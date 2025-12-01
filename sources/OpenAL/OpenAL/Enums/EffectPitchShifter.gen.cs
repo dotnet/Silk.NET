@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectPitchShifter")]
-[Transformed]
 public enum EffectPitchShifter : uint
 {
     [NativeName("AL_PITCH_SHIFTER_COARSE_TUNE")]

@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", 0)]
 [NativeName("WeightPointerTypeARB")]
-[Transformed]
 public enum WeightPointerTypeARB : uint
 {
     [NativeName("GL_BYTE")]

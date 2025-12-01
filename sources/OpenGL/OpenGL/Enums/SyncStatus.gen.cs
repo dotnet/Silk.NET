@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("SyncStatus")]
-[Transformed]
 public enum SyncStatus : uint
 {
     [NativeName("GL_ALREADY_SIGNALED")]

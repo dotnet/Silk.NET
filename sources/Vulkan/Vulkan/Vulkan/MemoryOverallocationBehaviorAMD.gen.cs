@@ -8,22 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "AMD", 0)]
 [NativeName("VkMemoryOverallocationBehaviorAMD")]
 [SupportedApiProfile("vulkan")]
 public enum MemoryOverallocationBehaviorAMD : uint
 {
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_MEMORY_OVERALLOCATION_BEHAVIOR_DEFAULT_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     DefaultAMD = 0,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_MEMORY_OVERALLOCATION_BEHAVIOR_ALLOWED_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     AllowedAMD = 1,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_MEMORY_OVERALLOCATION_BEHAVIOR_DISALLOWED_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_memory_overallocation_behavior"])]
     DisallowedAMD = 2,

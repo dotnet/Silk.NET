@@ -8,10 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_FRect")]
 public partial struct FRect
 {
+    [NativeName("x")]
     public float X;
+
+    [NativeName("y")]
     public float Y;
+
+    [NativeName("w")]
     public float W;
+
+    [NativeName("h")]
     public float H;
 }

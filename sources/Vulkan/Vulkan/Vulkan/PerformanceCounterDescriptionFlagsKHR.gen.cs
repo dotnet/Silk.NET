@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkPerformanceCounterDescriptionFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +15,6 @@ public enum PerformanceCounterDescriptionFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_DESCRIPTION_PERFORMANCE_IMPACTING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,7 +26,6 @@ public enum PerformanceCounterDescriptionFlagsKHR : uint
     )]
     PerformanceImpactingBitKHR = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

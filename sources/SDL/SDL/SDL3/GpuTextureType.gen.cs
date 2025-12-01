@@ -6,12 +6,21 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPUTextureType")]
 public enum GpuTextureType : uint
 {
+    [NativeName("SDL_GPU_TEXTURETYPE_2D")]
     Texturetype2D,
+
+    [NativeName("SDL_GPU_TEXTURETYPE_2D_ARRAY")]
     Texturetype2DArray,
+
+    [NativeName("SDL_GPU_TEXTURETYPE_3D")]
     Texturetype3D,
+
+    [NativeName("SDL_GPU_TEXTURETYPE_CUBE")]
     TexturetypeCube,
+
+    [NativeName("SDL_GPU_TEXTURETYPE_CUBE_ARRAY")]
     TexturetypeCubeArray,
 }

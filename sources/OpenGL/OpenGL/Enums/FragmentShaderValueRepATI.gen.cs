@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ATI", 0)]
 [NativeName("FragmentShaderValueRepATI")]
-[Transformed]
 public enum FragmentShaderValueRepATI : uint
 {
     [NativeName("GL_ALPHA")]

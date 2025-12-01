@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectEqualizer")]
-[Transformed]
 public enum EffectEqualizer : uint
 {
     [NativeName("AL_EQUALIZER_LOW_GAIN")]

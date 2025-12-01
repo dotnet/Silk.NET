@@ -6,7 +6,6 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "ARM", 0)]
 [NativeName("VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM

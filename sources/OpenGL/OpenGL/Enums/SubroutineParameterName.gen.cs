@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("SubroutineParameterName")]
-[Transformed]
 public enum SubroutineParameterName : uint
 {
     [NativeName("GL_UNIFORM_SIZE")]

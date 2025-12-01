@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("AccumOp")]
-[Transformed]
 public enum AccumOp : uint
 {
     [NativeName("GL_ADD")]

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ShaderParameterName")]
-[Transformed]
 public enum ShaderParameterName : uint
 {
     [NativeName("GL_SHADER_TYPE")]

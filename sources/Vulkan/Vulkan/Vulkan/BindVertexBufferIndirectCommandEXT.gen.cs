@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkBindVertexBufferIndirectCommandEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct BindVertexBufferIndirectCommandEXT

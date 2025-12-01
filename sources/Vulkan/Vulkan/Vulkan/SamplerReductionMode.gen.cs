@@ -66,7 +66,6 @@ public enum SamplerReductionMode : uint
     )]
     Max = 2,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_RANGECLAMP_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -78,7 +77,6 @@ public enum SamplerReductionMode : uint
     )]
     WeightedAverageRangeclampQCOM = 1000521000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -90,7 +88,6 @@ public enum SamplerReductionMode : uint
     )]
     WeightedAverageEXT = WeightedAverage,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SAMPLER_REDUCTION_MODE_MIN_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -102,7 +99,6 @@ public enum SamplerReductionMode : uint
     )]
     MinEXT = Min,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_SAMPLER_REDUCTION_MODE_MAX_EXT")]
     [SupportedApiProfile(
         "vulkan",

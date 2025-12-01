@@ -28,7 +28,6 @@ public enum HostImageCopyFlags : uint
     )]
     MemcpyBit = 0x1,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_HOST_IMAGE_COPY_MEMCPY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

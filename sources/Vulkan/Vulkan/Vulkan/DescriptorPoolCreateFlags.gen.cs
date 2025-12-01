@@ -57,7 +57,6 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     UpdateAfterBindBit = 0x2,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -69,7 +68,6 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     HostOnlyBitEXT = 0x4,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_ALLOW_OVERALLOCATION_SETS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -78,7 +76,6 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     AllowOverallocationSetsBitNV = 0x8,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_ALLOW_OVERALLOCATION_POOLS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -87,7 +84,6 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     AllowOverallocationPoolsBitNV = 0x10,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -99,7 +95,6 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     UpdateAfterBindBitEXT = UpdateAfterBindBit,
 
-    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",

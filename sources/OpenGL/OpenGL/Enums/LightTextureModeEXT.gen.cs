@@ -7,27 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("LightTextureModeEXT")]
-[Transformed]
 public enum LightTextureModeEXT : uint
 {
     [NativeName("GL_FRAGMENT_DEPTH")]
     Depth = unchecked((uint)0x8452),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_DEPTH_EXT")]
     DepthEXT = unchecked((uint)0x8452),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_MATERIAL_EXT")]
     MaterialEXT = unchecked((uint)0x8349),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_NORMAL_EXT")]
     NormalEXT = unchecked((uint)0x834A),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_COLOR_EXT")]
     ColorEXT = unchecked((uint)0x834C),
 }

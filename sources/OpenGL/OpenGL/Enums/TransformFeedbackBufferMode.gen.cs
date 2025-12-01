@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("TransformFeedbackBufferMode")]
-[Transformed]
 public enum TransformFeedbackBufferMode : uint
 {
     [NativeName("GL_INTERLEAVED_ATTRIBS")]

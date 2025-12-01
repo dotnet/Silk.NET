@@ -9,7 +9,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_StorageInterface_read_file")]
-[Transformed]
 public unsafe delegate byte StorageInterfaceReadFileDelegate(
     void* arg0,
     sbyte* arg1,

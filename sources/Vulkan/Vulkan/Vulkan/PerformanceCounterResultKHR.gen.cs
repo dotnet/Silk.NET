@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkPerformanceCounterResultKHR")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]

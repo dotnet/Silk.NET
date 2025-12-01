@@ -6,17 +6,18 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUVertexInputState")]
 public unsafe partial struct GpuVertexInputState
 {
-    [NativeTypeName("const SDL_GPUVertexBufferDescription *")]
+    [NativeName("vertex_buffer_descriptions")]
     public GpuVertexBufferDescription* VertexBufferDescriptions;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("num_vertex_buffers")]
     public uint NumVertexBuffers;
 
-    [NativeTypeName("const SDL_GPUVertexAttribute *")]
+    [NativeName("vertex_attributes")]
     public GpuVertexAttribute* VertexAttributes;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("num_vertex_attributes")]
     public uint NumVertexAttributes;
 }

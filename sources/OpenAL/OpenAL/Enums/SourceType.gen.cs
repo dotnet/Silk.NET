@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("SourceType")]
-[Transformed]
 public enum SourceType : uint
 {
     [NativeName("AL_STATIC")]

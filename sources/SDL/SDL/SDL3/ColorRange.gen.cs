@@ -6,10 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_ColorRange")]
 public enum ColorRange : uint
 {
+    [NativeName("SDL_COLOR_RANGE_UNKNOWN")]
     Unknown = 0,
+
+    [NativeName("SDL_COLOR_RANGE_LIMITED")]
     Limited = 1,
+
+    [NativeName("SDL_COLOR_RANGE_FULL")]
     Full = 2,
 }

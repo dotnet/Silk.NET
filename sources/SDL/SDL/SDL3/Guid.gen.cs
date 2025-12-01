@@ -6,8 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GUID")]
 public partial struct Guid
 {
-    [NativeTypeName("Uint8[16]")]
+    [NativeName("data")]
     public GuidData Data;
 }

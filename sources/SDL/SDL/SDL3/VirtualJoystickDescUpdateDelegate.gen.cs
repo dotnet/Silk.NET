@@ -7,5 +7,4 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [NativeName("SDL_VirtualJoystickDesc_Update")]
-[Transformed]
 public unsafe delegate void VirtualJoystickDescUpdateDelegate(void* arg0);

@@ -8,12 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_RendererLogicalPresentation")]
 public enum RendererLogicalPresentation : uint
 {
+    [NativeName("SDL_LOGICAL_PRESENTATION_DISABLED")]
     Disabled,
+
+    [NativeName("SDL_LOGICAL_PRESENTATION_STRETCH")]
     Stretch,
+
+    [NativeName("SDL_LOGICAL_PRESENTATION_LETTERBOX")]
     Letterbox,
+
+    [NativeName("SDL_LOGICAL_PRESENTATION_OVERSCAN")]
     Overscan,
+
+    [NativeName("SDL_LOGICAL_PRESENTATION_INTEGER_SCALE")]
     IntegerScale,
 }

@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("FoldbackEvent")]
-[Transformed]
 public enum FoldbackEvent : uint
 {
     [NativeName("AL_FOLDBACK_EVENT_BLOCK")]

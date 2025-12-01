@@ -6,12 +6,21 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_hid_bus_type")]
 public enum HidBusType : uint
 {
+    [NativeName("SDL_HID_API_BUS_UNKNOWN")]
     Unknown = 0x00,
+
+    [NativeName("SDL_HID_API_BUS_USB")]
     Usb = 0x01,
+
+    [NativeName("SDL_HID_API_BUS_BLUETOOTH")]
     Bluetooth = 0x02,
+
+    [NativeName("SDL_HID_API_BUS_I2C")]
     I2C = 0x03,
+
+    [NativeName("SDL_HID_API_BUS_SPI")]
     Spi = 0x04,
 }

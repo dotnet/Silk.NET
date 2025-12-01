@@ -199,7 +199,6 @@ public enum SubgroupFeatureFlags : uint
     )]
     RotateClusteredBit = 0x400,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SUBGROUP_FEATURE_PARTITIONED_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -208,7 +207,6 @@ public enum SubgroupFeatureFlags : uint
     )]
     PartitionedBitNV = 0x100,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SUBGROUP_FEATURE_ROTATE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -220,7 +218,6 @@ public enum SubgroupFeatureFlags : uint
     )]
     RotateBitKHR = RotateBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

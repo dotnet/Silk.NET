@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("PrimitiveType")]
-[Transformed]
 public enum PrimitiveType : uint
 {
     [NativeName("GL_POINTS")]
@@ -56,43 +55,33 @@ public enum PrimitiveType : uint
     [NativeName("GL_PATCHES")]
     Patches = unchecked((uint)0x000E),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LINES_ADJACENCY_ARB")]
     LinesAdjacencyARB = unchecked((uint)0x000A),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LINE_STRIP_ADJACENCY_ARB")]
     LineStripAdjacencyARB = unchecked((uint)0x000B),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRIANGLES_ADJACENCY_ARB")]
     TrianglesAdjacencyARB = unchecked((uint)0x000C),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_ARB")]
     TriangleStripAdjacencyARB = unchecked((uint)0x000D),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LINES_ADJACENCY_EXT")]
     LinesAdjacencyEXT = unchecked((uint)0x000A),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LINE_STRIP_ADJACENCY_EXT")]
     LineStripAdjacencyEXT = unchecked((uint)0x000B),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRIANGLES_ADJACENCY_EXT")]
     TrianglesAdjacencyEXT = unchecked((uint)0x000C),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_EXT")]
     TriangleStripAdjacencyEXT = unchecked((uint)0x000D),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PATCHES_EXT")]
     PatchesEXT = unchecked((uint)0x000E),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_QUADS_EXT")]
     QuadsEXT = unchecked((uint)0x0007),
 }

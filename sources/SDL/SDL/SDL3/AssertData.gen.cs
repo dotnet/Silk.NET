@@ -8,24 +8,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AssertData")]
 public unsafe partial struct AssertData
 {
-    [NativeTypeName("bool")]
+    [NativeName("always_ignore")]
     public byte AlwaysIgnore;
 
-    [NativeTypeName("unsigned int")]
+    [NativeName("trigger_count")]
     public uint TriggerCount;
 
-    [NativeTypeName("const char *")]
+    [NativeName("condition")]
     public sbyte* Condition;
 
-    [NativeTypeName("const char *")]
+    [NativeName("filename")]
     public sbyte* Filename;
+
+    [NativeName("linenum")]
     public int Linenum;
 
-    [NativeTypeName("const char *")]
+    [NativeName("function")]
     public sbyte* Function;
 
-    [NativeTypeName("const struct SDL_AssertData *")]
+    [NativeName("next")]
     public AssertData* Next;
 }

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("PFN_vkDebugReportCallbackEXT")]
 [SupportedApiProfile("vulkan")]
 public readonly unsafe struct DebugReportCallbackEXT : IDisposable

@@ -8,16 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_KeyboardDeviceEvent")]
 public partial struct KeyboardDeviceEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public nuint Timestamp;
 
-    [NativeTypeName("SDL_KeyboardID")]
+    [NativeName("which")]
     public uint Which;
 }

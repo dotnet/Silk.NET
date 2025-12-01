@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ProgramStagePName")]
-[Transformed]
 public enum ProgramStagePName : uint
 {
     [NativeName("GL_ACTIVE_SUBROUTINES")]

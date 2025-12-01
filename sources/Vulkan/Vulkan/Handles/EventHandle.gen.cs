@@ -9,8 +9,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkEvent")]
-[NameAffix("Suffix", "_T", -1)]
-[NameAffix("Suffix", "Handle", 1)]
 public readonly unsafe partial struct EventHandle
 {
     public readonly void* Handle;

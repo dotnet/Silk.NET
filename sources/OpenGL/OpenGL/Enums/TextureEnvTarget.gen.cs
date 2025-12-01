@@ -8,10 +8,8 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("TextureEnvTarget")]
-[Transformed]
 public enum TextureEnvTarget : uint
 {
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_ENV")]
     TextureENV = unchecked((uint)0x2300),
 

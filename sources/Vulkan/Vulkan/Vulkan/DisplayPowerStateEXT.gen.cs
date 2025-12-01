@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDisplayPowerStateEXT")]
 [SupportedApiProfile("vulkan")]
 public enum DisplayPowerStateEXT : uint
 {
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DISPLAY_POWER_STATE_OFF_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -22,7 +20,6 @@ public enum DisplayPowerStateEXT : uint
     )]
     OffEXT = 0,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DISPLAY_POWER_STATE_SUSPEND_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -31,7 +28,6 @@ public enum DisplayPowerStateEXT : uint
     )]
     SuspendEXT = 1,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DISPLAY_POWER_STATE_ON_EXT")]
     [SupportedApiProfile(
         "vulkan",

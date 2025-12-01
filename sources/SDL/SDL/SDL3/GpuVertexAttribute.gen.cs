@@ -6,15 +6,18 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUVertexAttribute")]
 public partial struct GpuVertexAttribute
 {
-    [NativeTypeName("Uint32")]
+    [NativeName("location")]
     public uint Location;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("buffer_slot")]
     public uint BufferSlot;
+
+    [NativeName("format")]
     public GpuVertexElementFormat Format;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("offset")]
     public uint Offset;
 }

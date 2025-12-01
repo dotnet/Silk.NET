@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("TextureSwizzle")]
-[Transformed]
 public enum TextureSwizzle : uint
 {
     [NativeName("GL_ZERO")]

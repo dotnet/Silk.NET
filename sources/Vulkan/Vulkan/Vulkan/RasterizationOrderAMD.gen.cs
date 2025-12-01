@@ -8,17 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "AMD", 0)]
 [NativeName("VkRasterizationOrderAMD")]
 [SupportedApiProfile("vulkan")]
 public enum RasterizationOrderAMD : uint
 {
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_RASTERIZATION_ORDER_STRICT_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
     StrictAMD = 0,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_RASTERIZATION_ORDER_RELAXED_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
     RelaxedAMD = 1,

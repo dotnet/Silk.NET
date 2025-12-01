@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeH265RateControlFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +15,6 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
     )]
     AttemptHrdComplianceBitKHR = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_RATE_CONTROL_REGULAR_GOP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -34,7 +31,6 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
     )]
     RegularGopBitKHR = 0x2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_RATE_CONTROL_REFERENCE_PATTERN_FLAT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43,7 +39,6 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
     )]
     ReferencePatternFlatBitKHR = 0x4,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_RATE_CONTROL_REFERENCE_PATTERN_DYADIC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -52,7 +47,6 @@ public enum VideoEncodeH265RateControlFlagsKHR : uint
     )]
     ReferencePatternDyadicBitKHR = 0x8,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_H265_RATE_CONTROL_TEMPORAL_SUB_LAYER_PATTERN_DYADIC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

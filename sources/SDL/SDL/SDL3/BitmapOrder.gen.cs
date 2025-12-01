@@ -6,10 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_BitmapOrder")]
 public enum BitmapOrder : uint
 {
+    [NativeName("SDL_BITMAPORDER_NONE")]
     BitmaporderNone,
+
+    [NativeName("SDL_BITMAPORDER_4321")]
     Bitmaporder4321,
+
+    [NativeName("SDL_BITMAPORDER_1234")]
     Bitmaporder1234,
 }

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ProgramResourceProperty")]
-[Transformed]
 public enum ProgramResourceProperty : uint
 {
     [NativeName("GL_NUM_COMPATIBLE_SUBROUTINES")]

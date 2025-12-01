@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("FramebufferStatus")]
-[Transformed]
 public enum FramebufferStatus : uint
 {
     [NativeName("GL_FRAMEBUFFER_UNDEFINED")]

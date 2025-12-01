@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectReverb")]
-[Transformed]
 public enum EffectReverb : uint
 {
     [NativeName("AL_REVERB_DENSITY")]

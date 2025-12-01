@@ -6,17 +6,33 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUGraphicsPipelineCreateInfo")]
 public unsafe partial struct GpuGraphicsPipelineCreateInfo
 {
+    [NativeName("vertex_shader")]
     public GpuShaderHandle VertexShader;
+
+    [NativeName("fragment_shader")]
     public GpuShaderHandle FragmentShader;
+
+    [NativeName("vertex_input_state")]
     public GpuVertexInputState VertexInputState;
+
+    [NativeName("primitive_type")]
     public GpuPrimitiveType PrimitiveType;
+
+    [NativeName("rasterizer_state")]
     public GpuRasterizerState RasterizerState;
+
+    [NativeName("multisample_state")]
     public GpuMultisampleState MultisampleState;
+
+    [NativeName("depth_stencil_state")]
     public GpuDepthStencilState DepthStencilState;
+
+    [NativeName("target_info")]
     public GpuGraphicsPipelineTargetInfo TargetInfo;
 
-    [NativeTypeName("SDL_PropertiesID")]
+    [NativeName("props")]
     public uint Props;
 }

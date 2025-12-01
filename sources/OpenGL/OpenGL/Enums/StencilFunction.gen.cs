@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("StencilFunction")]
-[Transformed]
 public enum StencilFunction : uint
 {
     [NativeName("GL_NEVER")]

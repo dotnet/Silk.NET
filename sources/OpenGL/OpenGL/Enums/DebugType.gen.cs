@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("DebugType")]
-[Transformed]
 public enum DebugType : uint
 {
     [NativeName("GL_DONT_CARE")]

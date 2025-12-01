@@ -6,26 +6,27 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_IOStreamInterface")]
 public unsafe partial struct IoStreamInterface
 {
-    [NativeTypeName("Uint32")]
+    [NativeName("version")]
     public uint Version;
 
-    [NativeTypeName("Sint64 (*)(void *)")]
+    [NativeName("size")]
     public IoStreamInterfaceSize Size;
 
-    [NativeTypeName("Sint64 (*)(void *, Sint64, SDL_IOWhence)")]
+    [NativeName("seek")]
     public IoStreamInterfaceSeek Seek;
 
-    [NativeTypeName("size_t (*)(void *, void *, size_t, SDL_IOStatus *)")]
+    [NativeName("read")]
     public IoStreamInterfaceRead Read;
 
-    [NativeTypeName("size_t (*)(void *, const void *, size_t, SDL_IOStatus *)")]
+    [NativeName("write")]
     public IoStreamInterfaceWrite Write;
 
-    [NativeTypeName("bool (*)(void *, SDL_IOStatus *)")]
+    [NativeName("flush")]
     public IoStreamInterfaceFlush Flush;
 
-    [NativeTypeName("bool (*)(void *)")]
+    [NativeName("close")]
     public IoStreamInterfaceClose Close;
 }

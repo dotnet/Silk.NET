@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("SourceState")]
-[Transformed]
 public enum SourceState : uint
 {
     [NativeName("AL_INITIAL")]

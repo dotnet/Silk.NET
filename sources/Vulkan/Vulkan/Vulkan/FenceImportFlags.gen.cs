@@ -40,7 +40,6 @@ public enum FenceImportFlags : uint
     )]
     TemporaryBit = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FENCE_IMPORT_TEMPORARY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

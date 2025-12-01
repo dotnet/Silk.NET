@@ -7,20 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("PixelTransformPNameEXT")]
-[Transformed]
 public enum PixelTransformPNameEXT : uint
 {
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_MAG_FILTER_EXT")]
     MagFilterEXT = unchecked((uint)0x8331),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_MIN_FILTER_EXT")]
     MinFilterEXT = unchecked((uint)0x8332),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_CUBIC_WEIGHT_EXT")]
     CubicWeightEXT = unchecked((uint)0x8333),
 }

@@ -185,7 +185,6 @@ public enum MemoryPropertyFlags : uint
     )]
     ProtectedBit = 0x20,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_MEMORY_PROPERTY_DEVICE_COHERENT_BIT_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -197,7 +196,6 @@ public enum MemoryPropertyFlags : uint
     )]
     DeviceCoherentBitAMD = 0x40,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("VK_MEMORY_PROPERTY_DEVICE_UNCACHED_BIT_AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -209,7 +207,6 @@ public enum MemoryPropertyFlags : uint
     )]
     DeviceUncachedBitAMD = 0x80,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_MEMORY_PROPERTY_RDMA_CAPABLE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",

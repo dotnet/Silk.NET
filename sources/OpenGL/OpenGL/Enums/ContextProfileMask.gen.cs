@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ContextProfileMask")]
-[Transformed]
 [Flags]
 public enum ContextProfileMask : uint
 {

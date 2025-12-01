@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkShaderCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ShaderCreateInfoEXT

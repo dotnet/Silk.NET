@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("InterleavedArrayFormat")]
-[Transformed]
 public enum InterleavedArrayFormat : uint
 {
     [NativeName("GL_V2F")]

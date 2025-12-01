@@ -6,16 +6,33 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_PackedOrder")]
 public enum PackedOrder : uint
 {
+    [NativeName("SDL_PACKEDORDER_NONE")]
     None,
+
+    [NativeName("SDL_PACKEDORDER_XRGB")]
     Xrgb,
+
+    [NativeName("SDL_PACKEDORDER_RGBX")]
     Rgbx,
+
+    [NativeName("SDL_PACKEDORDER_ARGB")]
     Argb,
+
+    [NativeName("SDL_PACKEDORDER_RGBA")]
     Rgba,
+
+    [NativeName("SDL_PACKEDORDER_XBGR")]
     Xbgr,
+
+    [NativeName("SDL_PACKEDORDER_BGRX")]
     Bgrx,
+
+    [NativeName("SDL_PACKEDORDER_ABGR")]
     Abgr,
+
+    [NativeName("SDL_PACKEDORDER_BGRA")]
     Bgra,
 }

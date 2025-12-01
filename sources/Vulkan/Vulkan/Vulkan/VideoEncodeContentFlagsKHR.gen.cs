@@ -8,13 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeContentFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum VideoEncodeContentFlagsKHR : uint
 {
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CONTENT_DEFAULT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -26,7 +24,6 @@ public enum VideoEncodeContentFlagsKHR : uint
     )]
     DefaultKHR = 0x0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CONTENT_CAMERA_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38,7 +35,6 @@ public enum VideoEncodeContentFlagsKHR : uint
     )]
     CameraBitKHR = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CONTENT_DESKTOP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -50,7 +46,6 @@ public enum VideoEncodeContentFlagsKHR : uint
     )]
     DesktopBitKHR = 0x2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CONTENT_RENDERED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

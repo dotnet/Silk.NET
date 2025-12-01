@@ -8,10 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoSessionParametersKHR")]
-[NameAffix("Suffix", "_T", -1)]
-[NameAffix("Suffix", "Handle", 1)]
 public readonly unsafe partial struct VideoSessionParametersHandleKHR
 {
     public readonly void* Handle;

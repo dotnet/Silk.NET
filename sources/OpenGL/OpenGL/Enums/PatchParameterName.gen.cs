@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("PatchParameterName")]
-[Transformed]
 public enum PatchParameterName : uint
 {
     [NativeName("GL_PATCH_VERTICES")]

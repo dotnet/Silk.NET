@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "ARM", 0)]
 [NativeName("VkTensorViewCaptureDescriptorDataInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TensorViewCaptureDescriptorDataInfoARM

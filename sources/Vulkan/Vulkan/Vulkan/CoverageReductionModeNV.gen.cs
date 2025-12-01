@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkCoverageReductionModeNV")]
 [SupportedApiProfile("vulkan")]
 public enum CoverageReductionModeNV : uint
 {
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COVERAGE_REDUCTION_MODE_MERGE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum CoverageReductionModeNV : uint
     )]
     MergeNV = 0,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COVERAGE_REDUCTION_MODE_TRUNCATE_NV")]
     [SupportedApiProfile(
         "vulkan",

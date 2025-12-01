@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("MapQuery")]
-[Transformed]
 public enum MapQuery : uint
 {
     [NativeName("GL_COEFF")]

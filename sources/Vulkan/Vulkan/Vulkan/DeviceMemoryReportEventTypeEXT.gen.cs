@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDeviceMemoryReportEventTypeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum DeviceMemoryReportEventTypeEXT : uint
 {
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_ALLOCATE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum DeviceMemoryReportEventTypeEXT : uint
     )]
     AllocateEXT = 0,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_FREE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +34,6 @@ public enum DeviceMemoryReportEventTypeEXT : uint
     )]
     FreeEXT = 1,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_IMPORT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +45,6 @@ public enum DeviceMemoryReportEventTypeEXT : uint
     )]
     ImportEXT = 2,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_UNIMPORT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +56,6 @@ public enum DeviceMemoryReportEventTypeEXT : uint
     )]
     UnimportEXT = 3,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_ALLOCATION_FAILED_EXT")]
     [SupportedApiProfile(
         "vulkan",

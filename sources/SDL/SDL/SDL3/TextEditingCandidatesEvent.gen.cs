@@ -8,37 +8,39 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_TextEditingCandidatesEvent")]
 public unsafe partial struct TextEditingCandidatesEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public nuint Timestamp;
 
-    [NativeTypeName("SDL_WindowID")]
+    [NativeName("windowID")]
     public uint WindowId;
 
-    [NativeTypeName("const char *const *")]
+    [NativeName("candidates")]
     public sbyte** Candidates;
 
-    [NativeTypeName("Sint32")]
+    [NativeName("num_candidates")]
     public int NumCandidates;
 
-    [NativeTypeName("Sint32")]
+    [NativeName("selected_candidate")]
     public int SelectedCandidate;
 
-    [NativeTypeName("bool")]
+    [NativeName("horizontal")]
     public byte Horizontal;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding1")]
     public byte Padding1;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding2")]
     public byte Padding2;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding3")]
     public byte Padding3;
 }

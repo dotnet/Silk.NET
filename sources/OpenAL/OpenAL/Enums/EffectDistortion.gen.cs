@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectDistortion")]
-[Transformed]
 public enum EffectDistortion : uint
 {
     [NativeName("AL_DISTORTION_EDGE")]

@@ -310,12 +310,10 @@ public enum DynamicState : uint
     )]
     LineStipple = 1000259000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_W_SCALING_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     ViewportWScalingNV = 1000087000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DISCARD_RECTANGLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -327,7 +325,6 @@ public enum DynamicState : uint
     )]
     DiscardRectangleEXT = 1000099000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DISCARD_RECTANGLE_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -339,7 +336,6 @@ public enum DynamicState : uint
     )]
     DiscardRectangleEnableEXT = 1000099001,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DISCARD_RECTANGLE_MODE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -351,7 +347,6 @@ public enum DynamicState : uint
     )]
     DiscardRectangleModeEXT = 1000099002,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_SAMPLE_LOCATIONS_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -363,7 +358,6 @@ public enum DynamicState : uint
     )]
     SampleLocationsEXT = 1000143000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DYNAMIC_STATE_RAY_TRACING_PIPELINE_STACK_SIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -375,7 +369,6 @@ public enum DynamicState : uint
     )]
     RayTracingPipelineStackSizeKHR = 1000347000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_SHADING_RATE_PALETTE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -387,7 +380,6 @@ public enum DynamicState : uint
     )]
     ViewportShadingRatePaletteNV = 1000164004,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_COARSE_SAMPLE_ORDER_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -399,7 +391,6 @@ public enum DynamicState : uint
     )]
     ViewportCoarseSampleOrderNV = 1000164006,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_ENABLE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -411,7 +402,6 @@ public enum DynamicState : uint
     )]
     ExclusiveScissorEnableNV = 1000205000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -423,7 +413,6 @@ public enum DynamicState : uint
     )]
     ExclusiveScissorNV = 1000205001,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DYNAMIC_STATE_FRAGMENT_SHADING_RATE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -436,7 +425,6 @@ public enum DynamicState : uint
     )]
     FragmentShadingRateKHR = 1000226000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_VERTEX_INPUT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -448,7 +436,6 @@ public enum DynamicState : uint
     )]
     VertexInputEXT = 1000352000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_PATCH_CONTROL_POINTS_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -460,7 +447,6 @@ public enum DynamicState : uint
     )]
     PatchControlPointsEXT = 1000377000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_LOGIC_OP_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -472,7 +458,6 @@ public enum DynamicState : uint
     )]
     LogicOpEXT = 1000377003,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_COLOR_WRITE_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -484,7 +469,6 @@ public enum DynamicState : uint
     )]
     ColorWriteEnableEXT = 1000381000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_CLAMP_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -496,7 +480,6 @@ public enum DynamicState : uint
     )]
     DepthClampEnableEXT = 1000455003,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_POLYGON_MODE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -508,7 +491,6 @@ public enum DynamicState : uint
     )]
     PolygonModeEXT = 1000455004,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_RASTERIZATION_SAMPLES_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -520,7 +502,6 @@ public enum DynamicState : uint
     )]
     RasterizationSamplesEXT = 1000455005,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_SAMPLE_MASK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -532,7 +513,6 @@ public enum DynamicState : uint
     )]
     SampleMaskEXT = 1000455006,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_ALPHA_TO_COVERAGE_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -544,7 +524,6 @@ public enum DynamicState : uint
     )]
     AlphaToCoverageEnableEXT = 1000455007,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_ALPHA_TO_ONE_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -556,7 +535,6 @@ public enum DynamicState : uint
     )]
     AlphaToOneEnableEXT = 1000455008,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_LOGIC_OP_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -568,7 +546,6 @@ public enum DynamicState : uint
     )]
     LogicOpEnableEXT = 1000455009,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_COLOR_BLEND_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -580,7 +557,6 @@ public enum DynamicState : uint
     )]
     ColorBlendEnableEXT = 1000455010,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_COLOR_BLEND_EQUATION_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -592,7 +568,6 @@ public enum DynamicState : uint
     )]
     ColorBlendEquationEXT = 1000455011,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_COLOR_WRITE_MASK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -604,7 +579,6 @@ public enum DynamicState : uint
     )]
     ColorWriteMaskEXT = 1000455012,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_TESSELLATION_DOMAIN_ORIGIN_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -619,7 +593,6 @@ public enum DynamicState : uint
     )]
     TessellationDomainOriginEXT = 1000455002,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_RASTERIZATION_STREAM_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -632,7 +605,6 @@ public enum DynamicState : uint
     )]
     RasterizationStreamEXT = 1000455013,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_CONSERVATIVE_RASTERIZATION_MODE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -645,7 +617,6 @@ public enum DynamicState : uint
     )]
     ConservativeRasterizationModeEXT = 1000455014,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -658,7 +629,6 @@ public enum DynamicState : uint
     )]
     ExtraPrimitiveOverestimationSizeEXT = 1000455015,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_CLIP_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -671,7 +641,6 @@ public enum DynamicState : uint
     )]
     DepthClipEnableEXT = 1000455016,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_SAMPLE_LOCATIONS_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -684,7 +653,6 @@ public enum DynamicState : uint
     )]
     SampleLocationsEnableEXT = 1000455017,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_COLOR_BLEND_ADVANCED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -697,7 +665,6 @@ public enum DynamicState : uint
     )]
     ColorBlendAdvancedEXT = 1000455018,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_PROVOKING_VERTEX_MODE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -710,7 +677,6 @@ public enum DynamicState : uint
     )]
     ProvokingVertexModeEXT = 1000455019,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_LINE_RASTERIZATION_MODE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -723,7 +689,6 @@ public enum DynamicState : uint
     )]
     LineRasterizationModeEXT = 1000455020,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -736,7 +701,6 @@ public enum DynamicState : uint
     )]
     LineStippleEnableEXT = 1000455021,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -749,7 +713,6 @@ public enum DynamicState : uint
     )]
     DepthClipNegativeOneToOneEXT = 1000455022,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_W_SCALING_ENABLE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -762,7 +725,6 @@ public enum DynamicState : uint
     )]
     ViewportWScalingEnableNV = 1000455023,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_SWIZZLE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -775,7 +737,6 @@ public enum DynamicState : uint
     )]
     ViewportSwizzleNV = 1000455024,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_TO_COLOR_ENABLE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -788,7 +749,6 @@ public enum DynamicState : uint
     )]
     CoverageToColorEnableNV = 1000455025,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_TO_COLOR_LOCATION_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -801,7 +761,6 @@ public enum DynamicState : uint
     )]
     CoverageToColorLocationNV = 1000455026,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_MODULATION_MODE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -814,7 +773,6 @@ public enum DynamicState : uint
     )]
     CoverageModulationModeNV = 1000455027,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_MODULATION_TABLE_ENABLE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -827,7 +785,6 @@ public enum DynamicState : uint
     )]
     CoverageModulationTableEnableNV = 1000455028,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_MODULATION_TABLE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -840,7 +797,6 @@ public enum DynamicState : uint
     )]
     CoverageModulationTableNV = 1000455029,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_SHADING_RATE_IMAGE_ENABLE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -853,7 +809,6 @@ public enum DynamicState : uint
     )]
     ShadingRateImageEnableNV = 1000455030,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -866,7 +821,6 @@ public enum DynamicState : uint
     )]
     RepresentativeFragmentTestEnableNV = 1000455031,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DYNAMIC_STATE_COVERAGE_REDUCTION_MODE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -879,7 +833,6 @@ public enum DynamicState : uint
     )]
     CoverageReductionModeNV = 1000455032,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_ATTACHMENT_FEEDBACK_LOOP_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -891,7 +844,6 @@ public enum DynamicState : uint
     )]
     AttachmentFeedbackLoopEnableEXT = 1000524000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_CLAMP_RANGE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -903,7 +855,6 @@ public enum DynamicState : uint
     )]
     DepthClampRangeEXT = 1000582000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -915,7 +866,6 @@ public enum DynamicState : uint
     )]
     LineStippleEXT = LineStipple,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_CULL_MODE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -927,7 +877,6 @@ public enum DynamicState : uint
     )]
     CullModeEXT = CullMode,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_FRONT_FACE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -939,7 +888,6 @@ public enum DynamicState : uint
     )]
     FrontFaceEXT = FrontFace,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_TOPOLOGY_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -951,7 +899,6 @@ public enum DynamicState : uint
     )]
     PrimitiveTopologyEXT = PrimitiveTopology,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_VIEWPORT_WITH_COUNT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -963,7 +910,6 @@ public enum DynamicState : uint
     )]
     ViewportWithCountEXT = ViewportWithCount,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_SCISSOR_WITH_COUNT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -975,7 +921,6 @@ public enum DynamicState : uint
     )]
     ScissorWithCountEXT = ScissorWithCount,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_VERTEX_INPUT_BINDING_STRIDE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -987,7 +932,6 @@ public enum DynamicState : uint
     )]
     VertexInputBindingStrideEXT = VertexInputBindingStride,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_TEST_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -999,7 +943,6 @@ public enum DynamicState : uint
     )]
     DepthTestEnableEXT = DepthTestEnable,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_WRITE_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -1011,7 +954,6 @@ public enum DynamicState : uint
     )]
     DepthWriteEnableEXT = DepthWriteEnable,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_COMPARE_OP_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -1023,7 +965,6 @@ public enum DynamicState : uint
     )]
     DepthCompareOpEXT = DepthCompareOp,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_BOUNDS_TEST_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -1035,7 +976,6 @@ public enum DynamicState : uint
     )]
     DepthBoundsTestEnableEXT = DepthBoundsTestEnable,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_STENCIL_TEST_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -1047,7 +987,6 @@ public enum DynamicState : uint
     )]
     StencilTestEnableEXT = StencilTestEnable,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_STENCIL_OP_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -1059,7 +998,6 @@ public enum DynamicState : uint
     )]
     StencilOpEXT = StencilOp,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_RASTERIZER_DISCARD_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -1071,7 +1009,6 @@ public enum DynamicState : uint
     )]
     RasterizerDiscardEnableEXT = RasterizerDiscardEnable,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_DEPTH_BIAS_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -1083,7 +1020,6 @@ public enum DynamicState : uint
     )]
     DepthBiasEnableEXT = DepthBiasEnable,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DYNAMIC_STATE_PRIMITIVE_RESTART_ENABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -1095,7 +1031,6 @@ public enum DynamicState : uint
     )]
     PrimitiveRestartEnableEXT = PrimitiveRestartEnable,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DYNAMIC_STATE_LINE_STIPPLE_KHR")]
     [SupportedApiProfile(
         "vulkan",

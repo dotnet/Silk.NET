@@ -8,11 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Finger")]
 public partial struct Finger
 {
-    [NativeTypeName("SDL_FingerID")]
+    [NativeName("id")]
     public nuint Id;
+
+    [NativeName("x")]
     public float X;
+
+    [NativeName("y")]
     public float Y;
+
+    [NativeName("pressure")]
     public float Pressure;
 }

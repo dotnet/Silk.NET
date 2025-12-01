@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("VertexArrayPName")]
-[Transformed]
 public enum VertexArrayPName : uint
 {
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_ENABLED")]

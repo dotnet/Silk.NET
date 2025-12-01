@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("QueryObjectParameterName")]
-[Transformed]
 public enum QueryObjectParameterName : uint
 {
     [NativeName("GL_QUERY_RESULT")]

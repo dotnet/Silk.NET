@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VertexWeightPointerTypeEXT")]
-[Transformed]
 public enum VertexWeightPointerTypeEXT : uint
 {
     [NativeName("GL_FLOAT")]

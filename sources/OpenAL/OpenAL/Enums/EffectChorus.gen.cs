@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectChorus")]
-[Transformed]
 public enum EffectChorus : uint
 {
     [NativeName("AL_CHORUS_WAVEFORM")]

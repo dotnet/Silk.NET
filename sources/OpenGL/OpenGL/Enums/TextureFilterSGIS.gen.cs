@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "SGIS", 0)]
 [NativeName("TextureFilterSGIS")]
-[Transformed]
 public enum TextureFilterSGIS : uint
 {
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_FILTER4_SGIS")]
     Filter4SGIS = unchecked((uint)0x8146),
 }

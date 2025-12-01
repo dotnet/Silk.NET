@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "INTEL", 0)]
 [NativeName("VkPerformanceConfigurationAcquireInfoINTEL")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceConfigurationAcquireInfoINTEL

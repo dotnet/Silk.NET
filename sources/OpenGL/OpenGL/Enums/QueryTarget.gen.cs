@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("QueryTarget")]
-[Transformed]
 public enum QueryTarget : uint
 {
     [NativeName("GL_SAMPLES_PASSED")]

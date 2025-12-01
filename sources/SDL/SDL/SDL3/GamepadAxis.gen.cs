@@ -6,14 +6,30 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GamepadAxis")]
 public enum GamepadAxis
 {
+    [NativeName("SDL_GAMEPAD_AXIS_INVALID")]
     Invalid = -1,
+
+    [NativeName("SDL_GAMEPAD_AXIS_LEFTX")]
     Leftx,
+
+    [NativeName("SDL_GAMEPAD_AXIS_LEFTY")]
     Lefty,
+
+    [NativeName("SDL_GAMEPAD_AXIS_RIGHTX")]
     Rightx,
+
+    [NativeName("SDL_GAMEPAD_AXIS_RIGHTY")]
     Righty,
+
+    [NativeName("SDL_GAMEPAD_AXIS_LEFT_TRIGGER")]
     LeftTrigger,
+
+    [NativeName("SDL_GAMEPAD_AXIS_RIGHT_TRIGGER")]
     RightTrigger,
+
+    [NativeName("SDL_GAMEPAD_AXIS_COUNT")]
     Count,
 }

@@ -8,11 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_ProcessIO")]
 public enum ProcessIo : uint
 {
+    [NativeName("SDL_PROCESS_STDIO_INHERITED")]
     Inherited,
+
+    [NativeName("SDL_PROCESS_STDIO_NULL")]
     Null,
+
+    [NativeName("SDL_PROCESS_STDIO_APP")]
     App,
+
+    [NativeName("SDL_PROCESS_STDIO_REDIRECT")]
     Redirect,
 }

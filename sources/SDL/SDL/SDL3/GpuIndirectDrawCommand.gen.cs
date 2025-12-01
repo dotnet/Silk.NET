@@ -8,17 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUIndirectDrawCommand")]
 public partial struct GpuIndirectDrawCommand
 {
-    [NativeTypeName("Uint32")]
+    [NativeName("num_vertices")]
     public uint NumVertices;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("num_instances")]
     public uint NumInstances;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("first_vertex")]
     public uint FirstVertex;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("first_instance")]
     public uint FirstInstance;
 }

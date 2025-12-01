@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VertexShaderWriteMaskEXT")]
-[Transformed]
 public enum VertexShaderWriteMaskEXT : uint
 {
     [NativeName("GL_FALSE")]

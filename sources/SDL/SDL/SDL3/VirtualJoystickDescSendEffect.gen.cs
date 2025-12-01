@@ -7,7 +7,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [NativeName("SDL_VirtualJoystickDesc_SendEffect")]
-[Transformed]
 public readonly unsafe struct VirtualJoystickDescSendEffect : IDisposable
 {
     private readonly void* Pointer;

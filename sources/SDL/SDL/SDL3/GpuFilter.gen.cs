@@ -6,9 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPUFilter")]
 public enum GpuFilter : uint
 {
+    [NativeName("SDL_GPU_FILTER_NEAREST")]
     Nearest,
+
+    [NativeName("SDL_GPU_FILTER_LINEAR")]
     Linear,
 }

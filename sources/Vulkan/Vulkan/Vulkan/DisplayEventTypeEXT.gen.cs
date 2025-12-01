@@ -6,12 +6,10 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDisplayEventTypeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum DisplayEventTypeEXT : uint
 {
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DISPLAY_EVENT_TYPE_FIRST_PIXEL_OUT_EXT")]
     [SupportedApiProfile(
         "vulkan",

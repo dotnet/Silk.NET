@@ -6,10 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPUCullMode")]
 public enum GpuCullMode : uint
 {
+    [NativeName("SDL_GPU_CULLMODE_NONE")]
     None,
+
+    [NativeName("SDL_GPU_CULLMODE_FRONT")]
     Front,
+
+    [NativeName("SDL_GPU_CULLMODE_BACK")]
     Back,
 }

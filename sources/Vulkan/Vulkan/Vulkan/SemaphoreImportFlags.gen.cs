@@ -40,7 +40,6 @@ public enum SemaphoreImportFlags : uint
     )]
     TemporaryBit = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SEMAPHORE_IMPORT_TEMPORARY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

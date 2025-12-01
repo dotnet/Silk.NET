@@ -6,11 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Locale")]
 public unsafe partial struct Locale
 {
-    [NativeTypeName("const char *")]
+    [NativeName("language")]
     public sbyte* Language;
 
-    [NativeTypeName("const char *")]
+    [NativeName("country")]
     public sbyte* Country;
 }

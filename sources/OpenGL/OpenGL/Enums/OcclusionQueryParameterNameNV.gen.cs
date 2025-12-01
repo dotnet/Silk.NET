@@ -7,16 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("OcclusionQueryParameterNameNV")]
-[Transformed]
 public enum OcclusionQueryParameterNameNV : uint
 {
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PIXEL_COUNT_NV")]
     Nv = unchecked((uint)0x8866),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PIXEL_COUNT_AVAILABLE_NV")]
     AvailableNV = unchecked((uint)0x8867),
 }

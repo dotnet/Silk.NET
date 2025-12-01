@@ -9,8 +9,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("VkQueue")]
-[NameAffix("Suffix", "_T", -1)]
-[NameAffix("Suffix", "Handle", 1)]
 public readonly unsafe partial struct QueueHandle
 {
     public readonly void* Handle;

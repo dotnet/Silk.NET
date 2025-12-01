@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("UniformBlockPName")]
-[Transformed]
 public enum UniformBlockPName : uint
 {
     [NativeName("GL_UNIFORM_BLOCK_BINDING")]

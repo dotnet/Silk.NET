@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectRingModulator")]
-[Transformed]
 public enum EffectRingModulator : uint
 {
     [NativeName("AL_RING_MODULATOR_FREQUENCY")]

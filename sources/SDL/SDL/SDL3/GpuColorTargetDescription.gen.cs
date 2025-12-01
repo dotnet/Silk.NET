@@ -6,8 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUColorTargetDescription")]
 public partial struct GpuColorTargetDescription
 {
+    [NativeName("format")]
     public GpuTextureFormat Format;
+
+    [NativeName("blend_state")]
     public GpuColorTargetBlendState BlendState;
 }

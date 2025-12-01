@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("Boolean")]
-[Transformed]
 public enum Boolean : uint
 {
     [NativeName("AL_FALSE")]

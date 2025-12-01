@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("StringName")]
-[Transformed]
 public enum StringName : uint
 {
     [NativeName("GL_VENDOR")]

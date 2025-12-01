@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("BlendingFactor")]
-[Transformed]
 public enum BlendingFactor : uint
 {
     [NativeName("GL_ZERO")]

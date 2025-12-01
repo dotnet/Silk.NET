@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("LogicOp")]
-[Transformed]
 public enum LogicOp : uint
 {
     [NativeName("GL_CLEAR")]

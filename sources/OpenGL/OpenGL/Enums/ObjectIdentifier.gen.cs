@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ObjectIdentifier")]
-[Transformed]
 public enum ObjectIdentifier : uint
 {
     [NativeName("GL_VERTEX_ARRAY")]

@@ -9,5 +9,4 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_StorageInterface_copy")]
-[Transformed]
 public unsafe delegate byte StorageInterfaceCopyDelegate(void* arg0, sbyte* arg1, sbyte* arg2);

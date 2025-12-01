@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("SourceBoolean")]
-[Transformed]
 public enum SourceBoolean : uint
 {
     [NativeName("AL_SOURCE_RELATIVE")]

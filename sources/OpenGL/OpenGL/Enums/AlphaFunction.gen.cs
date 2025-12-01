@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("AlphaFunction")]
-[Transformed]
 public enum AlphaFunction : uint
 {
     [NativeName("GL_NEVER")]

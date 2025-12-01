@@ -6,12 +6,24 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_PowerState")]
 public enum PowerState
 {
+    [NativeName("SDL_POWERSTATE_ERROR")]
     Error = -1,
+
+    [NativeName("SDL_POWERSTATE_UNKNOWN")]
     Unknown,
+
+    [NativeName("SDL_POWERSTATE_ON_BATTERY")]
     OnBattery,
+
+    [NativeName("SDL_POWERSTATE_NO_BATTERY")]
     NoBattery,
+
+    [NativeName("SDL_POWERSTATE_CHARGING")]
     Charging,
+
+    [NativeName("SDL_POWERSTATE_CHARGED")]
     Charged,
 }

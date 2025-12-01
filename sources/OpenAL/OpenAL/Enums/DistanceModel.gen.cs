@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("DistanceModel")]
-[Transformed]
 public enum DistanceModel : uint
 {
     [NativeName("AL_NONE")]

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("HintMode")]
-[Transformed]
 public enum HintMode : uint
 {
     [NativeName("GL_DONT_CARE")]

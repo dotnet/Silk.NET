@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("PathColorFormat")]
-[Transformed]
 public enum PathColorFormat : uint
 {
     [NativeName("GL_ALPHA")]

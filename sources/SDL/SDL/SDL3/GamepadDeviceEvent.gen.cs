@@ -6,16 +6,18 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GamepadDeviceEvent")]
 public partial struct GamepadDeviceEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public nuint Timestamp;
 
-    [NativeTypeName("SDL_JoystickID")]
+    [NativeName("which")]
     public uint Which;
 }

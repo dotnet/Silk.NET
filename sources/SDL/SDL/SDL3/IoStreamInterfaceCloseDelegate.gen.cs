@@ -9,5 +9,4 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_IOStreamInterface_close")]
-[Transformed]
 public unsafe delegate byte IoStreamInterfaceCloseDelegate(void* arg0);

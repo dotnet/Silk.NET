@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("LightParameter")]
-[Transformed]
 public enum LightParameter : uint
 {
     [NativeName("GL_AMBIENT")]

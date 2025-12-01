@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ContextInteger")]
-[Transformed]
 public enum ContextInteger : uint
 {
     [NativeName("ALC_FREQUENCY")]
@@ -44,43 +43,33 @@ public enum ContextInteger : uint
     [NativeName("ALC_DEFAULT_FILTER_ORDER")]
     DefaultFilterOrder = unchecked((uint)0x1100),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_HRTF_SOFT")]
     HrtfSOFT = unchecked((uint)0x1992),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_HRTF_STATUS_SOFT")]
     HrtfStatusSOFT = unchecked((uint)0x1993),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_NUM_HRTF_SPECIFIERS_SOFT")]
     NumHrtfSpecifiersSOFT = unchecked((uint)0x1994),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
     OutputLimiterSOFT = unchecked((uint)0x199A),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_DEVICE_CLOCK_SOFT")]
     DeviceClockSOFT = unchecked((uint)0x1600),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_DEVICE_LATENCY_SOFT")]
     DeviceLatencySOFT = unchecked((uint)0x1601),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_DEVICE_CLOCK_LATENCY_SOFT")]
     DeviceClockLatencySOFT = unchecked((uint)0x1602),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_MAX_AMBISONIC_ORDER_SOFT")]
     MaxAmbisonicOrderSOFT = unchecked((uint)0x199B),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_OUTPUT_MODE_SOFT")]
     OutputModeSOFT = unchecked((uint)0x19AC),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("ALC_CONTEXT_FLAGS_EXT")]
     ContextFlagsEXT = unchecked((uint)0x19CF),
 }

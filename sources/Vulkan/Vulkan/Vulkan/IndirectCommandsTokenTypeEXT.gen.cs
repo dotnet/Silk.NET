@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkIndirectCommandsTokenTypeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum IndirectCommandsTokenTypeEXT : uint
 {
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_EXECUTION_SET_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26,7 +24,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     ExecutionSetEXT = 0,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_PUSH_CONSTANT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -39,7 +36,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     PushConstantEXT = 1,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_SEQUENCE_INDEX_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -52,7 +48,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     SequenceIndexEXT = 2,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_INDEX_BUFFER_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -65,7 +60,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     IndexBufferEXT = 3,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_VERTEX_BUFFER_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -78,7 +72,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     VertexBufferEXT = 4,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_INDEXED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -91,7 +84,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     DrawIndexedEXT = 5,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -104,7 +96,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     DrawEXT = 6,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_INDEXED_COUNT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -117,7 +108,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     DrawIndexedCountEXT = 7,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_COUNT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -130,7 +120,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     DrawCountEXT = 8,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DISPATCH_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -143,7 +132,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     DispatchEXT = 9,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_NV_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -156,7 +144,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     DrawMeshTasksNvEXT = 1000202002,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_COUNT_NV_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -169,7 +156,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     DrawMeshTasksCountNvEXT = 1000202003,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -179,7 +165,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     DrawMeshTasksEXT = 1000328000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_DRAW_MESH_TASKS_COUNT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -189,7 +174,6 @@ public enum IndirectCommandsTokenTypeEXT : uint
     )]
     DrawMeshTasksCountEXT = 1000328001,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDIRECT_COMMANDS_TOKEN_TYPE_TRACE_RAYS2_EXT")]
     [SupportedApiProfile(
         "vulkan",

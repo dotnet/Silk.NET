@@ -613,7 +613,6 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageFilterMinmaxBit = 0x10000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_VIDEO_DECODE_OUTPUT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -625,7 +624,6 @@ public enum FormatFeatureFlags : uint
     )]
     VideoDecodeOutputBitKHR = 0x2000000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_VIDEO_DECODE_DPB_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -637,7 +635,6 @@ public enum FormatFeatureFlags : uint
     )]
     VideoDecodeDpbBitKHR = 0x4000000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_ACCELERATION_STRUCTURE_VERTEX_BUFFER_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -649,12 +646,10 @@ public enum FormatFeatureFlags : uint
     )]
     AccelerationStructureVertexBufferBitKHR = 0x20000000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     SampledImageFilterCubicBitEXT = 0x2000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_FEATURE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -666,7 +661,6 @@ public enum FormatFeatureFlags : uint
     )]
     FragmentDensityMapBitEXT = 0x1000000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -679,7 +673,6 @@ public enum FormatFeatureFlags : uint
     )]
     FragmentShadingRateAttachmentBitKHR = 0x40000000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_VIDEO_ENCODE_INPUT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -691,7 +684,6 @@ public enum FormatFeatureFlags : uint
     )]
     VideoEncodeInputBitKHR = 0x8000000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_VIDEO_ENCODE_DPB_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -703,22 +695,18 @@ public enum FormatFeatureFlags : uint
     )]
     VideoEncodeDpbBitKHR = 0x10000000,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_filter_cubic"])]
     SampledImageFilterCubicBitIMG = SampledImageFilterCubicBitEXT,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_TRANSFER_SRC_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
     TransferSrcBitKHR = TransferSrcBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_TRANSFER_DST_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
     TransferDstBitKHR = TransferDstBit,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_MINMAX_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -730,7 +718,6 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageFilterMinmaxBitEXT = SampledImageFilterMinmaxBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_MIDPOINT_CHROMA_SAMPLES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -742,7 +729,6 @@ public enum FormatFeatureFlags : uint
     )]
     MidpointChromaSamplesBitKHR = MidpointChromaSamplesBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -754,7 +740,6 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageYcbcrConversionLinearFilterBitKHR = SampledImageYcbcrConversionLinearFilterBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName(
         "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_SEPARATE_RECONSTRUCTION_FILTER_BIT_KHR"
     )]
@@ -769,7 +754,6 @@ public enum FormatFeatureFlags : uint
     SampledImageYcbcrConversionSeparateReconstructionFilterBitKHR =
         SampledImageYcbcrConversionSeparateReconstructionFilterBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName(
         "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_BIT_KHR"
     )]
@@ -784,7 +768,6 @@ public enum FormatFeatureFlags : uint
     SampledImageYcbcrConversionChromaReconstructionExplicitBitKHR =
         SampledImageYcbcrConversionChromaReconstructionExplicitBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName(
         "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_FORCEABLE_BIT_KHR"
     )]
@@ -799,7 +782,6 @@ public enum FormatFeatureFlags : uint
     SampledImageYcbcrConversionChromaReconstructionExplicitForceableBitKHR =
         SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_DISJOINT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -811,7 +793,6 @@ public enum FormatFeatureFlags : uint
     )]
     DisjointBitKHR = DisjointBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_FEATURE_COSITED_CHROMA_SAMPLES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

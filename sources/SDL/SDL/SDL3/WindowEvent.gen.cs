@@ -6,22 +6,24 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_WindowEvent")]
 public partial struct WindowEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public nuint Timestamp;
 
-    [NativeTypeName("SDL_WindowID")]
+    [NativeName("windowID")]
     public uint WindowId;
 
-    [NativeTypeName("Sint32")]
+    [NativeName("data1")]
     public int Data1;
 
-    [NativeTypeName("Sint32")]
+    [NativeName("data2")]
     public int Data2;
 }

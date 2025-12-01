@@ -7,7 +7,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [NativeName("SDL_VirtualJoystickDesc_SetPlayerIndex")]
-[Transformed]
 public readonly unsafe struct VirtualJoystickDescSetPlayerIndex : IDisposable
 {
     private readonly void* Pointer;

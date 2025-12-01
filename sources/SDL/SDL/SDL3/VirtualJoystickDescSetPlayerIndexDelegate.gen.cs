@@ -7,5 +7,4 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [NativeName("SDL_VirtualJoystickDesc_SetPlayerIndex")]
-[Transformed]
 public unsafe delegate void VirtualJoystickDescSetPlayerIndexDelegate(void* arg0, int arg1);

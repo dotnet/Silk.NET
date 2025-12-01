@@ -8,8 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("_hat_e__Struct")]
 public partial struct GamepadBindingInputHat
 {
+    [NativeName("hat")]
     public int Hat;
+
+    [NativeName("hat_mask")]
     public int HatMask;
 }

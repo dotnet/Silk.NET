@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("AuxiliaryEffectSlotFloat")]
-[Transformed]
 public enum AuxiliaryEffectSlotFloat : uint
 {
     [NativeName("AL_EFFECTSLOT_GAIN")]

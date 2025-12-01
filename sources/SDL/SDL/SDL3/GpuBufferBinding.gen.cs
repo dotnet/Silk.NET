@@ -6,10 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUBufferBinding")]
 public unsafe partial struct GpuBufferBinding
 {
+    [NativeName("buffer")]
     public GpuBufferHandle Buffer;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("offset")]
     public uint Offset;
 }

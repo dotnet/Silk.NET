@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("UniformType")]
-[Transformed]
 public enum UniformType : uint
 {
     [NativeName("GL_FLOAT")]

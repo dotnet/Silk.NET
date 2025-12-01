@@ -8,10 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPULoadOp")]
 public enum GpuLoadOp : uint
 {
+    [NativeName("SDL_GPU_LOADOP_LOAD")]
     Load,
+
+    [NativeName("SDL_GPU_LOADOP_CLEAR")]
     Clear,
+
+    [NativeName("SDL_GPU_LOADOP_DONT_CARE")]
     DontCare,
 }

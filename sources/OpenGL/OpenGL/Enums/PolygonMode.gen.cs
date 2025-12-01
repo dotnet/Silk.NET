@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("PolygonMode")]
-[Transformed]
 public enum PolygonMode : uint
 {
     [NativeName("GL_POINT")]

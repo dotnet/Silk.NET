@@ -8,10 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "NVX", 0)]
 [NativeName("VkCuModuleNVX")]
-[NameAffix("Suffix", "_T", -1)]
-[NameAffix("Suffix", "Handle", 1)]
 public readonly unsafe partial struct CuModuleHandleNVX
 {
     public readonly void* Handle;

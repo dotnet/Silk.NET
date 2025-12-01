@@ -6,9 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPUFrontFace")]
 public enum GpuFrontFace : uint
 {
+    [NativeName("SDL_GPU_FRONTFACE_COUNTER_CLOCKWISE")]
     CounterClockwise,
+
+    [NativeName("SDL_GPU_FRONTFACE_CLOCKWISE")]
     Clockwise,
 }

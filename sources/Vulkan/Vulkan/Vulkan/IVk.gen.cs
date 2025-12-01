@@ -12,7 +12,6 @@ public unsafe partial interface IVk
 {
     public partial interface Static
     {
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkAcquireDrmDisplayEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -26,7 +25,6 @@ public unsafe partial interface IVk
             [NativeName("display")] DisplayHandleKHR display
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkAcquireNextImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -41,7 +39,6 @@ public unsafe partial interface IVk
             [NativeName("pImageIndex")] uint* pImageIndex
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkAcquireNextImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -56,7 +53,6 @@ public unsafe partial interface IVk
             [NativeName("pImageIndex")] Ref<uint> pImageIndex
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkAcquireNextImageKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
@@ -69,7 +65,6 @@ public unsafe partial interface IVk
             [NativeName("pImageIndex")] uint* pImageIndex
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkAcquireNextImageKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
@@ -82,7 +77,6 @@ public unsafe partial interface IVk
             [NativeName("pImageIndex")] Ref<uint> pImageIndex
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkAcquirePerformanceConfigurationINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
@@ -92,7 +86,6 @@ public unsafe partial interface IVk
             [NativeName("pConfiguration")] PerformanceConfigurationHandleINTEL* pConfiguration
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkAcquirePerformanceConfigurationINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
@@ -102,7 +95,6 @@ public unsafe partial interface IVk
             [NativeName("pConfiguration")] Ref<PerformanceConfigurationHandleINTEL> pConfiguration
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkAcquireProfilingLockKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -118,7 +110,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] AcquireProfilingLockInfoKHR* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkAcquireProfilingLockKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -330,7 +321,6 @@ public unsafe partial interface IVk
             [NativeName("pMemory")] Ref<DeviceMemoryHandle> pMemory
         );
 
-        [NameAffix("Suffix", "AMD", 0)]
         [NativeName("vkAntiLagUpdateAMD")]
         [SupportedApiProfile(
             "vulkan",
@@ -346,7 +336,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] AntiLagDataAMD* pData
         );
 
-        [NameAffix("Suffix", "AMD", 0)]
         [NativeName("vkAntiLagUpdateAMD")]
         [SupportedApiProfile(
             "vulkan",
@@ -428,7 +417,6 @@ public unsafe partial interface IVk
             [NativeName("pBeginInfo")] Ref<CommandBufferBeginInfo> pBeginInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkBindAccelerationStructureMemoryNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -445,7 +433,6 @@ public unsafe partial interface IVk
             [NativeName("pBindInfos")] BindAccelerationStructureMemoryInfoNV* pBindInfos
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkBindAccelerationStructureMemoryNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -557,7 +544,6 @@ public unsafe partial interface IVk
             [NativeName("pBindInfos")] Ref<BindBufferMemoryInfo> pBindInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkBindBufferMemory2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
         [NativeFunction("vulkan", EntryPoint = "vkBindBufferMemory2KHR")]
@@ -567,7 +553,6 @@ public unsafe partial interface IVk
             [NativeName("pBindInfos")] BindBufferMemoryInfo* pBindInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkBindBufferMemory2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
         [NativeFunction("vulkan", EntryPoint = "vkBindBufferMemory2KHR")]
@@ -577,7 +562,6 @@ public unsafe partial interface IVk
             [NativeName("pBindInfos")] Ref<BindBufferMemoryInfo> pBindInfos
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkBindDataGraphPipelineSessionMemoryARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -595,7 +579,6 @@ public unsafe partial interface IVk
             [NativeName("pBindInfos")] BindDataGraphPipelineSessionMemoryInfoARM* pBindInfos
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkBindDataGraphPipelineSessionMemoryARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -708,7 +691,6 @@ public unsafe partial interface IVk
             [NativeName("pBindInfos")] Ref<BindImageMemoryInfo> pBindInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkBindImageMemory2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
         [NativeFunction("vulkan", EntryPoint = "vkBindImageMemory2KHR")]
@@ -718,7 +700,6 @@ public unsafe partial interface IVk
             [NativeName("pBindInfos")] BindImageMemoryInfo* pBindInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkBindImageMemory2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
         [NativeFunction("vulkan", EntryPoint = "vkBindImageMemory2KHR")]
@@ -728,7 +709,6 @@ public unsafe partial interface IVk
             [NativeName("pBindInfos")] Ref<BindImageMemoryInfo> pBindInfos
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkBindOpticalFlowSessionImageNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -748,7 +728,6 @@ public unsafe partial interface IVk
             [NativeName("layout")] ImageLayout layout
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkBindTensorMemoryARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
@@ -758,7 +737,6 @@ public unsafe partial interface IVk
             [NativeName("pBindInfos")] BindTensorMemoryInfoARM* pBindInfos
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkBindTensorMemoryARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
@@ -768,7 +746,6 @@ public unsafe partial interface IVk
             [NativeName("pBindInfos")] Ref<BindTensorMemoryInfoARM> pBindInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkBindVideoSessionMemoryKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -784,7 +761,6 @@ public unsafe partial interface IVk
                 BindVideoSessionMemoryInfoKHR* pBindSessionMemoryInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkBindVideoSessionMemoryKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -800,7 +776,6 @@ public unsafe partial interface IVk
                 Ref<BindVideoSessionMemoryInfoKHR> pBindSessionMemoryInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkBuildAccelerationStructuresKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -820,7 +795,6 @@ public unsafe partial interface IVk
                 AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkBuildAccelerationStructuresKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -840,7 +814,6 @@ public unsafe partial interface IVk
                 Ref2D<AccelerationStructureBuildRangeInfoKHR> ppBuildRangeInfos
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkBuildMicromapsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -858,7 +831,6 @@ public unsafe partial interface IVk
             [NativeName("pInfos")] MicromapBuildInfoEXT* pInfos
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkBuildMicromapsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -876,7 +848,6 @@ public unsafe partial interface IVk
             [NativeName("pInfos")] Ref<MicromapBuildInfoEXT> pInfos
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBeginConditionalRenderingEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -893,7 +864,6 @@ public unsafe partial interface IVk
                 ConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBeginConditionalRenderingEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -910,7 +880,6 @@ public unsafe partial interface IVk
                 Ref<ConditionalRenderingBeginInfoEXT> pConditionalRenderingBegin
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBeginDebugUtilsLabelEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
@@ -919,7 +888,6 @@ public unsafe partial interface IVk
             [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBeginDebugUtilsLabelEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
@@ -928,7 +896,6 @@ public unsafe partial interface IVk
             [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkCmdBeginPerTileExecutionQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -944,7 +911,6 @@ public unsafe partial interface IVk
             [NativeName("pPerTileBeginInfo")] PerTileBeginInfoQCOM* pPerTileBeginInfo
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkCmdBeginPerTileExecutionQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -995,7 +961,6 @@ public unsafe partial interface IVk
             [NativeName("flags")] QueryControlFlags flags
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBeginQueryIndexedEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1048,7 +1013,6 @@ public unsafe partial interface IVk
             [NativeName("pRenderingInfo")] Ref<RenderingInfo> pRenderingInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBeginRenderingKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -1065,7 +1029,6 @@ public unsafe partial interface IVk
             [NativeName("pRenderingInfo")] RenderingInfo* pRenderingInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBeginRenderingKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -1170,7 +1133,6 @@ public unsafe partial interface IVk
             [NativeName("pSubpassBeginInfo")] Ref<SubpassBeginInfo> pSubpassBeginInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBeginRenderPass2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -1184,7 +1146,6 @@ public unsafe partial interface IVk
             [NativeName("pSubpassBeginInfo")] SubpassBeginInfo* pSubpassBeginInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBeginRenderPass2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -1198,7 +1159,6 @@ public unsafe partial interface IVk
             [NativeName("pSubpassBeginInfo")] Ref<SubpassBeginInfo> pSubpassBeginInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBeginTransformFeedbackEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1217,7 +1177,6 @@ public unsafe partial interface IVk
             [NativeName("pCounterBufferOffsets")] ulong* pCounterBufferOffsets
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBeginTransformFeedbackEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1236,7 +1195,6 @@ public unsafe partial interface IVk
             [NativeName("pCounterBufferOffsets")] Ref<ulong> pCounterBufferOffsets
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBeginVideoCodingKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -1249,7 +1207,6 @@ public unsafe partial interface IVk
             [NativeName("pBeginInfo")] VideoBeginCodingInfoKHR* pBeginInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBeginVideoCodingKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -1262,7 +1219,6 @@ public unsafe partial interface IVk
             [NativeName("pBeginInfo")] Ref<VideoBeginCodingInfoKHR> pBeginInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplers2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1277,7 +1233,6 @@ public unsafe partial interface IVk
                 BindDescriptorBufferEmbeddedSamplersInfoEXT* pBindDescriptorBufferEmbeddedSamplersInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplers2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1292,7 +1247,6 @@ public unsafe partial interface IVk
                 Ref<BindDescriptorBufferEmbeddedSamplersInfoEXT> pBindDescriptorBufferEmbeddedSamplersInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplersEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1312,7 +1266,6 @@ public unsafe partial interface IVk
             [NativeName("set")] uint set
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindDescriptorBuffersEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1331,7 +1284,6 @@ public unsafe partial interface IVk
             [NativeName("pBindingInfos")] DescriptorBufferBindingInfoEXT* pBindingInfos
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindDescriptorBuffersEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1350,7 +1302,6 @@ public unsafe partial interface IVk
             [NativeName("pBindingInfos")] Ref<DescriptorBufferBindingInfoEXT> pBindingInfos
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindDescriptorBuffersEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1461,7 +1412,6 @@ public unsafe partial interface IVk
                 Ref<BindDescriptorSetsInfo> pBindDescriptorSetsInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBindDescriptorSets2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorSets2KHR")]
@@ -1470,7 +1420,6 @@ public unsafe partial interface IVk
             [NativeName("pBindDescriptorSetsInfo")] BindDescriptorSetsInfo* pBindDescriptorSetsInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBindDescriptorSets2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorSets2KHR")]
@@ -1520,7 +1469,6 @@ public unsafe partial interface IVk
             [NativeName("indexType")] IndexType indexType
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBindIndexBuffer2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -1536,7 +1484,6 @@ public unsafe partial interface IVk
             [NativeName("indexType")] IndexType indexType
         );
 
-        [NameAffix("Suffix", "HUAWEI", 0)]
         [NativeName("vkCmdBindInvocationMaskHUAWEI")]
         [SupportedApiProfile(
             "vulkan",
@@ -1582,7 +1529,6 @@ public unsafe partial interface IVk
             [NativeName("pipeline")] PipelineHandle pipeline
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdBindPipelineShaderGroupNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -1597,7 +1543,6 @@ public unsafe partial interface IVk
             [NativeName("groupIndex")] uint groupIndex
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindShadersEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1616,7 +1561,6 @@ public unsafe partial interface IVk
             [NativeName("pShaders")] ShaderHandleEXT* pShaders
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindShadersEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1635,7 +1579,6 @@ public unsafe partial interface IVk
             [NativeName("pShaders")] Ref<ShaderHandleEXT> pShaders
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdBindShadingRateImageNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -1652,7 +1595,6 @@ public unsafe partial interface IVk
             [NativeName("imageLayout")] ImageLayout imageLayout
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkCmdBindTileMemoryQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -1668,7 +1610,6 @@ public unsafe partial interface IVk
             [NativeName("pTileMemoryBindInfo")] TileMemoryBindInfoQCOM* pTileMemoryBindInfo
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkCmdBindTileMemoryQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -1684,7 +1625,6 @@ public unsafe partial interface IVk
             [NativeName("pTileMemoryBindInfo")] Ref<TileMemoryBindInfoQCOM> pTileMemoryBindInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindTransformFeedbackBuffersEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1704,7 +1644,6 @@ public unsafe partial interface IVk
             [NativeName("pSizes")] ulong* pSizes
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindTransformFeedbackBuffersEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1820,7 +1759,6 @@ public unsafe partial interface IVk
             [NativeName("pStrides")] Ref<ulong> pStrides
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindVertexBuffers2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1841,7 +1779,6 @@ public unsafe partial interface IVk
             [NativeName("pStrides")] ulong* pStrides
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBindVertexBuffers2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -1982,7 +1919,6 @@ public unsafe partial interface IVk
             [NativeName("pBlitImageInfo")] Ref<BlitImageInfo2> pBlitImageInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBlitImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -1998,7 +1934,6 @@ public unsafe partial interface IVk
             [NativeName("pBlitImageInfo")] BlitImageInfo2* pBlitImageInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBlitImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2014,7 +1949,6 @@ public unsafe partial interface IVk
             [NativeName("pBlitImageInfo")] Ref<BlitImageInfo2> pBlitImageInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdBuildAccelerationStructureNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -2037,7 +1971,6 @@ public unsafe partial interface IVk
             [NativeName("scratchOffset")] ulong scratchOffset
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdBuildAccelerationStructureNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -2060,7 +1993,6 @@ public unsafe partial interface IVk
             [NativeName("scratchOffset")] ulong scratchOffset
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBuildAccelerationStructuresIndirectKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2080,7 +2012,6 @@ public unsafe partial interface IVk
             [NativeName("ppMaxPrimitiveCounts")] uint** ppMaxPrimitiveCounts
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBuildAccelerationStructuresIndirectKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2100,7 +2031,6 @@ public unsafe partial interface IVk
             [NativeName("ppMaxPrimitiveCounts")] Ref2D<uint> ppMaxPrimitiveCounts
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBuildAccelerationStructuresKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2119,7 +2049,6 @@ public unsafe partial interface IVk
                 AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdBuildAccelerationStructuresKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2138,7 +2067,6 @@ public unsafe partial interface IVk
                 Ref2D<AccelerationStructureBuildRangeInfoKHR> ppBuildRangeInfos
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdBuildClusterAccelerationStructureIndirectNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -2151,7 +2079,6 @@ public unsafe partial interface IVk
             [NativeName("pCommandInfos")] ClusterAccelerationStructureCommandsInfoNV* pCommandInfos
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdBuildClusterAccelerationStructureIndirectNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -2165,7 +2092,6 @@ public unsafe partial interface IVk
                 Ref<ClusterAccelerationStructureCommandsInfoNV> pCommandInfos
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBuildMicromapsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -2182,7 +2108,6 @@ public unsafe partial interface IVk
             [NativeName("pInfos")] MicromapBuildInfoEXT* pInfos
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBuildMicromapsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -2199,7 +2124,6 @@ public unsafe partial interface IVk
             [NativeName("pInfos")] Ref<MicromapBuildInfoEXT> pInfos
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdBuildMicromapsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -2215,7 +2139,6 @@ public unsafe partial interface IVk
             [NativeName("pInfos")] MicromapBuildInfoEXT pInfos
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdBuildPartitionedAccelerationStructuresNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -2228,7 +2151,6 @@ public unsafe partial interface IVk
             [NativeName("pBuildInfo")] BuildPartitionedAccelerationStructureInfoNV* pBuildInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdBuildPartitionedAccelerationStructuresNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -2468,7 +2390,6 @@ public unsafe partial interface IVk
             [NativeName("pRanges")] ImageSubresourceRange pRanges
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdControlVideoCodingKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2481,7 +2402,6 @@ public unsafe partial interface IVk
             [NativeName("pCodingControlInfo")] VideoCodingControlInfoKHR* pCodingControlInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdControlVideoCodingKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2494,7 +2414,6 @@ public unsafe partial interface IVk
             [NativeName("pCodingControlInfo")] Ref<VideoCodingControlInfoKHR> pCodingControlInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -2511,7 +2430,6 @@ public unsafe partial interface IVk
             [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNV* pInfos
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -2528,7 +2446,6 @@ public unsafe partial interface IVk
             [NativeName("pInfos")] Ref<ConvertCooperativeVectorMatrixInfoNV> pInfos
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -2544,7 +2461,6 @@ public unsafe partial interface IVk
             [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNV pInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2560,7 +2476,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyAccelerationStructureInfoKHR* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2576,7 +2491,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKHR> pInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdCopyAccelerationStructureNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -2594,7 +2508,6 @@ public unsafe partial interface IVk
             [NativeName("mode")] CopyAccelerationStructureModeKHR mode
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyAccelerationStructureToMemoryKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2610,7 +2523,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKHR* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyAccelerationStructureToMemoryKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2775,7 +2687,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyBufferInfo")] Ref<CopyBufferInfo2> pCopyBufferInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyBuffer2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2791,7 +2702,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyBufferInfo")] CopyBufferInfo2* pCopyBufferInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyBuffer2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2960,7 +2870,6 @@ public unsafe partial interface IVk
                 Ref<CopyBufferToImageInfo2> pCopyBufferToImageInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyBufferToImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -2976,7 +2885,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyBufferToImageInfo")] CopyBufferToImageInfo2* pCopyBufferToImageInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyBufferToImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3148,7 +3056,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyImageInfo")] Ref<CopyImageInfo2> pCopyImageInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3164,7 +3071,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyImageInfo")] CopyImageInfo2* pCopyImageInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3333,7 +3239,6 @@ public unsafe partial interface IVk
                 Ref<CopyImageToBufferInfo2> pCopyImageToBufferInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyImageToBuffer2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3349,7 +3254,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyImageToBufferInfo")] CopyImageToBufferInfo2* pCopyImageToBufferInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyImageToBuffer2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3366,7 +3270,6 @@ public unsafe partial interface IVk
                 Ref<CopyImageToBufferInfo2> pCopyImageToBufferInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyMemoryIndirectKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3383,7 +3286,6 @@ public unsafe partial interface IVk
                 CopyMemoryIndirectInfoKHR* pCopyMemoryIndirectInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyMemoryIndirectKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3400,7 +3302,6 @@ public unsafe partial interface IVk
                 Ref<CopyMemoryIndirectInfoKHR> pCopyMemoryIndirectInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdCopyMemoryIndirectNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -3419,7 +3320,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyMemoryToAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3435,7 +3335,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKHR* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyMemoryToAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3451,7 +3350,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyMemoryToImageIndirectKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3468,7 +3366,6 @@ public unsafe partial interface IVk
                 CopyMemoryToImageIndirectInfoKHR* pCopyMemoryToImageIndirectInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdCopyMemoryToImageIndirectKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3485,7 +3382,6 @@ public unsafe partial interface IVk
                 Ref<CopyMemoryToImageIndirectInfoKHR> pCopyMemoryToImageIndirectInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdCopyMemoryToImageIndirectNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -3507,7 +3403,6 @@ public unsafe partial interface IVk
             [NativeName("pImageSubresources")] ImageSubresourceLayers* pImageSubresources
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdCopyMemoryToImageIndirectNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -3529,7 +3424,6 @@ public unsafe partial interface IVk
             [NativeName("pImageSubresources")] Ref<ImageSubresourceLayers> pImageSubresources
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdCopyMemoryToImageIndirectNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -3550,7 +3444,6 @@ public unsafe partial interface IVk
             [NativeName("pImageSubresources")] ImageSubresourceLayers pImageSubresources
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdCopyMemoryToMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3566,7 +3459,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyMemoryToMicromapInfoEXT* pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdCopyMemoryToMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3582,7 +3474,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoEXT> pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdCopyMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3598,7 +3489,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyMicromapInfoEXT* pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdCopyMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3614,7 +3504,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<CopyMicromapInfoEXT> pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdCopyMicromapToMemoryEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3630,7 +3519,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyMicromapToMemoryInfoEXT* pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdCopyMicromapToMemoryEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3685,7 +3573,6 @@ public unsafe partial interface IVk
             [NativeName("flags")] QueryResultFlags flags
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCmdCopyTensorARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
@@ -3694,7 +3581,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyTensorInfo")] CopyTensorInfoARM* pCopyTensorInfo
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCmdCopyTensorARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
@@ -3703,7 +3589,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyTensorInfo")] Ref<CopyTensorInfoARM> pCopyTensorInfo
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkCmdCuLaunchKernelNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCuLaunchKernelNVX")]
@@ -3712,7 +3597,6 @@ public unsafe partial interface IVk
             [NativeName("pLaunchInfo")] CuLaunchInfoNVX* pLaunchInfo
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkCmdCuLaunchKernelNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdCuLaunchKernelNVX")]
@@ -3721,7 +3605,6 @@ public unsafe partial interface IVk
             [NativeName("pLaunchInfo")] Ref<CuLaunchInfoNVX> pLaunchInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDebugMarkerBeginEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3734,7 +3617,6 @@ public unsafe partial interface IVk
             [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoEXT* pMarkerInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDebugMarkerBeginEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3747,7 +3629,6 @@ public unsafe partial interface IVk
             [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoEXT> pMarkerInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDebugMarkerEndEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3759,7 +3640,6 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDebugMarkerInsertEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3772,7 +3652,6 @@ public unsafe partial interface IVk
             [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoEXT* pMarkerInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDebugMarkerInsertEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3785,7 +3664,6 @@ public unsafe partial interface IVk
             [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoEXT> pMarkerInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdDecodeVideoKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3801,7 +3679,6 @@ public unsafe partial interface IVk
             [NativeName("pDecodeInfo")] VideoDecodeInfoKHR* pDecodeInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdDecodeVideoKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -3817,7 +3694,6 @@ public unsafe partial interface IVk
             [NativeName("pDecodeInfo")] Ref<VideoDecodeInfoKHR> pDecodeInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDecompressMemoryEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3831,7 +3707,6 @@ public unsafe partial interface IVk
                 DecompressMemoryInfoEXT* pDecompressMemoryInfoEXT
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDecompressMemoryEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3845,7 +3720,6 @@ public unsafe partial interface IVk
                 Ref<DecompressMemoryInfoEXT> pDecompressMemoryInfoEXT
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDecompressMemoryIndirectCountEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -3863,7 +3737,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdDecompressMemoryIndirectCountNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -3882,7 +3755,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdDecompressMemoryNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -3901,7 +3773,6 @@ public unsafe partial interface IVk
                 DecompressMemoryRegionNV* pDecompressMemoryRegions
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdDecompressMemoryNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -3920,7 +3791,6 @@ public unsafe partial interface IVk
                 Ref<DecompressMemoryRegionNV> pDecompressMemoryRegions
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdDecompressMemoryNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -3998,7 +3868,6 @@ public unsafe partial interface IVk
             [NativeName("groupCountZ")] uint groupCountZ
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdDispatchBaseKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -4016,7 +3885,6 @@ public unsafe partial interface IVk
             [NativeName("groupCountZ")] uint groupCountZ
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCmdDispatchDataGraphARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -4034,7 +3902,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] DataGraphPipelineDispatchInfoARM* pInfo
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCmdDispatchDataGraphARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -4081,7 +3948,6 @@ public unsafe partial interface IVk
             [NativeName("offset")] ulong offset
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkCmdDispatchTileQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -4097,7 +3963,6 @@ public unsafe partial interface IVk
             [NativeName("pDispatchTileInfo")] DispatchTileInfoQCOM* pDispatchTileInfo
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkCmdDispatchTileQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -4139,7 +4004,6 @@ public unsafe partial interface IVk
             [NativeName("firstInstance")] uint firstInstance
         );
 
-        [NameAffix("Suffix", "HUAWEI", 0)]
         [NativeName("vkCmdDrawClusterHUAWEI")]
         [SupportedApiProfile(
             "vulkan",
@@ -4157,7 +4021,6 @@ public unsafe partial interface IVk
             [NativeName("groupCountZ")] uint groupCountZ
         );
 
-        [NameAffix("Suffix", "HUAWEI", 0)]
         [NativeName("vkCmdDrawClusterIndirectHUAWEI")]
         [SupportedApiProfile(
             "vulkan",
@@ -4251,7 +4114,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "AMD", 0)]
         [NativeName("vkCmdDrawIndexedIndirectCountAMD")]
         [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCountAMD")]
@@ -4265,7 +4127,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdDrawIndexedIndirectCountKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCountKHR")]
@@ -4305,7 +4166,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDrawIndirectByteCountEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4350,7 +4210,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "AMD", 0)]
         [NativeName("vkCmdDrawIndirectCountAMD")]
         [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCountAMD")]
@@ -4364,7 +4223,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdDrawIndirectCountKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCountKHR")]
@@ -4378,7 +4236,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDrawMeshTasksEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4396,7 +4253,6 @@ public unsafe partial interface IVk
             [NativeName("groupCountZ")] uint groupCountZ
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDrawMeshTasksIndirectCountEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4421,7 +4277,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdDrawMeshTasksIndirectCountNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -4446,7 +4301,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDrawMeshTasksIndirectEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4465,7 +4319,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdDrawMeshTasksIndirectNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -4484,7 +4337,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdDrawMeshTasksNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -4501,7 +4353,6 @@ public unsafe partial interface IVk
             [NativeName("firstTask")] uint firstTask
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDrawMultiEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4521,7 +4372,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDrawMultiEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4541,7 +4391,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDrawMultiEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4560,7 +4409,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] uint stride
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDrawMultiIndexedEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4581,7 +4429,6 @@ public unsafe partial interface IVk
             [NativeName("pVertexOffset")] int* pVertexOffset
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDrawMultiIndexedEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4602,7 +4449,6 @@ public unsafe partial interface IVk
             [NativeName("pVertexOffset")] Ref<int> pVertexOffset
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdDrawMultiIndexedEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4622,7 +4468,6 @@ public unsafe partial interface IVk
             [NativeName("pVertexOffset")] Ref<int> pVertexOffset
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdEncodeVideoKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -4638,7 +4483,6 @@ public unsafe partial interface IVk
             [NativeName("pEncodeInfo")] VideoEncodeInfoKHR* pEncodeInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdEncodeVideoKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -4654,7 +4498,6 @@ public unsafe partial interface IVk
             [NativeName("pEncodeInfo")] Ref<VideoEncodeInfoKHR> pEncodeInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdEndConditionalRenderingEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4669,7 +4512,6 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdEndDebugUtilsLabelEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdEndDebugUtilsLabelEXT")]
@@ -4677,7 +4519,6 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkCmdEndPerTileExecutionQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -4693,7 +4534,6 @@ public unsafe partial interface IVk
             [NativeName("pPerTileEndInfo")] PerTileEndInfoQCOM* pPerTileEndInfo
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkCmdEndPerTileExecutionQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -4743,7 +4583,6 @@ public unsafe partial interface IVk
             [NativeName("query")] uint query
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdEndQueryIndexedEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4777,7 +4616,6 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdEndRendering2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4799,7 +4637,6 @@ public unsafe partial interface IVk
             [NativeName("pRenderingEndInfo")] RenderingEndInfoKHR* pRenderingEndInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdEndRendering2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4821,7 +4658,6 @@ public unsafe partial interface IVk
             [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKHR> pRenderingEndInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdEndRendering2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -4837,7 +4673,6 @@ public unsafe partial interface IVk
             [NativeName("pRenderingEndInfo")] RenderingEndInfoKHR* pRenderingEndInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdEndRendering2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -4853,7 +4688,6 @@ public unsafe partial interface IVk
             [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKHR> pRenderingEndInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdEndRenderingKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -4929,7 +4763,6 @@ public unsafe partial interface IVk
             [NativeName("pSubpassEndInfo")] Ref<SubpassEndInfo> pSubpassEndInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdEndRenderPass2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -4942,7 +4775,6 @@ public unsafe partial interface IVk
             [NativeName("pSubpassEndInfo")] SubpassEndInfo* pSubpassEndInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdEndRenderPass2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -4955,7 +4787,6 @@ public unsafe partial interface IVk
             [NativeName("pSubpassEndInfo")] Ref<SubpassEndInfo> pSubpassEndInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdEndTransformFeedbackEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4974,7 +4805,6 @@ public unsafe partial interface IVk
             [NativeName("pCounterBufferOffsets")] ulong* pCounterBufferOffsets
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdEndTransformFeedbackEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -4993,7 +4823,6 @@ public unsafe partial interface IVk
             [NativeName("pCounterBufferOffsets")] Ref<ulong> pCounterBufferOffsets
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdEndVideoCodingKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5006,7 +4835,6 @@ public unsafe partial interface IVk
             [NativeName("pEndCodingInfo")] VideoEndCodingInfoKHR* pEndCodingInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdEndVideoCodingKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5120,7 +4948,6 @@ public unsafe partial interface IVk
             [NativeName("pCommandBuffers")] Ref<CommandBufferHandle> pCommandBuffers
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdExecuteGeneratedCommandsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -5138,7 +4965,6 @@ public unsafe partial interface IVk
             [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoEXT* pGeneratedCommandsInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdExecuteGeneratedCommandsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -5157,7 +4983,6 @@ public unsafe partial interface IVk
                 Ref<GeneratedCommandsInfoEXT> pGeneratedCommandsInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdExecuteGeneratedCommandsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -5171,7 +4996,6 @@ public unsafe partial interface IVk
             [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNV* pGeneratedCommandsInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdExecuteGeneratedCommandsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -5222,7 +5046,6 @@ public unsafe partial interface IVk
             [NativeName("data")] uint data
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdInsertDebugUtilsLabelEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
@@ -5231,7 +5054,6 @@ public unsafe partial interface IVk
             [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdInsertDebugUtilsLabelEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
@@ -5303,7 +5125,6 @@ public unsafe partial interface IVk
             [NativeName("pSubpassEndInfo")] Ref<SubpassEndInfo> pSubpassEndInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdNextSubpass2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5317,7 +5138,6 @@ public unsafe partial interface IVk
             [NativeName("pSubpassEndInfo")] SubpassEndInfo* pSubpassEndInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdNextSubpass2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5331,7 +5151,6 @@ public unsafe partial interface IVk
             [NativeName("pSubpassEndInfo")] Ref<SubpassEndInfo> pSubpassEndInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdOpticalFlowExecuteNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -5349,7 +5168,6 @@ public unsafe partial interface IVk
             [NativeName("pExecuteInfo")] OpticalFlowExecuteInfoNV* pExecuteInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdOpticalFlowExecuteNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -5491,7 +5309,6 @@ public unsafe partial interface IVk
             [NativeName("pDependencyInfo")] Ref<DependencyInfo> pDependencyInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPipelineBarrier2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5507,7 +5324,6 @@ public unsafe partial interface IVk
             [NativeName("pDependencyInfo")] DependencyInfo* pDependencyInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPipelineBarrier2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5523,7 +5339,6 @@ public unsafe partial interface IVk
             [NativeName("pDependencyInfo")] Ref<DependencyInfo> pDependencyInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdPreprocessGeneratedCommandsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -5541,7 +5356,6 @@ public unsafe partial interface IVk
             [NativeName("stateCommandBuffer")] CommandBufferHandle stateCommandBuffer
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdPreprocessGeneratedCommandsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -5560,7 +5374,6 @@ public unsafe partial interface IVk
             [NativeName("stateCommandBuffer")] CommandBufferHandle stateCommandBuffer
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdPreprocessGeneratedCommandsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -5573,7 +5386,6 @@ public unsafe partial interface IVk
             [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNV* pGeneratedCommandsInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdPreprocessGeneratedCommandsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -5675,7 +5487,6 @@ public unsafe partial interface IVk
             [NativeName("pPushConstantsInfo")] Ref<PushConstantsInfo> pPushConstantsInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushConstants2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushConstants2KHR")]
@@ -5684,7 +5495,6 @@ public unsafe partial interface IVk
             [NativeName("pPushConstantsInfo")] PushConstantsInfo* pPushConstantsInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushConstants2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdPushConstants2KHR")]
@@ -5764,7 +5574,6 @@ public unsafe partial interface IVk
             [NativeName("pPushDescriptorSetInfo")] Ref<PushDescriptorSetInfo> pPushDescriptorSetInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushDescriptorSet2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5778,7 +5587,6 @@ public unsafe partial interface IVk
             [NativeName("pPushDescriptorSetInfo")] PushDescriptorSetInfo* pPushDescriptorSetInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushDescriptorSet2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5792,7 +5600,6 @@ public unsafe partial interface IVk
             [NativeName("pPushDescriptorSetInfo")] Ref<PushDescriptorSetInfo> pPushDescriptorSetInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushDescriptorSetKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5812,7 +5619,6 @@ public unsafe partial interface IVk
             [NativeName("pDescriptorWrites")] WriteDescriptorSet* pDescriptorWrites
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushDescriptorSetKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5832,7 +5638,6 @@ public unsafe partial interface IVk
             [NativeName("pDescriptorWrites")] Ref<WriteDescriptorSet> pDescriptorWrites
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushDescriptorSetKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5909,7 +5714,6 @@ public unsafe partial interface IVk
                 Ref<PushDescriptorSetWithTemplateInfo> pPushDescriptorSetWithTemplateInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushDescriptorSetWithTemplate2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5924,7 +5728,6 @@ public unsafe partial interface IVk
                 PushDescriptorSetWithTemplateInfo* pPushDescriptorSetWithTemplateInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushDescriptorSetWithTemplate2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5939,7 +5742,6 @@ public unsafe partial interface IVk
                 Ref<PushDescriptorSetWithTemplateInfo> pPushDescriptorSetWithTemplateInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushDescriptorSetWithTemplateKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -5962,7 +5764,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdPushDescriptorSetWithTemplateKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -6034,7 +5835,6 @@ public unsafe partial interface IVk
             [NativeName("stageMask")] PipelineStageFlags2 stageMask
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdResetEvent2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -6203,7 +6003,6 @@ public unsafe partial interface IVk
             [NativeName("pResolveImageInfo")] Ref<ResolveImageInfo2> pResolveImageInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdResolveImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -6219,7 +6018,6 @@ public unsafe partial interface IVk
             [NativeName("pResolveImageInfo")] ResolveImageInfo2* pResolveImageInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdResolveImage2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -6235,7 +6033,6 @@ public unsafe partial interface IVk
             [NativeName("pResolveImageInfo")] Ref<ResolveImageInfo2> pResolveImageInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetAlphaToCoverageEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6251,7 +6048,6 @@ public unsafe partial interface IVk
             [NativeName("alphaToCoverageEnable")] uint alphaToCoverageEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetAlphaToCoverageEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6267,7 +6063,6 @@ public unsafe partial interface IVk
             [NativeName("alphaToCoverageEnable")] MaybeBool<uint> alphaToCoverageEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetAlphaToOneEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6283,7 +6078,6 @@ public unsafe partial interface IVk
             [NativeName("alphaToOneEnable")] uint alphaToOneEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetAlphaToOneEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6299,7 +6093,6 @@ public unsafe partial interface IVk
             [NativeName("alphaToOneEnable")] MaybeBool<uint> alphaToOneEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetAttachmentFeedbackLoopEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6361,7 +6154,6 @@ public unsafe partial interface IVk
             [NativeName("blendConstants")] Ref<float> blendConstants
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCheckpointNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6377,7 +6169,6 @@ public unsafe partial interface IVk
             [NativeName("pCheckpointMarker")] void* pCheckpointMarker
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCheckpointNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6393,7 +6184,6 @@ public unsafe partial interface IVk
             [NativeName("pCheckpointMarker")] Ref pCheckpointMarker
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoarseSampleOrderNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6411,7 +6201,6 @@ public unsafe partial interface IVk
             [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNV* pCustomSampleOrders
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoarseSampleOrderNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6429,7 +6218,6 @@ public unsafe partial interface IVk
             [NativeName("pCustomSampleOrders")] Ref<CoarseSampleOrderCustomNV> pCustomSampleOrders
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoarseSampleOrderNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6446,7 +6234,6 @@ public unsafe partial interface IVk
             [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNV pCustomSampleOrders
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorBlendAdvancedEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6465,7 +6252,6 @@ public unsafe partial interface IVk
             [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedEXT* pColorBlendAdvanced
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorBlendAdvancedEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6484,7 +6270,6 @@ public unsafe partial interface IVk
             [NativeName("pColorBlendAdvanced")] Ref<ColorBlendAdvancedEXT> pColorBlendAdvanced
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorBlendAdvancedEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6502,7 +6287,6 @@ public unsafe partial interface IVk
             [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedEXT pColorBlendAdvanced
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorBlendEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6520,7 +6304,6 @@ public unsafe partial interface IVk
             [NativeName("pColorBlendEnables")] uint* pColorBlendEnables
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorBlendEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6538,7 +6321,6 @@ public unsafe partial interface IVk
             [NativeName("pColorBlendEnables")] Ref<uint> pColorBlendEnables
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorBlendEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6555,7 +6337,6 @@ public unsafe partial interface IVk
             [NativeName("pColorBlendEnables")] uint pColorBlendEnables
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorBlendEquationEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6573,7 +6354,6 @@ public unsafe partial interface IVk
             [NativeName("pColorBlendEquations")] ColorBlendEquationEXT* pColorBlendEquations
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorBlendEquationEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6591,7 +6371,6 @@ public unsafe partial interface IVk
             [NativeName("pColorBlendEquations")] Ref<ColorBlendEquationEXT> pColorBlendEquations
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorBlendEquationEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6608,7 +6387,6 @@ public unsafe partial interface IVk
             [NativeName("pColorBlendEquations")] ColorBlendEquationEXT pColorBlendEquations
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorWriteEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6625,7 +6403,6 @@ public unsafe partial interface IVk
             [NativeName("pColorWriteEnables")] uint* pColorWriteEnables
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorWriteEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6642,7 +6419,6 @@ public unsafe partial interface IVk
             [NativeName("pColorWriteEnables")] Ref<uint> pColorWriteEnables
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorWriteEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6658,7 +6434,6 @@ public unsafe partial interface IVk
             [NativeName("pColorWriteEnables")] uint pColorWriteEnables
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorWriteMaskEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6676,7 +6451,6 @@ public unsafe partial interface IVk
             [NativeName("pColorWriteMasks")] ColorComponentFlags* pColorWriteMasks
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorWriteMaskEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6694,7 +6468,6 @@ public unsafe partial interface IVk
             [NativeName("pColorWriteMasks")] Ref<ColorComponentFlags> pColorWriteMasks
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetColorWriteMaskEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6711,7 +6484,6 @@ public unsafe partial interface IVk
             [NativeName("pColorWriteMasks")] ColorComponentFlags pColorWriteMasks
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetConservativeRasterizationModeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6729,7 +6501,6 @@ public unsafe partial interface IVk
                 ConservativeRasterizationModeEXT conservativeRasterizationMode
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoverageModulationModeNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6746,7 +6517,6 @@ public unsafe partial interface IVk
             [NativeName("coverageModulationMode")] CoverageModulationModeNV coverageModulationMode
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoverageModulationTableEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6763,7 +6533,6 @@ public unsafe partial interface IVk
             [NativeName("coverageModulationTableEnable")] uint coverageModulationTableEnable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoverageModulationTableEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6781,7 +6550,6 @@ public unsafe partial interface IVk
                 MaybeBool<uint> coverageModulationTableEnable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoverageModulationTableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6799,7 +6567,6 @@ public unsafe partial interface IVk
             [NativeName("pCoverageModulationTable")] float* pCoverageModulationTable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoverageModulationTableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6817,7 +6584,6 @@ public unsafe partial interface IVk
             [NativeName("pCoverageModulationTable")] Ref<float> pCoverageModulationTable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoverageModulationTableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6834,7 +6600,6 @@ public unsafe partial interface IVk
             [NativeName("pCoverageModulationTable")] float pCoverageModulationTable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoverageReductionModeNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6851,7 +6616,6 @@ public unsafe partial interface IVk
             [NativeName("coverageReductionMode")] CoverageReductionModeNV coverageReductionMode
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoverageToColorEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6868,7 +6632,6 @@ public unsafe partial interface IVk
             [NativeName("coverageToColorEnable")] uint coverageToColorEnable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoverageToColorEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6885,7 +6648,6 @@ public unsafe partial interface IVk
             [NativeName("coverageToColorEnable")] MaybeBool<uint> coverageToColorEnable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetCoverageToColorLocationNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -6919,7 +6681,6 @@ public unsafe partial interface IVk
             [NativeName("cullMode")] CullModeFlags cullMode
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetCullModeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6960,7 +6721,6 @@ public unsafe partial interface IVk
             [NativeName("depthBiasSlopeFactor")] float depthBiasSlopeFactor
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthBias2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -6976,7 +6736,6 @@ public unsafe partial interface IVk
             [NativeName("pDepthBiasInfo")] DepthBiasInfoEXT* pDepthBiasInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthBias2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7026,7 +6785,6 @@ public unsafe partial interface IVk
             [NativeName("depthBiasEnable")] MaybeBool<uint> depthBiasEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthBiasEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7042,7 +6800,6 @@ public unsafe partial interface IVk
             [NativeName("depthBiasEnable")] uint depthBiasEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthBiasEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7116,7 +6873,6 @@ public unsafe partial interface IVk
             [NativeName("depthBoundsTestEnable")] MaybeBool<uint> depthBoundsTestEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthBoundsTestEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7132,7 +6888,6 @@ public unsafe partial interface IVk
             [NativeName("depthBoundsTestEnable")] uint depthBoundsTestEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthBoundsTestEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7148,7 +6903,6 @@ public unsafe partial interface IVk
             [NativeName("depthBoundsTestEnable")] MaybeBool<uint> depthBoundsTestEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthClampEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7164,7 +6918,6 @@ public unsafe partial interface IVk
             [NativeName("depthClampEnable")] uint depthClampEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthClampEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7180,7 +6933,6 @@ public unsafe partial interface IVk
             [NativeName("depthClampEnable")] MaybeBool<uint> depthClampEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthClampRangeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7199,7 +6951,6 @@ public unsafe partial interface IVk
             [NativeName("pDepthClampRange")] DepthClampRangeEXT* pDepthClampRange
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthClampRangeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7218,7 +6969,6 @@ public unsafe partial interface IVk
             [NativeName("pDepthClampRange")] Ref<DepthClampRangeEXT> pDepthClampRange
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthClipEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7235,7 +6985,6 @@ public unsafe partial interface IVk
             [NativeName("depthClipEnable")] uint depthClipEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthClipEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7252,7 +7001,6 @@ public unsafe partial interface IVk
             [NativeName("depthClipEnable")] MaybeBool<uint> depthClipEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthClipNegativeOneToOneEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7269,7 +7017,6 @@ public unsafe partial interface IVk
             [NativeName("negativeOneToOne")] uint negativeOneToOne
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthClipNegativeOneToOneEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7303,7 +7050,6 @@ public unsafe partial interface IVk
             [NativeName("depthCompareOp")] CompareOp depthCompareOp
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthCompareOpEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7353,7 +7099,6 @@ public unsafe partial interface IVk
             [NativeName("depthTestEnable")] MaybeBool<uint> depthTestEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthTestEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7369,7 +7114,6 @@ public unsafe partial interface IVk
             [NativeName("depthTestEnable")] uint depthTestEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthTestEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7419,7 +7163,6 @@ public unsafe partial interface IVk
             [NativeName("depthWriteEnable")] MaybeBool<uint> depthWriteEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthWriteEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7435,7 +7178,6 @@ public unsafe partial interface IVk
             [NativeName("depthWriteEnable")] uint depthWriteEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDepthWriteEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7451,7 +7193,6 @@ public unsafe partial interface IVk
             [NativeName("depthWriteEnable")] MaybeBool<uint> depthWriteEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDescriptorBufferOffsets2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7466,7 +7207,6 @@ public unsafe partial interface IVk
                 SetDescriptorBufferOffsetsInfoEXT* pSetDescriptorBufferOffsetsInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDescriptorBufferOffsets2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7481,7 +7221,6 @@ public unsafe partial interface IVk
                 Ref<SetDescriptorBufferOffsetsInfoEXT> pSetDescriptorBufferOffsetsInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDescriptorBufferOffsetsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7504,7 +7243,6 @@ public unsafe partial interface IVk
             [NativeName("pOffsets")] ulong* pOffsets
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDescriptorBufferOffsetsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7556,7 +7294,6 @@ public unsafe partial interface IVk
             [NativeName("deviceMask")] uint deviceMask
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetDeviceMaskKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -7569,7 +7306,6 @@ public unsafe partial interface IVk
             [NativeName("deviceMask")] uint deviceMask
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDiscardRectangleEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7585,7 +7321,6 @@ public unsafe partial interface IVk
             [NativeName("discardRectangleEnable")] uint discardRectangleEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDiscardRectangleEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7601,7 +7336,6 @@ public unsafe partial interface IVk
             [NativeName("discardRectangleEnable")] MaybeBool<uint> discardRectangleEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDiscardRectangleEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7619,7 +7353,6 @@ public unsafe partial interface IVk
             [NativeName("pDiscardRectangles")] Rect2D* pDiscardRectangles
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDiscardRectangleEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7637,7 +7370,6 @@ public unsafe partial interface IVk
             [NativeName("pDiscardRectangles")] Ref<Rect2D> pDiscardRectangles
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDiscardRectangleEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7654,7 +7386,6 @@ public unsafe partial interface IVk
             [NativeName("pDiscardRectangles")] Rect2D pDiscardRectangles
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetDiscardRectangleModeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7739,7 +7470,6 @@ public unsafe partial interface IVk
             [NativeName("pDependencyInfo")] Ref<DependencyInfo> pDependencyInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetEvent2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -7756,7 +7486,6 @@ public unsafe partial interface IVk
             [NativeName("pDependencyInfo")] DependencyInfo* pDependencyInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetEvent2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -7773,7 +7502,6 @@ public unsafe partial interface IVk
             [NativeName("pDependencyInfo")] Ref<DependencyInfo> pDependencyInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetExclusiveScissorEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -7791,7 +7519,6 @@ public unsafe partial interface IVk
             [NativeName("pExclusiveScissorEnables")] uint* pExclusiveScissorEnables
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetExclusiveScissorEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -7809,7 +7536,6 @@ public unsafe partial interface IVk
             [NativeName("pExclusiveScissorEnables")] Ref<uint> pExclusiveScissorEnables
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetExclusiveScissorEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -7826,7 +7552,6 @@ public unsafe partial interface IVk
             [NativeName("pExclusiveScissorEnables")] uint pExclusiveScissorEnables
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetExclusiveScissorNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -7844,7 +7569,6 @@ public unsafe partial interface IVk
             [NativeName("pExclusiveScissors")] Rect2D* pExclusiveScissors
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetExclusiveScissorNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -7862,7 +7586,6 @@ public unsafe partial interface IVk
             [NativeName("pExclusiveScissors")] Ref<Rect2D> pExclusiveScissors
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetExclusiveScissorNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -7879,7 +7602,6 @@ public unsafe partial interface IVk
             [NativeName("pExclusiveScissors")] Rect2D pExclusiveScissors
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetExtraPrimitiveOverestimationSizeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7896,7 +7618,6 @@ public unsafe partial interface IVk
             [NativeName("extraPrimitiveOverestimationSize")] float extraPrimitiveOverestimationSize
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetFragmentShadingRateEnumNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -7910,7 +7631,6 @@ public unsafe partial interface IVk
             [NativeName("combinerOps")] FragmentShadingRateCombinerOpKHR* combinerOps
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetFragmentShadingRateEnumNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -7924,7 +7644,6 @@ public unsafe partial interface IVk
             [NativeName("combinerOps")] Ref<FragmentShadingRateCombinerOpKHR> combinerOps
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetFragmentShadingRateKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -7942,7 +7661,6 @@ public unsafe partial interface IVk
             [NativeName("combinerOps")] FragmentShadingRateCombinerOpKHR* combinerOps
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetFragmentShadingRateKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -7977,7 +7695,6 @@ public unsafe partial interface IVk
             [NativeName("frontFace")] FrontFace frontFace
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetFrontFaceEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -7993,7 +7710,6 @@ public unsafe partial interface IVk
             [NativeName("frontFace")] FrontFace frontFace
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetLineRasterizationModeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8023,7 +7739,6 @@ public unsafe partial interface IVk
             [NativeName("lineStipplePattern")] ushort lineStipplePattern
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetLineStippleEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8040,7 +7755,6 @@ public unsafe partial interface IVk
             [NativeName("stippledLineEnable")] uint stippledLineEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetLineStippleEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8057,7 +7771,6 @@ public unsafe partial interface IVk
             [NativeName("stippledLineEnable")] MaybeBool<uint> stippledLineEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetLineStippleEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8074,7 +7787,6 @@ public unsafe partial interface IVk
             [NativeName("lineStipplePattern")] ushort lineStipplePattern
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetLineStippleKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -8114,7 +7826,6 @@ public unsafe partial interface IVk
             [NativeName("lineWidth")] float lineWidth
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetLogicOpEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8130,7 +7841,6 @@ public unsafe partial interface IVk
             [NativeName("logicOpEnable")] uint logicOpEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetLogicOpEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8146,7 +7856,6 @@ public unsafe partial interface IVk
             [NativeName("logicOpEnable")] MaybeBool<uint> logicOpEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetLogicOpEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8162,7 +7871,6 @@ public unsafe partial interface IVk
             [NativeName("logicOp")] LogicOp logicOp
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetPatchControlPointsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8178,7 +7886,6 @@ public unsafe partial interface IVk
             [NativeName("patchControlPoints")] uint patchControlPoints
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkCmdSetPerformanceMarkerINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceMarkerINTEL")]
@@ -8187,7 +7894,6 @@ public unsafe partial interface IVk
             [NativeName("pMarkerInfo")] PerformanceMarkerInfoINTEL* pMarkerInfo
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkCmdSetPerformanceMarkerINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceMarkerINTEL")]
@@ -8196,7 +7902,6 @@ public unsafe partial interface IVk
             [NativeName("pMarkerInfo")] Ref<PerformanceMarkerInfoINTEL> pMarkerInfo
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkCmdSetPerformanceOverrideINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceOverrideINTEL")]
@@ -8205,7 +7910,6 @@ public unsafe partial interface IVk
             [NativeName("pOverrideInfo")] PerformanceOverrideInfoINTEL* pOverrideInfo
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkCmdSetPerformanceOverrideINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceOverrideINTEL")]
@@ -8214,7 +7918,6 @@ public unsafe partial interface IVk
             [NativeName("pOverrideInfo")] Ref<PerformanceOverrideInfoINTEL> pOverrideInfo
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkCmdSetPerformanceStreamMarkerINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL")]
@@ -8223,7 +7926,6 @@ public unsafe partial interface IVk
             [NativeName("pMarkerInfo")] PerformanceStreamMarkerInfoINTEL* pMarkerInfo
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkCmdSetPerformanceStreamMarkerINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL")]
@@ -8232,7 +7934,6 @@ public unsafe partial interface IVk
             [NativeName("pMarkerInfo")] Ref<PerformanceStreamMarkerInfoINTEL> pMarkerInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetPolygonModeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8282,7 +7983,6 @@ public unsafe partial interface IVk
             [NativeName("primitiveRestartEnable")] MaybeBool<uint> primitiveRestartEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetPrimitiveRestartEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8298,7 +7998,6 @@ public unsafe partial interface IVk
             [NativeName("primitiveRestartEnable")] uint primitiveRestartEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetPrimitiveRestartEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8331,7 +8030,6 @@ public unsafe partial interface IVk
             [NativeName("primitiveTopology")] PrimitiveTopology primitiveTopology
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetPrimitiveTopologyEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8347,7 +8045,6 @@ public unsafe partial interface IVk
             [NativeName("primitiveTopology")] PrimitiveTopology primitiveTopology
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetProvokingVertexModeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8364,7 +8061,6 @@ public unsafe partial interface IVk
             [NativeName("provokingVertexMode")] ProvokingVertexModeEXT provokingVertexMode
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetRasterizationSamplesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8380,7 +8076,6 @@ public unsafe partial interface IVk
             [NativeName("rasterizationSamples")] SampleCountFlags rasterizationSamples
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetRasterizationStreamEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8431,7 +8126,6 @@ public unsafe partial interface IVk
             [NativeName("rasterizerDiscardEnable")] MaybeBool<uint> rasterizerDiscardEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetRasterizerDiscardEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8447,7 +8141,6 @@ public unsafe partial interface IVk
             [NativeName("rasterizerDiscardEnable")] uint rasterizerDiscardEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetRasterizerDiscardEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8463,7 +8156,6 @@ public unsafe partial interface IVk
             [NativeName("rasterizerDiscardEnable")] MaybeBool<uint> rasterizerDiscardEnable
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetRayTracingPipelineStackSizeKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -8503,7 +8195,6 @@ public unsafe partial interface IVk
             [NativeName("pLocationInfo")] Ref<RenderingAttachmentLocationInfo> pLocationInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetRenderingAttachmentLocationsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -8519,7 +8210,6 @@ public unsafe partial interface IVk
             [NativeName("pLocationInfo")] RenderingAttachmentLocationInfo* pLocationInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetRenderingAttachmentLocationsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -8561,7 +8251,6 @@ public unsafe partial interface IVk
                 Ref<RenderingInputAttachmentIndexInfo> pInputAttachmentIndexInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetRenderingInputAttachmentIndicesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -8578,7 +8267,6 @@ public unsafe partial interface IVk
                 RenderingInputAttachmentIndexInfo* pInputAttachmentIndexInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdSetRenderingInputAttachmentIndicesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -8595,7 +8283,6 @@ public unsafe partial interface IVk
                 Ref<RenderingInputAttachmentIndexInfo> pInputAttachmentIndexInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetRepresentativeFragmentTestEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -8612,7 +8299,6 @@ public unsafe partial interface IVk
             [NativeName("representativeFragmentTestEnable")] uint representativeFragmentTestEnable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetRepresentativeFragmentTestEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -8630,7 +8316,6 @@ public unsafe partial interface IVk
                 MaybeBool<uint> representativeFragmentTestEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetSampleLocationsEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8647,7 +8332,6 @@ public unsafe partial interface IVk
             [NativeName("sampleLocationsEnable")] uint sampleLocationsEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetSampleLocationsEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8664,7 +8348,6 @@ public unsafe partial interface IVk
             [NativeName("sampleLocationsEnable")] MaybeBool<uint> sampleLocationsEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetSampleLocationsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8680,7 +8363,6 @@ public unsafe partial interface IVk
             [NativeName("pSampleLocationsInfo")] SampleLocationsInfoEXT* pSampleLocationsInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetSampleLocationsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8696,7 +8378,6 @@ public unsafe partial interface IVk
             [NativeName("pSampleLocationsInfo")] Ref<SampleLocationsInfoEXT> pSampleLocationsInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetSampleMaskEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8713,7 +8394,6 @@ public unsafe partial interface IVk
             [NativeName("pSampleMask")] uint* pSampleMask
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetSampleMaskEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8857,7 +8537,6 @@ public unsafe partial interface IVk
             [NativeName("pScissors")] Rect2D pScissors
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetScissorWithCountEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8874,7 +8553,6 @@ public unsafe partial interface IVk
             [NativeName("pScissors")] Rect2D* pScissors
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetScissorWithCountEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8891,7 +8569,6 @@ public unsafe partial interface IVk
             [NativeName("pScissors")] Ref<Rect2D> pScissors
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetScissorWithCountEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -8907,7 +8584,6 @@ public unsafe partial interface IVk
             [NativeName("pScissors")] Rect2D pScissors
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetShadingRateImageEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -8924,7 +8600,6 @@ public unsafe partial interface IVk
             [NativeName("shadingRateImageEnable")] uint shadingRateImageEnable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetShadingRateImageEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -8986,7 +8661,6 @@ public unsafe partial interface IVk
             [NativeName("compareOp")] CompareOp compareOp
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetStencilOpEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -9064,7 +8738,6 @@ public unsafe partial interface IVk
             [NativeName("stencilTestEnable")] MaybeBool<uint> stencilTestEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetStencilTestEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -9080,7 +8753,6 @@ public unsafe partial interface IVk
             [NativeName("stencilTestEnable")] uint stencilTestEnable
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetStencilTestEnableEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -9120,7 +8792,6 @@ public unsafe partial interface IVk
             [NativeName("writeMask")] uint writeMask
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetTessellationDomainOriginEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -9139,7 +8810,6 @@ public unsafe partial interface IVk
             [NativeName("domainOrigin")] TessellationDomainOrigin domainOrigin
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetVertexInputEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -9160,7 +8830,6 @@ public unsafe partial interface IVk
                 VertexInputAttributeDescription2EXT* pVertexAttributeDescriptions
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetVertexInputEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -9255,7 +8924,6 @@ public unsafe partial interface IVk
             [NativeName("pViewports")] Viewport pViewports
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportShadingRatePaletteNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9273,7 +8941,6 @@ public unsafe partial interface IVk
             [NativeName("pShadingRatePalettes")] ShadingRatePaletteNV* pShadingRatePalettes
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportShadingRatePaletteNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9291,7 +8958,6 @@ public unsafe partial interface IVk
             [NativeName("pShadingRatePalettes")] Ref<ShadingRatePaletteNV> pShadingRatePalettes
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportShadingRatePaletteNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9308,7 +8974,6 @@ public unsafe partial interface IVk
             [NativeName("pShadingRatePalettes")] ShadingRatePaletteNV pShadingRatePalettes
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportSwizzleNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9327,7 +8992,6 @@ public unsafe partial interface IVk
             [NativeName("pViewportSwizzles")] ViewportSwizzleNV* pViewportSwizzles
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportSwizzleNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9346,7 +9010,6 @@ public unsafe partial interface IVk
             [NativeName("pViewportSwizzles")] Ref<ViewportSwizzleNV> pViewportSwizzles
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportSwizzleNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9417,7 +9080,6 @@ public unsafe partial interface IVk
             [NativeName("pViewports")] Viewport pViewports
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetViewportWithCountEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -9434,7 +9096,6 @@ public unsafe partial interface IVk
             [NativeName("pViewports")] Viewport* pViewports
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetViewportWithCountEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -9451,7 +9112,6 @@ public unsafe partial interface IVk
             [NativeName("pViewports")] Ref<Viewport> pViewports
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdSetViewportWithCountEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -9467,7 +9127,6 @@ public unsafe partial interface IVk
             [NativeName("pViewports")] Viewport pViewports
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportWScalingEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9484,7 +9143,6 @@ public unsafe partial interface IVk
             [NativeName("viewportWScalingEnable")] uint viewportWScalingEnable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportWScalingEnableNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9501,7 +9159,6 @@ public unsafe partial interface IVk
             [NativeName("viewportWScalingEnable")] MaybeBool<uint> viewportWScalingEnable
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportWScalingNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWScalingNV")]
@@ -9512,7 +9169,6 @@ public unsafe partial interface IVk
             [NativeName("pViewportWScalings")] ViewportWScalingNV* pViewportWScalings
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportWScalingNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWScalingNV")]
@@ -9523,7 +9179,6 @@ public unsafe partial interface IVk
             [NativeName("pViewportWScalings")] Ref<ViewportWScalingNV> pViewportWScalings
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdSetViewportWScalingNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWScalingNV")]
@@ -9533,7 +9188,6 @@ public unsafe partial interface IVk
             [NativeName("pViewportWScalings")] ViewportWScalingNV pViewportWScalings
         );
 
-        [NameAffix("Suffix", "HUAWEI", 0)]
         [NativeName("vkCmdSubpassShadingHUAWEI")]
         [SupportedApiProfile(
             "vulkan",
@@ -9549,7 +9203,6 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdTraceRaysIndirect2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -9563,7 +9216,6 @@ public unsafe partial interface IVk
             [NativeName("indirectDeviceAddress")] ulong indirectDeviceAddress
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdTraceRaysIndirectKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -9587,7 +9239,6 @@ public unsafe partial interface IVk
             [NativeName("indirectDeviceAddress")] ulong indirectDeviceAddress
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdTraceRaysIndirectKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -9611,7 +9262,6 @@ public unsafe partial interface IVk
             [NativeName("indirectDeviceAddress")] ulong indirectDeviceAddress
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdTraceRaysKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -9637,7 +9287,6 @@ public unsafe partial interface IVk
             [NativeName("depth")] uint depth
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdTraceRaysKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -9663,7 +9312,6 @@ public unsafe partial interface IVk
             [NativeName("depth")] uint depth
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdTraceRaysNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9766,7 +9414,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdUpdatePipelineIndirectBufferNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9896,7 +9543,6 @@ public unsafe partial interface IVk
             [NativeName("pDependencyInfos")] Ref<DependencyInfo> pDependencyInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdWaitEvents2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -9914,7 +9560,6 @@ public unsafe partial interface IVk
             [NativeName("pDependencyInfos")] DependencyInfo* pDependencyInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdWaitEvents2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -9932,7 +9577,6 @@ public unsafe partial interface IVk
             [NativeName("pDependencyInfos")] Ref<DependencyInfo> pDependencyInfos
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdWriteAccelerationStructuresPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -9953,7 +9597,6 @@ public unsafe partial interface IVk
             [NativeName("firstQuery")] uint firstQuery
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdWriteAccelerationStructuresPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -9974,7 +9617,6 @@ public unsafe partial interface IVk
             [NativeName("firstQuery")] uint firstQuery
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdWriteAccelerationStructuresPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -9994,7 +9636,6 @@ public unsafe partial interface IVk
             [NativeName("firstQuery")] uint firstQuery
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdWriteAccelerationStructuresPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -10015,7 +9656,6 @@ public unsafe partial interface IVk
             [NativeName("firstQuery")] uint firstQuery
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdWriteAccelerationStructuresPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -10036,7 +9676,6 @@ public unsafe partial interface IVk
             [NativeName("firstQuery")] uint firstQuery
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCmdWriteAccelerationStructuresPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -10056,7 +9695,6 @@ public unsafe partial interface IVk
             [NativeName("firstQuery")] uint firstQuery
         );
 
-        [NameAffix("Suffix", "AMD", 0)]
         [NativeName("vkCmdWriteBufferMarker2AMD")]
         [SupportedApiProfile(
             "vulkan",
@@ -10071,7 +9709,6 @@ public unsafe partial interface IVk
             [NativeName("marker")] uint marker
         );
 
-        [NameAffix("Suffix", "AMD", 0)]
         [NativeName("vkCmdWriteBufferMarkerAMD")]
         [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker"])]
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarkerAMD")]
@@ -10083,7 +9720,6 @@ public unsafe partial interface IVk
             [NativeName("marker")] uint marker
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdWriteMicromapsPropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10103,7 +9739,6 @@ public unsafe partial interface IVk
             [NativeName("firstQuery")] uint firstQuery
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdWriteMicromapsPropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10123,7 +9758,6 @@ public unsafe partial interface IVk
             [NativeName("firstQuery")] uint firstQuery
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCmdWriteMicromapsPropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10200,7 +9834,6 @@ public unsafe partial interface IVk
             [NativeName("query")] uint query
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCmdWriteTimestamp2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -10218,7 +9851,6 @@ public unsafe partial interface IVk
             [NativeName("query")] uint query
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCompileDeferredNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -10235,7 +9867,6 @@ public unsafe partial interface IVk
             [NativeName("shader")] uint shader
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkConvertCooperativeVectorMatrixNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -10251,7 +9882,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] ConvertCooperativeVectorMatrixInfoNV* pInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkConvertCooperativeVectorMatrixNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -10267,7 +9897,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<ConvertCooperativeVectorMatrixInfoNV> pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCopyAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -10284,7 +9913,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyAccelerationStructureInfoKHR* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCopyAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -10301,7 +9929,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKHR> pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCopyAccelerationStructureToMemoryKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -10318,7 +9945,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKHR* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCopyAccelerationStructureToMemoryKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -10369,7 +9995,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyImageToImageInfo")] Ref<CopyImageToImageInfo> pCopyImageToImageInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyImageToImageEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10386,7 +10011,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyImageToImageInfo")] CopyImageToImageInfo* pCopyImageToImageInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyImageToImageEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10437,7 +10061,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyImageToMemoryInfo")] Ref<CopyImageToMemoryInfo> pCopyImageToMemoryInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyImageToMemoryEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10454,7 +10077,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyImageToMemoryInfo")] CopyImageToMemoryInfo* pCopyImageToMemoryInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyImageToMemoryEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10471,7 +10093,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyImageToMemoryInfo")] Ref<CopyImageToMemoryInfo> pCopyImageToMemoryInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCopyMemoryToAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -10488,7 +10109,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKHR* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCopyMemoryToAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -10539,7 +10159,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyMemoryToImageInfo")] Ref<CopyMemoryToImageInfo> pCopyMemoryToImageInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyMemoryToImageEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10556,7 +10175,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyMemoryToImageInfo")] CopyMemoryToImageInfo* pCopyMemoryToImageInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyMemoryToImageEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10573,7 +10191,6 @@ public unsafe partial interface IVk
             [NativeName("pCopyMemoryToImageInfo")] Ref<CopyMemoryToImageInfo> pCopyMemoryToImageInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyMemoryToMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10590,7 +10207,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyMemoryToMicromapInfoEXT* pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyMemoryToMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10607,7 +10223,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoEXT> pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10624,7 +10239,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyMicromapInfoEXT* pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10641,7 +10255,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<CopyMicromapInfoEXT> pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyMicromapToMemoryEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10658,7 +10271,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] CopyMicromapToMemoryInfoEXT* pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCopyMicromapToMemoryEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -10675,7 +10287,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<CopyMicromapToMemoryInfoEXT> pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -10694,7 +10305,6 @@ public unsafe partial interface IVk
                 AccelerationStructureHandleKHR* pAccelerationStructure
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -10713,7 +10323,6 @@ public unsafe partial interface IVk
                 Ref<AccelerationStructureHandleKHR> pAccelerationStructure
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCreateAccelerationStructureNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -10732,7 +10341,6 @@ public unsafe partial interface IVk
                 AccelerationStructureHandleNV* pAccelerationStructure
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCreateAccelerationStructureNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -11015,7 +10623,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkCreateCuFunctionNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateCuFunctionNVX")]
@@ -11026,7 +10633,6 @@ public unsafe partial interface IVk
             [NativeName("pFunction")] CuFunctionHandleNVX* pFunction
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkCreateCuFunctionNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateCuFunctionNVX")]
@@ -11037,7 +10643,6 @@ public unsafe partial interface IVk
             [NativeName("pFunction")] Ref<CuFunctionHandleNVX> pFunction
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkCreateCuModuleNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateCuModuleNVX")]
@@ -11048,7 +10653,6 @@ public unsafe partial interface IVk
             [NativeName("pModule")] CuModuleHandleNVX* pModule
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkCreateCuModuleNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateCuModuleNVX")]
@@ -11059,7 +10663,6 @@ public unsafe partial interface IVk
             [NativeName("pModule")] Ref<CuModuleHandleNVX> pModule
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCreateDataGraphPipelinesARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -11081,7 +10684,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelines")] PipelineHandle* pPipelines
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCreateDataGraphPipelinesARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -11103,7 +10705,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCreateDataGraphPipelineSessionARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -11122,7 +10723,6 @@ public unsafe partial interface IVk
             [NativeName("pSession")] DataGraphPipelineSessionHandleARM* pSession
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCreateDataGraphPipelineSessionARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -11141,7 +10741,6 @@ public unsafe partial interface IVk
             [NativeName("pSession")] Ref<DataGraphPipelineSessionHandleARM> pSession
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateDebugReportCallbackEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDebugReportCallbackEXT")]
@@ -11152,7 +10751,6 @@ public unsafe partial interface IVk
             [NativeName("pCallback")] DebugReportCallbackHandleEXT* pCallback
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateDebugReportCallbackEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDebugReportCallbackEXT")]
@@ -11163,7 +10761,6 @@ public unsafe partial interface IVk
             [NativeName("pCallback")] Ref<DebugReportCallbackHandleEXT> pCallback
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateDebugUtilsMessengerEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
@@ -11174,7 +10771,6 @@ public unsafe partial interface IVk
             [NativeName("pMessenger")] DebugUtilsMessengerHandleEXT* pMessenger
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateDebugUtilsMessengerEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
@@ -11185,7 +10781,6 @@ public unsafe partial interface IVk
             [NativeName("pMessenger")] Ref<DebugUtilsMessengerHandleEXT> pMessenger
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateDeferredOperationKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDeferredOperationKHR")]
@@ -11195,7 +10790,6 @@ public unsafe partial interface IVk
             [NativeName("pDeferredOperation")] DeferredOperationHandleKHR* pDeferredOperation
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateDeferredOperationKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDeferredOperationKHR")]
@@ -11381,7 +10975,6 @@ public unsafe partial interface IVk
                 Ref<DescriptorUpdateTemplateHandle> pDescriptorUpdateTemplate
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateDescriptorUpdateTemplateKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDescriptorUpdateTemplateKHR")]
@@ -11393,7 +10986,6 @@ public unsafe partial interface IVk
                 DescriptorUpdateTemplateHandle* pDescriptorUpdateTemplate
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateDescriptorUpdateTemplateKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDescriptorUpdateTemplateKHR")]
@@ -11475,7 +11067,6 @@ public unsafe partial interface IVk
             [NativeName("pDevice")] Ref<DeviceHandle> pDevice
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateDisplayModeKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayModeKHR")]
@@ -11487,7 +11078,6 @@ public unsafe partial interface IVk
             [NativeName("pMode")] DisplayModeHandleKHR* pMode
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateDisplayModeKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayModeKHR")]
@@ -11499,7 +11089,6 @@ public unsafe partial interface IVk
             [NativeName("pMode")] Ref<DisplayModeHandleKHR> pMode
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateDisplayPlaneSurfaceKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayPlaneSurfaceKHR")]
@@ -11510,7 +11099,6 @@ public unsafe partial interface IVk
             [NativeName("pSurface")] SurfaceHandleKHR* pSurface
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateDisplayPlaneSurfaceKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayPlaneSurfaceKHR")]
@@ -11581,7 +11169,6 @@ public unsafe partial interface IVk
             [NativeName("pEvent")] Ref<EventHandle> pEvent
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCreateExternalComputeQueueNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateExternalComputeQueueNV")]
@@ -11592,7 +11179,6 @@ public unsafe partial interface IVk
             [NativeName("pExternalQueue")] ExternalComputeQueueHandleNV* pExternalQueue
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCreateExternalComputeQueueNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateExternalComputeQueueNV")]
@@ -11777,7 +11363,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateHeadlessSurfaceEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -11792,7 +11377,6 @@ public unsafe partial interface IVk
             [NativeName("pSurface")] SurfaceHandleKHR* pSurface
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateHeadlessSurfaceEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -11947,7 +11531,6 @@ public unsafe partial interface IVk
             [NativeName("pView")] Ref<ImageViewHandle> pView
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateIndirectCommandsLayoutEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -11967,7 +11550,6 @@ public unsafe partial interface IVk
                 IndirectCommandsLayoutHandleEXT* pIndirectCommandsLayout
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateIndirectCommandsLayoutEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -11987,7 +11569,6 @@ public unsafe partial interface IVk
                 Ref<IndirectCommandsLayoutHandleEXT> pIndirectCommandsLayout
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCreateIndirectCommandsLayoutNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -12003,7 +11584,6 @@ public unsafe partial interface IVk
                 IndirectCommandsLayoutHandleNV* pIndirectCommandsLayout
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCreateIndirectCommandsLayoutNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -12019,7 +11599,6 @@ public unsafe partial interface IVk
                 Ref<IndirectCommandsLayoutHandleNV> pIndirectCommandsLayout
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateIndirectExecutionSetEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -12039,7 +11618,6 @@ public unsafe partial interface IVk
                 IndirectExecutionSetHandleEXT* pIndirectExecutionSet
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateIndirectExecutionSetEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -12127,7 +11705,6 @@ public unsafe partial interface IVk
             [NativeName("pInstance")] Ref<InstanceHandle> pInstance
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -12145,7 +11722,6 @@ public unsafe partial interface IVk
             [NativeName("pMicromap")] MicromapHandleEXT* pMicromap
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -12163,7 +11739,6 @@ public unsafe partial interface IVk
             [NativeName("pMicromap")] Ref<MicromapHandleEXT> pMicromap
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCreateOpticalFlowSessionNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -12182,7 +11757,6 @@ public unsafe partial interface IVk
             [NativeName("pSession")] OpticalFlowSessionHandleNV* pSession
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCreateOpticalFlowSessionNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -12201,7 +11775,6 @@ public unsafe partial interface IVk
             [NativeName("pSession")] Ref<OpticalFlowSessionHandleNV> pSession
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreatePipelineBinariesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -12219,7 +11792,6 @@ public unsafe partial interface IVk
             [NativeName("pBinaries")] PipelineBinaryHandlesInfoKHR* pBinaries
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreatePipelineBinariesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -12403,7 +11975,6 @@ public unsafe partial interface IVk
             [NativeName("pPrivateDataSlot")] Ref<PrivateDataSlotHandle> pPrivateDataSlot
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreatePrivateDataSlotEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -12421,7 +11992,6 @@ public unsafe partial interface IVk
             [NativeName("pPrivateDataSlot")] PrivateDataSlotHandle* pPrivateDataSlot
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreatePrivateDataSlotEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -12509,7 +12079,6 @@ public unsafe partial interface IVk
             [NativeName("pQueryPool")] Ref<QueryPoolHandle> pQueryPool
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateRayTracingPipelinesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -12530,7 +12099,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelines")] PipelineHandle* pPipelines
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateRayTracingPipelinesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -12551,7 +12119,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCreateRayTracingPipelinesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -12571,7 +12138,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelines")] PipelineHandle* pPipelines
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkCreateRayTracingPipelinesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -12683,7 +12249,6 @@ public unsafe partial interface IVk
             [NativeName("pRenderPass")] Ref<RenderPassHandle> pRenderPass
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateRenderPass2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -12698,7 +12263,6 @@ public unsafe partial interface IVk
             [NativeName("pRenderPass")] RenderPassHandle* pRenderPass
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateRenderPass2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -12827,7 +12391,6 @@ public unsafe partial interface IVk
             [NativeName("pYcbcrConversion")] Ref<SamplerYcbcrConversionHandle> pYcbcrConversion
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateSamplerYcbcrConversionKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -12845,7 +12408,6 @@ public unsafe partial interface IVk
             [NativeName("pYcbcrConversion")] SamplerYcbcrConversionHandle* pYcbcrConversion
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateSamplerYcbcrConversionKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -12993,7 +12555,6 @@ public unsafe partial interface IVk
             [NativeName("pShaderModule")] Ref<ShaderModuleHandle> pShaderModule
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateShadersEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -13013,7 +12574,6 @@ public unsafe partial interface IVk
             [NativeName("pShaders")] ShaderHandleEXT* pShaders
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateShadersEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -13033,7 +12593,6 @@ public unsafe partial interface IVk
             [NativeName("pShaders")] Ref<ShaderHandleEXT> pShaders
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateSharedSwapchainsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -13049,7 +12608,6 @@ public unsafe partial interface IVk
             [NativeName("pSwapchains")] SwapchainHandleKHR* pSwapchains
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateSharedSwapchainsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -13065,7 +12623,6 @@ public unsafe partial interface IVk
             [NativeName("pSwapchains")] Ref<SwapchainHandleKHR> pSwapchains
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateSwapchainKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateSwapchainKHR")]
@@ -13076,7 +12633,6 @@ public unsafe partial interface IVk
             [NativeName("pSwapchain")] SwapchainHandleKHR* pSwapchain
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateSwapchainKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateSwapchainKHR")]
@@ -13087,7 +12643,6 @@ public unsafe partial interface IVk
             [NativeName("pSwapchain")] Ref<SwapchainHandleKHR> pSwapchain
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCreateTensorARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
@@ -13098,7 +12653,6 @@ public unsafe partial interface IVk
             [NativeName("pTensor")] TensorHandleARM* pTensor
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCreateTensorARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
@@ -13109,7 +12663,6 @@ public unsafe partial interface IVk
             [NativeName("pTensor")] Ref<TensorHandleARM> pTensor
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCreateTensorViewARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
@@ -13120,7 +12673,6 @@ public unsafe partial interface IVk
             [NativeName("pView")] TensorViewHandleARM* pView
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkCreateTensorViewARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
@@ -13131,7 +12683,6 @@ public unsafe partial interface IVk
             [NativeName("pView")] Ref<TensorViewHandleARM> pView
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateValidationCacheEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateValidationCacheEXT")]
@@ -13142,7 +12693,6 @@ public unsafe partial interface IVk
             [NativeName("pValidationCache")] ValidationCacheHandleEXT* pValidationCache
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkCreateValidationCacheEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
         [NativeFunction("vulkan", EntryPoint = "vkCreateValidationCacheEXT")]
@@ -13153,7 +12703,6 @@ public unsafe partial interface IVk
             [NativeName("pValidationCache")] Ref<ValidationCacheHandleEXT> pValidationCache
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateVideoSessionKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -13168,7 +12717,6 @@ public unsafe partial interface IVk
             [NativeName("pVideoSession")] VideoSessionHandleKHR* pVideoSession
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateVideoSessionKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -13183,7 +12731,6 @@ public unsafe partial interface IVk
             [NativeName("pVideoSession")] Ref<VideoSessionHandleKHR> pVideoSession
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateVideoSessionParametersKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -13199,7 +12746,6 @@ public unsafe partial interface IVk
                 VideoSessionParametersHandleKHR* pVideoSessionParameters
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkCreateVideoSessionParametersKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -13215,7 +12761,6 @@ public unsafe partial interface IVk
                 Ref<VideoSessionParametersHandleKHR> pVideoSessionParameters
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDebugMarkerSetObjectNameEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -13228,7 +12773,6 @@ public unsafe partial interface IVk
             [NativeName("pNameInfo")] DebugMarkerObjectNameInfoEXT* pNameInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDebugMarkerSetObjectNameEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -13241,7 +12785,6 @@ public unsafe partial interface IVk
             [NativeName("pNameInfo")] Ref<DebugMarkerObjectNameInfoEXT> pNameInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDebugMarkerSetObjectTagEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -13254,7 +12797,6 @@ public unsafe partial interface IVk
             [NativeName("pTagInfo")] DebugMarkerObjectTagInfoEXT* pTagInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDebugMarkerSetObjectTagEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -13267,7 +12809,6 @@ public unsafe partial interface IVk
             [NativeName("pTagInfo")] Ref<DebugMarkerObjectTagInfoEXT> pTagInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDebugReportMessageEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
         [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
@@ -13282,7 +12823,6 @@ public unsafe partial interface IVk
             [NativeName("pMessage")] sbyte* pMessage
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDebugReportMessageEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
         [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
@@ -13297,7 +12837,6 @@ public unsafe partial interface IVk
             [NativeName("pMessage")] Ref<sbyte> pMessage
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDeferredOperationJoinKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
         [NativeFunction("vulkan", EntryPoint = "vkDeferredOperationJoinKHR")]
@@ -13306,7 +12845,6 @@ public unsafe partial interface IVk
             [NativeName("operation")] DeferredOperationHandleKHR operation
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -13324,7 +12862,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyAccelerationStructureKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -13342,7 +12879,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkDestroyAccelerationStructureNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -13360,7 +12896,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkDestroyAccelerationStructureNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -13572,7 +13107,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkDestroyCuFunctionNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyCuFunctionNVX")]
@@ -13582,7 +13116,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkDestroyCuFunctionNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyCuFunctionNVX")]
@@ -13592,7 +13125,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkDestroyCuModuleNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyCuModuleNVX")]
@@ -13602,7 +13134,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkDestroyCuModuleNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyCuModuleNVX")]
@@ -13612,7 +13143,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkDestroyDataGraphPipelineSessionARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -13630,7 +13160,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkDestroyDataGraphPipelineSessionARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -13648,7 +13177,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyDebugReportCallbackEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugReportCallbackEXT")]
@@ -13658,7 +13186,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyDebugReportCallbackEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugReportCallbackEXT")]
@@ -13668,7 +13195,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyDebugUtilsMessengerEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
@@ -13678,7 +13204,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyDebugUtilsMessengerEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
@@ -13688,7 +13213,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyDeferredOperationKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDeferredOperationKHR")]
@@ -13698,7 +13222,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyDeferredOperationKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDeferredOperationKHR")]
@@ -13878,7 +13401,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyDescriptorUpdateTemplateKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDescriptorUpdateTemplateKHR")]
@@ -13889,7 +13411,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyDescriptorUpdateTemplateKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyDescriptorUpdateTemplateKHR")]
@@ -14024,7 +13545,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkDestroyExternalComputeQueueNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyExternalComputeQueueNV")]
@@ -14034,7 +13554,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkDestroyExternalComputeQueueNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyExternalComputeQueueNV")]
@@ -14296,7 +13815,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyIndirectCommandsLayoutEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -14315,7 +13833,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyIndirectCommandsLayoutEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -14334,7 +13851,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkDestroyIndirectCommandsLayoutNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -14349,7 +13865,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkDestroyIndirectCommandsLayoutNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -14364,7 +13879,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyIndirectExecutionSetEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -14382,7 +13896,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyIndirectExecutionSetEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -14466,7 +13979,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -14483,7 +13995,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyMicromapEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -14500,7 +14011,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkDestroyOpticalFlowSessionNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -14518,7 +14028,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkDestroyOpticalFlowSessionNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -14594,7 +14103,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyPipelineBinaryKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -14611,7 +14119,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyPipelineBinaryKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -14788,7 +14295,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyPrivateDataSlotEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -14805,7 +14311,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyPrivateDataSlotEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -15048,7 +14553,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroySamplerYcbcrConversionKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -15065,7 +14569,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroySamplerYcbcrConversionKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -15150,7 +14653,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyShaderEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -15168,7 +14670,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyShaderEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -15244,7 +14745,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroySurfaceKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroySurfaceKHR")]
@@ -15254,7 +14754,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroySurfaceKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroySurfaceKHR")]
@@ -15264,7 +14763,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroySwapchainKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroySwapchainKHR")]
@@ -15274,7 +14772,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroySwapchainKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroySwapchainKHR")]
@@ -15284,7 +14781,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkDestroyTensorARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
@@ -15294,7 +14790,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkDestroyTensorARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
@@ -15304,7 +14799,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkDestroyTensorViewARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
@@ -15314,7 +14808,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkDestroyTensorViewARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
@@ -15324,7 +14817,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyValidationCacheEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyValidationCacheEXT")]
@@ -15334,7 +14826,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDestroyValidationCacheEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
         [NativeFunction("vulkan", EntryPoint = "vkDestroyValidationCacheEXT")]
@@ -15344,7 +14835,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyVideoSessionKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -15358,7 +14848,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyVideoSessionKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -15372,7 +14861,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyVideoSessionParametersKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -15387,7 +14875,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkDestroyVideoSessionParametersKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -15432,7 +14919,6 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkDeviceWaitIdle")]
         static abstract Result DeviceWaitIdle([NativeName("device")] DeviceHandle device);
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDisplayPowerControlEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -15446,7 +14932,6 @@ public unsafe partial interface IVk
             [NativeName("pDisplayPowerInfo")] DisplayPowerInfoEXT* pDisplayPowerInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkDisplayPowerControlEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -15882,7 +15367,6 @@ public unsafe partial interface IVk
                 Ref<PhysicalDeviceGroupProperties> pPhysicalDeviceGroupProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkEnumeratePhysicalDeviceGroupsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
         [NativeFunction("vulkan", EntryPoint = "vkEnumeratePhysicalDeviceGroupsKHR")]
@@ -15893,7 +15377,6 @@ public unsafe partial interface IVk
                 PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkEnumeratePhysicalDeviceGroupsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
         [NativeFunction("vulkan", EntryPoint = "vkEnumeratePhysicalDeviceGroupsKHR")]
@@ -15904,7 +15387,6 @@ public unsafe partial interface IVk
                 Ref<PhysicalDeviceGroupProperties> pPhysicalDeviceGroupProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -15927,7 +15409,6 @@ public unsafe partial interface IVk
                 PerformanceCounterDescriptionARM* pCounterDescriptions
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -15950,7 +15431,6 @@ public unsafe partial interface IVk
                 Ref<PerformanceCounterDescriptionARM> pCounterDescriptions
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -15973,7 +15453,6 @@ public unsafe partial interface IVk
                 PerformanceCounterDescriptionKHR* pCounterDescriptions
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -16364,7 +15843,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetAccelerationStructureBuildSizesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -16383,7 +15861,6 @@ public unsafe partial interface IVk
             [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetAccelerationStructureBuildSizesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -16402,7 +15879,6 @@ public unsafe partial interface IVk
             [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetAccelerationStructureDeviceAddressKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -16418,7 +15894,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] AccelerationStructureDeviceAddressInfoKHR* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetAccelerationStructureDeviceAddressKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -16434,7 +15909,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetAccelerationStructureHandleNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -16453,7 +15927,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetAccelerationStructureHandleNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -16472,7 +15945,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetAccelerationStructureMemoryRequirementsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -16489,7 +15961,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetAccelerationStructureMemoryRequirementsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -16506,7 +15977,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -16531,7 +16001,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -16606,7 +16075,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<BufferDeviceAddressInfo> pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetBufferDeviceAddressEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -16622,7 +16090,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] BufferDeviceAddressInfo* pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetBufferDeviceAddressEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -16638,7 +16105,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<BufferDeviceAddressInfo> pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetBufferDeviceAddressKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -16654,7 +16120,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] BufferDeviceAddressInfo* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetBufferDeviceAddressKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -16798,7 +16263,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetBufferMemoryRequirements2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferMemoryRequirements2KHR")]
@@ -16808,7 +16272,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetBufferMemoryRequirements2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetBufferMemoryRequirements2KHR")]
@@ -16868,7 +16331,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<BufferDeviceAddressInfo> pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetBufferOpaqueCaptureAddressKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -16884,7 +16346,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] BufferDeviceAddressInfo* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetBufferOpaqueCaptureAddressKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -16900,7 +16361,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<BufferDeviceAddressInfo> pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetBufferOpaqueCaptureDescriptorDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -16919,7 +16379,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetBufferOpaqueCaptureDescriptorDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -16938,7 +16397,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetCalibratedTimestampsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -16957,7 +16415,6 @@ public unsafe partial interface IVk
             [NativeName("pMaxDeviation")] ulong* pMaxDeviation
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetCalibratedTimestampsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -16976,7 +16433,6 @@ public unsafe partial interface IVk
             [NativeName("pMaxDeviation")] Ref<ulong> pMaxDeviation
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetCalibratedTimestampsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -16995,7 +16451,6 @@ public unsafe partial interface IVk
             [NativeName("pMaxDeviation")] ulong* pMaxDeviation
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetCalibratedTimestampsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17014,7 +16469,6 @@ public unsafe partial interface IVk
             [NativeName("pMaxDeviation")] Ref<ulong> pMaxDeviation
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetClusterAccelerationStructureBuildSizesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -17028,7 +16482,6 @@ public unsafe partial interface IVk
             [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetClusterAccelerationStructureBuildSizesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -17042,7 +16495,6 @@ public unsafe partial interface IVk
             [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetDataGraphPipelineAvailablePropertiesARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -17061,7 +16513,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] DataGraphPipelinePropertyARM* pProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetDataGraphPipelineAvailablePropertiesARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -17080,7 +16531,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<DataGraphPipelinePropertyARM> pProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetDataGraphPipelinePropertiesARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -17099,7 +16549,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] DataGraphPipelinePropertyQueryResultARM* pProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetDataGraphPipelinePropertiesARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -17118,7 +16567,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<DataGraphPipelinePropertyQueryResultARM> pProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -17141,7 +16589,6 @@ public unsafe partial interface IVk
                 DataGraphPipelineSessionBindPointRequirementARM* pBindPointRequirements
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -17164,7 +16611,6 @@ public unsafe partial interface IVk
                 Ref<DataGraphPipelineSessionBindPointRequirementARM> pBindPointRequirements
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -17185,7 +16631,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -17206,7 +16651,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeferredOperationMaxConcurrencyKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeferredOperationMaxConcurrencyKHR")]
@@ -17215,7 +16659,6 @@ public unsafe partial interface IVk
             [NativeName("operation")] DeferredOperationHandleKHR operation
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeferredOperationResultKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeferredOperationResultKHR")]
@@ -17224,7 +16667,6 @@ public unsafe partial interface IVk
             [NativeName("operation")] DeferredOperationHandleKHR operation
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDescriptorEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -17244,7 +16686,6 @@ public unsafe partial interface IVk
             [NativeName("pDescriptor")] void* pDescriptor
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDescriptorEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -17264,7 +16705,6 @@ public unsafe partial interface IVk
             [NativeName("pDescriptor")] Ref pDescriptor
         );
 
-        [NameAffix("Suffix", "VALVE", 0)]
         [NativeName("vkGetDescriptorSetHostMappingVALVE")]
         [SupportedApiProfile(
             "vulkan",
@@ -17281,7 +16721,6 @@ public unsafe partial interface IVk
             [NativeName("ppData")] void** ppData
         );
 
-        [NameAffix("Suffix", "VALVE", 0)]
         [NativeName("vkGetDescriptorSetHostMappingVALVE")]
         [SupportedApiProfile(
             "vulkan",
@@ -17298,7 +16737,6 @@ public unsafe partial interface IVk
             [NativeName("ppData")] Ref2D ppData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDescriptorSetLayoutBindingOffsetEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -17318,7 +16756,6 @@ public unsafe partial interface IVk
             [NativeName("pOffset")] ulong* pOffset
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDescriptorSetLayoutBindingOffsetEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -17338,7 +16775,6 @@ public unsafe partial interface IVk
             [NativeName("pOffset")] Ref<ulong> pOffset
         );
 
-        [NameAffix("Suffix", "VALVE", 0)]
         [NativeName("vkGetDescriptorSetLayoutHostMappingInfoVALVE")]
         [SupportedApiProfile(
             "vulkan",
@@ -17355,7 +16791,6 @@ public unsafe partial interface IVk
             [NativeName("pHostMapping")] DescriptorSetLayoutHostMappingInfoVALVE* pHostMapping
         );
 
-        [NameAffix("Suffix", "VALVE", 0)]
         [NativeName("vkGetDescriptorSetLayoutHostMappingInfoVALVE")]
         [SupportedApiProfile(
             "vulkan",
@@ -17373,7 +16808,6 @@ public unsafe partial interface IVk
             [NativeName("pHostMapping")] Ref<DescriptorSetLayoutHostMappingInfoVALVE> pHostMapping
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDescriptorSetLayoutSizeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -17392,7 +16826,6 @@ public unsafe partial interface IVk
             [NativeName("pLayoutSizeInBytes")] ulong* pLayoutSizeInBytes
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDescriptorSetLayoutSizeEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -17463,7 +16896,6 @@ public unsafe partial interface IVk
             [NativeName("pSupport")] Ref<DescriptorSetLayoutSupport> pSupport
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDescriptorSetLayoutSupportKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17480,7 +16912,6 @@ public unsafe partial interface IVk
             [NativeName("pSupport")] DescriptorSetLayoutSupport* pSupport
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDescriptorSetLayoutSupportKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17497,7 +16928,6 @@ public unsafe partial interface IVk
             [NativeName("pSupport")] Ref<DescriptorSetLayoutSupport> pSupport
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceAccelerationStructureCompatibilityKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17514,7 +16944,6 @@ public unsafe partial interface IVk
             [NativeName("pCompatibility")] AccelerationStructureCompatibilityKHR* pCompatibility
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceAccelerationStructureCompatibilityKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17575,7 +17004,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceBufferMemoryRequirementsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceBufferMemoryRequirementsKHR")]
@@ -17585,7 +17013,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceBufferMemoryRequirementsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceBufferMemoryRequirementsKHR")]
@@ -17595,7 +17022,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDeviceFaultInfoEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -17612,7 +17038,6 @@ public unsafe partial interface IVk
             [NativeName("pFaultInfo")] DeviceFaultInfoEXT* pFaultInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDeviceFaultInfoEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -17693,7 +17118,6 @@ public unsafe partial interface IVk
             [NativeName("pPeerMemoryFeatures")] Ref<PeerMemoryFeatureFlags> pPeerMemoryFeatures
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceGroupPeerMemoryFeaturesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17709,7 +17133,6 @@ public unsafe partial interface IVk
             [NativeName("pPeerMemoryFeatures")] PeerMemoryFeatureFlags* pPeerMemoryFeatures
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceGroupPeerMemoryFeaturesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17725,7 +17148,6 @@ public unsafe partial interface IVk
             [NativeName("pPeerMemoryFeatures")] Ref<PeerMemoryFeatureFlags> pPeerMemoryFeatures
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceGroupPresentCapabilitiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17740,7 +17162,6 @@ public unsafe partial interface IVk
                 DeviceGroupPresentCapabilitiesKHR* pDeviceGroupPresentCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceGroupPresentCapabilitiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17755,7 +17176,6 @@ public unsafe partial interface IVk
                 Ref<DeviceGroupPresentCapabilitiesKHR> pDeviceGroupPresentCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17770,7 +17190,6 @@ public unsafe partial interface IVk
             [NativeName("pModes")] DeviceGroupPresentModeFlagsKHR* pModes
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17829,7 +17248,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceImageMemoryRequirementsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageMemoryRequirementsKHR")]
@@ -17839,7 +17257,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceImageMemoryRequirementsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageMemoryRequirementsKHR")]
@@ -17897,7 +17314,6 @@ public unsafe partial interface IVk
                 Ref<SparseImageMemoryRequirements2> pSparseMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceImageSparseMemoryRequirementsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSparseMemoryRequirementsKHR")]
@@ -17909,7 +17325,6 @@ public unsafe partial interface IVk
                 SparseImageMemoryRequirements2* pSparseMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceImageSparseMemoryRequirementsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSparseMemoryRequirementsKHR")]
@@ -17957,7 +17372,6 @@ public unsafe partial interface IVk
             [NativeName("pLayout")] Ref<SubresourceLayout2> pLayout
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceImageSubresourceLayoutKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -17971,7 +17385,6 @@ public unsafe partial interface IVk
             [NativeName("pLayout")] SubresourceLayout2* pLayout
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceImageSubresourceLayoutKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18103,7 +17516,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18119,7 +17531,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18135,7 +17546,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDeviceMicromapCompatibilityEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -18152,7 +17562,6 @@ public unsafe partial interface IVk
             [NativeName("pCompatibility")] AccelerationStructureCompatibilityKHR* pCompatibility
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDeviceMicromapCompatibilityEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -18365,7 +17774,6 @@ public unsafe partial interface IVk
             [NativeName("pQueue")] Ref<QueueHandle> pQueue
         );
 
-        [NameAffix("Suffix", "HUAWEI", 0)]
         [NativeName("vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI")]
         [SupportedApiProfile(
             "vulkan",
@@ -18383,7 +17791,6 @@ public unsafe partial interface IVk
             [NativeName("pMaxWorkgroupSize")] Extent2D* pMaxWorkgroupSize
         );
 
-        [NameAffix("Suffix", "HUAWEI", 0)]
         [NativeName("vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI")]
         [SupportedApiProfile(
             "vulkan",
@@ -18401,7 +17808,6 @@ public unsafe partial interface IVk
             [NativeName("pMaxWorkgroupSize")] Ref<Extent2D> pMaxWorkgroupSize
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetDeviceTensorMemoryRequirementsARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
@@ -18411,7 +17817,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetDeviceTensorMemoryRequirementsARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
@@ -18421,7 +17826,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDisplayModeProperties2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18436,7 +17840,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] DisplayModeProperties2KHR* pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDisplayModeProperties2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18451,7 +17854,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<DisplayModeProperties2KHR> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDisplayModePropertiesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModePropertiesKHR")]
@@ -18462,7 +17864,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] DisplayModePropertiesKHR* pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDisplayModePropertiesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModePropertiesKHR")]
@@ -18473,7 +17874,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<DisplayModePropertiesKHR> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDisplayPlaneCapabilities2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18487,7 +17887,6 @@ public unsafe partial interface IVk
             [NativeName("pCapabilities")] DisplayPlaneCapabilities2KHR* pCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDisplayPlaneCapabilities2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18501,7 +17900,6 @@ public unsafe partial interface IVk
             [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilities2KHR> pCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDisplayPlaneCapabilitiesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilitiesKHR")]
@@ -18512,7 +17910,6 @@ public unsafe partial interface IVk
             [NativeName("pCapabilities")] DisplayPlaneCapabilitiesKHR* pCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDisplayPlaneCapabilitiesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilitiesKHR")]
@@ -18523,7 +17920,6 @@ public unsafe partial interface IVk
             [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilitiesKHR> pCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDisplayPlaneSupportedDisplaysKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneSupportedDisplaysKHR")]
@@ -18534,7 +17930,6 @@ public unsafe partial interface IVk
             [NativeName("pDisplays")] DisplayHandleKHR* pDisplays
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetDisplayPlaneSupportedDisplaysKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneSupportedDisplaysKHR")]
@@ -18545,7 +17940,6 @@ public unsafe partial interface IVk
             [NativeName("pDisplays")] Ref<DisplayHandleKHR> pDisplays
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDrmDisplayEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -18560,7 +17954,6 @@ public unsafe partial interface IVk
             [NativeName("display")] DisplayHandleKHR* display
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetDrmDisplayEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -18575,7 +17968,6 @@ public unsafe partial interface IVk
             [NativeName("display")] Ref<DisplayHandleKHR> display
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkGetDynamicRenderingTilePropertiesQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -18592,7 +17984,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] TilePropertiesQCOM* pProperties
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkGetDynamicRenderingTilePropertiesQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -18609,7 +18000,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<TilePropertiesQCOM> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetEncodedVideoSessionParametersKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18630,7 +18020,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetEncodedVideoSessionParametersKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18679,7 +18068,6 @@ public unsafe partial interface IVk
             [NativeName("@event")] EventHandle @event
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetExternalComputeQueueDataNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetExternalComputeQueueDataNV")]
@@ -18689,7 +18077,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetExternalComputeQueueDataNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetExternalComputeQueueDataNV")]
@@ -18699,7 +18086,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetFenceFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18716,7 +18102,6 @@ public unsafe partial interface IVk
             [NativeName("pFd")] int* pFd
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetFenceFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -18766,7 +18151,6 @@ public unsafe partial interface IVk
             [NativeName("fence")] FenceHandle fence
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkGetFramebufferTilePropertiesQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -18784,7 +18168,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] TilePropertiesQCOM* pProperties
         );
 
-        [NameAffix("Suffix", "QCOM", 0)]
         [NativeName("vkGetFramebufferTilePropertiesQCOM")]
         [SupportedApiProfile(
             "vulkan",
@@ -18802,7 +18185,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<TilePropertiesQCOM> pProperties
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetGeneratedCommandsMemoryRequirementsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -18820,7 +18202,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetGeneratedCommandsMemoryRequirementsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -18838,7 +18219,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetGeneratedCommandsMemoryRequirementsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -18852,7 +18232,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetGeneratedCommandsMemoryRequirementsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -18866,7 +18245,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetImageDrmFormatModifierPropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -18884,7 +18262,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] ImageDrmFormatModifierPropertiesEXT* pProperties
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetImageDrmFormatModifierPropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19030,7 +18407,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetImageMemoryRequirements2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageMemoryRequirements2KHR")]
@@ -19040,7 +18416,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetImageMemoryRequirements2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageMemoryRequirements2KHR")]
@@ -19050,7 +18425,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetImageOpaqueCaptureDescriptorDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19069,7 +18443,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetImageOpaqueCaptureDescriptorDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19224,7 +18597,6 @@ public unsafe partial interface IVk
                 Ref<SparseImageMemoryRequirements2> pSparseMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetImageSparseMemoryRequirements2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageSparseMemoryRequirements2KHR")]
@@ -19236,7 +18608,6 @@ public unsafe partial interface IVk
                 SparseImageMemoryRequirements2* pSparseMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetImageSparseMemoryRequirements2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageSparseMemoryRequirements2KHR")]
@@ -19356,7 +18727,6 @@ public unsafe partial interface IVk
             [NativeName("pLayout")] Ref<SubresourceLayout2> pLayout
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetImageSubresourceLayout2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19375,7 +18745,6 @@ public unsafe partial interface IVk
             [NativeName("pLayout")] SubresourceLayout2* pLayout
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetImageSubresourceLayout2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19394,7 +18763,6 @@ public unsafe partial interface IVk
             [NativeName("pLayout")] Ref<SubresourceLayout2> pLayout
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetImageSubresourceLayout2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -19409,7 +18777,6 @@ public unsafe partial interface IVk
             [NativeName("pLayout")] SubresourceLayout2* pLayout
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetImageSubresourceLayout2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -19424,7 +18791,6 @@ public unsafe partial interface IVk
             [NativeName("pLayout")] Ref<SubresourceLayout2> pLayout
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkGetImageViewAddressNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewAddressNVX")]
@@ -19434,7 +18800,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] ImageViewAddressPropertiesNVX* pProperties
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkGetImageViewAddressNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewAddressNVX")]
@@ -19444,7 +18809,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<ImageViewAddressPropertiesNVX> pProperties
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkGetImageViewHandle64NVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
@@ -19453,7 +18817,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] ImageViewHandleInfoNVX* pInfo
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkGetImageViewHandle64NVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
@@ -19462,7 +18825,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<ImageViewHandleInfoNVX> pInfo
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkGetImageViewHandleNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandleNVX")]
@@ -19471,7 +18833,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] ImageViewHandleInfoNVX* pInfo
         );
 
-        [NameAffix("Suffix", "NVX", 0)]
         [NativeName("vkGetImageViewHandleNVX")]
         [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandleNVX")]
@@ -19480,7 +18841,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<ImageViewHandleInfoNVX> pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetImageViewOpaqueCaptureDescriptorDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19499,7 +18859,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetImageViewOpaqueCaptureDescriptorDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19584,7 +18943,6 @@ public unsafe partial interface IVk
             [NativeName("pName")] Ref<sbyte> pName
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetLatencyTimingsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -19603,7 +18961,6 @@ public unsafe partial interface IVk
             [NativeName("pLatencyMarkerInfo")] GetLatencyMarkerInfoNV* pLatencyMarkerInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetLatencyTimingsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -19622,7 +18979,6 @@ public unsafe partial interface IVk
             [NativeName("pLatencyMarkerInfo")] Ref<GetLatencyMarkerInfoNV> pLatencyMarkerInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetMemoryFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -19639,7 +18995,6 @@ public unsafe partial interface IVk
             [NativeName("pFd")] int* pFd
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetMemoryFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -19656,7 +19011,6 @@ public unsafe partial interface IVk
             [NativeName("pFd")] Ref<int> pFd
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetMemoryFdPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -19674,7 +19028,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryFdProperties")] MemoryFdPropertiesKHR* pMemoryFdProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetMemoryFdPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -19692,7 +19045,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryFdProperties")] Ref<MemoryFdPropertiesKHR> pMemoryFdProperties
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetMemoryHostPointerPropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19711,7 +19063,6 @@ public unsafe partial interface IVk
                 MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetMemoryHostPointerPropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19730,7 +19081,6 @@ public unsafe partial interface IVk
                 Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetMemoryRemoteAddressNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -19748,7 +19098,6 @@ public unsafe partial interface IVk
             [NativeName("pAddress")] void** pAddress
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetMemoryRemoteAddressNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -19766,7 +19115,6 @@ public unsafe partial interface IVk
             [NativeName("pAddress")] Ref2D pAddress
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetMicromapBuildSizesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19784,7 +19132,6 @@ public unsafe partial interface IVk
             [NativeName("pSizeInfo")] MicromapBuildSizesInfoEXT* pSizeInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetMicromapBuildSizesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19802,7 +19149,6 @@ public unsafe partial interface IVk
             [NativeName("pSizeInfo")] Ref<MicromapBuildSizesInfoEXT> pSizeInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPartitionedAccelerationStructuresBuildSizesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -19819,7 +19165,6 @@ public unsafe partial interface IVk
             [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPartitionedAccelerationStructuresBuildSizesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -19836,7 +19181,6 @@ public unsafe partial interface IVk
             [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
         );
 
-        [NameAffix("Suffix", "GOOGLE", 0)]
         [NativeName("vkGetPastPresentationTimingGOOGLE")]
         [SupportedApiProfile(
             "vulkan",
@@ -19851,7 +19195,6 @@ public unsafe partial interface IVk
             [NativeName("pPresentationTimings")] PastPresentationTimingGOOGLE* pPresentationTimings
         );
 
-        [NameAffix("Suffix", "GOOGLE", 0)]
         [NativeName("vkGetPastPresentationTimingGOOGLE")]
         [SupportedApiProfile(
             "vulkan",
@@ -19867,7 +19210,6 @@ public unsafe partial interface IVk
                 Ref<PastPresentationTimingGOOGLE> pPresentationTimings
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkGetPerformanceParameterINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPerformanceParameterINTEL")]
@@ -19877,7 +19219,6 @@ public unsafe partial interface IVk
             [NativeName("pValue")] PerformanceValueINTEL* pValue
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkGetPerformanceParameterINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPerformanceParameterINTEL")]
@@ -19887,7 +19228,6 @@ public unsafe partial interface IVk
             [NativeName("pValue")] Ref<PerformanceValueINTEL> pValue
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19904,7 +19244,6 @@ public unsafe partial interface IVk
             [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -19921,7 +19260,6 @@ public unsafe partial interface IVk
             [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -19938,7 +19276,6 @@ public unsafe partial interface IVk
             [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -19955,7 +19292,6 @@ public unsafe partial interface IVk
             [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -19972,7 +19308,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] CooperativeMatrixFlexibleDimensionsPropertiesNV* pProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -19990,7 +19325,6 @@ public unsafe partial interface IVk
                 Ref<CooperativeMatrixFlexibleDimensionsPropertiesNV> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20007,7 +19341,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] CooperativeMatrixPropertiesKHR* pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20024,7 +19357,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesKHR> pProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -20041,7 +19373,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] CooperativeMatrixPropertiesNV* pProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -20058,7 +19389,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesNV> pProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -20075,7 +19405,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] CooperativeVectorPropertiesNV* pProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -20092,7 +19421,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<CooperativeVectorPropertiesNV> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20106,7 +19434,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] DisplayPlaneProperties2KHR* pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20120,7 +19447,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<DisplayPlaneProperties2KHR> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
@@ -20130,7 +19456,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] DisplayPlanePropertiesKHR* pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
@@ -20140,7 +19465,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<DisplayPlanePropertiesKHR> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceDisplayProperties2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20154,7 +19478,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] DisplayProperties2KHR* pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceDisplayProperties2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20168,7 +19491,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<DisplayProperties2KHR> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceDisplayPropertiesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceDisplayPropertiesKHR")]
@@ -20178,7 +19500,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] DisplayPropertiesKHR* pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceDisplayPropertiesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceDisplayPropertiesKHR")]
@@ -20252,7 +19573,6 @@ public unsafe partial interface IVk
                 Ref<ExternalBufferProperties> pExternalBufferProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceExternalBufferPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20271,7 +19591,6 @@ public unsafe partial interface IVk
                 ExternalBufferProperties* pExternalBufferProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceExternalBufferPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20353,7 +19672,6 @@ public unsafe partial interface IVk
                 Ref<ExternalFenceProperties> pExternalFenceProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceExternalFencePropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20371,7 +19689,6 @@ public unsafe partial interface IVk
                 ExternalFenceProperties* pExternalFenceProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceExternalFencePropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20390,7 +19707,6 @@ public unsafe partial interface IVk
                 Ref<ExternalFenceProperties> pExternalFenceProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceExternalImageFormatPropertiesNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
         [NativeFunction(
@@ -20409,7 +19725,6 @@ public unsafe partial interface IVk
                 ExternalImageFormatPropertiesNV* pExternalImageFormatProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceExternalImageFormatPropertiesNV")]
         [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
         [NativeFunction(
@@ -20492,7 +19807,6 @@ public unsafe partial interface IVk
                 Ref<ExternalSemaphoreProperties> pExternalSemaphoreProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceExternalSemaphorePropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20511,7 +19825,6 @@ public unsafe partial interface IVk
                 ExternalSemaphoreProperties* pExternalSemaphoreProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceExternalSemaphorePropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20530,7 +19843,6 @@ public unsafe partial interface IVk
                 Ref<ExternalSemaphoreProperties> pExternalSemaphoreProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetPhysicalDeviceExternalTensorPropertiesARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
@@ -20542,7 +19854,6 @@ public unsafe partial interface IVk
                 ExternalTensorPropertiesARM* pExternalTensorProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetPhysicalDeviceExternalTensorPropertiesARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
@@ -20678,7 +19989,6 @@ public unsafe partial interface IVk
             [NativeName("pFeatures")] Ref<PhysicalDeviceFeatures2> pFeatures
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceFeatures2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFeatures2KHR")]
@@ -20687,7 +19997,6 @@ public unsafe partial interface IVk
             [NativeName("pFeatures")] PhysicalDeviceFeatures2* pFeatures
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceFeatures2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFeatures2KHR")]
@@ -20824,7 +20133,6 @@ public unsafe partial interface IVk
             [NativeName("pFormatProperties")] Ref<FormatProperties2> pFormatProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceFormatProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFormatProperties2KHR")]
@@ -20834,7 +20142,6 @@ public unsafe partial interface IVk
             [NativeName("pFormatProperties")] FormatProperties2* pFormatProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceFormatProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFormatProperties2KHR")]
@@ -20844,7 +20151,6 @@ public unsafe partial interface IVk
             [NativeName("pFormatProperties")] Ref<FormatProperties2> pFormatProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceFragmentShadingRatesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -20863,7 +20169,6 @@ public unsafe partial interface IVk
                 PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceFragmentShadingRatesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -21019,7 +20324,6 @@ public unsafe partial interface IVk
                 Ref<ImageFormatProperties2> pImageFormatProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceImageFormatProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2KHR")]
@@ -21029,7 +20333,6 @@ public unsafe partial interface IVk
             [NativeName("pImageFormatProperties")] ImageFormatProperties2* pImageFormatProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceImageFormatProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2KHR")]
@@ -21164,7 +20467,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryProperties")] Ref<PhysicalDeviceMemoryProperties2> pMemoryProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceMemoryProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMemoryProperties2KHR")]
@@ -21173,7 +20475,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryProperties")] PhysicalDeviceMemoryProperties2* pMemoryProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceMemoryProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMemoryProperties2KHR")]
@@ -21182,7 +20483,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryProperties")] Ref<PhysicalDeviceMemoryProperties2> pMemoryProperties
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPhysicalDeviceMultisamplePropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -21199,7 +20499,6 @@ public unsafe partial interface IVk
             [NativeName("pMultisampleProperties")] MultisamplePropertiesEXT* pMultisampleProperties
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPhysicalDeviceMultisamplePropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -21217,7 +20516,6 @@ public unsafe partial interface IVk
                 Ref<MultisamplePropertiesEXT> pMultisampleProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceOpticalFlowImageFormatsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -21238,7 +20536,6 @@ public unsafe partial interface IVk
                 OpticalFlowImageFormatPropertiesNV* pImageFormatProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceOpticalFlowImageFormatsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -21259,7 +20556,6 @@ public unsafe partial interface IVk
                 Ref<OpticalFlowImageFormatPropertiesNV> pImageFormatProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDevicePresentRectanglesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -21275,7 +20571,6 @@ public unsafe partial interface IVk
             [NativeName("pRects")] Rect2D* pRects
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDevicePresentRectanglesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -21415,7 +20710,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<PhysicalDeviceProperties2> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceProperties2KHR")]
@@ -21424,7 +20718,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] PhysicalDeviceProperties2* pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceProperties2KHR")]
@@ -21433,7 +20726,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<PhysicalDeviceProperties2> pProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -21456,7 +20748,6 @@ public unsafe partial interface IVk
                 QueueFamilyDataGraphProcessingEnginePropertiesARM* pQueueFamilyDataGraphProcessingEngineProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -21479,7 +20770,6 @@ public unsafe partial interface IVk
                 Ref<QueueFamilyDataGraphProcessingEnginePropertiesARM> pQueueFamilyDataGraphProcessingEngineProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -21503,7 +20793,6 @@ public unsafe partial interface IVk
                 QueueFamilyDataGraphPropertiesARM* pQueueFamilyDataGraphProperties
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -21527,7 +20816,6 @@ public unsafe partial interface IVk
                 Ref<QueueFamilyDataGraphPropertiesARM> pQueueFamilyDataGraphProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -21548,7 +20836,6 @@ public unsafe partial interface IVk
             [NativeName("pNumPasses")] uint* pNumPasses
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -21698,7 +20985,6 @@ public unsafe partial interface IVk
                 Ref<QueueFamilyProperties2> pQueueFamilyProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceQueueFamilyProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2KHR")]
@@ -21708,7 +20994,6 @@ public unsafe partial interface IVk
             [NativeName("pQueueFamilyProperties")] QueueFamilyProperties2* pQueueFamilyProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceQueueFamilyProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2KHR")]
@@ -21859,7 +21144,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<SparseImageFormatProperties2> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction(
@@ -21873,7 +21157,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] SparseImageFormatProperties2* pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
         [NativeFunction(
@@ -21887,7 +21170,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<SparseImageFormatProperties2> pProperties
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -21907,7 +21189,6 @@ public unsafe partial interface IVk
             [NativeName("pCombinations")] FramebufferMixedSamplesCombinationNV* pCombinations
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -21927,7 +21208,6 @@ public unsafe partial interface IVk
             [NativeName("pCombinations")] Ref<FramebufferMixedSamplesCombinationNV> pCombinations
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -21941,7 +21221,6 @@ public unsafe partial interface IVk
             [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2EXT* pSurfaceCapabilities
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -21955,7 +21234,6 @@ public unsafe partial interface IVk
             [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2EXT> pSurfaceCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -21969,7 +21247,6 @@ public unsafe partial interface IVk
             [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2KHR* pSurfaceCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -21983,7 +21260,6 @@ public unsafe partial interface IVk
             [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2KHR> pSurfaceCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
@@ -21993,7 +21269,6 @@ public unsafe partial interface IVk
             [NativeName("pSurfaceCapabilities")] SurfaceCapabilitiesKHR* pSurfaceCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
@@ -22003,7 +21278,6 @@ public unsafe partial interface IVk
             [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilitiesKHR> pSurfaceCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceFormats2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22018,7 +21292,6 @@ public unsafe partial interface IVk
             [NativeName("pSurfaceFormats")] SurfaceFormat2KHR* pSurfaceFormats
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceFormats2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22033,7 +21306,6 @@ public unsafe partial interface IVk
             [NativeName("pSurfaceFormats")] Ref<SurfaceFormat2KHR> pSurfaceFormats
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceFormatsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
@@ -22044,7 +21316,6 @@ public unsafe partial interface IVk
             [NativeName("pSurfaceFormats")] SurfaceFormatKHR* pSurfaceFormats
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceFormatsKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
@@ -22055,7 +21326,6 @@ public unsafe partial interface IVk
             [NativeName("pSurfaceFormats")] Ref<SurfaceFormatKHR> pSurfaceFormats
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -22066,7 +21336,6 @@ public unsafe partial interface IVk
             [NativeName("pPresentModes")] PresentModeKHR* pPresentModes
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -22077,7 +21346,6 @@ public unsafe partial interface IVk
             [NativeName("pPresentModes")] Ref<PresentModeKHR> pPresentModes
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceSupportKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceSupportKHR")]
@@ -22088,7 +21356,6 @@ public unsafe partial interface IVk
             [NativeName("pSupported")] uint* pSupported
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceSurfaceSupportKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceSupportKHR")]
@@ -22143,7 +21410,6 @@ public unsafe partial interface IVk
             [NativeName("pToolProperties")] Ref<PhysicalDeviceToolProperties> pToolProperties
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPhysicalDeviceToolPropertiesEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT")]
@@ -22153,7 +21419,6 @@ public unsafe partial interface IVk
             [NativeName("pToolProperties")] PhysicalDeviceToolProperties* pToolProperties
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPhysicalDeviceToolPropertiesEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT")]
@@ -22163,7 +21428,6 @@ public unsafe partial interface IVk
             [NativeName("pToolProperties")] Ref<PhysicalDeviceToolProperties> pToolProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceVideoCapabilitiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22177,7 +21441,6 @@ public unsafe partial interface IVk
             [NativeName("pCapabilities")] VideoCapabilitiesKHR* pCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceVideoCapabilitiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22191,7 +21454,6 @@ public unsafe partial interface IVk
             [NativeName("pCapabilities")] Ref<VideoCapabilitiesKHR> pCapabilities
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22213,7 +21475,6 @@ public unsafe partial interface IVk
                 VideoEncodeQualityLevelPropertiesKHR* pQualityLevelProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22235,7 +21496,6 @@ public unsafe partial interface IVk
                 Ref<VideoEncodeQualityLevelPropertiesKHR> pQualityLevelProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22250,7 +21510,6 @@ public unsafe partial interface IVk
             [NativeName("pVideoFormatProperties")] VideoFormatPropertiesKHR* pVideoFormatProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22266,7 +21525,6 @@ public unsafe partial interface IVk
                 Ref<VideoFormatPropertiesKHR> pVideoFormatProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPipelineBinaryDataKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22285,7 +21543,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelineBinaryData")] void* pPipelineBinaryData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPipelineBinaryDataKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22364,7 +21621,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPipelineExecutableInternalRepresentationsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22383,7 +21639,6 @@ public unsafe partial interface IVk
                 PipelineExecutableInternalRepresentationKHR* pInternalRepresentations
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPipelineExecutableInternalRepresentationsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22402,7 +21657,6 @@ public unsafe partial interface IVk
                 Ref<PipelineExecutableInternalRepresentationKHR> pInternalRepresentations
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPipelineExecutablePropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22420,7 +21674,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] PipelineExecutablePropertiesKHR* pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPipelineExecutablePropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22438,7 +21691,6 @@ public unsafe partial interface IVk
             [NativeName("pProperties")] Ref<PipelineExecutablePropertiesKHR> pProperties
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPipelineExecutableStatisticsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22456,7 +21708,6 @@ public unsafe partial interface IVk
             [NativeName("pStatistics")] PipelineExecutableStatisticKHR* pStatistics
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPipelineExecutableStatisticsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22474,7 +21725,6 @@ public unsafe partial interface IVk
             [NativeName("pStatistics")] Ref<PipelineExecutableStatisticKHR> pStatistics
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPipelineIndirectDeviceAddressNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -22487,7 +21737,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] PipelineIndirectDeviceAddressInfoNV* pInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPipelineIndirectDeviceAddressNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -22500,7 +21749,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref<PipelineIndirectDeviceAddressInfoNV> pInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPipelineIndirectMemoryRequirementsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -22514,7 +21762,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetPipelineIndirectMemoryRequirementsNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -22528,7 +21775,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPipelineKeyKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22545,7 +21791,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelineKey")] PipelineBinaryKeyKHR* pPipelineKey
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetPipelineKeyKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22562,7 +21807,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelineKey")] Ref<PipelineBinaryKeyKHR> pPipelineKey
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPipelinePropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -22579,7 +21823,6 @@ public unsafe partial interface IVk
             [NativeName("pPipelineProperties")] BaseOutStructure* pPipelineProperties
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPipelinePropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -22644,7 +21887,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref<ulong> pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPrivateDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -22663,7 +21905,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] ulong* pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetPrivateDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -22760,7 +22001,6 @@ public unsafe partial interface IVk
             [NativeName("flags")] QueryResultFlags flags
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetQueueCheckpointData2NV")]
         [SupportedApiProfile(
             "vulkan",
@@ -22780,7 +22020,6 @@ public unsafe partial interface IVk
             [NativeName("pCheckpointData")] CheckpointData2NV* pCheckpointData
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetQueueCheckpointData2NV")]
         [SupportedApiProfile(
             "vulkan",
@@ -22800,7 +22039,6 @@ public unsafe partial interface IVk
             [NativeName("pCheckpointData")] Ref<CheckpointData2NV> pCheckpointData
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetQueueCheckpointDataNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -22817,7 +22055,6 @@ public unsafe partial interface IVk
             [NativeName("pCheckpointData")] CheckpointDataNV* pCheckpointData
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetQueueCheckpointDataNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -22834,7 +22071,6 @@ public unsafe partial interface IVk
             [NativeName("pCheckpointData")] Ref<CheckpointDataNV> pCheckpointData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetRayTracingCaptureReplayShaderGroupHandlesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22854,7 +22090,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetRayTracingCaptureReplayShaderGroupHandlesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22874,7 +22109,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetRayTracingShaderGroupHandlesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22894,7 +22128,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetRayTracingShaderGroupHandlesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22914,7 +22147,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetRayTracingShaderGroupHandlesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -22934,7 +22166,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkGetRayTracingShaderGroupHandlesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -22954,7 +22185,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetRayTracingShaderGroupStackSizeKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -22972,7 +22202,6 @@ public unsafe partial interface IVk
             [NativeName("groupShader")] ShaderGroupShaderKHR groupShader
         );
 
-        [NameAffix("Suffix", "GOOGLE", 0)]
         [NativeName("vkGetRefreshCycleDurationGOOGLE")]
         [SupportedApiProfile(
             "vulkan",
@@ -22987,7 +22216,6 @@ public unsafe partial interface IVk
                 RefreshCycleDurationGOOGLE* pDisplayTimingProperties
         );
 
-        [NameAffix("Suffix", "GOOGLE", 0)]
         [NativeName("vkGetRefreshCycleDurationGOOGLE")]
         [SupportedApiProfile(
             "vulkan",
@@ -23076,7 +22304,6 @@ public unsafe partial interface IVk
             [NativeName("pGranularity")] Ref<Extent2D> pGranularity
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetRenderingAreaGranularityKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23090,7 +22317,6 @@ public unsafe partial interface IVk
             [NativeName("pGranularity")] Extent2D* pGranularity
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetRenderingAreaGranularityKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23104,7 +22330,6 @@ public unsafe partial interface IVk
             [NativeName("pGranularity")] Ref<Extent2D> pGranularity
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetSamplerOpaqueCaptureDescriptorDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -23123,7 +22348,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetSamplerOpaqueCaptureDescriptorDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -23194,7 +22418,6 @@ public unsafe partial interface IVk
             [NativeName("pValue")] Ref<ulong> pValue
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetSemaphoreCounterValueKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23211,7 +22434,6 @@ public unsafe partial interface IVk
             [NativeName("pValue")] ulong* pValue
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetSemaphoreCounterValueKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23228,7 +22450,6 @@ public unsafe partial interface IVk
             [NativeName("pValue")] Ref<ulong> pValue
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetSemaphoreFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23245,7 +22466,6 @@ public unsafe partial interface IVk
             [NativeName("pFd")] int* pFd
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetSemaphoreFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23262,7 +22482,6 @@ public unsafe partial interface IVk
             [NativeName("pFd")] Ref<int> pFd
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetShaderBinaryDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -23281,7 +22500,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetShaderBinaryDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -23300,7 +22518,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "AMD", 0)]
         [NativeName("vkGetShaderInfoAMD")]
         [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetShaderInfoAMD")]
@@ -23313,7 +22530,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] void* pInfo
         );
 
-        [NameAffix("Suffix", "AMD", 0)]
         [NativeName("vkGetShaderInfoAMD")]
         [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetShaderInfoAMD")]
@@ -23326,7 +22542,6 @@ public unsafe partial interface IVk
             [NativeName("pInfo")] Ref pInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetShaderModuleCreateInfoIdentifierEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -23344,7 +22559,6 @@ public unsafe partial interface IVk
             [NativeName("pIdentifier")] ShaderModuleIdentifierEXT* pIdentifier
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetShaderModuleCreateInfoIdentifierEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -23362,7 +22576,6 @@ public unsafe partial interface IVk
             [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierEXT> pIdentifier
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetShaderModuleIdentifierEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -23380,7 +22593,6 @@ public unsafe partial interface IVk
             [NativeName("pIdentifier")] ShaderModuleIdentifierEXT* pIdentifier
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetShaderModuleIdentifierEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -23398,7 +22610,6 @@ public unsafe partial interface IVk
             [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierEXT> pIdentifier
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetSwapchainCounterEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -23413,7 +22624,6 @@ public unsafe partial interface IVk
             [NativeName("pCounterValue")] ulong* pCounterValue
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetSwapchainCounterEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -23428,7 +22638,6 @@ public unsafe partial interface IVk
             [NativeName("pCounterValue")] Ref<ulong> pCounterValue
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetSwapchainImagesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainImagesKHR")]
@@ -23439,7 +22648,6 @@ public unsafe partial interface IVk
             [NativeName("pSwapchainImages")] ImageHandle* pSwapchainImages
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetSwapchainImagesKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainImagesKHR")]
@@ -23450,7 +22658,6 @@ public unsafe partial interface IVk
             [NativeName("pSwapchainImages")] Ref<ImageHandle> pSwapchainImages
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetSwapchainStatusKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23466,7 +22673,6 @@ public unsafe partial interface IVk
             [NativeName("swapchain")] SwapchainHandleKHR swapchain
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetTensorMemoryRequirementsARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
@@ -23476,7 +22682,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetTensorMemoryRequirementsARM")]
         [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
@@ -23486,7 +22691,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetTensorOpaqueCaptureDescriptorDataARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -23501,7 +22705,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetTensorOpaqueCaptureDescriptorDataARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -23516,7 +22719,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -23531,7 +22733,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "ARM", 0)]
         [NativeName("vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
         [SupportedApiProfile(
             "vulkan",
@@ -23546,7 +22747,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetValidationCacheDataEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetValidationCacheDataEXT")]
@@ -23557,7 +22757,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkGetValidationCacheDataEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
         [NativeFunction("vulkan", EntryPoint = "vkGetValidationCacheDataEXT")]
@@ -23568,7 +22767,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetVideoSessionMemoryRequirementsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23584,7 +22782,6 @@ public unsafe partial interface IVk
                 VideoSessionMemoryRequirementsKHR* pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkGetVideoSessionMemoryRequirementsKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23600,7 +22797,6 @@ public unsafe partial interface IVk
                 Ref<VideoSessionMemoryRequirementsKHR> pMemoryRequirements
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkImportFenceFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23616,7 +22812,6 @@ public unsafe partial interface IVk
             [NativeName("pImportFenceFdInfo")] ImportFenceFdInfoKHR* pImportFenceFdInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkImportFenceFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23632,7 +22827,6 @@ public unsafe partial interface IVk
             [NativeName("pImportFenceFdInfo")] Ref<ImportFenceFdInfoKHR> pImportFenceFdInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkImportSemaphoreFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23648,7 +22842,6 @@ public unsafe partial interface IVk
             [NativeName("pImportSemaphoreFdInfo")] ImportSemaphoreFdInfoKHR* pImportSemaphoreFdInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkImportSemaphoreFdKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -23665,7 +22858,6 @@ public unsafe partial interface IVk
                 Ref<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkInitializePerformanceApiINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkInitializePerformanceApiINTEL")]
@@ -23674,7 +22866,6 @@ public unsafe partial interface IVk
             [NativeName("pInitializeInfo")] InitializePerformanceApiInfoINTEL* pInitializeInfo
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkInitializePerformanceApiINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkInitializePerformanceApiINTEL")]
@@ -23751,7 +22942,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryRanges")] Ref<MappedMemoryRange> pMemoryRanges
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkLatencySleepNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -23770,7 +22960,6 @@ public unsafe partial interface IVk
             [NativeName("pSleepInfo")] LatencySleepInfoNV* pSleepInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkLatencySleepNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -23899,7 +23088,6 @@ public unsafe partial interface IVk
             [NativeName("ppData")] Ref2D ppData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkMapMemory2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
         [NativeFunction("vulkan", EntryPoint = "vkMapMemory2KHR")]
@@ -23909,7 +23097,6 @@ public unsafe partial interface IVk
             [NativeName("ppData")] void** ppData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkMapMemory2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
         [NativeFunction("vulkan", EntryPoint = "vkMapMemory2KHR")]
@@ -23979,7 +23166,6 @@ public unsafe partial interface IVk
             [NativeName("pSrcCaches")] Ref<PipelineCacheHandle> pSrcCaches
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkMergeValidationCachesEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
         [NativeFunction("vulkan", EntryPoint = "vkMergeValidationCachesEXT")]
@@ -23990,7 +23176,6 @@ public unsafe partial interface IVk
             [NativeName("pSrcCaches")] ValidationCacheHandleEXT* pSrcCaches
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkMergeValidationCachesEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
         [NativeFunction("vulkan", EntryPoint = "vkMergeValidationCachesEXT")]
@@ -24001,7 +23186,6 @@ public unsafe partial interface IVk
             [NativeName("pSrcCaches")] Ref<ValidationCacheHandleEXT> pSrcCaches
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkQueueBeginDebugUtilsLabelEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
@@ -24010,7 +23194,6 @@ public unsafe partial interface IVk
             [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkQueueBeginDebugUtilsLabelEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
@@ -24089,13 +23272,11 @@ public unsafe partial interface IVk
             [NativeName("fence")] FenceHandle fence
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkQueueEndDebugUtilsLabelEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkQueueEndDebugUtilsLabelEXT")]
         static abstract void QueueEndDebugUtilsLabelEXT([NativeName("queue")] QueueHandle queue);
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkQueueInsertDebugUtilsLabelEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
@@ -24104,7 +23285,6 @@ public unsafe partial interface IVk
             [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkQueueInsertDebugUtilsLabelEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
@@ -24113,7 +23293,6 @@ public unsafe partial interface IVk
             [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkQueueNotifyOutOfBandNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -24131,7 +23310,6 @@ public unsafe partial interface IVk
             [NativeName("pQueueTypeInfo")] OutOfBandQueueTypeInfoNV* pQueueTypeInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkQueueNotifyOutOfBandNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -24149,7 +23327,6 @@ public unsafe partial interface IVk
             [NativeName("pQueueTypeInfo")] Ref<OutOfBandQueueTypeInfoNV> pQueueTypeInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkQueuePresentKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkQueuePresentKHR")]
@@ -24158,7 +23335,6 @@ public unsafe partial interface IVk
             [NativeName("pPresentInfo")] PresentInfoKHR* pPresentInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkQueuePresentKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
         [NativeFunction("vulkan", EntryPoint = "vkQueuePresentKHR")]
@@ -24167,7 +23343,6 @@ public unsafe partial interface IVk
             [NativeName("pPresentInfo")] Ref<PresentInfoKHR> pPresentInfo
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkQueueSetPerformanceConfigurationINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkQueueSetPerformanceConfigurationINTEL")]
@@ -24292,7 +23467,6 @@ public unsafe partial interface IVk
             [NativeName("fence")] FenceHandle fence
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkQueueSubmit2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -24310,7 +23484,6 @@ public unsafe partial interface IVk
             [NativeName("fence")] FenceHandle fence
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkQueueSubmit2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -24358,7 +23531,6 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkQueueWaitIdle")]
         static abstract Result QueueWaitIdle([NativeName("queue")] QueueHandle queue);
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkRegisterDeviceEventEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -24373,7 +23545,6 @@ public unsafe partial interface IVk
             [NativeName("pFence")] FenceHandle* pFence
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkRegisterDeviceEventEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -24388,7 +23559,6 @@ public unsafe partial interface IVk
             [NativeName("pFence")] Ref<FenceHandle> pFence
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkRegisterDisplayEventEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -24404,7 +23574,6 @@ public unsafe partial interface IVk
             [NativeName("pFence")] FenceHandle* pFence
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkRegisterDisplayEventEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -24420,7 +23589,6 @@ public unsafe partial interface IVk
             [NativeName("pFence")] Ref<FenceHandle> pFence
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkReleaseCapturedPipelineDataKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -24437,7 +23605,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] AllocationCallbacks* pAllocator
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkReleaseCapturedPipelineDataKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -24454,7 +23621,6 @@ public unsafe partial interface IVk
             [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkReleaseDisplayEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -24467,7 +23633,6 @@ public unsafe partial interface IVk
             [NativeName("display")] DisplayHandleKHR display
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkReleasePerformanceConfigurationINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkReleasePerformanceConfigurationINTEL")]
@@ -24476,7 +23641,6 @@ public unsafe partial interface IVk
             [NativeName("configuration")] PerformanceConfigurationHandleINTEL configuration
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkReleaseProfilingLockKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -24489,7 +23653,6 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkReleaseProfilingLockKHR")]
         static abstract void ReleaseProfilingLockKHR([NativeName("device")] DeviceHandle device);
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkReleaseSwapchainImagesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -24505,7 +23668,6 @@ public unsafe partial interface IVk
             [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKHR* pReleaseInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkReleaseSwapchainImagesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -24521,7 +23683,6 @@ public unsafe partial interface IVk
             [NativeName("pReleaseInfo")] Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkReleaseSwapchainImagesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -24538,7 +23699,6 @@ public unsafe partial interface IVk
             [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKHR* pReleaseInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkReleaseSwapchainImagesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -24774,7 +23934,6 @@ public unsafe partial interface IVk
             [NativeName("queryCount")] uint queryCount
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkResetQueryPoolEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -24792,7 +23951,6 @@ public unsafe partial interface IVk
             [NativeName("queryCount")] uint queryCount
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkSetDebugUtilsObjectNameEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
@@ -24801,7 +23959,6 @@ public unsafe partial interface IVk
             [NativeName("pNameInfo")] DebugUtilsObjectNameInfoEXT* pNameInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkSetDebugUtilsObjectNameEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
@@ -24810,7 +23967,6 @@ public unsafe partial interface IVk
             [NativeName("pNameInfo")] Ref<DebugUtilsObjectNameInfoEXT> pNameInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkSetDebugUtilsObjectTagEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
@@ -24819,7 +23975,6 @@ public unsafe partial interface IVk
             [NativeName("pTagInfo")] DebugUtilsObjectTagInfoEXT* pTagInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkSetDebugUtilsObjectTagEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
@@ -24828,7 +23983,6 @@ public unsafe partial interface IVk
             [NativeName("pTagInfo")] Ref<DebugUtilsObjectTagInfoEXT> pTagInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkSetDeviceMemoryPriorityEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -24870,7 +24024,6 @@ public unsafe partial interface IVk
             [NativeName("@event")] EventHandle @event
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkSetHdrMetadataEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
         [NativeFunction("vulkan", EntryPoint = "vkSetHdrMetadataEXT")]
@@ -24881,7 +24034,6 @@ public unsafe partial interface IVk
             [NativeName("pMetadata")] HdrMetadataEXT* pMetadata
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkSetHdrMetadataEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
         [NativeFunction("vulkan", EntryPoint = "vkSetHdrMetadataEXT")]
@@ -24892,7 +24044,6 @@ public unsafe partial interface IVk
             [NativeName("pMetadata")] Ref<HdrMetadataEXT> pMetadata
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkSetLatencyMarkerNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -24911,7 +24062,6 @@ public unsafe partial interface IVk
             [NativeName("pLatencyMarkerInfo")] SetLatencyMarkerInfoNV* pLatencyMarkerInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkSetLatencyMarkerNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -24930,7 +24080,6 @@ public unsafe partial interface IVk
             [NativeName("pLatencyMarkerInfo")] Ref<SetLatencyMarkerInfoNV> pLatencyMarkerInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkSetLatencySleepModeNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -24949,7 +24098,6 @@ public unsafe partial interface IVk
             [NativeName("pSleepModeInfo")] LatencySleepModeInfoNV* pSleepModeInfo
         );
 
-        [NameAffix("Suffix", "NV", 0)]
         [NativeName("vkSetLatencySleepModeNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -24968,7 +24116,6 @@ public unsafe partial interface IVk
             [NativeName("pSleepModeInfo")] Ref<LatencySleepModeInfoNV> pSleepModeInfo
         );
 
-        [NameAffix("Suffix", "AMD", 0)]
         [NativeName("vkSetLocalDimmingAMD")]
         [SupportedApiProfile(
             "vulkan",
@@ -24985,7 +24132,6 @@ public unsafe partial interface IVk
             [NativeName("localDimmingEnable")] uint localDimmingEnable
         );
 
-        [NameAffix("Suffix", "AMD", 0)]
         [NativeName("vkSetLocalDimmingAMD")]
         [SupportedApiProfile(
             "vulkan",
@@ -25026,7 +24172,6 @@ public unsafe partial interface IVk
             [NativeName("data")] ulong data
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkSetPrivateDataEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25095,7 +24240,6 @@ public unsafe partial interface IVk
             [NativeName("pSignalInfo")] Ref<SemaphoreSignalInfo> pSignalInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkSignalSemaphoreKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25111,7 +24255,6 @@ public unsafe partial interface IVk
             [NativeName("pSignalInfo")] SemaphoreSignalInfo* pSignalInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkSignalSemaphoreKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25127,7 +24270,6 @@ public unsafe partial interface IVk
             [NativeName("pSignalInfo")] Ref<SemaphoreSignalInfo> pSignalInfo
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkSubmitDebugUtilsMessageEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
@@ -25138,7 +24280,6 @@ public unsafe partial interface IVk
             [NativeName("pCallbackData")] DebugUtilsMessengerCallbackDataEXT* pCallbackData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkSubmitDebugUtilsMessageEXT")]
         [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
         [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
@@ -25185,7 +24326,6 @@ public unsafe partial interface IVk
             [NativeName("pTransitions")] Ref<HostImageLayoutTransitionInfo> pTransitions
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkTransitionImageLayoutEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25203,7 +24343,6 @@ public unsafe partial interface IVk
             [NativeName("pTransitions")] HostImageLayoutTransitionInfo* pTransitions
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkTransitionImageLayoutEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25251,7 +24390,6 @@ public unsafe partial interface IVk
             [NativeName("flags")] uint flags
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkTrimCommandPoolKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
         [NativeFunction("vulkan", EntryPoint = "vkTrimCommandPoolKHR")]
@@ -25261,7 +24399,6 @@ public unsafe partial interface IVk
             [NativeName("flags")] uint flags
         );
 
-        [NameAffix("Suffix", "INTEL", 0)]
         [NativeName("vkUninitializePerformanceApiINTEL")]
         [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
         [NativeFunction("vulkan", EntryPoint = "vkUninitializePerformanceApiINTEL")]
@@ -25336,7 +24473,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryUnmapInfo")] Ref<MemoryUnmapInfo> pMemoryUnmapInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkUnmapMemory2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
         [NativeFunction("vulkan", EntryPoint = "vkUnmapMemory2KHR")]
@@ -25345,7 +24481,6 @@ public unsafe partial interface IVk
             [NativeName("pMemoryUnmapInfo")] MemoryUnmapInfo* pMemoryUnmapInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkUnmapMemory2KHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
         [NativeFunction("vulkan", EntryPoint = "vkUnmapMemory2KHR")]
@@ -25472,7 +24607,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkUpdateDescriptorSetWithTemplateKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
         [NativeFunction("vulkan", EntryPoint = "vkUpdateDescriptorSetWithTemplateKHR")]
@@ -25484,7 +24618,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] void* pData
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkUpdateDescriptorSetWithTemplateKHR")]
         [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
         [NativeFunction("vulkan", EntryPoint = "vkUpdateDescriptorSetWithTemplateKHR")]
@@ -25496,7 +24629,6 @@ public unsafe partial interface IVk
             [NativeName("pData")] Ref pData
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkUpdateIndirectExecutionSetPipelineEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25516,7 +24648,6 @@ public unsafe partial interface IVk
                 WriteIndirectExecutionSetPipelineEXT* pExecutionSetWrites
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkUpdateIndirectExecutionSetPipelineEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25536,7 +24667,6 @@ public unsafe partial interface IVk
                 Ref<WriteIndirectExecutionSetPipelineEXT> pExecutionSetWrites
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkUpdateIndirectExecutionSetPipelineEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25555,7 +24685,6 @@ public unsafe partial interface IVk
                 WriteIndirectExecutionSetPipelineEXT pExecutionSetWrites
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25575,7 +24704,6 @@ public unsafe partial interface IVk
                 WriteIndirectExecutionSetShaderEXT* pExecutionSetWrites
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25595,7 +24723,6 @@ public unsafe partial interface IVk
                 Ref<WriteIndirectExecutionSetShaderEXT> pExecutionSetWrites
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25614,7 +24741,6 @@ public unsafe partial interface IVk
                 WriteIndirectExecutionSetShaderEXT pExecutionSetWrites
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkUpdateVideoSessionParametersKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25629,7 +24755,6 @@ public unsafe partial interface IVk
             [NativeName("pUpdateInfo")] VideoSessionParametersUpdateInfoKHR* pUpdateInfo
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkUpdateVideoSessionParametersKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25716,7 +24841,6 @@ public unsafe partial interface IVk
             [NativeName("timeout")] ulong timeout
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkWaitForPresent2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25735,7 +24859,6 @@ public unsafe partial interface IVk
             [NativeName("pPresentWait2Info")] PresentWait2InfoKHR* pPresentWait2Info
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkWaitForPresent2KHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25754,7 +24877,6 @@ public unsafe partial interface IVk
             [NativeName("pPresentWait2Info")] Ref<PresentWait2InfoKHR> pPresentWait2Info
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkWaitForPresentKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25821,7 +24943,6 @@ public unsafe partial interface IVk
             [NativeName("timeout")] ulong timeout
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkWaitSemaphoresKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25838,7 +24959,6 @@ public unsafe partial interface IVk
             [NativeName("timeout")] ulong timeout
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkWaitSemaphoresKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25855,7 +24975,6 @@ public unsafe partial interface IVk
             [NativeName("timeout")] ulong timeout
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkWriteAccelerationStructuresPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25877,7 +24996,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] nuint stride
         );
 
-        [NameAffix("Suffix", "KHR", 0)]
         [NativeName("vkWriteAccelerationStructuresPropertiesKHR")]
         [SupportedApiProfile(
             "vulkan",
@@ -25899,7 +25017,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] nuint stride
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkWriteMicromapsPropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25920,7 +25037,6 @@ public unsafe partial interface IVk
             [NativeName("stride")] nuint stride
         );
 
-        [NameAffix("Suffix", "EXT", 0)]
         [NativeName("vkWriteMicromapsPropertiesEXT")]
         [SupportedApiProfile(
             "vulkan",
@@ -25942,7 +25058,6 @@ public unsafe partial interface IVk
         );
     }
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkAcquireDrmDisplayEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -25956,7 +25071,6 @@ public unsafe partial interface IVk
         [NativeName("display")] DisplayHandleKHR display
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkAcquireNextImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25971,7 +25085,6 @@ public unsafe partial interface IVk
         [NativeName("pImageIndex")] uint* pImageIndex
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkAcquireNextImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25986,7 +25099,6 @@ public unsafe partial interface IVk
         [NativeName("pImageIndex")] Ref<uint> pImageIndex
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkAcquireNextImageKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
@@ -25999,7 +25111,6 @@ public unsafe partial interface IVk
         [NativeName("pImageIndex")] uint* pImageIndex
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkAcquireNextImageKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkAcquireNextImageKHR")]
@@ -26012,7 +25123,6 @@ public unsafe partial interface IVk
         [NativeName("pImageIndex")] Ref<uint> pImageIndex
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkAcquirePerformanceConfigurationINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
@@ -26022,7 +25132,6 @@ public unsafe partial interface IVk
         [NativeName("pConfiguration")] PerformanceConfigurationHandleINTEL* pConfiguration
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkAcquirePerformanceConfigurationINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkAcquirePerformanceConfigurationINTEL")]
@@ -26032,7 +25141,6 @@ public unsafe partial interface IVk
         [NativeName("pConfiguration")] Ref<PerformanceConfigurationHandleINTEL> pConfiguration
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkAcquireProfilingLockKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -26048,7 +25156,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] AcquireProfilingLockInfoKHR* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkAcquireProfilingLockKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -26260,7 +25367,6 @@ public unsafe partial interface IVk
         [NativeName("pMemory")] Ref<DeviceMemoryHandle> pMemory
     );
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("vkAntiLagUpdateAMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -26276,7 +25382,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] AntiLagDataAMD* pData
     );
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("vkAntiLagUpdateAMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -26358,7 +25463,6 @@ public unsafe partial interface IVk
         [NativeName("pBeginInfo")] Ref<CommandBufferBeginInfo> pBeginInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkBindAccelerationStructureMemoryNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -26375,7 +25479,6 @@ public unsafe partial interface IVk
         [NativeName("pBindInfos")] BindAccelerationStructureMemoryInfoNV* pBindInfos
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkBindAccelerationStructureMemoryNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -26487,7 +25590,6 @@ public unsafe partial interface IVk
         [NativeName("pBindInfos")] Ref<BindBufferMemoryInfo> pBindInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkBindBufferMemory2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
     [NativeFunction("vulkan", EntryPoint = "vkBindBufferMemory2KHR")]
@@ -26497,7 +25599,6 @@ public unsafe partial interface IVk
         [NativeName("pBindInfos")] BindBufferMemoryInfo* pBindInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkBindBufferMemory2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
     [NativeFunction("vulkan", EntryPoint = "vkBindBufferMemory2KHR")]
@@ -26507,7 +25608,6 @@ public unsafe partial interface IVk
         [NativeName("pBindInfos")] Ref<BindBufferMemoryInfo> pBindInfos
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkBindDataGraphPipelineSessionMemoryARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -26521,7 +25621,6 @@ public unsafe partial interface IVk
         [NativeName("pBindInfos")] BindDataGraphPipelineSessionMemoryInfoARM* pBindInfos
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkBindDataGraphPipelineSessionMemoryARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -26630,7 +25729,6 @@ public unsafe partial interface IVk
         [NativeName("pBindInfos")] Ref<BindImageMemoryInfo> pBindInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkBindImageMemory2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
     [NativeFunction("vulkan", EntryPoint = "vkBindImageMemory2KHR")]
@@ -26640,7 +25738,6 @@ public unsafe partial interface IVk
         [NativeName("pBindInfos")] BindImageMemoryInfo* pBindInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkBindImageMemory2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_bind_memory2"])]
     [NativeFunction("vulkan", EntryPoint = "vkBindImageMemory2KHR")]
@@ -26650,7 +25747,6 @@ public unsafe partial interface IVk
         [NativeName("pBindInfos")] Ref<BindImageMemoryInfo> pBindInfos
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkBindOpticalFlowSessionImageNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -26670,7 +25766,6 @@ public unsafe partial interface IVk
         [NativeName("layout")] ImageLayout layout
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkBindTensorMemoryARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
@@ -26680,7 +25775,6 @@ public unsafe partial interface IVk
         [NativeName("pBindInfos")] BindTensorMemoryInfoARM* pBindInfos
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkBindTensorMemoryARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkBindTensorMemoryARM")]
@@ -26690,7 +25784,6 @@ public unsafe partial interface IVk
         [NativeName("pBindInfos")] Ref<BindTensorMemoryInfoARM> pBindInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkBindVideoSessionMemoryKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -26706,7 +25799,6 @@ public unsafe partial interface IVk
             BindVideoSessionMemoryInfoKHR* pBindSessionMemoryInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkBindVideoSessionMemoryKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -26722,7 +25814,6 @@ public unsafe partial interface IVk
             Ref<BindVideoSessionMemoryInfoKHR> pBindSessionMemoryInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkBuildAccelerationStructuresKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -26741,7 +25832,6 @@ public unsafe partial interface IVk
         [NativeName("ppBuildRangeInfos")] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkBuildAccelerationStructuresKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -26761,7 +25851,6 @@ public unsafe partial interface IVk
             Ref2D<AccelerationStructureBuildRangeInfoKHR> ppBuildRangeInfos
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkBuildMicromapsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26779,7 +25868,6 @@ public unsafe partial interface IVk
         [NativeName("pInfos")] MicromapBuildInfoEXT* pInfos
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkBuildMicromapsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26797,7 +25885,6 @@ public unsafe partial interface IVk
         [NativeName("pInfos")] Ref<MicromapBuildInfoEXT> pInfos
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBeginConditionalRenderingEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26814,7 +25901,6 @@ public unsafe partial interface IVk
             ConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBeginConditionalRenderingEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26831,7 +25917,6 @@ public unsafe partial interface IVk
             Ref<ConditionalRenderingBeginInfoEXT> pConditionalRenderingBegin
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBeginDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
@@ -26840,7 +25925,6 @@ public unsafe partial interface IVk
         [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBeginDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBeginDebugUtilsLabelEXT")]
@@ -26849,7 +25933,6 @@ public unsafe partial interface IVk
         [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkCmdBeginPerTileExecutionQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -26865,7 +25948,6 @@ public unsafe partial interface IVk
         [NativeName("pPerTileBeginInfo")] PerTileBeginInfoQCOM* pPerTileBeginInfo
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkCmdBeginPerTileExecutionQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -26916,7 +25998,6 @@ public unsafe partial interface IVk
         [NativeName("flags")] QueryControlFlags flags
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBeginQueryIndexedEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -26959,7 +26040,6 @@ public unsafe partial interface IVk
         [NativeName("pRenderingInfo")] Ref<RenderingInfo> pRenderingInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBeginRenderingKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -26976,7 +26056,6 @@ public unsafe partial interface IVk
         [NativeName("pRenderingInfo")] RenderingInfo* pRenderingInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBeginRenderingKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27081,7 +26160,6 @@ public unsafe partial interface IVk
         [NativeName("pSubpassBeginInfo")] Ref<SubpassBeginInfo> pSubpassBeginInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBeginRenderPass2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27095,7 +26173,6 @@ public unsafe partial interface IVk
         [NativeName("pSubpassBeginInfo")] SubpassBeginInfo* pSubpassBeginInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBeginRenderPass2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27109,7 +26186,6 @@ public unsafe partial interface IVk
         [NativeName("pSubpassBeginInfo")] Ref<SubpassBeginInfo> pSubpassBeginInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBeginTransformFeedbackEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27128,7 +26204,6 @@ public unsafe partial interface IVk
         [NativeName("pCounterBufferOffsets")] ulong* pCounterBufferOffsets
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBeginTransformFeedbackEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27147,7 +26222,6 @@ public unsafe partial interface IVk
         [NativeName("pCounterBufferOffsets")] Ref<ulong> pCounterBufferOffsets
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBeginVideoCodingKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27160,7 +26234,6 @@ public unsafe partial interface IVk
         [NativeName("pBeginInfo")] VideoBeginCodingInfoKHR* pBeginInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBeginVideoCodingKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27173,7 +26246,6 @@ public unsafe partial interface IVk
         [NativeName("pBeginInfo")] Ref<VideoBeginCodingInfoKHR> pBeginInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplers2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27188,7 +26260,6 @@ public unsafe partial interface IVk
             BindDescriptorBufferEmbeddedSamplersInfoEXT* pBindDescriptorBufferEmbeddedSamplersInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplers2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27203,7 +26274,6 @@ public unsafe partial interface IVk
             Ref<BindDescriptorBufferEmbeddedSamplersInfoEXT> pBindDescriptorBufferEmbeddedSamplersInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindDescriptorBufferEmbeddedSamplersEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27223,7 +26293,6 @@ public unsafe partial interface IVk
         [NativeName("set")] uint set
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindDescriptorBuffersEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27242,7 +26311,6 @@ public unsafe partial interface IVk
         [NativeName("pBindingInfos")] DescriptorBufferBindingInfoEXT* pBindingInfos
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindDescriptorBuffersEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27261,7 +26329,6 @@ public unsafe partial interface IVk
         [NativeName("pBindingInfos")] Ref<DescriptorBufferBindingInfoEXT> pBindingInfos
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindDescriptorBuffersEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27371,7 +26438,6 @@ public unsafe partial interface IVk
         [NativeName("pBindDescriptorSetsInfo")] Ref<BindDescriptorSetsInfo> pBindDescriptorSetsInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBindDescriptorSets2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorSets2KHR")]
@@ -27380,7 +26446,6 @@ public unsafe partial interface IVk
         [NativeName("pBindDescriptorSetsInfo")] BindDescriptorSetsInfo* pBindDescriptorSetsInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBindDescriptorSets2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorSets2KHR")]
@@ -27429,7 +26494,6 @@ public unsafe partial interface IVk
         [NativeName("indexType")] IndexType indexType
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBindIndexBuffer2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27445,7 +26509,6 @@ public unsafe partial interface IVk
         [NativeName("indexType")] IndexType indexType
     );
 
-    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("vkCmdBindInvocationMaskHUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -27491,7 +26554,6 @@ public unsafe partial interface IVk
         [NativeName("pipeline")] PipelineHandle pipeline
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdBindPipelineShaderGroupNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -27506,7 +26568,6 @@ public unsafe partial interface IVk
         [NativeName("groupIndex")] uint groupIndex
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindShadersEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27525,7 +26586,6 @@ public unsafe partial interface IVk
         [NativeName("pShaders")] ShaderHandleEXT* pShaders
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindShadersEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27544,7 +26604,6 @@ public unsafe partial interface IVk
         [NativeName("pShaders")] Ref<ShaderHandleEXT> pShaders
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdBindShadingRateImageNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -27561,7 +26620,6 @@ public unsafe partial interface IVk
         [NativeName("imageLayout")] ImageLayout imageLayout
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkCmdBindTileMemoryQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -27577,7 +26635,6 @@ public unsafe partial interface IVk
         [NativeName("pTileMemoryBindInfo")] TileMemoryBindInfoQCOM* pTileMemoryBindInfo
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkCmdBindTileMemoryQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -27593,7 +26650,6 @@ public unsafe partial interface IVk
         [NativeName("pTileMemoryBindInfo")] Ref<TileMemoryBindInfoQCOM> pTileMemoryBindInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindTransformFeedbackBuffersEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27613,7 +26669,6 @@ public unsafe partial interface IVk
         [NativeName("pSizes")] ulong* pSizes
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindTransformFeedbackBuffersEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27719,7 +26774,6 @@ public unsafe partial interface IVk
         [NativeName("pStrides")] Ref<ulong> pStrides
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindVertexBuffers2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27740,7 +26794,6 @@ public unsafe partial interface IVk
         [NativeName("pStrides")] ulong* pStrides
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBindVertexBuffers2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -27871,7 +26924,6 @@ public unsafe partial interface IVk
         [NativeName("pBlitImageInfo")] Ref<BlitImageInfo2> pBlitImageInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBlitImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27887,7 +26939,6 @@ public unsafe partial interface IVk
         [NativeName("pBlitImageInfo")] BlitImageInfo2* pBlitImageInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBlitImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27903,7 +26954,6 @@ public unsafe partial interface IVk
         [NativeName("pBlitImageInfo")] Ref<BlitImageInfo2> pBlitImageInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdBuildAccelerationStructureNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -27926,7 +26976,6 @@ public unsafe partial interface IVk
         [NativeName("scratchOffset")] ulong scratchOffset
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdBuildAccelerationStructureNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -27949,7 +26998,6 @@ public unsafe partial interface IVk
         [NativeName("scratchOffset")] ulong scratchOffset
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBuildAccelerationStructuresIndirectKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27969,7 +27017,6 @@ public unsafe partial interface IVk
         [NativeName("ppMaxPrimitiveCounts")] uint** ppMaxPrimitiveCounts
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBuildAccelerationStructuresIndirectKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27989,7 +27036,6 @@ public unsafe partial interface IVk
         [NativeName("ppMaxPrimitiveCounts")] Ref2D<uint> ppMaxPrimitiveCounts
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBuildAccelerationStructuresKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28007,7 +27053,6 @@ public unsafe partial interface IVk
         [NativeName("ppBuildRangeInfos")] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdBuildAccelerationStructuresKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28026,7 +27071,6 @@ public unsafe partial interface IVk
             Ref2D<AccelerationStructureBuildRangeInfoKHR> ppBuildRangeInfos
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdBuildClusterAccelerationStructureIndirectNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -28039,7 +27083,6 @@ public unsafe partial interface IVk
         [NativeName("pCommandInfos")] ClusterAccelerationStructureCommandsInfoNV* pCommandInfos
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdBuildClusterAccelerationStructureIndirectNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -28052,7 +27095,6 @@ public unsafe partial interface IVk
         [NativeName("pCommandInfos")] Ref<ClusterAccelerationStructureCommandsInfoNV> pCommandInfos
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBuildMicromapsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -28069,7 +27111,6 @@ public unsafe partial interface IVk
         [NativeName("pInfos")] MicromapBuildInfoEXT* pInfos
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBuildMicromapsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -28086,7 +27127,6 @@ public unsafe partial interface IVk
         [NativeName("pInfos")] Ref<MicromapBuildInfoEXT> pInfos
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdBuildMicromapsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -28102,7 +27142,6 @@ public unsafe partial interface IVk
         [NativeName("pInfos")] MicromapBuildInfoEXT pInfos
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdBuildPartitionedAccelerationStructuresNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -28115,7 +27154,6 @@ public unsafe partial interface IVk
         [NativeName("pBuildInfo")] BuildPartitionedAccelerationStructureInfoNV* pBuildInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdBuildPartitionedAccelerationStructuresNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -28355,7 +27393,6 @@ public unsafe partial interface IVk
         [NativeName("pRanges")] ImageSubresourceRange pRanges
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdControlVideoCodingKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28368,7 +27405,6 @@ public unsafe partial interface IVk
         [NativeName("pCodingControlInfo")] VideoCodingControlInfoKHR* pCodingControlInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdControlVideoCodingKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28381,7 +27417,6 @@ public unsafe partial interface IVk
         [NativeName("pCodingControlInfo")] Ref<VideoCodingControlInfoKHR> pCodingControlInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -28398,7 +27433,6 @@ public unsafe partial interface IVk
         [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNV* pInfos
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -28415,7 +27449,6 @@ public unsafe partial interface IVk
         [NativeName("pInfos")] Ref<ConvertCooperativeVectorMatrixInfoNV> pInfos
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdConvertCooperativeVectorMatrixNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -28431,7 +27464,6 @@ public unsafe partial interface IVk
         [NativeName("pInfos")] ConvertCooperativeVectorMatrixInfoNV pInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28447,7 +27479,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyAccelerationStructureInfoKHR* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28463,7 +27494,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKHR> pInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdCopyAccelerationStructureNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -28481,7 +27511,6 @@ public unsafe partial interface IVk
         [NativeName("mode")] CopyAccelerationStructureModeKHR mode
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyAccelerationStructureToMemoryKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28497,7 +27526,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKHR* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyAccelerationStructureToMemoryKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28662,7 +27690,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyBufferInfo")] Ref<CopyBufferInfo2> pCopyBufferInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyBuffer2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28678,7 +27705,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyBufferInfo")] CopyBufferInfo2* pCopyBufferInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyBuffer2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28846,7 +27872,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyBufferToImageInfo")] Ref<CopyBufferToImageInfo2> pCopyBufferToImageInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyBufferToImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28862,7 +27887,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyBufferToImageInfo")] CopyBufferToImageInfo2* pCopyBufferToImageInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyBufferToImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29033,7 +28057,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyImageInfo")] Ref<CopyImageInfo2> pCopyImageInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29049,7 +28072,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyImageInfo")] CopyImageInfo2* pCopyImageInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29217,7 +28239,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyImageToBufferInfo")] Ref<CopyImageToBufferInfo2> pCopyImageToBufferInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyImageToBuffer2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29233,7 +28254,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyImageToBufferInfo")] CopyImageToBufferInfo2* pCopyImageToBufferInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyImageToBuffer2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29249,7 +28269,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyImageToBufferInfo")] Ref<CopyImageToBufferInfo2> pCopyImageToBufferInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyMemoryIndirectKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29265,7 +28284,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyMemoryIndirectInfo")] CopyMemoryIndirectInfoKHR* pCopyMemoryIndirectInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyMemoryIndirectKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29282,7 +28300,6 @@ public unsafe partial interface IVk
             Ref<CopyMemoryIndirectInfoKHR> pCopyMemoryIndirectInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdCopyMemoryIndirectNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -29301,7 +28318,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyMemoryToAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29317,7 +28333,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKHR* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyMemoryToAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29333,7 +28348,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<CopyMemoryToAccelerationStructureInfoKHR> pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyMemoryToImageIndirectKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29350,7 +28364,6 @@ public unsafe partial interface IVk
             CopyMemoryToImageIndirectInfoKHR* pCopyMemoryToImageIndirectInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdCopyMemoryToImageIndirectKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29367,7 +28380,6 @@ public unsafe partial interface IVk
             Ref<CopyMemoryToImageIndirectInfoKHR> pCopyMemoryToImageIndirectInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdCopyMemoryToImageIndirectNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -29389,7 +28401,6 @@ public unsafe partial interface IVk
         [NativeName("pImageSubresources")] ImageSubresourceLayers* pImageSubresources
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdCopyMemoryToImageIndirectNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -29411,7 +28422,6 @@ public unsafe partial interface IVk
         [NativeName("pImageSubresources")] Ref<ImageSubresourceLayers> pImageSubresources
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdCopyMemoryToImageIndirectNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -29432,7 +28442,6 @@ public unsafe partial interface IVk
         [NativeName("pImageSubresources")] ImageSubresourceLayers pImageSubresources
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdCopyMemoryToMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -29448,7 +28457,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyMemoryToMicromapInfoEXT* pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdCopyMemoryToMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -29464,7 +28472,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoEXT> pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdCopyMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -29480,7 +28487,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyMicromapInfoEXT* pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdCopyMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -29496,7 +28502,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<CopyMicromapInfoEXT> pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdCopyMicromapToMemoryEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -29512,7 +28517,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyMicromapToMemoryInfoEXT* pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdCopyMicromapToMemoryEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -29567,7 +28571,6 @@ public unsafe partial interface IVk
         [NativeName("flags")] QueryResultFlags flags
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCmdCopyTensorARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
@@ -29576,7 +28579,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyTensorInfo")] CopyTensorInfoARM* pCopyTensorInfo
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCmdCopyTensorARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCopyTensorARM")]
@@ -29585,7 +28587,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyTensorInfo")] Ref<CopyTensorInfoARM> pCopyTensorInfo
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkCmdCuLaunchKernelNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCuLaunchKernelNVX")]
@@ -29594,7 +28595,6 @@ public unsafe partial interface IVk
         [NativeName("pLaunchInfo")] CuLaunchInfoNVX* pLaunchInfo
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkCmdCuLaunchKernelNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdCuLaunchKernelNVX")]
@@ -29603,7 +28603,6 @@ public unsafe partial interface IVk
         [NativeName("pLaunchInfo")] Ref<CuLaunchInfoNVX> pLaunchInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDebugMarkerBeginEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerBeginEXT")]
@@ -29612,7 +28611,6 @@ public unsafe partial interface IVk
         [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoEXT* pMarkerInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDebugMarkerBeginEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerBeginEXT")]
@@ -29621,13 +28619,11 @@ public unsafe partial interface IVk
         [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoEXT> pMarkerInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDebugMarkerEndEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerEndEXT")]
     void CmdDebugMarkerEndEXT([NativeName("commandBuffer")] CommandBufferHandle commandBuffer);
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDebugMarkerInsertEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerInsertEXT")]
@@ -29636,7 +28632,6 @@ public unsafe partial interface IVk
         [NativeName("pMarkerInfo")] DebugMarkerMarkerInfoEXT* pMarkerInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDebugMarkerInsertEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDebugMarkerInsertEXT")]
@@ -29645,7 +28640,6 @@ public unsafe partial interface IVk
         [NativeName("pMarkerInfo")] Ref<DebugMarkerMarkerInfoEXT> pMarkerInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdDecodeVideoKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29661,7 +28655,6 @@ public unsafe partial interface IVk
         [NativeName("pDecodeInfo")] VideoDecodeInfoKHR* pDecodeInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdDecodeVideoKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29677,7 +28670,6 @@ public unsafe partial interface IVk
         [NativeName("pDecodeInfo")] Ref<VideoDecodeInfoKHR> pDecodeInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDecompressMemoryEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -29690,7 +28682,6 @@ public unsafe partial interface IVk
         [NativeName("pDecompressMemoryInfoEXT")] DecompressMemoryInfoEXT* pDecompressMemoryInfoEXT
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDecompressMemoryEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -29704,7 +28695,6 @@ public unsafe partial interface IVk
             Ref<DecompressMemoryInfoEXT> pDecompressMemoryInfoEXT
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDecompressMemoryIndirectCountEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -29721,7 +28711,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdDecompressMemoryIndirectCountNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -29740,7 +28729,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdDecompressMemoryNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -29758,7 +28746,6 @@ public unsafe partial interface IVk
         [NativeName("pDecompressMemoryRegions")] DecompressMemoryRegionNV* pDecompressMemoryRegions
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdDecompressMemoryNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -29777,7 +28764,6 @@ public unsafe partial interface IVk
             Ref<DecompressMemoryRegionNV> pDecompressMemoryRegions
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdDecompressMemoryNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -29854,7 +28840,6 @@ public unsafe partial interface IVk
         [NativeName("groupCountZ")] uint groupCountZ
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdDispatchBaseKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -29872,7 +28857,6 @@ public unsafe partial interface IVk
         [NativeName("groupCountZ")] uint groupCountZ
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCmdDispatchDataGraphARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -29886,7 +28870,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] DataGraphPipelineDispatchInfoARM* pInfo
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCmdDispatchDataGraphARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -29929,7 +28912,6 @@ public unsafe partial interface IVk
         [NativeName("offset")] ulong offset
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkCmdDispatchTileQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -29945,7 +28927,6 @@ public unsafe partial interface IVk
         [NativeName("pDispatchTileInfo")] DispatchTileInfoQCOM* pDispatchTileInfo
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkCmdDispatchTileQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -29987,7 +28968,6 @@ public unsafe partial interface IVk
         [NativeName("firstInstance")] uint firstInstance
     );
 
-    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("vkCmdDrawClusterHUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -30005,7 +28985,6 @@ public unsafe partial interface IVk
         [NativeName("groupCountZ")] uint groupCountZ
     );
 
-    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("vkCmdDrawClusterIndirectHUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -30099,7 +29078,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("vkCmdDrawIndexedIndirectCountAMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCountAMD")]
@@ -30113,7 +29091,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdDrawIndexedIndirectCountKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndexedIndirectCountKHR")]
@@ -30153,7 +29130,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDrawIndirectByteCountEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30198,7 +29174,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("vkCmdDrawIndirectCountAMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_draw_indirect_count"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCountAMD")]
@@ -30212,7 +29187,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdDrawIndirectCountKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_draw_indirect_count"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdDrawIndirectCountKHR")]
@@ -30226,7 +29200,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDrawMeshTasksEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30241,7 +29214,6 @@ public unsafe partial interface IVk
         [NativeName("groupCountZ")] uint groupCountZ
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDrawMeshTasksIndirectCountEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30263,7 +29235,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdDrawMeshTasksIndirectCountNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -30288,7 +29259,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDrawMeshTasksIndirectEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30304,7 +29274,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdDrawMeshTasksIndirectNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -30323,7 +29292,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdDrawMeshTasksNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -30340,7 +29308,6 @@ public unsafe partial interface IVk
         [NativeName("firstTask")] uint firstTask
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDrawMultiEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30360,7 +29327,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDrawMultiEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30380,7 +29346,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDrawMultiEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30399,7 +29364,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] uint stride
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDrawMultiIndexedEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30420,7 +29384,6 @@ public unsafe partial interface IVk
         [NativeName("pVertexOffset")] int* pVertexOffset
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDrawMultiIndexedEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30441,7 +29404,6 @@ public unsafe partial interface IVk
         [NativeName("pVertexOffset")] Ref<int> pVertexOffset
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdDrawMultiIndexedEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30461,7 +29423,6 @@ public unsafe partial interface IVk
         [NativeName("pVertexOffset")] Ref<int> pVertexOffset
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdEncodeVideoKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -30477,7 +29438,6 @@ public unsafe partial interface IVk
         [NativeName("pEncodeInfo")] VideoEncodeInfoKHR* pEncodeInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdEncodeVideoKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -30493,7 +29453,6 @@ public unsafe partial interface IVk
         [NativeName("pEncodeInfo")] Ref<VideoEncodeInfoKHR> pEncodeInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdEndConditionalRenderingEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30508,13 +29467,11 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdEndDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndDebugUtilsLabelEXT")]
     void CmdEndDebugUtilsLabelEXT([NativeName("commandBuffer")] CommandBufferHandle commandBuffer);
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkCmdEndPerTileExecutionQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -30530,7 +29487,6 @@ public unsafe partial interface IVk
         [NativeName("pPerTileEndInfo")] PerTileEndInfoQCOM* pPerTileEndInfo
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkCmdEndPerTileExecutionQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -30580,7 +29536,6 @@ public unsafe partial interface IVk
         [NativeName("query")] uint query
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdEndQueryIndexedEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30607,7 +29562,6 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdEndRendering")]
     void CmdEndRendering([NativeName("commandBuffer")] CommandBufferHandle commandBuffer);
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdEndRendering2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30629,7 +29583,6 @@ public unsafe partial interface IVk
         [NativeName("pRenderingEndInfo")] RenderingEndInfoKHR* pRenderingEndInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdEndRendering2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30651,7 +29604,6 @@ public unsafe partial interface IVk
         [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKHR> pRenderingEndInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdEndRendering2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -30667,7 +29619,6 @@ public unsafe partial interface IVk
         [NativeName("pRenderingEndInfo")] RenderingEndInfoKHR* pRenderingEndInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdEndRendering2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -30683,7 +29634,6 @@ public unsafe partial interface IVk
         [NativeName("pRenderingEndInfo")] Ref<RenderingEndInfoKHR> pRenderingEndInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdEndRenderingKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -30755,7 +29705,6 @@ public unsafe partial interface IVk
         [NativeName("pSubpassEndInfo")] Ref<SubpassEndInfo> pSubpassEndInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdEndRenderPass2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -30768,7 +29717,6 @@ public unsafe partial interface IVk
         [NativeName("pSubpassEndInfo")] SubpassEndInfo* pSubpassEndInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdEndRenderPass2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -30781,7 +29729,6 @@ public unsafe partial interface IVk
         [NativeName("pSubpassEndInfo")] Ref<SubpassEndInfo> pSubpassEndInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdEndTransformFeedbackEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30800,7 +29747,6 @@ public unsafe partial interface IVk
         [NativeName("pCounterBufferOffsets")] ulong* pCounterBufferOffsets
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdEndTransformFeedbackEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30819,7 +29765,6 @@ public unsafe partial interface IVk
         [NativeName("pCounterBufferOffsets")] Ref<ulong> pCounterBufferOffsets
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdEndVideoCodingKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -30832,7 +29777,6 @@ public unsafe partial interface IVk
         [NativeName("pEndCodingInfo")] VideoEndCodingInfoKHR* pEndCodingInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdEndVideoCodingKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -30946,7 +29890,6 @@ public unsafe partial interface IVk
         [NativeName("pCommandBuffers")] Ref<CommandBufferHandle> pCommandBuffers
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdExecuteGeneratedCommandsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30964,7 +29907,6 @@ public unsafe partial interface IVk
         [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoEXT* pGeneratedCommandsInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdExecuteGeneratedCommandsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -30982,7 +29924,6 @@ public unsafe partial interface IVk
         [NativeName("pGeneratedCommandsInfo")] Ref<GeneratedCommandsInfoEXT> pGeneratedCommandsInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdExecuteGeneratedCommandsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -30996,7 +29937,6 @@ public unsafe partial interface IVk
         [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNV* pGeneratedCommandsInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdExecuteGeneratedCommandsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -31046,7 +29986,6 @@ public unsafe partial interface IVk
         [NativeName("data")] uint data
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdInsertDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
@@ -31055,7 +29994,6 @@ public unsafe partial interface IVk
         [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdInsertDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdInsertDebugUtilsLabelEXT")]
@@ -31127,7 +30065,6 @@ public unsafe partial interface IVk
         [NativeName("pSubpassEndInfo")] Ref<SubpassEndInfo> pSubpassEndInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdNextSubpass2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31141,7 +30078,6 @@ public unsafe partial interface IVk
         [NativeName("pSubpassEndInfo")] SubpassEndInfo* pSubpassEndInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdNextSubpass2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31155,7 +30091,6 @@ public unsafe partial interface IVk
         [NativeName("pSubpassEndInfo")] Ref<SubpassEndInfo> pSubpassEndInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdOpticalFlowExecuteNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -31173,7 +30108,6 @@ public unsafe partial interface IVk
         [NativeName("pExecuteInfo")] OpticalFlowExecuteInfoNV* pExecuteInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdOpticalFlowExecuteNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -31315,7 +30249,6 @@ public unsafe partial interface IVk
         [NativeName("pDependencyInfo")] Ref<DependencyInfo> pDependencyInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPipelineBarrier2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31331,7 +30264,6 @@ public unsafe partial interface IVk
         [NativeName("pDependencyInfo")] DependencyInfo* pDependencyInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPipelineBarrier2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31347,7 +30279,6 @@ public unsafe partial interface IVk
         [NativeName("pDependencyInfo")] Ref<DependencyInfo> pDependencyInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdPreprocessGeneratedCommandsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -31365,7 +30296,6 @@ public unsafe partial interface IVk
         [NativeName("stateCommandBuffer")] CommandBufferHandle stateCommandBuffer
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdPreprocessGeneratedCommandsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -31383,7 +30313,6 @@ public unsafe partial interface IVk
         [NativeName("stateCommandBuffer")] CommandBufferHandle stateCommandBuffer
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdPreprocessGeneratedCommandsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -31396,7 +30325,6 @@ public unsafe partial interface IVk
         [NativeName("pGeneratedCommandsInfo")] GeneratedCommandsInfoNV* pGeneratedCommandsInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdPreprocessGeneratedCommandsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -31497,7 +30425,6 @@ public unsafe partial interface IVk
         [NativeName("pPushConstantsInfo")] Ref<PushConstantsInfo> pPushConstantsInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushConstants2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushConstants2KHR")]
@@ -31506,7 +30433,6 @@ public unsafe partial interface IVk
         [NativeName("pPushConstantsInfo")] PushConstantsInfo* pPushConstantsInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushConstants2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance6"], ImpliesSets = ["VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdPushConstants2KHR")]
@@ -31586,7 +30512,6 @@ public unsafe partial interface IVk
         [NativeName("pPushDescriptorSetInfo")] Ref<PushDescriptorSetInfo> pPushDescriptorSetInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushDescriptorSet2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31600,7 +30525,6 @@ public unsafe partial interface IVk
         [NativeName("pPushDescriptorSetInfo")] PushDescriptorSetInfo* pPushDescriptorSetInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushDescriptorSet2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31614,7 +30538,6 @@ public unsafe partial interface IVk
         [NativeName("pPushDescriptorSetInfo")] Ref<PushDescriptorSetInfo> pPushDescriptorSetInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushDescriptorSetKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31634,7 +30557,6 @@ public unsafe partial interface IVk
         [NativeName("pDescriptorWrites")] WriteDescriptorSet* pDescriptorWrites
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushDescriptorSetKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31654,7 +30576,6 @@ public unsafe partial interface IVk
         [NativeName("pDescriptorWrites")] Ref<WriteDescriptorSet> pDescriptorWrites
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushDescriptorSetKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31731,7 +30652,6 @@ public unsafe partial interface IVk
             Ref<PushDescriptorSetWithTemplateInfo> pPushDescriptorSetWithTemplateInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushDescriptorSetWithTemplate2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31746,7 +30666,6 @@ public unsafe partial interface IVk
             PushDescriptorSetWithTemplateInfo* pPushDescriptorSetWithTemplateInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushDescriptorSetWithTemplate2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31761,7 +30680,6 @@ public unsafe partial interface IVk
             Ref<PushDescriptorSetWithTemplateInfo> pPushDescriptorSetWithTemplateInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushDescriptorSetWithTemplateKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31784,7 +30702,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdPushDescriptorSetWithTemplateKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -31856,7 +30773,6 @@ public unsafe partial interface IVk
         [NativeName("stageMask")] PipelineStageFlags2 stageMask
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdResetEvent2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -32015,7 +30931,6 @@ public unsafe partial interface IVk
         [NativeName("pResolveImageInfo")] Ref<ResolveImageInfo2> pResolveImageInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdResolveImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -32031,7 +30946,6 @@ public unsafe partial interface IVk
         [NativeName("pResolveImageInfo")] ResolveImageInfo2* pResolveImageInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdResolveImage2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -32047,7 +30961,6 @@ public unsafe partial interface IVk
         [NativeName("pResolveImageInfo")] Ref<ResolveImageInfo2> pResolveImageInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetAlphaToCoverageEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32063,7 +30976,6 @@ public unsafe partial interface IVk
         [NativeName("alphaToCoverageEnable")] uint alphaToCoverageEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetAlphaToCoverageEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32079,7 +30991,6 @@ public unsafe partial interface IVk
         [NativeName("alphaToCoverageEnable")] MaybeBool<uint> alphaToCoverageEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetAlphaToOneEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32095,7 +31006,6 @@ public unsafe partial interface IVk
         [NativeName("alphaToOneEnable")] uint alphaToOneEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetAlphaToOneEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32111,7 +31021,6 @@ public unsafe partial interface IVk
         [NativeName("alphaToOneEnable")] MaybeBool<uint> alphaToOneEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetAttachmentFeedbackLoopEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32173,7 +31082,6 @@ public unsafe partial interface IVk
         [NativeName("blendConstants")] Ref<float> blendConstants
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCheckpointNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32189,7 +31097,6 @@ public unsafe partial interface IVk
         [NativeName("pCheckpointMarker")] void* pCheckpointMarker
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCheckpointNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32205,7 +31112,6 @@ public unsafe partial interface IVk
         [NativeName("pCheckpointMarker")] Ref pCheckpointMarker
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoarseSampleOrderNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32223,7 +31129,6 @@ public unsafe partial interface IVk
         [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNV* pCustomSampleOrders
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoarseSampleOrderNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32241,7 +31146,6 @@ public unsafe partial interface IVk
         [NativeName("pCustomSampleOrders")] Ref<CoarseSampleOrderCustomNV> pCustomSampleOrders
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoarseSampleOrderNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32258,7 +31162,6 @@ public unsafe partial interface IVk
         [NativeName("pCustomSampleOrders")] CoarseSampleOrderCustomNV pCustomSampleOrders
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorBlendAdvancedEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32277,7 +31180,6 @@ public unsafe partial interface IVk
         [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedEXT* pColorBlendAdvanced
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorBlendAdvancedEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32296,7 +31198,6 @@ public unsafe partial interface IVk
         [NativeName("pColorBlendAdvanced")] Ref<ColorBlendAdvancedEXT> pColorBlendAdvanced
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorBlendAdvancedEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32314,7 +31215,6 @@ public unsafe partial interface IVk
         [NativeName("pColorBlendAdvanced")] ColorBlendAdvancedEXT pColorBlendAdvanced
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorBlendEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32332,7 +31232,6 @@ public unsafe partial interface IVk
         [NativeName("pColorBlendEnables")] uint* pColorBlendEnables
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorBlendEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32350,7 +31249,6 @@ public unsafe partial interface IVk
         [NativeName("pColorBlendEnables")] Ref<uint> pColorBlendEnables
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorBlendEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32367,7 +31265,6 @@ public unsafe partial interface IVk
         [NativeName("pColorBlendEnables")] uint pColorBlendEnables
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorBlendEquationEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32385,7 +31282,6 @@ public unsafe partial interface IVk
         [NativeName("pColorBlendEquations")] ColorBlendEquationEXT* pColorBlendEquations
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorBlendEquationEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32403,7 +31299,6 @@ public unsafe partial interface IVk
         [NativeName("pColorBlendEquations")] Ref<ColorBlendEquationEXT> pColorBlendEquations
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorBlendEquationEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32420,7 +31315,6 @@ public unsafe partial interface IVk
         [NativeName("pColorBlendEquations")] ColorBlendEquationEXT pColorBlendEquations
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorWriteEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32437,7 +31331,6 @@ public unsafe partial interface IVk
         [NativeName("pColorWriteEnables")] uint* pColorWriteEnables
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorWriteEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32454,7 +31347,6 @@ public unsafe partial interface IVk
         [NativeName("pColorWriteEnables")] Ref<uint> pColorWriteEnables
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorWriteEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32470,7 +31362,6 @@ public unsafe partial interface IVk
         [NativeName("pColorWriteEnables")] uint pColorWriteEnables
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorWriteMaskEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32488,7 +31379,6 @@ public unsafe partial interface IVk
         [NativeName("pColorWriteMasks")] ColorComponentFlags* pColorWriteMasks
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorWriteMaskEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32506,7 +31396,6 @@ public unsafe partial interface IVk
         [NativeName("pColorWriteMasks")] Ref<ColorComponentFlags> pColorWriteMasks
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetColorWriteMaskEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32523,7 +31412,6 @@ public unsafe partial interface IVk
         [NativeName("pColorWriteMasks")] ColorComponentFlags pColorWriteMasks
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetConservativeRasterizationModeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32541,7 +31429,6 @@ public unsafe partial interface IVk
             ConservativeRasterizationModeEXT conservativeRasterizationMode
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoverageModulationModeNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32558,7 +31445,6 @@ public unsafe partial interface IVk
         [NativeName("coverageModulationMode")] CoverageModulationModeNV coverageModulationMode
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoverageModulationTableEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32575,7 +31461,6 @@ public unsafe partial interface IVk
         [NativeName("coverageModulationTableEnable")] uint coverageModulationTableEnable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoverageModulationTableEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32592,7 +31477,6 @@ public unsafe partial interface IVk
         [NativeName("coverageModulationTableEnable")] MaybeBool<uint> coverageModulationTableEnable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoverageModulationTableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32610,7 +31494,6 @@ public unsafe partial interface IVk
         [NativeName("pCoverageModulationTable")] float* pCoverageModulationTable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoverageModulationTableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32628,7 +31511,6 @@ public unsafe partial interface IVk
         [NativeName("pCoverageModulationTable")] Ref<float> pCoverageModulationTable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoverageModulationTableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32645,7 +31527,6 @@ public unsafe partial interface IVk
         [NativeName("pCoverageModulationTable")] float pCoverageModulationTable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoverageReductionModeNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32662,7 +31543,6 @@ public unsafe partial interface IVk
         [NativeName("coverageReductionMode")] CoverageReductionModeNV coverageReductionMode
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoverageToColorEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32679,7 +31559,6 @@ public unsafe partial interface IVk
         [NativeName("coverageToColorEnable")] uint coverageToColorEnable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoverageToColorEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32696,7 +31575,6 @@ public unsafe partial interface IVk
         [NativeName("coverageToColorEnable")] MaybeBool<uint> coverageToColorEnable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetCoverageToColorLocationNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -32725,7 +31603,6 @@ public unsafe partial interface IVk
         [NativeName("cullMode")] CullModeFlags cullMode
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetCullModeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32766,7 +31643,6 @@ public unsafe partial interface IVk
         [NativeName("depthBiasSlopeFactor")] float depthBiasSlopeFactor
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthBias2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32782,7 +31658,6 @@ public unsafe partial interface IVk
         [NativeName("pDepthBiasInfo")] DepthBiasInfoEXT* pDepthBiasInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthBias2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32822,7 +31697,6 @@ public unsafe partial interface IVk
         [NativeName("depthBiasEnable")] MaybeBool<uint> depthBiasEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthBiasEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32838,7 +31712,6 @@ public unsafe partial interface IVk
         [NativeName("depthBiasEnable")] uint depthBiasEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthBiasEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32902,7 +31775,6 @@ public unsafe partial interface IVk
         [NativeName("depthBoundsTestEnable")] MaybeBool<uint> depthBoundsTestEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthBoundsTestEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32918,7 +31790,6 @@ public unsafe partial interface IVk
         [NativeName("depthBoundsTestEnable")] uint depthBoundsTestEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthBoundsTestEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32934,7 +31805,6 @@ public unsafe partial interface IVk
         [NativeName("depthBoundsTestEnable")] MaybeBool<uint> depthBoundsTestEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthClampEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32950,7 +31820,6 @@ public unsafe partial interface IVk
         [NativeName("depthClampEnable")] uint depthClampEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthClampEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32966,7 +31835,6 @@ public unsafe partial interface IVk
         [NativeName("depthClampEnable")] MaybeBool<uint> depthClampEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthClampRangeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -32985,7 +31853,6 @@ public unsafe partial interface IVk
         [NativeName("pDepthClampRange")] DepthClampRangeEXT* pDepthClampRange
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthClampRangeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33004,7 +31871,6 @@ public unsafe partial interface IVk
         [NativeName("pDepthClampRange")] Ref<DepthClampRangeEXT> pDepthClampRange
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthClipEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33021,7 +31887,6 @@ public unsafe partial interface IVk
         [NativeName("depthClipEnable")] uint depthClipEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthClipEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33038,7 +31903,6 @@ public unsafe partial interface IVk
         [NativeName("depthClipEnable")] MaybeBool<uint> depthClipEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthClipNegativeOneToOneEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33055,7 +31919,6 @@ public unsafe partial interface IVk
         [NativeName("negativeOneToOne")] uint negativeOneToOne
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthClipNegativeOneToOneEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33084,7 +31947,6 @@ public unsafe partial interface IVk
         [NativeName("depthCompareOp")] CompareOp depthCompareOp
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthCompareOpEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33124,7 +31986,6 @@ public unsafe partial interface IVk
         [NativeName("depthTestEnable")] MaybeBool<uint> depthTestEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthTestEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33140,7 +32001,6 @@ public unsafe partial interface IVk
         [NativeName("depthTestEnable")] uint depthTestEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthTestEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33180,7 +32040,6 @@ public unsafe partial interface IVk
         [NativeName("depthWriteEnable")] MaybeBool<uint> depthWriteEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthWriteEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33196,7 +32055,6 @@ public unsafe partial interface IVk
         [NativeName("depthWriteEnable")] uint depthWriteEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDepthWriteEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33212,7 +32070,6 @@ public unsafe partial interface IVk
         [NativeName("depthWriteEnable")] MaybeBool<uint> depthWriteEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDescriptorBufferOffsets2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33227,7 +32084,6 @@ public unsafe partial interface IVk
             SetDescriptorBufferOffsetsInfoEXT* pSetDescriptorBufferOffsetsInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDescriptorBufferOffsets2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33242,7 +32098,6 @@ public unsafe partial interface IVk
             Ref<SetDescriptorBufferOffsetsInfoEXT> pSetDescriptorBufferOffsetsInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDescriptorBufferOffsetsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33265,7 +32120,6 @@ public unsafe partial interface IVk
         [NativeName("pOffsets")] ulong* pOffsets
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDescriptorBufferOffsetsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33317,7 +32171,6 @@ public unsafe partial interface IVk
         [NativeName("deviceMask")] uint deviceMask
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetDeviceMaskKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33330,7 +32183,6 @@ public unsafe partial interface IVk
         [NativeName("deviceMask")] uint deviceMask
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDiscardRectangleEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33346,7 +32198,6 @@ public unsafe partial interface IVk
         [NativeName("discardRectangleEnable")] uint discardRectangleEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDiscardRectangleEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33362,7 +32213,6 @@ public unsafe partial interface IVk
         [NativeName("discardRectangleEnable")] MaybeBool<uint> discardRectangleEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDiscardRectangleEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33380,7 +32230,6 @@ public unsafe partial interface IVk
         [NativeName("pDiscardRectangles")] Rect2D* pDiscardRectangles
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDiscardRectangleEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33398,7 +32247,6 @@ public unsafe partial interface IVk
         [NativeName("pDiscardRectangles")] Ref<Rect2D> pDiscardRectangles
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDiscardRectangleEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33415,7 +32263,6 @@ public unsafe partial interface IVk
         [NativeName("pDiscardRectangles")] Rect2D pDiscardRectangles
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetDiscardRectangleModeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33500,7 +32347,6 @@ public unsafe partial interface IVk
         [NativeName("pDependencyInfo")] Ref<DependencyInfo> pDependencyInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetEvent2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33517,7 +32363,6 @@ public unsafe partial interface IVk
         [NativeName("pDependencyInfo")] DependencyInfo* pDependencyInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetEvent2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33534,7 +32379,6 @@ public unsafe partial interface IVk
         [NativeName("pDependencyInfo")] Ref<DependencyInfo> pDependencyInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetExclusiveScissorEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33552,7 +32396,6 @@ public unsafe partial interface IVk
         [NativeName("pExclusiveScissorEnables")] uint* pExclusiveScissorEnables
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetExclusiveScissorEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33570,7 +32413,6 @@ public unsafe partial interface IVk
         [NativeName("pExclusiveScissorEnables")] Ref<uint> pExclusiveScissorEnables
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetExclusiveScissorEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33587,7 +32429,6 @@ public unsafe partial interface IVk
         [NativeName("pExclusiveScissorEnables")] uint pExclusiveScissorEnables
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetExclusiveScissorNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33605,7 +32446,6 @@ public unsafe partial interface IVk
         [NativeName("pExclusiveScissors")] Rect2D* pExclusiveScissors
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetExclusiveScissorNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33623,7 +32463,6 @@ public unsafe partial interface IVk
         [NativeName("pExclusiveScissors")] Ref<Rect2D> pExclusiveScissors
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetExclusiveScissorNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33640,7 +32479,6 @@ public unsafe partial interface IVk
         [NativeName("pExclusiveScissors")] Rect2D pExclusiveScissors
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetExtraPrimitiveOverestimationSizeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33657,7 +32495,6 @@ public unsafe partial interface IVk
         [NativeName("extraPrimitiveOverestimationSize")] float extraPrimitiveOverestimationSize
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetFragmentShadingRateEnumNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33671,7 +32508,6 @@ public unsafe partial interface IVk
         [NativeName("combinerOps")] FragmentShadingRateCombinerOpKHR* combinerOps
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetFragmentShadingRateEnumNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33685,7 +32521,6 @@ public unsafe partial interface IVk
         [NativeName("combinerOps")] Ref<FragmentShadingRateCombinerOpKHR> combinerOps
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetFragmentShadingRateKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33703,7 +32538,6 @@ public unsafe partial interface IVk
         [NativeName("combinerOps")] FragmentShadingRateCombinerOpKHR* combinerOps
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetFragmentShadingRateKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33733,7 +32567,6 @@ public unsafe partial interface IVk
         [NativeName("frontFace")] FrontFace frontFace
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetFrontFaceEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33749,7 +32582,6 @@ public unsafe partial interface IVk
         [NativeName("frontFace")] FrontFace frontFace
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetLineRasterizationModeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33779,7 +32611,6 @@ public unsafe partial interface IVk
         [NativeName("lineStipplePattern")] ushort lineStipplePattern
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetLineStippleEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33796,7 +32627,6 @@ public unsafe partial interface IVk
         [NativeName("stippledLineEnable")] uint stippledLineEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetLineStippleEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33813,7 +32643,6 @@ public unsafe partial interface IVk
         [NativeName("stippledLineEnable")] MaybeBool<uint> stippledLineEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetLineStippleEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33830,7 +32659,6 @@ public unsafe partial interface IVk
         [NativeName("lineStipplePattern")] ushort lineStipplePattern
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetLineStippleKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -33870,7 +32698,6 @@ public unsafe partial interface IVk
         [NativeName("lineWidth")] float lineWidth
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetLogicOpEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33886,7 +32713,6 @@ public unsafe partial interface IVk
         [NativeName("logicOpEnable")] uint logicOpEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetLogicOpEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33902,7 +32728,6 @@ public unsafe partial interface IVk
         [NativeName("logicOpEnable")] MaybeBool<uint> logicOpEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetLogicOpEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33918,7 +32743,6 @@ public unsafe partial interface IVk
         [NativeName("logicOp")] LogicOp logicOp
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetPatchControlPointsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -33934,7 +32758,6 @@ public unsafe partial interface IVk
         [NativeName("patchControlPoints")] uint patchControlPoints
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkCmdSetPerformanceMarkerINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceMarkerINTEL")]
@@ -33943,7 +32766,6 @@ public unsafe partial interface IVk
         [NativeName("pMarkerInfo")] PerformanceMarkerInfoINTEL* pMarkerInfo
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkCmdSetPerformanceMarkerINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceMarkerINTEL")]
@@ -33952,7 +32774,6 @@ public unsafe partial interface IVk
         [NativeName("pMarkerInfo")] Ref<PerformanceMarkerInfoINTEL> pMarkerInfo
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkCmdSetPerformanceOverrideINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceOverrideINTEL")]
@@ -33961,7 +32782,6 @@ public unsafe partial interface IVk
         [NativeName("pOverrideInfo")] PerformanceOverrideInfoINTEL* pOverrideInfo
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkCmdSetPerformanceOverrideINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceOverrideINTEL")]
@@ -33970,7 +32790,6 @@ public unsafe partial interface IVk
         [NativeName("pOverrideInfo")] Ref<PerformanceOverrideInfoINTEL> pOverrideInfo
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkCmdSetPerformanceStreamMarkerINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL")]
@@ -33979,7 +32798,6 @@ public unsafe partial interface IVk
         [NativeName("pMarkerInfo")] PerformanceStreamMarkerInfoINTEL* pMarkerInfo
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkCmdSetPerformanceStreamMarkerINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL")]
@@ -33988,7 +32806,6 @@ public unsafe partial interface IVk
         [NativeName("pMarkerInfo")] Ref<PerformanceStreamMarkerInfoINTEL> pMarkerInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetPolygonModeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34028,7 +32845,6 @@ public unsafe partial interface IVk
         [NativeName("primitiveRestartEnable")] MaybeBool<uint> primitiveRestartEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetPrimitiveRestartEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34044,7 +32860,6 @@ public unsafe partial interface IVk
         [NativeName("primitiveRestartEnable")] uint primitiveRestartEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetPrimitiveRestartEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34072,7 +32887,6 @@ public unsafe partial interface IVk
         [NativeName("primitiveTopology")] PrimitiveTopology primitiveTopology
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetPrimitiveTopologyEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34088,7 +32902,6 @@ public unsafe partial interface IVk
         [NativeName("primitiveTopology")] PrimitiveTopology primitiveTopology
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetProvokingVertexModeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34105,7 +32918,6 @@ public unsafe partial interface IVk
         [NativeName("provokingVertexMode")] ProvokingVertexModeEXT provokingVertexMode
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetRasterizationSamplesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34121,7 +32933,6 @@ public unsafe partial interface IVk
         [NativeName("rasterizationSamples")] SampleCountFlags rasterizationSamples
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetRasterizationStreamEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34162,7 +32973,6 @@ public unsafe partial interface IVk
         [NativeName("rasterizerDiscardEnable")] MaybeBool<uint> rasterizerDiscardEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetRasterizerDiscardEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34178,7 +32988,6 @@ public unsafe partial interface IVk
         [NativeName("rasterizerDiscardEnable")] uint rasterizerDiscardEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetRasterizerDiscardEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34194,7 +33003,6 @@ public unsafe partial interface IVk
         [NativeName("rasterizerDiscardEnable")] MaybeBool<uint> rasterizerDiscardEnable
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetRayTracingPipelineStackSizeKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -34234,7 +33042,6 @@ public unsafe partial interface IVk
         [NativeName("pLocationInfo")] Ref<RenderingAttachmentLocationInfo> pLocationInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetRenderingAttachmentLocationsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -34250,7 +33057,6 @@ public unsafe partial interface IVk
         [NativeName("pLocationInfo")] RenderingAttachmentLocationInfo* pLocationInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetRenderingAttachmentLocationsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -34292,7 +33098,6 @@ public unsafe partial interface IVk
             Ref<RenderingInputAttachmentIndexInfo> pInputAttachmentIndexInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetRenderingInputAttachmentIndicesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -34309,7 +33114,6 @@ public unsafe partial interface IVk
             RenderingInputAttachmentIndexInfo* pInputAttachmentIndexInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdSetRenderingInputAttachmentIndicesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -34326,7 +33130,6 @@ public unsafe partial interface IVk
             Ref<RenderingInputAttachmentIndexInfo> pInputAttachmentIndexInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetRepresentativeFragmentTestEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -34343,7 +33146,6 @@ public unsafe partial interface IVk
         [NativeName("representativeFragmentTestEnable")] uint representativeFragmentTestEnable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetRepresentativeFragmentTestEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -34361,7 +33163,6 @@ public unsafe partial interface IVk
             MaybeBool<uint> representativeFragmentTestEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetSampleLocationsEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34378,7 +33179,6 @@ public unsafe partial interface IVk
         [NativeName("sampleLocationsEnable")] uint sampleLocationsEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetSampleLocationsEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34395,7 +33195,6 @@ public unsafe partial interface IVk
         [NativeName("sampleLocationsEnable")] MaybeBool<uint> sampleLocationsEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetSampleLocationsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34411,7 +33210,6 @@ public unsafe partial interface IVk
         [NativeName("pSampleLocationsInfo")] SampleLocationsInfoEXT* pSampleLocationsInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetSampleLocationsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34427,7 +33225,6 @@ public unsafe partial interface IVk
         [NativeName("pSampleLocationsInfo")] Ref<SampleLocationsInfoEXT> pSampleLocationsInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetSampleMaskEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34444,7 +33241,6 @@ public unsafe partial interface IVk
         [NativeName("pSampleMask")] uint* pSampleMask
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetSampleMaskEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34573,7 +33369,6 @@ public unsafe partial interface IVk
         [NativeName("pScissors")] Rect2D pScissors
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetScissorWithCountEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34590,7 +33385,6 @@ public unsafe partial interface IVk
         [NativeName("pScissors")] Rect2D* pScissors
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetScissorWithCountEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34607,7 +33401,6 @@ public unsafe partial interface IVk
         [NativeName("pScissors")] Ref<Rect2D> pScissors
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetScissorWithCountEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34623,7 +33416,6 @@ public unsafe partial interface IVk
         [NativeName("pScissors")] Rect2D pScissors
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetShadingRateImageEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -34640,7 +33432,6 @@ public unsafe partial interface IVk
         [NativeName("shadingRateImageEnable")] uint shadingRateImageEnable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetShadingRateImageEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -34697,7 +33488,6 @@ public unsafe partial interface IVk
         [NativeName("compareOp")] CompareOp compareOp
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetStencilOpEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34765,7 +33555,6 @@ public unsafe partial interface IVk
         [NativeName("stencilTestEnable")] MaybeBool<uint> stencilTestEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetStencilTestEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34781,7 +33570,6 @@ public unsafe partial interface IVk
         [NativeName("stencilTestEnable")] uint stencilTestEnable
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetStencilTestEnableEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34821,7 +33609,6 @@ public unsafe partial interface IVk
         [NativeName("writeMask")] uint writeMask
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetTessellationDomainOriginEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34840,7 +33627,6 @@ public unsafe partial interface IVk
         [NativeName("domainOrigin")] TessellationDomainOrigin domainOrigin
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetVertexInputEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34861,7 +33647,6 @@ public unsafe partial interface IVk
             VertexInputAttributeDescription2EXT* pVertexAttributeDescriptions
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetVertexInputEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -34956,7 +33741,6 @@ public unsafe partial interface IVk
         [NativeName("pViewports")] Viewport pViewports
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportShadingRatePaletteNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -34974,7 +33758,6 @@ public unsafe partial interface IVk
         [NativeName("pShadingRatePalettes")] ShadingRatePaletteNV* pShadingRatePalettes
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportShadingRatePaletteNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -34992,7 +33775,6 @@ public unsafe partial interface IVk
         [NativeName("pShadingRatePalettes")] Ref<ShadingRatePaletteNV> pShadingRatePalettes
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportShadingRatePaletteNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35009,7 +33791,6 @@ public unsafe partial interface IVk
         [NativeName("pShadingRatePalettes")] ShadingRatePaletteNV pShadingRatePalettes
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportSwizzleNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35028,7 +33809,6 @@ public unsafe partial interface IVk
         [NativeName("pViewportSwizzles")] ViewportSwizzleNV* pViewportSwizzles
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportSwizzleNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35047,7 +33827,6 @@ public unsafe partial interface IVk
         [NativeName("pViewportSwizzles")] Ref<ViewportSwizzleNV> pViewportSwizzles
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportSwizzleNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35103,7 +33882,6 @@ public unsafe partial interface IVk
         [NativeName("pViewports")] Viewport pViewports
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetViewportWithCountEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -35120,7 +33898,6 @@ public unsafe partial interface IVk
         [NativeName("pViewports")] Viewport* pViewports
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetViewportWithCountEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -35137,7 +33914,6 @@ public unsafe partial interface IVk
         [NativeName("pViewports")] Ref<Viewport> pViewports
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdSetViewportWithCountEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -35153,7 +33929,6 @@ public unsafe partial interface IVk
         [NativeName("pViewports")] Viewport pViewports
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportWScalingEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35170,7 +33945,6 @@ public unsafe partial interface IVk
         [NativeName("viewportWScalingEnable")] uint viewportWScalingEnable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportWScalingEnableNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35187,7 +33961,6 @@ public unsafe partial interface IVk
         [NativeName("viewportWScalingEnable")] MaybeBool<uint> viewportWScalingEnable
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportWScalingNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWScalingNV")]
@@ -35198,7 +33971,6 @@ public unsafe partial interface IVk
         [NativeName("pViewportWScalings")] ViewportWScalingNV* pViewportWScalings
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportWScalingNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWScalingNV")]
@@ -35209,7 +33981,6 @@ public unsafe partial interface IVk
         [NativeName("pViewportWScalings")] Ref<ViewportWScalingNV> pViewportWScalings
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdSetViewportWScalingNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdSetViewportWScalingNV")]
@@ -35219,7 +33990,6 @@ public unsafe partial interface IVk
         [NativeName("pViewportWScalings")] ViewportWScalingNV pViewportWScalings
     );
 
-    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("vkCmdSubpassShadingHUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -35233,7 +34003,6 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdSubpassShadingHUAWEI")]
     void CmdSubpassShadingHUAWEI([NativeName("commandBuffer")] CommandBufferHandle commandBuffer);
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdTraceRaysIndirect2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35247,7 +34016,6 @@ public unsafe partial interface IVk
         [NativeName("indirectDeviceAddress")] ulong indirectDeviceAddress
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdTraceRaysIndirectKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35271,7 +34039,6 @@ public unsafe partial interface IVk
         [NativeName("indirectDeviceAddress")] ulong indirectDeviceAddress
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdTraceRaysIndirectKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35295,7 +34062,6 @@ public unsafe partial interface IVk
         [NativeName("indirectDeviceAddress")] ulong indirectDeviceAddress
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdTraceRaysKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35321,7 +34087,6 @@ public unsafe partial interface IVk
         [NativeName("depth")] uint depth
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdTraceRaysKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35347,7 +34112,6 @@ public unsafe partial interface IVk
         [NativeName("depth")] uint depth
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdTraceRaysNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35449,7 +34213,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdUpdatePipelineIndirectBufferNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35579,7 +34342,6 @@ public unsafe partial interface IVk
         [NativeName("pDependencyInfos")] Ref<DependencyInfo> pDependencyInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdWaitEvents2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35597,7 +34359,6 @@ public unsafe partial interface IVk
         [NativeName("pDependencyInfos")] DependencyInfo* pDependencyInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdWaitEvents2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35615,7 +34376,6 @@ public unsafe partial interface IVk
         [NativeName("pDependencyInfos")] Ref<DependencyInfo> pDependencyInfos
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdWriteAccelerationStructuresPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35636,7 +34396,6 @@ public unsafe partial interface IVk
         [NativeName("firstQuery")] uint firstQuery
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdWriteAccelerationStructuresPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35657,7 +34416,6 @@ public unsafe partial interface IVk
         [NativeName("firstQuery")] uint firstQuery
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdWriteAccelerationStructuresPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35677,7 +34435,6 @@ public unsafe partial interface IVk
         [NativeName("firstQuery")] uint firstQuery
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdWriteAccelerationStructuresPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35698,7 +34455,6 @@ public unsafe partial interface IVk
         [NativeName("firstQuery")] uint firstQuery
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdWriteAccelerationStructuresPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35719,7 +34475,6 @@ public unsafe partial interface IVk
         [NativeName("firstQuery")] uint firstQuery
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCmdWriteAccelerationStructuresPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35739,7 +34494,6 @@ public unsafe partial interface IVk
         [NativeName("firstQuery")] uint firstQuery
     );
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("vkCmdWriteBufferMarker2AMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -35754,7 +34508,6 @@ public unsafe partial interface IVk
         [NativeName("marker")] uint marker
     );
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("vkCmdWriteBufferMarkerAMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_buffer_marker"])]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteBufferMarkerAMD")]
@@ -35766,7 +34519,6 @@ public unsafe partial interface IVk
         [NativeName("marker")] uint marker
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdWriteMicromapsPropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -35786,7 +34538,6 @@ public unsafe partial interface IVk
         [NativeName("firstQuery")] uint firstQuery
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdWriteMicromapsPropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -35806,7 +34557,6 @@ public unsafe partial interface IVk
         [NativeName("firstQuery")] uint firstQuery
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCmdWriteMicromapsPropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -35883,7 +34633,6 @@ public unsafe partial interface IVk
         [NativeName("query")] uint query
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCmdWriteTimestamp2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35901,7 +34650,6 @@ public unsafe partial interface IVk
         [NativeName("query")] uint query
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCompileDeferredNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35918,7 +34666,6 @@ public unsafe partial interface IVk
         [NativeName("shader")] uint shader
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkConvertCooperativeVectorMatrixNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35934,7 +34681,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] ConvertCooperativeVectorMatrixInfoNV* pInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkConvertCooperativeVectorMatrixNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -35950,7 +34696,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<ConvertCooperativeVectorMatrixInfoNV> pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCopyAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35967,7 +34712,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyAccelerationStructureInfoKHR* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCopyAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -35984,7 +34728,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<CopyAccelerationStructureInfoKHR> pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCopyAccelerationStructureToMemoryKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36001,7 +34744,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyAccelerationStructureToMemoryInfoKHR* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCopyAccelerationStructureToMemoryKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36052,7 +34794,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyImageToImageInfo")] Ref<CopyImageToImageInfo> pCopyImageToImageInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyImageToImageEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36069,7 +34810,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyImageToImageInfo")] CopyImageToImageInfo* pCopyImageToImageInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyImageToImageEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36120,7 +34860,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyImageToMemoryInfo")] Ref<CopyImageToMemoryInfo> pCopyImageToMemoryInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyImageToMemoryEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36137,7 +34876,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyImageToMemoryInfo")] CopyImageToMemoryInfo* pCopyImageToMemoryInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyImageToMemoryEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36154,7 +34892,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyImageToMemoryInfo")] Ref<CopyImageToMemoryInfo> pCopyImageToMemoryInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCopyMemoryToAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36171,7 +34908,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyMemoryToAccelerationStructureInfoKHR* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCopyMemoryToAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36222,7 +34958,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyMemoryToImageInfo")] Ref<CopyMemoryToImageInfo> pCopyMemoryToImageInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyMemoryToImageEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36239,7 +34974,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyMemoryToImageInfo")] CopyMemoryToImageInfo* pCopyMemoryToImageInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyMemoryToImageEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36256,7 +34990,6 @@ public unsafe partial interface IVk
         [NativeName("pCopyMemoryToImageInfo")] Ref<CopyMemoryToImageInfo> pCopyMemoryToImageInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyMemoryToMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36273,7 +35006,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyMemoryToMicromapInfoEXT* pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyMemoryToMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36290,7 +35022,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<CopyMemoryToMicromapInfoEXT> pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36307,7 +35038,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyMicromapInfoEXT* pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36324,7 +35054,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<CopyMicromapInfoEXT> pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyMicromapToMemoryEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36341,7 +35070,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] CopyMicromapToMemoryInfoEXT* pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCopyMicromapToMemoryEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -36358,7 +35086,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<CopyMicromapToMemoryInfoEXT> pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36377,7 +35104,6 @@ public unsafe partial interface IVk
             AccelerationStructureHandleKHR* pAccelerationStructure
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36396,7 +35122,6 @@ public unsafe partial interface IVk
             Ref<AccelerationStructureHandleKHR> pAccelerationStructure
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCreateAccelerationStructureNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -36414,7 +35139,6 @@ public unsafe partial interface IVk
         [NativeName("pAccelerationStructure")] AccelerationStructureHandleNV* pAccelerationStructure
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCreateAccelerationStructureNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -36697,7 +35421,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkCreateCuFunctionNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateCuFunctionNVX")]
@@ -36708,7 +35431,6 @@ public unsafe partial interface IVk
         [NativeName("pFunction")] CuFunctionHandleNVX* pFunction
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkCreateCuFunctionNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateCuFunctionNVX")]
@@ -36719,7 +35441,6 @@ public unsafe partial interface IVk
         [NativeName("pFunction")] Ref<CuFunctionHandleNVX> pFunction
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkCreateCuModuleNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateCuModuleNVX")]
@@ -36730,7 +35451,6 @@ public unsafe partial interface IVk
         [NativeName("pModule")] CuModuleHandleNVX* pModule
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkCreateCuModuleNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateCuModuleNVX")]
@@ -36741,7 +35461,6 @@ public unsafe partial interface IVk
         [NativeName("pModule")] Ref<CuModuleHandleNVX> pModule
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCreateDataGraphPipelinesARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -36759,7 +35478,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelines")] PipelineHandle* pPipelines
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCreateDataGraphPipelinesARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -36777,7 +35495,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCreateDataGraphPipelineSessionARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -36792,7 +35509,6 @@ public unsafe partial interface IVk
         [NativeName("pSession")] DataGraphPipelineSessionHandleARM* pSession
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCreateDataGraphPipelineSessionARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -36807,7 +35523,6 @@ public unsafe partial interface IVk
         [NativeName("pSession")] Ref<DataGraphPipelineSessionHandleARM> pSession
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateDebugReportCallbackEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDebugReportCallbackEXT")]
@@ -36818,7 +35533,6 @@ public unsafe partial interface IVk
         [NativeName("pCallback")] DebugReportCallbackHandleEXT* pCallback
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateDebugReportCallbackEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDebugReportCallbackEXT")]
@@ -36829,7 +35543,6 @@ public unsafe partial interface IVk
         [NativeName("pCallback")] Ref<DebugReportCallbackHandleEXT> pCallback
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateDebugUtilsMessengerEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
@@ -36840,7 +35553,6 @@ public unsafe partial interface IVk
         [NativeName("pMessenger")] DebugUtilsMessengerHandleEXT* pMessenger
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateDebugUtilsMessengerEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDebugUtilsMessengerEXT")]
@@ -36851,7 +35563,6 @@ public unsafe partial interface IVk
         [NativeName("pMessenger")] Ref<DebugUtilsMessengerHandleEXT> pMessenger
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateDeferredOperationKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDeferredOperationKHR")]
@@ -36861,7 +35572,6 @@ public unsafe partial interface IVk
         [NativeName("pDeferredOperation")] DeferredOperationHandleKHR* pDeferredOperation
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateDeferredOperationKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDeferredOperationKHR")]
@@ -37047,7 +35757,6 @@ public unsafe partial interface IVk
             Ref<DescriptorUpdateTemplateHandle> pDescriptorUpdateTemplate
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateDescriptorUpdateTemplateKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDescriptorUpdateTemplateKHR")]
@@ -37059,7 +35768,6 @@ public unsafe partial interface IVk
             DescriptorUpdateTemplateHandle* pDescriptorUpdateTemplate
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateDescriptorUpdateTemplateKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDescriptorUpdateTemplateKHR")]
@@ -37141,7 +35849,6 @@ public unsafe partial interface IVk
         [NativeName("pDevice")] Ref<DeviceHandle> pDevice
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateDisplayModeKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayModeKHR")]
@@ -37153,7 +35860,6 @@ public unsafe partial interface IVk
         [NativeName("pMode")] DisplayModeHandleKHR* pMode
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateDisplayModeKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayModeKHR")]
@@ -37165,7 +35871,6 @@ public unsafe partial interface IVk
         [NativeName("pMode")] Ref<DisplayModeHandleKHR> pMode
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateDisplayPlaneSurfaceKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayPlaneSurfaceKHR")]
@@ -37176,7 +35881,6 @@ public unsafe partial interface IVk
         [NativeName("pSurface")] SurfaceHandleKHR* pSurface
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateDisplayPlaneSurfaceKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateDisplayPlaneSurfaceKHR")]
@@ -37247,7 +35951,6 @@ public unsafe partial interface IVk
         [NativeName("pEvent")] Ref<EventHandle> pEvent
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCreateExternalComputeQueueNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateExternalComputeQueueNV")]
@@ -37258,7 +35961,6 @@ public unsafe partial interface IVk
         [NativeName("pExternalQueue")] ExternalComputeQueueHandleNV* pExternalQueue
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCreateExternalComputeQueueNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateExternalComputeQueueNV")]
@@ -37443,7 +36145,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateHeadlessSurfaceEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateHeadlessSurfaceEXT")]
@@ -37454,7 +36155,6 @@ public unsafe partial interface IVk
         [NativeName("pSurface")] SurfaceHandleKHR* pSurface
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateHeadlessSurfaceEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateHeadlessSurfaceEXT")]
@@ -37605,7 +36305,6 @@ public unsafe partial interface IVk
         [NativeName("pView")] Ref<ImageViewHandle> pView
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateIndirectCommandsLayoutEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37625,7 +36324,6 @@ public unsafe partial interface IVk
             IndirectCommandsLayoutHandleEXT* pIndirectCommandsLayout
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateIndirectCommandsLayoutEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37645,7 +36343,6 @@ public unsafe partial interface IVk
             Ref<IndirectCommandsLayoutHandleEXT> pIndirectCommandsLayout
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCreateIndirectCommandsLayoutNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -37661,7 +36358,6 @@ public unsafe partial interface IVk
             IndirectCommandsLayoutHandleNV* pIndirectCommandsLayout
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCreateIndirectCommandsLayoutNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -37677,7 +36373,6 @@ public unsafe partial interface IVk
             Ref<IndirectCommandsLayoutHandleNV> pIndirectCommandsLayout
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateIndirectExecutionSetEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37696,7 +36391,6 @@ public unsafe partial interface IVk
         [NativeName("pIndirectExecutionSet")] IndirectExecutionSetHandleEXT* pIndirectExecutionSet
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateIndirectExecutionSetEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37784,7 +36478,6 @@ public unsafe partial interface IVk
         [NativeName("pInstance")] Ref<InstanceHandle> pInstance
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37802,7 +36495,6 @@ public unsafe partial interface IVk
         [NativeName("pMicromap")] MicromapHandleEXT* pMicromap
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37820,7 +36512,6 @@ public unsafe partial interface IVk
         [NativeName("pMicromap")] Ref<MicromapHandleEXT> pMicromap
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCreateOpticalFlowSessionNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -37839,7 +36530,6 @@ public unsafe partial interface IVk
         [NativeName("pSession")] OpticalFlowSessionHandleNV* pSession
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCreateOpticalFlowSessionNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -37858,7 +36548,6 @@ public unsafe partial interface IVk
         [NativeName("pSession")] Ref<OpticalFlowSessionHandleNV> pSession
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreatePipelineBinariesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -37876,7 +36565,6 @@ public unsafe partial interface IVk
         [NativeName("pBinaries")] PipelineBinaryHandlesInfoKHR* pBinaries
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreatePipelineBinariesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38060,7 +36748,6 @@ public unsafe partial interface IVk
         [NativeName("pPrivateDataSlot")] Ref<PrivateDataSlotHandle> pPrivateDataSlot
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreatePrivateDataSlotEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -38078,7 +36765,6 @@ public unsafe partial interface IVk
         [NativeName("pPrivateDataSlot")] PrivateDataSlotHandle* pPrivateDataSlot
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreatePrivateDataSlotEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -38166,7 +36852,6 @@ public unsafe partial interface IVk
         [NativeName("pQueryPool")] Ref<QueryPoolHandle> pQueryPool
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateRayTracingPipelinesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38187,7 +36872,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelines")] PipelineHandle* pPipelines
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateRayTracingPipelinesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38208,7 +36892,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelines")] Ref<PipelineHandle> pPipelines
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCreateRayTracingPipelinesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -38228,7 +36911,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelines")] PipelineHandle* pPipelines
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkCreateRayTracingPipelinesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -38340,7 +37022,6 @@ public unsafe partial interface IVk
         [NativeName("pRenderPass")] Ref<RenderPassHandle> pRenderPass
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateRenderPass2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38355,7 +37036,6 @@ public unsafe partial interface IVk
         [NativeName("pRenderPass")] RenderPassHandle* pRenderPass
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateRenderPass2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38484,7 +37164,6 @@ public unsafe partial interface IVk
         [NativeName("pYcbcrConversion")] Ref<SamplerYcbcrConversionHandle> pYcbcrConversion
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateSamplerYcbcrConversionKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38502,7 +37181,6 @@ public unsafe partial interface IVk
         [NativeName("pYcbcrConversion")] SamplerYcbcrConversionHandle* pYcbcrConversion
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateSamplerYcbcrConversionKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38650,7 +37328,6 @@ public unsafe partial interface IVk
         [NativeName("pShaderModule")] Ref<ShaderModuleHandle> pShaderModule
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateShadersEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -38670,7 +37347,6 @@ public unsafe partial interface IVk
         [NativeName("pShaders")] ShaderHandleEXT* pShaders
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateShadersEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -38690,7 +37366,6 @@ public unsafe partial interface IVk
         [NativeName("pShaders")] Ref<ShaderHandleEXT> pShaders
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateSharedSwapchainsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38706,7 +37381,6 @@ public unsafe partial interface IVk
         [NativeName("pSwapchains")] SwapchainHandleKHR* pSwapchains
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateSharedSwapchainsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38722,7 +37396,6 @@ public unsafe partial interface IVk
         [NativeName("pSwapchains")] Ref<SwapchainHandleKHR> pSwapchains
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateSwapchainKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateSwapchainKHR")]
@@ -38733,7 +37406,6 @@ public unsafe partial interface IVk
         [NativeName("pSwapchain")] SwapchainHandleKHR* pSwapchain
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateSwapchainKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateSwapchainKHR")]
@@ -38744,7 +37416,6 @@ public unsafe partial interface IVk
         [NativeName("pSwapchain")] Ref<SwapchainHandleKHR> pSwapchain
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCreateTensorARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
@@ -38755,7 +37426,6 @@ public unsafe partial interface IVk
         [NativeName("pTensor")] TensorHandleARM* pTensor
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCreateTensorARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorARM")]
@@ -38766,7 +37436,6 @@ public unsafe partial interface IVk
         [NativeName("pTensor")] Ref<TensorHandleARM> pTensor
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCreateTensorViewARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
@@ -38777,7 +37446,6 @@ public unsafe partial interface IVk
         [NativeName("pView")] TensorViewHandleARM* pView
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkCreateTensorViewARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateTensorViewARM")]
@@ -38788,7 +37456,6 @@ public unsafe partial interface IVk
         [NativeName("pView")] Ref<TensorViewHandleARM> pView
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateValidationCacheEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateValidationCacheEXT")]
@@ -38799,7 +37466,6 @@ public unsafe partial interface IVk
         [NativeName("pValidationCache")] ValidationCacheHandleEXT* pValidationCache
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkCreateValidationCacheEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     [NativeFunction("vulkan", EntryPoint = "vkCreateValidationCacheEXT")]
@@ -38810,7 +37476,6 @@ public unsafe partial interface IVk
         [NativeName("pValidationCache")] Ref<ValidationCacheHandleEXT> pValidationCache
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateVideoSessionKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38825,7 +37490,6 @@ public unsafe partial interface IVk
         [NativeName("pVideoSession")] VideoSessionHandleKHR* pVideoSession
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateVideoSessionKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38840,7 +37504,6 @@ public unsafe partial interface IVk
         [NativeName("pVideoSession")] Ref<VideoSessionHandleKHR> pVideoSession
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateVideoSessionParametersKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38856,7 +37519,6 @@ public unsafe partial interface IVk
             VideoSessionParametersHandleKHR* pVideoSessionParameters
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkCreateVideoSessionParametersKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38872,7 +37534,6 @@ public unsafe partial interface IVk
             Ref<VideoSessionParametersHandleKHR> pVideoSessionParameters
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDebugMarkerSetObjectNameEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectNameEXT")]
@@ -38881,7 +37542,6 @@ public unsafe partial interface IVk
         [NativeName("pNameInfo")] DebugMarkerObjectNameInfoEXT* pNameInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDebugMarkerSetObjectNameEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectNameEXT")]
@@ -38890,7 +37550,6 @@ public unsafe partial interface IVk
         [NativeName("pNameInfo")] Ref<DebugMarkerObjectNameInfoEXT> pNameInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDebugMarkerSetObjectTagEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectTagEXT")]
@@ -38899,7 +37558,6 @@ public unsafe partial interface IVk
         [NativeName("pTagInfo")] DebugMarkerObjectTagInfoEXT* pTagInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDebugMarkerSetObjectTagEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkDebugMarkerSetObjectTagEXT")]
@@ -38908,7 +37566,6 @@ public unsafe partial interface IVk
         [NativeName("pTagInfo")] Ref<DebugMarkerObjectTagInfoEXT> pTagInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDebugReportMessageEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
@@ -38923,7 +37580,6 @@ public unsafe partial interface IVk
         [NativeName("pMessage")] sbyte* pMessage
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDebugReportMessageEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkDebugReportMessageEXT")]
@@ -38938,7 +37594,6 @@ public unsafe partial interface IVk
         [NativeName("pMessage")] Ref<sbyte> pMessage
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDeferredOperationJoinKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     [NativeFunction("vulkan", EntryPoint = "vkDeferredOperationJoinKHR")]
@@ -38947,7 +37602,6 @@ public unsafe partial interface IVk
         [NativeName("operation")] DeferredOperationHandleKHR operation
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38964,7 +37618,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyAccelerationStructureKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -38981,7 +37634,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkDestroyAccelerationStructureNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -38998,7 +37650,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkDestroyAccelerationStructureNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -39209,7 +37860,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkDestroyCuFunctionNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyCuFunctionNVX")]
@@ -39219,7 +37869,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkDestroyCuFunctionNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyCuFunctionNVX")]
@@ -39229,7 +37878,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkDestroyCuModuleNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyCuModuleNVX")]
@@ -39239,7 +37887,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkDestroyCuModuleNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyCuModuleNVX")]
@@ -39249,7 +37896,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkDestroyDataGraphPipelineSessionARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -39263,7 +37909,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkDestroyDataGraphPipelineSessionARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -39277,7 +37922,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyDebugReportCallbackEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugReportCallbackEXT")]
@@ -39287,7 +37931,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyDebugReportCallbackEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugReportCallbackEXT")]
@@ -39297,7 +37940,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyDebugUtilsMessengerEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
@@ -39307,7 +37949,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyDebugUtilsMessengerEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDebugUtilsMessengerEXT")]
@@ -39317,7 +37958,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyDeferredOperationKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDeferredOperationKHR")]
@@ -39327,7 +37967,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyDeferredOperationKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDeferredOperationKHR")]
@@ -39507,7 +38146,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyDescriptorUpdateTemplateKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDescriptorUpdateTemplateKHR")]
@@ -39518,7 +38156,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyDescriptorUpdateTemplateKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyDescriptorUpdateTemplateKHR")]
@@ -39653,7 +38290,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkDestroyExternalComputeQueueNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyExternalComputeQueueNV")]
@@ -39663,7 +38299,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkDestroyExternalComputeQueueNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyExternalComputeQueueNV")]
@@ -39925,7 +38560,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyIndirectCommandsLayoutEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -39944,7 +38578,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyIndirectCommandsLayoutEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -39963,7 +38596,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkDestroyIndirectCommandsLayoutNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -39978,7 +38610,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkDestroyIndirectCommandsLayoutNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -39993,7 +38624,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyIndirectExecutionSetEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -40011,7 +38641,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyIndirectExecutionSetEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -40095,7 +38724,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -40112,7 +38740,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -40129,7 +38756,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkDestroyOpticalFlowSessionNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -40147,7 +38773,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkDestroyOpticalFlowSessionNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -40223,7 +38848,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyPipelineBinaryKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -40240,7 +38864,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyPipelineBinaryKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -40417,7 +39040,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyPrivateDataSlotEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -40434,7 +39056,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyPrivateDataSlotEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -40677,7 +39298,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroySamplerYcbcrConversionKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -40694,7 +39314,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroySamplerYcbcrConversionKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -40779,7 +39398,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyShaderEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -40797,7 +39415,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyShaderEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -40873,7 +39490,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroySurfaceKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroySurfaceKHR")]
@@ -40883,7 +39499,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroySurfaceKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroySurfaceKHR")]
@@ -40893,7 +39508,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroySwapchainKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroySwapchainKHR")]
@@ -40903,7 +39517,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroySwapchainKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroySwapchainKHR")]
@@ -40913,7 +39526,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkDestroyTensorARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
@@ -40923,7 +39535,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkDestroyTensorARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorARM")]
@@ -40933,7 +39544,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkDestroyTensorViewARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
@@ -40943,7 +39553,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkDestroyTensorViewARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyTensorViewARM")]
@@ -40953,7 +39562,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyValidationCacheEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyValidationCacheEXT")]
@@ -40963,7 +39571,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDestroyValidationCacheEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     [NativeFunction("vulkan", EntryPoint = "vkDestroyValidationCacheEXT")]
@@ -40973,7 +39580,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyVideoSessionKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -40987,7 +39593,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyVideoSessionKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -41001,7 +39606,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyVideoSessionParametersKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -41016,7 +39620,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkDestroyVideoSessionParametersKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -41061,7 +39664,6 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkDeviceWaitIdle")]
     Result DeviceWaitIdle([NativeName("device")] DeviceHandle device);
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDisplayPowerControlEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -41075,7 +39677,6 @@ public unsafe partial interface IVk
         [NativeName("pDisplayPowerInfo")] DisplayPowerInfoEXT* pDisplayPowerInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkDisplayPowerControlEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -41505,7 +40106,6 @@ public unsafe partial interface IVk
             Ref<PhysicalDeviceGroupProperties> pPhysicalDeviceGroupProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkEnumeratePhysicalDeviceGroupsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
     [NativeFunction("vulkan", EntryPoint = "vkEnumeratePhysicalDeviceGroupsKHR")]
@@ -41516,7 +40116,6 @@ public unsafe partial interface IVk
             PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkEnumeratePhysicalDeviceGroupsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_device_group_creation"])]
     [NativeFunction("vulkan", EntryPoint = "vkEnumeratePhysicalDeviceGroupsKHR")]
@@ -41527,7 +40126,6 @@ public unsafe partial interface IVk
             Ref<PhysicalDeviceGroupProperties> pPhysicalDeviceGroupProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -41549,7 +40147,6 @@ public unsafe partial interface IVk
         [NativeName("pCounterDescriptions")] PerformanceCounterDescriptionARM* pCounterDescriptions
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -41572,7 +40169,6 @@ public unsafe partial interface IVk
             Ref<PerformanceCounterDescriptionARM> pCounterDescriptions
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -41594,7 +40190,6 @@ public unsafe partial interface IVk
         [NativeName("pCounterDescriptions")] PerformanceCounterDescriptionKHR* pCounterDescriptions
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -41985,7 +40580,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetAccelerationStructureBuildSizesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -42004,7 +40598,6 @@ public unsafe partial interface IVk
         [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetAccelerationStructureBuildSizesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -42023,7 +40616,6 @@ public unsafe partial interface IVk
         [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetAccelerationStructureDeviceAddressKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -42039,7 +40631,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] AccelerationStructureDeviceAddressInfoKHR* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetAccelerationStructureDeviceAddressKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -42055,7 +40646,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<AccelerationStructureDeviceAddressInfoKHR> pInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetAccelerationStructureHandleNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -42073,7 +40663,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetAccelerationStructureHandleNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -42091,7 +40680,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetAccelerationStructureMemoryRequirementsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -42108,7 +40696,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetAccelerationStructureMemoryRequirementsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -42125,7 +40712,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42150,7 +40736,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42225,7 +40810,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<BufferDeviceAddressInfo> pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetBufferDeviceAddressEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42241,7 +40825,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] BufferDeviceAddressInfo* pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetBufferDeviceAddressEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42257,7 +40840,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<BufferDeviceAddressInfo> pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetBufferDeviceAddressKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -42273,7 +40855,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] BufferDeviceAddressInfo* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetBufferDeviceAddressKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -42417,7 +40998,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetBufferMemoryRequirements2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferMemoryRequirements2KHR")]
@@ -42427,7 +41007,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetBufferMemoryRequirements2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetBufferMemoryRequirements2KHR")]
@@ -42487,7 +41066,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<BufferDeviceAddressInfo> pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetBufferOpaqueCaptureAddressKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -42503,7 +41081,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] BufferDeviceAddressInfo* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetBufferOpaqueCaptureAddressKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -42519,7 +41096,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<BufferDeviceAddressInfo> pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetBufferOpaqueCaptureDescriptorDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42538,7 +41114,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetBufferOpaqueCaptureDescriptorDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42557,7 +41132,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetCalibratedTimestampsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42576,7 +41150,6 @@ public unsafe partial interface IVk
         [NativeName("pMaxDeviation")] ulong* pMaxDeviation
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetCalibratedTimestampsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42595,7 +41168,6 @@ public unsafe partial interface IVk
         [NativeName("pMaxDeviation")] Ref<ulong> pMaxDeviation
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetCalibratedTimestampsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -42614,7 +41186,6 @@ public unsafe partial interface IVk
         [NativeName("pMaxDeviation")] ulong* pMaxDeviation
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetCalibratedTimestampsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -42633,7 +41204,6 @@ public unsafe partial interface IVk
         [NativeName("pMaxDeviation")] Ref<ulong> pMaxDeviation
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetClusterAccelerationStructureBuildSizesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -42647,7 +41217,6 @@ public unsafe partial interface IVk
         [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetClusterAccelerationStructureBuildSizesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -42661,7 +41230,6 @@ public unsafe partial interface IVk
         [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetDataGraphPipelineAvailablePropertiesARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -42676,7 +41244,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] DataGraphPipelinePropertyARM* pProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetDataGraphPipelineAvailablePropertiesARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -42691,7 +41258,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<DataGraphPipelinePropertyARM> pProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetDataGraphPipelinePropertiesARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -42706,7 +41272,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] DataGraphPipelinePropertyQueryResultARM* pProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetDataGraphPipelinePropertiesARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -42721,7 +41286,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<DataGraphPipelinePropertyQueryResultARM> pProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -42737,7 +41301,6 @@ public unsafe partial interface IVk
             DataGraphPipelineSessionBindPointRequirementARM* pBindPointRequirements
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetDataGraphPipelineSessionBindPointRequirementsARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -42753,7 +41316,6 @@ public unsafe partial interface IVk
             Ref<DataGraphPipelineSessionBindPointRequirementARM> pBindPointRequirements
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -42767,7 +41329,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetDataGraphPipelineSessionMemoryRequirementsARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -42781,7 +41342,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeferredOperationMaxConcurrencyKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeferredOperationMaxConcurrencyKHR")]
@@ -42790,7 +41350,6 @@ public unsafe partial interface IVk
         [NativeName("operation")] DeferredOperationHandleKHR operation
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeferredOperationResultKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeferredOperationResultKHR")]
@@ -42799,7 +41358,6 @@ public unsafe partial interface IVk
         [NativeName("operation")] DeferredOperationHandleKHR operation
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDescriptorEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42819,7 +41377,6 @@ public unsafe partial interface IVk
         [NativeName("pDescriptor")] void* pDescriptor
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDescriptorEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42839,7 +41396,6 @@ public unsafe partial interface IVk
         [NativeName("pDescriptor")] Ref pDescriptor
     );
 
-    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("vkGetDescriptorSetHostMappingVALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -42856,7 +41412,6 @@ public unsafe partial interface IVk
         [NativeName("ppData")] void** ppData
     );
 
-    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("vkGetDescriptorSetHostMappingVALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -42873,7 +41428,6 @@ public unsafe partial interface IVk
         [NativeName("ppData")] Ref2D ppData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDescriptorSetLayoutBindingOffsetEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42893,7 +41447,6 @@ public unsafe partial interface IVk
         [NativeName("pOffset")] ulong* pOffset
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDescriptorSetLayoutBindingOffsetEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42913,7 +41466,6 @@ public unsafe partial interface IVk
         [NativeName("pOffset")] Ref<ulong> pOffset
     );
 
-    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("vkGetDescriptorSetLayoutHostMappingInfoVALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -42930,7 +41482,6 @@ public unsafe partial interface IVk
         [NativeName("pHostMapping")] DescriptorSetLayoutHostMappingInfoVALVE* pHostMapping
     );
 
-    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("vkGetDescriptorSetLayoutHostMappingInfoVALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -42947,7 +41498,6 @@ public unsafe partial interface IVk
         [NativeName("pHostMapping")] Ref<DescriptorSetLayoutHostMappingInfoVALVE> pHostMapping
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDescriptorSetLayoutSizeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42966,7 +41516,6 @@ public unsafe partial interface IVk
         [NativeName("pLayoutSizeInBytes")] ulong* pLayoutSizeInBytes
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDescriptorSetLayoutSizeEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -43037,7 +41586,6 @@ public unsafe partial interface IVk
         [NativeName("pSupport")] Ref<DescriptorSetLayoutSupport> pSupport
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDescriptorSetLayoutSupportKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43054,7 +41602,6 @@ public unsafe partial interface IVk
         [NativeName("pSupport")] DescriptorSetLayoutSupport* pSupport
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDescriptorSetLayoutSupportKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43071,7 +41618,6 @@ public unsafe partial interface IVk
         [NativeName("pSupport")] Ref<DescriptorSetLayoutSupport> pSupport
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceAccelerationStructureCompatibilityKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43088,7 +41634,6 @@ public unsafe partial interface IVk
         [NativeName("pCompatibility")] AccelerationStructureCompatibilityKHR* pCompatibility
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceAccelerationStructureCompatibilityKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43149,7 +41694,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceBufferMemoryRequirementsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceBufferMemoryRequirementsKHR")]
@@ -43159,7 +41703,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceBufferMemoryRequirementsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceBufferMemoryRequirementsKHR")]
@@ -43169,7 +41712,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDeviceFaultInfoEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -43186,7 +41728,6 @@ public unsafe partial interface IVk
         [NativeName("pFaultInfo")] DeviceFaultInfoEXT* pFaultInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDeviceFaultInfoEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -43267,7 +41808,6 @@ public unsafe partial interface IVk
         [NativeName("pPeerMemoryFeatures")] Ref<PeerMemoryFeatureFlags> pPeerMemoryFeatures
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceGroupPeerMemoryFeaturesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43283,7 +41823,6 @@ public unsafe partial interface IVk
         [NativeName("pPeerMemoryFeatures")] PeerMemoryFeatureFlags* pPeerMemoryFeatures
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceGroupPeerMemoryFeaturesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43299,7 +41838,6 @@ public unsafe partial interface IVk
         [NativeName("pPeerMemoryFeatures")] Ref<PeerMemoryFeatureFlags> pPeerMemoryFeatures
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceGroupPresentCapabilitiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43314,7 +41852,6 @@ public unsafe partial interface IVk
             DeviceGroupPresentCapabilitiesKHR* pDeviceGroupPresentCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceGroupPresentCapabilitiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43329,7 +41866,6 @@ public unsafe partial interface IVk
             Ref<DeviceGroupPresentCapabilitiesKHR> pDeviceGroupPresentCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43344,7 +41880,6 @@ public unsafe partial interface IVk
         [NativeName("pModes")] DeviceGroupPresentModeFlagsKHR* pModes
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceGroupSurfacePresentModesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43403,7 +41938,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceImageMemoryRequirementsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageMemoryRequirementsKHR")]
@@ -43413,7 +41947,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceImageMemoryRequirementsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageMemoryRequirementsKHR")]
@@ -43471,7 +42004,6 @@ public unsafe partial interface IVk
             Ref<SparseImageMemoryRequirements2> pSparseMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceImageSparseMemoryRequirementsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSparseMemoryRequirementsKHR")]
@@ -43483,7 +42015,6 @@ public unsafe partial interface IVk
             SparseImageMemoryRequirements2* pSparseMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceImageSparseMemoryRequirementsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceImageSparseMemoryRequirementsKHR")]
@@ -43531,7 +42062,6 @@ public unsafe partial interface IVk
         [NativeName("pLayout")] Ref<SubresourceLayout2> pLayout
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceImageSubresourceLayoutKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43545,7 +42075,6 @@ public unsafe partial interface IVk
         [NativeName("pLayout")] SubresourceLayout2* pLayout
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceImageSubresourceLayoutKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43677,7 +42206,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43693,7 +42221,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] DeviceMemoryOpaqueCaptureAddressInfo* pInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDeviceMemoryOpaqueCaptureAddressKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43709,7 +42236,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<DeviceMemoryOpaqueCaptureAddressInfo> pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDeviceMicromapCompatibilityEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -43726,7 +42252,6 @@ public unsafe partial interface IVk
         [NativeName("pCompatibility")] AccelerationStructureCompatibilityKHR* pCompatibility
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDeviceMicromapCompatibilityEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -43939,7 +42464,6 @@ public unsafe partial interface IVk
         [NativeName("pQueue")] Ref<QueueHandle> pQueue
     );
 
-    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -43957,7 +42481,6 @@ public unsafe partial interface IVk
         [NativeName("pMaxWorkgroupSize")] Extent2D* pMaxWorkgroupSize
     );
 
-    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -43975,7 +42498,6 @@ public unsafe partial interface IVk
         [NativeName("pMaxWorkgroupSize")] Ref<Extent2D> pMaxWorkgroupSize
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetDeviceTensorMemoryRequirementsARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
@@ -43985,7 +42507,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetDeviceTensorMemoryRequirementsARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDeviceTensorMemoryRequirementsARM")]
@@ -43995,7 +42516,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDisplayModeProperties2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44010,7 +42530,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] DisplayModeProperties2KHR* pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDisplayModeProperties2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44025,7 +42544,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<DisplayModeProperties2KHR> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDisplayModePropertiesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModePropertiesKHR")]
@@ -44036,7 +42554,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] DisplayModePropertiesKHR* pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDisplayModePropertiesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayModePropertiesKHR")]
@@ -44047,7 +42564,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<DisplayModePropertiesKHR> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDisplayPlaneCapabilities2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44061,7 +42577,6 @@ public unsafe partial interface IVk
         [NativeName("pCapabilities")] DisplayPlaneCapabilities2KHR* pCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDisplayPlaneCapabilities2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44075,7 +42590,6 @@ public unsafe partial interface IVk
         [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilities2KHR> pCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDisplayPlaneCapabilitiesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilitiesKHR")]
@@ -44086,7 +42600,6 @@ public unsafe partial interface IVk
         [NativeName("pCapabilities")] DisplayPlaneCapabilitiesKHR* pCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDisplayPlaneCapabilitiesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneCapabilitiesKHR")]
@@ -44097,7 +42610,6 @@ public unsafe partial interface IVk
         [NativeName("pCapabilities")] Ref<DisplayPlaneCapabilitiesKHR> pCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDisplayPlaneSupportedDisplaysKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneSupportedDisplaysKHR")]
@@ -44108,7 +42620,6 @@ public unsafe partial interface IVk
         [NativeName("pDisplays")] DisplayHandleKHR* pDisplays
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetDisplayPlaneSupportedDisplaysKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetDisplayPlaneSupportedDisplaysKHR")]
@@ -44119,7 +42630,6 @@ public unsafe partial interface IVk
         [NativeName("pDisplays")] Ref<DisplayHandleKHR> pDisplays
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDrmDisplayEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44134,7 +42644,6 @@ public unsafe partial interface IVk
         [NativeName("display")] DisplayHandleKHR* display
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetDrmDisplayEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44149,7 +42658,6 @@ public unsafe partial interface IVk
         [NativeName("display")] Ref<DisplayHandleKHR> display
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkGetDynamicRenderingTilePropertiesQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -44166,7 +42674,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] TilePropertiesQCOM* pProperties
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkGetDynamicRenderingTilePropertiesQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -44183,7 +42690,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<TilePropertiesQCOM> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetEncodedVideoSessionParametersKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44203,7 +42709,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetEncodedVideoSessionParametersKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44252,7 +42757,6 @@ public unsafe partial interface IVk
         [NativeName("@event")] EventHandle @event
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetExternalComputeQueueDataNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetExternalComputeQueueDataNV")]
@@ -44262,7 +42766,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetExternalComputeQueueDataNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetExternalComputeQueueDataNV")]
@@ -44272,7 +42775,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetFenceFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44289,7 +42791,6 @@ public unsafe partial interface IVk
         [NativeName("pFd")] int* pFd
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetFenceFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44339,7 +42840,6 @@ public unsafe partial interface IVk
         [NativeName("fence")] FenceHandle fence
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkGetFramebufferTilePropertiesQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -44357,7 +42857,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] TilePropertiesQCOM* pProperties
     );
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("vkGetFramebufferTilePropertiesQCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -44375,7 +42874,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<TilePropertiesQCOM> pProperties
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetGeneratedCommandsMemoryRequirementsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44393,7 +42891,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetGeneratedCommandsMemoryRequirementsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44411,7 +42908,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetGeneratedCommandsMemoryRequirementsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -44425,7 +42921,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetGeneratedCommandsMemoryRequirementsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -44439,7 +42934,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetImageDrmFormatModifierPropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44457,7 +42951,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] ImageDrmFormatModifierPropertiesEXT* pProperties
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetImageDrmFormatModifierPropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44603,7 +43096,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetImageMemoryRequirements2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageMemoryRequirements2KHR")]
@@ -44613,7 +43105,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetImageMemoryRequirements2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageMemoryRequirements2KHR")]
@@ -44623,7 +43114,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetImageOpaqueCaptureDescriptorDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44642,7 +43132,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetImageOpaqueCaptureDescriptorDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44797,7 +43286,6 @@ public unsafe partial interface IVk
             Ref<SparseImageMemoryRequirements2> pSparseMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetImageSparseMemoryRequirements2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageSparseMemoryRequirements2KHR")]
@@ -44809,7 +43297,6 @@ public unsafe partial interface IVk
             SparseImageMemoryRequirements2* pSparseMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetImageSparseMemoryRequirements2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_memory_requirements2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageSparseMemoryRequirements2KHR")]
@@ -44929,7 +43416,6 @@ public unsafe partial interface IVk
         [NativeName("pLayout")] Ref<SubresourceLayout2> pLayout
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetImageSubresourceLayout2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44948,7 +43434,6 @@ public unsafe partial interface IVk
         [NativeName("pLayout")] SubresourceLayout2* pLayout
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetImageSubresourceLayout2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -44967,7 +43452,6 @@ public unsafe partial interface IVk
         [NativeName("pLayout")] Ref<SubresourceLayout2> pLayout
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetImageSubresourceLayout2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44982,7 +43466,6 @@ public unsafe partial interface IVk
         [NativeName("pLayout")] SubresourceLayout2* pLayout
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetImageSubresourceLayout2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -44997,7 +43480,6 @@ public unsafe partial interface IVk
         [NativeName("pLayout")] Ref<SubresourceLayout2> pLayout
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkGetImageViewAddressNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewAddressNVX")]
@@ -45007,7 +43489,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] ImageViewAddressPropertiesNVX* pProperties
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkGetImageViewAddressNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewAddressNVX")]
@@ -45017,7 +43498,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<ImageViewAddressPropertiesNVX> pProperties
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkGetImageViewHandle64NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
@@ -45026,7 +43506,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] ImageViewHandleInfoNVX* pInfo
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkGetImageViewHandle64NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandle64NVX")]
@@ -45035,7 +43514,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<ImageViewHandleInfoNVX> pInfo
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkGetImageViewHandleNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandleNVX")]
@@ -45044,7 +43522,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] ImageViewHandleInfoNVX* pInfo
     );
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("vkGetImageViewHandleNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_image_view_handle"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetImageViewHandleNVX")]
@@ -45053,7 +43530,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<ImageViewHandleInfoNVX> pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetImageViewOpaqueCaptureDescriptorDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45072,7 +43548,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetImageViewOpaqueCaptureDescriptorDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45157,7 +43632,6 @@ public unsafe partial interface IVk
         [NativeName("pName")] Ref<sbyte> pName
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetLatencyTimingsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45176,7 +43650,6 @@ public unsafe partial interface IVk
         [NativeName("pLatencyMarkerInfo")] GetLatencyMarkerInfoNV* pLatencyMarkerInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetLatencyTimingsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45195,7 +43668,6 @@ public unsafe partial interface IVk
         [NativeName("pLatencyMarkerInfo")] Ref<GetLatencyMarkerInfoNV> pLatencyMarkerInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetMemoryFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45212,7 +43684,6 @@ public unsafe partial interface IVk
         [NativeName("pFd")] int* pFd
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetMemoryFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45229,7 +43700,6 @@ public unsafe partial interface IVk
         [NativeName("pFd")] Ref<int> pFd
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetMemoryFdPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45247,7 +43717,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryFdProperties")] MemoryFdPropertiesKHR* pMemoryFdProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetMemoryFdPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45265,7 +43734,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryFdProperties")] Ref<MemoryFdPropertiesKHR> pMemoryFdProperties
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetMemoryHostPointerPropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45284,7 +43752,6 @@ public unsafe partial interface IVk
             MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetMemoryHostPointerPropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45303,7 +43770,6 @@ public unsafe partial interface IVk
             Ref<MemoryHostPointerPropertiesEXT> pMemoryHostPointerProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetMemoryRemoteAddressNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45321,7 +43787,6 @@ public unsafe partial interface IVk
         [NativeName("pAddress")] void** pAddress
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetMemoryRemoteAddressNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45339,7 +43804,6 @@ public unsafe partial interface IVk
         [NativeName("pAddress")] Ref2D pAddress
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetMicromapBuildSizesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45357,7 +43821,6 @@ public unsafe partial interface IVk
         [NativeName("pSizeInfo")] MicromapBuildSizesInfoEXT* pSizeInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetMicromapBuildSizesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45375,7 +43838,6 @@ public unsafe partial interface IVk
         [NativeName("pSizeInfo")] Ref<MicromapBuildSizesInfoEXT> pSizeInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPartitionedAccelerationStructuresBuildSizesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45389,7 +43851,6 @@ public unsafe partial interface IVk
         [NativeName("pSizeInfo")] AccelerationStructureBuildSizesInfoKHR* pSizeInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPartitionedAccelerationStructuresBuildSizesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45403,7 +43864,6 @@ public unsafe partial interface IVk
         [NativeName("pSizeInfo")] Ref<AccelerationStructureBuildSizesInfoKHR> pSizeInfo
     );
 
-    [NameAffix("Suffix", "GOOGLE", 0)]
     [NativeName("vkGetPastPresentationTimingGOOGLE")]
     [SupportedApiProfile(
         "vulkan",
@@ -45418,7 +43878,6 @@ public unsafe partial interface IVk
         [NativeName("pPresentationTimings")] PastPresentationTimingGOOGLE* pPresentationTimings
     );
 
-    [NameAffix("Suffix", "GOOGLE", 0)]
     [NativeName("vkGetPastPresentationTimingGOOGLE")]
     [SupportedApiProfile(
         "vulkan",
@@ -45433,7 +43892,6 @@ public unsafe partial interface IVk
         [NativeName("pPresentationTimings")] Ref<PastPresentationTimingGOOGLE> pPresentationTimings
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkGetPerformanceParameterINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPerformanceParameterINTEL")]
@@ -45443,7 +43901,6 @@ public unsafe partial interface IVk
         [NativeName("pValue")] PerformanceValueINTEL* pValue
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkGetPerformanceParameterINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPerformanceParameterINTEL")]
@@ -45453,7 +43910,6 @@ public unsafe partial interface IVk
         [NativeName("pValue")] Ref<PerformanceValueINTEL> pValue
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45470,7 +43926,6 @@ public unsafe partial interface IVk
         [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -45487,7 +43942,6 @@ public unsafe partial interface IVk
         [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45504,7 +43958,6 @@ public unsafe partial interface IVk
         [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45521,7 +43974,6 @@ public unsafe partial interface IVk
         [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45538,7 +43990,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] CooperativeMatrixFlexibleDimensionsPropertiesNV* pProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45555,7 +44006,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<CooperativeMatrixFlexibleDimensionsPropertiesNV> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45572,7 +44022,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] CooperativeMatrixPropertiesKHR* pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45589,7 +44038,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesKHR> pProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45606,7 +44054,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] CooperativeMatrixPropertiesNV* pProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45623,7 +44070,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<CooperativeMatrixPropertiesNV> pProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45640,7 +44086,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] CooperativeVectorPropertiesNV* pProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceCooperativeVectorPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -45657,7 +44102,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<CooperativeVectorPropertiesNV> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45671,7 +44115,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] DisplayPlaneProperties2KHR* pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45685,7 +44128,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<DisplayPlaneProperties2KHR> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
@@ -45695,7 +44137,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] DisplayPlanePropertiesKHR* pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceDisplayPlanePropertiesKHR")]
@@ -45705,7 +44146,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<DisplayPlanePropertiesKHR> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceDisplayProperties2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45719,7 +44159,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] DisplayProperties2KHR* pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceDisplayProperties2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45733,7 +44172,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<DisplayProperties2KHR> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceDisplayPropertiesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceDisplayPropertiesKHR")]
@@ -45743,7 +44181,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] DisplayPropertiesKHR* pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceDisplayPropertiesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceDisplayPropertiesKHR")]
@@ -45816,7 +44253,6 @@ public unsafe partial interface IVk
             Ref<ExternalBufferProperties> pExternalBufferProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceExternalBufferPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45834,7 +44270,6 @@ public unsafe partial interface IVk
             ExternalBufferProperties* pExternalBufferProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceExternalBufferPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45914,7 +44349,6 @@ public unsafe partial interface IVk
             Ref<ExternalFenceProperties> pExternalFenceProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceExternalFencePropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45931,7 +44365,6 @@ public unsafe partial interface IVk
         [NativeName("pExternalFenceProperties")] ExternalFenceProperties* pExternalFenceProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceExternalFencePropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45949,7 +44382,6 @@ public unsafe partial interface IVk
             Ref<ExternalFenceProperties> pExternalFenceProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceExternalImageFormatPropertiesNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalImageFormatPropertiesNV")]
@@ -45965,7 +44397,6 @@ public unsafe partial interface IVk
             ExternalImageFormatPropertiesNV* pExternalImageFormatProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceExternalImageFormatPropertiesNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalImageFormatPropertiesNV")]
@@ -46045,7 +44476,6 @@ public unsafe partial interface IVk
             Ref<ExternalSemaphoreProperties> pExternalSemaphoreProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceExternalSemaphorePropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -46064,7 +44494,6 @@ public unsafe partial interface IVk
             ExternalSemaphoreProperties* pExternalSemaphoreProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceExternalSemaphorePropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -46083,7 +44512,6 @@ public unsafe partial interface IVk
             Ref<ExternalSemaphoreProperties> pExternalSemaphoreProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetPhysicalDeviceExternalTensorPropertiesARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
@@ -46095,7 +44523,6 @@ public unsafe partial interface IVk
             ExternalTensorPropertiesARM* pExternalTensorProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetPhysicalDeviceExternalTensorPropertiesARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceExternalTensorPropertiesARM")]
@@ -46231,7 +44658,6 @@ public unsafe partial interface IVk
         [NativeName("pFeatures")] Ref<PhysicalDeviceFeatures2> pFeatures
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceFeatures2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFeatures2KHR")]
@@ -46240,7 +44666,6 @@ public unsafe partial interface IVk
         [NativeName("pFeatures")] PhysicalDeviceFeatures2* pFeatures
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceFeatures2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFeatures2KHR")]
@@ -46377,7 +44802,6 @@ public unsafe partial interface IVk
         [NativeName("pFormatProperties")] Ref<FormatProperties2> pFormatProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceFormatProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFormatProperties2KHR")]
@@ -46387,7 +44811,6 @@ public unsafe partial interface IVk
         [NativeName("pFormatProperties")] FormatProperties2* pFormatProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceFormatProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceFormatProperties2KHR")]
@@ -46397,7 +44820,6 @@ public unsafe partial interface IVk
         [NativeName("pFormatProperties")] Ref<FormatProperties2> pFormatProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceFragmentShadingRatesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -46416,7 +44838,6 @@ public unsafe partial interface IVk
             PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceFragmentShadingRatesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -46571,7 +44992,6 @@ public unsafe partial interface IVk
         [NativeName("pImageFormatProperties")] Ref<ImageFormatProperties2> pImageFormatProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceImageFormatProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2KHR")]
@@ -46581,7 +45001,6 @@ public unsafe partial interface IVk
         [NativeName("pImageFormatProperties")] ImageFormatProperties2* pImageFormatProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceImageFormatProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2KHR")]
@@ -46715,7 +45134,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryProperties")] Ref<PhysicalDeviceMemoryProperties2> pMemoryProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceMemoryProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMemoryProperties2KHR")]
@@ -46724,7 +45142,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryProperties")] PhysicalDeviceMemoryProperties2* pMemoryProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceMemoryProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceMemoryProperties2KHR")]
@@ -46733,7 +45150,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryProperties")] Ref<PhysicalDeviceMemoryProperties2> pMemoryProperties
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPhysicalDeviceMultisamplePropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -46750,7 +45166,6 @@ public unsafe partial interface IVk
         [NativeName("pMultisampleProperties")] MultisamplePropertiesEXT* pMultisampleProperties
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPhysicalDeviceMultisamplePropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -46767,7 +45182,6 @@ public unsafe partial interface IVk
         [NativeName("pMultisampleProperties")] Ref<MultisamplePropertiesEXT> pMultisampleProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceOpticalFlowImageFormatsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -46788,7 +45202,6 @@ public unsafe partial interface IVk
             OpticalFlowImageFormatPropertiesNV* pImageFormatProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceOpticalFlowImageFormatsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -46809,7 +45222,6 @@ public unsafe partial interface IVk
             Ref<OpticalFlowImageFormatPropertiesNV> pImageFormatProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDevicePresentRectanglesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -46825,7 +45237,6 @@ public unsafe partial interface IVk
         [NativeName("pRects")] Rect2D* pRects
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDevicePresentRectanglesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -46965,7 +45376,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<PhysicalDeviceProperties2> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceProperties2KHR")]
@@ -46974,7 +45384,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] PhysicalDeviceProperties2* pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceProperties2KHR")]
@@ -46983,7 +45392,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<PhysicalDeviceProperties2> pProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -47002,7 +45410,6 @@ public unsafe partial interface IVk
             QueueFamilyDataGraphProcessingEnginePropertiesARM* pQueueFamilyDataGraphProcessingEngineProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -47021,7 +45428,6 @@ public unsafe partial interface IVk
             Ref<QueueFamilyDataGraphProcessingEnginePropertiesARM> pQueueFamilyDataGraphProcessingEngineProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -47037,7 +45443,6 @@ public unsafe partial interface IVk
             QueueFamilyDataGraphPropertiesARM* pQueueFamilyDataGraphProperties
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -47054,7 +45459,6 @@ public unsafe partial interface IVk
             Ref<QueueFamilyDataGraphPropertiesARM> pQueueFamilyDataGraphProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47075,7 +45479,6 @@ public unsafe partial interface IVk
         [NativeName("pNumPasses")] uint* pNumPasses
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47224,7 +45627,6 @@ public unsafe partial interface IVk
         [NativeName("pQueueFamilyProperties")] Ref<QueueFamilyProperties2> pQueueFamilyProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceQueueFamilyProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2KHR")]
@@ -47234,7 +45636,6 @@ public unsafe partial interface IVk
         [NativeName("pQueueFamilyProperties")] QueueFamilyProperties2* pQueueFamilyProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceQueueFamilyProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2KHR")]
@@ -47384,7 +45785,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<SparseImageFormatProperties2> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2KHR")]
@@ -47395,7 +45795,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] SparseImageFormatProperties2* pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSparseImageFormatProperties2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_get_physical_device_properties2"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2KHR")]
@@ -47406,7 +45805,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<SparseImageFormatProperties2> pProperties
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -47426,7 +45824,6 @@ public unsafe partial interface IVk
         [NativeName("pCombinations")] FramebufferMixedSamplesCombinationNV* pCombinations
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -47446,7 +45843,6 @@ public unsafe partial interface IVk
         [NativeName("pCombinations")] Ref<FramebufferMixedSamplesCombinationNV> pCombinations
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -47460,7 +45856,6 @@ public unsafe partial interface IVk
         [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2EXT* pSurfaceCapabilities
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -47474,7 +45869,6 @@ public unsafe partial interface IVk
         [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2EXT> pSurfaceCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47488,7 +45882,6 @@ public unsafe partial interface IVk
         [NativeName("pSurfaceCapabilities")] SurfaceCapabilities2KHR* pSurfaceCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilities2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47502,7 +45895,6 @@ public unsafe partial interface IVk
         [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilities2KHR> pSurfaceCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
@@ -47512,7 +45904,6 @@ public unsafe partial interface IVk
         [NativeName("pSurfaceCapabilities")] SurfaceCapabilitiesKHR* pSurfaceCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceCapabilitiesKHR")]
@@ -47522,7 +45913,6 @@ public unsafe partial interface IVk
         [NativeName("pSurfaceCapabilities")] Ref<SurfaceCapabilitiesKHR> pSurfaceCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceFormats2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47537,7 +45927,6 @@ public unsafe partial interface IVk
         [NativeName("pSurfaceFormats")] SurfaceFormat2KHR* pSurfaceFormats
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceFormats2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47552,7 +45941,6 @@ public unsafe partial interface IVk
         [NativeName("pSurfaceFormats")] Ref<SurfaceFormat2KHR> pSurfaceFormats
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceFormatsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
@@ -47563,7 +45951,6 @@ public unsafe partial interface IVk
         [NativeName("pSurfaceFormats")] SurfaceFormatKHR* pSurfaceFormats
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceFormatsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceFormatsKHR")]
@@ -47574,7 +45961,6 @@ public unsafe partial interface IVk
         [NativeName("pSurfaceFormats")] Ref<SurfaceFormatKHR> pSurfaceFormats
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -47585,7 +45971,6 @@ public unsafe partial interface IVk
         [NativeName("pPresentModes")] PresentModeKHR* pPresentModes
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -47596,7 +45981,6 @@ public unsafe partial interface IVk
         [NativeName("pPresentModes")] Ref<PresentModeKHR> pPresentModes
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceSupportKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceSupportKHR")]
@@ -47607,7 +45991,6 @@ public unsafe partial interface IVk
         [NativeName("pSupported")] uint* pSupported
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceSurfaceSupportKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceSurfaceSupportKHR")]
@@ -47662,7 +46045,6 @@ public unsafe partial interface IVk
         [NativeName("pToolProperties")] Ref<PhysicalDeviceToolProperties> pToolProperties
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPhysicalDeviceToolPropertiesEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT")]
@@ -47672,7 +46054,6 @@ public unsafe partial interface IVk
         [NativeName("pToolProperties")] PhysicalDeviceToolProperties* pToolProperties
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPhysicalDeviceToolPropertiesEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_tooling_info"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetPhysicalDeviceToolPropertiesEXT")]
@@ -47682,7 +46063,6 @@ public unsafe partial interface IVk
         [NativeName("pToolProperties")] Ref<PhysicalDeviceToolProperties> pToolProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceVideoCapabilitiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47696,7 +46076,6 @@ public unsafe partial interface IVk
         [NativeName("pCapabilities")] VideoCapabilitiesKHR* pCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceVideoCapabilitiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47710,7 +46089,6 @@ public unsafe partial interface IVk
         [NativeName("pCapabilities")] Ref<VideoCapabilitiesKHR> pCapabilities
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47732,7 +46110,6 @@ public unsafe partial interface IVk
             VideoEncodeQualityLevelPropertiesKHR* pQualityLevelProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47754,7 +46131,6 @@ public unsafe partial interface IVk
             Ref<VideoEncodeQualityLevelPropertiesKHR> pQualityLevelProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47769,7 +46145,6 @@ public unsafe partial interface IVk
         [NativeName("pVideoFormatProperties")] VideoFormatPropertiesKHR* pVideoFormatProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPhysicalDeviceVideoFormatPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47784,7 +46159,6 @@ public unsafe partial interface IVk
         [NativeName("pVideoFormatProperties")] Ref<VideoFormatPropertiesKHR> pVideoFormatProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPipelineBinaryDataKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47803,7 +46177,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelineBinaryData")] void* pPipelineBinaryData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPipelineBinaryDataKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47882,7 +46255,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPipelineExecutableInternalRepresentationsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47901,7 +46273,6 @@ public unsafe partial interface IVk
             PipelineExecutableInternalRepresentationKHR* pInternalRepresentations
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPipelineExecutableInternalRepresentationsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47920,7 +46291,6 @@ public unsafe partial interface IVk
             Ref<PipelineExecutableInternalRepresentationKHR> pInternalRepresentations
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPipelineExecutablePropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47938,7 +46308,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] PipelineExecutablePropertiesKHR* pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPipelineExecutablePropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47956,7 +46325,6 @@ public unsafe partial interface IVk
         [NativeName("pProperties")] Ref<PipelineExecutablePropertiesKHR> pProperties
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPipelineExecutableStatisticsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47974,7 +46342,6 @@ public unsafe partial interface IVk
         [NativeName("pStatistics")] PipelineExecutableStatisticKHR* pStatistics
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPipelineExecutableStatisticsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -47992,7 +46359,6 @@ public unsafe partial interface IVk
         [NativeName("pStatistics")] Ref<PipelineExecutableStatisticKHR> pStatistics
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPipelineIndirectDeviceAddressNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48005,7 +46371,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] PipelineIndirectDeviceAddressInfoNV* pInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPipelineIndirectDeviceAddressNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48018,7 +46383,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref<PipelineIndirectDeviceAddressInfoNV> pInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPipelineIndirectMemoryRequirementsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48032,7 +46396,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetPipelineIndirectMemoryRequirementsNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48046,7 +46409,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPipelineKeyKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48063,7 +46425,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelineKey")] PipelineBinaryKeyKHR* pPipelineKey
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetPipelineKeyKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48080,7 +46441,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelineKey")] Ref<PipelineBinaryKeyKHR> pPipelineKey
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPipelinePropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48097,7 +46457,6 @@ public unsafe partial interface IVk
         [NativeName("pPipelineProperties")] BaseOutStructure* pPipelineProperties
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPipelinePropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48162,7 +46521,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref<ulong> pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPrivateDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48181,7 +46539,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] ulong* pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetPrivateDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48278,7 +46635,6 @@ public unsafe partial interface IVk
         [NativeName("flags")] QueryResultFlags flags
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetQueueCheckpointData2NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48298,7 +46654,6 @@ public unsafe partial interface IVk
         [NativeName("pCheckpointData")] CheckpointData2NV* pCheckpointData
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetQueueCheckpointData2NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48318,7 +46673,6 @@ public unsafe partial interface IVk
         [NativeName("pCheckpointData")] Ref<CheckpointData2NV> pCheckpointData
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetQueueCheckpointDataNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48335,7 +46689,6 @@ public unsafe partial interface IVk
         [NativeName("pCheckpointData")] CheckpointDataNV* pCheckpointData
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetQueueCheckpointDataNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48352,7 +46705,6 @@ public unsafe partial interface IVk
         [NativeName("pCheckpointData")] Ref<CheckpointDataNV> pCheckpointData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetRayTracingCaptureReplayShaderGroupHandlesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48372,7 +46724,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetRayTracingCaptureReplayShaderGroupHandlesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48392,7 +46743,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetRayTracingShaderGroupHandlesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48412,7 +46762,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetRayTracingShaderGroupHandlesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48432,7 +46781,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetRayTracingShaderGroupHandlesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48452,7 +46800,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkGetRayTracingShaderGroupHandlesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -48472,7 +46819,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetRayTracingShaderGroupStackSizeKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48490,7 +46836,6 @@ public unsafe partial interface IVk
         [NativeName("groupShader")] ShaderGroupShaderKHR groupShader
     );
 
-    [NameAffix("Suffix", "GOOGLE", 0)]
     [NativeName("vkGetRefreshCycleDurationGOOGLE")]
     [SupportedApiProfile(
         "vulkan",
@@ -48505,7 +46850,6 @@ public unsafe partial interface IVk
             RefreshCycleDurationGOOGLE* pDisplayTimingProperties
     );
 
-    [NameAffix("Suffix", "GOOGLE", 0)]
     [NativeName("vkGetRefreshCycleDurationGOOGLE")]
     [SupportedApiProfile(
         "vulkan",
@@ -48594,7 +46938,6 @@ public unsafe partial interface IVk
         [NativeName("pGranularity")] Ref<Extent2D> pGranularity
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetRenderingAreaGranularityKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48608,7 +46951,6 @@ public unsafe partial interface IVk
         [NativeName("pGranularity")] Extent2D* pGranularity
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetRenderingAreaGranularityKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48622,7 +46964,6 @@ public unsafe partial interface IVk
         [NativeName("pGranularity")] Ref<Extent2D> pGranularity
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetSamplerOpaqueCaptureDescriptorDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48641,7 +46982,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetSamplerOpaqueCaptureDescriptorDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48712,7 +47052,6 @@ public unsafe partial interface IVk
         [NativeName("pValue")] Ref<ulong> pValue
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetSemaphoreCounterValueKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48729,7 +47068,6 @@ public unsafe partial interface IVk
         [NativeName("pValue")] ulong* pValue
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetSemaphoreCounterValueKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48746,7 +47084,6 @@ public unsafe partial interface IVk
         [NativeName("pValue")] Ref<ulong> pValue
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetSemaphoreFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48763,7 +47100,6 @@ public unsafe partial interface IVk
         [NativeName("pFd")] int* pFd
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetSemaphoreFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48780,7 +47116,6 @@ public unsafe partial interface IVk
         [NativeName("pFd")] Ref<int> pFd
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetShaderBinaryDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48799,7 +47134,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetShaderBinaryDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48818,7 +47152,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("vkGetShaderInfoAMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetShaderInfoAMD")]
@@ -48831,7 +47164,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] void* pInfo
     );
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("vkGetShaderInfoAMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetShaderInfoAMD")]
@@ -48844,7 +47176,6 @@ public unsafe partial interface IVk
         [NativeName("pInfo")] Ref pInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetShaderModuleCreateInfoIdentifierEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48862,7 +47193,6 @@ public unsafe partial interface IVk
         [NativeName("pIdentifier")] ShaderModuleIdentifierEXT* pIdentifier
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetShaderModuleCreateInfoIdentifierEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48880,7 +47210,6 @@ public unsafe partial interface IVk
         [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierEXT> pIdentifier
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetShaderModuleIdentifierEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48898,7 +47227,6 @@ public unsafe partial interface IVk
         [NativeName("pIdentifier")] ShaderModuleIdentifierEXT* pIdentifier
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetShaderModuleIdentifierEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48916,7 +47244,6 @@ public unsafe partial interface IVk
         [NativeName("pIdentifier")] Ref<ShaderModuleIdentifierEXT> pIdentifier
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetSwapchainCounterEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48931,7 +47258,6 @@ public unsafe partial interface IVk
         [NativeName("pCounterValue")] ulong* pCounterValue
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetSwapchainCounterEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -48946,7 +47272,6 @@ public unsafe partial interface IVk
         [NativeName("pCounterValue")] Ref<ulong> pCounterValue
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetSwapchainImagesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainImagesKHR")]
@@ -48957,7 +47282,6 @@ public unsafe partial interface IVk
         [NativeName("pSwapchainImages")] ImageHandle* pSwapchainImages
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetSwapchainImagesKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetSwapchainImagesKHR")]
@@ -48968,7 +47292,6 @@ public unsafe partial interface IVk
         [NativeName("pSwapchainImages")] Ref<ImageHandle> pSwapchainImages
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetSwapchainStatusKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -48984,7 +47307,6 @@ public unsafe partial interface IVk
         [NativeName("swapchain")] SwapchainHandleKHR swapchain
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetTensorMemoryRequirementsARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
@@ -48994,7 +47316,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] MemoryRequirements2* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetTensorMemoryRequirementsARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetTensorMemoryRequirementsARM")]
@@ -49004,7 +47325,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] Ref<MemoryRequirements2> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetTensorOpaqueCaptureDescriptorDataARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -49019,7 +47339,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetTensorOpaqueCaptureDescriptorDataARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -49034,7 +47353,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -49049,7 +47367,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("vkGetTensorViewOpaqueCaptureDescriptorDataARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -49064,7 +47381,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetValidationCacheDataEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetValidationCacheDataEXT")]
@@ -49075,7 +47391,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkGetValidationCacheDataEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     [NativeFunction("vulkan", EntryPoint = "vkGetValidationCacheDataEXT")]
@@ -49086,7 +47401,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetVideoSessionMemoryRequirementsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49101,7 +47415,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRequirements")] VideoSessionMemoryRequirementsKHR* pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkGetVideoSessionMemoryRequirementsKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49117,7 +47430,6 @@ public unsafe partial interface IVk
             Ref<VideoSessionMemoryRequirementsKHR> pMemoryRequirements
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkImportFenceFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49133,7 +47445,6 @@ public unsafe partial interface IVk
         [NativeName("pImportFenceFdInfo")] ImportFenceFdInfoKHR* pImportFenceFdInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkImportFenceFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49149,7 +47460,6 @@ public unsafe partial interface IVk
         [NativeName("pImportFenceFdInfo")] Ref<ImportFenceFdInfoKHR> pImportFenceFdInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkImportSemaphoreFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49165,7 +47475,6 @@ public unsafe partial interface IVk
         [NativeName("pImportSemaphoreFdInfo")] ImportSemaphoreFdInfoKHR* pImportSemaphoreFdInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkImportSemaphoreFdKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49181,7 +47490,6 @@ public unsafe partial interface IVk
         [NativeName("pImportSemaphoreFdInfo")] Ref<ImportSemaphoreFdInfoKHR> pImportSemaphoreFdInfo
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkInitializePerformanceApiINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkInitializePerformanceApiINTEL")]
@@ -49190,7 +47498,6 @@ public unsafe partial interface IVk
         [NativeName("pInitializeInfo")] InitializePerformanceApiInfoINTEL* pInitializeInfo
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkInitializePerformanceApiINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkInitializePerformanceApiINTEL")]
@@ -49267,7 +47574,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryRanges")] Ref<MappedMemoryRange> pMemoryRanges
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkLatencySleepNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -49286,7 +47592,6 @@ public unsafe partial interface IVk
         [NativeName("pSleepInfo")] LatencySleepInfoNV* pSleepInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkLatencySleepNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -49415,7 +47720,6 @@ public unsafe partial interface IVk
         [NativeName("ppData")] Ref2D ppData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkMapMemory2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
     [NativeFunction("vulkan", EntryPoint = "vkMapMemory2KHR")]
@@ -49425,7 +47729,6 @@ public unsafe partial interface IVk
         [NativeName("ppData")] void** ppData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkMapMemory2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
     [NativeFunction("vulkan", EntryPoint = "vkMapMemory2KHR")]
@@ -49495,7 +47798,6 @@ public unsafe partial interface IVk
         [NativeName("pSrcCaches")] Ref<PipelineCacheHandle> pSrcCaches
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkMergeValidationCachesEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     [NativeFunction("vulkan", EntryPoint = "vkMergeValidationCachesEXT")]
@@ -49506,7 +47808,6 @@ public unsafe partial interface IVk
         [NativeName("pSrcCaches")] ValidationCacheHandleEXT* pSrcCaches
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkMergeValidationCachesEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     [NativeFunction("vulkan", EntryPoint = "vkMergeValidationCachesEXT")]
@@ -49517,7 +47818,6 @@ public unsafe partial interface IVk
         [NativeName("pSrcCaches")] Ref<ValidationCacheHandleEXT> pSrcCaches
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkQueueBeginDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
@@ -49526,7 +47826,6 @@ public unsafe partial interface IVk
         [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkQueueBeginDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkQueueBeginDebugUtilsLabelEXT")]
@@ -49605,13 +47904,11 @@ public unsafe partial interface IVk
         [NativeName("fence")] FenceHandle fence
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkQueueEndDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkQueueEndDebugUtilsLabelEXT")]
     void QueueEndDebugUtilsLabelEXT([NativeName("queue")] QueueHandle queue);
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkQueueInsertDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
@@ -49620,7 +47917,6 @@ public unsafe partial interface IVk
         [NativeName("pLabelInfo")] DebugUtilsLabelEXT* pLabelInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkQueueInsertDebugUtilsLabelEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkQueueInsertDebugUtilsLabelEXT")]
@@ -49629,7 +47925,6 @@ public unsafe partial interface IVk
         [NativeName("pLabelInfo")] Ref<DebugUtilsLabelEXT> pLabelInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkQueueNotifyOutOfBandNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -49647,7 +47942,6 @@ public unsafe partial interface IVk
         [NativeName("pQueueTypeInfo")] OutOfBandQueueTypeInfoNV* pQueueTypeInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkQueueNotifyOutOfBandNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -49665,7 +47959,6 @@ public unsafe partial interface IVk
         [NativeName("pQueueTypeInfo")] Ref<OutOfBandQueueTypeInfoNV> pQueueTypeInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkQueuePresentKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkQueuePresentKHR")]
@@ -49674,7 +47967,6 @@ public unsafe partial interface IVk
         [NativeName("pPresentInfo")] PresentInfoKHR* pPresentInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkQueuePresentKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     [NativeFunction("vulkan", EntryPoint = "vkQueuePresentKHR")]
@@ -49683,7 +47975,6 @@ public unsafe partial interface IVk
         [NativeName("pPresentInfo")] Ref<PresentInfoKHR> pPresentInfo
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkQueueSetPerformanceConfigurationINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkQueueSetPerformanceConfigurationINTEL")]
@@ -49808,7 +48099,6 @@ public unsafe partial interface IVk
         [NativeName("fence")] FenceHandle fence
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkQueueSubmit2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49826,7 +48116,6 @@ public unsafe partial interface IVk
         [NativeName("fence")] FenceHandle fence
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkQueueSubmit2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49874,7 +48163,6 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkQueueWaitIdle")]
     Result QueueWaitIdle([NativeName("queue")] QueueHandle queue);
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkRegisterDeviceEventEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -49889,7 +48177,6 @@ public unsafe partial interface IVk
         [NativeName("pFence")] FenceHandle* pFence
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkRegisterDeviceEventEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -49904,7 +48191,6 @@ public unsafe partial interface IVk
         [NativeName("pFence")] Ref<FenceHandle> pFence
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkRegisterDisplayEventEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -49920,7 +48206,6 @@ public unsafe partial interface IVk
         [NativeName("pFence")] FenceHandle* pFence
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkRegisterDisplayEventEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -49936,7 +48221,6 @@ public unsafe partial interface IVk
         [NativeName("pFence")] Ref<FenceHandle> pFence
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkReleaseCapturedPipelineDataKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49953,7 +48237,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] AllocationCallbacks* pAllocator
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkReleaseCapturedPipelineDataKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49970,7 +48253,6 @@ public unsafe partial interface IVk
         [NativeName("pAllocator")] Ref<AllocationCallbacks> pAllocator
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkReleaseDisplayEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -49983,7 +48265,6 @@ public unsafe partial interface IVk
         [NativeName("display")] DisplayHandleKHR display
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkReleasePerformanceConfigurationINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkReleasePerformanceConfigurationINTEL")]
@@ -49992,7 +48273,6 @@ public unsafe partial interface IVk
         [NativeName("configuration")] PerformanceConfigurationHandleINTEL configuration
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkReleaseProfilingLockKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -50005,7 +48285,6 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkReleaseProfilingLockKHR")]
     void ReleaseProfilingLockKHR([NativeName("device")] DeviceHandle device);
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkReleaseSwapchainImagesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -50021,7 +48300,6 @@ public unsafe partial interface IVk
         [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKHR* pReleaseInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkReleaseSwapchainImagesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -50037,7 +48315,6 @@ public unsafe partial interface IVk
         [NativeName("pReleaseInfo")] Ref<ReleaseSwapchainImagesInfoKHR> pReleaseInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkReleaseSwapchainImagesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -50054,7 +48331,6 @@ public unsafe partial interface IVk
         [NativeName("pReleaseInfo")] ReleaseSwapchainImagesInfoKHR* pReleaseInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkReleaseSwapchainImagesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -50290,7 +48566,6 @@ public unsafe partial interface IVk
         [NativeName("queryCount")] uint queryCount
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkResetQueryPoolEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -50308,7 +48583,6 @@ public unsafe partial interface IVk
         [NativeName("queryCount")] uint queryCount
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkSetDebugUtilsObjectNameEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
@@ -50317,7 +48591,6 @@ public unsafe partial interface IVk
         [NativeName("pNameInfo")] DebugUtilsObjectNameInfoEXT* pNameInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkSetDebugUtilsObjectNameEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectNameEXT")]
@@ -50326,7 +48599,6 @@ public unsafe partial interface IVk
         [NativeName("pNameInfo")] Ref<DebugUtilsObjectNameInfoEXT> pNameInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkSetDebugUtilsObjectTagEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
@@ -50335,7 +48607,6 @@ public unsafe partial interface IVk
         [NativeName("pTagInfo")] DebugUtilsObjectTagInfoEXT* pTagInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkSetDebugUtilsObjectTagEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkSetDebugUtilsObjectTagEXT")]
@@ -50344,7 +48615,6 @@ public unsafe partial interface IVk
         [NativeName("pTagInfo")] Ref<DebugUtilsObjectTagInfoEXT> pTagInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkSetDeviceMemoryPriorityEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -50386,7 +48656,6 @@ public unsafe partial interface IVk
         [NativeName("@event")] EventHandle @event
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkSetHdrMetadataEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     [NativeFunction("vulkan", EntryPoint = "vkSetHdrMetadataEXT")]
@@ -50397,7 +48666,6 @@ public unsafe partial interface IVk
         [NativeName("pMetadata")] HdrMetadataEXT* pMetadata
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkSetHdrMetadataEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     [NativeFunction("vulkan", EntryPoint = "vkSetHdrMetadataEXT")]
@@ -50408,7 +48676,6 @@ public unsafe partial interface IVk
         [NativeName("pMetadata")] Ref<HdrMetadataEXT> pMetadata
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkSetLatencyMarkerNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -50427,7 +48694,6 @@ public unsafe partial interface IVk
         [NativeName("pLatencyMarkerInfo")] SetLatencyMarkerInfoNV* pLatencyMarkerInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkSetLatencyMarkerNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -50446,7 +48712,6 @@ public unsafe partial interface IVk
         [NativeName("pLatencyMarkerInfo")] Ref<SetLatencyMarkerInfoNV> pLatencyMarkerInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkSetLatencySleepModeNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -50465,7 +48730,6 @@ public unsafe partial interface IVk
         [NativeName("pSleepModeInfo")] LatencySleepModeInfoNV* pSleepModeInfo
     );
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("vkSetLatencySleepModeNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -50484,7 +48748,6 @@ public unsafe partial interface IVk
         [NativeName("pSleepModeInfo")] Ref<LatencySleepModeInfoNV> pSleepModeInfo
     );
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("vkSetLocalDimmingAMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -50501,7 +48764,6 @@ public unsafe partial interface IVk
         [NativeName("localDimmingEnable")] uint localDimmingEnable
     );
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("vkSetLocalDimmingAMD")]
     [SupportedApiProfile(
         "vulkan",
@@ -50542,7 +48804,6 @@ public unsafe partial interface IVk
         [NativeName("data")] ulong data
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkSetPrivateDataEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -50611,7 +48872,6 @@ public unsafe partial interface IVk
         [NativeName("pSignalInfo")] Ref<SemaphoreSignalInfo> pSignalInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkSignalSemaphoreKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -50627,7 +48887,6 @@ public unsafe partial interface IVk
         [NativeName("pSignalInfo")] SemaphoreSignalInfo* pSignalInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkSignalSemaphoreKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -50643,7 +48902,6 @@ public unsafe partial interface IVk
         [NativeName("pSignalInfo")] Ref<SemaphoreSignalInfo> pSignalInfo
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkSubmitDebugUtilsMessageEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
@@ -50654,7 +48912,6 @@ public unsafe partial interface IVk
         [NativeName("pCallbackData")] DebugUtilsMessengerCallbackDataEXT* pCallbackData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkSubmitDebugUtilsMessageEXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     [NativeFunction("vulkan", EntryPoint = "vkSubmitDebugUtilsMessageEXT")]
@@ -50701,7 +48958,6 @@ public unsafe partial interface IVk
         [NativeName("pTransitions")] Ref<HostImageLayoutTransitionInfo> pTransitions
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkTransitionImageLayoutEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -50719,7 +48975,6 @@ public unsafe partial interface IVk
         [NativeName("pTransitions")] HostImageLayoutTransitionInfo* pTransitions
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkTransitionImageLayoutEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -50767,7 +49022,6 @@ public unsafe partial interface IVk
         [NativeName("flags")] uint flags
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkTrimCommandPoolKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
     [NativeFunction("vulkan", EntryPoint = "vkTrimCommandPoolKHR")]
@@ -50777,7 +49031,6 @@ public unsafe partial interface IVk
         [NativeName("flags")] uint flags
     );
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("vkUninitializePerformanceApiINTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     [NativeFunction("vulkan", EntryPoint = "vkUninitializePerformanceApiINTEL")]
@@ -50850,7 +49103,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryUnmapInfo")] Ref<MemoryUnmapInfo> pMemoryUnmapInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkUnmapMemory2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
     [NativeFunction("vulkan", EntryPoint = "vkUnmapMemory2KHR")]
@@ -50859,7 +49111,6 @@ public unsafe partial interface IVk
         [NativeName("pMemoryUnmapInfo")] MemoryUnmapInfo* pMemoryUnmapInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkUnmapMemory2KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_map_memory2"])]
     [NativeFunction("vulkan", EntryPoint = "vkUnmapMemory2KHR")]
@@ -50986,7 +49237,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkUpdateDescriptorSetWithTemplateKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
     [NativeFunction("vulkan", EntryPoint = "vkUpdateDescriptorSetWithTemplateKHR")]
@@ -50998,7 +49248,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] void* pData
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkUpdateDescriptorSetWithTemplateKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
     [NativeFunction("vulkan", EntryPoint = "vkUpdateDescriptorSetWithTemplateKHR")]
@@ -51010,7 +49259,6 @@ public unsafe partial interface IVk
         [NativeName("pData")] Ref pData
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkUpdateIndirectExecutionSetPipelineEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -51030,7 +49278,6 @@ public unsafe partial interface IVk
             WriteIndirectExecutionSetPipelineEXT* pExecutionSetWrites
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkUpdateIndirectExecutionSetPipelineEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -51050,7 +49297,6 @@ public unsafe partial interface IVk
             Ref<WriteIndirectExecutionSetPipelineEXT> pExecutionSetWrites
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkUpdateIndirectExecutionSetPipelineEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -51068,7 +49314,6 @@ public unsafe partial interface IVk
         [NativeName("pExecutionSetWrites")] WriteIndirectExecutionSetPipelineEXT pExecutionSetWrites
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -51087,7 +49332,6 @@ public unsafe partial interface IVk
         [NativeName("pExecutionSetWrites")] WriteIndirectExecutionSetShaderEXT* pExecutionSetWrites
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -51107,7 +49351,6 @@ public unsafe partial interface IVk
             Ref<WriteIndirectExecutionSetShaderEXT> pExecutionSetWrites
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkUpdateIndirectExecutionSetShaderEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -51125,7 +49368,6 @@ public unsafe partial interface IVk
         [NativeName("pExecutionSetWrites")] WriteIndirectExecutionSetShaderEXT pExecutionSetWrites
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkUpdateVideoSessionParametersKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -51140,7 +49382,6 @@ public unsafe partial interface IVk
         [NativeName("pUpdateInfo")] VideoSessionParametersUpdateInfoKHR* pUpdateInfo
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkUpdateVideoSessionParametersKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -51227,7 +49468,6 @@ public unsafe partial interface IVk
         [NativeName("timeout")] ulong timeout
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkWaitForPresent2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -51246,7 +49486,6 @@ public unsafe partial interface IVk
         [NativeName("pPresentWait2Info")] PresentWait2InfoKHR* pPresentWait2Info
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkWaitForPresent2KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -51265,7 +49504,6 @@ public unsafe partial interface IVk
         [NativeName("pPresentWait2Info")] Ref<PresentWait2InfoKHR> pPresentWait2Info
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkWaitForPresentKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -51332,7 +49570,6 @@ public unsafe partial interface IVk
         [NativeName("timeout")] ulong timeout
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkWaitSemaphoresKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -51349,7 +49586,6 @@ public unsafe partial interface IVk
         [NativeName("timeout")] ulong timeout
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkWaitSemaphoresKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -51366,7 +49602,6 @@ public unsafe partial interface IVk
         [NativeName("timeout")] ulong timeout
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkWriteAccelerationStructuresPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -51388,7 +49623,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] nuint stride
     );
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("vkWriteAccelerationStructuresPropertiesKHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -51410,7 +49644,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] nuint stride
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkWriteMicromapsPropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -51431,7 +49664,6 @@ public unsafe partial interface IVk
         [NativeName("stride")] nuint stride
     );
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("vkWriteMicromapsPropertiesEXT")]
     [SupportedApiProfile(
         "vulkan",

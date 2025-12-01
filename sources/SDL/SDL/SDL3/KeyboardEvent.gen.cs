@@ -6,35 +6,39 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_KeyboardEvent")]
 public partial struct KeyboardEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public nuint Timestamp;
 
-    [NativeTypeName("SDL_WindowID")]
+    [NativeName("windowID")]
     public uint WindowId;
 
-    [NativeTypeName("SDL_KeyboardID")]
+    [NativeName("which")]
     public uint Which;
+
+    [NativeName("scancode")]
     public Scancode Scancode;
 
-    [NativeTypeName("SDL_Keycode")]
+    [NativeName("key")]
     public uint Key;
 
-    [NativeTypeName("SDL_Keymod")]
+    [NativeName("mod")]
     public ushort Mod;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("raw")]
     public ushort Raw;
 
-    [NativeTypeName("bool")]
+    [NativeName("down")]
     public byte Down;
 
-    [NativeTypeName("bool")]
+    [NativeName("repeat")]
     public byte Repeat;
 }

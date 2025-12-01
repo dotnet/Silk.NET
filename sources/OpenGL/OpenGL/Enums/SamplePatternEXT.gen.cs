@@ -7,36 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("SamplePatternEXT")]
-[Transformed]
 public enum SamplePatternEXT : uint
 {
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_1PASS_EXT")]
     X1PassEXT = unchecked((uint)0x80A1),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_2PASS_0_EXT")]
     X2Pass0EXT = unchecked((uint)0x80A2),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_2PASS_1_EXT")]
     X2Pass1EXT = unchecked((uint)0x80A3),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_4PASS_0_EXT")]
     X4Pass0EXT = unchecked((uint)0x80A4),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_4PASS_1_EXT")]
     X4Pass1EXT = unchecked((uint)0x80A5),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_4PASS_2_EXT")]
     X4Pass2EXT = unchecked((uint)0x80A6),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_4PASS_3_EXT")]
     X4Pass3EXT = unchecked((uint)0x80A7),
 }

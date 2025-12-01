@@ -6593,52 +6593,42 @@ public enum Format : uint
     )]
     A8Unorm = 1000470001,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC1_2BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc1X2BppUnormBlockIMG = 1000054000,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC1_4BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc1X4BppUnormBlockIMG = 1000054001,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC2_2BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc2X2BppUnormBlockIMG = 1000054002,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC2_4BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc2X4BppUnormBlockIMG = 1000054003,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC1_2BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc1X2BppSrgbBlockIMG = 1000054004,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC1_4BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc1X4BppSrgbBlockIMG = 1000054005,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC2_2BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc2X2BppSrgbBlockIMG = 1000054006,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("VK_FORMAT_PVRTC2_4BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
     Pvrtc2X4BppSrgbBlockIMG = 1000054007,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R8_BOOL_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     R8BoolARM = 1000460000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_FORMAT_R16G16_SFIXED5_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -6651,7 +6641,6 @@ public enum Format : uint
     )]
     R16G16Sfixed5NV = 1000464000,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R10X6_UINT_PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6663,7 +6652,6 @@ public enum Format : uint
     )]
     R10X6UintPack16ARM = 1000609000,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R10X6G10X6_UINT_2PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6675,7 +6663,6 @@ public enum Format : uint
     )]
     R10X6G10X6Uint2Pack16ARM = 1000609001,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UINT_4PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6687,7 +6674,6 @@ public enum Format : uint
     )]
     R10X6G10X6B10X6A10X6Uint4Pack16ARM = 1000609002,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R12X4_UINT_PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6699,7 +6685,6 @@ public enum Format : uint
     )]
     R12X4UintPack16ARM = 1000609003,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R12X4G12X4_UINT_2PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6711,7 +6696,6 @@ public enum Format : uint
     )]
     R12X4G12X4Uint2Pack16ARM = 1000609004,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UINT_4PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6723,7 +6707,6 @@ public enum Format : uint
     )]
     R12X4G12X4B12X4A12X4Uint4Pack16ARM = 1000609005,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2_UINT_PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6735,7 +6718,6 @@ public enum Format : uint
     )]
     R14X2UintPack16ARM = 1000609006,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2G14X2_UINT_2PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6747,7 +6729,6 @@ public enum Format : uint
     )]
     R14X2G14X2Uint2Pack16ARM = 1000609007,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2G14X2B14X2A14X2_UINT_4PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6759,7 +6740,6 @@ public enum Format : uint
     )]
     R14X2G14X2B14X2A14X2Uint4Pack16ARM = 1000609008,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2_UNORM_PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6771,7 +6751,6 @@ public enum Format : uint
     )]
     R14X2UnormPack16ARM = 1000609009,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2G14X2_UNORM_2PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6783,7 +6762,6 @@ public enum Format : uint
     )]
     R14X2G14X2Unorm2Pack16ARM = 1000609010,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_R14X2G14X2B14X2A14X2_UNORM_4PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6795,7 +6773,6 @@ public enum Format : uint
     )]
     R14X2G14X2B14X2A14X2Unorm4Pack16ARM = 1000609011,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_G14X2_B14X2R14X2_2PLANE_420_UNORM_3PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6807,7 +6784,6 @@ public enum Format : uint
     )]
     G14X2B14X2R14X2X2Plane420Unorm3Pack16ARM = 1000609012,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_FORMAT_G14X2_B14X2R14X2_2PLANE_422_UNORM_3PACK16_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -6819,7 +6795,6 @@ public enum Format : uint
     )]
     G14X2B14X2R14X2X2Plane422Unorm3Pack16ARM = 1000609013,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6831,7 +6806,6 @@ public enum Format : uint
     )]
     Astc4X4SfloatBlockEXT = Astc4X4SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6843,7 +6817,6 @@ public enum Format : uint
     )]
     Astc5X4SfloatBlockEXT = Astc5X4SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6855,7 +6828,6 @@ public enum Format : uint
     )]
     Astc5X5SfloatBlockEXT = Astc5X5SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6867,7 +6839,6 @@ public enum Format : uint
     )]
     Astc6X5SfloatBlockEXT = Astc6X5SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6879,7 +6850,6 @@ public enum Format : uint
     )]
     Astc6X6SfloatBlockEXT = Astc6X6SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6891,7 +6861,6 @@ public enum Format : uint
     )]
     Astc8X5SfloatBlockEXT = Astc8X5SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6903,7 +6872,6 @@ public enum Format : uint
     )]
     Astc8X6SfloatBlockEXT = Astc8X6SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6915,7 +6883,6 @@ public enum Format : uint
     )]
     Astc8X8SfloatBlockEXT = Astc8X8SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6927,7 +6894,6 @@ public enum Format : uint
     )]
     Astc10X5SfloatBlockEXT = Astc10X5SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6939,7 +6905,6 @@ public enum Format : uint
     )]
     Astc10X6SfloatBlockEXT = Astc10X6SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6951,7 +6916,6 @@ public enum Format : uint
     )]
     Astc10X8SfloatBlockEXT = Astc10X8SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6963,7 +6927,6 @@ public enum Format : uint
     )]
     Astc10X10SfloatBlockEXT = Astc10X10SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6975,7 +6938,6 @@ public enum Format : uint
     )]
     Astc12X10SfloatBlockEXT = Astc12X10SfloatBlock,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -6987,7 +6949,6 @@ public enum Format : uint
     )]
     Astc12X12SfloatBlockEXT = Astc12X12SfloatBlock,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -6999,7 +6960,6 @@ public enum Format : uint
     )]
     G8B8G8R8X422UnormKHR = G8B8G8R8X422Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_B8G8R8G8_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7011,7 +6971,6 @@ public enum Format : uint
     )]
     B8G8R8G8X422UnormKHR = B8G8R8G8X422Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7023,7 +6982,6 @@ public enum Format : uint
     )]
     G8B8R8X3Plane420UnormKHR = G8B8R8X3Plane420Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7035,7 +6993,6 @@ public enum Format : uint
     )]
     G8B8R8X2Plane420UnormKHR = G8B8R8X2Plane420Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7047,7 +7004,6 @@ public enum Format : uint
     )]
     G8B8R8X3Plane422UnormKHR = G8B8R8X3Plane422Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7059,7 +7015,6 @@ public enum Format : uint
     )]
     G8B8R8X2Plane422UnormKHR = G8B8R8X2Plane422Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_444_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7071,7 +7026,6 @@ public enum Format : uint
     )]
     G8B8R8X3Plane444UnormKHR = G8B8R8X3Plane444Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R10X6_UNORM_PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7083,7 +7037,6 @@ public enum Format : uint
     )]
     R10X6UnormPack16KHR = R10X6UnormPack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R10X6G10X6_UNORM_2PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7095,7 +7048,6 @@ public enum Format : uint
     )]
     R10X6G10X6Unorm2Pack16KHR = R10X6G10X6Unorm2Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7107,7 +7059,6 @@ public enum Format : uint
     )]
     R10X6G10X6B10X6A10X6Unorm4Pack16KHR = R10X6G10X6B10X6A10X6Unorm4Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7119,7 +7070,6 @@ public enum Format : uint
     )]
     G10X6B10X6G10X6R10X6X422Unorm4Pack16KHR = G10X6B10X6G10X6R10X6X422Unorm4Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7131,7 +7081,6 @@ public enum Format : uint
     )]
     B10X6G10X6R10X6G10X6X422Unorm4Pack16KHR = B10X6G10X6R10X6G10X6X422Unorm4Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7143,7 +7092,6 @@ public enum Format : uint
     )]
     G10X6B10X6R10X6X3Plane420Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane420Unorm3Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7155,7 +7103,6 @@ public enum Format : uint
     )]
     G10X6B10X6R10X6X2Plane420Unorm3Pack16KHR = G10X6B10X6R10X6X2Plane420Unorm3Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7167,7 +7114,6 @@ public enum Format : uint
     )]
     G10X6B10X6R10X6X3Plane422Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane422Unorm3Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7179,7 +7125,6 @@ public enum Format : uint
     )]
     G10X6B10X6R10X6X2Plane422Unorm3Pack16KHR = G10X6B10X6R10X6X2Plane422Unorm3Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7191,7 +7136,6 @@ public enum Format : uint
     )]
     G10X6B10X6R10X6X3Plane444Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane444Unorm3Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R12X4_UNORM_PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7203,7 +7147,6 @@ public enum Format : uint
     )]
     R12X4UnormPack16KHR = R12X4UnormPack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R12X4G12X4_UNORM_2PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7215,7 +7158,6 @@ public enum Format : uint
     )]
     R12X4G12X4Unorm2Pack16KHR = R12X4G12X4Unorm2Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7227,7 +7169,6 @@ public enum Format : uint
     )]
     R12X4G12X4B12X4A12X4Unorm4Pack16KHR = R12X4G12X4B12X4A12X4Unorm4Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7239,7 +7180,6 @@ public enum Format : uint
     )]
     G12X4B12X4G12X4R12X4X422Unorm4Pack16KHR = G12X4B12X4G12X4R12X4X422Unorm4Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7251,7 +7191,6 @@ public enum Format : uint
     )]
     B12X4G12X4R12X4G12X4X422Unorm4Pack16KHR = B12X4G12X4R12X4G12X4X422Unorm4Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7263,7 +7202,6 @@ public enum Format : uint
     )]
     G12X4B12X4R12X4X3Plane420Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane420Unorm3Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7275,7 +7213,6 @@ public enum Format : uint
     )]
     G12X4B12X4R12X4X2Plane420Unorm3Pack16KHR = G12X4B12X4R12X4X2Plane420Unorm3Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7287,7 +7224,6 @@ public enum Format : uint
     )]
     G12X4B12X4R12X4X3Plane422Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane422Unorm3Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7299,7 +7235,6 @@ public enum Format : uint
     )]
     G12X4B12X4R12X4X2Plane422Unorm3Pack16KHR = G12X4B12X4R12X4X2Plane422Unorm3Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7311,7 +7246,6 @@ public enum Format : uint
     )]
     G12X4B12X4R12X4X3Plane444Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane444Unorm3Pack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16B16G16R16_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7323,7 +7257,6 @@ public enum Format : uint
     )]
     G16B16G16R16X422UnormKHR = G16B16G16R16X422Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_B16G16R16G16_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7335,7 +7268,6 @@ public enum Format : uint
     )]
     B16G16R16G16X422UnormKHR = B16G16R16G16X422Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7347,7 +7279,6 @@ public enum Format : uint
     )]
     G16B16R16X3Plane420UnormKHR = G16B16R16X3Plane420Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7359,7 +7290,6 @@ public enum Format : uint
     )]
     G16B16R16X2Plane420UnormKHR = G16B16R16X2Plane420Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7371,7 +7301,6 @@ public enum Format : uint
     )]
     G16B16R16X3Plane422UnormKHR = G16B16R16X3Plane422Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7383,7 +7312,6 @@ public enum Format : uint
     )]
     G16B16R16X2Plane422UnormKHR = G16B16R16X2Plane422Unorm,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7395,7 +7323,6 @@ public enum Format : uint
     )]
     G16B16R16X3Plane444UnormKHR = G16B16R16X3Plane444Unorm,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_444_UNORM_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7407,7 +7334,6 @@ public enum Format : uint
     )]
     G8B8R8X2Plane444UnormEXT = G8B8R8X2Plane444Unorm,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7419,7 +7345,6 @@ public enum Format : uint
     )]
     G10X6B10X6R10X6X2Plane444Unorm3Pack16EXT = G10X6B10X6R10X6X2Plane444Unorm3Pack16,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7431,7 +7356,6 @@ public enum Format : uint
     )]
     G12X4B12X4R12X4X2Plane444Unorm3Pack16EXT = G12X4B12X4R12X4X2Plane444Unorm3Pack16,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_444_UNORM_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7443,7 +7367,6 @@ public enum Format : uint
     )]
     G16B16R16X2Plane444UnormEXT = G16B16R16X2Plane444Unorm,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_A4R4G4B4_UNORM_PACK16_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7455,7 +7378,6 @@ public enum Format : uint
     )]
     A4R4G4B4UnormPack16EXT = A4R4G4B4UnormPack16,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_FORMAT_A4B4G4R4_UNORM_PACK16_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -7467,7 +7389,6 @@ public enum Format : uint
     )]
     A4B4G4R4UnormPack16EXT = A4B4G4R4UnormPack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_A1B5G5R5_UNORM_PACK16_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -7476,7 +7397,6 @@ public enum Format : uint
     )]
     A1B5G5R5UnormPack16KHR = A1B5G5R5UnormPack16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_FORMAT_A8_UNORM_KHR")]
     [SupportedApiProfile(
         "vulkan",

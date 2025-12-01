@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("GraphicsResetStatus")]
-[Transformed]
 public enum GraphicsResetStatus : uint
 {
     [NativeName("GL_NO_ERROR")]

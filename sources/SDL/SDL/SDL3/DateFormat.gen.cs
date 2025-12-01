@@ -8,10 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_DateFormat")]
 public enum DateFormat : uint
 {
+    [NativeName("SDL_DATE_FORMAT_YYYYMMDD")]
     Yyyymmdd = 0,
+
+    [NativeName("SDL_DATE_FORMAT_DDMMYYYY")]
     Ddmmyyyy = 1,
+
+    [NativeName("SDL_DATE_FORMAT_MMDDYYYY")]
     Mmddyyyy = 2,
 }

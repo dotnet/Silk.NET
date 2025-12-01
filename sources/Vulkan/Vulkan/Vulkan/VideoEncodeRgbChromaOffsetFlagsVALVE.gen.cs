@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "VALVE", 0)]
 [NativeName("VkVideoEncodeRgbChromaOffsetFlagBitsVALVE")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +15,6 @@ public enum VideoEncodeRgbChromaOffsetFlagsVALVE : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_VIDEO_ENCODE_RGB_CHROMA_OFFSET_COSITED_EVEN_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,7 +26,6 @@ public enum VideoEncodeRgbChromaOffsetFlagsVALVE : uint
     )]
     CositedEvenBitVALVE = 0x1,
 
-    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_VIDEO_ENCODE_RGB_CHROMA_OFFSET_MIDPOINT_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",

@@ -60,7 +60,6 @@ public enum PipelineBindPoint : uint
     )]
     Compute = 1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_BIND_POINT_RAY_TRACING_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -72,7 +71,6 @@ public enum PipelineBindPoint : uint
     )]
     RayTracingKHR = 1000165000,
 
-    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_PIPELINE_BIND_POINT_SUBPASS_SHADING_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -85,7 +83,6 @@ public enum PipelineBindPoint : uint
     )]
     SubpassShadingHUAWEI = 1000369003,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_PIPELINE_BIND_POINT_DATA_GRAPH_ARM")]
     [SupportedApiProfile(
         "vulkan",
@@ -94,7 +91,6 @@ public enum PipelineBindPoint : uint
     )]
     DataGraphARM = 1000507000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_PIPELINE_BIND_POINT_RAY_TRACING_NV")]
     [SupportedApiProfile(
         "vulkan",

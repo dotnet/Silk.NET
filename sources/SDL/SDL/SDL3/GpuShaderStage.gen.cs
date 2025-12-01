@@ -6,9 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPUShaderStage")]
 public enum GpuShaderStage : uint
 {
+    [NativeName("SDL_GPU_SHADERSTAGE_VERTEX")]
     Vertex,
+
+    [NativeName("SDL_GPU_SHADERSTAGE_FRAGMENT")]
     Fragment,
 }

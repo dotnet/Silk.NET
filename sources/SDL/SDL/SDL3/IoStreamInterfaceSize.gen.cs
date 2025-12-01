@@ -9,7 +9,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_IOStreamInterface_size")]
-[Transformed]
 public readonly unsafe struct IoStreamInterfaceSize : IDisposable
 {
     private readonly void* Pointer;

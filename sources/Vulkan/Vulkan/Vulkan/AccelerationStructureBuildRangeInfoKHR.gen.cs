@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkAccelerationStructureBuildRangeInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct AccelerationStructureBuildRangeInfoKHR

@@ -8,11 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_PathType")]
 public enum PathType : uint
 {
+    [NativeName("SDL_PATHTYPE_NONE")]
     None,
+
+    [NativeName("SDL_PATHTYPE_FILE")]
     File,
+
+    [NativeName("SDL_PATHTYPE_DIRECTORY")]
     Directory,
+
+    [NativeName("SDL_PATHTYPE_OTHER")]
     Other,
 }

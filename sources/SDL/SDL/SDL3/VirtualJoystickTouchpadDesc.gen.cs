@@ -6,11 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_VirtualJoystickTouchpadDesc")]
 public partial struct VirtualJoystickTouchpadDesc
 {
-    [NativeTypeName("Uint16")]
+    [NativeName("nfingers")]
     public ushort Nfingers;
 
-    [NativeTypeName("Uint16[3]")]
+    [NativeName("padding")]
     public VirtualJoystickTouchpadDescPadding Padding;
 }

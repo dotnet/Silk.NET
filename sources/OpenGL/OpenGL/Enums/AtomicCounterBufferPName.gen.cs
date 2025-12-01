@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("AtomicCounterBufferPName")]
-[Transformed]
 public enum AtomicCounterBufferPName : uint
 {
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_BINDING")]

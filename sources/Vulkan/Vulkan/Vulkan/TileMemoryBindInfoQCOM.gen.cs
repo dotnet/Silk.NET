@@ -6,7 +6,6 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "QCOM", 0)]
 [NativeName("VkTileMemoryBindInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TileMemoryBindInfoQCOM

@@ -9,5 +9,4 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_StorageInterface_ready")]
-[Transformed]
 public unsafe delegate byte StorageInterfaceReadyDelegate(void* arg0);

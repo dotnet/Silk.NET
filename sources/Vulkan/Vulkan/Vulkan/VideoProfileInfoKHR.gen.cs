@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoProfileInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoProfileInfoKHR

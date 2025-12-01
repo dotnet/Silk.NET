@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "SGIX", 0)]
 [NativeName("LightEnvModeSGIX")]
-[Transformed]
 public enum LightEnvModeSGIX : uint
 {
     [NativeName("GL_REPLACE")]

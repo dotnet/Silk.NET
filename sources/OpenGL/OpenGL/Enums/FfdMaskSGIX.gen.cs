@@ -7,17 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "SGIX", 0)]
 [NativeName("FfdMaskSGIX")]
-[Transformed]
 [Flags]
 public enum FfdMaskSGIX : uint
 {
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_DEFORMATION_BIT_SGIX")]
     TextureDeformationBitSGIX = unchecked((uint)0x00000001),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_GEOMETRY_DEFORMATION_BIT_SGIX")]
     GeometryDeformationBitSGIX = unchecked((uint)0x00000002),
 }

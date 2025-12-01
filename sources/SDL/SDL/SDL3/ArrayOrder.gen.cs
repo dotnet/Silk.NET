@@ -4,14 +4,27 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_ArrayOrder")]
 public enum ArrayOrder : uint
 {
+    [NativeName("SDL_ARRAYORDER_NONE")]
     None,
+
+    [NativeName("SDL_ARRAYORDER_RGB")]
     Rgb,
+
+    [NativeName("SDL_ARRAYORDER_RGBA")]
     Rgba,
+
+    [NativeName("SDL_ARRAYORDER_ARGB")]
     Argb,
+
+    [NativeName("SDL_ARRAYORDER_BGR")]
     Bgr,
+
+    [NativeName("SDL_ARRAYORDER_BGRA")]
     Bgra,
+
+    [NativeName("SDL_ARRAYORDER_ABGR")]
     Abgr,
 }

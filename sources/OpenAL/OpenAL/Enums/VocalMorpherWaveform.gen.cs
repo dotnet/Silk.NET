@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("VocalMorpherWaveform")]
-[Transformed]
 public enum VocalMorpherWaveform : uint
 {
     [NativeName("AL_VOCAL_MORPHER_WAVEFORM_SINUSOID")]

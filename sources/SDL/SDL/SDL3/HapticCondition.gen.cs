@@ -6,39 +6,42 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_HapticCondition")]
 public partial struct HapticCondition
 {
-    [NativeTypeName("Uint16")]
+    [NativeName("type")]
     public ushort Type;
+
+    [NativeName("direction")]
     public HapticDirection Direction;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("length")]
     public uint Length;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("delay")]
     public ushort Delay;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("button")]
     public ushort Button;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("interval")]
     public ushort Interval;
 
-    [NativeTypeName("Uint16[3]")]
+    [NativeName("right_sat")]
     public HapticConditionRightSat RightSat;
 
-    [NativeTypeName("Uint16[3]")]
+    [NativeName("left_sat")]
     public HapticConditionLeftSat LeftSat;
 
-    [NativeTypeName("Sint16[3]")]
+    [NativeName("right_coeff")]
     public HapticConditionRightCoeff RightCoeff;
 
-    [NativeTypeName("Sint16[3]")]
+    [NativeName("left_coeff")]
     public HapticConditionLeftCoeff LeftCoeff;
 
-    [NativeTypeName("Uint16[3]")]
+    [NativeName("deadband")]
     public HapticConditionDeadband Deadband;
 
-    [NativeTypeName("Sint16[3]")]
+    [NativeName("center")]
     public HapticConditionCenter Center;
 }

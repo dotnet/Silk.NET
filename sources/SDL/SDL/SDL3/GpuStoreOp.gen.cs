@@ -6,11 +6,18 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPUStoreOp")]
 public enum GpuStoreOp : uint
 {
+    [NativeName("SDL_GPU_STOREOP_STORE")]
     Store,
+
+    [NativeName("SDL_GPU_STOREOP_DONT_CARE")]
     DontCare,
+
+    [NativeName("SDL_GPU_STOREOP_RESOLVE")]
     Resolve,
+
+    [NativeName("SDL_GPU_STOREOP_RESOLVE_AND_STORE")]
     ResolveAndStore,
 }

@@ -6,7 +6,6 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkCheckpointData2NV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CheckpointData2NV

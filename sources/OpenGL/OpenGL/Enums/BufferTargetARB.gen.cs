@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", 0)]
 [NativeName("BufferTargetARB")]
-[Transformed]
 public enum BufferTargetARB : uint
 {
     [NativeName("GL_ARRAY_BUFFER")]

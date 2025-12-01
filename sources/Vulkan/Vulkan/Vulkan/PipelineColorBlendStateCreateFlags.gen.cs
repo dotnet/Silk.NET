@@ -15,7 +15,6 @@ public enum PipelineColorBlendStateCreateFlags : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
         "VK_PIPELINE_COLOR_BLEND_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_BIT_EXT"
     )]
@@ -29,7 +28,6 @@ public enum PipelineColorBlendStateCreateFlags : uint
     )]
     RasterizationOrderAttachmentAccessBitEXT = 0x1,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName(
         "VK_PIPELINE_COLOR_BLEND_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_BIT_ARM"
     )]

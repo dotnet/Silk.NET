@@ -297,7 +297,6 @@ public enum BufferUsageFlags : uint
     )]
     ShaderDeviceAddressBit = 0x20000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_VIDEO_DECODE_SRC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -309,7 +308,6 @@ public enum BufferUsageFlags : uint
     )]
     VideoDecodeSrcBitKHR = 0x2000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_VIDEO_DECODE_DST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -321,7 +319,6 @@ public enum BufferUsageFlags : uint
     )]
     VideoDecodeDstBitKHR = 0x4000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_BUFFER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -333,7 +330,6 @@ public enum BufferUsageFlags : uint
     )]
     TransformFeedbackBufferBitEXT = 0x800,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_COUNTER_BUFFER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -345,7 +341,6 @@ public enum BufferUsageFlags : uint
     )]
     TransformFeedbackCounterBufferBitEXT = 0x1000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -357,7 +352,6 @@ public enum BufferUsageFlags : uint
     )]
     ConditionalRenderingBitEXT = 0x200,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -369,7 +363,6 @@ public enum BufferUsageFlags : uint
     )]
     AccelerationStructureBuildInputReadOnlyBitKHR = 0x80000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_STORAGE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -381,7 +374,6 @@ public enum BufferUsageFlags : uint
     )]
     AccelerationStructureStorageBitKHR = 0x100000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_SHADER_BINDING_TABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -393,7 +385,6 @@ public enum BufferUsageFlags : uint
     )]
     ShaderBindingTableBitKHR = 0x400,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -405,7 +396,6 @@ public enum BufferUsageFlags : uint
     )]
     VideoEncodeDstBitKHR = 0x8000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -417,7 +407,6 @@ public enum BufferUsageFlags : uint
     )]
     VideoEncodeSrcBitKHR = 0x10000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_SAMPLER_DESCRIPTOR_BUFFER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -431,7 +420,6 @@ public enum BufferUsageFlags : uint
     )]
     SamplerDescriptorBufferBitEXT = 0x200000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_RESOURCE_DESCRIPTOR_BUFFER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -445,7 +433,6 @@ public enum BufferUsageFlags : uint
     )]
     ResourceDescriptorBufferBitEXT = 0x400000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_PUSH_DESCRIPTORS_DESCRIPTOR_BUFFER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -459,7 +446,6 @@ public enum BufferUsageFlags : uint
     )]
     PushDescriptorsDescriptorBufferBitEXT = 0x4000000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_MICROMAP_BUILD_INPUT_READ_ONLY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -471,7 +457,6 @@ public enum BufferUsageFlags : uint
     )]
     MicromapBuildInputReadOnlyBitEXT = 0x800000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_MICROMAP_STORAGE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -483,7 +468,6 @@ public enum BufferUsageFlags : uint
     )]
     MicromapStorageBitEXT = 0x1000000,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_BUFFER_USAGE_TILE_MEMORY_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -495,7 +479,6 @@ public enum BufferUsageFlags : uint
     )]
     TileMemoryBitQCOM = 0x8000000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_BUFFER_USAGE_RAY_TRACING_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -507,7 +490,6 @@ public enum BufferUsageFlags : uint
     )]
     RayTracingBitNV = ShaderBindingTableBitKHR,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -519,7 +501,6 @@ public enum BufferUsageFlags : uint
     )]
     ShaderDeviceAddressBitEXT = ShaderDeviceAddressBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

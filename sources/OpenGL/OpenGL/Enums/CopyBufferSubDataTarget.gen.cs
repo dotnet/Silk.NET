@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("CopyBufferSubDataTarget")]
-[Transformed]
 public enum CopyBufferSubDataTarget : uint
 {
     [NativeName("GL_ARRAY_BUFFER")]

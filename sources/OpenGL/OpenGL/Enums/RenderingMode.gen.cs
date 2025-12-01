@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("RenderingMode")]
-[Transformed]
 public enum RenderingMode : uint
 {
     [NativeName("GL_RENDER")]

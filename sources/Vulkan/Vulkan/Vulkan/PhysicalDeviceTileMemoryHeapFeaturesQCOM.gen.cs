@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "QCOM", 0)]
 [NativeName("VkPhysicalDeviceTileMemoryHeapFeaturesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTileMemoryHeapFeaturesQCOM

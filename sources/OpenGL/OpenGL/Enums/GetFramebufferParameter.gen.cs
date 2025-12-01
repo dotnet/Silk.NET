@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("GetFramebufferParameter")]
-[Transformed]
 public enum GetFramebufferParameter : uint
 {
     [NativeName("GL_SAMPLE_BUFFERS")]

@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectEcho")]
-[Transformed]
 public enum EffectEcho : uint
 {
     [NativeName("AL_ECHO_DELAY")]

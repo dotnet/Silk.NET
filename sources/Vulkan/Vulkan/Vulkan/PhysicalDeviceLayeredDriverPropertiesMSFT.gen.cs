@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "MSFT", 0)]
 [NativeName("VkPhysicalDeviceLayeredDriverPropertiesMSFT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLayeredDriverPropertiesMSFT

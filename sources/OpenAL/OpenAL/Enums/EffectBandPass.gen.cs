@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectBandPass")]
-[Transformed]
 public enum EffectBandPass : uint
 {
     [NativeName("AL_BANDPASS_GAIN")]

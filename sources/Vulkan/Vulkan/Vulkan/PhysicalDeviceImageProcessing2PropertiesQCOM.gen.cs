@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "QCOM", 0)]
 [NativeName("VkPhysicalDeviceImageProcessing2PropertiesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageProcessing2PropertiesQCOM

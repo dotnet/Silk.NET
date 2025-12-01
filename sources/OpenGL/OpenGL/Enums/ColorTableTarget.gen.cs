@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ColorTableTarget")]
-[Transformed]
 public enum ColorTableTarget : uint
 {
     [NativeName("GL_COLOR_TABLE")]

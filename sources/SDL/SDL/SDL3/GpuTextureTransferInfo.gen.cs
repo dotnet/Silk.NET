@@ -8,16 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUTextureTransferInfo")]
 public unsafe partial struct GpuTextureTransferInfo
 {
+    [NativeName("transfer_buffer")]
     public GpuTransferBufferHandle TransferBuffer;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("offset")]
     public uint Offset;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("pixels_per_row")]
     public uint PixelsPerRow;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("rows_per_layer")]
     public uint RowsPerLayer;
 }

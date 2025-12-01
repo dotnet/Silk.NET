@@ -8,41 +8,32 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("PathTransformType")]
-[Transformed]
 public enum PathTransformType : uint
 {
     [NativeName("GL_NONE")]
     None = unchecked((uint)0),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_X_NV")]
     TranslateXNV = unchecked((uint)0x908E),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_Y_NV")]
     TranslateYNV = unchecked((uint)0x908F),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_2D_NV")]
     Translate2DNV = unchecked((uint)0x9090),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_3D_NV")]
     Translate3DNV = unchecked((uint)0x9091),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_AFFINE_2D_NV")]
     Affine2DNV = unchecked((uint)0x9092),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_AFFINE_3D_NV")]
     Affine3DNV = unchecked((uint)0x9094),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSPOSE_AFFINE_2D_NV")]
     TransposeAffine2DNV = unchecked((uint)0x9096),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSPOSE_AFFINE_3D_NV")]
     TransposeAffine3DNV = unchecked((uint)0x9098),
 }

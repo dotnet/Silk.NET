@@ -8,10 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_IOWhence")]
 public enum IoWhence : uint
 {
+    [NativeName("SDL_IO_SEEK_SET")]
     Set,
+
+    [NativeName("SDL_IO_SEEK_CUR")]
     Cur,
+
+    [NativeName("SDL_IO_SEEK_END")]
     End,
 }

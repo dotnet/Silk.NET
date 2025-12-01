@@ -53,7 +53,6 @@ public enum SemaphoreType : uint
     )]
     Timeline = 1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SEMAPHORE_TYPE_BINARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -65,7 +64,6 @@ public enum SemaphoreType : uint
     )]
     BinaryKHR = Binary,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SEMAPHORE_TYPE_TIMELINE_KHR")]
     [SupportedApiProfile(
         "vulkan",

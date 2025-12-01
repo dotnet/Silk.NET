@@ -8,13 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeIntraRefreshModeFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
 public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
 {
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_MODE_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -23,7 +21,6 @@ public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
     )]
     NoneKHR = 0x0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_MODE_PER_PICTURE_PARTITION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -32,7 +29,6 @@ public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
     )]
     PerPicturePartitionBitKHR = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_MODE_BLOCK_BASED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -41,7 +37,6 @@ public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
     )]
     BlockBasedBitKHR = 0x2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_MODE_BLOCK_ROW_BASED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -50,7 +45,6 @@ public enum VideoEncodeIntraRefreshModeFlagsKHR : uint
     )]
     BlockRowBasedBitKHR = 0x4,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_INTRA_REFRESH_MODE_BLOCK_COLUMN_BASED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

@@ -36,7 +36,6 @@ public enum PipelineCacheHeaderVersion : uint
     )]
     One = 1,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_PIPELINE_CACHE_HEADER_VERSION_DATA_GRAPH_QCOM")]
     [SupportedApiProfile(
         "vulkan",

@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectType")]
-[Transformed]
 public enum EffectType : uint
 {
     [NativeName("AL_EFFECT_NULL")]

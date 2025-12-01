@@ -8,28 +8,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_JoyHatEvent")]
 public partial struct JoyHatEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public nuint Timestamp;
 
-    [NativeTypeName("SDL_JoystickID")]
+    [NativeName("which")]
     public uint Which;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("hat")]
     public byte Hat;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("value")]
     public byte Value;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding1")]
     public byte Padding1;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding2")]
     public byte Padding2;
 }

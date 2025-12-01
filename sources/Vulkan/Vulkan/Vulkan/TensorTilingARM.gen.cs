@@ -8,17 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "ARM", 0)]
 [NativeName("VkTensorTilingARM")]
 [SupportedApiProfile("vulkan")]
 public enum TensorTilingARM : uint
 {
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_TENSOR_TILING_OPTIMAL_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     OptimalARM = 0,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_TENSOR_TILING_LINEAR_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     LinearARM = 1,

@@ -8,12 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_Sandbox")]
 public enum Sandbox : uint
 {
+    [NativeName("SDL_SANDBOX_NONE")]
     None = 0,
+
+    [NativeName("SDL_SANDBOX_UNKNOWN_CONTAINER")]
     UnknownContainer,
+
+    [NativeName("SDL_SANDBOX_FLATPAK")]
     Flatpak,
+
+    [NativeName("SDL_SANDBOX_SNAP")]
     Snap,
+
+    [NativeName("SDL_SANDBOX_MACOS")]
     Macos,
 }

@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectFloat")]
-[Transformed]
 public enum EffectFloat : uint
 {
     [NativeName("AL_REVERB_DENSITY")]

@@ -7,5 +7,4 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [NativeName("SDL_VirtualJoystickDesc_SetSensorsEnabled")]
-[Transformed]
 public unsafe delegate byte VirtualJoystickDescSetSensorsEnabledDelegate(void* arg0, byte arg1);

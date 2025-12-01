@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", 0)]
 [NativeName("BufferUsageARB")]
-[Transformed]
 public enum BufferUsageARB : uint
 {
     [NativeName("GL_STATIC_DRAW")]

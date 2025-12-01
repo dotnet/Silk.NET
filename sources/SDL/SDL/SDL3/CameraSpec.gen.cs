@@ -6,12 +6,24 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_CameraSpec")]
 public partial struct CameraSpec
 {
+    [NativeName("format")]
     public PixelFormat Format;
+
+    [NativeName("colorspace")]
     public Colorspace Colorspace;
+
+    [NativeName("width")]
     public int Width;
+
+    [NativeName("height")]
     public int Height;
+
+    [NativeName("framerate_numerator")]
     public int FramerateNumerator;
+
+    [NativeName("framerate_denominator")]
     public int FramerateDenominator;
 }

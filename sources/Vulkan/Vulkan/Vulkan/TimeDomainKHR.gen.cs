@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkTimeDomainKHR")]
 [SupportedApiProfile("vulkan")]
 public enum TimeDomainKHR : uint
 {
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_TIME_DOMAIN_DEVICE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum TimeDomainKHR : uint
     )]
     DeviceKHR = 0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +34,6 @@ public enum TimeDomainKHR : uint
     )]
     ClockMonotonicKHR = 1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +45,6 @@ public enum TimeDomainKHR : uint
     )]
     ClockMonotonicRawKHR = 2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +56,6 @@ public enum TimeDomainKHR : uint
     )]
     QueryPerformanceCounterKHR = 3,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TIME_DOMAIN_DEVICE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -73,7 +67,6 @@ public enum TimeDomainKHR : uint
     )]
     DeviceEXT = DeviceKHR,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -85,7 +78,6 @@ public enum TimeDomainKHR : uint
     )]
     ClockMonotonicEXT = ClockMonotonicKHR,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -97,7 +89,6 @@ public enum TimeDomainKHR : uint
     )]
     ClockMonotonicRawEXT = ClockMonotonicRawKHR,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_EXT")]
     [SupportedApiProfile(
         "vulkan",

@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ListenerFloat3")]
-[Transformed]
 public enum ListenerFloat3 : uint
 {
     [NativeName("AL_POSITION")]

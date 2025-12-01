@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("FilterPName")]
-[Transformed]
 public enum FilterPName : uint
 {
     [NativeName("AL_LOWPASS_GAIN")]

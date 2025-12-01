@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "QCOM", 0)]
 [NativeName("VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM

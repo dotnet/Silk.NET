@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("IndexPointerType")]
-[Transformed]
 public enum IndexPointerType : uint
 {
     [NativeName("GL_SHORT")]

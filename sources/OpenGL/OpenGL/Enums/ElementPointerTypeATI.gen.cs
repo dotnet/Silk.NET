@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ATI", 0)]
 [NativeName("ElementPointerTypeATI")]
-[Transformed]
 public enum ElementPointerTypeATI : uint
 {
     [NativeName("GL_UNSIGNED_BYTE")]

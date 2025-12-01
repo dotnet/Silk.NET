@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkCoarseSampleOrderTypeNV")]
 [SupportedApiProfile("vulkan")]
 public enum CoarseSampleOrderTypeNV : uint
 {
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_DEFAULT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum CoarseSampleOrderTypeNV : uint
     )]
     DefaultNV = 0,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_CUSTOM_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +34,6 @@ public enum CoarseSampleOrderTypeNV : uint
     )]
     CustomNV = 1,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_PIXEL_MAJOR_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +45,6 @@ public enum CoarseSampleOrderTypeNV : uint
     )]
     PixelMajorNV = 2,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_SAMPLE_MAJOR_NV")]
     [SupportedApiProfile(
         "vulkan",

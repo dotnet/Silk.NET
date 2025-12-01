@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectDedicatedGain")]
-[Transformed]
 public enum EffectDedicatedGain : uint
 {
     [NativeName("AL_DEDICATED_GAIN")]

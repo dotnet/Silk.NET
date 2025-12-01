@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkShadingRatePaletteEntryNV")]
 [SupportedApiProfile("vulkan")]
 public enum ShadingRatePaletteEntryNV : uint
 {
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_NO_INVOCATIONS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     EntryNoInvocationsNV = 0,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_16_INVOCATIONS_PER_PIXEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +34,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     Entry16InvocationsPerPixelNV = 1,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_8_INVOCATIONS_PER_PIXEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +45,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     Entry8InvocationsPerPixelNV = 2,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_4_INVOCATIONS_PER_PIXEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +56,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     Entry4InvocationsPerPixelNV = 3,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_2_INVOCATIONS_PER_PIXEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -73,7 +67,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     Entry2InvocationsPerPixelNV = 4,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_PIXEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -85,7 +78,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     Entry1InvocationPerPixelNV = 5,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_2X1_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -97,7 +89,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     Entry1InvocationPer2X1PixelsNV = 6,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_1X2_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -109,7 +100,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     Entry1InvocationPer1X2PixelsNV = 7,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_2X2_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -121,7 +111,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     Entry1InvocationPer2X2PixelsNV = 8,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_4X2_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -133,7 +122,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     Entry1InvocationPer4X2PixelsNV = 9,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_2X4_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -145,7 +133,6 @@ public enum ShadingRatePaletteEntryNV : uint
     )]
     Entry1InvocationPer2X4PixelsNV = 10,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_4X4_PIXELS_NV")]
     [SupportedApiProfile(
         "vulkan",

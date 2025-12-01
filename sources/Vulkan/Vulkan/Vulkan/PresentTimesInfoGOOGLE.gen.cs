@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "GOOGLE", 0)]
 [NativeName("VkPresentTimesInfoGOOGLE")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PresentTimesInfoGOOGLE

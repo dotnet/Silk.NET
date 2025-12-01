@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "SUN", 0)]
 [NativeName("ReplacementCodeTypeSUN")]
-[Transformed]
 public enum ReplacementCodeTypeSUN : uint
 {
     [NativeName("GL_UNSIGNED_BYTE")]

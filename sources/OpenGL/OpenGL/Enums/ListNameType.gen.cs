@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ListNameType")]
-[Transformed]
 public enum ListNameType : uint
 {
     [NativeName("GL_BYTE")]

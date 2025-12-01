@@ -44,7 +44,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     RobustImageAccess2 = 3,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -56,7 +55,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     DeviceDefaultEXT = DeviceDefault,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +66,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     DisabledEXT = Disabled,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -80,7 +77,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     RobustImageAccessEXT = RobustImageAccess,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2_EXT")]
     [SupportedApiProfile(
         "vulkan",

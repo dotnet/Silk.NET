@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectFlanger")]
-[Transformed]
 public enum EffectFlanger : uint
 {
     [NativeName("AL_FLANGER_WAVEFORM")]

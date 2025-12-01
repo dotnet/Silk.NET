@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("SyncObjectMask")]
-[Transformed]
 [Flags]
 public enum SyncObjectMask : uint
 {
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
     FlushCommandsBitAPPLE = unchecked((uint)0x00000001),
 

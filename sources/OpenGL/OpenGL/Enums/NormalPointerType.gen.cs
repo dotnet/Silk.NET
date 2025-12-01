@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("NormalPointerType")]
-[Transformed]
 public enum NormalPointerType : uint
 {
     [NativeName("GL_BYTE")]

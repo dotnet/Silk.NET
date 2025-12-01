@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ContextBoolean")]
-[Transformed]
 public enum ContextBoolean : uint
 {
     [NativeName("ALC_SYNC")]

@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("IndexMaterialParameterEXT")]
-[Transformed]
 public enum IndexMaterialParameterEXT : uint
 {
     [NativeName("GL_INDEX_OFFSET")]

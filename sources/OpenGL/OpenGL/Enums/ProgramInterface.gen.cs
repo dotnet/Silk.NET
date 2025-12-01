@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ProgramInterface")]
-[Transformed]
 public enum ProgramInterface : uint
 {
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER")]

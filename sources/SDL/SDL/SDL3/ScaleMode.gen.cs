@@ -6,9 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_ScaleMode")]
 public enum ScaleMode : uint
 {
+    [NativeName("SDL_SCALEMODE_NEAREST")]
     Nearest,
+
+    [NativeName("SDL_SCALEMODE_LINEAR")]
     Linear,
 }

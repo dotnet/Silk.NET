@@ -7,20 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("CombinerParameterNV")]
-[Transformed]
 public enum CombinerParameterNV : uint
 {
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_INPUT_NV")]
     InputNV = unchecked((uint)0x8542),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_MAPPING_NV")]
     MappingNV = unchecked((uint)0x8543),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_COMPONENT_USAGE_NV")]
     ComponentUsageNV = unchecked((uint)0x8544),
 }

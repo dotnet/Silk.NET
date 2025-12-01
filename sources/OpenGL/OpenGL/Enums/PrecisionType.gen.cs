@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("PrecisionType")]
-[Transformed]
 public enum PrecisionType : uint
 {
     [NativeName("GL_LOW_FLOAT")]

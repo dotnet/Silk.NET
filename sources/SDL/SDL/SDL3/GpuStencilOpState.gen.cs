@@ -4,10 +4,18 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUStencilOpState")]
 public partial struct GpuStencilOpState
 {
+    [NativeName("fail_op")]
     public GpuStencilOp FailOp;
+
+    [NativeName("pass_op")]
     public GpuStencilOp PassOp;
+
+    [NativeName("depth_fail_op")]
     public GpuStencilOp DepthFailOp;
+
+    [NativeName("compare_op")]
     public GpuCompareOp CompareOp;
 }

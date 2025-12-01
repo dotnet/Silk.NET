@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("TextureParameterName")]
-[Transformed]
 public enum TextureParameterName : uint
 {
     [NativeName("GL_TEXTURE_MAG_FILTER")]
@@ -21,7 +20,6 @@ public enum TextureParameterName : uint
     TextureWrapS = unchecked((uint)0x2802),
 
     [NativeName("GL_TEXTURE_WRAP")]
-    [NameAffix("Suffix", "_T", -1)]
     TextureWrap = unchecked((uint)0x2803),
 
     [NativeName("GL_GENERATE_MIPMAP")]
@@ -114,171 +112,129 @@ public enum TextureParameterName : uint
     [NativeName("GL_TEXTURE_MAX_ANISOTROPY")]
     TextureMaxAnisotropy = unchecked((uint)0x84FE),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_TILING_EXT")]
     TextureTilingEXT = unchecked((uint)0x9580),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_DEPTH_EXT")]
     TextureDepthEXT = unchecked((uint)0x8071),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_WRAP_R_EXT")]
     TextureWrapREXT = unchecked((uint)0x8072),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_PRIORITY_EXT")]
     TexturePriorityEXT = unchecked((uint)0x8066),
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_TEXTURE_MEMORY_LAYOUT_INTEL")]
     TextureMemoryLayoutINTEL = unchecked((uint)0x83FF),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DETAIL_TEXTURE_LEVEL_SGIS")]
     DetailTextureLevelSGIS = unchecked((uint)0x809A),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DETAIL_TEXTURE_MODE_SGIS")]
     DetailTextureModeSGIS = unchecked((uint)0x809B),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DETAIL_TEXTURE_FUNC_POINTS_SGIS")]
     DetailTextureFuncPointsSGIS = unchecked((uint)0x809C),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_GENERATE_MIPMAP_SGIS")]
     GenerateMipmapSGIS = unchecked((uint)0x8191),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SHARPEN_TEXTURE_FUNC_POINTS_SGIS")]
     SharpenTextureFuncPointsSGIS = unchecked((uint)0x80B0),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_4DSIZE_SGIS")]
     Texture4DsizeSGIS = unchecked((uint)0x8136),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_WRAP_Q_SGIS")]
     TextureWrapQSGIS = unchecked((uint)0x8137),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_FILTER4_SIZE_SGIS")]
     TextureFilter4SizeSGIS = unchecked((uint)0x8147),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_MIN_LOD_SGIS")]
     TextureMinLodSGIS = unchecked((uint)0x813A),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_MAX_LOD_SGIS")]
     TextureMaxLodSGIS = unchecked((uint)0x813B),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_BASE_LEVEL_SGIS")]
     TextureBaseLevelSGIS = unchecked((uint)0x813C),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_MAX_LEVEL_SGIS")]
     TextureMaxLevelSGIS = unchecked((uint)0x813D),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_TEXTURE_SELECT_SGIS")]
     DualTextureSelectSGIS = unchecked((uint)0x8124),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_QUAD_TEXTURE_SELECT_SGIS")]
     QuadTextureSelectSGIS = unchecked((uint)0x8125),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_CENTER_SGIX")]
     TextureClipmapCenterSGIX = unchecked((uint)0x8171),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_FRAME_SGIX")]
     TextureClipmapFrameSGIX = unchecked((uint)0x8172),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_OFFSET_SGIX")]
     TextureClipmapOffsetSGIX = unchecked((uint)0x8173),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_VIRTUAL_DEPTH_SGIX")]
     TextureClipmapVirtualDepthSGIX = unchecked((uint)0x8174),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_LOD_OFFSET_SGIX")]
     TextureClipmapLodOffsetSGIX = unchecked((uint)0x8175),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_DEPTH_SGIX")]
     TextureClipmapDepthSGIX = unchecked((uint)0x8176),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_COMPARE_SGIX")]
     TextureCompareSGIX = unchecked((uint)0x819A),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_COMPARE_OPERATOR_SGIX")]
     TextureCompareOperatorSGIX = unchecked((uint)0x819B),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_LEQUAL_R_SGIX")]
     TextureLequalRSGIX = unchecked((uint)0x819C),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_GEQUAL_R_SGIX")]
     TextureGequalRSGIX = unchecked((uint)0x819D),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SHADOW_AMBIENT_SGIX")]
     ShadowAmbientSGIX = unchecked((uint)0x80BF),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_MAX_CLAMP_S_SGIX")]
     TextureMaxClampSSGIX = unchecked((uint)0x8369),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_MAX_CLAMP_T_SGIX")]
     TextureMaxClampTSGIX = unchecked((uint)0x836A),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_MAX_CLAMP_R_SGIX")]
     TextureMaxClampRSGIX = unchecked((uint)0x836B),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_LOD_BIAS_S_SGIX")]
     TextureLodBiasSSGIX = unchecked((uint)0x818E),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_LOD_BIAS_T_SGIX")]
     TextureLodBiasTSGIX = unchecked((uint)0x818F),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_LOD_BIAS_R_SGIX")]
     TextureLodBiasRSGIX = unchecked((uint)0x8190),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_POST_TEXTURE_FILTER_BIAS_SGIX")]
     PostTextureFilterBiasSGIX = unchecked((uint)0x8179),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_POST_TEXTURE_FILTER_SCALE_SGIX")]
     PostTextureFilterScaleSGIX = unchecked((uint)0x817A),
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_WRAP_R_OES")]
     TextureWrapROES = unchecked((uint)0x8072),
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
     TextureUnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
     TextureBorderColorNV = unchecked((uint)0x1004),
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM")]
     TextureFoveatedCutoffDensityQCOM = unchecked((uint)0x96A0),
 }

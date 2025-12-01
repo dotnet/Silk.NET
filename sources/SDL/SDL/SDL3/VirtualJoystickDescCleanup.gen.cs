@@ -7,7 +7,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [NativeName("SDL_VirtualJoystickDesc_Cleanup")]
-[Transformed]
 public readonly unsafe struct VirtualJoystickDescCleanup : IDisposable
 {
     private readonly void* Pointer;

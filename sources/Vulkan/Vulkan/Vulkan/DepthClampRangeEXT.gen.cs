@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkDepthClampRangeEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct DepthClampRangeEXT

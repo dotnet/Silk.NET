@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VariantCapEXT")]
-[Transformed]
 public enum VariantCapEXT : uint
 {
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VARIANT_ARRAY_EXT")]
     VariantArrayEXT = unchecked((uint)0x87E8),
 }

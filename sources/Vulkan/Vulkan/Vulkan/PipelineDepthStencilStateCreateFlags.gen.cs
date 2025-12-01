@@ -15,7 +15,6 @@ public enum PipelineDepthStencilStateCreateFlags : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
         "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_EXT"
     )]
@@ -29,7 +28,6 @@ public enum PipelineDepthStencilStateCreateFlags : uint
     )]
     RasterizationOrderAttachmentDepthAccessBitEXT = 0x1,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName(
         "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_EXT"
     )]
@@ -43,7 +41,6 @@ public enum PipelineDepthStencilStateCreateFlags : uint
     )]
     RasterizationOrderAttachmentStencilAccessBitEXT = 0x2,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName(
         "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_ARM"
     )]
@@ -57,7 +54,6 @@ public enum PipelineDepthStencilStateCreateFlags : uint
     )]
     RasterizationOrderAttachmentDepthAccessBitARM = RasterizationOrderAttachmentDepthAccessBitEXT,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName(
         "VK_PIPELINE_DEPTH_STENCIL_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_ARM"
     )]

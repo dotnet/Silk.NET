@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkPresentScalingFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +15,6 @@ public enum PresentScalingFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PRESENT_SCALING_ONE_TO_ONE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,7 +26,6 @@ public enum PresentScalingFlagsKHR : uint
     )]
     OneToOneBitKHR = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PRESENT_SCALING_ASPECT_RATIO_STRETCH_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -40,7 +37,6 @@ public enum PresentScalingFlagsKHR : uint
     )]
     AspectRatioStretchBitKHR = 0x2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PRESENT_SCALING_STRETCH_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -52,7 +48,6 @@ public enum PresentScalingFlagsKHR : uint
     )]
     StretchBitKHR = 0x4,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PRESENT_SCALING_ONE_TO_ONE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -64,7 +59,6 @@ public enum PresentScalingFlagsKHR : uint
     )]
     OneToOneBitEXT = OneToOneBitKHR,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PRESENT_SCALING_ASPECT_RATIO_STRETCH_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -76,7 +70,6 @@ public enum PresentScalingFlagsKHR : uint
     )]
     AspectRatioStretchBitEXT = AspectRatioStretchBitKHR,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PRESENT_SCALING_STRETCH_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

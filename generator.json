@@ -40,12 +40,14 @@
       "Mods": [
         "AddIncludes",
         "ClangScraper",
+        "MarkNativeNames",
         "ExtractNestedTyping",
         "TransformHandles",
         "TransformFunctions",
         "TransformProperties",
         "PrettifyNames",
-        "AddVTables"
+        "AddVTables",
+        "StripAttributes"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -54,9 +56,13 @@
         "InputSourceRoot": "sources/SDL",
         "InputTestRoot": "tests/SDL"
       },
+      "ExtractNestedTyping": {
+        "DelegateSuffixPriority": 1
+      },
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
-        "UseDSL": true
+        "UseDSL": true,
+        "HandleSuffixPriority": 1
       },
       "TransformFunctions": {
         "BoolTypes": {
@@ -65,6 +71,13 @@
       },
       "PrettifyNames": {
         "GlobalPrefixHints": ["SDL"]
+      },
+      "StripAttributes": {
+        "Remove": [
+          "NativeTypeName",
+          "NameAffix",
+          "Transformed"
+        ]
       }
     },
     "OpenGL": {
@@ -74,13 +87,15 @@
       "Mods": [
         "AddIncludes",
         "ClangScraper",
+        "MarkNativeNames",
         "AddApiProfiles",
         "BakeSourceSets",
         "MixKhronosData",
         "AddOpaqueStructs",
         "TransformFunctions",
         "PrettifyNames",
-        "AddVTables"
+        "AddVTables",
+        "StripAttributes"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -160,6 +175,13 @@
         "BoolTypes": {
           "GLboolean": null
         }
+      },
+      "StripAttributes": {
+        "Remove": [
+          "NativeTypeName",
+          "NameAffix",
+          "Transformed"
+        ]
       }
     },
     "OpenAL": {
@@ -169,6 +191,7 @@
       "Mods": [
         "AddIncludes",
         "ClangScraper",
+        "MarkNativeNames",
         "ChangeNativeClass",
         "AddApiProfiles",
         "MixKhronosData",
@@ -177,7 +200,8 @@
         "InterceptNativeFunctions",
         "TransformFunctions",
         "PrettifyNames",
-        "AddVTables"
+        "AddVTables",
+        "StripAttributes"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [
@@ -265,7 +289,18 @@
       },
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
-        "UseDSL": true
+        "UseDSL": true,
+        "HandleSuffixPriority": 1
+      },
+      "ExtractNestedTyping": {
+        "DelegateSuffixPriority": 1
+      },
+      "StripAttributes": {
+        "Remove": [
+          "NativeTypeName",
+          "NameAffix",
+          "Transformed"
+        ]
       }
     },
     "Vulkan": {
@@ -375,6 +410,7 @@
       "StripAttributes": {
         "Remove": [
           "NativeTypeName",
+          "NameAffix",
           "Transformed"
         ]
       }

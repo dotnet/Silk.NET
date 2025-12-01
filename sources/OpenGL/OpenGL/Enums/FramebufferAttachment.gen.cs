@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("FramebufferAttachment")]
-[Transformed]
 public enum FramebufferAttachment : uint
 {
     [NativeName("GL_DEPTH_STENCIL_ATTACHMENT")]
@@ -116,7 +115,6 @@ public enum FramebufferAttachment : uint
     [NativeName("GL_STENCIL_ATTACHMENT")]
     StencilAttachment = unchecked((uint)0x8D20),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_ATTACHMENT_EXT")]
     ShadingRateAttachmentEXT = unchecked((uint)0x96D1),
 }

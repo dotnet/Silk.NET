@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkScopeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum ScopeKHR : uint
 {
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SCOPE_DEVICE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum ScopeKHR : uint
     )]
     DeviceKHR = 1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SCOPE_WORKGROUP_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +34,6 @@ public enum ScopeKHR : uint
     )]
     WorkgroupKHR = 2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SCOPE_SUBGROUP_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +45,6 @@ public enum ScopeKHR : uint
     )]
     SubgroupKHR = 3,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SCOPE_QUEUE_FAMILY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +56,6 @@ public enum ScopeKHR : uint
     )]
     QueueFamilyKHR = 5,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SCOPE_DEVICE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -73,7 +67,6 @@ public enum ScopeKHR : uint
     )]
     DeviceNV = DeviceKHR,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SCOPE_WORKGROUP_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -85,7 +78,6 @@ public enum ScopeKHR : uint
     )]
     WorkgroupNV = WorkgroupKHR,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SCOPE_SUBGROUP_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -97,7 +89,6 @@ public enum ScopeKHR : uint
     )]
     SubgroupNV = SubgroupKHR,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_SCOPE_QUEUE_FAMILY_NV")]
     [SupportedApiProfile(
         "vulkan",

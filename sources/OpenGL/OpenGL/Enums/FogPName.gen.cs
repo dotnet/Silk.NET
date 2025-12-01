@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("FogPName")]
-[Transformed]
 public enum FogPName : uint
 {
     [NativeName("GL_FOG_DENSITY")]

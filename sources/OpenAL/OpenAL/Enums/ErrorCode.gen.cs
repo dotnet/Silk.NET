@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ErrorCode")]
-[Transformed]
 public enum ErrorCode : uint
 {
     [NativeName("AL_NO_ERROR")]
@@ -32,11 +31,9 @@ public enum ErrorCode : uint
     [NativeName("AL_OUT_OF_MEMORY")]
     OutOfMemory = unchecked((uint)0xA005),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_STACK_OVERFLOW_EXT")]
     StackOverflowEXT = unchecked((uint)0x19CD),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("AL_STACK_UNDERFLOW_EXT")]
     StackUnderflowEXT = unchecked((uint)0x19CE),
 
@@ -46,7 +43,6 @@ public enum ErrorCode : uint
     [NativeName("ALC_INVALID_DEVICE")]
     CInvalidDevice = unchecked((uint)0xA001),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("ALC_INVALID_CONTEXT")]
     CInvalidContEXT = unchecked((uint)0xA002),
 

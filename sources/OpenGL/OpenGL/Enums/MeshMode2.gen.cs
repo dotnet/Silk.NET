@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("MeshMode2")]
-[Transformed]
 public enum MeshMode2 : uint
 {
     [NativeName("GL_POINT")]

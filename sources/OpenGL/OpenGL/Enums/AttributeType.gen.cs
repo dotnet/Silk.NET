@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("AttributeType")]
-[Transformed]
 public enum AttributeType : uint
 {
     [NativeName("GL_FLOAT")]
@@ -338,159 +337,120 @@ public enum AttributeType : uint
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY")]
     UnsignedIntImage2DMultisampleArray = unchecked((uint)0x906C),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_INT64_ARB")]
     UnsignedInt64ARB = unchecked((uint)0x140F),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT64_ARB")]
     Int64ARB = unchecked((uint)0x140E),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT64_VEC2_ARB")]
     Int64Vec2ARB = unchecked((uint)0x8FE9),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT64_VEC3_ARB")]
     Int64Vec3ARB = unchecked((uint)0x8FEA),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT64_VEC4_ARB")]
     Int64Vec4ARB = unchecked((uint)0x8FEB),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_INT64_VEC2_ARB")]
     UnsignedInt64Vec2ARB = unchecked((uint)0x8FF5),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_INT64_VEC3_ARB")]
     UnsignedInt64Vec3ARB = unchecked((uint)0x8FF6),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_INT64_VEC4_ARB")]
     UnsignedInt64Vec4ARB = unchecked((uint)0x8FF7),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_VEC2_ARB")]
     FloatVec2ARB = unchecked((uint)0x8B50),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_VEC3_ARB")]
     FloatVec3ARB = unchecked((uint)0x8B51),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_VEC4_ARB")]
     FloatVec4ARB = unchecked((uint)0x8B52),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT_VEC2_ARB")]
     IntVec2ARB = unchecked((uint)0x8B53),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT_VEC3_ARB")]
     IntVec3ARB = unchecked((uint)0x8B54),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT_VEC4_ARB")]
     IntVec4ARB = unchecked((uint)0x8B55),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BOOL_ARB")]
     BoolARB = unchecked((uint)0x8B56),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BOOL_VEC2_ARB")]
     BoolVec2ARB = unchecked((uint)0x8B57),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BOOL_VEC3_ARB")]
     BoolVec3ARB = unchecked((uint)0x8B58),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BOOL_VEC4_ARB")]
     BoolVec4ARB = unchecked((uint)0x8B59),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_MAT2_ARB")]
     FloatMat2ARB = unchecked((uint)0x8B5A),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_MAT3_ARB")]
     FloatMat3ARB = unchecked((uint)0x8B5B),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_MAT4_ARB")]
     FloatMat4ARB = unchecked((uint)0x8B5C),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_1D_ARB")]
     Sampler1DARB = unchecked((uint)0x8B5D),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_2D_ARB")]
     Sampler2DARB = unchecked((uint)0x8B5E),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_3D_ARB")]
     Sampler3DARB = unchecked((uint)0x8B5F),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_CUBE_ARB")]
     SamplerCubeARB = unchecked((uint)0x8B60),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_1D_SHADOW_ARB")]
     Sampler1DShadowARB = unchecked((uint)0x8B61),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_2D_SHADOW_ARB")]
     Sampler2DShadowARB = unchecked((uint)0x8B62),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_2D_RECT_ARB")]
     Sampler2DRectARB = unchecked((uint)0x8B63),
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_2D_RECT_SHADOW_ARB")]
     Sampler2DRectShadowARB = unchecked((uint)0x8B64),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT64_NV")]
     Int64NV = unchecked((uint)0x140E),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT64_NV")]
     UnsignedInt64NV = unchecked((uint)0x140F),
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_SAMPLER_3D_OES")]
     Sampler3DOES = unchecked((uint)0x8B5F),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_2D_SHADOW_EXT")]
     Sampler2DShadowEXT = unchecked((uint)0x8B62),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT2x3_NV")]
     FloatMat2X3NV = unchecked((uint)0x8B65),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT2x4_NV")]
     FloatMat2X4NV = unchecked((uint)0x8B66),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT3x2_NV")]
     FloatMat3X2NV = unchecked((uint)0x8B67),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT3x4_NV")]
     FloatMat3X4NV = unchecked((uint)0x8B68),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT4x2_NV")]
     FloatMat4X2NV = unchecked((uint)0x8B69),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT4x3_NV")]
     FloatMat4X3NV = unchecked((uint)0x8B6A),
 }

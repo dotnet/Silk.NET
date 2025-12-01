@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkOpacityMicromapSpecialIndexEXT")]
 [SupportedApiProfile("vulkan")]
 public enum OpacityMicromapSpecialIndexEXT
 {
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_TRANSPARENT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum OpacityMicromapSpecialIndexEXT
     )]
     FullyTransparentEXT = -1,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_OPAQUE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +34,6 @@ public enum OpacityMicromapSpecialIndexEXT
     )]
     FullyOpaqueEXT = -2,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_TRANSPARENT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +45,6 @@ public enum OpacityMicromapSpecialIndexEXT
     )]
     FullyUnknownTransparentEXT = -3,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_FULLY_UNKNOWN_OPAQUE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +56,6 @@ public enum OpacityMicromapSpecialIndexEXT
     )]
     FullyUnknownOpaqueEXT = -4,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_OPACITY_MICROMAP_SPECIAL_INDEX_CLUSTER_GEOMETRY_DISABLE_OPACITY_MICROMAP_NV")]
     [SupportedApiProfile(
         "vulkan",

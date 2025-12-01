@@ -6,9 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AudioSpec")]
 public partial struct AudioSpec
 {
+    [NativeName("format")]
     public AudioFormat Format;
+
+    [NativeName("channels")]
     public int Channels;
+
+    [NativeName("freq")]
     public int Freq;
 }

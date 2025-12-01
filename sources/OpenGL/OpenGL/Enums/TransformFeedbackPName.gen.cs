@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("TransformFeedbackPName")]
-[Transformed]
 public enum TransformFeedbackPName : uint
 {
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_START")]

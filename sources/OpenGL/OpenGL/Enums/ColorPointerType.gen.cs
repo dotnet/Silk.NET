@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ColorPointerType")]
-[Transformed]
 public enum ColorPointerType : uint
 {
     [NativeName("GL_BYTE")]

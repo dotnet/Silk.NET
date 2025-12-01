@@ -83,7 +83,6 @@ public enum IndexType : uint
     )]
     Uint8 = 1000265000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_INDEX_TYPE_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -95,7 +94,6 @@ public enum IndexType : uint
     )]
     NoneKHR = 1000165000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_INDEX_TYPE_NONE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -107,7 +105,6 @@ public enum IndexType : uint
     )]
     NoneNV = NoneKHR,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INDEX_TYPE_UINT8_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -119,7 +116,6 @@ public enum IndexType : uint
     )]
     Uint8EXT = Uint8,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_INDEX_TYPE_UINT8_KHR")]
     [SupportedApiProfile(
         "vulkan",

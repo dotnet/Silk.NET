@@ -8,13 +8,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPUCubeMapFace")]
 public enum GpuCubeMapFace : uint
 {
+    [NativeName("SDL_GPU_CUBEMAPFACE_POSITIVEX")]
     Positivex,
+
+    [NativeName("SDL_GPU_CUBEMAPFACE_NEGATIVEX")]
     Negativex,
+
+    [NativeName("SDL_GPU_CUBEMAPFACE_POSITIVEY")]
     Positivey,
+
+    [NativeName("SDL_GPU_CUBEMAPFACE_NEGATIVEY")]
     Negativey,
+
+    [NativeName("SDL_GPU_CUBEMAPFACE_POSITIVEZ")]
     Positivez,
+
+    [NativeName("SDL_GPU_CUBEMAPFACE_NEGATIVEZ")]
     Negativez,
 }

@@ -8,8 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_DUMMY_ENUM")]
 public enum DummyEnum : uint
 {
+    [NativeName("DUMMY_ENUM_VALUE")]
     DummyEnumValue,
 }

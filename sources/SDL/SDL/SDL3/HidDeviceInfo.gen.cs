@@ -6,40 +6,51 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_hid_device_info")]
 public unsafe partial struct HidDeviceInfo
 {
-    [NativeTypeName("char *")]
+    [NativeName("path")]
     public sbyte* Path;
 
-    [NativeTypeName("unsigned short")]
+    [NativeName("vendor_id")]
     public ushort VendorId;
 
-    [NativeTypeName("unsigned short")]
+    [NativeName("product_id")]
     public ushort ProductId;
 
-    [NativeTypeName("wchar_t *")]
+    [NativeName("serial_number")]
     public uint* SerialNumber;
 
-    [NativeTypeName("unsigned short")]
+    [NativeName("release_number")]
     public ushort ReleaseNumber;
 
-    [NativeTypeName("wchar_t *")]
+    [NativeName("manufacturer_string")]
     public uint* ManufacturerString;
 
-    [NativeTypeName("wchar_t *")]
+    [NativeName("product_string")]
     public uint* ProductString;
 
-    [NativeTypeName("unsigned short")]
+    [NativeName("usage_page")]
     public ushort UsagePage;
 
-    [NativeTypeName("unsigned short")]
+    [NativeName("usage")]
     public ushort Usage;
+
+    [NativeName("interface_number")]
     public int InterfaceNumber;
+
+    [NativeName("interface_class")]
     public int InterfaceClass;
+
+    [NativeName("interface_subclass")]
     public int InterfaceSubclass;
+
+    [NativeName("interface_protocol")]
     public int InterfaceProtocol;
+
+    [NativeName("bus_type")]
     public HidBusType BusType;
 
-    [NativeTypeName("struct SDL_hid_device_info *")]
+    [NativeName("next")]
     public HidDeviceInfo* Next;
 }

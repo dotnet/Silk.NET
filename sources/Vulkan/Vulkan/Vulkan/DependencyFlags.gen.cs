@@ -86,7 +86,6 @@ public enum DependencyFlags : uint
     )]
     ViewLocalBit = 0x2,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DEPENDENCY_FEEDBACK_LOOP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -98,12 +97,10 @@ public enum DependencyFlags : uint
     )]
     FeedbackLoopBitEXT = 0x8,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEPENDENCY_QUEUE_FAMILY_OWNERSHIP_TRANSFER_USE_ALL_STAGES_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     QueueFamilyOwnershipTransferUseAllStagesBitKHR = 0x20,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEPENDENCY_ASYMMETRIC_EVENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -115,7 +112,6 @@ public enum DependencyFlags : uint
     )]
     AsymmetricEventBitKHR = 0x40,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEPENDENCY_VIEW_LOCAL_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -127,7 +123,6 @@ public enum DependencyFlags : uint
     )]
     ViewLocalBitKHR = ViewLocalBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEPENDENCY_DEVICE_GROUP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("TexCoordPointerType")]
-[Transformed]
 public enum TexCoordPointerType : uint
 {
     [NativeName("GL_SHORT")]

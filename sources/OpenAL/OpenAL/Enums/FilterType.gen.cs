@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("FilterType")]
-[Transformed]
 public enum FilterType : uint
 {
     [NativeName("AL_FILTER_NULL")]

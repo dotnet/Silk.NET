@@ -8,11 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_ThreadState")]
 public enum ThreadState : uint
 {
+    [NativeName("SDL_THREAD_UNKNOWN")]
     Unknown,
+
+    [NativeName("SDL_THREAD_ALIVE")]
     Alive,
+
+    [NativeName("SDL_THREAD_DETACHED")]
     Detached,
+
+    [NativeName("SDL_THREAD_COMPLETE")]
     Complete,
 }

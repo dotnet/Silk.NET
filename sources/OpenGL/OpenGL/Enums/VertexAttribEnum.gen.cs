@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("VertexAttribEnum")]
-[Transformed]
 public enum VertexAttribEnum : uint
 {
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING")]

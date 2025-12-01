@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("BufferState")]
-[Transformed]
 public enum BufferState : uint
 {
     [NativeName("AL_UNUSED")]

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkSRTDataNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct SrtDataNV

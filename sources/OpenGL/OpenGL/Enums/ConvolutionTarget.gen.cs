@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ConvolutionTarget")]
-[Transformed]
 public enum ConvolutionTarget : uint
 {
     [NativeName("GL_CONVOLUTION_1D")]

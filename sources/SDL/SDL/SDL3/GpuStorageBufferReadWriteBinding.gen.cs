@@ -6,19 +6,21 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUStorageBufferReadWriteBinding")]
 public unsafe partial struct GpuStorageBufferReadWriteBinding
 {
+    [NativeName("buffer")]
     public GpuBufferHandle Buffer;
 
-    [NativeTypeName("bool")]
+    [NativeName("cycle")]
     public byte Cycle;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding1")]
     public byte Padding1;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding2")]
     public byte Padding2;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding3")]
     public byte Padding3;
 }

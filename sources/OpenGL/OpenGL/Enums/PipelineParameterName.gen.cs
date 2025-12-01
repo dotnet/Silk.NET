@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("PipelineParameterName")]
-[Transformed]
 public enum PipelineParameterName : uint
 {
     [NativeName("GL_FRAGMENT_SHADER")]

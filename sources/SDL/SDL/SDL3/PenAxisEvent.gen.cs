@@ -6,26 +6,36 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_PenAxisEvent")]
 public partial struct PenAxisEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public nuint Timestamp;
 
-    [NativeTypeName("SDL_WindowID")]
+    [NativeName("windowID")]
     public uint WindowId;
 
-    [NativeTypeName("SDL_PenID")]
+    [NativeName("which")]
     public uint Which;
 
-    [NativeTypeName("SDL_PenInputFlags")]
+    [NativeName("pen_state")]
     public uint PenState;
+
+    [NativeName("x")]
     public float X;
+
+    [NativeName("y")]
     public float Y;
+
+    [NativeName("axis")]
     public PenAxis Axis;
+
+    [NativeName("value")]
     public float Value;
 }

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("VertexAttribType")]
-[Transformed]
 public enum VertexAttribType : uint
 {
     [NativeName("GL_BYTE")]
@@ -50,7 +49,6 @@ public enum VertexAttribType : uint
     [NativeName("GL_INT_2_10_10_10_REV")]
     Int2X10X10X10Rev = unchecked((uint)0x8D9F),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
     UnsignedInt2X10X10X10RevEXT = unchecked((uint)0x8368),
 }

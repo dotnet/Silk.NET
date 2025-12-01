@@ -6,34 +6,36 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_JoyBallEvent")]
 public partial struct JoyBallEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public nuint Timestamp;
 
-    [NativeTypeName("SDL_JoystickID")]
+    [NativeName("which")]
     public uint Which;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("ball")]
     public byte Ball;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding1")]
     public byte Padding1;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding2")]
     public byte Padding2;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding3")]
     public byte Padding3;
 
-    [NativeTypeName("Sint16")]
+    [NativeName("xrel")]
     public short Xrel;
 
-    [NativeTypeName("Sint16")]
+    [NativeName("yrel")]
     public short Yrel;
 }

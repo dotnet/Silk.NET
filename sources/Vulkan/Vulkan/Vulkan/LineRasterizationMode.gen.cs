@@ -44,7 +44,6 @@ public enum LineRasterizationMode : uint
     )]
     RectangularSmooth = 3,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_DEFAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -56,7 +55,6 @@ public enum LineRasterizationMode : uint
     )]
     DefaultEXT = Default,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -68,7 +66,6 @@ public enum LineRasterizationMode : uint
     )]
     RectangularEXT = Rectangular,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -80,7 +77,6 @@ public enum LineRasterizationMode : uint
     )]
     BresenhamEXT = Bresenham,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -92,7 +88,6 @@ public enum LineRasterizationMode : uint
     )]
     RectangularSmoothEXT = RectangularSmooth,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_DEFAULT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -104,7 +99,6 @@ public enum LineRasterizationMode : uint
     )]
     DefaultKHR = Default,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -116,7 +110,6 @@ public enum LineRasterizationMode : uint
     )]
     RectangularKHR = Rectangular,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -128,7 +121,6 @@ public enum LineRasterizationMode : uint
     )]
     BresenhamKHR = Bresenham,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_KHR")]
     [SupportedApiProfile(
         "vulkan",

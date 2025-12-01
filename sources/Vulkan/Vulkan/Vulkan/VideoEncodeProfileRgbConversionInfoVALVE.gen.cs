@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "VALVE", 0)]
 [NativeName("VkVideoEncodeProfileRgbConversionInfoVALVE")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeProfileRgbConversionInfoVALVE

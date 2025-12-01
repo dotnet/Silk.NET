@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "SGIX", 0)]
 [NativeName("PixelTexGenModeSGIX")]
-[Transformed]
 public enum PixelTexGenModeSGIX : uint
 {
     [NativeName("GL_ALPHA")]

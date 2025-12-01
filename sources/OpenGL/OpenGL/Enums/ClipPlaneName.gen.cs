@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ClipPlaneName")]
-[Transformed]
 public enum ClipPlaneName : uint
 {
     [NativeName("GL_CLIP_PLANE0")]

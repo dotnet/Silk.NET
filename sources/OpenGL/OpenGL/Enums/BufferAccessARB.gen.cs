@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", 0)]
 [NativeName("BufferAccessARB")]
-[Transformed]
 public enum BufferAccessARB : uint
 {
     [NativeName("GL_READ_ONLY")]

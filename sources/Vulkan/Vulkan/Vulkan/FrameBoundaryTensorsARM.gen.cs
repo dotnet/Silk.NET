@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "ARM", 0)]
 [NativeName("VkFrameBoundaryTensorsARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FrameBoundaryTensorsARM

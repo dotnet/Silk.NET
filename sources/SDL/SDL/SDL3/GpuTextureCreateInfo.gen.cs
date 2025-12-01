@@ -6,27 +6,33 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUTextureCreateInfo")]
 public partial struct GpuTextureCreateInfo
 {
+    [NativeName("type")]
     public GpuTextureType Type;
+
+    [NativeName("format")]
     public GpuTextureFormat Format;
 
-    [NativeTypeName("SDL_GPUTextureUsageFlags")]
+    [NativeName("usage")]
     public uint Usage;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("width")]
     public uint Width;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("height")]
     public uint Height;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("layer_count_or_depth")]
     public uint LayerCountOrDepth;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("num_levels")]
     public uint NumLevels;
+
+    [NativeName("sample_count")]
     public GpuSampleCount SampleCount;
 
-    [NativeTypeName("SDL_PropertiesID")]
+    [NativeName("props")]
     public uint Props;
 }

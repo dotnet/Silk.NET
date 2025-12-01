@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectInteger")]
-[Transformed]
 public enum EffectInteger : uint
 {
     [NativeName("AL_EAXREVERB_DECAY_HFLIMIT")]

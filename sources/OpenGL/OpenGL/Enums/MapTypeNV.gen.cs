@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("MapTypeNV")]
-[Transformed]
 public enum MapTypeNV : uint
 {
     [NativeName("GL_FLOAT")]

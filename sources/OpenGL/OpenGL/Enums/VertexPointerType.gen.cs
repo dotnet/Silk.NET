@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("VertexPointerType")]
-[Transformed]
 public enum VertexPointerType : uint
 {
     [NativeName("GL_SHORT")]

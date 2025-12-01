@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("DrawElementsType")]
-[Transformed]
 public enum DrawElementsType : uint
 {
     [NativeName("GL_UNSIGNED_BYTE")]

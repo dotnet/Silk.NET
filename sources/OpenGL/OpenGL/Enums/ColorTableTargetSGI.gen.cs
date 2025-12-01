@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "SGI", 0)]
 [NativeName("ColorTableTargetSGI")]
-[Transformed]
 public enum ColorTableTargetSGI : uint
 {
     [NativeName("GL_COLOR_TABLE")]
@@ -30,35 +28,27 @@ public enum ColorTableTargetSGI : uint
     [NativeName("GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE")]
     ProxyPostColorMatrixColorTable = unchecked((uint)0x80D5),
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_SGI")]
     ColorTableSGI = unchecked((uint)0x80D0),
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE_SGI")]
     PostConvolutionColorTableSGI = unchecked((uint)0x80D1),
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
     PostColorMatrixColorTableSGI = unchecked((uint)0x80D2),
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_PROXY_COLOR_TABLE_SGI")]
     ProxyColorTableSGI = unchecked((uint)0x80D3),
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_PROXY_POST_CONVOLUTION_COLOR_TABLE_SGI")]
     ProxyPostConvolutionColorTableSGI = unchecked((uint)0x80D4),
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
     ProxyPostColorMatrixColorTableSGI = unchecked((uint)0x80D5),
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_TEXTURE_COLOR_TABLE_SGI")]
     TextureColorTableSGI = unchecked((uint)0x80BC),
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_PROXY_TEXTURE_COLOR_TABLE_SGI")]
     ProxyTextureColorTableSGI = unchecked((uint)0x80BD),
 }

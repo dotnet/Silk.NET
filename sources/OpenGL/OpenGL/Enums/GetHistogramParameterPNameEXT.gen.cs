@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("GetHistogramParameterPNameEXT")]
-[Transformed]
 public enum GetHistogramParameterPNameEXT : uint
 {
     [NativeName("GL_HISTOGRAM_WIDTH")]
@@ -36,35 +34,27 @@ public enum GetHistogramParameterPNameEXT : uint
     [NativeName("GL_HISTOGRAM_SINK")]
     Sink = unchecked((uint)0x802D),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_WIDTH_EXT")]
     WidthEXT = unchecked((uint)0x8026),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_FORMAT_EXT")]
     FormatEXT = unchecked((uint)0x8027),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_RED_SIZE_EXT")]
     RedSizeEXT = unchecked((uint)0x8028),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_GREEN_SIZE_EXT")]
     GreenSizeEXT = unchecked((uint)0x8029),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_BLUE_SIZE_EXT")]
     BlueSizeEXT = unchecked((uint)0x802A),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_ALPHA_SIZE_EXT")]
     AlphaSizeEXT = unchecked((uint)0x802B),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_LUMINANCE_SIZE_EXT")]
     LuminanceSizeEXT = unchecked((uint)0x802C),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_SINK_EXT")]
     SinkEXT = unchecked((uint)0x802D),
 }

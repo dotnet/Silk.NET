@@ -9,7 +9,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_IOStreamInterface_write")]
-[Transformed]
 public unsafe delegate nuint IoStreamInterfaceWriteDelegate(
     void* arg0,
     void* arg1,

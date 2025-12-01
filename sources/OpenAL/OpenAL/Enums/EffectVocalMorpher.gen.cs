@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectVocalMorpher")]
-[Transformed]
 public enum EffectVocalMorpher : uint
 {
     [NativeName("AL_VOCAL_MORPHER_PHONEMEA")]

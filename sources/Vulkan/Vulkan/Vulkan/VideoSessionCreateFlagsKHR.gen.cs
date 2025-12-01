@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoSessionCreateFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,7 +14,6 @@ public enum VideoSessionCreateFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_PROTECTED_CONTENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -24,7 +22,6 @@ public enum VideoSessionCreateFlagsKHR : uint
     )]
     ProtectedContentBitKHR = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_ALLOW_ENCODE_PARAMETER_OPTIMIZATIONS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36,7 +33,6 @@ public enum VideoSessionCreateFlagsKHR : uint
     )]
     AllowEncodeParameterOptimizationsBitKHR = 0x2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_INLINE_QUERIES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -45,7 +41,6 @@ public enum VideoSessionCreateFlagsKHR : uint
     )]
     InlineQueriesBitKHR = 0x4,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_ALLOW_ENCODE_QUANTIZATION_DELTA_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -57,7 +52,6 @@ public enum VideoSessionCreateFlagsKHR : uint
     )]
     AllowEncodeQuantizationDeltaMapBitKHR = 0x8,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_ALLOW_ENCODE_EMPHASIS_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -69,7 +63,6 @@ public enum VideoSessionCreateFlagsKHR : uint
     )]
     AllowEncodeEmphasisMapBitKHR = 0x10,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_SESSION_CREATE_INLINE_SESSION_PARAMETERS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

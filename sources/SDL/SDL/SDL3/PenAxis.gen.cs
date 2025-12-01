@@ -6,15 +6,30 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_PenAxis")]
 public enum PenAxis : uint
 {
+    [NativeName("SDL_PEN_AXIS_PRESSURE")]
     Pressure,
+
+    [NativeName("SDL_PEN_AXIS_XTILT")]
     Xtilt,
+
+    [NativeName("SDL_PEN_AXIS_YTILT")]
     Ytilt,
+
+    [NativeName("SDL_PEN_AXIS_DISTANCE")]
     Distance,
+
+    [NativeName("SDL_PEN_AXIS_ROTATION")]
     Rotation,
+
+    [NativeName("SDL_PEN_AXIS_SLIDER")]
     Slider,
+
+    [NativeName("SDL_PEN_AXIS_TANGENTIAL_PRESSURE")]
     TangentialPressure,
+
+    [NativeName("SDL_PEN_AXIS_COUNT")]
     Count,
 }

@@ -4,12 +4,21 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_DisplayOrientation")]
 public enum DisplayOrientation : uint
 {
+    [NativeName("SDL_ORIENTATION_UNKNOWN")]
     Unknown,
+
+    [NativeName("SDL_ORIENTATION_LANDSCAPE")]
     Landscape,
+
+    [NativeName("SDL_ORIENTATION_LANDSCAPE_FLIPPED")]
     LandscapeFlipped,
+
+    [NativeName("SDL_ORIENTATION_PORTRAIT")]
     Portrait,
+
+    [NativeName("SDL_ORIENTATION_PORTRAIT_FLIPPED")]
     PortraitFlipped,
 }

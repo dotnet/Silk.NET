@@ -8,18 +8,14 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("InvalidateFramebufferAttachment")]
-[Transformed]
 public enum InvalidateFramebufferAttachment : uint
 {
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COLOR_ATTACHMENT0_OES")]
     ColorAttachment0OES = unchecked((uint)0x8CE0),
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_DEPTH_ATTACHMENT_OES")]
     DepthAttachmentOES = unchecked((uint)0x8D00),
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_STENCIL_ATTACHMENT_OES")]
     StencilAttachmentOES = unchecked((uint)0x8D20),
 
@@ -134,139 +130,105 @@ public enum InvalidateFramebufferAttachment : uint
     [NativeName("GL_DEPTH_ATTACHMENT")]
     DepthAttachment = unchecked((uint)0x8D00),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT0_EXT")]
     ColorAttachment0EXT = unchecked((uint)0x8CE0),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT1_EXT")]
     ColorAttachment1EXT = unchecked((uint)0x8CE1),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT2_EXT")]
     ColorAttachment2EXT = unchecked((uint)0x8CE2),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT3_EXT")]
     ColorAttachment3EXT = unchecked((uint)0x8CE3),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT4_EXT")]
     ColorAttachment4EXT = unchecked((uint)0x8CE4),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT5_EXT")]
     ColorAttachment5EXT = unchecked((uint)0x8CE5),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT6_EXT")]
     ColorAttachment6EXT = unchecked((uint)0x8CE6),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT7_EXT")]
     ColorAttachment7EXT = unchecked((uint)0x8CE7),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT8_EXT")]
     ColorAttachment8EXT = unchecked((uint)0x8CE8),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT9_EXT")]
     ColorAttachment9EXT = unchecked((uint)0x8CE9),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT10_EXT")]
     ColorAttachment10EXT = unchecked((uint)0x8CEA),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT11_EXT")]
     ColorAttachment11EXT = unchecked((uint)0x8CEB),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT12_EXT")]
     ColorAttachment12EXT = unchecked((uint)0x8CEC),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT13_EXT")]
     ColorAttachment13EXT = unchecked((uint)0x8CED),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT14_EXT")]
     ColorAttachment14EXT = unchecked((uint)0x8CEE),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT15_EXT")]
     ColorAttachment15EXT = unchecked((uint)0x8CEF),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEPTH_ATTACHMENT_EXT")]
     DepthAttachmentEXT = unchecked((uint)0x8D00),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_ATTACHMENT_EXT")]
     StencilAttachmentEXT = unchecked((uint)0x8D20),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT0_NV")]
     ColorAttachment0NV = unchecked((uint)0x8CE0),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT1_NV")]
     ColorAttachment1NV = unchecked((uint)0x8CE1),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT2_NV")]
     ColorAttachment2NV = unchecked((uint)0x8CE2),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT3_NV")]
     ColorAttachment3NV = unchecked((uint)0x8CE3),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT4_NV")]
     ColorAttachment4NV = unchecked((uint)0x8CE4),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT5_NV")]
     ColorAttachment5NV = unchecked((uint)0x8CE5),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT6_NV")]
     ColorAttachment6NV = unchecked((uint)0x8CE6),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT7_NV")]
     ColorAttachment7NV = unchecked((uint)0x8CE7),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT8_NV")]
     ColorAttachment8NV = unchecked((uint)0x8CE8),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT9_NV")]
     ColorAttachment9NV = unchecked((uint)0x8CE9),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT10_NV")]
     ColorAttachment10NV = unchecked((uint)0x8CEA),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT11_NV")]
     ColorAttachment11NV = unchecked((uint)0x8CEB),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT12_NV")]
     ColorAttachment12NV = unchecked((uint)0x8CEC),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT13_NV")]
     ColorAttachment13NV = unchecked((uint)0x8CED),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT14_NV")]
     ColorAttachment14NV = unchecked((uint)0x8CEE),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT15_NV")]
     ColorAttachment15NV = unchecked((uint)0x8CEF),
 }

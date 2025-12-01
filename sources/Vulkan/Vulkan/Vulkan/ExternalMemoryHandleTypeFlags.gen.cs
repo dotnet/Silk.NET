@@ -190,7 +190,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     D3D12ResourceBit = 0x40,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_DMA_BUF_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -199,7 +198,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     DmaBufBitEXT = 0x200,
 
-    [NameAffix("Suffix", "ANDROID", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_BIT_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
@@ -211,7 +209,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     AndroidHardwareBufferBitANDROID = 0x400,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_HOST_ALLOCATION_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -223,7 +220,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     HostAllocationBitEXT = 0x80,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_HOST_MAPPED_FOREIGN_MEMORY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -235,7 +231,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     HostMappedForeignMemoryBitEXT = 0x100,
 
-    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_ZIRCON_VMO_BIT_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -247,7 +242,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     ZirconVmoBitFUCHSIA = 0x800,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_RDMA_ADDRESS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -259,7 +253,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     RdmaAddressBitNV = 0x1000,
 
-    [NameAffix("Suffix", "OHOS", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OH_NATIVE_BUFFER_BIT_OHOS")]
     [SupportedApiProfile(
         "vulkan",
@@ -271,7 +264,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     OhNativeBufferBitOHOS = 0x8000,
 
-    [NameAffix("Suffix", "QNX", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCREEN_BUFFER_BIT_QNX")]
     [SupportedApiProfile(
         "vulkan",
@@ -283,7 +275,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     ScreenBufferBitQNX = 0x4000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLBUFFER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -295,7 +286,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     MtlbufferBitEXT = 0x10000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLTEXTURE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -307,7 +297,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     MtltextureBitEXT = 0x20000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLHEAP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -319,7 +308,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     MtlheapBitEXT = 0x40000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -331,7 +319,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     OpaqueFdBitKHR = OpaqueFdBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -343,7 +330,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     OpaqueWin32BitKHR = OpaqueWin32Bit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -355,7 +341,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -367,7 +352,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     D3D11TextureBitKHR = D3D11TextureBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_TEXTURE_KMT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -379,7 +363,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     D3D11TextureKmtBitKHR = D3D11TextureKmtBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_HEAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -391,7 +374,6 @@ public enum ExternalMemoryHandleTypeFlags : uint
     )]
     D3D12HeapBitKHR = D3D12HeapBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D12_RESOURCE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

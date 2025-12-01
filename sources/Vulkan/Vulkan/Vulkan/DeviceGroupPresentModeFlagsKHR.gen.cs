@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkDeviceGroupPresentModeFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +15,6 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEVICE_GROUP_PRESENT_MODE_LOCAL_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -26,7 +24,6 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
     )]
     LocalBitKHR = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEVICE_GROUP_PRESENT_MODE_REMOTE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -36,7 +33,6 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
     )]
     RemoteBitKHR = 0x2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEVICE_GROUP_PRESENT_MODE_SUM_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -46,7 +42,6 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
     )]
     SumBitKHR = 0x4,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DEVICE_GROUP_PRESENT_MODE_LOCAL_MULTI_DEVICE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

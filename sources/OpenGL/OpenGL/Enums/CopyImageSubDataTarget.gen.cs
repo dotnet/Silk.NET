@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("CopyImageSubDataTarget")]
-[Transformed]
 public enum CopyImageSubDataTarget : uint
 {
     [NativeName("GL_TEXTURE_2D")]
@@ -32,7 +31,6 @@ public enum CopyImageSubDataTarget : uint
     [NativeName("GL_RENDERBUFFER")]
     Renderbuffer = unchecked((uint)0x8D41),
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_TEXTURE_RECTANGLE")]
     TextureRectANGLE = unchecked((uint)0x84F5),
 

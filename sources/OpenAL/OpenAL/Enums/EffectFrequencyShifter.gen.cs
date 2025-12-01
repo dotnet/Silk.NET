@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectFrequencyShifter")]
-[Transformed]
 public enum EffectFrequencyShifter : uint
 {
     [NativeName("AL_FREQUENCY_SHIFTER_FREQUENCY")]

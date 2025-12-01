@@ -6,11 +6,12 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_HapticDirection")]
 public partial struct HapticDirection
 {
-    [NativeTypeName("Uint8")]
+    [NativeName("type")]
     public byte Type;
 
-    [NativeTypeName("Sint32[3]")]
+    [NativeName("dir")]
     public HapticDirectionDir Dir;
 }

@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("StringPName")]
-[Transformed]
 public enum StringPName : uint
 {
     [NativeName("AL_VENDOR")]
@@ -26,7 +25,6 @@ public enum StringPName : uint
     [NativeName("AL_EXTENSIONS")]
     Extensions = unchecked((uint)0xB004),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_RESAMPLER_NAME_SOFT")]
     ResamplerNameSOFT = unchecked((uint)0x1213),
 }

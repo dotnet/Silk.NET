@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("Buffer")]
-[Transformed]
 public enum Buffer : uint
 {
     [NativeName("GL_COLOR")]

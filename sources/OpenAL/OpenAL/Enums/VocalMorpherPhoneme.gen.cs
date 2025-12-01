@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("VocalMorpherPhoneme")]
-[Transformed]
 public enum VocalMorpherPhoneme : uint
 {
     [NativeName("AL_VOCAL_MORPHER_PHONEME_A")]
@@ -96,7 +95,6 @@ public enum VocalMorpherPhoneme : uint
     S = unchecked((uint)26),
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME")]
-    [NameAffix("Suffix", "_T", -1)]
     AlVocalMorpherPhoneme = unchecked((uint)27),
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_V")]

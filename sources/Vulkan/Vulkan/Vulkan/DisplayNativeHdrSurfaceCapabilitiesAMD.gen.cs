@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "AMD", 0)]
 [NativeName("VkDisplayNativeHdrSurfaceCapabilitiesAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayNativeHdrSurfaceCapabilitiesAMD

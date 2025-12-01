@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("PixelFormat")]
-[Transformed]
 public enum PixelFormat : uint
 {
     [NativeName("GL_UNSIGNED_SHORT")]
@@ -32,11 +31,9 @@ public enum PixelFormat : uint
     [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = unchecked((uint)0x1405),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BGRA_EXT")]
     BgraEXT = unchecked((uint)0x80E1),
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_BGRA_IMG")]
     BgraIMG = unchecked((uint)0x80E1),
 
@@ -94,31 +91,24 @@ public enum PixelFormat : uint
     [NativeName("GL_RG_INTEGER")]
     RgInteger = unchecked((uint)0x8228),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ABGR_EXT")]
     AbgrEXT = unchecked((uint)0x8000),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BGR_EXT")]
     BgrEXT = unchecked((uint)0x80E0),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CMYK_EXT")]
     CmykEXT = unchecked((uint)0x800C),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CMYKA_EXT")]
     CmykaEXT = unchecked((uint)0x800D),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_YCRCB_422_SGIX")]
     Ycrcb422SGIX = unchecked((uint)0x81BB),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_YCRCB_444_SGIX")]
     Ycrcb444SGIX = unchecked((uint)0x81BC),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RED_EXT")]
     RedEXT = unchecked((uint)0x1903),
 }

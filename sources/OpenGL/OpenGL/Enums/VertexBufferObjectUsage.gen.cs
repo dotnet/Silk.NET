@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("VertexBufferObjectUsage")]
-[Transformed]
 public enum VertexBufferObjectUsage : uint
 {
     [NativeName("GL_STATIC_DRAW")]

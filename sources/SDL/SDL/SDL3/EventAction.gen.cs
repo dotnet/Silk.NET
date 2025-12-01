@@ -6,10 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_EventAction")]
 public enum EventAction : uint
 {
+    [NativeName("SDL_ADDEVENT")]
     Addevent,
+
+    [NativeName("SDL_PEEKEVENT")]
     Peekevent,
+
+    [NativeName("SDL_GETEVENT")]
     Getevent,
 }

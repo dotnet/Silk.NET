@@ -8,11 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_ChromaLocation")]
 public enum ChromaLocation : uint
 {
+    [NativeName("SDL_CHROMA_LOCATION_NONE")]
     None = 0,
+
+    [NativeName("SDL_CHROMA_LOCATION_LEFT")]
     Left = 1,
+
+    [NativeName("SDL_CHROMA_LOCATION_CENTER")]
     Center = 2,
+
+    [NativeName("SDL_CHROMA_LOCATION_TOPLEFT")]
     Topleft = 3,
 }

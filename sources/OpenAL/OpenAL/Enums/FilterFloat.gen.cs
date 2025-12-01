@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("FilterFloat")]
-[Transformed]
 public enum FilterFloat : uint
 {
     [NativeName("AL_LOWPASS_GAIN")]

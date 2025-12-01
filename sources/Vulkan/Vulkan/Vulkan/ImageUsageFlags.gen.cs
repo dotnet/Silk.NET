@@ -260,7 +260,6 @@ public enum ImageUsageFlags : uint
     )]
     HostTransferBit = 0x400000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_DECODE_DST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -272,7 +271,6 @@ public enum ImageUsageFlags : uint
     )]
     VideoDecodeDstBitKHR = 0x400,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_DECODE_SRC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -284,7 +282,6 @@ public enum ImageUsageFlags : uint
     )]
     VideoDecodeSrcBitKHR = 0x800,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_DECODE_DPB_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -296,7 +293,6 @@ public enum ImageUsageFlags : uint
     )]
     VideoDecodeDpbBitKHR = 0x1000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_USAGE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -308,7 +304,6 @@ public enum ImageUsageFlags : uint
     )]
     FragmentDensityMapBitEXT = 0x200,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -321,7 +316,6 @@ public enum ImageUsageFlags : uint
     )]
     FragmentShadingRateAttachmentBitKHR = 0x100,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -333,7 +327,6 @@ public enum ImageUsageFlags : uint
     )]
     VideoEncodeDstBitKHR = 0x2000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -345,7 +338,6 @@ public enum ImageUsageFlags : uint
     )]
     VideoEncodeSrcBitKHR = 0x4000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_DPB_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -357,7 +349,6 @@ public enum ImageUsageFlags : uint
     )]
     VideoEncodeDpbBitKHR = 0x8000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_USAGE_ATTACHMENT_FEEDBACK_LOOP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -369,7 +360,6 @@ public enum ImageUsageFlags : uint
     )]
     AttachmentFeedbackLoopBitEXT = 0x80000,
 
-    [NameAffix("Suffix", "HUAWEI", 0)]
     [NativeName("VK_IMAGE_USAGE_INVOCATION_MASK_BIT_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
@@ -381,7 +371,6 @@ public enum ImageUsageFlags : uint
     )]
     InvocationMaskBitHUAWEI = 0x40000,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_IMAGE_USAGE_SAMPLE_WEIGHT_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -393,7 +382,6 @@ public enum ImageUsageFlags : uint
     )]
     SampleWeightBitQCOM = 0x100000,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_IMAGE_USAGE_SAMPLE_BLOCK_MATCH_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -405,12 +393,10 @@ public enum ImageUsageFlags : uint
     )]
     SampleBlockMatchBitQCOM = 0x200000,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_IMAGE_USAGE_TENSOR_ALIASING_BIT_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorAliasingBitARM = 0x800000,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_IMAGE_USAGE_TILE_MEMORY_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -422,7 +408,6 @@ public enum ImageUsageFlags : uint
     )]
     TileMemoryBitQCOM = 0x8000000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_QUANTIZATION_DELTA_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -434,7 +419,6 @@ public enum ImageUsageFlags : uint
     )]
     VideoEncodeQuantizationDeltaMapBitKHR = 0x2000000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_IMAGE_USAGE_VIDEO_ENCODE_EMPHASIS_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -446,7 +430,6 @@ public enum ImageUsageFlags : uint
     )]
     VideoEncodeEmphasisMapBitKHR = 0x4000000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_IMAGE_USAGE_SHADING_RATE_IMAGE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -458,7 +441,6 @@ public enum ImageUsageFlags : uint
     )]
     ShadingRateImageBitNV = FragmentShadingRateAttachmentBitKHR,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_IMAGE_USAGE_HOST_TRANSFER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",

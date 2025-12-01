@@ -7,17 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkValidationCheckEXT")]
 [SupportedApiProfile("vulkan")]
 public enum ValidationCheckEXT : uint
 {
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_VALIDATION_CHECK_ALL_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     AllEXT = 0,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_VALIDATION_CHECK_SHADERS_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
     ShadersEXT = 1,

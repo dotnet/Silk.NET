@@ -7,12 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeAV1RateControlGroupKHR")]
 [SupportedApiProfile("vulkan")]
 public enum VideoEncodeAv1RateControlGroupKHR : uint
 {
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_GROUP_INTRA_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -21,7 +19,6 @@ public enum VideoEncodeAv1RateControlGroupKHR : uint
     )]
     IntraKHR = 0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_GROUP_PREDICTIVE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -30,7 +27,6 @@ public enum VideoEncodeAv1RateControlGroupKHR : uint
     )]
     PredictiveKHR = 1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_GROUP_BIPREDICTIVE_KHR")]
     [SupportedApiProfile(
         "vulkan",

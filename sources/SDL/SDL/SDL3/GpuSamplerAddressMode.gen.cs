@@ -6,10 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPUSamplerAddressMode")]
 public enum GpuSamplerAddressMode : uint
 {
+    [NativeName("SDL_GPU_SAMPLERADDRESSMODE_REPEAT")]
     Repeat,
+
+    [NativeName("SDL_GPU_SAMPLERADDRESSMODE_MIRRORED_REPEAT")]
     MirroredRepeat,
+
+    [NativeName("SDL_GPU_SAMPLERADDRESSMODE_CLAMP_TO_EDGE")]
     ClampToEdge,
 }

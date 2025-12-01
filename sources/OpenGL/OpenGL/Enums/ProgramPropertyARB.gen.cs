@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", 0)]
 [NativeName("ProgramPropertyARB")]
-[Transformed]
 public enum ProgramPropertyARB : uint
 {
     [NativeName("GL_DELETE_STATUS")]

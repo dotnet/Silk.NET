@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("CombinerPortionNV")]
-[Transformed]
 public enum CombinerPortionNV : uint
 {
     [NativeName("GL_ALPHA")]

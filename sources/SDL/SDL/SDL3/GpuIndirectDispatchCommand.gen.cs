@@ -8,14 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUIndirectDispatchCommand")]
 public partial struct GpuIndirectDispatchCommand
 {
-    [NativeTypeName("Uint32")]
+    [NativeName("groupcount_x")]
     public uint GroupcountX;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("groupcount_y")]
     public uint GroupcountY;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("groupcount_z")]
     public uint GroupcountZ;
 }

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "GOOGLE", 0)]
 [NativeName("VkPastPresentationTimingGOOGLE")]
 [SupportedApiProfile("vulkan")]
 public partial struct PastPresentationTimingGOOGLE

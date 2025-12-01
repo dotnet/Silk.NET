@@ -8,24 +8,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPURasterizerState")]
 public partial struct GpuRasterizerState
 {
+    [NativeName("fill_mode")]
     public GpuFillMode FillMode;
+
+    [NativeName("cull_mode")]
     public GpuCullMode CullMode;
+
+    [NativeName("front_face")]
     public GpuFrontFace FrontFace;
+
+    [NativeName("depth_bias_constant_factor")]
     public float DepthBiasConstantFactor;
+
+    [NativeName("depth_bias_clamp")]
     public float DepthBiasClamp;
+
+    [NativeName("depth_bias_slope_factor")]
     public float DepthBiasSlopeFactor;
 
-    [NativeTypeName("bool")]
+    [NativeName("enable_depth_bias")]
     public byte EnableDepthBias;
 
-    [NativeTypeName("bool")]
+    [NativeName("enable_depth_clip")]
     public byte EnableDepthClip;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding1")]
     public byte Padding1;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding2")]
     public byte Padding2;
 }

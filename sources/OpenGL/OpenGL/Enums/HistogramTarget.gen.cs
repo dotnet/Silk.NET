@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("HistogramTarget")]
-[Transformed]
 public enum HistogramTarget : uint
 {
     [NativeName("GL_HISTOGRAM")]

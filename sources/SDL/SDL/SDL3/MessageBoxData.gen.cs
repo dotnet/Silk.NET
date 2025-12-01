@@ -6,22 +6,27 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_MessageBoxData")]
 public unsafe partial struct MessageBoxData
 {
-    [NativeTypeName("SDL_MessageBoxFlags")]
+    [NativeName("flags")]
     public uint Flags;
+
+    [NativeName("window")]
     public WindowHandle Window;
 
-    [NativeTypeName("const char *")]
+    [NativeName("title")]
     public sbyte* Title;
 
-    [NativeTypeName("const char *")]
+    [NativeName("message")]
     public sbyte* Message;
+
+    [NativeName("numbuttons")]
     public int Numbuttons;
 
-    [NativeTypeName("const SDL_MessageBoxButtonData *")]
+    [NativeName("buttons")]
     public MessageBoxButtonData* Buttons;
 
-    [NativeTypeName("const SDL_MessageBoxColorScheme *")]
+    [NativeName("colorScheme")]
     public MessageBoxColorScheme* ColorScheme;
 }

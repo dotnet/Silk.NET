@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "INTEL", 0)]
 [NativeName("VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderIntegerFunctions2FeaturesINTEL

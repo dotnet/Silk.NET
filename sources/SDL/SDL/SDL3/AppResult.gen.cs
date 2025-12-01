@@ -6,10 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_AppResult")]
 public enum AppResult : uint
 {
+    [NativeName("SDL_APP_CONTINUE")]
     Continue,
+
+    [NativeName("SDL_APP_SUCCESS")]
     Success,
+
+    [NativeName("SDL_APP_FAILURE")]
     Failure,
 }

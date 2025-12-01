@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("ConvolutionTargetEXT")]
-[Transformed]
 public enum ConvolutionTargetEXT : uint
 {
     [NativeName("GL_CONVOLUTION_1D")]
@@ -18,11 +16,9 @@ public enum ConvolutionTargetEXT : uint
     [NativeName("GL_CONVOLUTION_2D")]
     Convolution2D = unchecked((uint)0x8011),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_1D_EXT")]
     Convolution1DEXT = unchecked((uint)0x8010),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_2D_EXT")]
     Convolution2DEXT = unchecked((uint)0x8011),
 }

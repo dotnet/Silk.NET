@@ -10,92 +10,69 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NameAffix("Suffix", "SOFT", 0)]
 [NativeName("InternalFormatSOFT")]
-[Transformed]
 public enum InternalFormatSOFT : uint
 {
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_MONO8_SOFT")]
     Mono8SOFT = unchecked((uint)0x1100),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_MONO16_SOFT")]
     Mono16SOFT = unchecked((uint)0x1101),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_MONO32F_SOFT")]
     Mono32FSOFT = unchecked((uint)0x10010),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_STEREO8_SOFT")]
     Stereo8SOFT = unchecked((uint)0x1102),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_STEREO16_SOFT")]
     Stereo16SOFT = unchecked((uint)0x1103),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_STEREO32F_SOFT")]
     Stereo32FSOFT = unchecked((uint)0x10011),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_QUAD8_SOFT")]
     Quad8SOFT = unchecked((uint)0x1204),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_QUAD16_SOFT")]
     Quad16SOFT = unchecked((uint)0x1205),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_QUAD32F_SOFT")]
     Quad32FSOFT = unchecked((uint)0x1206),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_REAR8_SOFT")]
     Rear8SOFT = unchecked((uint)0x1207),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_REAR16_SOFT")]
     Rear16SOFT = unchecked((uint)0x1208),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_REAR32F_SOFT")]
     Rear32FSOFT = unchecked((uint)0x1209),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_5POINT1_8_SOFT")]
     X5Point1X8SOFT = unchecked((uint)0x120A),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_5POINT1_16_SOFT")]
     X5Point1X16SOFT = unchecked((uint)0x120B),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_5POINT1_32F_SOFT")]
     X5Point1X32FSOFT = unchecked((uint)0x120C),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_6POINT1_8_SOFT")]
     X6Point1X8SOFT = unchecked((uint)0x120D),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_6POINT1_16_SOFT")]
     X6Point1X16SOFT = unchecked((uint)0x120E),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_6POINT1_32F_SOFT")]
     X6Point1X32FSOFT = unchecked((uint)0x120F),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_7POINT1_8_SOFT")]
     X7Point1X8SOFT = unchecked((uint)0x1210),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_7POINT1_16_SOFT")]
     X7Point1X16SOFT = unchecked((uint)0x1211),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_7POINT1_32F_SOFT")]
     X7Point1X32FSOFT = unchecked((uint)0x1212),
 }

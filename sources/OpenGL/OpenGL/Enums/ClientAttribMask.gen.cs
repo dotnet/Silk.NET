@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ClientAttribMask")]
-[Transformed]
 [Flags]
 public enum ClientAttribMask : uint
 {

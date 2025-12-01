@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("FeedBackToken")]
-[Transformed]
 public enum FeedBackToken : uint
 {
     [NativeName("GL_PASS_THROUGH_TOKEN")]

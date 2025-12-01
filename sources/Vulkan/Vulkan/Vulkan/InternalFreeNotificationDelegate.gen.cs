@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "Delegate", 1)]
 [NativeName("PFN_vkInternalFreeNotification")]
 [SupportedApiProfile("vulkan")]
 public unsafe delegate void InternalFreeNotificationDelegate(

@@ -6,13 +6,24 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPUBlendOp")]
 public enum GpuBlendOp : uint
 {
+    [NativeName("SDL_GPU_BLENDOP_INVALID")]
     Invalid,
+
+    [NativeName("SDL_GPU_BLENDOP_ADD")]
     Add,
+
+    [NativeName("SDL_GPU_BLENDOP_SUBTRACT")]
     Subtract,
+
+    [NativeName("SDL_GPU_BLENDOP_REVERSE_SUBTRACT")]
     ReverseSubtract,
+
+    [NativeName("SDL_GPU_BLENDOP_MIN")]
     Min,
+
+    [NativeName("SDL_GPU_BLENDOP_MAX")]
     Max,
 }

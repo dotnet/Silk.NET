@@ -6,7 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AtomicInt")]
 public partial struct AtomicInt
 {
+    [NativeName("value")]
     public int Value;
 }

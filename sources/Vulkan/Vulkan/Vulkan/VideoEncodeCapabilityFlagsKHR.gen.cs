@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeCapabilityFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -15,7 +14,6 @@ public enum VideoEncodeCapabilityFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CAPABILITY_PRECEDING_EXTERNALLY_ENCODED_BYTES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -27,7 +25,6 @@ public enum VideoEncodeCapabilityFlagsKHR : uint
     )]
     PrecedingExternallyEncodedBytesBitKHR = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CAPABILITY_INSUFFICIENT_BITSTREAM_BUFFER_RANGE_DETECTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -39,7 +36,6 @@ public enum VideoEncodeCapabilityFlagsKHR : uint
     )]
     InsufficientBitstreamBufferRangeDetectionBitKHR = 0x2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CAPABILITY_QUANTIZATION_DELTA_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -51,7 +47,6 @@ public enum VideoEncodeCapabilityFlagsKHR : uint
     )]
     QuantizationDeltaMapBitKHR = 0x4,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_CAPABILITY_EMPHASIS_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

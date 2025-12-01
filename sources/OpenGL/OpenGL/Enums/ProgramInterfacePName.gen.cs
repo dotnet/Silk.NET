@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ProgramInterfacePName")]
-[Transformed]
 public enum ProgramInterfacePName : uint
 {
     [NativeName("GL_ACTIVE_RESOURCES")]

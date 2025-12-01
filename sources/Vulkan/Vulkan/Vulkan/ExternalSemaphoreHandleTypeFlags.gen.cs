@@ -140,7 +140,6 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
     )]
     SyncFdBit = 0x10,
 
-    [NameAffix("Suffix", "FUCHSIA", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_ZIRCON_EVENT_BIT_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
@@ -174,7 +173,6 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
     )]
     D3D11FenceBit = D3D12FenceBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -186,7 +184,6 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
     )]
     OpaqueFdBitKHR = OpaqueFdBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -198,7 +195,6 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
     )]
     OpaqueWin32BitKHR = OpaqueWin32Bit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -210,7 +206,6 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
     )]
     OpaqueWin32KmtBitKHR = OpaqueWin32KmtBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D12_FENCE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -222,7 +217,6 @@ public enum ExternalSemaphoreHandleTypeFlags : uint
     )]
     D3D12FenceBitKHR = D3D12FenceBit,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_SYNC_FD_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

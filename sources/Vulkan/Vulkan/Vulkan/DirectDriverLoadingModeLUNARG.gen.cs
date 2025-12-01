@@ -8,17 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "LUNARG", 0)]
 [NativeName("VkDirectDriverLoadingModeLUNARG")]
 [SupportedApiProfile("vulkan")]
 public enum DirectDriverLoadingModeLUNARG : uint
 {
-    [NameAffix("Suffix", "LUNARG", 0)]
     [NativeName("VK_DIRECT_DRIVER_LOADING_MODE_EXCLUSIVE_LUNARG")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     ExclusiveLUNARG = 0,
 
-    [NameAffix("Suffix", "LUNARG", 0)]
     [NativeName("VK_DIRECT_DRIVER_LOADING_MODE_INCLUSIVE_LUNARG")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
     InclusiveLUNARG = 1,

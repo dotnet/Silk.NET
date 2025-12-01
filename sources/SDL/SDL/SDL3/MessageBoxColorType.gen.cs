@@ -6,13 +6,24 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_MessageBoxColorType")]
 public enum MessageBoxColorType : uint
 {
+    [NativeName("SDL_MESSAGEBOX_COLOR_BACKGROUND")]
     Background,
+
+    [NativeName("SDL_MESSAGEBOX_COLOR_TEXT")]
     Text,
+
+    [NativeName("SDL_MESSAGEBOX_COLOR_BUTTON_BORDER")]
     ButtonBorder,
+
+    [NativeName("SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND")]
     ButtonBackground,
+
+    [NativeName("SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED")]
     ButtonSelected,
+
+    [NativeName("SDL_MESSAGEBOX_COLOR_COUNT")]
     Count,
 }

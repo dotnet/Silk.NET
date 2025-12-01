@@ -8,34 +8,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_JoyAxisEvent")]
 public partial struct JoyAxisEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public nuint Timestamp;
 
-    [NativeTypeName("SDL_JoystickID")]
+    [NativeName("which")]
     public uint Which;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("axis")]
     public byte Axis;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding1")]
     public byte Padding1;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding2")]
     public byte Padding2;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding3")]
     public byte Padding3;
 
-    [NativeTypeName("Sint16")]
+    [NativeName("value")]
     public short Value;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("padding4")]
     public ushort Padding4;
 }

@@ -8,33 +8,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUShaderCreateInfo")]
 public unsafe partial struct GpuShaderCreateInfo
 {
-    [NativeTypeName("size_t")]
+    [NativeName("code_size")]
     public nuint CodeSize;
 
-    [NativeTypeName("const Uint8 *")]
+    [NativeName("code")]
     public byte* Code;
 
-    [NativeTypeName("const char *")]
+    [NativeName("entrypoint")]
     public sbyte* Entrypoint;
 
-    [NativeTypeName("SDL_GPUShaderFormat")]
+    [NativeName("format")]
     public uint Format;
+
+    [NativeName("stage")]
     public GpuShaderStage Stage;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("num_samplers")]
     public uint NumSamplers;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("num_storage_textures")]
     public uint NumStorageTextures;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("num_storage_buffers")]
     public uint NumStorageBuffers;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("num_uniform_buffers")]
     public uint NumUniformBuffers;
 
-    [NativeTypeName("SDL_PropertiesID")]
+    [NativeName("props")]
     public uint Props;
 }

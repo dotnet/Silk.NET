@@ -8,19 +8,42 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GamepadType")]
 public enum GamepadType : uint
 {
+    [NativeName("SDL_GAMEPAD_TYPE_UNKNOWN")]
     Unknown = 0,
+
+    [NativeName("SDL_GAMEPAD_TYPE_STANDARD")]
     Standard,
+
+    [NativeName("SDL_GAMEPAD_TYPE_XBOX360")]
     Xbox360,
+
+    [NativeName("SDL_GAMEPAD_TYPE_XBOXONE")]
     Xboxone,
+
+    [NativeName("SDL_GAMEPAD_TYPE_PS3")]
     Ps3,
+
+    [NativeName("SDL_GAMEPAD_TYPE_PS4")]
     Ps4,
+
+    [NativeName("SDL_GAMEPAD_TYPE_PS5")]
     Ps5,
+
+    [NativeName("SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_PRO")]
     NintendoSwitchPro,
+
+    [NativeName("SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_LEFT")]
     NintendoSwitchJoyconLeft,
+
+    [NativeName("SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_RIGHT")]
     NintendoSwitchJoyconRight,
+
+    [NativeName("SDL_GAMEPAD_TYPE_NINTENDO_SWITCH_JOYCON_PAIR")]
     NintendoSwitchJoyconPair,
+
+    [NativeName("SDL_GAMEPAD_TYPE_COUNT")]
     Count,
 }

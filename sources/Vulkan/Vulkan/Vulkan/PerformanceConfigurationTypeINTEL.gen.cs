@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "INTEL", 0)]
 [NativeName("VkPerformanceConfigurationTypeINTEL")]
 [SupportedApiProfile("vulkan")]
 public enum PerformanceConfigurationTypeINTEL : uint
 {
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName(
         "VK_PERFORMANCE_CONFIGURATION_TYPE_COMMAND_QUEUE_METRICS_DISCOVERY_ACTIVATED_INTEL"
     )]

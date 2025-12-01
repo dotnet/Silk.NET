@@ -290,7 +290,6 @@ public enum DescriptorType : uint
     )]
     InlineUniformBlock = 1000138000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_ACCELERATION_STRUCTURE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -302,7 +301,6 @@ public enum DescriptorType : uint
     )]
     AccelerationStructureKHR = 1000150000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_ACCELERATION_STRUCTURE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -314,7 +312,6 @@ public enum DescriptorType : uint
     )]
     AccelerationStructureNV = 1000165000,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_SAMPLE_WEIGHT_IMAGE_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -326,7 +323,6 @@ public enum DescriptorType : uint
     )]
     SampleWeightImageQCOM = 1000440000,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_BLOCK_MATCH_IMAGE_QCOM")]
     [SupportedApiProfile(
         "vulkan",
@@ -338,12 +334,10 @@ public enum DescriptorType : uint
     )]
     BlockMatchImageQCOM = 1000440001,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_TENSOR_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorARM = 1000460000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_MUTABLE_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -355,7 +349,6 @@ public enum DescriptorType : uint
     )]
     MutableEXT = 1000351000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_PARTITIONED_ACCELERATION_STRUCTURE_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -364,7 +357,6 @@ public enum DescriptorType : uint
     )]
     PartitionedAccelerationStructureNV = 1000570000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -376,7 +368,6 @@ public enum DescriptorType : uint
     )]
     InlineUniformBlockEXT = InlineUniformBlock,
 
-    [NameAffix("Suffix", "VALVE", 0)]
     [NativeName("VK_DESCRIPTOR_TYPE_MUTABLE_VALVE")]
     [SupportedApiProfile(
         "vulkan",

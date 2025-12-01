@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ContextString")]
-[Transformed]
 public enum ContextString : uint
 {
     [NativeName("ALC_DEFAULT_DEVICE_SPECIFIER")]
@@ -35,7 +34,6 @@ public enum ContextString : uint
     [NativeName("ALC_ALL_DEVICES_SPECIFIER")]
     AllDevicesSpecifier = unchecked((uint)0x1013),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("ALC_HRTF_SPECIFIER_SOFT")]
     HrtfSpecifierSOFT = unchecked((uint)0x1995),
 }

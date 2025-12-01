@@ -46,12 +46,10 @@ public enum PointClippingBehavior : uint
     )]
     UserClipPlanesOnly = 1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_POINT_CLIPPING_BEHAVIOR_ALL_CLIP_PLANES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     AllClipPlanesKHR = AllClipPlanes,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_POINT_CLIPPING_BEHAVIOR_USER_CLIP_PLANES_ONLY_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     UserClipPlanesOnlyKHR = UserClipPlanesOnly,

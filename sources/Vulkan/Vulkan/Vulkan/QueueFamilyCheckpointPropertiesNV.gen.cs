@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkQueueFamilyCheckpointPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct QueueFamilyCheckpointPropertiesNV

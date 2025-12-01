@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("FoldbackMode")]
-[Transformed]
 public enum FoldbackMode : uint
 {
     [NativeName("AL_FOLDBACK_MODE_MONO")]

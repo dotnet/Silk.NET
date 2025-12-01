@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("VkMemoryGetRemoteAddressInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryGetRemoteAddressInfoNV

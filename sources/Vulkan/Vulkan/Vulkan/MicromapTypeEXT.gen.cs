@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VkMicromapTypeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum MicromapTypeEXT : uint
 {
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_MICROMAP_TYPE_OPACITY_MICROMAP_EXT")]
     [SupportedApiProfile(
         "vulkan",

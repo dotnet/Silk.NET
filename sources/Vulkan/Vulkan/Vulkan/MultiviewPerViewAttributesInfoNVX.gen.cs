@@ -6,7 +6,6 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "NVX", 0)]
 [NativeName("VkMultiviewPerViewAttributesInfoNVX")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MultiviewPerViewAttributesInfoNVX

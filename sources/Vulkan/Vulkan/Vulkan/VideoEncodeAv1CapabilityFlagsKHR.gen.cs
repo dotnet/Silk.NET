@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkVideoEncodeAV1CapabilityFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +15,6 @@ public enum VideoEncodeAv1CapabilityFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_PER_RATE_CONTROL_GROUP_MIN_MAX_Q_INDEX_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum VideoEncodeAv1CapabilityFlagsKHR : uint
     )]
     PerRateControlGroupMinMaxQIndexBitKHR = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_GENERATE_OBU_EXTENSION_HEADER_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -34,7 +31,6 @@ public enum VideoEncodeAv1CapabilityFlagsKHR : uint
     )]
     GenerateObuExtensionHeaderBitKHR = 0x2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_PRIMARY_REFERENCE_CDF_ONLY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -43,7 +39,6 @@ public enum VideoEncodeAv1CapabilityFlagsKHR : uint
     )]
     PrimaryReferenceCdfOnlyBitKHR = 0x4,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_FRAME_SIZE_OVERRIDE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -52,7 +47,6 @@ public enum VideoEncodeAv1CapabilityFlagsKHR : uint
     )]
     FrameSizeOverrideBitKHR = 0x8,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_MOTION_VECTOR_SCALING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +55,6 @@ public enum VideoEncodeAv1CapabilityFlagsKHR : uint
     )]
     MotionVectorScalingBitKHR = 0x10,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_VIDEO_ENCODE_AV1_CAPABILITY_COMPOUND_PREDICTION_INTRA_REFRESH_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

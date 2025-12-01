@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("TextureCompareMode")]
-[Transformed]
 public enum TextureCompareMode : uint
 {
     [NativeName("GL_NONE")]

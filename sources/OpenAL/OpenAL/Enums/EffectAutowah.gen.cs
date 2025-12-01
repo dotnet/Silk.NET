@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("EffectAutowah")]
-[Transformed]
 public enum EffectAutowah : uint
 {
     [NativeName("AL_AUTOWAH_ATTACK_TIME")]

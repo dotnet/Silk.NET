@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("InternalFormatPName")]
-[Transformed]
 public enum InternalFormatPName : uint
 {
     [NativeName("GL_SAMPLES")]
@@ -224,7 +223,6 @@ public enum InternalFormatPName : uint
     [NativeName("GL_CLEAR_TEXTURE")]
     ClearTexture = unchecked((uint)0x9365),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
     NumSurfaceCompressionFixedRatesEXT = unchecked((uint)0x8F6E),
 }

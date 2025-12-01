@@ -8,17 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "INTEL", 0)]
 [NativeName("VkPerformanceOverrideTypeINTEL")]
 [SupportedApiProfile("vulkan")]
 public enum PerformanceOverrideTypeINTEL : uint
 {
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_PERFORMANCE_OVERRIDE_TYPE_NULL_HARDWARE_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     NullHardwareINTEL = 0,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("VK_PERFORMANCE_OVERRIDE_TYPE_FLUSH_GPU_CACHES_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
     FlushGpuCachesINTEL = 1,

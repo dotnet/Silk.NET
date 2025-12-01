@@ -7,40 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("CombinerStageNV")]
-[Transformed]
 public enum CombinerStageNV : uint
 {
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER0_NV")]
     Combiner0NV = unchecked((uint)0x8550),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER1_NV")]
     Combiner1NV = unchecked((uint)0x8551),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER2_NV")]
     Combiner2NV = unchecked((uint)0x8552),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER3_NV")]
     Combiner3NV = unchecked((uint)0x8553),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER4_NV")]
     Combiner4NV = unchecked((uint)0x8554),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER5_NV")]
     Combiner5NV = unchecked((uint)0x8555),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER6_NV")]
     Combiner6NV = unchecked((uint)0x8556),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER7_NV")]
     Combiner7NV = unchecked((uint)0x8557),
 }

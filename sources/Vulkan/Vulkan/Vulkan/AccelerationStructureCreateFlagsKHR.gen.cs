@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkAccelerationStructureCreateFlagBitsKHR")]
 [Flags]
 [SupportedApiProfile("vulkan")]
@@ -16,7 +15,6 @@ public enum AccelerationStructureCreateFlagsKHR : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -28,7 +26,6 @@ public enum AccelerationStructureCreateFlagsKHR : uint
     )]
     DeviceAddressCaptureReplayBitKHR = 0x1,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -42,7 +39,6 @@ public enum AccelerationStructureCreateFlagsKHR : uint
     )]
     DescriptorBufferCaptureReplayBitEXT = 0x8,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_CREATE_MOTION_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",

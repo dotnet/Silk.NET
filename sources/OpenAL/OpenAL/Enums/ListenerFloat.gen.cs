@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ListenerFloat")]
-[Transformed]
 public enum ListenerFloat : uint
 {
     [NativeName("AL_ORIENTATION")]

@@ -10,9 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NameAffix("Suffix", "SOFT", 0)]
 [NativeName("SourceSpatializeSOFT")]
-[Transformed]
 public enum SourceSpatializeSOFT : uint
 {
     [NativeName("AL_FALSE")]
@@ -21,7 +19,6 @@ public enum SourceSpatializeSOFT : uint
     [NativeName("AL_TRUE")]
     True = unchecked((uint)1),
 
-    [NameAffix("Suffix", "SOFT", 0)]
     [NativeName("AL_AUTO_SOFT")]
     AutoSOFT = unchecked((uint)0x0002),
 }

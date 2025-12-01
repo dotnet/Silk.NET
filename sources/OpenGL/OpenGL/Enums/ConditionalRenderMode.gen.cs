@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ConditionalRenderMode")]
-[Transformed]
 public enum ConditionalRenderMode : uint
 {
     [NativeName("GL_QUERY_WAIT")]

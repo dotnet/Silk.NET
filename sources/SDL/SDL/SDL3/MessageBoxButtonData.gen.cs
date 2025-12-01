@@ -8,12 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_MessageBoxButtonData")]
 public unsafe partial struct MessageBoxButtonData
 {
-    [NativeTypeName("SDL_MessageBoxButtonFlags")]
+    [NativeName("flags")]
     public uint Flags;
+
+    [NativeName("buttonID")]
     public int ButtonId;
 
-    [NativeTypeName("const char *")]
+    [NativeName("text")]
     public sbyte* Text;
 }

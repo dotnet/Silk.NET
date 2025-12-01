@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("FramebufferParameterName")]
-[Transformed]
 public enum FramebufferParameterName : uint
 {
     [NativeName("GL_FRAMEBUFFER_DEFAULT_WIDTH")]

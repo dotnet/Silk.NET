@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("RingModulatorWaveform")]
-[Transformed]
 public enum RingModulatorWaveform : uint
 {
     [NativeName("AL_RING_MODULATOR_SINUSOID")]

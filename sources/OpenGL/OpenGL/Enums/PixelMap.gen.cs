@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("PixelMap")]
-[Transformed]
 public enum PixelMap : uint
 {
     [NativeName("GL_PIXEL_MAP_I_TO_I")]

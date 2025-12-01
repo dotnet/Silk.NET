@@ -7,9 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", 0)]
 [NativeName("MatrixIndexPointerTypeARB")]
-[Transformed]
 public enum MatrixIndexPointerTypeARB : uint
 {
     [NativeName("GL_UNSIGNED_BYTE")]

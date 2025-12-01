@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ListMode")]
-[Transformed]
 public enum ListMode : uint
 {
     [NativeName("GL_COMPILE")]

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("TextureUnit")]
-[Transformed]
 public enum TextureUnit : uint
 {
     [NativeName("GL_TEXTURE0")]

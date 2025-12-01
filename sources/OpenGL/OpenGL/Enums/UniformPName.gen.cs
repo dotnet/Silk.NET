@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("UniformPName")]
-[Transformed]
 public enum UniformPName : uint
 {
     [NativeName("GL_UNIFORM_TYPE")]

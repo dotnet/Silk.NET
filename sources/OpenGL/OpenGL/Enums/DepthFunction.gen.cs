@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("DepthFunction")]
-[Transformed]
 public enum DepthFunction : uint
 {
     [NativeName("GL_NEVER")]

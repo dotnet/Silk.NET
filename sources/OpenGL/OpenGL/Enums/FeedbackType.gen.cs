@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("FeedbackType")]
-[Transformed]
 public enum FeedbackType : uint
 {
     [NativeName("GL_2D")]

@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ListenerInteger3")]
-[Transformed]
 public enum ListenerInteger3 : uint
 {
     [NativeName("AL_DIRECTION")]

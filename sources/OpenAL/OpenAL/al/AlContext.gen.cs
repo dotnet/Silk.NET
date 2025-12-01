@@ -14,38 +14,41 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
 {
     public partial class DllImport : IAlContext.Static
     {
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcCaptureCloseDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
-        public static MaybeBool<sbyte> CaptureCloseDevice(DeviceHandle device) =>
-            (MaybeBool<sbyte>)(sbyte)CaptureCloseDeviceRaw(device);
+        public static MaybeBool<sbyte> CaptureCloseDevice(
+            [NativeName("device")] DeviceHandle device
+        ) => (MaybeBool<sbyte>)(sbyte)CaptureCloseDeviceRaw(device);
 
+        [NativeName("alcCaptureCloseDevice")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcCaptureCloseDevice")]
-        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        public static extern sbyte CaptureCloseDeviceRaw(DeviceHandle device);
+        public static extern sbyte CaptureCloseDeviceRaw(
+            [NativeName("device")] DeviceHandle device
+        );
 
+        [NativeName("alcCaptureOpenDevice")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcCaptureOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         public static extern DeviceHandle CaptureOpenDevice(
-            [NativeTypeName("const ALCchar *")] sbyte* devicename,
-            [NativeTypeName("ALCuint")] uint frequency,
-            [NativeTypeName("ALCenum")] int format,
-            [NativeTypeName("ALCsizei")] int buffersize
+            [NativeName("devicename")] sbyte* devicename,
+            [NativeName("frequency")] uint frequency,
+            [NativeName("format")] int format,
+            [NativeName("buffersize")] int buffersize
         );
 
+        [NativeName("alcCaptureOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static DeviceHandle CaptureOpenDevice(
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename,
-            [NativeTypeName("ALCuint")] uint frequency,
-            [NativeTypeName("ALCenum")] Constant<int, AlEnum, Format> format,
-            [NativeTypeName("ALCsizei")] int buffersize
+            [NativeName("devicename")] Ref<sbyte> devicename,
+            [NativeName("frequency")] uint frequency,
+            [NativeName("format")] Constant<int, AlEnum, Format> format,
+            [NativeName("buffersize")] int buffersize
         )
         {
             fixed (sbyte* __dsl_devicename = devicename)
@@ -59,24 +62,25 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcCaptureSamples")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcCaptureSamples")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         public static extern void CaptureSamples(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] void* buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] void* buffer,
+            [NativeName("samples")] int samples
         );
 
+        [NativeName("alcCaptureSamples")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void CaptureSamples(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] Ref buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] Ref buffer,
+            [NativeName("samples")] int samples
         )
         {
             fixed (void* __dsl_buffer = buffer)
@@ -85,42 +89,44 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcCaptureStart")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcCaptureStart")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        public static extern void CaptureStart(DeviceHandle device);
+        public static extern void CaptureStart([NativeName("device")] DeviceHandle device);
 
+        [NativeName("alcCaptureStop")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcCaptureStop")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        public static extern void CaptureStop(DeviceHandle device);
+        public static extern void CaptureStop([NativeName("device")] DeviceHandle device);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcCloseDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
-        public static MaybeBool<sbyte> CloseDevice(DeviceHandle device) =>
+        public static MaybeBool<sbyte> CloseDevice([NativeName("device")] DeviceHandle device) =>
             (MaybeBool<sbyte>)(sbyte)CloseDeviceRaw(device);
 
+        [NativeName("alcCloseDevice")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcCloseDevice")]
-        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        public static extern sbyte CloseDeviceRaw(DeviceHandle device);
+        public static extern sbyte CloseDeviceRaw([NativeName("device")] DeviceHandle device);
 
+        [NativeName("alcCreateContext")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcCreateContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern ContextHandle CreateContext(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] int* attrlist
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attrlist")] int* attrlist
         );
 
+        [NativeName("alcCreateContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCreateContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static ContextHandle CreateContext(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] Ref<int> attrlist
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attrlist")] Ref<int> attrlist
         )
         {
             fixed (int* __dsl_attrlist = attrlist)
@@ -129,38 +135,38 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcDestroyContext")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcDestroyContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        public static extern void DestroyContext(ContextHandle context);
+        public static extern void DestroyContext([NativeName("context")] ContextHandle context);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcDevicePauseSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcDevicePauseSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
-        public static extern void DevicePauseSOFT(DeviceHandle device);
+        public static extern void DevicePauseSOFT([NativeName("device")] DeviceHandle device);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcDeviceResumeSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcDeviceResumeSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
-        public static extern void DeviceResumeSOFT(DeviceHandle device);
+        public static extern void DeviceResumeSOFT([NativeName("device")] DeviceHandle device);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcEventCallbackSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         public static extern void EventCallbackSOFT(
-            [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSoft callback,
-            void* userParam
+            [NativeName("callback")] ContextEventProcSoft callback,
+            [NativeName("userParam")] void* userParam
         );
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void EventCallbackSOFT(
-            [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSoft callback,
-            Ref userParam
+            [NativeName("callback")] ContextEventProcSoft callback,
+            [NativeName("userParam")] Ref userParam
         )
         {
             fixed (void* __dsl_userParam = userParam)
@@ -169,28 +175,25 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcEventControlSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcEventControlSOFT")]
-        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         public static extern sbyte EventControlSOFT(
-            [NativeTypeName("ALCsizei")] int count,
-            [NativeTypeName("const ALCenum *")] int* events,
-            [NativeTypeName("ALCboolean")] sbyte enable
+            [NativeName("count")] int count,
+            [NativeName("events")] int* events,
+            [NativeName("enable")] sbyte enable
         );
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<sbyte> EventControlSOFT(
-            [NativeTypeName("ALCsizei")] int count,
-            [NativeTypeName("const ALCenum *")] Ref<int> events,
-            [NativeTypeName("ALCboolean")] MaybeBool<sbyte> enable
+            [NativeName("count")] int count,
+            [NativeName("events")] Ref<int> events,
+            [NativeName("enable")] MaybeBool<sbyte> enable
         )
         {
             fixed (int* __dsl_events = events)
@@ -200,53 +203,53 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcEventIsSupportedSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcEventIsSupportedSOFT")]
-        [return: NativeTypeName("ALCenum")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         public static extern int EventIsSupportedSOFT(
-            [NativeTypeName("ALCenum")] int eventType,
-            [NativeTypeName("ALCenum")] int deviceType
+            [NativeName("eventType")] int eventType,
+            [NativeName("deviceType")] int deviceType
         );
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
         public static Constant<int, AlcEnum, EventSupportSOFT> EventIsSupportedSOFT(
-            [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
+            [NativeName("eventType")] Constant<int, EventTypeSOFT> eventType,
+            [NativeName("deviceType")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
         ) =>
             (Constant<int, AlcEnum, EventSupportSOFT>)
                 (int)EventIsSupportedSOFT((int)eventType, (int)deviceType);
 
+        [NativeName("alcGetContextsDevice")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetContextsDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        public static extern DeviceHandle GetContextsDevice(ContextHandle context);
+        public static extern DeviceHandle GetContextsDevice(
+            [NativeName("context")] ContextHandle context
+        );
 
+        [NativeName("alcGetCurrentContext")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetCurrentContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern ContextHandle GetCurrentContext();
 
+        [NativeName("alcGetEnumValue")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetEnumValue")]
-        [return: NativeTypeName("ALCenum")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern int GetEnumValue(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* enumname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("enumname")] sbyte* enumname
         );
 
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcGetEnumValue")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetEnumValue(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> enumname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("enumname")] Ref<sbyte> enumname
         )
         {
             fixed (sbyte* __dsl_enumname = enumname)
@@ -255,46 +258,45 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcGetError")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetError")]
-        public static Constant<int, ErrorCode> GetError(DeviceHandle device) =>
-            (Constant<int, ErrorCode>)(int)GetErrorRaw(device);
+        public static Constant<int, ErrorCode> GetError(
+            [NativeName("device")] DeviceHandle device
+        ) => (Constant<int, ErrorCode>)(int)GetErrorRaw(device);
 
+        [NativeName("alcGetError")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetError")]
-        [return: NativeTypeName("ALCenum")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        public static extern int GetErrorRaw(DeviceHandle device);
+        public static extern int GetErrorRaw([NativeName("device")] DeviceHandle device);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcGetInteger64vSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
         public static extern void GetInteger64VSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int pname,
-            [NativeTypeName("ALsizei")] int size,
-            [NativeTypeName("ALCint64SOFT *")] nint* values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("pname")] int pname,
+            [NativeName("size")] int size,
+            [NativeName("values")] nint* values
         );
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetInteger64VSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int pname,
-            [NativeTypeName("ALsizei")] int size,
-            [NativeTypeName("ALCint64SOFT *")] Ref<nint> values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("pname")] int pname,
+            [NativeName("size")] int size,
+            [NativeName("values")] Ref<nint> values
         )
         {
             fixed (nint* __dsl_values = values)
@@ -303,16 +305,15 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
         public static nint GetInteger64VSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int pname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("pname")] int pname
         )
         {
             nint values = default;
@@ -320,26 +321,27 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             return values;
         }
 
+        [NativeName("alcGetIntegerv")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern void GetInteger(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1,
-            [NativeTypeName("ALCsizei")] int size,
-            [NativeTypeName("ALCint *")] int* values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1,
+            [NativeName("size")] int size,
+            [NativeName("values")] int* values
         );
 
+        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetInteger(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1,
-            [NativeTypeName("ALCsizei")] int size,
-            [NativeTypeName("ALCint *")] Ref<int> values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1,
+            [NativeName("size")] int size,
+            [NativeName("values")] Ref<int> values
         )
         {
             fixed (int* __dsl_values = values)
@@ -348,34 +350,36 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        public static int GetInteger(DeviceHandle device, [NativeTypeName("ALCenum")] int param1)
+        public static int GetInteger(
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1
+        )
         {
             int values = default;
             GetInteger(device, param1, 1, (int*)&values);
             return values;
         }
 
+        [NativeName("alcGetProcAddress")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetProcAddress")]
-        [return: NativeTypeName("ALCvoid *")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern void* GetProcAddress(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* funcname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcname")] sbyte* funcname
         );
 
-        [return: NativeTypeName("ALCvoid *")]
+        [NativeName("alcGetProcAddress")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Ptr GetProcAddress(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> funcname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcname")] Ref<sbyte> funcname
         )
         {
             fixed (sbyte* __dsl_funcname = funcname)
@@ -384,30 +388,29 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcGetProcAddress2")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetProcAddress2")]
-        [return: NativeTypeName("ALCvoid *")]
         [
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         public static extern void* GetProcAddress2(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* funcName
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcName")] sbyte* funcName
         );
 
-        [return: NativeTypeName("ALCvoid *")]
+        [NativeName("alcGetProcAddress2")]
         [
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Ptr GetProcAddress2(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> funcName
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcName")] Ref<sbyte> funcName
         )
         {
             fixed (sbyte* __dsl_funcName = funcName)
@@ -416,72 +419,68 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcGetString")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetString")]
-        [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern sbyte* GetString(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1
         );
 
-        [return: NativeTypeName("const ALCchar *")]
+        [NativeName("alcGetString")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Ptr<sbyte> GetString(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, ContextString> param1
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
         ) => (sbyte*)GetString(device, (int)param1);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcGetStringiSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetStringiSOFT")]
-        [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         public static extern sbyte* GetStringiSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int paramName,
-            [NativeTypeName("ALCsizei")] int index
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("paramName")] int paramName,
+            [NativeName("index")] int index
         );
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("const ALCchar *")]
+        [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Ptr<sbyte> GetStringiSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, ContextString> paramName,
-            [NativeTypeName("ALCsizei")] int index
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
+            [NativeName("index")] int index
         ) => (sbyte*)GetStringiSOFT(device, (int)paramName, index);
 
+        [NativeName("alcGetThreadContext")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
         public static extern ContextHandle GetThreadContext();
 
+        [NativeName("alcIsExtensionPresent")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcIsExtensionPresent")]
-        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern sbyte IsExtensionPresent(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* extname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("extname")] sbyte* extname
         );
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcIsExtensionPresent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<sbyte> IsExtensionPresent(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> extname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("extname")] Ref<sbyte> extname
         )
         {
             fixed (sbyte* __dsl_extname = extname)
@@ -490,47 +489,43 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcIsRenderFormatSupportedSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcIsRenderFormatSupportedSOFT")]
-        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         public static extern sbyte IsRenderFormatSupportedSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCsizei")] int freq,
-            [NativeTypeName("ALCenum")] int channels,
-            [NativeTypeName("ALCenum")] int type
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("freq")] int freq,
+            [NativeName("channels")] int channels,
+            [NativeName("type")] int type
         );
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
         public static MaybeBool<sbyte> IsRenderFormatSupportedSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCsizei")] int freq,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("freq")] int freq,
+            [NativeName("channels")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+            [NativeName("type")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
         ) =>
             (MaybeBool<sbyte>)
                 (sbyte)IsRenderFormatSupportedSOFT(device, freq, (int)channels, (int)type);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcLoopbackOpenDeviceSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         public static extern DeviceHandle LoopbackOpenDeviceSOFT(
-            [NativeTypeName("const ALCchar *")] sbyte* deviceName
+            [NativeName("deviceName")] sbyte* deviceName
         );
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static DeviceHandle LoopbackOpenDeviceSOFT(
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName
+            [NativeName("deviceName")] Ref<sbyte> deviceName
         )
         {
             fixed (sbyte* __dsl_deviceName = deviceName)
@@ -539,45 +534,46 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcMakeContextCurrent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
-        public static MaybeBool<sbyte> MakeContextCurrent(ContextHandle context) =>
-            (MaybeBool<sbyte>)(sbyte)MakeContextCurrentRaw(context);
+        public static MaybeBool<sbyte> MakeContextCurrent(
+            [NativeName("context")] ContextHandle context
+        ) => (MaybeBool<sbyte>)(sbyte)MakeContextCurrentRaw(context);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcMakeContextCurrent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
-        private static MaybeBool<sbyte> MakeContextCurrentInternal(ContextHandle context) =>
-            (MaybeBool<sbyte>)(sbyte)MakeContextCurrentInternalRaw(context);
+        private static MaybeBool<sbyte> MakeContextCurrentInternal(
+            [NativeName("context")] ContextHandle context
+        ) => (MaybeBool<sbyte>)(sbyte)MakeContextCurrentInternalRaw(context);
 
+        [NativeName("alcMakeContextCurrent")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcMakeContextCurrent")]
-        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        private static extern sbyte MakeContextCurrentInternalRaw(ContextHandle context);
-
-        [return: NativeTypeName("ALCboolean")]
-        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
-        public static partial sbyte MakeContextCurrentRaw(ContextHandle context);
-
-        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
-        public static partial DeviceHandle OpenDevice(
-            [NativeTypeName("const ALCchar *")] sbyte* devicename
+        private static extern sbyte MakeContextCurrentInternalRaw(
+            [NativeName("context")] ContextHandle context
         );
 
+        [NativeName("alcMakeContextCurrent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
+        [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
+        public static partial sbyte MakeContextCurrentRaw(
+            [NativeName("context")] ContextHandle context
+        );
+
+        [NativeName("alcOpenDevice")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
+        public static partial DeviceHandle OpenDevice([NativeName("devicename")] sbyte* devicename);
+
+        [NativeName("alcOpenDevice")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static DeviceHandle OpenDevice(
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename
-        )
+        public static DeviceHandle OpenDevice([NativeName("devicename")] Ref<sbyte> devicename)
         {
             fixed (sbyte* __dsl_devicename = devicename)
             {
@@ -585,20 +581,21 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcOpenDevice")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         private static extern DeviceHandle OpenDeviceInternal(
-            [NativeTypeName("const ALCchar *")] sbyte* devicename
+            [NativeName("devicename")] sbyte* devicename
         );
 
+        [NativeName("alcOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         private static DeviceHandle OpenDeviceInternal(
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename
+            [NativeName("devicename")] Ref<sbyte> devicename
         )
         {
             fixed (sbyte* __dsl_devicename = devicename)
@@ -607,30 +604,30 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcProcessContext")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcProcessContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        public static extern void ProcessContext(ContextHandle context);
+        public static extern void ProcessContext([NativeName("context")] ContextHandle context);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcRenderSamplesSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         public static extern void RenderSamplesSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] void* buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] void* buffer,
+            [NativeName("samples")] int samples
         );
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void RenderSamplesSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] Ref buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] Ref buffer,
+            [NativeName("samples")] int samples
         )
         {
             fixed (void* __dsl_buffer = buffer)
@@ -639,28 +636,25 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcReopenDeviceSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcReopenDeviceSOFT")]
-        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
         public static extern sbyte ReopenDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* deviceName,
-            [NativeTypeName("const ALCint *")] int* attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("deviceName")] sbyte* deviceName,
+            [NativeName("attribs")] int* attribs
         );
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<sbyte> ReopenDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName,
-            [NativeTypeName("const ALCint *")] Ref<int> attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("deviceName")] Ref<sbyte> deviceName,
+            [NativeName("attribs")] Ref<int> attribs
         )
         {
             fixed (int* __dsl_attribs = attribs)
@@ -671,26 +665,23 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcResetDeviceSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcResetDeviceSOFT")]
-        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         public static extern sbyte ResetDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] int* attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attribs")] int* attribs
         );
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<sbyte> ResetDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] Ref<int> attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attribs")] Ref<int> attribs
         )
         {
             fixed (int* __dsl_attribs = attribs)
@@ -699,250 +690,260 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcSetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
-        public static MaybeBool<sbyte> SetThreadContext(ContextHandle context) =>
-            (MaybeBool<sbyte>)(sbyte)SetThreadContextRaw(context);
+        public static MaybeBool<sbyte> SetThreadContext(
+            [NativeName("context")] ContextHandle context
+        ) => (MaybeBool<sbyte>)(sbyte)SetThreadContextRaw(context);
 
+        [NativeName("alcSetThreadContext")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcSetThreadContext")]
-        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
-        public static extern sbyte SetThreadContextRaw(ContextHandle context);
+        public static extern sbyte SetThreadContextRaw(
+            [NativeName("context")] ContextHandle context
+        );
 
+        [NativeName("alcSuspendContext")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcSuspendContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        public static extern void SuspendContext(ContextHandle context);
+        public static extern void SuspendContext([NativeName("context")] ContextHandle context);
     }
 
     public partial class StaticWrapper<T> : IAlContext
         where T : IAlContext.Static
     {
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcCaptureCloseDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public MaybeBool<sbyte> CaptureCloseDevice(DeviceHandle device) =>
+        public MaybeBool<sbyte> CaptureCloseDevice([NativeName("device")] DeviceHandle device) =>
             T.CaptureCloseDevice(device);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcCaptureCloseDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte CaptureCloseDeviceRaw(DeviceHandle device) => T.CaptureCloseDeviceRaw(device);
+        public sbyte CaptureCloseDeviceRaw([NativeName("device")] DeviceHandle device) =>
+            T.CaptureCloseDeviceRaw(device);
 
+        [NativeName("alcCaptureOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public DeviceHandle CaptureOpenDevice(
-            [NativeTypeName("const ALCchar *")] sbyte* devicename,
-            [NativeTypeName("ALCuint")] uint frequency,
-            [NativeTypeName("ALCenum")] int format,
-            [NativeTypeName("ALCsizei")] int buffersize
+            [NativeName("devicename")] sbyte* devicename,
+            [NativeName("frequency")] uint frequency,
+            [NativeName("format")] int format,
+            [NativeName("buffersize")] int buffersize
         ) => T.CaptureOpenDevice(devicename, frequency, format, buffersize);
 
+        [NativeName("alcCaptureOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public DeviceHandle CaptureOpenDevice(
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename,
-            [NativeTypeName("ALCuint")] uint frequency,
-            [NativeTypeName("ALCenum")] Constant<int, AlEnum, Format> format,
-            [NativeTypeName("ALCsizei")] int buffersize
+            [NativeName("devicename")] Ref<sbyte> devicename,
+            [NativeName("frequency")] uint frequency,
+            [NativeName("format")] Constant<int, AlEnum, Format> format,
+            [NativeName("buffersize")] int buffersize
         ) => T.CaptureOpenDevice(devicename, frequency, format, buffersize);
 
+        [NativeName("alcCaptureSamples")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void CaptureSamples(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] void* buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] void* buffer,
+            [NativeName("samples")] int samples
         ) => T.CaptureSamples(device, buffer, samples);
 
+        [NativeName("alcCaptureSamples")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void CaptureSamples(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] Ref buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] Ref buffer,
+            [NativeName("samples")] int samples
         ) => T.CaptureSamples(device, buffer, samples);
 
+        [NativeName("alcCaptureStart")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureStart")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void CaptureStart(DeviceHandle device) => T.CaptureStart(device);
+        public void CaptureStart([NativeName("device")] DeviceHandle device) =>
+            T.CaptureStart(device);
 
+        [NativeName("alcCaptureStop")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureStop")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void CaptureStop(DeviceHandle device) => T.CaptureStop(device);
+        public void CaptureStop([NativeName("device")] DeviceHandle device) =>
+            T.CaptureStop(device);
 
-        [return: NativeTypeName("ALCboolean")]
-        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
-        [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public MaybeBool<sbyte> CloseDevice(DeviceHandle device) => T.CloseDevice(device);
-
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcCloseDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte CloseDeviceRaw(DeviceHandle device) => T.CloseDeviceRaw(device);
+        public MaybeBool<sbyte> CloseDevice([NativeName("device")] DeviceHandle device) =>
+            T.CloseDevice(device);
 
+        [NativeName("alcCloseDevice")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public sbyte CloseDeviceRaw([NativeName("device")] DeviceHandle device) =>
+            T.CloseDeviceRaw(device);
+
+        [NativeName("alcCreateContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcCreateContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public ContextHandle CreateContext(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] int* attrlist
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attrlist")] int* attrlist
         ) => T.CreateContext(device, attrlist);
 
+        [NativeName("alcCreateContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCreateContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public ContextHandle CreateContext(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] Ref<int> attrlist
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attrlist")] Ref<int> attrlist
         ) => T.CreateContext(device, attrlist);
 
+        [NativeName("alcDestroyContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcDestroyContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void DestroyContext(ContextHandle context) => T.DestroyContext(context);
+        public void DestroyContext([NativeName("context")] ContextHandle context) =>
+            T.DestroyContext(context);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcDevicePauseSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         [NativeFunction("openal", EntryPoint = "alcDevicePauseSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void DevicePauseSOFT(DeviceHandle device) => T.DevicePauseSOFT(device);
+        public void DevicePauseSOFT([NativeName("device")] DeviceHandle device) =>
+            T.DevicePauseSOFT(device);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcDeviceResumeSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         [NativeFunction("openal", EntryPoint = "alcDeviceResumeSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void DeviceResumeSOFT(DeviceHandle device) => T.DeviceResumeSOFT(device);
+        public void DeviceResumeSOFT([NativeName("device")] DeviceHandle device) =>
+            T.DeviceResumeSOFT(device);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void EventCallbackSOFT(
-            [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSoft callback,
-            void* userParam
+            [NativeName("callback")] ContextEventProcSoft callback,
+            [NativeName("userParam")] void* userParam
         ) => T.EventCallbackSOFT(callback, userParam);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void EventCallbackSOFT(
-            [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSoft callback,
-            Ref userParam
+            [NativeName("callback")] ContextEventProcSoft callback,
+            [NativeName("userParam")] Ref userParam
         ) => T.EventCallbackSOFT(callback, userParam);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public sbyte EventControlSOFT(
-            [NativeTypeName("ALCsizei")] int count,
-            [NativeTypeName("const ALCenum *")] int* events,
-            [NativeTypeName("ALCboolean")] sbyte enable
+            [NativeName("count")] int count,
+            [NativeName("events")] int* events,
+            [NativeName("enable")] sbyte enable
         ) => T.EventControlSOFT(count, events, enable);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public MaybeBool<sbyte> EventControlSOFT(
-            [NativeTypeName("ALCsizei")] int count,
-            [NativeTypeName("const ALCenum *")] Ref<int> events,
-            [NativeTypeName("ALCboolean")] MaybeBool<sbyte> enable
+            [NativeName("count")] int count,
+            [NativeName("events")] Ref<int> events,
+            [NativeName("enable")] MaybeBool<sbyte> enable
         ) => T.EventControlSOFT(count, events, enable);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int EventIsSupportedSOFT(
-            [NativeTypeName("ALCenum")] int eventType,
-            [NativeTypeName("ALCenum")] int deviceType
+            [NativeName("eventType")] int eventType,
+            [NativeName("deviceType")] int deviceType
         ) => T.EventIsSupportedSOFT(eventType, deviceType);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public Constant<int, AlcEnum, EventSupportSOFT> EventIsSupportedSOFT(
-            [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
+            [NativeName("eventType")] Constant<int, EventTypeSOFT> eventType,
+            [NativeName("deviceType")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
         ) => T.EventIsSupportedSOFT(eventType, deviceType);
 
+        [NativeName("alcGetContextsDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetContextsDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public DeviceHandle GetContextsDevice(ContextHandle context) =>
+        public DeviceHandle GetContextsDevice([NativeName("context")] ContextHandle context) =>
             T.GetContextsDevice(context);
 
+        [NativeName("alcGetCurrentContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetCurrentContext")]
         [MethodImpl(
@@ -950,47 +951,46 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         )]
         public ContextHandle GetCurrentContext() => T.GetCurrentContext();
 
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcGetEnumValue")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetEnumValue(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* enumname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("enumname")] sbyte* enumname
         ) => T.GetEnumValue(device, enumname);
 
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcGetEnumValue")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public int GetEnumValue(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> enumname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("enumname")] Ref<sbyte> enumname
         ) => T.GetEnumValue(device, enumname);
 
-        [return: NativeTypeName("ALCenum")]
-        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
-        [NativeFunction("openal", EntryPoint = "alcGetError")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public Constant<int, ErrorCode> GetError(DeviceHandle device) => T.GetError(device);
-
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcGetError")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetError")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int GetErrorRaw(DeviceHandle device) => T.GetErrorRaw(device);
+        public Constant<int, ErrorCode> GetError([NativeName("device")] DeviceHandle device) =>
+            T.GetError(device);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcGetError")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [NativeFunction("openal", EntryPoint = "alcGetError")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public int GetErrorRaw([NativeName("device")] DeviceHandle device) => T.GetErrorRaw(device);
+
+        [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
@@ -1000,100 +1000,102 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void GetInteger64VSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int pname,
-            [NativeTypeName("ALsizei")] int size,
-            [NativeTypeName("ALCint64SOFT *")] nint* values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("pname")] int pname,
+            [NativeName("size")] int size,
+            [NativeName("values")] nint* values
         ) => T.GetInteger64VSOFT(device, pname, size, values);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void GetInteger64VSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int pname,
-            [NativeTypeName("ALsizei")] int size,
-            [NativeTypeName("ALCint64SOFT *")] Ref<nint> values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("pname")] int pname,
+            [NativeName("size")] int size,
+            [NativeName("values")] Ref<nint> values
         ) => T.GetInteger64VSOFT(device, pname, size, values);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public nint GetInteger64VSOFT(DeviceHandle device, [NativeTypeName("ALCenum")] int pname) =>
-            T.GetInteger64VSOFT(device, pname);
+        public nint GetInteger64VSOFT(
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("pname")] int pname
+        ) => T.GetInteger64VSOFT(device, pname);
 
+        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void GetInteger(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1,
-            [NativeTypeName("ALCsizei")] int size,
-            [NativeTypeName("ALCint *")] int* values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1,
+            [NativeName("size")] int size,
+            [NativeName("values")] int* values
         ) => T.GetInteger(device, param1, size, values);
 
+        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void GetInteger(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1,
-            [NativeTypeName("ALCsizei")] int size,
-            [NativeTypeName("ALCint *")] Ref<int> values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1,
+            [NativeName("size")] int size,
+            [NativeName("values")] Ref<int> values
         ) => T.GetInteger(device, param1, size, values);
 
+        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int GetInteger(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
-            T.GetInteger(device, param1);
+        public int GetInteger(
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1
+        ) => T.GetInteger(device, param1);
 
-        [return: NativeTypeName("ALCvoid *")]
+        [NativeName("alcGetProcAddress")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void* GetProcAddress(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* funcname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcname")] sbyte* funcname
         ) => T.GetProcAddress(device, funcname);
 
-        [return: NativeTypeName("ALCvoid *")]
+        [NativeName("alcGetProcAddress")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public Ptr GetProcAddress(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> funcname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcname")] Ref<sbyte> funcname
         ) => T.GetProcAddress(device, funcname);
 
-        [return: NativeTypeName("ALCvoid *")]
+        [NativeName("alcGetProcAddress2")]
         [
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
@@ -1103,73 +1105,71 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void* GetProcAddress2(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* funcName
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcName")] sbyte* funcName
         ) => T.GetProcAddress2(device, funcName);
 
-        [return: NativeTypeName("ALCvoid *")]
+        [NativeName("alcGetProcAddress2")]
         [
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public Ptr GetProcAddress2(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> funcName
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcName")] Ref<sbyte> funcName
         ) => T.GetProcAddress2(device, funcName);
 
-        [return: NativeTypeName("const ALCchar *")]
+        [NativeName("alcGetString")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte* GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
-            T.GetString(device, param1);
+        public sbyte* GetString(
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1
+        ) => T.GetString(device, param1);
 
-        [return: NativeTypeName("const ALCchar *")]
+        [NativeName("alcGetString")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public Ptr<sbyte> GetString(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, ContextString> param1
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
         ) => T.GetString(device, param1);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("const ALCchar *")]
+        [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public sbyte* GetStringiSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int paramName,
-            [NativeTypeName("ALCsizei")] int index
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("paramName")] int paramName,
+            [NativeName("index")] int index
         ) => T.GetStringiSOFT(device, paramName, index);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("const ALCchar *")]
+        [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public Ptr<sbyte> GetStringiSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, ContextString> paramName,
-            [NativeTypeName("ALCsizei")] int index
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
+            [NativeName("index")] int index
         ) => T.GetStringiSOFT(device, paramName, index);
 
+        [NativeName("alcGetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
         [NativeFunction("openal", EntryPoint = "alcGetThreadContext")]
         [MethodImpl(
@@ -1177,269 +1177,261 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         )]
         public ContextHandle GetThreadContext() => T.GetThreadContext();
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcIsExtensionPresent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public sbyte IsExtensionPresent(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* extname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("extname")] sbyte* extname
         ) => T.IsExtensionPresent(device, extname);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcIsExtensionPresent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public MaybeBool<sbyte> IsExtensionPresent(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> extname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("extname")] Ref<sbyte> extname
         ) => T.IsExtensionPresent(device, extname);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public sbyte IsRenderFormatSupportedSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCsizei")] int freq,
-            [NativeTypeName("ALCenum")] int channels,
-            [NativeTypeName("ALCenum")] int type
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("freq")] int freq,
+            [NativeName("channels")] int channels,
+            [NativeName("type")] int type
         ) => T.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public MaybeBool<sbyte> IsRenderFormatSupportedSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCsizei")] int freq,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("freq")] int freq,
+            [NativeName("channels")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+            [NativeName("type")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
         ) => T.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcLoopbackOpenDeviceSOFT")]
+        [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
+        [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public DeviceHandle LoopbackOpenDeviceSOFT([NativeName("deviceName")] sbyte* deviceName) =>
+            T.LoopbackOpenDeviceSOFT(deviceName);
+
+        [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public DeviceHandle LoopbackOpenDeviceSOFT(
-            [NativeTypeName("const ALCchar *")] sbyte* deviceName
+            [NativeName("deviceName")] Ref<sbyte> deviceName
         ) => T.LoopbackOpenDeviceSOFT(deviceName);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-        [Transformed]
-        [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public DeviceHandle LoopbackOpenDeviceSOFT(
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName
-        ) => T.LoopbackOpenDeviceSOFT(deviceName);
-
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcMakeContextCurrent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public MaybeBool<sbyte> MakeContextCurrent(ContextHandle context) =>
+        public MaybeBool<sbyte> MakeContextCurrent([NativeName("context")] ContextHandle context) =>
             T.MakeContextCurrent(context);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcMakeContextCurrent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte MakeContextCurrentRaw(ContextHandle context) =>
+        public sbyte MakeContextCurrentRaw([NativeName("context")] ContextHandle context) =>
             T.MakeContextCurrentRaw(context);
 
+        [NativeName("alcOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public DeviceHandle OpenDevice([NativeTypeName("const ALCchar *")] sbyte* devicename) =>
+        public DeviceHandle OpenDevice([NativeName("devicename")] sbyte* devicename) =>
             T.OpenDevice(devicename);
 
+        [NativeName("alcOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public DeviceHandle OpenDevice([NativeTypeName("const ALCchar *")] Ref<sbyte> devicename) =>
+        public DeviceHandle OpenDevice([NativeName("devicename")] Ref<sbyte> devicename) =>
             T.OpenDevice(devicename);
 
+        [NativeName("alcProcessContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcProcessContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void ProcessContext(ContextHandle context) => T.ProcessContext(context);
+        public void ProcessContext([NativeName("context")] ContextHandle context) =>
+            T.ProcessContext(context);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void RenderSamplesSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] void* buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] void* buffer,
+            [NativeName("samples")] int samples
         ) => T.RenderSamplesSOFT(device, buffer, samples);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void RenderSamplesSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] Ref buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] Ref buffer,
+            [NativeName("samples")] int samples
         ) => T.RenderSamplesSOFT(device, buffer, samples);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public sbyte ReopenDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* deviceName,
-            [NativeTypeName("const ALCint *")] int* attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("deviceName")] sbyte* deviceName,
+            [NativeName("attribs")] int* attribs
         ) => T.ReopenDeviceSOFT(device, deviceName, attribs);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public MaybeBool<sbyte> ReopenDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName,
-            [NativeTypeName("const ALCint *")] Ref<int> attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("deviceName")] Ref<sbyte> deviceName,
+            [NativeName("attribs")] Ref<int> attribs
         ) => T.ReopenDeviceSOFT(device, deviceName, attribs);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public sbyte ResetDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] int* attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attribs")] int* attribs
         ) => T.ResetDeviceSOFT(device, attribs);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public MaybeBool<sbyte> ResetDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] Ref<int> attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attribs")] Ref<int> attribs
         ) => T.ResetDeviceSOFT(device, attribs);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcSetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public MaybeBool<sbyte> SetThreadContext(ContextHandle context) =>
+        public MaybeBool<sbyte> SetThreadContext([NativeName("context")] ContextHandle context) =>
             T.SetThreadContext(context);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcSetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
         [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte SetThreadContextRaw(ContextHandle context) => T.SetThreadContextRaw(context);
+        public sbyte SetThreadContextRaw([NativeName("context")] ContextHandle context) =>
+            T.SetThreadContextRaw(context);
 
+        [NativeName("alcSuspendContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcSuspendContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void SuspendContext(ContextHandle context) => T.SuspendContext(context);
+        public void SuspendContext([NativeName("context")] ContextHandle context) =>
+            T.SuspendContext(context);
     }
 
     public partial class ThisThread
     {
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcCaptureCloseDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<sbyte> CaptureCloseDevice(DeviceHandle device) =>
-            Underlying.Value!.CaptureCloseDevice(device);
+        public static MaybeBool<sbyte> CaptureCloseDevice(
+            [NativeName("device")] DeviceHandle device
+        ) => Underlying.Value!.CaptureCloseDevice(device);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcCaptureCloseDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte CaptureCloseDeviceRaw(DeviceHandle device) =>
+        public static sbyte CaptureCloseDeviceRaw([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.CaptureCloseDeviceRaw(device);
 
+        [NativeName("alcCaptureOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static DeviceHandle CaptureOpenDevice(
-            [NativeTypeName("const ALCchar *")] sbyte* devicename,
-            [NativeTypeName("ALCuint")] uint frequency,
-            [NativeTypeName("ALCenum")] int format,
-            [NativeTypeName("ALCsizei")] int buffersize
+            [NativeName("devicename")] sbyte* devicename,
+            [NativeName("frequency")] uint frequency,
+            [NativeName("format")] int format,
+            [NativeName("buffersize")] int buffersize
         ) => Underlying.Value!.CaptureOpenDevice(devicename, frequency, format, buffersize);
 
+        [NativeName("alcCaptureOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static DeviceHandle CaptureOpenDevice(
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename,
-            [NativeTypeName("ALCuint")] uint frequency,
-            [NativeTypeName("ALCenum")] Constant<int, AlEnum, Format> format,
-            [NativeTypeName("ALCsizei")] int buffersize
+            [NativeName("devicename")] Ref<sbyte> devicename,
+            [NativeName("frequency")] uint frequency,
+            [NativeName("format")] Constant<int, AlEnum, Format> format,
+            [NativeName("buffersize")] int buffersize
         )
         {
             fixed (sbyte* __dsl_devicename = devicename)
@@ -1453,27 +1445,28 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcCaptureSamples")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void CaptureSamples(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] void* buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] void* buffer,
+            [NativeName("samples")] int samples
         ) => Underlying.Value!.CaptureSamples(device, buffer, samples);
 
+        [NativeName("alcCaptureSamples")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void CaptureSamples(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] Ref buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] Ref buffer,
+            [NativeName("samples")] int samples
         )
         {
             fixed (void* __dsl_buffer = buffer)
@@ -1482,60 +1475,62 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcCaptureStart")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureStart")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void CaptureStart(DeviceHandle device) =>
+        public static void CaptureStart([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.CaptureStart(device);
 
+        [NativeName("alcCaptureStop")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureStop")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void CaptureStop(DeviceHandle device) =>
+        public static void CaptureStop([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.CaptureStop(device);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcCloseDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<sbyte> CloseDevice(DeviceHandle device) =>
+        public static MaybeBool<sbyte> CloseDevice([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.CloseDevice(device);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcCloseDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte CloseDeviceRaw(DeviceHandle device) =>
+        public static sbyte CloseDeviceRaw([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.CloseDeviceRaw(device);
 
+        [NativeName("alcCreateContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcCreateContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static ContextHandle CreateContext(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] int* attrlist
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attrlist")] int* attrlist
         ) => Underlying.Value!.CreateContext(device, attrlist);
 
+        [NativeName("alcCreateContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCreateContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static ContextHandle CreateContext(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] Ref<int> attrlist
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attrlist")] Ref<int> attrlist
         )
         {
             fixed (int* __dsl_attrlist = attrlist)
@@ -1544,53 +1539,53 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcDestroyContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcDestroyContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void DestroyContext(ContextHandle context) =>
+        public static void DestroyContext([NativeName("context")] ContextHandle context) =>
             Underlying.Value!.DestroyContext(context);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcDevicePauseSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         [NativeFunction("openal", EntryPoint = "alcDevicePauseSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void DevicePauseSOFT(DeviceHandle device) =>
+        public static void DevicePauseSOFT([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.DevicePauseSOFT(device);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcDeviceResumeSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         [NativeFunction("openal", EntryPoint = "alcDeviceResumeSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void DeviceResumeSOFT(DeviceHandle device) =>
+        public static void DeviceResumeSOFT([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.DeviceResumeSOFT(device);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void EventCallbackSOFT(
-            [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSoft callback,
-            void* userParam
+            [NativeName("callback")] ContextEventProcSoft callback,
+            [NativeName("userParam")] void* userParam
         ) => Underlying.Value!.EventCallbackSOFT(callback, userParam);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void EventCallbackSOFT(
-            [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSoft callback,
-            Ref userParam
+            [NativeName("callback")] ContextEventProcSoft callback,
+            [NativeName("userParam")] Ref userParam
         )
         {
             fixed (void* __dsl_userParam = userParam)
@@ -1599,31 +1594,28 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static sbyte EventControlSOFT(
-            [NativeTypeName("ALCsizei")] int count,
-            [NativeTypeName("const ALCenum *")] int* events,
-            [NativeTypeName("ALCboolean")] sbyte enable
+            [NativeName("count")] int count,
+            [NativeName("events")] int* events,
+            [NativeName("enable")] sbyte enable
         ) => Underlying.Value!.EventControlSOFT(count, events, enable);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<sbyte> EventControlSOFT(
-            [NativeTypeName("ALCsizei")] int count,
-            [NativeTypeName("const ALCenum *")] Ref<int> events,
-            [NativeTypeName("ALCboolean")] MaybeBool<sbyte> enable
+            [NativeName("count")] int count,
+            [NativeName("events")] Ref<int> events,
+            [NativeName("enable")] MaybeBool<sbyte> enable
         )
         {
             fixed (int* __dsl_events = events)
@@ -1633,39 +1625,39 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int EventIsSupportedSOFT(
-            [NativeTypeName("ALCenum")] int eventType,
-            [NativeTypeName("ALCenum")] int deviceType
+            [NativeName("eventType")] int eventType,
+            [NativeName("deviceType")] int deviceType
         ) => Underlying.Value!.EventIsSupportedSOFT(eventType, deviceType);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Constant<int, AlcEnum, EventSupportSOFT> EventIsSupportedSOFT(
-            [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
+            [NativeName("eventType")] Constant<int, EventTypeSOFT> eventType,
+            [NativeName("deviceType")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
         ) => Underlying.Value!.EventIsSupportedSOFT(eventType, deviceType);
 
+        [NativeName("alcGetContextsDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetContextsDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static DeviceHandle GetContextsDevice(ContextHandle context) =>
-            Underlying.Value!.GetContextsDevice(context);
+        public static DeviceHandle GetContextsDevice(
+            [NativeName("context")] ContextHandle context
+        ) => Underlying.Value!.GetContextsDevice(context);
 
+        [NativeName("alcGetCurrentContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetCurrentContext")]
         [MethodImpl(
@@ -1673,27 +1665,26 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         )]
         public static ContextHandle GetCurrentContext() => Underlying.Value!.GetCurrentContext();
 
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcGetEnumValue")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetEnumValue(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* enumname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("enumname")] sbyte* enumname
         ) => Underlying.Value!.GetEnumValue(device, enumname);
 
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcGetEnumValue")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static int GetEnumValue(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> enumname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("enumname")] Ref<sbyte> enumname
         )
         {
             fixed (sbyte* __dsl_enumname = enumname)
@@ -1702,25 +1693,26 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [return: NativeTypeName("ALCenum")]
-        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
-        [NativeFunction("openal", EntryPoint = "alcGetError")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static Constant<int, ErrorCode> GetError(DeviceHandle device) =>
-            Underlying.Value!.GetError(device);
-
-        [return: NativeTypeName("ALCenum")]
+        [NativeName("alcGetError")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetError")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int GetErrorRaw(DeviceHandle device) => Underlying.Value!.GetErrorRaw(device);
+        public static Constant<int, ErrorCode> GetError(
+            [NativeName("device")] DeviceHandle device
+        ) => Underlying.Value!.GetError(device);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcGetError")]
+        [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [NativeFunction("openal", EntryPoint = "alcGetError")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static int GetErrorRaw([NativeName("device")] DeviceHandle device) =>
+            Underlying.Value!.GetErrorRaw(device);
+
+        [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
@@ -1730,27 +1722,26 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetInteger64VSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int pname,
-            [NativeTypeName("ALsizei")] int size,
-            [NativeTypeName("ALCint64SOFT *")] nint* values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("pname")] int pname,
+            [NativeName("size")] int size,
+            [NativeName("values")] nint* values
         ) => Underlying.Value!.GetInteger64VSOFT(device, pname, size, values);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetInteger64VSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int pname,
-            [NativeTypeName("ALsizei")] int size,
-            [NativeTypeName("ALCint64SOFT *")] Ref<nint> values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("pname")] int pname,
+            [NativeName("size")] int size,
+            [NativeName("values")] Ref<nint> values
         )
         {
             fixed (nint* __dsl_values = values)
@@ -1759,19 +1750,18 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static nint GetInteger64VSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int pname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("pname")] int pname
         )
         {
             nint values = default;
@@ -1779,29 +1769,30 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             return values;
         }
 
+        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetInteger(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1,
-            [NativeTypeName("ALCsizei")] int size,
-            [NativeTypeName("ALCint *")] int* values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1,
+            [NativeName("size")] int size,
+            [NativeName("values")] int* values
         ) => Underlying.Value!.GetInteger(device, param1, size, values);
 
+        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void GetInteger(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1,
-            [NativeTypeName("ALCsizei")] int size,
-            [NativeTypeName("ALCint *")] Ref<int> values
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1,
+            [NativeName("size")] int size,
+            [NativeName("values")] Ref<int> values
         )
         {
             fixed (int* __dsl_values = values)
@@ -1810,40 +1801,42 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int GetInteger(DeviceHandle device, [NativeTypeName("ALCenum")] int param1)
+        public static int GetInteger(
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1
+        )
         {
             int values = default;
             GetInteger(device, param1, 1, (int*)&values);
             return values;
         }
 
-        [return: NativeTypeName("ALCvoid *")]
+        [NativeName("alcGetProcAddress")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void* GetProcAddress(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* funcname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcname")] sbyte* funcname
         ) => Underlying.Value!.GetProcAddress(device, funcname);
 
-        [return: NativeTypeName("ALCvoid *")]
+        [NativeName("alcGetProcAddress")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Ptr GetProcAddress(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> funcname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcname")] Ref<sbyte> funcname
         )
         {
             fixed (sbyte* __dsl_funcname = funcname)
@@ -1852,7 +1845,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [return: NativeTypeName("ALCvoid *")]
+        [NativeName("alcGetProcAddress2")]
         [
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
@@ -1862,23 +1855,22 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void* GetProcAddress2(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* funcName
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcName")] sbyte* funcName
         ) => Underlying.Value!.GetProcAddress2(device, funcName);
 
-        [return: NativeTypeName("ALCvoid *")]
+        [NativeName("alcGetProcAddress2")]
         [
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Ptr GetProcAddress2(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> funcName
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("funcName")] Ref<sbyte> funcName
         )
         {
             fixed (sbyte* __dsl_funcName = funcName)
@@ -1887,56 +1879,53 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [return: NativeTypeName("const ALCchar *")]
+        [NativeName("alcGetString")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static sbyte* GetString(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int param1
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] int param1
         ) => Underlying.Value!.GetString(device, param1);
 
-        [return: NativeTypeName("const ALCchar *")]
+        [NativeName("alcGetString")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Ptr<sbyte> GetString(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, ContextString> param1
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
         ) => Underlying.Value!.GetString(device, param1);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("const ALCchar *")]
+        [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static sbyte* GetStringiSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] int paramName,
-            [NativeTypeName("ALCsizei")] int index
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("paramName")] int paramName,
+            [NativeName("index")] int index
         ) => Underlying.Value!.GetStringiSOFT(device, paramName, index);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("const ALCchar *")]
+        [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Ptr<sbyte> GetStringiSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, ContextString> paramName,
-            [NativeTypeName("ALCsizei")] int index
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
+            [NativeName("index")] int index
         ) => Underlying.Value!.GetStringiSOFT(device, paramName, index);
 
+        [NativeName("alcGetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
         [NativeFunction("openal", EntryPoint = "alcGetThreadContext")]
         [MethodImpl(
@@ -1944,27 +1933,26 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         )]
         public static ContextHandle GetThreadContext() => Underlying.Value!.GetThreadContext();
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcIsExtensionPresent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static sbyte IsExtensionPresent(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* extname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("extname")] sbyte* extname
         ) => Underlying.Value!.IsExtensionPresent(device, extname);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcIsExtensionPresent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<sbyte> IsExtensionPresent(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> extname
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("extname")] Ref<sbyte> extname
         )
         {
             fixed (sbyte* __dsl_extname = extname)
@@ -1973,54 +1961,50 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static sbyte IsRenderFormatSupportedSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCsizei")] int freq,
-            [NativeTypeName("ALCenum")] int channels,
-            [NativeTypeName("ALCenum")] int type
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("freq")] int freq,
+            [NativeName("channels")] int channels,
+            [NativeName("type")] int type
         ) => Underlying.Value!.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<sbyte> IsRenderFormatSupportedSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCsizei")] int freq,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
-            [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("freq")] int freq,
+            [NativeName("channels")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+            [NativeName("type")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
         ) => Underlying.Value!.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static DeviceHandle LoopbackOpenDeviceSOFT(
-            [NativeTypeName("const ALCchar *")] sbyte* deviceName
+            [NativeName("deviceName")] sbyte* deviceName
         ) => Underlying.Value!.LoopbackOpenDeviceSOFT(deviceName);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static DeviceHandle LoopbackOpenDeviceSOFT(
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName
+            [NativeName("deviceName")] Ref<sbyte> deviceName
         )
         {
             fixed (sbyte* __dsl_deviceName = deviceName)
@@ -2029,43 +2013,41 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcMakeContextCurrent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<sbyte> MakeContextCurrent(ContextHandle context) =>
-            Underlying.Value!.MakeContextCurrent(context);
+        public static MaybeBool<sbyte> MakeContextCurrent(
+            [NativeName("context")] ContextHandle context
+        ) => Underlying.Value!.MakeContextCurrent(context);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcMakeContextCurrent")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte MakeContextCurrentRaw(ContextHandle context) =>
+        public static sbyte MakeContextCurrentRaw([NativeName("context")] ContextHandle context) =>
             Underlying.Value!.MakeContextCurrentRaw(context);
 
+        [NativeName("alcOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static DeviceHandle OpenDevice(
-            [NativeTypeName("const ALCchar *")] sbyte* devicename
-        ) => Underlying.Value!.OpenDevice(devicename);
+        public static DeviceHandle OpenDevice([NativeName("devicename")] sbyte* devicename) =>
+            Underlying.Value!.OpenDevice(devicename);
 
+        [NativeName("alcOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static DeviceHandle OpenDevice(
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename
-        )
+        public static DeviceHandle OpenDevice([NativeName("devicename")] Ref<sbyte> devicename)
         {
             fixed (sbyte* __dsl_devicename = devicename)
             {
@@ -2073,37 +2055,37 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
+        [NativeName("alcProcessContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcProcessContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void ProcessContext(ContextHandle context) =>
+        public static void ProcessContext([NativeName("context")] ContextHandle context) =>
             Underlying.Value!.ProcessContext(context);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void RenderSamplesSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] void* buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] void* buffer,
+            [NativeName("samples")] int samples
         ) => Underlying.Value!.RenderSamplesSOFT(device, buffer, samples);
 
-        [NameAffix("Suffix", "SOFT", 0)]
+        [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void RenderSamplesSOFT(
-            DeviceHandle device,
-            [NativeTypeName("ALCvoid *")] Ref buffer,
-            [NativeTypeName("ALCsizei")] int samples
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("buffer")] Ref buffer,
+            [NativeName("samples")] int samples
         )
         {
             fixed (void* __dsl_buffer = buffer)
@@ -2112,31 +2094,28 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static sbyte ReopenDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] sbyte* deviceName,
-            [NativeTypeName("const ALCint *")] int* attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("deviceName")] sbyte* deviceName,
+            [NativeName("attribs")] int* attribs
         ) => Underlying.Value!.ReopenDeviceSOFT(device, deviceName, attribs);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<sbyte> ReopenDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName,
-            [NativeTypeName("const ALCint *")] Ref<int> attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("deviceName")] Ref<sbyte> deviceName,
+            [NativeName("attribs")] Ref<int> attribs
         )
         {
             fixed (int* __dsl_attribs = attribs)
@@ -2147,29 +2126,26 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static sbyte ResetDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] int* attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attribs")] int* attribs
         ) => Underlying.Value!.ResetDeviceSOFT(device, attribs);
 
-        [NameAffix("Suffix", "SOFT", 0)]
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static MaybeBool<sbyte> ResetDeviceSOFT(
-            DeviceHandle device,
-            [NativeTypeName("const ALCint *")] Ref<int> attribs
+            [NativeName("device")] DeviceHandle device,
+            [NativeName("attribs")] Ref<int> attribs
         )
         {
             fixed (int* __dsl_attribs = attribs)
@@ -2178,75 +2154,73 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcSetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
-        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<sbyte> SetThreadContext(ContextHandle context) =>
-            Underlying.Value!.SetThreadContext(context);
+        public static MaybeBool<sbyte> SetThreadContext(
+            [NativeName("context")] ContextHandle context
+        ) => Underlying.Value!.SetThreadContext(context);
 
-        [return: NativeTypeName("ALCboolean")]
+        [NativeName("alcSetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
         [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte SetThreadContextRaw(ContextHandle context) =>
+        public static sbyte SetThreadContextRaw([NativeName("context")] ContextHandle context) =>
             Underlying.Value!.SetThreadContextRaw(context);
 
+        [NativeName("alcSuspendContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcSuspendContext")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void SuspendContext(ContextHandle context) =>
+        public static void SuspendContext([NativeName("context")] ContextHandle context) =>
             Underlying.Value!.SuspendContext(context);
     }
 
-    [NativeTypeName("#define ALC_CPLUSPLUS __cplusplus")]
+    [NativeName("ALC_CPLUSPLUS")]
     public const nint Cplusplus = 201703;
 
-    [NativeTypeName("#define ALC_VERSION_0_1 1")]
+    [NativeName("ALC_VERSION_0_1")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     public const int Version0X1 = 1;
 
-    [NativeTypeName("#define ALC_EXT_CAPTURE 1")]
+    [NativeName("ALC_EXT_CAPTURE")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     public const int ExtCapture = 1;
 
-    [NameAffix("Suffix", "EXT", 0)]
-    [NativeTypeName("#define ALC_ENUMERATE_ALL_EXT 1")]
+    [NativeName("ALC_ENUMERATE_ALL_EXT")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     public const int EnumerateAllEXT = 1;
 
-    [NativeTypeName("#define ALC_EXT_EFX_NAME \"ALC_EXT_EFX\"")]
+    [NativeName("ALC_EXT_EFX_NAME")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     public static ReadOnlySpan<byte> ExtEfxName => "ALC_EXT_EFX"u8;
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcCaptureCloseDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<sbyte> IAlContext.CaptureCloseDevice(DeviceHandle device) =>
+    MaybeBool<sbyte> IAlContext.CaptureCloseDevice([NativeName("device")] DeviceHandle device) =>
         (MaybeBool<sbyte>)(sbyte)((IAlContext)this).CaptureCloseDeviceRaw(device);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcCaptureCloseDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<sbyte> CaptureCloseDevice(DeviceHandle device) =>
+    public static MaybeBool<sbyte> CaptureCloseDevice([NativeName("device")] DeviceHandle device) =>
         ThisThread.CaptureCloseDevice(device);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcCaptureCloseDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAlContext.CaptureCloseDeviceRaw(DeviceHandle device) =>
+    sbyte IAlContext.CaptureCloseDeviceRaw([NativeName("device")] DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, sbyte>)(
                 _slots[0] is not null and var loadedFnPtr
@@ -2255,21 +2229,22 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcCaptureCloseDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte CaptureCloseDeviceRaw(DeviceHandle device) =>
+    public static sbyte CaptureCloseDeviceRaw([NativeName("device")] DeviceHandle device) =>
         ThisThread.CaptureCloseDeviceRaw(device);
 
+    [NativeName("alcCaptureOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     DeviceHandle IAlContext.CaptureOpenDevice(
-        [NativeTypeName("const ALCchar *")] sbyte* devicename,
-        [NativeTypeName("ALCuint")] uint frequency,
-        [NativeTypeName("ALCenum")] int format,
-        [NativeTypeName("ALCsizei")] int buffersize
+        [NativeName("devicename")] sbyte* devicename,
+        [NativeName("frequency")] uint frequency,
+        [NativeName("format")] int format,
+        [NativeName("buffersize")] int buffersize
     ) =>
         (
             (delegate* unmanaged<sbyte*, uint, int, int, DeviceHandle>)(
@@ -2279,25 +2254,26 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(devicename, frequency, format, buffersize);
 
+    [NativeName("alcCaptureOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static DeviceHandle CaptureOpenDevice(
-        [NativeTypeName("const ALCchar *")] sbyte* devicename,
-        [NativeTypeName("ALCuint")] uint frequency,
-        [NativeTypeName("ALCenum")] int format,
-        [NativeTypeName("ALCsizei")] int buffersize
+        [NativeName("devicename")] sbyte* devicename,
+        [NativeName("frequency")] uint frequency,
+        [NativeName("format")] int format,
+        [NativeName("buffersize")] int buffersize
     ) => ThisThread.CaptureOpenDevice(devicename, frequency, format, buffersize);
 
+    [NativeName("alcCaptureOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     DeviceHandle IAlContext.CaptureOpenDevice(
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename,
-        [NativeTypeName("ALCuint")] uint frequency,
-        [NativeTypeName("ALCenum")] Constant<int, AlEnum, Format> format,
-        [NativeTypeName("ALCsizei")] int buffersize
+        [NativeName("devicename")] Ref<sbyte> devicename,
+        [NativeName("frequency")] uint frequency,
+        [NativeName("format")] Constant<int, AlEnum, Format> format,
+        [NativeName("buffersize")] int buffersize
     )
     {
         fixed (sbyte* __dsl_devicename = devicename)
@@ -2312,24 +2288,25 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
+    [NativeName("alcCaptureOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static DeviceHandle CaptureOpenDevice(
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename,
-        [NativeTypeName("ALCuint")] uint frequency,
-        [NativeTypeName("ALCenum")] Constant<int, AlEnum, Format> format,
-        [NativeTypeName("ALCsizei")] int buffersize
+        [NativeName("devicename")] Ref<sbyte> devicename,
+        [NativeName("frequency")] uint frequency,
+        [NativeName("format")] Constant<int, AlEnum, Format> format,
+        [NativeName("buffersize")] int buffersize
     ) => ThisThread.CaptureOpenDevice(devicename, frequency, format, buffersize);
 
+    [NativeName("alcCaptureSamples")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAlContext.CaptureSamples(
-        DeviceHandle device,
-        [NativeTypeName("ALCvoid *")] void* buffer,
-        [NativeTypeName("ALCsizei")] int samples
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("buffer")] void* buffer,
+        [NativeName("samples")] int samples
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, void*, int, void>)(
@@ -2339,23 +2316,24 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, buffer, samples);
 
+    [NativeName("alcCaptureSamples")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CaptureSamples(
-        DeviceHandle device,
-        [NativeTypeName("ALCvoid *")] void* buffer,
-        [NativeTypeName("ALCsizei")] int samples
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("buffer")] void* buffer,
+        [NativeName("samples")] int samples
     ) => ThisThread.CaptureSamples(device, buffer, samples);
 
+    [NativeName("alcCaptureSamples")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAlContext.CaptureSamples(
-        DeviceHandle device,
-        [NativeTypeName("ALCvoid *")] Ref buffer,
-        [NativeTypeName("ALCsizei")] int samples
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("buffer")] Ref buffer,
+        [NativeName("samples")] int samples
     )
     {
         fixed (void* __dsl_buffer = buffer)
@@ -2364,20 +2342,21 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
+    [NativeName("alcCaptureSamples")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void CaptureSamples(
-        DeviceHandle device,
-        [NativeTypeName("ALCvoid *")] Ref buffer,
-        [NativeTypeName("ALCsizei")] int samples
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("buffer")] Ref buffer,
+        [NativeName("samples")] int samples
     ) => ThisThread.CaptureSamples(device, buffer, samples);
 
+    [NativeName("alcCaptureStart")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureStart")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.CaptureStart(DeviceHandle device) =>
+    void IAlContext.CaptureStart([NativeName("device")] DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, void>)(
                 _slots[3] is not null and var loadedFnPtr
@@ -2386,15 +2365,18 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device);
 
+    [NativeName("alcCaptureStart")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureStart")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CaptureStart(DeviceHandle device) => ThisThread.CaptureStart(device);
+    public static void CaptureStart([NativeName("device")] DeviceHandle device) =>
+        ThisThread.CaptureStart(device);
 
+    [NativeName("alcCaptureStop")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureStop")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.CaptureStop(DeviceHandle device) =>
+    void IAlContext.CaptureStop([NativeName("device")] DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, void>)(
                 _slots[4] is not null and var loadedFnPtr
@@ -2403,32 +2385,32 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device);
 
+    [NativeName("alcCaptureStop")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureStop")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void CaptureStop(DeviceHandle device) => ThisThread.CaptureStop(device);
+    public static void CaptureStop([NativeName("device")] DeviceHandle device) =>
+        ThisThread.CaptureStop(device);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcCloseDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<sbyte> IAlContext.CloseDevice(DeviceHandle device) =>
+    MaybeBool<sbyte> IAlContext.CloseDevice([NativeName("device")] DeviceHandle device) =>
         (MaybeBool<sbyte>)(sbyte)((IAlContext)this).CloseDeviceRaw(device);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcCloseDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<sbyte> CloseDevice(DeviceHandle device) =>
+    public static MaybeBool<sbyte> CloseDevice([NativeName("device")] DeviceHandle device) =>
         ThisThread.CloseDevice(device);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcCloseDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAlContext.CloseDeviceRaw(DeviceHandle device) =>
+    sbyte IAlContext.CloseDeviceRaw([NativeName("device")] DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, sbyte>)(
                 _slots[5] is not null and var loadedFnPtr
@@ -2437,18 +2419,20 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcCloseDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte CloseDeviceRaw(DeviceHandle device) => ThisThread.CloseDeviceRaw(device);
+    public static sbyte CloseDeviceRaw([NativeName("device")] DeviceHandle device) =>
+        ThisThread.CloseDeviceRaw(device);
 
+    [NativeName("alcCreateContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcCreateContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     ContextHandle IAlContext.CreateContext(
-        DeviceHandle device,
-        [NativeTypeName("const ALCint *")] int* attrlist
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("attrlist")] int* attrlist
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, int*, ContextHandle>)(
@@ -2458,21 +2442,22 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, attrlist);
 
+    [NativeName("alcCreateContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcCreateContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ContextHandle CreateContext(
-        DeviceHandle device,
-        [NativeTypeName("const ALCint *")] int* attrlist
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("attrlist")] int* attrlist
     ) => ThisThread.CreateContext(device, attrlist);
 
+    [NativeName("alcCreateContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCreateContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     ContextHandle IAlContext.CreateContext(
-        DeviceHandle device,
-        [NativeTypeName("const ALCint *")] Ref<int> attrlist
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("attrlist")] Ref<int> attrlist
     )
     {
         fixed (int* __dsl_attrlist = attrlist)
@@ -2481,19 +2466,20 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
+    [NativeName("alcCreateContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCreateContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ContextHandle CreateContext(
-        DeviceHandle device,
-        [NativeTypeName("const ALCint *")] Ref<int> attrlist
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("attrlist")] Ref<int> attrlist
     ) => ThisThread.CreateContext(device, attrlist);
 
+    [NativeName("alcDestroyContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcDestroyContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.DestroyContext(ContextHandle context) =>
+    void IAlContext.DestroyContext([NativeName("context")] ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, void>)(
                 _slots[7] is not null and var loadedFnPtr
@@ -2502,16 +2488,18 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(context);
 
+    [NativeName("alcDestroyContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcDestroyContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DestroyContext(ContextHandle context) => ThisThread.DestroyContext(context);
+    public static void DestroyContext([NativeName("context")] ContextHandle context) =>
+        ThisThread.DestroyContext(context);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcDevicePauseSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
     [NativeFunction("openal", EntryPoint = "alcDevicePauseSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.DevicePauseSOFT(DeviceHandle device) =>
+    void IAlContext.DevicePauseSOFT([NativeName("device")] DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, void>)(
                 _slots[8] is not null and var loadedFnPtr
@@ -2520,17 +2508,18 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcDevicePauseSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
     [NativeFunction("openal", EntryPoint = "alcDevicePauseSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DevicePauseSOFT(DeviceHandle device) => ThisThread.DevicePauseSOFT(device);
+    public static void DevicePauseSOFT([NativeName("device")] DeviceHandle device) =>
+        ThisThread.DevicePauseSOFT(device);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcDeviceResumeSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
     [NativeFunction("openal", EntryPoint = "alcDeviceResumeSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.DeviceResumeSOFT(DeviceHandle device) =>
+    void IAlContext.DeviceResumeSOFT([NativeName("device")] DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, void>)(
                 _slots[9] is not null and var loadedFnPtr
@@ -2539,19 +2528,20 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcDeviceResumeSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
     [NativeFunction("openal", EntryPoint = "alcDeviceResumeSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DeviceResumeSOFT(DeviceHandle device) => ThisThread.DeviceResumeSOFT(device);
+    public static void DeviceResumeSOFT([NativeName("device")] DeviceHandle device) =>
+        ThisThread.DeviceResumeSOFT(device);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcEventCallbackSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAlContext.EventCallbackSOFT(
-        [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSoft callback,
-        void* userParam
+        [NativeName("callback")] ContextEventProcSoft callback,
+        [NativeName("userParam")] void* userParam
     ) =>
         (
             (delegate* unmanaged<ContextEventProcSoft, void*, void>)(
@@ -2561,23 +2551,22 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(callback, userParam);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcEventCallbackSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void EventCallbackSOFT(
-        [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSoft callback,
-        void* userParam
+        [NativeName("callback")] ContextEventProcSoft callback,
+        [NativeName("userParam")] void* userParam
     ) => ThisThread.EventCallbackSOFT(callback, userParam);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcEventCallbackSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAlContext.EventCallbackSOFT(
-        [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSoft callback,
-        Ref userParam
+        [NativeName("callback")] ContextEventProcSoft callback,
+        [NativeName("userParam")] Ref userParam
     )
     {
         fixed (void* __dsl_userParam = userParam)
@@ -2586,25 +2575,23 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcEventCallbackSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void EventCallbackSOFT(
-        [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSoft callback,
-        Ref userParam
+        [NativeName("callback")] ContextEventProcSoft callback,
+        [NativeName("userParam")] Ref userParam
     ) => ThisThread.EventCallbackSOFT(callback, userParam);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcEventControlSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     sbyte IAlContext.EventControlSOFT(
-        [NativeTypeName("ALCsizei")] int count,
-        [NativeTypeName("const ALCenum *")] int* events,
-        [NativeTypeName("ALCboolean")] sbyte enable
+        [NativeName("count")] int count,
+        [NativeName("events")] int* events,
+        [NativeName("enable")] sbyte enable
     ) =>
         (
             (delegate* unmanaged<int, int*, sbyte, sbyte>)(
@@ -2614,27 +2601,24 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(count, events, enable);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcEventControlSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static sbyte EventControlSOFT(
-        [NativeTypeName("ALCsizei")] int count,
-        [NativeTypeName("const ALCenum *")] int* events,
-        [NativeTypeName("ALCboolean")] sbyte enable
+        [NativeName("count")] int count,
+        [NativeName("events")] int* events,
+        [NativeName("enable")] sbyte enable
     ) => ThisThread.EventControlSOFT(count, events, enable);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcEventControlSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAlContext.EventControlSOFT(
-        [NativeTypeName("ALCsizei")] int count,
-        [NativeTypeName("const ALCenum *")] Ref<int> events,
-        [NativeTypeName("ALCboolean")] MaybeBool<sbyte> enable
+        [NativeName("count")] int count,
+        [NativeName("events")] Ref<int> events,
+        [NativeName("enable")] MaybeBool<sbyte> enable
     )
     {
         fixed (int* __dsl_events = events)
@@ -2644,26 +2628,23 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcEventControlSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<sbyte> EventControlSOFT(
-        [NativeTypeName("ALCsizei")] int count,
-        [NativeTypeName("const ALCenum *")] Ref<int> events,
-        [NativeTypeName("ALCboolean")] MaybeBool<sbyte> enable
+        [NativeName("count")] int count,
+        [NativeName("events")] Ref<int> events,
+        [NativeName("enable")] MaybeBool<sbyte> enable
     ) => ThisThread.EventControlSOFT(count, events, enable);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcEventIsSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int IAlContext.EventIsSupportedSOFT(
-        [NativeTypeName("ALCenum")] int eventType,
-        [NativeTypeName("ALCenum")] int deviceType
+        [NativeName("eventType")] int eventType,
+        [NativeName("deviceType")] int deviceType
     ) =>
         (
             (delegate* unmanaged<int, int, int>)(
@@ -2673,44 +2654,40 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(eventType, deviceType);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcEventIsSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int EventIsSupportedSOFT(
-        [NativeTypeName("ALCenum")] int eventType,
-        [NativeTypeName("ALCenum")] int deviceType
+        [NativeName("eventType")] int eventType,
+        [NativeName("deviceType")] int deviceType
     ) => ThisThread.EventIsSupportedSOFT(eventType, deviceType);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcEventIsSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Constant<int, AlcEnum, EventSupportSOFT> IAlContext.EventIsSupportedSOFT(
-        [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
+        [NativeName("eventType")] Constant<int, EventTypeSOFT> eventType,
+        [NativeName("deviceType")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
     ) =>
         (Constant<int, AlcEnum, EventSupportSOFT>)
             (int)((IAlContext)this).EventIsSupportedSOFT((int)eventType, (int)deviceType);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcEventIsSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Constant<int, AlcEnum, EventSupportSOFT> EventIsSupportedSOFT(
-        [NativeTypeName("ALCenum")] Constant<int, EventTypeSOFT> eventType,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
+        [NativeName("eventType")] Constant<int, EventTypeSOFT> eventType,
+        [NativeName("deviceType")] Constant<int, AlcEnum, DeviceTypeSOFT> deviceType
     ) => ThisThread.EventIsSupportedSOFT(eventType, deviceType);
 
+    [NativeName("alcGetContextsDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetContextsDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    DeviceHandle IAlContext.GetContextsDevice(ContextHandle context) =>
+    DeviceHandle IAlContext.GetContextsDevice([NativeName("context")] ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, DeviceHandle>)(
                 _slots[13] is not null and var loadedFnPtr
@@ -2719,12 +2696,14 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(context);
 
+    [NativeName("alcGetContextsDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetContextsDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static DeviceHandle GetContextsDevice(ContextHandle context) =>
+    public static DeviceHandle GetContextsDevice([NativeName("context")] ContextHandle context) =>
         ThisThread.GetContextsDevice(context);
 
+    [NativeName("alcGetCurrentContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetCurrentContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -2737,18 +2716,19 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )();
 
+    [NativeName("alcGetCurrentContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetCurrentContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ContextHandle GetCurrentContext() => ThisThread.GetCurrentContext();
 
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcGetEnumValue")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int IAlContext.GetEnumValue(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] sbyte* enumname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("enumname")] sbyte* enumname
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, sbyte*, int>)(
@@ -2758,23 +2738,22 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, enumname);
 
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcGetEnumValue")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetEnumValue(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] sbyte* enumname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("enumname")] sbyte* enumname
     ) => ThisThread.GetEnumValue(device, enumname);
 
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcGetEnumValue")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     int IAlContext.GetEnumValue(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> enumname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("enumname")] Ref<sbyte> enumname
     )
     {
         fixed (sbyte* __dsl_enumname = enumname)
@@ -2783,37 +2762,34 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcGetEnumValue")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static int GetEnumValue(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> enumname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("enumname")] Ref<sbyte> enumname
     ) => ThisThread.GetEnumValue(device, enumname);
 
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcGetError")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Constant<int, ErrorCode> IAlContext.GetError(DeviceHandle device) =>
+    Constant<int, ErrorCode> IAlContext.GetError([NativeName("device")] DeviceHandle device) =>
         (Constant<int, ErrorCode>)(int)((IAlContext)this).GetErrorRaw(device);
 
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcGetError")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Constant<int, ErrorCode> GetError(DeviceHandle device) =>
+    public static Constant<int, ErrorCode> GetError([NativeName("device")] DeviceHandle device) =>
         ThisThread.GetError(device);
 
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcGetError")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IAlContext.GetErrorRaw(DeviceHandle device) =>
+    int IAlContext.GetErrorRaw([NativeName("device")] DeviceHandle device) =>
         (
             (delegate* unmanaged<DeviceHandle, int>)(
                 _slots[16] is not null and var loadedFnPtr
@@ -2822,13 +2798,14 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device);
 
-    [return: NativeTypeName("ALCenum")]
+    [NativeName("alcGetError")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int GetErrorRaw(DeviceHandle device) => ThisThread.GetErrorRaw(device);
+    public static int GetErrorRaw([NativeName("device")] DeviceHandle device) =>
+        ThisThread.GetErrorRaw(device);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
@@ -2836,10 +2813,10 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAlContext.GetInteger64VSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int pname,
-        [NativeTypeName("ALsizei")] int size,
-        [NativeTypeName("ALCint64SOFT *")] nint* values
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("pname")] int pname,
+        [NativeName("size")] int size,
+        [NativeName("values")] nint* values
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, int, int, nint*, void>)(
@@ -2849,7 +2826,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, pname, size, values);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
@@ -2857,25 +2834,24 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetInteger64VSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int pname,
-        [NativeTypeName("ALsizei")] int size,
-        [NativeTypeName("ALCint64SOFT *")] nint* values
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("pname")] int pname,
+        [NativeName("size")] int size,
+        [NativeName("values")] nint* values
     ) => ThisThread.GetInteger64VSOFT(device, pname, size, values);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
     ]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAlContext.GetInteger64VSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int pname,
-        [NativeTypeName("ALsizei")] int size,
-        [NativeTypeName("ALCint64SOFT *")] Ref<nint> values
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("pname")] int pname,
+        [NativeName("size")] int size,
+        [NativeName("values")] Ref<nint> values
     )
     {
         fixed (nint* __dsl_values = values)
@@ -2884,57 +2860,58 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
     ]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetInteger64VSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int pname,
-        [NativeTypeName("ALsizei")] int size,
-        [NativeTypeName("ALCint64SOFT *")] Ref<nint> values
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("pname")] int pname,
+        [NativeName("size")] int size,
+        [NativeName("values")] Ref<nint> values
     ) => ThisThread.GetInteger64VSOFT(device, pname, size, values);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
     ]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nint IAlContext.GetInteger64VSOFT(DeviceHandle device, [NativeTypeName("ALCenum")] int pname)
+    nint IAlContext.GetInteger64VSOFT(
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("pname")] int pname
+    )
     {
         nint values = default;
         ((IAlContext)this).GetInteger64VSOFT(device, pname, 1, (nint*)&values);
         return values;
     }
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
     ]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static nint GetInteger64VSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int pname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("pname")] int pname
     ) => ThisThread.GetInteger64VSOFT(device, pname);
 
+    [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAlContext.GetInteger(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int param1,
-        [NativeTypeName("ALCsizei")] int size,
-        [NativeTypeName("ALCint *")] int* values
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("param1")] int param1,
+        [NativeName("size")] int size,
+        [NativeName("values")] int* values
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, int, int, int*, void>)(
@@ -2944,25 +2921,26 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, param1, size, values);
 
+    [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetInteger(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int param1,
-        [NativeTypeName("ALCsizei")] int size,
-        [NativeTypeName("ALCint *")] int* values
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("param1")] int param1,
+        [NativeName("size")] int size,
+        [NativeName("values")] int* values
     ) => ThisThread.GetInteger(device, param1, size, values);
 
+    [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAlContext.GetInteger(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int param1,
-        [NativeTypeName("ALCsizei")] int size,
-        [NativeTypeName("ALCint *")] Ref<int> values
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("param1")] int param1,
+        [NativeName("size")] int size,
+        [NativeName("values")] Ref<int> values
     )
     {
         fixed (int* __dsl_values = values)
@@ -2971,42 +2949,47 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
+    [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GetInteger(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int param1,
-        [NativeTypeName("ALCsizei")] int size,
-        [NativeTypeName("ALCint *")] Ref<int> values
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("param1")] int param1,
+        [NativeName("size")] int size,
+        [NativeName("values")] Ref<int> values
     ) => ThisThread.GetInteger(device, param1, size, values);
 
+    [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IAlContext.GetInteger(DeviceHandle device, [NativeTypeName("ALCenum")] int param1)
+    int IAlContext.GetInteger(
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("param1")] int param1
+    )
     {
         int values = default;
         ((IAlContext)this).GetInteger(device, param1, 1, (int*)&values);
         return values;
     }
 
+    [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int GetInteger(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
-        ThisThread.GetInteger(device, param1);
+    public static int GetInteger(
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("param1")] int param1
+    ) => ThisThread.GetInteger(device, param1);
 
-    [return: NativeTypeName("ALCvoid *")]
+    [NativeName("alcGetProcAddress")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void* IAlContext.GetProcAddress(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] sbyte* funcname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("funcname")] sbyte* funcname
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, sbyte*, void*>)(
@@ -3016,23 +2999,22 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, funcname);
 
-    [return: NativeTypeName("ALCvoid *")]
+    [NativeName("alcGetProcAddress")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void* GetProcAddress(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] sbyte* funcname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("funcname")] sbyte* funcname
     ) => ThisThread.GetProcAddress(device, funcname);
 
-    [return: NativeTypeName("ALCvoid *")]
+    [NativeName("alcGetProcAddress")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Ptr IAlContext.GetProcAddress(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> funcname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("funcname")] Ref<sbyte> funcname
     )
     {
         fixed (sbyte* __dsl_funcname = funcname)
@@ -3041,17 +3023,16 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [return: NativeTypeName("ALCvoid *")]
+    [NativeName("alcGetProcAddress")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr GetProcAddress(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> funcname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("funcname")] Ref<sbyte> funcname
     ) => ThisThread.GetProcAddress(device, funcname);
 
-    [return: NativeTypeName("ALCvoid *")]
+    [NativeName("alcGetProcAddress2")]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context"]),
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
@@ -3059,8 +3040,8 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void* IAlContext.GetProcAddress2(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] sbyte* funcName
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("funcName")] sbyte* funcName
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, sbyte*, void*>)(
@@ -3070,7 +3051,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, funcName);
 
-    [return: NativeTypeName("ALCvoid *")]
+    [NativeName("alcGetProcAddress2")]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context"]),
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
@@ -3078,21 +3059,20 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void* GetProcAddress2(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] sbyte* funcName
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("funcName")] sbyte* funcName
     ) => ThisThread.GetProcAddress2(device, funcName);
 
-    [return: NativeTypeName("ALCvoid *")]
+    [NativeName("alcGetProcAddress2")]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context"]),
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Ptr IAlContext.GetProcAddress2(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> funcName
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("funcName")] Ref<sbyte> funcName
     )
     {
         fixed (sbyte* __dsl_funcName = funcName)
@@ -3101,24 +3081,26 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [return: NativeTypeName("ALCvoid *")]
+    [NativeName("alcGetProcAddress2")]
     [
         SupportedApiProfile("al", ["AL_EXT_direct_context"]),
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr GetProcAddress2(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> funcName
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("funcName")] Ref<sbyte> funcName
     ) => ThisThread.GetProcAddress2(device, funcName);
 
-    [return: NativeTypeName("const ALCchar *")]
+    [NativeName("alcGetString")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetString")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte* IAlContext.GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
+    sbyte* IAlContext.GetString(
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("param1")] int param1
+    ) =>
         (
             (delegate* unmanaged<DeviceHandle, int, sbyte*>)(
                 _slots[21] is not null and var loadedFnPtr
@@ -3127,42 +3109,41 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, param1);
 
-    [return: NativeTypeName("const ALCchar *")]
+    [NativeName("alcGetString")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetString")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte* GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1) =>
-        ThisThread.GetString(device, param1);
+    public static sbyte* GetString(
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("param1")] int param1
+    ) => ThisThread.GetString(device, param1);
 
-    [return: NativeTypeName("const ALCchar *")]
+    [NativeName("alcGetString")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetString")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Ptr<sbyte> IAlContext.GetString(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, ContextString> param1
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
     ) => (sbyte*)((IAlContext)this).GetString(device, (int)param1);
 
-    [return: NativeTypeName("const ALCchar *")]
+    [NativeName("alcGetString")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetString")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr<sbyte> GetString(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, ContextString> param1
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
     ) => ThisThread.GetString(device, param1);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("const ALCchar *")]
+    [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     sbyte* IAlContext.GetStringiSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int paramName,
-        [NativeTypeName("ALCsizei")] int index
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("paramName")] int paramName,
+        [NativeName("index")] int index
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, int, int, sbyte*>)(
@@ -3172,41 +3153,37 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, paramName, index);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("const ALCchar *")]
+    [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static sbyte* GetStringiSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] int paramName,
-        [NativeTypeName("ALCsizei")] int index
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("paramName")] int paramName,
+        [NativeName("index")] int index
     ) => ThisThread.GetStringiSOFT(device, paramName, index);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("const ALCchar *")]
+    [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Ptr<sbyte> IAlContext.GetStringiSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, ContextString> paramName,
-        [NativeTypeName("ALCsizei")] int index
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
+        [NativeName("index")] int index
     ) => (sbyte*)((IAlContext)this).GetStringiSOFT(device, (int)paramName, index);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("const ALCchar *")]
+    [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Ptr<sbyte> GetStringiSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, ContextString> paramName,
-        [NativeTypeName("ALCsizei")] int index
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
+        [NativeName("index")] int index
     ) => ThisThread.GetStringiSOFT(device, paramName, index);
 
+    [NativeName("alcGetThreadContext")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
     [NativeFunction("openal", EntryPoint = "alcGetThreadContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
@@ -3219,18 +3196,19 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )();
 
+    [NativeName("alcGetThreadContext")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
     [NativeFunction("openal", EntryPoint = "alcGetThreadContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static ContextHandle GetThreadContext() => ThisThread.GetThreadContext();
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcIsExtensionPresent")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     sbyte IAlContext.IsExtensionPresent(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] sbyte* extname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("extname")] sbyte* extname
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, sbyte*, sbyte>)(
@@ -3240,23 +3218,22 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, extname);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcIsExtensionPresent")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static sbyte IsExtensionPresent(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] sbyte* extname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("extname")] sbyte* extname
     ) => ThisThread.IsExtensionPresent(device, extname);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcIsExtensionPresent")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAlContext.IsExtensionPresent(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> extname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("extname")] Ref<sbyte> extname
     )
     {
         fixed (sbyte* __dsl_extname = extname)
@@ -3266,26 +3243,24 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcIsExtensionPresent")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<sbyte> IsExtensionPresent(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> extname
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("extname")] Ref<sbyte> extname
     ) => ThisThread.IsExtensionPresent(device, extname);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcIsRenderFormatSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     sbyte IAlContext.IsRenderFormatSupportedSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCsizei")] int freq,
-        [NativeTypeName("ALCenum")] int channels,
-        [NativeTypeName("ALCenum")] int type
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("freq")] int freq,
+        [NativeName("channels")] int channels,
+        [NativeName("type")] int type
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, int, int, int, sbyte>)(
@@ -3298,29 +3273,26 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, freq, channels, type);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcIsRenderFormatSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static sbyte IsRenderFormatSupportedSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCsizei")] int freq,
-        [NativeTypeName("ALCenum")] int channels,
-        [NativeTypeName("ALCenum")] int type
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("freq")] int freq,
+        [NativeName("channels")] int channels,
+        [NativeName("type")] int type
     ) => ThisThread.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcIsRenderFormatSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAlContext.IsRenderFormatSupportedSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCsizei")] int freq,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("freq")] int freq,
+        [NativeName("channels")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+        [NativeName("type")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
     ) =>
         (MaybeBool<sbyte>)
             (sbyte)
@@ -3331,26 +3303,22 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
                     (int)type
                 );
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcIsRenderFormatSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<sbyte> IsRenderFormatSupportedSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCsizei")] int freq,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
-        [NativeTypeName("ALCenum")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("freq")] int freq,
+        [NativeName("channels")] Constant<int, AlcEnum, RenderFormatChannelSOFT> channels,
+        [NativeName("type")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
     ) => ThisThread.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcLoopbackOpenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    DeviceHandle IAlContext.LoopbackOpenDeviceSOFT(
-        [NativeTypeName("const ALCchar *")] sbyte* deviceName
-    ) =>
+    DeviceHandle IAlContext.LoopbackOpenDeviceSOFT([NativeName("deviceName")] sbyte* deviceName) =>
         (
             (delegate* unmanaged<sbyte*, DeviceHandle>)(
                 _slots[26] is not null and var loadedFnPtr
@@ -3359,22 +3327,19 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(deviceName);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcLoopbackOpenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static DeviceHandle LoopbackOpenDeviceSOFT(
-        [NativeTypeName("const ALCchar *")] sbyte* deviceName
+        [NativeName("deviceName")] sbyte* deviceName
     ) => ThisThread.LoopbackOpenDeviceSOFT(deviceName);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcLoopbackOpenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    DeviceHandle IAlContext.LoopbackOpenDeviceSOFT(
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName
-    )
+    DeviceHandle IAlContext.LoopbackOpenDeviceSOFT([NativeName("deviceName")] Ref<sbyte> deviceName)
     {
         fixed (sbyte* __dsl_deviceName = deviceName)
         {
@@ -3382,44 +3347,42 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcLoopbackOpenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static DeviceHandle LoopbackOpenDeviceSOFT(
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName
+        [NativeName("deviceName")] Ref<sbyte> deviceName
     ) => ThisThread.LoopbackOpenDeviceSOFT(deviceName);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcMakeContextCurrent")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<sbyte> IAlContext.MakeContextCurrent(ContextHandle context) =>
+    MaybeBool<sbyte> IAlContext.MakeContextCurrent([NativeName("context")] ContextHandle context) =>
         (MaybeBool<sbyte>)(sbyte)((IAlContext)this).MakeContextCurrentRaw(context);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcMakeContextCurrent")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<sbyte> MakeContextCurrent(ContextHandle context) =>
-        ThisThread.MakeContextCurrent(context);
+    public static MaybeBool<sbyte> MakeContextCurrent(
+        [NativeName("context")] ContextHandle context
+    ) => ThisThread.MakeContextCurrent(context);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcMakeContextCurrent")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    private MaybeBool<sbyte> MakeContextCurrentInternal(ContextHandle context) =>
-        (MaybeBool<sbyte>)(sbyte)MakeContextCurrentInternalRaw(context);
+    private MaybeBool<sbyte> MakeContextCurrentInternal(
+        [NativeName("context")] ContextHandle context
+    ) => (MaybeBool<sbyte>)(sbyte)MakeContextCurrentInternalRaw(context);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcMakeContextCurrent")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    private sbyte MakeContextCurrentInternalRaw(ContextHandle context) =>
+    private sbyte MakeContextCurrentInternalRaw([NativeName("context")] ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, sbyte>)(
                 _slots[27] is not null and var loadedFnPtr
@@ -3428,24 +3391,25 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(context);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcMakeContextCurrent")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte MakeContextCurrentRaw(ContextHandle context) =>
+    public static sbyte MakeContextCurrentRaw([NativeName("context")] ContextHandle context) =>
         ThisThread.MakeContextCurrentRaw(context);
 
+    [NativeName("alcOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static DeviceHandle OpenDevice([NativeTypeName("const ALCchar *")] sbyte* devicename) =>
+    public static DeviceHandle OpenDevice([NativeName("devicename")] sbyte* devicename) =>
         ThisThread.OpenDevice(devicename);
 
+    [NativeName("alcOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    DeviceHandle IAlContext.OpenDevice([NativeTypeName("const ALCchar *")] Ref<sbyte> devicename)
+    DeviceHandle IAlContext.OpenDevice([NativeName("devicename")] Ref<sbyte> devicename)
     {
         fixed (sbyte* __dsl_devicename = devicename)
         {
@@ -3453,20 +3417,18 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
+    [NativeName("alcOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static DeviceHandle OpenDevice(
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename
-    ) => ThisThread.OpenDevice(devicename);
+    public static DeviceHandle OpenDevice([NativeName("devicename")] Ref<sbyte> devicename) =>
+        ThisThread.OpenDevice(devicename);
 
+    [NativeName("alcOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    private DeviceHandle OpenDeviceInternal(
-        [NativeTypeName("const ALCchar *")] sbyte* devicename
-    ) =>
+    private DeviceHandle OpenDeviceInternal([NativeName("devicename")] sbyte* devicename) =>
         (
             (delegate* unmanaged<sbyte*, DeviceHandle>)(
                 _slots[28] is not null and var loadedFnPtr
@@ -3475,13 +3437,11 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(devicename);
 
+    [NativeName("alcOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    private DeviceHandle OpenDeviceInternal(
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename
-    )
+    private DeviceHandle OpenDeviceInternal([NativeName("devicename")] Ref<sbyte> devicename)
     {
         fixed (sbyte* __dsl_devicename = devicename)
         {
@@ -3489,10 +3449,11 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
+    [NativeName("alcProcessContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcProcessContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.ProcessContext(ContextHandle context) =>
+    void IAlContext.ProcessContext([NativeName("context")] ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, void>)(
                 _slots[29] is not null and var loadedFnPtr
@@ -3501,19 +3462,21 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(context);
 
+    [NativeName("alcProcessContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcProcessContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void ProcessContext(ContextHandle context) => ThisThread.ProcessContext(context);
+    public static void ProcessContext([NativeName("context")] ContextHandle context) =>
+        ThisThread.ProcessContext(context);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcRenderSamplesSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAlContext.RenderSamplesSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCvoid *")] void* buffer,
-        [NativeTypeName("ALCsizei")] int samples
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("buffer")] void* buffer,
+        [NativeName("samples")] int samples
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, void*, int, void>)(
@@ -3523,25 +3486,24 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, buffer, samples);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcRenderSamplesSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void RenderSamplesSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCvoid *")] void* buffer,
-        [NativeTypeName("ALCsizei")] int samples
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("buffer")] void* buffer,
+        [NativeName("samples")] int samples
     ) => ThisThread.RenderSamplesSOFT(device, buffer, samples);
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcRenderSamplesSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     void IAlContext.RenderSamplesSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCvoid *")] Ref buffer,
-        [NativeTypeName("ALCsizei")] int samples
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("buffer")] Ref buffer,
+        [NativeName("samples")] int samples
     )
     {
         fixed (void* __dsl_buffer = buffer)
@@ -3550,26 +3512,24 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0)]
+    [NativeName("alcRenderSamplesSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void RenderSamplesSOFT(
-        DeviceHandle device,
-        [NativeTypeName("ALCvoid *")] Ref buffer,
-        [NativeTypeName("ALCsizei")] int samples
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("buffer")] Ref buffer,
+        [NativeName("samples")] int samples
     ) => ThisThread.RenderSamplesSOFT(device, buffer, samples);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcReopenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     sbyte IAlContext.ReopenDeviceSOFT(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] sbyte* deviceName,
-        [NativeTypeName("const ALCint *")] int* attribs
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("deviceName")] sbyte* deviceName,
+        [NativeName("attribs")] int* attribs
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, sbyte*, int*, sbyte>)(
@@ -3579,27 +3539,24 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, deviceName, attribs);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcReopenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static sbyte ReopenDeviceSOFT(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] sbyte* deviceName,
-        [NativeTypeName("const ALCint *")] int* attribs
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("deviceName")] sbyte* deviceName,
+        [NativeName("attribs")] int* attribs
     ) => ThisThread.ReopenDeviceSOFT(device, deviceName, attribs);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcReopenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAlContext.ReopenDeviceSOFT(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName,
-        [NativeTypeName("const ALCint *")] Ref<int> attribs
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("deviceName")] Ref<sbyte> deviceName,
+        [NativeName("attribs")] Ref<int> attribs
     )
     {
         fixed (int* __dsl_attribs = attribs)
@@ -3610,26 +3567,23 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcReopenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<sbyte> ReopenDeviceSOFT(
-        DeviceHandle device,
-        [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName,
-        [NativeTypeName("const ALCint *")] Ref<int> attribs
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("deviceName")] Ref<sbyte> deviceName,
+        [NativeName("attribs")] Ref<int> attribs
     ) => ThisThread.ReopenDeviceSOFT(device, deviceName, attribs);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcResetDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     sbyte IAlContext.ResetDeviceSOFT(
-        DeviceHandle device,
-        [NativeTypeName("const ALCint *")] int* attribs
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("attribs")] int* attribs
     ) =>
         (
             (delegate* unmanaged<DeviceHandle, int*, sbyte>)(
@@ -3639,25 +3593,22 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, attribs);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcResetDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static sbyte ResetDeviceSOFT(
-        DeviceHandle device,
-        [NativeTypeName("const ALCint *")] int* attribs
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("attribs")] int* attribs
     ) => ThisThread.ResetDeviceSOFT(device, attribs);
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcResetDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAlContext.ResetDeviceSOFT(
-        DeviceHandle device,
-        [NativeTypeName("const ALCint *")] Ref<int> attribs
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("attribs")] Ref<int> attribs
     )
     {
         fixed (int* __dsl_attribs = attribs)
@@ -3667,38 +3618,35 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0)]
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcResetDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static MaybeBool<sbyte> ResetDeviceSOFT(
-        DeviceHandle device,
-        [NativeTypeName("const ALCint *")] Ref<int> attribs
+        [NativeName("device")] DeviceHandle device,
+        [NativeName("attribs")] Ref<int> attribs
     ) => ThisThread.ResetDeviceSOFT(device, attribs);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcSetThreadContext")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<sbyte> IAlContext.SetThreadContext(ContextHandle context) =>
+    MaybeBool<sbyte> IAlContext.SetThreadContext([NativeName("context")] ContextHandle context) =>
         (MaybeBool<sbyte>)(sbyte)((IAlContext)this).SetThreadContextRaw(context);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcSetThreadContext")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
-    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<sbyte> SetThreadContext(ContextHandle context) =>
-        ThisThread.SetThreadContext(context);
+    public static MaybeBool<sbyte> SetThreadContext(
+        [NativeName("context")] ContextHandle context
+    ) => ThisThread.SetThreadContext(context);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcSetThreadContext")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
     [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAlContext.SetThreadContextRaw(ContextHandle context) =>
+    sbyte IAlContext.SetThreadContextRaw([NativeName("context")] ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, sbyte>)(
                 _slots[33] is not null and var loadedFnPtr
@@ -3707,17 +3655,18 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(context);
 
-    [return: NativeTypeName("ALCboolean")]
+    [NativeName("alcSetThreadContext")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
     [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte SetThreadContextRaw(ContextHandle context) =>
+    public static sbyte SetThreadContextRaw([NativeName("context")] ContextHandle context) =>
         ThisThread.SetThreadContextRaw(context);
 
+    [NativeName("alcSuspendContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcSuspendContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.SuspendContext(ContextHandle context) =>
+    void IAlContext.SuspendContext([NativeName("context")] ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, void>)(
                 _slots[34] is not null and var loadedFnPtr
@@ -3726,8 +3675,10 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(context);
 
+    [NativeName("alcSuspendContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcSuspendContext")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void SuspendContext(ContextHandle context) => ThisThread.SuspendContext(context);
+    public static void SuspendContext([NativeName("context")] ContextHandle context) =>
+        ThisThread.SuspendContext(context);
 }

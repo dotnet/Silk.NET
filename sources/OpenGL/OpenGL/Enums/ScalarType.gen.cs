@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ScalarType")]
-[Transformed]
 public enum ScalarType : uint
 {
     [NativeName("GL_UNSIGNED_BYTE")]

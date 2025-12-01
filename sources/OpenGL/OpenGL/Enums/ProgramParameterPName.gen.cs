@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ProgramParameterPName")]
-[Transformed]
 public enum ProgramParameterPName : uint
 {
     [NativeName("GL_PROGRAM_BINARY_RETRIEVABLE_HINT")]

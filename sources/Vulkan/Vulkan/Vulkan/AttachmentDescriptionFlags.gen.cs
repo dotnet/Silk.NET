@@ -34,7 +34,6 @@ public enum AttachmentDescriptionFlags : uint
     )]
     MayAliasBit = 0x1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ATTACHMENT_DESCRIPTION_RESOLVE_SKIP_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -46,7 +45,6 @@ public enum AttachmentDescriptionFlags : uint
     )]
     ResolveSkipTransferFunctionBitKHR = 0x2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ATTACHMENT_DESCRIPTION_RESOLVE_ENABLE_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

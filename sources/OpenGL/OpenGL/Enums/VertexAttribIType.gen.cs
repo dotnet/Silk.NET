@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("VertexAttribIType")]
-[Transformed]
 public enum VertexAttribIType : uint
 {
     [NativeName("GL_BYTE")]

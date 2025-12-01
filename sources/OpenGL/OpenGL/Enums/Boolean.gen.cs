@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("Boolean")]
-[Transformed]
 public enum Boolean : uint
 {
     [NativeName("GL_FALSE")]

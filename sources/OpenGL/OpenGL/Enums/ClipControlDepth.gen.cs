@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("ClipControlDepth")]
-[Transformed]
 public enum ClipControlDepth : uint
 {
     [NativeName("GL_NEGATIVE_ONE_TO_ONE")]

@@ -6,12 +6,21 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_BlendOperation")]
 public enum BlendOperation : uint
 {
+    [NativeName("SDL_BLENDOPERATION_ADD")]
     Add = 0x1,
+
+    [NativeName("SDL_BLENDOPERATION_SUBTRACT")]
     Subtract = 0x2,
+
+    [NativeName("SDL_BLENDOPERATION_REV_SUBTRACT")]
     RevSubtract = 0x3,
+
+    [NativeName("SDL_BLENDOPERATION_MINIMUM")]
     Minimum = 0x4,
+
+    [NativeName("SDL_BLENDOPERATION_MAXIMUM")]
     Maximum = 0x5,
 }

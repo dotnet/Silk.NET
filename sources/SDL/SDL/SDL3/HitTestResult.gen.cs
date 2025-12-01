@@ -6,17 +6,36 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_HitTestResult")]
 public enum HitTestResult : uint
 {
+    [NativeName("SDL_HITTEST_NORMAL")]
     Normal,
+
+    [NativeName("SDL_HITTEST_DRAGGABLE")]
     Draggable,
+
+    [NativeName("SDL_HITTEST_RESIZE_TOPLEFT")]
     ResizeTopleft,
+
+    [NativeName("SDL_HITTEST_RESIZE_TOP")]
     ResizeTop,
+
+    [NativeName("SDL_HITTEST_RESIZE_TOPRIGHT")]
     ResizeTopright,
+
+    [NativeName("SDL_HITTEST_RESIZE_RIGHT")]
     ResizeRight,
+
+    [NativeName("SDL_HITTEST_RESIZE_BOTTOMRIGHT")]
     ResizeBottomright,
+
+    [NativeName("SDL_HITTEST_RESIZE_BOTTOM")]
     ResizeBottom,
+
+    [NativeName("SDL_HITTEST_RESIZE_BOTTOMLEFT")]
     ResizeBottomleft,
+
+    [NativeName("SDL_HITTEST_RESIZE_LEFT")]
     ResizeLeft,
 }

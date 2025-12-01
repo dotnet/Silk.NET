@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("SourceInteger3")]
-[Transformed]
 public enum SourceInteger3 : uint
 {
     [NativeName("AL_POSITION")]

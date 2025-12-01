@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("MaterialParameter")]
-[Transformed]
 public enum MaterialParameter : uint
 {
     [NativeName("GL_AMBIENT")]

@@ -130,7 +130,6 @@ public enum QueryResultFlags : uint
     )]
     ResultPartialBit = 0x8,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_QUERY_RESULT_WITH_STATUS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",

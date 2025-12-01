@@ -6,14 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_CommonEvent")]
 public partial struct CommonEvent
 {
-    [NativeTypeName("Uint32")]
+    [NativeName("type")]
     public uint Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public nuint Timestamp;
 }

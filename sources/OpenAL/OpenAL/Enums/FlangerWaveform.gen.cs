@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("FlangerWaveform")]
-[Transformed]
 public enum FlangerWaveform : uint
 {
     [NativeName("AL_FLANGER_WAVEFORM_SINUSOID")]

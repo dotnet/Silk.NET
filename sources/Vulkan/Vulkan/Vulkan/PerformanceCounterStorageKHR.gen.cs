@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkPerformanceCounterStorageKHR")]
 [SupportedApiProfile("vulkan")]
 public enum PerformanceCounterStorageKHR : uint
 {
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_INT32_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum PerformanceCounterStorageKHR : uint
     )]
     Int32KHR = 0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_INT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +34,6 @@ public enum PerformanceCounterStorageKHR : uint
     )]
     Int64KHR = 1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_UINT32_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +45,6 @@ public enum PerformanceCounterStorageKHR : uint
     )]
     Uint32KHR = 2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_UINT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +56,6 @@ public enum PerformanceCounterStorageKHR : uint
     )]
     Uint64KHR = 3,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_FLOAT32_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -73,7 +67,6 @@ public enum PerformanceCounterStorageKHR : uint
     )]
     Float32KHR = 4,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_FLOAT64_KHR")]
     [SupportedApiProfile(
         "vulkan",

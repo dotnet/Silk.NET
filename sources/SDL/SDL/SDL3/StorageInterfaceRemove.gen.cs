@@ -9,7 +9,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_StorageInterface_remove")]
-[Transformed]
 public readonly unsafe struct StorageInterfaceRemove : IDisposable
 {
     private readonly void* Pointer;

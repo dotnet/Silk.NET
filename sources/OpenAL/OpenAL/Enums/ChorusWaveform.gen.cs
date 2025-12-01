@@ -11,7 +11,6 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ChorusWaveform")]
-[Transformed]
 public enum ChorusWaveform : uint
 {
     [NativeName("AL_CHORUS_WAVEFORM_SINUSOID")]

@@ -6,11 +6,18 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
+[NativeName("SDL_GPUSwapchainComposition")]
 public enum GpuSwapchainComposition : uint
 {
+    [NativeName("SDL_GPU_SWAPCHAINCOMPOSITION_SDR")]
     Sdr,
+
+    [NativeName("SDL_GPU_SWAPCHAINCOMPOSITION_SDR_LINEAR")]
     SdrLinear,
+
+    [NativeName("SDL_GPU_SWAPCHAINCOMPOSITION_HDR_EXTENDED_LINEAR")]
     HdrExtendedLinear,
+
+    [NativeName("SDL_GPU_SWAPCHAINCOMPOSITION_HDR10_ST2084")]
     Hdr10St2084,
 }

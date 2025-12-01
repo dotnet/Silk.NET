@@ -709,27 +709,22 @@ public enum Result
     )]
     ErrorNotPermitted = -1000174001,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_SURFACE_LOST_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     ErrorSurfaceLostKHR = -1000000000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_NATIVE_WINDOW_IN_USE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     ErrorNativeWindowInUseKHR = -1000000001,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_SUBOPTIMAL_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     SuboptimalKHR = 1000001003,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_OUT_OF_DATE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     ErrorOutOfDateKHR = -1000001004,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_INCOMPATIBLE_DISPLAY_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -738,12 +733,10 @@ public enum Result
     )]
     ErrorIncompatibleDisplayKHR = -1000003001,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ERROR_INVALID_SHADER_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_glsl_shader"])]
     ErrorInvalidShaderNV = -1000012000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_IMAGE_USAGE_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -752,7 +745,6 @@ public enum Result
     )]
     ErrorImageUsageNotSupportedKHR = -1000023000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_VIDEO_PICTURE_LAYOUT_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -761,7 +753,6 @@ public enum Result
     )]
     ErrorVideoPictureLayoutNotSupportedKHR = -1000023001,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_VIDEO_PROFILE_OPERATION_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -770,7 +761,6 @@ public enum Result
     )]
     ErrorVideoProfileOperationNotSupportedKHR = -1000023002,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_VIDEO_PROFILE_FORMAT_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -779,7 +769,6 @@ public enum Result
     )]
     ErrorVideoProfileFormatNotSupportedKHR = -1000023003,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_VIDEO_PROFILE_CODEC_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -788,7 +777,6 @@ public enum Result
     )]
     ErrorVideoProfileCodecNotSupportedKHR = -1000023004,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -797,7 +785,6 @@ public enum Result
     )]
     ErrorVideoStdVersionNotSupportedKHR = -1000023005,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ERROR_INVALID_DRM_FORMAT_MODIFIER_PLANE_LAYOUT_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -810,7 +797,6 @@ public enum Result
     )]
     ErrorInvalidDrmFormatModifierPlaneLayoutEXT = -1000158000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ERROR_FULL_SCREEN_EXCLUSIVE_MODE_LOST_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -822,27 +808,22 @@ public enum Result
     )]
     ErrorFullScreenExclusiveModeLostEXT = -1000255000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_THREAD_IDLE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     ThreadIdleKHR = 1000268000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_THREAD_DONE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     ThreadDoneKHR = 1000268001,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OPERATION_DEFERRED_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     OperationDeferredKHR = 1000268002,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_OPERATION_NOT_DEFERRED_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     OperationNotDeferredKHR = 1000268003,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_INVALID_VIDEO_STD_PARAMETERS_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -854,7 +835,6 @@ public enum Result
     )]
     ErrorInvalidVideoStdParametersKHR = -1000299000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ERROR_COMPRESSION_EXHAUSTED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -866,7 +846,6 @@ public enum Result
     )]
     ErrorCompressionExhaustedEXT = -1000338000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_INCOMPATIBLE_SHADER_BINARY_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -879,7 +858,6 @@ public enum Result
     )]
     IncompatibleShaderBinaryEXT = 1000482000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_PIPELINE_BINARY_MISSING_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -891,7 +869,6 @@ public enum Result
     )]
     PipelineBinaryMissingKHR = 1000483000,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_NOT_ENOUGH_SPACE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -903,17 +880,14 @@ public enum Result
     )]
     ErrorNotEnoughSpaceKHR = -1000483000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ERROR_VALIDATION_FAILED_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     ErrorValidationFailedEXT = ErrorValidationFailed,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_OUT_OF_POOL_MEMORY_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
     ErrorOutOfPoolMemoryKHR = ErrorOutOfPoolMemory,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -925,7 +899,6 @@ public enum Result
     )]
     ErrorInvalidExternalHandleKHR = ErrorInvalidExternalHandle,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ERROR_FRAGMENTATION_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -937,12 +910,10 @@ public enum Result
     )]
     ErrorFragmentationEXT = ErrorFragmentation,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ERROR_NOT_PERMITTED_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
     ErrorNotPermittedEXT = ErrorNotPermitted,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_NOT_PERMITTED_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -954,7 +925,6 @@ public enum Result
     )]
     ErrorNotPermittedKHR = ErrorNotPermitted,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ERROR_INVALID_DEVICE_ADDRESS_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -966,7 +936,6 @@ public enum Result
     )]
     ErrorInvalidDeviceAddressEXT = ErrorInvalidOpaqueCaptureAddress,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -978,7 +947,6 @@ public enum Result
     )]
     ErrorInvalidOpaqueCaptureAddressKHR = ErrorInvalidOpaqueCaptureAddress,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_PIPELINE_COMPILE_REQUIRED_EXT")]
     [SupportedApiProfile(
         "vulkan",
@@ -990,7 +958,6 @@ public enum Result
     )]
     PipelineCompileRequiredEXT = PipelineCompileRequired,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("VK_ERROR_PIPELINE_COMPILE_REQUIRED_EXT")]
     [SupportedApiProfile(
         "vulkan",

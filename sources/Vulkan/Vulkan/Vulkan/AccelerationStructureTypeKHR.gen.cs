@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NameAffix("Suffix", "KHR", 0)]
 [NativeName("VkAccelerationStructureTypeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum AccelerationStructureTypeKHR : uint
 {
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public enum AccelerationStructureTypeKHR : uint
     )]
     TopLevelKHR = 0,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +34,6 @@ public enum AccelerationStructureTypeKHR : uint
     )]
     BottomLevelKHR = 1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_GENERIC_KHR")]
     [SupportedApiProfile(
         "vulkan",
@@ -49,7 +45,6 @@ public enum AccelerationStructureTypeKHR : uint
     )]
     GenericKHR = 2,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV")]
     [SupportedApiProfile(
         "vulkan",
@@ -61,7 +56,6 @@ public enum AccelerationStructureTypeKHR : uint
     )]
     TopLevelNV = TopLevelKHR,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV")]
     [SupportedApiProfile(
         "vulkan",
