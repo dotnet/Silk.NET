@@ -10,11 +10,11 @@ namespace Silk.NET.SDL;
 public enum GpuSamplerAddressMode : uint
 {
     [NativeName("SDL_GPU_SAMPLERADDRESSMODE_REPEAT")]
-    Repeat,
+    Repeat = 0,
 
     [NativeName("SDL_GPU_SAMPLERADDRESSMODE_MIRRORED_REPEAT")]
-    MirroredRepeat,
+    MirroredRepeat = 1,
 
     [NativeName("SDL_GPU_SAMPLERADDRESSMODE_CLAMP_TO_EDGE")]
-    ClampToEdge,
+    ClampToEdge = 2,
 }

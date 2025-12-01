@@ -10,29 +10,29 @@ namespace Silk.NET.SDL;
 public enum PackedOrder : uint
 {
     [NativeName("SDL_PACKEDORDER_NONE")]
-    None,
+    None = 0,
 
     [NativeName("SDL_PACKEDORDER_XRGB")]
-    Xrgb,
+    Xrgb = 1,
 
     [NativeName("SDL_PACKEDORDER_RGBX")]
-    Rgbx,
+    Rgbx = 2,
 
     [NativeName("SDL_PACKEDORDER_ARGB")]
-    Argb,
+    Argb = 3,
 
     [NativeName("SDL_PACKEDORDER_RGBA")]
-    Rgba,
+    Rgba = 4,
 
     [NativeName("SDL_PACKEDORDER_XBGR")]
-    Xbgr,
+    Xbgr = 5,
 
     [NativeName("SDL_PACKEDORDER_BGRX")]
-    Bgrx,
+    Bgrx = 6,
 
     [NativeName("SDL_PACKEDORDER_ABGR")]
-    Abgr,
+    Abgr = 7,
 
     [NativeName("SDL_PACKEDORDER_BGRA")]
-    Bgra,
+    Bgra = 8,
 }

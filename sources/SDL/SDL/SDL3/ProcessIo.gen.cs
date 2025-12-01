@@ -12,14 +12,14 @@ namespace Silk.NET.SDL;
 public enum ProcessIo : uint
 {
     [NativeName("SDL_PROCESS_STDIO_INHERITED")]
-    Inherited,
+    Inherited = 0,
 
     [NativeName("SDL_PROCESS_STDIO_NULL")]
-    Null,
+    Null = 1,
 
     [NativeName("SDL_PROCESS_STDIO_APP")]
-    App,
+    App = 2,
 
     [NativeName("SDL_PROCESS_STDIO_REDIRECT")]
-    Redirect,
+    Redirect = 3,
 }

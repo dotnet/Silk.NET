@@ -10,14 +10,14 @@ namespace Silk.NET.SDL;
 public enum GpuSwapchainComposition : uint
 {
     [NativeName("SDL_GPU_SWAPCHAINCOMPOSITION_SDR")]
-    Sdr,
+    Sdr = 0,
 
     [NativeName("SDL_GPU_SWAPCHAINCOMPOSITION_SDR_LINEAR")]
-    SdrLinear,
+    SdrLinear = 1,
 
     [NativeName("SDL_GPU_SWAPCHAINCOMPOSITION_HDR_EXTENDED_LINEAR")]
-    HdrExtendedLinear,
+    HdrExtendedLinear = 2,
 
     [NativeName("SDL_GPU_SWAPCHAINCOMPOSITION_HDR10_ST2084")]
-    Hdr10St2084,
+    Hdr10St2084 = 3,
 }

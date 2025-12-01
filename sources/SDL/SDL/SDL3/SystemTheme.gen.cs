@@ -10,11 +10,11 @@ namespace Silk.NET.SDL;
 public enum SystemTheme : uint
 {
     [NativeName("SDL_SYSTEM_THEME_UNKNOWN")]
-    Unknown,
+    Unknown = 0,
 
     [NativeName("SDL_SYSTEM_THEME_LIGHT")]
-    Light,
+    Light = 1,
 
     [NativeName("SDL_SYSTEM_THEME_DARK")]
-    Dark,
+    Dark = 2,
 }

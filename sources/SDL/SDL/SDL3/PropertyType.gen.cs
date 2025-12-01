@@ -10,20 +10,20 @@ namespace Silk.NET.SDL;
 public enum PropertyType : uint
 {
     [NativeName("SDL_PROPERTY_TYPE_INVALID")]
-    Invalid,
+    Invalid = 0,
 
     [NativeName("SDL_PROPERTY_TYPE_POINTER")]
-    Pointer,
+    Pointer = 1,
 
     [NativeName("SDL_PROPERTY_TYPE_STRING")]
-    String,
+    String = 2,
 
     [NativeName("SDL_PROPERTY_TYPE_NUMBER")]
-    Number,
+    Number = 3,
 
     [NativeName("SDL_PROPERTY_TYPE_FLOAT")]
-    Float,
+    Float = 4,
 
     [NativeName("SDL_PROPERTY_TYPE_BOOLEAN")]
-    Boolean,
+    Boolean = 5,
 }

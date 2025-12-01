@@ -10,20 +10,20 @@ namespace Silk.NET.SDL;
 public enum MessageBoxColorType : uint
 {
     [NativeName("SDL_MESSAGEBOX_COLOR_BACKGROUND")]
-    Background,
+    Background = 0,
 
     [NativeName("SDL_MESSAGEBOX_COLOR_TEXT")]
-    Text,
+    Text = 1,
 
     [NativeName("SDL_MESSAGEBOX_COLOR_BUTTON_BORDER")]
-    ButtonBorder,
+    ButtonBorder = 2,
 
     [NativeName("SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND")]
-    ButtonBackground,
+    ButtonBackground = 3,
 
     [NativeName("SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED")]
-    ButtonSelected,
+    ButtonSelected = 4,
 
     [NativeName("SDL_MESSAGEBOX_COLOR_COUNT")]
-    Count,
+    Count = 5,
 }

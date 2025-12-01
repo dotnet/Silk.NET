@@ -177,8 +177,8 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
             return;
         }
 
-        var referenceDetector = new MemberReferenceDetector();
-        var rewriter = new Rewriter(config, removeMemberFilters, compilation, referenceDetector);
+        var memberRewriteDecider = new MemberRewriteDecider();
+        var rewriter = new Rewriter(config, removeMemberFilters, compilation, memberRewriteDecider);
         foreach (var docId in proj.DocumentIds)
         {
             var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -191,7 +191,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         ctx.SourceProject = proj;
     }
 
-    private class Rewriter(Configuration config, List<EnumMemberFilter> removeMemberFilters, Compilation compilation, MemberReferenceDetector referenceDetector) : CSharpSyntaxRewriter
+    private class Rewriter(Configuration config, List<EnumMemberFilter> removeMemberFilters, Compilation compilation, MemberRewriteDecider memberRewriteDecider) : CSharpSyntaxRewriter
     {
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
@@ -360,16 +360,22 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                             return m;
                         }
 
-                        // Enum member contains a reference
-                        // We want to preserve these
-                        referenceDetector.Visit(m.EqualsValue);
-                        if (referenceDetector.ContainsReference)
+                        if (m.EqualsValue != null)
                         {
-                            return m;
+                            memberRewriteDecider.Visit(m.EqualsValue);
+                            if (!memberRewriteDecider.ShouldRewrite)
+                            {
+                                return m;
+                            }
                         }
 
                         var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
                         if (fieldSymbol == null)
+                        {
+                            return m;
+                        }
+
+                        if (fieldSymbol.ConstantValue == null)
                         {
                             return m;
                         }
@@ -394,20 +400,38 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         }
     }
 
-    private class MemberReferenceDetector : CSharpSyntaxWalker
+    private class MemberRewriteDecider : CSharpSyntaxWalker
     {
-        public bool ContainsReference { get; private set; }
+        /// <summary>
+        /// Whether the enum member's value should be rewritten to be simpler.
+        /// We default to rewriting the member value, but do not if the enum member contains important information.
+        /// <para/>
+        /// Currently, there is only 1 case.
+        /// <para/>
+        /// Case 1: References to enum members or constants. Eg: <c>NoneKHR = None</c> in Vulkan.
+        /// We approximate this by checking for identifiers in the <see cref="EqualsValueClauseSyntax"/>.
+        /// </summary>
+        public bool ShouldRewrite { get; private set; }
 
         public override void VisitEqualsValueClause(EqualsValueClauseSyntax node)
         {
-            ContainsReference = false;
+            ShouldRewrite = true;
             base.VisitEqualsValueClause(node);
         }
 
         public override void VisitIdentifierName(IdentifierNameSyntax node)
         {
             base.VisitIdentifierName(node);
-            ContainsReference = true;
+            ShouldRewrite = false;
+        }
+
+        public override void VisitCastExpression(CastExpressionSyntax node)
+        {
+            // Ignore cast expressions
+            // These contain identifiers, but these identifiers are references to types.
+            //
+            // Eg: DepthBufferBit = unchecked((uint)0x00000100)
+            // uint is an identifier, but we want to rewrite this anyway
         }
     }
 }

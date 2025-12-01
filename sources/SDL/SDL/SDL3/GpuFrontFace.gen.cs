@@ -10,8 +10,8 @@ namespace Silk.NET.SDL;
 public enum GpuFrontFace : uint
 {
     [NativeName("SDL_GPU_FRONTFACE_COUNTER_CLOCKWISE")]
-    CounterClockwise,
+    CounterClockwise = 0,
 
     [NativeName("SDL_GPU_FRONTFACE_CLOCKWISE")]
-    Clockwise,
+    Clockwise = 1,
 }
