@@ -1,7 +1,7 @@
 ﻿using NAudio.Wave;
 using Silk.NET.OpenAL;
 
-// NOTE: If you prefer, you can use the static ALContext and AL functions instead of creating an API object!
+// NOTE: If you prefer, you can use the static AlContext and Al functions instead of creating an API object!
 // Learn more: https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings
 var alc = AlContext.Create(); // TODO disposable
 
