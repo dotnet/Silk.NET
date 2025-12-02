@@ -228,6 +228,38 @@ public static class AttributeUtils
     }
 
     /// <summary>
+    /// Gets the native name or returns the specified default.
+    /// </summary>
+    /// <remarks>
+    /// The default usually should be the node's identifier.
+    /// </remarks>
+    public static string GetNativeNameOrDefault(this IEnumerable<AttributeListSyntax> attributeLists, SyntaxToken identifier)
+    {
+        if (TryGetNativeName(attributeLists, out var nativeName))
+        {
+            return nativeName;
+        }
+
+        return identifier.ToString();
+    }
+
+    /// <summary>
+    /// Gets the native name or returns the specified default.
+    /// </summary>
+    /// <remarks>
+    /// The default usually should be the node's identifier.
+    /// </remarks>
+    public static string GetNativeNameOrDefault(this IEnumerable<AttributeListSyntax> attributeLists, string defaultName)
+    {
+        if (TryGetNativeName(attributeLists, out var nativeName))
+        {
+            return nativeName;
+        }
+
+        return defaultName;
+    }
+
+    /// <summary>
     /// Gets the value of the native name attribute from the given attribute list.
     /// </summary>
     public static bool TryGetNativeName(this IEnumerable<AttributeListSyntax> attributeLists, [NotNullWhen(true)] out string? nativeName)

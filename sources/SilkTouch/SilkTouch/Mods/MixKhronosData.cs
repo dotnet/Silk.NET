@@ -2041,7 +2041,7 @@ public partial class MixKhronosData(
     {
         private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
         {
-            var name = attributeLists.TryGetNativeName(out var nativeName) ? nativeName : identifier.Text;
+            var name = attributeLists.GetNativeNameOrDefault(identifier);
 
             var handleSuffix = "_T";
             if (name.EndsWith(handleSuffix))
