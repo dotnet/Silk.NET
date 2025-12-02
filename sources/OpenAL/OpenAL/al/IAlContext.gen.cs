@@ -245,7 +245,7 @@ public unsafe partial interface IAlContext
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        static abstract void GetInteger(
+        static abstract void GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1,
             [NativeName("size")] int size,
@@ -255,7 +255,7 @@ public unsafe partial interface IAlContext
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        static abstract void GetInteger(
+        static abstract void GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1,
             [NativeName("size")] int size,
@@ -265,7 +265,7 @@ public unsafe partial interface IAlContext
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        static abstract int GetInteger(
+        static abstract int GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1
         );
@@ -719,7 +719,7 @@ public unsafe partial interface IAlContext
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-    void GetInteger(
+    void GetIntegerv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("param1")] int param1,
         [NativeName("size")] int size,
@@ -729,7 +729,7 @@ public unsafe partial interface IAlContext
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-    void GetInteger(
+    void GetIntegerv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("param1")] int param1,
         [NativeName("size")] int size,
@@ -739,7 +739,7 @@ public unsafe partial interface IAlContext
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-    int GetInteger([NativeName("device")] DeviceHandle device, [NativeName("param1")] int param1);
+    int GetIntegerv([NativeName("device")] DeviceHandle device, [NativeName("param1")] int param1);
 
     [NativeName("alcGetProcAddress")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]

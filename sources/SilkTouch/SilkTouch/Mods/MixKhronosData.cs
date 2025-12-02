@@ -1182,8 +1182,6 @@ public partial class MixKhronosData(
         }
     }
 
-    private bool _outputVendorInformationWarning = false;
-
     /// <inheritdoc />
     public void Trim(NameTrimmerContext context)
     {
@@ -1199,120 +1197,21 @@ public partial class MixKhronosData(
             );
         }
 
-        if (job.Vendors.Count == 0 && !_outputVendorInformationWarning)
-        {
-            _outputVendorInformationWarning = true;
-            logger.LogWarning(
-                "No vendor information present, assuming no XML was provided? Extension trimming will be skipped."
-            );
-        }
-
-        // Trim the extension vendor names
         foreach (var (original, (current, previous)) in context.Names)
         {
-            // GLEnum is obviously trimmed, and we don't really want to do that.
+            // Prevent enums like GLEnum from having their prefix trimmed
             if (context.Container is null)
             {
-                var changed = false;
                 foreach (var name in (IEnumerable<string>)[current, .. previous ?? []])
                 {
-                    if (
-                        job.Groups.TryGetValue(name, out var group)
-                        && name == $"{group.Namespace}Enum"
-                    )
+                    if (job.Groups.TryGetValue(name, out var group)
+                        && name == $"{group.Namespace}Enum")
                     {
                         context.Names[original] = new CandidateNames(name, null);
-                        changed = true;
                         break;
                     }
                 }
-
-                if (changed)
-                {
-                    continue;
-                }
             }
-
-            var newCurrent = current;
-            List<string>? newPrev = null;
-            string? identifiedVendor = null;
-            var trimVendor = false;
-            foreach (var vendor in job.Vendors ?? [])
-            {
-                if (!current.EndsWith(vendor))
-                {
-                    continue;
-                }
-
-                newCurrent = current[..^vendor.Length];
-                var newOriginal = original[..^vendor.Length];
-                // Sometimes we should keep the vendor prefix so we prefer the promoted functions.
-                // ----------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv--------------------------------------
-                trimVendor =
-                    !context.Names.ContainsKey(newOriginal)
-                    && context.Container is not null
-                    && job.Groups.TryGetValue(context.Container, out var group)
-                    && group.ExclusiveVendor == vendor;
-                if (trimVendor)
-                {
-                    newPrev ??= previous ?? [];
-                    newPrev.Add(current);
-                    context.Names[original] = new CandidateNames(newCurrent, newPrev);
-                }
-
-                identifiedVendor = vendor;
-                break;
-            }
-
-            // If we have an additional non-vendor suffix (e.g. al*Direct) then let's trim it before we try to do the
-            // data type trimming
-            string? identifiedSuffix = null;
-            foreach (var suffix in job.Configuration.IgnoreNonVendorSuffixes ?? [])
-            {
-                if (newCurrent.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
-                {
-                    identifiedSuffix = suffix;
-                    newCurrent = newCurrent[..^suffix.Length];
-                    break;
-                }
-            }
-
-            if (
-                !job.Configuration.UseDataTypeTrimmings // don't trim data types
-                || context.Container is null // don't trim type names
-                || newCurrent.Count(x => x == '_') > 1 // is probably an enum
-                || EndingsToTrim().Match(newCurrent) is not { Success: true } match // we don't have a data type suffix
-                || EndingsNotToTrim().IsMatch(newCurrent) // we need to keep it
-            )
-            {
-                continue;
-            }
-
-            newPrev ??= previous ?? [];
-            var newPrim = newCurrent.Remove(match.Index);
-            newPrim += identifiedSuffix;
-            if (identifiedVendor is not null && trimVendor)
-            {
-                // If the only difference between this function and other functions that could conflict is the vendor,
-                // it would be extremely confusing if the difference between e.g. a NV function and a non-NV function
-                // was one had data type suffixes and the other didn't. Therefore, let's add the new name but with the
-                // vendor added as the first secondary (e.g. for glVertex2bOES we first try Vertex2OES). If that doesn't
-                // work, we still have the original one (modulo GL prefix) that we added to the secondary list when
-                // originally trimming the vendor.
-                newPrev.Add(newPrim + identifiedVendor);
-            }
-            else
-            {
-                // If trimVendor is false, add the vendor back. We're not trimming vendors so the only other secondary
-                // we have is the original current name i.e. primary = glVertex2OES, secondary = glVertex2bOES, which
-                // WOULDN'T be in the secondary list already per the if trimVendor above. If we're hitting this else
-                // because we haven't identified a vendor, then we're just appending null to this string which does
-                // nothing and is effectively equivalent to us having primary = glVertex2, secondary = glVertex2b
-                newPrim += identifiedVendor;
-                newPrev.Add(current);
-            }
-
-            context.Names[original] = new CandidateNames(newPrim, newPrev);
         }
     }
 
