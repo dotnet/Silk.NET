@@ -147,14 +147,14 @@
         ]
       },
       "MixKhronosData": {
-        "UseDataTypeTrimmings": true,
         "SpecPath": "eng/submodules/opengl/xml/gl.xml",
+        "Namespace": "Silk.NET.OpenGL",
         "TypeMap": {
           "TraceMaskMESA": "uint",
           "PathRenderingTokenNV": "byte",
           "PathCoordType": "byte"
         },
-        "Namespace": "Silk.NET.OpenGL"
+        "TrimDataTypes": true
       },
       "AddVTables": {
         "VTables": [
@@ -228,12 +228,7 @@
         }
       },
       "MixKhronosData": {
-        "UseDataTypeTrimmings": true,
         "SpecPath": "eng/submodules/openal-soft/registry/xml/al.xml",
-        "EnumNativeTypeNames": {
-          "ALenum": "AlEnum",
-          "ALCenum": "AlcEnum"
-        },
         "Namespace": "Silk.NET.OpenAL",
         "NonStandardExtensionNomenclature": true,
         "Vendors": [
@@ -241,12 +236,13 @@
           "LOKI",
           "EXT"
         ],
+        "ExcludeVendorSuffixIdentification": [
+          "ALC_INVALID_CONTEXT"
+        ],
         "IgnoreNonVendorSuffixes": [
           "Direct"
         ],
-        "ExcludeVendorSuffixIdentification": [
-          "ALC_INVALID_CONTEXT"
-        ]
+        "TrimDataTypes": true
       },
       "InterceptNativeFunctions": {
         "NativeFunctionNames": [

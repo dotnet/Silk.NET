@@ -36,14 +36,6 @@ public partial class MixKhronosData(
     internal ConcurrentDictionary<string, JobData> Jobs = new();
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
-    private static readonly Dictionary<string, string> _defaultEnumNativeTypeNameMaps =
-        new()
-        {
-            { "GLenum", "GLEnum" },
-            { "EGLenum", "EGLEnum" },
-            { "GLbitfield", "GLEnum" },
-        };
-
     internal class JobData
     {
         /// <summary>
@@ -146,25 +138,14 @@ public partial class MixKhronosData(
         public string? SpecPath { get; init; }
 
         /// <summary>
-        /// Whether OpenGL-style data type suffixes should be trimmed.
+        /// Default namespace for enums.
         /// </summary>
-        public bool UseDataTypeTrimmings { get; init; }
-
-        /// <summary>
-        /// A map of native type names to group names.
-        /// </summary>
-        public Dictionary<string, string> EnumNativeTypeNames { get; init; } =
-            _defaultEnumNativeTypeNameMaps;
+        public string? Namespace { get; init; }
 
         /// <summary>
         /// A map of native type names to C# type names. This is mostly used for determining enum backing types.
         /// </summary>
         public Dictionary<string, string>? TypeMap { get; init; }
-
-        /// <summary>
-        /// Default namespace for enums.
-        /// </summary>
-        public string? Namespace { get; init; }
 
         /// <summary>
         /// The base type used for flags/bitmask enums.
@@ -188,13 +169,6 @@ public partial class MixKhronosData(
         public List<string>? Vendors { get; init; }
 
         /// <summary>
-        /// Additional suffixes that may follow a data type suffix but precede a vendor suffix that should be ignored
-        /// when determining a data type suffix to trim when <see cref="UseDataTypeTrimmings"/> is on. For example,
-        /// <c>Direct</c> for OpenAL.
-        /// </summary>
-        public List<string>? IgnoreNonVendorSuffixes { get; init; }
-
-        /// <summary>
         /// The priority with which vendor suffixes are applied.
         /// </summary>
         public int VendorSuffixPriority { get; init; } = 0;
@@ -206,6 +180,23 @@ public partial class MixKhronosData(
         /// See <see cref="RewriterPhase3"/>.
         /// </remarks>
         public HashSet<string> ExcludeVendorSuffixIdentification { get; init; } = [];
+
+        /// <summary>
+        /// Additional suffixes that may follow a data type suffix but precede a vendor suffix that should be ignored
+        /// when determining a data type suffix to trim when <see cref="TrimDataTypes"/> is on. For example,
+        /// <c>Direct</c> for OpenAL.
+        /// </summary>
+        public List<string>? IgnoreNonVendorSuffixes { get; init; }
+
+        /// <summary>
+        /// The priority with which non-vendor suffixes are applied.
+        /// </summary>
+        public int NonVendorSuffixPriority { get; init; } = 0;
+
+        /// <summary>
+        /// Whether OpenGL-style data type suffixes should be trimmed.
+        /// </summary>
+        public bool TrimDataTypes { get; init; }
     }
 
     /// <inheritdoc />
