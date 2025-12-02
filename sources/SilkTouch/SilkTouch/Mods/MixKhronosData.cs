@@ -1207,46 +1207,6 @@ public partial class MixKhronosData(
             );
         }
 
-        // NameTrimmer trims member names by looking for a common prefix and removing it
-        // This sometimes trims too much and leads to only the vendor suffix remaining
-        // This is bad because the next block of code removes the vendor suffix, leaving only an empty string or underscore
-        // This means we have to rewind back to the previous name (minus the prefix, such as GL_)
-        var rewind = false;
-        if (context.Container is not null && job.Groups.ContainsKey(context.Container))
-        {
-            foreach (var (_, (current, previous)) in context.Names)
-            {
-                var prev = previous?.FirstOrDefault();
-                if (prev is not null && (job.Vendors?.Contains(current.Trim('_')) ?? false)
-                )
-                {
-                    rewind = true;
-
-                    break;
-                }
-            }
-        }
-
-        if (rewind)
-        {
-            foreach (var (original, (_, previous)) in context.Names)
-            {
-                var prev = previous?.FirstOrDefault() ?? original;
-                var prevList = previous ?? [];
-                var next = prev[(prev.IndexOf('_') + 1)..];
-                if (next == prev)
-                {
-                    prevList.Remove(prev);
-                }
-                else if (!prevList.Contains(prev))
-                {
-                    prevList.Add(prev);
-                }
-
-                context.Names[original] = new CandidateNames(prev[(prev.IndexOf('_') + 1)..], prevList);
-            }
-        }
-
         // Trim the extension vendor names
         foreach (var (original, (current, previous)) in context.Names)
         {
