@@ -58,7 +58,7 @@ Al.ThrowError();
 
 // Configure the audio source to loop its audio, and play it!
 // TODO this is crap - we should have a boolean overload.
-Al.Source(source, (ALEnum)SourceBoolean.Looping, 1);
+Al.Source(source, (AlEnum)SourceBoolean.Looping, 1);
 Al.Source(source, SourceInteger.Buffer, (int)buffer);
 Al.SourcePlay(source);
 Al.ThrowError();
