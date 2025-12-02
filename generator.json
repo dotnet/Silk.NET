@@ -243,6 +243,9 @@
         ],
         "IgnoreNonVendorSuffixes": [
           "Direct"
+        ],
+        "ExcludeVendorSuffixIdentification": [
+          "ALC_INVALID_CONTEXT"
         ]
       },
       "InterceptNativeFunctions": {
