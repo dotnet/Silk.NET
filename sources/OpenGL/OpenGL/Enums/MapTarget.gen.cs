@@ -64,9 +64,11 @@ public enum MapTarget : uint
     [NativeName("GL_MAP2_VERTEX_4")]
     Map2Vertex4 = unchecked((uint)0x0DB8),
 
+    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_GEOMETRY_DEFORMATION_SGIX")]
     GeometryDeformationSGIX = unchecked((uint)0x8194),
 
+    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_DEFORMATION_SGIX")]
     TextureDeformationSGIX = unchecked((uint)0x8195),
 }

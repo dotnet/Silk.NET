@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "NV", 0)]
 [NativeName("EvalTargetNV")]
 public enum EvalTargetNV : uint
 {
+    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_EVAL_2D_NV")]
-    Eval2DNV = unchecked((uint)0x86C0),
+    Eval2D = unchecked((uint)0x86C0),
 
+    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_EVAL_TRIANGULAR_2D_NV")]
-    EvalTriangular2DNV = unchecked((uint)0x86C1),
+    EvalTriangular2D = unchecked((uint)0x86C1),
 }

@@ -7,15 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "ATI", 0)]
 [NativeName("PNTrianglesPNameATI")]
 public enum PnTrianglesPNameATI : uint
 {
+    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_PN_TRIANGLES_POINT_MODE_ATI")]
-    PointModeATI = 34802,
+    PointMode = 34802,
 
+    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_PN_TRIANGLES_NORMAL_MODE_ATI")]
-    NormalModeATI = 34803,
+    NormalMode = 34803,
 
+    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_PN_TRIANGLES_TESSELATION_LEVEL_ATI")]
-    TesselationLevelATI = 34804,
+    TesselationLevel = 34804,
 }

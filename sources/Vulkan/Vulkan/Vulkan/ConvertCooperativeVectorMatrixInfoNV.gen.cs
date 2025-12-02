@@ -87,7 +87,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public ComponentTypeKHR SrcComponentType;
+    public ComponentType SrcComponentType;
 
     [NativeName("dstComponentType")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public unsafe partial struct ConvertCooperativeVectorMatrixInfoNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public ComponentTypeKHR DstComponentType;
+    public ComponentType DstComponentType;
 
     [NativeName("numRows")]
     [SupportedApiProfile(

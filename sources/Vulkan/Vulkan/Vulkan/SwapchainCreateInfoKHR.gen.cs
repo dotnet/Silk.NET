@@ -38,7 +38,7 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeName("imageColorSpace")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public ColorSpaceKHR ImageColorSpace;
+    public ColorSpace ImageColorSpace;
 
     [NativeName("imageExtent")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
@@ -74,7 +74,7 @@ public unsafe partial struct SwapchainCreateInfoKHR
 
     [NativeName("presentMode")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
-    public PresentModeKHR PresentMode;
+    public PresentMode PresentMode;
 
     [NativeName("clipped")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]

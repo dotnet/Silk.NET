@@ -14,17 +14,17 @@ namespace Silk.NET.OpenAL;
 public enum DebugSeverityEXT : uint
 {
     [NativeName("AL_DONT_CARE_EXT")]
-    DontCareEXT = unchecked((uint)0x0002),
+    DontCare = unchecked((uint)0x0002),
 
     [NativeName("AL_DEBUG_SEVERITY_HIGH_EXT")]
-    DebugSeverityHighEXT = unchecked((uint)0x19C3),
+    DebugSeverityHigh = unchecked((uint)0x19C3),
 
     [NativeName("AL_DEBUG_SEVERITY_MEDIUM_EXT")]
-    DebugSeverityMediumEXT = unchecked((uint)0x19C4),
+    DebugSeverityMedium = unchecked((uint)0x19C4),
 
     [NativeName("AL_DEBUG_SEVERITY_LOW_EXT")]
-    DebugSeverityLowEXT = unchecked((uint)0x19C5),
+    DebugSeverityLow = unchecked((uint)0x19C5),
 
     [NativeName("AL_DEBUG_SEVERITY_NOTIFICATION_EXT")]
-    DebugSeverityNotificationEXT = unchecked((uint)0x19C6),
+    DebugSeverityNotification = unchecked((uint)0x19C6),
 }

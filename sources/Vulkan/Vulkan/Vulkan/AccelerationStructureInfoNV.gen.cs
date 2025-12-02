@@ -43,7 +43,7 @@ public unsafe partial struct AccelerationStructureInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public AccelerationStructureTypeKHR Type;
+    public AccelerationStructureType Type;
 
     [NativeName("flags")]
     [SupportedApiProfile(

@@ -7,15 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "EXT", 0)]
 [NativeName("DataTypeEXT")]
 public enum DataTypeEXT : uint
 {
+    [NameAffix("Suffix", "EXT", -1)]
     [NativeName("GL_SCALAR_EXT")]
-    ScalarEXT = unchecked((uint)0x87BE),
+    Scalar = unchecked((uint)0x87BE),
 
+    [NameAffix("Suffix", "EXT", -1)]
     [NativeName("GL_VECTOR_EXT")]
-    VectorEXT = unchecked((uint)0x87BF),
+    Vector = unchecked((uint)0x87BF),
 
+    [NameAffix("Suffix", "EXT", -1)]
     [NativeName("GL_MATRIX_EXT")]
-    MatrixEXT = unchecked((uint)0x87C0),
+    Matrix = unchecked((uint)0x87C0),
 }

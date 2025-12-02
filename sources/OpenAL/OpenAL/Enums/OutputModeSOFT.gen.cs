@@ -14,23 +14,23 @@ namespace Silk.NET.OpenAL;
 public enum OutputModeSOFT : uint
 {
     [NativeName("ALC_ANY_SOFT")]
-    AnySOFT = unchecked((uint)0x19AD),
+    Any = unchecked((uint)0x19AD),
 
     [NativeName("ALC_STEREO_BASIC_SOFT")]
-    StereoBasicSOFT = unchecked((uint)0x19AE),
+    StereoBasic = unchecked((uint)0x19AE),
 
     [NativeName("ALC_STEREO_UHJ_SOFT")]
-    StereoUhjSOFT = unchecked((uint)0x19AF),
+    StereoUhj = unchecked((uint)0x19AF),
 
     [NativeName("ALC_STEREO_HRTF_SOFT")]
-    StereoHrtfSOFT = unchecked((uint)0x19B2),
+    StereoHrtf = unchecked((uint)0x19B2),
 
     [NativeName("ALC_SURROUND_5_1_SOFT")]
-    Surround5X1SOFT = unchecked((uint)0x1504),
+    Surround5X1 = unchecked((uint)0x1504),
 
     [NativeName("ALC_SURROUND_6_1_SOFT")]
-    Surround6X1SOFT = unchecked((uint)0x1505),
+    Surround6X1 = unchecked((uint)0x1505),
 
     [NativeName("ALC_SURROUND_7_1_SOFT")]
-    Surround7X1SOFT = unchecked((uint)0x1506),
+    Surround7X1 = unchecked((uint)0x1506),
 }

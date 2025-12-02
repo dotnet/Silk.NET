@@ -13,9 +13,11 @@ public enum PathFontStyle : uint
     [NativeName("GL_NONE")]
     None = unchecked((uint)0),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BOLD_BIT_NV")]
     BoldBitNV = unchecked((uint)0x01),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ITALIC_BIT_NV")]
     ItalicBitNV = unchecked((uint)0x02),
 }

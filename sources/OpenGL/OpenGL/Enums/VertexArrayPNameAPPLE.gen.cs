@@ -7,15 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "APPLE", 0)]
 [NativeName("VertexArrayPNameAPPLE")]
 public enum VertexArrayPNameAPPLE : uint
 {
+    [NameAffix("Suffix", "APPLE", -1)]
     [NativeName("GL_STORAGE_CACHED_APPLE")]
-    CachedAPPLE = unchecked((uint)0x85BE),
+    Cached = unchecked((uint)0x85BE),
 
+    [NameAffix("Suffix", "APPLE", -1)]
     [NativeName("GL_STORAGE_SHARED_APPLE")]
-    SharedAPPLE = unchecked((uint)0x85BF),
+    Shared = unchecked((uint)0x85BF),
 
+    [NameAffix("Suffix", "APPLE", -1)]
     [NativeName("GL_STORAGE_CLIENT_APPLE")]
-    ClientAPPLE = unchecked((uint)0x85B4),
+    Client = unchecked((uint)0x85B4),
 }

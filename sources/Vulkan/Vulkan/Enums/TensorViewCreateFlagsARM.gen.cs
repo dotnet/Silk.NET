@@ -15,5 +15,5 @@ public enum TensorViewCreateFlagsARM : ulong
     None = 0x0,
 
     [NativeName("VK_TENSOR_VIEW_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_ARM")]
-    DescriptorBufferCaptureReplayBitARM = 0x1,
+    DescriptorBufferCaptureReplayBit = 0x1,
 }

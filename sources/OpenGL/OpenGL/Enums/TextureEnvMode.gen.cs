@@ -28,9 +28,11 @@ public enum TextureEnvMode : uint
     [NativeName("GL_COMBINE")]
     Combine = unchecked((uint)0x8570),
 
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_REPLACE_EXT")]
     ReplaceEXT = unchecked((uint)0x8062),
 
+    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_ENV_BIAS_SGIX")]
     TextureEnvBiasSGIX = unchecked((uint)0x80BE),
 }

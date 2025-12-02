@@ -42,5 +42,5 @@ public unsafe partial struct SurfacePresentModeKHR
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    public PresentModeKHR PresentMode;
+    public PresentMode PresentMode;
 }

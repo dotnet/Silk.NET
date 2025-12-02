@@ -43,7 +43,7 @@ public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureTypeKHR Type;
+    public AccelerationStructureType Type;
 
     [NativeName("flags")]
     [SupportedApiProfile(

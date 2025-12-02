@@ -21,7 +21,7 @@ public enum ShaderCodeTypeEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    BinaryEXT = 0,
+    Binary = 0,
 
     [NativeName("VK_SHADER_CODE_TYPE_SPIRV_EXT")]
     [SupportedApiProfile(
@@ -33,5 +33,5 @@ public enum ShaderCodeTypeEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    SpirvEXT = 1,
+    Spirv = 1,
 }

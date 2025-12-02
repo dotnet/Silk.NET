@@ -10,6 +10,7 @@ namespace Silk.NET.OpenGL;
 [NativeName("RenderbufferTarget")]
 public enum RenderbufferTarget : uint
 {
+    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_OES")]
     RenderbufferOES = unchecked((uint)0x8D41),
 

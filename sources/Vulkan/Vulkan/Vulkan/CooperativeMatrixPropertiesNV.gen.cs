@@ -76,7 +76,7 @@ public unsafe partial struct CooperativeMatrixPropertiesNV
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public ComponentTypeKHR AType;
+    public ComponentType AType;
 
     [NativeName("BType")]
     [SupportedApiProfile(
@@ -87,7 +87,7 @@ public unsafe partial struct CooperativeMatrixPropertiesNV
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public ComponentTypeKHR BType;
+    public ComponentType BType;
 
     [NativeName("CType")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public unsafe partial struct CooperativeMatrixPropertiesNV
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public ComponentTypeKHR CType;
+    public ComponentType CType;
 
     [NativeName("DType")]
     [SupportedApiProfile(
@@ -109,7 +109,7 @@ public unsafe partial struct CooperativeMatrixPropertiesNV
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public ComponentTypeKHR DType;
+    public ComponentType DType;
 
     [NativeName("scope")]
     [SupportedApiProfile(
@@ -120,5 +120,5 @@ public unsafe partial struct CooperativeMatrixPropertiesNV
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public ScopeKHR Scope;
+    public Scope Scope;
 }

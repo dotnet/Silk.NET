@@ -16,6 +16,7 @@ public enum ReadBufferMode : uint
     [NativeName("GL_BACK")]
     Back = unchecked((uint)0x0405),
 
+    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_NONE_OES")]
     NoneOES = unchecked((uint)0),
 

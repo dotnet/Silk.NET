@@ -10,6 +10,7 @@ namespace Silk.NET.OpenGL;
 [NativeName("TextureEnvTarget")]
 public enum TextureEnvTarget : uint
 {
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_ENV")]
     TextureENV = unchecked((uint)0x2300),
 

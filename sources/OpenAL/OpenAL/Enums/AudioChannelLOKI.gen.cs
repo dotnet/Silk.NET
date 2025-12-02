@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum AudioChannelLOKI : uint
 {
     [NativeName("ALC_CHAN_MAIN_LOKI")]
-    MainLOKI = unchecked((uint)0x500001),
+    Main = unchecked((uint)0x500001),
 
     [NativeName("ALC_CHAN_PCM_LOKI")]
-    PcmLOKI = unchecked((uint)0x500002),
+    Pcm = unchecked((uint)0x500002),
 
     [NativeName("ALC_CHAN_CD_LOKI")]
-    CdLOKI = unchecked((uint)0x500003),
+    Cd = unchecked((uint)0x500003),
 }

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "IBM", 0)]
 [NativeName("FogPointerTypeIBM")]
 public enum FogPointerTypeIBM : uint
 {

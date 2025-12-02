@@ -19,7 +19,7 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    CloneEXT = 0,
+    Clone = 0,
 
     [NativeName("VK_COPY_MICROMAP_MODE_SERIALIZE_EXT")]
     [SupportedApiProfile(
@@ -30,7 +30,7 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    SerializeEXT = 1,
+    Serialize = 1,
 
     [NativeName("VK_COPY_MICROMAP_MODE_DESERIALIZE_EXT")]
     [SupportedApiProfile(
@@ -41,7 +41,7 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    DeserializeEXT = 2,
+    Deserialize = 2,
 
     [NativeName("VK_COPY_MICROMAP_MODE_COMPACT_EXT")]
     [SupportedApiProfile(
@@ -52,5 +52,5 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    CompactEXT = 3,
+    Compact = 3,
 }

@@ -10,9 +10,11 @@ namespace Silk.NET.OpenGL;
 [NativeName("ContainerType")]
 public enum ContainerType : uint
 {
+    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_OBJECT_ARB")]
     Arb = unchecked((uint)0x8B40),
 
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROGRAM_OBJECT_EXT")]
     Ext = unchecked((uint)0x8B40),
 }

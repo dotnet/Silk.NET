@@ -13,21 +13,27 @@ public enum MapBufferAccessMask : uint
 {
     None = 0x0,
 
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_READ_BIT_EXT")]
     ReadBitEXT = unchecked((uint)0x0001),
 
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_WRITE_BIT_EXT")]
     WriteBitEXT = unchecked((uint)0x0002),
 
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
     InvalidateRangeBitEXT = unchecked((uint)0x0004),
 
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
     InvalidateBufferBitEXT = unchecked((uint)0x0008),
 
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
     FlushExplicitBitEXT = unchecked((uint)0x0010),
 
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
     UnsynchronizedBitEXT = unchecked((uint)0x0020),
 
@@ -55,9 +61,11 @@ public enum MapBufferAccessMask : uint
     [NativeName("GL_MAP_COHERENT_BIT")]
     CoherentBit = unchecked((uint)0x0080),
 
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
     PersistentBitEXT = unchecked((uint)0x0040),
 
+    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_COHERENT_BIT_EXT")]
     CoherentBitEXT = unchecked((uint)0x0080),
 }

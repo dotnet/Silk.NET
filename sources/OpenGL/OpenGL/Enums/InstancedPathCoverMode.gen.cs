@@ -10,15 +10,19 @@ namespace Silk.NET.OpenGL;
 [NativeName("InstancedPathCoverMode")]
 public enum InstancedPathCoverMode : uint
 {
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FILL_COVER_MODE_NV")]
     PathFillCoverModeNV = unchecked((uint)0x9082),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONVEX_HULL_NV")]
     ConvexHullNV = unchecked((uint)0x908B),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BOUNDING_BOX_NV")]
     BoundingBoxNV = unchecked((uint)0x908D),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BOUNDING_BOX_OF_BOUNDING_BOXES_NV")]
     BoundingBoxOfBoundingBoxesNV = unchecked((uint)0x909C),
 }

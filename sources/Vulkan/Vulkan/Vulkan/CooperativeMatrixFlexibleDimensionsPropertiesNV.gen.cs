@@ -58,7 +58,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public ComponentTypeKHR AType;
+    public ComponentType AType;
 
     [NativeName("BType")]
     [SupportedApiProfile(
@@ -66,7 +66,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public ComponentTypeKHR BType;
+    public ComponentType BType;
 
     [NativeName("CType")]
     [SupportedApiProfile(
@@ -74,7 +74,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public ComponentTypeKHR CType;
+    public ComponentType CType;
 
     [NativeName("ResultType")]
     [SupportedApiProfile(
@@ -82,7 +82,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public ComponentTypeKHR ResultType;
+    public ComponentType ResultType;
 
     [NativeName("saturatingAccumulation")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
         ["VK_NV_cooperative_matrix2"],
         ImpliesSets = ["VK_KHR_cooperative_matrix"]
     )]
-    public ScopeKHR Scope;
+    public Scope Scope;
 
     [NativeName("workgroupInvocations")]
     [SupportedApiProfile(

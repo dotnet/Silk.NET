@@ -22,6 +22,7 @@ public enum PathGenMode : uint
     [NativeName("GL_OBJECT_LINEAR")]
     ObjectLinear = unchecked((uint)0x2401),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_OBJECT_BOUNDING_BOX_NV")]
     PathObjectBoundingBoxNV = unchecked((uint)0x908A),
 }

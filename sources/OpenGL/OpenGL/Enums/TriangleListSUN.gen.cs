@@ -7,15 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "SUN", 0)]
 [NativeName("TriangleListSUN")]
 public enum TriangleListSUN : uint
 {
+    [NameAffix("Suffix", "SUN", -1)]
     [NativeName("GL_RESTART_SUN")]
-    RestartSUN = unchecked((uint)0x0001),
+    Restart = unchecked((uint)0x0001),
 
+    [NameAffix("Suffix", "SUN", -1)]
     [NativeName("GL_REPLACE_MIDDLE_SUN")]
-    ReplaceMiddleSUN = unchecked((uint)0x0002),
+    ReplaceMiddle = unchecked((uint)0x0002),
 
+    [NameAffix("Suffix", "SUN", -1)]
     [NativeName("GL_REPLACE_OLDEST_SUN")]
-    ReplaceOldestSUN = unchecked((uint)0x0003),
+    ReplaceOldest = unchecked((uint)0x0003),
 }

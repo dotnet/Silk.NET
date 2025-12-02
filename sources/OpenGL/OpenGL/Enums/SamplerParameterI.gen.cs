@@ -20,6 +20,7 @@ public enum SamplerParameterI : uint
     WrapS = unchecked((uint)0x2802),
 
     [NativeName("GL_TEXTURE_WRAP")]
+    [NameAffix("Suffix", "_T", -1)]
     Wrap = unchecked((uint)0x2803),
 
     [NativeName("GL_TEXTURE_WRAP_R")]
@@ -31,6 +32,7 @@ public enum SamplerParameterI : uint
     [NativeName("GL_TEXTURE_COMPARE_FUNC")]
     CompareFunc = unchecked((uint)0x884D),
 
+    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
     UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
 }

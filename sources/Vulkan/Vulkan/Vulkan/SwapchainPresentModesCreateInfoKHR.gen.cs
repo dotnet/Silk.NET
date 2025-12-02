@@ -58,5 +58,5 @@ public unsafe partial struct SwapchainPresentModesCreateInfoKHR
             "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
         ]
     )]
-    public PresentModeKHR* PPresentModes;
+    public PresentMode* PPresentModes;
 }

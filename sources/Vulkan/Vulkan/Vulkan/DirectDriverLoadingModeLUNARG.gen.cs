@@ -14,9 +14,9 @@ public enum DirectDriverLoadingModeLUNARG : uint
 {
     [NativeName("VK_DIRECT_DRIVER_LOADING_MODE_EXCLUSIVE_LUNARG")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
-    ExclusiveLUNARG = 0,
+    Exclusive = 0,
 
     [NativeName("VK_DIRECT_DRIVER_LOADING_MODE_INCLUSIVE_LUNARG")]
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
-    InclusiveLUNARG = 1,
+    Inclusive = 1,
 }

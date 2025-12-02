@@ -13,9 +13,11 @@ public enum PathColor : uint
     [NativeName("GL_PRIMARY_COLOR")]
     PrimaryColor = unchecked((uint)0x8577),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PRIMARY_COLOR_NV")]
     PrimaryColorNV = unchecked((uint)0x852C),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SECONDARY_COLOR_NV")]
     SecondaryColorNV = unchecked((uint)0x852D),
 }

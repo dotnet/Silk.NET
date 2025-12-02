@@ -17,5 +17,5 @@ public partial struct SurfaceFormatKHR
 
     [NativeName("colorSpace")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    public ColorSpaceKHR ColorSpace;
+    public ColorSpace ColorSpace;
 }

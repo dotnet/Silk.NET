@@ -14,23 +14,23 @@ namespace Silk.NET.OpenAL;
 public enum RenderFormatTypeSOFT : uint
 {
     [NativeName("ALC_BYTE_SOFT")]
-    ByteSOFT = unchecked((uint)0x1400),
+    Byte = unchecked((uint)0x1400),
 
     [NativeName("ALC_UNSIGNED_BYTE_SOFT")]
-    UnsignedByteSOFT = unchecked((uint)0x1401),
+    UnsignedByte = unchecked((uint)0x1401),
 
     [NativeName("ALC_SHORT_SOFT")]
-    ShortSOFT = unchecked((uint)0x1402),
+    Short = unchecked((uint)0x1402),
 
     [NativeName("ALC_UNSIGNED_SHORT_SOFT")]
-    UnsignedShortSOFT = unchecked((uint)0x1403),
+    UnsignedShort = unchecked((uint)0x1403),
 
     [NativeName("ALC_INT_SOFT")]
-    IntSOFT = unchecked((uint)0x1404),
+    Int = unchecked((uint)0x1404),
 
     [NativeName("ALC_UNSIGNED_INT_SOFT")]
-    UnsignedIntSOFT = unchecked((uint)0x1405),
+    UnsignedInt = unchecked((uint)0x1405),
 
     [NativeName("ALC_FLOAT_SOFT")]
-    FloatSOFT = unchecked((uint)0x1406),
+    Float = unchecked((uint)0x1406),
 }

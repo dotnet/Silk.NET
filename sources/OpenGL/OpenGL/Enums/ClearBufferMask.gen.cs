@@ -25,6 +25,7 @@ public enum ClearBufferMask : uint
     [NativeName("GL_ACCUM_BUFFER_BIT")]
     AccumBufferBit = unchecked((uint)0x00000200),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_BUFFER_BIT_NV")]
     CoverageBufferBitNV = unchecked((uint)0x00008000),
 }

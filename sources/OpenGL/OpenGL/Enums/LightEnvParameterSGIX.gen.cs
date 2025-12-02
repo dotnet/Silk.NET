@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "SGIX", 0)]
 [NativeName("LightEnvParameterSGIX")]
 public enum LightEnvParameterSGIX : uint
 {
+    [NameAffix("Suffix", "SGIX", -1)]
     [NativeName("GL_LIGHT_ENV_MODE_SGIX")]
-    LightEnvModeSGIX = unchecked((uint)0x8407),
+    LightEnvMode = unchecked((uint)0x8407),
 }

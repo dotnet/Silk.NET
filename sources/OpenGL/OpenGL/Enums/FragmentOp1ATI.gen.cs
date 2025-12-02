@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "ATI", 0)]
 [NativeName("FragmentOp1ATI")]
 public enum FragmentOp1ATI : uint
 {
+    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_MOV_ATI")]
-    MovATI = unchecked((uint)0x8961),
+    Mov = unchecked((uint)0x8961),
 }

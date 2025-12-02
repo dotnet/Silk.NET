@@ -174,7 +174,8 @@
       "PrettifyNames": {
         "GlobalPrefixHints": ["gl"],
         "PrefixOverrides": {
-          "SyncObjectMask": "GL_SYNC"
+          "SyncObjectMask": "GL_SYNC",
+          "OcclusionQueryParameterNameNV": "GL"
         }
       },
       "TransformEnums": {
@@ -189,7 +190,6 @@
       "StripAttributes": {
         "Remove": [
           "NativeTypeName",
-          "NameAffix",
           "Transformed"
         ]
       }
@@ -363,7 +363,7 @@
           "VkFlags",
           "VkFlags64"
         ],
-        "VendorSuffixIdentificationExclusions": [
+        "ExcludeVendorSuffixIdentification": [
           "VK_VENDOR_ID_VIV",
           "VK_VENDOR_ID_VSI",
           "VK_VENDOR_ID_MESA"

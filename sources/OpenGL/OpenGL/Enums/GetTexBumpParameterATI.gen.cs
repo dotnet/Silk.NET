@@ -7,18 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
+[NameAffix("Suffix", "ATI", 0)]
 [NativeName("GetTexBumpParameterATI")]
 public enum GetTexBumpParameterATI : uint
 {
+    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_BUMP_ROT_MATRIX_ATI")]
-    RotMatrixATI = unchecked((uint)0x8775),
+    RotMatrix = unchecked((uint)0x8775),
 
+    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_BUMP_ROT_MATRIX_SIZE_ATI")]
-    RotMatrixSizeATI = unchecked((uint)0x8776),
+    RotMatrixSize = unchecked((uint)0x8776),
 
+    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_BUMP_NUM_TEX_UNITS_ATI")]
-    NumTexUnitsATI = unchecked((uint)0x8777),
+    NumTexUnits = unchecked((uint)0x8777),
 
+    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_BUMP_TEX_UNITS_ATI")]
-    TexUnitsATI = unchecked((uint)0x8778),
+    TexUnits = unchecked((uint)0x8778),
 }

@@ -23,7 +23,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    SimulationStartNV = 0,
+    SimulationStart = 0,
 
     [NativeName("VK_LATENCY_MARKER_SIMULATION_END_NV")]
     [SupportedApiProfile(
@@ -36,7 +36,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    SimulationEndNV = 1,
+    SimulationEnd = 1,
 
     [NativeName("VK_LATENCY_MARKER_RENDERSUBMIT_START_NV")]
     [SupportedApiProfile(
@@ -49,7 +49,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    RendersubmitStartNV = 2,
+    RendersubmitStart = 2,
 
     [NativeName("VK_LATENCY_MARKER_RENDERSUBMIT_END_NV")]
     [SupportedApiProfile(
@@ -62,7 +62,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    RendersubmitEndNV = 3,
+    RendersubmitEnd = 3,
 
     [NativeName("VK_LATENCY_MARKER_PRESENT_START_NV")]
     [SupportedApiProfile(
@@ -75,7 +75,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    PresentStartNV = 4,
+    PresentStart = 4,
 
     [NativeName("VK_LATENCY_MARKER_PRESENT_END_NV")]
     [SupportedApiProfile(
@@ -88,7 +88,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    PresentEndNV = 5,
+    PresentEnd = 5,
 
     [NativeName("VK_LATENCY_MARKER_INPUT_SAMPLE_NV")]
     [SupportedApiProfile(
@@ -101,7 +101,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    InputSampleNV = 6,
+    InputSample = 6,
 
     [NativeName("VK_LATENCY_MARKER_TRIGGER_FLASH_NV")]
     [SupportedApiProfile(
@@ -114,7 +114,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    TriggerFlashNV = 7,
+    TriggerFlash = 7,
 
     [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_RENDERSUBMIT_START_NV")]
     [SupportedApiProfile(
@@ -127,7 +127,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    OutOfBandRendersubmitStartNV = 8,
+    OutOfBandRendersubmitStart = 8,
 
     [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_RENDERSUBMIT_END_NV")]
     [SupportedApiProfile(
@@ -140,7 +140,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    OutOfBandRendersubmitEndNV = 9,
+    OutOfBandRendersubmitEnd = 9,
 
     [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_PRESENT_START_NV")]
     [SupportedApiProfile(
@@ -153,7 +153,7 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    OutOfBandPresentStartNV = 10,
+    OutOfBandPresentStart = 10,
 
     [NativeName("VK_LATENCY_MARKER_OUT_OF_BAND_PRESENT_END_NV")]
     [SupportedApiProfile(
@@ -166,5 +166,5 @@ public enum LatencyMarkerNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    OutOfBandPresentEndNV = 11,
+    OutOfBandPresentEnd = 11,
 }

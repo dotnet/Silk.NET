@@ -43,7 +43,7 @@ public unsafe partial struct GeometryNV
             "VK_VERSION_1_1",
         ]
     )]
-    public GeometryTypeKHR GeometryType;
+    public GeometryType GeometryType;
 
     [NativeName("geometry")]
     [SupportedApiProfile(

@@ -10,12 +10,15 @@ namespace Silk.NET.OpenGL;
 [NativeName("PathListMode")]
 public enum PathListMode : uint
 {
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ACCUM_ADJACENT_PAIRS_NV")]
     AccumAdjacentPairsNV = unchecked((uint)0x90AD),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ADJACENT_PAIRS_NV")]
     AdjacentPairsNV = unchecked((uint)0x90AE),
 
+    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FIRST_TO_REST_NV")]
     FirstToRestNV = unchecked((uint)0x90AF),
 }

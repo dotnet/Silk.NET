@@ -14,65 +14,65 @@ namespace Silk.NET.OpenAL;
 public enum InternalFormatSOFT : uint
 {
     [NativeName("AL_MONO8_SOFT")]
-    Mono8SOFT = unchecked((uint)0x1100),
+    Mono8 = unchecked((uint)0x1100),
 
     [NativeName("AL_MONO16_SOFT")]
-    Mono16SOFT = unchecked((uint)0x1101),
+    Mono16 = unchecked((uint)0x1101),
 
     [NativeName("AL_MONO32F_SOFT")]
-    Mono32FSOFT = unchecked((uint)0x10010),
+    Mono32F = unchecked((uint)0x10010),
 
     [NativeName("AL_STEREO8_SOFT")]
-    Stereo8SOFT = unchecked((uint)0x1102),
+    Stereo8 = unchecked((uint)0x1102),
 
     [NativeName("AL_STEREO16_SOFT")]
-    Stereo16SOFT = unchecked((uint)0x1103),
+    Stereo16 = unchecked((uint)0x1103),
 
     [NativeName("AL_STEREO32F_SOFT")]
-    Stereo32FSOFT = unchecked((uint)0x10011),
+    Stereo32F = unchecked((uint)0x10011),
 
     [NativeName("AL_QUAD8_SOFT")]
-    Quad8SOFT = unchecked((uint)0x1204),
+    Quad8 = unchecked((uint)0x1204),
 
     [NativeName("AL_QUAD16_SOFT")]
-    Quad16SOFT = unchecked((uint)0x1205),
+    Quad16 = unchecked((uint)0x1205),
 
     [NativeName("AL_QUAD32F_SOFT")]
-    Quad32FSOFT = unchecked((uint)0x1206),
+    Quad32F = unchecked((uint)0x1206),
 
     [NativeName("AL_REAR8_SOFT")]
-    Rear8SOFT = unchecked((uint)0x1207),
+    Rear8 = unchecked((uint)0x1207),
 
     [NativeName("AL_REAR16_SOFT")]
-    Rear16SOFT = unchecked((uint)0x1208),
+    Rear16 = unchecked((uint)0x1208),
 
     [NativeName("AL_REAR32F_SOFT")]
-    Rear32FSOFT = unchecked((uint)0x1209),
+    Rear32F = unchecked((uint)0x1209),
 
     [NativeName("AL_5POINT1_8_SOFT")]
-    X5Point1X8SOFT = unchecked((uint)0x120A),
+    X5Point1X8 = unchecked((uint)0x120A),
 
     [NativeName("AL_5POINT1_16_SOFT")]
-    X5Point1X16SOFT = unchecked((uint)0x120B),
+    X5Point1X16 = unchecked((uint)0x120B),
 
     [NativeName("AL_5POINT1_32F_SOFT")]
-    X5Point1X32FSOFT = unchecked((uint)0x120C),
+    X5Point1X32F = unchecked((uint)0x120C),
 
     [NativeName("AL_6POINT1_8_SOFT")]
-    X6Point1X8SOFT = unchecked((uint)0x120D),
+    X6Point1X8 = unchecked((uint)0x120D),
 
     [NativeName("AL_6POINT1_16_SOFT")]
-    X6Point1X16SOFT = unchecked((uint)0x120E),
+    X6Point1X16 = unchecked((uint)0x120E),
 
     [NativeName("AL_6POINT1_32F_SOFT")]
-    X6Point1X32FSOFT = unchecked((uint)0x120F),
+    X6Point1X32F = unchecked((uint)0x120F),
 
     [NativeName("AL_7POINT1_8_SOFT")]
-    X7Point1X8SOFT = unchecked((uint)0x1210),
+    X7Point1X8 = unchecked((uint)0x1210),
 
     [NativeName("AL_7POINT1_16_SOFT")]
-    X7Point1X16SOFT = unchecked((uint)0x1211),
+    X7Point1X16 = unchecked((uint)0x1211),
 
     [NativeName("AL_7POINT1_32F_SOFT")]
-    X7Point1X32FSOFT = unchecked((uint)0x1212),
+    X7Point1X32F = unchecked((uint)0x1212),
 }
