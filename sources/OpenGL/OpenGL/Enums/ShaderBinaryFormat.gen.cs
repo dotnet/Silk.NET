@@ -13,23 +13,18 @@ public enum ShaderBinaryFormat : uint
     [NativeName("GL_SHADER_BINARY_FORMAT_SPIR_V")]
     ShaderBinaryFormatSpirV = unchecked((uint)0x9551),
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_MALI_SHADER_BINARY_ARM")]
     MaliShaderBinaryARM = unchecked((uint)0x8F60),
 
-    [NameAffix("Suffix", "DMP", 0)]
     [NativeName("GL_SHADER_BINARY_DMP")]
     ShaderBinaryDMP = unchecked((uint)0x9250),
 
-    [NameAffix("Suffix", "FJ", 0)]
     [NativeName("GL_GCCSO_SHADER_BINARY_FJ")]
     GccsoShaderBinaryFJ = unchecked((uint)0x9260),
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_SGX_BINARY_IMG")]
     SgxBinaryIMG = unchecked((uint)0x8C0A),
 
-    [NameAffix("Suffix", "VIV", 0)]
     [NativeName("GL_SHADER_BINARY_VIV")]
     ShaderBinaryVIV = unchecked((uint)0x8FC4),
 }

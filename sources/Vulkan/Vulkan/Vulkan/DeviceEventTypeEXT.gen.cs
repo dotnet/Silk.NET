@@ -17,5 +17,5 @@ public enum DeviceEventTypeEXT : uint
         ["VK_EXT_display_control"],
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
-    DisplayHotplug = 0,
+    DisplayHotplugEXT = 0,
 }

@@ -21,7 +21,7 @@ public enum ShaderGroupShaderKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    General = 0,
+    GeneralKHR = 0,
 
     [NativeName("VK_SHADER_GROUP_SHADER_CLOSEST_HIT_KHR")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum ShaderGroupShaderKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ClosestHit = 1,
+    ClosestHitKHR = 1,
 
     [NativeName("VK_SHADER_GROUP_SHADER_ANY_HIT_KHR")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public enum ShaderGroupShaderKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    AnyHit = 2,
+    AnyHitKHR = 2,
 
     [NativeName("VK_SHADER_GROUP_SHADER_INTERSECTION_KHR")]
     [SupportedApiProfile(
@@ -54,5 +54,5 @@ public enum ShaderGroupShaderKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    Intersection = 3,
+    IntersectionKHR = 3,
 }

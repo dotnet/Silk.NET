@@ -21,7 +21,7 @@ public enum DiscardRectangleModeEXT : uint
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    Inclusive = 0,
+    InclusiveEXT = 0,
 
     [NativeName("VK_DISCARD_RECTANGLE_MODE_EXCLUSIVE_EXT")]
     [SupportedApiProfile(
@@ -32,5 +32,5 @@ public enum DiscardRectangleModeEXT : uint
             "VK_EXT_discard_rectangles+VK_VERSION_1_1",
         ]
     )]
-    Exclusive = 1,
+    ExclusiveEXT = 1,
 }

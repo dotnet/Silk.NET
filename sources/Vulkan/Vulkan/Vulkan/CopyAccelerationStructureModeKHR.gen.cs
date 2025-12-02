@@ -8,11 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGeometryTypeKHR")]
+[NativeName("VkCopyAccelerationStructureModeKHR")]
 [SupportedApiProfile("vulkan")]
-public enum GeometryType : uint
+public enum CopyAccelerationStructureModeKHR : uint
 {
-    [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_KHR")]
+    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -21,9 +21,9 @@ public enum GeometryType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TrianglesKHR = 0,
+    CloneKHR = 0,
 
-    [NativeName("VK_GEOMETRY_TYPE_AABBS_KHR")]
+    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -32,9 +32,9 @@ public enum GeometryType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AabbsKHR = 1,
+    CompactKHR = 1,
 
-    [NativeName("VK_GEOMETRY_TYPE_INSTANCES_KHR")]
+    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_SERIALIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -43,25 +43,20 @@ public enum GeometryType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    InstancesKHR = 2,
+    SerializeKHR = 2,
 
-    [NativeName("VK_GEOMETRY_TYPE_SPHERES_NV")]
+    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_DESERIALIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
-        ["VK_NV_ray_tracing_linear_swept_spheres"],
-        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
     )]
-    SpheresNV = 1000429004,
+    DeserializeKHR = 3,
 
-    [NativeName("VK_GEOMETRY_TYPE_LINEAR_SWEPT_SPHERES_NV")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_NV_ray_tracing_linear_swept_spheres"],
-        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
-    )]
-    LinearSweptSpheresNV = 1000429005,
-
-    [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_NV")]
+    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -70,9 +65,9 @@ public enum GeometryType : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TrianglesNV = TrianglesKHR,
+    CloneNV = CloneKHR,
 
-    [NativeName("VK_GEOMETRY_TYPE_AABBS_NV")]
+    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -81,5 +76,5 @@ public enum GeometryType : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AabbsNV = AabbsKHR,
+    CompactNV = CompactKHR,
 }

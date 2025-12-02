@@ -61,63 +61,48 @@ public enum MemoryBarrierMask : uint
     [NativeName("GL_QUERY_BUFFER_BARRIER_BIT")]
     QueryBufferBarrierBit = unchecked((uint)0x00008000),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT_EXT")]
     VertexAttribArrayBarrierBitEXT = unchecked((uint)0x00000001),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ELEMENT_ARRAY_BARRIER_BIT_EXT")]
     ElementArrayBarrierBitEXT = unchecked((uint)0x00000002),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNIFORM_BARRIER_BIT_EXT")]
     UniformBarrierBitEXT = unchecked((uint)0x00000004),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_FETCH_BARRIER_BIT_EXT")]
     TextureFetchBarrierBitEXT = unchecked((uint)0x00000008),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADER_IMAGE_ACCESS_BARRIER_BIT_EXT")]
     ShaderImageAccessBarrierBitEXT = unchecked((uint)0x00000020),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMMAND_BARRIER_BIT_EXT")]
     CommandBarrierBitEXT = unchecked((uint)0x00000040),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_BUFFER_BARRIER_BIT_EXT")]
     PixelBufferBarrierBitEXT = unchecked((uint)0x00000080),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_UPDATE_BARRIER_BIT_EXT")]
     TextureUpdateBarrierBitEXT = unchecked((uint)0x00000100),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BUFFER_UPDATE_BARRIER_BIT_EXT")]
     BufferUpdateBarrierBitEXT = unchecked((uint)0x00000200),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_BARRIER_BIT_EXT")]
     FramebufferBarrierBitEXT = unchecked((uint)0x00000400),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT")]
     TransformFeedbackBarrierBitEXT = unchecked((uint)0x00000800),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ATOMIC_COUNTER_BARRIER_BIT_EXT")]
     AtomicCounterBarrierBitEXT = unchecked((uint)0x00001000),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALL_BARRIER_BITS_EXT")]
     AllBarrierBitsEXT = unchecked((uint)0xFFFFFFFF),
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV")]
     ShaderGlobalAccessBarrierBitNV = unchecked((uint)0x00000010),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT")]
     ClientMappedBufferBarrierBitEXT = unchecked((uint)0x00004000),
 }

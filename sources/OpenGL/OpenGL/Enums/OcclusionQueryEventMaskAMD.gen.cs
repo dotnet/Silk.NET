@@ -7,30 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "AMD", 0)]
 [NativeName("OcclusionQueryEventMaskAMD")]
 [Flags]
 public enum OcclusionQueryEventMaskAMD : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "AMD", -1)]
     [NativeName("GL_QUERY_DEPTH_PASS_EVENT_BIT_AMD")]
     DepthPassEventBit = unchecked((uint)0x00000001),
 
-    [NameAffix("Suffix", "AMD", -1)]
     [NativeName("GL_QUERY_DEPTH_FAIL_EVENT_BIT_AMD")]
     DepthFailEventBit = unchecked((uint)0x00000002),
 
-    [NameAffix("Suffix", "AMD", -1)]
     [NativeName("GL_QUERY_STENCIL_FAIL_EVENT_BIT_AMD")]
     StencilFailEventBit = unchecked((uint)0x00000004),
 
-    [NameAffix("Suffix", "AMD", -1)]
     [NativeName("GL_QUERY_DEPTH_BOUNDS_FAIL_EVENT_BIT_AMD")]
     DepthBoundsFailEventBit = unchecked((uint)0x00000008),
 
-    [NameAffix("Suffix", "AMD", -1)]
     [NativeName("GL_QUERY_ALL_EVENT_BITS_AMD")]
     AllEventBits = unchecked((uint)0xFFFFFFFF),
 }

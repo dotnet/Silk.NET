@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkScopeKHR")]
 [SupportedApiProfile("vulkan")]
-public enum Scope : uint
+public enum ScopeKHR : uint
 {
     [NativeName("VK_SCOPE_DEVICE_KHR")]
     [SupportedApiProfile(

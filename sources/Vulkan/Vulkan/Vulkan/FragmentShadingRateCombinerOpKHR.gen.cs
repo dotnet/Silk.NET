@@ -22,7 +22,7 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    Keep = 0,
+    KeepKHR = 0,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_KHR")]
     [SupportedApiProfile(
@@ -34,7 +34,7 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    Replace = 1,
+    ReplaceKHR = 1,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_KHR")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    Min = 2,
+    MinKHR = 2,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_KHR")]
     [SupportedApiProfile(
@@ -58,7 +58,7 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    Max = 3,
+    MaxKHR = 3,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_KHR")]
     [SupportedApiProfile(
@@ -70,5 +70,5 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    Mul = 4,
+    MulKHR = 4,
 }

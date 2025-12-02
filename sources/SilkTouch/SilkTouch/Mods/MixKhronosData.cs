@@ -183,7 +183,7 @@ public partial class MixKhronosData(
 
         /// <summary>
         /// Additional suffixes that may follow a data type suffix but precede a vendor suffix that should be ignored
-        /// when determining a data type suffix to trim when <see cref="TrimDataTypes"/> is on. For example,
+        /// when determining a data type suffix to trim when <see cref="TrimFunctionDataTypes"/> is on. For example,
         /// <c>Direct</c> for OpenAL.
         /// </summary>
         public List<string>? IgnoreNonVendorSuffixes { get; init; }
@@ -196,7 +196,27 @@ public partial class MixKhronosData(
         /// <summary>
         /// Whether OpenGL-style data type suffixes should be trimmed.
         /// </summary>
-        public bool TrimDataTypes { get; init; }
+        public bool TrimFunctionDataTypes { get; init; }
+
+        /// <summary>
+        /// Whether enum type vendor suffixes should be identified and trimmed
+        /// if the enum type contains members that don't match the exclusive vendor.
+        /// </summary>
+        /// <remarks>
+        /// For context, OpenGL has a problem where an enum group starts out as ARB but never gets promoted, and then contains other vendor enums or even core enums.
+        /// For example, BufferUsageARB contains StreamDraw, which is a core enum. Enabling this option will cause BufferUsageARB to be trimmed as BufferUsage.
+        /// </remarks>
+        public bool TrimEnumTypeNonExclusiveVendors { get; init; } = false;
+
+        /// <summary>
+        /// Whether enum members should have their vendor suffixes trimmed
+        /// if they all share a vendor suffix with the containing type.
+        /// </summary>
+        /// <remarks>
+        /// This can lead to cleaner names, but if a new enum member is later added to a type and that member
+        /// does not have the same vendor suffix, the suffixes will be added back.
+        /// </remarks>
+        public bool TrimEnumMemberExclusiveVendors { get; init; } = false;
     }
 
     /// <inheritdoc />
@@ -1884,22 +1904,15 @@ public partial class MixKhronosData(
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             // Special case for enums since this code needs information about the enum type and its members at the same time.
-            //
-            // For context, OpenGL has a problem where an enum starts out as ARB but never gets promoted, and then contains other vendor
-            // enums or even core enums.
-            //
-            // If an enum has a vendor suffix, but its members contradict that suffix, we want to remove the vendor suffix from the enum name.
-            // Additionally, if an enum has a vendor suffix and all of its members have that suffix, we want to remove the vendor suffix from the enum member names.
 
-            var enumName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
-            var groupInfo = job.Groups.GetValueOrDefault(enumName);
+            var typeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
+            var groupInfo = job.Groups.GetValueOrDefault(typeName);
 
-            // The vendor suffix in the enum name
-            var vendorFromEnumName = job.Vendors.FirstOrDefault(enumName.EndsWith);
-            var isSafeToTrimEnum = job.Groups.Count(x => x.Key.StartsWith(enumName[..^(vendorFromEnumName?.Length ?? 0)])) <= 1;
+            var vendorFromTypeName = job.Vendors.FirstOrDefault(typeName.EndsWith);
+            var vendorFromTypeNamePriority = config.VendorSuffixPriority;
 
-            // The enum's effective exclusive vendor
-            var exclusiveVendor = groupInfo?.ExclusiveVendor ?? vendorFromEnumName;
+            // Figure out the enum's exclusive vendor
+            var exclusiveVendor = groupInfo?.ExclusiveVendor ?? vendorFromTypeName;
             if (exclusiveVendor == null || !node.Members.All(member => member.Identifier.Text.EndsWith(exclusiveVendor)))
             {
                 // Not all enum members share the exclusive vendor
@@ -1907,25 +1920,32 @@ public partial class MixKhronosData(
                 exclusiveVendor = null;
             }
 
-            // Trim the enum name if needed
-            if (vendorFromEnumName != null)
+            if (config.TrimEnumTypeNonExclusiveVendors)
             {
-                var shouldTrimEnum = vendorFromEnumName != exclusiveVendor;
-                if (shouldTrimEnum && isSafeToTrimEnum)
+                // The vendor suffix in the enum name
+                var isSafeToTrimType = job.Groups.Count(x => x.Key.StartsWith(typeName[..^(vendorFromTypeName?.Length ?? 0)])) <= 1;
+
+                // Trim the enum name if needed
+                if (config.TrimEnumTypeNonExclusiveVendors && vendorFromTypeName != null)
                 {
-                    // Remove the exclusive vendor from the enum name since it is wrong
-                    node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(vendorFromEnumName, -1));
-                }
-                else
-                {
-                    // Default behavior - Identify, but keep the enum suffix
-                    node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(vendorFromEnumName, config.VendorSuffixPriority));
+                    var shouldTrimType = vendorFromTypeName != exclusiveVendor;
+                    if (shouldTrimType && isSafeToTrimType)
+                    {
+                        // Remove the exclusive vendor from the enum name since it is wrong
+                        vendorFromTypeNamePriority = -1;
+                    }
                 }
             }
 
+            if (vendorFromTypeName != null)
+            {
+                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(vendorFromTypeName, vendorFromTypeNamePriority));
+            }
 
             // Trim the enum members if needed
-            if (exclusiveVendor != null)
+            if (config.TrimEnumMemberExclusiveVendors
+                && exclusiveVendor != null
+                && node.Members.All(member => member.Identifier.Text.EndsWith(exclusiveVendor)))
             {
                 node = node.WithMembers([
                     ..node.Members.Select(member => member.WithAttributeLists(member.AttributeLists.AddNameSuffix(exclusiveVendor, -1))),

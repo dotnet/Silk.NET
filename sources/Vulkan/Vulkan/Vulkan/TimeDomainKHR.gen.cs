@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkTimeDomainKHR")]
 [SupportedApiProfile("vulkan")]
-public enum TimeDomain : uint
+public enum TimeDomainKHR : uint
 {
     [NativeName("VK_TIME_DOMAIN_DEVICE_KHR")]
     [SupportedApiProfile(

@@ -15,5 +15,5 @@ public enum PhysicalDeviceSchedulingControlsFlagsARM : ulong
     None = 0x0,
 
     [NativeName("VK_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_SHADER_CORE_COUNT_ARM")]
-    ShaderCoreCount = 0x1,
+    ShaderCoreCountARM = 0x1,
 }

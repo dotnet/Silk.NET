@@ -43,7 +43,7 @@ public unsafe partial struct AccelerationStructureGeometryKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public GeometryType GeometryType;
+    public GeometryTypeKHR GeometryType;
 
     [NativeName("geometry")]
     [SupportedApiProfile(

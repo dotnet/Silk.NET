@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkComponentTypeKHR")]
 [SupportedApiProfile("vulkan")]
-public enum ComponentType : uint
+public enum ComponentTypeKHR : uint
 {
     [NativeName("VK_COMPONENT_TYPE_FLOAT16_KHR")]
     [SupportedApiProfile(

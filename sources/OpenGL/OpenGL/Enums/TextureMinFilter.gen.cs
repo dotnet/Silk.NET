@@ -28,23 +28,18 @@ public enum TextureMinFilter : uint
     [NativeName("GL_LINEAR_MIPMAP_LINEAR")]
     LinearMipmapLinear = unchecked((uint)0x2703),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_FILTER4_SGIS")]
     Filter4SGIS = unchecked((uint)0x8146),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_LINEAR_CLIPMAP_LINEAR_SGIX")]
     LinearClipmapLinearSGIX = unchecked((uint)0x8170),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_NEAREST_CLIPMAP_NEAREST_SGIX")]
     NearestClipmapNearestSGIX = unchecked((uint)0x844D),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_NEAREST_CLIPMAP_LINEAR_SGIX")]
     NearestClipmapLinearSGIX = unchecked((uint)0x844E),
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_LINEAR_CLIPMAP_NEAREST_SGIX")]
     LinearClipmapNearestSGIX = unchecked((uint)0x844F),
 }

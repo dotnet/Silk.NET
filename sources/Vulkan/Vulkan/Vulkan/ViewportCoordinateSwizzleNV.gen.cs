@@ -14,33 +14,33 @@ public enum ViewportCoordinateSwizzleNV : uint
 {
     [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_POSITIVE_X_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    PositiveX = 0,
+    PositiveXNV = 0,
 
     [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_NEGATIVE_X_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    NegativeX = 1,
+    NegativeXNV = 1,
 
     [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_POSITIVE_Y_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    PositiveY = 2,
+    PositiveYNV = 2,
 
     [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_NEGATIVE_Y_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    NegativeY = 3,
+    NegativeYNV = 3,
 
     [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_POSITIVE_Z_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    PositiveZ = 4,
+    PositiveZNV = 4,
 
     [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_NEGATIVE_Z_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    NegativeZ = 5,
+    NegativeZNV = 5,
 
     [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_POSITIVE_W_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    PositiveW = 6,
+    PositiveWNV = 6,
 
     [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_NEGATIVE_W_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    NegativeW = 7,
+    NegativeWNV = 7,
 }

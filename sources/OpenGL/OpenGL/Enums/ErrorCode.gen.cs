@@ -31,7 +31,6 @@ public enum ErrorCode : uint
     [NativeName("GL_OUT_OF_MEMORY")]
     OutOfMemory = unchecked((uint)0x0505),
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
     InvalidFramebufferOperationOES = unchecked((uint)0x0506),
 
@@ -41,15 +40,12 @@ public enum ErrorCode : uint
     [NativeName("GL_TABLE_TOO_LARGE")]
     TableTooLarge = unchecked((uint)0x8031),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_EXT")]
     InvalidFramebufferOperationEXT = unchecked((uint)0x0506),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TABLE_TOO_LARGE_EXT")]
     TableTooLargeEXT = unchecked((uint)0x8031),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_TOO_LARGE_EXT")]
     TextureTooLargeEXT = unchecked((uint)0x8065),
 }

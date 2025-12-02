@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("EvalMapsModeNV")]
 public enum EvalMapsModeNV : uint
 {
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_FILL_NV")]
     Fill = unchecked((uint)0x1B02),
 }

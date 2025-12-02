@@ -20,5 +20,5 @@ public enum BuildMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    Build = 0,
+    BuildEXT = 0,
 }

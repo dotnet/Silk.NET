@@ -154,7 +154,9 @@
           "PathRenderingTokenNV": "byte",
           "PathCoordType": "byte"
         },
-        "TrimDataTypes": true
+        "TrimFunctionDataTypes": true,
+        "TrimEnumTypeNonExclusiveVendors": true,
+        "TrimEnumMemberExclusiveVendors": true
       },
       "AddVTables": {
         "VTables": [
@@ -190,6 +192,7 @@
       "StripAttributes": {
         "Remove": [
           "NativeTypeName",
+          "NameAffix",
           "Transformed"
         ]
       }
@@ -242,7 +245,9 @@
         "IgnoreNonVendorSuffixes": [
           "Direct"
         ],
-        "TrimDataTypes": true
+        "TrimFunctionDataTypes": true,
+        "TrimEnumTypeNonExclusiveVendors": true,
+        "TrimEnumMemberExclusiveVendors": true
       },
       "InterceptNativeFunctions": {
         "NativeFunctionNames": [

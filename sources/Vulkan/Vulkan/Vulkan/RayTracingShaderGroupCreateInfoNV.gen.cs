@@ -42,7 +42,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoNV
             "VK_VERSION_1_1",
         ]
     )]
-    public RayTracingShaderGroupType Type;
+    public RayTracingShaderGroupTypeKHR Type;
 
     [NativeName("generalShader")]
     [SupportedApiProfile(

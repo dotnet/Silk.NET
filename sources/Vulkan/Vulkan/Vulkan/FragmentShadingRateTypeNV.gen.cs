@@ -17,7 +17,7 @@ public enum FragmentShadingRateTypeNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    FragmentSize = 0,
+    FragmentSizeNV = 0,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_TYPE_ENUMS_NV")]
     [SupportedApiProfile(
@@ -25,5 +25,5 @@ public enum FragmentShadingRateTypeNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Enums = 1,
+    EnumsNV = 1,
 }

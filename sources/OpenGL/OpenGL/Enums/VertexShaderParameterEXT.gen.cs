@@ -7,15 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("VertexShaderParameterEXT")]
 public enum VertexShaderParameterEXT : uint
 {
-    [NameAffix("Suffix", "EXT", -1)]
     [NativeName("GL_CURRENT_VERTEX_EXT")]
     CurrentVertex = unchecked((uint)0x87E2),
 
-    [NameAffix("Suffix", "EXT", -1)]
     [NativeName("GL_MVP_MATRIX_EXT")]
     MvpMatrix = unchecked((uint)0x87E3),
 }

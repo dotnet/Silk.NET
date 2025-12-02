@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", -1)]
 [NativeName("VertexAttribPropertyARB")]
 public enum VertexAttribProperty : uint
 {
@@ -47,7 +46,6 @@ public enum VertexAttribProperty : uint
     [NativeName("GL_VERTEX_ATTRIB_RELATIVE_OFFSET")]
     VertexAttribRelativeOffset = 33493,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT")]
     VertexAttribArrayIntegerEXT = 35069,
 }

@@ -19,7 +19,6 @@ public enum MatrixMode : uint
     [NativeName("GL_TEXTURE")]
     Texture = unchecked((uint)0x1702),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MODELVIEW0_EXT")]
     Modelview0EXT = unchecked((uint)0x1700),
 }

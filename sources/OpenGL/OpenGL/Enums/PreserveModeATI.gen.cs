@@ -7,15 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ATI", 0)]
 [NativeName("PreserveModeATI")]
 public enum PreserveModeATI : uint
 {
-    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_PRESERVE_ATI")]
     Preserve = unchecked((uint)0x8762),
 
-    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_DISCARD_ATI")]
     Discard = unchecked((uint)0x8763),
 }

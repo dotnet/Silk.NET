@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "SUN", -1)]
 [NativeName("ReplacementCodeTypeSUN")]
 public enum ReplacementCodeType : uint
 {

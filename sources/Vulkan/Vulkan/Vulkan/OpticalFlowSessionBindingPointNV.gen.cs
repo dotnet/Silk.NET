@@ -20,7 +20,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Unknown = 0,
+    UnknownNV = 0,
 
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_INPUT_NV")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Input = 1,
+    InputNV = 1,
 
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_REFERENCE_NV")]
     [SupportedApiProfile(
@@ -44,7 +44,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Reference = 2,
+    ReferenceNV = 2,
 
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_HINT_NV")]
     [SupportedApiProfile(
@@ -56,7 +56,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Hint = 3,
+    HintNV = 3,
 
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_FLOW_VECTOR_NV")]
     [SupportedApiProfile(
@@ -68,7 +68,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    FlowVector = 4,
+    FlowVectorNV = 4,
 
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_BACKWARD_FLOW_VECTOR_NV")]
     [SupportedApiProfile(
@@ -80,7 +80,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    BackwardFlowVector = 5,
+    BackwardFlowVectorNV = 5,
 
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_COST_NV")]
     [SupportedApiProfile(
@@ -92,7 +92,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Cost = 6,
+    CostNV = 6,
 
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_BACKWARD_COST_NV")]
     [SupportedApiProfile(
@@ -104,7 +104,7 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    BackwardCost = 7,
+    BackwardCostNV = 7,
 
     [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_GLOBAL_FLOW_NV")]
     [SupportedApiProfile(
@@ -116,5 +116,5 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    GlobalFlow = 8,
+    GlobalFlowNV = 8,
 }

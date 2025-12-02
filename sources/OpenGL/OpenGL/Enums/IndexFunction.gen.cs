@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", -1)]
 [NativeName("IndexFunctionEXT")]
 public enum IndexFunction : uint
 {

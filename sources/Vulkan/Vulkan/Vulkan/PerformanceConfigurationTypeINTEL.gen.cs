@@ -16,5 +16,5 @@ public enum PerformanceConfigurationTypeINTEL : uint
         "VK_PERFORMANCE_CONFIGURATION_TYPE_COMMAND_QUEUE_METRICS_DISCOVERY_ACTIVATED_INTEL"
     )]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    CommandQueueMetricsDiscoveryActivated = 0,
+    CommandQueueMetricsDiscoveryActivatedINTEL = 0,
 }

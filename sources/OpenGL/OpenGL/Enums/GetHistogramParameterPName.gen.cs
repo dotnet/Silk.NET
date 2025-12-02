@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", -1)]
 [NativeName("GetHistogramParameterPNameEXT")]
 public enum GetHistogramParameterPName : uint
 {
@@ -35,35 +34,27 @@ public enum GetHistogramParameterPName : uint
     [NativeName("GL_HISTOGRAM_SINK")]
     Sink = 32813,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_WIDTH_EXT")]
     WidthEXT = 32806,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_FORMAT_EXT")]
     FormatEXT = 32807,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_RED_SIZE_EXT")]
     RedSizeEXT = 32808,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_GREEN_SIZE_EXT")]
     GreenSizeEXT = 32809,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_BLUE_SIZE_EXT")]
     BlueSizeEXT = 32810,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_ALPHA_SIZE_EXT")]
     AlphaSizeEXT = 32811,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_LUMINANCE_SIZE_EXT")]
     LuminanceSizeEXT = 32812,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_SINK_EXT")]
     SinkEXT = 32813,
 }

@@ -25,7 +25,6 @@ public enum SamplerParameterF : uint
     [NativeName("GL_TEXTURE_MAX_ANISOTROPY")]
     MaxAnisotropy = unchecked((uint)0x84FE),
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
     UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
 }

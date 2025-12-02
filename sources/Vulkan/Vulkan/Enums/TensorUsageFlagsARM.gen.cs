@@ -15,17 +15,17 @@ public enum TensorUsageFlagsARM : ulong
     None = 0x0,
 
     [NativeName("VK_TENSOR_USAGE_SHADER_BIT_ARM")]
-    ShaderBit = 0x2,
+    ShaderBitARM = 0x2,
 
     [NativeName("VK_TENSOR_USAGE_TRANSFER_SRC_BIT_ARM")]
-    TransferSrcBit = 0x4,
+    TransferSrcBitARM = 0x4,
 
     [NativeName("VK_TENSOR_USAGE_TRANSFER_DST_BIT_ARM")]
-    TransferDstBit = 0x8,
+    TransferDstBitARM = 0x8,
 
     [NativeName("VK_TENSOR_USAGE_IMAGE_ALIASING_BIT_ARM")]
-    ImageAliasingBit = 0x10,
+    ImageAliasingBitARM = 0x10,
 
     [NativeName("VK_TENSOR_USAGE_DATA_GRAPH_BIT_ARM")]
-    DataGraphBit = 0x20,
+    DataGraphBitARM = 0x20,
 }

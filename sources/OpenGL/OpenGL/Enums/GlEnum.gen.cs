@@ -730,7 +730,6 @@ public enum GlEnum : uint
     [NativeName("GL_TEXTURE_ENV_COLOR")]
     TextureEnvColor = 8705,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_ENV")]
     TextureENV = 8960,
 
@@ -762,7 +761,6 @@ public enum GlEnum : uint
     TextureWrapS = 10242,
 
     [NativeName("GL_TEXTURE_WRAP")]
-    [NameAffix("Suffix", "_T", -1)]
     TextureWrap = 10243,
 
     [NativeName("GL_GENERATE_MIPMAP")]
@@ -1011,1137 +1009,855 @@ public enum GlEnum : uint
     [NativeName("GL_DOT3_RGBA")]
     Dot3Rgba = 34479,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_EXTERNAL_OES")]
     TextureExternalOES = 36197,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BINDING_EXTERNAL_OES")]
     TextureBindingExternalOES = 36199,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_REQUIRED_TEXTURE_IMAGE_UNITS_OES")]
     RequiredTextureImageUnitsOES = 36200,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_BLEND_EQUATION_RGB_OES")]
     BlendEquationRgbOES = 32777,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_BLEND_EQUATION_ALPHA_OES")]
     BlendEquationAlphaOES = 34877,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_BLEND_DST_RGB_OES")]
     BlendDstRgbOES = 32968,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_BLEND_SRC_RGB_OES")]
     BlendSrcRgbOES = 32969,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_BLEND_DST_ALPHA_OES")]
     BlendDstAlphaOES = 32970,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_BLEND_SRC_ALPHA_OES")]
     BlendSrcAlphaOES = 32971,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_BLEND_EQUATION_OES")]
     BlendEquationOES = 32777,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FUNC_ADD_OES")]
     FuncAddOES = 32774,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FUNC_SUBTRACT_OES")]
     FuncSubtractOES = 32778,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FUNC_REVERSE_SUBTRACT_OES")]
     FuncReverseSubtractOES = 32779,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_ETC1_RGB8_OES")]
     Etc1Rgb8OES = 36196,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PALETTE4_RGB8_OES")]
     Palette4Rgb8OES = 35728,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PALETTE4_RGBA8_OES")]
     Palette4Rgba8OES = 35729,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PALETTE4_R5_G6_B5_OES")]
     Palette4R5G6B5OES = 35730,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PALETTE4_RGBA4_OES")]
     Palette4Rgba4OES = 35731,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PALETTE4_RGB5_A1_OES")]
     Palette4Rgb5A1OES = 35732,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PALETTE8_RGB8_OES")]
     Palette8Rgb8OES = 35733,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PALETTE8_RGBA8_OES")]
     Palette8Rgba8OES = 35734,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PALETTE8_R5_G6_B5_OES")]
     Palette8R5G6B5OES = 35735,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PALETTE8_RGBA4_OES")]
     Palette8Rgba4OES = 35736,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PALETTE8_RGB5_A1_OES")]
     Palette8Rgb5A1OES = 35737,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_DEPTH_COMPONENT24_OES")]
     DepthComponent24OES = 33190,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_DEPTH_COMPONENT32_OES")]
     DepthComponent32OES = 33191,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_CROP_RECT_OES")]
     TextureCropRectOES = 35741,
 
     [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = 5125,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FIXED_OES")]
     FixedOES = 5132,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_NONE_OES")]
     NoneOES = 0,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_OES")]
     FramebufferOES = 36160,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_OES")]
     RenderbufferOES = 36161,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RGBA4_OES")]
     Rgba4OES = 32854,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RGB5_A1_OES")]
     Rgb5A1OES = 32855,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RGB565_OES")]
     Rgb565OES = 36194,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_DEPTH_COMPONENT16_OES")]
     DepthComponent16OES = 33189,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_WIDTH_OES")]
     RenderbufferWidthOES = 36162,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_HEIGHT_OES")]
     RenderbufferHeightOES = 36163,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_OES")]
     RenderbufferInternalFormatOES = 36164,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_RED_SIZE_OES")]
     RenderbufferRedSizeOES = 36176,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_GREEN_SIZE_OES")]
     RenderbufferGreenSizeOES = 36177,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_BLUE_SIZE_OES")]
     RenderbufferBlueSizeOES = 36178,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_OES")]
     RenderbufferAlphaSizeOES = 36179,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_OES")]
     RenderbufferDepthSizeOES = 36180,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_OES")]
     RenderbufferStencilSizeOES = 36181,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
     FramebufferAttachmentObjectTypeOES = 36048,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
     FramebufferAttachmentObjectNameOES = 36049,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
     FramebufferAttachmentTextureLevelOES = 36050,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
     FramebufferAttachmentTextureCubeMapFaceOES = 36051,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COLOR_ATTACHMENT0_OES")]
     ColorAttachment0OES = 36064,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_DEPTH_ATTACHMENT_OES")]
     DepthAttachmentOES = 36096,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_STENCIL_ATTACHMENT_OES")]
     StencilAttachmentOES = 36128,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_COMPLETE_OES")]
     FramebufferCompleteOES = 36053,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_OES")]
     FramebufferIncompleteAttachmentOES = 36054,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_OES")]
     FramebufferIncompleteMissingAttachmentOES = 36055,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_OES")]
     FramebufferIncompleteDimensionsOES = 36057,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_FORMATS_OES")]
     FramebufferIncompleteFormatsOES = 36058,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_UNSUPPORTED_OES")]
     FramebufferUnsupportedOES = 36061,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_BINDING_OES")]
     FramebufferBindingOES = 36006,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RENDERBUFFER_BINDING_OES")]
     RenderbufferBindingOES = 36007,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_RENDERBUFFER_SIZE_OES")]
     MaxRenderbufferSizeOES = 34024,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
     InvalidFramebufferOperationOES = 1286,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_WRITE_ONLY_OES")]
     WriteOnlyOES = 35001,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_BUFFER_ACCESS_OES")]
     BufferAccessOES = 35003,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_BUFFER_MAPPED_OES")]
     BufferMappedOES = 35004,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_BUFFER_MAP_POINTER_OES")]
     BufferMapPointerOES = 35005,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES")]
     ModelviewMatrixFloatAsIntBitsOES = 35213,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES")]
     ProjectionMatrixFloatAsIntBitsOES = 35214,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES")]
     TextureMatrixFloatAsIntBitsOES = 35215,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_VERTEX_UNITS_OES")]
     MaxVertexUnitsOES = 34468,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_PALETTE_MATRICES_OES")]
     MaxPaletteMatricesOES = 34882,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MATRIX_PALETTE_OES")]
     MatrixPaletteOES = 34880,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_OES")]
     MatrixIndexArrayOES = 34884,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_WEIGHT_ARRAY_OES")]
     WeightArrayOES = 34477,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_CURRENT_PALETTE_MATRIX_OES")]
     CurrentPaletteMatrixOES = 34883,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_SIZE_OES")]
     MatrixIndexArraySizeOES = 34886,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_TYPE_OES")]
     MatrixIndexArrayTypeOES = 34887,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_STRIDE_OES")]
     MatrixIndexArrayStrideOES = 34888,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_POINTER_OES")]
     MatrixIndexArrayPointerOES = 34889,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES")]
     MatrixIndexArrayBufferBindingOES = 35742,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_WEIGHT_ARRAY_SIZE_OES")]
     WeightArraySizeOES = 34475,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_WEIGHT_ARRAY_TYPE_OES")]
     WeightArrayTypeOES = 34473,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_WEIGHT_ARRAY_STRIDE_OES")]
     WeightArrayStrideOES = 34474,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_WEIGHT_ARRAY_POINTER_OES")]
     WeightArrayPointerOES = 34476,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_WEIGHT_ARRAY_BUFFER_BINDING_OES")]
     WeightArrayBufferBindingOES = 34974,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_DEPTH_STENCIL_OES")]
     DepthStencilOES = 34041,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_UNSIGNED_INT_24_8_OES")]
     UnsignedInt24X8OES = 34042,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_DEPTH24_STENCIL8_OES")]
     Depth24Stencil8OES = 35056,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_POINT_SIZE_ARRAY_OES")]
     PointSizeArrayOES = 35740,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_POINT_SIZE_ARRAY_TYPE_OES")]
     PointSizeArrayTypeOES = 35210,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_POINT_SIZE_ARRAY_STRIDE_OES")]
     PointSizeArrayStrideOES = 35211,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_POINT_SIZE_ARRAY_POINTER_OES")]
     PointSizeArrayPointerOES = 35212,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES")]
     PointSizeArrayBufferBindingOES = 35743,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_POINT_SPRITE_OES")]
     PointSpriteOES = 34913,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COORD_REPLACE_OES")]
     CoordReplaceOES = 34914,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_IMPLEMENTATION_COLOR_READ_TYPE_OES")]
     ImplementationColorReadTypeOES = 35738,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_IMPLEMENTATION_COLOR_READ_FORMAT_OES")]
     ImplementationColorReadFormatOES = 35739,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_ALPHA8_OES")]
     Alpha8OES = 32828,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_LUMINANCE4_ALPHA4_OES")]
     Luminance4Alpha4OES = 32835,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_LUMINANCE8_ALPHA8_OES")]
     Luminance8Alpha8OES = 32837,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_LUMINANCE8_OES")]
     Luminance8OES = 32832,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RGB8_OES")]
     Rgb8OES = 32849,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_RGBA8_OES")]
     Rgba8OES = 32856,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB10_EXT")]
     Rgb10EXT = 32850,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB10_A2_EXT")]
     Rgb10A2EXT = 32857,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_STENCIL_INDEX1_OES")]
     StencilIndex1OES = 36166,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_STENCIL_INDEX4_OES")]
     StencilIndex4OES = 36167,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_STENCIL_INDEX8_OES")]
     StencilIndex8OES = 36168,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_INCR_WRAP_OES")]
     IncrWrapOES = 34055,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_DECR_WRAP_OES")]
     DecrWrapOES = 34056,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_UNDEFINED_OES")]
     FramebufferUndefinedOES = 33305,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_NORMAL_MAP_OES")]
     NormalMapOES = 34065,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_REFLECTION_MAP_OES")]
     ReflectionMapOES = 34066,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
     TextureCubeMapOES = 34067,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_OES")]
     TextureBindingCubeMapOES = 34068,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES")]
     TextureCubeMapPositiveXOES = 34069,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES")]
     TextureCubeMapNegativeXOES = 34070,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES")]
     TextureCubeMapPositiveYOES = 34071,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES")]
     TextureCubeMapNegativeYOES = 34072,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES")]
     TextureCubeMapPositiveZOES = 34073,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES")]
     TextureCubeMapNegativeZOES = 34074,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES")]
     MaxCubeMapTextureSizeOES = 34076,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_GEN_MODE_OES")]
     TextureGenModeOES = 9472,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_GEN_STR_OES")]
     TextureGenStrOES = 36192,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MIRRORED_REPEAT_OES")]
     MirroredRepeatOES = 33648,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_VERTEX_ARRAY_BINDING_OES")]
     VertexArrayBindingOES = 34229,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_3DC_X_AMD")]
     X3DcXAMD = 34809,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_3DC_XY_AMD")]
     X3DcXyAMD = 34810,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_ATC_RGB_AMD")]
     AtcRgbAMD = 35986,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_ATC_RGBA_EXPLICIT_ALPHA_AMD")]
     AtcRgbaExplicitAlphaAMD = 35987,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD")]
     AtcRgbaInterpolatedAlphaAMD = 34798,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_APPLE")]
     RenderbufferSamplesAPPLE = 36011,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_APPLE")]
     FramebufferIncompleteMultisampleAPPLE = 36182,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_MAX_SAMPLES_APPLE")]
     MaxSamplesAPPLE = 36183,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_READ_FRAMEBUFFER_APPLE")]
     ReadFramebufferAPPLE = 36008,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_DRAW_FRAMEBUFFER_APPLE")]
     DrawFramebufferAPPLE = 36009,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_APPLE")]
     DrawFramebufferBindingAPPLE = 36006,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_READ_FRAMEBUFFER_BINDING_APPLE")]
     ReadFramebufferBindingAPPLE = 36010,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SYNC_OBJECT_APPLE")]
     SyncObjectAPPLE = 35411,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_MAX_SERVER_WAIT_TIMEOUT_APPLE")]
     MaxServerWaitTimeoutAPPLE = 37137,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_OBJECT_TYPE_APPLE")]
     ObjectTypeAPPLE = 37138,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SYNC_CONDITION_APPLE")]
     SyncConditionAPPLE = 37139,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SYNC_STATUS_APPLE")]
     SyncStatusAPPLE = 37140,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SYNC_FLAGS_APPLE")]
     SyncFlagsAPPLE = 37141,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SYNC_FENCE_APPLE")]
     SyncFenceAPPLE = 37142,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SYNC_GPU_COMMANDS_COMPLETE_APPLE")]
     SyncGpuCommandsCompleteAPPLE = 37143,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_UNSIGNALED_APPLE")]
     UnsignaledAPPLE = 37144,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SIGNALED_APPLE")]
     SignaledAPPLE = 37145,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_ALREADY_SIGNALED_APPLE")]
     AlreadySignaledAPPLE = 37146,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_TIMEOUT_EXPIRED_APPLE")]
     TimeoutExpiredAPPLE = 37147,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_CONDITION_SATISFIED_APPLE")]
     ConditionSatisfiedAPPLE = 37148,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_WAIT_FAILED_APPLE")]
     WaitFailedAPPLE = 37149,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
     SyncFlushCommandsBitAPPLE = 1,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_TIMEOUT_IGNORED_APPLE")]
     TimeoutIgnoredAPPLE = 4294967295,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BGRA_EXT")]
     BgraEXT = 32993,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BGRA8_EXT")]
     Bgra8EXT = 37793,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_TEXTURE_MAX_LEVEL_APPLE")]
     TextureMaxLevelAPPLE = 33085,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MIN_EXT")]
     MinEXT = 32775,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_EXT")]
     MaxEXT = 32776,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_EXT")]
     ColorEXT = 6144,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEPTH_EXT")]
     DepthEXT = 6145,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_EXT")]
     StencilEXT = 6146,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_READ_BIT_EXT")]
     MapReadBitEXT = 1,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_WRITE_BIT_EXT")]
     MapWriteBitEXT = 2,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
     MapInvalidateRangeBitEXT = 4,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
     MapInvalidateBufferBitEXT = 8,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
     MapFlushExplicitBitEXT = 16,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
     MapUnsynchronizedBitEXT = 32,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
     FramebufferAttachmentTextureSamplesEXT = 36204,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_EXT")]
     RenderbufferSamplesEXT = 36011,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_EXT")]
     FramebufferIncompleteMultisampleEXT = 36182,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_SAMPLES_EXT")]
     MaxSamplesEXT = 36183,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_EXT")]
     UnsignedShort4X4X4X4RevEXT = 33637,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_SHORT_1_5_5_5_REV_EXT")]
     UnsignedShort1X5X5X5RevEXT = 33638,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GUILTY_CONTEXT_RESET_EXT")]
     GuiltyContextResetEXT = 33363,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INNOCENT_CONTEXT_RESET_EXT")]
     InnocentContextResetEXT = 33364,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNKNOWN_CONTEXT_RESET_EXT")]
     UnknownContextResetEXT = 33365,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONTEXT_ROBUST_ACCESS_EXT")]
     ContextRobustAccessEXT = 37107,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RESET_NOTIFICATION_STRATEGY_EXT")]
     ResetNotificationStrategyEXT = 33366,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LOSE_CONTEXT_ON_RESET_EXT")]
     LoseContextOnResetEXT = 33362,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NO_RESET_NOTIFICATION_EXT")]
     NoResetNotificationEXT = 33377,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SRGB_EXT")]
     SrgbEXT = 35904,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SRGB_ALPHA_EXT")]
     SrgbAlphaEXT = 35906,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SRGB8_ALPHA8_EXT")]
     Srgb8Alpha8EXT = 35907,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
     FramebufferAttachmentColorEncodingEXT = 33296,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RGB_S3TC_DXT1_EXT")]
     CompressedRgbS3TcDxt1EXT = 33776,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT1_EXT")]
     CompressedRgbaS3TcDxt1EXT = 33777,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_MAX_ANISOTROPY_EXT")]
     TextureMaxAnisotropyEXT = 34046,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT")]
     MaxTextureMaxAnisotropyEXT = 34047,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TEXTURE_LOD_BIAS_EXT")]
     MaxTextureLodBiasEXT = 34045,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_FILTER_CONTROL_EXT")]
     TextureFilterControlEXT = 34048,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_LOD_BIAS_EXT")]
     TextureLodBiasEXT = 34049,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_IMMUTABLE_FORMAT_EXT")]
     TextureImmutableFormatEXT = 37167,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA8_EXT")]
     Alpha8EXT = 32828,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE8_EXT")]
     Luminance8EXT = 32832,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE8_ALPHA8_EXT")]
     Luminance8Alpha8EXT = 32837,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA32F_EXT")]
     Rgba32FEXT = 34836,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB32F_EXT")]
     Rgb32FEXT = 34837,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA32F_EXT")]
     Alpha32FEXT = 34838,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE32F_EXT")]
     Luminance32FEXT = 34840,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE_ALPHA32F_EXT")]
     LuminanceAlpha32FEXT = 34841,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA16F_EXT")]
     Rgba16FEXT = 34842,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB16F_EXT")]
     Rgb16FEXT = 34843,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA16F_EXT")]
     Alpha16FEXT = 34844,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE16F_EXT")]
     Luminance16FEXT = 34846,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE_ALPHA16F_EXT")]
     LuminanceAlpha16FEXT = 34847,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_R8_EXT")]
     R8EXT = 33321,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RG8_EXT")]
     Rg8EXT = 33323,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_R32F_EXT")]
     R32FEXT = 33326,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RG32F_EXT")]
     Rg32FEXT = 33328,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_R16F_EXT")]
     R16FEXT = 33325,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RG16F_EXT")]
     Rg16FEXT = 33327,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_IMG")]
     RenderbufferSamplesIMG = 37171,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_IMG")]
     FramebufferIncompleteMultisampleIMG = 37172,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_MAX_SAMPLES_IMG")]
     MaxSamplesIMG = 37173,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_TEXTURE_SAMPLES_IMG")]
     TextureSamplesIMG = 37174,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_BGRA_IMG")]
     BgraIMG = 32993,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_REV_IMG")]
     UnsignedShort4X4X4X4RevIMG = 33637,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG")]
     CompressedRgbPvrtc4Bppv1IMG = 35840,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG")]
     CompressedRgbPvrtc2Bppv1IMG = 35841,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG")]
     CompressedRgbaPvrtc4Bppv1IMG = 35842,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG")]
     CompressedRgbaPvrtc2Bppv1IMG = 35843,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_MODULATE_COLOR_IMG")]
     ModulateColorIMG = 35844,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_RECIP_ADD_SIGNED_ALPHA_IMG")]
     RecipAddSignedAlphaIMG = 35845,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_TEXTURE_ALPHA_MODULATE_IMG")]
     TextureAlphaModulateIMG = 35846,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_FACTOR_ALPHA_MODULATE_IMG")]
     FactorAlphaModulateIMG = 35847,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_FRAGMENT_ALPHA_MODULATE_IMG")]
     FragmentAlphaModulateIMG = 35848,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_ADD_BLEND_IMG")]
     AddBlendIMG = 35849,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_DOT3_RGBA_IMG")]
     Dot3RgbaIMG = 34479,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_CLIP_PLANE0_IMG")]
     ClipPlane0IMG = 12288,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_CLIP_PLANE1_IMG")]
     ClipPlane1IMG = 12289,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_CLIP_PLANE2_IMG")]
     ClipPlane2IMG = 12290,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_CLIP_PLANE3_IMG")]
     ClipPlane3IMG = 12291,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_CLIP_PLANE4_IMG")]
     ClipPlane4IMG = 12292,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_CLIP_PLANE5_IMG")]
     ClipPlane5IMG = 12293,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_MAX_CLIP_PLANES_IMG")]
     MaxClipPlanesIMG = 3378,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ALL_COMPLETED_NV")]
     AllCompletedNV = 34034,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FENCE_STATUS_NV")]
     FenceStatusNV = 34035,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FENCE_CONDITION_NV")]
     FenceConditionNV = 34036,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_WIDTH_QCOM")]
     TextureWidthQCOM = 35794,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_HEIGHT_QCOM")]
     TextureHeightQCOM = 35795,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_DEPTH_QCOM")]
     TextureDepthQCOM = 35796,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_INTERNAL_FORMAT_QCOM")]
     TextureInternalFormatQCOM = 35797,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_FORMAT_QCOM")]
     TextureFormatQCOM = 35798,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_TYPE_QCOM")]
     TextureTypeQCOM = 35799,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_IMAGE_VALID_QCOM")]
     TextureImageValidQCOM = 35800,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_NUM_LEVELS_QCOM")]
     TextureNumLevelsQCOM = 35801,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_TARGET_QCOM")]
     TextureTargetQCOM = 35802,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_OBJECT_VALID_QCOM")]
     TextureObjectValidQCOM = 35803,
 
     [NativeName("GL_STATE_RESTORE")]
     StateRestore = 35804,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_PERFMON_GLOBAL_MODE_QCOM")]
     PerfmonGlobalModeQCOM = 36768,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_COLOR_BUFFER_BIT0_QCOM")]
     ColorBufferBit0QCOM = 1,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_COLOR_BUFFER_BIT1_QCOM")]
     ColorBufferBit1QCOM = 2,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_COLOR_BUFFER_BIT2_QCOM")]
     ColorBufferBit2QCOM = 4,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_COLOR_BUFFER_BIT3_QCOM")]
     ColorBufferBit3QCOM = 8,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_COLOR_BUFFER_BIT4_QCOM")]
     ColorBufferBit4QCOM = 16,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_COLOR_BUFFER_BIT5_QCOM")]
     ColorBufferBit5QCOM = 32,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_COLOR_BUFFER_BIT6_QCOM")]
     ColorBufferBit6QCOM = 64,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_COLOR_BUFFER_BIT7_QCOM")]
     ColorBufferBit7QCOM = 128,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_DEPTH_BUFFER_BIT0_QCOM")]
     DepthBufferBit0QCOM = 256,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_DEPTH_BUFFER_BIT1_QCOM")]
     DepthBufferBit1QCOM = 512,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_DEPTH_BUFFER_BIT2_QCOM")]
     DepthBufferBit2QCOM = 1024,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_DEPTH_BUFFER_BIT3_QCOM")]
     DepthBufferBit3QCOM = 2048,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_DEPTH_BUFFER_BIT4_QCOM")]
     DepthBufferBit4QCOM = 4096,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_DEPTH_BUFFER_BIT5_QCOM")]
     DepthBufferBit5QCOM = 8192,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_DEPTH_BUFFER_BIT6_QCOM")]
     DepthBufferBit6QCOM = 16384,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_DEPTH_BUFFER_BIT7_QCOM")]
     DepthBufferBit7QCOM = 32768,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_STENCIL_BUFFER_BIT0_QCOM")]
     StencilBufferBit0QCOM = 65536,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_STENCIL_BUFFER_BIT1_QCOM")]
     StencilBufferBit1QCOM = 131072,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_STENCIL_BUFFER_BIT2_QCOM")]
     StencilBufferBit2QCOM = 262144,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_STENCIL_BUFFER_BIT3_QCOM")]
     StencilBufferBit3QCOM = 524288,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_STENCIL_BUFFER_BIT4_QCOM")]
     StencilBufferBit4QCOM = 1048576,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_STENCIL_BUFFER_BIT5_QCOM")]
     StencilBufferBit5QCOM = 2097152,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_STENCIL_BUFFER_BIT6_QCOM")]
     StencilBufferBit6QCOM = 4194304,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_STENCIL_BUFFER_BIT7_QCOM")]
     StencilBufferBit7QCOM = 8388608,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MULTISAMPLE_BUFFER_BIT0_QCOM")]
     MultisampleBufferBit0QCOM = 16777216,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MULTISAMPLE_BUFFER_BIT1_QCOM")]
     MultisampleBufferBit1QCOM = 33554432,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MULTISAMPLE_BUFFER_BIT2_QCOM")]
     MultisampleBufferBit2QCOM = 67108864,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MULTISAMPLE_BUFFER_BIT3_QCOM")]
     MultisampleBufferBit3QCOM = 134217728,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MULTISAMPLE_BUFFER_BIT4_QCOM")]
     MultisampleBufferBit4QCOM = 268435456,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MULTISAMPLE_BUFFER_BIT5_QCOM")]
     MultisampleBufferBit5QCOM = 536870912,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MULTISAMPLE_BUFFER_BIT6_QCOM")]
     MultisampleBufferBit6QCOM = 1073741824,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MULTISAMPLE_BUFFER_BIT7_QCOM")]
     MultisampleBufferBit7QCOM = 2147483648,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_WRITEONLY_RENDERING_QCOM")]
     WriteonlyRenderingQCOM = 34851,
 
@@ -2533,7 +2249,6 @@ public enum GlEnum : uint
     TextureGenS = 3168,
 
     [NativeName("GL_TEXTURE_GEN")]
-    [NameAffix("Suffix", "_T", -1)]
     TextureGen = 3169,
 
     [NativeName("GL_TEXTURE_GEN_R")]
@@ -2759,7 +2474,6 @@ public enum GlEnum : uint
     S = 8192,
 
     [NativeName("GL")]
-    [NameAffix("Suffix", "_T", -1)]
     Gl = 8193,
 
     [NativeName("GL_R")]
@@ -4517,15 +4231,12 @@ public enum GlEnum : uint
     [NativeName("GL_TEXTURE_BUFFER_DATA_STORE_BINDING")]
     TextureBufferDataStoreBinding = 35885,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_TEXTURE_RECTANGLE")]
     TextureRectANGLE = 34037,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_TEXTURE_BINDING_RECTANGLE")]
     TextureBindingRectANGLE = 34038,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_PROXY_TEXTURE_RECTANGLE")]
     ProxyTextureRectANGLE = 34039,
 
@@ -6581,675 +6292,507 @@ public enum GlEnum : uint
     [NativeName("GL_TRANSFORM_FEEDBACK_STREAM_OVERFLOW")]
     TransformFeedbackStreamOverflow = 33517,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PRIMITIVE_BOUNDING_BOX_ARB")]
     PrimitiveBoundingBoxARB = 37566,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MULTISAMPLE_LINE_WIDTH_RANGE_ARB")]
     MultisampleLineWidthRangeARB = 37761,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MULTISAMPLE_LINE_WIDTH_GRANULARITY_ARB")]
     MultisampleLineWidthGranularityARB = 37762,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_INT64_ARB")]
     UnsignedInt64ARB = 5135,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SYNC_CL_EVENT_ARB")]
     SyncClEventARB = 33344,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SYNC_CL_EVENT_COMPLETE_ARB")]
     SyncClEventCompleteARB = 33345,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_RGBA_FLOAT_MODE_ARB")]
     RgbaFloatModeARB = 34848,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CLAMP_VERTEX_COLOR_ARB")]
     ClampVertexColorARB = 35098,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CLAMP_FRAGMENT_COLOR_ARB")]
     ClampFragmentColorARB = 35099,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CLAMP_READ_COLOR_ARB")]
     ClampReadColorARB = 35100,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FIXED_ONLY_ARB")]
     FixedOnlyARB = 35101,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_COMPUTE_VARIABLE_GROUP_INVOCATIONS_ARB")]
     MaxComputeVariableGroupInvocationsARB = 37700,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_COMPUTE_FIXED_GROUP_INVOCATIONS_ARB")]
     MaxComputeFixedGroupInvocationsARB = 37099,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_COMPUTE_VARIABLE_GROUP_SIZE_ARB")]
     MaxComputeVariableGroupSizeARB = 37701,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_COMPUTE_FIXED_GROUP_SIZE_ARB")]
     MaxComputeFixedGroupSizeARB = 37311,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_OUTPUT_SYNCHRONOUS_ARB")]
     DebugOutputSynchronousARB = 33346,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_ARB")]
     DebugNextLoggedMessageLengthARB = 33347,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_CALLBACK_FUNCTION_ARB")]
     DebugCallbackFunctionARB = 33348,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_CALLBACK_USER_PARAM_ARB")]
     DebugCallbackUserParamARB = 33349,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_SOURCE_API_ARB")]
     DebugSourceApiARB = 33350,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_SOURCE_WINDOW_SYSTEM_ARB")]
     DebugSourceWindowSystemARB = 33351,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_SOURCE_SHADER_COMPILER_ARB")]
     DebugSourceShaderCompilerARB = 33352,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_SOURCE_THIRD_PARTY_ARB")]
     DebugSourceThirdPartyARB = 33353,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_SOURCE_APPLICATION_ARB")]
     DebugSourceApplicationARB = 33354,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_SOURCE_OTHER_ARB")]
     DebugSourceOtherARB = 33355,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_TYPE_ERROR_ARB")]
     DebugTypeErrorARB = 33356,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_ARB")]
     DebugTypeDeprecatedBehaviorARB = 33357,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_ARB")]
     DebugTypeUndefinedBehaviorARB = 33358,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_TYPE_PORTABILITY_ARB")]
     DebugTypePortabilityARB = 33359,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_TYPE_PERFORMANCE_ARB")]
     DebugTypePerformanceARB = 33360,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_TYPE_OTHER_ARB")]
     DebugTypeOtherARB = 33361,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_DEBUG_MESSAGE_LENGTH_ARB")]
     MaxDebugMessageLengthARB = 37187,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_DEBUG_LOGGED_MESSAGES_ARB")]
     MaxDebugLoggedMessagesARB = 37188,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_LOGGED_MESSAGES_ARB")]
     DebugLoggedMessagesARB = 37189,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_SEVERITY_HIGH_ARB")]
     DebugSeverityHighARB = 37190,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_SEVERITY_MEDIUM_ARB")]
     DebugSeverityMediumARB = 37191,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEBUG_SEVERITY_LOW_ARB")]
     DebugSeverityLowARB = 37192,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEPTH_COMPONENT16_ARB")]
     DepthComponent16ARB = 33189,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEPTH_COMPONENT24_ARB")]
     DepthComponent24ARB = 33190,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEPTH_COMPONENT32_ARB")]
     DepthComponent32ARB = 33191,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_DEPTH_SIZE_ARB")]
     TextureDepthSizeARB = 34890,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DEPTH_TEXTURE_MODE_ARB")]
     DepthTextureModeARB = 34891,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_DRAW_BUFFERS_ARB")]
     MaxDrawBuffersARB = 34852,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER0_ARB")]
     DrawBuffer0ARB = 34853,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER1_ARB")]
     DrawBuffer1ARB = 34854,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER2_ARB")]
     DrawBuffer2ARB = 34855,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER3_ARB")]
     DrawBuffer3ARB = 34856,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER4_ARB")]
     DrawBuffer4ARB = 34857,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER5_ARB")]
     DrawBuffer5ARB = 34858,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER6_ARB")]
     DrawBuffer6ARB = 34859,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER7_ARB")]
     DrawBuffer7ARB = 34860,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER8_ARB")]
     DrawBuffer8ARB = 34861,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER9_ARB")]
     DrawBuffer9ARB = 34862,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER10_ARB")]
     DrawBuffer10ARB = 34863,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER11_ARB")]
     DrawBuffer11ARB = 34864,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER12_ARB")]
     DrawBuffer12ARB = 34865,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER13_ARB")]
     DrawBuffer13ARB = 34866,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER14_ARB")]
     DrawBuffer14ARB = 34867,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DRAW_BUFFER15_ARB")]
     DrawBuffer15ARB = 34868,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAGMENT_PROGRAM_ARB")]
     FragmentProgramARB = 34820,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_FORMAT_ASCII_ARB")]
     ProgramFormatAsciiARB = 34933,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_LENGTH_ARB")]
     ProgramLengthARB = 34343,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_FORMAT_ARB")]
     ProgramFormatARB = 34934,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_BINDING_ARB")]
     ProgramBindingARB = 34423,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_INSTRUCTIONS_ARB")]
     ProgramInstructionsARB = 34976,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_INSTRUCTIONS_ARB")]
     MaxProgramInstructionsARB = 34977,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_NATIVE_INSTRUCTIONS_ARB")]
     ProgramNativeInstructionsARB = 34978,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_NATIVE_INSTRUCTIONS_ARB")]
     MaxProgramNativeInstructionsARB = 34979,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_TEMPORARIES_ARB")]
     ProgramTemporariesARB = 34980,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_TEMPORARIES_ARB")]
     MaxProgramTemporariesARB = 34981,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_NATIVE_TEMPORARIES_ARB")]
     ProgramNativeTemporariesARB = 34982,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_NATIVE_TEMPORARIES_ARB")]
     MaxProgramNativeTemporariesARB = 34983,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_PARAMETERS_ARB")]
     ProgramParametersARB = 34984,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_PARAMETERS_ARB")]
     MaxProgramParametersARB = 34985,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_NATIVE_PARAMETERS_ARB")]
     ProgramNativeParametersARB = 34986,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_NATIVE_PARAMETERS_ARB")]
     MaxProgramNativeParametersARB = 34987,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_ATTRIBS_ARB")]
     ProgramAttribsARB = 34988,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_ATTRIBS_ARB")]
     MaxProgramAttribsARB = 34989,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_NATIVE_ATTRIBS_ARB")]
     ProgramNativeAttribsARB = 34990,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_NATIVE_ATTRIBS_ARB")]
     MaxProgramNativeAttribsARB = 34991,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_LOCAL_PARAMETERS_ARB")]
     MaxProgramLocalParametersARB = 34996,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_ENV_PARAMETERS_ARB")]
     MaxProgramEnvParametersARB = 34997,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_UNDER_NATIVE_LIMITS_ARB")]
     ProgramUnderNativeLimitsARB = 34998,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_ALU_INSTRUCTIONS_ARB")]
     ProgramAluInstructionsARB = 34821,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_TEX_INSTRUCTIONS_ARB")]
     ProgramTexInstructionsARB = 34822,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_TEX_INDIRECTIONS_ARB")]
     ProgramTexIndirectionsARB = 34823,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB")]
     ProgramNativeAluInstructionsARB = 34824,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB")]
     ProgramNativeTexInstructionsARB = 34825,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB")]
     ProgramNativeTexIndirectionsARB = 34826,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_ALU_INSTRUCTIONS_ARB")]
     MaxProgramAluInstructionsARB = 34827,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_TEX_INSTRUCTIONS_ARB")]
     MaxProgramTexInstructionsARB = 34828,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_TEX_INDIRECTIONS_ARB")]
     MaxProgramTexIndirectionsARB = 34829,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_NATIVE_ALU_INSTRUCTIONS_ARB")]
     MaxProgramNativeAluInstructionsARB = 34830,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_NATIVE_TEX_INSTRUCTIONS_ARB")]
     MaxProgramNativeTexInstructionsARB = 34831,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_NATIVE_TEX_INDIRECTIONS_ARB")]
     MaxProgramNativeTexIndirectionsARB = 34832,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_STRING_ARB")]
     ProgramStringARB = 34344,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_ERROR_POSITION_ARB")]
     ProgramErrorPositionARB = 34379,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CURRENT_MATRIX_ARB")]
     CurrentMatrixARB = 34369,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRANSPOSE_CURRENT_MATRIX_ARB")]
     TransposeCurrentMatrixARB = 34999,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CURRENT_MATRIX_STACK_DEPTH_ARB")]
     CurrentMatrixStackDepthARB = 34368,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_MATRICES_ARB")]
     MaxProgramMatricesARB = 34351,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_MATRIX_STACK_DEPTH_ARB")]
     MaxProgramMatrixStackDepthARB = 34350,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_TEXTURE_COORDS_ARB")]
     MaxTextureCoordsARB = 34929,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_TEXTURE_IMAGE_UNITS_ARB")]
     MaxTextureImageUnitsARB = 34930,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_ERROR_STRING_ARB")]
     ProgramErrorStringARB = 34932,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX0_ARB")]
     Matrix0ARB = 35008,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX1_ARB")]
     Matrix1ARB = 35009,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX2_ARB")]
     Matrix2ARB = 35010,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX3_ARB")]
     Matrix3ARB = 35011,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX4_ARB")]
     Matrix4ARB = 35012,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX5_ARB")]
     Matrix5ARB = 35013,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX6_ARB")]
     Matrix6ARB = 35014,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX7_ARB")]
     Matrix7ARB = 35015,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX8_ARB")]
     Matrix8ARB = 35016,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX9_ARB")]
     Matrix9ARB = 35017,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX10_ARB")]
     Matrix10ARB = 35018,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX11_ARB")]
     Matrix11ARB = 35019,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX12_ARB")]
     Matrix12ARB = 35020,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX13_ARB")]
     Matrix13ARB = 35021,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX14_ARB")]
     Matrix14ARB = 35022,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX15_ARB")]
     Matrix15ARB = 35023,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX16_ARB")]
     Matrix16ARB = 35024,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX17_ARB")]
     Matrix17ARB = 35025,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX18_ARB")]
     Matrix18ARB = 35026,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX19_ARB")]
     Matrix19ARB = 35027,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX20_ARB")]
     Matrix20ARB = 35028,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX21_ARB")]
     Matrix21ARB = 35029,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX22_ARB")]
     Matrix22ARB = 35030,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX23_ARB")]
     Matrix23ARB = 35031,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX24_ARB")]
     Matrix24ARB = 35032,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX25_ARB")]
     Matrix25ARB = 35033,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX26_ARB")]
     Matrix26ARB = 35034,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX27_ARB")]
     Matrix27ARB = 35035,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX28_ARB")]
     Matrix28ARB = 35036,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX29_ARB")]
     Matrix29ARB = 35037,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX30_ARB")]
     Matrix30ARB = 35038,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX31_ARB")]
     Matrix31ARB = 35039,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAGMENT_SHADER_ARB")]
     FragmentShaderARB = 35632,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_FRAGMENT_UNIFORM_COMPONENTS_ARB")]
     MaxFragmentUniformComponentsARB = 35657,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB")]
     FragmentShaderDerivativeHintARB = 35723,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LINES_ADJACENCY_ARB")]
     LinesAdjacencyARB = 10,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LINE_STRIP_ADJACENCY_ARB")]
     LineStripAdjacencyARB = 11,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRIANGLES_ADJACENCY_ARB")]
     TrianglesAdjacencyARB = 12,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_ARB")]
     TriangleStripAdjacencyARB = 13,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_POINT_SIZE_ARB")]
     ProgramPointSizeARB = 34370,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_ARB")]
     MaxGeometryTextureImageUnitsARB = 35881,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_ARB")]
     FramebufferAttachmentLayeredARB = 36263,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_ARB")]
     FramebufferIncompleteLayerTargetsARB = 36264,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_ARB")]
     FramebufferIncompleteLayerCountARB = 36265,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_GEOMETRY_SHADER_ARB")]
     GeometryShaderARB = 36313,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_GEOMETRY_VERTICES_OUT_ARB")]
     GeometryVerticesOutARB = 36314,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_GEOMETRY_INPUT_TYPE_ARB")]
     GeometryInputTypeARB = 36315,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_GEOMETRY_OUTPUT_TYPE_ARB")]
     GeometryOutputTypeARB = 36316,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_GEOMETRY_VARYING_COMPONENTS_ARB")]
     MaxGeometryVaryingComponentsARB = 36317,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_VERTEX_VARYING_COMPONENTS_ARB")]
     MaxVertexVaryingComponentsARB = 36318,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_ARB")]
     MaxGeometryUniformComponentsARB = 36319,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_GEOMETRY_OUTPUT_VERTICES_ARB")]
     MaxGeometryOutputVerticesARB = 36320,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_ARB")]
     MaxGeometryTotalOutputComponentsARB = 36321,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SHADER_BINARY_FORMAT_SPIR_V_ARB")]
     ShaderBinaryFormatSpirVARB = 38225,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SPIR_V_BINARY_ARB")]
     SpirVBinaryARB = 38226,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT64_ARB")]
     Int64ARB = 5134,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT64_VEC2_ARB")]
     Int64Vec2ARB = 36841,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT64_VEC3_ARB")]
     Int64Vec3ARB = 36842,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT64_VEC4_ARB")]
     Int64Vec4ARB = 36843,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_INT64_VEC2_ARB")]
     UnsignedInt64Vec2ARB = 36853,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_INT64_VEC3_ARB")]
     UnsignedInt64Vec3ARB = 36854,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_INT64_VEC4_ARB")]
     UnsignedInt64Vec4ARB = 36855,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_HALF_FLOAT_ARB")]
     HalfFloatARB = 5131,
 
@@ -7409,19 +6952,15 @@ public enum GlEnum : uint
     [NativeName("GL_CONVOLUTION_BORDER_COLOR")]
     ConvolutionBorderColor = 33108,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PARAMETER_BUFFER_ARB")]
     ParameterBufferARB = 33006,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PARAMETER_BUFFER_BINDING_ARB")]
     ParameterBufferBindingARB = 33007,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ARB")]
     VertexAttribArrayDivisorARB = 35070,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SRGB_DECODE_ARB")]
     SrgbDecodeARB = 33433,
 
@@ -7482,5465 +7021,4101 @@ public enum GlEnum : uint
     [NativeName("GL_VIEW_CLASS_ASTC_12x12_RGBA")]
     ViewClassAstc12X12Rgba = 37781,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX_PALETTE_ARB")]
     MatrixPaletteARB = 34880,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_MATRIX_PALETTE_STACK_DEPTH_ARB")]
     MaxMatrixPaletteStackDepthARB = 34881,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PALETTE_MATRICES_ARB")]
     MaxPaletteMatricesARB = 34882,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CURRENT_PALETTE_MATRIX_ARB")]
     CurrentPaletteMatrixARB = 34883,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_ARB")]
     MatrixIndexArrayARB = 34884,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CURRENT_MATRIX_INDEX_ARB")]
     CurrentMatrixIndexARB = 34885,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_SIZE_ARB")]
     MatrixIndexArraySizeARB = 34886,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_TYPE_ARB")]
     MatrixIndexArrayTypeARB = 34887,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_STRIDE_ARB")]
     MatrixIndexArrayStrideARB = 34888,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MATRIX_INDEX_ARRAY_POINTER_ARB")]
     MatrixIndexArrayPointerARB = 34889,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MULTISAMPLE_ARB")]
     MultisampleARB = 32925,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_ALPHA_TO_COVERAGE_ARB")]
     SampleAlphaToCoverageARB = 32926,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_ALPHA_TO_ONE_ARB")]
     SampleAlphaToOneARB = 32927,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_COVERAGE_ARB")]
     SampleCoverageARB = 32928,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_BUFFERS_ARB")]
     SampleBuffersARB = 32936,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLES_ARB")]
     SamplesARB = 32937,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_COVERAGE_VALUE_ARB")]
     SampleCoverageValueARB = 32938,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_COVERAGE_INVERT_ARB")]
     SampleCoverageInvertARB = 32939,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MULTISAMPLE_BIT_ARB")]
     MultisampleBitARB = 536870912,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE0_ARB")]
     Texture0ARB = 33984,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE1_ARB")]
     Texture1ARB = 33985,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE2_ARB")]
     Texture2ARB = 33986,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE3_ARB")]
     Texture3ARB = 33987,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE4_ARB")]
     Texture4ARB = 33988,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE5_ARB")]
     Texture5ARB = 33989,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE6_ARB")]
     Texture6ARB = 33990,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE7_ARB")]
     Texture7ARB = 33991,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE8_ARB")]
     Texture8ARB = 33992,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE9_ARB")]
     Texture9ARB = 33993,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE10_ARB")]
     Texture10ARB = 33994,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE11_ARB")]
     Texture11ARB = 33995,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE12_ARB")]
     Texture12ARB = 33996,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE13_ARB")]
     Texture13ARB = 33997,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE14_ARB")]
     Texture14ARB = 33998,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE15_ARB")]
     Texture15ARB = 33999,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE16_ARB")]
     Texture16ARB = 34000,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE17_ARB")]
     Texture17ARB = 34001,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE18_ARB")]
     Texture18ARB = 34002,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE19_ARB")]
     Texture19ARB = 34003,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE20_ARB")]
     Texture20ARB = 34004,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE21_ARB")]
     Texture21ARB = 34005,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE22_ARB")]
     Texture22ARB = 34006,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE23_ARB")]
     Texture23ARB = 34007,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE24_ARB")]
     Texture24ARB = 34008,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE25_ARB")]
     Texture25ARB = 34009,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE26_ARB")]
     Texture26ARB = 34010,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE27_ARB")]
     Texture27ARB = 34011,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE28_ARB")]
     Texture28ARB = 34012,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE29_ARB")]
     Texture29ARB = 34013,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE30_ARB")]
     Texture30ARB = 34014,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE31_ARB")]
     Texture31ARB = 34015,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_ACTIVE_TEXTURE_ARB")]
     ActiveTextureARB = 34016,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CLIENT_ACTIVE_TEXTURE_ARB")]
     ClientActiveTextureARB = 34017,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_TEXTURE_UNITS_ARB")]
     MaxTextureUnitsARB = 34018,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_QUERY_COUNTER_BITS_ARB")]
     QueryCounterBitsARB = 34916,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CURRENT_QUERY_ARB")]
     CurrentQueryARB = 34917,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_QUERY_RESULT_ARB")]
     QueryResultARB = 34918,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_QUERY_RESULT_AVAILABLE_ARB")]
     QueryResultAvailableARB = 34919,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLES_PASSED_ARB")]
     SamplesPassedARB = 35092,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_SHADER_COMPILER_THREADS_ARB")]
     MaxShaderCompilerThreadsARB = 37296,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPLETION_STATUS_ARB")]
     CompletionStatusARB = 37297,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTICES_SUBMITTED_ARB")]
     VerticesSubmittedARB = 33518,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PRIMITIVES_SUBMITTED_ARB")]
     PrimitivesSubmittedARB = 33519,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_SHADER_INVOCATIONS_ARB")]
     VertexShaderInvocationsARB = 33520,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TESS_CONTROL_SHADER_PATCHES_ARB")]
     TessControlShaderPatchesARB = 33521,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TESS_EVALUATION_SHADER_INVOCATIONS_ARB")]
     TessEvaluationShaderInvocationsARB = 33522,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_GEOMETRY_SHADER_PRIMITIVES_EMITTED_ARB")]
     GeometryShaderPrimitivesEmittedARB = 33523,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAGMENT_SHADER_INVOCATIONS_ARB")]
     FragmentShaderInvocationsARB = 33524,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPUTE_SHADER_INVOCATIONS_ARB")]
     ComputeShaderInvocationsARB = 33525,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CLIPPING_INPUT_PRIMITIVES_ARB")]
     ClippingInputPrimitivesARB = 33526,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CLIPPING_OUTPUT_PRIMITIVES_ARB")]
     ClippingOutputPrimitivesARB = 33527,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PIXEL_PACK_BUFFER_ARB")]
     PixelPackBufferARB = 35051,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PIXEL_UNPACK_BUFFER_ARB")]
     PixelUnpackBufferARB = 35052,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PIXEL_PACK_BUFFER_BINDING_ARB")]
     PixelPackBufferBindingARB = 35053,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PIXEL_UNPACK_BUFFER_BINDING_ARB")]
     PixelUnpackBufferBindingARB = 35055,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_POINT_SIZE_MIN_ARB")]
     PointSizeMinARB = 33062,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_POINT_SIZE_MAX_ARB")]
     PointSizeMaxARB = 33063,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_POINT_FADE_THRESHOLD_SIZE_ARB")]
     PointFadeThresholdSizeARB = 33064,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_POINT_DISTANCE_ATTENUATION_ARB")]
     PointDistanceAttenuationARB = 33065,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_POINT_SPRITE_ARB")]
     PointSpriteARB = 34913,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COORD_REPLACE_ARB")]
     CoordReplaceARB = 34914,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB")]
     ContextFlagRobustAccessBitARB = 4,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LOSE_CONTEXT_ON_RESET_ARB")]
     LoseContextOnResetARB = 33362,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_GUILTY_CONTEXT_RESET_ARB")]
     GuiltyContextResetARB = 33363,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INNOCENT_CONTEXT_RESET_ARB")]
     InnocentContextResetARB = 33364,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNKNOWN_CONTEXT_RESET_ARB")]
     UnknownContextResetARB = 33365,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_RESET_NOTIFICATION_STRATEGY_ARB")]
     ResetNotificationStrategyARB = 33366,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_NO_RESET_NOTIFICATION_ARB")]
     NoResetNotificationARB = 33377,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_LOCATION_SUBPIXEL_BITS_ARB")]
     SampleLocationSubpixelBitsARB = 37693,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_LOCATION_PIXEL_GRID_WIDTH_ARB")]
     SampleLocationPixelGridWidthARB = 37694,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_LOCATION_PIXEL_GRID_HEIGHT_ARB")]
     SampleLocationPixelGridHeightARB = 37695,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAMMABLE_SAMPLE_LOCATION_TABLE_SIZE_ARB")]
     ProgrammableSampleLocationTableSizeARB = 37696,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_LOCATION_ARB")]
     SampleLocationARB = 36432,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAMMABLE_SAMPLE_LOCATION_ARB")]
     ProgrammableSampleLocationARB = 37697,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_ARB")]
     FramebufferProgrammableSampleLocationsARB = 37698,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_ARB")]
     FramebufferSampleLocationPixelGridARB = 37699,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_SHADING_ARB")]
     SampleShadingARB = 35894,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MIN_SAMPLE_SHADING_VALUE_ARB")]
     MinSampleShadingValueARB = 35895,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_OBJECT_ARB")]
     ProgramObjectARB = 35648,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SHADER_OBJECT_ARB")]
     ShaderObjectARB = 35656,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_TYPE_ARB")]
     ObjectTypeARB = 35662,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_SUBTYPE_ARB")]
     ObjectSubtypeARB = 35663,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_VEC2_ARB")]
     FloatVec2ARB = 35664,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_VEC3_ARB")]
     FloatVec3ARB = 35665,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_VEC4_ARB")]
     FloatVec4ARB = 35666,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT_VEC2_ARB")]
     IntVec2ARB = 35667,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT_VEC3_ARB")]
     IntVec3ARB = 35668,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT_VEC4_ARB")]
     IntVec4ARB = 35669,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BOOL_ARB")]
     BoolARB = 35670,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BOOL_VEC2_ARB")]
     BoolVec2ARB = 35671,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BOOL_VEC3_ARB")]
     BoolVec3ARB = 35672,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BOOL_VEC4_ARB")]
     BoolVec4ARB = 35673,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_MAT2_ARB")]
     FloatMat2ARB = 35674,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_MAT3_ARB")]
     FloatMat3ARB = 35675,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FLOAT_MAT4_ARB")]
     FloatMat4ARB = 35676,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_1D_ARB")]
     Sampler1DARB = 35677,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_2D_ARB")]
     Sampler2DARB = 35678,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_3D_ARB")]
     Sampler3DARB = 35679,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_CUBE_ARB")]
     SamplerCubeARB = 35680,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_1D_SHADOW_ARB")]
     Sampler1DShadowARB = 35681,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_2D_SHADOW_ARB")]
     Sampler2DShadowARB = 35682,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_2D_RECT_ARB")]
     Sampler2DRectARB = 35683,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_2D_RECT_SHADOW_ARB")]
     Sampler2DRectShadowARB = 35684,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_DELETE_STATUS_ARB")]
     ObjectDeleteStatusARB = 35712,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_COMPILE_STATUS_ARB")]
     ObjectCompileStatusARB = 35713,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_LINK_STATUS_ARB")]
     ObjectLinkStatusARB = 35714,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_VALIDATE_STATUS_ARB")]
     ObjectValidateStatusARB = 35715,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_INFO_LOG_LENGTH_ARB")]
     ObjectInfoLogLengthARB = 35716,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_ATTACHED_OBJECTS_ARB")]
     ObjectAttachedObjectsARB = 35717,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_ACTIVE_UNIFORMS_ARB")]
     ObjectActiveUniformsARB = 35718,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_ACTIVE_UNIFORM_MAX_LENGTH_ARB")]
     ObjectActiveUniformMaxLengthARB = 35719,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_SHADER_SOURCE_LENGTH_ARB")]
     ObjectShaderSourceLengthARB = 35720,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SHADING_LANGUAGE_VERSION_ARB")]
     ShadingLanguageVersionARB = 35724,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SHADER_INCLUDE_ARB")]
     ShaderIncludeARB = 36270,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_NAMED_STRING_LENGTH_ARB")]
     NamedStringLengthARB = 36329,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_NAMED_STRING_TYPE_ARB")]
     NamedStringTypeARB = 36330,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_COMPARE_MODE_ARB")]
     TextureCompareModeARB = 34892,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_COMPARE_FUNC_ARB")]
     TextureCompareFuncARB = 34893,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPARE_R_TO_TEXTURE_ARB")]
     CompareRToTextureARB = 34894,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_COMPARE_FAIL_VALUE_ARB")]
     TextureCompareFailValueARB = 32959,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SPARSE_STORAGE_BIT_ARB")]
     SparseStorageBitARB = 1024,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SPARSE_BUFFER_PAGE_SIZE_ARB")]
     SparseBufferPageSizeARB = 33528,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_SPARSE_ARB")]
     TextureSparseARB = 37286,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_INDEX_ARB")]
     VirtualPageSizeIndexARB = 37287,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_NUM_SPARSE_LEVELS_ARB")]
     NumSparseLevelsARB = 37290,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_NUM_VIRTUAL_PAGE_SIZES_ARB")]
     NumVirtualPageSizesARB = 37288,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_X_ARB")]
     VirtualPageSizeXARB = 37269,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_Y_ARB")]
     VirtualPageSizeYARB = 37270,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_Z_ARB")]
     VirtualPageSizeZARB = 37271,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_SPARSE_TEXTURE_SIZE_ARB")]
     MaxSparseTextureSizeARB = 37272,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_SPARSE_3D_TEXTURE_SIZE_ARB")]
     MaxSparse3DTextureSizeARB = 37273,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB")]
     MaxSparseArrayTextureLayersARB = 37274,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_ARB")]
     SparseTextureFullArrayCubeMipmapsARB = 37289,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CLAMP_TO_BORDER_ARB")]
     ClampToBorderARB = 33069,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_BUFFER_ARB")]
     TextureBufferARB = 35882,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_TEXTURE_BUFFER_SIZE_ARB")]
     MaxTextureBufferSizeARB = 35883,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_BINDING_BUFFER_ARB")]
     TextureBindingBufferARB = 35884,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_BUFFER_DATA_STORE_BINDING_ARB")]
     TextureBufferDataStoreBindingARB = 35885,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_BUFFER_FORMAT_ARB")]
     TextureBufferFormatARB = 35886,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_ALPHA_ARB")]
     CompressedAlphaARB = 34025,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_LUMINANCE_ARB")]
     CompressedLuminanceARB = 34026,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_LUMINANCE_ALPHA_ARB")]
     CompressedLuminanceAlphaARB = 34027,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_INTENSITY_ARB")]
     CompressedIntensityARB = 34028,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_RGB_ARB")]
     CompressedRgbARB = 34029,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ARB")]
     CompressedRgbaARB = 34030,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_COMPRESSION_HINT_ARB")]
     TextureCompressionHintARB = 34031,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_COMPRESSED_IMAGE_SIZE_ARB")]
     TextureCompressedImageSizeARB = 34464,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_COMPRESSED_ARB")]
     TextureCompressedARB = 34465,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_NUM_COMPRESSED_TEXTURE_FORMATS_ARB")]
     NumCompressedTextureFormatsARB = 34466,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_TEXTURE_FORMATS_ARB")]
     CompressedTextureFormatsARB = 34467,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_RGBA_BPTC_UNORM_ARB")]
     CompressedRgbaBptcUnormARB = 36492,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB")]
     CompressedSrgbAlphaBptcUnormARB = 36493,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB")]
     CompressedRgbBptcSignedFloatARB = 36494,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB")]
     CompressedRgbBptcUnsignedFloatARB = 36495,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_NORMAL_MAP_ARB")]
     NormalMapARB = 34065,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_REFLECTION_MAP_ARB")]
     ReflectionMapARB = 34066,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_ARB")]
     TextureCubeMapARB = 34067,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_ARB")]
     TextureBindingCubeMapARB = 34068,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_ARB")]
     TextureCubeMapPositiveXARB = 34069,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_ARB")]
     TextureCubeMapNegativeXARB = 34070,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_ARB")]
     TextureCubeMapPositiveYARB = 34071,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_ARB")]
     TextureCubeMapNegativeYARB = 34072,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_ARB")]
     TextureCubeMapPositiveZARB = 34073,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_ARB")]
     TextureCubeMapNegativeZARB = 34074,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROXY_TEXTURE_CUBE_MAP_ARB")]
     ProxyTextureCubeMapARB = 34075,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_ARB")]
     MaxCubeMapTextureSizeARB = 34076,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_ARB")]
     TextureCubeMapArrayARB = 36873,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_ARB")]
     TextureBindingCubeMapArrayARB = 36874,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROXY_TEXTURE_CUBE_MAP_ARRAY_ARB")]
     ProxyTextureCubeMapArrayARB = 36875,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_ARB")]
     SamplerCubeMapArrayARB = 36876,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_ARB")]
     SamplerCubeMapArrayShadowARB = 36877,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INT_SAMPLER_CUBE_MAP_ARRAY_ARB")]
     IntSamplerCubeMapArrayARB = 36878,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_ARB")]
     UnsignedIntSamplerCubeMapArrayARB = 36879,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMBINE_ARB")]
     CombineARB = 34160,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMBINE_RGB_ARB")]
     CombineRgbARB = 34161,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COMBINE_ALPHA_ARB")]
     CombineAlphaARB = 34162,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SOURCE0_RGB_ARB")]
     Source0RgbARB = 34176,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SOURCE1_RGB_ARB")]
     Source1RgbARB = 34177,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SOURCE2_RGB_ARB")]
     Source2RgbARB = 34178,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SOURCE0_ALPHA_ARB")]
     Source0AlphaARB = 34184,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SOURCE1_ALPHA_ARB")]
     Source1AlphaARB = 34185,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SOURCE2_ALPHA_ARB")]
     Source2AlphaARB = 34186,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OPERAND0_RGB_ARB")]
     Operand0RgbARB = 34192,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OPERAND1_RGB_ARB")]
     Operand1RgbARB = 34193,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OPERAND2_RGB_ARB")]
     Operand2RgbARB = 34194,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OPERAND0_ALPHA_ARB")]
     Operand0AlphaARB = 34200,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OPERAND1_ALPHA_ARB")]
     Operand1AlphaARB = 34201,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OPERAND2_ALPHA_ARB")]
     Operand2AlphaARB = 34202,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_RGB_SCALE_ARB")]
     RgbScaleARB = 34163,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_ADD_SIGNED_ARB")]
     AddSignedARB = 34164,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INTERPOLATE_ARB")]
     InterpolateARB = 34165,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SUBTRACT_ARB")]
     SubtractARB = 34023,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CONSTANT_ARB")]
     ConstantARB = 34166,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PRIMARY_COLOR_ARB")]
     PrimaryColorARB = 34167,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PREVIOUS_ARB")]
     PreviousARB = 34168,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DOT3_RGB_ARB")]
     Dot3RgbARB = 34478,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DOT3_RGBA_ARB")]
     Dot3RgbaARB = 34479,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_REDUCTION_MODE_ARB")]
     TextureReductionModeARB = 37734,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_WEIGHTED_AVERAGE_ARB")]
     WeightedAverageARB = 37735,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_RED_TYPE_ARB")]
     TextureRedTypeARB = 35856,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_GREEN_TYPE_ARB")]
     TextureGreenTypeARB = 35857,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_BLUE_TYPE_ARB")]
     TextureBlueTypeARB = 35858,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_ALPHA_TYPE_ARB")]
     TextureAlphaTypeARB = 35859,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_LUMINANCE_TYPE_ARB")]
     TextureLuminanceTypeARB = 35860,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_INTENSITY_TYPE_ARB")]
     TextureIntensityTypeARB = 35861,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_DEPTH_TYPE_ARB")]
     TextureDepthTypeARB = 35862,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_UNSIGNED_NORMALIZED_ARB")]
     UnsignedNormalizedARB = 35863,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_RGBA32F_ARB")]
     Rgba32FARB = 34836,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_RGB32F_ARB")]
     Rgb32FARB = 34837,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_ALPHA32F_ARB")]
     Alpha32FARB = 34838,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INTENSITY32F_ARB")]
     Intensity32FARB = 34839,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LUMINANCE32F_ARB")]
     Luminance32FARB = 34840,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LUMINANCE_ALPHA32F_ARB")]
     LuminanceAlpha32FARB = 34841,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_RGBA16F_ARB")]
     Rgba16FARB = 34842,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_RGB16F_ARB")]
     Rgb16FARB = 34843,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_ALPHA16F_ARB")]
     Alpha16FARB = 34844,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INTENSITY16F_ARB")]
     Intensity16FARB = 34845,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LUMINANCE16F_ARB")]
     Luminance16FARB = 34846,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_LUMINANCE_ALPHA16F_ARB")]
     LuminanceAlpha16FARB = 34847,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET_ARB")]
     MinProgramTextureGatherOffsetARB = 36446,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET_ARB")]
     MaxProgramTextureGatherOffsetARB = 36447,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_TEXTURE_GATHER_COMPONENTS_ARB")]
     MaxProgramTextureGatherComponentsARB = 36767,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MIRRORED_REPEAT_ARB")]
     MirroredRepeatARB = 33648,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_RECTANGLE_ARB")]
     TextureRectangleARB = 34037,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_BINDING_RECTANGLE_ARB")]
     TextureBindingRectangleARB = 34038,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROXY_TEXTURE_RECTANGLE_ARB")]
     ProxyTextureRectangleARB = 34039,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_RECTANGLE_TEXTURE_SIZE_ARB")]
     MaxRectangleTextureSizeARB = 34040,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_OVERFLOW_ARB")]
     TransformFeedbackOverflowARB = 33516,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_STREAM_OVERFLOW_ARB")]
     TransformFeedbackStreamOverflowARB = 33517,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRANSPOSE_MODELVIEW_MATRIX_ARB")]
     TransposeModelviewMatrixARB = 34019,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRANSPOSE_PROJECTION_MATRIX_ARB")]
     TransposeProjectionMatrixARB = 34020,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRANSPOSE_TEXTURE_MATRIX_ARB")]
     TransposeTextureMatrixARB = 34021,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TRANSPOSE_COLOR_MATRIX_ARB")]
     TransposeColorMatrixARB = 34022,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_VERTEX_UNITS_ARB")]
     MaxVertexUnitsARB = 34468,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_ACTIVE_VERTEX_UNITS_ARB")]
     ActiveVertexUnitsARB = 34469,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_WEIGHT_SUM_UNITY_ARB")]
     WeightSumUnityARB = 34470,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_BLEND_ARB")]
     VertexBlendARB = 34471,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CURRENT_WEIGHT_ARB")]
     CurrentWeightARB = 34472,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_WEIGHT_ARRAY_TYPE_ARB")]
     WeightArrayTypeARB = 34473,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_WEIGHT_ARRAY_STRIDE_ARB")]
     WeightArrayStrideARB = 34474,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_WEIGHT_ARRAY_SIZE_ARB")]
     WeightArraySizeARB = 34475,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_WEIGHT_ARRAY_POINTER_ARB")]
     WeightArrayPointerARB = 34476,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_WEIGHT_ARRAY_ARB")]
     WeightArrayARB = 34477,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW0_ARB")]
     Modelview0ARB = 5888,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW1_ARB")]
     Modelview1ARB = 34058,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW2_ARB")]
     Modelview2ARB = 34594,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW3_ARB")]
     Modelview3ARB = 34595,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW4_ARB")]
     Modelview4ARB = 34596,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW5_ARB")]
     Modelview5ARB = 34597,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW6_ARB")]
     Modelview6ARB = 34598,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW7_ARB")]
     Modelview7ARB = 34599,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW8_ARB")]
     Modelview8ARB = 34600,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW9_ARB")]
     Modelview9ARB = 34601,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW10_ARB")]
     Modelview10ARB = 34602,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW11_ARB")]
     Modelview11ARB = 34603,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW12_ARB")]
     Modelview12ARB = 34604,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW13_ARB")]
     Modelview13ARB = 34605,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW14_ARB")]
     Modelview14ARB = 34606,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW15_ARB")]
     Modelview15ARB = 34607,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW16_ARB")]
     Modelview16ARB = 34608,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW17_ARB")]
     Modelview17ARB = 34609,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW18_ARB")]
     Modelview18ARB = 34610,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW19_ARB")]
     Modelview19ARB = 34611,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW20_ARB")]
     Modelview20ARB = 34612,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW21_ARB")]
     Modelview21ARB = 34613,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW22_ARB")]
     Modelview22ARB = 34614,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW23_ARB")]
     Modelview23ARB = 34615,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW24_ARB")]
     Modelview24ARB = 34616,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW25_ARB")]
     Modelview25ARB = 34617,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW26_ARB")]
     Modelview26ARB = 34618,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW27_ARB")]
     Modelview27ARB = 34619,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW28_ARB")]
     Modelview28ARB = 34620,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW29_ARB")]
     Modelview29ARB = 34621,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW30_ARB")]
     Modelview30ARB = 34622,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MODELVIEW31_ARB")]
     Modelview31ARB = 34623,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BUFFER_SIZE_ARB")]
     BufferSizeARB = 34660,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BUFFER_USAGE_ARB")]
     BufferUsageARB = 34661,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_ARRAY_BUFFER_ARB")]
     ArrayBufferARB = 34962,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_ELEMENT_ARRAY_BUFFER_ARB")]
     ElementArrayBufferARB = 34963,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_ARRAY_BUFFER_BINDING_ARB")]
     ArrayBufferBindingARB = 34964,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_ELEMENT_ARRAY_BUFFER_BINDING_ARB")]
     ElementArrayBufferBindingARB = 34965,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_ARRAY_BUFFER_BINDING_ARB")]
     VertexArrayBufferBindingARB = 34966,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_NORMAL_ARRAY_BUFFER_BINDING_ARB")]
     NormalArrayBufferBindingARB = 34967,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COLOR_ARRAY_BUFFER_BINDING_ARB")]
     ColorArrayBufferBindingARB = 34968,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_INDEX_ARRAY_BUFFER_BINDING_ARB")]
     IndexArrayBufferBindingARB = 34969,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING_ARB")]
     TextureCoordArrayBufferBindingARB = 34970,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_EDGE_FLAG_ARRAY_BUFFER_BINDING_ARB")]
     EdgeFlagArrayBufferBindingARB = 34971,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SECONDARY_COLOR_ARRAY_BUFFER_BINDING_ARB")]
     SecondaryColorArrayBufferBindingARB = 34972,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FOG_COORDINATE_ARRAY_BUFFER_BINDING_ARB")]
     FogCoordinateArrayBufferBindingARB = 34973,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_WEIGHT_ARRAY_BUFFER_BINDING_ARB")]
     WeightArrayBufferBindingARB = 34974,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING_ARB")]
     VertexAttribArrayBufferBindingARB = 34975,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_READ_ONLY_ARB")]
     ReadOnlyARB = 35000,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_WRITE_ONLY_ARB")]
     WriteOnlyARB = 35001,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_READ_WRITE_ARB")]
     ReadWriteARB = 35002,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BUFFER_ACCESS_ARB")]
     BufferAccessARB = 35003,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BUFFER_MAPPED_ARB")]
     BufferMappedARB = 35004,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BUFFER_MAP_POINTER_ARB")]
     BufferMapPointerARB = 35005,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_STREAM_DRAW_ARB")]
     StreamDrawARB = 35040,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_STREAM_READ_ARB")]
     StreamReadARB = 35041,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_STREAM_COPY_ARB")]
     StreamCopyARB = 35042,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_STATIC_DRAW_ARB")]
     StaticDrawARB = 35044,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_STATIC_READ_ARB")]
     StaticReadARB = 35045,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_STATIC_COPY_ARB")]
     StaticCopyARB = 35046,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DYNAMIC_DRAW_ARB")]
     DynamicDrawARB = 35048,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DYNAMIC_READ_ARB")]
     DynamicReadARB = 35049,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_DYNAMIC_COPY_ARB")]
     DynamicCopyARB = 35050,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_COLOR_SUM_ARB")]
     ColorSumARB = 33880,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_PROGRAM_ARB")]
     VertexProgramARB = 34336,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_ENABLED_ARB")]
     VertexAttribArrayEnabledARB = 34338,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_SIZE_ARB")]
     VertexAttribArraySizeARB = 34339,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_STRIDE_ARB")]
     VertexAttribArrayStrideARB = 34340,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_TYPE_ARB")]
     VertexAttribArrayTypeARB = 34341,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_CURRENT_VERTEX_ATTRIB_ARB")]
     CurrentVertexAttribARB = 34342,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_PROGRAM_POINT_SIZE_ARB")]
     VertexProgramPointSizeARB = 34370,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_PROGRAM_TWO_SIDE_ARB")]
     VertexProgramTwoSideARB = 34371,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_POINTER_ARB")]
     VertexAttribArrayPointerARB = 34373,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_VERTEX_ATTRIBS_ARB")]
     MaxVertexAttribsARB = 34921,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_NORMALIZED_ARB")]
     VertexAttribArrayNormalizedARB = 34922,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_ADDRESS_REGISTERS_ARB")]
     ProgramAddressRegistersARB = 34992,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_ADDRESS_REGISTERS_ARB")]
     MaxProgramAddressRegistersARB = 34993,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB")]
     ProgramNativeAddressRegistersARB = 34994,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_PROGRAM_NATIVE_ADDRESS_REGISTERS_ARB")]
     MaxProgramNativeAddressRegistersARB = 34995,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_VERTEX_SHADER_ARB")]
     VertexShaderARB = 35633,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_VERTEX_UNIFORM_COMPONENTS_ARB")]
     MaxVertexUniformComponentsARB = 35658,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_VARYING_FLOATS_ARB")]
     MaxVaryingFloatsARB = 35659,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS_ARB")]
     MaxVertexTextureImageUnitsARB = 35660,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS_ARB")]
     MaxCombinedTextureImageUnitsARB = 35661,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_ACTIVE_ATTRIBUTES_ARB")]
     ObjectActiveAttributesARB = 35721,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_OBJECT_ACTIVE_ATTRIBUTE_MAX_LENGTH_ARB")]
     ObjectActiveAttributeMaxLengthARB = 35722,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_MULTIPLY_KHR")]
     MultiplyKHR = 37524,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SCREEN_KHR")]
     ScreenKHR = 37525,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_OVERLAY_KHR")]
     OverlayKHR = 37526,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DARKEN_KHR")]
     DarkenKHR = 37527,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_LIGHTEN_KHR")]
     LightenKHR = 37528,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COLORDODGE_KHR")]
     ColordodgeKHR = 37529,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COLORBURN_KHR")]
     ColorburnKHR = 37530,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_HARDLIGHT_KHR")]
     HardlightKHR = 37531,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SOFTLIGHT_KHR")]
     SoftlightKHR = 37532,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DIFFERENCE_KHR")]
     DifferenceKHR = 37534,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_EXCLUSION_KHR")]
     ExclusionKHR = 37536,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_HSL_HUE_KHR")]
     HslHueKHR = 37549,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_HSL_SATURATION_KHR")]
     HslSaturationKHR = 37550,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_HSL_COLOR_KHR")]
     HslColorKHR = 37551,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_HSL_LUMINOSITY_KHR")]
     HslLuminosityKHR = 37552,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_BLEND_ADVANCED_COHERENT_KHR")]
     BlendAdvancedCoherentKHR = 37509,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_CONTEXT_FLAG_NO_ERROR_BIT_KHR")]
     ContextFlagNoErrorBitKHR = 8,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_MAX_SHADER_COMPILER_THREADS_KHR")]
     MaxShaderCompilerThreadsKHR = 37296,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPLETION_STATUS_KHR")]
     CompletionStatusKHR = 37297,
 
     [NativeName("GL_CONTEXT_ROBUST_ACCESS")]
     ContextRobustAccess = 37107,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_SIZE_KHR")]
     SubgroupSizeKHR = 38194,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_SUPPORTED_STAGES_KHR")]
     SubgroupSupportedStagesKHR = 38195,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_SUPPORTED_FEATURES_KHR")]
     SubgroupSupportedFeaturesKHR = 38196,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_QUAD_ALL_STAGES_KHR")]
     SubgroupQuadAllStagesKHR = 38197,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_FEATURE_BASIC_BIT_KHR")]
     SubgroupFeatureBasicBitKHR = 1,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_FEATURE_VOTE_BIT_KHR")]
     SubgroupFeatureVoteBitKHR = 2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_FEATURE_ARITHMETIC_BIT_KHR")]
     SubgroupFeatureArithmeticBitKHR = 4,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_FEATURE_BALLOT_BIT_KHR")]
     SubgroupFeatureBallotBitKHR = 8,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_FEATURE_SHUFFLE_BIT_KHR")]
     SubgroupFeatureShuffleBitKHR = 16,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_FEATURE_SHUFFLE_RELATIVE_BIT_KHR")]
     SubgroupFeatureShuffleRelativeBitKHR = 32,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_FEATURE_CLUSTERED_BIT_KHR")]
     SubgroupFeatureClusteredBitKHR = 64,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SUBGROUP_FEATURE_QUAD_BIT_KHR")]
     SubgroupFeatureQuadBitKHR = 128,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4_KHR")]
     CompressedRgbaAstc4X4KHR = 37808,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x4_KHR")]
     CompressedRgbaAstc5X4KHR = 37809,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5_KHR")]
     CompressedRgbaAstc5X5KHR = 37810,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x5_KHR")]
     CompressedRgbaAstc6X5KHR = 37811,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6_KHR")]
     CompressedRgbaAstc6X6KHR = 37812,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_8x5_KHR")]
     CompressedRgbaAstc8X5KHR = 37813,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_8x6_KHR")]
     CompressedRgbaAstc8X6KHR = 37814,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_8x8_KHR")]
     CompressedRgbaAstc8X8KHR = 37815,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x5_KHR")]
     CompressedRgbaAstc10X5KHR = 37816,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x6_KHR")]
     CompressedRgbaAstc10X6KHR = 37817,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x8_KHR")]
     CompressedRgbaAstc10X8KHR = 37818,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x10_KHR")]
     CompressedRgbaAstc10X10KHR = 37819,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_12x10_KHR")]
     CompressedRgbaAstc12X10KHR = 37820,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_12x12_KHR")]
     CompressedRgbaAstc12X12KHR = 37821,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR")]
     CompressedSrgb8Alpha8Astc4X4KHR = 37840,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR")]
     CompressedSrgb8Alpha8Astc5X4KHR = 37841,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR")]
     CompressedSrgb8Alpha8Astc5X5KHR = 37842,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR")]
     CompressedSrgb8Alpha8Astc6X5KHR = 37843,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR")]
     CompressedSrgb8Alpha8Astc6X6KHR = 37844,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR")]
     CompressedSrgb8Alpha8Astc8X5KHR = 37845,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR")]
     CompressedSrgb8Alpha8Astc8X6KHR = 37846,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR")]
     CompressedSrgb8Alpha8Astc8X8KHR = 37847,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR")]
     CompressedSrgb8Alpha8Astc10X5KHR = 37848,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR")]
     CompressedSrgb8Alpha8Astc10X6KHR = 37849,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR")]
     CompressedSrgb8Alpha8Astc10X8KHR = 37850,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR")]
     CompressedSrgb8Alpha8Astc10X10KHR = 37851,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR")]
     CompressedSrgb8Alpha8Astc12X10KHR = 37852,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR")]
     CompressedSrgb8Alpha8Astc12X12KHR = 37853,
 
-    [NameAffix("Suffix", "3DFX", 0)]
     [NativeName("GL_MULTISAMPLE_3DFX")]
     Multisample3DFX = 34482,
 
-    [NameAffix("Suffix", "3DFX", 0)]
     [NativeName("GL_SAMPLE_BUFFERS_3DFX")]
     SampleBuffers3DFX = 34483,
 
-    [NameAffix("Suffix", "3DFX", 0)]
     [NativeName("GL_SAMPLES_3DFX")]
     Samples3DFX = 34484,
 
-    [NameAffix("Suffix", "3DFX", 0)]
     [NativeName("GL_MULTISAMPLE_BIT_3DFX")]
     MultisampleBit3DFX = 536870912,
 
-    [NameAffix("Suffix", "3DFX", 0)]
     [NativeName("GL_COMPRESSED_RGB_FXT1_3DFX")]
     CompressedRgbFxt1X3DFX = 34480,
 
-    [NameAffix("Suffix", "3DFX", 0)]
     [NativeName("GL_COMPRESSED_RGBA_FXT1_3DFX")]
     CompressedRgbaFxt1X3DFX = 34481,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FACTOR_MIN_AMD")]
     FactorMinAMD = 36892,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FACTOR_MAX_AMD")]
     FactorMaxAMD = 36893,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_MAX_DEBUG_MESSAGE_LENGTH_AMD")]
     MaxDebugMessageLengthAMD = 37187,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_MAX_DEBUG_LOGGED_MESSAGES_AMD")]
     MaxDebugLoggedMessagesAMD = 37188,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_LOGGED_MESSAGES_AMD")]
     DebugLoggedMessagesAMD = 37189,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_SEVERITY_HIGH_AMD")]
     DebugSeverityHighAMD = 37190,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_SEVERITY_MEDIUM_AMD")]
     DebugSeverityMediumAMD = 37191,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_SEVERITY_LOW_AMD")]
     DebugSeverityLowAMD = 37192,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_CATEGORY_API_ERROR_AMD")]
     DebugCategoryApiErrorAMD = 37193,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_CATEGORY_WINDOW_SYSTEM_AMD")]
     DebugCategoryWindowSystemAMD = 37194,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_CATEGORY_DEPRECATION_AMD")]
     DebugCategoryDeprecationAMD = 37195,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_CATEGORY_UNDEFINED_BEHAVIOR_AMD")]
     DebugCategoryUndefinedBehaviorAMD = 37196,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_CATEGORY_PERFORMANCE_AMD")]
     DebugCategoryPerformanceAMD = 37197,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_CATEGORY_SHADER_COMPILER_AMD")]
     DebugCategoryShaderCompilerAMD = 37198,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_CATEGORY_APPLICATION_AMD")]
     DebugCategoryApplicationAMD = 37199,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEBUG_CATEGORY_OTHER_AMD")]
     DebugCategoryOtherAMD = 37200,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEPTH_CLAMP_NEAR_AMD")]
     DepthClampNearAMD = 36894,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DEPTH_CLAMP_FAR_AMD")]
     DepthClampFarAMD = 36895,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_RENDERBUFFER_STORAGE_SAMPLES_AMD")]
     RenderbufferStorageSamplesAMD = 37298,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_MAX_COLOR_FRAMEBUFFER_SAMPLES_AMD")]
     MaxColorFramebufferSamplesAMD = 37299,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_MAX_COLOR_FRAMEBUFFER_STORAGE_SAMPLES_AMD")]
     MaxColorFramebufferStorageSamplesAMD = 37300,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_MAX_DEPTH_STENCIL_FRAMEBUFFER_SAMPLES_AMD")]
     MaxDepthStencilFramebufferSamplesAMD = 37301,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_NUM_SUPPORTED_MULTISAMPLE_MODES_AMD")]
     NumSupportedMultisampleModesAMD = 37302,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_SUPPORTED_MULTISAMPLE_MODES_AMD")]
     SupportedMultisampleModesAMD = 37303,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_SUBSAMPLE_DISTANCE_AMD")]
     SubsampleDistanceAMD = 34879,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_PIXELS_PER_SAMPLE_PATTERN_X_AMD")]
     PixelsPerSamplePatternXAMD = 37294,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_PIXELS_PER_SAMPLE_PATTERN_Y_AMD")]
     PixelsPerSamplePatternYAMD = 37295,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_ALL_PIXELS_AMD")]
     AllPixelsAMD = 4294967295,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT16_NV")]
     Float16NV = 36856,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT16_VEC2_NV")]
     Float16Vec2NV = 36857,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT16_VEC3_NV")]
     Float16Vec3NV = 36858,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT16_VEC4_NV")]
     Float16Vec4NV = 36859,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FLOAT16_MAT2_AMD")]
     Float16Mat2AMD = 37317,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FLOAT16_MAT3_AMD")]
     Float16Mat3AMD = 37318,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FLOAT16_MAT4_AMD")]
     Float16Mat4AMD = 37319,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FLOAT16_MAT2x3_AMD")]
     Float16Mat2X3AMD = 37320,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FLOAT16_MAT2x4_AMD")]
     Float16Mat2X4AMD = 37321,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FLOAT16_MAT3x2_AMD")]
     Float16Mat3X2AMD = 37322,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FLOAT16_MAT3x4_AMD")]
     Float16Mat3X4AMD = 37323,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FLOAT16_MAT4x2_AMD")]
     Float16Mat4X2AMD = 37324,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_FLOAT16_MAT4x3_AMD")]
     Float16Mat4X3AMD = 37325,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT64_NV")]
     Int64NV = 5134,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT64_NV")]
     UnsignedInt64NV = 5135,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT8_NV")]
     Int8NV = 36832,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT8_VEC2_NV")]
     Int8Vec2NV = 36833,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT8_VEC3_NV")]
     Int8Vec3NV = 36834,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT8_VEC4_NV")]
     Int8Vec4NV = 36835,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT16_NV")]
     Int16NV = 36836,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT16_VEC2_NV")]
     Int16Vec2NV = 36837,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT16_VEC3_NV")]
     Int16Vec3NV = 36838,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT16_VEC4_NV")]
     Int16Vec4NV = 36839,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT64_VEC2_NV")]
     Int64Vec2NV = 36841,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT64_VEC3_NV")]
     Int64Vec3NV = 36842,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT64_VEC4_NV")]
     Int64Vec4NV = 36843,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT8_NV")]
     UnsignedInt8NV = 36844,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT8_VEC2_NV")]
     UnsignedInt8Vec2NV = 36845,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT8_VEC3_NV")]
     UnsignedInt8Vec3NV = 36846,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT8_VEC4_NV")]
     UnsignedInt8Vec4NV = 36847,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT16_NV")]
     UnsignedInt16NV = 36848,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT16_VEC2_NV")]
     UnsignedInt16Vec2NV = 36849,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT16_VEC3_NV")]
     UnsignedInt16Vec3NV = 36850,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT16_VEC4_NV")]
     UnsignedInt16Vec4NV = 36851,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT64_VEC2_NV")]
     UnsignedInt64Vec2NV = 36853,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT64_VEC3_NV")]
     UnsignedInt64Vec3NV = 36854,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT64_VEC4_NV")]
     UnsignedInt64Vec4NV = 36855,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_VERTEX_ELEMENT_SWIZZLE_AMD")]
     VertexElementSwizzleAMD = 37284,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_VERTEX_ID_SWIZZLE_AMD")]
     VertexIdSwizzleAMD = 37285,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DATA_BUFFER_AMD")]
     DataBufferAMD = 37201,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_PERFORMANCE_MONITOR_AMD")]
     PerformanceMonitorAMD = 37202,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_QUERY_OBJECT_AMD")]
     QueryObjectAMD = 37203,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_VERTEX_ARRAY_OBJECT_AMD")]
     VertexArrayObjectAMD = 37204,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_SAMPLER_OBJECT_AMD")]
     SamplerObjectAMD = 37205,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_OCCLUSION_QUERY_EVENT_MASK_AMD")]
     OcclusionQueryEventMaskAMD = 34639,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_QUERY_DEPTH_PASS_EVENT_BIT_AMD")]
     QueryDepthPassEventBitAMD = 1,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_QUERY_DEPTH_FAIL_EVENT_BIT_AMD")]
     QueryDepthFailEventBitAMD = 2,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_QUERY_STENCIL_FAIL_EVENT_BIT_AMD")]
     QueryStencilFailEventBitAMD = 4,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_QUERY_DEPTH_BOUNDS_FAIL_EVENT_BIT_AMD")]
     QueryDepthBoundsFailEventBitAMD = 8,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_QUERY_ALL_EVENT_BITS_AMD")]
     QueryAllEventBitsAMD = 4294967295,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_COUNTER_TYPE_AMD")]
     CounterTypeAMD = 35776,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_COUNTER_RANGE_AMD")]
     CounterRangeAMD = 35777,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_UNSIGNED_INT64_AMD")]
     UnsignedInt64AMD = 35778,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_PERCENTAGE_AMD")]
     PercentageAMD = 35779,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_PERFMON_RESULT_AVAILABLE_AMD")]
     PerfmonResultAvailableAMD = 35780,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_PERFMON_RESULT_SIZE_AMD")]
     PerfmonResultSizeAMD = 35781,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_PERFMON_RESULT_AMD")]
     PerfmonResultAMD = 35782,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_EXTERNAL_VIRTUAL_MEMORY_BUFFER_AMD")]
     ExternalVirtualMemoryBufferAMD = 37216,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_QUERY_BUFFER_AMD")]
     QueryBufferAMD = 37266,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_QUERY_BUFFER_BINDING_AMD")]
     QueryBufferBindingAMD = 37267,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_QUERY_RESULT_NO_WAIT_AMD")]
     QueryResultNoWaitAMD = 37268,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_X_AMD")]
     VirtualPageSizeXAMD = 37269,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_Y_AMD")]
     VirtualPageSizeYAMD = 37270,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_Z_AMD")]
     VirtualPageSizeZAMD = 37271,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_MAX_SPARSE_TEXTURE_SIZE_AMD")]
     MaxSparseTextureSizeAMD = 37272,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_MAX_SPARSE_3D_TEXTURE_SIZE_AMD")]
     MaxSparse3DTextureSizeAMD = 37273,
 
     [NativeName("GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS")]
     MaxSparseArrayTextureLayers = 37274,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_MIN_SPARSE_LEVEL_AMD")]
     MinSparseLevelAMD = 37275,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_MIN_LOD_WARNING_AMD")]
     MinLodWarningAMD = 37276,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_TEXTURE_STORAGE_SPARSE_BIT_AMD")]
     TextureStorageSparseBitAMD = 1,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_SET_AMD")]
     SetAMD = 34634,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_REPLACE_VALUE_AMD")]
     ReplaceValueAMD = 34635,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_STENCIL_OP_VALUE_AMD")]
     StencilOpValueAMD = 34636,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_STENCIL_BACK_OP_VALUE_AMD")]
     StencilBackOpValueAMD = 34637,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_STREAM_RASTERIZATION_AMD")]
     StreamRasterizationAMD = 37280,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_SAMPLER_BUFFER_AMD")]
     SamplerBufferAMD = 36865,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_INT_SAMPLER_BUFFER_AMD")]
     IntSamplerBufferAMD = 36866,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_BUFFER_AMD")]
     UnsignedIntSamplerBufferAMD = 36867,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_TESSELLATION_MODE_AMD")]
     TessellationModeAMD = 36868,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_TESSELLATION_FACTOR_AMD")]
     TessellationFactorAMD = 36869,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_DISCRETE_AMD")]
     DiscreteAMD = 36870,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_CONTINUOUS_AMD")]
     ContinuousAMD = 36871,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_AUX_DEPTH_STENCIL_APPLE")]
     AuxDepthStencilAPPLE = 35348,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_UNPACK_CLIENT_STORAGE_APPLE")]
     UnpackClientStorageAPPLE = 34226,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_ELEMENT_ARRAY_APPLE")]
     ElementArrayAPPLE = 35340,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_ELEMENT_ARRAY_TYPE_APPLE")]
     ElementArrayTypeAPPLE = 35341,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_ELEMENT_ARRAY_POINTER_APPLE")]
     ElementArrayPointerAPPLE = 35342,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_DRAW_PIXELS_APPLE")]
     DrawPixelsAPPLE = 35338,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_FENCE_APPLE")]
     FenceAPPLE = 35339,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_HALF_APPLE")]
     HalfAPPLE = 5131,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RGBA_FLOAT32_APPLE")]
     RgbaFloat32APPLE = 34836,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RGB_FLOAT32_APPLE")]
     RgbFloat32APPLE = 34837,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_ALPHA_FLOAT32_APPLE")]
     AlphaFloat32APPLE = 34838,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_INTENSITY_FLOAT32_APPLE")]
     IntensityFloat32APPLE = 34839,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_LUMINANCE_FLOAT32_APPLE")]
     LuminanceFloat32APPLE = 34840,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_LUMINANCE_ALPHA_FLOAT32_APPLE")]
     LuminanceAlphaFloat32APPLE = 34841,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RGBA_FLOAT16_APPLE")]
     RgbaFloat16APPLE = 34842,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RGB_FLOAT16_APPLE")]
     RgbFloat16APPLE = 34843,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_ALPHA_FLOAT16_APPLE")]
     AlphaFloat16APPLE = 34844,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_INTENSITY_FLOAT16_APPLE")]
     IntensityFloat16APPLE = 34845,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_LUMINANCE_FLOAT16_APPLE")]
     LuminanceFloat16APPLE = 34846,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_LUMINANCE_ALPHA_FLOAT16_APPLE")]
     LuminanceAlphaFloat16APPLE = 34847,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_COLOR_FLOAT_APPLE")]
     ColorFloatAPPLE = 35343,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_BUFFER_SERIALIZED_MODIFY_APPLE")]
     BufferSerializedModifyAPPLE = 35346,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_BUFFER_FLUSHING_UNMAP_APPLE")]
     BufferFlushingUnmapAPPLE = 35347,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_BUFFER_OBJECT_APPLE")]
     BufferObjectAPPLE = 34227,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RELEASED_APPLE")]
     ReleasedAPPLE = 35353,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VOLATILE_APPLE")]
     VolatileAPPLE = 35354,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RETAINED_APPLE")]
     RetainedAPPLE = 35355,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_UNDEFINED_APPLE")]
     UndefinedAPPLE = 35356,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_PURGEABLE_APPLE")]
     PurgeableAPPLE = 35357,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RGB_422_APPLE")]
     Rgb422APPLE = 35359,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_UNSIGNED_SHORT_8_8_APPLE")]
     UnsignedShort8X8APPLE = 34234,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_UNSIGNED_SHORT_8_8_REV_APPLE")]
     UnsignedShort8X8RevAPPLE = 34235,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RGB_RAW_422_APPLE")]
     RgbRaw422APPLE = 35409,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_PACK_ROW_BYTES_APPLE")]
     PackRowBytesAPPLE = 35349,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_UNPACK_ROW_BYTES_APPLE")]
     UnpackRowBytesAPPLE = 35350,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_LIGHT_MODEL_SPECULAR_VECTOR_APPLE")]
     LightModelSpecularVectorAPPLE = 34224,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_TEXTURE_RANGE_LENGTH_APPLE")]
     TextureRangeLengthAPPLE = 34231,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_TEXTURE_RANGE_POINTER_APPLE")]
     TextureRangePointerAPPLE = 34232,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_TEXTURE_STORAGE_HINT_APPLE")]
     TextureStorageHintAPPLE = 34236,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_STORAGE_PRIVATE_APPLE")]
     StoragePrivateAPPLE = 34237,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_STORAGE_CACHED_APPLE")]
     StorageCachedAPPLE = 34238,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_STORAGE_SHARED_APPLE")]
     StorageSharedAPPLE = 34239,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_TRANSFORM_HINT_APPLE")]
     TransformHintAPPLE = 34225,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ARRAY_BINDING_APPLE")]
     VertexArrayBindingAPPLE = 34229,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ARRAY_RANGE_APPLE")]
     VertexArrayRangeAPPLE = 34077,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ARRAY_RANGE_LENGTH_APPLE")]
     VertexArrayRangeLengthAPPLE = 34078,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ARRAY_STORAGE_HINT_APPLE")]
     VertexArrayStorageHintAPPLE = 34079,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ARRAY_RANGE_POINTER_APPLE")]
     VertexArrayRangePointerAPPLE = 34081,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_STORAGE_CLIENT_APPLE")]
     StorageClientAPPLE = 34228,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_MAP1_APPLE")]
     VertexAttribMap1APPLE = 35328,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_MAP2_APPLE")]
     VertexAttribMap2APPLE = 35329,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_MAP1_SIZE_APPLE")]
     VertexAttribMap1SizeAPPLE = 35330,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_MAP1_COEFF_APPLE")]
     VertexAttribMap1CoeffAPPLE = 35331,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_MAP1_ORDER_APPLE")]
     VertexAttribMap1OrderAPPLE = 35332,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_MAP1_DOMAIN_APPLE")]
     VertexAttribMap1DomainAPPLE = 35333,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_MAP2_SIZE_APPLE")]
     VertexAttribMap2SizeAPPLE = 35334,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_MAP2_COEFF_APPLE")]
     VertexAttribMap2CoeffAPPLE = 35335,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_MAP2_ORDER_APPLE")]
     VertexAttribMap2OrderAPPLE = 35336,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_MAP2_DOMAIN_APPLE")]
     VertexAttribMap2DomainAPPLE = 35337,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_YCBCR_422_APPLE")]
     Ycbcr422APPLE = 34233,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MAX_DRAW_BUFFERS_ATI")]
     MaxDrawBuffersATI = 34852,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER0_ATI")]
     DrawBuffer0ATI = 34853,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER1_ATI")]
     DrawBuffer1ATI = 34854,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER2_ATI")]
     DrawBuffer2ATI = 34855,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER3_ATI")]
     DrawBuffer3ATI = 34856,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER4_ATI")]
     DrawBuffer4ATI = 34857,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER5_ATI")]
     DrawBuffer5ATI = 34858,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER6_ATI")]
     DrawBuffer6ATI = 34859,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER7_ATI")]
     DrawBuffer7ATI = 34860,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER8_ATI")]
     DrawBuffer8ATI = 34861,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER9_ATI")]
     DrawBuffer9ATI = 34862,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER10_ATI")]
     DrawBuffer10ATI = 34863,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER11_ATI")]
     DrawBuffer11ATI = 34864,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER12_ATI")]
     DrawBuffer12ATI = 34865,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER13_ATI")]
     DrawBuffer13ATI = 34866,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER14_ATI")]
     DrawBuffer14ATI = 34867,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DRAW_BUFFER15_ATI")]
     DrawBuffer15ATI = 34868,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_ELEMENT_ARRAY_ATI")]
     ElementArrayATI = 34664,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_ELEMENT_ARRAY_TYPE_ATI")]
     ElementArrayTypeATI = 34665,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_ELEMENT_ARRAY_POINTER_ATI")]
     ElementArrayPointerATI = 34666,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_BUMP_ROT_MATRIX_ATI")]
     BumpRotMatrixATI = 34677,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_BUMP_ROT_MATRIX_SIZE_ATI")]
     BumpRotMatrixSizeATI = 34678,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_BUMP_NUM_TEX_UNITS_ATI")]
     BumpNumTexUnitsATI = 34679,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_BUMP_TEX_UNITS_ATI")]
     BumpTexUnitsATI = 34680,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DUDV_ATI")]
     DudvATI = 34681,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DU8DV8_ATI")]
     Du8Dv8ATI = 34682,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_BUMP_ENVMAP_ATI")]
     BumpEnvmapATI = 34683,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_BUMP_TARGET_ATI")]
     BumpTargetATI = 34684,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_FRAGMENT_SHADER_ATI")]
     FragmentShaderATI = 35104,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_0_ATI")]
     Reg0ATI = 35105,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_1_ATI")]
     Reg1ATI = 35106,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_2_ATI")]
     Reg2ATI = 35107,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_3_ATI")]
     Reg3ATI = 35108,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_4_ATI")]
     Reg4ATI = 35109,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_5_ATI")]
     Reg5ATI = 35110,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_6_ATI")]
     Reg6ATI = 35111,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_7_ATI")]
     Reg7ATI = 35112,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_8_ATI")]
     Reg8ATI = 35113,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_9_ATI")]
     Reg9ATI = 35114,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_10_ATI")]
     Reg10ATI = 35115,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_11_ATI")]
     Reg11ATI = 35116,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_12_ATI")]
     Reg12ATI = 35117,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_13_ATI")]
     Reg13ATI = 35118,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_14_ATI")]
     Reg14ATI = 35119,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_15_ATI")]
     Reg15ATI = 35120,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_16_ATI")]
     Reg16ATI = 35121,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_17_ATI")]
     Reg17ATI = 35122,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_18_ATI")]
     Reg18ATI = 35123,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_19_ATI")]
     Reg19ATI = 35124,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_20_ATI")]
     Reg20ATI = 35125,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_21_ATI")]
     Reg21ATI = 35126,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_22_ATI")]
     Reg22ATI = 35127,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_23_ATI")]
     Reg23ATI = 35128,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_24_ATI")]
     Reg24ATI = 35129,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_25_ATI")]
     Reg25ATI = 35130,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_26_ATI")]
     Reg26ATI = 35131,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_27_ATI")]
     Reg27ATI = 35132,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_28_ATI")]
     Reg28ATI = 35133,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_29_ATI")]
     Reg29ATI = 35134,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_30_ATI")]
     Reg30ATI = 35135,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_31_ATI")]
     Reg31ATI = 35136,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_0_ATI")]
     Con0ATI = 35137,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_1_ATI")]
     Con1ATI = 35138,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_2_ATI")]
     Con2ATI = 35139,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_3_ATI")]
     Con3ATI = 35140,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_4_ATI")]
     Con4ATI = 35141,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_5_ATI")]
     Con5ATI = 35142,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_6_ATI")]
     Con6ATI = 35143,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_7_ATI")]
     Con7ATI = 35144,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_8_ATI")]
     Con8ATI = 35145,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_9_ATI")]
     Con9ATI = 35146,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_10_ATI")]
     Con10ATI = 35147,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_11_ATI")]
     Con11ATI = 35148,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_12_ATI")]
     Con12ATI = 35149,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_13_ATI")]
     Con13ATI = 35150,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_14_ATI")]
     Con14ATI = 35151,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_15_ATI")]
     Con15ATI = 35152,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_16_ATI")]
     Con16ATI = 35153,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_17_ATI")]
     Con17ATI = 35154,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_18_ATI")]
     Con18ATI = 35155,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_19_ATI")]
     Con19ATI = 35156,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_20_ATI")]
     Con20ATI = 35157,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_21_ATI")]
     Con21ATI = 35158,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_22_ATI")]
     Con22ATI = 35159,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_23_ATI")]
     Con23ATI = 35160,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_24_ATI")]
     Con24ATI = 35161,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_25_ATI")]
     Con25ATI = 35162,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_26_ATI")]
     Con26ATI = 35163,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_27_ATI")]
     Con27ATI = 35164,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_28_ATI")]
     Con28ATI = 35165,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_29_ATI")]
     Con29ATI = 35166,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_30_ATI")]
     Con30ATI = 35167,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CON_31_ATI")]
     Con31ATI = 35168,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MOV_ATI")]
     MovATI = 35169,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_ADD_ATI")]
     AddATI = 35171,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MUL_ATI")]
     MulATI = 35172,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_SUB_ATI")]
     SubATI = 35173,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DOT3_ATI")]
     Dot3ATI = 35174,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DOT4_ATI")]
     Dot4ATI = 35175,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MAD_ATI")]
     MadATI = 35176,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_LERP_ATI")]
     LerpATI = 35177,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CND_ATI")]
     CndATI = 35178,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_CND0_ATI")]
     Cnd0ATI = 35179,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DOT2_ADD_ATI")]
     Dot2AddATI = 35180,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_SECONDARY_INTERPOLATOR_ATI")]
     SecondaryInterpolatorATI = 35181,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_NUM_FRAGMENT_REGISTERS_ATI")]
     NumFragmentRegistersATI = 35182,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_NUM_FRAGMENT_CONSTANTS_ATI")]
     NumFragmentConstantsATI = 35183,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_NUM_PASSES_ATI")]
     NumPassesATI = 35184,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_NUM_INSTRUCTIONS_PER_PASS_ATI")]
     NumInstructionsPerPassATI = 35185,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_NUM_INSTRUCTIONS_TOTAL_ATI")]
     NumInstructionsTotalATI = 35186,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_NUM_INPUT_INTERPOLATOR_COMPONENTS_ATI")]
     NumInputInterpolatorComponentsATI = 35187,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_NUM_LOOPBACK_COMPONENTS_ATI")]
     NumLoopbackComponentsATI = 35188,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_COLOR_ALPHA_PAIRING_ATI")]
     ColorAlphaPairingATI = 35189,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_SWIZZLE_STR_ATI")]
     SwizzleStrATI = 35190,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_SWIZZLE_STQ_ATI")]
     SwizzleStqATI = 35191,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_SWIZZLE_STR_DR_ATI")]
     SwizzleStrDrATI = 35192,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_SWIZZLE_STQ_DQ_ATI")]
     SwizzleStqDqATI = 35193,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_SWIZZLE_STRQ_ATI")]
     SwizzleStrqATI = 35194,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_SWIZZLE_STRQ_DQ_ATI")]
     SwizzleStrqDqATI = 35195,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_RED_BIT_ATI")]
     RedBitATI = 1,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_GREEN_BIT_ATI")]
     GreenBitATI = 2,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_BLUE_BIT_ATI")]
     BlueBitATI = 4,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_2X_BIT_ATI")]
     X2XBitATI = 1,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_4X_BIT_ATI")]
     X4XBitATI = 2,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_8X_BIT_ATI")]
     X8XBitATI = 4,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_HALF_BIT_ATI")]
     HalfBitATI = 8,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_QUARTER_BIT_ATI")]
     QuarterBitATI = 16,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_EIGHTH_BIT_ATI")]
     EighthBitATI = 32,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_SATURATE_BIT_ATI")]
     SaturateBitATI = 64,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_COMP_BIT_ATI")]
     CompBitATI = 2,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_NEGATE_BIT_ATI")]
     NegateBitATI = 4,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_BIAS_BIT_ATI")]
     BiasBitATI = 8,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_VBO_FREE_MEMORY_ATI")]
     VboFreeMemoryATI = 34811,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_TEXTURE_FREE_MEMORY_ATI")]
     TextureFreeMemoryATI = 34812,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_RENDERBUFFER_FREE_MEMORY_ATI")]
     RenderbufferFreeMemoryATI = 34813,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_RGBA_FLOAT_MODE_ATI")]
     RgbaFloatModeATI = 34848,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_COLOR_CLEAR_UNCLAMPED_VALUE_ATI")]
     ColorClearUnclampedValueATI = 34869,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_PN_TRIANGLES_ATI")]
     PnTrianglesATI = 34800,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MAX_PN_TRIANGLES_TESSELATION_LEVEL_ATI")]
     MaxPnTrianglesTesselationLevelATI = 34801,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_PN_TRIANGLES_POINT_MODE_ATI")]
     PnTrianglesPointModeATI = 34802,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_PN_TRIANGLES_NORMAL_MODE_ATI")]
     PnTrianglesNormalModeATI = 34803,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_PN_TRIANGLES_TESSELATION_LEVEL_ATI")]
     PnTrianglesTesselationLevelATI = 34804,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_PN_TRIANGLES_POINT_MODE_LINEAR_ATI")]
     PnTrianglesPointModeLinearATI = 34805,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_PN_TRIANGLES_POINT_MODE_CUBIC_ATI")]
     PnTrianglesPointModeCubicATI = 34806,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_PN_TRIANGLES_NORMAL_MODE_LINEAR_ATI")]
     PnTrianglesNormalModeLinearATI = 34807,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_PN_TRIANGLES_NORMAL_MODE_QUADRATIC_ATI")]
     PnTrianglesNormalModeQuadraticATI = 34808,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_STENCIL_BACK_FUNC_ATI")]
     StencilBackFuncATI = 34816,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_STENCIL_BACK_FAIL_ATI")]
     StencilBackFailATI = 34817,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_STENCIL_BACK_PASS_DEPTH_FAIL_ATI")]
     StencilBackPassDepthFailATI = 34818,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_STENCIL_BACK_PASS_DEPTH_PASS_ATI")]
     StencilBackPassDepthPassATI = 34819,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_TEXT_FRAGMENT_SHADER_ATI")]
     TextFragmentShaderATI = 33280,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MODULATE_ADD_ATI")]
     ModulateAddATI = 34628,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MODULATE_SIGNED_ADD_ATI")]
     ModulateSignedAddATI = 34629,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MODULATE_SUBTRACT_ATI")]
     ModulateSubtractATI = 34630,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_RGBA_FLOAT32_ATI")]
     RgbaFloat32ATI = 34836,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_RGB_FLOAT32_ATI")]
     RgbFloat32ATI = 34837,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_ALPHA_FLOAT32_ATI")]
     AlphaFloat32ATI = 34838,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_INTENSITY_FLOAT32_ATI")]
     IntensityFloat32ATI = 34839,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_LUMINANCE_FLOAT32_ATI")]
     LuminanceFloat32ATI = 34840,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_LUMINANCE_ALPHA_FLOAT32_ATI")]
     LuminanceAlphaFloat32ATI = 34841,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_RGBA_FLOAT16_ATI")]
     RgbaFloat16ATI = 34842,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_RGB_FLOAT16_ATI")]
     RgbFloat16ATI = 34843,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_ALPHA_FLOAT16_ATI")]
     AlphaFloat16ATI = 34844,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_INTENSITY_FLOAT16_ATI")]
     IntensityFloat16ATI = 34845,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_LUMINANCE_FLOAT16_ATI")]
     LuminanceFloat16ATI = 34846,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_LUMINANCE_ALPHA_FLOAT16_ATI")]
     LuminanceAlphaFloat16ATI = 34847,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MIRROR_CLAMP_ATI")]
     MirrorClampATI = 34626,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MIRROR_CLAMP_TO_EDGE_ATI")]
     MirrorClampToEdgeATI = 34627,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_STATIC_ATI")]
     StaticATI = 34656,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DYNAMIC_ATI")]
     DynamicATI = 34657,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_PRESERVE_ATI")]
     PreserveATI = 34658,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_DISCARD_ATI")]
     DiscardATI = 34659,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_OBJECT_BUFFER_SIZE_ATI")]
     ObjectBufferSizeATI = 34660,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_OBJECT_BUFFER_USAGE_ATI")]
     ObjectBufferUsageATI = 34661,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_ARRAY_OBJECT_BUFFER_ATI")]
     ArrayObjectBufferATI = 34662,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_ARRAY_OBJECT_OFFSET_ATI")]
     ArrayObjectOffsetATI = 34663,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_MAX_VERTEX_STREAMS_ATI")]
     MaxVertexStreamsATI = 34667,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_VERTEX_STREAM0_ATI")]
     VertexStream0ATI = 34668,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_VERTEX_STREAM1_ATI")]
     VertexStream1ATI = 34669,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_VERTEX_STREAM2_ATI")]
     VertexStream2ATI = 34670,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_VERTEX_STREAM3_ATI")]
     VertexStream3ATI = 34671,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_VERTEX_STREAM4_ATI")]
     VertexStream4ATI = 34672,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_VERTEX_STREAM5_ATI")]
     VertexStream5ATI = 34673,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_VERTEX_STREAM6_ATI")]
     VertexStream6ATI = 34674,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_VERTEX_STREAM7_ATI")]
     VertexStream7ATI = 34675,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_VERTEX_SOURCE_ATI")]
     VertexSourceATI = 34676,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_422_EXT")]
     X422EXT = 32972,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_422_REV_EXT")]
     X422RevEXT = 32973,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_422_AVERAGE_EXT")]
     X422AverageEXT = 32974,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_422_REV_AVERAGE_EXT")]
     X422RevAverageEXT = 32975,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ABGR_EXT")]
     AbgrEXT = 32768,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BGR_EXT")]
     BgrEXT = 32992,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_VERTEX_BINDABLE_UNIFORMS_EXT")]
     MaxVertexBindableUniformsEXT = 36322,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_FRAGMENT_BINDABLE_UNIFORMS_EXT")]
     MaxFragmentBindableUniformsEXT = 36323,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_BINDABLE_UNIFORMS_EXT")]
     MaxGeometryBindableUniformsEXT = 36324,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_BINDABLE_UNIFORM_SIZE_EXT")]
     MaxBindableUniformSizeEXT = 36333,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNIFORM_BUFFER_EXT")]
     UniformBufferEXT = 36334,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNIFORM_BUFFER_BINDING_EXT")]
     UniformBufferBindingEXT = 36335,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONSTANT_COLOR_EXT")]
     ConstantColorEXT = 32769,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ONE_MINUS_CONSTANT_COLOR_EXT")]
     OneMinusConstantColorEXT = 32770,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONSTANT_ALPHA_EXT")]
     ConstantAlphaEXT = 32771,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ONE_MINUS_CONSTANT_ALPHA_EXT")]
     OneMinusConstantAlphaEXT = 32772,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BLEND_COLOR_EXT")]
     BlendColorEXT = 32773,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BLEND_EQUATION_RGB_EXT")]
     BlendEquationRgbEXT = 32777,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BLEND_EQUATION_ALPHA_EXT")]
     BlendEquationAlphaEXT = 34877,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BLEND_DST_RGB_EXT")]
     BlendDstRgbEXT = 32968,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BLEND_SRC_RGB_EXT")]
     BlendSrcRgbEXT = 32969,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BLEND_DST_ALPHA_EXT")]
     BlendDstAlphaEXT = 32970,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BLEND_SRC_ALPHA_EXT")]
     BlendSrcAlphaEXT = 32971,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FUNC_ADD_EXT")]
     FuncAddEXT = 32774,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BLEND_EQUATION_EXT")]
     BlendEquationEXT = 32777,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FUNC_SUBTRACT_EXT")]
     FuncSubtractEXT = 32778,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FUNC_REVERSE_SUBTRACT_EXT")]
     FuncReverseSubtractEXT = 32779,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_VOLUME_CLIPPING_HINT_EXT")]
     ClipVolumeClippingHintEXT = 33008,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CMYK_EXT")]
     CmykEXT = 32780,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CMYKA_EXT")]
     CmykaEXT = 32781,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PACK_CMYK_HINT_EXT")]
     PackCmykHintEXT = 32782,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_CMYK_HINT_EXT")]
     UnpackCmykHintEXT = 32783,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ARRAY_ELEMENT_LOCK_FIRST_EXT")]
     ArrayElementLockFirstEXT = 33192,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ARRAY_ELEMENT_LOCK_COUNT_EXT")]
     ArrayElementLockCountEXT = 33193,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_1D_EXT")]
     Convolution1DEXT = 32784,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_2D_EXT")]
     Convolution2DEXT = 32785,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SEPARABLE_2D_EXT")]
     Separable2DEXT = 32786,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_BORDER_MODE_EXT")]
     ConvolutionBorderModeEXT = 32787,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_FILTER_SCALE_EXT")]
     ConvolutionFilterScaleEXT = 32788,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_FILTER_BIAS_EXT")]
     ConvolutionFilterBiasEXT = 32789,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_REDUCE_EXT")]
     ReduceEXT = 32790,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_FORMAT_EXT")]
     ConvolutionFormatEXT = 32791,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_WIDTH_EXT")]
     ConvolutionWidthEXT = 32792,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONVOLUTION_HEIGHT_EXT")]
     ConvolutionHeightEXT = 32793,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_CONVOLUTION_WIDTH_EXT")]
     MaxConvolutionWidthEXT = 32794,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_CONVOLUTION_HEIGHT_EXT")]
     MaxConvolutionHeightEXT = 32795,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_RED_SCALE_EXT")]
     PostConvolutionRedScaleEXT = 32796,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_GREEN_SCALE_EXT")]
     PostConvolutionGreenScaleEXT = 32797,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_BLUE_SCALE_EXT")]
     PostConvolutionBlueScaleEXT = 32798,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_ALPHA_SCALE_EXT")]
     PostConvolutionAlphaScaleEXT = 32799,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_RED_BIAS_EXT")]
     PostConvolutionRedBiasEXT = 32800,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_GREEN_BIAS_EXT")]
     PostConvolutionGreenBiasEXT = 32801,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_BLUE_BIAS_EXT")]
     PostConvolutionBlueBiasEXT = 32802,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POST_CONVOLUTION_ALPHA_BIAS_EXT")]
     PostConvolutionAlphaBiasEXT = 32803,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TANGENT_ARRAY_EXT")]
     TangentArrayEXT = 33849,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BINORMAL_ARRAY_EXT")]
     BinormalArrayEXT = 33850,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CURRENT_TANGENT_EXT")]
     CurrentTangentEXT = 33851,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CURRENT_BINORMAL_EXT")]
     CurrentBinormalEXT = 33852,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TANGENT_ARRAY_TYPE_EXT")]
     TangentArrayTypeEXT = 33854,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TANGENT_ARRAY_STRIDE_EXT")]
     TangentArrayStrideEXT = 33855,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BINORMAL_ARRAY_TYPE_EXT")]
     BinormalArrayTypeEXT = 33856,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BINORMAL_ARRAY_STRIDE_EXT")]
     BinormalArrayStrideEXT = 33857,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TANGENT_ARRAY_POINTER_EXT")]
     TangentArrayPointerEXT = 33858,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BINORMAL_ARRAY_POINTER_EXT")]
     BinormalArrayPointerEXT = 33859,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP1_TANGENT_EXT")]
     Map1TangentEXT = 33860,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP2_TANGENT_EXT")]
     Map2TangentEXT = 33861,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP1_BINORMAL_EXT")]
     Map1BinormalEXT = 33862,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP2_BINORMAL_EXT")]
     Map2BinormalEXT = 33863,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CULL_VERTEX_EXT")]
     CullVertexEXT = 33194,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CULL_VERTEX_EYE_POSITION_EXT")]
     CullVertexEyePositionEXT = 33195,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CULL_VERTEX_OBJECT_POSITION_EXT")]
     CullVertexObjectPositionEXT = 33196,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROGRAM_PIPELINE_OBJECT_EXT")]
     ProgramPipelineObjectEXT = 35407,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROGRAM_OBJECT_EXT")]
     ProgramObjectEXT = 35648,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADER_OBJECT_EXT")]
     ShaderObjectEXT = 35656,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BUFFER_OBJECT_EXT")]
     BufferObjectEXT = 37201,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_QUERY_OBJECT_EXT")]
     QueryObjectEXT = 37203,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ARRAY_OBJECT_EXT")]
     VertexArrayObjectEXT = 37204,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEPTH_BOUNDS_TEST_EXT")]
     DepthBoundsTestEXT = 34960,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEPTH_BOUNDS_EXT")]
     DepthBoundsEXT = 34961,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROGRAM_MATRIX_EXT")]
     ProgramMatrixEXT = 36397,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSPOSE_PROGRAM_MATRIX_EXT")]
     TransposeProgramMatrixEXT = 36398,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROGRAM_MATRIX_STACK_DEPTH_EXT")]
     ProgramMatrixStackDepthEXT = 36399,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_ELEMENTS_VERTICES_EXT")]
     MaxElementsVerticesEXT = 33000,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_ELEMENTS_INDICES_EXT")]
     MaxElementsIndicesEXT = 33001,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FOG_COORDINATE_SOURCE_EXT")]
     FogCoordinateSourceEXT = 33872,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FOG_COORDINATE_EXT")]
     FogCoordinateEXT = 33873,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_DEPTH_EXT")]
     FragmentDepthEXT = 33874,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CURRENT_FOG_COORDINATE_EXT")]
     CurrentFogCoordinateEXT = 33875,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FOG_COORDINATE_ARRAY_TYPE_EXT")]
     FogCoordinateArrayTypeEXT = 33876,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FOG_COORDINATE_ARRAY_STRIDE_EXT")]
     FogCoordinateArrayStrideEXT = 33877,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FOG_COORDINATE_ARRAY_POINTER_EXT")]
     FogCoordinateArrayPointerEXT = 33878,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FOG_COORDINATE_ARRAY_EXT")]
     FogCoordinateArrayEXT = 33879,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_READ_FRAMEBUFFER_EXT")]
     ReadFramebufferEXT = 36008,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_FRAMEBUFFER_EXT")]
     DrawFramebufferEXT = 36009,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_EXT")]
     DrawFramebufferBindingEXT = 36006,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_READ_FRAMEBUFFER_BINDING_EXT")]
     ReadFramebufferBindingEXT = 36010,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SCALED_RESOLVE_FASTEST_EXT")]
     ScaledResolveFastestEXT = 37050,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SCALED_RESOLVE_NICEST_EXT")]
     ScaledResolveNicestEXT = 37051,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_EXT")]
     InvalidFramebufferOperationEXT = 1286,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_RENDERBUFFER_SIZE_EXT")]
     MaxRenderbufferSizeEXT = 34024,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_BINDING_EXT")]
     FramebufferBindingEXT = 36006,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_BINDING_EXT")]
     RenderbufferBindingEXT = 36007,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_EXT")]
     FramebufferAttachmentObjectTypeEXT = 36048,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_EXT")]
     FramebufferAttachmentObjectNameEXT = 36049,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_EXT")]
     FramebufferAttachmentTextureLevelEXT = 36050,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_EXT")]
     FramebufferAttachmentTextureCubeMapFaceEXT = 36051,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_EXT")]
     FramebufferAttachmentTexture3DZoffsetEXT = 36052,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_COMPLETE_EXT")]
     FramebufferCompleteEXT = 36053,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_EXT")]
     FramebufferIncompleteAttachmentEXT = 36054,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_EXT")]
     FramebufferIncompleteMissingAttachmentEXT = 36055,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT")]
     FramebufferIncompleteDimensionsEXT = 36057,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT")]
     FramebufferIncompleteFormatsEXT = 36058,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT")]
     FramebufferIncompleteDrawBufferEXT = 36059,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER_EXT")]
     FramebufferIncompleteReadBufferEXT = 36060,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_UNSUPPORTED_EXT")]
     FramebufferUnsupportedEXT = 36061,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_COLOR_ATTACHMENTS_EXT")]
     MaxColorAttachmentsEXT = 36063,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT0_EXT")]
     ColorAttachment0EXT = 36064,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT1_EXT")]
     ColorAttachment1EXT = 36065,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT2_EXT")]
     ColorAttachment2EXT = 36066,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT3_EXT")]
     ColorAttachment3EXT = 36067,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT4_EXT")]
     ColorAttachment4EXT = 36068,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT5_EXT")]
     ColorAttachment5EXT = 36069,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT6_EXT")]
     ColorAttachment6EXT = 36070,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT7_EXT")]
     ColorAttachment7EXT = 36071,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT8_EXT")]
     ColorAttachment8EXT = 36072,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT9_EXT")]
     ColorAttachment9EXT = 36073,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT10_EXT")]
     ColorAttachment10EXT = 36074,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT11_EXT")]
     ColorAttachment11EXT = 36075,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT12_EXT")]
     ColorAttachment12EXT = 36076,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT13_EXT")]
     ColorAttachment13EXT = 36077,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT14_EXT")]
     ColorAttachment14EXT = 36078,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT15_EXT")]
     ColorAttachment15EXT = 36079,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEPTH_ATTACHMENT_EXT")]
     DepthAttachmentEXT = 36096,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_ATTACHMENT_EXT")]
     StencilAttachmentEXT = 36128,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_EXT")]
     FramebufferEXT = 36160,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_EXT")]
     RenderbufferEXT = 36161,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_WIDTH_EXT")]
     RenderbufferWidthEXT = 36162,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_HEIGHT_EXT")]
     RenderbufferHeightEXT = 36163,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_EXT")]
     RenderbufferInternalFormatEXT = 36164,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_INDEX1_EXT")]
     StencilIndex1EXT = 36166,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_INDEX4_EXT")]
     StencilIndex4EXT = 36167,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_INDEX8_EXT")]
     StencilIndex8EXT = 36168,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_INDEX16_EXT")]
     StencilIndex16EXT = 36169,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_RED_SIZE_EXT")]
     RenderbufferRedSizeEXT = 36176,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_GREEN_SIZE_EXT")]
     RenderbufferGreenSizeEXT = 36177,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_BLUE_SIZE_EXT")]
     RenderbufferBlueSizeEXT = 36178,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_EXT")]
     RenderbufferAlphaSizeEXT = 36179,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_EXT")]
     RenderbufferDepthSizeEXT = 36180,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_EXT")]
     RenderbufferStencilSizeEXT = 36181,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_SRGB_EXT")]
     FramebufferSrgbEXT = 36281,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_SRGB_CAPABLE_EXT")]
     FramebufferSrgbCapableEXT = 36282,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GEOMETRY_SHADER_EXT")]
     GeometryShaderEXT = 36313,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GEOMETRY_VERTICES_OUT_EXT")]
     GeometryVerticesOutEXT = 36314,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GEOMETRY_INPUT_TYPE_EXT")]
     GeometryInputTypeEXT = 36315,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GEOMETRY_OUTPUT_TYPE_EXT")]
     GeometryOutputTypeEXT = 36316,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_EXT")]
     MaxGeometryTextureImageUnitsEXT = 35881,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_VARYING_COMPONENTS_EXT")]
     MaxGeometryVaryingComponentsEXT = 36317,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_VERTEX_VARYING_COMPONENTS_EXT")]
     MaxVertexVaryingComponentsEXT = 36318,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_VARYING_COMPONENTS_EXT")]
     MaxVaryingComponentsEXT = 35659,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_EXT")]
     MaxGeometryUniformComponentsEXT = 36319,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_OUTPUT_VERTICES_EXT")]
     MaxGeometryOutputVerticesEXT = 36320,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_EXT")]
     MaxGeometryTotalOutputComponentsEXT = 36321,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LINES_ADJACENCY_EXT")]
     LinesAdjacencyEXT = 10,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LINE_STRIP_ADJACENCY_EXT")]
     LineStripAdjacencyEXT = 11,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRIANGLES_ADJACENCY_EXT")]
     TrianglesAdjacencyEXT = 12,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_EXT")]
     TriangleStripAdjacencyEXT = 13,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_EXT")]
     FramebufferIncompleteLayerTargetsEXT = 36264,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_LAYER_COUNT_EXT")]
     FramebufferIncompleteLayerCountEXT = 36265,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT")]
     FramebufferAttachmentLayeredEXT = 36263,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT")]
     FramebufferAttachmentTextureLayerEXT = 36052,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROGRAM_POINT_SIZE_EXT")]
     ProgramPointSizeEXT = 34370,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_1D_ARRAY_EXT")]
     Sampler1DArrayEXT = 36288,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_2D_ARRAY_EXT")]
     Sampler2DArrayEXT = 36289,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_BUFFER_EXT")]
     SamplerBufferEXT = 36290,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_1D_ARRAY_SHADOW_EXT")]
     Sampler1DArrayShadowEXT = 36291,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_2D_ARRAY_SHADOW_EXT")]
     Sampler2DArrayShadowEXT = 36292,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_CUBE_SHADOW_EXT")]
     SamplerCubeShadowEXT = 36293,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_VEC2_EXT")]
     UnsignedIntVec2EXT = 36294,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_VEC3_EXT")]
     UnsignedIntVec3EXT = 36295,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_VEC4_EXT")]
     UnsignedIntVec4EXT = 36296,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_SAMPLER_1D_EXT")]
     IntSampler1DEXT = 36297,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_SAMPLER_2D_EXT")]
     IntSampler2DEXT = 36298,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_SAMPLER_3D_EXT")]
     IntSampler3DEXT = 36299,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_SAMPLER_CUBE_EXT")]
     IntSamplerCubeEXT = 36300,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_SAMPLER_2D_RECT_EXT")]
     IntSampler2DRectEXT = 36301,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_SAMPLER_1D_ARRAY_EXT")]
     IntSampler1DArrayEXT = 36302,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_SAMPLER_2D_ARRAY_EXT")]
     IntSampler2DArrayEXT = 36303,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_SAMPLER_BUFFER_EXT")]
     IntSamplerBufferEXT = 36304,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_1D_EXT")]
     UnsignedIntSampler1DEXT = 36305,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_EXT")]
     UnsignedIntSampler2DEXT = 36306,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_3D_EXT")]
     UnsignedIntSampler3DEXT = 36307,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_EXT")]
     UnsignedIntSamplerCubeEXT = 36308,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_RECT_EXT")]
     UnsignedIntSampler2DRectEXT = 36309,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_1D_ARRAY_EXT")]
     UnsignedIntSampler1DArrayEXT = 36310,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_ARRAY_EXT")]
     UnsignedIntSampler2DArrayEXT = 36311,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT")]
     UnsignedIntSamplerBufferEXT = 36312,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MIN_PROGRAM_TEXEL_OFFSET_EXT")]
     MinProgramTexelOffsetEXT = 35076,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_PROGRAM_TEXEL_OFFSET_EXT")]
     MaxProgramTexelOffsetEXT = 35077,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT")]
     VertexAttribArrayIntegerEXT = 35069,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_EXT")]
     HistogramEXT = 32804,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROXY_HISTOGRAM_EXT")]
     ProxyHistogramEXT = 32805,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_WIDTH_EXT")]
     HistogramWidthEXT = 32806,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_FORMAT_EXT")]
     HistogramFormatEXT = 32807,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_RED_SIZE_EXT")]
     HistogramRedSizeEXT = 32808,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_GREEN_SIZE_EXT")]
     HistogramGreenSizeEXT = 32809,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_BLUE_SIZE_EXT")]
     HistogramBlueSizeEXT = 32810,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_ALPHA_SIZE_EXT")]
     HistogramAlphaSizeEXT = 32811,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_LUMINANCE_SIZE_EXT")]
     HistogramLuminanceSizeEXT = 32812,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HISTOGRAM_SINK_EXT")]
     HistogramSinkEXT = 32813,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MINMAX_EXT")]
     MinmaxEXT = 32814,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MINMAX_FORMAT_EXT")]
     MinmaxFormatEXT = 32815,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MINMAX_SINK_EXT")]
     MinmaxSinkEXT = 32816,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TABLE_TOO_LARGE_EXT")]
     TableTooLargeEXT = 32817,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IUI_V2F_EXT")]
     IuiV2FEXT = 33197,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IUI_V3F_EXT")]
     IuiV3FEXT = 33198,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IUI_N3F_V2F_EXT")]
     IuiN3FV2FEXT = 33199,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IUI_N3F_V3F_EXT")]
     IuiN3FV3FEXT = 33200,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_T2F_IUI_V2F_EXT")]
     T2FIuiV2FEXT = 33201,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_T2F_IUI_V3F_EXT")]
     T2FIuiV3FEXT = 33202,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_T2F_IUI_N3F_V2F_EXT")]
     T2FIuiN3FV2FEXT = 33203,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_T2F_IUI_N3F_V3F_EXT")]
     T2FIuiN3FV3FEXT = 33204,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_TEST_EXT")]
     IndexTestEXT = 33205,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_TEST_FUNC_EXT")]
     IndexTestFuncEXT = 33206,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_TEST_REF_EXT")]
     IndexTestRefEXT = 33207,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_MATERIAL_EXT")]
     IndexMaterialEXT = 33208,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_MATERIAL_PARAMETER_EXT")]
     IndexMaterialParameterEXT = 33209,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_MATERIAL_FACE_EXT")]
     IndexMaterialFaceEXT = 33210,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_MATERIAL_EXT")]
     FragmentMaterialEXT = 33609,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_NORMAL_EXT")]
     FragmentNormalEXT = 33610,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_COLOR_EXT")]
     FragmentColorEXT = 33612,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ATTENUATION_EXT")]
     AttenuationEXT = 33613,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADOW_ATTENUATION_EXT")]
     ShadowAttenuationEXT = 33614,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_APPLICATION_MODE_EXT")]
     TextureApplicationModeEXT = 33615,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_LIGHT_EXT")]
     TextureLightEXT = 33616,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_MATERIAL_FACE_EXT")]
     TextureMaterialFaceEXT = 33617,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_MATERIAL_PARAMETER_EXT")]
     TextureMaterialParameterEXT = 33618,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_TILING_EXT")]
     TextureTilingEXT = 38272,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEDICATED_MEMORY_OBJECT_EXT")]
     DedicatedMemoryObjectEXT = 38273,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROTECTED_MEMORY_OBJECT_EXT")]
     ProtectedMemoryObjectEXT = 38299,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NUM_TILING_TYPES_EXT")]
     NumTilingTypesEXT = 38274,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TILING_TYPES_EXT")]
     TilingTypesEXT = 38275,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OPTIMAL_TILING_EXT")]
     OptimalTilingEXT = 38276,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LINEAR_TILING_EXT")]
     LinearTilingEXT = 38277,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NUM_DEVICE_UUIDS_EXT")]
     NumDeviceUuidsEXT = 38294,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEVICE_UUID_EXT")]
     DeviceUuidEXT = 38295,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRIVER_UUID_EXT")]
     DriverUuidEXT = 38296,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UUID_SIZE_EXT")]
     UuidSizeEXT = 16,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HANDLE_TYPE_OPAQUE_FD_EXT")]
     HandleTypeOpaqueFdEXT = 38278,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HANDLE_TYPE_OPAQUE_WIN32_EXT")]
     HandleTypeOpaqueWin32EXT = 38279,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HANDLE_TYPE_OPAQUE_WIN32_KMT_EXT")]
     HandleTypeOpaqueWin32KmtEXT = 38280,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEVICE_LUID_EXT")]
     DeviceLuidEXT = 38297,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEVICE_NODE_MASK_EXT")]
     DeviceNodeMaskEXT = 38298,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUID_SIZE_EXT")]
     LuidSizeEXT = 8,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HANDLE_TYPE_D3D12_TILEPOOL_EXT")]
     HandleTypeD3D12TilepoolEXT = 38281,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HANDLE_TYPE_D3D12_RESOURCE_EXT")]
     HandleTypeD3D12ResourceEXT = 38282,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HANDLE_TYPE_D3D11_IMAGE_EXT")]
     HandleTypeD3D11ImageEXT = 38283,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HANDLE_TYPE_D3D11_IMAGE_KMT_EXT")]
     HandleTypeD3D11ImageKmtEXT = 38284,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MULTISAMPLE_EXT")]
     MultisampleEXT = 32925,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLE_ALPHA_TO_MASK_EXT")]
     SampleAlphaToMaskEXT = 32926,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLE_ALPHA_TO_ONE_EXT")]
     SampleAlphaToOneEXT = 32927,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLE_MASK_EXT")]
     SampleMaskEXT = 32928,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_1PASS_EXT")]
     X1PassEXT = 32929,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_2PASS_0_EXT")]
     X2Pass0EXT = 32930,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_2PASS_1_EXT")]
     X2Pass1EXT = 32931,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_4PASS_0_EXT")]
     X4Pass0EXT = 32932,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_4PASS_1_EXT")]
     X4Pass1EXT = 32933,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_4PASS_2_EXT")]
     X4Pass2EXT = 32934,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_4PASS_3_EXT")]
     X4Pass3EXT = 32935,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLE_BUFFERS_EXT")]
     SampleBuffersEXT = 32936,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLES_EXT")]
     SamplesEXT = 32937,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLE_MASK_VALUE_EXT")]
     SampleMaskValueEXT = 32938,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLE_MASK_INVERT_EXT")]
     SampleMaskInvertEXT = 32939,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLE_PATTERN_EXT")]
     SamplePatternEXT = 32940,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MULTISAMPLE_BIT_EXT")]
     MultisampleBitEXT = 536870912,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEPTH_STENCIL_EXT")]
     DepthStencilEXT = 34041,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_24_8_EXT")]
     UnsignedInt24X8EXT = 34042,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEPTH24_STENCIL8_EXT")]
     Depth24Stencil8EXT = 35056,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_STENCIL_SIZE_EXT")]
     TextureStencilSizeEXT = 35057,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_R11F_G11F_B10F_EXT")]
     R11FG11FB10FEXT = 35898,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV_EXT")]
     UnsignedInt10F11F11FRevEXT = 35899,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA_SIGNED_COMPONENTS_EXT")]
     RgbaSignedComponentsEXT = 35900,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_BYTE_3_3_2_EXT")]
     UnsignedByte3X3X2EXT = 32818,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_SHORT_4_4_4_4_EXT")]
     UnsignedShort4X4X4X4EXT = 32819,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_SHORT_5_5_5_1_EXT")]
     UnsignedShort5X5X5X1EXT = 32820,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_8_8_8_8_EXT")]
     UnsignedInt8X8X8X8EXT = 32821,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_10_10_10_2_EXT")]
     UnsignedInt10X10X10X2EXT = 32822,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_INDEX1_EXT")]
     ColorIndex1EXT = 32994,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_INDEX2_EXT")]
     ColorIndex2EXT = 32995,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_INDEX4_EXT")]
     ColorIndex4EXT = 32996,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_INDEX8_EXT")]
     ColorIndex8EXT = 32997,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_INDEX12_EXT")]
     ColorIndex12EXT = 32998,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_INDEX16_EXT")]
     ColorIndex16EXT = 32999,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_INDEX_SIZE_EXT")]
     TextureIndexSizeEXT = 33005,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_PACK_BUFFER_EXT")]
     PixelPackBufferEXT = 35051,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_UNPACK_BUFFER_EXT")]
     PixelUnpackBufferEXT = 35052,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_PACK_BUFFER_BINDING_EXT")]
     PixelPackBufferBindingEXT = 35053,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_UNPACK_BUFFER_BINDING_EXT")]
     PixelUnpackBufferBindingEXT = 35055,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_TRANSFORM_2D_EXT")]
     PixelTransform2DEXT = 33584,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_MAG_FILTER_EXT")]
     PixelMagFilterEXT = 33585,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_MIN_FILTER_EXT")]
     PixelMinFilterEXT = 33586,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_CUBIC_WEIGHT_EXT")]
     PixelCubicWeightEXT = 33587,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CUBIC_EXT")]
     CubicEXT = 33588,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_AVERAGE_EXT")]
     AverageEXT = 33589,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT")]
     PixelTransform2DStackDepthEXT = 33590,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_PIXEL_TRANSFORM_2D_STACK_DEPTH_EXT")]
     MaxPixelTransform2DStackDepthEXT = 33591,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_TRANSFORM_2D_MATRIX_EXT")]
     PixelTransform2DMatrixEXT = 33592,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POINT_SIZE_MIN_EXT")]
     PointSizeMinEXT = 33062,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POINT_SIZE_MAX_EXT")]
     PointSizeMaxEXT = 33063,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POINT_FADE_THRESHOLD_SIZE_EXT")]
     PointFadeThresholdSizeEXT = 33064,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DISTANCE_ATTENUATION_EXT")]
     DistanceAttenuationEXT = 33065,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POLYGON_OFFSET_EXT")]
     PolygonOffsetEXT = 32823,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POLYGON_OFFSET_FACTOR_EXT")]
     PolygonOffsetFactorEXT = 32824,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POLYGON_OFFSET_BIAS_EXT")]
     PolygonOffsetBiasEXT = 32825,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POLYGON_OFFSET_CLAMP_EXT")]
     PolygonOffsetClampEXT = 36379,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION_EXT")]
     QuadsFollowProvokingVertexConventionEXT = 36428,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FIRST_VERTEX_CONVENTION_EXT")]
     FirstVertexConventionEXT = 36429,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAST_VERTEX_CONVENTION_EXT")]
     LastVertexConventionEXT = 36430,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROVOKING_VERTEX_EXT")]
     ProvokingVertexEXT = 36431,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RASTER_MULTISAMPLE_EXT")]
     RasterMultisampleEXT = 37671,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RASTER_SAMPLES_EXT")]
     RasterSamplesEXT = 37672,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_RASTER_SAMPLES_EXT")]
     MaxRasterSamplesEXT = 37673,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RASTER_FIXED_SAMPLE_LOCATIONS_EXT")]
     RasterFixedSampleLocationsEXT = 37674,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MULTISAMPLE_RASTERIZATION_ALLOWED_EXT")]
     MultisampleRasterizationAllowedEXT = 37675,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_EFFECTIVE_RASTER_SAMPLES_EXT")]
     EffectiveRasterSamplesEXT = 37676,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RESCALE_NORMAL_EXT")]
     RescaleNormalEXT = 32826,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_SUM_EXT")]
     ColorSumEXT = 33880,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CURRENT_SECONDARY_COLOR_EXT")]
     CurrentSecondaryColorEXT = 33881,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SECONDARY_COLOR_ARRAY_SIZE_EXT")]
     SecondaryColorArraySizeEXT = 33882,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SECONDARY_COLOR_ARRAY_TYPE_EXT")]
     SecondaryColorArrayTypeEXT = 33883,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SECONDARY_COLOR_ARRAY_STRIDE_EXT")]
     SecondaryColorArrayStrideEXT = 33884,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SECONDARY_COLOR_ARRAY_POINTER_EXT")]
     SecondaryColorArrayPointerEXT = 33885,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SECONDARY_COLOR_ARRAY_EXT")]
     SecondaryColorArrayEXT = 33886,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAYOUT_GENERAL_EXT")]
     LayoutGeneralEXT = 38285,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAYOUT_COLOR_ATTACHMENT_EXT")]
     LayoutColorAttachmentEXT = 38286,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAYOUT_DEPTH_STENCIL_ATTACHMENT_EXT")]
     LayoutDepthStencilAttachmentEXT = 38287,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAYOUT_DEPTH_STENCIL_READ_ONLY_EXT")]
     LayoutDepthStencilReadOnlyEXT = 38288,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAYOUT_SHADER_READ_ONLY_EXT")]
     LayoutShaderReadOnlyEXT = 38289,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAYOUT_TRANSFER_SRC_EXT")]
     LayoutTransferSrcEXT = 38290,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAYOUT_TRANSFER_DST_EXT")]
     LayoutTransferDstEXT = 38291,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_EXT")]
     LayoutDepthReadOnlyStencilAttachmentEXT = 38192,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_EXT")]
     LayoutDepthAttachmentStencilReadOnlyEXT = 38193,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_HANDLE_TYPE_D3D12_FENCE_EXT")]
     HandleTypeD3D12FenceEXT = 38292,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_D3D12_FENCE_VALUE_EXT")]
     D3D12FenceValueEXT = 38293,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ACTIVE_PROGRAM_EXT")]
     ActiveProgramEXT = 33369,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LIGHT_MODEL_COLOR_CONTROL_EXT")]
     LightModelColorControlEXT = 33272,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SINGLE_COLOR_EXT")]
     SingleColorEXT = 33273,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SEPARATE_SPECULAR_COLOR_EXT")]
     SeparateSpecularColorEXT = 33274,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADER_DISCARDS_SAMPLES_EXT")]
     FragmentShaderDiscardsSamplesEXT = 35410,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_IMAGE_UNITS_EXT")]
     MaxImageUnitsEXT = 36664,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS_EXT")]
     MaxCombinedImageUnitsAndFragmentOutputsEXT = 36665,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_BINDING_NAME_EXT")]
     ImageBindingNameEXT = 36666,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_BINDING_LEVEL_EXT")]
     ImageBindingLevelEXT = 36667,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_BINDING_LAYERED_EXT")]
     ImageBindingLayeredEXT = 36668,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_BINDING_LAYER_EXT")]
     ImageBindingLayerEXT = 36669,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_BINDING_ACCESS_EXT")]
     ImageBindingAccessEXT = 36670,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_1D_EXT")]
     Image1DEXT = 36940,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_2D_EXT")]
     Image2DEXT = 36941,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_3D_EXT")]
     Image3DEXT = 36942,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_2D_RECT_EXT")]
     Image2DRectEXT = 36943,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_CUBE_EXT")]
     ImageCubeEXT = 36944,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_BUFFER_EXT")]
     ImageBufferEXT = 36945,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_1D_ARRAY_EXT")]
     Image1DArrayEXT = 36946,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_2D_ARRAY_EXT")]
     Image2DArrayEXT = 36947,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_CUBE_MAP_ARRAY_EXT")]
     ImageCubeMapArrayEXT = 36948,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_2D_MULTISAMPLE_EXT")]
     Image2DMultisampleEXT = 36949,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_2D_MULTISAMPLE_ARRAY_EXT")]
     Image2DMultisampleArrayEXT = 36950,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_1D_EXT")]
     IntImage1DEXT = 36951,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_2D_EXT")]
     IntImage2DEXT = 36952,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_3D_EXT")]
     IntImage3DEXT = 36953,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_2D_RECT_EXT")]
     IntImage2DRectEXT = 36954,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_CUBE_EXT")]
     IntImageCubeEXT = 36955,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_BUFFER_EXT")]
     IntImageBufferEXT = 36956,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_1D_ARRAY_EXT")]
     IntImage1DArrayEXT = 36957,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_2D_ARRAY_EXT")]
     IntImage2DArrayEXT = 36958,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_CUBE_MAP_ARRAY_EXT")]
     IntImageCubeMapArrayEXT = 36959,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_2D_MULTISAMPLE_EXT")]
     IntImage2DMultisampleEXT = 36960,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT")]
     IntImage2DMultisampleArrayEXT = 36961,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_1D_EXT")]
     UnsignedIntImage1DEXT = 36962,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D_EXT")]
     UnsignedIntImage2DEXT = 36963,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_3D_EXT")]
     UnsignedIntImage3DEXT = 36964,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D_RECT_EXT")]
     UnsignedIntImage2DRectEXT = 36965,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_CUBE_EXT")]
     UnsignedIntImageCubeEXT = 36966,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_BUFFER_EXT")]
     UnsignedIntImageBufferEXT = 36967,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_1D_ARRAY_EXT")]
     UnsignedIntImage1DArrayEXT = 36968,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D_ARRAY_EXT")]
     UnsignedIntImage2DArrayEXT = 36969,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_EXT")]
     UnsignedIntImageCubeMapArrayEXT = 36970,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_EXT")]
     UnsignedIntImage2DMultisampleEXT = 36971,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY_EXT")]
     UnsignedIntImage2DMultisampleArrayEXT = 36972,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_IMAGE_SAMPLES_EXT")]
     MaxImageSamplesEXT = 36973,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IMAGE_BINDING_FORMAT_EXT")]
     ImageBindingFormatEXT = 36974,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT_EXT")]
     VertexAttribArrayBarrierBitEXT = 1,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ELEMENT_ARRAY_BARRIER_BIT_EXT")]
     ElementArrayBarrierBitEXT = 2,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNIFORM_BARRIER_BIT_EXT")]
     UniformBarrierBitEXT = 4,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_FETCH_BARRIER_BIT_EXT")]
     TextureFetchBarrierBitEXT = 8,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADER_IMAGE_ACCESS_BARRIER_BIT_EXT")]
     ShaderImageAccessBarrierBitEXT = 32,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMMAND_BARRIER_BIT_EXT")]
     CommandBarrierBitEXT = 64,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PIXEL_BUFFER_BARRIER_BIT_EXT")]
     PixelBufferBarrierBitEXT = 128,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_UPDATE_BARRIER_BIT_EXT")]
     TextureUpdateBarrierBitEXT = 256,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BUFFER_UPDATE_BARRIER_BIT_EXT")]
     BufferUpdateBarrierBitEXT = 512,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_BARRIER_BIT_EXT")]
     FramebufferBarrierBitEXT = 1024,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT")]
     TransformFeedbackBarrierBitEXT = 2048,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ATOMIC_COUNTER_BARRIER_BIT_EXT")]
     AtomicCounterBarrierBitEXT = 4096,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALL_BARRIER_BITS_EXT")]
     AllBarrierBitsEXT = 4294967295,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHARED_TEXTURE_PALETTE_EXT")]
     SharedTexturePaletteEXT = 33275,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_TAG_BITS_EXT")]
     StencilTagBitsEXT = 35058,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_CLEAR_TAG_VALUE_EXT")]
     StencilClearTagValueEXT = 35059,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_STENCIL_TEST_TWO_SIDE_EXT")]
     StencilTestTwoSideEXT = 35088,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ACTIVE_STENCIL_FACE_EXT")]
     ActiveStencilFaceEXT = 35089,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INCR_WRAP_EXT")]
     IncrWrapEXT = 34055,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DECR_WRAP_EXT")]
     DecrWrapEXT = 34056,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA4_EXT")]
     Alpha4EXT = 32827,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA12_EXT")]
     Alpha12EXT = 32829,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA16_EXT")]
     Alpha16EXT = 32830,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE4_EXT")]
     Luminance4EXT = 32831,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE12_EXT")]
     Luminance12EXT = 32833,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE16_EXT")]
     Luminance16EXT = 32834,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE4_ALPHA4_EXT")]
     Luminance4Alpha4EXT = 32835,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE6_ALPHA2_EXT")]
     Luminance6Alpha2EXT = 32836,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE12_ALPHA4_EXT")]
     Luminance12Alpha4EXT = 32838,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE12_ALPHA12_EXT")]
     Luminance12Alpha12EXT = 32839,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE16_ALPHA16_EXT")]
     Luminance16Alpha16EXT = 32840,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY_EXT")]
     IntensityEXT = 32841,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY4_EXT")]
     Intensity4EXT = 32842,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY8_EXT")]
     Intensity8EXT = 32843,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY12_EXT")]
     Intensity12EXT = 32844,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY16_EXT")]
     Intensity16EXT = 32845,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB2_EXT")]
     Rgb2EXT = 32846,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB4_EXT")]
     Rgb4EXT = 32847,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB5_EXT")]
     Rgb5EXT = 32848,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB8_EXT")]
     Rgb8EXT = 32849,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB12_EXT")]
     Rgb12EXT = 32851,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB16_EXT")]
     Rgb16EXT = 32852,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA2_EXT")]
     Rgba2EXT = 32853,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA4_EXT")]
     Rgba4EXT = 32854,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB5_A1_EXT")]
     Rgb5A1EXT = 32855,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA8_EXT")]
     Rgba8EXT = 32856,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA12_EXT")]
     Rgba12EXT = 32858,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA16_EXT")]
     Rgba16EXT = 32859,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_RED_SIZE_EXT")]
     TextureRedSizeEXT = 32860,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_GREEN_SIZE_EXT")]
     TextureGreenSizeEXT = 32861,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BLUE_SIZE_EXT")]
     TextureBlueSizeEXT = 32862,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_ALPHA_SIZE_EXT")]
     TextureAlphaSizeEXT = 32863,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_LUMINANCE_SIZE_EXT")]
     TextureLuminanceSizeEXT = 32864,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_INTENSITY_SIZE_EXT")]
     TextureIntensitySizeEXT = 32865,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_REPLACE_EXT")]
     ReplaceEXT = 32866,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROXY_TEXTURE_1D_EXT")]
     ProxyTexture1DEXT = 32867,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROXY_TEXTURE_2D_EXT")]
     ProxyTexture2DEXT = 32868,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_TOO_LARGE_EXT")]
     TextureTooLargeEXT = 32869,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PACK_SKIP_IMAGES_EXT")]
     PackSkipImagesEXT = 32875,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PACK_IMAGE_HEIGHT_EXT")]
     PackImageHeightEXT = 32876,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_SKIP_IMAGES_EXT")]
     UnpackSkipImagesEXT = 32877,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_IMAGE_HEIGHT_EXT")]
     UnpackImageHeightEXT = 32878,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_3D_EXT")]
     Texture3DEXT = 32879,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROXY_TEXTURE_3D_EXT")]
     ProxyTexture3DEXT = 32880,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_DEPTH_EXT")]
     TextureDepthEXT = 32881,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_WRAP_R_EXT")]
     TextureWrapREXT = 32882,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_3D_TEXTURE_SIZE_EXT")]
     Max3DTextureSizeEXT = 32883,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_1D_ARRAY_EXT")]
     Texture1DArrayEXT = 35864,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROXY_TEXTURE_1D_ARRAY_EXT")]
     ProxyTexture1DArrayEXT = 35865,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_2D_ARRAY_EXT")]
     Texture2DArrayEXT = 35866,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROXY_TEXTURE_2D_ARRAY_EXT")]
     ProxyTexture2DArrayEXT = 35867,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BINDING_1D_ARRAY_EXT")]
     TextureBinding1DArrayEXT = 35868,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BINDING_2D_ARRAY_EXT")]
     TextureBinding2DArrayEXT = 35869,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_ARRAY_TEXTURE_LAYERS_EXT")]
     MaxArrayTextureLayersEXT = 35071,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPARE_REF_DEPTH_TO_TEXTURE_EXT")]
     CompareRefDepthToTextureEXT = 34894,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BUFFER_EXT")]
     TextureBufferEXT = 35882,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TEXTURE_BUFFER_SIZE_EXT")]
     MaxTextureBufferSizeEXT = 35883,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BINDING_BUFFER_EXT")]
     TextureBindingBufferEXT = 35884,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BUFFER_DATA_STORE_BINDING_EXT")]
     TextureBufferDataStoreBindingEXT = 35885,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BUFFER_FORMAT_EXT")]
     TextureBufferFormatEXT = 35886,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_LUMINANCE_LATC1_EXT")]
     CompressedLuminanceLatc1EXT = 35952,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SIGNED_LUMINANCE_LATC1_EXT")]
     CompressedSignedLuminanceLatc1EXT = 35953,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_EXT")]
     CompressedLuminanceAlphaLatc2EXT = 35954,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2_EXT")]
     CompressedSignedLuminanceAlphaLatc2EXT = 35955,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RED_RGTC1_EXT")]
     CompressedRedRgtc1EXT = 36283,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SIGNED_RED_RGTC1_EXT")]
     CompressedSignedRedRgtc1EXT = 36284,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RED_GREEN_RGTC2_EXT")]
     CompressedRedGreenRgtc2EXT = 36285,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT")]
     CompressedSignedRedGreenRgtc2EXT = 36286,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT3_EXT")]
     CompressedRgbaS3TcDxt3EXT = 33778,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT5_EXT")]
     CompressedRgbaS3TcDxt5EXT = 33779,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NORMAL_MAP_EXT")]
     NormalMapEXT = 34065,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_REFLECTION_MAP_EXT")]
     ReflectionMapEXT = 34066,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_EXT")]
     TextureCubeMapEXT = 34067,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_EXT")]
     TextureBindingCubeMapEXT = 34068,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_EXT")]
     TextureCubeMapPositiveXEXT = 34069,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_EXT")]
     TextureCubeMapNegativeXEXT = 34070,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_EXT")]
     TextureCubeMapPositiveYEXT = 34071,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_EXT")]
     TextureCubeMapNegativeYEXT = 34072,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_EXT")]
     TextureCubeMapPositiveZEXT = 34073,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_EXT")]
     TextureCubeMapNegativeZEXT = 34074,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROXY_TEXTURE_CUBE_MAP_EXT")]
     ProxyTextureCubeMapEXT = 34075,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_EXT")]
     MaxCubeMapTextureSizeEXT = 34076,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMBINE_EXT")]
     CombineEXT = 34160,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMBINE_RGB_EXT")]
     CombineRgbEXT = 34161,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMBINE_ALPHA_EXT")]
     CombineAlphaEXT = 34162,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB_SCALE_EXT")]
     RgbScaleEXT = 34163,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ADD_SIGNED_EXT")]
     AddSignedEXT = 34164,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTERPOLATE_EXT")]
     InterpolateEXT = 34165,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONSTANT_EXT")]
     ConstantEXT = 34166,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PRIMARY_COLOR_EXT")]
     PrimaryColorEXT = 34167,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PREVIOUS_EXT")]
     PreviousEXT = 34168,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SOURCE0_RGB_EXT")]
     Source0RgbEXT = 34176,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SOURCE1_RGB_EXT")]
     Source1RgbEXT = 34177,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SOURCE2_RGB_EXT")]
     Source2RgbEXT = 34178,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SOURCE0_ALPHA_EXT")]
     Source0AlphaEXT = 34184,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SOURCE1_ALPHA_EXT")]
     Source1AlphaEXT = 34185,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SOURCE2_ALPHA_EXT")]
     Source2AlphaEXT = 34186,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OPERAND0_RGB_EXT")]
     Operand0RgbEXT = 34192,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OPERAND1_RGB_EXT")]
     Operand1RgbEXT = 34193,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OPERAND2_RGB_EXT")]
     Operand2RgbEXT = 34194,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OPERAND0_ALPHA_EXT")]
     Operand0AlphaEXT = 34200,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OPERAND1_ALPHA_EXT")]
     Operand1AlphaEXT = 34201,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OPERAND2_ALPHA_EXT")]
     Operand2AlphaEXT = 34202,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOT3_RGB_EXT")]
     Dot3RgbEXT = 34624,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOT3_RGBA_EXT")]
     Dot3RgbaEXT = 34625,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_REDUCTION_MODE_EXT")]
     TextureReductionModeEXT = 37734,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_WEIGHTED_AVERAGE_EXT")]
     WeightedAverageEXT = 37735,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA32UI_EXT")]
     Rgba32UiEXT = 36208,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB32UI_EXT")]
     Rgb32UiEXT = 36209,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA32UI_EXT")]
     Alpha32UiEXT = 36210,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY32UI_EXT")]
     Intensity32UiEXT = 36211,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE32UI_EXT")]
     Luminance32UiEXT = 36212,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE_ALPHA32UI_EXT")]
     LuminanceAlpha32UiEXT = 36213,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA16UI_EXT")]
     Rgba16UiEXT = 36214,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB16UI_EXT")]
     Rgb16UiEXT = 36215,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA16UI_EXT")]
     Alpha16UiEXT = 36216,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY16UI_EXT")]
     Intensity16UiEXT = 36217,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE16UI_EXT")]
     Luminance16UiEXT = 36218,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE_ALPHA16UI_EXT")]
     LuminanceAlpha16UiEXT = 36219,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA8UI_EXT")]
     Rgba8UiEXT = 36220,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB8UI_EXT")]
     Rgb8UiEXT = 36221,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA8UI_EXT")]
     Alpha8UiEXT = 36222,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY8UI_EXT")]
     Intensity8UiEXT = 36223,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE8UI_EXT")]
     Luminance8UiEXT = 36224,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE_ALPHA8UI_EXT")]
     LuminanceAlpha8UiEXT = 36225,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA32I_EXT")]
     Rgba32IEXT = 36226,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB32I_EXT")]
     Rgb32IEXT = 36227,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA32I_EXT")]
     Alpha32IEXT = 36228,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY32I_EXT")]
     Intensity32IEXT = 36229,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE32I_EXT")]
     Luminance32IEXT = 36230,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE_ALPHA32I_EXT")]
     LuminanceAlpha32IEXT = 36231,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA16I_EXT")]
     Rgba16IEXT = 36232,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB16I_EXT")]
     Rgb16IEXT = 36233,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA16I_EXT")]
     Alpha16IEXT = 36234,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY16I_EXT")]
     Intensity16IEXT = 36235,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE16I_EXT")]
     Luminance16IEXT = 36236,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE_ALPHA16I_EXT")]
     LuminanceAlpha16IEXT = 36237,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA8I_EXT")]
     Rgba8IEXT = 36238,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB8I_EXT")]
     Rgb8IEXT = 36239,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA8I_EXT")]
     Alpha8IEXT = 36240,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTENSITY8I_EXT")]
     Intensity8IEXT = 36241,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE8I_EXT")]
     Luminance8IEXT = 36242,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE_ALPHA8I_EXT")]
     LuminanceAlpha8IEXT = 36243,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RED_INTEGER_EXT")]
     RedIntegerEXT = 36244,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GREEN_INTEGER_EXT")]
     GreenIntegerEXT = 36245,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BLUE_INTEGER_EXT")]
     BlueIntegerEXT = 36246,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALPHA_INTEGER_EXT")]
     AlphaIntegerEXT = 36247,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB_INTEGER_EXT")]
     RgbIntegerEXT = 36248,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA_INTEGER_EXT")]
     RgbaIntegerEXT = 36249,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BGR_INTEGER_EXT")]
     BgrIntegerEXT = 36250,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BGRA_INTEGER_EXT")]
     BgraIntegerEXT = 36251,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE_INTEGER_EXT")]
     LuminanceIntegerEXT = 36252,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LUMINANCE_ALPHA_INTEGER_EXT")]
     LuminanceAlphaIntegerEXT = 36253,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA_INTEGER_MODE_EXT")]
     RgbaIntegerModeEXT = 36254,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MIRROR_CLAMP_EXT")]
     MirrorClampEXT = 34626,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MIRROR_CLAMP_TO_EDGE_EXT")]
     MirrorClampToEdgeEXT = 34627,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MIRROR_CLAMP_TO_BORDER_EXT")]
     MirrorClampToBorderEXT = 35090,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_PRIORITY_EXT")]
     TexturePriorityEXT = 32870,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_RESIDENT_EXT")]
     TextureResidentEXT = 32871,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_1D_BINDING_EXT")]
     Texture1DBindingEXT = 32872,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_2D_BINDING_EXT")]
     Texture2DBindingEXT = 32873,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_3D_BINDING_EXT")]
     Texture3DBindingEXT = 32874,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PERTURB_EXT")]
     PerturbEXT = 34222,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_NORMAL_EXT")]
     TextureNormalEXT = 34223,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SRGB8_EXT")]
     Srgb8EXT = 35905,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SLUMINANCE_ALPHA_EXT")]
     SluminanceAlphaEXT = 35908,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SLUMINANCE8_ALPHA8_EXT")]
     Sluminance8Alpha8EXT = 35909,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SLUMINANCE_EXT")]
     SluminanceEXT = 35910,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SLUMINANCE8_EXT")]
     Sluminance8EXT = 35911,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_EXT")]
     CompressedSrgbEXT = 35912,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_EXT")]
     CompressedSrgbAlphaEXT = 35913,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SLUMINANCE_EXT")]
     CompressedSluminanceEXT = 35914,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SLUMINANCE_ALPHA_EXT")]
     CompressedSluminanceAlphaEXT = 35915,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_S3TC_DXT1_EXT")]
     CompressedSrgbS3TcDxt1EXT = 35916,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT")]
     CompressedSrgbAlphaS3TcDxt1EXT = 35917,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT")]
     CompressedSrgbAlphaS3TcDxt3EXT = 35918,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT")]
     CompressedSrgbAlphaS3TcDxt5EXT = 35919,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SR8_EXT")]
     Sr8EXT = 36797,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SRG8_EXT")]
     Srg8EXT = 36798,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_SRGB_DECODE_EXT")]
     TextureSrgbDecodeEXT = 35400,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DECODE_EXT")]
     DecodeEXT = 35401,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SKIP_DECODE_EXT")]
     SkipDecodeEXT = 35402,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB9_E5_EXT")]
     Rgb9E5EXT = 35901,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_5_9_9_9_REV_EXT")]
     UnsignedInt5X9X9X9RevEXT = 35902,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_SHARED_SIZE_EXT")]
     TextureSharedSizeEXT = 35903,
 
@@ -12992,4963 +11167,3723 @@ public enum GlEnum : uint
     [NativeName("GL_RGBA_SNORM")]
     RgbaSnorm = 36755,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_SWIZZLE_R_EXT")]
     TextureSwizzleREXT = 36418,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_SWIZZLE_G_EXT")]
     TextureSwizzleGEXT = 36419,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_SWIZZLE_B_EXT")]
     TextureSwizzleBEXT = 36420,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_SWIZZLE_A_EXT")]
     TextureSwizzleAEXT = 36421,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_SWIZZLE_RGBA_EXT")]
     TextureSwizzleRgbaEXT = 36422,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TIME_ELAPSED_EXT")]
     TimeElapsedEXT = 35007,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_EXT")]
     TransformFeedbackBufferEXT = 35982,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_START_EXT")]
     TransformFeedbackBufferStartEXT = 35972,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_SIZE_EXT")]
     TransformFeedbackBufferSizeEXT = 35973,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_BINDING_EXT")]
     TransformFeedbackBufferBindingEXT = 35983,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INTERLEAVED_ATTRIBS_EXT")]
     InterleavedAttribsEXT = 35980,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SEPARATE_ATTRIBS_EXT")]
     SeparateAttribsEXT = 35981,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PRIMITIVES_GENERATED_EXT")]
     PrimitivesGeneratedEXT = 35975,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN_EXT")]
     TransformFeedbackPrimitivesWrittenEXT = 35976,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RASTERIZER_DISCARD_EXT")]
     RasterizerDiscardEXT = 35977,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_EXT")]
     MaxTransformFeedbackInterleavedComponentsEXT = 35978,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_EXT")]
     MaxTransformFeedbackSeparateAttribsEXT = 35979,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS_EXT")]
     MaxTransformFeedbackSeparateComponentsEXT = 35968,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_VARYINGS_EXT")]
     TransformFeedbackVaryingsEXT = 35971,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_MODE_EXT")]
     TransformFeedbackBufferModeEXT = 35967,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH_EXT")]
     TransformFeedbackVaryingMaxLengthEXT = 35958,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ARRAY_EXT")]
     VertexArrayEXT = 32884,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NORMAL_ARRAY_EXT")]
     NormalArrayEXT = 32885,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ARRAY_EXT")]
     ColorArrayEXT = 32886,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_ARRAY_EXT")]
     IndexArrayEXT = 32887,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_EXT")]
     TextureCoordArrayEXT = 32888,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_EDGE_FLAG_ARRAY_EXT")]
     EdgeFlagArrayEXT = 32889,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ARRAY_SIZE_EXT")]
     VertexArraySizeEXT = 32890,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ARRAY_TYPE_EXT")]
     VertexArrayTypeEXT = 32891,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ARRAY_STRIDE_EXT")]
     VertexArrayStrideEXT = 32892,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ARRAY_COUNT_EXT")]
     VertexArrayCountEXT = 32893,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NORMAL_ARRAY_TYPE_EXT")]
     NormalArrayTypeEXT = 32894,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NORMAL_ARRAY_STRIDE_EXT")]
     NormalArrayStrideEXT = 32895,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NORMAL_ARRAY_COUNT_EXT")]
     NormalArrayCountEXT = 32896,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ARRAY_SIZE_EXT")]
     ColorArraySizeEXT = 32897,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ARRAY_TYPE_EXT")]
     ColorArrayTypeEXT = 32898,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ARRAY_STRIDE_EXT")]
     ColorArrayStrideEXT = 32899,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ARRAY_COUNT_EXT")]
     ColorArrayCountEXT = 32900,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_ARRAY_TYPE_EXT")]
     IndexArrayTypeEXT = 32901,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_ARRAY_STRIDE_EXT")]
     IndexArrayStrideEXT = 32902,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_ARRAY_COUNT_EXT")]
     IndexArrayCountEXT = 32903,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_SIZE_EXT")]
     TextureCoordArraySizeEXT = 32904,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_TYPE_EXT")]
     TextureCoordArrayTypeEXT = 32905,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_STRIDE_EXT")]
     TextureCoordArrayStrideEXT = 32906,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_COUNT_EXT")]
     TextureCoordArrayCountEXT = 32907,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_EDGE_FLAG_ARRAY_STRIDE_EXT")]
     EdgeFlagArrayStrideEXT = 32908,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_EDGE_FLAG_ARRAY_COUNT_EXT")]
     EdgeFlagArrayCountEXT = 32909,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ARRAY_POINTER_EXT")]
     VertexArrayPointerEXT = 32910,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NORMAL_ARRAY_POINTER_EXT")]
     NormalArrayPointerEXT = 32911,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ARRAY_POINTER_EXT")]
     ColorArrayPointerEXT = 32912,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INDEX_ARRAY_POINTER_EXT")]
     IndexArrayPointerEXT = 32913,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_POINTER_EXT")]
     TextureCoordArrayPointerEXT = 32914,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_EDGE_FLAG_ARRAY_POINTER_EXT")]
     EdgeFlagArrayPointerEXT = 32915,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_VEC2_EXT")]
     DoubleVec2EXT = 36860,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_VEC3_EXT")]
     DoubleVec3EXT = 36861,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_VEC4_EXT")]
     DoubleVec4EXT = 36862,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_MAT2_EXT")]
     DoubleMat2EXT = 36678,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_MAT3_EXT")]
     DoubleMat3EXT = 36679,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_MAT4_EXT")]
     DoubleMat4EXT = 36680,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_MAT2x3_EXT")]
     DoubleMat2X3EXT = 36681,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_MAT2x4_EXT")]
     DoubleMat2X4EXT = 36682,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_MAT3x2_EXT")]
     DoubleMat3X2EXT = 36683,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_MAT3x4_EXT")]
     DoubleMat3X4EXT = 36684,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_MAT4x2_EXT")]
     DoubleMat4X2EXT = 36685,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DOUBLE_MAT4x3_EXT")]
     DoubleMat4X3EXT = 36686,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_EXT")]
     VertexShaderEXT = 34688,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_BINDING_EXT")]
     VertexShaderBindingEXT = 34689,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_INDEX_EXT")]
     OpIndexEXT = 34690,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_NEGATE_EXT")]
     OpNegateEXT = 34691,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_DOT3_EXT")]
     OpDot3EXT = 34692,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_DOT4_EXT")]
     OpDot4EXT = 34693,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_MUL_EXT")]
     OpMulEXT = 34694,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_ADD_EXT")]
     OpAddEXT = 34695,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_MADD_EXT")]
     OpMaddEXT = 34696,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_FRAC_EXT")]
     OpFracEXT = 34697,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_MAX_EXT")]
     OpMaxEXT = 34698,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_MIN_EXT")]
     OpMinEXT = 34699,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_SET_GE_EXT")]
     OpSetGeEXT = 34700,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_SET_LT_EXT")]
     OpSetLtEXT = 34701,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_CLAMP_EXT")]
     OpClampEXT = 34702,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_FLOOR_EXT")]
     OpFloorEXT = 34703,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_ROUND_EXT")]
     OpRoundEXT = 34704,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_EXP_BASE_2_EXT")]
     OpExpBase2EXT = 34705,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_LOG_BASE_2_EXT")]
     OpLogBase2EXT = 34706,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_POWER_EXT")]
     OpPowerEXT = 34707,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_RECIP_EXT")]
     OpRecipEXT = 34708,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_RECIP_SQRT_EXT")]
     OpRecipSqrtEXT = 34709,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_SUB_EXT")]
     OpSubEXT = 34710,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_CROSS_PRODUCT_EXT")]
     OpCrossProductEXT = 34711,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_MULTIPLY_MATRIX_EXT")]
     OpMultiplyMatrixEXT = 34712,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OP_MOV_EXT")]
     OpMovEXT = 34713,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_VERTEX_EXT")]
     OutputVertexEXT = 34714,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_COLOR0_EXT")]
     OutputColor0EXT = 34715,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_COLOR1_EXT")]
     OutputColor1EXT = 34716,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD0_EXT")]
     OutputTextureCoord0EXT = 34717,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD1_EXT")]
     OutputTextureCoord1EXT = 34718,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD2_EXT")]
     OutputTextureCoord2EXT = 34719,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD3_EXT")]
     OutputTextureCoord3EXT = 34720,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD4_EXT")]
     OutputTextureCoord4EXT = 34721,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD5_EXT")]
     OutputTextureCoord5EXT = 34722,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD6_EXT")]
     OutputTextureCoord6EXT = 34723,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD7_EXT")]
     OutputTextureCoord7EXT = 34724,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD8_EXT")]
     OutputTextureCoord8EXT = 34725,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD9_EXT")]
     OutputTextureCoord9EXT = 34726,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD10_EXT")]
     OutputTextureCoord10EXT = 34727,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD11_EXT")]
     OutputTextureCoord11EXT = 34728,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD12_EXT")]
     OutputTextureCoord12EXT = 34729,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD13_EXT")]
     OutputTextureCoord13EXT = 34730,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD14_EXT")]
     OutputTextureCoord14EXT = 34731,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD15_EXT")]
     OutputTextureCoord15EXT = 34732,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD16_EXT")]
     OutputTextureCoord16EXT = 34733,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD17_EXT")]
     OutputTextureCoord17EXT = 34734,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD18_EXT")]
     OutputTextureCoord18EXT = 34735,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD19_EXT")]
     OutputTextureCoord19EXT = 34736,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD20_EXT")]
     OutputTextureCoord20EXT = 34737,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD21_EXT")]
     OutputTextureCoord21EXT = 34738,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD22_EXT")]
     OutputTextureCoord22EXT = 34739,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD23_EXT")]
     OutputTextureCoord23EXT = 34740,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD24_EXT")]
     OutputTextureCoord24EXT = 34741,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD25_EXT")]
     OutputTextureCoord25EXT = 34742,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD26_EXT")]
     OutputTextureCoord26EXT = 34743,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD27_EXT")]
     OutputTextureCoord27EXT = 34744,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD28_EXT")]
     OutputTextureCoord28EXT = 34745,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD29_EXT")]
     OutputTextureCoord29EXT = 34746,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD30_EXT")]
     OutputTextureCoord30EXT = 34747,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_TEXTURE_COORD31_EXT")]
     OutputTextureCoord31EXT = 34748,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_OUTPUT_FOG_EXT")]
     OutputFogEXT = 34749,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SCALAR_EXT")]
     ScalarEXT = 34750,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VECTOR_EXT")]
     VectorEXT = 34751,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MATRIX_EXT")]
     MatrixEXT = 34752,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VARIANT_EXT")]
     VariantEXT = 34753,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INVARIANT_EXT")]
     InvariantEXT = 34754,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LOCAL_CONSTANT_EXT")]
     LocalConstantEXT = 34755,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LOCAL_EXT")]
     LocalEXT = 34756,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_VERTEX_SHADER_INSTRUCTIONS_EXT")]
     MaxVertexShaderInstructionsEXT = 34757,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_VERTEX_SHADER_VARIANTS_EXT")]
     MaxVertexShaderVariantsEXT = 34758,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_VERTEX_SHADER_INVARIANTS_EXT")]
     MaxVertexShaderInvariantsEXT = 34759,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_VERTEX_SHADER_LOCAL_CONSTANTS_EXT")]
     MaxVertexShaderLocalConstantsEXT = 34760,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_VERTEX_SHADER_LOCALS_EXT")]
     MaxVertexShaderLocalsEXT = 34761,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_OPTIMIZED_VERTEX_SHADER_INSTRUCTIONS_EXT")]
     MaxOptimizedVertexShaderInstructionsEXT = 34762,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_OPTIMIZED_VERTEX_SHADER_VARIANTS_EXT")]
     MaxOptimizedVertexShaderVariantsEXT = 34763,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_OPTIMIZED_VERTEX_SHADER_LOCAL_CONSTANTS_EXT")]
     MaxOptimizedVertexShaderLocalConstantsEXT = 34764,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_OPTIMIZED_VERTEX_SHADER_INVARIANTS_EXT")]
     MaxOptimizedVertexShaderInvariantsEXT = 34765,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_OPTIMIZED_VERTEX_SHADER_LOCALS_EXT")]
     MaxOptimizedVertexShaderLocalsEXT = 34766,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_INSTRUCTIONS_EXT")]
     VertexShaderInstructionsEXT = 34767,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_VARIANTS_EXT")]
     VertexShaderVariantsEXT = 34768,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_INVARIANTS_EXT")]
     VertexShaderInvariantsEXT = 34769,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_LOCAL_CONSTANTS_EXT")]
     VertexShaderLocalConstantsEXT = 34770,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_LOCALS_EXT")]
     VertexShaderLocalsEXT = 34771,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_OPTIMIZED_EXT")]
     VertexShaderOptimizedEXT = 34772,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_X_EXT")]
     Xext = 34773,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_Y_EXT")]
     Yext = 34774,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_Z_EXT")]
     Zext = 34775,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_W_EXT")]
     Wext = 34776,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NEGATIVE_X_EXT")]
     NegativeXEXT = 34777,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NEGATIVE_Y_EXT")]
     NegativeYEXT = 34778,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NEGATIVE_Z_EXT")]
     NegativeZEXT = 34779,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NEGATIVE_W_EXT")]
     NegativeWEXT = 34780,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ZERO_EXT")]
     ZeroEXT = 34781,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ONE_EXT")]
     OneEXT = 34782,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NEGATIVE_ONE_EXT")]
     NegativeOneEXT = 34783,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NORMALIZED_RANGE_EXT")]
     NormalizedRangeEXT = 34784,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FULL_RANGE_EXT")]
     FullRangeEXT = 34785,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CURRENT_VERTEX_EXT")]
     CurrentVertexEXT = 34786,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MVP_MATRIX_EXT")]
     MvpMatrixEXT = 34787,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VARIANT_VALUE_EXT")]
     VariantValueEXT = 34788,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VARIANT_DATATYPE_EXT")]
     VariantDatatypeEXT = 34789,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VARIANT_ARRAY_STRIDE_EXT")]
     VariantArrayStrideEXT = 34790,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VARIANT_ARRAY_TYPE_EXT")]
     VariantArrayTypeEXT = 34791,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VARIANT_ARRAY_EXT")]
     VariantArrayEXT = 34792,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VARIANT_ARRAY_POINTER_EXT")]
     VariantArrayPointerEXT = 34793,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INVARIANT_VALUE_EXT")]
     InvariantValueEXT = 34794,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INVARIANT_DATATYPE_EXT")]
     InvariantDatatypeEXT = 34795,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LOCAL_CONSTANT_VALUE_EXT")]
     LocalConstantValueEXT = 34796,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LOCAL_CONSTANT_DATATYPE_EXT")]
     LocalConstantDatatypeEXT = 34797,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MODELVIEW0_STACK_DEPTH_EXT")]
     Modelview0StackDepthEXT = 2979,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MODELVIEW1_STACK_DEPTH_EXT")]
     Modelview1StackDepthEXT = 34050,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MODELVIEW0_MATRIX_EXT")]
     Modelview0MatrixEXT = 2982,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MODELVIEW1_MATRIX_EXT")]
     Modelview1MatrixEXT = 34054,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_WEIGHTING_EXT")]
     VertexWeightingEXT = 34057,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MODELVIEW0_EXT")]
     Modelview0EXT = 5888,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MODELVIEW1_EXT")]
     Modelview1EXT = 34058,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CURRENT_VERTEX_WEIGHT_EXT")]
     CurrentVertexWeightEXT = 34059,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_WEIGHT_ARRAY_EXT")]
     VertexWeightArrayEXT = 34060,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_WEIGHT_ARRAY_SIZE_EXT")]
     VertexWeightArraySizeEXT = 34061,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_WEIGHT_ARRAY_TYPE_EXT")]
     VertexWeightArrayTypeEXT = 34062,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_WEIGHT_ARRAY_STRIDE_EXT")]
     VertexWeightArrayStrideEXT = 34063,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_WEIGHT_ARRAY_POINTER_EXT")]
     VertexWeightArrayPointerEXT = 34064,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INCLUSIVE_EXT")]
     InclusiveEXT = 36624,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_EXCLUSIVE_EXT")]
     ExclusiveEXT = 36625,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_WINDOW_RECTANGLE_EXT")]
     WindowRectangleEXT = 36626,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_WINDOW_RECTANGLE_MODE_EXT")]
     WindowRectangleModeEXT = 36627,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_WINDOW_RECTANGLES_EXT")]
     MaxWindowRectanglesEXT = 36628,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NUM_WINDOW_RECTANGLES_EXT")]
     NumWindowRectanglesEXT = 36629,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SYNC_X11_FENCE_EXT")]
     SyncX11FenceEXT = 37089,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IGNORE_BORDER_HP")]
     IgnoreBorderHP = 33104,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_CONSTANT_BORDER_HP")]
     ConstantBorderHP = 33105,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_REPLICATE_BORDER_HP")]
     ReplicateBorderHP = 33107,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_CONVOLUTION_BORDER_COLOR_HP")]
     ConvolutionBorderColorHP = 33108,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_SCALE_X_HP")]
     ImageScaleXHP = 33109,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_SCALE_Y_HP")]
     ImageScaleYHP = 33110,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_TRANSLATE_X_HP")]
     ImageTranslateXHP = 33111,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_TRANSLATE_Y_HP")]
     ImageTranslateYHP = 33112,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_ROTATE_ANGLE_HP")]
     ImageRotateAngleHP = 33113,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_ROTATE_ORIGIN_X_HP")]
     ImageRotateOriginXHP = 33114,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_ROTATE_ORIGIN_Y_HP")]
     ImageRotateOriginYHP = 33115,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_MAG_FILTER_HP")]
     ImageMagFilterHP = 33116,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_MIN_FILTER_HP")]
     ImageMinFilterHP = 33117,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_CUBIC_WEIGHT_HP")]
     ImageCubicWeightHP = 33118,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_CUBIC_HP")]
     CubicHP = 33119,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_AVERAGE_HP")]
     AverageHP = 33120,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_IMAGE_TRANSFORM_2D_HP")]
     ImageTransform2DHP = 33121,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_POST_IMAGE_TRANSFORM_COLOR_TABLE_HP")]
     PostImageTransformColorTableHP = 33122,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_PROXY_POST_IMAGE_TRANSFORM_COLOR_TABLE_HP")]
     ProxyPostImageTransformColorTableHP = 33123,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_OCCLUSION_TEST_HP")]
     OcclusionTestHP = 33125,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_OCCLUSION_TEST_RESULT_HP")]
     OcclusionTestResultHP = 33126,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_TEXTURE_LIGHTING_MODE_HP")]
     TextureLightingModeHP = 33127,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_TEXTURE_POST_SPECULAR_HP")]
     TexturePostSpecularHP = 33128,
 
-    [NameAffix("Suffix", "HP", 0)]
     [NativeName("GL_TEXTURE_PRE_SPECULAR_HP")]
     TexturePreSpecularHP = 33129,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_CULL_VERTEX_IBM")]
     CullVertexIBM = 103050,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_RASTER_POSITION_UNCLIPPED_IBM")]
     RasterPositionUnclippedIBM = 103010,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_ALL_STATIC_DATA_IBM")]
     AllStaticDataIBM = 103060,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_STATIC_VERTEX_ARRAY_IBM")]
     StaticVertexArrayIBM = 103061,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_MIRRORED_REPEAT_IBM")]
     MirroredRepeatIBM = 33648,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_VERTEX_ARRAY_LIST_IBM")]
     VertexArrayListIBM = 103070,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_NORMAL_ARRAY_LIST_IBM")]
     NormalArrayListIBM = 103071,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_COLOR_ARRAY_LIST_IBM")]
     ColorArrayListIBM = 103072,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_INDEX_ARRAY_LIST_IBM")]
     IndexArrayListIBM = 103073,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_LIST_IBM")]
     TextureCoordArrayListIBM = 103074,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_EDGE_FLAG_ARRAY_LIST_IBM")]
     EdgeFlagArrayListIBM = 103075,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_FOG_COORDINATE_ARRAY_LIST_IBM")]
     FogCoordinateArrayListIBM = 103076,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_SECONDARY_COLOR_ARRAY_LIST_IBM")]
     SecondaryColorArrayListIBM = 103077,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_VERTEX_ARRAY_LIST_STRIDE_IBM")]
     VertexArrayListStrideIBM = 103080,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_NORMAL_ARRAY_LIST_STRIDE_IBM")]
     NormalArrayListStrideIBM = 103081,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_COLOR_ARRAY_LIST_STRIDE_IBM")]
     ColorArrayListStrideIBM = 103082,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_INDEX_ARRAY_LIST_STRIDE_IBM")]
     IndexArrayListStrideIBM = 103083,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_LIST_STRIDE_IBM")]
     TextureCoordArrayListStrideIBM = 103084,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_EDGE_FLAG_ARRAY_LIST_STRIDE_IBM")]
     EdgeFlagArrayListStrideIBM = 103085,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_FOG_COORDINATE_ARRAY_LIST_STRIDE_IBM")]
     FogCoordinateArrayListStrideIBM = 103086,
 
-    [NameAffix("Suffix", "IBM", 0)]
     [NativeName("GL_SECONDARY_COLOR_ARRAY_LIST_STRIDE_IBM")]
     SecondaryColorArrayListStrideIBM = 103087,
 
-    [NameAffix("Suffix", "INGR", 0)]
     [NativeName("GL_RED_MIN_CLAMP_INGR")]
     RedMinClampINGR = 34144,
 
-    [NameAffix("Suffix", "INGR", 0)]
     [NativeName("GL_GREEN_MIN_CLAMP_INGR")]
     GreenMinClampINGR = 34145,
 
-    [NameAffix("Suffix", "INGR", 0)]
     [NativeName("GL_BLUE_MIN_CLAMP_INGR")]
     BlueMinClampINGR = 34146,
 
-    [NameAffix("Suffix", "INGR", 0)]
     [NativeName("GL_ALPHA_MIN_CLAMP_INGR")]
     AlphaMinClampINGR = 34147,
 
-    [NameAffix("Suffix", "INGR", 0)]
     [NativeName("GL_RED_MAX_CLAMP_INGR")]
     RedMaxClampINGR = 34148,
 
-    [NameAffix("Suffix", "INGR", 0)]
     [NativeName("GL_GREEN_MAX_CLAMP_INGR")]
     GreenMaxClampINGR = 34149,
 
-    [NameAffix("Suffix", "INGR", 0)]
     [NativeName("GL_BLUE_MAX_CLAMP_INGR")]
     BlueMaxClampINGR = 34150,
 
-    [NameAffix("Suffix", "INGR", 0)]
     [NativeName("GL_ALPHA_MAX_CLAMP_INGR")]
     AlphaMaxClampINGR = 34151,
 
-    [NameAffix("Suffix", "INGR", 0)]
     [NativeName("GL_INTERLACE_READ_INGR")]
     InterlaceReadINGR = 34152,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_BLACKHOLE_RENDER_INTEL")]
     BlackholeRenderINTEL = 33788,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_CONSERVATIVE_RASTERIZATION_INTEL")]
     ConservativeRasterizationINTEL = 33790,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_TEXTURE_MEMORY_LAYOUT_INTEL")]
     TextureMemoryLayoutINTEL = 33791,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_LAYOUT_DEFAULT_INTEL")]
     LayoutDefaultINTEL = 0,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_LAYOUT_LINEAR_INTEL")]
     LayoutLinearINTEL = 1,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_LAYOUT_LINEAR_CPU_CACHED_INTEL")]
     LayoutLinearCpuCachedINTEL = 2,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PARALLEL_ARRAYS_INTEL")]
     ParallelArraysINTEL = 33780,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_VERTEX_ARRAY_PARALLEL_POINTERS_INTEL")]
     VertexArrayParallelPointersINTEL = 33781,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_NORMAL_ARRAY_PARALLEL_POINTERS_INTEL")]
     NormalArrayParallelPointersINTEL = 33782,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_COLOR_ARRAY_PARALLEL_POINTERS_INTEL")]
     ColorArrayParallelPointersINTEL = 33783,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_PARALLEL_POINTERS_INTEL")]
     TextureCoordArrayParallelPointersINTEL = 33784,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_SINGLE_CONTEXT_INTEL")]
     PerfquerySingleContextINTEL = 0,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_GLOBAL_CONTEXT_INTEL")]
     PerfqueryGlobalContextINTEL = 1,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_WAIT_INTEL")]
     PerfqueryWaitINTEL = 33787,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_FLUSH_INTEL")]
     PerfqueryFlushINTEL = 33786,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_DONOT_FLUSH_INTEL")]
     PerfqueryDonotFlushINTEL = 33785,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_EVENT_INTEL")]
     PerfqueryCounterEventINTEL = 38128,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_DURATION_NORM_INTEL")]
     PerfqueryCounterDurationNormINTEL = 38129,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_DURATION_RAW_INTEL")]
     PerfqueryCounterDurationRawINTEL = 38130,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_THROUGHPUT_INTEL")]
     PerfqueryCounterThroughputINTEL = 38131,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_RAW_INTEL")]
     PerfqueryCounterRawINTEL = 38132,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_TIMESTAMP_INTEL")]
     PerfqueryCounterTimestampINTEL = 38133,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_DATA_UINT32_INTEL")]
     PerfqueryCounterDataUint32INTEL = 38136,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_DATA_UINT64_INTEL")]
     PerfqueryCounterDataUint64INTEL = 38137,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_DATA_FLOAT_INTEL")]
     PerfqueryCounterDataFloatINTEL = 38138,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_DATA_DOUBLE_INTEL")]
     PerfqueryCounterDataDoubleINTEL = 38139,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_DATA_BOOL32_INTEL")]
     PerfqueryCounterDataBool32INTEL = 38140,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_QUERY_NAME_LENGTH_MAX_INTEL")]
     PerfqueryQueryNameLengthMaxINTEL = 38141,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_NAME_LENGTH_MAX_INTEL")]
     PerfqueryCounterNameLengthMaxINTEL = 38142,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_COUNTER_DESC_LENGTH_MAX_INTEL")]
     PerfqueryCounterDescLengthMaxINTEL = 38143,
 
-    [NameAffix("Suffix", "INTEL", 0)]
     [NativeName("GL_PERFQUERY_GPA_EXTENDED_COUNTERS_INTEL")]
     PerfqueryGpaExtendedCountersINTEL = 38144,
 
-    [NameAffix("Suffix", "MESAX", 0)]
     [NativeName("GL_TEXTURE_1D_STACK_MESAX")]
     Texture1DStackMESAX = 34649,
 
-    [NameAffix("Suffix", "MESAX", 0)]
     [NativeName("GL_TEXTURE_2D_STACK_MESAX")]
     Texture2DStackMESAX = 34650,
 
-    [NameAffix("Suffix", "MESAX", 0)]
     [NativeName("GL_PROXY_TEXTURE_1D_STACK_MESAX")]
     ProxyTexture1DStackMESAX = 34651,
 
-    [NameAffix("Suffix", "MESAX", 0)]
     [NativeName("GL_PROXY_TEXTURE_2D_STACK_MESAX")]
     ProxyTexture2DStackMESAX = 34652,
 
-    [NameAffix("Suffix", "MESAX", 0)]
     [NativeName("GL_TEXTURE_1D_STACK_BINDING_MESAX")]
     Texture1DStackBindingMESAX = 34653,
 
-    [NameAffix("Suffix", "MESAX", 0)]
     [NativeName("GL_TEXTURE_2D_STACK_BINDING_MESAX")]
     Texture2DStackBindingMESAX = 34654,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_FRAMEBUFFER_FLIP_X_MESA")]
     FramebufferFlipXMESA = 35772,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_FRAMEBUFFER_FLIP_Y_MESA")]
     FramebufferFlipYMESA = 35771,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_FRAMEBUFFER_SWAP_XY_MESA")]
     FramebufferSwapXyMESA = 35773,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_PACK_INVERT_MESA")]
     PackInvertMESA = 34648,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_PROGRAM_BINARY_FORMAT_MESA")]
     ProgramBinaryFormatMESA = 34655,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_TILE_RASTER_ORDER_FIXED_MESA")]
     TileRasterOrderFixedMESA = 35768,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_TILE_RASTER_ORDER_INCREASING_X_MESA")]
     TileRasterOrderIncreasingXMESA = 35769,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_TILE_RASTER_ORDER_INCREASING_Y_MESA")]
     TileRasterOrderIncreasingYMESA = 35770,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_UNSIGNED_SHORT_8_8_MESA")]
     UnsignedShort8X8MESA = 34234,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_UNSIGNED_SHORT_8_8_REV_MESA")]
     UnsignedShort8X8RevMESA = 34235,
 
-    [NameAffix("Suffix", "MESA", 0)]
     [NativeName("GL_YCBCR_MESA")]
     YcbcrMESA = 34647,
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX")]
     GpuMemoryInfoDedicatedVidmemNVX = 36935,
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX")]
     GpuMemoryInfoTotalAvailableMemoryNVX = 36936,
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("GL_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX")]
     GpuMemoryInfoCurrentAvailableVidmemNVX = 36937,
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("GL_GPU_MEMORY_INFO_EVICTION_COUNT_NVX")]
     GpuMemoryInfoEvictionCountNVX = 36938,
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("GL_GPU_MEMORY_INFO_EVICTED_MEMORY_NVX")]
     GpuMemoryInfoEvictedMemoryNVX = 36939,
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("GL_UPLOAD_GPU_MASK_NVX")]
     UploadGpuMaskNVX = 38218,
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("GL_LGPU_SEPARATE_STORAGE_BIT_NVX")]
     LgpuSeparateStorageBitNVX = 2048,
 
-    [NameAffix("Suffix", "NVX", 0)]
     [NativeName("GL_MAX_LGPU_GPUS_NVX")]
     MaxLgpuGpusNVX = 37562,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ALPHA_TO_COVERAGE_DITHER_DEFAULT_NV")]
     AlphaToCoverageDitherDefaultNV = 37709,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ALPHA_TO_COVERAGE_DITHER_ENABLE_NV")]
     AlphaToCoverageDitherEnableNV = 37710,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ALPHA_TO_COVERAGE_DITHER_DISABLE_NV")]
     AlphaToCoverageDitherDisableNV = 37711,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ALPHA_TO_COVERAGE_DITHER_MODE_NV")]
     AlphaToCoverageDitherModeNV = 37567,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BLEND_OVERLAP_NV")]
     BlendOverlapNV = 37505,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BLEND_PREMULTIPLIED_SRC_NV")]
     BlendPremultipliedSrcNV = 37504,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BLUE_NV")]
     BlueNV = 6405,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLORBURN_NV")]
     ColorburnNV = 37530,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLORDODGE_NV")]
     ColordodgeNV = 37529,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONJOINT_NV")]
     ConjointNV = 37508,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONTRAST_NV")]
     ContrastNV = 37537,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DARKEN_NV")]
     DarkenNV = 37527,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DIFFERENCE_NV")]
     DifferenceNV = 37534,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DISJOINT_NV")]
     DisjointNV = 37507,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DST_ATOP_NV")]
     DstAtopNV = 37519,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DST_IN_NV")]
     DstInNV = 37515,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DST_NV")]
     DstNV = 37511,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DST_OUT_NV")]
     DstOutNV = 37517,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DST_OVER_NV")]
     DstOverNV = 37513,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EXCLUSION_NV")]
     ExclusionNV = 37536,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GREEN_NV")]
     GreenNV = 6404,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HARDLIGHT_NV")]
     HardlightNV = 37531,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HARDMIX_NV")]
     HardmixNV = 37545,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HSL_COLOR_NV")]
     HslColorNV = 37551,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HSL_HUE_NV")]
     HslHueNV = 37549,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HSL_LUMINOSITY_NV")]
     HslLuminosityNV = 37552,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HSL_SATURATION_NV")]
     HslSaturationNV = 37550,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INVERT_OVG_NV")]
     InvertOvgNV = 37556,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INVERT_RGB_NV")]
     InvertRgbNV = 37539,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LIGHTEN_NV")]
     LightenNV = 37528,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LINEARBURN_NV")]
     LinearburnNV = 37541,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LINEARDODGE_NV")]
     LineardodgeNV = 37540,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LINEARLIGHT_NV")]
     LinearlightNV = 37543,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MINUS_CLAMPED_NV")]
     MinusClampedNV = 37555,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MINUS_NV")]
     MinusNV = 37535,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MULTIPLY_NV")]
     MultiplyNV = 37524,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OVERLAY_NV")]
     OverlayNV = 37526,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PINLIGHT_NV")]
     PinlightNV = 37544,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PLUS_CLAMPED_ALPHA_NV")]
     PlusClampedAlphaNV = 37554,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PLUS_CLAMPED_NV")]
     PlusClampedNV = 37553,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PLUS_DARKER_NV")]
     PlusDarkerNV = 37522,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PLUS_NV")]
     PlusNV = 37521,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RED_NV")]
     RedNV = 6403,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SCREEN_NV")]
     ScreenNV = 37525,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SOFTLIGHT_NV")]
     SoftlightNV = 37532,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SRC_ATOP_NV")]
     SrcAtopNV = 37518,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SRC_IN_NV")]
     SrcInNV = 37514,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SRC_NV")]
     SrcNV = 37510,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SRC_OUT_NV")]
     SrcOutNV = 37516,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SRC_OVER_NV")]
     SrcOverNV = 37512,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNCORRELATED_NV")]
     UncorrelatedNV = 37506,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIVIDLIGHT_NV")]
     VividlightNV = 37542,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_XOR_NV")]
     XorNV = 5382,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BLEND_ADVANCED_COHERENT_NV")]
     BlendAdvancedCoherentNV = 37509,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_POSITION_W_SCALE_NV")]
     ViewportPositionWScaleNV = 37756,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_POSITION_W_SCALE_X_COEFF_NV")]
     ViewportPositionWScaleXCoeffNV = 37757,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_POSITION_W_SCALE_Y_COEFF_NV")]
     ViewportPositionWScaleYCoeffNV = 37758,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TERMINATE_SEQUENCE_COMMAND_NV")]
     TerminateSequenceCommandNV = 0,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_NOP_COMMAND_NV")]
     NopCommandNV = 1,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_ELEMENTS_COMMAND_NV")]
     DrawElementsCommandNV = 2,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_ARRAYS_COMMAND_NV")]
     DrawArraysCommandNV = 3,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_ELEMENTS_STRIP_COMMAND_NV")]
     DrawElementsStripCommandNV = 4,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_ARRAYS_STRIP_COMMAND_NV")]
     DrawArraysStripCommandNV = 5,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_ELEMENTS_INSTANCED_COMMAND_NV")]
     DrawElementsInstancedCommandNV = 6,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_ARRAYS_INSTANCED_COMMAND_NV")]
     DrawArraysInstancedCommandNV = 7,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ELEMENT_ADDRESS_COMMAND_NV")]
     ElementAddressCommandNV = 8,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ATTRIBUTE_ADDRESS_COMMAND_NV")]
     AttributeAddressCommandNV = 9,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNIFORM_ADDRESS_COMMAND_NV")]
     UniformAddressCommandNV = 10,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BLEND_COLOR_COMMAND_NV")]
     BlendColorCommandNV = 11,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_STENCIL_REF_COMMAND_NV")]
     StencilRefCommandNV = 12,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LINE_WIDTH_COMMAND_NV")]
     LineWidthCommandNV = 13,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_POLYGON_OFFSET_COMMAND_NV")]
     PolygonOffsetCommandNV = 14,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ALPHA_REF_COMMAND_NV")]
     AlphaRefCommandNV = 15,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_COMMAND_NV")]
     ViewportCommandNV = 16,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SCISSOR_COMMAND_NV")]
     ScissorCommandNV = 17,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRONT_FACE_COMMAND_NV")]
     FrontFaceCommandNV = 18,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMPUTE_PROGRAM_NV")]
     ComputeProgramNV = 37115,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMPUTE_PROGRAM_PARAMETER_BUFFER_NV")]
     ComputeProgramParameterBufferNV = 37116,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUERY_WAIT_NV")]
     QueryWaitNV = 36371,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUERY_NO_WAIT_NV")]
     QueryNoWaitNV = 36372,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUERY_BY_REGION_WAIT_NV")]
     QueryByRegionWaitNV = 36373,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUERY_BY_REGION_NO_WAIT_NV")]
     QueryByRegionNoWaitNV = 36374,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSERVATIVE_RASTERIZATION_NV")]
     ConservativeRasterizationNV = 37702,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SUBPIXEL_PRECISION_BIAS_X_BITS_NV")]
     SubpixelPrecisionBiasXBitsNV = 37703,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SUBPIXEL_PRECISION_BIAS_Y_BITS_NV")]
     SubpixelPrecisionBiasYBitsNV = 37704,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_SUBPIXEL_PRECISION_BIAS_BITS_NV")]
     MaxSubpixelPrecisionBiasBitsNV = 37705,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSERVATIVE_RASTER_DILATE_NV")]
     ConservativeRasterDilateNV = 37753,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSERVATIVE_RASTER_DILATE_RANGE_NV")]
     ConservativeRasterDilateRangeNV = 37754,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSERVATIVE_RASTER_DILATE_GRANULARITY_NV")]
     ConservativeRasterDilateGranularityNV = 37755,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSERVATIVE_RASTER_MODE_PRE_SNAP_NV")]
     ConservativeRasterModePreSnapNV = 38224,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSERVATIVE_RASTER_MODE_NV")]
     ConservativeRasterModeNV = 38221,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSERVATIVE_RASTER_MODE_POST_SNAP_NV")]
     ConservativeRasterModePostSnapNV = 38222,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSERVATIVE_RASTER_MODE_PRE_SNAP_TRIANGLES_NV")]
     ConservativeRasterModePreSnapTrianglesNV = 38223,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPTH_STENCIL_TO_RGBA_NV")]
     DepthStencilToRgbaNV = 34926,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPTH_STENCIL_TO_BGRA_NV")]
     DepthStencilToBgraNV = 34927,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_DEEP_3D_TEXTURE_WIDTH_HEIGHT_NV")]
     MaxDeep3DTextureWidthHeightNV = 37072,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_DEEP_3D_TEXTURE_DEPTH_NV")]
     MaxDeep3DTextureDepthNV = 37073,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPTH_COMPONENT32F_NV")]
     DepthComponent32FNV = 36267,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPTH32F_STENCIL8_NV")]
     Depth32FStencil8NV = 36268,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_32_UNSIGNED_INT_24_8_REV_NV")]
     Float32UnsignedInt24X8RevNV = 36269,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPTH_BUFFER_FLOAT_MODE_NV")]
     DepthBufferFloatModeNV = 36271,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPTH_CLAMP_NV")]
     DepthClampNV = 34383,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_2D_NV")]
     Eval2DNV = 34496,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_TRIANGULAR_2D_NV")]
     EvalTriangular2DNV = 34497,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP_TESSELLATION_NV")]
     MapTessellationNV = 34498,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP_ATTRIB_U_ORDER_NV")]
     MapAttribUOrderNV = 34499,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP_ATTRIB_V_ORDER_NV")]
     MapAttribVOrderNV = 34500,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_FRACTIONAL_TESSELLATION_NV")]
     EvalFractionalTessellationNV = 34501,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB0_NV")]
     EvalVertexAttrib0NV = 34502,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB1_NV")]
     EvalVertexAttrib1NV = 34503,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB2_NV")]
     EvalVertexAttrib2NV = 34504,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB3_NV")]
     EvalVertexAttrib3NV = 34505,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB4_NV")]
     EvalVertexAttrib4NV = 34506,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB5_NV")]
     EvalVertexAttrib5NV = 34507,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB6_NV")]
     EvalVertexAttrib6NV = 34508,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB7_NV")]
     EvalVertexAttrib7NV = 34509,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB8_NV")]
     EvalVertexAttrib8NV = 34510,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB9_NV")]
     EvalVertexAttrib9NV = 34511,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB10_NV")]
     EvalVertexAttrib10NV = 34512,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB11_NV")]
     EvalVertexAttrib11NV = 34513,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB12_NV")]
     EvalVertexAttrib12NV = 34514,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB13_NV")]
     EvalVertexAttrib13NV = 34515,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB14_NV")]
     EvalVertexAttrib14NV = 34516,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EVAL_VERTEX_ATTRIB15_NV")]
     EvalVertexAttrib15NV = 34517,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MAP_TESSELLATION_NV")]
     MaxMapTessellationNV = 34518,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_RATIONAL_EVAL_ORDER_NV")]
     MaxRationalEvalOrderNV = 34519,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SAMPLE_POSITION_NV")]
     SamplePositionNV = 36432,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SAMPLE_MASK_NV")]
     SampleMaskNV = 36433,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SAMPLE_MASK_VALUE_NV")]
     SampleMaskValueNV = 36434,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_BINDING_RENDERBUFFER_NV")]
     TextureBindingRenderbufferNV = 36435,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_RENDERBUFFER_DATA_STORE_BINDING_NV")]
     TextureRenderbufferDataStoreBindingNV = 36436,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_RENDERBUFFER_NV")]
     TextureRenderbufferNV = 36437,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SAMPLER_RENDERBUFFER_NV")]
     SamplerRenderbufferNV = 36438,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INT_SAMPLER_RENDERBUFFER_NV")]
     IntSamplerRenderbufferNV = 36439,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_RENDERBUFFER_NV")]
     UnsignedIntSamplerRenderbufferNV = 36440,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_SAMPLE_MASK_WORDS_NV")]
     MaxSampleMaskWordsNV = 36441,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FILL_RECTANGLE_NV")]
     FillRectangleNV = 37692,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_R_NV")]
     FloatRNV = 34944,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_RG_NV")]
     FloatRgNV = 34945,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_RGB_NV")]
     FloatRgbNV = 34946,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_RGBA_NV")]
     FloatRgbaNV = 34947,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_R16_NV")]
     FloatR16NV = 34948,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_R32_NV")]
     FloatR32NV = 34949,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_RG16_NV")]
     FloatRg16NV = 34950,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_RG32_NV")]
     FloatRg32NV = 34951,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_RGB16_NV")]
     FloatRgb16NV = 34952,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_RGB32_NV")]
     FloatRgb32NV = 34953,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_RGBA16_NV")]
     FloatRgba16NV = 34954,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_RGBA32_NV")]
     FloatRgba32NV = 34955,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_FLOAT_COMPONENTS_NV")]
     TextureFloatComponentsNV = 34956,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_CLEAR_COLOR_VALUE_NV")]
     FloatClearColorValueNV = 34957,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_RGBA_MODE_NV")]
     FloatRgbaModeNV = 34958,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FOG_DISTANCE_MODE_NV")]
     FogDistanceModeNV = 34138,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EYE_RADIAL_NV")]
     EyeRadialNV = 34139,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EYE_PLANE_ABSOLUTE_NV")]
     EyePlaneAbsoluteNV = 34140,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAGMENT_COVERAGE_TO_COLOR_NV")]
     FragmentCoverageToColorNV = 37597,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAGMENT_COVERAGE_COLOR_NV")]
     FragmentCoverageColorNV = 37598,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_FRAGMENT_PROGRAM_LOCAL_PARAMETERS_NV")]
     MaxFragmentProgramLocalParametersNV = 34920,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAGMENT_PROGRAM_NV")]
     FragmentProgramNV = 34928,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TEXTURE_COORDS_NV")]
     MaxTextureCoordsNV = 34929,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TEXTURE_IMAGE_UNITS_NV")]
     MaxTextureImageUnitsNV = 34930,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAGMENT_PROGRAM_BINDING_NV")]
     FragmentProgramBindingNV = 34931,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAM_ERROR_STRING_NV")]
     ProgramErrorStringNV = 34932,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_EXEC_INSTRUCTIONS_NV")]
     MaxProgramExecInstructionsNV = 35060,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_CALL_DEPTH_NV")]
     MaxProgramCallDepthNV = 35061,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_IF_DEPTH_NV")]
     MaxProgramIfDepthNV = 35062,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_LOOP_DEPTH_NV")]
     MaxProgramLoopDepthNV = 35063,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_LOOP_COUNT_NV")]
     MaxProgramLoopCountNV = 35064,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_MODULATION_TABLE_NV")]
     CoverageModulationTableNV = 37681,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_SAMPLES_NV")]
     ColorSamplesNV = 36384,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPTH_SAMPLES_NV")]
     DepthSamplesNV = 37677,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_STENCIL_SAMPLES_NV")]
     StencilSamplesNV = 37678,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MIXED_DEPTH_SAMPLES_SUPPORTED_NV")]
     MixedDepthSamplesSupportedNV = 37679,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MIXED_STENCIL_SAMPLES_SUPPORTED_NV")]
     MixedStencilSamplesSupportedNV = 37680,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_MODULATION_NV")]
     CoverageModulationNV = 37682,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_MODULATION_TABLE_SIZE_NV")]
     CoverageModulationTableSizeNV = 37683,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RENDERBUFFER_COVERAGE_SAMPLES_NV")]
     RenderbufferCoverageSamplesNV = 36011,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RENDERBUFFER_COLOR_SAMPLES_NV")]
     RenderbufferColorSamplesNV = 36368,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MULTISAMPLE_COVERAGE_MODES_NV")]
     MaxMultisampleCoverageModesNV = 36369,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MULTISAMPLE_COVERAGE_MODES_NV")]
     MultisampleCoverageModesNV = 36370,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GEOMETRY_PROGRAM_NV")]
     GeometryProgramNV = 35878,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_OUTPUT_VERTICES_NV")]
     MaxProgramOutputVerticesNV = 35879,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_TOTAL_OUTPUT_COMPONENTS_NV")]
     MaxProgramTotalOutputComponentsNV = 35880,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PER_GPU_STORAGE_BIT_NV")]
     PerGpuStorageBitNV = 2048,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MULTICAST_GPUS_NV")]
     MulticastGpusNV = 37562,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RENDER_GPU_MASK_NV")]
     RenderGpuMaskNV = 38232,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PER_GPU_STORAGE_NV")]
     PerGpuStorageNV = 38216,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MULTICAST_PROGRAMMABLE_SAMPLE_LOCATION_NV")]
     MulticastProgrammableSampleLocationNV = 38217,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MIN_PROGRAM_TEXEL_OFFSET_NV")]
     MinProgramTexelOffsetNV = 35076,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_TEXEL_OFFSET_NV")]
     MaxProgramTexelOffsetNV = 35077,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAM_ATTRIB_COMPONENTS_NV")]
     ProgramAttribComponentsNV = 35078,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAM_RESULT_COMPONENTS_NV")]
     ProgramResultComponentsNV = 35079,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_ATTRIB_COMPONENTS_NV")]
     MaxProgramAttribComponentsNV = 35080,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_RESULT_COMPONENTS_NV")]
     MaxProgramResultComponentsNV = 35081,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_GENERIC_ATTRIBS_NV")]
     MaxProgramGenericAttribsNV = 36261,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_GENERIC_RESULTS_NV")]
     MaxProgramGenericResultsNV = 36262,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_GEOMETRY_PROGRAM_INVOCATIONS_NV")]
     MaxGeometryProgramInvocationsNV = 36442,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_NV")]
     MinFragmentInterpolationOffsetNV = 36443,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_NV")]
     MaxFragmentInterpolationOffsetNV = 36444,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAGMENT_PROGRAM_INTERPOLATION_OFFSET_BITS_NV")]
     FragmentProgramInterpolationOffsetBitsNV = 36445,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MIN_PROGRAM_TEXTURE_GATHER_OFFSET_NV")]
     MinProgramTextureGatherOffsetNV = 36446,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET_NV")]
     MaxProgramTextureGatherOffsetNV = 36447,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_SUBROUTINE_PARAMETERS_NV")]
     MaxProgramSubroutineParametersNV = 36676,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_SUBROUTINE_NUM_NV")]
     MaxProgramSubroutineNumNV = 36677,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HALF_FLOAT_NV")]
     HalfFloatNV = 5131,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MULTISAMPLES_NV")]
     MultisamplesNV = 37745,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SUPERSAMPLE_SCALE_X_NV")]
     SupersampleScaleXNV = 37746,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SUPERSAMPLE_SCALE_Y_NV")]
     SupersampleScaleYNV = 37747,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONFORMANT_NV")]
     ConformantNV = 37748,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_SHININESS_NV")]
     MaxShininessNV = 34052,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_SPOT_EXPONENT_NV")]
     MaxSpotExponentNV = 34053,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ATTACHED_MEMORY_OBJECT_NV")]
     AttachedMemoryObjectNV = 38308,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ATTACHED_MEMORY_OFFSET_NV")]
     AttachedMemoryOffsetNV = 38309,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MEMORY_ATTACHABLE_ALIGNMENT_NV")]
     MemoryAttachableAlignmentNV = 38310,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MEMORY_ATTACHABLE_SIZE_NV")]
     MemoryAttachableSizeNV = 38311,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MEMORY_ATTACHABLE_NV")]
     MemoryAttachableNV = 38312,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DETACHED_MEMORY_INCARNATION_NV")]
     DetachedMemoryIncarnationNV = 38313,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DETACHED_TEXTURES_NV")]
     DetachedTexturesNV = 38314,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DETACHED_BUFFERS_NV")]
     DetachedBuffersNV = 38315,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_DETACHED_TEXTURES_NV")]
     MaxDetachedTexturesNV = 38316,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_DETACHED_BUFFERS_NV")]
     MaxDetachedBuffersNV = 38317,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_SHADER_NV")]
     MeshShaderNV = 38233,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TASK_SHADER_NV")]
     TaskShaderNV = 38234,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_UNIFORM_BLOCKS_NV")]
     MaxMeshUniformBlocksNV = 36448,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_TEXTURE_IMAGE_UNITS_NV")]
     MaxMeshTextureImageUnitsNV = 36449,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_IMAGE_UNIFORMS_NV")]
     MaxMeshImageUniformsNV = 36450,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_UNIFORM_COMPONENTS_NV")]
     MaxMeshUniformComponentsNV = 36451,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_ATOMIC_COUNTER_BUFFERS_NV")]
     MaxMeshAtomicCounterBuffersNV = 36452,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_ATOMIC_COUNTERS_NV")]
     MaxMeshAtomicCountersNV = 36453,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_SHADER_STORAGE_BLOCKS_NV")]
     MaxMeshShaderStorageBlocksNV = 36454,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_COMBINED_MESH_UNIFORM_COMPONENTS_NV")]
     MaxCombinedMeshUniformComponentsNV = 36455,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_UNIFORM_BLOCKS_NV")]
     MaxTaskUniformBlocksNV = 36456,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_TEXTURE_IMAGE_UNITS_NV")]
     MaxTaskTextureImageUnitsNV = 36457,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_IMAGE_UNIFORMS_NV")]
     MaxTaskImageUniformsNV = 36458,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_UNIFORM_COMPONENTS_NV")]
     MaxTaskUniformComponentsNV = 36459,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_ATOMIC_COUNTER_BUFFERS_NV")]
     MaxTaskAtomicCounterBuffersNV = 36460,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_ATOMIC_COUNTERS_NV")]
     MaxTaskAtomicCountersNV = 36461,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_SHADER_STORAGE_BLOCKS_NV")]
     MaxTaskShaderStorageBlocksNV = 36462,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_COMBINED_TASK_UNIFORM_COMPONENTS_NV")]
     MaxCombinedTaskUniformComponentsNV = 36463,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_WORK_GROUP_INVOCATIONS_NV")]
     MaxMeshWorkGroupInvocationsNV = 38306,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_WORK_GROUP_INVOCATIONS_NV")]
     MaxTaskWorkGroupInvocationsNV = 38307,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_TOTAL_MEMORY_SIZE_NV")]
     MaxMeshTotalMemorySizeNV = 38198,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_TOTAL_MEMORY_SIZE_NV")]
     MaxTaskTotalMemorySizeNV = 38199,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_OUTPUT_VERTICES_NV")]
     MaxMeshOutputVerticesNV = 38200,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_OUTPUT_PRIMITIVES_NV")]
     MaxMeshOutputPrimitivesNV = 38201,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_OUTPUT_COUNT_NV")]
     MaxTaskOutputCountNV = 38202,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_DRAW_MESH_TASKS_COUNT_NV")]
     MaxDrawMeshTasksCountNV = 38205,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_VIEWS_NV")]
     MaxMeshViewsNV = 38231,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_OUTPUT_PER_VERTEX_GRANULARITY_NV")]
     MeshOutputPerVertexGranularityNV = 37599,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_NV")]
     MeshOutputPerPrimitiveGranularityNV = 38211,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_MESH_WORK_GROUP_SIZE_NV")]
     MaxMeshWorkGroupSizeNV = 38203,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TASK_WORK_GROUP_SIZE_NV")]
     MaxTaskWorkGroupSizeNV = 38204,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_WORK_GROUP_SIZE_NV")]
     MeshWorkGroupSizeNV = 38206,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TASK_WORK_GROUP_SIZE_NV")]
     TaskWorkGroupSizeNV = 38207,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_VERTICES_OUT_NV")]
     MeshVerticesOutNV = 38265,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_PRIMITIVES_OUT_NV")]
     MeshPrimitivesOutNV = 38266,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_OUTPUT_TYPE_NV")]
     MeshOutputTypeNV = 38267,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_MESH_SHADER_NV")]
     UniformBlockReferencedByMeshShaderNV = 38300,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_TASK_SHADER_NV")]
     UniformBlockReferencedByTaskShaderNV = 38301,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_REFERENCED_BY_MESH_SHADER_NV")]
     ReferencedByMeshShaderNV = 38304,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_REFERENCED_BY_TASK_SHADER_NV")]
     ReferencedByTaskShaderNV = 38305,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_SHADER_BIT_NV")]
     MeshShaderBitNV = 64,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TASK_SHADER_BIT_NV")]
     TaskShaderBitNV = 128,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_SUBROUTINE_NV")]
     MeshSubroutineNV = 38268,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TASK_SUBROUTINE_NV")]
     TaskSubroutineNV = 38269,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MESH_SUBROUTINE_UNIFORM_NV")]
     MeshSubroutineUniformNV = 38270,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TASK_SUBROUTINE_UNIFORM_NV")]
     TaskSubroutineUniformNV = 38271,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_MESH_SHADER_NV")]
     AtomicCounterBufferReferencedByMeshShaderNV = 38302,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TASK_SHADER_NV")]
     AtomicCounterBufferReferencedByTaskShaderNV = 38303,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MULTISAMPLE_FILTER_HINT_NV")]
     MultisampleFilterHintNV = 34100,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PIXEL_COUNTER_BITS_NV")]
     PixelCounterBitsNV = 34916,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CURRENT_OCCLUSION_QUERY_ID_NV")]
     CurrentOcclusionQueryIdNV = 34917,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PIXEL_COUNT_NV")]
     PixelCountNV = 34918,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PIXEL_COUNT_AVAILABLE_NV")]
     PixelCountAvailableNV = 34919,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPTH_STENCIL_NV")]
     DepthStencilNV = 34041,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT_24_8_NV")]
     UnsignedInt24X8NV = 34042,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_PARAMETER_BUFFER_BINDINGS_NV")]
     MaxProgramParameterBufferBindingsNV = 36256,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_PARAMETER_BUFFER_SIZE_NV")]
     MaxProgramParameterBufferSizeNV = 36257,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_PROGRAM_PARAMETER_BUFFER_NV")]
     VertexProgramParameterBufferNV = 36258,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GEOMETRY_PROGRAM_PARAMETER_BUFFER_NV")]
     GeometryProgramParameterBufferNV = 36259,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAGMENT_PROGRAM_PARAMETER_BUFFER_NV")]
     FragmentProgramParameterBufferNV = 36260,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FORMAT_SVG_NV")]
     PathFormatSvgNV = 36976,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FORMAT_PS_NV")]
     PathFormatPsNV = 36977,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_STANDARD_FONT_NAME_NV")]
     StandardFontNameNV = 36978,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SYSTEM_FONT_NAME_NV")]
     SystemFontNameNV = 36979,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FILE_NAME_NV")]
     FileNameNV = 36980,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_STROKE_WIDTH_NV")]
     PathStrokeWidthNV = 36981,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_END_CAPS_NV")]
     PathEndCapsNV = 36982,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_INITIAL_END_CAP_NV")]
     PathInitialEndCapNV = 36983,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_TERMINAL_END_CAP_NV")]
     PathTerminalEndCapNV = 36984,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_JOIN_STYLE_NV")]
     PathJoinStyleNV = 36985,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_MITER_LIMIT_NV")]
     PathMiterLimitNV = 36986,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_DASH_CAPS_NV")]
     PathDashCapsNV = 36987,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_INITIAL_DASH_CAP_NV")]
     PathInitialDashCapNV = 36988,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_TERMINAL_DASH_CAP_NV")]
     PathTerminalDashCapNV = 36989,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_DASH_OFFSET_NV")]
     PathDashOffsetNV = 36990,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_CLIENT_LENGTH_NV")]
     PathClientLengthNV = 36991,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FILL_MODE_NV")]
     PathFillModeNV = 36992,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FILL_MASK_NV")]
     PathFillMaskNV = 36993,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FILL_COVER_MODE_NV")]
     PathFillCoverModeNV = 36994,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_STROKE_COVER_MODE_NV")]
     PathStrokeCoverModeNV = 36995,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_STROKE_MASK_NV")]
     PathStrokeMaskNV = 36996,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COUNT_UP_NV")]
     CountUpNV = 37000,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COUNT_DOWN_NV")]
     CountDownNV = 37001,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_OBJECT_BOUNDING_BOX_NV")]
     PathObjectBoundingBoxNV = 37002,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONVEX_HULL_NV")]
     ConvexHullNV = 37003,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BOUNDING_BOX_NV")]
     BoundingBoxNV = 37005,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_X_NV")]
     TranslateXNV = 37006,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_Y_NV")]
     TranslateYNV = 37007,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_2D_NV")]
     Translate2DNV = 37008,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSLATE_3D_NV")]
     Translate3DNV = 37009,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_AFFINE_2D_NV")]
     Affine2DNV = 37010,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_AFFINE_3D_NV")]
     Affine3DNV = 37012,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSPOSE_AFFINE_2D_NV")]
     TransposeAffine2DNV = 37014,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSPOSE_AFFINE_3D_NV")]
     TransposeAffine3DNV = 37016,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UTF8_NV")]
     Utf8NV = 37018,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UTF16_NV")]
     Utf16NV = 37019,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BOUNDING_BOX_OF_BOUNDING_BOXES_NV")]
     BoundingBoxOfBoundingBoxesNV = 37020,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_COMMAND_COUNT_NV")]
     PathCommandCountNV = 37021,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_COORD_COUNT_NV")]
     PathCoordCountNV = 37022,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_DASH_ARRAY_COUNT_NV")]
     PathDashArrayCountNV = 37023,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_COMPUTED_LENGTH_NV")]
     PathComputedLengthNV = 37024,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FILL_BOUNDING_BOX_NV")]
     PathFillBoundingBoxNV = 37025,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_STROKE_BOUNDING_BOX_NV")]
     PathStrokeBoundingBoxNV = 37026,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SQUARE_NV")]
     SquareNV = 37027,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ROUND_NV")]
     RoundNV = 37028,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRIANGULAR_NV")]
     TriangularNV = 37029,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BEVEL_NV")]
     BevelNV = 37030,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MITER_REVERT_NV")]
     MiterRevertNV = 37031,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MITER_TRUNCATE_NV")]
     MiterTruncateNV = 37032,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SKIP_MISSING_GLYPH_NV")]
     SkipMissingGlyphNV = 37033,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_USE_MISSING_GLYPH_NV")]
     UseMissingGlyphNV = 37034,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_ERROR_POSITION_NV")]
     PathErrorPositionNV = 37035,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ACCUM_ADJACENT_PAIRS_NV")]
     AccumAdjacentPairsNV = 37037,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ADJACENT_PAIRS_NV")]
     AdjacentPairsNV = 37038,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FIRST_TO_REST_NV")]
     FirstToRestNV = 37039,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_GEN_MODE_NV")]
     PathGenModeNV = 37040,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_GEN_COEFF_NV")]
     PathGenCoeffNV = 37041,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_GEN_COMPONENTS_NV")]
     PathGenComponentsNV = 37043,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_STENCIL_FUNC_NV")]
     PathStencilFuncNV = 37047,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_STENCIL_REF_NV")]
     PathStencilRefNV = 37048,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_STENCIL_VALUE_MASK_NV")]
     PathStencilValueMaskNV = 37049,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_STENCIL_DEPTH_OFFSET_FACTOR_NV")]
     PathStencilDepthOffsetFactorNV = 37053,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_STENCIL_DEPTH_OFFSET_UNITS_NV")]
     PathStencilDepthOffsetUnitsNV = 37054,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_COVER_DEPTH_FUNC_NV")]
     PathCoverDepthFuncNV = 37055,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_DASH_OFFSET_RESET_NV")]
     PathDashOffsetResetNV = 37044,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MOVE_TO_RESETS_NV")]
     MoveToResetsNV = 37045,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MOVE_TO_CONTINUES_NV")]
     MoveToContinuesNV = 37046,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CLOSE_PATH_NV")]
     ClosePathNV = 0,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MOVE_TO_NV")]
     MoveToNV = 2,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_MOVE_TO_NV")]
     RelativeMoveToNV = 3,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LINE_TO_NV")]
     LineToNV = 4,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_LINE_TO_NV")]
     RelativeLineToNV = 5,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HORIZONTAL_LINE_TO_NV")]
     HorizontalLineToNV = 6,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_HORIZONTAL_LINE_TO_NV")]
     RelativeHorizontalLineToNV = 7,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTICAL_LINE_TO_NV")]
     VerticalLineToNV = 8,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_VERTICAL_LINE_TO_NV")]
     RelativeVerticalLineToNV = 9,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUADRATIC_CURVE_TO_NV")]
     QuadraticCurveToNV = 10,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_QUADRATIC_CURVE_TO_NV")]
     RelativeQuadraticCurveToNV = 11,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CUBIC_CURVE_TO_NV")]
     CubicCurveToNV = 12,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_CUBIC_CURVE_TO_NV")]
     RelativeCubicCurveToNV = 13,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SMOOTH_QUADRATIC_CURVE_TO_NV")]
     SmoothQuadraticCurveToNV = 14,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_SMOOTH_QUADRATIC_CURVE_TO_NV")]
     RelativeSmoothQuadraticCurveToNV = 15,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SMOOTH_CUBIC_CURVE_TO_NV")]
     SmoothCubicCurveToNV = 16,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_SMOOTH_CUBIC_CURVE_TO_NV")]
     RelativeSmoothCubicCurveToNV = 17,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SMALL_CCW_ARC_TO_NV")]
     SmallCcwArcToNV = 18,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_SMALL_CCW_ARC_TO_NV")]
     RelativeSmallCcwArcToNV = 19,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SMALL_CW_ARC_TO_NV")]
     SmallCwArcToNV = 20,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_SMALL_CW_ARC_TO_NV")]
     RelativeSmallCwArcToNV = 21,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LARGE_CCW_ARC_TO_NV")]
     LargeCcwArcToNV = 22,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_LARGE_CCW_ARC_TO_NV")]
     RelativeLargeCcwArcToNV = 23,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LARGE_CW_ARC_TO_NV")]
     LargeCwArcToNV = 24,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_LARGE_CW_ARC_TO_NV")]
     RelativeLargeCwArcToNV = 25,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RESTART_PATH_NV")]
     RestartPathNV = 240,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DUP_FIRST_CUBIC_CURVE_TO_NV")]
     DupFirstCubicCurveToNV = 242,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DUP_LAST_CUBIC_CURVE_TO_NV")]
     DupLastCubicCurveToNV = 244,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RECT_NV")]
     RectNV = 246,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CIRCULAR_CCW_ARC_TO_NV")]
     CircularCcwArcToNV = 248,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CIRCULAR_CW_ARC_TO_NV")]
     CircularCwArcToNV = 250,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CIRCULAR_TANGENT_ARC_TO_NV")]
     CircularTangentArcToNV = 252,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ARC_TO_NV")]
     ArcToNV = 254,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_ARC_TO_NV")]
     RelativeArcToNV = 255,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BOLD_BIT_NV")]
     BoldBitNV = 1,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ITALIC_BIT_NV")]
     ItalicBitNV = 2,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GLYPH_WIDTH_BIT_NV")]
     GlyphWidthBitNV = 1,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GLYPH_HEIGHT_BIT_NV")]
     GlyphHeightBitNV = 2,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV")]
     GlyphHorizontalBearingXBitNV = 4,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV")]
     GlyphHorizontalBearingYBitNV = 8,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV")]
     GlyphHorizontalBearingAdvanceBitNV = 16,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GLYPH_VERTICAL_BEARING_X_BIT_NV")]
     GlyphVerticalBearingXBitNV = 32,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV")]
     GlyphVerticalBearingYBitNV = 64,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV")]
     GlyphVerticalBearingAdvanceBitNV = 128,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GLYPH_HAS_KERNING_BIT_NV")]
     GlyphHasKerningBitNV = 256,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_X_MIN_BOUNDS_BIT_NV")]
     FontXMinBoundsBitNV = 65536,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_Y_MIN_BOUNDS_BIT_NV")]
     FontYMinBoundsBitNV = 131072,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_X_MAX_BOUNDS_BIT_NV")]
     FontXMaxBoundsBitNV = 262144,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_Y_MAX_BOUNDS_BIT_NV")]
     FontYMaxBoundsBitNV = 524288,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_UNITS_PER_EM_BIT_NV")]
     FontUnitsPerEmBitNV = 1048576,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_ASCENDER_BIT_NV")]
     FontAscenderBitNV = 2097152,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_DESCENDER_BIT_NV")]
     FontDescenderBitNV = 4194304,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_HEIGHT_BIT_NV")]
     FontHeightBitNV = 8388608,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_MAX_ADVANCE_WIDTH_BIT_NV")]
     FontMaxAdvanceWidthBitNV = 16777216,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_MAX_ADVANCE_HEIGHT_BIT_NV")]
     FontMaxAdvanceHeightBitNV = 33554432,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_UNDERLINE_POSITION_BIT_NV")]
     FontUnderlinePositionBitNV = 67108864,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_UNDERLINE_THICKNESS_BIT_NV")]
     FontUnderlineThicknessBitNV = 134217728,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_HAS_KERNING_BIT_NV")]
     FontHasKerningBitNV = 268435456,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ROUNDED_RECT_NV")]
     RoundedRectNV = 232,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_ROUNDED_RECT_NV")]
     RelativeRoundedRectNV = 233,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ROUNDED_RECT2_NV")]
     RoundedRect2NV = 234,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_ROUNDED_RECT2_NV")]
     RelativeRoundedRect2NV = 235,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ROUNDED_RECT4_NV")]
     RoundedRect4NV = 236,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_ROUNDED_RECT4_NV")]
     RelativeRoundedRect4NV = 237,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ROUNDED_RECT8_NV")]
     RoundedRect8NV = 238,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_ROUNDED_RECT8_NV")]
     RelativeRoundedRect8NV = 239,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_RECT_NV")]
     RelativeRectNV = 247,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_GLYPHS_AVAILABLE_NV")]
     FontGlyphsAvailableNV = 37736,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_TARGET_UNAVAILABLE_NV")]
     FontTargetUnavailableNV = 37737,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_UNAVAILABLE_NV")]
     FontUnavailableNV = 37738,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_UNINTELLIGIBLE_NV")]
     FontUnintelligibleNV = 37739,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONIC_CURVE_TO_NV")]
     ConicCurveToNV = 26,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RELATIVE_CONIC_CURVE_TO_NV")]
     RelativeConicCurveToNV = 27,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FONT_NUM_GLYPH_INDICES_BIT_NV")]
     FontNumGlyphIndicesBitNV = 536870912,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_STANDARD_FONT_FORMAT_NV")]
     StandardFontFormatNV = 37740,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_2_BYTES_NV")]
     X2BytesNV = 5127,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_3_BYTES_NV")]
     X3BytesNV = 5128,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_4_BYTES_NV")]
     X4BytesNV = 5129,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EYE_LINEAR_NV")]
     EyeLinearNV = 9216,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OBJECT_LINEAR_NV")]
     ObjectLinearNV = 9217,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSTANT_NV")]
     ConstantNV = 34166,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_FOG_GEN_MODE_NV")]
     PathFogGenModeNV = 37036,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PRIMARY_COLOR_NV")]
     PrimaryColorNV = 34092,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SECONDARY_COLOR_NV")]
     SecondaryColorNV = 34093,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_GEN_COLOR_FORMAT_NV")]
     PathGenColorFormatNV = 37042,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_PROJECTION_NV")]
     PathProjectionNV = 5889,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_MODELVIEW_NV")]
     PathModelviewNV = 5888,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_MODELVIEW_STACK_DEPTH_NV")]
     PathModelviewStackDepthNV = 2979,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_MODELVIEW_MATRIX_NV")]
     PathModelviewMatrixNV = 2982,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_MAX_MODELVIEW_STACK_DEPTH_NV")]
     PathMaxModelviewStackDepthNV = 3382,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_TRANSPOSE_MODELVIEW_MATRIX_NV")]
     PathTransposeModelviewMatrixNV = 34019,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_PROJECTION_STACK_DEPTH_NV")]
     PathProjectionStackDepthNV = 2980,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_PROJECTION_MATRIX_NV")]
     PathProjectionMatrixNV = 2983,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_MAX_PROJECTION_STACK_DEPTH_NV")]
     PathMaxProjectionStackDepthNV = 3384,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PATH_TRANSPOSE_PROJECTION_MATRIX_NV")]
     PathTransposeProjectionMatrixNV = 34020,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAGMENT_INPUT_NV")]
     FragmentInputNV = 37741,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHARED_EDGE_NV")]
     SharedEdgeNV = 192,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_WRITE_PIXEL_DATA_RANGE_NV")]
     WritePixelDataRangeNV = 34936,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_READ_PIXEL_DATA_RANGE_NV")]
     ReadPixelDataRangeNV = 34937,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_WRITE_PIXEL_DATA_RANGE_LENGTH_NV")]
     WritePixelDataRangeLengthNV = 34938,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_READ_PIXEL_DATA_RANGE_LENGTH_NV")]
     ReadPixelDataRangeLengthNV = 34939,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_WRITE_PIXEL_DATA_RANGE_POINTER_NV")]
     WritePixelDataRangePointerNV = 34940,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_READ_PIXEL_DATA_RANGE_POINTER_NV")]
     ReadPixelDataRangePointerNV = 34941,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_POINT_SPRITE_NV")]
     PointSpriteNV = 34913,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COORD_REPLACE_NV")]
     CoordReplaceNV = 34914,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_POINT_SPRITE_R_MODE_NV")]
     PointSpriteRModeNV = 34915,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAME_NV")]
     FrameNV = 36390,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FIELDS_NV")]
     FieldsNV = 36391,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CURRENT_TIME_NV")]
     CurrentTimeNV = 36392,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_NUM_FILL_STREAMS_NV")]
     NumFillStreamsNV = 36393,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PRESENT_TIME_NV")]
     PresentTimeNV = 36394,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PRESENT_DURATION_NV")]
     PresentDurationNV = 36395,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PRIMITIVE_RESTART_NV")]
     PrimitiveRestartNV = 34136,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PRIMITIVE_RESTART_INDEX_NV")]
     PrimitiveRestartIndexNV = 34137,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
     ShadingRateImagePerPrimitiveNV = 38321,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_IMAGE_PALETTE_COUNT_NV")]
     ShadingRateImagePaletteCountNV = 38322,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUERY_RESOURCE_TYPE_VIDMEM_ALLOC_NV")]
     QueryResourceTypeVidmemAllocNV = 38208,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUERY_RESOURCE_MEMTYPE_VIDMEM_NV")]
     QueryResourceMemtypeVidmemNV = 38210,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUERY_RESOURCE_SYS_RESERVED_NV")]
     QueryResourceSysReservedNV = 38212,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUERY_RESOURCE_TEXTURE_NV")]
     QueryResourceTextureNV = 38213,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUERY_RESOURCE_RENDERBUFFER_NV")]
     QueryResourceRenderbufferNV = 38214,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_QUERY_RESOURCE_BUFFEROBJECT_NV")]
     QueryResourceBufferobjectNV = 38215,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_REGISTER_COMBINERS_NV")]
     RegisterCombinersNV = 34082,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VARIABLE_A_NV")]
     VariableANV = 34083,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VARIABLE_B_NV")]
     VariableBNV = 34084,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VARIABLE_C_NV")]
     VariableCNV = 34085,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VARIABLE_D_NV")]
     VariableDNV = 34086,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VARIABLE_E_NV")]
     VariableENV = 34087,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VARIABLE_F_NV")]
     VariableFNV = 34088,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VARIABLE_G_NV")]
     VariableGNV = 34089,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSTANT_COLOR0_NV")]
     ConstantColor0NV = 34090,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONSTANT_COLOR1_NV")]
     ConstantColor1NV = 34091,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SPARE0_NV")]
     Spare0NV = 34094,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SPARE1_NV")]
     Spare1NV = 34095,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DISCARD_NV")]
     DiscardNV = 34096,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_E_TIMES_F_NV")]
     ETimesFNV = 34097,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SPARE0_PLUS_SECONDARY_COLOR_NV")]
     Spare0PlusSecondaryColorNV = 34098,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_IDENTITY_NV")]
     UnsignedIdentityNV = 34102,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INVERT_NV")]
     UnsignedInvertNV = 34103,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EXPAND_NORMAL_NV")]
     ExpandNormalNV = 34104,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EXPAND_NEGATE_NV")]
     ExpandNegateNV = 34105,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HALF_BIAS_NORMAL_NV")]
     HalfBiasNormalNV = 34106,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HALF_BIAS_NEGATE_NV")]
     HalfBiasNegateNV = 34107,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_IDENTITY_NV")]
     SignedIdentityNV = 34108,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_NEGATE_NV")]
     SignedNegateNV = 34109,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SCALE_BY_TWO_NV")]
     ScaleByTwoNV = 34110,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SCALE_BY_FOUR_NV")]
     ScaleByFourNV = 34111,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SCALE_BY_ONE_HALF_NV")]
     ScaleByOneHalfNV = 34112,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BIAS_BY_NEGATIVE_ONE_HALF_NV")]
     BiasByNegativeOneHalfNV = 34113,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_INPUT_NV")]
     CombinerInputNV = 34114,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_MAPPING_NV")]
     CombinerMappingNV = 34115,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_COMPONENT_USAGE_NV")]
     CombinerComponentUsageNV = 34116,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_AB_DOT_PRODUCT_NV")]
     CombinerAbDotProductNV = 34117,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_CD_DOT_PRODUCT_NV")]
     CombinerCdDotProductNV = 34118,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_MUX_SUM_NV")]
     CombinerMuxSumNV = 34119,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_SCALE_NV")]
     CombinerScaleNV = 34120,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_BIAS_NV")]
     CombinerBiasNV = 34121,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_AB_OUTPUT_NV")]
     CombinerAbOutputNV = 34122,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_CD_OUTPUT_NV")]
     CombinerCdOutputNV = 34123,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER_SUM_OUTPUT_NV")]
     CombinerSumOutputNV = 34124,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_GENERAL_COMBINERS_NV")]
     MaxGeneralCombinersNV = 34125,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_NUM_GENERAL_COMBINERS_NV")]
     NumGeneralCombinersNV = 34126,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_SUM_CLAMP_NV")]
     ColorSumClampNV = 34127,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER0_NV")]
     Combiner0NV = 34128,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER1_NV")]
     Combiner1NV = 34129,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER2_NV")]
     Combiner2NV = 34130,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER3_NV")]
     Combiner3NV = 34131,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER4_NV")]
     Combiner4NV = 34132,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER5_NV")]
     Combiner5NV = 34133,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER6_NV")]
     Combiner6NV = 34134,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINER7_NV")]
     Combiner7NV = 34135,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PER_STAGE_CONSTANTS_NV")]
     PerStageConstantsNV = 34101,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_REPRESENTATIVE_FRAGMENT_TEST_NV")]
     RepresentativeFragmentTestNV = 37759,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PURGED_CONTEXT_RESET_NV")]
     PurgedContextResetNV = 37563,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SAMPLE_LOCATION_SUBPIXEL_BITS_NV")]
     SampleLocationSubpixelBitsNV = 37693,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SAMPLE_LOCATION_PIXEL_GRID_WIDTH_NV")]
     SampleLocationPixelGridWidthNV = 37694,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SAMPLE_LOCATION_PIXEL_GRID_HEIGHT_NV")]
     SampleLocationPixelGridHeightNV = 37695,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAMMABLE_SAMPLE_LOCATION_TABLE_SIZE_NV")]
     ProgrammableSampleLocationTableSizeNV = 37696,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SAMPLE_LOCATION_NV")]
     SampleLocationNV = 36432,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAMMABLE_SAMPLE_LOCATION_NV")]
     ProgrammableSampleLocationNV = 37697,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_NV")]
     FramebufferProgrammableSampleLocationsNV = 37698,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_NV")]
     FramebufferSampleLocationPixelGridNV = 37699,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SCISSOR_TEST_EXCLUSIVE_NV")]
     ScissorTestExclusiveNV = 38229,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SCISSOR_BOX_EXCLUSIVE_NV")]
     ScissorBoxExclusiveNV = 38230,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BUFFER_GPU_ADDRESS_NV")]
     BufferGpuAddressNV = 36637,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GPU_ADDRESS_NV")]
     GpuAddressNV = 36660,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_SHADER_BUFFER_ADDRESS_NV")]
     MaxShaderBufferAddressNV = 36661,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV")]
     ShaderGlobalAccessBarrierBitNV = 16,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SUBGROUP_FEATURE_PARTITIONED_BIT_NV")]
     SubgroupFeaturePartitionedBitNV = 256,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_WARP_SIZE_NV")]
     WarpSizeNV = 37689,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_WARPS_PER_SM_NV")]
     WarpsPerSmNV = 37690,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SM_COUNT_NV")]
     SmCountNV = 37691,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_IMAGE_NV")]
     ShadingRateImageNV = 38243,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_NO_INVOCATIONS_NV")]
     ShadingRateNoInvocationsNV = 38244,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_1_INVOCATION_PER_PIXEL_NV")]
     ShadingRate1InvocationPerPixelNV = 38245,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_1_INVOCATION_PER_1X2_PIXELS_NV")]
     ShadingRate1InvocationPer1X2PixelsNV = 38246,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_1_INVOCATION_PER_2X1_PIXELS_NV")]
     ShadingRate1InvocationPer2X1PixelsNV = 38247,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_1_INVOCATION_PER_2X2_PIXELS_NV")]
     ShadingRate1InvocationPer2X2PixelsNV = 38248,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_1_INVOCATION_PER_2X4_PIXELS_NV")]
     ShadingRate1InvocationPer2X4PixelsNV = 38249,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_1_INVOCATION_PER_4X2_PIXELS_NV")]
     ShadingRate1InvocationPer4X2PixelsNV = 38250,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_1_INVOCATION_PER_4X4_PIXELS_NV")]
     ShadingRate1InvocationPer4X4PixelsNV = 38251,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_2_INVOCATIONS_PER_PIXEL_NV")]
     ShadingRate2InvocationsPerPixelNV = 38252,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_4_INVOCATIONS_PER_PIXEL_NV")]
     ShadingRate4InvocationsPerPixelNV = 38253,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_8_INVOCATIONS_PER_PIXEL_NV")]
     ShadingRate8InvocationsPerPixelNV = 38254,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_16_INVOCATIONS_PER_PIXEL_NV")]
     ShadingRate16InvocationsPerPixelNV = 38255,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_IMAGE_BINDING_NV")]
     ShadingRateImageBindingNV = 38235,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_IMAGE_TEXEL_WIDTH_NV")]
     ShadingRateImageTexelWidthNV = 38236,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_IMAGE_TEXEL_HEIGHT_NV")]
     ShadingRateImageTexelHeightNV = 38237,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_IMAGE_PALETTE_SIZE_NV")]
     ShadingRateImagePaletteSizeNV = 38238,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_COARSE_FRAGMENT_SAMPLES_NV")]
     MaxCoarseFragmentSamplesNV = 38239,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_SAMPLE_ORDER_DEFAULT_NV")]
     ShadingRateSampleOrderDefaultNV = 38318,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_SAMPLE_ORDER_PIXEL_MAJOR_NV")]
     ShadingRateSampleOrderPixelMajorNV = 38319,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADING_RATE_SAMPLE_ORDER_SAMPLE_MAJOR_NV")]
     ShadingRateSampleOrderSampleMajorNV = 38320,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_PROGRAM_PATCH_ATTRIBS_NV")]
     MaxProgramPatchAttribsNV = 34520,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TESS_CONTROL_PROGRAM_NV")]
     TessControlProgramNV = 35102,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TESS_EVALUATION_PROGRAM_NV")]
     TessEvaluationProgramNV = 35103,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TESS_CONTROL_PROGRAM_PARAMETER_BUFFER_NV")]
     TessControlProgramParameterBufferNV = 35956,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TESS_EVALUATION_PROGRAM_PARAMETER_BUFFER_NV")]
     TessEvaluationProgramParameterBufferNV = 35957,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EMBOSS_LIGHT_NV")]
     EmbossLightNV = 34141,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EMBOSS_CONSTANT_NV")]
     EmbossConstantNV = 34142,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EMBOSS_MAP_NV")]
     EmbossMapNV = 34143,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_NORMAL_MAP_NV")]
     NormalMapNV = 34065,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_REFLECTION_MAP_NV")]
     ReflectionMapNV = 34066,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMBINE4_NV")]
     Combine4NV = 34051,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SOURCE3_RGB_NV")]
     Source3RgbNV = 34179,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SOURCE3_ALPHA_NV")]
     Source3AlphaNV = 34187,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OPERAND3_RGB_NV")]
     Operand3RgbNV = 34195,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OPERAND3_ALPHA_NV")]
     Operand3AlphaNV = 34203,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_UNSIGNED_REMAP_MODE_NV")]
     TextureUnsignedRemapModeNV = 34959,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_COVERAGE_SAMPLES_NV")]
     TextureCoverageSamplesNV = 36933,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_COLOR_SAMPLES_NV")]
     TextureColorSamplesNV = 36934,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_RECTANGLE_NV")]
     TextureRectangleNV = 34037,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_BINDING_RECTANGLE_NV")]
     TextureBindingRectangleNV = 34038,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROXY_TEXTURE_RECTANGLE_NV")]
     ProxyTextureRectangleNV = 34039,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_RECTANGLE_TEXTURE_SIZE_NV")]
     MaxRectangleTextureSizeNV = 34040,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_TEXTURE_RECTANGLE_NV")]
     OffsetTextureRectangleNV = 34380,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_TEXTURE_RECTANGLE_SCALE_NV")]
     OffsetTextureRectangleScaleNV = 34381,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_TEXTURE_RECTANGLE_NV")]
     DotProductTextureRectangleNV = 34382,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RGBA_UNSIGNED_DOT_PRODUCT_MAPPING_NV")]
     RgbaUnsignedDotProductMappingNV = 34521,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT_S8_S8_8_8_NV")]
     UnsignedIntS8S8X8X8NV = 34522,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNSIGNED_INT_8_8_S8_S8_REV_NV")]
     UnsignedInt8X8S8S8RevNV = 34523,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DSDT_MAG_INTENSITY_NV")]
     DsdtMagIntensityNV = 34524,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADER_CONSISTENT_NV")]
     ShaderConsistentNV = 34525,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_SHADER_NV")]
     TextureShaderNV = 34526,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SHADER_OPERATION_NV")]
     ShaderOperationNV = 34527,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CULL_MODES_NV")]
     CullModesNV = 34528,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_TEXTURE_MATRIX_NV")]
     OffsetTextureMatrixNV = 34529,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_TEXTURE_SCALE_NV")]
     OffsetTextureScaleNV = 34530,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_TEXTURE_BIAS_NV")]
     OffsetTextureBiasNV = 34531,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_TEXTURE_2D_MATRIX_NV")]
     OffsetTexture2DMatrixNV = 34529,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_TEXTURE_2D_SCALE_NV")]
     OffsetTexture2DScaleNV = 34530,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_TEXTURE_2D_BIAS_NV")]
     OffsetTexture2DBiasNV = 34531,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PREVIOUS_TEXTURE_INPUT_NV")]
     PreviousTextureInputNV = 34532,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CONST_EYE_NV")]
     ConstEyeNV = 34533,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PASS_THROUGH_NV")]
     PassThroughNV = 34534,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CULL_FRAGMENT_NV")]
     CullFragmentNV = 34535,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_TEXTURE_2D_NV")]
     OffsetTexture2DNV = 34536,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPENDENT_AR_TEXTURE_2D_NV")]
     DependentArTexture2DNV = 34537,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPENDENT_GB_TEXTURE_2D_NV")]
     DependentGbTexture2DNV = 34538,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_NV")]
     DotProductNV = 34540,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_DEPTH_REPLACE_NV")]
     DotProductDepthReplaceNV = 34541,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_TEXTURE_2D_NV")]
     DotProductTexture2DNV = 34542,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_TEXTURE_CUBE_MAP_NV")]
     DotProductTextureCubeMapNV = 34544,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_DIFFUSE_CUBE_MAP_NV")]
     DotProductDiffuseCubeMapNV = 34545,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_REFLECT_CUBE_MAP_NV")]
     DotProductReflectCubeMapNV = 34546,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_CONST_EYE_REFLECT_CUBE_MAP_NV")]
     DotProductConstEyeReflectCubeMapNV = 34547,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HILO_NV")]
     HiloNV = 34548,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DSDT_NV")]
     DsdtNV = 34549,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DSDT_MAG_NV")]
     DsdtMagNV = 34550,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DSDT_MAG_VIB_NV")]
     DsdtMagVibNV = 34551,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HILO16_NV")]
     Hilo16NV = 34552,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_HILO_NV")]
     SignedHiloNV = 34553,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_HILO16_NV")]
     SignedHilo16NV = 34554,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_RGBA_NV")]
     SignedRgbaNV = 34555,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_RGBA8_NV")]
     SignedRgba8NV = 34556,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_RGB_NV")]
     SignedRgbNV = 34558,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_RGB8_NV")]
     SignedRgb8NV = 34559,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_LUMINANCE_NV")]
     SignedLuminanceNV = 34561,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_LUMINANCE8_NV")]
     SignedLuminance8NV = 34562,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_LUMINANCE_ALPHA_NV")]
     SignedLuminanceAlphaNV = 34563,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_LUMINANCE8_ALPHA8_NV")]
     SignedLuminance8Alpha8NV = 34564,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_ALPHA_NV")]
     SignedAlphaNV = 34565,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_ALPHA8_NV")]
     SignedAlpha8NV = 34566,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_INTENSITY_NV")]
     SignedIntensityNV = 34567,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_INTENSITY8_NV")]
     SignedIntensity8NV = 34568,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DSDT8_NV")]
     Dsdt8NV = 34569,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DSDT8_MAG8_NV")]
     Dsdt8Mag8NV = 34570,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DSDT8_MAG8_INTENSITY8_NV")]
     Dsdt8Mag8Intensity8NV = 34571,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_RGB_UNSIGNED_ALPHA_NV")]
     SignedRgbUnsignedAlphaNV = 34572,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_RGB8_UNSIGNED_ALPHA8_NV")]
     SignedRgb8UnsignedAlpha8NV = 34573,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HI_SCALE_NV")]
     HiScaleNV = 34574,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LO_SCALE_NV")]
     LoScaleNV = 34575,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DS_SCALE_NV")]
     DsScaleNV = 34576,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DT_SCALE_NV")]
     DtScaleNV = 34577,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAGNITUDE_SCALE_NV")]
     MagnitudeScaleNV = 34578,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIBRANCE_SCALE_NV")]
     VibranceScaleNV = 34579,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HI_BIAS_NV")]
     HiBiasNV = 34580,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LO_BIAS_NV")]
     LoBiasNV = 34581,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DS_BIAS_NV")]
     DsBiasNV = 34582,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DT_BIAS_NV")]
     DtBiasNV = 34583,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAGNITUDE_BIAS_NV")]
     MagnitudeBiasNV = 34584,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIBRANCE_BIAS_NV")]
     VibranceBiasNV = 34585,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_BORDER_VALUES_NV")]
     TextureBorderValuesNV = 34586,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_HI_SIZE_NV")]
     TextureHiSizeNV = 34587,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_LO_SIZE_NV")]
     TextureLoSizeNV = 34588,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_DS_SIZE_NV")]
     TextureDsSizeNV = 34589,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_DT_SIZE_NV")]
     TextureDtSizeNV = 34590,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_MAG_SIZE_NV")]
     TextureMagSizeNV = 34591,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_TEXTURE_3D_NV")]
     DotProductTexture3DNV = 34543,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_PROJECTIVE_TEXTURE_2D_NV")]
     OffsetProjectiveTexture2DNV = 34896,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_PROJECTIVE_TEXTURE_2D_SCALE_NV")]
     OffsetProjectiveTexture2DScaleNV = 34897,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_PROJECTIVE_TEXTURE_RECTANGLE_NV")]
     OffsetProjectiveTextureRectangleNV = 34898,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_PROJECTIVE_TEXTURE_RECTANGLE_SCALE_NV")]
     OffsetProjectiveTextureRectangleScaleNV = 34899,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_HILO_TEXTURE_2D_NV")]
     OffsetHiloTexture2DNV = 34900,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_HILO_TEXTURE_RECTANGLE_NV")]
     OffsetHiloTextureRectangleNV = 34901,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_HILO_PROJECTIVE_TEXTURE_2D_NV")]
     OffsetHiloProjectiveTexture2DNV = 34902,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_OFFSET_HILO_PROJECTIVE_TEXTURE_RECTANGLE_NV")]
     OffsetHiloProjectiveTextureRectangleNV = 34903,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPENDENT_HILO_TEXTURE_2D_NV")]
     DependentHiloTexture2DNV = 34904,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPENDENT_RGB_TEXTURE_3D_NV")]
     DependentRgbTexture3DNV = 34905,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPENDENT_RGB_TEXTURE_CUBE_MAP_NV")]
     DependentRgbTextureCubeMapNV = 34906,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_PASS_THROUGH_NV")]
     DotProductPassThroughNV = 34907,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_TEXTURE_1D_NV")]
     DotProductTexture1DNV = 34908,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DOT_PRODUCT_AFFINE_DEPTH_REPLACE_NV")]
     DotProductAffineDepthReplaceNV = 34909,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_HILO8_NV")]
     Hilo8NV = 34910,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SIGNED_HILO8_NV")]
     SignedHilo8NV = 34911,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FORCE_BLUE_TO_ONE_NV")]
     ForceBlueToOneNV = 34912,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TIMELINE_SEMAPHORE_VALUE_NV")]
     TimelineSemaphoreValueNV = 38293,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SEMAPHORE_TYPE_NV")]
     SemaphoreTypeNV = 38323,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SEMAPHORE_TYPE_BINARY_NV")]
     SemaphoreTypeBinaryNV = 38324,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SEMAPHORE_TYPE_TIMELINE_NV")]
     SemaphoreTypeTimelineNV = 38325,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_NV")]
     MaxTimelineSemaphoreValueDifferenceNV = 38326,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BACK_PRIMARY_COLOR_NV")]
     BackPrimaryColorNV = 35959,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_BACK_SECONDARY_COLOR_NV")]
     BackSecondaryColorNV = 35960,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_COORD_NV")]
     TextureCoordNV = 35961,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CLIP_DISTANCE_NV")]
     ClipDistanceNV = 35962,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ID_NV")]
     VertexIdNV = 35963,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PRIMITIVE_ID_NV")]
     PrimitiveIdNV = 35964,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_GENERIC_ATTRIB_NV")]
     GenericAttribNV = 35965,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_ATTRIBS_NV")]
     TransformFeedbackAttribsNV = 35966,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_MODE_NV")]
     TransformFeedbackBufferModeNV = 35967,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_COMPONENTS_NV")]
     MaxTransformFeedbackSeparateComponentsNV = 35968,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ACTIVE_VARYINGS_NV")]
     ActiveVaryingsNV = 35969,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ACTIVE_VARYING_MAX_LENGTH_NV")]
     ActiveVaryingMaxLengthNV = 35970,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_VARYINGS_NV")]
     TransformFeedbackVaryingsNV = 35971,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_START_NV")]
     TransformFeedbackBufferStartNV = 35972,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_SIZE_NV")]
     TransformFeedbackBufferSizeNV = 35973,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_RECORD_NV")]
     TransformFeedbackRecordNV = 35974,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PRIMITIVES_GENERATED_NV")]
     PrimitivesGeneratedNV = 35975,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN_NV")]
     TransformFeedbackPrimitivesWrittenNV = 35976,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RASTERIZER_DISCARD_NV")]
     RasterizerDiscardNV = 35977,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TRANSFORM_FEEDBACK_INTERLEAVED_COMPONENTS_NV")]
     MaxTransformFeedbackInterleavedComponentsNV = 35978,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS_NV")]
     MaxTransformFeedbackSeparateAttribsNV = 35979,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INTERLEAVED_ATTRIBS_NV")]
     InterleavedAttribsNV = 35980,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SEPARATE_ATTRIBS_NV")]
     SeparateAttribsNV = 35981,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_NV")]
     TransformFeedbackBufferNV = 35982,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_BINDING_NV")]
     TransformFeedbackBufferBindingNV = 35983,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LAYER_NV")]
     LayerNV = 36266,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_NEXT_BUFFER_NV")]
     NextBufferNV = 4294967294,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SKIP_COMPONENTS4_NV")]
     SkipComponents4NV = 4294967293,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SKIP_COMPONENTS3_NV")]
     SkipComponents3NV = 4294967292,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SKIP_COMPONENTS2_NV")]
     SkipComponents2NV = 4294967291,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SKIP_COMPONENTS1_NV")]
     SkipComponents1NV = 4294967290,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_NV")]
     TransformFeedbackNV = 36386,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_PAUSED_NV")]
     TransformFeedbackBufferPausedNV = 36387,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_ACTIVE_NV")]
     TransformFeedbackBufferActiveNV = 36388,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSFORM_FEEDBACK_BINDING_NV")]
     TransformFeedbackBindingNV = 36389,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNIFORM_BUFFER_UNIFIED_NV")]
     UniformBufferUnifiedNV = 37742,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNIFORM_BUFFER_ADDRESS_NV")]
     UniformBufferAddressNV = 37743,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_UNIFORM_BUFFER_LENGTH_NV")]
     UniformBufferLengthNV = 37744,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SURFACE_STATE_NV")]
     SurfaceStateNV = 34539,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SURFACE_REGISTERED_NV")]
     SurfaceRegisteredNV = 34557,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SURFACE_MAPPED_NV")]
     SurfaceMappedNV = 34560,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_WRITE_DISCARD_NV")]
     WriteDiscardNV = 35006,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ARRAY_RANGE_NV")]
     VertexArrayRangeNV = 34077,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ARRAY_RANGE_LENGTH_NV")]
     VertexArrayRangeLengthNV = 34078,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ARRAY_RANGE_VALID_NV")]
     VertexArrayRangeValidNV = 34079,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_VERTEX_ARRAY_RANGE_ELEMENT_NV")]
     MaxVertexArrayRangeElementNV = 34080,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ARRAY_RANGE_POINTER_NV")]
     VertexArrayRangePointerNV = 34081,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ARRAY_RANGE_WITHOUT_FLUSH_NV")]
     VertexArrayRangeWithoutFlushNV = 34099,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_UNIFIED_NV")]
     VertexAttribArrayUnifiedNV = 36638,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ELEMENT_ARRAY_UNIFIED_NV")]
     ElementArrayUnifiedNV = 36639,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_ADDRESS_NV")]
     VertexAttribArrayAddressNV = 36640,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ARRAY_ADDRESS_NV")]
     VertexArrayAddressNV = 36641,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_NORMAL_ARRAY_ADDRESS_NV")]
     NormalArrayAddressNV = 36642,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ARRAY_ADDRESS_NV")]
     ColorArrayAddressNV = 36643,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INDEX_ARRAY_ADDRESS_NV")]
     IndexArrayAddressNV = 36644,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_ADDRESS_NV")]
     TextureCoordArrayAddressNV = 36645,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EDGE_FLAG_ARRAY_ADDRESS_NV")]
     EdgeFlagArrayAddressNV = 36646,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SECONDARY_COLOR_ARRAY_ADDRESS_NV")]
     SecondaryColorArrayAddressNV = 36647,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FOG_COORD_ARRAY_ADDRESS_NV")]
     FogCoordArrayAddressNV = 36648,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ELEMENT_ARRAY_ADDRESS_NV")]
     ElementArrayAddressNV = 36649,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_LENGTH_NV")]
     VertexAttribArrayLengthNV = 36650,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ARRAY_LENGTH_NV")]
     VertexArrayLengthNV = 36651,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_NORMAL_ARRAY_LENGTH_NV")]
     NormalArrayLengthNV = 36652,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ARRAY_LENGTH_NV")]
     ColorArrayLengthNV = 36653,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INDEX_ARRAY_LENGTH_NV")]
     IndexArrayLengthNV = 36654,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_COORD_ARRAY_LENGTH_NV")]
     TextureCoordArrayLengthNV = 36655,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_EDGE_FLAG_ARRAY_LENGTH_NV")]
     EdgeFlagArrayLengthNV = 36656,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SECONDARY_COLOR_ARRAY_LENGTH_NV")]
     SecondaryColorArrayLengthNV = 36657,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FOG_COORD_ARRAY_LENGTH_NV")]
     FogCoordArrayLengthNV = 36658,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ELEMENT_ARRAY_LENGTH_NV")]
     ElementArrayLengthNV = 36659,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_INDIRECT_UNIFIED_NV")]
     DrawIndirectUnifiedNV = 36672,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_INDIRECT_ADDRESS_NV")]
     DrawIndirectAddressNV = 36673,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_INDIRECT_LENGTH_NV")]
     DrawIndirectLengthNV = 36674,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_PROGRAM_NV")]
     VertexProgramNV = 34336,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_STATE_PROGRAM_NV")]
     VertexStateProgramNV = 34337,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ATTRIB_ARRAY_SIZE_NV")]
     AttribArraySizeNV = 34339,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ATTRIB_ARRAY_STRIDE_NV")]
     AttribArrayStrideNV = 34340,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ATTRIB_ARRAY_TYPE_NV")]
     AttribArrayTypeNV = 34341,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CURRENT_ATTRIB_NV")]
     CurrentAttribNV = 34342,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAM_LENGTH_NV")]
     ProgramLengthNV = 34343,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAM_STRING_NV")]
     ProgramStringNV = 34344,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MODELVIEW_PROJECTION_NV")]
     ModelviewProjectionNV = 34345,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_IDENTITY_NV")]
     IdentityNV = 34346,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INVERSE_NV")]
     InverseNV = 34347,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRANSPOSE_NV")]
     TransposeNV = 34348,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_INVERSE_TRANSPOSE_NV")]
     InverseTransposeNV = 34349,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TRACK_MATRIX_STACK_DEPTH_NV")]
     MaxTrackMatrixStackDepthNV = 34350,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_TRACK_MATRICES_NV")]
     MaxTrackMatricesNV = 34351,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MATRIX0_NV")]
     Matrix0NV = 34352,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MATRIX1_NV")]
     Matrix1NV = 34353,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MATRIX2_NV")]
     Matrix2NV = 34354,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MATRIX3_NV")]
     Matrix3NV = 34355,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MATRIX4_NV")]
     Matrix4NV = 34356,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MATRIX5_NV")]
     Matrix5NV = 34357,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MATRIX6_NV")]
     Matrix6NV = 34358,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MATRIX7_NV")]
     Matrix7NV = 34359,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CURRENT_MATRIX_STACK_DEPTH_NV")]
     CurrentMatrixStackDepthNV = 34368,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CURRENT_MATRIX_NV")]
     CurrentMatrixNV = 34369,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_PROGRAM_POINT_SIZE_NV")]
     VertexProgramPointSizeNV = 34370,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_PROGRAM_TWO_SIDE_NV")]
     VertexProgramTwoSideNV = 34371,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAM_PARAMETER_NV")]
     ProgramParameterNV = 34372,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ATTRIB_ARRAY_POINTER_NV")]
     AttribArrayPointerNV = 34373,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAM_TARGET_NV")]
     ProgramTargetNV = 34374,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAM_RESIDENT_NV")]
     ProgramResidentNV = 34375,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRACK_MATRIX_NV")]
     TrackMatrixNV = 34376,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TRACK_MATRIX_TRANSFORM_NV")]
     TrackMatrixTransformNV = 34377,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_PROGRAM_BINDING_NV")]
     VertexProgramBindingNV = 34378,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PROGRAM_ERROR_POSITION_NV")]
     ProgramErrorPositionNV = 34379,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY0_NV")]
     VertexAttribArray0NV = 34384,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY1_NV")]
     VertexAttribArray1NV = 34385,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY2_NV")]
     VertexAttribArray2NV = 34386,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY3_NV")]
     VertexAttribArray3NV = 34387,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY4_NV")]
     VertexAttribArray4NV = 34388,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY5_NV")]
     VertexAttribArray5NV = 34389,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY6_NV")]
     VertexAttribArray6NV = 34390,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY7_NV")]
     VertexAttribArray7NV = 34391,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY8_NV")]
     VertexAttribArray8NV = 34392,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY9_NV")]
     VertexAttribArray9NV = 34393,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY10_NV")]
     VertexAttribArray10NV = 34394,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY11_NV")]
     VertexAttribArray11NV = 34395,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY12_NV")]
     VertexAttribArray12NV = 34396,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY13_NV")]
     VertexAttribArray13NV = 34397,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY14_NV")]
     VertexAttribArray14NV = 34398,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY15_NV")]
     VertexAttribArray15NV = 34399,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB0_4_NV")]
     Map1VertexAttrib0X4NV = 34400,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB1_4_NV")]
     Map1VertexAttrib1X4NV = 34401,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB2_4_NV")]
     Map1VertexAttrib2X4NV = 34402,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB3_4_NV")]
     Map1VertexAttrib3X4NV = 34403,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB4_4_NV")]
     Map1VertexAttrib4X4NV = 34404,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB5_4_NV")]
     Map1VertexAttrib5X4NV = 34405,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB6_4_NV")]
     Map1VertexAttrib6X4NV = 34406,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB7_4_NV")]
     Map1VertexAttrib7X4NV = 34407,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB8_4_NV")]
     Map1VertexAttrib8X4NV = 34408,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB9_4_NV")]
     Map1VertexAttrib9X4NV = 34409,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB10_4_NV")]
     Map1VertexAttrib10X4NV = 34410,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB11_4_NV")]
     Map1VertexAttrib11X4NV = 34411,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB12_4_NV")]
     Map1VertexAttrib12X4NV = 34412,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB13_4_NV")]
     Map1VertexAttrib13X4NV = 34413,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB14_4_NV")]
     Map1VertexAttrib14X4NV = 34414,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP1_VERTEX_ATTRIB15_4_NV")]
     Map1VertexAttrib15X4NV = 34415,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB0_4_NV")]
     Map2VertexAttrib0X4NV = 34416,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB1_4_NV")]
     Map2VertexAttrib1X4NV = 34417,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB2_4_NV")]
     Map2VertexAttrib2X4NV = 34418,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB3_4_NV")]
     Map2VertexAttrib3X4NV = 34419,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB4_4_NV")]
     Map2VertexAttrib4X4NV = 34420,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB5_4_NV")]
     Map2VertexAttrib5X4NV = 34421,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB6_4_NV")]
     Map2VertexAttrib6X4NV = 34422,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB7_4_NV")]
     Map2VertexAttrib7X4NV = 34423,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB8_4_NV")]
     Map2VertexAttrib8X4NV = 34424,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB9_4_NV")]
     Map2VertexAttrib9X4NV = 34425,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB10_4_NV")]
     Map2VertexAttrib10X4NV = 34426,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB11_4_NV")]
     Map2VertexAttrib11X4NV = 34427,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB12_4_NV")]
     Map2VertexAttrib12X4NV = 34428,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB13_4_NV")]
     Map2VertexAttrib13X4NV = 34429,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB14_4_NV")]
     Map2VertexAttrib14X4NV = 34430,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAP2_VERTEX_ATTRIB15_4_NV")]
     Map2VertexAttrib15X4NV = 34431,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_INTEGER_NV")]
     VertexAttribArrayIntegerNV = 35069,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_BUFFER_NV")]
     VideoBufferNV = 36896,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_BUFFER_BINDING_NV")]
     VideoBufferBindingNV = 36897,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FIELD_UPPER_NV")]
     FieldUpperNV = 36898,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FIELD_LOWER_NV")]
     FieldLowerNV = 36899,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_NUM_VIDEO_CAPTURE_STREAMS_NV")]
     NumVideoCaptureStreamsNV = 36900,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_NEXT_VIDEO_CAPTURE_BUFFER_STATUS_NV")]
     NextVideoCaptureBufferStatusNV = 36901,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_CAPTURE_TO_422_SUPPORTED_NV")]
     VideoCaptureTo422SupportedNV = 36902,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LAST_VIDEO_CAPTURE_STATUS_NV")]
     LastVideoCaptureStatusNV = 36903,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_BUFFER_PITCH_NV")]
     VideoBufferPitchNV = 36904,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_COLOR_CONVERSION_MATRIX_NV")]
     VideoColorConversionMatrixNV = 36905,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_COLOR_CONVERSION_MAX_NV")]
     VideoColorConversionMaxNV = 36906,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_COLOR_CONVERSION_MIN_NV")]
     VideoColorConversionMinNV = 36907,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_COLOR_CONVERSION_OFFSET_NV")]
     VideoColorConversionOffsetNV = 36908,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_BUFFER_INTERNAL_FORMAT_NV")]
     VideoBufferInternalFormatNV = 36909,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PARTIAL_SUCCESS_NV")]
     PartialSuccessNV = 36910,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SUCCESS_NV")]
     SuccessNV = 36911,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FAILURE_NV")]
     FailureNV = 36912,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_YCBYCR8_422_NV")]
     Ycbycr8X422NV = 36913,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_YCBAYCR8A_4224_NV")]
     Ycbaycr8A4224NV = 36914,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_Z6Y10Z6CB10Z6Y10Z6CR10_422_NV")]
     Z6Y10Z6Cb10Z6Y10Z6Cr10X422NV = 36915,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_Z6Y10Z6CB10Z6A10Z6Y10Z6CR10Z6A10_4224_NV")]
     Z6Y10Z6Cb10Z6A10Z6Y10Z6Cr10Z6A10X4224NV = 36916,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_Z4Y12Z4CB12Z4Y12Z4CR12_422_NV")]
     Z4Y12Z4Cb12Z4Y12Z4Cr12X422NV = 36917,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_Z4Y12Z4CB12Z4A12Z4Y12Z4CR12Z4A12_4224_NV")]
     Z4Y12Z4Cb12Z4A12Z4Y12Z4Cr12Z4A12X4224NV = 36918,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_Z4Y12Z4CB12Z4CR12_444_NV")]
     Z4Y12Z4Cb12Z4Cr12X444NV = 36919,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_CAPTURE_FRAME_WIDTH_NV")]
     VideoCaptureFrameWidthNV = 36920,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_CAPTURE_FRAME_HEIGHT_NV")]
     VideoCaptureFrameHeightNV = 36921,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_CAPTURE_FIELD_UPPER_HEIGHT_NV")]
     VideoCaptureFieldUpperHeightNV = 36922,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_CAPTURE_FIELD_LOWER_HEIGHT_NV")]
     VideoCaptureFieldLowerHeightNV = 36923,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIDEO_CAPTURE_SURFACE_ORIGIN_NV")]
     VideoCaptureSurfaceOriginNV = 36924,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_POSITIVE_X_NV")]
     ViewportSwizzlePositiveXNV = 37712,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_NEGATIVE_X_NV")]
     ViewportSwizzleNegativeXNV = 37713,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_POSITIVE_Y_NV")]
     ViewportSwizzlePositiveYNV = 37714,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_NEGATIVE_Y_NV")]
     ViewportSwizzleNegativeYNV = 37715,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_POSITIVE_Z_NV")]
     ViewportSwizzlePositiveZNV = 37716,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_NEGATIVE_Z_NV")]
     ViewportSwizzleNegativeZNV = 37717,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_POSITIVE_W_NV")]
     ViewportSwizzlePositiveWNV = 37718,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_NEGATIVE_W_NV")]
     ViewportSwizzleNegativeWNV = 37719,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_X_NV")]
     ViewportSwizzleXNV = 37720,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_Y_NV")]
     ViewportSwizzleYNV = 37721,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_Z_NV")]
     ViewportSwizzleZNV = 37722,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SWIZZLE_W_NV")]
     ViewportSwizzleWNV = 37723,
 
-    [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_INTERLACE_OML")]
     InterlaceOML = 35200,
 
-    [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_INTERLACE_READ_OML")]
     InterlaceReadOML = 35201,
 
-    [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_PACK_RESAMPLE_OML")]
     PackResampleOML = 35204,
 
-    [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_UNPACK_RESAMPLE_OML")]
     UnpackResampleOML = 35205,
 
-    [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_RESAMPLE_REPLICATE_OML")]
     ResampleReplicateOML = 35206,
 
-    [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_RESAMPLE_ZERO_FILL_OML")]
     ResampleZeroFillOML = 35207,
 
-    [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_RESAMPLE_AVERAGE_OML")]
     ResampleAverageOML = 35208,
 
-    [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_RESAMPLE_DECIMATE_OML")]
     ResampleDecimateOML = 35209,
 
-    [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_FORMAT_SUBSAMPLE_24_24_OML")]
     FormatSubsample24X24OML = 35202,
 
-    [NameAffix("Suffix", "OML", 0)]
     [NativeName("GL_FORMAT_SUBSAMPLE_244_244_OML")]
     FormatSubsample244X244OML = 35203,
 
-    [NameAffix("Suffix", "OVR", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR")]
     FramebufferAttachmentTextureNumViewsOVR = 38448,
 
-    [NameAffix("Suffix", "OVR", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR")]
     FramebufferAttachmentTextureBaseViewIndexOVR = 38450,
 
-    [NameAffix("Suffix", "OVR", 0)]
     [NativeName("GL_MAX_VIEWS_OVR")]
     MaxViewsOVR = 38449,
 
-    [NameAffix("Suffix", "OVR", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_VIEW_TARGETS_OVR")]
     FramebufferIncompleteViewTargetsOVR = 38451,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_PREFER_DOUBLEBUFFER_HINT_PGI")]
     PreferDoublebufferHintPGI = 107000,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_CONSERVE_MEMORY_HINT_PGI")]
     ConserveMemoryHintPGI = 107005,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_RECLAIM_MEMORY_HINT_PGI")]
     ReclaimMemoryHintPGI = 107006,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_NATIVE_GRAPHICS_HANDLE_PGI")]
     NativeGraphicsHandlePGI = 107010,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_NATIVE_GRAPHICS_BEGIN_HINT_PGI")]
     NativeGraphicsBeginHintPGI = 107011,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_NATIVE_GRAPHICS_END_HINT_PGI")]
     NativeGraphicsEndHintPGI = 107012,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALWAYS_FAST_HINT_PGI")]
     AlwaysFastHintPGI = 107020,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALWAYS_SOFT_HINT_PGI")]
     AlwaysSoftHintPGI = 107021,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALLOW_DRAW_OBJ_HINT_PGI")]
     AllowDrawObjHintPGI = 107022,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALLOW_DRAW_WIN_HINT_PGI")]
     AllowDrawWinHintPGI = 107023,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALLOW_DRAW_FRG_HINT_PGI")]
     AllowDrawFrgHintPGI = 107024,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_ALLOW_DRAW_MEM_HINT_PGI")]
     AllowDrawMemHintPGI = 107025,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_STRICT_DEPTHFUNC_HINT_PGI")]
     StrictDepthfuncHintPGI = 107030,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_STRICT_LIGHTING_HINT_PGI")]
     StrictLightingHintPGI = 107031,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_STRICT_SCISSOR_HINT_PGI")]
     StrictScissorHintPGI = 107032,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_FULL_STIPPLE_HINT_PGI")]
     FullStippleHintPGI = 107033,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_CLIP_NEAR_HINT_PGI")]
     ClipNearHintPGI = 107040,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_CLIP_FAR_HINT_PGI")]
     ClipFarHintPGI = 107041,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_WIDE_LINE_HINT_PGI")]
     WideLineHintPGI = 107042,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_BACK_NORMALS_HINT_PGI")]
     BackNormalsHintPGI = 107043,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_VERTEX_DATA_HINT_PGI")]
     VertexDataHintPGI = 107050,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_VERTEX_CONSISTENT_HINT_PGI")]
     VertexConsistentHintPGI = 107051,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MATERIAL_SIDE_HINT_PGI")]
     MaterialSideHintPGI = 107052,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MAX_VERTEX_HINT_PGI")]
     MaxVertexHintPGI = 107053,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_COLOR3_BIT_PGI")]
     Color3BitPGI = 65536,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_COLOR4_BIT_PGI")]
     Color4BitPGI = 131072,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_EDGEFLAG_BIT_PGI")]
     EdgeflagBitPGI = 262144,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_INDEX_BIT_PGI")]
     IndexBitPGI = 524288,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MAT_AMBIENT_BIT_PGI")]
     MatAmbientBitPGI = 1048576,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MAT_AMBIENT_AND_DIFFUSE_BIT_PGI")]
     MatAmbientAndDiffuseBitPGI = 2097152,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MAT_DIFFUSE_BIT_PGI")]
     MatDiffuseBitPGI = 4194304,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MAT_EMISSION_BIT_PGI")]
     MatEmissionBitPGI = 8388608,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MAT_COLOR_INDEXES_BIT_PGI")]
     MatColorIndexesBitPGI = 16777216,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MAT_SHININESS_BIT_PGI")]
     MatShininessBitPGI = 33554432,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_MAT_SPECULAR_BIT_PGI")]
     MatSpecularBitPGI = 67108864,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_NORMAL_BIT_PGI")]
     NormalBitPGI = 134217728,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_TEXCOORD1_BIT_PGI")]
     Texcoord1BitPGI = 268435456,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_TEXCOORD2_BIT_PGI")]
     Texcoord2BitPGI = 536870912,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_TEXCOORD3_BIT_PGI")]
     Texcoord3BitPGI = 1073741824,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_TEXCOORD4_BIT_PGI")]
     Texcoord4BitPGI = 2147483648,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_VERTEX23_BIT_PGI")]
     Vertex23BitPGI = 4,
 
-    [NameAffix("Suffix", "PGI", 0)]
     [NativeName("GL_VERTEX4_BIT_PGI")]
     Vertex4BitPGI = 8,
 
-    [NameAffix("Suffix", "REND", 0)]
     [NativeName("GL_SCREEN_COORDINATES_REND")]
     ScreenCoordinatesREND = 33936,
 
-    [NameAffix("Suffix", "REND", 0)]
     [NativeName("GL_INVERTED_SCREEN_W_REND")]
     InvertedScreenWREND = 33937,
 
@@ -17970,3522 +14905,2643 @@ public enum GlEnum : uint
     [NativeName("GL_RGBA4_DXT5_S3TC")]
     Rgba4Dxt5S3Tc = 33701,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DETAIL_TEXTURE_2D_SGIS")]
     DetailTexture2DSGIS = 32917,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DETAIL_TEXTURE_2D_BINDING_SGIS")]
     DetailTexture2DBindingSGIS = 32918,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_DETAIL_SGIS")]
     LinearDetailSGIS = 32919,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_DETAIL_ALPHA_SGIS")]
     LinearDetailAlphaSGIS = 32920,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_DETAIL_COLOR_SGIS")]
     LinearDetailColorSGIS = 32921,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DETAIL_TEXTURE_LEVEL_SGIS")]
     DetailTextureLevelSGIS = 32922,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DETAIL_TEXTURE_MODE_SGIS")]
     DetailTextureModeSGIS = 32923,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DETAIL_TEXTURE_FUNC_POINTS_SGIS")]
     DetailTextureFuncPointsSGIS = 32924,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_FOG_FUNC_SGIS")]
     FogFuncSGIS = 33066,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_FOG_FUNC_POINTS_SGIS")]
     FogFuncPointsSGIS = 33067,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_MAX_FOG_FUNC_POINTS_SGIS")]
     MaxFogFuncPointsSGIS = 33068,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_GENERATE_MIPMAP_SGIS")]
     GenerateMipmapSGIS = 33169,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_GENERATE_MIPMAP_HINT_SGIS")]
     GenerateMipmapHintSGIS = 33170,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_MULTISAMPLE_SGIS")]
     MultisampleSGIS = 32925,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLE_ALPHA_TO_MASK_SGIS")]
     SampleAlphaToMaskSGIS = 32926,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLE_ALPHA_TO_ONE_SGIS")]
     SampleAlphaToOneSGIS = 32927,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLE_MASK_SGIS")]
     SampleMaskSGIS = 32928,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_1PASS_SGIS")]
     X1PassSGIS = 32929,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_2PASS_0_SGIS")]
     X2Pass0SGIS = 32930,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_2PASS_1_SGIS")]
     X2Pass1SGIS = 32931,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_4PASS_0_SGIS")]
     X4Pass0SGIS = 32932,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_4PASS_1_SGIS")]
     X4Pass1SGIS = 32933,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_4PASS_2_SGIS")]
     X4Pass2SGIS = 32934,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_4PASS_3_SGIS")]
     X4Pass3SGIS = 32935,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLE_BUFFERS_SGIS")]
     SampleBuffersSGIS = 32936,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLES_SGIS")]
     SamplesSGIS = 32937,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLE_MASK_VALUE_SGIS")]
     SampleMaskValueSGIS = 32938,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLE_MASK_INVERT_SGIS")]
     SampleMaskInvertSGIS = 32939,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SAMPLE_PATTERN_SGIS")]
     SamplePatternSGIS = 32940,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_PIXEL_TEXTURE_SGIS")]
     PixelTextureSGIS = 33619,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_PIXEL_FRAGMENT_RGB_SOURCE_SGIS")]
     PixelFragmentRgbSourceSGIS = 33620,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_PIXEL_FRAGMENT_ALPHA_SOURCE_SGIS")]
     PixelFragmentAlphaSourceSGIS = 33621,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_PIXEL_GROUP_COLOR_SGIS")]
     PixelGroupColorSGIS = 33622,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_EYE_DISTANCE_TO_POINT_SGIS")]
     EyeDistanceToPointSGIS = 33264,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_OBJECT_DISTANCE_TO_POINT_SGIS")]
     ObjectDistanceToPointSGIS = 33265,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_EYE_DISTANCE_TO_LINE_SGIS")]
     EyeDistanceToLineSGIS = 33266,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_OBJECT_DISTANCE_TO_LINE_SGIS")]
     ObjectDistanceToLineSGIS = 33267,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_EYE_POINT_SGIS")]
     EyePointSGIS = 33268,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_OBJECT_POINT_SGIS")]
     ObjectPointSGIS = 33269,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_EYE_LINE_SGIS")]
     EyeLineSGIS = 33270,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_OBJECT_LINE_SGIS")]
     ObjectLineSGIS = 33271,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_POINT_SIZE_MIN_SGIS")]
     PointSizeMinSGIS = 33062,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_POINT_SIZE_MAX_SGIS")]
     PointSizeMaxSGIS = 33063,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_POINT_FADE_THRESHOLD_SIZE_SGIS")]
     PointFadeThresholdSizeSGIS = 33064,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DISTANCE_ATTENUATION_SGIS")]
     DistanceAttenuationSGIS = 33065,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_SHARPEN_SGIS")]
     LinearSharpenSGIS = 32941,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_SHARPEN_ALPHA_SGIS")]
     LinearSharpenAlphaSGIS = 32942,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_LINEAR_SHARPEN_COLOR_SGIS")]
     LinearSharpenColorSGIS = 32943,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_SHARPEN_TEXTURE_FUNC_POINTS_SGIS")]
     SharpenTextureFuncPointsSGIS = 32944,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_PACK_SKIP_VOLUMES_SGIS")]
     PackSkipVolumesSGIS = 33072,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_PACK_IMAGE_DEPTH_SGIS")]
     PackImageDepthSGIS = 33073,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_UNPACK_SKIP_VOLUMES_SGIS")]
     UnpackSkipVolumesSGIS = 33074,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_UNPACK_IMAGE_DEPTH_SGIS")]
     UnpackImageDepthSGIS = 33075,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_4D_SGIS")]
     Texture4DSGIS = 33076,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_PROXY_TEXTURE_4D_SGIS")]
     ProxyTexture4DSGIS = 33077,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_4DSIZE_SGIS")]
     Texture4DsizeSGIS = 33078,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_WRAP_Q_SGIS")]
     TextureWrapQSGIS = 33079,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_MAX_4D_TEXTURE_SIZE_SGIS")]
     Max4DTextureSizeSGIS = 33080,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_4D_BINDING_SGIS")]
     Texture4DBindingSGIS = 33103,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_CLAMP_TO_BORDER_SGIS")]
     ClampToBorderSGIS = 33069,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_COLOR_WRITEMASK_SGIS")]
     TextureColorWritemaskSGIS = 33263,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_CLAMP_TO_EDGE_SGIS")]
     ClampToEdgeSGIS = 33071,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_FILTER4_SGIS")]
     Filter4SGIS = 33094,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_FILTER4_SIZE_SGIS")]
     TextureFilter4SizeSGIS = 33095,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_MIN_LOD_SGIS")]
     TextureMinLodSGIS = 33082,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_MAX_LOD_SGIS")]
     TextureMaxLodSGIS = 33083,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_BASE_LEVEL_SGIS")]
     TextureBaseLevelSGIS = 33084,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_TEXTURE_MAX_LEVEL_SGIS")]
     TextureMaxLevelSGIS = 33085,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_ALPHA4_SGIS")]
     DualAlpha4SGIS = 33040,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_ALPHA8_SGIS")]
     DualAlpha8SGIS = 33041,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_ALPHA12_SGIS")]
     DualAlpha12SGIS = 33042,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_ALPHA16_SGIS")]
     DualAlpha16SGIS = 33043,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_LUMINANCE4_SGIS")]
     DualLuminance4SGIS = 33044,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_LUMINANCE8_SGIS")]
     DualLuminance8SGIS = 33045,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_LUMINANCE12_SGIS")]
     DualLuminance12SGIS = 33046,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_LUMINANCE16_SGIS")]
     DualLuminance16SGIS = 33047,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_INTENSITY4_SGIS")]
     DualIntensity4SGIS = 33048,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_INTENSITY8_SGIS")]
     DualIntensity8SGIS = 33049,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_INTENSITY12_SGIS")]
     DualIntensity12SGIS = 33050,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_INTENSITY16_SGIS")]
     DualIntensity16SGIS = 33051,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_LUMINANCE_ALPHA4_SGIS")]
     DualLuminanceAlpha4SGIS = 33052,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_LUMINANCE_ALPHA8_SGIS")]
     DualLuminanceAlpha8SGIS = 33053,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_QUAD_ALPHA4_SGIS")]
     QuadAlpha4SGIS = 33054,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_QUAD_ALPHA8_SGIS")]
     QuadAlpha8SGIS = 33055,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_QUAD_LUMINANCE4_SGIS")]
     QuadLuminance4SGIS = 33056,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_QUAD_LUMINANCE8_SGIS")]
     QuadLuminance8SGIS = 33057,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_QUAD_INTENSITY4_SGIS")]
     QuadIntensity4SGIS = 33058,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_QUAD_INTENSITY8_SGIS")]
     QuadIntensity8SGIS = 33059,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DUAL_TEXTURE_SELECT_SGIS")]
     DualTextureSelectSGIS = 33060,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_QUAD_TEXTURE_SELECT_SGIS")]
     QuadTextureSelectSGIS = 33061,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ASYNC_MARKER_SGIX")]
     AsyncMarkerSGIX = 33577,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ASYNC_HISTOGRAM_SGIX")]
     AsyncHistogramSGIX = 33580,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_MAX_ASYNC_HISTOGRAM_SGIX")]
     MaxAsyncHistogramSGIX = 33581,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ASYNC_TEX_IMAGE_SGIX")]
     AsyncTexImageSGIX = 33628,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ASYNC_DRAW_PIXELS_SGIX")]
     AsyncDrawPixelsSGIX = 33629,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ASYNC_READ_PIXELS_SGIX")]
     AsyncReadPixelsSGIX = 33630,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_MAX_ASYNC_TEX_IMAGE_SGIX")]
     MaxAsyncTexImageSGIX = 33631,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_MAX_ASYNC_DRAW_PIXELS_SGIX")]
     MaxAsyncDrawPixelsSGIX = 33632,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_MAX_ASYNC_READ_PIXELS_SGIX")]
     MaxAsyncReadPixelsSGIX = 33633,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ALPHA_MIN_SGIX")]
     AlphaMinSGIX = 33568,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_ALPHA_MAX_SGIX")]
     AlphaMaxSGIX = 33569,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_CALLIGRAPHIC_FRAGMENT_SGIX")]
     CalligraphicFragmentSGIX = 33155,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_LINEAR_CLIPMAP_LINEAR_SGIX")]
     LinearClipmapLinearSGIX = 33136,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_CENTER_SGIX")]
     TextureClipmapCenterSGIX = 33137,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_FRAME_SGIX")]
     TextureClipmapFrameSGIX = 33138,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_OFFSET_SGIX")]
     TextureClipmapOffsetSGIX = 33139,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_VIRTUAL_DEPTH_SGIX")]
     TextureClipmapVirtualDepthSGIX = 33140,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_LOD_OFFSET_SGIX")]
     TextureClipmapLodOffsetSGIX = 33141,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_CLIPMAP_DEPTH_SGIX")]
     TextureClipmapDepthSGIX = 33142,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_MAX_CLIPMAP_DEPTH_SGIX")]
     MaxClipmapDepthSGIX = 33143,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_MAX_CLIPMAP_VIRTUAL_DEPTH_SGIX")]
     MaxClipmapVirtualDepthSGIX = 33144,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_NEAREST_CLIPMAP_NEAREST_SGIX")]
     NearestClipmapNearestSGIX = 33869,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_NEAREST_CLIPMAP_LINEAR_SGIX")]
     NearestClipmapLinearSGIX = 33870,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_LINEAR_CLIPMAP_NEAREST_SGIX")]
     LinearClipmapNearestSGIX = 33871,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_CONVOLUTION_HINT_SGIX")]
     ConvolutionHintSGIX = 33558,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_DEPTH_COMPONENT16_SGIX")]
     DepthComponent16SGIX = 33189,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_DEPTH_COMPONENT24_SGIX")]
     DepthComponent24SGIX = 33190,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_DEPTH_COMPONENT32_SGIX")]
     DepthComponent32SGIX = 33191,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FOG_OFFSET_SGIX")]
     FogOffsetSGIX = 33176,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FOG_OFFSET_VALUE_SGIX")]
     FogOffsetValueSGIX = 33177,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHTING_SGIX")]
     FragmentLightingSGIX = 33792,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_COLOR_MATERIAL_SGIX")]
     FragmentColorMaterialSGIX = 33793,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_COLOR_MATERIAL_FACE_SGIX")]
     FragmentColorMaterialFaceSGIX = 33794,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_COLOR_MATERIAL_PARAMETER_SGIX")]
     FragmentColorMaterialParameterSGIX = 33795,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_MAX_FRAGMENT_LIGHTS_SGIX")]
     MaxFragmentLightsSGIX = 33796,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_MAX_ACTIVE_LIGHTS_SGIX")]
     MaxActiveLightsSGIX = 33797,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_CURRENT_RASTER_NORMAL_SGIX")]
     CurrentRasterNormalSGIX = 33798,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_LIGHT_ENV_MODE_SGIX")]
     LightEnvModeSGIX = 33799,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT_MODEL_LOCAL_VIEWER_SGIX")]
     FragmentLightModelLocalViewerSGIX = 33800,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT_MODEL_TWO_SIDE_SGIX")]
     FragmentLightModelTwoSideSGIX = 33801,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT_MODEL_AMBIENT_SGIX")]
     FragmentLightModelAmbientSGIX = 33802,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT_MODEL_NORMAL_INTERPOLATION_SGIX")]
     FragmentLightModelNormalInterpolationSGIX = 33803,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT0_SGIX")]
     FragmentLight0SGIX = 33804,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT1_SGIX")]
     FragmentLight1SGIX = 33805,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT2_SGIX")]
     FragmentLight2SGIX = 33806,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT3_SGIX")]
     FragmentLight3SGIX = 33807,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT4_SGIX")]
     FragmentLight4SGIX = 33808,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT5_SGIX")]
     FragmentLight5SGIX = 33809,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT6_SGIX")]
     FragmentLight6SGIX = 33810,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAGMENT_LIGHT7_SGIX")]
     FragmentLight7SGIX = 33811,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAMEZOOM_SGIX")]
     FramezoomSGIX = 33163,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_FRAMEZOOM_FACTOR_SGIX")]
     FramezoomFactorSGIX = 33164,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_MAX_FRAMEZOOM_FACTOR_SGIX")]
     MaxFramezoomFactorSGIX = 33165,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_INSTRUMENT_BUFFER_POINTER_SGIX")]
     InstrumentBufferPointerSGIX = 33152,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_INSTRUMENT_MEASUREMENTS_SGIX")]
     InstrumentMeasurementsSGIX = 33153,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_INTERLACE_SGIX")]
     InterlaceSGIX = 32916,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_IR_INSTRUMENT1_SGIX")]
     IrInstrument1SGIX = 33151,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_LIST_PRIORITY_SGIX")]
     ListPrioritySGIX = 33154,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TEX_GEN_SGIX")]
     PixelTexGenSGIX = 33081,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TEX_GEN_MODE_SGIX")]
     PixelTexGenModeSGIX = 33579,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_BEST_ALIGNMENT_SGIX")]
     PixelTileBestAlignmentSGIX = 33086,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_CACHE_INCREMENT_SGIX")]
     PixelTileCacheIncrementSGIX = 33087,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_WIDTH_SGIX")]
     PixelTileWidthSGIX = 33088,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_HEIGHT_SGIX")]
     PixelTileHeightSGIX = 33089,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_GRID_WIDTH_SGIX")]
     PixelTileGridWidthSGIX = 33090,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_GRID_HEIGHT_SGIX")]
     PixelTileGridHeightSGIX = 33091,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_GRID_DEPTH_SGIX")]
     PixelTileGridDepthSGIX = 33092,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_TILE_CACHE_SIZE_SGIX")]
     PixelTileCacheSizeSGIX = 33093,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_DEFORMATION_BIT_SGIX")]
     TextureDeformationBitSGIX = 1,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_GEOMETRY_DEFORMATION_BIT_SGIX")]
     GeometryDeformationBitSGIX = 2,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_GEOMETRY_DEFORMATION_SGIX")]
     GeometryDeformationSGIX = 33172,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_DEFORMATION_SGIX")]
     TextureDeformationSGIX = 33173,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_DEFORMATIONS_MASK_SGIX")]
     DeformationsMaskSGIX = 33174,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_MAX_DEFORMATION_ORDER_SGIX")]
     MaxDeformationOrderSGIX = 33175,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_REFERENCE_PLANE_SGIX")]
     ReferencePlaneSGIX = 33149,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_REFERENCE_PLANE_EQUATION_SGIX")]
     ReferencePlaneEquationSGIX = 33150,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PACK_RESAMPLE_SGIX")]
     PackResampleSGIX = 33838,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_UNPACK_RESAMPLE_SGIX")]
     UnpackResampleSGIX = 33839,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_RESAMPLE_REPLICATE_SGIX")]
     ResampleReplicateSGIX = 33843,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_RESAMPLE_ZERO_FILL_SGIX")]
     ResampleZeroFillSGIX = 33844,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_RESAMPLE_DECIMATE_SGIX")]
     ResampleDecimateSGIX = 33840,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SCALEBIAS_HINT_SGIX")]
     ScalebiasHintSGIX = 33570,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_COMPARE_SGIX")]
     TextureCompareSGIX = 33178,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_COMPARE_OPERATOR_SGIX")]
     TextureCompareOperatorSGIX = 33179,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_LEQUAL_R_SGIX")]
     TextureLequalRSGIX = 33180,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_GEQUAL_R_SGIX")]
     TextureGequalRSGIX = 33181,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SHADOW_AMBIENT_SGIX")]
     ShadowAmbientSGIX = 32959,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SPRITE_SGIX")]
     SpriteSGIX = 33096,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SPRITE_MODE_SGIX")]
     SpriteModeSGIX = 33097,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SPRITE_AXIS_SGIX")]
     SpriteAxisSGIX = 33098,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SPRITE_TRANSLATION_SGIX")]
     SpriteTranslationSGIX = 33099,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SPRITE_AXIAL_SGIX")]
     SpriteAxialSGIX = 33100,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SPRITE_OBJECT_ALIGNED_SGIX")]
     SpriteObjectAlignedSGIX = 33101,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_SPRITE_EYE_ALIGNED_SGIX")]
     SpriteEyeAlignedSGIX = 33102,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PACK_SUBSAMPLE_RATE_SGIX")]
     PackSubsampleRateSGIX = 34208,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_UNPACK_SUBSAMPLE_RATE_SGIX")]
     UnpackSubsampleRateSGIX = 34209,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_SUBSAMPLE_4444_SGIX")]
     PixelSubsample4444SGIX = 34210,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_SUBSAMPLE_2424_SGIX")]
     PixelSubsample2424SGIX = 34211,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_PIXEL_SUBSAMPLE_4242_SGIX")]
     PixelSubsample4242SGIX = 34212,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_ENV_BIAS_SGIX")]
     TextureEnvBiasSGIX = 32958,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_MAX_CLAMP_S_SGIX")]
     TextureMaxClampSSGIX = 33641,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_MAX_CLAMP_T_SGIX")]
     TextureMaxClampTSGIX = 33642,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_MAX_CLAMP_R_SGIX")]
     TextureMaxClampRSGIX = 33643,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_LOD_BIAS_S_SGIX")]
     TextureLodBiasSSGIX = 33166,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_LOD_BIAS_T_SGIX")]
     TextureLodBiasTSGIX = 33167,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_LOD_BIAS_R_SGIX")]
     TextureLodBiasRSGIX = 33168,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_TEXTURE_MULTI_BUFFER_HINT_SGIX")]
     TextureMultiBufferHintSGIX = 33070,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_POST_TEXTURE_FILTER_BIAS_SGIX")]
     PostTextureFilterBiasSGIX = 33145,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_POST_TEXTURE_FILTER_SCALE_SGIX")]
     PostTextureFilterScaleSGIX = 33146,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_POST_TEXTURE_FILTER_BIAS_RANGE_SGIX")]
     PostTextureFilterBiasRangeSGIX = 33147,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_POST_TEXTURE_FILTER_SCALE_RANGE_SGIX")]
     PostTextureFilterScaleRangeSGIX = 33148,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_VERTEX_PRECLIP_SGIX")]
     VertexPreclipSGIX = 33774,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_VERTEX_PRECLIP_HINT_SGIX")]
     VertexPreclipHintSGIX = 33775,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_YCRCB_422_SGIX")]
     Ycrcb422SGIX = 33211,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_YCRCB_444_SGIX")]
     Ycrcb444SGIX = 33212,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_YCRCB_SGIX")]
     YcrcbSGIX = 33560,
 
-    [NameAffix("Suffix", "SGIX", 0)]
     [NativeName("GL_YCRCBA_SGIX")]
     YcrcbaSGIX = 33561,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_MATRIX_SGI")]
     ColorMatrixSGI = 32945,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_MATRIX_STACK_DEPTH_SGI")]
     ColorMatrixStackDepthSGI = 32946,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_MAX_COLOR_MATRIX_STACK_DEPTH_SGI")]
     MaxColorMatrixStackDepthSGI = 32947,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_RED_SCALE_SGI")]
     PostColorMatrixRedScaleSGI = 32948,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_GREEN_SCALE_SGI")]
     PostColorMatrixGreenScaleSGI = 32949,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_BLUE_SCALE_SGI")]
     PostColorMatrixBlueScaleSGI = 32950,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_ALPHA_SCALE_SGI")]
     PostColorMatrixAlphaScaleSGI = 32951,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_RED_BIAS_SGI")]
     PostColorMatrixRedBiasSGI = 32952,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_GREEN_BIAS_SGI")]
     PostColorMatrixGreenBiasSGI = 32953,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_BLUE_BIAS_SGI")]
     PostColorMatrixBlueBiasSGI = 32954,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_ALPHA_BIAS_SGI")]
     PostColorMatrixAlphaBiasSGI = 32955,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_SGI")]
     ColorTableSGI = 32976,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE_SGI")]
     PostConvolutionColorTableSGI = 32977,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
     PostColorMatrixColorTableSGI = 32978,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_PROXY_COLOR_TABLE_SGI")]
     ProxyColorTableSGI = 32979,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_PROXY_POST_CONVOLUTION_COLOR_TABLE_SGI")]
     ProxyPostConvolutionColorTableSGI = 32980,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
     ProxyPostColorMatrixColorTableSGI = 32981,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_SCALE_SGI")]
     ColorTableScaleSGI = 32982,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_BIAS_SGI")]
     ColorTableBiasSGI = 32983,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_FORMAT_SGI")]
     ColorTableFormatSGI = 32984,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_WIDTH_SGI")]
     ColorTableWidthSGI = 32985,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_RED_SIZE_SGI")]
     ColorTableRedSizeSGI = 32986,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_GREEN_SIZE_SGI")]
     ColorTableGreenSizeSGI = 32987,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_BLUE_SIZE_SGI")]
     ColorTableBlueSizeSGI = 32988,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_ALPHA_SIZE_SGI")]
     ColorTableAlphaSizeSGI = 32989,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_LUMINANCE_SIZE_SGI")]
     ColorTableLuminanceSizeSGI = 32990,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_COLOR_TABLE_INTENSITY_SIZE_SGI")]
     ColorTableIntensitySizeSGI = 32991,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_TEXTURE_COLOR_TABLE_SGI")]
     TextureColorTableSGI = 32956,
 
-    [NameAffix("Suffix", "SGI", 0)]
     [NativeName("GL_PROXY_TEXTURE_COLOR_TABLE_SGI")]
     ProxyTextureColorTableSGI = 32957,
 
-    [NameAffix("Suffix", "SUNX", 0)]
     [NativeName("GL_UNPACK_CONSTANT_DATA_SUNX")]
     UnpackConstantDataSUNX = 33237,
 
-    [NameAffix("Suffix", "SUNX", 0)]
     [NativeName("GL_TEXTURE_CONSTANT_DATA_SUNX")]
     TextureConstantDataSUNX = 33238,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_WRAP_BORDER_SUN")]
     WrapBorderSUN = 33236,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_GLOBAL_ALPHA_SUN")]
     GlobalAlphaSUN = 33241,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_GLOBAL_ALPHA_FACTOR_SUN")]
     GlobalAlphaFactorSUN = 33242,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_QUAD_MESH_SUN")]
     QuadMeshSUN = 34324,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_TRIANGLE_MESH_SUN")]
     TriangleMeshSUN = 34325,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_SLICE_ACCUM_SUN")]
     SliceAccumSUN = 34252,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_RESTART_SUN")]
     RestartSUN = 1,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_REPLACE_MIDDLE_SUN")]
     ReplaceMiddleSUN = 2,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_REPLACE_OLDEST_SUN")]
     ReplaceOldestSUN = 3,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_TRIANGLE_LIST_SUN")]
     TriangleListSUN = 33239,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_REPLACEMENT_CODE_SUN")]
     ReplacementCodeSUN = 33240,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_REPLACEMENT_CODE_ARRAY_SUN")]
     ReplacementCodeArraySUN = 34240,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_REPLACEMENT_CODE_ARRAY_TYPE_SUN")]
     ReplacementCodeArrayTypeSUN = 34241,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_REPLACEMENT_CODE_ARRAY_STRIDE_SUN")]
     ReplacementCodeArrayStrideSUN = 34242,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_REPLACEMENT_CODE_ARRAY_POINTER_SUN")]
     ReplacementCodeArrayPointerSUN = 34243,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_R1UI_V3F_SUN")]
     R1UiV3FSUN = 34244,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_R1UI_C4UB_V3F_SUN")]
     R1UiC4UbV3FSUN = 34245,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_R1UI_C3F_V3F_SUN")]
     R1UiC3FV3FSUN = 34246,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_R1UI_N3F_V3F_SUN")]
     R1UiN3FV3FSUN = 34247,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_R1UI_C4F_N3F_V3F_SUN")]
     R1UiC4FN3FV3FSUN = 34248,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_R1UI_T2F_V3F_SUN")]
     R1UiT2FV3FSUN = 34249,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_R1UI_T2F_N3F_V3F_SUN")]
     R1UiT2FN3FV3FSUN = 34250,
 
-    [NameAffix("Suffix", "SUN", 0)]
     [NativeName("GL_R1UI_T2F_C4F_N3F_V3F_SUN")]
     R1UiT2FC4FN3FV3FSUN = 34251,
 
-    [NameAffix("Suffix", "WIN", 0)]
     [NativeName("GL_PHONG_WIN")]
     PhongWIN = 33002,
 
-    [NameAffix("Suffix", "WIN", 0)]
     [NativeName("GL_PHONG_HINT_WIN")]
     PhongHintWIN = 33003,
 
-    [NameAffix("Suffix", "WIN", 0)]
     [NativeName("GL_FOG_SPECULAR_TEXTURE_WIN")]
     FogSpecularTextureWIN = 33004,
 
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS")]
     FramebufferIncompleteDimensions = 36057,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_CONTEXT_RELEASE_BEHAVIOR_KHR")]
     ContextReleaseBehaviorKHR = 33531,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_CONTEXT_RELEASE_BEHAVIOR_FLUSH_KHR")]
     ContextReleaseBehaviorFlushKHR = 33532,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_OUTPUT_SYNCHRONOUS_KHR")]
     DebugOutputSynchronousKHR = 33346,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_KHR")]
     DebugNextLoggedMessageLengthKHR = 33347,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_CALLBACK_FUNCTION_KHR")]
     DebugCallbackFunctionKHR = 33348,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_CALLBACK_USER_PARAM_KHR")]
     DebugCallbackUserParamKHR = 33349,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_SOURCE_API_KHR")]
     DebugSourceApiKHR = 33350,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_SOURCE_WINDOW_SYSTEM_KHR")]
     DebugSourceWindowSystemKHR = 33351,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_SOURCE_SHADER_COMPILER_KHR")]
     DebugSourceShaderCompilerKHR = 33352,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_SOURCE_THIRD_PARTY_KHR")]
     DebugSourceThirdPartyKHR = 33353,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_SOURCE_APPLICATION_KHR")]
     DebugSourceApplicationKHR = 33354,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_SOURCE_OTHER_KHR")]
     DebugSourceOtherKHR = 33355,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_TYPE_ERROR_KHR")]
     DebugTypeErrorKHR = 33356,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_KHR")]
     DebugTypeDeprecatedBehaviorKHR = 33357,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_KHR")]
     DebugTypeUndefinedBehaviorKHR = 33358,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_TYPE_PORTABILITY_KHR")]
     DebugTypePortabilityKHR = 33359,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_TYPE_PERFORMANCE_KHR")]
     DebugTypePerformanceKHR = 33360,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_TYPE_OTHER_KHR")]
     DebugTypeOtherKHR = 33361,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_TYPE_MARKER_KHR")]
     DebugTypeMarkerKHR = 33384,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_TYPE_PUSH_GROUP_KHR")]
     DebugTypePushGroupKHR = 33385,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_TYPE_POP_GROUP_KHR")]
     DebugTypePopGroupKHR = 33386,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_SEVERITY_NOTIFICATION_KHR")]
     DebugSeverityNotificationKHR = 33387,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_MAX_DEBUG_GROUP_STACK_DEPTH_KHR")]
     MaxDebugGroupStackDepthKHR = 33388,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_GROUP_STACK_DEPTH_KHR")]
     DebugGroupStackDepthKHR = 33389,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_BUFFER_KHR")]
     BufferKHR = 33504,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SHADER_KHR")]
     ShaderKHR = 33505,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_PROGRAM_KHR")]
     ProgramKHR = 33506,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_VERTEX_ARRAY_KHR")]
     VertexArrayKHR = 32884,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_QUERY_KHR")]
     QueryKHR = 33507,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_PROGRAM_PIPELINE_KHR")]
     ProgramPipelineKHR = 33508,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_SAMPLER_KHR")]
     SamplerKHR = 33510,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_MAX_LABEL_LENGTH_KHR")]
     MaxLabelLengthKHR = 33512,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_MAX_DEBUG_MESSAGE_LENGTH_KHR")]
     MaxDebugMessageLengthKHR = 37187,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_MAX_DEBUG_LOGGED_MESSAGES_KHR")]
     MaxDebugLoggedMessagesKHR = 37188,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_LOGGED_MESSAGES_KHR")]
     DebugLoggedMessagesKHR = 37189,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_SEVERITY_HIGH_KHR")]
     DebugSeverityHighKHR = 37190,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_SEVERITY_MEDIUM_KHR")]
     DebugSeverityMediumKHR = 37191,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_SEVERITY_LOW_KHR")]
     DebugSeverityLowKHR = 37192,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_DEBUG_OUTPUT_KHR")]
     DebugOutputKHR = 37600,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_CONTEXT_FLAG_DEBUG_BIT_KHR")]
     ContextFlagDebugBitKHR = 2,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_STACK_OVERFLOW_KHR")]
     StackOverflowKHR = 1283,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_STACK_UNDERFLOW_KHR")]
     StackUnderflowKHR = 1284,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_CONTEXT_ROBUST_ACCESS_KHR")]
     ContextRobustAccessKHR = 37107,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_LOSE_CONTEXT_ON_RESET_KHR")]
     LoseContextOnResetKHR = 33362,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_GUILTY_CONTEXT_RESET_KHR")]
     GuiltyContextResetKHR = 33363,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_INNOCENT_CONTEXT_RESET_KHR")]
     InnocentContextResetKHR = 33364,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_UNKNOWN_CONTEXT_RESET_KHR")]
     UnknownContextResetKHR = 33365,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_RESET_NOTIFICATION_STRATEGY_KHR")]
     ResetNotificationStrategyKHR = 33366,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_NO_RESET_NOTIFICATION_KHR")]
     NoResetNotificationKHR = 33377,
 
-    [NameAffix("Suffix", "KHR", 0)]
     [NativeName("GL_CONTEXT_LOST_KHR")]
     ContextLostKHR = 1287,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_SAMPLER_EXTERNAL_OES")]
     SamplerExternalOES = 36198,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_GEOMETRY_SHADER_OES")]
     GeometryShaderOES = 36313,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_GEOMETRY_SHADER_BIT_OES")]
     GeometryShaderBitOES = 4,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_GEOMETRY_LINKED_VERTICES_OUT_OES")]
     GeometryLinkedVerticesOutOES = 35094,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_GEOMETRY_LINKED_INPUT_TYPE_OES")]
     GeometryLinkedInputTypeOES = 35095,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_GEOMETRY_LINKED_OUTPUT_TYPE_OES")]
     GeometryLinkedOutputTypeOES = 35096,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_GEOMETRY_SHADER_INVOCATIONS_OES")]
     GeometryShaderInvocationsOES = 34943,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_LAYER_PROVOKING_VERTEX_OES")]
     LayerProvokingVertexOES = 33374,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_LINES_ADJACENCY_OES")]
     LinesAdjacencyOES = 10,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_LINE_STRIP_ADJACENCY_OES")]
     LineStripAdjacencyOES = 11,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TRIANGLES_ADJACENCY_OES")]
     TrianglesAdjacencyOES = 12,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_OES")]
     TriangleStripAdjacencyOES = 13,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_UNIFORM_COMPONENTS_OES")]
     MaxGeometryUniformComponentsOES = 36319,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_UNIFORM_BLOCKS_OES")]
     MaxGeometryUniformBlocksOES = 35372,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_OES")]
     MaxCombinedGeometryUniformComponentsOES = 35378,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_INPUT_COMPONENTS_OES")]
     MaxGeometryInputComponentsOES = 37155,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_OES")]
     MaxGeometryOutputComponentsOES = 37156,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_OUTPUT_VERTICES_OES")]
     MaxGeometryOutputVerticesOES = 36320,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_OES")]
     MaxGeometryTotalOutputComponentsOES = 36321,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_SHADER_INVOCATIONS_OES")]
     MaxGeometryShaderInvocationsOES = 36442,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_TEXTURE_IMAGE_UNITS_OES")]
     MaxGeometryTextureImageUnitsOES = 35881,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_OES")]
     MaxGeometryAtomicCounterBuffersOES = 37583,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTERS_OES")]
     MaxGeometryAtomicCountersOES = 37589,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_IMAGE_UNIFORMS_OES")]
     MaxGeometryImageUniformsOES = 37069,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_OES")]
     MaxGeometryShaderStorageBlocksOES = 37079,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FIRST_VERTEX_CONVENTION_OES")]
     FirstVertexConventionOES = 36429,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_LAST_VERTEX_CONVENTION_OES")]
     LastVertexConventionOES = 36430,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_UNDEFINED_VERTEX_OES")]
     UndefinedVertexOES = 33376,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PRIMITIVES_GENERATED_OES")]
     PrimitivesGeneratedOES = 35975,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_DEFAULT_LAYERS_OES")]
     FramebufferDefaultLayersOES = 37650,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_FRAMEBUFFER_LAYERS_OES")]
     MaxFramebufferLayersOES = 37655,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS_OES")]
     FramebufferIncompleteLayerTargetsOES = 36264,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_OES")]
     FramebufferAttachmentLayeredOES = 36263,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_REFERENCED_BY_GEOMETRY_SHADER_OES")]
     ReferencedByGeometryShaderOES = 37641,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PROGRAM_BINARY_LENGTH_OES")]
     ProgramBinaryLengthOES = 34625,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_NUM_PROGRAM_BINARY_FORMATS_OES")]
     NumProgramBinaryFormatsOES = 34814,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PROGRAM_BINARY_FORMATS_OES")]
     ProgramBinaryFormatsOES = 34815,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PRIMITIVE_BOUNDING_BOX_OES")]
     PrimitiveBoundingBoxOES = 37566,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_SAMPLE_SHADING_OES")]
     SampleShadingOES = 35894,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MIN_SAMPLE_SHADING_VALUE_OES")]
     MinSampleShadingValueOES = 35895,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MIN_FRAGMENT_INTERPOLATION_OFFSET_OES")]
     MinFragmentInterpolationOffsetOES = 36443,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_FRAGMENT_INTERPOLATION_OFFSET_OES")]
     MaxFragmentInterpolationOffsetOES = 36444,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAGMENT_INTERPOLATION_OFFSET_BITS_OES")]
     FragmentInterpolationOffsetBitsOES = 36445,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAGMENT_SHADER_DERIVATIVE_HINT_OES")]
     FragmentShaderDerivativeHintOES = 35723,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PATCHES_OES")]
     PatchesOES = 14,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PATCH_VERTICES_OES")]
     PatchVerticesOES = 36466,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_CONTROL_OUTPUT_VERTICES_OES")]
     TessControlOutputVerticesOES = 36469,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_GEN_MODE_OES")]
     TessGenModeOES = 36470,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_GEN_SPACING_OES")]
     TessGenSpacingOES = 36471,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_GEN_VERTEX_ORDER_OES")]
     TessGenVertexOrderOES = 36472,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_GEN_POINT_MODE_OES")]
     TessGenPointModeOES = 36473,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_ISOLINES_OES")]
     IsolinesOES = 36474,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_QUADS_OES")]
     QuadsOES = 7,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRACTIONAL_ODD_OES")]
     FractionalOddOES = 36475,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRACTIONAL_EVEN_OES")]
     FractionalEvenOES = 36476,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_PATCH_VERTICES_OES")]
     MaxPatchVerticesOES = 36477,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_GEN_LEVEL_OES")]
     MaxTessGenLevelOES = 36478,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_OES")]
     MaxTessControlUniformComponentsOES = 36479,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_OES")]
     MaxTessEvaluationUniformComponentsOES = 36480,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_OES")]
     MaxTessControlTextureImageUnitsOES = 36481,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_OES")]
     MaxTessEvaluationTextureImageUnitsOES = 36482,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_OES")]
     MaxTessControlOutputComponentsOES = 36483,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_PATCH_COMPONENTS_OES")]
     MaxTessPatchComponentsOES = 36484,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_OES")]
     MaxTessControlTotalOutputComponentsOES = 36485,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_OES")]
     MaxTessEvaluationOutputComponentsOES = 36486,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_OES")]
     MaxTessControlUniformBlocksOES = 36489,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_OES")]
     MaxTessEvaluationUniformBlocksOES = 36490,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_OES")]
     MaxTessControlInputComponentsOES = 34924,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_OES")]
     MaxTessEvaluationInputComponentsOES = 34925,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_OES")]
     MaxCombinedTessControlUniformComponentsOES = 36382,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_OES")]
     MaxCombinedTessEvaluationUniformComponentsOES = 36383,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_OES")]
     MaxTessControlAtomicCounterBuffersOES = 37581,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_OES")]
     MaxTessEvaluationAtomicCounterBuffersOES = 37582,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_OES")]
     MaxTessControlAtomicCountersOES = 37587,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_OES")]
     MaxTessEvaluationAtomicCountersOES = 37588,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_OES")]
     MaxTessControlImageUniformsOES = 37067,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_OES")]
     MaxTessEvaluationImageUniformsOES = 37068,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_OES")]
     MaxTessControlShaderStorageBlocksOES = 37080,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_OES")]
     MaxTessEvaluationShaderStorageBlocksOES = 37081,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED_OES")]
     PrimitiveRestartForPatchesSupportedOES = 33313,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_IS_PER_PATCH_OES")]
     IsPerPatchOES = 37607,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_REFERENCED_BY_TESS_CONTROL_SHADER_OES")]
     ReferencedByTessControlShaderOES = 37639,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_REFERENCED_BY_TESS_EVALUATION_SHADER_OES")]
     ReferencedByTessEvaluationShaderOES = 37640,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_CONTROL_SHADER_OES")]
     TessControlShaderOES = 36488,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_EVALUATION_SHADER_OES")]
     TessEvaluationShaderOES = 36487,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_CONTROL_SHADER_BIT_OES")]
     TessControlShaderBitOES = 8,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TESS_EVALUATION_SHADER_BIT_OES")]
     TessEvaluationShaderBitOES = 16,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_WRAP_R_OES")]
     TextureWrapROES = 32882,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_3D_OES")]
     Texture3DOES = 32879,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BINDING_3D_OES")]
     TextureBinding3DOES = 32874,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_3D_TEXTURE_SIZE_OES")]
     Max3DTextureSizeOES = 32883,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_SAMPLER_3D_OES")]
     Sampler3DOES = 35679,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES")]
     FramebufferAttachmentTexture3DZoffsetOES = 36052,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BORDER_COLOR_OES")]
     TextureBorderColorOES = 4100,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_CLAMP_TO_BORDER_OES")]
     ClampToBorderOES = 33069,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BUFFER_OES")]
     TextureBufferOES = 35882,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BUFFER_BINDING_OES")]
     TextureBufferBindingOES = 35882,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_TEXTURE_BUFFER_SIZE_OES")]
     MaxTextureBufferSizeOES = 35883,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BINDING_BUFFER_OES")]
     TextureBindingBufferOES = 35884,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BUFFER_DATA_STORE_BINDING_OES")]
     TextureBufferDataStoreBindingOES = 35885,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_OES")]
     TextureBufferOffsetAlignmentOES = 37279,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_SAMPLER_BUFFER_OES")]
     SamplerBufferOES = 36290,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_INT_SAMPLER_BUFFER_OES")]
     IntSamplerBufferOES = 36304,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_BUFFER_OES")]
     UnsignedIntSamplerBufferOES = 36312,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_IMAGE_BUFFER_OES")]
     ImageBufferOES = 36945,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_INT_IMAGE_BUFFER_OES")]
     IntImageBufferOES = 36956,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_BUFFER_OES")]
     UnsignedIntImageBufferOES = 36967,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BUFFER_OFFSET_OES")]
     TextureBufferOffsetOES = 37277,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BUFFER_SIZE_OES")]
     TextureBufferSizeOES = 37278,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_3x3x3_OES")]
     CompressedRgbaAstc3X3X3OES = 37824,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x3x3_OES")]
     CompressedRgbaAstc4X3X3OES = 37825,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4x3_OES")]
     CompressedRgbaAstc4X4X3OES = 37826,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4x4_OES")]
     CompressedRgbaAstc4X4X4OES = 37827,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x4x4_OES")]
     CompressedRgbaAstc5X4X4OES = 37828,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5x4_OES")]
     CompressedRgbaAstc5X5X4OES = 37829,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5x5_OES")]
     CompressedRgbaAstc5X5X5OES = 37830,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x5x5_OES")]
     CompressedRgbaAstc6X5X5OES = 37831,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6x5_OES")]
     CompressedRgbaAstc6X6X5OES = 37832,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6x6_OES")]
     CompressedRgbaAstc6X6X6OES = 37833,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_3x3x3_OES")]
     CompressedSrgb8Alpha8Astc3X3X3OES = 37856,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES")]
     CompressedSrgb8Alpha8Astc4X3X3OES = 37857,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x3_OES")]
     CompressedSrgb8Alpha8Astc4X4X3OES = 37858,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x4_OES")]
     CompressedSrgb8Alpha8Astc4X4X4OES = 37859,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4x4_OES")]
     CompressedSrgb8Alpha8Astc5X4X4OES = 37860,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x4_OES")]
     CompressedSrgb8Alpha8Astc5X5X4OES = 37861,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x5_OES")]
     CompressedSrgb8Alpha8Astc5X5X5OES = 37862,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5x5_OES")]
     CompressedSrgb8Alpha8Astc6X5X5OES = 37863,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x5_OES")]
     CompressedSrgb8Alpha8Astc6X6X5OES = 37864,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x6_OES")]
     CompressedSrgb8Alpha8Astc6X6X6OES = 37865,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_OES")]
     TextureCubeMapArrayOES = 36873,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_OES")]
     TextureBindingCubeMapArrayOES = 36874,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_OES")]
     SamplerCubeMapArrayOES = 36876,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_OES")]
     SamplerCubeMapArrayShadowOES = 36877,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_INT_SAMPLER_CUBE_MAP_ARRAY_OES")]
     IntSamplerCubeMapArrayOES = 36878,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_OES")]
     UnsignedIntSamplerCubeMapArrayOES = 36879,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_IMAGE_CUBE_MAP_ARRAY_OES")]
     ImageCubeMapArrayOES = 36948,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_INT_IMAGE_CUBE_MAP_ARRAY_OES")]
     IntImageCubeMapArrayOES = 36959,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY_OES")]
     UnsignedIntImageCubeMapArrayOES = 36970,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_HALF_FLOAT_OES")]
     HalfFloatOES = 36193,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_STENCIL_INDEX_OES")]
     StencilIndexOES = 6401,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES")]
     Texture2DMultisampleArrayOES = 37122,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_BINDING_2D_MULTISAMPLE_ARRAY_OES")]
     TextureBinding2DMultisampleArrayOES = 37125,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_SAMPLER_2D_MULTISAMPLE_ARRAY_OES")]
     Sampler2DMultisampleArrayOES = 37131,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES")]
     IntSampler2DMultisampleArrayOES = 37132,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY_OES")]
     UnsignedIntSampler2DMultisampleArrayOES = 37133,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_VIEW_MIN_LEVEL_OES")]
     TextureViewMinLevelOES = 33499,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_VIEW_NUM_LEVELS_OES")]
     TextureViewNumLevelsOES = 33500,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_VIEW_MIN_LAYER_OES")]
     TextureViewMinLayerOES = 33501,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_TEXTURE_VIEW_NUM_LAYERS_OES")]
     TextureViewNumLayersOES = 33502,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_UNSIGNED_INT_10_10_10_2_OES")]
     UnsignedInt10X10X10X2OES = 36342,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_INT_10_10_10_2_OES")]
     Int10X10X10X2OES = 36343,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_MAX_VIEWPORTS_OES")]
     MaxViewportsOES = 33371,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_VIEWPORT_SUBPIXEL_BITS_OES")]
     ViewportSubpixelBitsOES = 33372,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_VIEWPORT_BOUNDS_RANGE_OES")]
     ViewportBoundsRangeOES = 33373,
 
-    [NameAffix("Suffix", "OES", 0)]
     [NativeName("GL_VIEWPORT_INDEX_PROVOKING_VERTEX_OES")]
     ViewportIndexProvokingVertexOES = 33375,
 
-    [NameAffix("Suffix", "AMD", 0)]
     [NativeName("GL_Z400_BINARY_AMD")]
     Z400BinaryAMD = 34624,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_READ_FRAMEBUFFER_ANGLE")]
     ReadFramebufferANGLE = 36008,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_DRAW_FRAMEBUFFER_ANGLE")]
     DrawFramebufferANGLE = 36009,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_ANGLE")]
     DrawFramebufferBindingANGLE = 36006,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_READ_FRAMEBUFFER_BINDING_ANGLE")]
     ReadFramebufferBindingANGLE = 36010,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_ANGLE")]
     RenderbufferSamplesANGLE = 36011,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_ANGLE")]
     FramebufferIncompleteMultisampleANGLE = 36182,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_MAX_SAMPLES_ANGLE")]
     MaxSamplesANGLE = 36183,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE")]
     VertexAttribArrayDivisorANGLE = 35070,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_PACK_REVERSE_ROW_ORDER_ANGLE")]
     PackReverseRowOrderANGLE = 37796,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_PROGRAM_BINARY_ANGLE")]
     ProgramBinaryANGLE = 37798,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE")]
     CompressedRgbaS3TcDxt3ANGLE = 33778,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT5_ANGLE")]
     CompressedRgbaS3TcDxt5ANGLE = 33779,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_TEXTURE_USAGE_ANGLE")]
     TextureUsageANGLE = 37794,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_ANGLE")]
     FramebufferAttachmentANGLE = 37795,
 
-    [NameAffix("Suffix", "ANGLE", 0)]
     [NativeName("GL_TRANSLATED_SHADER_SOURCE_LENGTH_ANGLE")]
     TranslatedShaderSourceLengthANGLE = 37792,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_MAX_CLIP_DISTANCES_APPLE")]
     MaxClipDistancesAPPLE = 3378,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_CLIP_DISTANCE0_APPLE")]
     ClipDistance0APPLE = 12288,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_CLIP_DISTANCE1_APPLE")]
     ClipDistance1APPLE = 12289,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_CLIP_DISTANCE2_APPLE")]
     ClipDistance2APPLE = 12290,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_CLIP_DISTANCE3_APPLE")]
     ClipDistance3APPLE = 12291,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_CLIP_DISTANCE4_APPLE")]
     ClipDistance4APPLE = 12292,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_CLIP_DISTANCE5_APPLE")]
     ClipDistance5APPLE = 12293,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_CLIP_DISTANCE6_APPLE")]
     ClipDistance6APPLE = 12294,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_CLIP_DISTANCE7_APPLE")]
     ClipDistance7APPLE = 12295,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV_APPLE")]
     UnsignedInt10F11F11FRevAPPLE = 35899,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_UNSIGNED_INT_5_9_9_9_REV_APPLE")]
     UnsignedInt5X9X9X9RevAPPLE = 35902,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_R11F_G11F_B10F_APPLE")]
     R11FG11FB10FAPPLE = 35898,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_RGB9_E5_APPLE")]
     Rgb9E5APPLE = 35901,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_MALI_PROGRAM_BINARY_ARM")]
     MaliProgramBinaryARM = 36705,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_MALI_SHADER_BINARY_ARM")]
     MaliShaderBinaryARM = 36704,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
     FetchPerSampleARM = 36709,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM")]
     FragmentShaderFramebufferFetchMrtARM = 36710,
 
-    [NameAffix("Suffix", "ARM", 0)]
     [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
     TextureUnnormalizedCoordinatesARM = 36714,
 
-    [NameAffix("Suffix", "DMP", 0)]
     [NativeName("GL_SMAPHS30_PROGRAM_BINARY_DMP")]
     Smaphs30ProgramBinaryDMP = 37457,
 
-    [NameAffix("Suffix", "DMP", 0)]
     [NativeName("GL_SMAPHS_PROGRAM_BINARY_DMP")]
     SmaphsProgramBinaryDMP = 37458,
 
-    [NameAffix("Suffix", "DMP", 0)]
     [NativeName("GL_DMP_PROGRAM_BINARY_DMP")]
     DmpProgramBinaryDMP = 37459,
 
-    [NameAffix("Suffix", "DMP", 0)]
     [NativeName("GL_SHADER_BINARY_DMP")]
     ShaderBinaryDMP = 37456,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_EXT")]
     SurfaceCompressionEXT = 38592,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_NONE_EXT")]
     SurfaceCompressionFixedRateNoneEXT = 38593,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_DEFAULT_EXT")]
     SurfaceCompressionFixedRateDefaultEXT = 38594,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_EXTERNAL_2D_Y2Y_EXT")]
     SamplerExternal2DY2YEXT = 35815,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SRC1_COLOR_EXT")]
     Src1ColorEXT = 35065,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SRC1_ALPHA_EXT")]
     Src1AlphaEXT = 34185,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ONE_MINUS_SRC1_COLOR_EXT")]
     OneMinusSrc1ColorEXT = 35066,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ONE_MINUS_SRC1_ALPHA_EXT")]
     OneMinusSrc1AlphaEXT = 35067,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SRC_ALPHA_SATURATE_EXT")]
     SrcAlphaSaturateEXT = 776,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LOCATION_INDEX_EXT")]
     LocationIndexEXT = 37647,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_DUAL_SOURCE_DRAW_BUFFERS_EXT")]
     MaxDualSourceDrawBuffersEXT = 35068,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
     MapPersistentBitEXT = 64,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAP_COHERENT_BIT_EXT")]
     MapCoherentBitEXT = 128,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DYNAMIC_STORAGE_BIT_EXT")]
     DynamicStorageBitEXT = 256,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIENT_STORAGE_BIT_EXT")]
     ClientStorageBitEXT = 512,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT")]
     ClientMappedBufferBarrierBitEXT = 16384,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BUFFER_IMMUTABLE_STORAGE_EXT")]
     BufferImmutableStorageEXT = 33311,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_BUFFER_STORAGE_FLAGS_EXT")]
     BufferStorageFlagsEXT = 33312,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LOWER_LEFT_EXT")]
     LowerLeftEXT = 36001,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UPPER_LEFT_EXT")]
     UpperLeftEXT = 36002,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NEGATIVE_ONE_TO_ONE_EXT")]
     NegativeOneToOneEXT = 37726,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ZERO_TO_ONE_EXT")]
     ZeroToOneEXT = 37727,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_ORIGIN_EXT")]
     ClipOriginEXT = 37724,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_DEPTH_MODE_EXT")]
     ClipDepthModeEXT = 37725,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_CLIP_DISTANCES_EXT")]
     MaxClipDistancesEXT = 3378,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_CULL_DISTANCES_EXT")]
     MaxCullDistancesEXT = 33529,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_COMBINED_CLIP_AND_CULL_DISTANCES_EXT")]
     MaxCombinedClipAndCullDistancesEXT = 33530,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_DISTANCE0_EXT")]
     ClipDistance0EXT = 12288,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_DISTANCE1_EXT")]
     ClipDistance1EXT = 12289,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_DISTANCE2_EXT")]
     ClipDistance2EXT = 12290,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_DISTANCE3_EXT")]
     ClipDistance3EXT = 12291,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_DISTANCE4_EXT")]
     ClipDistance4EXT = 12292,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_DISTANCE5_EXT")]
     ClipDistance5EXT = 12293,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_DISTANCE6_EXT")]
     ClipDistance6EXT = 12294,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLIP_DISTANCE7_EXT")]
     ClipDistance7EXT = 12295,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT")]
     FramebufferAttachmentComponentTypeEXT = 33297,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_NORMALIZED_EXT")]
     UnsignedNormalizedEXT = 35863,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DEPTH_CLAMP_EXT")]
     DepthClampEXT = 34383,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_QUERY_COUNTER_BITS_EXT")]
     QueryCounterBitsEXT = 34916,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CURRENT_QUERY_EXT")]
     CurrentQueryEXT = 34917,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_QUERY_RESULT_EXT")]
     QueryResultEXT = 34918,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_QUERY_RESULT_AVAILABLE_EXT")]
     QueryResultAvailableEXT = 34919,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TIMESTAMP_EXT")]
     TimestampEXT = 36392,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GPU_DISJOINT_EXT")]
     GpuDisjointEXT = 36795,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_DRAW_BUFFERS_EXT")]
     MaxDrawBuffersEXT = 34852,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER0_EXT")]
     DrawBuffer0EXT = 34853,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER1_EXT")]
     DrawBuffer1EXT = 34854,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER2_EXT")]
     DrawBuffer2EXT = 34855,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER3_EXT")]
     DrawBuffer3EXT = 34856,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER4_EXT")]
     DrawBuffer4EXT = 34857,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER5_EXT")]
     DrawBuffer5EXT = 34858,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER6_EXT")]
     DrawBuffer6EXT = 34859,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER7_EXT")]
     DrawBuffer7EXT = 34860,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER8_EXT")]
     DrawBuffer8EXT = 34861,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER9_EXT")]
     DrawBuffer9EXT = 34862,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER10_EXT")]
     DrawBuffer10EXT = 34863,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER11_EXT")]
     DrawBuffer11EXT = 34864,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER12_EXT")]
     DrawBuffer12EXT = 34865,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER13_EXT")]
     DrawBuffer13EXT = 34866,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER14_EXT")]
     DrawBuffer14EXT = 34867,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER15_EXT")]
     DrawBuffer15EXT = 34868,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_1X1_PIXELS_EXT")]
     ShadingRate1X1PixelsEXT = 38566,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_1X2_PIXELS_EXT")]
     ShadingRate1X2PixelsEXT = 38567,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_2X1_PIXELS_EXT")]
     ShadingRate2X1PixelsEXT = 38568,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_2X2_PIXELS_EXT")]
     ShadingRate2X2PixelsEXT = 38569,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_1X4_PIXELS_EXT")]
     ShadingRate1X4PixelsEXT = 38570,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_4X1_PIXELS_EXT")]
     ShadingRate4X1PixelsEXT = 38571,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_4X2_PIXELS_EXT")]
     ShadingRate4X2PixelsEXT = 38572,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_2X4_PIXELS_EXT")]
     ShadingRate2X4PixelsEXT = 38573,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_4X4_PIXELS_EXT")]
     ShadingRate4X4PixelsEXT = 38574,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_EXT")]
     ShadingRateEXT = 38608,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADING_RATE_ATTACHMENT_EXT")]
     ShadingRateAttachmentEXT = 38609,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_KEEP_EXT")]
     FragmentShadingRateCombinerOpKeepEXT = 38610,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_EXT")]
     FragmentShadingRateCombinerOpReplaceEXT = 38611,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_EXT")]
     FragmentShadingRateCombinerOpMinEXT = 38612,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_EXT")]
     FragmentShadingRateCombinerOpMaxEXT = 38613,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_EXT")]
     FragmentShadingRateCombinerOpMulEXT = 38614,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
     MinFragmentShadingRateAttachmentTexelWidthEXT = 38615,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
     MaxFragmentShadingRateAttachmentTexelWidthEXT = 38616,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
     MinFragmentShadingRateAttachmentTexelHeightEXT = 38617,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
     MaxFragmentShadingRateAttachmentTexelHeightEXT = 38618,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT")]
     MaxFragmentShadingRateAttachmentTexelAspectRatioEXT = 38619,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT")]
     MaxFragmentShadingRateAttachmentLayersEXT = 38620,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT")]
     FragmentShadingRateWithShaderDepthStencilWritesSupportedEXT = 38621,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT")]
     FragmentShadingRateWithSampleMaskSupportedEXT = 38622,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT")]
     FragmentShadingRateAttachmentWithDefaultFramebufferSupportedEXT = 38623,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT")]
     FragmentShadingRateNonTrivialCombinersSupportedEXT = 36719,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GEOMETRY_SHADER_BIT_EXT")]
     GeometryShaderBitEXT = 4,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GEOMETRY_LINKED_VERTICES_OUT_EXT")]
     GeometryLinkedVerticesOutEXT = 35094,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GEOMETRY_LINKED_INPUT_TYPE_EXT")]
     GeometryLinkedInputTypeEXT = 35095,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GEOMETRY_LINKED_OUTPUT_TYPE_EXT")]
     GeometryLinkedOutputTypeEXT = 35096,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_GEOMETRY_SHADER_INVOCATIONS_EXT")]
     GeometryShaderInvocationsEXT = 34943,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_LAYER_PROVOKING_VERTEX_EXT")]
     LayerProvokingVertexEXT = 33374,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_UNIFORM_BLOCKS_EXT")]
     MaxGeometryUniformBlocksEXT = 35372,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_COMBINED_GEOMETRY_UNIFORM_COMPONENTS_EXT")]
     MaxCombinedGeometryUniformComponentsEXT = 35378,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_INPUT_COMPONENTS_EXT")]
     MaxGeometryInputComponentsEXT = 37155,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_OUTPUT_COMPONENTS_EXT")]
     MaxGeometryOutputComponentsEXT = 37156,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_SHADER_INVOCATIONS_EXT")]
     MaxGeometryShaderInvocationsEXT = 36442,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS_EXT")]
     MaxGeometryAtomicCounterBuffersEXT = 37583,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_ATOMIC_COUNTERS_EXT")]
     MaxGeometryAtomicCountersEXT = 37589,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_IMAGE_UNIFORMS_EXT")]
     MaxGeometryImageUniformsEXT = 37069,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_GEOMETRY_SHADER_STORAGE_BLOCKS_EXT")]
     MaxGeometryShaderStorageBlocksEXT = 37079,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNDEFINED_VERTEX_EXT")]
     UndefinedVertexEXT = 33376,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_DEFAULT_LAYERS_EXT")]
     FramebufferDefaultLayersEXT = 37650,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_FRAMEBUFFER_LAYERS_EXT")]
     MaxFramebufferLayersEXT = 37655,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_REFERENCED_BY_GEOMETRY_SHADER_EXT")]
     ReferencedByGeometryShaderEXT = 37641,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR_EXT")]
     VertexAttribArrayDivisorEXT = 35070,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COLOR_ATTACHMENT_EXT")]
     ColorAttachmentEXT = 37104,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MULTIVIEW_EXT")]
     MultiviewEXT = 37105,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DRAW_BUFFER_EXT")]
     DrawBufferEXT = 3073,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_READ_BUFFER_EXT")]
     ReadBufferEXT = 3074,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_MULTIVIEW_BUFFERS_EXT")]
     MaxMultiviewBuffersEXT = 37106,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ANY_SAMPLES_PASSED_EXT")]
     AnySamplesPassedEXT = 35887,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ANY_SAMPLES_PASSED_CONSERVATIVE_EXT")]
     AnySamplesPassedConservativeEXT = 36202,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PRIMITIVE_BOUNDING_BOX_EXT")]
     PrimitiveBoundingBoxEXT = 37566,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT")]
     ContextFlagProtectedContentBitEXT = 16,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_PROTECTED_EXT")]
     TextureProtectedEXT = 35834,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_PVRTC_2BPPV1_EXT")]
     CompressedSrgbPvrtc2Bppv1EXT = 35412,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_PVRTC_4BPPV1_EXT")]
     CompressedSrgbPvrtc4Bppv1EXT = 35413,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV1_EXT")]
     CompressedSrgbAlphaPvrtc2Bppv1EXT = 35414,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV1_EXT")]
     CompressedSrgbAlphaPvrtc4Bppv1EXT = 35415,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV2_IMG")]
     CompressedSrgbAlphaPvrtc2Bppv2IMG = 37872,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV2_IMG")]
     CompressedSrgbAlphaPvrtc4Bppv2IMG = 37873,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_R16_SNORM_EXT")]
     R16SnormEXT = 36760,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RG16_SNORM_EXT")]
     Rg16SnormEXT = 36761,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGBA16_SNORM_EXT")]
     Rgba16SnormEXT = 36763,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VERTEX_SHADER_BIT_EXT")]
     VertexShaderBitEXT = 1,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAGMENT_SHADER_BIT_EXT")]
     FragmentShaderBitEXT = 2,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ALL_SHADER_BITS_EXT")]
     AllShaderBitsEXT = 4294967295,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROGRAM_SEPARABLE_EXT")]
     ProgramSeparableEXT = 33368,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PROGRAM_PIPELINE_BINDING_EXT")]
     ProgramPipelineBindingEXT = 33370,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_FAST_SIZE_EXT")]
     MaxShaderPixelLocalStorageFastSizeEXT = 36707,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_SIZE_EXT")]
     MaxShaderPixelLocalStorageSizeEXT = 36711,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SHADER_PIXEL_LOCAL_STORAGE_EXT")]
     ShaderPixelLocalStorageEXT = 36708,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_FAST_SIZE_EXT")]
     MaxShaderCombinedLocalStorageFastSizeEXT = 38480,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_SHADER_COMBINED_LOCAL_STORAGE_SIZE_EXT")]
     MaxShaderCombinedLocalStorageSizeEXT = 38481,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_INSUFFICIENT_SHADER_COMBINED_LOCAL_STORAGE_EXT")]
     FramebufferIncompleteInsufficientShaderCombinedLocalStorageEXT = 38482,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_COMPARE_MODE_EXT")]
     TextureCompareModeEXT = 34892,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_COMPARE_FUNC_EXT")]
     TextureCompareFuncEXT = 34893,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPARE_REF_TO_TEXTURE_EXT")]
     CompareRefToTextureEXT = 34894,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_2D_SHADOW_EXT")]
     Sampler2DShadowEXT = 35682,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_SPARSE_EXT")]
     TextureSparseEXT = 37286,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_INDEX_EXT")]
     VirtualPageSizeIndexEXT = 37287,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NUM_SPARSE_LEVELS_EXT")]
     NumSparseLevelsEXT = 37290,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NUM_VIRTUAL_PAGE_SIZES_EXT")]
     NumVirtualPageSizesEXT = 37288,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_X_EXT")]
     VirtualPageSizeXEXT = 37269,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_Y_EXT")]
     VirtualPageSizeYEXT = 37270,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_VIRTUAL_PAGE_SIZE_Z_EXT")]
     VirtualPageSizeZEXT = 37271,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_SPARSE_TEXTURE_SIZE_EXT")]
     MaxSparseTextureSizeEXT = 37272,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_SPARSE_3D_TEXTURE_SIZE_EXT")]
     MaxSparse3DTextureSizeEXT = 37273,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_SPARSE_ARRAY_TEXTURE_LAYERS_EXT")]
     MaxSparseArrayTextureLayersEXT = 37274,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_EXT")]
     SparseTextureFullArrayCubeMipmapsEXT = 37289,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PATCHES_EXT")]
     PatchesEXT = 14,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_PATCH_VERTICES_EXT")]
     PatchVerticesEXT = 36466,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_CONTROL_OUTPUT_VERTICES_EXT")]
     TessControlOutputVerticesEXT = 36469,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_GEN_MODE_EXT")]
     TessGenModeEXT = 36470,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_GEN_SPACING_EXT")]
     TessGenSpacingEXT = 36471,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_GEN_VERTEX_ORDER_EXT")]
     TessGenVertexOrderEXT = 36472,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_GEN_POINT_MODE_EXT")]
     TessGenPointModeEXT = 36473,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_ISOLINES_EXT")]
     IsolinesEXT = 36474,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_QUADS_EXT")]
     QuadsEXT = 7,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRACTIONAL_ODD_EXT")]
     FractionalOddEXT = 36475,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_FRACTIONAL_EVEN_EXT")]
     FractionalEvenEXT = 36476,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_PATCH_VERTICES_EXT")]
     MaxPatchVerticesEXT = 36477,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_GEN_LEVEL_EXT")]
     MaxTessGenLevelEXT = 36478,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_COMPONENTS_EXT")]
     MaxTessControlUniformComponentsEXT = 36479,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT")]
     MaxTessEvaluationUniformComponentsEXT = 36480,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS_EXT")]
     MaxTessControlTextureImageUnitsEXT = 36481,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS_EXT")]
     MaxTessEvaluationTextureImageUnitsEXT = 36482,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_OUTPUT_COMPONENTS_EXT")]
     MaxTessControlOutputComponentsEXT = 36483,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_PATCH_COMPONENTS_EXT")]
     MaxTessPatchComponentsEXT = 36484,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS_EXT")]
     MaxTessControlTotalOutputComponentsEXT = 36485,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_OUTPUT_COMPONENTS_EXT")]
     MaxTessEvaluationOutputComponentsEXT = 36486,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_UNIFORM_BLOCKS_EXT")]
     MaxTessControlUniformBlocksEXT = 36489,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS_EXT")]
     MaxTessEvaluationUniformBlocksEXT = 36490,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_INPUT_COMPONENTS_EXT")]
     MaxTessControlInputComponentsEXT = 34924,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_INPUT_COMPONENTS_EXT")]
     MaxTessEvaluationInputComponentsEXT = 34925,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS_EXT")]
     MaxCombinedTessControlUniformComponentsEXT = 36382,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS_EXT")]
     MaxCombinedTessEvaluationUniformComponentsEXT = 36383,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS_EXT")]
     MaxTessControlAtomicCounterBuffersEXT = 37581,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS_EXT")]
     MaxTessEvaluationAtomicCounterBuffersEXT = 37582,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_ATOMIC_COUNTERS_EXT")]
     MaxTessControlAtomicCountersEXT = 37587,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_ATOMIC_COUNTERS_EXT")]
     MaxTessEvaluationAtomicCountersEXT = 37588,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_IMAGE_UNIFORMS_EXT")]
     MaxTessControlImageUniformsEXT = 37067,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_IMAGE_UNIFORMS_EXT")]
     MaxTessEvaluationImageUniformsEXT = 37068,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_CONTROL_SHADER_STORAGE_BLOCKS_EXT")]
     MaxTessControlShaderStorageBlocksEXT = 37080,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MAX_TESS_EVALUATION_SHADER_STORAGE_BLOCKS_EXT")]
     MaxTessEvaluationShaderStorageBlocksEXT = 37081,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_IS_PER_PATCH_EXT")]
     IsPerPatchEXT = 37607,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_REFERENCED_BY_TESS_CONTROL_SHADER_EXT")]
     ReferencedByTessControlShaderEXT = 37639,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_REFERENCED_BY_TESS_EVALUATION_SHADER_EXT")]
     ReferencedByTessEvaluationShaderEXT = 37640,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_CONTROL_SHADER_EXT")]
     TessControlShaderEXT = 36488,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_EVALUATION_SHADER_EXT")]
     TessEvaluationShaderEXT = 36487,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_CONTROL_SHADER_BIT_EXT")]
     TessControlShaderBitEXT = 8,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TESS_EVALUATION_SHADER_BIT_EXT")]
     TessEvaluationShaderBitEXT = 16,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BORDER_COLOR_EXT")]
     TextureBorderColorEXT = 4100,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_CLAMP_TO_BORDER_EXT")]
     ClampToBorderEXT = 33069,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BUFFER_BINDING_EXT")]
     TextureBufferBindingEXT = 35882,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT_EXT")]
     TextureBufferOffsetAlignmentEXT = 37279,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BUFFER_OFFSET_EXT")]
     TextureBufferOffsetEXT = 37277,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BUFFER_SIZE_EXT")]
     TextureBufferSizeEXT = 37278,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_ASTC_DECODE_PRECISION_EXT")]
     TextureAstcDecodePrecisionEXT = 36713,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RGBA_BPTC_UNORM_EXT")]
     CompressedRgbaBptcUnormEXT = 36492,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT")]
     CompressedSrgbAlphaBptcUnormEXT = 36493,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT")]
     CompressedRgbBptcSignedFloatEXT = 36494,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT")]
     CompressedRgbBptcUnsignedFloatEXT = 36495,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_EXT")]
     TextureCubeMapArrayEXT = 36873,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_ARRAY_EXT")]
     TextureBindingCubeMapArrayEXT = 36874,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_EXT")]
     SamplerCubeMapArrayEXT = 36876,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW_EXT")]
     SamplerCubeMapArrayShadowEXT = 36877,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_INT_SAMPLER_CUBE_MAP_ARRAY_EXT")]
     IntSamplerCubeMapArrayEXT = 36878,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY_EXT")]
     UnsignedIntSamplerCubeMapArrayEXT = 36879,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_FORMAT_SRGB_OVERRIDE_EXT")]
     TextureFormatSrgbOverrideEXT = 36799,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_R16_EXT")]
     R16EXT = 33322,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RG16_EXT")]
     Rg16EXT = 33324,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RGB16_SNORM_EXT")]
     Rgb16SnormEXT = 36762,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RED_EXT")]
     RedEXT = 6403,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_RG_EXT")]
     RgEXT = 33319,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
     NumSurfaceCompressionFixedRatesEXT = 36718,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_1BPC_EXT")]
     SurfaceCompressionFixedRate1BpcEXT = 38596,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_2BPC_EXT")]
     SurfaceCompressionFixedRate2BpcEXT = 38597,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_3BPC_EXT")]
     SurfaceCompressionFixedRate3BpcEXT = 38598,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_4BPC_EXT")]
     SurfaceCompressionFixedRate4BpcEXT = 38599,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_5BPC_EXT")]
     SurfaceCompressionFixedRate5BpcEXT = 38600,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_6BPC_EXT")]
     SurfaceCompressionFixedRate6BpcEXT = 38601,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_7BPC_EXT")]
     SurfaceCompressionFixedRate7BpcEXT = 38602,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_8BPC_EXT")]
     SurfaceCompressionFixedRate8BpcEXT = 38603,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_9BPC_EXT")]
     SurfaceCompressionFixedRate9BpcEXT = 38604,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_10BPC_EXT")]
     SurfaceCompressionFixedRate10BpcEXT = 38605,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_11BPC_EXT")]
     SurfaceCompressionFixedRate11BpcEXT = 38606,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_12BPC_EXT")]
     SurfaceCompressionFixedRate12BpcEXT = 38607,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
     UnsignedInt2X10X10X10RevEXT = 33640,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_VIEW_MIN_LEVEL_EXT")]
     TextureViewMinLevelEXT = 33499,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_VIEW_NUM_LEVELS_EXT")]
     TextureViewNumLevelsEXT = 33500,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_VIEW_MIN_LAYER_EXT")]
     TextureViewMinLayerEXT = 33501,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TEXTURE_VIEW_NUM_LAYERS_EXT")]
     TextureViewNumLayersEXT = 33502,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_ROW_LENGTH_EXT")]
     UnpackRowLengthEXT = 3314,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_SKIP_ROWS_EXT")]
     UnpackSkipRowsEXT = 3315,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_UNPACK_SKIP_PIXELS_EXT")]
     UnpackSkipPixelsEXT = 3316,
 
-    [NameAffix("Suffix", "FJ", 0)]
     [NativeName("GL_GCCSO_SHADER_BINARY_FJ")]
     GccsoShaderBinaryFJ = 37472,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_AND_DOWNSAMPLE_IMG")]
     FramebufferIncompleteMultisampleAndDownsampleIMG = 37180,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_NUM_DOWNSAMPLE_SCALES_IMG")]
     NumDownsampleScalesIMG = 37181,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_DOWNSAMPLE_SCALES_IMG")]
     DownsampleScalesIMG = 37182,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SCALE_IMG")]
     FramebufferAttachmentTextureScaleIMG = 37183,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_SGX_PROGRAM_BINARY_IMG")]
     SgxProgramBinaryIMG = 37168,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_SGX_BINARY_IMG")]
     SgxBinaryIMG = 35850,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG")]
     CompressedRgbaPvrtc2Bppv2IMG = 37175,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG")]
     CompressedRgbaPvrtc4Bppv2IMG = 37176,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_CUBIC_IMG")]
     CubicIMG = 37177,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_CUBIC_MIPMAP_NEAREST_IMG")]
     CubicMipmapNearestIMG = 37178,
 
-    [NameAffix("Suffix", "IMG", 0)]
     [NativeName("GL_CUBIC_MIPMAP_LINEAR_IMG")]
     CubicMipmapLinearIMG = 37179,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COPY_READ_BUFFER_NV")]
     CopyReadBufferNV = 36662,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COPY_WRITE_BUFFER_NV")]
     CopyWriteBufferNV = 36663,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_COMPONENT_NV")]
     CoverageComponentNV = 36560,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_COMPONENT4_NV")]
     CoverageComponent4NV = 36561,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_ATTACHMENT_NV")]
     CoverageAttachmentNV = 36562,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_BUFFERS_NV")]
     CoverageBuffersNV = 36563,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_SAMPLES_NV")]
     CoverageSamplesNV = 36564,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_ALL_FRAGMENTS_NV")]
     CoverageAllFragmentsNV = 36565,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_EDGE_FRAGMENTS_NV")]
     CoverageEdgeFragmentsNV = 36566,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_AUTOMATIC_NV")]
     CoverageAutomaticNV = 36567,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COVERAGE_BUFFER_BIT_NV")]
     CoverageBufferBitNV = 32768,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DEPTH_COMPONENT16_NONLINEAR_NV")]
     DepthComponent16NonlinearNV = 36396,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_DRAW_BUFFERS_NV")]
     MaxDrawBuffersNV = 34852,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER0_NV")]
     DrawBuffer0NV = 34853,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER1_NV")]
     DrawBuffer1NV = 34854,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER2_NV")]
     DrawBuffer2NV = 34855,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER3_NV")]
     DrawBuffer3NV = 34856,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER4_NV")]
     DrawBuffer4NV = 34857,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER5_NV")]
     DrawBuffer5NV = 34858,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER6_NV")]
     DrawBuffer6NV = 34859,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER7_NV")]
     DrawBuffer7NV = 34860,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER8_NV")]
     DrawBuffer8NV = 34861,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER9_NV")]
     DrawBuffer9NV = 34862,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER10_NV")]
     DrawBuffer10NV = 34863,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER11_NV")]
     DrawBuffer11NV = 34864,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER12_NV")]
     DrawBuffer12NV = 34865,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER13_NV")]
     DrawBuffer13NV = 34866,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER14_NV")]
     DrawBuffer14NV = 34867,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_BUFFER15_NV")]
     DrawBuffer15NV = 34868,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT0_NV")]
     ColorAttachment0NV = 36064,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT1_NV")]
     ColorAttachment1NV = 36065,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT2_NV")]
     ColorAttachment2NV = 36066,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT3_NV")]
     ColorAttachment3NV = 36067,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT4_NV")]
     ColorAttachment4NV = 36068,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT5_NV")]
     ColorAttachment5NV = 36069,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT6_NV")]
     ColorAttachment6NV = 36070,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT7_NV")]
     ColorAttachment7NV = 36071,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT8_NV")]
     ColorAttachment8NV = 36072,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT9_NV")]
     ColorAttachment9NV = 36073,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT10_NV")]
     ColorAttachment10NV = 36074,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT11_NV")]
     ColorAttachment11NV = 36075,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT12_NV")]
     ColorAttachment12NV = 36076,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT13_NV")]
     ColorAttachment13NV = 36077,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT14_NV")]
     ColorAttachment14NV = 36078,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COLOR_ATTACHMENT15_NV")]
     ColorAttachment15NV = 36079,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_COLOR_ATTACHMENTS_NV")]
     MaxColorAttachmentsNV = 36063,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_READ_FRAMEBUFFER_NV")]
     ReadFramebufferNV = 36008,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_FRAMEBUFFER_NV")]
     DrawFramebufferNV = 36009,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_DRAW_FRAMEBUFFER_BINDING_NV")]
     DrawFramebufferBindingNV = 36006,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_READ_FRAMEBUFFER_BINDING_NV")]
     ReadFramebufferBindingNV = 36010,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_RENDERBUFFER_SAMPLES_NV")]
     RenderbufferSamplesNV = 36011,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_NV")]
     FramebufferIncompleteMultisampleNV = 36182,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_SAMPLES_NV")]
     MaxSamplesNV = 36183,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR_NV")]
     VertexAttribArrayDivisorNV = 35070,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT2x3_NV")]
     FloatMat2X3NV = 35685,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT2x4_NV")]
     FloatMat2X4NV = 35686,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT3x2_NV")]
     FloatMat3X2NV = 35687,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT3x4_NV")]
     FloatMat3X4NV = 35688,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT4x2_NV")]
     FloatMat4X2NV = 35689,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FLOAT_MAT4x3_NV")]
     FloatMat4X3NV = 35690,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PACK_ROW_LENGTH_NV")]
     PackRowLengthNV = 3330,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PACK_SKIP_ROWS_NV")]
     PackSkipRowsNV = 3331,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PACK_SKIP_PIXELS_NV")]
     PackSkipPixelsNV = 3332,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PIXEL_PACK_BUFFER_NV")]
     PixelPackBufferNV = 35051,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PIXEL_UNPACK_BUFFER_NV")]
     PixelUnpackBufferNV = 35052,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PIXEL_PACK_BUFFER_BINDING_NV")]
     PixelPackBufferBindingNV = 35053,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_PIXEL_UNPACK_BUFFER_BINDING_NV")]
     PixelUnpackBufferBindingNV = 35055,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_POLYGON_MODE_NV")]
     PolygonModeNV = 2880,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_POLYGON_OFFSET_POINT_NV")]
     PolygonOffsetPointNV = 10753,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_POLYGON_OFFSET_LINE_NV")]
     PolygonOffsetLineNV = 10754,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_POINT_NV")]
     PointNV = 6912,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_LINE_NV")]
     LineNV = 6913,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_FILL_NV")]
     FillNV = 6914,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_READ_BUFFER_NV")]
     ReadBufferNV = 3074,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SLUMINANCE_NV")]
     SluminanceNV = 35910,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SLUMINANCE_ALPHA_NV")]
     SluminanceAlphaNV = 35908,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SRGB8_NV")]
     Srgb8NV = 35905,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SLUMINANCE8_NV")]
     Sluminance8NV = 35911,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SLUMINANCE8_ALPHA8_NV")]
     Sluminance8Alpha8NV = 35909,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMPRESSED_SRGB_S3TC_DXT1_NV")]
     CompressedSrgbS3TcDxt1NV = 35916,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_NV")]
     CompressedSrgbAlphaS3TcDxt1NV = 35917,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_NV")]
     CompressedSrgbAlphaS3TcDxt3NV = 35918,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV")]
     CompressedSrgbAlphaS3TcDxt5NV = 35919,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_ETC1_SRGB8_NV")]
     Etc1Srgb8NV = 35054,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SAMPLER_2D_ARRAY_SHADOW_NV")]
     Sampler2DArrayShadowNV = 36292,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_SAMPLER_CUBE_SHADOW_NV")]
     SamplerCubeShadowNV = 36293,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
     TextureBorderColorNV = 4100,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_CLAMP_TO_BORDER_NV")]
     ClampToBorderNV = 33069,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_MAX_VIEWPORTS_NV")]
     MaxViewportsNV = 33371,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_SUBPIXEL_BITS_NV")]
     ViewportSubpixelBitsNV = 33372,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_BOUNDS_RANGE_NV")]
     ViewportBoundsRangeNV = 33373,
 
-    [NameAffix("Suffix", "NV", 0)]
     [NativeName("GL_VIEWPORT_INDEX_PROVOKING_VERTEX_NV")]
     ViewportIndexProvokingVertexNV = 33375,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_ALPHA_TEST_QCOM")]
     AlphaTestQCOM = 3008,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_ALPHA_TEST_FUNC_QCOM")]
     AlphaTestFuncQCOM = 3009,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_ALPHA_TEST_REF_QCOM")]
     AlphaTestRefQCOM = 3010,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_BINNING_CONTROL_HINT_QCOM")]
     BinningControlHintQCOM = 36784,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_CPU_OPTIMIZED_QCOM")]
     CpuOptimizedQCOM = 36785,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_GPU_OPTIMIZED_QCOM")]
     GpuOptimizedQCOM = 36786,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_RENDER_DIRECT_TO_FRAMEBUFFER_QCOM")]
     RenderDirectToFramebufferQCOM = 36787,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_FOVEATION_ENABLE_BIT_QCOM")]
     FoveationEnableBitQCOM = 1,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM")]
     FoveationScaledBinMethodBitQCOM = 2,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_X_QCOM")]
     MotionEstimationSearchBlockXQCOM = 35984,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MOTION_ESTIMATION_SEARCH_BLOCK_Y_QCOM")]
     MotionEstimationSearchBlockYQCOM = 35985,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
     FramebufferFetchNoncoherentQCOM = 38562,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_SHADING_RATE_QCOM")]
     ShadingRateQCOM = 38564,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
     ShadingRatePreserveAspectRatioQCOM = 38565,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_SHADING_RATE_1X1_PIXELS_QCOM")]
     ShadingRate1X1PixelsQCOM = 38566,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_SHADING_RATE_1X2_PIXELS_QCOM")]
     ShadingRate1X2PixelsQCOM = 38567,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_SHADING_RATE_2X1_PIXELS_QCOM")]
     ShadingRate2X1PixelsQCOM = 38568,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_SHADING_RATE_2X2_PIXELS_QCOM")]
     ShadingRate2X2PixelsQCOM = 38569,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_SHADING_RATE_4X2_PIXELS_QCOM")]
     ShadingRate4X2PixelsQCOM = 38572,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_SHADING_RATE_4X4_PIXELS_QCOM")]
     ShadingRate4X4PixelsQCOM = 38574,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_FOVEATED_FEATURE_BITS_QCOM")]
     TextureFoveatedFeatureBitsQCOM = 35835,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_FOVEATED_MIN_PIXEL_DENSITY_QCOM")]
     TextureFoveatedMinPixelDensityQCOM = 35836,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_FOVEATED_FEATURE_QUERY_QCOM")]
     TextureFoveatedFeatureQueryQCOM = 35837,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_FOVEATED_NUM_FOCAL_POINTS_QUERY_QCOM")]
     TextureFoveatedNumFocalPointsQueryQCOM = 35838,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_FOVEATION_QCOM")]
     FramebufferIncompleteFoveationQCOM = 35839,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM")]
     TextureFoveatedCutoffDensityQCOM = 38560,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_FOVEATION_SUBSAMPLED_LAYOUT_METHOD_BIT_QCOM")]
     FoveationSubsampledLayoutMethodBitQCOM = 4,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_MAX_SHADER_SUBSAMPLED_IMAGE_UNITS_QCOM")]
     MaxShaderSubsampledImageUnitsQCOM = 36769,
 
-    [NameAffix("Suffix", "QCOM", 0)]
     [NativeName("GL_TEXTURE_LOD_BIAS_QCOM")]
     TextureLodBiasQCOM = 35990,
 
-    [NameAffix("Suffix", "VIV", 0)]
     [NativeName("GL_SHADER_BINARY_VIV")]
     ShaderBinaryVIV = 36804,
 }

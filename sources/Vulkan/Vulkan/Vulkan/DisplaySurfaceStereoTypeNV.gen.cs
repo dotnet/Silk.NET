@@ -18,7 +18,7 @@ public enum DisplaySurfaceStereoTypeNV : uint
         ["VK_NV_display_stereo"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
     )]
-    None = 0,
+    NoneNV = 0,
 
     [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_ONBOARD_DIN_NV")]
     [SupportedApiProfile(
@@ -26,7 +26,7 @@ public enum DisplaySurfaceStereoTypeNV : uint
         ["VK_NV_display_stereo"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
     )]
-    OnboardDin = 1,
+    OnboardDinNV = 1,
 
     [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_HDMI_3D_NV")]
     [SupportedApiProfile(
@@ -34,7 +34,7 @@ public enum DisplaySurfaceStereoTypeNV : uint
         ["VK_NV_display_stereo"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
     )]
-    Hdmi3D = 2,
+    Hdmi3DNV = 2,
 
     [NativeName("VK_DISPLAY_SURFACE_STEREO_TYPE_INBAND_DISPLAYPORT_NV")]
     [SupportedApiProfile(
@@ -42,5 +42,5 @@ public enum DisplaySurfaceStereoTypeNV : uint
         ["VK_NV_display_stereo"],
         ImpliesSets = ["VK_KHR_display", "VK_KHR_get_display_properties2"]
     )]
-    InbandDisplayport = 3,
+    InbandDisplayportNV = 3,
 }

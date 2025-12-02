@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ATI", -1)]
 [NativeName("FragmentShaderTextureSourceATI")]
 public enum FragmentShaderTextureSource : uint
 {
@@ -107,131 +106,99 @@ public enum FragmentShaderTextureSource : uint
     [NativeName("GL_TEXTURE31")]
     Texture31 = 34015,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_0_ATI")]
     Reg0ATI = 35105,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_1_ATI")]
     Reg1ATI = 35106,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_2_ATI")]
     Reg2ATI = 35107,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_3_ATI")]
     Reg3ATI = 35108,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_4_ATI")]
     Reg4ATI = 35109,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_5_ATI")]
     Reg5ATI = 35110,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_6_ATI")]
     Reg6ATI = 35111,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_7_ATI")]
     Reg7ATI = 35112,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_8_ATI")]
     Reg8ATI = 35113,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_9_ATI")]
     Reg9ATI = 35114,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_10_ATI")]
     Reg10ATI = 35115,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_11_ATI")]
     Reg11ATI = 35116,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_12_ATI")]
     Reg12ATI = 35117,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_13_ATI")]
     Reg13ATI = 35118,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_14_ATI")]
     Reg14ATI = 35119,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_15_ATI")]
     Reg15ATI = 35120,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_16_ATI")]
     Reg16ATI = 35121,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_17_ATI")]
     Reg17ATI = 35122,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_18_ATI")]
     Reg18ATI = 35123,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_19_ATI")]
     Reg19ATI = 35124,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_20_ATI")]
     Reg20ATI = 35125,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_21_ATI")]
     Reg21ATI = 35126,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_22_ATI")]
     Reg22ATI = 35127,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_23_ATI")]
     Reg23ATI = 35128,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_24_ATI")]
     Reg24ATI = 35129,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_25_ATI")]
     Reg25ATI = 35130,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_26_ATI")]
     Reg26ATI = 35131,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_27_ATI")]
     Reg27ATI = 35132,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_28_ATI")]
     Reg28ATI = 35133,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_29_ATI")]
     Reg29ATI = 35134,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_30_ATI")]
     Reg30ATI = 35135,
 
-    [NameAffix("Suffix", "ATI", 0)]
     [NativeName("GL_REG_31_ATI")]
     Reg31ATI = 35136,
 }

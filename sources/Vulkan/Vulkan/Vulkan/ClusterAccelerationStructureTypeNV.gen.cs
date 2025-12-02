@@ -18,7 +18,7 @@ public enum ClusterAccelerationStructureTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    ClustersBottomLevel = 0,
+    ClustersBottomLevelNV = 0,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_TYPE_TRIANGLE_CLUSTER_NV")]
     [SupportedApiProfile(
@@ -26,7 +26,7 @@ public enum ClusterAccelerationStructureTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    TriangleCluster = 1,
+    TriangleClusterNV = 1,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_TYPE_TRIANGLE_CLUSTER_TEMPLATE_NV")]
     [SupportedApiProfile(
@@ -34,5 +34,5 @@ public enum ClusterAccelerationStructureTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    TriangleClusterTemplate = 2,
+    TriangleClusterTemplateNV = 2,
 }

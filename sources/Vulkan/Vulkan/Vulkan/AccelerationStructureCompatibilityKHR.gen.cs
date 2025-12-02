@@ -21,7 +21,7 @@ public enum AccelerationStructureCompatibilityKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    Compatible = 0,
+    CompatibleKHR = 0,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_COMPATIBILITY_INCOMPATIBLE_KHR")]
     [SupportedApiProfile(
@@ -32,5 +32,5 @@ public enum AccelerationStructureCompatibilityKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    Incompatible = 1,
+    IncompatibleKHR = 1,
 }

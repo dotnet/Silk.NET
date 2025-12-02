@@ -20,7 +20,7 @@ public enum DefaultVertexAttributeValueKHR : uint
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    ZeroZeroZeroZero = 0,
+    ZeroZeroZeroZeroKHR = 0,
 
     [NativeName("VK_DEFAULT_VERTEX_ATTRIBUTE_VALUE_ZERO_ZERO_ZERO_ONE_KHR")]
     [SupportedApiProfile(
@@ -31,5 +31,5 @@ public enum DefaultVertexAttributeValueKHR : uint
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    ZeroZeroZeroOne = 1,
+    ZeroZeroZeroOneKHR = 1,
 }

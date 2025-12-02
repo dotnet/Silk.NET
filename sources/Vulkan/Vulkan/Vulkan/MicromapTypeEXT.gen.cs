@@ -21,5 +21,5 @@ public enum MicromapTypeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    OpacityMicromap = 0,
+    OpacityMicromapEXT = 0,
 }

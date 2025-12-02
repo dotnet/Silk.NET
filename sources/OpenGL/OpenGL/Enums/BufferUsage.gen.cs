@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", -1)]
 [NativeName("BufferUsageARB")]
 public enum BufferUsage : uint
 {

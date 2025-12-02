@@ -21,7 +21,7 @@ public enum AntiLagModeAMD : uint
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    DriverControl = 0,
+    DriverControlAMD = 0,
 
     [NativeName("VK_ANTI_LAG_MODE_ON_AMD")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum AntiLagModeAMD : uint
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    On = 1,
+    OnAMD = 1,
 
     [NativeName("VK_ANTI_LAG_MODE_OFF_AMD")]
     [SupportedApiProfile(
@@ -43,5 +43,5 @@ public enum AntiLagModeAMD : uint
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    Off = 2,
+    OffAMD = 2,
 }

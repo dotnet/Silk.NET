@@ -16,11 +16,9 @@ public enum LightModelColorControl : uint
     [NativeName("GL_SEPARATE_SPECULAR_COLOR")]
     SeparateSpecularColor = unchecked((uint)0x81FA),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SINGLE_COLOR_EXT")]
     SingleColorEXT = unchecked((uint)0x81F9),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_SEPARATE_SPECULAR_COLOR_EXT")]
     SeparateSpecularColorEXT = unchecked((uint)0x81FA),
 }

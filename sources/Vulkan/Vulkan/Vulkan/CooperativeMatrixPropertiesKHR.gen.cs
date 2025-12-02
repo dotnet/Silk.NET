@@ -76,7 +76,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public ComponentType AType;
+    public ComponentTypeKHR AType;
 
     [NativeName("BType")]
     [SupportedApiProfile(
@@ -87,7 +87,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public ComponentType BType;
+    public ComponentTypeKHR BType;
 
     [NativeName("CType")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public ComponentType CType;
+    public ComponentTypeKHR CType;
 
     [NativeName("ResultType")]
     [SupportedApiProfile(
@@ -109,7 +109,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public ComponentType ResultType;
+    public ComponentTypeKHR ResultType;
 
     [NativeName("saturatingAccumulation")]
     [SupportedApiProfile(
@@ -131,5 +131,5 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    public Scope Scope;
+    public ScopeKHR Scope;
 }

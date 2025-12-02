@@ -13,7 +13,6 @@ public enum SyncObjectMask : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "APPLE", 0)]
     [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
     FlushCommandsBitAPPLE = unchecked((uint)0x00000001),
 

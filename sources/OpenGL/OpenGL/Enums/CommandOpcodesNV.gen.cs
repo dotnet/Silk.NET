@@ -7,83 +7,63 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "NV", 0)]
 [NativeName("CommandOpcodesNV")]
 public enum CommandOpcodesNV : uint
 {
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_TERMINATE_SEQUENCE_COMMAND_NV")]
     TerminateSequenceCommand = unchecked((uint)0x0000),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_NOP_COMMAND_NV")]
     NopCommand = unchecked((uint)0x0001),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_DRAW_ELEMENTS_COMMAND_NV")]
     DrawElementsCommand = unchecked((uint)0x0002),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_DRAW_ARRAYS_COMMAND_NV")]
     DrawArraysCommand = unchecked((uint)0x0003),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_DRAW_ELEMENTS_STRIP_COMMAND_NV")]
     DrawElementsStripCommand = unchecked((uint)0x0004),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_DRAW_ARRAYS_STRIP_COMMAND_NV")]
     DrawArraysStripCommand = unchecked((uint)0x0005),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_DRAW_ELEMENTS_INSTANCED_COMMAND_NV")]
     DrawElementsInstancedCommand = unchecked((uint)0x0006),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_DRAW_ARRAYS_INSTANCED_COMMAND_NV")]
     DrawArraysInstancedCommand = unchecked((uint)0x0007),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_ELEMENT_ADDRESS_COMMAND_NV")]
     ElementAddressCommand = unchecked((uint)0x0008),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_ATTRIBUTE_ADDRESS_COMMAND_NV")]
     AttributeAddressCommand = unchecked((uint)0x0009),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_UNIFORM_ADDRESS_COMMAND_NV")]
     UniformAddressCommand = unchecked((uint)0x000A),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_BLEND_COLOR_COMMAND_NV")]
     BlendColorCommand = unchecked((uint)0x000B),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_STENCIL_REF_COMMAND_NV")]
     StencilRefCommand = unchecked((uint)0x000C),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_LINE_WIDTH_COMMAND_NV")]
     LineWidthCommand = unchecked((uint)0x000D),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_POLYGON_OFFSET_COMMAND_NV")]
     PolygonOffsetCommand = unchecked((uint)0x000E),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_ALPHA_REF_COMMAND_NV")]
     AlphaRefCommand = unchecked((uint)0x000F),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_VIEWPORT_COMMAND_NV")]
     ViewportCommand = unchecked((uint)0x0010),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_SCISSOR_COMMAND_NV")]
     ScissorCommand = unchecked((uint)0x0011),
 
-    [NameAffix("Suffix", "NV", -1)]
     [NativeName("GL_FRONT_FACE_COMMAND_NV")]
     FrontFaceCommand = unchecked((uint)0x0012),
 }

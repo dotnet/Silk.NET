@@ -18,7 +18,7 @@ public enum RayTracingLssIndexingModeNV : uint
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    List = 0,
+    ListNV = 0,
 
     [NativeName("VK_RAY_TRACING_LSS_INDEXING_MODE_SUCCESSIVE_NV")]
     [SupportedApiProfile(
@@ -26,5 +26,5 @@ public enum RayTracingLssIndexingModeNV : uint
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    Successive = 1,
+    SuccessiveNV = 1,
 }

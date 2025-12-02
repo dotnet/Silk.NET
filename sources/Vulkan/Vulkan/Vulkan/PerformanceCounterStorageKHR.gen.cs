@@ -21,7 +21,7 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Int32 = 0,
+    Int32KHR = 0,
 
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_INT64_KHR")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Int64 = 1,
+    Int64KHR = 1,
 
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_UINT32_KHR")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Uint32 = 2,
+    Uint32KHR = 2,
 
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_UINT64_KHR")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Uint64 = 3,
+    Uint64KHR = 3,
 
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_FLOAT32_KHR")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Float32 = 4,
+    Float32KHR = 4,
 
     [NativeName("VK_PERFORMANCE_COUNTER_STORAGE_FLOAT64_KHR")]
     [SupportedApiProfile(
@@ -76,5 +76,5 @@ public enum PerformanceCounterStorageKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Float64 = 5,
+    Float64KHR = 5,
 }

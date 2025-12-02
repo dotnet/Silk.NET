@@ -19,7 +19,6 @@ public enum FogMode : uint
     [NativeName("GL_LINEAR")]
     Linear = unchecked((uint)0x2601),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_FOG_FUNC_SGIS")]
     FogFuncSGIS = unchecked((uint)0x812A),
 }

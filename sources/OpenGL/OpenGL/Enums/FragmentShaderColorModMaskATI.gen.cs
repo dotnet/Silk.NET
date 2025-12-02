@@ -7,26 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ATI", 0)]
 [NativeName("FragmentShaderColorModMaskATI")]
 [Flags]
 public enum FragmentShaderColorModMaskATI : uint
 {
     None = 0x0,
 
-    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_2X_BIT_ATI")]
     X2XBit = unchecked((uint)0x00000001),
 
-    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_COMP_BIT_ATI")]
     CompBit = unchecked((uint)0x00000002),
 
-    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_NEGATE_BIT_ATI")]
     NegateBit = unchecked((uint)0x00000004),
 
-    [NameAffix("Suffix", "ATI", -1)]
     [NativeName("GL_BIAS_BIT_ATI")]
     BiasBit = unchecked((uint)0x00000008),
 }

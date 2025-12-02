@@ -19,19 +19,15 @@ public enum TextureGenMode : uint
     [NativeName("GL_SPHERE_MAP")]
     SphereMap = unchecked((uint)0x2402),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_EYE_DISTANCE_TO_POINT_SGIS")]
     EyeDistanceToPointSGIS = unchecked((uint)0x81F0),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_OBJECT_DISTANCE_TO_POINT_SGIS")]
     ObjectDistanceToPointSGIS = unchecked((uint)0x81F1),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_EYE_DISTANCE_TO_LINE_SGIS")]
     EyeDistanceToLineSGIS = unchecked((uint)0x81F2),
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_OBJECT_DISTANCE_TO_LINE_SGIS")]
     ObjectDistanceToLineSGIS = unchecked((uint)0x81F3),
 }

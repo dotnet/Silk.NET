@@ -34,7 +34,7 @@ public unsafe partial struct PhysicalDeviceMemoryDecompressionPropertiesEXT
         ["VK_EXT_memory_decompression"],
         ImpliesSets = ["VK_KHR_buffer_device_address", "VK_KHR_get_physical_device_properties2"]
     )]
-    public MemoryDecompressionMethodFlags DecompressionMethods;
+    public MemoryDecompressionMethodFlagsEXT DecompressionMethods;
 
     [NativeName("maxDecompressionIndirectCount")]
     [SupportedApiProfile(

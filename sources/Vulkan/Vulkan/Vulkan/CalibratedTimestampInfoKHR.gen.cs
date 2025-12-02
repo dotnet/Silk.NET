@@ -43,5 +43,5 @@ public unsafe partial struct CalibratedTimestampInfoKHR
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    public TimeDomain TimeDomain;
+    public TimeDomainKHR TimeDomain;
 }

@@ -18,7 +18,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    MoveObjects = 0,
+    MoveObjectsNV = 0,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_BUILD_CLUSTERS_BOTTOM_LEVEL_NV")]
     [SupportedApiProfile(
@@ -26,7 +26,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    BuildClustersBottomLevel = 1,
+    BuildClustersBottomLevelNV = 1,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_BUILD_TRIANGLE_CLUSTER_NV")]
     [SupportedApiProfile(
@@ -34,7 +34,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    BuildTriangleCluster = 2,
+    BuildTriangleClusterNV = 2,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_BUILD_TRIANGLE_CLUSTER_TEMPLATE_NV")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    BuildTriangleClusterTemplate = 3,
+    BuildTriangleClusterTemplateNV = 3,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_INSTANTIATE_TRIANGLE_CLUSTER_NV")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    InstantiateTriangleCluster = 4,
+    InstantiateTriangleClusterNV = 4,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_OP_TYPE_GET_CLUSTER_TEMPLATE_INDICES_NV")]
     [SupportedApiProfile(
@@ -58,5 +58,5 @@ public enum ClusterAccelerationStructureOpTypeNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    GetClusterTemplateIndices = 5,
+    GetClusterTemplateIndicesNV = 5,
 }

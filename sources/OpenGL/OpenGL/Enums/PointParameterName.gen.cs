@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", -1)]
 [NativeName("PointParameterNameARB")]
 public enum PointParameterName : uint
 {
@@ -23,51 +22,39 @@ public enum PointParameterName : uint
     [NativeName("GL_POINT_DISTANCE_ATTENUATION")]
     PointDistanceAttenuation = 33065,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_POINT_SIZE_MIN_ARB")]
     PointSizeMinARB = 33062,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_POINT_SIZE_MAX_ARB")]
     PointSizeMaxARB = 33063,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_POINT_FADE_THRESHOLD_SIZE_ARB")]
     PointFadeThresholdSizeARB = 33064,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_POINT_DISTANCE_ATTENUATION_ARB")]
     PointDistanceAttenuationARB = 33065,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POINT_SIZE_MIN_EXT")]
     PointSizeMinEXT = 33062,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POINT_SIZE_MAX_EXT")]
     PointSizeMaxEXT = 33063,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_POINT_FADE_THRESHOLD_SIZE_EXT")]
     PointFadeThresholdSizeEXT = 33064,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_DISTANCE_ATTENUATION_EXT")]
     DistanceAttenuationEXT = 33065,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_POINT_SIZE_MIN_SGIS")]
     PointSizeMinSGIS = 33062,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_POINT_SIZE_MAX_SGIS")]
     PointSizeMaxSGIS = 33063,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_POINT_FADE_THRESHOLD_SIZE_SGIS")]
     PointFadeThresholdSizeSGIS = 33064,
 
-    [NameAffix("Suffix", "SGIS", 0)]
     [NativeName("GL_DISTANCE_ATTENUATION_SGIS")]
     DistanceAttenuationSGIS = 33065,
 }

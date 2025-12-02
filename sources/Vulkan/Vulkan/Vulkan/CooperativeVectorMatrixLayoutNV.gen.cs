@@ -21,7 +21,7 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    RowMajor = 0,
+    RowMajorNV = 0,
 
     [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_COLUMN_MAJOR_NV")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    ColumnMajor = 1,
+    ColumnMajorNV = 1,
 
     [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_INFERENCING_OPTIMAL_NV")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    InferencingOptimal = 2,
+    InferencingOptimalNV = 2,
 
     [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_TRAINING_OPTIMAL_NV")]
     [SupportedApiProfile(
@@ -54,5 +54,5 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    TrainingOptimal = 3,
+    TrainingOptimalNV = 3,
 }

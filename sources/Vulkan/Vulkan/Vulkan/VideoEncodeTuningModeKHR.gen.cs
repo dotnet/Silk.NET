@@ -21,7 +21,7 @@ public enum VideoEncodeTuningModeKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    Default = 0,
+    DefaultKHR = 0,
 
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_HIGH_QUALITY_KHR")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum VideoEncodeTuningModeKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    HighQuality = 1,
+    HighQualityKHR = 1,
 
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_LOW_LATENCY_KHR")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public enum VideoEncodeTuningModeKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    LowLatency = 2,
+    LowLatencyKHR = 2,
 
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_ULTRA_LOW_LATENCY_KHR")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public enum VideoEncodeTuningModeKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    UltraLowLatency = 3,
+    UltraLowLatencyKHR = 3,
 
     [NativeName("VK_VIDEO_ENCODE_TUNING_MODE_LOSSLESS_KHR")]
     [SupportedApiProfile(
@@ -65,5 +65,5 @@ public enum VideoEncodeTuningModeKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    Lossless = 4,
+    LosslessKHR = 4,
 }

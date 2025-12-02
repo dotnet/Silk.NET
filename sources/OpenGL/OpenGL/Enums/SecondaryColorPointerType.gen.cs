@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "IBM", -1)]
 [NativeName("SecondaryColorPointerTypeIBM")]
 public enum SecondaryColorPointerType : uint
 {

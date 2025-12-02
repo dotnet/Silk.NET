@@ -7,18 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "NV", -1)]
 [NativeName("GetMultisamplePNameNV")]
 public enum GetMultisamplePName : uint
 {
     [NativeName("GL_SAMPLE_POSITION")]
     SamplePosition = 36432,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_SAMPLE_LOCATION_ARB")]
     SampleLocationARB = 36432,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_PROGRAMMABLE_SAMPLE_LOCATION_ARB")]
     ProgrammableSampleLocationARB = 37697,
 }

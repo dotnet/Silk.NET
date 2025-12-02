@@ -14,9 +14,9 @@ public enum PerformanceOverrideTypeINTEL : uint
 {
     [NativeName("VK_PERFORMANCE_OVERRIDE_TYPE_NULL_HARDWARE_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    NullHardware = 0,
+    NullHardwareINTEL = 0,
 
     [NativeName("VK_PERFORMANCE_OVERRIDE_TYPE_FLUSH_GPU_CACHES_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    FlushGpuCaches = 1,
+    FlushGpuCachesINTEL = 1,
 }

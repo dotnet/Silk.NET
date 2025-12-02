@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", -1)]
 [NativeName("BufferPNameARB")]
 public enum BufferPName : uint
 {
@@ -38,19 +37,15 @@ public enum BufferPName : uint
     [NativeName("GL_BUFFER_STORAGE_FLAGS")]
     StorageFlags = 33312,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BUFFER_SIZE_ARB")]
     SizeARB = 34660,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BUFFER_USAGE_ARB")]
     UsageARB = 34661,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BUFFER_ACCESS_ARB")]
     AccessARB = 35003,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_BUFFER_MAPPED_ARB")]
     MappedARB = 35004,
 }

@@ -18,7 +18,7 @@ public enum PartitionedAccelerationStructureOpTypeNV : uint
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    WriteInstance = 0,
+    WriteInstanceNV = 0,
 
     [NativeName("VK_PARTITIONED_ACCELERATION_STRUCTURE_OP_TYPE_UPDATE_INSTANCE_NV")]
     [SupportedApiProfile(
@@ -26,7 +26,7 @@ public enum PartitionedAccelerationStructureOpTypeNV : uint
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    UpdateInstance = 1,
+    UpdateInstanceNV = 1,
 
     [NativeName("VK_PARTITIONED_ACCELERATION_STRUCTURE_OP_TYPE_WRITE_PARTITION_TRANSLATION_NV")]
     [SupportedApiProfile(
@@ -34,5 +34,5 @@ public enum PartitionedAccelerationStructureOpTypeNV : uint
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    WritePartitionTranslation = 2,
+    WritePartitionTranslationNV = 2,
 }

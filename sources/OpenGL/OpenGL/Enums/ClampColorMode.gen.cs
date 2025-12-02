@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ARB", -1)]
 [NativeName("ClampColorModeARB")]
 public enum ClampColorMode : uint
 {
@@ -20,7 +19,6 @@ public enum ClampColorMode : uint
     [NativeName("GL_FIXED_ONLY")]
     FixedOnly = 35101,
 
-    [NameAffix("Suffix", "ARB", 0)]
     [NativeName("GL_FIXED_ONLY_ARB")]
     FixedOnlyARB = 35101,
 }

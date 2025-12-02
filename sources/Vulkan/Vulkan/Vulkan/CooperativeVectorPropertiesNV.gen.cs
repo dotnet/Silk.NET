@@ -43,7 +43,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public ComponentType InputType;
+    public ComponentTypeKHR InputType;
 
     [NativeName("inputInterpretation")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public ComponentType InputInterpretation;
+    public ComponentTypeKHR InputInterpretation;
 
     [NativeName("matrixInterpretation")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public ComponentType MatrixInterpretation;
+    public ComponentTypeKHR MatrixInterpretation;
 
     [NativeName("biasInterpretation")]
     [SupportedApiProfile(
@@ -76,7 +76,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public ComponentType BiasInterpretation;
+    public ComponentTypeKHR BiasInterpretation;
 
     [NativeName("resultType")]
     [SupportedApiProfile(
@@ -87,7 +87,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    public ComponentType ResultType;
+    public ComponentTypeKHR ResultType;
 
     [NativeName("transpose")]
     [SupportedApiProfile(

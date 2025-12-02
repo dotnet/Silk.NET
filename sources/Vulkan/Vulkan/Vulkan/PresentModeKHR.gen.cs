@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkPresentModeKHR")]
 [SupportedApiProfile("vulkan")]
-public enum PresentMode : uint
+public enum PresentModeKHR : uint
 {
     [NativeName("VK_PRESENT_MODE_IMMEDIATE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]

@@ -52,5 +52,5 @@ public unsafe partial struct SurfacePresentModeCompatibilityKHR
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    public PresentMode* PPresentModes;
+    public PresentModeKHR* PPresentModes;
 }

@@ -8,11 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAccelerationStructureTypeKHR")]
+[NativeName("VkGeometryTypeKHR")]
 [SupportedApiProfile("vulkan")]
-public enum AccelerationStructureType : uint
+public enum GeometryTypeKHR : uint
 {
-    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_KHR")]
+    [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -21,9 +21,9 @@ public enum AccelerationStructureType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TopLevelKHR = 0,
+    TrianglesKHR = 0,
 
-    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_KHR")]
+    [NativeName("VK_GEOMETRY_TYPE_AABBS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -32,9 +32,9 @@ public enum AccelerationStructureType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    BottomLevelKHR = 1,
+    AabbsKHR = 1,
 
-    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_GENERIC_KHR")]
+    [NativeName("VK_GEOMETRY_TYPE_INSTANCES_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -43,9 +43,25 @@ public enum AccelerationStructureType : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    GenericKHR = 2,
+    InstancesKHR = 2,
 
-    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV")]
+    [NativeName("VK_GEOMETRY_TYPE_SPHERES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_linear_swept_spheres"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
+    SpheresNV = 1000429004,
+
+    [NativeName("VK_GEOMETRY_TYPE_LINEAR_SWEPT_SPHERES_NV")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_ray_tracing_linear_swept_spheres"],
+        ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
+    )]
+    LinearSweptSpheresNV = 1000429005,
+
+    [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -54,9 +70,9 @@ public enum AccelerationStructureType : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TopLevelNV = TopLevelKHR,
+    TrianglesNV = TrianglesKHR,
 
-    [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV")]
+    [NativeName("VK_GEOMETRY_TYPE_AABBS_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -65,5 +81,5 @@ public enum AccelerationStructureType : uint
             "VK_VERSION_1_1",
         ]
     )]
-    BottomLevelNV = BottomLevelKHR,
+    AabbsNV = AabbsKHR,
 }

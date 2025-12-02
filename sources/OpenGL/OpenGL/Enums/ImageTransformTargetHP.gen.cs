@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "HP", 0)]
 [NativeName("ImageTransformTargetHP")]
 public enum ImageTransformTargetHP : uint
 {
-    [NameAffix("Suffix", "HP", -1)]
     [NativeName("GL_IMAGE_TRANSFORM_2D_HP")]
     ImageTransform2D = unchecked((uint)0x8161),
 }

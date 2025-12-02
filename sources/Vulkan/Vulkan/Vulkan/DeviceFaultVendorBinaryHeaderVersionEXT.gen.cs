@@ -20,5 +20,5 @@ public enum DeviceFaultVendorBinaryHeaderVersionEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    One = 1,
+    OneEXT = 1,
 }

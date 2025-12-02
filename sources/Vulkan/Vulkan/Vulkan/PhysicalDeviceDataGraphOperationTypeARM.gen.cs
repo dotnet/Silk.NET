@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceDataGraphOperationTypeARM")]
 [SupportedApiProfile("vulkan")]
-public enum PhysicalDeviceDataGraphOperationType : uint
+public enum PhysicalDeviceDataGraphOperationTypeARM : uint
 {
     [NativeName("VK_PHYSICAL_DEVICE_DATA_GRAPH_OPERATION_TYPE_SPIRV_EXTENDED_INSTRUCTION_SET_ARM")]
     [SupportedApiProfile(

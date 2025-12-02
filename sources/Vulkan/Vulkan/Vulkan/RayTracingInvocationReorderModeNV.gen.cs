@@ -18,7 +18,7 @@ public enum RayTracingInvocationReorderModeNV : uint
         ["VK_NV_ray_tracing_invocation_reorder"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    None = 0,
+    NoneNV = 0,
 
     [NativeName("VK_RAY_TRACING_INVOCATION_REORDER_MODE_REORDER_NV")]
     [SupportedApiProfile(
@@ -26,5 +26,5 @@ public enum RayTracingInvocationReorderModeNV : uint
         ["VK_NV_ray_tracing_invocation_reorder"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    Reorder = 1,
+    ReorderNV = 1,
 }

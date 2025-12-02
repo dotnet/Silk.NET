@@ -13,7 +13,6 @@ public enum QueryCounterTarget : uint
     [NativeName("GL_TIMESTAMP")]
     Timestamp = unchecked((uint)0x8E28),
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_TIMESTAMP_EXT")]
     TimestampEXT = unchecked((uint)0x8E28),
 }

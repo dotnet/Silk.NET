@@ -14,13 +14,13 @@ public enum ShaderInfoTypeAMD : uint
 {
     [NativeName("VK_SHADER_INFO_TYPE_STATISTICS_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    Statistics = 0,
+    StatisticsAMD = 0,
 
     [NativeName("VK_SHADER_INFO_TYPE_BINARY_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    Binary = 1,
+    BinaryAMD = 1,
 
     [NativeName("VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    Disassembly = 2,
+    DisassemblyAMD = 2,
 }

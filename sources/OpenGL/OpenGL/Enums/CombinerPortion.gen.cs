@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "NV", -1)]
 [NativeName("CombinerPortionNV")]
 public enum CombinerPortion : uint
 {

@@ -2505,7 +2505,7 @@ public unsafe partial interface IVk
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
             [NativeName("dst")] AccelerationStructureHandleNV dst,
             [NativeName("src")] AccelerationStructureHandleNV src,
-            [NativeName("mode")] CopyAccelerationStructureMode mode
+            [NativeName("mode")] CopyAccelerationStructureModeKHR mode
         );
 
         [NativeName("vkCmdCopyAccelerationStructureToMemoryKHR")]
@@ -3729,7 +3729,8 @@ public unsafe partial interface IVk
         [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountEXT")]
         static abstract void CmdDecompressMemoryIndirectCountEXT(
             [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-            [NativeName("decompressionMethod")] MemoryDecompressionMethodFlags decompressionMethod,
+            [NativeName("decompressionMethod")]
+                MemoryDecompressionMethodFlagsEXT decompressionMethod,
             [NativeName("indirectCommandsAddress")] ulong indirectCommandsAddress,
             [NativeName("indirectCommandsCountAddress")] ulong indirectCommandsCountAddress,
             [NativeName("maxDecompressionCount")] uint maxDecompressionCount,
@@ -19240,7 +19241,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCalibrateableTimeDomainsEXT(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pTimeDomainCount")] uint* pTimeDomainCount,
-            [NativeName("pTimeDomains")] TimeDomain* pTimeDomains
+            [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
         );
 
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
@@ -19256,7 +19257,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCalibrateableTimeDomainsEXT(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pTimeDomainCount")] Ref<uint> pTimeDomainCount,
-            [NativeName("pTimeDomains")] Ref<TimeDomain> pTimeDomains
+            [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
         );
 
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
@@ -19272,7 +19273,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCalibrateableTimeDomainsKHR(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pTimeDomainCount")] uint* pTimeDomainCount,
-            [NativeName("pTimeDomains")] TimeDomain* pTimeDomains
+            [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
         );
 
         [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
@@ -19288,7 +19289,7 @@ public unsafe partial interface IVk
         static abstract Result GetPhysicalDeviceCalibrateableTimeDomainsKHR(
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("pTimeDomainCount")] Ref<uint> pTimeDomainCount,
-            [NativeName("pTimeDomains")] Ref<TimeDomain> pTimeDomains
+            [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
         );
 
         [NativeName("vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV")]
@@ -21332,7 +21333,7 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pPresentModeCount")] uint* pPresentModeCount,
-            [NativeName("pPresentModes")] PresentMode* pPresentModes
+            [NativeName("pPresentModes")] PresentModeKHR* pPresentModes
         );
 
         [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -21342,7 +21343,7 @@ public unsafe partial interface IVk
             [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
             [NativeName("surface")] SurfaceHandleKHR surface,
             [NativeName("pPresentModeCount")] Ref<uint> pPresentModeCount,
-            [NativeName("pPresentModes")] Ref<PresentMode> pPresentModes
+            [NativeName("pPresentModes")] Ref<PresentModeKHR> pPresentModes
         );
 
         [NativeName("vkGetPhysicalDeviceSurfaceSupportKHR")]
@@ -27507,7 +27508,7 @@ public unsafe partial interface IVk
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
         [NativeName("dst")] AccelerationStructureHandleNV dst,
         [NativeName("src")] AccelerationStructureHandleNV src,
-        [NativeName("mode")] CopyAccelerationStructureMode mode
+        [NativeName("mode")] CopyAccelerationStructureModeKHR mode
     );
 
     [NativeName("vkCmdCopyAccelerationStructureToMemoryKHR")]
@@ -28703,7 +28704,7 @@ public unsafe partial interface IVk
     [NativeFunction("vulkan", EntryPoint = "vkCmdDecompressMemoryIndirectCountEXT")]
     void CmdDecompressMemoryIndirectCountEXT(
         [NativeName("commandBuffer")] CommandBufferHandle commandBuffer,
-        [NativeName("decompressionMethod")] MemoryDecompressionMethodFlags decompressionMethod,
+        [NativeName("decompressionMethod")] MemoryDecompressionMethodFlagsEXT decompressionMethod,
         [NativeName("indirectCommandsAddress")] ulong indirectCommandsAddress,
         [NativeName("indirectCommandsCountAddress")] ulong indirectCommandsCountAddress,
         [NativeName("maxDecompressionCount")] uint maxDecompressionCount,
@@ -43922,7 +43923,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCalibrateableTimeDomainsEXT(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pTimeDomainCount")] uint* pTimeDomainCount,
-        [NativeName("pTimeDomains")] TimeDomain* pTimeDomains
+        [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
     );
 
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
@@ -43938,7 +43939,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCalibrateableTimeDomainsEXT(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pTimeDomainCount")] Ref<uint> pTimeDomainCount,
-        [NativeName("pTimeDomains")] Ref<TimeDomain> pTimeDomains
+        [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
     );
 
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
@@ -43954,7 +43955,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCalibrateableTimeDomainsKHR(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pTimeDomainCount")] uint* pTimeDomainCount,
-        [NativeName("pTimeDomains")] TimeDomain* pTimeDomains
+        [NativeName("pTimeDomains")] TimeDomainKHR* pTimeDomains
     );
 
     [NativeName("vkGetPhysicalDeviceCalibrateableTimeDomainsKHR")]
@@ -43970,7 +43971,7 @@ public unsafe partial interface IVk
     Result GetPhysicalDeviceCalibrateableTimeDomainsKHR(
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("pTimeDomainCount")] Ref<uint> pTimeDomainCount,
-        [NativeName("pTimeDomains")] Ref<TimeDomain> pTimeDomains
+        [NativeName("pTimeDomains")] Ref<TimeDomainKHR> pTimeDomains
     );
 
     [NativeName("vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV")]
@@ -45967,7 +45968,7 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pPresentModeCount")] uint* pPresentModeCount,
-        [NativeName("pPresentModes")] PresentMode* pPresentModes
+        [NativeName("pPresentModes")] PresentModeKHR* pPresentModes
     );
 
     [NativeName("vkGetPhysicalDeviceSurfacePresentModesKHR")]
@@ -45977,7 +45978,7 @@ public unsafe partial interface IVk
         [NativeName("physicalDevice")] PhysicalDeviceHandle physicalDevice,
         [NativeName("surface")] SurfaceHandleKHR surface,
         [NativeName("pPresentModeCount")] Ref<uint> pPresentModeCount,
-        [NativeName("pPresentModes")] Ref<PresentMode> pPresentModes
+        [NativeName("pPresentModes")] Ref<PresentModeKHR> pPresentModes
     );
 
     [NativeName("vkGetPhysicalDeviceSurfaceSupportKHR")]

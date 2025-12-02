@@ -21,7 +21,7 @@ public enum ConservativeRasterizationModeEXT : uint
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    Disabled = 0,
+    DisabledEXT = 0,
 
     [NativeName("VK_CONSERVATIVE_RASTERIZATION_MODE_OVERESTIMATE_EXT")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum ConservativeRasterizationModeEXT : uint
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    Overestimate = 1,
+    OverestimateEXT = 1,
 
     [NativeName("VK_CONSERVATIVE_RASTERIZATION_MODE_UNDERESTIMATE_EXT")]
     [SupportedApiProfile(
@@ -43,5 +43,5 @@ public enum ConservativeRasterizationModeEXT : uint
             "VK_EXT_conservative_rasterization+VK_VERSION_1_1",
         ]
     )]
-    Underestimate = 2,
+    UnderestimateEXT = 2,
 }

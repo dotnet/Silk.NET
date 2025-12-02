@@ -13,5 +13,5 @@ namespace Silk.NET.Vulkan;
 public enum AccessFlags3KHR : ulong
 {
     [NativeName("VK_ACCESS_3_NONE_KHR")]
-    Access3None = 0x0,
+    Access3NoneKHR = 0x0,
 }

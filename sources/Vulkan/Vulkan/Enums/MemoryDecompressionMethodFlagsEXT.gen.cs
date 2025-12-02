@@ -10,7 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkMemoryDecompressionMethodFlagsEXT")]
 [Flags]
-public enum MemoryDecompressionMethodFlags : ulong
+public enum MemoryDecompressionMethodFlagsEXT : ulong
 {
     None = 0x0,
 

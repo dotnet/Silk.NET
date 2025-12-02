@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkRayTracingShaderGroupTypeKHR")]
 [SupportedApiProfile("vulkan")]
-public enum RayTracingShaderGroupType : uint
+public enum RayTracingShaderGroupTypeKHR : uint
 {
     [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_KHR")]
     [SupportedApiProfile(

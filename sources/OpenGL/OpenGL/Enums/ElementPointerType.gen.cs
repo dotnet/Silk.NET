@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "ATI", -1)]
 [NativeName("ElementPointerTypeATI")]
 public enum ElementPointerType : uint
 {

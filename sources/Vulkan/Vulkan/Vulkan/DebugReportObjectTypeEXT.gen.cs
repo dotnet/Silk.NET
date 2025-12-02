@@ -14,139 +14,139 @@ public enum DebugReportObjectTypeEXT : uint
 {
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_UNKNOWN_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Unknown = 0,
+    UnknownEXT = 0,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_INSTANCE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Instance = 1,
+    InstanceEXT = 1,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_PHYSICAL_DEVICE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    PhysicalDevice = 2,
+    PhysicalDeviceEXT = 2,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DEVICE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Device = 3,
+    DeviceEXT = 3,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_QUEUE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Queue = 4,
+    QueueEXT = 4,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SEMAPHORE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Semaphore = 5,
+    SemaphoreEXT = 5,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_COMMAND_BUFFER_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    CommandBuffer = 6,
+    CommandBufferEXT = 6,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_FENCE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Fence = 7,
+    FenceEXT = 7,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DEVICE_MEMORY_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DeviceMemory = 8,
+    DeviceMemoryEXT = 8,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_BUFFER_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Buffer = 9,
+    BufferEXT = 9,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_IMAGE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Image = 10,
+    ImageEXT = 10,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_EVENT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Event = 11,
+    EventEXT = 11,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_QUERY_POOL_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    QueryPool = 12,
+    QueryPoolEXT = 12,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_BUFFER_VIEW_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    BufferView = 13,
+    BufferViewEXT = 13,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_IMAGE_VIEW_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    ImageView = 14,
+    ImageViewEXT = 14,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SHADER_MODULE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    ShaderModule = 15,
+    ShaderModuleEXT = 15,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_PIPELINE_CACHE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    PipelineCache = 16,
+    PipelineCacheEXT = 16,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_PIPELINE_LAYOUT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    PipelineLayout = 17,
+    PipelineLayoutEXT = 17,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_RENDER_PASS_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    RenderPass = 18,
+    RenderPassEXT = 18,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_PIPELINE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Pipeline = 19,
+    PipelineEXT = 19,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_SET_LAYOUT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DescriptorSetLayout = 20,
+    DescriptorSetLayoutEXT = 20,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SAMPLER_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Sampler = 21,
+    SamplerEXT = 21,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_POOL_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DescriptorPool = 22,
+    DescriptorPoolEXT = 22,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_SET_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DescriptorSet = 23,
+    DescriptorSetEXT = 23,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_FRAMEBUFFER_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    Framebuffer = 24,
+    FramebufferEXT = 24,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_COMMAND_POOL_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    CommandPool = 25,
+    CommandPoolEXT = 25,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SURFACE_KHR_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    SurfaceKhr = 26,
+    SurfaceKhrEXT = 26,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SWAPCHAIN_KHR_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    SwapchainKhr = 27,
+    SwapchainKhrEXT = 27,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DEBUG_REPORT_CALLBACK_EXT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DebugReportCallbackExt = 28,
+    DebugReportCallbackExtEXT = 28,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DISPLAY_KHR_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DisplayKhr = 29,
+    DisplayKhrEXT = 29,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DISPLAY_MODE_KHR_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DisplayModeKhr = 30,
+    DisplayModeKhrEXT = 30,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_VALIDATION_CACHE_EXT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    ValidationCacheExt = 33,
+    ValidationCacheExtEXT = 33,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report", "VK_VERSION_1_1"], RequireAll = true)]
-    SamplerYcbcrConversion = 1000156000,
+    SamplerYcbcrConversionEXT = 1000156000,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report", "VK_VERSION_1_1"], RequireAll = true)]
-    DescriptorUpdateTemplate = 1000085000,
+    DescriptorUpdateTemplateEXT = 1000085000,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_CU_MODULE_NVX_EXT")]
     [SupportedApiProfile(
@@ -154,7 +154,7 @@ public enum DebugReportObjectTypeEXT : uint
         ["VK_EXT_debug_report", "VK_NVX_binary_import"],
         RequireAll = true
     )]
-    CuModuleNvx = 1000029000,
+    CuModuleNvxEXT = 1000029000,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_CU_FUNCTION_NVX_EXT")]
     [SupportedApiProfile(
@@ -162,7 +162,7 @@ public enum DebugReportObjectTypeEXT : uint
         ["VK_EXT_debug_report", "VK_NVX_binary_import"],
         RequireAll = true
     )]
-    CuFunctionNvx = 1000029001,
+    CuFunctionNvxEXT = 1000029001,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_ACCELERATION_STRUCTURE_KHR_EXT")]
     [SupportedApiProfile(
@@ -174,7 +174,7 @@ public enum DebugReportObjectTypeEXT : uint
         ],
         RequireAll = true
     )]
-    AccelerationStructureKhr = 1000150000,
+    AccelerationStructureKhrEXT = 1000150000,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_ACCELERATION_STRUCTURE_NV_EXT")]
     [SupportedApiProfile(
@@ -186,7 +186,7 @@ public enum DebugReportObjectTypeEXT : uint
         ],
         RequireAll = true
     )]
-    AccelerationStructureNv = 1000165000,
+    AccelerationStructureNvEXT = 1000165000,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_CUDA_MODULE_NV_EXT")]
     [SupportedApiProfile(
@@ -198,7 +198,7 @@ public enum DebugReportObjectTypeEXT : uint
         ],
         RequireAll = true
     )]
-    CudaModuleNv = 1000307000,
+    CudaModuleNvEXT = 1000307000,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_CUDA_FUNCTION_NV_EXT")]
     [SupportedApiProfile(
@@ -210,7 +210,7 @@ public enum DebugReportObjectTypeEXT : uint
         ],
         RequireAll = true
     )]
-    CudaFunctionNv = 1000307001,
+    CudaFunctionNvEXT = 1000307001,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_BUFFER_COLLECTION_FUCHSIA_EXT")]
     [SupportedApiProfile(
@@ -222,7 +222,7 @@ public enum DebugReportObjectTypeEXT : uint
         ],
         RequireAll = true
     )]
-    BufferCollectionFuchsia = 1000366000,
+    BufferCollectionFuchsiaEXT = 1000366000,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR_EXT")]
     [SupportedApiProfile(
@@ -230,7 +230,7 @@ public enum DebugReportObjectTypeEXT : uint
         ["VK_EXT_debug_report", "VK_KHR_descriptor_update_template"],
         RequireAll = true
     )]
-    DescriptorUpdateTemplateKhr = DescriptorUpdateTemplate,
+    DescriptorUpdateTemplateKhrEXT = DescriptorUpdateTemplateEXT,
 
     [NativeName("VK_DEBUG_REPORT_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_KHR_EXT")]
     [SupportedApiProfile(
@@ -242,5 +242,5 @@ public enum DebugReportObjectTypeEXT : uint
         ],
         RequireAll = true
     )]
-    SamplerYcbcrConversionKhr = SamplerYcbcrConversion,
+    SamplerYcbcrConversionKhrEXT = SamplerYcbcrConversionEXT,
 }

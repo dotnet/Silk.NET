@@ -20,7 +20,7 @@ public enum AntiLagStageAMD : uint
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    Input = 0,
+    InputAMD = 0,
 
     [NativeName("VK_ANTI_LAG_STAGE_PRESENT_AMD")]
     [SupportedApiProfile(
@@ -31,5 +31,5 @@ public enum AntiLagStageAMD : uint
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    Present = 1,
+    PresentAMD = 1,
 }

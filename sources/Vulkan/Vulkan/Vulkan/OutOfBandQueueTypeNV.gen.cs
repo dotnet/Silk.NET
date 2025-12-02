@@ -23,7 +23,7 @@ public enum OutOfBandQueueTypeNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    Render = 0,
+    RenderNV = 0,
 
     [NativeName("VK_OUT_OF_BAND_QUEUE_TYPE_PRESENT_NV")]
     [SupportedApiProfile(
@@ -36,5 +36,5 @@ public enum OutOfBandQueueTypeNV : uint
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    Present = 1,
+    PresentNV = 1,
 }

@@ -62,5 +62,5 @@ public unsafe partial struct LatencySurfaceCapabilitiesNV
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    public PresentMode* PPresentModes;
+    public PresentModeKHR* PPresentModes;
 }

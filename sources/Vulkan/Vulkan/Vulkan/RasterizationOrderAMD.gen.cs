@@ -14,9 +14,9 @@ public enum RasterizationOrderAMD : uint
 {
     [NativeName("VK_RASTERIZATION_ORDER_STRICT_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
-    Strict = 0,
+    StrictAMD = 0,
 
     [NativeName("VK_RASTERIZATION_ORDER_RELAXED_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
-    Relaxed = 1,
+    RelaxedAMD = 1,
 }

@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", -1)]
 [NativeName("GetMinmaxParameterPNameEXT")]
 public enum GetMinmaxParameterPName : uint
 {
@@ -17,11 +16,9 @@ public enum GetMinmaxParameterPName : uint
     [NativeName("GL_MINMAX_SINK")]
     Sink = 32816,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MINMAX_FORMAT_EXT")]
     FormatEXT = 32815,
 
-    [NameAffix("Suffix", "EXT", 0)]
     [NativeName("GL_MINMAX_SINK_EXT")]
     SinkEXT = 32816,
 }

@@ -7,7 +7,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NameAffix("Suffix", "EXT", 0)]
 [NativeName("FogPointerTypeEXT")]
 public enum FogPointerTypeEXT : uint
 {
