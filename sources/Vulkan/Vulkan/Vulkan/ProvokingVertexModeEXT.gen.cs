@@ -20,7 +20,7 @@ public enum ProvokingVertexModeEXT : uint
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    FirstVertexEXT = 0,
+    FirstVertex = 0,
 
     [NativeName("VK_PROVOKING_VERTEX_MODE_LAST_VERTEX_EXT")]
     [SupportedApiProfile(
@@ -31,5 +31,5 @@ public enum ProvokingVertexModeEXT : uint
             "VK_EXT_provoking_vertex+VK_VERSION_1_1",
         ]
     )]
-    LastVertexEXT = 1,
+    LastVertex = 1,
 }

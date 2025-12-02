@@ -20,7 +20,7 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    GeneralKHR = 0,
+    General = 0,
 
     [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_KHR")]
     [SupportedApiProfile(
@@ -31,7 +31,7 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    TrianglesHitGroupKHR = 1,
+    TrianglesHitGroup = 1,
 
     [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_KHR")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ProceduralHitGroupKHR = 2,
+    ProceduralHitGroup = 2,
 
     [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_NV")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    GeneralNV = GeneralKHR,
+    GeneralNV = General,
 
     [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_NV")]
     [SupportedApiProfile(
@@ -64,7 +64,7 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TrianglesHitGroupNV = TrianglesHitGroupKHR,
+    TrianglesHitGroupNV = TrianglesHitGroup,
 
     [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_NV")]
     [SupportedApiProfile(
@@ -75,5 +75,5 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ProceduralHitGroupNV = ProceduralHitGroupKHR,
+    ProceduralHitGroupNV = ProceduralHitGroup,
 }

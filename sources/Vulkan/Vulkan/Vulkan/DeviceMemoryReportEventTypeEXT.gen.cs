@@ -21,7 +21,7 @@ public enum DeviceMemoryReportEventTypeEXT : uint
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    AllocateEXT = 0,
+    Allocate = 0,
 
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_FREE_EXT")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum DeviceMemoryReportEventTypeEXT : uint
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    FreeEXT = 1,
+    Free = 1,
 
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_IMPORT_EXT")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public enum DeviceMemoryReportEventTypeEXT : uint
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    ImportEXT = 2,
+    Import = 2,
 
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_UNIMPORT_EXT")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public enum DeviceMemoryReportEventTypeEXT : uint
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    UnimportEXT = 3,
+    Unimport = 3,
 
     [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_ALLOCATION_FAILED_EXT")]
     [SupportedApiProfile(
@@ -65,5 +65,5 @@ public enum DeviceMemoryReportEventTypeEXT : uint
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    AllocationFailedEXT = 4,
+    AllocationFailed = 4,
 }

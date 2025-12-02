@@ -18,7 +18,7 @@ public enum RayTracingLssPrimitiveEndCapsModeNV : uint
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    NoneNV = 0,
+    None = 0,
 
     [NativeName("VK_RAY_TRACING_LSS_PRIMITIVE_END_CAPS_MODE_CHAINED_NV")]
     [SupportedApiProfile(
@@ -26,5 +26,5 @@ public enum RayTracingLssPrimitiveEndCapsModeNV : uint
         ["VK_NV_ray_tracing_linear_swept_spheres"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    ChainedNV = 1,
+    Chained = 1,
 }

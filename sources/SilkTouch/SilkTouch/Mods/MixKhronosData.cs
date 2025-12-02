@@ -210,13 +210,9 @@ public partial class MixKhronosData(
 
         /// <summary>
         /// Whether enum members should have their vendor suffixes trimmed
-        /// if they all share a vendor suffix with the containing type.
+        /// if they share a vendor suffix with the containing type.
         /// </summary>
-        /// <remarks>
-        /// This can lead to cleaner names, but if a new enum member is later added to a type and that member
-        /// does not have the same vendor suffix, the suffixes will be added back.
-        /// </remarks>
-        public bool TrimEnumMemberExclusiveVendors { get; init; } = false;
+        public bool TrimEnumMemberImpliedVendors { get; init; } = false;
     }
 
     /// <inheritdoc />
@@ -1908,11 +1904,11 @@ public partial class MixKhronosData(
             var typeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
             var groupInfo = job.Groups.GetValueOrDefault(typeName);
 
-            var vendorFromTypeName = job.Vendors.FirstOrDefault(typeName.EndsWith);
+            var typeVendor = job.Vendors.FirstOrDefault(typeName.EndsWith);
             var vendorFromTypeNamePriority = config.VendorSuffixPriority;
 
             // Figure out the enum's exclusive vendor
-            var exclusiveVendor = groupInfo?.ExclusiveVendor ?? vendorFromTypeName;
+            var exclusiveVendor = groupInfo?.ExclusiveVendor ?? typeVendor;
             if (exclusiveVendor == null || !node.Members.All(member => member.Identifier.Text.EndsWith(exclusiveVendor)))
             {
                 // Not all enum members share the exclusive vendor
@@ -1920,35 +1916,61 @@ public partial class MixKhronosData(
                 exclusiveVendor = null;
             }
 
-            if (config.TrimEnumTypeNonExclusiveVendors)
+            // Check if the enum contains unsuffixed members
+            var containsUnsuffixed = node.Members.Any(member =>
             {
-                // The vendor suffix in the enum name
-                var isSafeToTrimType = job.Groups.Count(x => x.Key.StartsWith(typeName[..^(vendorFromTypeName?.Length ?? 0)])) <= 1;
-
-                // Trim the enum name if needed
-                if (config.TrimEnumTypeNonExclusiveVendors && vendorFromTypeName != null)
+                var memberName = member.AttributeLists.GetNativeNameOrDefault(member.Identifier);
+                if (job.Vendors.FirstOrDefault(memberName.EndsWith) == null)
                 {
-                    var shouldTrimType = vendorFromTypeName != exclusiveVendor;
-                    if (shouldTrimType && isSafeToTrimType)
+                    return true;
+                }
+
+                return false;
+            });
+
+            var isSafeToTrimMembers = !containsUnsuffixed;
+
+            if (config.TrimEnumTypeNonExclusiveVendors && typeVendor != null)
+            {
+                var shouldTrimType = typeVendor != exclusiveVendor;
+
+                // Check if there are other versions of the enum (this includes the core variant and other vendor variants)
+                var isSafeToTrimType = job.Groups.Count(x => x.Key.StartsWith(typeName[..^typeVendor.Length])) <= 1;
+
+                if (shouldTrimType)
+                {
+                    if (isSafeToTrimType)
                     {
-                        // Remove the exclusive vendor from the enum name since it is wrong
+                        // Remove the exclusive vendor from the enum name since it is wrong and it is safe to do so
                         vendorFromTypeNamePriority = -1;
                     }
+
+                    // Assume it is unsafe to trim members if we attempted to trim the type
+                    // If the attempt succeeded, then there is no type suffix to trim from the members
+                    // If the attempt failed, then the enum probably contains members of a higher promotion status than the type itself
+                    isSafeToTrimMembers = false;
                 }
             }
 
-            if (vendorFromTypeName != null)
+            if (typeVendor != null)
             {
-                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(vendorFromTypeName, vendorFromTypeNamePriority));
+                // Mark the type vendor suffix as identified
+                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(typeVendor, vendorFromTypeNamePriority));
             }
 
             // Trim the enum members if needed
-            if (config.TrimEnumMemberExclusiveVendors
-                && exclusiveVendor != null
-                && node.Members.All(member => member.Identifier.Text.EndsWith(exclusiveVendor)))
+            if (config.TrimEnumMemberImpliedVendors && typeVendor != null && isSafeToTrimMembers)
             {
                 node = node.WithMembers([
-                    ..node.Members.Select(member => member.WithAttributeLists(member.AttributeLists.AddNameSuffix(exclusiveVendor, -1))),
+                    ..node.Members.Select(member => {
+                        if (member.AttributeLists.GetNativeNameOrDefault(member.Identifier).EndsWith(typeVendor))
+                        {
+                            return member.WithAttributeLists(member.AttributeLists.AddNameSuffix(typeVendor, -1));
+                        }
+
+                        // Default behavior - Identify, but keep the member suffixes
+                        return member.WithAttributeLists(ProcessAndGetNewAttributes(member.AttributeLists, member.Identifier));
+                    }),
                 ]);
             }
             else

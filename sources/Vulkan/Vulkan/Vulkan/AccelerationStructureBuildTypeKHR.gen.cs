@@ -20,7 +20,7 @@ public enum AccelerationStructureBuildTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    HostKHR = 0,
+    Host = 0,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_BUILD_TYPE_DEVICE_KHR")]
     [SupportedApiProfile(
@@ -31,7 +31,7 @@ public enum AccelerationStructureBuildTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    DeviceKHR = 1,
+    Device = 1,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_BUILD_TYPE_HOST_OR_DEVICE_KHR")]
     [SupportedApiProfile(
@@ -42,5 +42,5 @@ public enum AccelerationStructureBuildTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    HostOrDeviceKHR = 2,
+    HostOrDevice = 2,
 }

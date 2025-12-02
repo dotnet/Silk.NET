@@ -18,7 +18,7 @@ public enum DataGraphPipelinePropertyARM : uint
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    CreationLogARM = 0,
+    CreationLog = 0,
 
     [NativeName("VK_DATA_GRAPH_PIPELINE_PROPERTY_IDENTIFIER_ARM")]
     [SupportedApiProfile(
@@ -26,5 +26,5 @@ public enum DataGraphPipelinePropertyARM : uint
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    IdentifierARM = 1,
+    Identifier = 1,
 }

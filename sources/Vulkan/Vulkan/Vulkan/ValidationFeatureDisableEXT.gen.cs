@@ -14,33 +14,33 @@ public enum ValidationFeatureDisableEXT : uint
 {
     [NativeName("VK_VALIDATION_FEATURE_DISABLE_ALL_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    AllEXT = 0,
+    All = 0,
 
     [NativeName("VK_VALIDATION_FEATURE_DISABLE_SHADERS_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    ShadersEXT = 1,
+    Shaders = 1,
 
     [NativeName("VK_VALIDATION_FEATURE_DISABLE_THREAD_SAFETY_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    ThreadSafetyEXT = 2,
+    ThreadSafety = 2,
 
     [NativeName("VK_VALIDATION_FEATURE_DISABLE_API_PARAMETERS_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    ApiParametersEXT = 3,
+    ApiParameters = 3,
 
     [NativeName("VK_VALIDATION_FEATURE_DISABLE_OBJECT_LIFETIMES_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    ObjectLifetimesEXT = 4,
+    ObjectLifetimes = 4,
 
     [NativeName("VK_VALIDATION_FEATURE_DISABLE_CORE_CHECKS_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    CoreChecksEXT = 5,
+    CoreChecks = 5,
 
     [NativeName("VK_VALIDATION_FEATURE_DISABLE_UNIQUE_HANDLES_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    UniqueHandlesEXT = 6,
+    UniqueHandles = 6,
 
     [NativeName("VK_VALIDATION_FEATURE_DISABLE_SHADER_VALIDATION_CACHE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_features"])]
-    ShaderValidationCacheEXT = 7,
+    ShaderValidationCache = 7,
 }

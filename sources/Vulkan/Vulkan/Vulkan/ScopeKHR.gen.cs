@@ -21,7 +21,7 @@ public enum ScopeKHR : uint
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    DeviceKHR = 1,
+    Device = 1,
 
     [NativeName("VK_SCOPE_WORKGROUP_KHR")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum ScopeKHR : uint
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    WorkgroupKHR = 2,
+    Workgroup = 2,
 
     [NativeName("VK_SCOPE_SUBGROUP_KHR")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public enum ScopeKHR : uint
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    SubgroupKHR = 3,
+    Subgroup = 3,
 
     [NativeName("VK_SCOPE_QUEUE_FAMILY_KHR")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public enum ScopeKHR : uint
             "VK_KHR_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    QueueFamilyKHR = 5,
+    QueueFamily = 5,
 
     [NativeName("VK_SCOPE_DEVICE_NV")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public enum ScopeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    DeviceNV = DeviceKHR,
+    DeviceNV = Device,
 
     [NativeName("VK_SCOPE_WORKGROUP_NV")]
     [SupportedApiProfile(
@@ -76,7 +76,7 @@ public enum ScopeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    WorkgroupNV = WorkgroupKHR,
+    WorkgroupNV = Workgroup,
 
     [NativeName("VK_SCOPE_SUBGROUP_NV")]
     [SupportedApiProfile(
@@ -87,7 +87,7 @@ public enum ScopeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    SubgroupNV = SubgroupKHR,
+    SubgroupNV = Subgroup,
 
     [NativeName("VK_SCOPE_QUEUE_FAMILY_NV")]
     [SupportedApiProfile(
@@ -98,5 +98,5 @@ public enum ScopeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    QueueFamilyNV = QueueFamilyKHR,
+    QueueFamilyNV = QueueFamily,
 }

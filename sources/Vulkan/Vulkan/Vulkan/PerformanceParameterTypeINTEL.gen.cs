@@ -13,9 +13,9 @@ public enum PerformanceParameterTypeINTEL : uint
 {
     [NativeName("VK_PERFORMANCE_PARAMETER_TYPE_HW_COUNTERS_SUPPORTED_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    HwCountersSupportedINTEL = 0,
+    HwCountersSupported = 0,
 
     [NativeName("VK_PERFORMANCE_PARAMETER_TYPE_STREAM_MARKER_VALID_BITS_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    StreamMarkerValidBitsINTEL = 1,
+    StreamMarkerValidBits = 1,
 }

@@ -18,7 +18,7 @@ public enum DisplayPowerStateEXT : uint
         ["VK_EXT_display_control"],
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
-    OffEXT = 0,
+    Off = 0,
 
     [NativeName("VK_DISPLAY_POWER_STATE_SUSPEND_EXT")]
     [SupportedApiProfile(
@@ -26,7 +26,7 @@ public enum DisplayPowerStateEXT : uint
         ["VK_EXT_display_control"],
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
-    SuspendEXT = 1,
+    Suspend = 1,
 
     [NativeName("VK_DISPLAY_POWER_STATE_ON_EXT")]
     [SupportedApiProfile(
@@ -34,5 +34,5 @@ public enum DisplayPowerStateEXT : uint
         ["VK_EXT_display_control"],
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
-    OnEXT = 2,
+    On = 2,
 }

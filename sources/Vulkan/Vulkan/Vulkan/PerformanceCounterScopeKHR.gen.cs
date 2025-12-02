@@ -20,7 +20,7 @@ public enum PerformanceCounterScopeKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    CommandBufferKHR = 0,
+    CommandBuffer = 0,
 
     [NativeName("VK_PERFORMANCE_COUNTER_SCOPE_RENDER_PASS_KHR")]
     [SupportedApiProfile(
@@ -31,7 +31,7 @@ public enum PerformanceCounterScopeKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    RenderPassKHR = 1,
+    RenderPass = 1,
 
     [NativeName("VK_PERFORMANCE_COUNTER_SCOPE_COMMAND_KHR")]
     [SupportedApiProfile(
@@ -42,5 +42,5 @@ public enum PerformanceCounterScopeKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    CommandKHR = 2,
+    Command = 2,
 }
