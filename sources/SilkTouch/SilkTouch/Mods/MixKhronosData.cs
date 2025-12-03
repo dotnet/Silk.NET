@@ -1204,10 +1204,10 @@ public partial class MixKhronosData(
             );
         }
 
-        foreach (var (original, (current, previous)) in context.Names)
+        // Prevent enums like GLEnum from having their prefix trimmed
+        if (context.Container is null)
         {
-            // Prevent enums like GLEnum from having their prefix trimmed
-            if (context.Container is null)
+            foreach (var (original, (current, previous)) in context.Names)
             {
                 foreach (var name in (IEnumerable<string>)[current, .. previous ?? []])
                 {
