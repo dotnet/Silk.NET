@@ -871,7 +871,7 @@ public class PrettifyNames(
     /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
     private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
 
-    private record struct NameAffix(bool IsPrefix, string Affix, int Priority);
+    private record struct NameAffix(bool IsPrefix, string Affix, int Priority, int DiscriminatorPriority);
 
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
@@ -962,14 +962,16 @@ public class PrettifyNames(
                         var typeArg = attribute.ArgumentList.Arguments[0];
                         var affixArg = attribute.ArgumentList.Arguments[1];
                         var priorityArg = attribute.ArgumentList.Arguments[2];
+                        var discriminatorPriorityArg = attribute.ArgumentList.Arguments[3];
 
                         var type = (typeArg.Expression as LiteralExpressionSyntax)?.Token.Value as string;
                         var affix = (affixArg.Expression as LiteralExpressionSyntax)?.Token.Value as string;
-                        var priority = (priorityArg.Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? 0;
+                        var priority = (priorityArg.Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
+                        var discriminatorPriority = (discriminatorPriorityArg.Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
 
                         if (affix != null)
                         {
-                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, priority)];
+                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, priority, discriminatorPriority)];
                         }
                     }
                 }

@@ -20,18 +20,48 @@ namespace Silk.NET.Core;
 [Conditional("DEBUG")]
 public sealed class NameAffixAttribute : Attribute
 {
-    /// <param name="type">The type of affix. Either "Prefix" or "Suffix".</param>
-    /// <param name="affix">The affix of the identifier.</param>
-    /// <param name="priority">The priority with which the affix is applied. Higher means the affix is applied first.</param>
-    public NameAffixAttribute(string type, string affix, int priority)
+    /// <summary>
+    /// Creates a new NameAffix attribute.
+    /// </summary>
+    public NameAffixAttribute(string type, string affix, int priority, int discriminatorPriority)
     {
+        Type = type;
         Affix = affix;
         Priority = priority;
+        DiscriminatorPriority = discriminatorPriority;
     }
 
-    /// <summary>The affix of the identifier.</summary>
+    /// <summary>
+    /// The type of affix. Either "Prefix" or "Suffix".
+    /// </summary>
+    public string Type { get; }
+
+    /// <summary>
+    /// The affix of the identifier.
+    /// </summary>
     public string Affix { get; }
 
-    /// <summary>The priority with which the affix is applied. Higher means the affix is applied first.</summary>
+    /// <summary>
+    /// The priority with which the affix is applied.
+    /// Higher means the affix is applied first.
+    /// <para/>
+    /// Negative means the affix is not reapplied after trimming.
+    /// Ideally all affixes of the same type have different priorities.
+    /// <para/>
+    /// Affixes with the same priority have ties broken using the order they are declared on the identifier.
+    /// First declared have higher priority.
+    /// </summary>
     public int Priority { get; }
+
+    /// <summary>
+    /// The priority with which the affix is used
+    /// to create alternative names in case of conflicts.
+    /// <para/>
+    /// Higher means the names created using the affix is tried first.
+    /// Negative means the affix is not used for creating alternative names.
+    /// <para/>
+    /// Affixes with the same priority are applied together as a group and are combined using the order they are declared on the identifier.
+    /// First declared are applied first within the group.
+    /// </summary>
+    public int DiscriminatorPriority { get; }
 }
