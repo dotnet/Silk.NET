@@ -1943,12 +1943,10 @@ public partial class MixKhronosData(
                     {
                         // Remove the exclusive vendor from the enum name since it is wrong and it is safe to do so
                         vendorFromTypeNamePriority = -1;
-                    }
 
-                    // Assume it is unsafe to trim members if we attempted to trim the type
-                    // If the attempt succeeded, then there is no type suffix to trim from the members
-                    // If the attempt failed, then the enum probably contains members of a higher promotion status than the type itself
-                    isSafeToTrimMembers = false;
+                        // Type suffix has been removed
+                        isSafeToTrimMembers = false;
+                    }
                 }
             }
 
