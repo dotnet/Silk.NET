@@ -38,7 +38,7 @@ public enum AlcEnum : uint
     InvalidDevice = 40961,
 
     [NativeName("ALC_INVALID_CONTEXT")]
-    InvalidContEXT = 40962,
+    InvalidContext = 40962,
 
     [NativeName("ALC_INVALID_ENUM")]
     InvalidEnum = 40963,

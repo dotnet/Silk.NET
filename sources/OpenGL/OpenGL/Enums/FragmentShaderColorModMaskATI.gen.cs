@@ -14,14 +14,14 @@ public enum FragmentShaderColorModMaskATI : uint
     None = 0x0,
 
     [NativeName("GL_2X_BIT_ATI")]
-    X2XBitATI = unchecked((uint)0x00000001),
+    X2XBit = unchecked((uint)0x00000001),
 
     [NativeName("GL_COMP_BIT_ATI")]
-    CompBitATI = unchecked((uint)0x00000002),
+    CompBit = unchecked((uint)0x00000002),
 
     [NativeName("GL_NEGATE_BIT_ATI")]
-    NegateBitATI = unchecked((uint)0x00000004),
+    NegateBit = unchecked((uint)0x00000004),
 
     [NativeName("GL_BIAS_BIT_ATI")]
-    BiasBitATI = unchecked((uint)0x00000008),
+    BiasBit = unchecked((uint)0x00000008),
 }

@@ -11,20 +11,20 @@ namespace Silk.NET.OpenGL;
 public enum ShadingRateQCOM : uint
 {
     [NativeName("GL_SHADING_RATE_1X1_PIXELS_QCOM")]
-    Rate1X1PixelsQCOM = unchecked((uint)0x96A6),
+    Rate1X1Pixels = unchecked((uint)0x96A6),
 
     [NativeName("GL_SHADING_RATE_1X2_PIXELS_QCOM")]
-    Rate1X2PixelsQCOM = unchecked((uint)0x96A7),
+    Rate1X2Pixels = unchecked((uint)0x96A7),
 
     [NativeName("GL_SHADING_RATE_2X1_PIXELS_QCOM")]
-    Rate2X1PixelsQCOM = unchecked((uint)0x96A8),
+    Rate2X1Pixels = unchecked((uint)0x96A8),
 
     [NativeName("GL_SHADING_RATE_2X2_PIXELS_QCOM")]
-    Rate2X2PixelsQCOM = unchecked((uint)0x96A9),
+    Rate2X2Pixels = unchecked((uint)0x96A9),
 
     [NativeName("GL_SHADING_RATE_4X2_PIXELS_QCOM")]
-    Rate4X2PixelsQCOM = unchecked((uint)0x96AC),
+    Rate4X2Pixels = unchecked((uint)0x96AC),
 
     [NativeName("GL_SHADING_RATE_4X4_PIXELS_QCOM")]
-    Rate4X4PixelsQCOM = unchecked((uint)0x96AE),
+    Rate4X4Pixels = unchecked((uint)0x96AE),
 }

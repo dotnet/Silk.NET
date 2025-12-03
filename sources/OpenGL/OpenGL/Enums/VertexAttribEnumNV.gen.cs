@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum VertexAttribEnumNV : uint
 {
     [NativeName("GL_PROGRAM_PARAMETER_NV")]
-    ProgramParameterNV = unchecked((uint)0x8644),
+    ProgramParameter = unchecked((uint)0x8644),
 }

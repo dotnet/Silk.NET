@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum FenceConditionNV : uint
 {
     [NativeName("GL_ALL_COMPLETED_NV")]
-    AllCompletedNV = unchecked((uint)0x84F2),
+    AllCompleted = unchecked((uint)0x84F2),
 }

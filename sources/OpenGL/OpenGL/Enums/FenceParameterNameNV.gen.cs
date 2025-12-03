@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum FenceParameterNameNV : uint
 {
     [NativeName("GL_FENCE_STATUS_NV")]
-    StatusNV = unchecked((uint)0x84F3),
+    Status = unchecked((uint)0x84F3),
 
     [NativeName("GL_FENCE_CONDITION_NV")]
-    ConditionNV = unchecked((uint)0x84F4),
+    Condition = unchecked((uint)0x84F4),
 }

@@ -21,7 +21,7 @@ public enum GeometryTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TrianglesKHR = 0,
+    Triangles = 0,
 
     [NativeName("VK_GEOMETRY_TYPE_AABBS_KHR")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum GeometryTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AabbsKHR = 1,
+    Aabbs = 1,
 
     [NativeName("VK_GEOMETRY_TYPE_INSTANCES_KHR")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public enum GeometryTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    InstancesKHR = 2,
+    Instances = 2,
 
     [NativeName("VK_GEOMETRY_TYPE_SPHERES_NV")]
     [SupportedApiProfile(
@@ -70,7 +70,7 @@ public enum GeometryTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TrianglesNV = TrianglesKHR,
+    TrianglesNV = Triangles,
 
     [NativeName("VK_GEOMETRY_TYPE_AABBS_NV")]
     [SupportedApiProfile(
@@ -81,5 +81,5 @@ public enum GeometryTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AabbsNV = AabbsKHR,
+    AabbsNV = Aabbs,
 }

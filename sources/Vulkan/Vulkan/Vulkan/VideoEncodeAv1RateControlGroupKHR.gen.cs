@@ -17,7 +17,7 @@ public enum VideoEncodeAv1RateControlGroupKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    IntraKHR = 0,
+    Intra = 0,
 
     [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_GROUP_PREDICTIVE_KHR")]
     [SupportedApiProfile(
@@ -25,7 +25,7 @@ public enum VideoEncodeAv1RateControlGroupKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PredictiveKHR = 1,
+    Predictive = 1,
 
     [NativeName("VK_VIDEO_ENCODE_AV1_RATE_CONTROL_GROUP_BIPREDICTIVE_KHR")]
     [SupportedApiProfile(
@@ -33,5 +33,5 @@ public enum VideoEncodeAv1RateControlGroupKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BipredictiveKHR = 2,
+    Bipredictive = 2,
 }

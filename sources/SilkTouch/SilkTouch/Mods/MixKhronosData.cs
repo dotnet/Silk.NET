@@ -36,14 +36,6 @@ public partial class MixKhronosData(
     internal ConcurrentDictionary<string, JobData> Jobs = new();
     private static readonly char[] _listSeparators = { ',', '|', '+' };
 
-    private static readonly Dictionary<string, string> _defaultEnumNativeTypeNameMaps =
-        new()
-        {
-            { "GLenum", "GLEnum" },
-            { "EGLenum", "EGLEnum" },
-            { "GLbitfield", "GLEnum" },
-        };
-
     internal class JobData
     {
         /// <summary>
@@ -92,7 +84,7 @@ public partial class MixKhronosData(
         /// <summary>
         /// The vendors contributing to the specification. This is in extension form e.g. Microsoft is MSFT.
         /// </summary>
-        public HashSet<string>? Vendors { get; set; }
+        public HashSet<string> Vendors { get; init; } = [];
 
         /// <summary>
         /// A map of containing symbol names (i.e. function or struct) and applicable symbol names (i.e. field name,
@@ -146,25 +138,14 @@ public partial class MixKhronosData(
         public string? SpecPath { get; init; }
 
         /// <summary>
-        /// Whether OpenGL-style data type suffixes should be trimmed.
+        /// Default namespace for enums.
         /// </summary>
-        public bool UseDataTypeTrimmings { get; init; }
-
-        /// <summary>
-        /// A map of native type names to group names.
-        /// </summary>
-        public Dictionary<string, string> EnumNativeTypeNames { get; init; } =
-            _defaultEnumNativeTypeNameMaps;
+        public string? Namespace { get; init; }
 
         /// <summary>
         /// A map of native type names to C# type names. This is mostly used for determining enum backing types.
         /// </summary>
         public Dictionary<string, string>? TypeMap { get; init; }
-
-        /// <summary>
-        /// Default namespace for enums.
-        /// </summary>
-        public string? Namespace { get; init; }
 
         /// <summary>
         /// The base type used for flags/bitmask enums.
@@ -188,13 +169,6 @@ public partial class MixKhronosData(
         public List<string>? Vendors { get; init; }
 
         /// <summary>
-        /// Additional suffixes that may follow a data type suffix but precede a vendor suffix that should be ignored
-        /// when determining a data type suffix to trim when <see cref="UseDataTypeTrimmings"/> is on. For example,
-        /// <c>Direct</c> for OpenAL.
-        /// </summary>
-        public List<string>? IgnoreNonVendorSuffixes { get; init; }
-
-        /// <summary>
         /// The priority with which vendor suffixes are applied.
         /// </summary>
         public int VendorSuffixPriority { get; init; } = 0;
@@ -205,7 +179,40 @@ public partial class MixKhronosData(
         /// <remarks>
         /// See <see cref="RewriterPhase3"/>.
         /// </remarks>
-        public HashSet<string> VendorSuffixIdentificationExclusions { get; init; } = [];
+        public HashSet<string> ExcludeVendorSuffixIdentification { get; init; } = [];
+
+        /// <summary>
+        /// Additional suffixes that may follow a data type suffix but precede a vendor suffix that should be ignored
+        /// when determining a data type suffix to trim when <see cref="TrimFunctionDataTypes"/> is on. For example,
+        /// <c>Direct</c> for OpenAL.
+        /// </summary>
+        public List<string>? IgnoreNonVendorSuffixes { get; init; }
+
+        /// <summary>
+        /// The priority with which non-vendor suffixes are applied.
+        /// </summary>
+        public int NonVendorSuffixPriority { get; init; } = 0;
+
+        /// <summary>
+        /// Whether OpenGL-style data type suffixes should be trimmed.
+        /// </summary>
+        public bool TrimFunctionDataTypes { get; init; }
+
+        /// <summary>
+        /// Whether enum type vendor suffixes should be identified and trimmed
+        /// if the enum type contains members that don't match the exclusive vendor.
+        /// </summary>
+        /// <remarks>
+        /// For context, OpenGL has a problem where an enum group starts out as ARB but never gets promoted, and then contains other vendor enums or even core enums.
+        /// For example, BufferUsageARB contains StreamDraw, which is a core enum. Enabling this option will cause BufferUsageARB to be trimmed as BufferUsage.
+        /// </remarks>
+        public bool TrimEnumTypeNonExclusiveVendors { get; init; } = false;
+
+        /// <summary>
+        /// Whether enum members should have their vendor suffixes trimmed
+        /// if they share a vendor suffix with the containing type.
+        /// </summary>
+        public bool TrimEnumMemberImpliedVendors { get; init; } = false;
     }
 
     /// <inheritdoc />
@@ -252,8 +259,7 @@ public partial class MixKhronosData(
 
         var profiles = supportedApiProfiles.SelectMany(x => x.Value).Select(x => x.Profile).ToHashSet();
 
-        job.Vendors =
-        [
+        job.Vendors.UnionWith([
             .. xml.Element("registry")
                 ?.Element("tags")
                 ?.Elements("tag")
@@ -276,7 +282,7 @@ public partial class MixKhronosData(
                     // Eg: GL_NV_command_list -> NV
                     .Select(name => name.Value.Split('_')[1].ToUpper()) ?? [],
             .. currentConfig.Vendors ?? [],
-        ];
+        ]);
 
         job.DeprecatedAliases = xml.Descendants()
             .Where(x => x.Attribute("deprecated")?.Value == "aliased" && x.Attribute("name") != null)
@@ -368,23 +374,20 @@ public partial class MixKhronosData(
         }
 
         // Rewrite phase 3
-        if (jobData.Vendors != null)
+        foreach (var docId in proj.DocumentIds)
         {
-            foreach (var docId in proj.DocumentIds)
+            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var syntaxTree = await doc.GetSyntaxTreeAsync(ct);
+            if (syntaxTree == null)
             {
-                var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
-                var syntaxTree = await doc.GetSyntaxTreeAsync(ct);
-                if (syntaxTree == null)
-                {
-                    continue;
-                }
-
-                var rewriter3 = new RewriterPhase3(jobData.Vendors, currentConfig.VendorSuffixIdentificationExclusions, currentConfig.VendorSuffixPriority);
-                proj = doc.WithSyntaxRoot(
-                    rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
-                    ?? throw new InvalidOperationException("Visit returned null.")
-                ).Project;
+                continue;
             }
+
+            var rewriter3 = new RewriterPhase3(jobData, currentConfig);
+            proj = doc.WithSyntaxRoot(
+                rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
+                ?? throw new InvalidOperationException("Visit returned null.")
+            ).Project;
         }
 
         // Rename documents to account for FlagBits/Flags differences
@@ -1186,8 +1189,6 @@ public partial class MixKhronosData(
         }
     }
 
-    private bool _outputVendorInformationWarning = false;
-
     /// <inheritdoc />
     public void Trim(NameTrimmerContext context)
     {
@@ -1203,212 +1204,21 @@ public partial class MixKhronosData(
             );
         }
 
-        if (job.Vendors?.Count is 0 or null && !_outputVendorInformationWarning)
-        {
-            _outputVendorInformationWarning = true;
-            logger.LogWarning(
-                "No vendor information present, assuming no XML was provided? Extension trimming will be skipped."
-            );
-        }
-
-        // NameTrimmer trims member names by looking for a common prefix and removing it
-        // This sometimes trims too much and leads to only the vendor suffix remaining
-        // This is bad because the next block of code removes the vendor suffix, leaving only an empty string or underscore
-        // This means we have to rewind back to the previous name (minus the prefix, such as GL_)
-        var rewind = false;
-        if (context.Container is not null && job.Groups.ContainsKey(context.Container))
-        {
-            foreach (var (_, (current, previous)) in context.Names)
-            {
-                var prev = previous?.FirstOrDefault();
-                if (prev is not null && (job.Vendors?.Contains(current.Trim('_')) ?? false)
-                )
-                {
-                    rewind = true;
-
-                    break;
-                }
-            }
-        }
-
-        if (rewind)
-        {
-            foreach (var (original, (_, previous)) in context.Names)
-            {
-                var prev = previous?.FirstOrDefault() ?? original;
-                var prevList = previous ?? [];
-                var next = prev[(prev.IndexOf('_') + 1)..];
-                if (next == prev)
-                {
-                    prevList.Remove(prev);
-                }
-                else if (!prevList.Contains(prev))
-                {
-                    prevList.Add(prev);
-                }
-
-                context.Names[original] = new CandidateNames(prev[(prev.IndexOf('_') + 1)..], prevList);
-            }
-        }
-
-        // OpenGL has a problem where an enum starts out as ARB but never gets promoted, and then contains other vendor
-        // enums or even core enums. This removes the vendor suffix where it is not necessary e.g. BufferUsageARB
-        // becomes BufferUsage.
-        if (context.Container is null && job.Vendors is not null)
+        // Prevent enums like GLEnum from having their prefix trimmed
+        if (context.Container is null)
         {
             foreach (var (original, (current, previous)) in context.Names)
             {
-                if (job.Groups.TryGetValue(current, out var groupInfo))
-                {
-                    var vendorSuffix =
-                        groupInfo.ExclusiveVendor ?? job.Vendors.FirstOrDefault(current.EndsWith);
-                    vendorSuffix = vendorSuffix?[(vendorSuffix.LastIndexOf('_') + 1)..];
-                    var notSafeToTrim =
-                        job.Groups.Count(x =>
-                            x.Key.StartsWith(current[..^(vendorSuffix?.Length ?? 0)])
-                        ) > 1;
-                    if (
-                        vendorSuffix is null
-                        || !job.Vendors.Contains(vendorSuffix)
-                        || !current.EndsWith(vendorSuffix)
-                        || !groupInfo.Enums.All(x => x.Identifier.ToString().EndsWith(vendorSuffix))
-                    )
-                    {
-                        vendorSuffix = null;
-                    }
-
-                    job.Groups[current] = groupInfo = groupInfo with
-                    {
-                        ExclusiveVendor = vendorSuffix,
-                    };
-
-                    if (notSafeToTrim)
-                    {
-                        continue;
-                    }
-
-                    // If the vendor suffix is not equal to our exclusive vendor, then it must not be exclusive
-                    // therefore we should remove the suffix.
-                    foreach (var vendor in job.Vendors)
-                    {
-                        if (current.EndsWith(vendor) && groupInfo.ExclusiveVendor != vendor)
-                        {
-                            var sec = previous ?? [];
-                            sec.Add(current);
-                            context.Names[original] = new CandidateNames(current[..^vendor.Length], sec);
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-
-        // Trim the extension vendor names
-        foreach (var (original, (current, previous)) in context.Names)
-        {
-            // GLEnum is obviously trimmed, and we don't really want to do that.
-            if (context.Container is null)
-            {
-                var changed = false;
                 foreach (var name in (IEnumerable<string>)[current, .. previous ?? []])
                 {
-                    if (
-                        job.Groups.TryGetValue(name, out var group)
-                        && name == $"{group.Namespace}Enum"
-                    )
+                    if (job.Groups.TryGetValue(name, out var group)
+                        && name == $"{group.Namespace}Enum")
                     {
                         context.Names[original] = new CandidateNames(name, null);
-                        changed = true;
                         break;
                     }
                 }
-
-                if (changed)
-                {
-                    continue;
-                }
             }
-
-            var newCurrent = current;
-            List<string>? newPrev = null;
-            string? identifiedVendor = null;
-            var trimVendor = false;
-            foreach (var vendor in job.Vendors ?? [])
-            {
-                if (!current.EndsWith(vendor))
-                {
-                    continue;
-                }
-
-                newCurrent = current[..^vendor.Length];
-                var newOriginal = original[..^vendor.Length];
-                // Sometimes we should keep the vendor prefix so we prefer the promoted functions.
-                // ----------vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv--------------------------------------
-                trimVendor =
-                    !context.Names.ContainsKey(newOriginal)
-                    && context.Container is not null
-                    && job.Groups.TryGetValue(context.Container, out var group)
-                    && group.ExclusiveVendor == vendor;
-                if (trimVendor)
-                {
-                    newPrev ??= previous ?? [];
-                    newPrev.Add(current);
-                    context.Names[original] = new CandidateNames(newCurrent, newPrev);
-                }
-
-                identifiedVendor = vendor;
-                break;
-            }
-
-            // If we have an additional non-vendor suffix (e.g. al*Direct) then let's trim it before we try to do the
-            // data type trimming
-            string? identifiedSuffix = null;
-            foreach (var suffix in job.Configuration.IgnoreNonVendorSuffixes ?? [])
-            {
-                if (newCurrent.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
-                {
-                    identifiedSuffix = suffix;
-                    newCurrent = newCurrent[..^suffix.Length];
-                    break;
-                }
-            }
-
-            if (
-                !job.Configuration.UseDataTypeTrimmings // don't trim data types
-                || context.Container is null // don't trim type names
-                || newCurrent.Count(x => x == '_') > 1 // is probably an enum
-                || EndingsToTrim().Match(newCurrent) is not { Success: true } match // we don't have a data type suffix
-                || EndingsNotToTrim().IsMatch(newCurrent) // we need to keep it
-            )
-            {
-                continue;
-            }
-
-            newPrev ??= previous ?? [];
-            var newPrim = newCurrent.Remove(match.Index);
-            newPrim += identifiedSuffix;
-            if (identifiedVendor is not null && trimVendor)
-            {
-                // If the only difference between this function and other functions that could conflict is the vendor,
-                // it would be extremely confusing if the difference between e.g. a NV function and a non-NV function
-                // was one had data type suffixes and the other didn't. Therefore, let's add the new name but with the
-                // vendor added as the first secondary (e.g. for glVertex2bOES we first try Vertex2OES). If that doesn't
-                // work, we still have the original one (modulo GL prefix) that we added to the secondary list when
-                // originally trimming the vendor.
-                newPrev.Add(newPrim + identifiedVendor);
-            }
-            else
-            {
-                // If trimVendor is false, add the vendor back. We're not trimming vendors so the only other secondary
-                // we have is the original current name i.e. primary = glVertex2OES, secondary = glVertex2bOES, which
-                // WOULDN'T be in the secondary list already per the if trimVendor above. If we're hitting this else
-                // because we haven't identified a vendor, then we're just appending null to this string which does
-                // nothing and is effectively equivalent to us having primary = glVertex2, secondary = glVertex2b
-                newPrim += identifiedVendor;
-                newPrev.Add(current);
-            }
-
-            context.Names[original] = new CandidateNames(newPrim, newPrev);
         }
     }
 
@@ -2037,7 +1847,7 @@ public partial class MixKhronosData(
     /// <remarks>
     /// Yes, this is a 3rd rewriter.
     /// </remarks>
-    private class RewriterPhase3(HashSet<string> vendors, HashSet<string> excludedIdentifiers, int vendorSuffixPriority) : CSharpSyntaxRewriter
+    private class RewriterPhase3(JobData job, Configuration config) : CSharpSyntaxRewriter
     {
         private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
         {
@@ -2052,16 +1862,16 @@ public partial class MixKhronosData(
                     .WithNativeName(name);
             }
 
-            if (excludedIdentifiers.Contains(name))
+            if (config.ExcludeVendorSuffixIdentification.Contains(name))
             {
                 return attributeLists;
             }
 
-            foreach (var vendor in vendors)
+            foreach (var vendor in job.Vendors)
             {
                 if (name.EndsWith(vendor))
                 {
-                    attributeLists = attributeLists.AddNameSuffix(vendor, vendorSuffixPriority);
+                    attributeLists = attributeLists.AddNameSuffix(vendor, config.VendorSuffixPriority);
 
                     break;
                 }
@@ -2084,14 +1894,91 @@ public partial class MixKhronosData(
             return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, variable.Identifier));
         }
 
-        public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
-        {
-            node = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
-        }
-
         public override SyntaxNode VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
             node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
+
+        public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            // Special case for enums since this code needs information about the enum type and its members at the same time.
+
+            var typeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
+            var groupInfo = job.Groups.GetValueOrDefault(typeName);
+
+            var typeVendor = job.Vendors.FirstOrDefault(typeName.EndsWith);
+            var vendorFromTypeNamePriority = config.VendorSuffixPriority;
+
+            // Figure out the enum's exclusive vendor
+            var exclusiveVendor = groupInfo?.ExclusiveVendor ?? typeVendor;
+            if (exclusiveVendor == null || !node.Members.All(member => member.Identifier.Text.EndsWith(exclusiveVendor)))
+            {
+                // Not all enum members share the exclusive vendor
+                // This means the vendor suffix isn't actually exclusive
+                exclusiveVendor = null;
+            }
+
+            // Check if the enum contains unsuffixed members
+            var containsUnsuffixed = node.Members.Any(member =>
+            {
+                var memberName = member.AttributeLists.GetNativeNameOrDefault(member.Identifier);
+                if (job.Vendors.FirstOrDefault(memberName.EndsWith) == null)
+                {
+                    return true;
+                }
+
+                return false;
+            });
+
+            var isSafeToTrimMembers = !containsUnsuffixed;
+
+            if (config.TrimEnumTypeNonExclusiveVendors && typeVendor != null)
+            {
+                var shouldTrimType = typeVendor != exclusiveVendor;
+
+                // Check if there are other versions of the enum (this includes the core variant and other vendor variants)
+                var isSafeToTrimType = job.Groups.Count(x => x.Key.StartsWith(typeName[..^typeVendor.Length])) <= 1;
+
+                if (shouldTrimType)
+                {
+                    if (isSafeToTrimType)
+                    {
+                        // Remove the exclusive vendor from the enum name since it is wrong and it is safe to do so
+                        vendorFromTypeNamePriority = -1;
+
+                        // Type suffix has been removed
+                        isSafeToTrimMembers = false;
+                    }
+                }
+            }
+
+            if (typeVendor != null)
+            {
+                // Mark the type vendor suffix as identified
+                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(typeVendor, vendorFromTypeNamePriority));
+            }
+
+            // Trim the enum members if needed
+            if (config.TrimEnumMemberImpliedVendors && typeVendor != null && isSafeToTrimMembers)
+            {
+                node = node.WithMembers([
+                    ..node.Members.Select(member => {
+                        if (member.AttributeLists.GetNativeNameOrDefault(member.Identifier).EndsWith(typeVendor))
+                        {
+                            return member.WithAttributeLists(member.AttributeLists.AddNameSuffix(typeVendor, -1));
+                        }
+
+                        // Default behavior - Identify, but keep the member suffixes
+                        return member.WithAttributeLists(ProcessAndGetNewAttributes(member.AttributeLists, member.Identifier));
+                    }),
+                ]);
+            }
+            else
+            {
+                // Default behavior - Identify, but keep the member suffixes
+                node = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
+            }
+
+            return node;
+        }
 
         // ----- Members -----
 

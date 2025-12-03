@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum StereoModeSOFT : uint
 {
     [NativeName("AL_NORMAL_SOFT")]
-    NormalSOFT = unchecked((uint)0x0000),
+    Normal = unchecked((uint)0x0000),
 
     [NativeName("AL_SUPER_STEREO_SOFT")]
-    SuperStereoSOFT = unchecked((uint)0x0001),
+    SuperStereo = unchecked((uint)0x0001),
 }

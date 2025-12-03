@@ -14,8 +14,8 @@ public enum PerformanceQueryCapsMaskINTEL : uint
     None = 0x0,
 
     [NativeName("GL_PERFQUERY_SINGLE_CONTEXT_INTEL")]
-    SingleContextINTEL = unchecked((uint)0x00000000),
+    SingleContext = unchecked((uint)0x00000000),
 
     [NativeName("GL_PERFQUERY_GLOBAL_CONTEXT_INTEL")]
-    GlobalContextINTEL = unchecked((uint)0x00000001),
+    GlobalContext = unchecked((uint)0x00000001),
 }

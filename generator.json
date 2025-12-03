@@ -147,14 +147,16 @@
         ]
       },
       "MixKhronosData": {
-        "UseDataTypeTrimmings": true,
         "SpecPath": "eng/submodules/opengl/xml/gl.xml",
+        "Namespace": "Silk.NET.OpenGL",
         "TypeMap": {
           "TraceMaskMESA": "uint",
           "PathRenderingTokenNV": "byte",
           "PathCoordType": "byte"
         },
-        "Namespace": "Silk.NET.OpenGL"
+        "TrimFunctionDataTypes": true,
+        "TrimEnumTypeNonExclusiveVendors": true,
+        "TrimEnumMemberImpliedVendors": true
       },
       "AddVTables": {
         "VTables": [
@@ -174,7 +176,8 @@
       "PrettifyNames": {
         "GlobalPrefixHints": ["gl"],
         "PrefixOverrides": {
-          "SyncObjectMask": "GL_SYNC"
+          "SyncObjectMask": "GL_SYNC",
+          "OcclusionQueryParameterNameNV": "GL"
         }
       },
       "TransformEnums": {
@@ -228,12 +231,7 @@
         }
       },
       "MixKhronosData": {
-        "UseDataTypeTrimmings": true,
         "SpecPath": "eng/submodules/openal-soft/registry/xml/al.xml",
-        "EnumNativeTypeNames": {
-          "ALenum": "AlEnum",
-          "ALCenum": "AlcEnum"
-        },
         "Namespace": "Silk.NET.OpenAL",
         "NonStandardExtensionNomenclature": true,
         "Vendors": [
@@ -241,9 +239,15 @@
           "LOKI",
           "EXT"
         ],
+        "ExcludeVendorSuffixIdentification": [
+          "ALC_INVALID_CONTEXT"
+        ],
         "IgnoreNonVendorSuffixes": [
           "Direct"
-        ]
+        ],
+        "TrimFunctionDataTypes": true,
+        "TrimEnumTypeNonExclusiveVendors": true,
+        "TrimEnumMemberImpliedVendors": true
       },
       "InterceptNativeFunctions": {
         "NativeFunctionNames": [
@@ -363,11 +367,12 @@
           "VkFlags",
           "VkFlags64"
         ],
-        "VendorSuffixIdentificationExclusions": [
+        "ExcludeVendorSuffixIdentification": [
           "VK_VENDOR_ID_VIV",
           "VK_VENDOR_ID_VSI",
           "VK_VENDOR_ID_MESA"
-        ]
+        ],
+        "TrimEnumMemberImpliedVendors": true
       },
       "InterceptNativeFunctions": {
         "NativeFunctionNames": [

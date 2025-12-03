@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum EvalMapsModeNV : uint
 {
     [NativeName("GL_FILL_NV")]
-    FillNV = unchecked((uint)0x1B02),
+    Fill = unchecked((uint)0x1B02),
 }

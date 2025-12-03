@@ -21,7 +21,7 @@ public enum AccelerationStructureTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TopLevelKHR = 0,
+    TopLevel = 0,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_KHR")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum AccelerationStructureTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    BottomLevelKHR = 1,
+    BottomLevel = 1,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_GENERIC_KHR")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public enum AccelerationStructureTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    GenericKHR = 2,
+    Generic = 2,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public enum AccelerationStructureTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TopLevelNV = TopLevelKHR,
+    TopLevelNV = TopLevel,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV")]
     [SupportedApiProfile(
@@ -65,5 +65,5 @@ public enum AccelerationStructureTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    BottomLevelNV = BottomLevelKHR,
+    BottomLevelNV = BottomLevel,
 }

@@ -21,7 +21,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    GenericKHR = 0,
+    Generic = 0,
 
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_PERCENTAGE_KHR")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    PercentageKHR = 1,
+    Percentage = 1,
 
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_NANOSECONDS_KHR")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    NanosecondsKHR = 2,
+    Nanoseconds = 2,
 
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_BYTES_KHR")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    BytesKHR = 3,
+    Bytes = 3,
 
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_BYTES_PER_SECOND_KHR")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    BytesPerSecondKHR = 4,
+    BytesPerSecond = 4,
 
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_KELVIN_KHR")]
     [SupportedApiProfile(
@@ -76,7 +76,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    KelvinKHR = 5,
+    Kelvin = 5,
 
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_WATTS_KHR")]
     [SupportedApiProfile(
@@ -87,7 +87,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    WattsKHR = 6,
+    Watts = 6,
 
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_VOLTS_KHR")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    VoltsKHR = 7,
+    Volts = 7,
 
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_AMPS_KHR")]
     [SupportedApiProfile(
@@ -109,7 +109,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    AmpsKHR = 8,
+    Amps = 8,
 
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_HERTZ_KHR")]
     [SupportedApiProfile(
@@ -120,7 +120,7 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    HertzKHR = 9,
+    Hertz = 9,
 
     [NativeName("VK_PERFORMANCE_COUNTER_UNIT_CYCLES_KHR")]
     [SupportedApiProfile(
@@ -131,5 +131,5 @@ public enum PerformanceCounterUnitKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    CyclesKHR = 10,
+    Cycles = 10,
 }

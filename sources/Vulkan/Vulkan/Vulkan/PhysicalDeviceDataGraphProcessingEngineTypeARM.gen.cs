@@ -18,7 +18,7 @@ public enum PhysicalDeviceDataGraphProcessingEngineTypeARM : uint
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    DefaultARM = 0,
+    Default = 0,
 
     [NativeName("VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_NEURAL_QCOM")]
     [SupportedApiProfile(

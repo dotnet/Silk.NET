@@ -14,32 +14,32 @@ namespace Silk.NET.OpenAL;
 public enum DebugTypeEXT : uint
 {
     [NativeName("AL_DONT_CARE_EXT")]
-    DontCareEXT = unchecked((uint)0x0002),
+    DontCare = unchecked((uint)0x0002),
 
     [NativeName("AL_DEBUG_TYPE_ERROR_EXT")]
-    DebugTypeErrorEXT = unchecked((uint)0x19BA),
+    DebugTypeError = unchecked((uint)0x19BA),
 
     [NativeName("AL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_EXT")]
-    DebugTypeDeprecatedBehaviorEXT = unchecked((uint)0x19BB),
+    DebugTypeDeprecatedBehavior = unchecked((uint)0x19BB),
 
     [NativeName("AL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_EXT")]
-    DebugTypeUndefinedBehaviorEXT = unchecked((uint)0x19BC),
+    DebugTypeUndefinedBehavior = unchecked((uint)0x19BC),
 
     [NativeName("AL_DEBUG_TYPE_PORTABILITY_EXT")]
-    DebugTypePortabilityEXT = unchecked((uint)0x19BD),
+    DebugTypePortability = unchecked((uint)0x19BD),
 
     [NativeName("AL_DEBUG_TYPE_PERFORMANCE_EXT")]
-    DebugTypePerformanceEXT = unchecked((uint)0x19BE),
+    DebugTypePerformance = unchecked((uint)0x19BE),
 
     [NativeName("AL_DEBUG_TYPE_MARKER_EXT")]
-    DebugTypeMarkerEXT = unchecked((uint)0x19BF),
+    DebugTypeMarker = unchecked((uint)0x19BF),
 
     [NativeName("AL_DEBUG_TYPE_PUSH_GROUP_EXT")]
-    DebugTypePushGroupEXT = unchecked((uint)0x19C0),
+    DebugTypePushGroup = unchecked((uint)0x19C0),
 
     [NativeName("AL_DEBUG_TYPE_POP_GROUP_EXT")]
-    DebugTypePopGroupEXT = unchecked((uint)0x19C1),
+    DebugTypePopGroup = unchecked((uint)0x19C1),
 
     [NativeName("AL_DEBUG_TYPE_OTHER_EXT")]
-    DebugTypeOtherEXT = unchecked((uint)0x19C2),
+    DebugTypeOther = unchecked((uint)0x19C2),
 }

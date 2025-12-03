@@ -11,26 +11,26 @@ namespace Silk.NET.OpenGL;
 public enum FragmentLightNameSGIX : uint
 {
     [NativeName("GL_FRAGMENT_LIGHT0_SGIX")]
-    Light0SGIX = unchecked((uint)0x840C),
+    Light0 = unchecked((uint)0x840C),
 
     [NativeName("GL_FRAGMENT_LIGHT1_SGIX")]
-    Light1SGIX = unchecked((uint)0x840D),
+    Light1 = unchecked((uint)0x840D),
 
     [NativeName("GL_FRAGMENT_LIGHT2_SGIX")]
-    Light2SGIX = unchecked((uint)0x840E),
+    Light2 = unchecked((uint)0x840E),
 
     [NativeName("GL_FRAGMENT_LIGHT3_SGIX")]
-    Light3SGIX = unchecked((uint)0x840F),
+    Light3 = unchecked((uint)0x840F),
 
     [NativeName("GL_FRAGMENT_LIGHT4_SGIX")]
-    Light4SGIX = unchecked((uint)0x8410),
+    Light4 = unchecked((uint)0x8410),
 
     [NativeName("GL_FRAGMENT_LIGHT5_SGIX")]
-    Light5SGIX = unchecked((uint)0x8411),
+    Light5 = unchecked((uint)0x8411),
 
     [NativeName("GL_FRAGMENT_LIGHT6_SGIX")]
-    Light6SGIX = unchecked((uint)0x8412),
+    Light6 = unchecked((uint)0x8412),
 
     [NativeName("GL_FRAGMENT_LIGHT7_SGIX")]
-    Light7SGIX = unchecked((uint)0x8413),
+    Light7 = unchecked((uint)0x8413),
 }

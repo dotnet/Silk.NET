@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum MapTextureFormatINTEL : uint
 {
     [NativeName("GL_LAYOUT_DEFAULT_INTEL")]
-    DefaultINTEL = unchecked((uint)0),
+    Default = unchecked((uint)0),
 
     [NativeName("GL_LAYOUT_LINEAR_INTEL")]
-    LinearINTEL = unchecked((uint)1),
+    Linear = unchecked((uint)1),
 
     [NativeName("GL_LAYOUT_LINEAR_CPU_CACHED_INTEL")]
-    LinearCpuCachedINTEL = unchecked((uint)2),
+    LinearCpuCached = unchecked((uint)2),
 }

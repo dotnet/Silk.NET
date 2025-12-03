@@ -21,7 +21,7 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    DeviceKHR = 0,
+    Device = 0,
 
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_KHR")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicKHR = 1,
+    ClockMonotonic = 1,
 
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_KHR")]
     [SupportedApiProfile(
@@ -43,7 +43,7 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicRawKHR = 2,
+    ClockMonotonicRaw = 2,
 
     [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_KHR")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    QueryPerformanceCounterKHR = 3,
+    QueryPerformanceCounter = 3,
 
     [NativeName("VK_TIME_DOMAIN_DEVICE_EXT")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    DeviceEXT = DeviceKHR,
+    DeviceEXT = Device,
 
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_EXT")]
     [SupportedApiProfile(
@@ -76,7 +76,7 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicEXT = ClockMonotonicKHR,
+    ClockMonotonicEXT = ClockMonotonic,
 
     [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_EXT")]
     [SupportedApiProfile(
@@ -87,7 +87,7 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicRawEXT = ClockMonotonicRawKHR,
+    ClockMonotonicRawEXT = ClockMonotonicRaw,
 
     [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_EXT")]
     [SupportedApiProfile(
@@ -98,5 +98,5 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    QueryPerformanceCounterEXT = QueryPerformanceCounterKHR,
+    QueryPerformanceCounterEXT = QueryPerformanceCounter,
 }

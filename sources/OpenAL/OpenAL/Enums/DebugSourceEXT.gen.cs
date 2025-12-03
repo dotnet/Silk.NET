@@ -14,20 +14,20 @@ namespace Silk.NET.OpenAL;
 public enum DebugSourceEXT : uint
 {
     [NativeName("AL_DONT_CARE_EXT")]
-    DontCareEXT = unchecked((uint)0x0002),
+    DontCare = unchecked((uint)0x0002),
 
     [NativeName("AL_DEBUG_SOURCE_API_EXT")]
-    DebugSourceApiEXT = unchecked((uint)0x19B5),
+    DebugSourceApi = unchecked((uint)0x19B5),
 
     [NativeName("AL_DEBUG_SOURCE_AUDIO_SYSTEM_EXT")]
-    DebugSourceAudioSystemEXT = unchecked((uint)0x19B6),
+    DebugSourceAudioSystem = unchecked((uint)0x19B6),
 
     [NativeName("AL_DEBUG_SOURCE_THIRD_PARTY_EXT")]
-    DebugSourceThirdPartyEXT = unchecked((uint)0x19B7),
+    DebugSourceThirdParty = unchecked((uint)0x19B7),
 
     [NativeName("AL_DEBUG_SOURCE_APPLICATION_EXT")]
-    DebugSourceApplicationEXT = unchecked((uint)0x19B8),
+    DebugSourceApplication = unchecked((uint)0x19B8),
 
     [NativeName("AL_DEBUG_SOURCE_OTHER_EXT")]
-    DebugSourceOtherEXT = unchecked((uint)0x19B9),
+    DebugSourceOther = unchecked((uint)0x19B9),
 }

@@ -44,7 +44,7 @@ public enum ErrorCode : uint
     CInvalidDevice = unchecked((uint)0xA001),
 
     [NativeName("ALC_INVALID_CONTEXT")]
-    CInvalidContEXT = unchecked((uint)0xA002),
+    CInvalidContext = unchecked((uint)0xA002),
 
     [NativeName("ALC_INVALID_ENUM")]
     CInvalidEnum = unchecked((uint)0xA003),

@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum HintTargetPGI : uint
 {
     [NativeName("GL_VERTEX_DATA_HINT_PGI")]
-    VertexDataHintPGI = unchecked((uint)0x1A22A),
+    VertexDataHint = unchecked((uint)0x1A22A),
 
     [NativeName("GL_VERTEX_CONSISTENT_HINT_PGI")]
-    VertexConsistentHintPGI = unchecked((uint)0x1A22B),
+    VertexConsistentHint = unchecked((uint)0x1A22B),
 
     [NativeName("GL_MATERIAL_SIDE_HINT_PGI")]
-    MaterialSideHintPGI = unchecked((uint)0x1A22C),
+    MaterialSideHint = unchecked((uint)0x1A22C),
 
     [NativeName("GL_MAX_VERTEX_HINT_PGI")]
-    MaxVertexHintPGI = unchecked((uint)0x1A22D),
+    MaxVertexHint = unchecked((uint)0x1A22D),
 }

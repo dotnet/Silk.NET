@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum VertexShaderParameterEXT : uint
 {
     [NativeName("GL_CURRENT_VERTEX_EXT")]
-    CurrentVertexEXT = unchecked((uint)0x87E2),
+    CurrentVertex = unchecked((uint)0x87E2),
 
     [NativeName("GL_MVP_MATRIX_EXT")]
-    MvpMatrixEXT = unchecked((uint)0x87E3),
+    MvpMatrix = unchecked((uint)0x87E3),
 }

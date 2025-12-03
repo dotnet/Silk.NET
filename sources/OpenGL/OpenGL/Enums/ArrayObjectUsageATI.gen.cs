@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum ArrayObjectUsageATI : uint
 {
     [NativeName("GL_STATIC_ATI")]
-    StaticATI = unchecked((uint)0x8760),
+    Static = unchecked((uint)0x8760),
 
     [NativeName("GL_DYNAMIC_ATI")]
-    DynamicATI = unchecked((uint)0x8761),
+    Dynamic = unchecked((uint)0x8761),
 }

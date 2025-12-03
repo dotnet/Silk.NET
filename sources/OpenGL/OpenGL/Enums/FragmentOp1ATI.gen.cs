@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum FragmentOp1ATI : uint
 {
     [NativeName("GL_MOV_ATI")]
-    MovATI = unchecked((uint)0x8961),
+    Mov = unchecked((uint)0x8961),
 }

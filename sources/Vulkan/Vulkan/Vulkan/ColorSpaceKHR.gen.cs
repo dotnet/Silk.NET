@@ -14,7 +14,7 @@ public enum ColorSpaceKHR : uint
 {
     [NativeName("VK_COLOR_SPACE_SRGB_NONLINEAR_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
-    SrgbNonlinearKHR = 0,
+    SrgbNonlinear = 0,
 
     [NativeName("VK_COLOR_SPACE_DISPLAY_P3_NONLINEAR_EXT")]
     [SupportedApiProfile(

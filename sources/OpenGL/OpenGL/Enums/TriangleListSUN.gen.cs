@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum TriangleListSUN : uint
 {
     [NativeName("GL_RESTART_SUN")]
-    RestartSUN = unchecked((uint)0x0001),
+    Restart = unchecked((uint)0x0001),
 
     [NativeName("GL_REPLACE_MIDDLE_SUN")]
-    ReplaceMiddleSUN = unchecked((uint)0x0002),
+    ReplaceMiddle = unchecked((uint)0x0002),
 
     [NativeName("GL_REPLACE_OLDEST_SUN")]
-    ReplaceOldestSUN = unchecked((uint)0x0003),
+    ReplaceOldest = unchecked((uint)0x0003),
 }

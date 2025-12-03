@@ -14,8 +14,8 @@ public enum FfdMaskSGIX : uint
     None = 0x0,
 
     [NativeName("GL_TEXTURE_DEFORMATION_BIT_SGIX")]
-    TextureDeformationBitSGIX = unchecked((uint)0x00000001),
+    TextureDeformationBit = unchecked((uint)0x00000001),
 
     [NativeName("GL_GEOMETRY_DEFORMATION_BIT_SGIX")]
-    GeometryDeformationBitSGIX = unchecked((uint)0x00000002),
+    GeometryDeformationBit = unchecked((uint)0x00000002),
 }

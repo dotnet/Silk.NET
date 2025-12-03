@@ -21,7 +21,7 @@ public enum DepthBiasRepresentationEXT : uint
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    LeastRepresentableValueFormatEXT = 0,
+    LeastRepresentableValueFormat = 0,
 
     [NativeName("VK_DEPTH_BIAS_REPRESENTATION_LEAST_REPRESENTABLE_VALUE_FORCE_UNORM_EXT")]
     [SupportedApiProfile(
@@ -32,7 +32,7 @@ public enum DepthBiasRepresentationEXT : uint
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    LeastRepresentableValueForceUnormEXT = 1,
+    LeastRepresentableValueForceUnorm = 1,
 
     [NativeName("VK_DEPTH_BIAS_REPRESENTATION_FLOAT_EXT")]
     [SupportedApiProfile(
@@ -43,5 +43,5 @@ public enum DepthBiasRepresentationEXT : uint
             "VK_EXT_depth_bias_control+VK_VERSION_1_1",
         ]
     )]
-    FloatEXT = 2,
+    Float = 2,
 }

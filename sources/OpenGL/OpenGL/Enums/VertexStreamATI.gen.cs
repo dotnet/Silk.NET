@@ -11,26 +11,26 @@ namespace Silk.NET.OpenGL;
 public enum VertexStreamATI : uint
 {
     [NativeName("GL_VERTEX_STREAM0_ATI")]
-    Stream0ATI = unchecked((uint)0x876C),
+    Stream0 = unchecked((uint)0x876C),
 
     [NativeName("GL_VERTEX_STREAM1_ATI")]
-    Stream1ATI = unchecked((uint)0x876D),
+    Stream1 = unchecked((uint)0x876D),
 
     [NativeName("GL_VERTEX_STREAM2_ATI")]
-    Stream2ATI = unchecked((uint)0x876E),
+    Stream2 = unchecked((uint)0x876E),
 
     [NativeName("GL_VERTEX_STREAM3_ATI")]
-    Stream3ATI = unchecked((uint)0x876F),
+    Stream3 = unchecked((uint)0x876F),
 
     [NativeName("GL_VERTEX_STREAM4_ATI")]
-    Stream4ATI = unchecked((uint)0x8770),
+    Stream4 = unchecked((uint)0x8770),
 
     [NativeName("GL_VERTEX_STREAM5_ATI")]
-    Stream5ATI = unchecked((uint)0x8771),
+    Stream5 = unchecked((uint)0x8771),
 
     [NativeName("GL_VERTEX_STREAM6_ATI")]
-    Stream6ATI = unchecked((uint)0x8772),
+    Stream6 = unchecked((uint)0x8772),
 
     [NativeName("GL_VERTEX_STREAM7_ATI")]
-    Stream7ATI = unchecked((uint)0x8773),
+    Stream7 = unchecked((uint)0x8773),
 }

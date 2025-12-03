@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum AmbisonicLayoutSOFT : uint
 {
     [NativeName("AL_FUMA_SOFT")]
-    FumaSOFT = unchecked((uint)0x0000),
+    Fuma = unchecked((uint)0x0000),
 
     [NativeName("AL_ACN_SOFT")]
-    AcnSOFT = unchecked((uint)0x0001),
+    Acn = unchecked((uint)0x0001),
 }

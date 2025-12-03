@@ -20,7 +20,7 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ObjectNV = 0,
+    Object = 0,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV")]
     [SupportedApiProfile(
@@ -31,7 +31,7 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
             "VK_VERSION_1_1",
         ]
     )]
-    BuildScratchNV = 1,
+    BuildScratch = 1,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV")]
     [SupportedApiProfile(
@@ -42,5 +42,5 @@ public enum AccelerationStructureMemoryRequirementsTypeNV : uint
             "VK_VERSION_1_1",
         ]
     )]
-    UpdateScratchNV = 2,
+    UpdateScratch = 2,
 }

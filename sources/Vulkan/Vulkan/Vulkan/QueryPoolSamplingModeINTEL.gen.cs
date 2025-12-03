@@ -14,5 +14,5 @@ public enum QueryPoolSamplingModeINTEL : uint
 {
     [NativeName("VK_QUERY_POOL_SAMPLING_MODE_MANUAL_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    ManualINTEL = 0,
+    Manual = 0,
 }

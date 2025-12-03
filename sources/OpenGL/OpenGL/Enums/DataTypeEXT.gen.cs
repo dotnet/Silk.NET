@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum DataTypeEXT : uint
 {
     [NativeName("GL_SCALAR_EXT")]
-    ScalarEXT = unchecked((uint)0x87BE),
+    Scalar = unchecked((uint)0x87BE),
 
     [NativeName("GL_VECTOR_EXT")]
-    VectorEXT = unchecked((uint)0x87BF),
+    Vector = unchecked((uint)0x87BF),
 
     [NativeName("GL_MATRIX_EXT")]
-    MatrixEXT = unchecked((uint)0x87C0),
+    Matrix = unchecked((uint)0x87C0),
 }

@@ -15,7 +15,7 @@ public enum MemoryDecompressionMethodFlagsEXT : ulong
     None = 0x0,
 
     [NativeName("VK_MEMORY_DECOMPRESSION_METHOD_GDEFLATE_1_0_BIT_EXT")]
-    Gdeflate1X0BitEXT = 0x1,
+    Gdeflate1X0Bit = 0x1,
 
     [NativeName("VK_MEMORY_DECOMPRESSION_METHOD_GDEFLATE_1_0_BIT_NV")]
     Gdeflate1X0BitNV = 0x1,

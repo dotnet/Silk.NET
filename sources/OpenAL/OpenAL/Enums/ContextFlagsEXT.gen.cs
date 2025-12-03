@@ -14,5 +14,5 @@ namespace Silk.NET.OpenAL;
 public enum ContextFlagsEXT : uint
 {
     [NativeName("ALC_CONTEXT_DEBUG_BIT_EXT")]
-    ContextDebugBitEXT = unchecked((uint)0x0001),
+    ContextDebugBit = unchecked((uint)0x0001),
 }

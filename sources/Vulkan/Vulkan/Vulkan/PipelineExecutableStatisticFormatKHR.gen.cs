@@ -19,7 +19,7 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Bool32KHR = 0,
+    Bool32 = 0,
 
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_INT64_KHR")]
     [SupportedApiProfile(
@@ -30,7 +30,7 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Int64KHR = 1,
+    Int64 = 1,
 
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_UINT64_KHR")]
     [SupportedApiProfile(
@@ -41,7 +41,7 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Uint64KHR = 2,
+    Uint64 = 2,
 
     [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_FLOAT64_KHR")]
     [SupportedApiProfile(
@@ -52,5 +52,5 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Float64KHR = 3,
+    Float64 = 3,
 }
