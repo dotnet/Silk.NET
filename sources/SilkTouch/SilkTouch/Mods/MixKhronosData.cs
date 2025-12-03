@@ -186,7 +186,7 @@ public partial class MixKhronosData(
         /// when determining a data type suffix to trim when <see cref="TrimFunctionDataTypes"/> is on. For example,
         /// <c>Direct</c> for OpenAL.
         /// </summary>
-        public List<string>? IgnoreNonVendorSuffixes { get; init; }
+        public List<string> NonVendorSuffixes { get; init; } = [];
 
         /// <summary>
         /// The priority with which non-vendor suffixes are applied.
@@ -1849,31 +1849,61 @@ public partial class MixKhronosData(
     /// </remarks>
     private class RewriterPhase3(JobData job, Configuration config) : CSharpSyntaxRewriter
     {
-        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
+        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier, MethodDeclarationSyntax? methodDeclaration = null)
         {
-            var name = attributeLists.GetNativeNameOrDefault(identifier);
+            // Get the name of the identifier, preferring the native one if available
+            // This name will be modified by the code below as different suffixes are identified
+            var trimmedName = attributeLists.GetNativeNameOrDefault(identifier);
 
             var handleSuffix = "_T";
-            if (name.EndsWith(handleSuffix))
+            if (trimmedName.EndsWith(handleSuffix))
             {
-                name = name[..^handleSuffix.Length];
+                trimmedName = trimmedName[..^handleSuffix.Length];
                 attributeLists = attributeLists
                     .AddNameSuffix(handleSuffix, -1)
-                    .WithNativeName(name);
+                    .WithNativeName(trimmedName);
             }
 
-            if (config.ExcludeVendorSuffixIdentification.Contains(name))
+            if (!config.ExcludeVendorSuffixIdentification.Contains(trimmedName))
             {
-                return attributeLists;
-            }
-
-            foreach (var vendor in job.Vendors)
-            {
-                if (name.EndsWith(vendor))
+                // Try to identify vendor suffixes
+                foreach (var vendor in job.Vendors)
                 {
-                    attributeLists = attributeLists.AddNameSuffix(vendor, config.VendorSuffixPriority);
+                    if (trimmedName.EndsWith(vendor))
+                    {
+                        attributeLists = attributeLists.AddNameSuffix(vendor, config.VendorSuffixPriority);
+                        trimmedName = trimmedName[..^vendor.Length];
 
-                    break;
+                        break;
+                    }
+                }
+            }
+
+            if (methodDeclaration != null && methodDeclaration.Parent.IsKind(SyntaxKind.ClassDeclaration))
+            {
+                // Try to identify non-vendor suffixes
+                foreach (var suffix in config.NonVendorSuffixes)
+                {
+                    if (trimmedName.EndsWith(suffix))
+                    {
+                        attributeLists = attributeLists.AddNameSuffix(suffix, config.NonVendorSuffixPriority);
+                        trimmedName = trimmedName[..^suffix.Length];
+
+                        break;
+                    }
+                }
+
+                // Try to identify data type suffixes
+                if (config.TrimFunctionDataTypes)
+                {
+                    if (EndingsToTrim().Match(trimmedName) is { Success: true } match // Check if we end in a data type suffix
+                        && !EndingsNotToTrim().IsMatch(trimmedName)) // Check if the ending is excluded
+                    {
+                        var dataTypeSuffix = trimmedName[match.Index..];
+                        trimmedName = trimmedName[..^match.Index];
+
+                        attributeLists = attributeLists.AddNameSuffix(dataTypeSuffix, -1);
+                    }
                 }
             }
 
@@ -1989,7 +2019,7 @@ public partial class MixKhronosData(
             node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
 
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, node));
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]

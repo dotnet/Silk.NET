@@ -242,7 +242,7 @@
         "ExcludeVendorSuffixIdentification": [
           "ALC_INVALID_CONTEXT"
         ],
-        "IgnoreNonVendorSuffixes": [
+        "NonVendorSuffixes": [
           "Direct"
         ],
         "TrimFunctionDataTypes": true,
