@@ -3,7 +3,7 @@ using System.Diagnostics;
 namespace Silk.NET.Core;
 
 /// <summary>
-/// Stores the affix of the identifier that this attribute is placed on.
+/// Attribute used by the SilkTouch bindings generator to store information about identified name affixes.
 /// </summary>
 [AttributeUsage(
     AttributeTargets.Class
