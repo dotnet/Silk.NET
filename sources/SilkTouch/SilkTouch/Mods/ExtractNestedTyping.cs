@@ -44,9 +44,9 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger, IO
     public record Configuration
     {
         /// <summary>
-        /// The priority with which the -Delegate suffix is applied.
+        /// The order with which the -Delegate suffix is applied.
         /// </summary>
-        public int DelegateSuffixPriority { get; init; } = 0;
+        public int DelegateSuffixOrder { get; init; } = 0;
     }
 
     /// <inheritdoc />
@@ -77,7 +77,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger, IO
         }
 
         // Second pass to modify existing files as per our discovery.
-        var rewriter = new Rewriter(logger, config.DelegateSuffixPriority);
+        var rewriter = new Rewriter(logger, config.DelegateSuffixOrder);
         // rewriter.FunctionPointerTypes = walker.GetFunctionPointerTypes();
         var (enums, constants) = walker.GetExtractedEnums();
         rewriter.ConstantsToRemove = constants;

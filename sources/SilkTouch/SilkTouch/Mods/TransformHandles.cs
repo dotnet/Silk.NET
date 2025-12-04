@@ -50,9 +50,9 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         public bool UseDSL { get; init; }
 
         /// <summary>
-        /// The priority with which the -Handle suffix is applied.
+        /// The order with which the -Handle suffix is applied.
         /// </summary>
-        public int HandleSuffixPriority { get; init; } = 0;
+        public int HandleSuffixOrder { get; init; } = 0;
     }
 
     /// <inheritdoc />
@@ -134,7 +134,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         project = ctx.SourceProject;
 
         // Use document IDs from earlier
-        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL, cfg.HandleSuffixPriority);
+        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL, cfg.HandleSuffixOrder);
         foreach (var (originalName, documentId) in handleTypeDocumentIds)
         {
             var document = project.GetDocument(documentId) ?? throw new InvalidOperationException("Failed to find document");

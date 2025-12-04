@@ -169,9 +169,9 @@ public partial class MixKhronosData(
         public List<string>? Vendors { get; init; }
 
         /// <summary>
-        /// The priority with which vendor suffixes are applied.
+        /// The order with which vendor suffixes are applied.
         /// </summary>
-        public int VendorSuffixPriority { get; init; } = 0;
+        public int VendorSuffixOrder { get; init; } = 0;
 
         /// <summary>
         /// The set of identifiers that should be excluded from vendor suffix identification.
@@ -189,9 +189,9 @@ public partial class MixKhronosData(
         public List<string> NonVendorSuffixes { get; init; } = [];
 
         /// <summary>
-        /// The priority with which non-vendor suffixes are applied.
+        /// The order with which non-vendor suffixes are applied.
         /// </summary>
-        public int NonVendorSuffixPriority { get; init; } = 0;
+        public int NonVendorSuffixOrder { get; init; } = 0;
 
         /// <summary>
         /// Whether OpenGL-style data type suffixes should be trimmed.
@@ -1871,7 +1871,7 @@ public partial class MixKhronosData(
                 {
                     if (trimmedName.EndsWith(vendor))
                     {
-                        attributeLists = attributeLists.AddNameSuffix(vendor, config.VendorSuffixPriority);
+                        attributeLists = attributeLists.AddNameSuffix(vendor, config.VendorSuffixOrder);
                         trimmedName = trimmedName[..^vendor.Length];
 
                         break;
@@ -1886,7 +1886,7 @@ public partial class MixKhronosData(
                 {
                     if (trimmedName.EndsWith(suffix))
                     {
-                        attributeLists = attributeLists.AddNameSuffix(suffix, config.NonVendorSuffixPriority);
+                        attributeLists = attributeLists.AddNameSuffix(suffix, config.NonVendorSuffixOrder);
                         trimmedName = trimmedName[..^suffix.Length];
 
                         break;
@@ -1935,7 +1935,7 @@ public partial class MixKhronosData(
             var groupInfo = job.Groups.GetValueOrDefault(typeName);
 
             var typeVendor = job.Vendors.FirstOrDefault(typeName.EndsWith);
-            var vendorFromTypeNamePriority = config.VendorSuffixPriority;
+            var vendorFromTypeNameOrder = config.VendorSuffixOrder;
 
             // Figure out the enum's exclusive vendor
             var exclusiveVendor = groupInfo?.ExclusiveVendor ?? typeVendor;
@@ -1972,7 +1972,7 @@ public partial class MixKhronosData(
                     if (isSafeToTrimType)
                     {
                         // Remove the exclusive vendor from the enum name since it is wrong and it is safe to do so
-                        vendorFromTypeNamePriority = -1;
+                        vendorFromTypeNameOrder = -1;
 
                         // Type suffix has been removed
                         isSafeToTrimMembers = false;
@@ -1983,7 +1983,7 @@ public partial class MixKhronosData(
             if (typeVendor != null)
             {
                 // Mark the type vendor suffix as identified
-                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(typeVendor, vendorFromTypeNamePriority));
+                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(typeVendor, vendorFromTypeNameOrder));
             }
 
             // Trim the enum members if needed

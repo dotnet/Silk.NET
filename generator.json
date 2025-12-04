@@ -58,12 +58,12 @@
         "InputTestRoot": "tests/SDL"
       },
       "ExtractNestedTyping": {
-        "DelegateSuffixPriority": 1
+        "DelegateSuffixOrder": 1
       },
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
         "UseDSL": true,
-        "HandleSuffixPriority": 1
+        "HandleSuffixOrder": 1
       },
       "TransformFunctions": {
         "BoolTypes": {
@@ -309,10 +309,10 @@
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
         "UseDSL": true,
-        "HandleSuffixPriority": 1
+        "HandleSuffixOrder": 1
       },
       "ExtractNestedTyping": {
-        "DelegateSuffixPriority": 1
+        "DelegateSuffixOrder": 1
       },
       "StripAttributes": {
         "Remove": [
@@ -357,7 +357,7 @@
         ]
       },
       "ExtractNestedTyping": {
-        "DelegateSuffixPriority": 1
+        "DelegateSuffixOrder": 1
       },
       "MixKhronosData": {
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
@@ -387,7 +387,7 @@
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
         "UseDSL": true,
-        "HandleSuffixPriority": 1
+        "HandleSuffixOrder": 1
       },
       "PrettifyNames": {
         "GlobalPrefixHints": ["PFN_vk","vk"],

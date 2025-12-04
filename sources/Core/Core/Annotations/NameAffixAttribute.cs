@@ -54,10 +54,10 @@ public sealed class NameAffixAttribute : Attribute
 
     /// <summary>
     /// The priority with which the affix is used
-    /// to create alternative names in case of conflicts.
+    /// to create secondary names in case of conflicts.
     /// <para/>
-    /// Negative means the affix is required.
-    /// Non-negative means the affix is optional.
+    /// Negative means the affix is required, but won't be used to create secondaries.
+    /// Non-negative means the affix is optional, but will be used to create secondaries.
     /// Higher means the names created using the affix is tried first.
     /// <para/>
     /// Affixes with the same priority are applied together as a group.
