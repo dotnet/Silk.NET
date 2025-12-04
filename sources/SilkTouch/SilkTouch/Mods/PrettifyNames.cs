@@ -99,6 +99,7 @@ public class PrettifyNames(
                 .SelectMany(x => x.Get(ctx.JobKey))
                 .Append(new NameAffixerEarlyTrimmer(visitor.AffixTypes))
                 .Append(new NameAffixerLateTrimmer(visitor.AffixTypes))
+                .Append(new PrettifyNamesTrimmer())
                 .OrderBy(x => x.Version)
                 .ToArray();
 
@@ -178,17 +179,9 @@ public class PrettifyNames(
 
                 // Add it to the rewriter's list of names to... rewrite...
                 newNames[typeName] = new RenamedType(
-                    newTypeName.Prettify(),
-
-                    constNames.ToDictionary(
-                        x => x.Key,
-                        x => x.Value.Primary.Prettify()
-                    ),
-
-                    functionNames.ToDictionary(
-                        x => x.Key,
-                        x => x.Value.Primary.Prettify()
-                    )
+                    newTypeName,
+                    constNames.ToDictionary(x => x.Key, x => x.Value.Primary),
+                    functionNames.ToDictionary(x => x.Key, x => x.Value.Primary)
                 );
             }
         }
@@ -768,7 +761,21 @@ public class PrettifyNames(
 
         var originalPrimary = primary;
 
-        affixes.Sort((a, b) => a.Order.CompareTo(b.Order));
+        // Sort affixes so that the outer affixes are first
+        affixes.Sort(static (a, b) =>
+        {
+            // Sort by ascending order
+            // Higher order means the affix is closer to the inside of the name
+            if (a.Order != b.Order)
+            {
+                return a.Order.CompareTo(b.Order);
+            }
+
+            // Then by descending declaration order
+            // Lower declaration order means the affix is closer to the inside of the name
+            return -a.DeclarationOrder.CompareTo(b.DeclarationOrder);
+        });
+
         var prefixes = affixes.Where(x => x.IsPrefix).ToList();
         var suffixes = affixes.Where(x => !x.IsPrefix).ToList();
 
@@ -828,34 +835,94 @@ public class PrettifyNames(
             return primary;
         }
 
-        var originalPrimary = primary;
-
-        affixes.Sort((a, b) => -a.Order.CompareTo(b.Order));
-        foreach (var affix in affixes)
+        // Sort affixes by priority
+        // Negative priority is first, followed by highest non-negative priority
+        // This groups the required affixes at the start and each group of fallback affixes together
+        affixes.Sort(static (a, b) =>
         {
-            if (affix.Order >= 0)
+            // Negative priority first
+            // These are our required affixes
+            if (int.Sign(a.Priority) != 1 || int.Sign(b.Priority) != 1)
             {
-                if (affix.IsPrefix)
+                return a.Priority.CompareTo(b.Priority);
+            }
+
+            // Then sort the remaining by descending priority
+            return -a.Priority.CompareTo(b.Priority);
+        });
+
+        // This is guaranteed to be non-null when this method returns if there is at least one affix
+        string? newPrimary = null;
+
+        var currentPriority = -1;
+        for (var affixI = 0; affixI < affixes.Length; affixI++)
+        {
+            var affix = affixes[affixI];
+            if (currentPriority == -1 && affix.Priority < 0)
+            {
+                continue;
+            }
+
+            if (currentPriority == -1 || affix.Priority < currentPriority)
+            {
+                currentPriority = affix.Priority;
+                CreateName(primary, affixes.AsSpan()[..affixI], ref newPrimary, secondary);
+                if (secondary == null)
                 {
-                    primary = PreventPrettificationHack(affix.Affix) + primary;
-                }
-                else
-                {
-                    primary += PreventPrettificationHack(affix.Affix);
+                    return newPrimary!;
                 }
             }
         }
 
-        if (originalPrimary != primary)
-        {
-            secondary?.Add(originalPrimary);
-        }
+        CreateName(primary, affixes, ref newPrimary, secondary);
 
-        return primary;
+        return newPrimary!;
+
+        static void CreateName(string name, Span<NameAffix> currentAffixes, ref string? newPrimary, List<string>? secondary)
+        {
+            // Sort affixes so that the inner affixes are first
+            currentAffixes.Sort(static (a, b) =>
+            {
+                // Sort by descending order
+                // Higher order means the affix is closer to the inside of the name
+                if (a.Order != b.Order)
+                {
+                    return -a.Order.CompareTo(b.Order);
+                }
+
+                // Then by ascending declaration order
+                // Lower declaration order means the affix is closer to the inside of the name
+                return a.DeclarationOrder.CompareTo(b.DeclarationOrder);
+            });
+
+            foreach (var affix in currentAffixes)
+            {
+                if (affix.Order >= 0)
+                {
+                    if (affix.IsPrefix)
+                    {
+                        name = PreventPrettificationHack(affix.Affix) + name;
+                    }
+                    else
+                    {
+                        name += PreventPrettificationHack(affix.Affix);
+                    }
+                }
+            }
+
+            if (newPrimary == null)
+            {
+                newPrimary = name;
+            }
+            else
+            {
+                secondary?.Add(name);
+            }
+        }
 
         // This appends a space before every capital and after the entire affix
         // This ensures that capitals are preserved when the name is prettified
-        string PreventPrettificationHack(string affix)
+        static string PreventPrettificationHack(string affix)
         {
             var result = "";
             foreach (var c in affix)
@@ -1281,9 +1348,9 @@ public class PrettifyNames(
     private class NameAffixerEarlyTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
     {
         /// <summary>
-        /// Use low version to ensure this trimmer runs first.
+        /// Use high-ish version to ensure this trimmer runs second to last.
         /// </summary>
-        public Version Version => new(0, 0, 0);
+        public Version Version => new(21, 21, 21);
 
         public void Trim(NameTrimmerContext context)
         {
@@ -1293,7 +1360,6 @@ public class PrettifyNames(
                 {
                     var secondaries = secondary;
                     var newPrimary = RemoveAffixes(primary, null, original, affixTypes, secondaries);
-
                     context.Names[original] = new CandidateNames(newPrimary, secondaries);
                 }
 
@@ -1304,7 +1370,6 @@ public class PrettifyNames(
             {
                 var secondaries = secondary;
                 var newPrimary = RemoveAffixes(primary, context.Container, original, affixTypes, secondaries);
-
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }
         }
@@ -1313,9 +1378,9 @@ public class PrettifyNames(
     private class NameAffixerLateTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
     {
         /// <summary>
-        /// Use low version to ensure this trimmer runs first.
+        /// Use high version to ensure this trimmer runs second to last.
         /// </summary>
-        public Version Version => new(0, 0, 0);
+        public Version Version => new(999, 999, 999);
 
         public void Trim(NameTrimmerContext context)
         {
@@ -1336,6 +1401,27 @@ public class PrettifyNames(
                 var secondaries = secondary;
                 var newPrimary = ApplyAffixes(primary, context.Container, original, affixTypes, secondaries);
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
+            }
+        }
+    }
+
+    private class PrettifyNamesTrimmer : INameTrimmer
+    {
+        /// <summary>
+        /// Use really high version to ensure this trimmer runs last.
+        /// </summary>
+        public Version Version => new(9999, 9999, 9999);
+
+        public void Trim(NameTrimmerContext context)
+        {
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                for (var i = 0; i < secondary.Count; i++)
+                {
+                    secondary[i] = secondary[i].Prettify();
+                }
+
+                context.Names[original] = new CandidateNames(primary.Prettify(), secondary);
             }
         }
     }

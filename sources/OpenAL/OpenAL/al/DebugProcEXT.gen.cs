@@ -11,20 +11,20 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ALDEBUGPROCEXT")]
-public readonly unsafe struct DebugProcExt : IDisposable
+public readonly unsafe struct DebugProcEXT : IDisposable
 {
     private readonly void* Pointer;
     public delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void> Handle =>
         (delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void>)Pointer;
 
-    public DebugProcExt(delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void> ptr) =>
+    public DebugProcEXT(delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void> ptr) =>
         Pointer = ptr;
 
-    public DebugProcExt(DebugProcDelegateExt proc) => Pointer = SilkMarshal.DelegateToPtr(proc);
+    public DebugProcEXT(DebugProcDelegateEXT proc) => Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
 
-    public static implicit operator DebugProcExt(
+    public static implicit operator DebugProcEXT(
         delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void> pfn
     ) => new(pfn);
 
@@ -36,6 +36,6 @@ public readonly unsafe struct DebugProcExt : IDisposable
         int,
         sbyte*,
         void*,
-        void>(DebugProcExt pfn) =>
+        void>(DebugProcEXT pfn) =>
         (delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void>)pfn.Pointer;
 }

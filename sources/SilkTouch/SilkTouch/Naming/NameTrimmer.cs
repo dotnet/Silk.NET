@@ -159,7 +159,7 @@ public class NameTrimmer : INameTrimmer
                     continue;
                 }
 
-                var sec = secondary ?? [];
+                var sec = secondary;
                 sec.Add(oldPrimary);
 
                 // this was trimmingName originally. given that we're using trimming name to determine a prefix but then

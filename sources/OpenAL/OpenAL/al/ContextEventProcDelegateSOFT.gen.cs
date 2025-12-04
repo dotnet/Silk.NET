@@ -11,5 +11,12 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "Delegate", 1, -1)]
-[NativeName("ALBUFFERCALLBACKTYPESOFT")]
-public unsafe delegate int BufferCallbackDelegateSoft(void* arg0, void* arg1, int arg2);
+[NativeName("ALCEVENTPROCTYPESOFT")]
+public unsafe delegate void ContextEventProcDelegateSOFT(
+    int arg0,
+    int arg1,
+    DeviceHandle arg2,
+    int arg3,
+    sbyte* arg4,
+    void* arg5
+);

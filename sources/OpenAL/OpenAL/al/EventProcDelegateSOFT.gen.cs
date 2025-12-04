@@ -11,13 +11,12 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NameAffix("Suffix", "Delegate", 1, -1)]
-[NativeName("ALDEBUGPROCEXT")]
-public unsafe delegate void DebugProcDelegateExt(
+[NativeName("ALEVENTPROCSOFT")]
+public unsafe delegate void EventProcDelegateSOFT(
     int arg0,
-    int arg1,
+    uint arg1,
     uint arg2,
     int arg3,
-    int arg4,
-    sbyte* arg5,
-    void* arg6
+    sbyte* arg4,
+    void* arg5
 );

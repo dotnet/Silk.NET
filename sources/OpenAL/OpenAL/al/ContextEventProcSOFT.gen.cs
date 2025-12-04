@@ -11,22 +11,22 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ALCEVENTPROCTYPESOFT")]
-public readonly unsafe struct ContextEventProcSoft : IDisposable
+public readonly unsafe struct ContextEventProcSOFT : IDisposable
 {
     private readonly void* Pointer;
     public delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void> Handle =>
         (delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void>)Pointer;
 
-    public ContextEventProcSoft(
+    public ContextEventProcSOFT(
         delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void> ptr
     ) => Pointer = ptr;
 
-    public ContextEventProcSoft(ContextEventProcDelegateSoft proc) =>
+    public ContextEventProcSOFT(ContextEventProcDelegateSOFT proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
 
-    public static implicit operator ContextEventProcSoft(
+    public static implicit operator ContextEventProcSOFT(
         delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void> pfn
     ) => new(pfn);
 
@@ -37,6 +37,6 @@ public readonly unsafe struct ContextEventProcSoft : IDisposable
         int,
         sbyte*,
         void*,
-        void>(ContextEventProcSoft pfn) =>
+        void>(ContextEventProcSOFT pfn) =>
         (delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void>)pfn.Pointer;
 }

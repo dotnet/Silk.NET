@@ -122,7 +122,7 @@ public unsafe partial interface IAlContext
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
         static abstract void EventCallbackSOFT(
-            [NativeName("callback")] ContextEventProcSoft callback,
+            [NativeName("callback")] ContextEventProcSOFT callback,
             [NativeName("userParam")] void* userParam
         );
 
@@ -131,7 +131,7 @@ public unsafe partial interface IAlContext
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
         static abstract void EventCallbackSOFT(
-            [NativeName("callback")] ContextEventProcSoft callback,
+            [NativeName("callback")] ContextEventProcSOFT callback,
             [NativeName("userParam")] Ref userParam
         );
 
@@ -221,7 +221,7 @@ public unsafe partial interface IAlContext
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-        static abstract void GetInteger64VSOFT(
+        static abstract void GetInteger64SOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname,
             [NativeName("size")] int size,
@@ -236,7 +236,7 @@ public unsafe partial interface IAlContext
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-        static abstract void GetInteger64VSOFT(
+        static abstract void GetInteger64SOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname,
             [NativeName("size")] int size,
@@ -251,7 +251,7 @@ public unsafe partial interface IAlContext
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-        static abstract nint GetInteger64VSOFT(
+        static abstract nint GetInteger64SOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname
         );
@@ -260,7 +260,7 @@ public unsafe partial interface IAlContext
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        static abstract void GetIntegerv(
+        static abstract void GetInteger(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1,
             [NativeName("size")] int size,
@@ -271,7 +271,7 @@ public unsafe partial interface IAlContext
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        static abstract void GetIntegerv(
+        static abstract void GetInteger(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1,
             [NativeName("size")] int size,
@@ -282,7 +282,7 @@ public unsafe partial interface IAlContext
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        static abstract int GetIntegerv(
+        static abstract int GetInteger(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1
         );
@@ -346,7 +346,7 @@ public unsafe partial interface IAlContext
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
-        static abstract sbyte* GetStringiSOFT(
+        static abstract sbyte* GetStringSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("paramName")] int paramName,
             [NativeName("index")] int index
@@ -357,7 +357,7 @@ public unsafe partial interface IAlContext
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
-        static abstract Ptr<sbyte> GetStringiSOFT(
+        static abstract Ptr<sbyte> GetStringSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
             [NativeName("index")] int index
@@ -631,7 +631,7 @@ public unsafe partial interface IAlContext
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
     void EventCallbackSOFT(
-        [NativeName("callback")] ContextEventProcSoft callback,
+        [NativeName("callback")] ContextEventProcSOFT callback,
         [NativeName("userParam")] void* userParam
     );
 
@@ -640,7 +640,7 @@ public unsafe partial interface IAlContext
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
     void EventCallbackSOFT(
-        [NativeName("callback")] ContextEventProcSoft callback,
+        [NativeName("callback")] ContextEventProcSOFT callback,
         [NativeName("userParam")] Ref userParam
     );
 
@@ -726,7 +726,7 @@ public unsafe partial interface IAlContext
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-    void GetInteger64VSOFT(
+    void GetInteger64SOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pname")] int pname,
         [NativeName("size")] int size,
@@ -741,7 +741,7 @@ public unsafe partial interface IAlContext
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-    void GetInteger64VSOFT(
+    void GetInteger64SOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pname")] int pname,
         [NativeName("size")] int size,
@@ -756,7 +756,7 @@ public unsafe partial interface IAlContext
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-    nint GetInteger64VSOFT(
+    nint GetInteger64SOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pname")] int pname
     );
@@ -765,7 +765,7 @@ public unsafe partial interface IAlContext
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-    void GetIntegerv(
+    void GetInteger(
         [NativeName("device")] DeviceHandle device,
         [NativeName("param1")] int param1,
         [NativeName("size")] int size,
@@ -776,7 +776,7 @@ public unsafe partial interface IAlContext
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-    void GetIntegerv(
+    void GetInteger(
         [NativeName("device")] DeviceHandle device,
         [NativeName("param1")] int param1,
         [NativeName("size")] int size,
@@ -787,7 +787,7 @@ public unsafe partial interface IAlContext
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-    int GetIntegerv([NativeName("device")] DeviceHandle device, [NativeName("param1")] int param1);
+    int GetInteger([NativeName("device")] DeviceHandle device, [NativeName("param1")] int param1);
 
     [NativeName("alcGetProcAddress")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -845,7 +845,7 @@ public unsafe partial interface IAlContext
     [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
-    sbyte* GetStringiSOFT(
+    sbyte* GetStringSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("paramName")] int paramName,
         [NativeName("index")] int index
@@ -856,7 +856,7 @@ public unsafe partial interface IAlContext
     [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
-    Ptr<sbyte> GetStringiSOFT(
+    Ptr<sbyte> GetStringSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
         [NativeName("index")] int index

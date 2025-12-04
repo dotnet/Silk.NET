@@ -11,24 +11,24 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ALBUFFERCALLBACKTYPESOFT")]
-public readonly unsafe struct BufferCallbackSoft : IDisposable
+public readonly unsafe struct BufferCallbackSOFT : IDisposable
 {
     private readonly void* Pointer;
     public delegate* unmanaged<void*, void*, int, int> Handle =>
         (delegate* unmanaged<void*, void*, int, int>)Pointer;
 
-    public BufferCallbackSoft(delegate* unmanaged<void*, void*, int, int> ptr) => Pointer = ptr;
+    public BufferCallbackSOFT(delegate* unmanaged<void*, void*, int, int> ptr) => Pointer = ptr;
 
-    public BufferCallbackSoft(BufferCallbackDelegateSoft proc) =>
+    public BufferCallbackSOFT(BufferCallbackDelegateSOFT proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
 
-    public static implicit operator BufferCallbackSoft(
+    public static implicit operator BufferCallbackSOFT(
         delegate* unmanaged<void*, void*, int, int> pfn
     ) => new(pfn);
 
     public static implicit operator delegate* unmanaged<void*, void*, int, int>(
-        BufferCallbackSoft pfn
+        BufferCallbackSOFT pfn
     ) => (delegate* unmanaged<void*, void*, int, int>)pfn.Pointer;
 }
