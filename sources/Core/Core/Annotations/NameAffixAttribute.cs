@@ -7,13 +7,13 @@ namespace Silk.NET.Core;
 /// </summary>
 [AttributeUsage(
     AttributeTargets.Class
-    | AttributeTargets.Struct
+    | AttributeTargets.Delegate
     | AttributeTargets.Enum
-    | AttributeTargets.Property
     | AttributeTargets.Field
     | AttributeTargets.Method
     | AttributeTargets.Parameter
-    | AttributeTargets.Delegate,
+    | AttributeTargets.Property
+    | AttributeTargets.Struct,
     AllowMultiple = true,
     Inherited = true
 )]

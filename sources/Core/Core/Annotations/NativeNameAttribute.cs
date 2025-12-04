@@ -7,14 +7,14 @@ namespace Silk.NET.Core;
 /// Stores the native name of the identifier that this attribute is placed on.
 /// </summary>
 [AttributeUsage(
-    AttributeTargets.Struct
+    AttributeTargets.Class
+    | AttributeTargets.Delegate
     | AttributeTargets.Enum
-    | AttributeTargets.Property
     | AttributeTargets.Field
     | AttributeTargets.Method
     | AttributeTargets.Parameter
-    | AttributeTargets.ReturnValue
-    | AttributeTargets.Delegate,
+    | AttributeTargets.Property
+    | AttributeTargets.Struct,
     AllowMultiple = false,
     Inherited = true
 )]
