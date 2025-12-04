@@ -715,6 +715,13 @@ public class PrettifyNames(
         }
     }
 
+    /// <summary>
+    /// Gets affix data for the specified container and original name of the identifier.
+    /// </summary>
+    /// <param name="container">The container name. Either null or the containing type.</param>
+    /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
+    /// <param name="affixTypes">The affix data retrieved by the <see cref="Visitor"/>.</param>
+    /// <returns>The name affixes for the specified identifier.</returns>
     private static NameAffix[] GetAffixes(string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes)
     {
         TypeAffixData typeAffixData;
@@ -739,7 +746,19 @@ public class PrettifyNames(
         return [];
     }
 
-    private static string RemoveAffixes(string primary, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes, List<string>? secondaries)
+    /// <summary>
+    /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list if provided.
+    /// </summary>
+    /// <remarks>
+    /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="NameAffixerEarlyTrimmer"/>.
+    /// </remarks>
+    /// <param name="primary">The current primary name.</param>
+    /// <param name="container">The container name. Either null or the containing type.</param>
+    /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
+    /// <param name="affixTypes">The affix data retrieved by the <see cref="Visitor"/>.</param>
+    /// <param name="secondary">The list of secondary names. This should be null if used by <see cref="ApplyPrettifyOnlyPipeline"/>.</param>
+    /// <returns>The new primary name.</returns>
+    private static string RemoveAffixes(string primary, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes, List<string>? secondary)
     {
         var affixes = GetAffixes(container, originalName, affixTypes);
         if (affixes.Length == 0)
@@ -758,7 +777,7 @@ public class PrettifyNames(
 
         if (originalPrimary != primary)
         {
-            secondaries?.Add(originalPrimary);
+            secondary?.Add(originalPrimary);
         }
 
         return primary;
@@ -789,7 +808,19 @@ public class PrettifyNames(
         }
     }
 
-    private static string ApplyAffixes(string primary, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes, List<string>? secondaries)
+    /// <summary>
+    /// Applies affixes to the specified primary name and adds fallbacks to the secondary list if provided.
+    /// </summary>
+    /// <remarks>
+    /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="NameAffixerLateTrimmer"/>.
+    /// </remarks>
+    /// <param name="primary">The current primary name.</param>
+    /// <param name="container">The container name. Either null or the containing type.</param>
+    /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
+    /// <param name="affixTypes">The affix data retrieved by the <see cref="Visitor"/>.</param>
+    /// <param name="secondary">The list of secondary names. This should be null if used by <see cref="ApplyPrettifyOnlyPipeline"/>.</param>
+    /// <returns>The new primary name.</returns>
+    private static string ApplyAffixes(string primary, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes, List<string>? secondary)
     {
         var affixes = GetAffixes(container, originalName, affixTypes);
         if (affixes.Length == 0)
@@ -817,7 +848,7 @@ public class PrettifyNames(
 
         if (originalPrimary != primary)
         {
-            secondaries?.Add(originalPrimary);
+            secondary?.Add(originalPrimary);
         }
 
         return primary;
