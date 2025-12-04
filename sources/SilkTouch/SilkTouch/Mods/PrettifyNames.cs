@@ -818,6 +818,8 @@ public class PrettifyNames(
 
         return nameToModify;
 
+        // This appends a space before every capital and after the entire affix
+        // This ensures that capitals are preserved when the name is prettified
         string PreventPrettificationHack(string affix)
         {
             var result = "";
