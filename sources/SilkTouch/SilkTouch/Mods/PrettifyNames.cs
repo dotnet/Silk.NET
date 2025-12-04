@@ -1347,8 +1347,9 @@ public class PrettifyNames(
 
     private class NameAffixerEarlyTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
     {
+        // TODO: This setup has become insane. Think of a better one.
         /// <summary>
-        /// Use high-ish version to ensure this trimmer runs second to last.
+        /// Use high-ish version to ensure this trimmer runs after the global prefix trimmer and before MixKhronosData.
         /// </summary>
         public Version Version => new(21, 21, 21);
 
