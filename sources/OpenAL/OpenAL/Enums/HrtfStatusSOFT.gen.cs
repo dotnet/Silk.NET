@@ -10,31 +10,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NameAffix("Suffix", "SOFT", 0, -1)]
 [NativeName("HrtfStatusSOFT")]
 public enum HrtfStatusSOFT : uint
 {
-    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("ALC_HRTF_DISABLED_SOFT")]
     Disabled = unchecked((uint)0x0000),
 
-    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("ALC_HRTF_ENABLED_SOFT")]
     Enabled = unchecked((uint)0x0001),
 
-    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("ALC_HRTF_DENIED_SOFT")]
     Denied = unchecked((uint)0x0002),
 
-    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("ALC_HRTF_REQUIRED_SOFT")]
     Required = unchecked((uint)0x0003),
 
-    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("ALC_HRTF_HEADPHONES_DETECTED_SOFT")]
     HeadphonesDetected = unchecked((uint)0x0004),
 
-    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("ALC_HRTF_UNSUPPORTED_FORMAT_SOFT")]
     UnsupportedFormat = unchecked((uint)0x0005),
 }

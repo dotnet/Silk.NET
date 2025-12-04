@@ -31,11 +31,9 @@ public enum ErrorCode : uint
     [NativeName("AL_OUT_OF_MEMORY")]
     OutOfMemory = unchecked((uint)0xA005),
 
-    [NameAffix("Suffix", "EXT", 0, -1)]
     [NativeName("AL_STACK_OVERFLOW_EXT")]
     StackOverflowEXT = unchecked((uint)0x19CD),
 
-    [NameAffix("Suffix", "EXT", 0, -1)]
     [NativeName("AL_STACK_UNDERFLOW_EXT")]
     StackUnderflowEXT = unchecked((uint)0x19CE),
 

@@ -10,15 +10,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NameAffix("Suffix", "SOFT", 0, -1)]
 [NativeName("StereoModeSOFT")]
 public enum StereoModeSOFT : uint
 {
-    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("AL_NORMAL_SOFT")]
     Normal = unchecked((uint)0x0000),
 
-    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("AL_SUPER_STEREO_SOFT")]
     SuperStereo = unchecked((uint)0x0001),
 }

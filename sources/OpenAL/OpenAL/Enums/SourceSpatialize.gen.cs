@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NameAffix("Suffix", "SOFT", -1, -1)]
 [NativeName("SourceSpatializeSOFT")]
 public enum SourceSpatialize : uint
 {
@@ -20,7 +19,6 @@ public enum SourceSpatialize : uint
     [NativeName("AL_TRUE")]
     True = 1,
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_AUTO_SOFT")]
     AutoSOFT = 2,
 }

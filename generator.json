@@ -317,6 +317,7 @@
       "StripAttributes": {
         "Remove": [
           "NativeTypeName",
+          "NameAffix",
           "Transformed"
         ]
       }

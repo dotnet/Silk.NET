@@ -10,47 +10,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NameAffix("Suffix", "EXT", 0, -1)]
 [NativeName("DebugTypeEXT")]
 public enum DebugTypeEXT : uint
 {
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("AL_DONT_CARE_EXT")]
     DontCare = unchecked((uint)0x0002),
 
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("AL_DEBUG_TYPE_ERROR_EXT")]
     DebugTypeError = unchecked((uint)0x19BA),
 
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("AL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_EXT")]
     DebugTypeDeprecatedBehavior = unchecked((uint)0x19BB),
 
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("AL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_EXT")]
     DebugTypeUndefinedBehavior = unchecked((uint)0x19BC),
 
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("AL_DEBUG_TYPE_PORTABILITY_EXT")]
     DebugTypePortability = unchecked((uint)0x19BD),
 
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("AL_DEBUG_TYPE_PERFORMANCE_EXT")]
     DebugTypePerformance = unchecked((uint)0x19BE),
 
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("AL_DEBUG_TYPE_MARKER_EXT")]
     DebugTypeMarker = unchecked((uint)0x19BF),
 
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("AL_DEBUG_TYPE_PUSH_GROUP_EXT")]
     DebugTypePushGroup = unchecked((uint)0x19C0),
 
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("AL_DEBUG_TYPE_POP_GROUP_EXT")]
     DebugTypePopGroup = unchecked((uint)0x19C1),
 
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("AL_DEBUG_TYPE_OTHER_EXT")]
     DebugTypeOther = unchecked((uint)0x19C2),
 }

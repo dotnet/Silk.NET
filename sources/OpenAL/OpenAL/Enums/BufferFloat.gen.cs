@@ -13,7 +13,6 @@ namespace Silk.NET.OpenAL;
 [NativeName("BufferFloat")]
 public enum BufferFloat : uint
 {
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SEC_LENGTH_SOFT")]
     SecLengthSOFT = unchecked((uint)0x200B),
 }

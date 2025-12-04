@@ -55,27 +55,21 @@ public enum SourceInteger : uint
     [NativeName("AL_ROOM_ROLLOFF_FACTOR")]
     RoomRolloffFactor = unchecked((uint)0x20008),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_DIRECT_CHANNELS_SOFT")]
     DirectChannelsSOFT = unchecked((uint)0x1033),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SAMPLE_OFFSET_LATENCY_SOFT")]
     SampleOffsetLatencySOFT = unchecked((uint)0x1200),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SOURCE_RESAMPLER_SOFT")]
     SourceResamplerSOFT = unchecked((uint)0x1212),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SOURCE_SPATIALIZE_SOFT")]
     SourceSpatializeSOFT = unchecked((uint)0x1214),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SAMPLE_OFFSET_CLOCK_SOFT")]
     SampleOffsetClockSOFT = unchecked((uint)0x1202),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_STEREO_MODE_SOFT")]
     StereoModeSOFT = unchecked((uint)0x19B0),
 }

@@ -19,7 +19,6 @@ public enum AuxiliaryEffectSlotInteger : uint
     [NativeName("AL_EFFECTSLOT_AUXILIARY_SEND_AUTO")]
     AuxiliarySendAuto = unchecked((uint)0x0003),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_EFFECTSLOT_TARGET_SOFT")]
     TargetSOFT = unchecked((uint)0x199C),
 }

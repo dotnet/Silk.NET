@@ -28,42 +28,33 @@ public enum ContextAttribute : uint
     [NativeName("ALC_STEREO_SOURCES")]
     StereoSources = unchecked((uint)0x1011),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("ALC_FORMAT_CHANNELS_SOFT")]
     FormatChannelsSOFT = unchecked((uint)0x1990),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("ALC_FORMAT_TYPE_SOFT")]
     FormatTypeSOFT = unchecked((uint)0x1991),
 
     [NativeName("ALC_DEFAULT_FILTER_ORDER")]
     DefaultFilterOrder = unchecked((uint)0x1100),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("ALC_HRTF_SOFT")]
     HrtfSOFT = unchecked((uint)0x1992),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("ALC_HRTF_ID_SOFT")]
     HrtfIdSOFT = unchecked((uint)0x1996),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
     OutputLimiterSOFT = unchecked((uint)0x199A),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("ALC_AMBISONIC_LAYOUT_SOFT")]
     AmbisonicLayoutSOFT = unchecked((uint)0x1997),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("ALC_AMBISONIC_SCALING_SOFT")]
     AmbisonicScalingSOFT = unchecked((uint)0x1998),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("ALC_AMBISONIC_ORDER_SOFT")]
     AmbisonicOrderSOFT = unchecked((uint)0x1999),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("ALC_OUTPUT_MODE_SOFT")]
     OutputModeSOFT = unchecked((uint)0x19AC),
 }

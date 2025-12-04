@@ -10,11 +10,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NameAffix("Suffix", "EXT", 0, -1)]
 [NativeName("ContextFlagsEXT")]
 public enum ContextFlagsEXT : uint
 {
-    [NameAffix("Suffix", "EXT", -1, -1)]
     [NativeName("ALC_CONTEXT_DEBUG_BIT_EXT")]
     ContextDebugBit = unchecked((uint)0x0001),
 }

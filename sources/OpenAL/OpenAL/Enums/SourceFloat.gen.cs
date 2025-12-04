@@ -52,11 +52,9 @@ public enum SourceFloat : uint
     [NativeName("AL_CONE_OUTER_GAINHF")]
     ConeOuterGainhf = unchecked((uint)0x20009),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_BYTE_RW_OFFSETS_SOFT")]
     ByteRwOffsetsSOFT = unchecked((uint)0x1031),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
     SampleRwOffsetsSOFT = unchecked((uint)0x1032),
 
@@ -66,11 +64,9 @@ public enum SourceFloat : uint
     [NativeName("AL_SOURCE_RADIUS")]
     SourceRadius = unchecked((uint)0x1031),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SEC_OFFSET_LATENCY_SOFT")]
     SecOffsetLatencySOFT = unchecked((uint)0x1201),
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
     SuperStereoWidthSOFT = unchecked((uint)0x19B1),
 }

@@ -140,19 +140,16 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern void DestroyContext([NativeName("context")] ContextHandle context);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcDevicePauseSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcDevicePauseSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         public static extern void DevicePauseSOFT([NativeName("device")] DeviceHandle device);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcDeviceResumeSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcDeviceResumeSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         public static extern void DeviceResumeSOFT([NativeName("device")] DeviceHandle device);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventCallbackSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
@@ -161,7 +158,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("userParam")] void* userParam
         );
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
@@ -179,7 +175,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventControlSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
@@ -189,7 +184,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("enable")] sbyte enable
         );
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
@@ -209,7 +203,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventIsSupportedSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
@@ -218,7 +211,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("deviceType")] int deviceType
         );
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
@@ -278,8 +270,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern int GetErrorRaw([NativeName("device")] DeviceHandle device);
 
-        [NameAffix("Suffix", "v", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetInteger64vSOFT")]
         [
@@ -293,8 +283,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("values")] nint* values
         );
 
-        [NameAffix("Suffix", "v", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -317,8 +305,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "v", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -335,7 +321,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             return values;
         }
 
-        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -346,7 +331,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("values")] int* values
         );
 
-        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -366,7 +350,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -455,8 +438,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
         ) => (sbyte*)GetString(device, (int)param1);
 
-        [NameAffix("Suffix", "i", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
@@ -466,8 +447,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("index")] int index
         );
 
-        [NameAffix("Suffix", "i", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
@@ -510,7 +489,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcIsRenderFormatSupportedSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
@@ -521,7 +499,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("type")] int type
         );
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
@@ -534,7 +511,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             (MaybeBool<sbyte>)
                 (sbyte)IsRenderFormatSupportedSOFT(device, freq, (int)channels, (int)type);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcLoopbackOpenDeviceSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
@@ -542,7 +518,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("deviceName")] sbyte* deviceName
         );
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
@@ -634,7 +609,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern void ProcessContext([NativeName("context")] ContextHandle context);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcRenderSamplesSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
@@ -644,7 +618,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("samples")] int samples
         );
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
@@ -663,7 +636,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcReopenDeviceSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
@@ -673,7 +645,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("attribs")] int* attribs
         );
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
@@ -694,7 +665,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcResetDeviceSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
@@ -703,7 +673,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("attribs")] int* attribs
         );
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
@@ -879,7 +848,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public void DestroyContext([NativeName("context")] ContextHandle context) =>
             T.DestroyContext(context);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcDevicePauseSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         [NativeFunction("openal", EntryPoint = "alcDevicePauseSOFT")]
@@ -889,7 +857,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public void DevicePauseSOFT([NativeName("device")] DeviceHandle device) =>
             T.DevicePauseSOFT(device);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcDeviceResumeSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         [NativeFunction("openal", EntryPoint = "alcDeviceResumeSOFT")]
@@ -899,7 +866,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public void DeviceResumeSOFT([NativeName("device")] DeviceHandle device) =>
             T.DeviceResumeSOFT(device);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
@@ -911,7 +877,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("userParam")] void* userParam
         ) => T.EventCallbackSOFT(callback, userParam);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
@@ -923,7 +888,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("userParam")] Ref userParam
         ) => T.EventCallbackSOFT(callback, userParam);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
@@ -936,7 +900,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("enable")] sbyte enable
         ) => T.EventControlSOFT(count, events, enable);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
@@ -949,7 +912,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("enable")] MaybeBool<sbyte> enable
         ) => T.EventControlSOFT(count, events, enable);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
@@ -961,7 +923,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("deviceType")] int deviceType
         ) => T.EventIsSupportedSOFT(eventType, deviceType);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
@@ -1029,8 +990,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         )]
         public int GetErrorRaw([NativeName("device")] DeviceHandle device) => T.GetErrorRaw(device);
 
-        [NameAffix("Suffix", "v", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -1047,8 +1006,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("values")] nint* values
         ) => T.GetInteger64SOFT(device, pname, size, values);
 
-        [NameAffix("Suffix", "v", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -1065,8 +1022,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("values")] Ref<nint> values
         ) => T.GetInteger64SOFT(device, pname, size, values);
 
-        [NameAffix("Suffix", "v", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -1081,7 +1036,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("pname")] int pname
         ) => T.GetInteger64SOFT(device, pname);
 
-        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -1095,7 +1049,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("values")] int* values
         ) => T.GetInteger(device, param1, size, values);
 
-        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -1109,7 +1062,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("values")] Ref<int> values
         ) => T.GetInteger(device, param1, size, values);
 
-        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -1193,8 +1145,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
         ) => T.GetString(device, param1);
 
-        [NameAffix("Suffix", "i", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
@@ -1207,8 +1157,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("index")] int index
         ) => T.GetStringSOFT(device, paramName, index);
 
-        [NameAffix("Suffix", "i", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
@@ -1251,7 +1199,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("extname")] Ref<sbyte> extname
         ) => T.IsExtensionPresent(device, extname);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
@@ -1265,7 +1212,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("type")] int type
         ) => T.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
@@ -1279,7 +1225,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("type")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
         ) => T.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
@@ -1289,7 +1234,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public DeviceHandle LoopbackOpenDeviceSOFT([NativeName("deviceName")] sbyte* deviceName) =>
             T.LoopbackOpenDeviceSOFT(deviceName);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
@@ -1345,7 +1289,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public void ProcessContext([NativeName("context")] ContextHandle context) =>
             T.ProcessContext(context);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
@@ -1358,7 +1301,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("samples")] int samples
         ) => T.RenderSamplesSOFT(device, buffer, samples);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
@@ -1371,7 +1313,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("samples")] int samples
         ) => T.RenderSamplesSOFT(device, buffer, samples);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
@@ -1384,7 +1325,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("attribs")] int* attribs
         ) => T.ReopenDeviceSOFT(device, deviceName, attribs);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
@@ -1397,7 +1337,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("attribs")] Ref<int> attribs
         ) => T.ReopenDeviceSOFT(device, deviceName, attribs);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
@@ -1409,7 +1348,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("attribs")] int* attribs
         ) => T.ResetDeviceSOFT(device, attribs);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
@@ -1610,7 +1548,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public static void DestroyContext([NativeName("context")] ContextHandle context) =>
             Underlying.Value!.DestroyContext(context);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcDevicePauseSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         [NativeFunction("openal", EntryPoint = "alcDevicePauseSOFT")]
@@ -1620,7 +1557,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public static void DevicePauseSOFT([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.DevicePauseSOFT(device);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcDeviceResumeSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         [NativeFunction("openal", EntryPoint = "alcDeviceResumeSOFT")]
@@ -1630,7 +1566,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public static void DeviceResumeSOFT([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.DeviceResumeSOFT(device);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
@@ -1642,7 +1577,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("userParam")] void* userParam
         ) => Underlying.Value!.EventCallbackSOFT(callback, userParam);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
@@ -1660,7 +1594,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
@@ -1673,7 +1606,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("enable")] sbyte enable
         ) => Underlying.Value!.EventControlSOFT(count, events, enable);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventControlSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
@@ -1693,7 +1625,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
@@ -1705,7 +1636,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("deviceType")] int deviceType
         ) => Underlying.Value!.EventIsSupportedSOFT(eventType, deviceType);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcEventIsSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
@@ -1782,8 +1712,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public static int GetErrorRaw([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.GetErrorRaw(device);
 
-        [NameAffix("Suffix", "v", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -1800,8 +1728,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("values")] nint* values
         ) => Underlying.Value!.GetInteger64SOFT(device, pname, size, values);
 
-        [NameAffix("Suffix", "v", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -1824,8 +1750,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "v", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -1845,7 +1769,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             return values;
         }
 
-        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -1859,7 +1782,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("values")] int* values
         ) => Underlying.Value!.GetInteger(device, param1, size, values);
 
-        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -1879,7 +1801,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -1980,8 +1901,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
         ) => Underlying.Value!.GetString(device, param1);
 
-        [NameAffix("Suffix", "i", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
@@ -1994,8 +1913,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("index")] int index
         ) => Underlying.Value!.GetStringSOFT(device, paramName, index);
 
-        [NameAffix("Suffix", "i", 0, 0)]
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
@@ -2044,7 +1961,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
@@ -2058,7 +1974,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("type")] int type
         ) => Underlying.Value!.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcIsRenderFormatSupportedSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
@@ -2072,7 +1987,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("type")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
         ) => Underlying.Value!.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
@@ -2083,7 +1997,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("deviceName")] sbyte* deviceName
         ) => Underlying.Value!.LoopbackOpenDeviceSOFT(deviceName);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
@@ -2151,7 +2064,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public static void ProcessContext([NativeName("context")] ContextHandle context) =>
             Underlying.Value!.ProcessContext(context);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
@@ -2164,7 +2076,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("samples")] int samples
         ) => Underlying.Value!.RenderSamplesSOFT(device, buffer, samples);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
@@ -2183,7 +2094,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
@@ -2196,7 +2106,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("attribs")] int* attribs
         ) => Underlying.Value!.ReopenDeviceSOFT(device, deviceName, attribs);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcReopenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
@@ -2217,7 +2126,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             }
         }
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
@@ -2229,7 +2137,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("attribs")] int* attribs
         ) => Underlying.Value!.ResetDeviceSOFT(device, attribs);
 
-        [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcResetDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
@@ -2287,7 +2194,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     public const int ExtCapture = 1;
 
-    [NameAffix("Suffix", "EXT", 0, -1)]
     [NativeName("ALC_ENUMERATE_ALL_EXT")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     public const int EnumerateAllEXT = 1;
@@ -2589,7 +2495,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     public static void DestroyContext([NativeName("context")] ContextHandle context) =>
         ThisThread.DestroyContext(context);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcDevicePauseSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
     [NativeFunction("openal", EntryPoint = "alcDevicePauseSOFT")]
@@ -2603,7 +2508,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcDevicePauseSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
     [NativeFunction("openal", EntryPoint = "alcDevicePauseSOFT")]
@@ -2611,7 +2515,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     public static void DevicePauseSOFT([NativeName("device")] DeviceHandle device) =>
         ThisThread.DevicePauseSOFT(device);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcDeviceResumeSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
     [NativeFunction("openal", EntryPoint = "alcDeviceResumeSOFT")]
@@ -2625,7 +2528,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcDeviceResumeSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
     [NativeFunction("openal", EntryPoint = "alcDeviceResumeSOFT")]
@@ -2633,7 +2535,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     public static void DeviceResumeSOFT([NativeName("device")] DeviceHandle device) =>
         ThisThread.DeviceResumeSOFT(device);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventCallbackSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
@@ -2650,7 +2551,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(callback, userParam);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventCallbackSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
@@ -2660,7 +2560,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("userParam")] void* userParam
     ) => ThisThread.EventCallbackSOFT(callback, userParam);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventCallbackSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
@@ -2676,7 +2575,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventCallbackSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
@@ -2686,7 +2584,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("userParam")] Ref userParam
     ) => ThisThread.EventCallbackSOFT(callback, userParam);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventControlSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
@@ -2704,7 +2601,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(count, events, enable);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventControlSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
@@ -2715,7 +2611,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("enable")] sbyte enable
     ) => ThisThread.EventControlSOFT(count, events, enable);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventControlSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
@@ -2733,7 +2628,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventControlSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
@@ -2744,7 +2638,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("enable")] MaybeBool<sbyte> enable
     ) => ThisThread.EventControlSOFT(count, events, enable);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventIsSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
@@ -2761,7 +2654,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(eventType, deviceType);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventIsSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
@@ -2771,7 +2663,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("deviceType")] int deviceType
     ) => ThisThread.EventIsSupportedSOFT(eventType, deviceType);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventIsSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
@@ -2783,7 +2674,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         (Constant<int, AlcEnum, EventSupportSOFT>)
             (int)((IAlContext)this).EventIsSupportedSOFT((int)eventType, (int)deviceType);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcEventIsSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
@@ -2915,8 +2805,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     public static int GetErrorRaw([NativeName("device")] DeviceHandle device) =>
         ThisThread.GetErrorRaw(device);
 
-    [NameAffix("Suffix", "v", 0, 0)]
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -2938,8 +2826,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, pname, size, values);
 
-    [NameAffix("Suffix", "v", 0, 0)]
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -2954,8 +2840,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("values")] nint* values
     ) => ThisThread.GetInteger64SOFT(device, pname, size, values);
 
-    [NameAffix("Suffix", "v", 0, 0)]
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -2976,8 +2860,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "v", 0, 0)]
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -2992,8 +2874,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("values")] Ref<nint> values
     ) => ThisThread.GetInteger64SOFT(device, pname, size, values);
 
-    [NameAffix("Suffix", "v", 0, 0)]
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -3011,8 +2891,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         return values;
     }
 
-    [NameAffix("Suffix", "v", 0, 0)]
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
         SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
@@ -3025,7 +2903,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("pname")] int pname
     ) => ThisThread.GetInteger64SOFT(device, pname);
 
-    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -3044,7 +2921,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, param1, size, values);
 
-    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -3056,7 +2932,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("values")] int* values
     ) => ThisThread.GetInteger(device, param1, size, values);
 
-    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -3074,7 +2949,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -3086,7 +2960,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("values")] Ref<int> values
     ) => ThisThread.GetInteger(device, param1, size, values);
 
-    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -3101,7 +2974,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         return values;
     }
 
-    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
@@ -3264,8 +3136,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
     ) => ThisThread.GetString(device, param1);
 
-    [NameAffix("Suffix", "i", 0, 0)]
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
@@ -3283,8 +3153,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, paramName, index);
 
-    [NameAffix("Suffix", "i", 0, 0)]
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
@@ -3295,8 +3163,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("index")] int index
     ) => ThisThread.GetStringSOFT(device, paramName, index);
 
-    [NameAffix("Suffix", "i", 0, 0)]
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
@@ -3307,8 +3173,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("index")] int index
     ) => (sbyte*)((IAlContext)this).GetStringSOFT(device, (int)paramName, index);
 
-    [NameAffix("Suffix", "i", 0, 0)]
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
@@ -3388,7 +3252,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("extname")] Ref<sbyte> extname
     ) => ThisThread.IsExtensionPresent(device, extname);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcIsRenderFormatSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
@@ -3410,7 +3273,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, freq, channels, type);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcIsRenderFormatSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
@@ -3422,7 +3284,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("type")] int type
     ) => ThisThread.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcIsRenderFormatSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
@@ -3442,7 +3303,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
                     (int)type
                 );
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcIsRenderFormatSupportedSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
@@ -3454,7 +3314,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("type")] Constant<int, AlcEnum, RenderFormatTypeSOFT> type
     ) => ThisThread.IsRenderFormatSupportedSOFT(device, freq, channels, type);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcLoopbackOpenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
@@ -3468,7 +3327,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(deviceName);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcLoopbackOpenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
@@ -3477,7 +3335,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("deviceName")] sbyte* deviceName
     ) => ThisThread.LoopbackOpenDeviceSOFT(deviceName);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcLoopbackOpenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
@@ -3490,7 +3347,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcLoopbackOpenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
@@ -3613,7 +3469,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     public static void ProcessContext([NativeName("context")] ContextHandle context) =>
         ThisThread.ProcessContext(context);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcRenderSamplesSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
@@ -3631,7 +3486,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, buffer, samples);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcRenderSamplesSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
@@ -3642,7 +3496,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("samples")] int samples
     ) => ThisThread.RenderSamplesSOFT(device, buffer, samples);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcRenderSamplesSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
@@ -3659,7 +3512,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcRenderSamplesSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
@@ -3670,7 +3522,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("samples")] int samples
     ) => ThisThread.RenderSamplesSOFT(device, buffer, samples);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcReopenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
@@ -3688,7 +3539,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, deviceName, attribs);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcReopenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
@@ -3699,7 +3549,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("attribs")] int* attribs
     ) => ThisThread.ReopenDeviceSOFT(device, deviceName, attribs);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcReopenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
@@ -3718,7 +3567,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcReopenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
@@ -3729,7 +3577,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("attribs")] Ref<int> attribs
     ) => ThisThread.ReopenDeviceSOFT(device, deviceName, attribs);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcResetDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
@@ -3746,7 +3593,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, attribs);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcResetDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
@@ -3756,7 +3602,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("attribs")] int* attribs
     ) => ThisThread.ResetDeviceSOFT(device, attribs);
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcResetDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
@@ -3773,7 +3618,6 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         }
     }
 
-    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcResetDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
