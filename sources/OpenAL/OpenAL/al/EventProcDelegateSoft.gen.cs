@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "Delegate", 1, -1)]
 [NativeName("ALEVENTPROCSOFT")]
 public unsafe delegate void EventProcDelegateSoft(
     int arg0,

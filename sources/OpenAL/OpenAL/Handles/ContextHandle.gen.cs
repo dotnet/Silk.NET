@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "Handle", 1, -1)]
 [NativeName("ALCcontext")]
 public readonly unsafe partial struct ContextHandle
 {

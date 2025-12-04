@@ -25,6 +25,7 @@ public enum StringPName : uint
     [NativeName("AL_EXTENSIONS")]
     Extensions = unchecked((uint)0xB004),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_RESAMPLER_NAME_SOFT")]
     ResamplerNameSOFT = unchecked((uint)0x1213),
 }

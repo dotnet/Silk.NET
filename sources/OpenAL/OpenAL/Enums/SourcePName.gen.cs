@@ -103,12 +103,15 @@ public enum SourcePName : uint
     [NativeName("AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO")]
     AuxiliarySendFilterGainhfAuto = unchecked((uint)0x2000C),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_BYTE_RW_OFFSETS_SOFT")]
     ByteRwOffsetsSOFT = unchecked((uint)0x1031),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
     SampleRwOffsetsSOFT = unchecked((uint)0x1032),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_DIRECT_CHANNELS_SOFT")]
     DirectChannelsSOFT = unchecked((uint)0x1033),
 
@@ -118,27 +121,35 @@ public enum SourcePName : uint
     [NativeName("AL_SOURCE_RADIUS")]
     SourceRadius = unchecked((uint)0x1031),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SAMPLE_OFFSET_LATENCY_SOFT")]
     SampleOffsetLatencySOFT = unchecked((uint)0x1200),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SEC_OFFSET_LATENCY_SOFT")]
     SecOffsetLatencySOFT = unchecked((uint)0x1201),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SOURCE_RESAMPLER_SOFT")]
     SourceResamplerSOFT = unchecked((uint)0x1212),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SOURCE_SPATIALIZE_SOFT")]
     SourceSpatializeSOFT = unchecked((uint)0x1214),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SAMPLE_OFFSET_CLOCK_SOFT")]
     SampleOffsetClockSOFT = unchecked((uint)0x1202),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SEC_OFFSET_CLOCK_SOFT")]
     SecOffsetClockSOFT = unchecked((uint)0x1203),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_STEREO_MODE_SOFT")]
     StereoModeSOFT = unchecked((uint)0x19B0),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
     SuperStereoWidthSOFT = unchecked((uint)0x19B1),
 }

@@ -10,12 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "SOFT", 0, -1)]
 [NativeName("DeviceTypeSOFT")]
 public enum DeviceTypeSOFT : uint
 {
+    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("ALC_PLAYBACK_DEVICE_SOFT")]
     PlaybackDevice = unchecked((uint)0x19D4),
 
+    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("ALC_CAPTURE_DEVICE_SOFT")]
     CaptureDevice = unchecked((uint)0x19D5),
 }

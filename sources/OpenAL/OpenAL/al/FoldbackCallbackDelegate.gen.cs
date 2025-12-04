@@ -10,5 +10,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "Delegate", 1, -1)]
 [NativeName("LPALFOLDBACKCALLBACK")]
 public unsafe delegate void FoldbackCallbackDelegate(int arg0, int arg1);

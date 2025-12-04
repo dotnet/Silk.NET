@@ -16,33 +16,43 @@ public enum IntegerPName : uint
     [NativeName("AL_DISTANCE_MODEL")]
     DistanceModel = unchecked((uint)0xD000),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_GAIN_LIMIT_SOFT")]
     GainLimitSOFT = unchecked((uint)0x200E),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_NUM_RESAMPLERS_SOFT")]
     NumResamplersSOFT = unchecked((uint)0x1210),
 
+    [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("AL_DEFAULT_RESAMPLER_SOFT")]
     DefaultResamplerSOFT = unchecked((uint)0x1211),
 
+    [NameAffix("Suffix", "EXT", 0, -1)]
     [NativeName("AL_DEBUG_LOGGED_MESSAGES_EXT")]
     DebugLoggedMessagesEXT = unchecked((uint)0x19C7),
 
+    [NameAffix("Suffix", "EXT", 0, -1)]
     [NativeName("AL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_EXT")]
     DebugNextLoggedMessageLengthEXT = unchecked((uint)0x19C8),
 
+    [NameAffix("Suffix", "EXT", 0, -1)]
     [NativeName("AL_MAX_DEBUG_MESSAGE_LENGTH_EXT")]
     MaxDebugMessageLengthEXT = unchecked((uint)0x19C9),
 
+    [NameAffix("Suffix", "EXT", 0, -1)]
     [NativeName("AL_MAX_DEBUG_LOGGED_MESSAGES_EXT")]
     MaxDebugLoggedMessagesEXT = unchecked((uint)0x19CA),
 
+    [NameAffix("Suffix", "EXT", 0, -1)]
     [NativeName("AL_MAX_DEBUG_GROUP_STACK_DEPTH_EXT")]
     MaxDebugGroupStackDepthEXT = unchecked((uint)0x19CB),
 
+    [NameAffix("Suffix", "EXT", 0, -1)]
     [NativeName("AL_MAX_LABEL_LENGTH_EXT")]
     MaxLabelLengthEXT = unchecked((uint)0x19CC),
 
+    [NameAffix("Suffix", "EXT", 0, -1)]
     [NativeName("AL_CONTEXT_FLAGS_EXT")]
     ContextFlagsEXT = unchecked((uint)0x19CF),
 }

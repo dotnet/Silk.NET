@@ -10,27 +10,35 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "SOFT", 0, -1)]
 [NativeName("BufferChannelsSOFT")]
 public enum BufferChannelsSOFT : uint
 {
+    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("AL_MONO_SOFT")]
     Mono = unchecked((uint)0x1500),
 
+    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("AL_STEREO_SOFT")]
     Stereo = unchecked((uint)0x1501),
 
+    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("AL_REAR_SOFT")]
     Rear = unchecked((uint)0x1502),
 
+    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("AL_QUAD_SOFT")]
     Quad = unchecked((uint)0x1503),
 
+    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("AL_5POINT1_SOFT")]
     X5Point1 = unchecked((uint)0x1504),
 
+    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("AL_6POINT1_SOFT")]
     X6Point1 = unchecked((uint)0x1505),
 
+    [NameAffix("Suffix", "SOFT", -1, -1)]
     [NativeName("AL_7POINT1_SOFT")]
     X7Point1 = unchecked((uint)0x1506),
 }

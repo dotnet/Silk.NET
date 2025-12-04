@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "Delegate", 1, -1)]
 [NativeName("ALDEBUGPROCEXT")]
 public unsafe delegate void DebugProcDelegateExt(
     int arg0,

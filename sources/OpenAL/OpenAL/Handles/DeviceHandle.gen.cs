@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NameAffix("Suffix", "Handle", 1, -1)]
 [NativeName("ALCdevice")]
 public readonly unsafe partial struct DeviceHandle
 {

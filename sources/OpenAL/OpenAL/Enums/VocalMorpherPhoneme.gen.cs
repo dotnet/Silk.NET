@@ -95,6 +95,7 @@ public enum VocalMorpherPhoneme : uint
     S = unchecked((uint)26),
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME")]
+    [NameAffix("Suffix", "_T", -1, -1)]
     AlVocalMorpherPhoneme = unchecked((uint)27),
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_V")]
