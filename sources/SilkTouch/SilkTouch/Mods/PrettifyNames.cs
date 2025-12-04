@@ -749,7 +749,7 @@ public class PrettifyNames(
 
         var originalPrimary = primary;
 
-        affixes.Sort((a, b) => a.Priority.CompareTo(b.Priority));
+        affixes.Sort((a, b) => a.Order.CompareTo(b.Order));
         var prefixes = affixes.Where(x => x.IsPrefix).ToList();
         var suffixes = affixes.Where(x => !x.IsPrefix).ToList();
 
@@ -799,10 +799,10 @@ public class PrettifyNames(
 
         var originalPrimary = primary;
 
-        affixes.Sort((a, b) => -a.Priority.CompareTo(b.Priority));
+        affixes.Sort((a, b) => -a.Order.CompareTo(b.Order));
         foreach (var affix in affixes)
         {
-            if (affix.Priority >= 0)
+            if (affix.Order >= 0)
             {
                 if (affix.IsPrefix)
                 {
@@ -877,7 +877,7 @@ public class PrettifyNames(
     /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
     private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
 
-    private record struct NameAffix(bool IsPrefix, string Affix, int Priority, int DiscriminatorPriority);
+    private record struct NameAffix(bool IsPrefix, string Affix, int Order, int Priority);
 
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
@@ -965,19 +965,14 @@ public class PrettifyNames(
 
                     if (attribute.ArgumentList != null)
                     {
-                        var typeArg = attribute.ArgumentList.Arguments[0];
-                        var affixArg = attribute.ArgumentList.Arguments[1];
-                        var priorityArg = attribute.ArgumentList.Arguments[2];
-                        var discriminatorPriorityArg = attribute.ArgumentList.Arguments[3];
-
-                        var type = (typeArg.Expression as LiteralExpressionSyntax)?.Token.Value as string;
-                        var affix = (affixArg.Expression as LiteralExpressionSyntax)?.Token.Value as string;
-                        var priority = (priorityArg.Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
-                        var discriminatorPriority = (discriminatorPriorityArg.Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
+                        var type = (attribute.ArgumentList.Arguments[0].Expression as LiteralExpressionSyntax)?.Token.Value as string;
+                        var affix = (attribute.ArgumentList.Arguments[1].Expression as LiteralExpressionSyntax)?.Token.Value as string;
+                        var order = (attribute.ArgumentList.Arguments[2].Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
+                        var priority = (attribute.ArgumentList.Arguments[3].Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
 
                         if (affix != null)
                         {
-                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, priority, discriminatorPriority)];
+                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, order, priority)];
                         }
                     }
                 }

@@ -23,12 +23,12 @@ public sealed class NameAffixAttribute : Attribute
     /// <summary>
     /// Creates a new NameAffix attribute.
     /// </summary>
-    public NameAffixAttribute(string type, string affix, int priority, int discriminatorPriority)
+    public NameAffixAttribute(string type, string affix, int order, int priority)
     {
         Type = type;
         Affix = affix;
+        Order = order;
         Priority = priority;
-        DiscriminatorPriority = discriminatorPriority;
     }
 
     /// <summary>
@@ -42,26 +42,25 @@ public sealed class NameAffixAttribute : Attribute
     public string Affix { get; }
 
     /// <summary>
-    /// The priority with which the affix is applied.
-    /// Higher means the affix is applied first.
+    /// The order with which the affix is applied.
     /// <para/>
     /// Negative means the affix is not reapplied after trimming.
-    /// Ideally all affixes of the same type have different priorities.
+    /// Higher means the affix is applied first.
     /// <para/>
-    /// Affixes with the same priority have ties broken using the order they are declared on the identifier.
-    /// First declared have higher priority.
+    /// Affixes with the same order have ties broken using the order they are declared on the identifier.
+    /// First declared are applied first.
     /// </summary>
-    public int Priority { get; }
+    public int Order { get; }
 
     /// <summary>
     /// The priority with which the affix is used
     /// to create alternative names in case of conflicts.
     /// <para/>
+    /// Negative means the affix is required.
+    /// Non-negative means the affix is optional.
     /// Higher means the names created using the affix is tried first.
-    /// Negative means the affix is not used for creating alternative names.
     /// <para/>
-    /// Affixes with the same priority are applied together as a group and are combined using the order they are declared on the identifier.
-    /// First declared are applied first within the group.
+    /// Affixes with the same priority are applied together as a group.
     /// </summary>
-    public int DiscriminatorPriority { get; }
+    public int Priority { get; }
 }
