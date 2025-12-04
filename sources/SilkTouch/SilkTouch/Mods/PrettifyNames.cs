@@ -105,7 +105,7 @@ public class PrettifyNames(
             // Create a type name dictionary to trim the type names.
             var typeNames = visitor.TrimmableTypes.ToDictionary(
                 x => x.Key,
-                x => new CandidateNames(x.Key, null)
+                x => new CandidateNames(x.Key, [])
             );
 
             // If we don't have a prefix hint and don't have more than one type, we can't determine a prefix so don't
@@ -134,7 +134,7 @@ public class PrettifyNames(
                 // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
                 var constNames = consts.ToDictionary(
                     x => x,
-                    x => new CandidateNames(x, null)
+                    x => new CandidateNames(x, [])
                 );
 
                 // Trim the constants.
@@ -154,7 +154,7 @@ public class PrettifyNames(
                 // treat them separately.
                 var functionNames = functions
                     .DistinctBy(x => x.Name)
-                    .ToDictionary(x => x.Name, x => new CandidateNames(x.Name, null));
+                    .ToDictionary(x => x.Name, x => new CandidateNames(x.Name, []));
 
                 // Collect the syntax as this is used for conflict resolution in the Trim function.
                 var functionSyntax = functionNames.Keys.ToDictionary(
@@ -460,7 +460,7 @@ public class PrettifyNames(
             // Apply the name override to the dictionary we actually use.
             context.Names[nameToAdd] = new CandidateNames(
                 overriddenName,
-                [.. v.Secondary ?? [], nameToAdd]
+                [.. v.Secondary, nameToAdd]
             );
         }
 
@@ -480,12 +480,9 @@ public class PrettifyNames(
         }
 
         // Prefer shorter names
-        foreach (var (trimmingName, (primary, secondary)) in context.Names)
+        foreach (var (_, (_, secondary)) in context.Names)
         {
-            context.Names[trimmingName] = new CandidateNames(
-                primary,
-                secondary?.OrderByDescending(x => x.Length).ToList()
-            );
+            secondary.Sort((a, b) => -a.Length.CompareTo(b.Length));
         }
 
         // Create a map from primaries to trimming names, to account for multiple overloads with the same primary and
@@ -530,7 +527,7 @@ public class PrettifyNames(
             foreach (var trimmingNameToEval in trimmingNamesForOldPrimary)
             {
                 // Do we even have a secondary to fall back on if there is a conflict?
-                if ((context.Names[trimmingNameToEval].Secondary?.Count ?? 0) == 0)
+                if (context.Names[trimmingNameToEval].Secondary.Count == 0)
                 {
                     noSecondaryTrimmingName ??= trimmingNameToEval;
                     nNoSecondaries++;
@@ -649,10 +646,7 @@ public class PrettifyNames(
                             ?? throw new InvalidOperationException("More than one trimming name without secondary names.");
                         var firstNextPrimary = firstSecondary[^1];
                         firstSecondary.RemoveAt(firstSecondary.Count - 1);
-                        context.Names[first] = new CandidateNames(
-                            firstNextPrimary,
-                            firstSecondary.Count == 0 ? null : firstSecondary
-                        );
+                        context.Names[first] = new CandidateNames(firstNextPrimary, firstSecondary);
 
                         // Update our primary to trimming name map
                         var trimmingNamesForFirst = primaries.TryGetValue(
@@ -692,10 +686,7 @@ public class PrettifyNames(
                     ?? throw new InvalidOperationException("More than one trimming name without secondary names.");
                 var nextPrimary = secondary[^1];
                 secondary.RemoveAt(secondary.Count - 1);
-                context.Names[conflictingTrimmingName] = new CandidateNames(
-                    nextPrimary,
-                    secondary.Count == 0 ? null : secondary
-                );
+                context.Names[conflictingTrimmingName] = new CandidateNames(nextPrimary, secondary);
 
                 // Update our primary to trimming name map
                 var trimmingNamesForNewPrimary = primaries.TryGetValue(nextPrimary, out var tnfp)
@@ -1272,7 +1263,7 @@ public class PrettifyNames(
             {
                 foreach (var (original, (primary, secondary)) in context.Names)
                 {
-                    var secondaries = secondary ?? [];
+                    var secondaries = secondary;
                     var newPrimary = RemoveAffixes(primary, null, original, affixTypes, secondaries);
 
                     context.Names[original] = new CandidateNames(newPrimary, secondaries);
@@ -1283,7 +1274,7 @@ public class PrettifyNames(
 
             foreach (var (original, (primary, secondary)) in context.Names)
             {
-                var secondaries = secondary ?? [];
+                var secondaries = secondary;
                 var newPrimary = RemoveAffixes(primary, context.Container, original, affixTypes, secondaries);
 
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
@@ -1304,7 +1295,7 @@ public class PrettifyNames(
             {
                 foreach (var (original, (primary, secondary)) in context.Names)
                 {
-                    var secondaries = secondary ?? [];
+                    var secondaries = secondary;
                     var newPrimary = ApplyAffixes(primary, null, original, affixTypes, secondaries);
                     context.Names[original] = new CandidateNames(newPrimary, secondaries);
                 }
@@ -1314,7 +1305,7 @@ public class PrettifyNames(
 
             foreach (var (original, (primary, secondary)) in context.Names)
             {
-                var secondaries = secondary ?? [];
+                var secondaries = secondary;
                 var newPrimary = ApplyAffixes(primary, context.Container, original, affixTypes, secondaries);
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }

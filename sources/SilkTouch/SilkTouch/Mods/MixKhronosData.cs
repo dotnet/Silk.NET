@@ -1209,12 +1209,12 @@ public partial class MixKhronosData(
         {
             foreach (var (original, (current, previous)) in context.Names)
             {
-                foreach (var name in (IEnumerable<string>)[current, .. previous ?? []])
+                foreach (var name in (IEnumerable<string>)[current, .. previous])
                 {
                     if (job.Groups.TryGetValue(name, out var group)
                         && name == $"{group.Namespace}Enum")
                     {
-                        context.Names[original] = new CandidateNames(name, null);
+                        context.Names[original] = new CandidateNames(name, []);
                         break;
                     }
                 }
