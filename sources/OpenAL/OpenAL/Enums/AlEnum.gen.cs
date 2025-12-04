@@ -1474,9 +1474,8 @@ public enum AlEnum : uint
     [NativeName("AL_VOCAL_MORPHER_PHONEME_S")]
     VocalMorpherPhonemeS = 26,
 
-    [NativeName("AL_VOCAL_MORPHER_PHONEME")]
-    [NameAffix("Suffix", "_T", -1, -1)]
-    VocalMorpherPhoneme = 27,
+    [NativeName("AL_VOCAL_MORPHER_PHONEME_T")]
+    VocalMorpherPhonemeT = 27,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_V")]
     VocalMorpherPhonemeV = 28,

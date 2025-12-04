@@ -1849,19 +1849,22 @@ public partial class MixKhronosData(
     /// </remarks>
     private class RewriterPhase3(JobData job, Configuration config) : CSharpSyntaxRewriter
     {
-        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier, MethodDeclarationSyntax? methodDeclaration = null)
+        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier, bool trimHandleSuffix, MethodDeclarationSyntax? methodDeclaration = null)
         {
             // Get the name of the identifier, preferring the native one if available
             // This name will be modified by the code below as different suffixes are identified
             var trimmedName = attributeLists.GetNativeNameOrDefault(identifier);
 
-            var handleSuffix = "_T";
-            if (trimmedName.EndsWith(handleSuffix))
+            if (trimHandleSuffix)
             {
-                trimmedName = trimmedName[..^handleSuffix.Length];
-                attributeLists = attributeLists
-                    .AddNameSuffix(handleSuffix, -1)
-                    .WithNativeName(trimmedName);
+                const string handleSuffix = "_T";
+                if (trimmedName.EndsWith(handleSuffix))
+                {
+                    trimmedName = trimmedName[..^handleSuffix.Length];
+                    attributeLists = attributeLists
+                        .AddNameSuffix(handleSuffix, -1)
+                        .WithNativeName(trimmedName);
+                }
             }
 
             if (!config.ExcludeVendorSuffixIdentification.Contains(trimmedName))
@@ -1915,17 +1918,17 @@ public partial class MixKhronosData(
         public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
             node = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, true));
         }
 
         public override SyntaxNode VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
             var variable = node.Declaration.Variables.First();
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, variable.Identifier));
+            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, variable.Identifier, false));
         }
 
         public override SyntaxNode VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false));
 
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
@@ -1997,7 +2000,7 @@ public partial class MixKhronosData(
                         }
 
                         // Default behavior - Identify, but keep the member suffixes
-                        return member.WithAttributeLists(ProcessAndGetNewAttributes(member.AttributeLists, member.Identifier));
+                        return member.WithAttributeLists(ProcessAndGetNewAttributes(member.AttributeLists, member.Identifier, false));
                     }),
                 ]);
             }
@@ -2013,13 +2016,13 @@ public partial class MixKhronosData(
         // ----- Members -----
 
         public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
-            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false));
 
         public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
-            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier));
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false));
 
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, node));
+            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false, node));
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]
