@@ -16,8 +16,8 @@ public enum TextureCoordName : uint
     [NativeName("GL_S")]
     S = unchecked((uint)0x2000),
 
-    [NativeName("GL")]
-    Gl = unchecked((uint)0x2001),
+    [NativeName("GL_T")]
+    T = unchecked((uint)0x2001),
 
     [NativeName("GL_R")]
     R = unchecked((uint)0x2002),

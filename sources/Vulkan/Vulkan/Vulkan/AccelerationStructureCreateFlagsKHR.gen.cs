@@ -24,7 +24,7 @@ public enum AccelerationStructureCreateFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    DeviceAddressCaptureReplayBitKHR = 0x1,
+    DeviceAddressCaptureReplayBit = 0x1,
 
     [NativeName("VK_ACCELERATION_STRUCTURE_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(

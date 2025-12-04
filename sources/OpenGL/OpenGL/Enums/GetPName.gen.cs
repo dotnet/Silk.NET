@@ -565,8 +565,8 @@ public enum GetPName : uint
     [NativeName("GL_TEXTURE_GEN_S")]
     TextureGenS = unchecked((uint)0x0C60),
 
-    [NativeName("GL_TEXTURE_GEN")]
-    TextureGen = unchecked((uint)0x0C61),
+    [NativeName("GL_TEXTURE_GEN_T")]
+    TextureGenT = unchecked((uint)0x0C61),
 
     [NativeName("GL_TEXTURE_GEN_R")]
     TextureGenR = unchecked((uint)0x0C62),

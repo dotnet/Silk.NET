@@ -19,7 +19,7 @@ public enum VideoComponentBitDepthFlagsKHR : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    DepthInvalidKHR = 0x0,
+    DepthInvalid = 0x0,
 
     [NativeName("VK_VIDEO_COMPONENT_BIT_DEPTH_8_BIT_KHR")]
     [SupportedApiProfile(
@@ -27,7 +27,7 @@ public enum VideoComponentBitDepthFlagsKHR : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    Depth8BitKHR = 0x1,
+    Depth8Bit = 0x1,
 
     [NativeName("VK_VIDEO_COMPONENT_BIT_DEPTH_10_BIT_KHR")]
     [SupportedApiProfile(
@@ -35,7 +35,7 @@ public enum VideoComponentBitDepthFlagsKHR : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    Depth10BitKHR = 0x4,
+    Depth10Bit = 0x4,
 
     [NativeName("VK_VIDEO_COMPONENT_BIT_DEPTH_12_BIT_KHR")]
     [SupportedApiProfile(
@@ -43,5 +43,5 @@ public enum VideoComponentBitDepthFlagsKHR : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    Depth12BitKHR = 0x10,
+    Depth12Bit = 0x10,
 }

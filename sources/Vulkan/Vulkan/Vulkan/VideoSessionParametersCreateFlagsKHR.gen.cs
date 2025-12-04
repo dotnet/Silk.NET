@@ -23,5 +23,5 @@ public enum VideoSessionParametersCreateFlagsKHR : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    QuantizationMapCompatibleBitKHR = 0x1,
+    QuantizationMapCompatibleBit = 0x1,
 }

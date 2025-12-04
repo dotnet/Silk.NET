@@ -24,7 +24,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AllowUpdateBitKHR = 0x1,
+    AllowUpdateBit = 0x1,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_KHR")]
     [SupportedApiProfile(
@@ -35,7 +35,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AllowCompactionBitKHR = 0x2,
+    AllowCompactionBit = 0x2,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_KHR")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    PreferFastTraceBitKHR = 0x4,
+    PreferFastTraceBit = 0x4,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_KHR")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    PreferFastBuildBitKHR = 0x8,
+    PreferFastBuildBit = 0x8,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_KHR")]
     [SupportedApiProfile(
@@ -68,7 +68,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    LowMemoryBitKHR = 0x10,
+    LowMemoryBit = 0x10,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_MOTION_BIT_NV")]
     [SupportedApiProfile(
@@ -117,7 +117,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
         ["VK_KHR_ray_tracing_position_fetch"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    AllowDataAccessBitKHR = 0x800,
+    AllowDataAccessBit = 0x800,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_CLUSTER_OPACITY_MICROMAPS_BIT_NV")]
     [SupportedApiProfile(
@@ -136,7 +136,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AllowUpdateBitNV = AllowUpdateBitKHR,
+    AllowUpdateBitNV = AllowUpdateBit,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV")]
     [SupportedApiProfile(
@@ -147,7 +147,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AllowCompactionBitNV = AllowCompactionBitKHR,
+    AllowCompactionBitNV = AllowCompactionBit,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_NV")]
     [SupportedApiProfile(
@@ -158,7 +158,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    PreferFastTraceBitNV = PreferFastTraceBitKHR,
+    PreferFastTraceBitNV = PreferFastTraceBit,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_NV")]
     [SupportedApiProfile(
@@ -169,7 +169,7 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    PreferFastBuildBitNV = PreferFastBuildBitKHR,
+    PreferFastBuildBitNV = PreferFastBuildBit,
 
     [NativeName("VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_NV")]
     [SupportedApiProfile(
@@ -180,5 +180,5 @@ public enum BuildAccelerationStructureFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    LowMemoryBitNV = LowMemoryBitKHR,
+    LowMemoryBitNV = LowMemoryBit,
 }

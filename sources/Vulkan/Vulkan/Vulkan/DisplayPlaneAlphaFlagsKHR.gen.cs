@@ -17,17 +17,17 @@ public enum DisplayPlaneAlphaFlagsKHR : uint
 
     [NativeName("VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    OpaqueBitKHR = 0x1,
+    OpaqueBit = 0x1,
 
     [NativeName("VK_DISPLAY_PLANE_ALPHA_GLOBAL_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    GlobalBitKHR = 0x2,
+    GlobalBit = 0x2,
 
     [NativeName("VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    PerPixelBitKHR = 0x4,
+    PerPixelBit = 0x4,
 
     [NativeName("VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_PREMULTIPLIED_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    PerPixelPremultipliedBitKHR = 0x8,
+    PerPixelPremultipliedBit = 0x8,
 }

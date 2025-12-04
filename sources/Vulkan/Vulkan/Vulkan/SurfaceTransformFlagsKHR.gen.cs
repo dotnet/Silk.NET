@@ -17,37 +17,37 @@ public enum SurfaceTransformFlagsKHR : uint
 
     [NativeName("VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    IdentityBitKHR = 0x1,
+    IdentityBit = 0x1,
 
     [NativeName("VK_SURFACE_TRANSFORM_ROTATE_90_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    Rotate90BitKHR = 0x2,
+    Rotate90Bit = 0x2,
 
     [NativeName("VK_SURFACE_TRANSFORM_ROTATE_180_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    Rotate180BitKHR = 0x4,
+    Rotate180Bit = 0x4,
 
     [NativeName("VK_SURFACE_TRANSFORM_ROTATE_270_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    Rotate270BitKHR = 0x8,
+    Rotate270Bit = 0x8,
 
     [NativeName("VK_SURFACE_TRANSFORM_HORIZONTAL_MIRROR_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    HorizontalMirrorBitKHR = 0x10,
+    HorizontalMirrorBit = 0x10,
 
     [NativeName("VK_SURFACE_TRANSFORM_HORIZONTAL_MIRROR_ROTATE_90_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    HorizontalMirrorRotate90BitKHR = 0x20,
+    HorizontalMirrorRotate90Bit = 0x20,
 
     [NativeName("VK_SURFACE_TRANSFORM_HORIZONTAL_MIRROR_ROTATE_180_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    HorizontalMirrorRotate180BitKHR = 0x40,
+    HorizontalMirrorRotate180Bit = 0x40,
 
     [NativeName("VK_SURFACE_TRANSFORM_HORIZONTAL_MIRROR_ROTATE_270_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    HorizontalMirrorRotate270BitKHR = 0x80,
+    HorizontalMirrorRotate270Bit = 0x80,
 
     [NativeName("VK_SURFACE_TRANSFORM_INHERIT_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    InheritBitKHR = 0x100,
+    InheritBit = 0x100,
 }

@@ -21,5 +21,5 @@ public enum ClusterAccelerationStructureClusterFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    AllowDisableOpacityMicromapsNV = 0x1,
+    AllowDisableOpacityMicromaps = 0x1,
 }

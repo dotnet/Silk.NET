@@ -23,7 +23,7 @@ public enum VideoEncodeRgbRangeCompressionFlagsVALVE : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    FullRangeBitVALVE = 0x1,
+    FullRangeBit = 0x1,
 
     [NativeName("VK_VIDEO_ENCODE_RGB_RANGE_COMPRESSION_NARROW_RANGE_BIT_VALVE")]
     [SupportedApiProfile(
@@ -34,5 +34,5 @@ public enum VideoEncodeRgbRangeCompressionFlagsVALVE : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    NarrowRangeBitVALVE = 0x2,
+    NarrowRangeBit = 0x2,
 }

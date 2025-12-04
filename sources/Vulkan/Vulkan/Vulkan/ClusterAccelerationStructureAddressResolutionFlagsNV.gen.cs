@@ -19,7 +19,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    NoneNV = 0x0,
+    None = 0x0,
 
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_DST_IMPLICIT_DATA_BIT_NV"
@@ -29,7 +29,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedDstImplicitDataBitNV = 0x1,
+    IndirectedDstImplicitDataBit = 0x1,
 
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_SCRATCH_DATA_BIT_NV"
@@ -39,7 +39,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedScratchDataBitNV = 0x2,
+    IndirectedScratchDataBit = 0x2,
 
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_DST_ADDRESS_ARRAY_BIT_NV"
@@ -49,7 +49,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedDstAddressArrayBitNV = 0x4,
+    IndirectedDstAddressArrayBit = 0x4,
 
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_DST_SIZES_ARRAY_BIT_NV"
@@ -59,7 +59,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedDstSizesArrayBitNV = 0x8,
+    IndirectedDstSizesArrayBit = 0x8,
 
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_SRC_INFOS_ARRAY_BIT_NV"
@@ -69,7 +69,7 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedSrcInfosArrayBitNV = 0x10,
+    IndirectedSrcInfosArrayBit = 0x10,
 
     [NativeName(
         "VK_CLUSTER_ACCELERATION_STRUCTURE_ADDRESS_RESOLUTION_INDIRECTED_SRC_INFOS_COUNT_BIT_NV"
@@ -79,5 +79,5 @@ public enum ClusterAccelerationStructureAddressResolutionFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    IndirectedSrcInfosCountBitNV = 0x20,
+    IndirectedSrcInfosCountBit = 0x20,
 }

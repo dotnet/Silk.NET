@@ -23,7 +23,7 @@ public enum VideoDecodeCapabilityFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DpbAndOutputCoincideBitKHR = 0x1,
+    DpbAndOutputCoincideBit = 0x1,
 
     [NativeName("VK_VIDEO_DECODE_CAPABILITY_DPB_AND_OUTPUT_DISTINCT_BIT_KHR")]
     [SupportedApiProfile(
@@ -34,5 +34,5 @@ public enum VideoDecodeCapabilityFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DpbAndOutputDistinctBitKHR = 0x2,
+    DpbAndOutputDistinctBit = 0x2,
 }

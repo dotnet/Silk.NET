@@ -19,8 +19,8 @@ public enum SamplerParameterI : uint
     [NativeName("GL_TEXTURE_WRAP_S")]
     WrapS = unchecked((uint)0x2802),
 
-    [NativeName("GL_TEXTURE_WRAP")]
-    Wrap = unchecked((uint)0x2803),
+    [NativeName("GL_TEXTURE_WRAP_T")]
+    WrapT = unchecked((uint)0x2803),
 
     [NativeName("GL_TEXTURE_WRAP_R")]
     WrapR = unchecked((uint)0x8072),

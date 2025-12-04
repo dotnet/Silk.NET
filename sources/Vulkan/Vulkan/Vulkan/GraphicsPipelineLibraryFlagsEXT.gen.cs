@@ -24,7 +24,7 @@ public enum GraphicsPipelineLibraryFlagsEXT : uint
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    VertexInputInterfaceBitEXT = 0x1,
+    VertexInputInterfaceBit = 0x1,
 
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_PRE_RASTERIZATION_SHADERS_BIT_EXT")]
     [SupportedApiProfile(
@@ -35,7 +35,7 @@ public enum GraphicsPipelineLibraryFlagsEXT : uint
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    PreRasterizationShadersBitEXT = 0x2,
+    PreRasterizationShadersBit = 0x2,
 
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_SHADER_BIT_EXT")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public enum GraphicsPipelineLibraryFlagsEXT : uint
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    FragmentShaderBitEXT = 0x4,
+    FragmentShaderBit = 0x4,
 
     [NativeName("VK_GRAPHICS_PIPELINE_LIBRARY_FRAGMENT_OUTPUT_INTERFACE_BIT_EXT")]
     [SupportedApiProfile(
@@ -57,5 +57,5 @@ public enum GraphicsPipelineLibraryFlagsEXT : uint
             "VK_KHR_pipeline_library+VK_VERSION_1_1",
         ]
     )]
-    FragmentOutputInterfaceBitEXT = 0x8,
+    FragmentOutputInterfaceBit = 0x8,
 }

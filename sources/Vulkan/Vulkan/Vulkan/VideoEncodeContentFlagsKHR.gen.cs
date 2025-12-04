@@ -22,7 +22,7 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DefaultKHR = 0x0,
+    Default = 0x0,
 
     [NativeName("VK_VIDEO_ENCODE_CONTENT_CAMERA_BIT_KHR")]
     [SupportedApiProfile(
@@ -33,7 +33,7 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    CameraBitKHR = 0x1,
+    CameraBit = 0x1,
 
     [NativeName("VK_VIDEO_ENCODE_CONTENT_DESKTOP_BIT_KHR")]
     [SupportedApiProfile(
@@ -44,7 +44,7 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DesktopBitKHR = 0x2,
+    DesktopBit = 0x2,
 
     [NativeName("VK_VIDEO_ENCODE_CONTENT_RENDERED_BIT_KHR")]
     [SupportedApiProfile(
@@ -55,5 +55,5 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    RenderedBitKHR = 0x4,
+    RenderedBit = 0x4,
 }

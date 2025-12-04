@@ -23,5 +23,5 @@ public enum MicromapCreateFlagsEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    DeviceAddressCaptureReplayBitEXT = 0x1,
+    DeviceAddressCaptureReplayBit = 0x1,
 }

@@ -21,7 +21,7 @@ public enum VideoEncodeAv1SuperblockSizeFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size64BitKHR = 0x1,
+    Size64Bit = 0x1,
 
     [NativeName("VK_VIDEO_ENCODE_AV1_SUPERBLOCK_SIZE_128_BIT_KHR")]
     [SupportedApiProfile(
@@ -29,5 +29,5 @@ public enum VideoEncodeAv1SuperblockSizeFlagsKHR : uint
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size128BitKHR = 0x2,
+    Size128Bit = 0x2,
 }

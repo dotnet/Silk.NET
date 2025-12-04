@@ -21,7 +21,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    HrdComplianceBitKHR = 0x1,
+    HrdComplianceBit = 0x1,
 
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_PREDICTION_WEIGHT_TABLE_GENERATED_BIT_KHR")]
     [SupportedApiProfile(
@@ -29,7 +29,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PredictionWeightTableGeneratedBitKHR = 0x2,
+    PredictionWeightTableGeneratedBit = 0x2,
 
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_ROW_UNALIGNED_SLICE_BIT_KHR")]
     [SupportedApiProfile(
@@ -37,7 +37,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    RowUnalignedSliceBitKHR = 0x4,
+    RowUnalignedSliceBit = 0x4,
 
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_DIFFERENT_SLICE_TYPE_BIT_KHR")]
     [SupportedApiProfile(
@@ -45,7 +45,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DifferentSliceTypeBitKHR = 0x8,
+    DifferentSliceTypeBit = 0x8,
 
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_B_FRAME_IN_L0_LIST_BIT_KHR")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BFrameInL0ListBitKHR = 0x10,
+    BFrameInL0ListBit = 0x10,
 
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_KHR")]
     [SupportedApiProfile(
@@ -61,7 +61,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BFrameInL1ListBitKHR = 0x20,
+    BFrameInL1ListBit = 0x20,
 
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_PER_PICTURE_TYPE_MIN_MAX_QP_BIT_KHR")]
     [SupportedApiProfile(
@@ -69,7 +69,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PerPictureTypeMinMaxQpBitKHR = 0x40,
+    PerPictureTypeMinMaxQpBit = 0x40,
 
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_PER_SLICE_CONSTANT_QP_BIT_KHR")]
     [SupportedApiProfile(
@@ -77,7 +77,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PerSliceConstantQpBitKHR = 0x80,
+    PerSliceConstantQpBit = 0x80,
 
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_GENERATE_PREFIX_NALU_BIT_KHR")]
     [SupportedApiProfile(
@@ -85,7 +85,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    GeneratePrefixNaluBitKHR = 0x100,
+    GeneratePrefixNaluBit = 0x100,
 
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
     [SupportedApiProfile(
@@ -94,7 +94,7 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"],
         RequireAll = true
     )]
-    BPictureIntraRefreshBitKHR = 0x400,
+    BPictureIntraRefreshBit = 0x400,
 
     [NativeName("VK_VIDEO_ENCODE_H264_CAPABILITY_MB_QP_DIFF_WRAPAROUND_BIT_KHR")]
     [SupportedApiProfile(
@@ -106,5 +106,5 @@ public enum VideoEncodeH264CapabilityFlagsKHR : uint
         ],
         RequireAll = true
     )]
-    MbQpDiffWraparoundBitKHR = 0x200,
+    MbQpDiffWraparoundBit = 0x200,
 }

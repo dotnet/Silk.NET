@@ -23,5 +23,5 @@ public enum ConditionalRenderingFlagsEXT : uint
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    InvertedBitEXT = 0x1,
+    InvertedBit = 0x1,
 }

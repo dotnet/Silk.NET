@@ -24,7 +24,7 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TriangleFacingCullDisableBitKHR = 0x1,
+    TriangleFacingCullDisableBit = 0x1,
 
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FLIP_FACING_BIT_KHR")]
     [SupportedApiProfile(
@@ -35,7 +35,7 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TriangleFlipFacingBitKHR = 0x2,
+    TriangleFlipFacingBit = 0x2,
 
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_KHR")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    ForceOpaqueBitKHR = 0x4,
+    ForceOpaqueBit = 0x4,
 
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_KHR")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    ForceNoOpaqueBitKHR = 0x8,
+    ForceNoOpaqueBit = 0x8,
 
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_BIT_EXT")]
     [SupportedApiProfile(
@@ -90,7 +90,7 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TriangleFrontCounterclockwiseBitKHR = TriangleFlipFacingBitKHR,
+    TriangleFrontCounterclockwiseBit = TriangleFlipFacingBit,
 
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_CULL_DISABLE_BIT_NV")]
     [SupportedApiProfile(
@@ -101,7 +101,7 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TriangleCullDisableBitNV = TriangleFacingCullDisableBitKHR,
+    TriangleCullDisableBitNV = TriangleFacingCullDisableBit,
 
     [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_NV")]
     [SupportedApiProfile(
@@ -112,7 +112,7 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TriangleFrontCounterclockwiseBitNV = TriangleFrontCounterclockwiseBitKHR,
+    TriangleFrontCounterclockwiseBitNV = TriangleFrontCounterclockwiseBit,
 
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
@@ -123,7 +123,7 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ForceOpaqueBitNV = ForceOpaqueBitKHR,
+    ForceOpaqueBitNV = ForceOpaqueBit,
 
     [NativeName("VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
@@ -134,5 +134,5 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ForceNoOpaqueBitNV = ForceNoOpaqueBitKHR,
+    ForceNoOpaqueBitNV = ForceNoOpaqueBit,
 }

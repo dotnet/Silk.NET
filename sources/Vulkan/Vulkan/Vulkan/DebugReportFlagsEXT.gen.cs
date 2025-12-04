@@ -17,21 +17,21 @@ public enum DebugReportFlagsEXT : uint
 
     [NativeName("VK_DEBUG_REPORT_INFORMATION_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    InformationBitEXT = 0x1,
+    InformationBit = 0x1,
 
     [NativeName("VK_DEBUG_REPORT_WARNING_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    WarningBitEXT = 0x2,
+    WarningBit = 0x2,
 
     [NativeName("VK_DEBUG_REPORT_PERFORMANCE_WARNING_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    PerformanceWarningBitEXT = 0x4,
+    PerformanceWarningBit = 0x4,
 
     [NativeName("VK_DEBUG_REPORT_ERROR_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    ErrorBitEXT = 0x8,
+    ErrorBit = 0x8,
 
     [NativeName("VK_DEBUG_REPORT_DEBUG_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DebugBitEXT = 0x10,
+    DebugBit = 0x10,
 }

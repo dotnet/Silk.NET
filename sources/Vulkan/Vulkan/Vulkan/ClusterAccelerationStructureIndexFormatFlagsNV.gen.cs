@@ -21,7 +21,7 @@ public enum ClusterAccelerationStructureIndexFormatFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    Format8BitNV = 0x1,
+    Format8Bit = 0x1,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_INDEX_FORMAT_16BIT_NV")]
     [SupportedApiProfile(
@@ -29,7 +29,7 @@ public enum ClusterAccelerationStructureIndexFormatFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    Format16BitNV = 0x2,
+    Format16Bit = 0x2,
 
     [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_INDEX_FORMAT_32BIT_NV")]
     [SupportedApiProfile(
@@ -37,5 +37,5 @@ public enum ClusterAccelerationStructureIndexFormatFlagsNV : uint
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    Format32BitNV = 0x4,
+    Format32Bit = 0x4,
 }

@@ -25,7 +25,7 @@ public enum IndirectCommandsInputModeFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    VulkanIndexBufferEXT = 0x1,
+    VulkanIndexBuffer = 0x1,
 
     [NativeName("VK_INDIRECT_COMMANDS_INPUT_MODE_DXGI_INDEX_BUFFER_EXT")]
     [SupportedApiProfile(
@@ -37,5 +37,5 @@ public enum IndirectCommandsInputModeFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DxgiIndexBufferEXT = 0x2,
+    DxgiIndexBuffer = 0x2,
 }

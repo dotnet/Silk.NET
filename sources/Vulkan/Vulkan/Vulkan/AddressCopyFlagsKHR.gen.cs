@@ -23,7 +23,7 @@ public enum AddressCopyFlagsKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    DeviceLocalBitKHR = 0x1,
+    DeviceLocalBit = 0x1,
 
     [NativeName("VK_ADDRESS_COPY_SPARSE_BIT_KHR")]
     [SupportedApiProfile(
@@ -34,7 +34,7 @@ public enum AddressCopyFlagsKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    SparseBitKHR = 0x2,
+    SparseBit = 0x2,
 
     [NativeName("VK_ADDRESS_COPY_PROTECTED_BIT_KHR")]
     [SupportedApiProfile(
@@ -45,5 +45,5 @@ public enum AddressCopyFlagsKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    ProtectedBitKHR = 0x4,
+    ProtectedBit = 0x4,
 }

@@ -19,8 +19,8 @@ public enum GetTextureParameter : uint
     [NativeName("GL_TEXTURE_WRAP_S")]
     TextureWrapS = unchecked((uint)0x2802),
 
-    [NativeName("GL_TEXTURE_WRAP")]
-    TextureWrap = unchecked((uint)0x2803),
+    [NativeName("GL_TEXTURE_WRAP_T")]
+    TextureWrapT = unchecked((uint)0x2803),
 
     [NativeName("GL_NORMAL_MAP_OES")]
     NormalMapOES = unchecked((uint)0x8511),

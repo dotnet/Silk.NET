@@ -21,7 +21,7 @@ public enum IndirectCommandsLayoutUsageFlagsNV : uint
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    ExplicitPreprocessBitNV = 0x1,
+    ExplicitPreprocessBit = 0x1,
 
     [NativeName("VK_INDIRECT_COMMANDS_LAYOUT_USAGE_INDEXED_SEQUENCES_BIT_NV")]
     [SupportedApiProfile(
@@ -29,7 +29,7 @@ public enum IndirectCommandsLayoutUsageFlagsNV : uint
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    IndexedSequencesBitNV = 0x2,
+    IndexedSequencesBit = 0x2,
 
     [NativeName("VK_INDIRECT_COMMANDS_LAYOUT_USAGE_UNORDERED_SEQUENCES_BIT_NV")]
     [SupportedApiProfile(
@@ -37,5 +37,5 @@ public enum IndirectCommandsLayoutUsageFlagsNV : uint
         ["VK_NV_device_generated_commands"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_buffer_device_address", "VK_VERSION_1_2"]
     )]
-    UnorderedSequencesBitNV = 0x4,
+    UnorderedSequencesBit = 0x4,
 }

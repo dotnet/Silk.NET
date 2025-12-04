@@ -24,7 +24,7 @@ public enum ResolveImageFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    SkipTransferFunctionBitKHR = 0x1,
+    SkipTransferFunctionBit = 0x1,
 
     [NativeName("VK_RESOLVE_IMAGE_ENABLE_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
@@ -35,5 +35,5 @@ public enum ResolveImageFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    EnableTransferFunctionBitKHR = 0x2,
+    EnableTransferFunctionBit = 0x2,
 }

@@ -28,7 +28,7 @@ public enum RenderingAttachmentFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    InputAttachmentFeedbackBitKHR = 0x1,
+    InputAttachmentFeedbackBit = 0x1,
 
     [NativeName("VK_RENDERING_ATTACHMENT_RESOLVE_SKIP_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
@@ -39,7 +39,7 @@ public enum RenderingAttachmentFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    ResolveSkipTransferFunctionBitKHR = 0x2,
+    ResolveSkipTransferFunctionBit = 0x2,
 
     [NativeName("VK_RENDERING_ATTACHMENT_RESOLVE_ENABLE_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
@@ -50,5 +50,5 @@ public enum RenderingAttachmentFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    ResolveEnableTransferFunctionBitKHR = 0x4,
+    ResolveEnableTransferFunctionBit = 0x4,
 }

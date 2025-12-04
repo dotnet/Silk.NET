@@ -760,8 +760,8 @@ public enum GlEnum : uint
     [NativeName("GL_TEXTURE_WRAP_S")]
     TextureWrapS = 10242,
 
-    [NativeName("GL_TEXTURE_WRAP")]
-    TextureWrap = 10243,
+    [NativeName("GL_TEXTURE_WRAP_T")]
+    TextureWrapT = 10243,
 
     [NativeName("GL_GENERATE_MIPMAP")]
     GenerateMipmap = 33169,
@@ -2248,8 +2248,8 @@ public enum GlEnum : uint
     [NativeName("GL_TEXTURE_GEN_S")]
     TextureGenS = 3168,
 
-    [NativeName("GL_TEXTURE_GEN")]
-    TextureGen = 3169,
+    [NativeName("GL_TEXTURE_GEN_T")]
+    TextureGenT = 3169,
 
     [NativeName("GL_TEXTURE_GEN_R")]
     TextureGenR = 3170,
@@ -2473,8 +2473,8 @@ public enum GlEnum : uint
     [NativeName("GL_S")]
     S = 8192,
 
-    [NativeName("GL")]
-    Gl = 8193,
+    [NativeName("GL_T")]
+    T = 8193,
 
     [NativeName("GL_R")]
     R = 8194,

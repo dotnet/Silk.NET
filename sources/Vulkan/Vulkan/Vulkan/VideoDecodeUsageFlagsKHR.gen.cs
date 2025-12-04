@@ -22,7 +22,7 @@ public enum VideoDecodeUsageFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DefaultKHR = 0x0,
+    Default = 0x0,
 
     [NativeName("VK_VIDEO_DECODE_USAGE_TRANSCODING_BIT_KHR")]
     [SupportedApiProfile(
@@ -33,7 +33,7 @@ public enum VideoDecodeUsageFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    TranscodingBitKHR = 0x1,
+    TranscodingBit = 0x1,
 
     [NativeName("VK_VIDEO_DECODE_USAGE_OFFLINE_BIT_KHR")]
     [SupportedApiProfile(
@@ -44,7 +44,7 @@ public enum VideoDecodeUsageFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    OfflineBitKHR = 0x2,
+    OfflineBit = 0x2,
 
     [NativeName("VK_VIDEO_DECODE_USAGE_STREAMING_BIT_KHR")]
     [SupportedApiProfile(
@@ -55,5 +55,5 @@ public enum VideoDecodeUsageFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    StreamingBitKHR = 0x4,
+    StreamingBit = 0x4,
 }

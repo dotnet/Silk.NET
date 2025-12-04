@@ -21,7 +21,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    HrdComplianceBitKHR = 0x1,
+    HrdComplianceBit = 0x1,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_PREDICTION_WEIGHT_TABLE_GENERATED_BIT_KHR")]
     [SupportedApiProfile(
@@ -29,7 +29,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PredictionWeightTableGeneratedBitKHR = 0x2,
+    PredictionWeightTableGeneratedBit = 0x2,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_ROW_UNALIGNED_SLICE_SEGMENT_BIT_KHR")]
     [SupportedApiProfile(
@@ -37,7 +37,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    RowUnalignedSliceSegmentBitKHR = 0x4,
+    RowUnalignedSliceSegmentBit = 0x4,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_DIFFERENT_SLICE_SEGMENT_TYPE_BIT_KHR")]
     [SupportedApiProfile(
@@ -45,7 +45,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    DifferentSliceSegmentTypeBitKHR = 0x8,
+    DifferentSliceSegmentTypeBit = 0x8,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_B_FRAME_IN_L0_LIST_BIT_KHR")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BFrameInL0ListBitKHR = 0x10,
+    BFrameInL0ListBit = 0x10,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_B_FRAME_IN_L1_LIST_BIT_KHR")]
     [SupportedApiProfile(
@@ -61,7 +61,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BFrameInL1ListBitKHR = 0x20,
+    BFrameInL1ListBit = 0x20,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_PER_PICTURE_TYPE_MIN_MAX_QP_BIT_KHR")]
     [SupportedApiProfile(
@@ -69,7 +69,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PerPictureTypeMinMaxQpBitKHR = 0x40,
+    PerPictureTypeMinMaxQpBit = 0x40,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_PER_SLICE_SEGMENT_CONSTANT_QP_BIT_KHR")]
     [SupportedApiProfile(
@@ -77,7 +77,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    PerSliceSegmentConstantQpBitKHR = 0x80,
+    PerSliceSegmentConstantQpBit = 0x80,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_TILES_PER_SLICE_SEGMENT_BIT_KHR")]
     [SupportedApiProfile(
@@ -85,7 +85,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    MultipleTilesPerSliceSegmentBitKHR = 0x100,
+    MultipleTilesPerSliceSegmentBit = 0x100,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_SLICE_SEGMENTS_PER_TILE_BIT_KHR")]
     [SupportedApiProfile(
@@ -93,7 +93,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    MultipleSliceSegmentsPerTileBitKHR = 0x200,
+    MultipleSliceSegmentsPerTileBit = 0x200,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
     [SupportedApiProfile(
@@ -102,7 +102,7 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ImpliesSets = ["VK_KHR_video_encode_queue"],
         RequireAll = true
     )]
-    BPictureIntraRefreshBitKHR = 0x800,
+    BPictureIntraRefreshBit = 0x800,
 
     [NativeName("VK_VIDEO_ENCODE_H265_CAPABILITY_CU_QP_DIFF_WRAPAROUND_BIT_KHR")]
     [SupportedApiProfile(
@@ -114,5 +114,5 @@ public enum VideoEncodeH265CapabilityFlagsKHR : uint
         ],
         RequireAll = true
     )]
-    CuQpDiffWraparoundBitKHR = 0x400,
+    CuQpDiffWraparoundBit = 0x400,
 }

@@ -24,5 +24,5 @@ public enum DeviceAddressBindingFlagsEXT : uint
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    InternalObjectBitEXT = 0x1,
+    InternalObjectBit = 0x1,
 }

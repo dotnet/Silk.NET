@@ -23,5 +23,5 @@ public enum FrameBoundaryFlagsEXT : uint
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    FrameEndBitEXT = 0x1,
+    FrameEndBit = 0x1,
 }

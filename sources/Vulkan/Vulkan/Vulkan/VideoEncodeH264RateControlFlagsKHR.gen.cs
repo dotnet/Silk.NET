@@ -21,7 +21,7 @@ public enum VideoEncodeH264RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    AttemptHrdComplianceBitKHR = 0x1,
+    AttemptHrdComplianceBit = 0x1,
 
     [NativeName("VK_VIDEO_ENCODE_H264_RATE_CONTROL_REGULAR_GOP_BIT_KHR")]
     [SupportedApiProfile(
@@ -29,7 +29,7 @@ public enum VideoEncodeH264RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    RegularGopBitKHR = 0x2,
+    RegularGopBit = 0x2,
 
     [NativeName("VK_VIDEO_ENCODE_H264_RATE_CONTROL_REFERENCE_PATTERN_FLAT_BIT_KHR")]
     [SupportedApiProfile(
@@ -37,7 +37,7 @@ public enum VideoEncodeH264RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ReferencePatternFlatBitKHR = 0x4,
+    ReferencePatternFlatBit = 0x4,
 
     [NativeName("VK_VIDEO_ENCODE_H264_RATE_CONTROL_REFERENCE_PATTERN_DYADIC_BIT_KHR")]
     [SupportedApiProfile(
@@ -45,7 +45,7 @@ public enum VideoEncodeH264RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ReferencePatternDyadicBitKHR = 0x8,
+    ReferencePatternDyadicBit = 0x8,
 
     [NativeName("VK_VIDEO_ENCODE_H264_RATE_CONTROL_TEMPORAL_LAYER_PATTERN_DYADIC_BIT_KHR")]
     [SupportedApiProfile(
@@ -53,5 +53,5 @@ public enum VideoEncodeH264RateControlFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    TemporalLayerPatternDyadicBitKHR = 0x10,
+    TemporalLayerPatternDyadicBit = 0x10,
 }

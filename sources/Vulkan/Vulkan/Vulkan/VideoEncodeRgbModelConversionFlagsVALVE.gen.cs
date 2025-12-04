@@ -24,7 +24,7 @@ public enum VideoEncodeRgbModelConversionFlagsVALVE : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    RgbIdentityBitVALVE = 0x1,
+    RgbIdentityBit = 0x1,
 
     [NativeName("VK_VIDEO_ENCODE_RGB_MODEL_CONVERSION_YCBCR_IDENTITY_BIT_VALVE")]
     [SupportedApiProfile(
@@ -35,7 +35,7 @@ public enum VideoEncodeRgbModelConversionFlagsVALVE : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    YcbcrIdentityBitVALVE = 0x2,
+    YcbcrIdentityBit = 0x2,
 
     [NativeName("VK_VIDEO_ENCODE_RGB_MODEL_CONVERSION_YCBCR_709_BIT_VALVE")]
     [SupportedApiProfile(
@@ -46,7 +46,7 @@ public enum VideoEncodeRgbModelConversionFlagsVALVE : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    Ycbcr709BitVALVE = 0x4,
+    Ycbcr709Bit = 0x4,
 
     [NativeName("VK_VIDEO_ENCODE_RGB_MODEL_CONVERSION_YCBCR_601_BIT_VALVE")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public enum VideoEncodeRgbModelConversionFlagsVALVE : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    Ycbcr601BitVALVE = 0x8,
+    Ycbcr601Bit = 0x8,
 
     [NativeName("VK_VIDEO_ENCODE_RGB_MODEL_CONVERSION_YCBCR_2020_BIT_VALVE")]
     [SupportedApiProfile(
@@ -68,5 +68,5 @@ public enum VideoEncodeRgbModelConversionFlagsVALVE : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    Ycbcr2020BitVALVE = 0x10,
+    Ycbcr2020Bit = 0x10,
 }

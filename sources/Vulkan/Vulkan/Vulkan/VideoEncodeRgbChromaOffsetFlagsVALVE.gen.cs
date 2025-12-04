@@ -24,7 +24,7 @@ public enum VideoEncodeRgbChromaOffsetFlagsVALVE : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    CositedEvenBitVALVE = 0x1,
+    CositedEvenBit = 0x1,
 
     [NativeName("VK_VIDEO_ENCODE_RGB_CHROMA_OFFSET_MIDPOINT_BIT_VALVE")]
     [SupportedApiProfile(
@@ -35,5 +35,5 @@ public enum VideoEncodeRgbChromaOffsetFlagsVALVE : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_1",
         ]
     )]
-    MidpointBitVALVE = 0x2,
+    MidpointBit = 0x2,
 }

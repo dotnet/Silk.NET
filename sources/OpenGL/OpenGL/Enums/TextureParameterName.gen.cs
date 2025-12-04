@@ -19,8 +19,8 @@ public enum TextureParameterName : uint
     [NativeName("GL_TEXTURE_WRAP_S")]
     TextureWrapS = unchecked((uint)0x2802),
 
-    [NativeName("GL_TEXTURE_WRAP")]
-    TextureWrap = unchecked((uint)0x2803),
+    [NativeName("GL_TEXTURE_WRAP_T")]
+    TextureWrapT = unchecked((uint)0x2803),
 
     [NativeName("GL_GENERATE_MIPMAP")]
     GenerateMipmap = unchecked((uint)0x8191),

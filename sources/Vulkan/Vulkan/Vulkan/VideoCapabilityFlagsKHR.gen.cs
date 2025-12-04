@@ -21,7 +21,7 @@ public enum VideoCapabilityFlagsKHR : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    ProtectedContentBitKHR = 0x1,
+    ProtectedContentBit = 0x1,
 
     [NativeName("VK_VIDEO_CAPABILITY_SEPARATE_REFERENCE_IMAGES_BIT_KHR")]
     [SupportedApiProfile(
@@ -29,5 +29,5 @@ public enum VideoCapabilityFlagsKHR : uint
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    SeparateReferenceImagesBitKHR = 0x2,
+    SeparateReferenceImagesBit = 0x2,
 }

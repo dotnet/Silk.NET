@@ -24,7 +24,7 @@ public enum IndirectCommandsLayoutUsageFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    ExplicitPreprocessBitEXT = 0x1,
+    ExplicitPreprocessBit = 0x1,
 
     [NativeName("VK_INDIRECT_COMMANDS_LAYOUT_USAGE_UNORDERED_SEQUENCES_BIT_EXT")]
     [SupportedApiProfile(
@@ -36,5 +36,5 @@ public enum IndirectCommandsLayoutUsageFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    UnorderedSequencesBitEXT = 0x2,
+    UnorderedSequencesBit = 0x2,
 }

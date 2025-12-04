@@ -24,7 +24,7 @@ public enum TileShadingRenderPassFlagsQCOM : uint
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    EnableBitQCOM = 0x1,
+    EnableBit = 0x1,
 
     [NativeName("VK_TILE_SHADING_RENDER_PASS_PER_TILE_EXECUTION_BIT_QCOM")]
     [SupportedApiProfile(
@@ -35,5 +35,5 @@ public enum TileShadingRenderPassFlagsQCOM : uint
             "VK_QCOM_tile_shading+VK_QCOM_tile_properties",
         ]
     )]
-    PerTileExecutionBitQCOM = 0x2,
+    PerTileExecutionBit = 0x2,
 }

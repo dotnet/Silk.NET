@@ -22,7 +22,7 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    LocalBitKHR = 0x1,
+    LocalBit = 0x1,
 
     [NativeName("VK_DEVICE_GROUP_PRESENT_MODE_REMOTE_BIT_KHR")]
     [SupportedApiProfile(
@@ -31,7 +31,7 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    RemoteBitKHR = 0x2,
+    RemoteBit = 0x2,
 
     [NativeName("VK_DEVICE_GROUP_PRESENT_MODE_SUM_BIT_KHR")]
     [SupportedApiProfile(
@@ -40,7 +40,7 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    SumBitKHR = 0x4,
+    SumBit = 0x4,
 
     [NativeName("VK_DEVICE_GROUP_PRESENT_MODE_LOCAL_MULTI_DEVICE_BIT_KHR")]
     [SupportedApiProfile(
@@ -49,5 +49,5 @@ public enum DeviceGroupPresentModeFlagsKHR : uint
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    LocalMultiDeviceBitKHR = 0x8,
+    LocalMultiDeviceBit = 0x8,
 }
