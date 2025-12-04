@@ -405,7 +405,7 @@ public class PrettifyNames(
         }
 
         // Remove affixes, prettify, and add affixes back
-        return ApplyAffixes(RemoveAffixes(name, container, name, affixTypes), container, name, affixTypes).Prettify();
+        return ApplyAffixes(RemoveAffixes(name, container, name, affixTypes, null), container, name, affixTypes, null).Prettify();
     }
 
     private void Trim(
@@ -748,13 +748,15 @@ public class PrettifyNames(
         return [];
     }
 
-    private static string RemoveAffixes(string nameToModify, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes)
+    private static string RemoveAffixes(string primary, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes, List<string>? secondaries)
     {
         var affixes = GetAffixes(container, originalName, affixTypes);
         if (affixes.Length == 0)
         {
-            return nameToModify;
+            return primary;
         }
+
+        var originalPrimary = primary;
 
         affixes.Sort((a, b) => a.Priority.CompareTo(b.Priority));
         var prefixes = affixes.Where(x => x.IsPrefix).ToList();
@@ -763,7 +765,12 @@ public class PrettifyNames(
         RemoveSide(true, prefixes);
         RemoveSide(false, suffixes);
 
-        return nameToModify;
+        if (originalPrimary != primary)
+        {
+            secondaries?.Add(originalPrimary);
+        }
+
+        return primary;
 
         void RemoveSide(bool isPrefix, List<NameAffix> nameAffixes)
         {
@@ -773,9 +780,9 @@ public class PrettifyNames(
                 for (var i = 0; i < nameAffixes.Count; i++)
                 {
                     var affix = nameAffixes[i];
-                    if (isPrefix ? nameToModify.StartsWith(affix.Affix) : nameToModify.EndsWith(affix.Affix))
+                    if (isPrefix ? primary.StartsWith(affix.Affix) : primary.EndsWith(affix.Affix))
                     {
-                        nameToModify = isPrefix ? nameToModify[affix.Affix.Length..] : nameToModify[..^affix.Affix.Length];
+                        primary = isPrefix ? primary[affix.Affix.Length..] : primary[..^affix.Affix.Length];
 
                         nameAffixes.RemoveAt(i);
                         removedAffix = true;
@@ -791,32 +798,38 @@ public class PrettifyNames(
         }
     }
 
-    private static string ApplyAffixes(string nameToModify, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes)
+    private static string ApplyAffixes(string primary, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes, List<string>? secondaries)
     {
         var affixes = GetAffixes(container, originalName, affixTypes);
         if (affixes.Length == 0)
         {
-            return nameToModify;
+            return primary;
         }
 
-        affixes.Sort((a, b) => -a.Priority.CompareTo(b.Priority));
+        var originalPrimary = primary;
 
+        affixes.Sort((a, b) => -a.Priority.CompareTo(b.Priority));
         foreach (var affix in affixes)
         {
             if (affix.Priority >= 0)
             {
                 if (affix.IsPrefix)
                 {
-                    nameToModify = PreventPrettificationHack(affix.Affix) + nameToModify;
+                    primary = PreventPrettificationHack(affix.Affix) + primary;
                 }
                 else
                 {
-                    nameToModify += PreventPrettificationHack(affix.Affix);
+                    primary += PreventPrettificationHack(affix.Affix);
                 }
             }
         }
 
-        return nameToModify;
+        if (originalPrimary != primary)
+        {
+            secondaries?.Add(originalPrimary);
+        }
+
+        return primary;
 
         // This appends a space before every capital and after the entire affix
         // This ensures that capitals are preserved when the name is prettified
@@ -1259,9 +1272,8 @@ public class PrettifyNames(
             {
                 foreach (var (original, (primary, secondary)) in context.Names)
                 {
-                    var newPrimary = RemoveAffixes(primary, null, original, affixTypes);
                     var secondaries = secondary ?? [];
-                    secondaries.Add(primary);
+                    var newPrimary = RemoveAffixes(primary, null, original, affixTypes, secondaries);
 
                     context.Names[original] = new CandidateNames(newPrimary, secondaries);
                 }
@@ -1271,9 +1283,8 @@ public class PrettifyNames(
 
             foreach (var (original, (primary, secondary)) in context.Names)
             {
-                var newPrimary = RemoveAffixes(primary, context.Container, original, affixTypes);
                 var secondaries = secondary ?? [];
-                secondaries.Add(primary);
+                var newPrimary = RemoveAffixes(primary, context.Container, original, affixTypes, secondaries);
 
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }
@@ -1293,10 +1304,8 @@ public class PrettifyNames(
             {
                 foreach (var (original, (primary, secondary)) in context.Names)
                 {
-                    var newPrimary = ApplyAffixes(primary, null, original, affixTypes);
                     var secondaries = secondary ?? [];
-                    secondaries.Add(primary);
-
+                    var newPrimary = ApplyAffixes(primary, null, original, affixTypes, secondaries);
                     context.Names[original] = new CandidateNames(newPrimary, secondaries);
                 }
 
@@ -1305,10 +1314,8 @@ public class PrettifyNames(
 
             foreach (var (original, (primary, secondary)) in context.Names)
             {
-                var newPrimary = ApplyAffixes(primary, context.Container, original, affixTypes);
                 var secondaries = secondary ?? [];
-                secondaries.Add(primary);
-
+                var newPrimary = ApplyAffixes(primary, context.Container, original, affixTypes, secondaries);
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }
         }
