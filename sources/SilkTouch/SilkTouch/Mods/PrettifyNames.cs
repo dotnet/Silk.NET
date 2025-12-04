@@ -908,7 +908,7 @@ public class PrettifyNames(
     /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
     private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
 
-    private record struct NameAffix(bool IsPrefix, string Affix, int Order, int Priority);
+    private record struct NameAffix(bool IsPrefix, string Affix, int Order, int Priority, int DeclarationOrder);
 
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
@@ -985,6 +985,7 @@ public class PrettifyNames(
         private bool TryGetAffixData(SyntaxList<AttributeListSyntax> attributeLists, out NameAffix[] affixes)
         {
             affixes = [];
+            var declarationOrder = 0;
             foreach (var list in attributeLists)
             {
                 foreach (var attribute in list.Attributes)
@@ -1003,7 +1004,8 @@ public class PrettifyNames(
 
                         if (affix != null)
                         {
-                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, order, priority)];
+                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, order, priority, declarationOrder)];
+                            declarationOrder++;
                         }
                     }
                 }
