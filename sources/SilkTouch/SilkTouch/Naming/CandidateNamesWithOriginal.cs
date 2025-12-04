@@ -10,4 +10,11 @@ namespace Silk.NET.SilkTouch.Naming;
 /// <param name="Primary">The preferred version of the trimmed name.</param>
 /// <param name="Secondary">The fallback versions of the trimmed name in case the primary does not work.</param>
 /// <param name="Original">The original, unmodified name.</param>
-public record struct CandidateNamesWithOriginal(string Primary, List<string>? Secondary, string Original);
+public record struct CandidateNamesWithOriginal(string Primary, List<string>? Secondary, string Original)
+{
+    /// <summary>
+    /// Formats this instance as a string.
+    /// </summary>
+    public override string ToString() =>
+        $"(Original={Original}, Primary={Primary}, Secondary=[{string.Join(", ", Secondary ?? [])}])";
+}
