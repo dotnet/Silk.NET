@@ -1902,7 +1902,7 @@ public partial class MixKhronosData(
                         var dataTypeSuffix = trimmedName[match.Index..];
                         trimmedName = trimmedName[..^match.Index];
 
-                        attributeLists = attributeLists.AddNameSuffix(dataTypeSuffix, -1);
+                        attributeLists = attributeLists.AddNameSuffix(dataTypeSuffix, 0, 0);
                     }
                 }
             }

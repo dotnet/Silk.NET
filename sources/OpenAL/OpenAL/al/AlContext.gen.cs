@@ -278,7 +278,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         public static extern int GetErrorRaw([NativeName("device")] DeviceHandle device);
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetInteger64vSOFT")]
@@ -286,14 +286,14 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
-        public static extern void GetInteger64SOFT(
+        public static extern void GetInteger64VSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname,
             [NativeName("size")] int size,
             [NativeName("values")] nint* values
         );
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
@@ -304,7 +304,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetInteger64SOFT(
+        public static void GetInteger64VSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname,
             [NativeName("size")] int size,
@@ -313,11 +313,11 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         {
             fixed (nint* __dsl_values = values)
             {
-                GetInteger64SOFT(device, pname, size, __dsl_values);
+                GetInteger64VSOFT(device, pname, size, __dsl_values);
             }
         }
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
@@ -325,35 +325,35 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-        public static nint GetInteger64SOFT(
+        public static nint GetInteger64VSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname
         )
         {
             nint values = default;
-            GetInteger64SOFT(device, pname, 1, (nint*)&values);
+            GetInteger64VSOFT(device, pname, 1, (nint*)&values);
             return values;
         }
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-        public static extern void GetInteger(
+        public static extern void GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1,
             [NativeName("size")] int size,
             [NativeName("values")] int* values
         );
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetInteger(
+        public static void GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1,
             [NativeName("size")] int size,
@@ -362,21 +362,21 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         {
             fixed (int* __dsl_values = values)
             {
-                GetInteger(device, param1, size, __dsl_values);
+                GetIntegerv(device, param1, size, __dsl_values);
             }
         }
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        public static int GetInteger(
+        public static int GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1
         )
         {
             int values = default;
-            GetInteger(device, param1, 1, (int*)&values);
+            GetIntegerv(device, param1, 1, (int*)&values);
             return values;
         }
 
@@ -455,18 +455,18 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
         ) => (sbyte*)GetString(device, (int)param1);
 
-        [NameAffix("Suffix", "i", -1, -1)]
+        [NameAffix("Suffix", "i", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
-        public static extern sbyte* GetStringSOFT(
+        public static extern sbyte* GetStringiSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("paramName")] int paramName,
             [NativeName("index")] int index
         );
 
-        [NameAffix("Suffix", "i", -1, -1)]
+        [NameAffix("Suffix", "i", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
@@ -474,11 +474,11 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<sbyte> GetStringSOFT(
+        public static Ptr<sbyte> GetStringiSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
             [NativeName("index")] int index
-        ) => (sbyte*)GetStringSOFT(device, (int)paramName, index);
+        ) => (sbyte*)GetStringiSOFT(device, (int)paramName, index);
 
         [NativeName("alcGetThreadContext")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetThreadContext")]
@@ -1029,7 +1029,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         )]
         public int GetErrorRaw([NativeName("device")] DeviceHandle device) => T.GetErrorRaw(device);
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
@@ -1040,14 +1040,14 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetInteger64SOFT(
+        public void GetInteger64VSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname,
             [NativeName("size")] int size,
             [NativeName("values")] nint* values
-        ) => T.GetInteger64SOFT(device, pname, size, values);
+        ) => T.GetInteger64VSOFT(device, pname, size, values);
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
@@ -1058,14 +1058,14 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetInteger64SOFT(
+        public void GetInteger64VSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname,
             [NativeName("size")] int size,
             [NativeName("values")] Ref<nint> values
-        ) => T.GetInteger64SOFT(device, pname, size, values);
+        ) => T.GetInteger64VSOFT(device, pname, size, values);
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
@@ -1076,50 +1076,50 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public nint GetInteger64SOFT(
+        public nint GetInteger64VSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname
-        ) => T.GetInteger64SOFT(device, pname);
+        ) => T.GetInteger64VSOFT(device, pname);
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetInteger(
+        public void GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1,
             [NativeName("size")] int size,
             [NativeName("values")] int* values
-        ) => T.GetInteger(device, param1, size, values);
+        ) => T.GetIntegerv(device, param1, size, values);
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetInteger(
+        public void GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1,
             [NativeName("size")] int size,
             [NativeName("values")] Ref<int> values
-        ) => T.GetInteger(device, param1, size, values);
+        ) => T.GetIntegerv(device, param1, size, values);
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int GetInteger(
+        public int GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1
-        ) => T.GetInteger(device, param1);
+        ) => T.GetIntegerv(device, param1);
 
         [NativeName("alcGetProcAddress")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -1193,7 +1193,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
         ) => T.GetString(device, param1);
 
-        [NameAffix("Suffix", "i", -1, -1)]
+        [NameAffix("Suffix", "i", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
@@ -1201,13 +1201,13 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte* GetStringSOFT(
+        public sbyte* GetStringiSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("paramName")] int paramName,
             [NativeName("index")] int index
-        ) => T.GetStringSOFT(device, paramName, index);
+        ) => T.GetStringiSOFT(device, paramName, index);
 
-        [NameAffix("Suffix", "i", -1, -1)]
+        [NameAffix("Suffix", "i", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
@@ -1215,11 +1215,11 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Ptr<sbyte> GetStringSOFT(
+        public Ptr<sbyte> GetStringiSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
             [NativeName("index")] int index
-        ) => T.GetStringSOFT(device, paramName, index);
+        ) => T.GetStringiSOFT(device, paramName, index);
 
         [NativeName("alcGetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
@@ -1782,7 +1782,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         public static int GetErrorRaw([NativeName("device")] DeviceHandle device) =>
             Underlying.Value!.GetErrorRaw(device);
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
@@ -1793,14 +1793,14 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetInteger64SOFT(
+        public static void GetInteger64VSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname,
             [NativeName("size")] int size,
             [NativeName("values")] nint* values
-        ) => Underlying.Value!.GetInteger64SOFT(device, pname, size, values);
+        ) => Underlying.Value!.GetInteger64VSOFT(device, pname, size, values);
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
@@ -1811,7 +1811,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetInteger64SOFT(
+        public static void GetInteger64VSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname,
             [NativeName("size")] int size,
@@ -1820,11 +1820,11 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         {
             fixed (nint* __dsl_values = values)
             {
-                GetInteger64SOFT(device, pname, size, __dsl_values);
+                GetInteger64VSOFT(device, pname, size, __dsl_values);
             }
         }
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetInteger64vSOFT")]
         [
@@ -1835,38 +1835,38 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static nint GetInteger64SOFT(
+        public static nint GetInteger64VSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("pname")] int pname
         )
         {
             nint values = default;
-            GetInteger64SOFT(device, pname, 1, (nint*)&values);
+            GetInteger64VSOFT(device, pname, 1, (nint*)&values);
             return values;
         }
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetInteger(
+        public static void GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1,
             [NativeName("size")] int size,
             [NativeName("values")] int* values
-        ) => Underlying.Value!.GetInteger(device, param1, size, values);
+        ) => Underlying.Value!.GetIntegerv(device, param1, size, values);
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetInteger(
+        public static void GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1,
             [NativeName("size")] int size,
@@ -1875,24 +1875,24 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         {
             fixed (int* __dsl_values = values)
             {
-                GetInteger(device, param1, size, __dsl_values);
+                GetIntegerv(device, param1, size, __dsl_values);
             }
         }
 
-        [NameAffix("Suffix", "v", -1, -1)]
+        [NameAffix("Suffix", "v", 0, 0)]
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int GetInteger(
+        public static int GetIntegerv(
             [NativeName("device")] DeviceHandle device,
             [NativeName("param1")] int param1
         )
         {
             int values = default;
-            GetInteger(device, param1, 1, (int*)&values);
+            GetIntegerv(device, param1, 1, (int*)&values);
             return values;
         }
 
@@ -1980,7 +1980,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
         ) => Underlying.Value!.GetString(device, param1);
 
-        [NameAffix("Suffix", "i", -1, -1)]
+        [NameAffix("Suffix", "i", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
@@ -1988,13 +1988,13 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte* GetStringSOFT(
+        public static sbyte* GetStringiSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("paramName")] int paramName,
             [NativeName("index")] int index
-        ) => Underlying.Value!.GetStringSOFT(device, paramName, index);
+        ) => Underlying.Value!.GetStringiSOFT(device, paramName, index);
 
-        [NameAffix("Suffix", "i", -1, -1)]
+        [NameAffix("Suffix", "i", 0, 0)]
         [NameAffix("Suffix", "SOFT", 0, -1)]
         [NativeName("alcGetStringiSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
@@ -2002,11 +2002,11 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Ptr<sbyte> GetStringSOFT(
+        public static Ptr<sbyte> GetStringiSOFT(
             [NativeName("device")] DeviceHandle device,
             [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
             [NativeName("index")] int index
-        ) => Underlying.Value!.GetStringSOFT(device, paramName, index);
+        ) => Underlying.Value!.GetStringiSOFT(device, paramName, index);
 
         [NativeName("alcGetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
@@ -2915,7 +2915,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     public static int GetErrorRaw([NativeName("device")] DeviceHandle device) =>
         ThisThread.GetErrorRaw(device);
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
@@ -2924,7 +2924,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.GetInteger64SOFT(
+    void IAlContext.GetInteger64VSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pname")] int pname,
         [NativeName("size")] int size,
@@ -2938,7 +2938,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, pname, size, values);
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
@@ -2947,14 +2947,14 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetInteger64SOFT(
+    public static void GetInteger64VSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pname")] int pname,
         [NativeName("size")] int size,
         [NativeName("values")] nint* values
-    ) => ThisThread.GetInteger64SOFT(device, pname, size, values);
+    ) => ThisThread.GetInteger64VSOFT(device, pname, size, values);
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
@@ -2963,7 +2963,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.GetInteger64SOFT(
+    void IAlContext.GetInteger64VSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pname")] int pname,
         [NativeName("size")] int size,
@@ -2972,11 +2972,11 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     {
         fixed (nint* __dsl_values = values)
         {
-            ((IAlContext)this).GetInteger64SOFT(device, pname, size, __dsl_values);
+            ((IAlContext)this).GetInteger64VSOFT(device, pname, size, __dsl_values);
         }
     }
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
@@ -2985,14 +2985,14 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetInteger64SOFT(
+    public static void GetInteger64VSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pname")] int pname,
         [NativeName("size")] int size,
         [NativeName("values")] Ref<nint> values
-    ) => ThisThread.GetInteger64SOFT(device, pname, size, values);
+    ) => ThisThread.GetInteger64VSOFT(device, pname, size, values);
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
@@ -3001,17 +3001,17 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nint IAlContext.GetInteger64SOFT(
+    nint IAlContext.GetInteger64VSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pname")] int pname
     )
     {
         nint values = default;
-        ((IAlContext)this).GetInteger64SOFT(device, pname, 1, (nint*)&values);
+        ((IAlContext)this).GetInteger64VSOFT(device, pname, 1, (nint*)&values);
         return values;
     }
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetInteger64vSOFT")]
     [
@@ -3020,17 +3020,17 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nint GetInteger64SOFT(
+    public static nint GetInteger64VSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("pname")] int pname
-    ) => ThisThread.GetInteger64SOFT(device, pname);
+    ) => ThisThread.GetInteger64VSOFT(device, pname);
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.GetInteger(
+    void IAlContext.GetIntegerv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("param1")] int param1,
         [NativeName("size")] int size,
@@ -3044,24 +3044,24 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, param1, size, values);
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetInteger(
+    public static void GetIntegerv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("param1")] int param1,
         [NativeName("size")] int size,
         [NativeName("values")] int* values
-    ) => ThisThread.GetInteger(device, param1, size, values);
+    ) => ThisThread.GetIntegerv(device, param1, size, values);
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.GetInteger(
+    void IAlContext.GetIntegerv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("param1")] int param1,
         [NativeName("size")] int size,
@@ -3070,46 +3070,46 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     {
         fixed (int* __dsl_values = values)
         {
-            ((IAlContext)this).GetInteger(device, param1, size, __dsl_values);
+            ((IAlContext)this).GetIntegerv(device, param1, size, __dsl_values);
         }
     }
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetInteger(
+    public static void GetIntegerv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("param1")] int param1,
         [NativeName("size")] int size,
         [NativeName("values")] Ref<int> values
-    ) => ThisThread.GetInteger(device, param1, size, values);
+    ) => ThisThread.GetIntegerv(device, param1, size, values);
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IAlContext.GetInteger(
+    int IAlContext.GetIntegerv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("param1")] int param1
     )
     {
         int values = default;
-        ((IAlContext)this).GetInteger(device, param1, 1, (int*)&values);
+        ((IAlContext)this).GetIntegerv(device, param1, 1, (int*)&values);
         return values;
     }
 
-    [NameAffix("Suffix", "v", -1, -1)]
+    [NameAffix("Suffix", "v", 0, 0)]
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int GetInteger(
+    public static int GetIntegerv(
         [NativeName("device")] DeviceHandle device,
         [NativeName("param1")] int param1
-    ) => ThisThread.GetInteger(device, param1);
+    ) => ThisThread.GetIntegerv(device, param1);
 
     [NativeName("alcGetProcAddress")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -3264,13 +3264,13 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [NativeName("param1")] Constant<int, AlcEnum, ContextString> param1
     ) => ThisThread.GetString(device, param1);
 
-    [NameAffix("Suffix", "i", -1, -1)]
+    [NameAffix("Suffix", "i", 0, 0)]
     [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte* IAlContext.GetStringSOFT(
+    sbyte* IAlContext.GetStringiSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("paramName")] int paramName,
         [NativeName("index")] int index
@@ -3283,41 +3283,41 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             )
         )(device, paramName, index);
 
-    [NameAffix("Suffix", "i", -1, -1)]
+    [NameAffix("Suffix", "i", 0, 0)]
     [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte* GetStringSOFT(
+    public static sbyte* GetStringiSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("paramName")] int paramName,
         [NativeName("index")] int index
-    ) => ThisThread.GetStringSOFT(device, paramName, index);
+    ) => ThisThread.GetStringiSOFT(device, paramName, index);
 
-    [NameAffix("Suffix", "i", -1, -1)]
+    [NameAffix("Suffix", "i", 0, 0)]
     [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Ptr<sbyte> IAlContext.GetStringSOFT(
+    Ptr<sbyte> IAlContext.GetStringiSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
         [NativeName("index")] int index
-    ) => (sbyte*)((IAlContext)this).GetStringSOFT(device, (int)paramName, index);
+    ) => (sbyte*)((IAlContext)this).GetStringiSOFT(device, (int)paramName, index);
 
-    [NameAffix("Suffix", "i", -1, -1)]
+    [NameAffix("Suffix", "i", 0, 0)]
     [NameAffix("Suffix", "SOFT", 0, -1)]
     [NativeName("alcGetStringiSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Ptr<sbyte> GetStringSOFT(
+    public static Ptr<sbyte> GetStringiSOFT(
         [NativeName("device")] DeviceHandle device,
         [NativeName("paramName")] Constant<int, AlcEnum, ContextString> paramName,
         [NativeName("index")] int index
-    ) => ThisThread.GetStringSOFT(device, paramName, index);
+    ) => ThisThread.GetStringiSOFT(device, paramName, index);
 
     [NativeName("alcGetThreadContext")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
