@@ -100,7 +100,7 @@ public class PrettifyNames(
                 .Append(new NameAffixerEarlyTrimmer(visitor.AffixTypes))
                 .Append(new NameAffixerLateTrimmer(visitor.AffixTypes))
                 .Append(new PrettifyNamesTrimmer())
-                .OrderBy(x => x.Version)
+                .OrderBy(x => x.Order)
                 .ToArray();
 
             // Create a type name dictionary to trim the type names.
@@ -1347,11 +1347,11 @@ public class PrettifyNames(
 
     private class NameAffixerEarlyTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
     {
-        // TODO: This setup has become insane. Think of a better one.
-        /// <summary>
-        /// Use high-ish version to ensure this trimmer runs after the global prefix trimmer and before MixKhronosData.
-        /// </summary>
-        public Version Version => new(21, 21, 21);
+        /// <inheritdoc/>
+        public Version Version => new(0, 0, 0);
+
+        /// <inheritdoc/>
+        public int Order => (int)TrimmerOrder.NameAffixerEarlyTrimmer;
 
         public void Trim(NameTrimmerContext context)
         {
@@ -1378,10 +1378,11 @@ public class PrettifyNames(
 
     private class NameAffixerLateTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
     {
-        /// <summary>
-        /// Use high version to ensure this trimmer runs second to last.
-        /// </summary>
-        public Version Version => new(999, 999, 999);
+        /// <inheritdoc/>
+        public Version Version => new(0, 0, 0);
+
+        /// <inheritdoc/>
+        public int Order => (int)TrimmerOrder.NameAffixerLateTrimmer;
 
         public void Trim(NameTrimmerContext context)
         {
@@ -1408,10 +1409,11 @@ public class PrettifyNames(
 
     private class PrettifyNamesTrimmer : INameTrimmer
     {
-        /// <summary>
-        /// Use really high version to ensure this trimmer runs last.
-        /// </summary>
-        public Version Version => new(9999, 9999, 9999);
+        /// <inheritdoc/>
+        public Version Version => new(0, 0, 0);
+
+        /// <inheritdoc/>
+        public int Order => (int)TrimmerOrder.PrettifyNamesTrimmer;
 
         public void Trim(NameTrimmerContext context)
         {

@@ -16,6 +16,12 @@ public interface INameTrimmer
     Version Version { get; }
 
     /// <summary>
+    /// Used to define the order that the trimmers will run in.
+    /// Higher values indicate that the trimmer should run later.
+    /// </summary>
+    int Order { get; }
+
+    /// <summary>
     /// Trims prefixes from the given constituent names within the given container.
     /// </summary>
     /// <param name="context">The arguments.</param>

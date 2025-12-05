@@ -216,8 +216,10 @@ public partial class MixKhronosData(
     }
 
     /// <inheritdoc />
-    // non-versioned trimmer (and needs to be a big number to come after the default trimmers)
-    public Version Version { get; } = new(42, 42, 42, 42);
+    Version INameTrimmer.Version { get; } = new(0, 0, 0);
+
+    /// <inheritdoc/>
+    int INameTrimmer.Order => (int)TrimmerOrder.MixKhronosData;
 
     /// <inheritdoc />
     public async Task InitializeAsync(IModContext ctx, CancellationToken ct = default)

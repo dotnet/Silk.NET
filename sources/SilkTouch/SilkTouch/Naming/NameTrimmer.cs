@@ -14,6 +14,9 @@ public class NameTrimmer : INameTrimmer
     /// <inheritdoc />
     public virtual Version Version => new(3, 0);
 
+    /// <inheritdoc/>
+    public virtual int Order => (int)TrimmerOrder.NameTrimmer;
+
     /// <summary>
     /// Determines whether a second pass without using <see cref="GetTrimmingName"/> is warranted.
     /// </summary>
