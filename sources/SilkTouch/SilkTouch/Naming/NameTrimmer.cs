@@ -193,7 +193,7 @@ public class NameTrimmer : INameTrimmer
     protected (string Prefix, Dictionary<string, CandidateNamesWithOriginal>)? GetPrefix(
         string? container,
         string? hint,
-        Dictionary<string,CandidateNames>? names,
+        Dictionary<string, CandidateNames>? names,
         Dictionary<string, string>? prefixOverrides,
         HashSet<string>? nonDeterminant,
         bool getTrimmingName,
