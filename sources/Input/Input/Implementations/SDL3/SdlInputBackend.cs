@@ -421,7 +421,7 @@ internal partial class SdlInputBackend : IInputBackend
             case EventType.DisplayCurrentModeChanged:
             case EventType.DisplayContentScaleChanged:
             {
-                var bounds = SdlBoundedPointerTarget.CalculateBounds(Sdl);
+                var bounds = SdlBoundedPointerTarget.CalculateAllDisplayBounds(Sdl);
                 var x = (QueuedEventType.BoundedPointerTargetUpdate,
                         timestamp,
                         bounds.Min.ToSystem(),

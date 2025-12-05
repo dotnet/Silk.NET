@@ -13,13 +13,12 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
 
     private readonly MouseState _state;
 
-    private SdlSharedMouse(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend)
+    private SdlSharedMouse(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unboundedPointerTarget, ICursorConfiguration cursor)
         : base(backend, uniqueId, sdlDeviceId)
     {
-        IPointerTarget unboundedPointerTarget = backend.UnboundedPointerTarget;
         _state = new MouseState(new ButtonReadOnlyList<PointerButton>(_buttons),
             new InputReadOnlyList<TargetPoint>(_points), Vector2.Zero);
-        Cursor = backend.CursorConfiguration;
+        Cursor = cursor;
         float x = 0, y = 0;
         var buttonMask = NativeBackend.GetMouseState(x.AsRef(), y.AsRef());
         var pos = new Vector2(x, y);
@@ -106,7 +105,7 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
         }
 
         backend.Sdl.Free(deviceName);
-        return new SdlSharedMouse(sdlDeviceId, uniqueId, backend);
+        return new SdlSharedMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, backend.CursorConfiguration);
     }
 
     public override string Name => $"{Backend.Name}: Shared/Global Mouse";
@@ -195,7 +194,7 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
     private static bool IsPointerButtonPressedSdl(PointerButton button, uint state)
     {
         var index = EnumInfo<PointerButton>.ValueIndexOf(button);
-        if (index < 0 || index >= 32)
+        if (index is < 0 or >= 32)
         {
             return false;
         }
@@ -204,8 +203,8 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
     }
 
     private uint _mouseWindowId;
-    private Vector2 _mouseScroll = default;
-    private Vector2 _accumulatedMotion = default;
+    private Vector2 _mouseScroll;
+    private Vector2 _accumulatedMotion;
     private readonly List<Button<PointerButton>> _buttons = [];
     private readonly List<TargetPoint> _points = new();
     private readonly IPointerTarget[] _targetListNoWindow;
