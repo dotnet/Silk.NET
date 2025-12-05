@@ -397,8 +397,12 @@ public class PrettifyNames(
             }
         }
 
-        // Remove affixes, prettify, and add affixes back
-        return ApplyAffixes(RemoveAffixes(name, container, name, affixTypes, null), container, name, affixTypes, null).Prettify();
+        var result = name;
+        result = RemoveAffixes(result, container, name, affixTypes, null);
+        result = result.Prettify();
+        result = ApplyAffixes(result, container, name, affixTypes, null);
+
+        return result;
     }
 
     private void Trim(
@@ -901,11 +905,11 @@ public class PrettifyNames(
                 {
                     if (affix.IsPrefix)
                     {
-                        name = PreventPrettificationHack(affix.Affix) + name;
+                        name = affix.Affix + name;
                     }
                     else
                     {
-                        name += PreventPrettificationHack(affix.Affix);
+                        name += affix.Affix;
                     }
                 }
             }
@@ -918,24 +922,6 @@ public class PrettifyNames(
             {
                 secondary?.Add(name);
             }
-        }
-
-        // This appends a space before every capital and after the entire affix
-        // This ensures that capitals are preserved when the name is prettified
-        static string PreventPrettificationHack(string affix)
-        {
-            var result = "";
-            foreach (var c in affix)
-            {
-                if (NameUtils.Uppercase.Contains(c))
-                {
-                    result += ' ';
-                }
-
-                result += c;
-            }
-
-            return result + ' ';
         }
     }
 

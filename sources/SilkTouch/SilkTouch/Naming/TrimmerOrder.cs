@@ -16,7 +16,7 @@ internal enum TrimmerOrder
 
     MixKhronosData = 300,
 
-    NameAffixerLateTrimmer = 400,
+    PrettifyNamesTrimmer = 400,
 
-    PrettifyNamesTrimmer = 500,
+    NameAffixerLateTrimmer = 500,
 }

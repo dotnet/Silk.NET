@@ -5989,7 +5989,7 @@ public unsafe partial class Al : IAl, IAl.Static
                 RequireAll = true
             )
         ]
-        public static extern void GetSourcei64VDirectSOFT(
+        public static extern void GetSourcei64vDirectSOFT(
             ContextHandle context,
             uint source,
             int param2,
@@ -6013,7 +6013,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetSourcei64VDirectSOFT(
+        public static void GetSourcei64vDirectSOFT(
             ContextHandle context,
             uint source,
             Constant<int, AlEnum, SourceInteger> param2,
@@ -6022,14 +6022,14 @@ public unsafe partial class Al : IAl, IAl.Static
         {
             fixed (nint* __dsl_values = values)
             {
-                GetSourcei64VDirectSOFT(context, source, (int)param2, __dsl_values);
+                GetSourcei64vDirectSOFT(context, source, (int)param2, __dsl_values);
             }
         }
 
         [NativeName("alGetSourcei64vSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetSourcei64vSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
-        public static extern void GetSourcei64VSOFT(uint source, int param1, nint* values);
+        public static extern void GetSourcei64vSOFT(uint source, int param1, nint* values);
 
         [NativeName("alGetSourcei64vSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -6037,7 +6037,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetSourcei64VSOFT(
+        public static void GetSourcei64vSOFT(
             uint source,
             Constant<int, AlEnum, SourceInteger> param1,
             Ref<nint> values
@@ -6045,7 +6045,7 @@ public unsafe partial class Al : IAl, IAl.Static
         {
             fixed (nint* __dsl_values = values)
             {
-                GetSourcei64VSOFT(source, (int)param1, __dsl_values);
+                GetSourcei64vSOFT(source, (int)param1, __dsl_values);
             }
         }
 
@@ -13887,12 +13887,12 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetSourcei64VDirectSOFT(
+        public void GetSourcei64vDirectSOFT(
             ContextHandle context,
             uint source,
             int param2,
             nint* values
-        ) => T.GetSourcei64VDirectSOFT(context, source, param2, values);
+        ) => T.GetSourcei64vDirectSOFT(context, source, param2, values);
 
         [NativeName("alGetSourcei64vDirectSOFT")]
         [
@@ -13911,12 +13911,12 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetSourcei64VDirectSOFT(
+        public void GetSourcei64vDirectSOFT(
             ContextHandle context,
             uint source,
             Constant<int, AlEnum, SourceInteger> param2,
             Ref<nint> values
-        ) => T.GetSourcei64VDirectSOFT(context, source, param2, values);
+        ) => T.GetSourcei64vDirectSOFT(context, source, param2, values);
 
         [NativeName("alGetSourcei64vSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -13924,8 +13924,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetSourcei64VSOFT(uint source, int param1, nint* values) =>
-            T.GetSourcei64VSOFT(source, param1, values);
+        public void GetSourcei64vSOFT(uint source, int param1, nint* values) =>
+            T.GetSourcei64vSOFT(source, param1, values);
 
         [NativeName("alGetSourcei64vSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -13933,11 +13933,11 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetSourcei64VSOFT(
+        public void GetSourcei64vSOFT(
             uint source,
             Constant<int, AlEnum, SourceInteger> param1,
             Ref<nint> values
-        ) => T.GetSourcei64VSOFT(source, param1, values);
+        ) => T.GetSourcei64vSOFT(source, param1, values);
 
         [NativeName("alGetSourceiDirect")]
         [
@@ -23259,12 +23259,12 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetSourcei64VDirectSOFT(
+        public static void GetSourcei64vDirectSOFT(
             ContextHandle context,
             uint source,
             int param2,
             nint* values
-        ) => Underlying.Value!.GetSourcei64VDirectSOFT(context, source, param2, values);
+        ) => Underlying.Value!.GetSourcei64vDirectSOFT(context, source, param2, values);
 
         [NativeName("alGetSourcei64vDirectSOFT")]
         [
@@ -23283,7 +23283,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetSourcei64VDirectSOFT(
+        public static void GetSourcei64vDirectSOFT(
             ContextHandle context,
             uint source,
             Constant<int, AlEnum, SourceInteger> param2,
@@ -23292,7 +23292,7 @@ public unsafe partial class Al : IAl, IAl.Static
         {
             fixed (nint* __dsl_values = values)
             {
-                GetSourcei64VDirectSOFT(context, source, (int)param2, __dsl_values);
+                GetSourcei64vDirectSOFT(context, source, (int)param2, __dsl_values);
             }
         }
 
@@ -23302,8 +23302,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetSourcei64VSOFT(uint source, int param1, nint* values) =>
-            Underlying.Value!.GetSourcei64VSOFT(source, param1, values);
+        public static void GetSourcei64vSOFT(uint source, int param1, nint* values) =>
+            Underlying.Value!.GetSourcei64vSOFT(source, param1, values);
 
         [NativeName("alGetSourcei64vSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
@@ -23311,7 +23311,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void GetSourcei64VSOFT(
+        public static void GetSourcei64vSOFT(
             uint source,
             Constant<int, AlEnum, SourceInteger> param1,
             Ref<nint> values
@@ -23319,7 +23319,7 @@ public unsafe partial class Al : IAl, IAl.Static
         {
             fixed (nint* __dsl_values = values)
             {
-                GetSourcei64VSOFT(source, (int)param1, __dsl_values);
+                GetSourcei64vSOFT(source, (int)param1, __dsl_values);
             }
         }
 
@@ -37846,7 +37846,7 @@ public unsafe partial class Al : IAl, IAl.Static
     ]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAl.GetSourcei64VDirectSOFT(
+    void IAl.GetSourcei64vDirectSOFT(
         ContextHandle context,
         uint source,
         int param2,
@@ -37878,12 +37878,12 @@ public unsafe partial class Al : IAl, IAl.Static
     ]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetSourcei64VDirectSOFT(
+    public static void GetSourcei64vDirectSOFT(
         ContextHandle context,
         uint source,
         int param2,
         nint* values
-    ) => ThisThread.GetSourcei64VDirectSOFT(context, source, param2, values);
+    ) => ThisThread.GetSourcei64vDirectSOFT(context, source, param2, values);
 
     [NativeName("alGetSourcei64vDirectSOFT")]
     [
@@ -37900,7 +37900,7 @@ public unsafe partial class Al : IAl, IAl.Static
     ]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAl.GetSourcei64VDirectSOFT(
+    void IAl.GetSourcei64vDirectSOFT(
         ContextHandle context,
         uint source,
         Constant<int, AlEnum, SourceInteger> param2,
@@ -37909,7 +37909,7 @@ public unsafe partial class Al : IAl, IAl.Static
     {
         fixed (nint* __dsl_values = values)
         {
-            ((IAl)this).GetSourcei64VDirectSOFT(context, source, (int)param2, __dsl_values);
+            ((IAl)this).GetSourcei64vDirectSOFT(context, source, (int)param2, __dsl_values);
         }
     }
 
@@ -37928,18 +37928,18 @@ public unsafe partial class Al : IAl, IAl.Static
     ]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetSourcei64VDirectSOFT(
+    public static void GetSourcei64vDirectSOFT(
         ContextHandle context,
         uint source,
         Constant<int, AlEnum, SourceInteger> param2,
         Ref<nint> values
-    ) => ThisThread.GetSourcei64VDirectSOFT(context, source, param2, values);
+    ) => ThisThread.GetSourcei64vDirectSOFT(context, source, param2, values);
 
     [NativeName("alGetSourcei64vSOFT")]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAl.GetSourcei64VSOFT(uint source, int param1, nint* values) =>
+    void IAl.GetSourcei64vSOFT(uint source, int param1, nint* values) =>
         (
             (delegate* unmanaged<uint, int, nint*, void>)(
                 _slots[196] is not null and var loadedFnPtr
@@ -37952,14 +37952,14 @@ public unsafe partial class Al : IAl, IAl.Static
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetSourcei64VSOFT(uint source, int param1, nint* values) =>
-        ThisThread.GetSourcei64VSOFT(source, param1, values);
+    public static void GetSourcei64vSOFT(uint source, int param1, nint* values) =>
+        ThisThread.GetSourcei64vSOFT(source, param1, values);
 
     [NativeName("alGetSourcei64vSOFT")]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAl.GetSourcei64VSOFT(
+    void IAl.GetSourcei64vSOFT(
         uint source,
         Constant<int, AlEnum, SourceInteger> param1,
         Ref<nint> values
@@ -37967,7 +37967,7 @@ public unsafe partial class Al : IAl, IAl.Static
     {
         fixed (nint* __dsl_values = values)
         {
-            ((IAl)this).GetSourcei64VSOFT(source, (int)param1, __dsl_values);
+            ((IAl)this).GetSourcei64vSOFT(source, (int)param1, __dsl_values);
         }
     }
 
@@ -37975,11 +37975,11 @@ public unsafe partial class Al : IAl, IAl.Static
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetSourcei64VSOFT(
+    public static void GetSourcei64vSOFT(
         uint source,
         Constant<int, AlEnum, SourceInteger> param1,
         Ref<nint> values
-    ) => ThisThread.GetSourcei64VSOFT(source, param1, values);
+    ) => ThisThread.GetSourcei64vSOFT(source, param1, values);
 
     [NativeName("alGetSourceiDirect")]
     [

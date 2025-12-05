@@ -4211,7 +4211,7 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
-        static abstract void GetSourcei64VDirectSOFT(
+        static abstract void GetSourcei64vDirectSOFT(
             ContextHandle context,
             uint source,
             int param2,
@@ -4232,7 +4232,7 @@ public unsafe partial interface IAl
             )
         ]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
-        static abstract void GetSourcei64VDirectSOFT(
+        static abstract void GetSourcei64vDirectSOFT(
             ContextHandle context,
             uint source,
             Constant<int, AlEnum, SourceInteger> param2,
@@ -4242,12 +4242,12 @@ public unsafe partial interface IAl
         [NativeName("alGetSourcei64vSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
-        static abstract void GetSourcei64VSOFT(uint source, int param1, nint* values);
+        static abstract void GetSourcei64vSOFT(uint source, int param1, nint* values);
 
         [NativeName("alGetSourcei64vSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
         [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
-        static abstract void GetSourcei64VSOFT(
+        static abstract void GetSourcei64vSOFT(
             uint source,
             Constant<int, AlEnum, SourceInteger> param1,
             Ref<nint> values
@@ -9815,7 +9815,7 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
-    void GetSourcei64VDirectSOFT(ContextHandle context, uint source, int param2, nint* values);
+    void GetSourcei64vDirectSOFT(ContextHandle context, uint source, int param2, nint* values);
 
     [NativeName("alGetSourcei64vDirectSOFT")]
     [
@@ -9831,7 +9831,7 @@ public unsafe partial interface IAl
         )
     ]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vDirectSOFT")]
-    void GetSourcei64VDirectSOFT(
+    void GetSourcei64vDirectSOFT(
         ContextHandle context,
         uint source,
         Constant<int, AlEnum, SourceInteger> param2,
@@ -9841,12 +9841,12 @@ public unsafe partial interface IAl
     [NativeName("alGetSourcei64vSOFT")]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
-    void GetSourcei64VSOFT(uint source, int param1, nint* values);
+    void GetSourcei64vSOFT(uint source, int param1, nint* values);
 
     [NativeName("alGetSourcei64vSOFT")]
     [SupportedApiProfile("al", ["AL_SOFT_source_latency"])]
     [NativeFunction("openal", EntryPoint = "alGetSourcei64vSOFT")]
-    void GetSourcei64VSOFT(
+    void GetSourcei64vSOFT(
         uint source,
         Constant<int, AlEnum, SourceInteger> param1,
         Ref<nint> values
