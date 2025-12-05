@@ -1905,7 +1905,7 @@ public partial class MixKhronosData(
                         && !EndingsNotToTrim().IsMatch(trimmedName)) // Check if the ending is excluded
                     {
                         var dataTypeSuffix = trimmedName[match.Index..];
-                        trimmedName = trimmedName[..^match.Index];
+                        trimmedName = trimmedName[..match.Index];
 
                         attributeLists = attributeLists.AddNameSuffix(dataTypeSuffix, 0, 0);
                     }
