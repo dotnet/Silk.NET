@@ -141,7 +141,7 @@ public unsafe partial struct PhysicalDeviceGroupPropertiesPhysicalDevices
     public PhysicalDeviceHandle E31;
 
     [SupportedApiProfile("vulkan")]
-    public ref PhysicalDeviceHandle this[[NativeName("index")] int index]
+    public ref PhysicalDeviceHandle this[int index]
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get

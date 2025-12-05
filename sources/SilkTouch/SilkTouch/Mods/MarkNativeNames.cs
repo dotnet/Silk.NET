@@ -109,14 +109,5 @@ public class MarkNativeNames : IMod
             node = (FieldDeclarationSyntax)base.VisitFieldDeclaration(node)!;
             return node;
         }
-
-        // ----- Other -----
-
-        public override SyntaxNode VisitParameter(ParameterSyntax node)
-        {
-            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
-            node = (ParameterSyntax)base.VisitParameter(node)!;
-            return node;
-        }
     }
 }
