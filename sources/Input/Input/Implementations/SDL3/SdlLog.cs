@@ -7,7 +7,7 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlLog
+internal static class InputLog
 {
     [Conditional("DEBUG")]
     public static void Error(string? message = null,
@@ -19,6 +19,11 @@ internal class SdlLog
         Console.Error.WriteLine(log);
     }
 
+    private static string GenerateLog(string? message, string? path, int line, string? member)
+    {
+        const string traceFmt = "{0} at {1}:{2}";
+        return  $"{message} ({string.Format(traceFmt, member, path, line)})";
+    }
 
     [Conditional("DEBUG")]
     public static void Debug(string? message = null,
@@ -27,27 +32,43 @@ internal class SdlLog
         [CallerMemberName] string? member = null)
     {
         var log = GenerateLog(message, path, line, member);
-        Console.Out.WriteLine(log);
+        Console.WriteLine(log);
+    }
+}
+
+internal static class SdlLog
+{
+    [Conditional("DEBUG")]
+    public static void Error(string? message = null,
+        [CallerFilePath] string? path = null,
+        [CallerLineNumber] int line = 0,
+        [CallerMemberName] string? member = null)
+    {
+        var log = GenerateLog(message);
+        InputLog.Error(log, path, line, member);
     }
 
-    private static unsafe string GenerateLog(string? message, string? path, int line, string? member)
+
+    [Conditional("DEBUG")]
+    public static void Debug(string? message = null,
+        [CallerFilePath] string? path = null,
+        [CallerLineNumber] int line = 0,
+        [CallerMemberName] string? member = null)
+    {
+        var log = GenerateLog(message);
+        InputLog.Debug(log, path, line, member);
+    }
+
+    private static unsafe string GenerateLog(string? message)
     {
         var error = Sdl.GetError();
-        string log;
-        const string traceFmt = "{0} at {1}:{2}";
         if (error.Native != null)
         {
             var sdlError = error.ReadToString();
             Sdl.ClearError();
-            message ??= "SDL Error: ";
-            log = $"{message} {sdlError} ({string.Format(traceFmt, member, path, line)})";
-        }
-        else
-        {
-            message ??= "Error: ";
-            log = $"{message} ({string.Format(traceFmt, member, path, line)})";
+            return $"{message ?? "SDL Error: "} {sdlError}";
         }
 
-        return log;
+        return message ?? "Error: ";
     }
 }

@@ -2,19 +2,26 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Frozen;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
-internal class SdlCursor : ICursorConfiguration, IDisposable
+internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
 {
     private readonly ISdl _sdl;
+
     private CursorHandle _handle;
+
+    /// <summary>
+    /// Internal style of the current cursor handle - may differ from the <see cref="Style"/> property,
+    /// </summary>
+    private CursorStyles _handleStyle = _noStyle;
+    private const CursorStyles _noStyle = (CursorStyles)(-1);
 
     private static readonly FrozenDictionary<CursorStyles, SystemCursor> _cursorStyles =
         new Dictionary<CursorStyles, SystemCursor> {
+            [CursorStyles.Default] = SystemCursor.Default,
             [CursorStyles.Arrow] = SystemCursor.Default,
             [CursorStyles.IBeam] = SystemCursor.Text,
             [CursorStyles.Crosshair] = SystemCursor.Crosshair,
@@ -24,79 +31,99 @@ internal class SdlCursor : ICursorConfiguration, IDisposable
         }.ToFrozenDictionary();
 
 
-    public unsafe SdlCursor(ISdl sdl)
+    public SdlCursor(ISdl sdl)
     {
         _sdl = sdl;
         Mode = CursorModes.Normal;
         SupportedStyles = TestCursorCompatibility(sdl);
-
-        SetCursorStyle(CursorStyles.Arrow);
+        Style = CursorStyles.Arrow;
     }
 
     private bool SetCursorStyle(CursorStyles style)
     {
-        FreeCurrentCursor();
+        CursorHandle handle;
         if (style == CursorStyles.Custom)
         {
-            // to be set by the Image property, so we just return
-            if (_customCursorImage != null)
+            if (_customCursorImage == null || _customCursorSurface == null)
             {
-                ApplyCustomCursor();
+                return false;
             }
+
+            var canReuseCurrentCursorHandle = _handleStyle == CursorStyles.Custom; // todo - compare cursor hotspot
+            if (canReuseCurrentCursorHandle)
+            {
+                return true;
+            }
+
+            // todo: cursor hotspot, not supported by sdl?
+            handle = _sdl.CreateColorCursor(_customCursorSurface, 0, 0);
+        }
+        else if (style == _handleStyle)
+        {
             return true;
         }
-
-        _handle = _sdl.CreateSystemCursor(_cursorStyles[style]);
-        if (_handle == default)
+        else
         {
-            SdlLog.Error("Failed to create system cursor");
+            handle = _sdl.CreateSystemCursor(_cursorStyles[style]);
+        }
+
+        if (handle.Handle == null)
+        {
+            SdlLog.Error("Failed to create cursor");
             return false;
         }
 
+        if (_handle != handle)
+        {
+            FreeCurrentCursor();
+        }
+
+        _handle = handle;
+        _handleStyle = style;
+
         if (_sdl.SetCursor(_handle))
         {
-            Style = CursorStyles.Arrow;
             return true;
         }
 
+        SdlLog.Error("Failed to set cursor");
         return false;
-    }
-
-    private void ApplyCustomCursor()
-    {
-        if (_customCursorImage == null)
-        {
-            // presumably this was set by the Styles property, and we're still waiting on the image
-            return;
-        }
-
-        var image = _customCursorImage;
-        var width = _customCursorWidth;
-        var height = _customCursorHeight;
-        var minSize = width * height * 4;
-
-        if (image.Length < minSize)
-        {
-            throw new ArgumentException($"Custom cursor image of size ({width}, {height}) must be at least {minSize} " +
-                                        $"bytes long, got {image.Length} bytes instead");
-        }
     }
 
     public void Dispose()
     {
         FreeCurrentCursor();
+        DisposeCursorSurface(ref _customCursorSurface);
     }
 
     private void FreeCurrentCursor()
     {
-        if (_handle != default)
+        if (_handle == default)
         {
-            _sdl.DestroyCursor(_handle);
-            _handle = default;
+            return;
+        }
+
+        _sdl.DestroyCursor(_handle);
+        _handle = default;
+
+        if (_handleStyle == CursorStyles.Custom)
+        {
+            DisposeCursorSurface(ref _customCursorSurface);
+        }
+
+        _handleStyle = _noStyle;
+    }
+
+    private void DisposeCursorSurface(ref Surface* surface)
+    {
+        if(surface != null)
+        {
+            _sdl.DestroySurface(surface);
+            _customCursorSurface = null;
         }
     }
 
-    private static unsafe CursorStyles TestCursorCompatibility(ISdl sdl)
+    private static CursorStyles TestCursorCompatibility(ISdl sdl)
     {
         // check cursor style availability
         ReadOnlySpan<CursorStyles> mainStyles = [
@@ -130,7 +157,24 @@ internal class SdlCursor : ICursorConfiguration, IDisposable
     public CursorModes SupportedModes =>
         CursorModes.Normal | CursorModes.Confined | CursorModes.Unbounded;
 
-    public CursorModes Mode { get; set; }
+    public CursorModes Mode
+    {
+        get;
+        set
+        {
+            field = value;
+            try
+            {
+                ModeChanged?.Invoke(this, value);
+            }
+            catch (Exception e)
+            {
+                InputLog.Error(e.ToString());
+            }
+        }
+    }
+
+    public event EventHandler<CursorModes>? ModeChanged;
 
     public CursorStyles SupportedStyles { get; }
 
@@ -139,31 +183,35 @@ internal class SdlCursor : ICursorConfiguration, IDisposable
         get;
         set
         {
-            if (value == field)
+            if (value == CursorStyles.Hidden && field != CursorStyles.Hidden)
             {
+                SetCursorVisibility(false);
                 return;
             }
 
-            if (value == CursorStyles.Hidden)
+            SetCursorStyle(value);
+            if(field == CursorStyles.Hidden)
             {
-                if (!_sdl.HideCursor())
-                {
-                    SdlLog.Error("Failed to hide cursor");
-                    return;
-                }
-            }
-            else if(field == CursorStyles.Hidden)
-            {
-                // reveal the cursor
-                if (!_sdl.ShowCursor())
-                {
-                    SdlLog.Error("Failed to show cursor");
-                }
+                SetCursorVisibility(true);
             }
 
-            SetCursorStyle(value);
             field = value;
         }
+    }
+
+    private void SetCursorVisibility(bool visible)
+    {
+        if (_handle == default)
+        {
+            return;
+        }
+
+        if (visible ? _sdl.HideCursor() : _sdl.ShowCursor())
+        {
+            return;
+        }
+
+        SdlLog.Error("Failed to hide cursor");
     }
 
     public CustomCursor Image
@@ -177,31 +225,70 @@ internal class SdlCursor : ICursorConfiguration, IDisposable
         }
         set
         {
-            var val = value;
-            var necessaryLength = val.Width * val.Height;
-            if(val.Data.Length < necessaryLength)
+            var necessaryLength = value.Width * value.Height;
+            if(value.Data.Length < necessaryLength)
             {
-                throw new ArgumentException($"Custom cursor image of size ({val.Width}, {val.Height}) " +
-                                         $"must be at least {val.Width * val.Height * 4} bytes long, " +
-                                         $"got {val.Data.Length} bytes instead");
+                throw new ArgumentException($"Custom cursor image of size ({value.Width}, {value.Height}) " +
+                                         $"must be at least {value.Width * value.Height * 4} bytes long, " +
+                                         $"got {value.Data.Length} bytes instead");
             }
 
-            _customCursorHeight = val.Height;
-            _customCursorWidth = val.Width;
+            // ensure we have a fixed byte array to work with so updates would automatically apply to sdl
+            _customCursorHeight = value.Height;
+            _customCursorWidth = value.Width;
             var byteCount = necessaryLength * 4;
             if (_customCursorImage is null || _customCursorImage.Length < byteCount)
             {
-                _customCursorImage = new byte[byteCount];
+                _customCursorImage = GC.AllocateUninitializedArray<byte>(byteCount, pinned: true);
             }
 
+            // copy the user data to our fixed array
             var myBytes = _customCursorImage.AsSpan(..byteCount);
-            var bytesAsInts = MemoryMarshal.Cast<byte, int>(myBytes);
-            value.Data[..necessaryLength].CopyTo(bytesAsInts);
+            var providedBytes = MemoryMarshal.Cast<int, byte>(value.Data);
+            providedBytes.CopyTo(myBytes);
 
-            // todo - actually apply to sdl
+            ApplyToCursorSurface(ref _customCursorSurface, value);
+
+            if (Style == CursorStyles.Custom && _handleStyle != CursorStyles.Custom)
+            {
+                SetCursorStyle(CursorStyles.Custom);
+            }
+
+            return;
+
+            void ApplyToCursorSurface(ref Surface* customCursorSurface, in CustomCursor val)
+            {
+                // create a new sdl surface if necessary
+                if(customCursorSurface != null)
+                {
+                    if (customCursorSurface->H != val.Height || customCursorSurface->W != val.Width)
+                    {
+                        DisposeCursorSurface(ref customCursorSurface);
+                        customCursorSurface = CreateSurface(val);
+                    }
+                }
+                else
+                {
+                    customCursorSurface = _sdl.CreateSurface(val.Width, val.Height, PixelFormat.Argb8888);
+                }
+
+                // ensure the surface's pixel data is our fixed array
+                fixed (byte* ptr = _customCursorImage)
+                {
+                    customCursorSurface->Pixels = ptr;
+                }
+
+                return;
+
+                Ptr<Surface> CreateSurface(CustomCursor customCursor)
+                {
+                    return _sdl.CreateSurface(customCursor.Width, customCursor.Height, PixelFormat.Argb8888);
+                }
+            }
         }
     }
 
+    private Surface* _customCursorSurface;
     private int _customCursorHeight, _customCursorWidth;
     private byte[]? _customCursorImage;
 
