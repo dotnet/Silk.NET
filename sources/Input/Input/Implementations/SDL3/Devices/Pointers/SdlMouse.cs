@@ -6,14 +6,14 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
-internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlSharedMouse>
+internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 {
     public override PointerState State => _state;
     public ICursorConfiguration Cursor { get; }
 
     private readonly MouseState _state;
 
-    private SdlSharedMouse(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unboundedPointerTarget, ICursorConfiguration cursor)
+    private SdlMouse(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unboundedPointerTarget, ICursorConfiguration cursor)
         : base(backend, uniqueId, sdlDeviceId)
     {
         _state = new MouseState(new ButtonReadOnlyList<PointerButton>(_buttons),
@@ -95,7 +95,7 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
             ));
     }
 
-    public static unsafe SdlSharedMouse CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
+    public static unsafe SdlMouse CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
     {
         var deviceName = backend.Sdl.GetMouseNameForID(sdlDeviceId);
         nint uniqueId = 0;
@@ -105,10 +105,10 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
         }
 
         backend.Sdl.Free(deviceName);
-        return new SdlSharedMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, backend.CursorConfiguration);
+        return new SdlMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, backend.CursorConfiguration);
     }
 
-    public override string Name => $"{Backend.Name}: Shared/Global Mouse";
+    public override string Name => NativeBackend.GetMouseNameForID(SdlDeviceId).ReadToString();
 
     protected override void Release()
     {
@@ -134,6 +134,8 @@ internal class SdlSharedMouse : SdlBoundedPointerDevice, IMouse, ISdlDevice<SdlS
             return _targetListWithWindow;
         }
     }
+
+    protected override bool IsBounded { get; }
 
 
     public bool TrySetPosition(Vector2 position)

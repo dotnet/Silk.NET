@@ -3,7 +3,7 @@
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
-internal class SdlTouchScreen : SdlDevice, ISdlDevice<SdlTouchScreen>, IPointerDevice
+internal class SdlTouchScreen : SdlPointerDevice, ISdlDevice<SdlTouchScreen>, IPointerDevice
 {
     public static SdlTouchScreen CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
     {
@@ -28,7 +28,7 @@ internal class SdlTouchScreen : SdlDevice, ISdlDevice<SdlTouchScreen>, IPointerD
         throw new NotImplementedException();
     }
 
-    public PointerState State
+    public override PointerState State
     {
         get
         {
@@ -36,13 +36,15 @@ internal class SdlTouchScreen : SdlDevice, ISdlDevice<SdlTouchScreen>, IPointerD
         }
     }
 
-    public IReadOnlyList<IPointerTarget> Targets
+    public override IReadOnlyList<IPointerTarget> Targets
     {
         get
         {
             throw new NotImplementedException();
         }
     }
+
+    protected override bool IsBounded { get; }
 
     public SdlTouchScreen(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
     {

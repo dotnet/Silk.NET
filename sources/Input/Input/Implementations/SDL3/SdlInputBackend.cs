@@ -6,6 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
 using Silk.NET.Input.SDL3.Devices.Pointers;
+using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
@@ -225,8 +226,7 @@ internal partial class SdlInputBackend : IInputBackend
                 RemoveDevice<SdlKeyboard>(_devices, evt.Kdevice.Which);
                 return;
             case EventType.MouseRemoved:
-                RemoveDevice<SdlSharedMouse>(_devices, evt.Mdevice.Which);
-                RemoveDevice<SdlUnboundedMouse>(_devices, evt.Mdevice.Which);
+                RemoveDevice<SdlMouse>(_devices, evt.Mdevice.Which);
                 return;
             case >= EventType.KeyDown and <= EventType.TextEditingCandidates:
             {
@@ -336,7 +336,7 @@ internal partial class SdlInputBackend : IInputBackend
             }
             case >= EventType.MouseMotion and <= EventType.MouseAdded:
             {
-                if(!TryGetOrCreateDevice<SdlSharedMouse>(evt.Mdevice.Which, out var mouse))
+                if(!TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, out var mouse))
                 {
                     return;
                 }

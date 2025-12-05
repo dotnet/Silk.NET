@@ -3,7 +3,7 @@
 
 using Silk.NET.Maths;
 
-namespace Silk.NET.Input.SDL3.Devices.Pointers;
+namespace Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 
 internal class SdlUnboundedPointerTarget(SdlInputBackend backend) : IPointerTarget
 {

@@ -14,8 +14,7 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
     bool IEquatable<IInputDevice>.Equals(IInputDevice? other) =>
         other?.GetType() == GetType()
         && other.Id == Id
-        && other is SdlBoundedPointerDevice dev
-        && dev.NativeBackend == NativeBackend;
+        && (other as SdlDevice)!.NativeBackend == NativeBackend;
 
     public nint Id { get; }
 

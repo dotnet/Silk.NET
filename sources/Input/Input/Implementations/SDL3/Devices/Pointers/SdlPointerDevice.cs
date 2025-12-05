@@ -1,16 +1,19 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
+
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 /// <summary>
 /// A base class for SDL input devices that operate in terms of a window's or DWMs bounds.
 /// </summary>
-internal abstract class SdlBoundedPointerDevice : SdlDevice, IPointerDevice
+internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
 {
-    protected SdlBoundedPointerDevice(SdlInputBackend backend, nint silkId,
+    protected SdlPointerDevice(SdlInputBackend backend, nint silkId,
         uint sdlDeviceId) : base(backend, silkId, sdlDeviceId)
     {
+
     }
 
     public abstract PointerState State { get; }
@@ -22,5 +25,5 @@ internal abstract class SdlBoundedPointerDevice : SdlDevice, IPointerDevice
     /// as being bounded points. For all devices supported by this backend, only one target is supported at a time
     /// today.
     /// </summary>
-    public bool IsBounded => true;
+    protected abstract bool IsBounded { get; }
 }
