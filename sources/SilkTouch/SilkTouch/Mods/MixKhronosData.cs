@@ -1505,7 +1505,7 @@ public partial class MixKhronosData(
     /// while the lookbehind asserts that the ending match will not overreach into the end of a word.
     /// </summary>
     // NOTE: LET THIS BE A LESSON! Do NOT add x (fixed) here, these will frequently conflict with integer overloads.
-    [GeneratedRegex("(?<!xe)([fdh]v?|u?[isb](64)?v?|v|i_v|fi|hi)$")]
+    [GeneratedRegex("(?<!xe)((?<!Rewin)[dhf]v?|u?[isb](64)?v?|v|i_v|fi|hi)$")]
     private static partial Regex EndingsToTrim();
 
     /// <summary>

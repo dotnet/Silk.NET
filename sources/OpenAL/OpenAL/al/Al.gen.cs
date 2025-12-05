@@ -8004,7 +8004,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [NativeName("alSourceRewindv")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alSourceRewindv")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
-        public static extern void SourceRewin(int n, uint* sources);
+        public static extern void SourceRewindv(int n, uint* sources);
 
         [NativeName("alSourceRewindv")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -8012,18 +8012,18 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void SourceRewin(int n, Ref<uint> sources)
+        public static void SourceRewindv(int n, Ref<uint> sources)
         {
             fixed (uint* __dsl_sources = sources)
             {
-                SourceRewin(n, __dsl_sources);
+                SourceRewindv(n, __dsl_sources);
             }
         }
 
         [NativeName("alSourceRewindv")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
-        public static void SourceRewin(uint sources) => SourceRewin(1, (uint*)&sources);
+        public static void SourceRewindv(uint sources) => SourceRewindv(1, (uint*)&sources);
 
         [NativeName("alSourceRewindvDirect")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alSourceRewindvDirect")]
@@ -8031,7 +8031,7 @@ public unsafe partial class Al : IAl, IAl.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        public static extern void SourceRewinDirect(ContextHandle context, int n, uint* sources);
+        public static extern void SourceRewindvDirect(ContextHandle context, int n, uint* sources);
 
         [NativeName("alSourceRewindvDirect")]
         [
@@ -8042,11 +8042,11 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void SourceRewinDirect(ContextHandle context, int n, Ref<uint> sources)
+        public static void SourceRewindvDirect(ContextHandle context, int n, Ref<uint> sources)
         {
             fixed (uint* __dsl_sources = sources)
             {
-                SourceRewinDirect(context, n, __dsl_sources);
+                SourceRewindvDirect(context, n, __dsl_sources);
             }
         }
 
@@ -8056,8 +8056,8 @@ public unsafe partial class Al : IAl, IAl.Static
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
-        public static void SourceRewinDirect(ContextHandle context, uint sources) =>
-            SourceRewinDirect(context, 1, (uint*)&sources);
+        public static void SourceRewindvDirect(ContextHandle context, uint sources) =>
+            SourceRewindvDirect(context, 1, (uint*)&sources);
 
         [NativeName("alSourceStop")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alSourceStop")]
@@ -16074,7 +16074,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void SourceRewin(int n, uint* sources) => T.SourceRewin(n, sources);
+        public void SourceRewindv(int n, uint* sources) => T.SourceRewindv(n, sources);
 
         [NativeName("alSourceRewindv")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -16082,7 +16082,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void SourceRewin(int n, Ref<uint> sources) => T.SourceRewin(n, sources);
+        public void SourceRewindv(int n, Ref<uint> sources) => T.SourceRewindv(n, sources);
 
         [NativeName("alSourceRewindv")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -16090,7 +16090,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void SourceRewin(uint sources) => T.SourceRewin(sources);
+        public void SourceRewindv(uint sources) => T.SourceRewindv(sources);
 
         [NativeName("alSourceRewindvDirect")]
         [
@@ -16101,8 +16101,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void SourceRewinDirect(ContextHandle context, int n, uint* sources) =>
-            T.SourceRewinDirect(context, n, sources);
+        public void SourceRewindvDirect(ContextHandle context, int n, uint* sources) =>
+            T.SourceRewindvDirect(context, n, sources);
 
         [NativeName("alSourceRewindvDirect")]
         [
@@ -16113,8 +16113,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void SourceRewinDirect(ContextHandle context, int n, Ref<uint> sources) =>
-            T.SourceRewinDirect(context, n, sources);
+        public void SourceRewindvDirect(ContextHandle context, int n, Ref<uint> sources) =>
+            T.SourceRewindvDirect(context, n, sources);
 
         [NativeName("alSourceRewindvDirect")]
         [
@@ -16125,8 +16125,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void SourceRewinDirect(ContextHandle context, uint sources) =>
-            T.SourceRewinDirect(context, sources);
+        public void SourceRewindvDirect(ContextHandle context, uint sources) =>
+            T.SourceRewindvDirect(context, sources);
 
         [NativeName("alSourceStop")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -25699,8 +25699,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void SourceRewin(int n, uint* sources) =>
-            Underlying.Value!.SourceRewin(n, sources);
+        public static void SourceRewindv(int n, uint* sources) =>
+            Underlying.Value!.SourceRewindv(n, sources);
 
         [NativeName("alSourceRewindv")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -25708,11 +25708,11 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void SourceRewin(int n, Ref<uint> sources)
+        public static void SourceRewindv(int n, Ref<uint> sources)
         {
             fixed (uint* __dsl_sources = sources)
             {
-                SourceRewin(n, __dsl_sources);
+                SourceRewindv(n, __dsl_sources);
             }
         }
 
@@ -25722,7 +25722,7 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void SourceRewin(uint sources) => Underlying.Value!.SourceRewin(sources);
+        public static void SourceRewindv(uint sources) => Underlying.Value!.SourceRewindv(sources);
 
         [NativeName("alSourceRewindvDirect")]
         [
@@ -25733,8 +25733,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void SourceRewinDirect(ContextHandle context, int n, uint* sources) =>
-            Underlying.Value!.SourceRewinDirect(context, n, sources);
+        public static void SourceRewindvDirect(ContextHandle context, int n, uint* sources) =>
+            Underlying.Value!.SourceRewindvDirect(context, n, sources);
 
         [NativeName("alSourceRewindvDirect")]
         [
@@ -25745,11 +25745,11 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void SourceRewinDirect(ContextHandle context, int n, Ref<uint> sources)
+        public static void SourceRewindvDirect(ContextHandle context, int n, Ref<uint> sources)
         {
             fixed (uint* __dsl_sources = sources)
             {
-                SourceRewinDirect(context, n, __dsl_sources);
+                SourceRewindvDirect(context, n, __dsl_sources);
             }
         }
 
@@ -25762,8 +25762,8 @@ public unsafe partial class Al : IAl, IAl.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static void SourceRewinDirect(ContextHandle context, uint sources) =>
-            Underlying.Value!.SourceRewinDirect(context, sources);
+        public static void SourceRewindvDirect(ContextHandle context, uint sources) =>
+            Underlying.Value!.SourceRewindvDirect(context, sources);
 
         [NativeName("alSourceStop")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -42273,7 +42273,7 @@ public unsafe partial class Al : IAl, IAl.Static
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAl.SourceRewin(int n, uint* sources) =>
+    void IAl.SourceRewindv(int n, uint* sources) =>
         (
             (delegate* unmanaged<int, uint*, void>)(
                 _slots[283] is not null and var loadedFnPtr
@@ -42286,17 +42286,17 @@ public unsafe partial class Al : IAl, IAl.Static
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void SourceRewin(int n, uint* sources) => ThisThread.SourceRewin(n, sources);
+    public static void SourceRewindv(int n, uint* sources) => ThisThread.SourceRewindv(n, sources);
 
     [NativeName("alSourceRewindv")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAl.SourceRewin(int n, Ref<uint> sources)
+    void IAl.SourceRewindv(int n, Ref<uint> sources)
     {
         fixed (uint* __dsl_sources = sources)
         {
-            ((IAl)this).SourceRewin(n, __dsl_sources);
+            ((IAl)this).SourceRewindv(n, __dsl_sources);
         }
     }
 
@@ -42304,19 +42304,20 @@ public unsafe partial class Al : IAl, IAl.Static
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void SourceRewin(int n, Ref<uint> sources) => ThisThread.SourceRewin(n, sources);
+    public static void SourceRewindv(int n, Ref<uint> sources) =>
+        ThisThread.SourceRewindv(n, sources);
 
     [NativeName("alSourceRewindv")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAl.SourceRewin(uint sources) => ((IAl)this).SourceRewin(1, (uint*)&sources);
+    void IAl.SourceRewindv(uint sources) => ((IAl)this).SourceRewindv(1, (uint*)&sources);
 
     [NativeName("alSourceRewindv")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alSourceRewindv")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void SourceRewin(uint sources) => ThisThread.SourceRewin(sources);
+    public static void SourceRewindv(uint sources) => ThisThread.SourceRewindv(sources);
 
     [NativeName("alSourceRewindvDirect")]
     [
@@ -42325,7 +42326,7 @@ public unsafe partial class Al : IAl, IAl.Static
     ]
     [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAl.SourceRewinDirect(ContextHandle context, int n, uint* sources) =>
+    void IAl.SourceRewindvDirect(ContextHandle context, int n, uint* sources) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, void>)(
                 _slots[284] is not null and var loadedFnPtr
@@ -42341,8 +42342,8 @@ public unsafe partial class Al : IAl, IAl.Static
     ]
     [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void SourceRewinDirect(ContextHandle context, int n, uint* sources) =>
-        ThisThread.SourceRewinDirect(context, n, sources);
+    public static void SourceRewindvDirect(ContextHandle context, int n, uint* sources) =>
+        ThisThread.SourceRewindvDirect(context, n, sources);
 
     [NativeName("alSourceRewindvDirect")]
     [
@@ -42351,11 +42352,11 @@ public unsafe partial class Al : IAl, IAl.Static
     ]
     [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAl.SourceRewinDirect(ContextHandle context, int n, Ref<uint> sources)
+    void IAl.SourceRewindvDirect(ContextHandle context, int n, Ref<uint> sources)
     {
         fixed (uint* __dsl_sources = sources)
         {
-            ((IAl)this).SourceRewinDirect(context, n, __dsl_sources);
+            ((IAl)this).SourceRewindvDirect(context, n, __dsl_sources);
         }
     }
 
@@ -42366,8 +42367,8 @@ public unsafe partial class Al : IAl, IAl.Static
     ]
     [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void SourceRewinDirect(ContextHandle context, int n, Ref<uint> sources) =>
-        ThisThread.SourceRewinDirect(context, n, sources);
+    public static void SourceRewindvDirect(ContextHandle context, int n, Ref<uint> sources) =>
+        ThisThread.SourceRewindvDirect(context, n, sources);
 
     [NativeName("alSourceRewindvDirect")]
     [
@@ -42376,8 +42377,8 @@ public unsafe partial class Al : IAl, IAl.Static
     ]
     [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAl.SourceRewinDirect(ContextHandle context, uint sources) =>
-        ((IAl)this).SourceRewinDirect(context, 1, (uint*)&sources);
+    void IAl.SourceRewindvDirect(ContextHandle context, uint sources) =>
+        ((IAl)this).SourceRewindvDirect(context, 1, (uint*)&sources);
 
     [NativeName("alSourceRewindvDirect")]
     [
@@ -42386,8 +42387,8 @@ public unsafe partial class Al : IAl, IAl.Static
     ]
     [NativeFunction("openal", EntryPoint = "alSourceRewindvDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void SourceRewinDirect(ContextHandle context, uint sources) =>
-        ThisThread.SourceRewinDirect(context, sources);
+    public static void SourceRewindvDirect(ContextHandle context, uint sources) =>
+        ThisThread.SourceRewindvDirect(context, sources);
 
     [NativeName("alSourceStop")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
