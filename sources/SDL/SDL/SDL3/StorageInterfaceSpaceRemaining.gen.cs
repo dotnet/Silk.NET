@@ -12,9 +12,9 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct StorageInterfaceSpaceRemaining : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, nuint> Handle => (delegate* unmanaged<void*, nuint>)Pointer;
+    public delegate* unmanaged<void*, ulong> Handle => (delegate* unmanaged<void*, ulong>)Pointer;
 
-    public StorageInterfaceSpaceRemaining(delegate* unmanaged<void*, nuint> ptr) => Pointer = ptr;
+    public StorageInterfaceSpaceRemaining(delegate* unmanaged<void*, ulong> ptr) => Pointer = ptr;
 
     public StorageInterfaceSpaceRemaining(StorageInterfaceSpaceRemainingDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
@@ -22,10 +22,10 @@ public readonly unsafe struct StorageInterfaceSpaceRemaining : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator StorageInterfaceSpaceRemaining(
-        delegate* unmanaged<void*, nuint> pfn
+        delegate* unmanaged<void*, ulong> pfn
     ) => new(pfn);
 
-    public static implicit operator delegate* unmanaged<void*, nuint>(
+    public static implicit operator delegate* unmanaged<void*, ulong>(
         StorageInterfaceSpaceRemaining pfn
-    ) => (delegate* unmanaged<void*, nuint>)pfn.Pointer;
+    ) => (delegate* unmanaged<void*, ulong>)pfn.Pointer;
 }

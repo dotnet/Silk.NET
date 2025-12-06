@@ -3,6 +3,7 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
@@ -16,13 +17,13 @@ public partial struct TouchFingerEvent
     public uint Reserved;
 
     [NativeName("timestamp")]
-    public nuint Timestamp;
+    public ulong Timestamp;
 
     [NativeName("touchID")]
-    public nuint TouchId;
+    public ulong TouchId;
 
     [NativeName("fingerID")]
-    public nuint FingerId;
+    public ulong FingerId;
 
     [NativeName("x")]
     public float X;

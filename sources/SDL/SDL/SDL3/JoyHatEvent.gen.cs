@@ -18,7 +18,7 @@ public partial struct JoyHatEvent
     public uint Reserved;
 
     [NativeName("timestamp")]
-    public nuint Timestamp;
+    public ulong Timestamp;
 
     [NativeName("which")]
     public uint Which;

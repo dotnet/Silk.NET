@@ -9,4 +9,4 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_IOStreamInterface_seek")]
-public unsafe delegate nint IoStreamInterfaceSeekDelegate(void* arg0, nint arg1, IoWhence arg2);
+public unsafe delegate long IoStreamInterfaceSeekDelegate(void* arg0, long arg1, IoWhence arg2);

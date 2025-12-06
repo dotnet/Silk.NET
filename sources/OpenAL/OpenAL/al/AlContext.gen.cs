@@ -241,7 +241,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             DeviceHandle device,
             int pname,
             int size,
-            nint* values
+            long* values
         );
 
         [NativeName("alcGetInteger64vSOFT")]
@@ -257,10 +257,10 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             DeviceHandle device,
             int pname,
             int size,
-            Ref<nint> values
+            Ref<long> values
         )
         {
-            fixed (nint* __dsl_values = values)
+            fixed (long* __dsl_values = values)
             {
                 GetInteger64SOFT(device, pname, size, __dsl_values);
             }
@@ -272,10 +272,10 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-        public static nint GetInteger64SOFT(DeviceHandle device, int pname)
+        public static long GetInteger64SOFT(DeviceHandle device, int pname)
         {
-            nint values = default;
-            GetInteger64SOFT(device, pname, 1, (nint*)&values);
+            long values = default;
+            GetInteger64SOFT(device, pname, 1, (long*)&values);
             return values;
         }
 
@@ -861,7 +861,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetInteger64SOFT(DeviceHandle device, int pname, int size, nint* values) =>
+        public void GetInteger64SOFT(DeviceHandle device, int pname, int size, long* values) =>
             T.GetInteger64SOFT(device, pname, size, values);
 
         [NativeName("alcGetInteger64vSOFT")]
@@ -873,7 +873,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public void GetInteger64SOFT(DeviceHandle device, int pname, int size, Ref<nint> values) =>
+        public void GetInteger64SOFT(DeviceHandle device, int pname, int size, Ref<long> values) =>
             T.GetInteger64SOFT(device, pname, size, values);
 
         [NativeName("alcGetInteger64vSOFT")]
@@ -885,7 +885,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public nint GetInteger64SOFT(DeviceHandle device, int pname) =>
+        public long GetInteger64SOFT(DeviceHandle device, int pname) =>
             T.GetInteger64SOFT(device, pname);
 
         [NativeName("alcGetIntegerv")]
@@ -1498,7 +1498,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             DeviceHandle device,
             int pname,
             int size,
-            nint* values
+            long* values
         ) => Underlying.Value!.GetInteger64SOFT(device, pname, size, values);
 
         [NativeName("alcGetInteger64vSOFT")]
@@ -1514,10 +1514,10 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
             DeviceHandle device,
             int pname,
             int size,
-            Ref<nint> values
+            Ref<long> values
         )
         {
-            fixed (nint* __dsl_values = values)
+            fixed (long* __dsl_values = values)
             {
                 GetInteger64SOFT(device, pname, size, __dsl_values);
             }
@@ -1532,10 +1532,10 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static nint GetInteger64SOFT(DeviceHandle device, int pname)
+        public static long GetInteger64SOFT(DeviceHandle device, int pname)
         {
-            nint values = default;
-            GetInteger64SOFT(device, pname, 1, (nint*)&values);
+            long values = default;
+            GetInteger64SOFT(device, pname, 1, (long*)&values);
             return values;
         }
 
@@ -1905,7 +1905,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     }
 
     [NativeName("ALC_CPLUSPLUS")]
-    public const nint Cplusplus = 201703;
+    public const int Cplusplus = 201402;
 
     [NativeName("ALC_VERSION_0_1")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -2470,9 +2470,9 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.GetInteger64SOFT(DeviceHandle device, int pname, int size, nint* values) =>
+    void IAlContext.GetInteger64SOFT(DeviceHandle device, int pname, int size, long* values) =>
         (
-            (delegate* unmanaged<DeviceHandle, int, int, nint*, void>)(
+            (delegate* unmanaged<DeviceHandle, int, int, long*, void>)(
                 _slots[17] is not null and var loadedFnPtr
                     ? loadedFnPtr
                     : _slots[17] = nativeContext.LoadFunction("alcGetInteger64vSOFT", "openal")
@@ -2486,7 +2486,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void GetInteger64SOFT(DeviceHandle device, int pname, int size, nint* values) =>
+    public static void GetInteger64SOFT(DeviceHandle device, int pname, int size, long* values) =>
         ThisThread.GetInteger64SOFT(device, pname, size, values);
 
     [NativeName("alcGetInteger64vSOFT")]
@@ -2496,9 +2496,9 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAlContext.GetInteger64SOFT(DeviceHandle device, int pname, int size, Ref<nint> values)
+    void IAlContext.GetInteger64SOFT(DeviceHandle device, int pname, int size, Ref<long> values)
     {
-        fixed (nint* __dsl_values = values)
+        fixed (long* __dsl_values = values)
         {
             ((IAlContext)this).GetInteger64SOFT(device, pname, size, __dsl_values);
         }
@@ -2515,7 +2515,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
         DeviceHandle device,
         int pname,
         int size,
-        Ref<nint> values
+        Ref<long> values
     ) => ThisThread.GetInteger64SOFT(device, pname, size, values);
 
     [NativeName("alcGetInteger64vSOFT")]
@@ -2525,10 +2525,10 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    nint IAlContext.GetInteger64SOFT(DeviceHandle device, int pname)
+    long IAlContext.GetInteger64SOFT(DeviceHandle device, int pname)
     {
-        nint values = default;
-        ((IAlContext)this).GetInteger64SOFT(device, pname, 1, (nint*)&values);
+        long values = default;
+        ((IAlContext)this).GetInteger64SOFT(device, pname, 1, (long*)&values);
         return values;
     }
 
@@ -2539,7 +2539,7 @@ public unsafe partial class AlContext : IAlContext, IAlContext.Static
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static nint GetInteger64SOFT(DeviceHandle device, int pname) =>
+    public static long GetInteger64SOFT(DeviceHandle device, int pname) =>
         ThisThread.GetInteger64SOFT(device, pname);
 
     [NativeName("alcGetIntegerv")]

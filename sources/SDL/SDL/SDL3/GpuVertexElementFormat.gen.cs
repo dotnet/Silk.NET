@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_GPUVertexElementFormat")]
-public enum GpuVertexElementFormat : uint
+public enum GpuVertexElementFormat
 {
     [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_INVALID")]
     Invalid = 0,

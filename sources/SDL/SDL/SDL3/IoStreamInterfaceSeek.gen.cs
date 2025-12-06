@@ -12,10 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct IoStreamInterfaceSeek : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, nint, IoWhence, nint> Handle =>
-        (delegate* unmanaged<void*, nint, IoWhence, nint>)Pointer;
+    public delegate* unmanaged<void*, long, IoWhence, long> Handle =>
+        (delegate* unmanaged<void*, long, IoWhence, long>)Pointer;
 
-    public IoStreamInterfaceSeek(delegate* unmanaged<void*, nint, IoWhence, nint> ptr) =>
+    public IoStreamInterfaceSeek(delegate* unmanaged<void*, long, IoWhence, long> ptr) =>
         Pointer = ptr;
 
     public IoStreamInterfaceSeek(IoStreamInterfaceSeekDelegate proc) =>
@@ -24,10 +24,10 @@ public readonly unsafe struct IoStreamInterfaceSeek : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator IoStreamInterfaceSeek(
-        delegate* unmanaged<void*, nint, IoWhence, nint> pfn
+        delegate* unmanaged<void*, long, IoWhence, long> pfn
     ) => new(pfn);
 
-    public static implicit operator delegate* unmanaged<void*, nint, IoWhence, nint>(
+    public static implicit operator delegate* unmanaged<void*, long, IoWhence, long>(
         IoStreamInterfaceSeek pfn
-    ) => (delegate* unmanaged<void*, nint, IoWhence, nint>)pfn.Pointer;
+    ) => (delegate* unmanaged<void*, long, IoWhence, long>)pfn.Pointer;
 }

@@ -9,4 +9,4 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_NSTimerCallback")]
-public unsafe delegate nuint NsTimerCallbackDelegate(void* arg0, uint arg1, nuint arg2);
+public unsafe delegate ulong NsTimerCallbackDelegate(void* arg0, uint arg1, ulong arg2);

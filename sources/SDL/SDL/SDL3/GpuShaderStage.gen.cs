@@ -3,11 +3,12 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_GPUShaderStage")]
-public enum GpuShaderStage : uint
+public enum GpuShaderStage
 {
     [NativeName("SDL_GPU_SHADERSTAGE_VERTEX")]
     Vertex = 0,

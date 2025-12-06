@@ -3,6 +3,7 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
@@ -13,14 +14,14 @@ public partial struct PathInfo
     public PathType Type;
 
     [NativeName("size")]
-    public nuint Size;
+    public ulong Size;
 
     [NativeName("create_time")]
-    public nint CreateTime;
+    public long CreateTime;
 
     [NativeName("modify_time")]
-    public nint ModifyTime;
+    public long ModifyTime;
 
     [NativeName("access_time")]
-    public nint AccessTime;
+    public long AccessTime;
 }

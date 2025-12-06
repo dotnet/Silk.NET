@@ -9,4 +9,4 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_IOStreamInterface_size")]
-public unsafe delegate nint IoStreamInterfaceSizeDelegate(void* arg0);
+public unsafe delegate long IoStreamInterfaceSizeDelegate(void* arg0);

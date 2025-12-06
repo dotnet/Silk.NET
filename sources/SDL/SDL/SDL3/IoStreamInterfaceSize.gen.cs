@@ -12,18 +12,18 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct IoStreamInterfaceSize : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, nint> Handle => (delegate* unmanaged<void*, nint>)Pointer;
+    public delegate* unmanaged<void*, long> Handle => (delegate* unmanaged<void*, long>)Pointer;
 
-    public IoStreamInterfaceSize(delegate* unmanaged<void*, nint> ptr) => Pointer = ptr;
+    public IoStreamInterfaceSize(delegate* unmanaged<void*, long> ptr) => Pointer = ptr;
 
     public IoStreamInterfaceSize(IoStreamInterfaceSizeDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
 
-    public static implicit operator IoStreamInterfaceSize(delegate* unmanaged<void*, nint> pfn) =>
+    public static implicit operator IoStreamInterfaceSize(delegate* unmanaged<void*, long> pfn) =>
         new(pfn);
 
-    public static implicit operator delegate* unmanaged<void*, nint>(IoStreamInterfaceSize pfn) =>
-        (delegate* unmanaged<void*, nint>)pfn.Pointer;
+    public static implicit operator delegate* unmanaged<void*, long>(IoStreamInterfaceSize pfn) =>
+        (delegate* unmanaged<void*, long>)pfn.Pointer;
 }
