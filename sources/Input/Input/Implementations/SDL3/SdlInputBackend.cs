@@ -30,6 +30,12 @@ internal partial class SdlInputBackend : IInputBackend
     {
         ArgumentNullException.ThrowIfNull(info.Sdl);
         ArgumentNullException.ThrowIfNull(info.Window.Handle);
+
+        _getDisplayHandles = GetDisplayHandles;
+        _getWindowHandles = GetWindowHandles;
+        _getWindowId = GetWindowId;
+        _getDisplayId = GetDisplayId;
+
         var ptr = new EventFilter(OnEvent);
         _sdl = info.Sdl;
         _focusedWindow = info.Window;
@@ -152,6 +158,8 @@ internal partial class SdlInputBackend : IInputBackend
         {
             Sdl.PumpEvents();
         }
+
+        UpdatePointerTargets();
 
         _pumped = false;
         if (handler == null)
@@ -566,8 +574,7 @@ internal partial class SdlInputBackend : IInputBackend
             return false;
         }
 
-        // todo : get the SDL window (or other window) with the given ID
-        target = null;
-        throw new NotImplementedException();
+        target = _windowTargets.FirstOrDefault(x => x.Id == id);
+        return target != null;
     }
 }

@@ -6,13 +6,38 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers.Targets;
 
-internal class SdlBoundedPointerTarget(SdlInputBackend backend) : IPointerTarget
+internal interface ISdlBoundedPointerTarget<out T, THandle>
+    where T : SdlBoundedPointerTarget
+    where THandle : unmanaged
 {
-    internal SdlInputBackend Backend { get; } = backend;
-    private Box2D<float> Bounds2D { get; set; }
+    uint Id { get; }
+    THandle Handle { get; }
 
-    public Box3D<float> Bounds =>
-        new(new Vector3D<float>(Bounds2D.Min, 0), new Vector3D<float>(Bounds2D.Max, 1));
+    public static abstract T? Create(SdlInputBackend backend, uint id, THandle handle);
+    public void UpdateBounds();
+}
+
+internal abstract class SdlBoundedPointerTarget : IPointerTarget
+{
+    protected SdlBoundedPointerTarget(SdlInputBackend backend)
+    {
+        Backend = backend;
+    }
+
+    internal SdlInputBackend Backend { get; }
+    private Box2D<float> Bounds2D
+    {
+        get
+        {
+            var bounds = Bounds;
+            return new Box2D<float>(bounds.Min.X, bounds.Min.Y, bounds.Max.X, bounds.Max.Y);
+        }
+    }
+
+    public Box3D<float> Bounds { get; private set; }
+
+    public void UpdateBounds() => Bounds = CalculateBounds();
+    protected abstract Box3D<float> CalculateBounds();
 
     /// <inheritdoc />
     public int GetPointCount(IPointerDevice pointer) => PointerTargetExtensions.GetPointCount(this, pointer);
@@ -100,5 +125,10 @@ internal class SdlBoundedPointerTarget(SdlInputBackend backend) : IPointerTarget
         }
 
         return CalculateWindowBounds(sdl, window);
+    }
+
+    public void Dispose()
+    {
+        throw new NotImplementedException();
     }
 }
