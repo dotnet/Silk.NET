@@ -82,7 +82,7 @@ internal static class SdlEventProcessor
         SdlSurface? surface = null;
         if (
             @event.Type is >= (uint)EventType.WindowFirst and <= (uint)EventType.WindowLast
-            && !_surfaces.TryGetValue(@event.Window.WindowID, out surface)
+            && !_surfaces.TryGetValue(@event.Window.WindowId, out surface)
         )
         {
             return;
@@ -172,7 +172,7 @@ internal static class SdlEventProcessor
             {
                 foreach (var knownSurface in _surfaces.Values)
                 {
-                    knownSurface.Impl.OnDisplayCoordinatesChanged(@event.Display.DisplayID);
+                    knownSurface.Impl.OnDisplayCoordinatesChanged(@event.Display.DisplayId);
                 }
                 break;
             }
@@ -183,7 +183,7 @@ internal static class SdlEventProcessor
                 foreach (var knownSurface in _surfaces.Values)
                 {
                     knownSurface.Impl.OnPotentialVideoModeChanges(
-                        @event.Display.DisplayID,
+                        @event.Display.DisplayId,
                         out var isDisplayCurrent,
                         currentDisplay
                     );
@@ -203,7 +203,7 @@ internal static class SdlEventProcessor
                 {
                     Display = @event.Display with
                     {
-                        DisplayID = currentDisplay = Sdl.GetDisplayForWindow(surface!.Impl.Handle),
+                        DisplayId = currentDisplay = Sdl.GetDisplayForWindow(surface!.Impl.Handle),
                     },
                 };
                 goto case (uint)EventType.DisplayContentScaleChanged;
@@ -283,7 +283,7 @@ internal static class SdlEventProcessor
             {
                 if (
                     _droppedFiles is null
-                    || !_surfaces.TryGetValue(@event.Window.WindowID, out surface)
+                    || !_surfaces.TryGetValue(@event.Window.WindowId, out surface)
                 )
                 {
                     _droppedFiles = null;

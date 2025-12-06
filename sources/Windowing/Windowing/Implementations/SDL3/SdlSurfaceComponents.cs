@@ -12,7 +12,7 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
 {
     public static bool IsChildrenEnabled { get; private set; }
     public static bool IsDisplayEnabled => true;
-    public static bool IsOpenGLEnabled { get; private set; }
+    public static bool IsOpenGlEnabled { get; private set; }
     public static bool IsScaleEnabled => true;
     public static bool IsVulkanEnabled { get; private set; }
     public static bool IsWindowEnabled { get; private set; }
@@ -81,8 +81,8 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
             return nullptr;
         }
 
-        IsOpenGLEnabled = Sdl.GLLoadLibrary(nullptr);
-        DebugPrintWithError(IsOpenGLEnabled ? "OpenGL support enabled" : "OpenGL support disabled");
+        IsOpenGlEnabled = Sdl.GlLoadLibrary(nullptr);
+        DebugPrintWithError(IsOpenGlEnabled ? "OpenGL support enabled" : "OpenGL support disabled");
 
         IsVulkanEnabled = Sdl.VulkanLoadLibrary(nullptr);
         DebugPrintWithError(IsVulkanEnabled ? "Vulkan support enabled" : "Vulkan support disabled");
@@ -159,9 +159,9 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
                 InitializeChildren(createProps);
             }
 
-            if (IsOpenGLEnabled)
+            if (IsOpenGlEnabled)
             {
-                InitializeOpenGL(createProps);
+                InitializeOpenGl(createProps);
             }
 
             if (IsScaleEnabled)
@@ -197,13 +197,13 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
             Sdl.ThrowError();
         }
 
-        Id = Sdl.GetWindowID(Handle);
+        Id = Sdl.GetWindowId(Handle);
         SdlEventProcessor.AddSurface(Id, surface);
         DebugPrintAllProps(Sdl.GetWindowProperties(Handle));
         IsSurfaceInitialized = true;
-        if (IsOpenGLEnabled)
+        if (IsOpenGlEnabled)
         {
-            PostInitializeOpenGL();
+            PostInitializeOpenGl();
         }
 
         if (IsScaleEnabled)
@@ -231,9 +231,9 @@ internal partial class SdlSurfaceComponents(SdlSurface surface)
         }
 
         Sdl.QuitSubSystem(Sdl.InitVideo);
-        if (IsOpenGLEnabled)
+        if (IsOpenGlEnabled)
         {
-            Sdl.GLUnloadLibrary();
+            Sdl.GlUnloadLibrary();
         }
 
         if (IsVulkanEnabled)
