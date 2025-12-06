@@ -11,26 +11,26 @@ namespace Silk.NET.OpenGL;
 public enum ConditionalRenderMode : uint
 {
     [NativeName("GL_QUERY_WAIT")]
-    Wait = unchecked((uint)0x8E13),
+    Wait = 36371,
 
     [NativeName("GL_QUERY_NO_WAIT")]
-    NoWait = unchecked((uint)0x8E14),
+    NoWait = 36372,
 
     [NativeName("GL_QUERY_BY_REGION_WAIT")]
-    ByRegionWait = unchecked((uint)0x8E15),
+    ByRegionWait = 36373,
 
     [NativeName("GL_QUERY_BY_REGION_NO_WAIT")]
-    ByRegionNoWait = unchecked((uint)0x8E16),
+    ByRegionNoWait = 36374,
 
     [NativeName("GL_QUERY_WAIT_INVERTED")]
-    WaitInverted = unchecked((uint)0x8E17),
+    WaitInverted = 36375,
 
     [NativeName("GL_QUERY_NO_WAIT_INVERTED")]
-    NoWaitInverted = unchecked((uint)0x8E18),
+    NoWaitInverted = 36376,
 
     [NativeName("GL_QUERY_BY_REGION_WAIT_INVERTED")]
-    ByRegionWaitInverted = unchecked((uint)0x8E19),
+    ByRegionWaitInverted = 36377,
 
     [NativeName("GL_QUERY_BY_REGION_NO_WAIT_INVERTED")]
-    ByRegionNoWaitInverted = unchecked((uint)0x8E1A),
+    ByRegionNoWaitInverted = 36378,
 }

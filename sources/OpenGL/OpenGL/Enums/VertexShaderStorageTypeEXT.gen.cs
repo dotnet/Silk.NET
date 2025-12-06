@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum VertexShaderStorageTypeEXT : uint
 {
     [NativeName("GL_VARIANT_EXT")]
-    Variant = unchecked((uint)0x87C1),
+    Variant = 34753,
 
     [NativeName("GL_INVARIANT_EXT")]
-    Invariant = unchecked((uint)0x87C2),
+    Invariant = 34754,
 
     [NativeName("GL_LOCAL_CONSTANT_EXT")]
-    LocalConstant = unchecked((uint)0x87C3),
+    LocalConstant = 34755,
 
     [NativeName("GL_LOCAL_EXT")]
-    Local = unchecked((uint)0x87C4),
+    Local = 34756,
 }

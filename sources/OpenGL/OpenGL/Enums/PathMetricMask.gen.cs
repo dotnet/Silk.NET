@@ -14,71 +14,71 @@ public enum PathMetricMask : uint
     None = 0x0,
 
     [NativeName("GL_GLYPH_WIDTH_BIT_NV")]
-    GlyphWidthBitNV = unchecked((uint)0x01),
+    GlyphWidthBitNV = 0x1,
 
     [NativeName("GL_GLYPH_HEIGHT_BIT_NV")]
-    GlyphHeightBitNV = unchecked((uint)0x02),
+    GlyphHeightBitNV = 0x2,
 
     [NativeName("GL_GLYPH_HORIZONTAL_BEARING_X_BIT_NV")]
-    GlyphHorizontalBearingXBitNV = unchecked((uint)0x04),
+    GlyphHorizontalBearingXBitNV = 0x4,
 
     [NativeName("GL_GLYPH_HORIZONTAL_BEARING_Y_BIT_NV")]
-    GlyphHorizontalBearingYBitNV = unchecked((uint)0x08),
+    GlyphHorizontalBearingYBitNV = 0x8,
 
     [NativeName("GL_GLYPH_HORIZONTAL_BEARING_ADVANCE_BIT_NV")]
-    GlyphHorizontalBearingAdvanceBitNV = unchecked((uint)0x10),
+    GlyphHorizontalBearingAdvanceBitNV = 0x10,
 
     [NativeName("GL_GLYPH_VERTICAL_BEARING_X_BIT_NV")]
-    GlyphVerticalBearingXBitNV = unchecked((uint)0x20),
+    GlyphVerticalBearingXBitNV = 0x20,
 
     [NativeName("GL_GLYPH_VERTICAL_BEARING_Y_BIT_NV")]
-    GlyphVerticalBearingYBitNV = unchecked((uint)0x40),
+    GlyphVerticalBearingYBitNV = 0x40,
 
     [NativeName("GL_GLYPH_VERTICAL_BEARING_ADVANCE_BIT_NV")]
-    GlyphVerticalBearingAdvanceBitNV = unchecked((uint)0x80),
+    GlyphVerticalBearingAdvanceBitNV = 0x80,
 
     [NativeName("GL_GLYPH_HAS_KERNING_BIT_NV")]
-    GlyphHasKerningBitNV = unchecked((uint)0x100),
+    GlyphHasKerningBitNV = 0x100,
 
     [NativeName("GL_FONT_X_MIN_BOUNDS_BIT_NV")]
-    FontXMinBoundsBitNV = unchecked((uint)0x00010000),
+    FontXMinBoundsBitNV = 0x10000,
 
     [NativeName("GL_FONT_Y_MIN_BOUNDS_BIT_NV")]
-    FontYMinBoundsBitNV = unchecked((uint)0x00020000),
+    FontYMinBoundsBitNV = 0x20000,
 
     [NativeName("GL_FONT_X_MAX_BOUNDS_BIT_NV")]
-    FontXMaxBoundsBitNV = unchecked((uint)0x00040000),
+    FontXMaxBoundsBitNV = 0x40000,
 
     [NativeName("GL_FONT_Y_MAX_BOUNDS_BIT_NV")]
-    FontYMaxBoundsBitNV = unchecked((uint)0x00080000),
+    FontYMaxBoundsBitNV = 0x80000,
 
     [NativeName("GL_FONT_UNITS_PER_EM_BIT_NV")]
-    FontUnitsPerEmBitNV = unchecked((uint)0x00100000),
+    FontUnitsPerEmBitNV = 0x100000,
 
     [NativeName("GL_FONT_ASCENDER_BIT_NV")]
-    FontAscenderBitNV = unchecked((uint)0x00200000),
+    FontAscenderBitNV = 0x200000,
 
     [NativeName("GL_FONT_DESCENDER_BIT_NV")]
-    FontDescenderBitNV = unchecked((uint)0x00400000),
+    FontDescenderBitNV = 0x400000,
 
     [NativeName("GL_FONT_HEIGHT_BIT_NV")]
-    FontHeightBitNV = unchecked((uint)0x00800000),
+    FontHeightBitNV = 0x800000,
 
     [NativeName("GL_FONT_MAX_ADVANCE_WIDTH_BIT_NV")]
-    FontMaxAdvanceWidthBitNV = unchecked((uint)0x01000000),
+    FontMaxAdvanceWidthBitNV = 0x1000000,
 
     [NativeName("GL_FONT_MAX_ADVANCE_HEIGHT_BIT_NV")]
-    FontMaxAdvanceHeightBitNV = unchecked((uint)0x02000000),
+    FontMaxAdvanceHeightBitNV = 0x2000000,
 
     [NativeName("GL_FONT_UNDERLINE_POSITION_BIT_NV")]
-    FontUnderlinePositionBitNV = unchecked((uint)0x04000000),
+    FontUnderlinePositionBitNV = 0x4000000,
 
     [NativeName("GL_FONT_UNDERLINE_THICKNESS_BIT_NV")]
-    FontUnderlineThicknessBitNV = unchecked((uint)0x08000000),
+    FontUnderlineThicknessBitNV = 0x8000000,
 
     [NativeName("GL_FONT_HAS_KERNING_BIT_NV")]
-    FontHasKerningBitNV = unchecked((uint)0x10000000),
+    FontHasKerningBitNV = 0x10000000,
 
     [NativeName("GL_FONT_NUM_GLYPH_INDICES_BIT_NV")]
-    FontNumGlyphIndicesBitNV = unchecked((uint)0x20000000),
+    FontNumGlyphIndicesBitNV = 0x20000000,
 }

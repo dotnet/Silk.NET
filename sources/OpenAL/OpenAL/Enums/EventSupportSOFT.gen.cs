@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum EventSupportSOFT : uint
 {
     [NativeName("ALC_EVENT_SUPPORTED_SOFT")]
-    Supported = unchecked((uint)0x19D9),
+    Supported = 6617,
 
     [NativeName("ALC_EVENT_NOT_SUPPORTED_SOFT")]
-    NotSupported = unchecked((uint)0x19DA),
+    NotSupported = 6618,
 }

@@ -11,32 +11,32 @@ namespace Silk.NET.OpenGL;
 public enum AtomicCounterBufferPName : uint
 {
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_BINDING")]
-    Binding = unchecked((uint)0x92C1),
+    Binding = 37569,
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_DATA_SIZE")]
-    DataSize = unchecked((uint)0x92C4),
+    DataSize = 37572,
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTERS")]
-    ActiveAtomicCounters = unchecked((uint)0x92C5),
+    ActiveAtomicCounters = 37573,
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTER_INDICES")]
-    ActiveAtomicCounterIndices = unchecked((uint)0x92C6),
+    ActiveAtomicCounterIndices = 37574,
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_VERTEX_SHADER")]
-    ReferencedByVertexShader = unchecked((uint)0x92C7),
+    ReferencedByVertexShader = 37575,
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_CONTROL_SHADER")]
-    ReferencedByTessControlShader = unchecked((uint)0x92C8),
+    ReferencedByTessControlShader = 37576,
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_EVALUATION_SHADER")]
-    ReferencedByTessEvaluationShader = unchecked((uint)0x92C9),
+    ReferencedByTessEvaluationShader = 37577,
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_GEOMETRY_SHADER")]
-    ReferencedByGeometryShader = unchecked((uint)0x92CA),
+    ReferencedByGeometryShader = 37578,
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_FRAGMENT_SHADER")]
-    ReferencedByFragmentShader = unchecked((uint)0x92CB),
+    ReferencedByFragmentShader = 37579,
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER")]
-    ReferencedByComputeShader = unchecked((uint)0x90ED),
+    ReferencedByComputeShader = 37101,
 }

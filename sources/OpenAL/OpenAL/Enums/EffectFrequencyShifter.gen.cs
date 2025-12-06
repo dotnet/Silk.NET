@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum EffectFrequencyShifter : uint
 {
     [NativeName("AL_FREQUENCY_SHIFTER_FREQUENCY")]
-    Frequency = unchecked((uint)0x0001),
+    Frequency = 1,
 
     [NativeName("AL_FREQUENCY_SHIFTER_LEFT_DIRECTION")]
-    LeftDirection = unchecked((uint)0x0002),
+    LeftDirection = 2,
 
     [NativeName("AL_FREQUENCY_SHIFTER_RIGHT_DIRECTION")]
-    RightDirection = unchecked((uint)0x0003),
+    RightDirection = 3,
 }

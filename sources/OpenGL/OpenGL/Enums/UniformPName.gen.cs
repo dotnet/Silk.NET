@@ -11,29 +11,29 @@ namespace Silk.NET.OpenGL;
 public enum UniformPName : uint
 {
     [NativeName("GL_UNIFORM_TYPE")]
-    Type = unchecked((uint)0x8A37),
+    Type = 35383,
 
     [NativeName("GL_UNIFORM_SIZE")]
-    Size = unchecked((uint)0x8A38),
+    Size = 35384,
 
     [NativeName("GL_UNIFORM_NAME_LENGTH")]
-    NameLength = unchecked((uint)0x8A39),
+    NameLength = 35385,
 
     [NativeName("GL_UNIFORM_BLOCK_INDEX")]
-    BlockIndex = unchecked((uint)0x8A3A),
+    BlockIndex = 35386,
 
     [NativeName("GL_UNIFORM_OFFSET")]
-    Offset = unchecked((uint)0x8A3B),
+    Offset = 35387,
 
     [NativeName("GL_UNIFORM_ARRAY_STRIDE")]
-    ArrayStride = unchecked((uint)0x8A3C),
+    ArrayStride = 35388,
 
     [NativeName("GL_UNIFORM_MATRIX_STRIDE")]
-    MatrixStride = unchecked((uint)0x8A3D),
+    MatrixStride = 35389,
 
     [NativeName("GL_UNIFORM_IS_ROW_MAJOR")]
-    IsRowMajor = unchecked((uint)0x8A3E),
+    IsRowMajor = 35390,
 
     [NativeName("GL_UNIFORM_ATOMIC_COUNTER_BUFFER_INDEX")]
-    AtomicCounterBufferIndex = unchecked((uint)0x92DA),
+    AtomicCounterBufferIndex = 37594,
 }

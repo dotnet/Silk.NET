@@ -11,20 +11,20 @@ namespace Silk.NET.OpenGL;
 public enum SamplerParameterF : uint
 {
     [NativeName("GL_TEXTURE_BORDER_COLOR")]
-    BorderColor = unchecked((uint)0x1004),
+    BorderColor = 4100,
 
     [NativeName("GL_TEXTURE_MIN_LOD")]
-    MinLod = unchecked((uint)0x813A),
+    MinLod = 33082,
 
     [NativeName("GL_TEXTURE_MAX_LOD")]
-    MaxLod = unchecked((uint)0x813B),
+    MaxLod = 33083,
 
     [NativeName("GL_TEXTURE_LOD_BIAS")]
-    LodBias = unchecked((uint)0x8501),
+    LodBias = 34049,
 
     [NativeName("GL_TEXTURE_MAX_ANISOTROPY")]
-    MaxAnisotropy = unchecked((uint)0x84FE),
+    MaxAnisotropy = 34046,
 
     [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
+    UnnormalizedCoordinatesARM = 36714,
 }

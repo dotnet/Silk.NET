@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum TextureFilterSGIS : uint
 {
     [NativeName("GL_FILTER4_SGIS")]
-    Filter4 = unchecked((uint)0x8146),
+    Filter4 = 33094,
 }

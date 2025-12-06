@@ -11,23 +11,23 @@ namespace Silk.NET.OpenGL;
 public enum MaterialParameter : uint
 {
     [NativeName("GL_AMBIENT")]
-    Ambient = unchecked((uint)0x1200),
+    Ambient = 4608,
 
     [NativeName("GL_DIFFUSE")]
-    Diffuse = unchecked((uint)0x1201),
+    Diffuse = 4609,
 
     [NativeName("GL_SPECULAR")]
-    Specular = unchecked((uint)0x1202),
+    Specular = 4610,
 
     [NativeName("GL_EMISSION")]
-    Emission = unchecked((uint)0x1600),
+    Emission = 5632,
 
     [NativeName("GL_SHININESS")]
-    Shininess = unchecked((uint)0x1601),
+    Shininess = 5633,
 
     [NativeName("GL_AMBIENT_AND_DIFFUSE")]
-    AmbientAndDiffuse = unchecked((uint)0x1602),
+    AmbientAndDiffuse = 5634,
 
     [NativeName("GL_COLOR_INDEXES")]
-    ColorIndexes = unchecked((uint)0x1603),
+    ColorIndexes = 5635,
 }

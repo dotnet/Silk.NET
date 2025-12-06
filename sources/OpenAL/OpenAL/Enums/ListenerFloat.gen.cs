@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum ListenerFloat : uint
 {
     [NativeName("AL_ORIENTATION")]
-    Orientation = unchecked((uint)0x100F),
+    Orientation = 4111,
 
     [NativeName("AL_CONE_OUTER_GAIN")]
-    ConeOuterGain = unchecked((uint)0x1022),
+    ConeOuterGain = 4130,
 
     [NativeName("AL_METERS_PER_UNIT")]
-    MetersPerUnit = unchecked((uint)0x20004),
+    MetersPerUnit = 131076,
 }

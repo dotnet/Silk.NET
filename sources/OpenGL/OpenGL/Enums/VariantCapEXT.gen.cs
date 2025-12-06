@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum VariantCapEXT : uint
 {
     [NativeName("GL_VARIANT_ARRAY_EXT")]
-    VariantArray = unchecked((uint)0x87E8),
+    VariantArray = 34792,
 }

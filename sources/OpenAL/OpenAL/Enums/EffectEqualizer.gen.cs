@@ -14,32 +14,32 @@ namespace Silk.NET.OpenAL;
 public enum EffectEqualizer : uint
 {
     [NativeName("AL_EQUALIZER_LOW_GAIN")]
-    LowGain = unchecked((uint)0x0001),
+    LowGain = 1,
 
     [NativeName("AL_EQUALIZER_LOW_CUTOFF")]
-    LowCutoff = unchecked((uint)0x0002),
+    LowCutoff = 2,
 
     [NativeName("AL_EQUALIZER_MID1_GAIN")]
-    Mid1Gain = unchecked((uint)0x0003),
+    Mid1Gain = 3,
 
     [NativeName("AL_EQUALIZER_MID1_CENTER")]
-    Mid1Center = unchecked((uint)0x0004),
+    Mid1Center = 4,
 
     [NativeName("AL_EQUALIZER_MID1_WIDTH")]
-    Mid1Width = unchecked((uint)0x0005),
+    Mid1Width = 5,
 
     [NativeName("AL_EQUALIZER_MID2_GAIN")]
-    Mid2Gain = unchecked((uint)0x0006),
+    Mid2Gain = 6,
 
     [NativeName("AL_EQUALIZER_MID2_CENTER")]
-    Mid2Center = unchecked((uint)0x0007),
+    Mid2Center = 7,
 
     [NativeName("AL_EQUALIZER_MID2_WIDTH")]
-    Mid2Width = unchecked((uint)0x0008),
+    Mid2Width = 8,
 
     [NativeName("AL_EQUALIZER_HIGH_GAIN")]
-    HighGain = unchecked((uint)0x0009),
+    HighGain = 9,
 
     [NativeName("AL_EQUALIZER_HIGH_CUTOFF")]
-    HighCutoff = unchecked((uint)0x000A),
+    HighCutoff = 10,
 }

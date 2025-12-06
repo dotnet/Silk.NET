@@ -14,41 +14,41 @@ namespace Silk.NET.OpenAL;
 public enum EffectReverb : uint
 {
     [NativeName("AL_REVERB_DENSITY")]
-    Density = unchecked((uint)0x0001),
+    Density = 1,
 
     [NativeName("AL_REVERB_DIFFUSION")]
-    Diffusion = unchecked((uint)0x0002),
+    Diffusion = 2,
 
     [NativeName("AL_REVERB_GAIN")]
-    Gain = unchecked((uint)0x0003),
+    Gain = 3,
 
     [NativeName("AL_REVERB_GAINHF")]
-    Gainhf = unchecked((uint)0x0004),
+    Gainhf = 4,
 
     [NativeName("AL_REVERB_DECAY_TIME")]
-    DecayTime = unchecked((uint)0x0005),
+    DecayTime = 5,
 
     [NativeName("AL_REVERB_DECAY_HFRATIO")]
-    DecayHfratio = unchecked((uint)0x0006),
+    DecayHfratio = 6,
 
     [NativeName("AL_REVERB_REFLECTIONS_GAIN")]
-    ReflectionsGain = unchecked((uint)0x0007),
+    ReflectionsGain = 7,
 
     [NativeName("AL_REVERB_REFLECTIONS_DELAY")]
-    ReflectionsDelay = unchecked((uint)0x0008),
+    ReflectionsDelay = 8,
 
     [NativeName("AL_REVERB_LATE_REVERB_GAIN")]
-    LateReverbGain = unchecked((uint)0x0009),
+    LateReverbGain = 9,
 
     [NativeName("AL_REVERB_LATE_REVERB_DELAY")]
-    LateReverbDelay = unchecked((uint)0x000A),
+    LateReverbDelay = 10,
 
     [NativeName("AL_REVERB_AIR_ABSORPTION_GAINHF")]
-    AirAbsorptionGainhf = unchecked((uint)0x000B),
+    AirAbsorptionGainhf = 11,
 
     [NativeName("AL_REVERB_ROOM_ROLLOFF_FACTOR")]
-    RoomRolloffFactor = unchecked((uint)0x000C),
+    RoomRolloffFactor = 12,
 
     [NativeName("AL_REVERB_DECAY_HFLIMIT")]
-    DecayHflimit = unchecked((uint)0x000D),
+    DecayHflimit = 13,
 }

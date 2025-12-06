@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum EvalTargetNV : uint
 {
     [NativeName("GL_EVAL_2D_NV")]
-    Eval2D = unchecked((uint)0x86C0),
+    Eval2D = 34496,
 
     [NativeName("GL_EVAL_TRIANGULAR_2D_NV")]
-    EvalTriangular2D = unchecked((uint)0x86C1),
+    EvalTriangular2D = 34497,
 }

@@ -1595,42 +1595,33 @@ public partial class MixKhronosData(
                         attributes = attributes.WithNativeName(groupInfo.NativeName);
                     }
 
+                    var baseTypeSyntax = ParseTypeName(baseType);
+
                     results.Add((
                         $"Enums/{groupName}.gen.cs",
                         CompilationUnit()
                             .WithMembers(
                                 SingletonList<MemberDeclarationSyntax>(
-                                    FileScopedNamespaceDeclaration(
-                                            ModUtils.NamespaceIntoIdentifierName(ns)
-                                        )
+                                    FileScopedNamespaceDeclaration(ModUtils.NamespaceIntoIdentifierName(ns))
                                         .WithMembers(
                                             SingletonList<MemberDeclarationSyntax>(
                                                 EnumDeclaration(groupName)
-                                                    .WithModifiers(
-                                                        TokenList(Token(SyntaxKind.PublicKeyword))
-                                                    )
+                                                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
                                                     .WithAttributeLists(attributes)
-                                                    .WithBaseList(
-                                                        BaseList(
-                                                            SingletonSeparatedList<BaseTypeSyntax>(
-                                                                SimpleBaseType(IdentifierName(baseType))
-                                                            )
-                                                        )
-                                                    )
+                                                    .WithBaseList(BaseList([SimpleBaseType(baseTypeSyntax)]))
                                                     .WithMembers(
                                                         SeparatedList(
                                                             groupInfo.Enums.Select(x =>
                                                                 EnumMemberDeclaration(x.Identifier.ToString())
-                                                                    .WithAttributeLists(new SyntaxList<AttributeListSyntax>()
+                                                                    .WithAttributeLists(
+                                                                        new SyntaxList<AttributeListSyntax>()
                                                                         .WithNativeName(x.Identifier.Text))
                                                                     .WithEqualsValue(
                                                                         x.Initializer?.WithValue(
                                                                             CheckedExpression(
                                                                                 SyntaxKind.UncheckedExpression,
                                                                                 CastExpression(
-                                                                                    IdentifierName(
-                                                                                        baseType
-                                                                                    ),
+                                                                                    baseTypeSyntax,
                                                                                     x.Initializer.Value
                                                                                 )
                                                                             )

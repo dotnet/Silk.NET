@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum ListParameterName : uint
 {
     [NativeName("GL_LIST_PRIORITY_SGIX")]
-    ListPrioritySGIX = unchecked((uint)0x8182),
+    ListPrioritySGIX = 33154,
 }

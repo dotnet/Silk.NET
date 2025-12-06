@@ -11,47 +11,47 @@ namespace Silk.NET.OpenGL;
 public enum TexStorageAttribs : uint
 {
     [NativeName("GL_SURFACE_COMPRESSION_EXT")]
-    SurfaceCompressionEXT = unchecked((uint)0x96C0),
+    SurfaceCompressionEXT = 38592,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_NONE_EXT")]
-    SurfaceCompressionFixedRateNoneEXT = unchecked((uint)0x96C1),
+    SurfaceCompressionFixedRateNoneEXT = 38593,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_DEFAULT_EXT")]
-    SurfaceCompressionFixedRateDefaultEXT = unchecked((uint)0x96C2),
+    SurfaceCompressionFixedRateDefaultEXT = 38594,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_1BPC_EXT")]
-    SurfaceCompressionFixedRate1BpcEXT = unchecked((uint)0x96C4),
+    SurfaceCompressionFixedRate1BpcEXT = 38596,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_2BPC_EXT")]
-    SurfaceCompressionFixedRate2BpcEXT = unchecked((uint)0x96C5),
+    SurfaceCompressionFixedRate2BpcEXT = 38597,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_3BPC_EXT")]
-    SurfaceCompressionFixedRate3BpcEXT = unchecked((uint)0x96C6),
+    SurfaceCompressionFixedRate3BpcEXT = 38598,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_4BPC_EXT")]
-    SurfaceCompressionFixedRate4BpcEXT = unchecked((uint)0x96C7),
+    SurfaceCompressionFixedRate4BpcEXT = 38599,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_5BPC_EXT")]
-    SurfaceCompressionFixedRate5BpcEXT = unchecked((uint)0x96C8),
+    SurfaceCompressionFixedRate5BpcEXT = 38600,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_6BPC_EXT")]
-    SurfaceCompressionFixedRate6BpcEXT = unchecked((uint)0x96C9),
+    SurfaceCompressionFixedRate6BpcEXT = 38601,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_7BPC_EXT")]
-    SurfaceCompressionFixedRate7BpcEXT = unchecked((uint)0x96CA),
+    SurfaceCompressionFixedRate7BpcEXT = 38602,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_8BPC_EXT")]
-    SurfaceCompressionFixedRate8BpcEXT = unchecked((uint)0x96CB),
+    SurfaceCompressionFixedRate8BpcEXT = 38603,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_9BPC_EXT")]
-    SurfaceCompressionFixedRate9BpcEXT = unchecked((uint)0x96CC),
+    SurfaceCompressionFixedRate9BpcEXT = 38604,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_10BPC_EXT")]
-    SurfaceCompressionFixedRate10BpcEXT = unchecked((uint)0x96CD),
+    SurfaceCompressionFixedRate10BpcEXT = 38605,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_11BPC_EXT")]
-    SurfaceCompressionFixedRate11BpcEXT = unchecked((uint)0x96CE),
+    SurfaceCompressionFixedRate11BpcEXT = 38606,
 
     [NativeName("GL_SURFACE_COMPRESSION_FIXED_RATE_12BPC_EXT")]
-    SurfaceCompressionFixedRate12BpcEXT = unchecked((uint)0x96CF),
+    SurfaceCompressionFixedRate12BpcEXT = 38607,
 }

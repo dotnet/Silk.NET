@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum ContextBoolean : uint
 {
     [NativeName("ALC_SYNC")]
-    Sync = unchecked((uint)0x1009),
+    Sync = 4105,
 
     [NativeName("ALC_CONNECTED")]
-    Connected = unchecked((uint)0x313),
+    Connected = 787,
 }

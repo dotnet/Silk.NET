@@ -11,20 +11,20 @@ namespace Silk.NET.OpenGL;
 public enum TextureSwizzle : uint
 {
     [NativeName("GL_ZERO")]
-    Zero = unchecked((uint)0),
+    Zero = 0,
 
     [NativeName("GL_ONE")]
-    One = unchecked((uint)1),
+    One = 1,
 
     [NativeName("GL_ALPHA")]
-    Alpha = unchecked((uint)0x1906),
+    Alpha = 6406,
 
     [NativeName("GL_RED")]
-    Red = unchecked((uint)0x1903),
+    Red = 6403,
 
     [NativeName("GL_GREEN")]
-    Green = unchecked((uint)0x1904),
+    Green = 6404,
 
     [NativeName("GL_BLUE")]
-    Blue = unchecked((uint)0x1905),
+    Blue = 6405,
 }

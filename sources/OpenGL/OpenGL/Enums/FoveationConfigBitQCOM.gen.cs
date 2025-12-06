@@ -14,11 +14,11 @@ public enum FoveationConfigBitQCOM : uint
     None = 0x0,
 
     [NativeName("GL_FOVEATION_ENABLE_BIT_QCOM")]
-    EnableBit = unchecked((uint)0x00000001),
+    EnableBit = 0x1,
 
     [NativeName("GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM")]
-    ScaledBinMethodBit = unchecked((uint)0x00000002),
+    ScaledBinMethodBit = 0x2,
 
     [NativeName("GL_FOVEATION_SUBSAMPLED_LAYOUT_METHOD_BIT_QCOM")]
-    SubsampledLayoutMethodBit = unchecked((uint)0x00000004),
+    SubsampledLayoutMethodBit = 0x4,
 }

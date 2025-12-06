@@ -14,17 +14,17 @@ namespace Silk.NET.OpenAL;
 public enum SourceBoolean : uint
 {
     [NativeName("AL_SOURCE_RELATIVE")]
-    SourceRelative = unchecked((uint)0x202),
+    SourceRelative = 514,
 
     [NativeName("AL_LOOPING")]
-    Looping = unchecked((uint)0x1007),
+    Looping = 4103,
 
     [NativeName("AL_DIRECT_FILTER_GAINHF_AUTO")]
-    DirectFilterGainhfAuto = unchecked((uint)0x2000A),
+    DirectFilterGainhfAuto = 131082,
 
     [NativeName("AL_AUXILIARY_SEND_FILTER_GAIN_AUTO")]
-    AuxiliarySendFilterGainAuto = unchecked((uint)0x2000B),
+    AuxiliarySendFilterGainAuto = 131083,
 
     [NativeName("AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO")]
-    AuxiliarySendFilterGainhfAuto = unchecked((uint)0x2000C),
+    AuxiliarySendFilterGainhfAuto = 131084,
 }

@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum ContextAmbisonicScalingSOFT : uint
 {
     [NativeName("ALC_FUMA_SOFT")]
-    Fuma = unchecked((uint)0x0000),
+    Fuma = 0,
 
     [NativeName("ALC_SN3D_SOFT")]
-    Sn3D = unchecked((uint)0x0001),
+    Sn3D = 1,
 
     [NativeName("ALC_N3D_SOFT")]
-    N3D = unchecked((uint)0x0002),
+    N3D = 2,
 }

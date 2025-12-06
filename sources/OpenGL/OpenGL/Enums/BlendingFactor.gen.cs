@@ -11,59 +11,59 @@ namespace Silk.NET.OpenGL;
 public enum BlendingFactor : uint
 {
     [NativeName("GL_ZERO")]
-    Zero = unchecked((uint)0),
+    Zero = 0,
 
     [NativeName("GL_ONE")]
-    One = unchecked((uint)1),
+    One = 1,
 
     [NativeName("GL_SRC_COLOR")]
-    SrcColor = unchecked((uint)0x0300),
+    SrcColor = 768,
 
     [NativeName("GL_ONE_MINUS_SRC_COLOR")]
-    OneMinusSrcColor = unchecked((uint)0x0301),
+    OneMinusSrcColor = 769,
 
     [NativeName("GL_SRC_ALPHA")]
-    SrcAlpha = unchecked((uint)0x0302),
+    SrcAlpha = 770,
 
     [NativeName("GL_ONE_MINUS_SRC_ALPHA")]
-    OneMinusSrcAlpha = unchecked((uint)0x0303),
+    OneMinusSrcAlpha = 771,
 
     [NativeName("GL_DST_ALPHA")]
-    DstAlpha = unchecked((uint)0x0304),
+    DstAlpha = 772,
 
     [NativeName("GL_ONE_MINUS_DST_ALPHA")]
-    OneMinusDstAlpha = unchecked((uint)0x0305),
+    OneMinusDstAlpha = 773,
 
     [NativeName("GL_DST_COLOR")]
-    DstColor = unchecked((uint)0x0306),
+    DstColor = 774,
 
     [NativeName("GL_ONE_MINUS_DST_COLOR")]
-    OneMinusDstColor = unchecked((uint)0x0307),
+    OneMinusDstColor = 775,
 
     [NativeName("GL_SRC_ALPHA_SATURATE")]
-    SrcAlphaSaturate = unchecked((uint)0x0308),
+    SrcAlphaSaturate = 776,
 
     [NativeName("GL_SRC1_ALPHA")]
-    Src1Alpha = unchecked((uint)0x8589),
+    Src1Alpha = 34185,
 
     [NativeName("GL_CONSTANT_COLOR")]
-    ConstantColor = unchecked((uint)0x8001),
+    ConstantColor = 32769,
 
     [NativeName("GL_ONE_MINUS_CONSTANT_COLOR")]
-    OneMinusConstantColor = unchecked((uint)0x8002),
+    OneMinusConstantColor = 32770,
 
     [NativeName("GL_CONSTANT_ALPHA")]
-    ConstantAlpha = unchecked((uint)0x8003),
+    ConstantAlpha = 32771,
 
     [NativeName("GL_ONE_MINUS_CONSTANT_ALPHA")]
-    OneMinusConstantAlpha = unchecked((uint)0x8004),
+    OneMinusConstantAlpha = 32772,
 
     [NativeName("GL_SRC1_COLOR")]
-    Src1Color = unchecked((uint)0x88F9),
+    Src1Color = 35065,
 
     [NativeName("GL_ONE_MINUS_SRC1_COLOR")]
-    OneMinusSrc1Color = unchecked((uint)0x88FA),
+    OneMinusSrc1Color = 35066,
 
     [NativeName("GL_ONE_MINUS_SRC1_ALPHA")]
-    OneMinusSrc1Alpha = unchecked((uint)0x88FB),
+    OneMinusSrc1Alpha = 35067,
 }

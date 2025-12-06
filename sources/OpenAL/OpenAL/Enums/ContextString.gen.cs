@@ -14,26 +14,26 @@ namespace Silk.NET.OpenAL;
 public enum ContextString : uint
 {
     [NativeName("ALC_DEFAULT_DEVICE_SPECIFIER")]
-    DefaultDeviceSpecifier = unchecked((uint)0x1004),
+    DefaultDeviceSpecifier = 4100,
 
     [NativeName("ALC_DEVICE_SPECIFIER")]
-    DeviceSpecifier = unchecked((uint)0x1005),
+    DeviceSpecifier = 4101,
 
     [NativeName("ALC_EXTENSIONS")]
-    Extensions = unchecked((uint)0x1006),
+    Extensions = 4102,
 
     [NativeName("ALC_CAPTURE_DEVICE_SPECIFIER")]
-    CaptureDeviceSpecifier = unchecked((uint)0x310),
+    CaptureDeviceSpecifier = 784,
 
     [NativeName("ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER")]
-    CaptureDefaultDeviceSpecifier = unchecked((uint)0x311),
+    CaptureDefaultDeviceSpecifier = 785,
 
     [NativeName("ALC_DEFAULT_ALL_DEVICES_SPECIFIER")]
-    DefaultAllDevicesSpecifier = unchecked((uint)0x1012),
+    DefaultAllDevicesSpecifier = 4114,
 
     [NativeName("ALC_ALL_DEVICES_SPECIFIER")]
-    AllDevicesSpecifier = unchecked((uint)0x1013),
+    AllDevicesSpecifier = 4115,
 
     [NativeName("ALC_HRTF_SPECIFIER_SOFT")]
-    HrtfSpecifierSOFT = unchecked((uint)0x1995),
+    HrtfSpecifierSOFT = 6549,
 }

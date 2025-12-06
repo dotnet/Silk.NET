@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum SwizzleOpATI : uint
 {
     [NativeName("GL_SWIZZLE_STR_ATI")]
-    Str = unchecked((uint)0x8976),
+    Str = 35190,
 
     [NativeName("GL_SWIZZLE_STQ_ATI")]
-    Stq = unchecked((uint)0x8977),
+    Stq = 35191,
 
     [NativeName("GL_SWIZZLE_STR_DR_ATI")]
-    StrDr = unchecked((uint)0x8978),
+    StrDr = 35192,
 
     [NativeName("GL_SWIZZLE_STQ_DQ_ATI")]
-    StqDq = unchecked((uint)0x8979),
+    StqDq = 35193,
 }

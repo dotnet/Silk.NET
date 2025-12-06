@@ -14,14 +14,14 @@ namespace Silk.NET.OpenAL;
 public enum PointerPName : uint
 {
     [NativeName("AL_EVENT_CALLBACK_FUNCTION_SOFT")]
-    EventCallbackFunctionSOFT = unchecked((uint)0x19A2),
+    EventCallbackFunctionSOFT = 6562,
 
     [NativeName("AL_EVENT_CALLBACK_USER_PARAM_SOFT")]
-    EventCallbackUserParamSOFT = unchecked((uint)0x19A3),
+    EventCallbackUserParamSOFT = 6563,
 
     [NativeName("AL_DEBUG_CALLBACK_FUNCTION_EXT")]
-    DebugCallbackFunctionEXT = unchecked((uint)0x19B3),
+    DebugCallbackFunctionEXT = 6579,
 
     [NativeName("AL_DEBUG_CALLBACK_USER_PARAM_EXT")]
-    DebugCallbackUserParamEXT = unchecked((uint)0x19B4),
+    DebugCallbackUserParamEXT = 6580,
 }

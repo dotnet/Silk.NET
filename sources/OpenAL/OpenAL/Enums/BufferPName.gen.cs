@@ -14,50 +14,50 @@ namespace Silk.NET.OpenAL;
 public enum BufferPName : uint
 {
     [NativeName("AL_FREQUENCY")]
-    Frequency = unchecked((uint)0x2001),
+    Frequency = 8193,
 
     [NativeName("AL_SIZE")]
-    Size = unchecked((uint)0x2004),
+    Size = 8196,
 
     [NativeName("AL_BITS")]
-    Bits = unchecked((uint)0x2002),
+    Bits = 8194,
 
     [NativeName("AL_CHANNELS")]
-    Channels = unchecked((uint)0x2003),
+    Channels = 8195,
 
     [NativeName("AL_LOOP_POINTS_SOFT")]
-    LoopPointsSOFT = unchecked((uint)0x2015),
+    LoopPointsSOFT = 8213,
 
     [NativeName("AL_INTERNAL_FORMAT_SOFT")]
-    InternalFormatSOFT = unchecked((uint)0x2008),
+    InternalFormatSOFT = 8200,
 
     [NativeName("AL_BYTE_LENGTH_SOFT")]
-    ByteLengthSOFT = unchecked((uint)0x2009),
+    ByteLengthSOFT = 8201,
 
     [NativeName("AL_SAMPLE_LENGTH_SOFT")]
-    SampleLengthSOFT = unchecked((uint)0x200A),
+    SampleLengthSOFT = 8202,
 
     [NativeName("AL_SEC_LENGTH_SOFT")]
-    SecLengthSOFT = unchecked((uint)0x200B),
+    SecLengthSOFT = 8203,
 
     [NativeName("AL_UNPACK_BLOCK_ALIGNMENT_SOFT")]
-    UnpackBlockAlignmentSOFT = unchecked((uint)0x200C),
+    UnpackBlockAlignmentSOFT = 8204,
 
     [NativeName("AL_PACK_BLOCK_ALIGNMENT_SOFT")]
-    PackBlockAlignmentSOFT = unchecked((uint)0x200D),
+    PackBlockAlignmentSOFT = 8205,
 
     [NativeName("AL_AMBISONIC_LAYOUT_SOFT")]
-    AmbisonicLayoutSOFT = unchecked((uint)0x1997),
+    AmbisonicLayoutSOFT = 6551,
 
     [NativeName("AL_AMBISONIC_SCALING_SOFT")]
-    AmbisonicScalingSOFT = unchecked((uint)0x1998),
+    AmbisonicScalingSOFT = 6552,
 
     [NativeName("AL_BUFFER_CALLBACK_FUNCTION_SOFT")]
-    BufferCallbackFunctionSOFT = unchecked((uint)0x19A0),
+    BufferCallbackFunctionSOFT = 6560,
 
     [NativeName("AL_BUFFER_CALLBACK_USER_PARAM_SOFT")]
-    BufferCallbackUserParamSOFT = unchecked((uint)0x19A1),
+    BufferCallbackUserParamSOFT = 6561,
 
     [NativeName("AL_UNPACK_AMBISONIC_ORDER_SOFT")]
-    UnpackAmbisonicOrderSOFT = unchecked((uint)0x199D),
+    UnpackAmbisonicOrderSOFT = 6557,
 }

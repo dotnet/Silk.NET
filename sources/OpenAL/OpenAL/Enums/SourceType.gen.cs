@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum SourceType : uint
 {
     [NativeName("AL_STATIC")]
-    Static = unchecked((uint)0x1028),
+    Static = 4136,
 
     [NativeName("AL_STREAMING")]
-    Streaming = unchecked((uint)0x1029),
+    Streaming = 4137,
 
     [NativeName("AL_UNDETERMINED")]
-    Undetermined = unchecked((uint)0x1030),
+    Undetermined = 4144,
 }

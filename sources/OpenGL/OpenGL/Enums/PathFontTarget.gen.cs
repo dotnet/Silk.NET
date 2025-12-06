@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum PathFontTarget : uint
 {
     [NativeName("GL_STANDARD_FONT_NAME_NV")]
-    StandardFontNameNV = unchecked((uint)0x9072),
+    StandardFontNameNV = 36978,
 
     [NativeName("GL_SYSTEM_FONT_NAME_NV")]
-    SystemFontNameNV = unchecked((uint)0x9073),
+    SystemFontNameNV = 36979,
 
     [NativeName("GL_FILE_NAME_NV")]
-    FileNameNV = unchecked((uint)0x9074),
+    FileNameNV = 36980,
 }

@@ -11,32 +11,32 @@ namespace Silk.NET.OpenGL;
 public enum PixelMap : uint
 {
     [NativeName("GL_PIXEL_MAP_I_TO_I")]
-    IToI = unchecked((uint)0x0C70),
+    IToI = 3184,
 
     [NativeName("GL_PIXEL_MAP_S_TO_S")]
-    SToS = unchecked((uint)0x0C71),
+    SToS = 3185,
 
     [NativeName("GL_PIXEL_MAP_I_TO_R")]
-    IToR = unchecked((uint)0x0C72),
+    IToR = 3186,
 
     [NativeName("GL_PIXEL_MAP_I_TO_G")]
-    IToG = unchecked((uint)0x0C73),
+    IToG = 3187,
 
     [NativeName("GL_PIXEL_MAP_I_TO_B")]
-    IToB = unchecked((uint)0x0C74),
+    IToB = 3188,
 
     [NativeName("GL_PIXEL_MAP_I_TO_A")]
-    IToA = unchecked((uint)0x0C75),
+    IToA = 3189,
 
     [NativeName("GL_PIXEL_MAP_R_TO_R")]
-    RToR = unchecked((uint)0x0C76),
+    RToR = 3190,
 
     [NativeName("GL_PIXEL_MAP_G_TO_G")]
-    GToG = unchecked((uint)0x0C77),
+    GToG = 3191,
 
     [NativeName("GL_PIXEL_MAP_B_TO_B")]
-    BToB = unchecked((uint)0x0C78),
+    BToB = 3192,
 
     [NativeName("GL_PIXEL_MAP_A_TO_A")]
-    AToA = unchecked((uint)0x0C79),
+    AToA = 3193,
 }

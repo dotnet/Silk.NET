@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum ArrayObjectPNameATI : uint
 {
     [NativeName("GL_OBJECT_BUFFER_SIZE_ATI")]
-    Size = unchecked((uint)0x8764),
+    Size = 34660,
 
     [NativeName("GL_OBJECT_BUFFER_USAGE_ATI")]
-    Usage = unchecked((uint)0x8765),
+    Usage = 34661,
 }

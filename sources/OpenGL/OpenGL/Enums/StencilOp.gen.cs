@@ -11,26 +11,26 @@ namespace Silk.NET.OpenGL;
 public enum StencilOp : uint
 {
     [NativeName("GL_ZERO")]
-    Zero = unchecked((uint)0),
+    Zero = 0,
 
     [NativeName("GL_INVERT")]
-    Invert = unchecked((uint)0x150A),
+    Invert = 5386,
 
     [NativeName("GL_KEEP")]
-    Keep = unchecked((uint)0x1E00),
+    Keep = 7680,
 
     [NativeName("GL_REPLACE")]
-    Replace = unchecked((uint)0x1E01),
+    Replace = 7681,
 
     [NativeName("GL_INCR")]
-    Incr = unchecked((uint)0x1E02),
+    Incr = 7682,
 
     [NativeName("GL_DECR")]
-    Decr = unchecked((uint)0x1E03),
+    Decr = 7683,
 
     [NativeName("GL_INCR_WRAP")]
-    IncrWrap = unchecked((uint)0x8507),
+    IncrWrap = 34055,
 
     [NativeName("GL_DECR_WRAP")]
-    DecrWrap = unchecked((uint)0x8508),
+    DecrWrap = 34056,
 }

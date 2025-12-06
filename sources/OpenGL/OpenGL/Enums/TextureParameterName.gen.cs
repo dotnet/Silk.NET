@@ -11,230 +11,230 @@ namespace Silk.NET.OpenGL;
 public enum TextureParameterName : uint
 {
     [NativeName("GL_TEXTURE_MAG_FILTER")]
-    TextureMagFilter = unchecked((uint)0x2800),
+    TextureMagFilter = 10240,
 
     [NativeName("GL_TEXTURE_MIN_FILTER")]
-    TextureMinFilter = unchecked((uint)0x2801),
+    TextureMinFilter = 10241,
 
     [NativeName("GL_TEXTURE_WRAP_S")]
-    TextureWrapS = unchecked((uint)0x2802),
+    TextureWrapS = 10242,
 
     [NativeName("GL_TEXTURE_WRAP_T")]
-    TextureWrapT = unchecked((uint)0x2803),
+    TextureWrapT = 10243,
 
     [NativeName("GL_GENERATE_MIPMAP")]
-    GenerateMipmap = unchecked((uint)0x8191),
+    GenerateMipmap = 33169,
 
     [NativeName("GL_TEXTURE_WIDTH")]
-    TextureWidth = unchecked((uint)0x1000),
+    TextureWidth = 4096,
 
     [NativeName("GL_TEXTURE_HEIGHT")]
-    TextureHeight = unchecked((uint)0x1001),
+    TextureHeight = 4097,
 
     [NativeName("GL_TEXTURE_BORDER_COLOR")]
-    TextureBorderColor = unchecked((uint)0x1004),
+    TextureBorderColor = 4100,
 
     [NativeName("GL_TEXTURE_COMPONENTS")]
-    TextureComponents = unchecked((uint)0x1003),
+    TextureComponents = 4099,
 
     [NativeName("GL_TEXTURE_BORDER")]
-    TextureBorder = unchecked((uint)0x1005),
+    TextureBorder = 4101,
 
     [NativeName("GL_TEXTURE_INTERNAL_FORMAT")]
-    TextureInternalFormat = unchecked((uint)0x1003),
+    TextureInternalFormat = 4099,
 
     [NativeName("GL_TEXTURE_RED_SIZE")]
-    TextureRedSize = unchecked((uint)0x805C),
+    TextureRedSize = 32860,
 
     [NativeName("GL_TEXTURE_GREEN_SIZE")]
-    TextureGreenSize = unchecked((uint)0x805D),
+    TextureGreenSize = 32861,
 
     [NativeName("GL_TEXTURE_BLUE_SIZE")]
-    TextureBlueSize = unchecked((uint)0x805E),
+    TextureBlueSize = 32862,
 
     [NativeName("GL_TEXTURE_ALPHA_SIZE")]
-    TextureAlphaSize = unchecked((uint)0x805F),
+    TextureAlphaSize = 32863,
 
     [NativeName("GL_TEXTURE_LUMINANCE_SIZE")]
-    TextureLuminanceSize = unchecked((uint)0x8060),
+    TextureLuminanceSize = 32864,
 
     [NativeName("GL_TEXTURE_INTENSITY_SIZE")]
-    TextureIntensitySize = unchecked((uint)0x8061),
+    TextureIntensitySize = 32865,
 
     [NativeName("GL_TEXTURE_PRIORITY")]
-    TexturePriority = unchecked((uint)0x8066),
+    TexturePriority = 32870,
 
     [NativeName("GL_TEXTURE_RESIDENT")]
-    TextureResident = unchecked((uint)0x8067),
+    TextureResident = 32871,
 
     [NativeName("GL_TEXTURE_WRAP_R")]
-    TextureWrapR = unchecked((uint)0x8072),
+    TextureWrapR = 32882,
 
     [NativeName("GL_TEXTURE_MIN_LOD")]
-    TextureMinLod = unchecked((uint)0x813A),
+    TextureMinLod = 33082,
 
     [NativeName("GL_TEXTURE_MAX_LOD")]
-    TextureMaxLod = unchecked((uint)0x813B),
+    TextureMaxLod = 33083,
 
     [NativeName("GL_TEXTURE_BASE_LEVEL")]
-    TextureBaseLevel = unchecked((uint)0x813C),
+    TextureBaseLevel = 33084,
 
     [NativeName("GL_TEXTURE_MAX_LEVEL")]
-    TextureMaxLevel = unchecked((uint)0x813D),
+    TextureMaxLevel = 33085,
 
     [NativeName("GL_TEXTURE_LOD_BIAS")]
-    TextureLodBias = unchecked((uint)0x8501),
+    TextureLodBias = 34049,
 
     [NativeName("GL_TEXTURE_COMPARE_MODE")]
-    TextureCompareMode = unchecked((uint)0x884C),
+    TextureCompareMode = 34892,
 
     [NativeName("GL_TEXTURE_COMPARE_FUNC")]
-    TextureCompareFunc = unchecked((uint)0x884D),
+    TextureCompareFunc = 34893,
 
     [NativeName("GL_TEXTURE_SWIZZLE_R")]
-    TextureSwizzleR = unchecked((uint)0x8E42),
+    TextureSwizzleR = 36418,
 
     [NativeName("GL_TEXTURE_SWIZZLE_G")]
-    TextureSwizzleG = unchecked((uint)0x8E43),
+    TextureSwizzleG = 36419,
 
     [NativeName("GL_TEXTURE_SWIZZLE_B")]
-    TextureSwizzleB = unchecked((uint)0x8E44),
+    TextureSwizzleB = 36420,
 
     [NativeName("GL_TEXTURE_SWIZZLE_A")]
-    TextureSwizzleA = unchecked((uint)0x8E45),
+    TextureSwizzleA = 36421,
 
     [NativeName("GL_TEXTURE_SWIZZLE_RGBA")]
-    TextureSwizzleRgba = unchecked((uint)0x8E46),
+    TextureSwizzleRgba = 36422,
 
     [NativeName("GL_DEPTH_STENCIL_TEXTURE_MODE")]
-    DepthStencilTextureMode = unchecked((uint)0x90EA),
+    DepthStencilTextureMode = 37098,
 
     [NativeName("GL_TEXTURE_MAX_ANISOTROPY")]
-    TextureMaxAnisotropy = unchecked((uint)0x84FE),
+    TextureMaxAnisotropy = 34046,
 
     [NativeName("GL_TEXTURE_TILING_EXT")]
-    TextureTilingEXT = unchecked((uint)0x9580),
+    TextureTilingEXT = 38272,
 
     [NativeName("GL_TEXTURE_DEPTH_EXT")]
-    TextureDepthEXT = unchecked((uint)0x8071),
+    TextureDepthEXT = 32881,
 
     [NativeName("GL_TEXTURE_WRAP_R_EXT")]
-    TextureWrapREXT = unchecked((uint)0x8072),
+    TextureWrapREXT = 32882,
 
     [NativeName("GL_TEXTURE_PRIORITY_EXT")]
-    TexturePriorityEXT = unchecked((uint)0x8066),
+    TexturePriorityEXT = 32870,
 
     [NativeName("GL_TEXTURE_MEMORY_LAYOUT_INTEL")]
-    TextureMemoryLayoutINTEL = unchecked((uint)0x83FF),
+    TextureMemoryLayoutINTEL = 33791,
 
     [NativeName("GL_DETAIL_TEXTURE_LEVEL_SGIS")]
-    DetailTextureLevelSGIS = unchecked((uint)0x809A),
+    DetailTextureLevelSGIS = 32922,
 
     [NativeName("GL_DETAIL_TEXTURE_MODE_SGIS")]
-    DetailTextureModeSGIS = unchecked((uint)0x809B),
+    DetailTextureModeSGIS = 32923,
 
     [NativeName("GL_DETAIL_TEXTURE_FUNC_POINTS_SGIS")]
-    DetailTextureFuncPointsSGIS = unchecked((uint)0x809C),
+    DetailTextureFuncPointsSGIS = 32924,
 
     [NativeName("GL_GENERATE_MIPMAP_SGIS")]
-    GenerateMipmapSGIS = unchecked((uint)0x8191),
+    GenerateMipmapSGIS = 33169,
 
     [NativeName("GL_SHARPEN_TEXTURE_FUNC_POINTS_SGIS")]
-    SharpenTextureFuncPointsSGIS = unchecked((uint)0x80B0),
+    SharpenTextureFuncPointsSGIS = 32944,
 
     [NativeName("GL_TEXTURE_4DSIZE_SGIS")]
-    Texture4DsizeSGIS = unchecked((uint)0x8136),
+    Texture4DsizeSGIS = 33078,
 
     [NativeName("GL_TEXTURE_WRAP_Q_SGIS")]
-    TextureWrapQSGIS = unchecked((uint)0x8137),
+    TextureWrapQSGIS = 33079,
 
     [NativeName("GL_TEXTURE_FILTER4_SIZE_SGIS")]
-    TextureFilter4SizeSGIS = unchecked((uint)0x8147),
+    TextureFilter4SizeSGIS = 33095,
 
     [NativeName("GL_TEXTURE_MIN_LOD_SGIS")]
-    TextureMinLodSGIS = unchecked((uint)0x813A),
+    TextureMinLodSGIS = 33082,
 
     [NativeName("GL_TEXTURE_MAX_LOD_SGIS")]
-    TextureMaxLodSGIS = unchecked((uint)0x813B),
+    TextureMaxLodSGIS = 33083,
 
     [NativeName("GL_TEXTURE_BASE_LEVEL_SGIS")]
-    TextureBaseLevelSGIS = unchecked((uint)0x813C),
+    TextureBaseLevelSGIS = 33084,
 
     [NativeName("GL_TEXTURE_MAX_LEVEL_SGIS")]
-    TextureMaxLevelSGIS = unchecked((uint)0x813D),
+    TextureMaxLevelSGIS = 33085,
 
     [NativeName("GL_DUAL_TEXTURE_SELECT_SGIS")]
-    DualTextureSelectSGIS = unchecked((uint)0x8124),
+    DualTextureSelectSGIS = 33060,
 
     [NativeName("GL_QUAD_TEXTURE_SELECT_SGIS")]
-    QuadTextureSelectSGIS = unchecked((uint)0x8125),
+    QuadTextureSelectSGIS = 33061,
 
     [NativeName("GL_TEXTURE_CLIPMAP_CENTER_SGIX")]
-    TextureClipmapCenterSGIX = unchecked((uint)0x8171),
+    TextureClipmapCenterSGIX = 33137,
 
     [NativeName("GL_TEXTURE_CLIPMAP_FRAME_SGIX")]
-    TextureClipmapFrameSGIX = unchecked((uint)0x8172),
+    TextureClipmapFrameSGIX = 33138,
 
     [NativeName("GL_TEXTURE_CLIPMAP_OFFSET_SGIX")]
-    TextureClipmapOffsetSGIX = unchecked((uint)0x8173),
+    TextureClipmapOffsetSGIX = 33139,
 
     [NativeName("GL_TEXTURE_CLIPMAP_VIRTUAL_DEPTH_SGIX")]
-    TextureClipmapVirtualDepthSGIX = unchecked((uint)0x8174),
+    TextureClipmapVirtualDepthSGIX = 33140,
 
     [NativeName("GL_TEXTURE_CLIPMAP_LOD_OFFSET_SGIX")]
-    TextureClipmapLodOffsetSGIX = unchecked((uint)0x8175),
+    TextureClipmapLodOffsetSGIX = 33141,
 
     [NativeName("GL_TEXTURE_CLIPMAP_DEPTH_SGIX")]
-    TextureClipmapDepthSGIX = unchecked((uint)0x8176),
+    TextureClipmapDepthSGIX = 33142,
 
     [NativeName("GL_TEXTURE_COMPARE_SGIX")]
-    TextureCompareSGIX = unchecked((uint)0x819A),
+    TextureCompareSGIX = 33178,
 
     [NativeName("GL_TEXTURE_COMPARE_OPERATOR_SGIX")]
-    TextureCompareOperatorSGIX = unchecked((uint)0x819B),
+    TextureCompareOperatorSGIX = 33179,
 
     [NativeName("GL_TEXTURE_LEQUAL_R_SGIX")]
-    TextureLequalRSGIX = unchecked((uint)0x819C),
+    TextureLequalRSGIX = 33180,
 
     [NativeName("GL_TEXTURE_GEQUAL_R_SGIX")]
-    TextureGequalRSGIX = unchecked((uint)0x819D),
+    TextureGequalRSGIX = 33181,
 
     [NativeName("GL_SHADOW_AMBIENT_SGIX")]
-    ShadowAmbientSGIX = unchecked((uint)0x80BF),
+    ShadowAmbientSGIX = 32959,
 
     [NativeName("GL_TEXTURE_MAX_CLAMP_S_SGIX")]
-    TextureMaxClampSSGIX = unchecked((uint)0x8369),
+    TextureMaxClampSSGIX = 33641,
 
     [NativeName("GL_TEXTURE_MAX_CLAMP_T_SGIX")]
-    TextureMaxClampTSGIX = unchecked((uint)0x836A),
+    TextureMaxClampTSGIX = 33642,
 
     [NativeName("GL_TEXTURE_MAX_CLAMP_R_SGIX")]
-    TextureMaxClampRSGIX = unchecked((uint)0x836B),
+    TextureMaxClampRSGIX = 33643,
 
     [NativeName("GL_TEXTURE_LOD_BIAS_S_SGIX")]
-    TextureLodBiasSSGIX = unchecked((uint)0x818E),
+    TextureLodBiasSSGIX = 33166,
 
     [NativeName("GL_TEXTURE_LOD_BIAS_T_SGIX")]
-    TextureLodBiasTSGIX = unchecked((uint)0x818F),
+    TextureLodBiasTSGIX = 33167,
 
     [NativeName("GL_TEXTURE_LOD_BIAS_R_SGIX")]
-    TextureLodBiasRSGIX = unchecked((uint)0x8190),
+    TextureLodBiasRSGIX = 33168,
 
     [NativeName("GL_POST_TEXTURE_FILTER_BIAS_SGIX")]
-    PostTextureFilterBiasSGIX = unchecked((uint)0x8179),
+    PostTextureFilterBiasSGIX = 33145,
 
     [NativeName("GL_POST_TEXTURE_FILTER_SCALE_SGIX")]
-    PostTextureFilterScaleSGIX = unchecked((uint)0x817A),
+    PostTextureFilterScaleSGIX = 33146,
 
     [NativeName("GL_TEXTURE_WRAP_R_OES")]
-    TextureWrapROES = unchecked((uint)0x8072),
+    TextureWrapROES = 32882,
 
     [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    TextureUnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
+    TextureUnnormalizedCoordinatesARM = 36714,
 
     [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
-    TextureBorderColorNV = unchecked((uint)0x1004),
+    TextureBorderColorNV = 4100,
 
     [NativeName("GL_TEXTURE_FOVEATED_CUTOFF_DENSITY_QCOM")]
-    TextureFoveatedCutoffDensityQCOM = unchecked((uint)0x96A0),
+    TextureFoveatedCutoffDensityQCOM = 38560,
 }

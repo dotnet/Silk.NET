@@ -14,47 +14,47 @@ public enum BufferStorageMask : uint
     None = 0x0,
 
     [NativeName("GL_MAP_READ_BIT_EXT")]
-    MapReadBitEXT = unchecked((uint)0x0001),
+    MapReadBitEXT = 0x1,
 
     [NativeName("GL_MAP_WRITE_BIT_EXT")]
-    MapWriteBitEXT = unchecked((uint)0x0002),
+    MapWriteBitEXT = 0x2,
 
     [NativeName("GL_MAP_READ_BIT")]
-    MapReadBit = unchecked((uint)0x0001),
+    MapReadBit = 0x1,
 
     [NativeName("GL_MAP_WRITE_BIT")]
-    MapWriteBit = unchecked((uint)0x0002),
+    MapWriteBit = 0x2,
 
     [NativeName("GL_MAP_PERSISTENT_BIT")]
-    MapPersistentBit = unchecked((uint)0x0040),
+    MapPersistentBit = 0x40,
 
     [NativeName("GL_MAP_COHERENT_BIT")]
-    MapCoherentBit = unchecked((uint)0x0080),
+    MapCoherentBit = 0x80,
 
     [NativeName("GL_DYNAMIC_STORAGE_BIT")]
-    DynamicStorageBit = unchecked((uint)0x0100),
+    DynamicStorageBit = 0x100,
 
     [NativeName("GL_CLIENT_STORAGE_BIT")]
-    ClientStorageBit = unchecked((uint)0x0200),
+    ClientStorageBit = 0x200,
 
     [NativeName("GL_SPARSE_STORAGE_BIT_ARB")]
-    SparseStorageBitARB = unchecked((uint)0x0400),
+    SparseStorageBitARB = 0x400,
 
     [NativeName("GL_LGPU_SEPARATE_STORAGE_BIT_NVX")]
-    LgpuSeparateStorageBitNVX = unchecked((uint)0x0800),
+    LgpuSeparateStorageBitNVX = 0x800,
 
     [NativeName("GL_PER_GPU_STORAGE_BIT_NV")]
-    PerGpuStorageBitNV = unchecked((uint)0x0800),
+    PerGpuStorageBitNV = 0x800,
 
     [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
-    MapPersistentBitEXT = unchecked((uint)0x0040),
+    MapPersistentBitEXT = 0x40,
 
     [NativeName("GL_MAP_COHERENT_BIT_EXT")]
-    MapCoherentBitEXT = unchecked((uint)0x0080),
+    MapCoherentBitEXT = 0x80,
 
     [NativeName("GL_DYNAMIC_STORAGE_BIT_EXT")]
-    DynamicStorageBitEXT = unchecked((uint)0x0100),
+    DynamicStorageBitEXT = 0x100,
 
     [NativeName("GL_CLIENT_STORAGE_BIT_EXT")]
-    ClientStorageBitEXT = unchecked((uint)0x0200),
+    ClientStorageBitEXT = 0x200,
 }

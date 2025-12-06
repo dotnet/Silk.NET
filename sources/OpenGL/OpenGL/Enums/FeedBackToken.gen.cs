@@ -11,26 +11,26 @@ namespace Silk.NET.OpenGL;
 public enum FeedBackToken : uint
 {
     [NativeName("GL_PASS_THROUGH_TOKEN")]
-    PassThroughToken = unchecked((uint)0x0700),
+    PassThroughToken = 1792,
 
     [NativeName("GL_POINT_TOKEN")]
-    PointToken = unchecked((uint)0x0701),
+    PointToken = 1793,
 
     [NativeName("GL_LINE_TOKEN")]
-    LineToken = unchecked((uint)0x0702),
+    LineToken = 1794,
 
     [NativeName("GL_POLYGON_TOKEN")]
-    PolygonToken = unchecked((uint)0x0703),
+    PolygonToken = 1795,
 
     [NativeName("GL_BITMAP_TOKEN")]
-    BitmapToken = unchecked((uint)0x0704),
+    BitmapToken = 1796,
 
     [NativeName("GL_DRAW_PIXEL_TOKEN")]
-    DrawPixelToken = unchecked((uint)0x0705),
+    DrawPixelToken = 1797,
 
     [NativeName("GL_COPY_PIXEL_TOKEN")]
-    CopyPixelToken = unchecked((uint)0x0706),
+    CopyPixelToken = 1798,
 
     [NativeName("GL_LINE_RESET_TOKEN")]
-    LineResetToken = unchecked((uint)0x0707),
+    LineResetToken = 1799,
 }

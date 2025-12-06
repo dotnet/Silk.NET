@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum GetTexBumpParameterATI : uint
 {
     [NativeName("GL_BUMP_ROT_MATRIX_ATI")]
-    RotMatrix = unchecked((uint)0x8775),
+    RotMatrix = 34677,
 
     [NativeName("GL_BUMP_ROT_MATRIX_SIZE_ATI")]
-    RotMatrixSize = unchecked((uint)0x8776),
+    RotMatrixSize = 34678,
 
     [NativeName("GL_BUMP_NUM_TEX_UNITS_ATI")]
-    NumTexUnits = unchecked((uint)0x8777),
+    NumTexUnits = 34679,
 
     [NativeName("GL_BUMP_TEX_UNITS_ATI")]
-    TexUnits = unchecked((uint)0x8778),
+    TexUnits = 34680,
 }

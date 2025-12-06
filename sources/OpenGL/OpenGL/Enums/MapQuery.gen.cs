@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum MapQuery : uint
 {
     [NativeName("GL_COEFF")]
-    Coeff = unchecked((uint)0x0A00),
+    Coeff = 2560,
 
     [NativeName("GL_ORDER")]
-    Order = unchecked((uint)0x0A01),
+    Order = 2561,
 
     [NativeName("GL_DOMAIN")]
-    Domain = unchecked((uint)0x0A02),
+    Domain = 2562,
 }

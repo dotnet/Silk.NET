@@ -11,1064 +11,1064 @@ namespace Silk.NET.OpenGL;
 public enum InternalFormat : uint
 {
     [NativeName("GL_RGB")]
-    Rgb = unchecked((uint)0x1907),
+    Rgb = 6407,
 
     [NativeName("GL_RGBA")]
-    Rgba = unchecked((uint)0x1908),
+    Rgba = 6408,
 
     [NativeName("GL_ETC1_RGB8_OES")]
-    Etc1Rgb8OES = unchecked((uint)0x8D64),
+    Etc1Rgb8OES = 36196,
 
     [NativeName("GL_DEPTH_COMPONENT24_OES")]
-    DepthComponent24OES = unchecked((uint)0x81A6),
+    DepthComponent24OES = 33190,
 
     [NativeName("GL_DEPTH_COMPONENT32_OES")]
-    DepthComponent32OES = unchecked((uint)0x81A7),
+    DepthComponent32OES = 33191,
 
     [NativeName("GL_RGBA4_OES")]
-    Rgba4OES = unchecked((uint)0x8056),
+    Rgba4OES = 32854,
 
     [NativeName("GL_RGB5_A1_OES")]
-    Rgb5A1OES = unchecked((uint)0x8057),
+    Rgb5A1OES = 32855,
 
     [NativeName("GL_RGB565_OES")]
-    Rgb565OES = unchecked((uint)0x8D62),
+    Rgb565OES = 36194,
 
     [NativeName("GL_DEPTH_COMPONENT16_OES")]
-    DepthComponent16OES = unchecked((uint)0x81A5),
+    DepthComponent16OES = 33189,
 
     [NativeName("GL_DEPTH_STENCIL_OES")]
-    DepthStencilOES = unchecked((uint)0x84F9),
+    DepthStencilOES = 34041,
 
     [NativeName("GL_DEPTH24_STENCIL8_OES")]
-    Depth24Stencil8OES = unchecked((uint)0x88F0),
+    Depth24Stencil8OES = 35056,
 
     [NativeName("GL_ALPHA8_OES")]
-    Alpha8OES = unchecked((uint)0x803C),
+    Alpha8OES = 32828,
 
     [NativeName("GL_LUMINANCE4_ALPHA4_OES")]
-    Luminance4Alpha4OES = unchecked((uint)0x8043),
+    Luminance4Alpha4OES = 32835,
 
     [NativeName("GL_LUMINANCE8_ALPHA8_OES")]
-    Luminance8Alpha8OES = unchecked((uint)0x8045),
+    Luminance8Alpha8OES = 32837,
 
     [NativeName("GL_LUMINANCE8_OES")]
-    Luminance8OES = unchecked((uint)0x8040),
+    Luminance8OES = 32832,
 
     [NativeName("GL_RGB8_OES")]
-    Rgb8OES = unchecked((uint)0x8051),
+    Rgb8OES = 32849,
 
     [NativeName("GL_RGBA8_OES")]
-    Rgba8OES = unchecked((uint)0x8058),
+    Rgba8OES = 32856,
 
     [NativeName("GL_RGB10_EXT")]
-    Rgb10EXT = unchecked((uint)0x8052),
+    Rgb10EXT = 32850,
 
     [NativeName("GL_RGB10_A2_EXT")]
-    Rgb10A2EXT = unchecked((uint)0x8059),
+    Rgb10A2EXT = 32857,
 
     [NativeName("GL_STENCIL_INDEX1_OES")]
-    StencilIndex1OES = unchecked((uint)0x8D46),
+    StencilIndex1OES = 36166,
 
     [NativeName("GL_STENCIL_INDEX4_OES")]
-    StencilIndex4OES = unchecked((uint)0x8D47),
+    StencilIndex4OES = 36167,
 
     [NativeName("GL_STENCIL_INDEX8_OES")]
-    StencilIndex8OES = unchecked((uint)0x8D48),
+    StencilIndex8OES = 36168,
 
     [NativeName("GL_SRGB_EXT")]
-    SrgbEXT = unchecked((uint)0x8C40),
+    SrgbEXT = 35904,
 
     [NativeName("GL_SRGB_ALPHA_EXT")]
-    SrgbAlphaEXT = unchecked((uint)0x8C42),
+    SrgbAlphaEXT = 35906,
 
     [NativeName("GL_SRGB8_ALPHA8_EXT")]
-    Srgb8Alpha8EXT = unchecked((uint)0x8C43),
+    Srgb8Alpha8EXT = 35907,
 
     [NativeName("GL_COMPRESSED_RGB_S3TC_DXT1_EXT")]
-    CompressedRgbS3TcDxt1EXT = unchecked((uint)0x83F0),
+    CompressedRgbS3TcDxt1EXT = 33776,
 
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT1_EXT")]
-    CompressedRgbaS3TcDxt1EXT = unchecked((uint)0x83F1),
+    CompressedRgbaS3TcDxt1EXT = 33777,
 
     [NativeName("GL_ALPHA8_EXT")]
-    Alpha8EXT = unchecked((uint)0x803C),
+    Alpha8EXT = 32828,
 
     [NativeName("GL_LUMINANCE8_EXT")]
-    Luminance8EXT = unchecked((uint)0x8040),
+    Luminance8EXT = 32832,
 
     [NativeName("GL_LUMINANCE8_ALPHA8_EXT")]
-    Luminance8Alpha8EXT = unchecked((uint)0x8045),
+    Luminance8Alpha8EXT = 32837,
 
     [NativeName("GL_RGBA32F_EXT")]
-    Rgba32FEXT = unchecked((uint)0x8814),
+    Rgba32FEXT = 34836,
 
     [NativeName("GL_RGB32F_EXT")]
-    Rgb32FEXT = unchecked((uint)0x8815),
+    Rgb32FEXT = 34837,
 
     [NativeName("GL_RGBA16F_EXT")]
-    Rgba16FEXT = unchecked((uint)0x881A),
+    Rgba16FEXT = 34842,
 
     [NativeName("GL_RGB16F_EXT")]
-    Rgb16FEXT = unchecked((uint)0x881B),
+    Rgb16FEXT = 34843,
 
     [NativeName("GL_R8_EXT")]
-    R8EXT = unchecked((uint)0x8229),
+    R8EXT = 33321,
 
     [NativeName("GL_RG8_EXT")]
-    Rg8EXT = unchecked((uint)0x822B),
+    Rg8EXT = 33323,
 
     [NativeName("GL_R32F_EXT")]
-    R32FEXT = unchecked((uint)0x822E),
+    R32FEXT = 33326,
 
     [NativeName("GL_RG32F_EXT")]
-    Rg32FEXT = unchecked((uint)0x8230),
+    Rg32FEXT = 33328,
 
     [NativeName("GL_R16F_EXT")]
-    R16FEXT = unchecked((uint)0x822D),
+    R16FEXT = 33325,
 
     [NativeName("GL_RG16F_EXT")]
-    Rg16FEXT = unchecked((uint)0x822F),
+    Rg16FEXT = 33327,
 
     [NativeName("GL_STENCIL_INDEX")]
-    StencilIndex = unchecked((uint)0x1901),
+    StencilIndex = 6401,
 
     [NativeName("GL_DEPTH_COMPONENT")]
-    DepthComponent = unchecked((uint)0x1902),
+    DepthComponent = 6402,
 
     [NativeName("GL_RED")]
-    Red = unchecked((uint)0x1903),
+    Red = 6403,
 
     [NativeName("GL_R3_G3_B2")]
-    R3G3B2 = unchecked((uint)0x2A10),
+    R3G3B2 = 10768,
 
     [NativeName("GL_RGB4")]
-    Rgb4 = unchecked((uint)0x804F),
+    Rgb4 = 32847,
 
     [NativeName("GL_RGB5")]
-    Rgb5 = unchecked((uint)0x8050),
+    Rgb5 = 32848,
 
     [NativeName("GL_RGB8")]
-    Rgb8 = unchecked((uint)0x8051),
+    Rgb8 = 32849,
 
     [NativeName("GL_RGB10")]
-    Rgb10 = unchecked((uint)0x8052),
+    Rgb10 = 32850,
 
     [NativeName("GL_RGB12")]
-    Rgb12 = unchecked((uint)0x8053),
+    Rgb12 = 32851,
 
     [NativeName("GL_RGB16")]
-    Rgb16 = unchecked((uint)0x8054),
+    Rgb16 = 32852,
 
     [NativeName("GL_RGBA2")]
-    Rgba2 = unchecked((uint)0x8055),
+    Rgba2 = 32853,
 
     [NativeName("GL_RGBA4")]
-    Rgba4 = unchecked((uint)0x8056),
+    Rgba4 = 32854,
 
     [NativeName("GL_RGB5_A1")]
-    Rgb5A1 = unchecked((uint)0x8057),
+    Rgb5A1 = 32855,
 
     [NativeName("GL_RGBA8")]
-    Rgba8 = unchecked((uint)0x8058),
+    Rgba8 = 32856,
 
     [NativeName("GL_RGB10_A2")]
-    Rgb10A2 = unchecked((uint)0x8059),
+    Rgb10A2 = 32857,
 
     [NativeName("GL_RGBA12")]
-    Rgba12 = unchecked((uint)0x805A),
+    Rgba12 = 32858,
 
     [NativeName("GL_RGBA16")]
-    Rgba16 = unchecked((uint)0x805B),
+    Rgba16 = 32859,
 
     [NativeName("GL_ALPHA4")]
-    Alpha4 = unchecked((uint)0x803B),
+    Alpha4 = 32827,
 
     [NativeName("GL_ALPHA8")]
-    Alpha8 = unchecked((uint)0x803C),
+    Alpha8 = 32828,
 
     [NativeName("GL_ALPHA12")]
-    Alpha12 = unchecked((uint)0x803D),
+    Alpha12 = 32829,
 
     [NativeName("GL_ALPHA16")]
-    Alpha16 = unchecked((uint)0x803E),
+    Alpha16 = 32830,
 
     [NativeName("GL_LUMINANCE4")]
-    Luminance4 = unchecked((uint)0x803F),
+    Luminance4 = 32831,
 
     [NativeName("GL_LUMINANCE8")]
-    Luminance8 = unchecked((uint)0x8040),
+    Luminance8 = 32832,
 
     [NativeName("GL_LUMINANCE12")]
-    Luminance12 = unchecked((uint)0x8041),
+    Luminance12 = 32833,
 
     [NativeName("GL_LUMINANCE16")]
-    Luminance16 = unchecked((uint)0x8042),
+    Luminance16 = 32834,
 
     [NativeName("GL_LUMINANCE4_ALPHA4")]
-    Luminance4Alpha4 = unchecked((uint)0x8043),
+    Luminance4Alpha4 = 32835,
 
     [NativeName("GL_LUMINANCE6_ALPHA2")]
-    Luminance6Alpha2 = unchecked((uint)0x8044),
+    Luminance6Alpha2 = 32836,
 
     [NativeName("GL_LUMINANCE8_ALPHA8")]
-    Luminance8Alpha8 = unchecked((uint)0x8045),
+    Luminance8Alpha8 = 32837,
 
     [NativeName("GL_LUMINANCE12_ALPHA4")]
-    Luminance12Alpha4 = unchecked((uint)0x8046),
+    Luminance12Alpha4 = 32838,
 
     [NativeName("GL_LUMINANCE12_ALPHA12")]
-    Luminance12Alpha12 = unchecked((uint)0x8047),
+    Luminance12Alpha12 = 32839,
 
     [NativeName("GL_LUMINANCE16_ALPHA16")]
-    Luminance16Alpha16 = unchecked((uint)0x8048),
+    Luminance16Alpha16 = 32840,
 
     [NativeName("GL_INTENSITY")]
-    Intensity = unchecked((uint)0x8049),
+    Intensity = 32841,
 
     [NativeName("GL_INTENSITY4")]
-    Intensity4 = unchecked((uint)0x804A),
+    Intensity4 = 32842,
 
     [NativeName("GL_INTENSITY8")]
-    Intensity8 = unchecked((uint)0x804B),
+    Intensity8 = 32843,
 
     [NativeName("GL_INTENSITY12")]
-    Intensity12 = unchecked((uint)0x804C),
+    Intensity12 = 32844,
 
     [NativeName("GL_INTENSITY16")]
-    Intensity16 = unchecked((uint)0x804D),
+    Intensity16 = 32845,
 
     [NativeName("GL_COMPRESSED_RGB")]
-    CompressedRgb = unchecked((uint)0x84ED),
+    CompressedRgb = 34029,
 
     [NativeName("GL_COMPRESSED_RGBA")]
-    CompressedRgba = unchecked((uint)0x84EE),
+    CompressedRgba = 34030,
 
     [NativeName("GL_DEPTH_COMPONENT16")]
-    DepthComponent16 = unchecked((uint)0x81A5),
+    DepthComponent16 = 33189,
 
     [NativeName("GL_DEPTH_COMPONENT24")]
-    DepthComponent24 = unchecked((uint)0x81A6),
+    DepthComponent24 = 33190,
 
     [NativeName("GL_DEPTH_COMPONENT32")]
-    DepthComponent32 = unchecked((uint)0x81A7),
+    DepthComponent32 = 33191,
 
     [NativeName("GL_SRGB")]
-    Srgb = unchecked((uint)0x8C40),
+    Srgb = 35904,
 
     [NativeName("GL_SRGB8")]
-    Srgb8 = unchecked((uint)0x8C41),
+    Srgb8 = 35905,
 
     [NativeName("GL_SRGB_ALPHA")]
-    SrgbAlpha = unchecked((uint)0x8C42),
+    SrgbAlpha = 35906,
 
     [NativeName("GL_SRGB8_ALPHA8")]
-    Srgb8Alpha8 = unchecked((uint)0x8C43),
+    Srgb8Alpha8 = 35907,
 
     [NativeName("GL_COMPRESSED_SRGB")]
-    CompressedSrgb = unchecked((uint)0x8C48),
+    CompressedSrgb = 35912,
 
     [NativeName("GL_COMPRESSED_SRGB_ALPHA")]
-    CompressedSrgbAlpha = unchecked((uint)0x8C49),
+    CompressedSrgbAlpha = 35913,
 
     [NativeName("GL_COMPRESSED_RED")]
-    CompressedRed = unchecked((uint)0x8225),
+    CompressedRed = 33317,
 
     [NativeName("GL_COMPRESSED_RG")]
-    CompressedRg = unchecked((uint)0x8226),
+    CompressedRg = 33318,
 
     [NativeName("GL_RGBA32F")]
-    Rgba32F = unchecked((uint)0x8814),
+    Rgba32F = 34836,
 
     [NativeName("GL_RGB32F")]
-    Rgb32F = unchecked((uint)0x8815),
+    Rgb32F = 34837,
 
     [NativeName("GL_RGBA16F")]
-    Rgba16F = unchecked((uint)0x881A),
+    Rgba16F = 34842,
 
     [NativeName("GL_RGB16F")]
-    Rgb16F = unchecked((uint)0x881B),
+    Rgb16F = 34843,
 
     [NativeName("GL_R11F_G11F_B10F")]
-    R11FG11FB10F = unchecked((uint)0x8C3A),
+    R11FG11FB10F = 35898,
 
     [NativeName("GL_RGB9_E5")]
-    Rgb9E5 = unchecked((uint)0x8C3D),
+    Rgb9E5 = 35901,
 
     [NativeName("GL_RGBA32UI")]
-    Rgba32Ui = unchecked((uint)0x8D70),
+    Rgba32Ui = 36208,
 
     [NativeName("GL_RGB32UI")]
-    Rgb32Ui = unchecked((uint)0x8D71),
+    Rgb32Ui = 36209,
 
     [NativeName("GL_RGBA16UI")]
-    Rgba16Ui = unchecked((uint)0x8D76),
+    Rgba16Ui = 36214,
 
     [NativeName("GL_RGB16UI")]
-    Rgb16Ui = unchecked((uint)0x8D77),
+    Rgb16Ui = 36215,
 
     [NativeName("GL_RGBA8UI")]
-    Rgba8Ui = unchecked((uint)0x8D7C),
+    Rgba8Ui = 36220,
 
     [NativeName("GL_RGB8UI")]
-    Rgb8Ui = unchecked((uint)0x8D7D),
+    Rgb8Ui = 36221,
 
     [NativeName("GL_RGBA32I")]
-    Rgba32I = unchecked((uint)0x8D82),
+    Rgba32I = 36226,
 
     [NativeName("GL_RGB32I")]
-    Rgb32I = unchecked((uint)0x8D83),
+    Rgb32I = 36227,
 
     [NativeName("GL_RGBA16I")]
-    Rgba16I = unchecked((uint)0x8D88),
+    Rgba16I = 36232,
 
     [NativeName("GL_RGB16I")]
-    Rgb16I = unchecked((uint)0x8D89),
+    Rgb16I = 36233,
 
     [NativeName("GL_RGBA8I")]
-    Rgba8I = unchecked((uint)0x8D8E),
+    Rgba8I = 36238,
 
     [NativeName("GL_RGB8I")]
-    Rgb8I = unchecked((uint)0x8D8F),
+    Rgb8I = 36239,
 
     [NativeName("GL_DEPTH_COMPONENT32F")]
-    DepthComponent32F = unchecked((uint)0x8CAC),
+    DepthComponent32F = 36012,
 
     [NativeName("GL_DEPTH32F_STENCIL8")]
-    Depth32FStencil8 = unchecked((uint)0x8CAD),
+    Depth32FStencil8 = 36013,
 
     [NativeName("GL_DEPTH_STENCIL")]
-    DepthStencil = unchecked((uint)0x84F9),
+    DepthStencil = 34041,
 
     [NativeName("GL_DEPTH24_STENCIL8")]
-    Depth24Stencil8 = unchecked((uint)0x88F0),
+    Depth24Stencil8 = 35056,
 
     [NativeName("GL_STENCIL_INDEX1")]
-    StencilIndex1 = unchecked((uint)0x8D46),
+    StencilIndex1 = 36166,
 
     [NativeName("GL_STENCIL_INDEX4")]
-    StencilIndex4 = unchecked((uint)0x8D47),
+    StencilIndex4 = 36167,
 
     [NativeName("GL_STENCIL_INDEX8")]
-    StencilIndex8 = unchecked((uint)0x8D48),
+    StencilIndex8 = 36168,
 
     [NativeName("GL_STENCIL_INDEX16")]
-    StencilIndex16 = unchecked((uint)0x8D49),
+    StencilIndex16 = 36169,
 
     [NativeName("GL_COMPRESSED_RED_RGTC1")]
-    CompressedRedRgtc1 = unchecked((uint)0x8DBB),
+    CompressedRedRgtc1 = 36283,
 
     [NativeName("GL_COMPRESSED_SIGNED_RED_RGTC1")]
-    CompressedSignedRedRgtc1 = unchecked((uint)0x8DBC),
+    CompressedSignedRedRgtc1 = 36284,
 
     [NativeName("GL_COMPRESSED_RG_RGTC2")]
-    CompressedRgRgtc2 = unchecked((uint)0x8DBD),
+    CompressedRgRgtc2 = 36285,
 
     [NativeName("GL_COMPRESSED_SIGNED_RG_RGTC2")]
-    CompressedSignedRgRgtc2 = unchecked((uint)0x8DBE),
+    CompressedSignedRgRgtc2 = 36286,
 
     [NativeName("GL_RG")]
-    Rg = unchecked((uint)0x8227),
+    Rg = 33319,
 
     [NativeName("GL_R8")]
-    R8 = unchecked((uint)0x8229),
+    R8 = 33321,
 
     [NativeName("GL_R16")]
-    R16 = unchecked((uint)0x822A),
+    R16 = 33322,
 
     [NativeName("GL_RG8")]
-    Rg8 = unchecked((uint)0x822B),
+    Rg8 = 33323,
 
     [NativeName("GL_RG16")]
-    Rg16 = unchecked((uint)0x822C),
+    Rg16 = 33324,
 
     [NativeName("GL_R16F")]
-    R16F = unchecked((uint)0x822D),
+    R16F = 33325,
 
     [NativeName("GL_R32F")]
-    R32F = unchecked((uint)0x822E),
+    R32F = 33326,
 
     [NativeName("GL_RG16F")]
-    Rg16F = unchecked((uint)0x822F),
+    Rg16F = 33327,
 
     [NativeName("GL_RG32F")]
-    Rg32F = unchecked((uint)0x8230),
+    Rg32F = 33328,
 
     [NativeName("GL_R8I")]
-    R8I = unchecked((uint)0x8231),
+    R8I = 33329,
 
     [NativeName("GL_R8UI")]
-    R8Ui = unchecked((uint)0x8232),
+    R8Ui = 33330,
 
     [NativeName("GL_R16I")]
-    R16I = unchecked((uint)0x8233),
+    R16I = 33331,
 
     [NativeName("GL_R16UI")]
-    R16Ui = unchecked((uint)0x8234),
+    R16Ui = 33332,
 
     [NativeName("GL_R32I")]
-    R32I = unchecked((uint)0x8235),
+    R32I = 33333,
 
     [NativeName("GL_R32UI")]
-    R32Ui = unchecked((uint)0x8236),
+    R32Ui = 33334,
 
     [NativeName("GL_RG8I")]
-    Rg8I = unchecked((uint)0x8237),
+    Rg8I = 33335,
 
     [NativeName("GL_RG8UI")]
-    Rg8Ui = unchecked((uint)0x8238),
+    Rg8Ui = 33336,
 
     [NativeName("GL_RG16I")]
-    Rg16I = unchecked((uint)0x8239),
+    Rg16I = 33337,
 
     [NativeName("GL_RG16UI")]
-    Rg16Ui = unchecked((uint)0x823A),
+    Rg16Ui = 33338,
 
     [NativeName("GL_RG32I")]
-    Rg32I = unchecked((uint)0x823B),
+    Rg32I = 33339,
 
     [NativeName("GL_RG32UI")]
-    Rg32Ui = unchecked((uint)0x823C),
+    Rg32Ui = 33340,
 
     [NativeName("GL_R8_SNORM")]
-    R8Snorm = unchecked((uint)0x8F94),
+    R8Snorm = 36756,
 
     [NativeName("GL_RG8_SNORM")]
-    Rg8Snorm = unchecked((uint)0x8F95),
+    Rg8Snorm = 36757,
 
     [NativeName("GL_RGB8_SNORM")]
-    Rgb8Snorm = unchecked((uint)0x8F96),
+    Rgb8Snorm = 36758,
 
     [NativeName("GL_RGBA8_SNORM")]
-    Rgba8Snorm = unchecked((uint)0x8F97),
+    Rgba8Snorm = 36759,
 
     [NativeName("GL_R16_SNORM")]
-    R16Snorm = unchecked((uint)0x8F98),
+    R16Snorm = 36760,
 
     [NativeName("GL_RG16_SNORM")]
-    Rg16Snorm = unchecked((uint)0x8F99),
+    Rg16Snorm = 36761,
 
     [NativeName("GL_RGB16_SNORM")]
-    Rgb16Snorm = unchecked((uint)0x8F9A),
+    Rgb16Snorm = 36762,
 
     [NativeName("GL_RGBA16_SNORM")]
-    Rgba16Snorm = unchecked((uint)0x8F9B),
+    Rgba16Snorm = 36763,
 
     [NativeName("GL_RGB10_A2UI")]
-    Rgb10A2Ui = unchecked((uint)0x906F),
+    Rgb10A2Ui = 36975,
 
     [NativeName("GL_RGB565")]
-    Rgb565 = unchecked((uint)0x8D62),
+    Rgb565 = 36194,
 
     [NativeName("GL_COMPRESSED_RGBA_BPTC_UNORM")]
-    CompressedRgbaBptcUnorm = unchecked((uint)0x8E8C),
+    CompressedRgbaBptcUnorm = 36492,
 
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM")]
-    CompressedSrgbAlphaBptcUnorm = unchecked((uint)0x8E8D),
+    CompressedSrgbAlphaBptcUnorm = 36493,
 
     [NativeName("GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT")]
-    CompressedRgbBptcSignedFloat = unchecked((uint)0x8E8E),
+    CompressedRgbBptcSignedFloat = 36494,
 
     [NativeName("GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT")]
-    CompressedRgbBptcUnsignedFloat = unchecked((uint)0x8E8F),
+    CompressedRgbBptcUnsignedFloat = 36495,
 
     [NativeName("GL_COMPRESSED_RGB8_ETC2")]
-    CompressedRgb8Etc2 = unchecked((uint)0x9274),
+    CompressedRgb8Etc2 = 37492,
 
     [NativeName("GL_COMPRESSED_SRGB8_ETC2")]
-    CompressedSrgb8Etc2 = unchecked((uint)0x9275),
+    CompressedSrgb8Etc2 = 37493,
 
     [NativeName("GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2")]
-    CompressedRgb8PunchthroughAlpha1Etc2 = unchecked((uint)0x9276),
+    CompressedRgb8PunchthroughAlpha1Etc2 = 37494,
 
     [NativeName("GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2")]
-    CompressedSrgb8PunchthroughAlpha1Etc2 = unchecked((uint)0x9277),
+    CompressedSrgb8PunchthroughAlpha1Etc2 = 37495,
 
     [NativeName("GL_COMPRESSED_RGBA8_ETC2_EAC")]
-    CompressedRgba8Etc2Eac = unchecked((uint)0x9278),
+    CompressedRgba8Etc2Eac = 37496,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC")]
-    CompressedSrgb8Alpha8Etc2Eac = unchecked((uint)0x9279),
+    CompressedSrgb8Alpha8Etc2Eac = 37497,
 
     [NativeName("GL_COMPRESSED_R11_EAC")]
-    CompressedR11Eac = unchecked((uint)0x9270),
+    CompressedR11Eac = 37488,
 
     [NativeName("GL_COMPRESSED_SIGNED_R11_EAC")]
-    CompressedSignedR11Eac = unchecked((uint)0x9271),
+    CompressedSignedR11Eac = 37489,
 
     [NativeName("GL_COMPRESSED_RG11_EAC")]
-    CompressedRg11Eac = unchecked((uint)0x9272),
+    CompressedRg11Eac = 37490,
 
     [NativeName("GL_COMPRESSED_SIGNED_RG11_EAC")]
-    CompressedSignedRg11Eac = unchecked((uint)0x9273),
+    CompressedSignedRg11Eac = 37491,
 
     [NativeName("GL_DEPTH_COMPONENT16_ARB")]
-    DepthComponent16ARB = unchecked((uint)0x81A5),
+    DepthComponent16ARB = 33189,
 
     [NativeName("GL_DEPTH_COMPONENT24_ARB")]
-    DepthComponent24ARB = unchecked((uint)0x81A6),
+    DepthComponent24ARB = 33190,
 
     [NativeName("GL_DEPTH_COMPONENT32_ARB")]
-    DepthComponent32ARB = unchecked((uint)0x81A7),
+    DepthComponent32ARB = 33191,
 
     [NativeName("GL_COMPRESSED_RGBA_BPTC_UNORM_ARB")]
-    CompressedRgbaBptcUnormARB = unchecked((uint)0x8E8C),
+    CompressedRgbaBptcUnormARB = 36492,
 
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB")]
-    CompressedSrgbAlphaBptcUnormARB = unchecked((uint)0x8E8D),
+    CompressedSrgbAlphaBptcUnormARB = 36493,
 
     [NativeName("GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB")]
-    CompressedRgbBptcSignedFloatARB = unchecked((uint)0x8E8E),
+    CompressedRgbBptcSignedFloatARB = 36494,
 
     [NativeName("GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB")]
-    CompressedRgbBptcUnsignedFloatARB = unchecked((uint)0x8E8F),
+    CompressedRgbBptcUnsignedFloatARB = 36495,
 
     [NativeName("GL_RGBA32F_ARB")]
-    Rgba32FARB = unchecked((uint)0x8814),
+    Rgba32FARB = 34836,
 
     [NativeName("GL_RGB32F_ARB")]
-    Rgb32FARB = unchecked((uint)0x8815),
+    Rgb32FARB = 34837,
 
     [NativeName("GL_RGBA16F_ARB")]
-    Rgba16FARB = unchecked((uint)0x881A),
+    Rgba16FARB = 34842,
 
     [NativeName("GL_RGB16F_ARB")]
-    Rgb16FARB = unchecked((uint)0x881B),
+    Rgb16FARB = 34843,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4_KHR")]
-    CompressedRgbaAstc4X4KHR = unchecked((uint)0x93B0),
+    CompressedRgbaAstc4X4KHR = 37808,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x4_KHR")]
-    CompressedRgbaAstc5X4KHR = unchecked((uint)0x93B1),
+    CompressedRgbaAstc5X4KHR = 37809,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5_KHR")]
-    CompressedRgbaAstc5X5KHR = unchecked((uint)0x93B2),
+    CompressedRgbaAstc5X5KHR = 37810,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x5_KHR")]
-    CompressedRgbaAstc6X5KHR = unchecked((uint)0x93B3),
+    CompressedRgbaAstc6X5KHR = 37811,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6_KHR")]
-    CompressedRgbaAstc6X6KHR = unchecked((uint)0x93B4),
+    CompressedRgbaAstc6X6KHR = 37812,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_8x5_KHR")]
-    CompressedRgbaAstc8X5KHR = unchecked((uint)0x93B5),
+    CompressedRgbaAstc8X5KHR = 37813,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_8x6_KHR")]
-    CompressedRgbaAstc8X6KHR = unchecked((uint)0x93B6),
+    CompressedRgbaAstc8X6KHR = 37814,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_8x8_KHR")]
-    CompressedRgbaAstc8X8KHR = unchecked((uint)0x93B7),
+    CompressedRgbaAstc8X8KHR = 37815,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x5_KHR")]
-    CompressedRgbaAstc10X5KHR = unchecked((uint)0x93B8),
+    CompressedRgbaAstc10X5KHR = 37816,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x6_KHR")]
-    CompressedRgbaAstc10X6KHR = unchecked((uint)0x93B9),
+    CompressedRgbaAstc10X6KHR = 37817,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x8_KHR")]
-    CompressedRgbaAstc10X8KHR = unchecked((uint)0x93BA),
+    CompressedRgbaAstc10X8KHR = 37818,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x10_KHR")]
-    CompressedRgbaAstc10X10KHR = unchecked((uint)0x93BB),
+    CompressedRgbaAstc10X10KHR = 37819,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_12x10_KHR")]
-    CompressedRgbaAstc12X10KHR = unchecked((uint)0x93BC),
+    CompressedRgbaAstc12X10KHR = 37820,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_12x12_KHR")]
-    CompressedRgbaAstc12X12KHR = unchecked((uint)0x93BD),
+    CompressedRgbaAstc12X12KHR = 37821,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR")]
-    CompressedSrgb8Alpha8Astc4X4KHR = unchecked((uint)0x93D0),
+    CompressedSrgb8Alpha8Astc4X4KHR = 37840,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR")]
-    CompressedSrgb8Alpha8Astc5X4KHR = unchecked((uint)0x93D1),
+    CompressedSrgb8Alpha8Astc5X4KHR = 37841,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR")]
-    CompressedSrgb8Alpha8Astc5X5KHR = unchecked((uint)0x93D2),
+    CompressedSrgb8Alpha8Astc5X5KHR = 37842,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR")]
-    CompressedSrgb8Alpha8Astc6X5KHR = unchecked((uint)0x93D3),
+    CompressedSrgb8Alpha8Astc6X5KHR = 37843,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR")]
-    CompressedSrgb8Alpha8Astc6X6KHR = unchecked((uint)0x93D4),
+    CompressedSrgb8Alpha8Astc6X6KHR = 37844,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR")]
-    CompressedSrgb8Alpha8Astc8X5KHR = unchecked((uint)0x93D5),
+    CompressedSrgb8Alpha8Astc8X5KHR = 37845,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR")]
-    CompressedSrgb8Alpha8Astc8X6KHR = unchecked((uint)0x93D6),
+    CompressedSrgb8Alpha8Astc8X6KHR = 37846,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR")]
-    CompressedSrgb8Alpha8Astc8X8KHR = unchecked((uint)0x93D7),
+    CompressedSrgb8Alpha8Astc8X8KHR = 37847,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR")]
-    CompressedSrgb8Alpha8Astc10X5KHR = unchecked((uint)0x93D8),
+    CompressedSrgb8Alpha8Astc10X5KHR = 37848,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR")]
-    CompressedSrgb8Alpha8Astc10X6KHR = unchecked((uint)0x93D9),
+    CompressedSrgb8Alpha8Astc10X6KHR = 37849,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR")]
-    CompressedSrgb8Alpha8Astc10X8KHR = unchecked((uint)0x93DA),
+    CompressedSrgb8Alpha8Astc10X8KHR = 37850,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR")]
-    CompressedSrgb8Alpha8Astc10X10KHR = unchecked((uint)0x93DB),
+    CompressedSrgb8Alpha8Astc10X10KHR = 37851,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR")]
-    CompressedSrgb8Alpha8Astc12X10KHR = unchecked((uint)0x93DC),
+    CompressedSrgb8Alpha8Astc12X10KHR = 37852,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR")]
-    CompressedSrgb8Alpha8Astc12X12KHR = unchecked((uint)0x93DD),
+    CompressedSrgb8Alpha8Astc12X12KHR = 37853,
 
     [NativeName("GL_STENCIL_INDEX1_EXT")]
-    StencilIndex1EXT = unchecked((uint)0x8D46),
+    StencilIndex1EXT = 36166,
 
     [NativeName("GL_STENCIL_INDEX4_EXT")]
-    StencilIndex4EXT = unchecked((uint)0x8D47),
+    StencilIndex4EXT = 36167,
 
     [NativeName("GL_STENCIL_INDEX8_EXT")]
-    StencilIndex8EXT = unchecked((uint)0x8D48),
+    StencilIndex8EXT = 36168,
 
     [NativeName("GL_STENCIL_INDEX16_EXT")]
-    StencilIndex16EXT = unchecked((uint)0x8D49),
+    StencilIndex16EXT = 36169,
 
     [NativeName("GL_DEPTH_STENCIL_EXT")]
-    DepthStencilEXT = unchecked((uint)0x84F9),
+    DepthStencilEXT = 34041,
 
     [NativeName("GL_DEPTH24_STENCIL8_EXT")]
-    Depth24Stencil8EXT = unchecked((uint)0x88F0),
+    Depth24Stencil8EXT = 35056,
 
     [NativeName("GL_R11F_G11F_B10F_EXT")]
-    R11FG11FB10FEXT = unchecked((uint)0x8C3A),
+    R11FG11FB10FEXT = 35898,
 
     [NativeName("GL_ALPHA4_EXT")]
-    Alpha4EXT = unchecked((uint)0x803B),
+    Alpha4EXT = 32827,
 
     [NativeName("GL_ALPHA12_EXT")]
-    Alpha12EXT = unchecked((uint)0x803D),
+    Alpha12EXT = 32829,
 
     [NativeName("GL_ALPHA16_EXT")]
-    Alpha16EXT = unchecked((uint)0x803E),
+    Alpha16EXT = 32830,
 
     [NativeName("GL_LUMINANCE4_EXT")]
-    Luminance4EXT = unchecked((uint)0x803F),
+    Luminance4EXT = 32831,
 
     [NativeName("GL_LUMINANCE12_EXT")]
-    Luminance12EXT = unchecked((uint)0x8041),
+    Luminance12EXT = 32833,
 
     [NativeName("GL_LUMINANCE16_EXT")]
-    Luminance16EXT = unchecked((uint)0x8042),
+    Luminance16EXT = 32834,
 
     [NativeName("GL_LUMINANCE4_ALPHA4_EXT")]
-    Luminance4Alpha4EXT = unchecked((uint)0x8043),
+    Luminance4Alpha4EXT = 32835,
 
     [NativeName("GL_LUMINANCE6_ALPHA2_EXT")]
-    Luminance6Alpha2EXT = unchecked((uint)0x8044),
+    Luminance6Alpha2EXT = 32836,
 
     [NativeName("GL_LUMINANCE12_ALPHA4_EXT")]
-    Luminance12Alpha4EXT = unchecked((uint)0x8046),
+    Luminance12Alpha4EXT = 32838,
 
     [NativeName("GL_LUMINANCE12_ALPHA12_EXT")]
-    Luminance12Alpha12EXT = unchecked((uint)0x8047),
+    Luminance12Alpha12EXT = 32839,
 
     [NativeName("GL_LUMINANCE16_ALPHA16_EXT")]
-    Luminance16Alpha16EXT = unchecked((uint)0x8048),
+    Luminance16Alpha16EXT = 32840,
 
     [NativeName("GL_INTENSITY4_EXT")]
-    Intensity4EXT = unchecked((uint)0x804A),
+    Intensity4EXT = 32842,
 
     [NativeName("GL_INTENSITY8_EXT")]
-    Intensity8EXT = unchecked((uint)0x804B),
+    Intensity8EXT = 32843,
 
     [NativeName("GL_INTENSITY12_EXT")]
-    Intensity12EXT = unchecked((uint)0x804C),
+    Intensity12EXT = 32844,
 
     [NativeName("GL_INTENSITY16_EXT")]
-    Intensity16EXT = unchecked((uint)0x804D),
+    Intensity16EXT = 32845,
 
     [NativeName("GL_RGB2_EXT")]
-    Rgb2EXT = unchecked((uint)0x804E),
+    Rgb2EXT = 32846,
 
     [NativeName("GL_RGB4_EXT")]
-    Rgb4EXT = unchecked((uint)0x804F),
+    Rgb4EXT = 32847,
 
     [NativeName("GL_RGB5_EXT")]
-    Rgb5EXT = unchecked((uint)0x8050),
+    Rgb5EXT = 32848,
 
     [NativeName("GL_RGB8_EXT")]
-    Rgb8EXT = unchecked((uint)0x8051),
+    Rgb8EXT = 32849,
 
     [NativeName("GL_RGB12_EXT")]
-    Rgb12EXT = unchecked((uint)0x8053),
+    Rgb12EXT = 32851,
 
     [NativeName("GL_RGB16_EXT")]
-    Rgb16EXT = unchecked((uint)0x8054),
+    Rgb16EXT = 32852,
 
     [NativeName("GL_RGBA2_EXT")]
-    Rgba2EXT = unchecked((uint)0x8055),
+    Rgba2EXT = 32853,
 
     [NativeName("GL_RGBA4_EXT")]
-    Rgba4EXT = unchecked((uint)0x8056),
+    Rgba4EXT = 32854,
 
     [NativeName("GL_RGB5_A1_EXT")]
-    Rgb5A1EXT = unchecked((uint)0x8057),
+    Rgb5A1EXT = 32855,
 
     [NativeName("GL_RGBA8_EXT")]
-    Rgba8EXT = unchecked((uint)0x8058),
+    Rgba8EXT = 32856,
 
     [NativeName("GL_RGBA12_EXT")]
-    Rgba12EXT = unchecked((uint)0x805A),
+    Rgba12EXT = 32858,
 
     [NativeName("GL_RGBA16_EXT")]
-    Rgba16EXT = unchecked((uint)0x805B),
+    Rgba16EXT = 32859,
 
     [NativeName("GL_COMPRESSED_RED_RGTC1_EXT")]
-    CompressedRedRgtc1EXT = unchecked((uint)0x8DBB),
+    CompressedRedRgtc1EXT = 36283,
 
     [NativeName("GL_COMPRESSED_SIGNED_RED_RGTC1_EXT")]
-    CompressedSignedRedRgtc1EXT = unchecked((uint)0x8DBC),
+    CompressedSignedRedRgtc1EXT = 36284,
 
     [NativeName("GL_COMPRESSED_RED_GREEN_RGTC2_EXT")]
-    CompressedRedGreenRgtc2EXT = unchecked((uint)0x8DBD),
+    CompressedRedGreenRgtc2EXT = 36285,
 
     [NativeName("GL_COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT")]
-    CompressedSignedRedGreenRgtc2EXT = unchecked((uint)0x8DBE),
+    CompressedSignedRedGreenRgtc2EXT = 36286,
 
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT3_EXT")]
-    CompressedRgbaS3TcDxt3EXT = unchecked((uint)0x83F2),
+    CompressedRgbaS3TcDxt3EXT = 33778,
 
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT5_EXT")]
-    CompressedRgbaS3TcDxt5EXT = unchecked((uint)0x83F3),
+    CompressedRgbaS3TcDxt5EXT = 33779,
 
     [NativeName("GL_RGBA32UI_EXT")]
-    Rgba32UiEXT = unchecked((uint)0x8D70),
+    Rgba32UiEXT = 36208,
 
     [NativeName("GL_RGB32UI_EXT")]
-    Rgb32UiEXT = unchecked((uint)0x8D71),
+    Rgb32UiEXT = 36209,
 
     [NativeName("GL_ALPHA32UI_EXT")]
-    Alpha32UiEXT = unchecked((uint)0x8D72),
+    Alpha32UiEXT = 36210,
 
     [NativeName("GL_INTENSITY32UI_EXT")]
-    Intensity32UiEXT = unchecked((uint)0x8D73),
+    Intensity32UiEXT = 36211,
 
     [NativeName("GL_LUMINANCE32UI_EXT")]
-    Luminance32UiEXT = unchecked((uint)0x8D74),
+    Luminance32UiEXT = 36212,
 
     [NativeName("GL_LUMINANCE_ALPHA32UI_EXT")]
-    LuminanceAlpha32UiEXT = unchecked((uint)0x8D75),
+    LuminanceAlpha32UiEXT = 36213,
 
     [NativeName("GL_RGBA16UI_EXT")]
-    Rgba16UiEXT = unchecked((uint)0x8D76),
+    Rgba16UiEXT = 36214,
 
     [NativeName("GL_RGB16UI_EXT")]
-    Rgb16UiEXT = unchecked((uint)0x8D77),
+    Rgb16UiEXT = 36215,
 
     [NativeName("GL_ALPHA16UI_EXT")]
-    Alpha16UiEXT = unchecked((uint)0x8D78),
+    Alpha16UiEXT = 36216,
 
     [NativeName("GL_INTENSITY16UI_EXT")]
-    Intensity16UiEXT = unchecked((uint)0x8D79),
+    Intensity16UiEXT = 36217,
 
     [NativeName("GL_LUMINANCE16UI_EXT")]
-    Luminance16UiEXT = unchecked((uint)0x8D7A),
+    Luminance16UiEXT = 36218,
 
     [NativeName("GL_LUMINANCE_ALPHA16UI_EXT")]
-    LuminanceAlpha16UiEXT = unchecked((uint)0x8D7B),
+    LuminanceAlpha16UiEXT = 36219,
 
     [NativeName("GL_RGBA8UI_EXT")]
-    Rgba8UiEXT = unchecked((uint)0x8D7C),
+    Rgba8UiEXT = 36220,
 
     [NativeName("GL_RGB8UI_EXT")]
-    Rgb8UiEXT = unchecked((uint)0x8D7D),
+    Rgb8UiEXT = 36221,
 
     [NativeName("GL_ALPHA8UI_EXT")]
-    Alpha8UiEXT = unchecked((uint)0x8D7E),
+    Alpha8UiEXT = 36222,
 
     [NativeName("GL_INTENSITY8UI_EXT")]
-    Intensity8UiEXT = unchecked((uint)0x8D7F),
+    Intensity8UiEXT = 36223,
 
     [NativeName("GL_LUMINANCE8UI_EXT")]
-    Luminance8UiEXT = unchecked((uint)0x8D80),
+    Luminance8UiEXT = 36224,
 
     [NativeName("GL_LUMINANCE_ALPHA8UI_EXT")]
-    LuminanceAlpha8UiEXT = unchecked((uint)0x8D81),
+    LuminanceAlpha8UiEXT = 36225,
 
     [NativeName("GL_RGBA32I_EXT")]
-    Rgba32IEXT = unchecked((uint)0x8D82),
+    Rgba32IEXT = 36226,
 
     [NativeName("GL_RGB32I_EXT")]
-    Rgb32IEXT = unchecked((uint)0x8D83),
+    Rgb32IEXT = 36227,
 
     [NativeName("GL_ALPHA32I_EXT")]
-    Alpha32IEXT = unchecked((uint)0x8D84),
+    Alpha32IEXT = 36228,
 
     [NativeName("GL_INTENSITY32I_EXT")]
-    Intensity32IEXT = unchecked((uint)0x8D85),
+    Intensity32IEXT = 36229,
 
     [NativeName("GL_LUMINANCE32I_EXT")]
-    Luminance32IEXT = unchecked((uint)0x8D86),
+    Luminance32IEXT = 36230,
 
     [NativeName("GL_LUMINANCE_ALPHA32I_EXT")]
-    LuminanceAlpha32IEXT = unchecked((uint)0x8D87),
+    LuminanceAlpha32IEXT = 36231,
 
     [NativeName("GL_RGBA16I_EXT")]
-    Rgba16IEXT = unchecked((uint)0x8D88),
+    Rgba16IEXT = 36232,
 
     [NativeName("GL_RGB16I_EXT")]
-    Rgb16IEXT = unchecked((uint)0x8D89),
+    Rgb16IEXT = 36233,
 
     [NativeName("GL_ALPHA16I_EXT")]
-    Alpha16IEXT = unchecked((uint)0x8D8A),
+    Alpha16IEXT = 36234,
 
     [NativeName("GL_INTENSITY16I_EXT")]
-    Intensity16IEXT = unchecked((uint)0x8D8B),
+    Intensity16IEXT = 36235,
 
     [NativeName("GL_LUMINANCE16I_EXT")]
-    Luminance16IEXT = unchecked((uint)0x8D8C),
+    Luminance16IEXT = 36236,
 
     [NativeName("GL_LUMINANCE_ALPHA16I_EXT")]
-    LuminanceAlpha16IEXT = unchecked((uint)0x8D8D),
+    LuminanceAlpha16IEXT = 36237,
 
     [NativeName("GL_RGBA8I_EXT")]
-    Rgba8IEXT = unchecked((uint)0x8D8E),
+    Rgba8IEXT = 36238,
 
     [NativeName("GL_RGB8I_EXT")]
-    Rgb8IEXT = unchecked((uint)0x8D8F),
+    Rgb8IEXT = 36239,
 
     [NativeName("GL_ALPHA8I_EXT")]
-    Alpha8IEXT = unchecked((uint)0x8D90),
+    Alpha8IEXT = 36240,
 
     [NativeName("GL_INTENSITY8I_EXT")]
-    Intensity8IEXT = unchecked((uint)0x8D91),
+    Intensity8IEXT = 36241,
 
     [NativeName("GL_LUMINANCE8I_EXT")]
-    Luminance8IEXT = unchecked((uint)0x8D92),
+    Luminance8IEXT = 36242,
 
     [NativeName("GL_LUMINANCE_ALPHA8I_EXT")]
-    LuminanceAlpha8IEXT = unchecked((uint)0x8D93),
+    LuminanceAlpha8IEXT = 36243,
 
     [NativeName("GL_SRGB8_EXT")]
-    Srgb8EXT = unchecked((uint)0x8C41),
+    Srgb8EXT = 35905,
 
     [NativeName("GL_COMPRESSED_SRGB_S3TC_DXT1_EXT")]
-    CompressedSrgbS3TcDxt1EXT = unchecked((uint)0x8C4C),
+    CompressedSrgbS3TcDxt1EXT = 35916,
 
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT")]
-    CompressedSrgbAlphaS3TcDxt1EXT = unchecked((uint)0x8C4D),
+    CompressedSrgbAlphaS3TcDxt1EXT = 35917,
 
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT")]
-    CompressedSrgbAlphaS3TcDxt3EXT = unchecked((uint)0x8C4E),
+    CompressedSrgbAlphaS3TcDxt3EXT = 35918,
 
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT")]
-    CompressedSrgbAlphaS3TcDxt5EXT = unchecked((uint)0x8C4F),
+    CompressedSrgbAlphaS3TcDxt5EXT = 35919,
 
     [NativeName("GL_SR8_EXT")]
-    Sr8EXT = unchecked((uint)0x8FBD),
+    Sr8EXT = 36797,
 
     [NativeName("GL_SRG8_EXT")]
-    Srg8EXT = unchecked((uint)0x8FBE),
+    Srg8EXT = 36798,
 
     [NativeName("GL_RGB9_E5_EXT")]
-    Rgb9E5EXT = unchecked((uint)0x8C3D),
+    Rgb9E5EXT = 35901,
 
     [NativeName("GL_DEPTH_COMPONENT32F_NV")]
-    DepthComponent32FNV = unchecked((uint)0x8DAB),
+    DepthComponent32FNV = 36267,
 
     [NativeName("GL_DEPTH32F_STENCIL8_NV")]
-    Depth32FStencil8NV = unchecked((uint)0x8DAC),
+    Depth32FStencil8NV = 36268,
 
     [NativeName("GL_DEPTH_STENCIL_NV")]
-    DepthStencilNV = unchecked((uint)0x84F9),
+    DepthStencilNV = 34041,
 
     [NativeName("GL_DUAL_ALPHA4_SGIS")]
-    DualAlpha4SGIS = unchecked((uint)0x8110),
+    DualAlpha4SGIS = 33040,
 
     [NativeName("GL_DUAL_ALPHA8_SGIS")]
-    DualAlpha8SGIS = unchecked((uint)0x8111),
+    DualAlpha8SGIS = 33041,
 
     [NativeName("GL_DUAL_ALPHA12_SGIS")]
-    DualAlpha12SGIS = unchecked((uint)0x8112),
+    DualAlpha12SGIS = 33042,
 
     [NativeName("GL_DUAL_ALPHA16_SGIS")]
-    DualAlpha16SGIS = unchecked((uint)0x8113),
+    DualAlpha16SGIS = 33043,
 
     [NativeName("GL_DUAL_LUMINANCE4_SGIS")]
-    DualLuminance4SGIS = unchecked((uint)0x8114),
+    DualLuminance4SGIS = 33044,
 
     [NativeName("GL_DUAL_LUMINANCE8_SGIS")]
-    DualLuminance8SGIS = unchecked((uint)0x8115),
+    DualLuminance8SGIS = 33045,
 
     [NativeName("GL_DUAL_LUMINANCE12_SGIS")]
-    DualLuminance12SGIS = unchecked((uint)0x8116),
+    DualLuminance12SGIS = 33046,
 
     [NativeName("GL_DUAL_LUMINANCE16_SGIS")]
-    DualLuminance16SGIS = unchecked((uint)0x8117),
+    DualLuminance16SGIS = 33047,
 
     [NativeName("GL_DUAL_INTENSITY4_SGIS")]
-    DualIntensity4SGIS = unchecked((uint)0x8118),
+    DualIntensity4SGIS = 33048,
 
     [NativeName("GL_DUAL_INTENSITY8_SGIS")]
-    DualIntensity8SGIS = unchecked((uint)0x8119),
+    DualIntensity8SGIS = 33049,
 
     [NativeName("GL_DUAL_INTENSITY12_SGIS")]
-    DualIntensity12SGIS = unchecked((uint)0x811A),
+    DualIntensity12SGIS = 33050,
 
     [NativeName("GL_DUAL_INTENSITY16_SGIS")]
-    DualIntensity16SGIS = unchecked((uint)0x811B),
+    DualIntensity16SGIS = 33051,
 
     [NativeName("GL_DUAL_LUMINANCE_ALPHA4_SGIS")]
-    DualLuminanceAlpha4SGIS = unchecked((uint)0x811C),
+    DualLuminanceAlpha4SGIS = 33052,
 
     [NativeName("GL_DUAL_LUMINANCE_ALPHA8_SGIS")]
-    DualLuminanceAlpha8SGIS = unchecked((uint)0x811D),
+    DualLuminanceAlpha8SGIS = 33053,
 
     [NativeName("GL_QUAD_ALPHA4_SGIS")]
-    QuadAlpha4SGIS = unchecked((uint)0x811E),
+    QuadAlpha4SGIS = 33054,
 
     [NativeName("GL_QUAD_ALPHA8_SGIS")]
-    QuadAlpha8SGIS = unchecked((uint)0x811F),
+    QuadAlpha8SGIS = 33055,
 
     [NativeName("GL_QUAD_LUMINANCE4_SGIS")]
-    QuadLuminance4SGIS = unchecked((uint)0x8120),
+    QuadLuminance4SGIS = 33056,
 
     [NativeName("GL_QUAD_LUMINANCE8_SGIS")]
-    QuadLuminance8SGIS = unchecked((uint)0x8121),
+    QuadLuminance8SGIS = 33057,
 
     [NativeName("GL_QUAD_INTENSITY4_SGIS")]
-    QuadIntensity4SGIS = unchecked((uint)0x8122),
+    QuadIntensity4SGIS = 33058,
 
     [NativeName("GL_QUAD_INTENSITY8_SGIS")]
-    QuadIntensity8SGIS = unchecked((uint)0x8123),
+    QuadIntensity8SGIS = 33059,
 
     [NativeName("GL_DEPTH_COMPONENT16_SGIX")]
-    DepthComponent16SGIX = unchecked((uint)0x81A5),
+    DepthComponent16SGIX = 33189,
 
     [NativeName("GL_DEPTH_COMPONENT24_SGIX")]
-    DepthComponent24SGIX = unchecked((uint)0x81A6),
+    DepthComponent24SGIX = 33190,
 
     [NativeName("GL_DEPTH_COMPONENT32_SGIX")]
-    DepthComponent32SGIX = unchecked((uint)0x81A7),
+    DepthComponent32SGIX = 33191,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_3x3x3_OES")]
-    CompressedRgbaAstc3X3X3OES = unchecked((uint)0x93C0),
+    CompressedRgbaAstc3X3X3OES = 37824,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x3x3_OES")]
-    CompressedRgbaAstc4X3X3OES = unchecked((uint)0x93C1),
+    CompressedRgbaAstc4X3X3OES = 37825,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4x3_OES")]
-    CompressedRgbaAstc4X4X3OES = unchecked((uint)0x93C2),
+    CompressedRgbaAstc4X4X3OES = 37826,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4x4_OES")]
-    CompressedRgbaAstc4X4X4OES = unchecked((uint)0x93C3),
+    CompressedRgbaAstc4X4X4OES = 37827,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x4x4_OES")]
-    CompressedRgbaAstc5X4X4OES = unchecked((uint)0x93C4),
+    CompressedRgbaAstc5X4X4OES = 37828,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5x4_OES")]
-    CompressedRgbaAstc5X5X4OES = unchecked((uint)0x93C5),
+    CompressedRgbaAstc5X5X4OES = 37829,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5x5_OES")]
-    CompressedRgbaAstc5X5X5OES = unchecked((uint)0x93C6),
+    CompressedRgbaAstc5X5X5OES = 37830,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x5x5_OES")]
-    CompressedRgbaAstc6X5X5OES = unchecked((uint)0x93C7),
+    CompressedRgbaAstc6X5X5OES = 37831,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6x5_OES")]
-    CompressedRgbaAstc6X6X5OES = unchecked((uint)0x93C8),
+    CompressedRgbaAstc6X6X5OES = 37832,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6x6_OES")]
-    CompressedRgbaAstc6X6X6OES = unchecked((uint)0x93C9),
+    CompressedRgbaAstc6X6X6OES = 37833,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_3x3x3_OES")]
-    CompressedSrgb8Alpha8Astc3X3X3OES = unchecked((uint)0x93E0),
+    CompressedSrgb8Alpha8Astc3X3X3OES = 37856,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES")]
-    CompressedSrgb8Alpha8Astc4X3X3OES = unchecked((uint)0x93E1),
+    CompressedSrgb8Alpha8Astc4X3X3OES = 37857,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x3_OES")]
-    CompressedSrgb8Alpha8Astc4X4X3OES = unchecked((uint)0x93E2),
+    CompressedSrgb8Alpha8Astc4X4X3OES = 37858,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x4_OES")]
-    CompressedSrgb8Alpha8Astc4X4X4OES = unchecked((uint)0x93E3),
+    CompressedSrgb8Alpha8Astc4X4X4OES = 37859,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4x4_OES")]
-    CompressedSrgb8Alpha8Astc5X4X4OES = unchecked((uint)0x93E4),
+    CompressedSrgb8Alpha8Astc5X4X4OES = 37860,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x4_OES")]
-    CompressedSrgb8Alpha8Astc5X5X4OES = unchecked((uint)0x93E5),
+    CompressedSrgb8Alpha8Astc5X5X4OES = 37861,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x5_OES")]
-    CompressedSrgb8Alpha8Astc5X5X5OES = unchecked((uint)0x93E6),
+    CompressedSrgb8Alpha8Astc5X5X5OES = 37862,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5x5_OES")]
-    CompressedSrgb8Alpha8Astc6X5X5OES = unchecked((uint)0x93E7),
+    CompressedSrgb8Alpha8Astc6X5X5OES = 37863,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x5_OES")]
-    CompressedSrgb8Alpha8Astc6X6X5OES = unchecked((uint)0x93E8),
+    CompressedSrgb8Alpha8Astc6X6X5OES = 37864,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x6_OES")]
-    CompressedSrgb8Alpha8Astc6X6X6OES = unchecked((uint)0x93E9),
+    CompressedSrgb8Alpha8Astc6X6X6OES = 37865,
 
     [NativeName("GL_STENCIL_INDEX_OES")]
-    StencilIndexOES = unchecked((uint)0x1901),
+    StencilIndexOES = 6401,
 
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE")]
-    CompressedRgbaS3TcDxt3ANGLE = unchecked((uint)0x83F2),
+    CompressedRgbaS3TcDxt3ANGLE = 33778,
 
     [NativeName("GL_COMPRESSED_RGBA_S3TC_DXT5_ANGLE")]
-    CompressedRgbaS3TcDxt5ANGLE = unchecked((uint)0x83F3),
+    CompressedRgbaS3TcDxt5ANGLE = 33779,
 
     [NativeName("GL_R11F_G11F_B10F_APPLE")]
-    R11FG11FB10FAPPLE = unchecked((uint)0x8C3A),
+    R11FG11FB10FAPPLE = 35898,
 
     [NativeName("GL_RGB9_E5_APPLE")]
-    Rgb9E5APPLE = unchecked((uint)0x8C3D),
+    Rgb9E5APPLE = 35901,
 
     [NativeName("GL_R16_SNORM_EXT")]
-    R16SnormEXT = unchecked((uint)0x8F98),
+    R16SnormEXT = 36760,
 
     [NativeName("GL_RG16_SNORM_EXT")]
-    Rg16SnormEXT = unchecked((uint)0x8F99),
+    Rg16SnormEXT = 36761,
 
     [NativeName("GL_RGBA16_SNORM_EXT")]
-    Rgba16SnormEXT = unchecked((uint)0x8F9B),
+    Rgba16SnormEXT = 36763,
 
     [NativeName("GL_COMPRESSED_RGBA_BPTC_UNORM_EXT")]
-    CompressedRgbaBptcUnormEXT = unchecked((uint)0x8E8C),
+    CompressedRgbaBptcUnormEXT = 36492,
 
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT")]
-    CompressedSrgbAlphaBptcUnormEXT = unchecked((uint)0x8E8D),
+    CompressedSrgbAlphaBptcUnormEXT = 36493,
 
     [NativeName("GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT")]
-    CompressedRgbBptcSignedFloatEXT = unchecked((uint)0x8E8E),
+    CompressedRgbBptcSignedFloatEXT = 36494,
 
     [NativeName("GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT")]
-    CompressedRgbBptcUnsignedFloatEXT = unchecked((uint)0x8E8F),
+    CompressedRgbBptcUnsignedFloatEXT = 36495,
 
     [NativeName("GL_R16_EXT")]
-    R16EXT = unchecked((uint)0x822A),
+    R16EXT = 33322,
 
     [NativeName("GL_RG16_EXT")]
-    Rg16EXT = unchecked((uint)0x822C),
+    Rg16EXT = 33324,
 
     [NativeName("GL_RGB16_SNORM_EXT")]
-    Rgb16SnormEXT = unchecked((uint)0x8F9A),
+    Rgb16SnormEXT = 36762,
 
     [NativeName("GL_RED_EXT")]
-    RedEXT = unchecked((uint)0x1903),
+    RedEXT = 6403,
 
     [NativeName("GL_SRGB8_NV")]
-    Srgb8NV = unchecked((uint)0x8C41),
+    Srgb8NV = 35905,
 
     [NativeName("GL_COMPRESSED_SRGB_S3TC_DXT1_NV")]
-    CompressedSrgbS3TcDxt1NV = unchecked((uint)0x8C4C),
+    CompressedSrgbS3TcDxt1NV = 35916,
 
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_NV")]
-    CompressedSrgbAlphaS3TcDxt1NV = unchecked((uint)0x8C4D),
+    CompressedSrgbAlphaS3TcDxt1NV = 35917,
 
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_NV")]
-    CompressedSrgbAlphaS3TcDxt3NV = unchecked((uint)0x8C4E),
+    CompressedSrgbAlphaS3TcDxt3NV = 35918,
 
     [NativeName("GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV")]
-    CompressedSrgbAlphaS3TcDxt5NV = unchecked((uint)0x8C4F),
+    CompressedSrgbAlphaS3TcDxt5NV = 35919,
 }

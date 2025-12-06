@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum SyncParameterName : uint
 {
     [NativeName("GL_OBJECT_TYPE")]
-    ObjectType = unchecked((uint)0x9112),
+    ObjectType = 37138,
 
     [NativeName("GL_SYNC_CONDITION")]
-    SyncCondition = unchecked((uint)0x9113),
+    SyncCondition = 37139,
 
     [NativeName("GL_SYNC_STATUS")]
-    SyncStatus = unchecked((uint)0x9114),
+    SyncStatus = 37140,
 
     [NativeName("GL_SYNC_FLAGS")]
-    SyncFlags = unchecked((uint)0x9115),
+    SyncFlags = 37141,
 }

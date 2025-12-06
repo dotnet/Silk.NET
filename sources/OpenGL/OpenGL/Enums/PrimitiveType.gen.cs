@@ -11,77 +11,77 @@ namespace Silk.NET.OpenGL;
 public enum PrimitiveType : uint
 {
     [NativeName("GL_POINTS")]
-    Points = unchecked((uint)0x0000),
+    Points = 0,
 
     [NativeName("GL_LINES")]
-    Lines = unchecked((uint)0x0001),
+    Lines = 1,
 
     [NativeName("GL_LINE_LOOP")]
-    LineLoop = unchecked((uint)0x0002),
+    LineLoop = 2,
 
     [NativeName("GL_LINE_STRIP")]
-    LineStrip = unchecked((uint)0x0003),
+    LineStrip = 3,
 
     [NativeName("GL_TRIANGLES")]
-    Triangles = unchecked((uint)0x0004),
+    Triangles = 4,
 
     [NativeName("GL_TRIANGLE_STRIP")]
-    TriangleStrip = unchecked((uint)0x0005),
+    TriangleStrip = 5,
 
     [NativeName("GL_TRIANGLE_FAN")]
-    TriangleFan = unchecked((uint)0x0006),
+    TriangleFan = 6,
 
     [NativeName("GL_QUADS")]
-    Quads = unchecked((uint)0x0007),
+    Quads = 7,
 
     [NativeName("GL_QUAD_STRIP")]
-    QuadStrip = unchecked((uint)0x0008),
+    QuadStrip = 8,
 
     [NativeName("GL_POLYGON")]
-    Polygon = unchecked((uint)0x0009),
+    Polygon = 9,
 
     [NativeName("GL_LINES_ADJACENCY")]
-    LinesAdjacency = unchecked((uint)0x000A),
+    LinesAdjacency = 10,
 
     [NativeName("GL_LINE_STRIP_ADJACENCY")]
-    LineStripAdjacency = unchecked((uint)0x000B),
+    LineStripAdjacency = 11,
 
     [NativeName("GL_TRIANGLES_ADJACENCY")]
-    TrianglesAdjacency = unchecked((uint)0x000C),
+    TrianglesAdjacency = 12,
 
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY")]
-    TriangleStripAdjacency = unchecked((uint)0x000D),
+    TriangleStripAdjacency = 13,
 
     [NativeName("GL_PATCHES")]
-    Patches = unchecked((uint)0x000E),
+    Patches = 14,
 
     [NativeName("GL_LINES_ADJACENCY_ARB")]
-    LinesAdjacencyARB = unchecked((uint)0x000A),
+    LinesAdjacencyARB = 10,
 
     [NativeName("GL_LINE_STRIP_ADJACENCY_ARB")]
-    LineStripAdjacencyARB = unchecked((uint)0x000B),
+    LineStripAdjacencyARB = 11,
 
     [NativeName("GL_TRIANGLES_ADJACENCY_ARB")]
-    TrianglesAdjacencyARB = unchecked((uint)0x000C),
+    TrianglesAdjacencyARB = 12,
 
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_ARB")]
-    TriangleStripAdjacencyARB = unchecked((uint)0x000D),
+    TriangleStripAdjacencyARB = 13,
 
     [NativeName("GL_LINES_ADJACENCY_EXT")]
-    LinesAdjacencyEXT = unchecked((uint)0x000A),
+    LinesAdjacencyEXT = 10,
 
     [NativeName("GL_LINE_STRIP_ADJACENCY_EXT")]
-    LineStripAdjacencyEXT = unchecked((uint)0x000B),
+    LineStripAdjacencyEXT = 11,
 
     [NativeName("GL_TRIANGLES_ADJACENCY_EXT")]
-    TrianglesAdjacencyEXT = unchecked((uint)0x000C),
+    TrianglesAdjacencyEXT = 12,
 
     [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_EXT")]
-    TriangleStripAdjacencyEXT = unchecked((uint)0x000D),
+    TriangleStripAdjacencyEXT = 13,
 
     [NativeName("GL_PATCHES_EXT")]
-    PatchesEXT = unchecked((uint)0x000E),
+    PatchesEXT = 14,
 
     [NativeName("GL_QUADS_EXT")]
-    QuadsEXT = unchecked((uint)0x0007),
+    QuadsEXT = 7,
 }

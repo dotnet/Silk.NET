@@ -14,29 +14,29 @@ public enum SubgroupSupportedFeatures : uint
     None = 0x0,
 
     [NativeName("GL_SUBGROUP_FEATURE_BASIC_BIT_KHR")]
-    BasicBitKHR = unchecked((uint)0x00000001),
+    BasicBitKHR = 0x1,
 
     [NativeName("GL_SUBGROUP_FEATURE_VOTE_BIT_KHR")]
-    VoteBitKHR = unchecked((uint)0x00000002),
+    VoteBitKHR = 0x2,
 
     [NativeName("GL_SUBGROUP_FEATURE_ARITHMETIC_BIT_KHR")]
-    ArithmeticBitKHR = unchecked((uint)0x00000004),
+    ArithmeticBitKHR = 0x4,
 
     [NativeName("GL_SUBGROUP_FEATURE_BALLOT_BIT_KHR")]
-    BallotBitKHR = unchecked((uint)0x00000008),
+    BallotBitKHR = 0x8,
 
     [NativeName("GL_SUBGROUP_FEATURE_SHUFFLE_BIT_KHR")]
-    ShuffleBitKHR = unchecked((uint)0x00000010),
+    ShuffleBitKHR = 0x10,
 
     [NativeName("GL_SUBGROUP_FEATURE_SHUFFLE_RELATIVE_BIT_KHR")]
-    ShuffleRelativeBitKHR = unchecked((uint)0x00000020),
+    ShuffleRelativeBitKHR = 0x20,
 
     [NativeName("GL_SUBGROUP_FEATURE_CLUSTERED_BIT_KHR")]
-    ClusteredBitKHR = unchecked((uint)0x00000040),
+    ClusteredBitKHR = 0x40,
 
     [NativeName("GL_SUBGROUP_FEATURE_QUAD_BIT_KHR")]
-    QuadBitKHR = unchecked((uint)0x00000080),
+    QuadBitKHR = 0x80,
 
     [NativeName("GL_SUBGROUP_FEATURE_PARTITIONED_BIT_NV")]
-    PartitionedBitNV = unchecked((uint)0x00000100),
+    PartitionedBitNV = 0x100,
 }

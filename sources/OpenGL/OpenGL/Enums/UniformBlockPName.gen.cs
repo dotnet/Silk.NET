@@ -11,35 +11,35 @@ namespace Silk.NET.OpenGL;
 public enum UniformBlockPName : uint
 {
     [NativeName("GL_UNIFORM_BLOCK_BINDING")]
-    Binding = unchecked((uint)0x8A3F),
+    Binding = 35391,
 
     [NativeName("GL_UNIFORM_BLOCK_DATA_SIZE")]
-    DataSize = unchecked((uint)0x8A40),
+    DataSize = 35392,
 
     [NativeName("GL_UNIFORM_BLOCK_NAME_LENGTH")]
-    NameLength = unchecked((uint)0x8A41),
+    NameLength = 35393,
 
     [NativeName("GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS")]
-    ActiveUniforms = unchecked((uint)0x8A42),
+    ActiveUniforms = 35394,
 
     [NativeName("GL_UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES")]
-    ActiveUniformIndices = unchecked((uint)0x8A43),
+    ActiveUniformIndices = 35395,
 
     [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER")]
-    ReferencedByVertexShader = unchecked((uint)0x8A44),
+    ReferencedByVertexShader = 35396,
 
     [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER")]
-    ReferencedByGeometryShader = unchecked((uint)0x8A45),
+    ReferencedByGeometryShader = 35397,
 
     [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER")]
-    ReferencedByFragmentShader = unchecked((uint)0x8A46),
+    ReferencedByFragmentShader = 35398,
 
     [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER")]
-    ReferencedByTessControlShader = unchecked((uint)0x84F0),
+    ReferencedByTessControlShader = 34032,
 
     [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER")]
-    ReferencedByTessEvaluationShader = unchecked((uint)0x84F1),
+    ReferencedByTessEvaluationShader = 34033,
 
     [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER")]
-    ReferencedByComputeShader = unchecked((uint)0x90EC),
+    ReferencedByComputeShader = 37100,
 }

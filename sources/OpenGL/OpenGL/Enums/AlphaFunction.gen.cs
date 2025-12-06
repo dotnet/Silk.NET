@@ -11,26 +11,26 @@ namespace Silk.NET.OpenGL;
 public enum AlphaFunction : uint
 {
     [NativeName("GL_NEVER")]
-    Never = unchecked((uint)0x0200),
+    Never = 512,
 
     [NativeName("GL_LESS")]
-    Less = unchecked((uint)0x0201),
+    Less = 513,
 
     [NativeName("GL_EQUAL")]
-    Equal = unchecked((uint)0x0202),
+    Equal = 514,
 
     [NativeName("GL_LEQUAL")]
-    Lequal = unchecked((uint)0x0203),
+    Lequal = 515,
 
     [NativeName("GL_GREATER")]
-    Greater = unchecked((uint)0x0204),
+    Greater = 516,
 
     [NativeName("GL_NOTEQUAL")]
-    Notequal = unchecked((uint)0x0205),
+    Notequal = 517,
 
     [NativeName("GL_GEQUAL")]
-    Gequal = unchecked((uint)0x0206),
+    Gequal = 518,
 
     [NativeName("GL_ALWAYS")]
-    Always = unchecked((uint)0x0207),
+    Always = 519,
 }

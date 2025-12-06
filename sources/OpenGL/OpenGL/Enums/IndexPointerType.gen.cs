@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum IndexPointerType : uint
 {
     [NativeName("GL_SHORT")]
-    Short = unchecked((uint)0x1402),
+    Short = 5122,
 
     [NativeName("GL_FLOAT")]
-    Float = unchecked((uint)0x1406),
+    Float = 5126,
 
     [NativeName("GL_INT")]
-    Int = unchecked((uint)0x1404),
+    Int = 5124,
 
     [NativeName("GL_DOUBLE")]
-    Double = unchecked((uint)0x140A),
+    Double = 5130,
 }

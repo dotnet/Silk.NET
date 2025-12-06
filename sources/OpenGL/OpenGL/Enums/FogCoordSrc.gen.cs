@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum FogCoordSrc : uint
 {
     [NativeName("GL_FOG_COORDINATE")]
-    FogCoordinate = unchecked((uint)0x8451),
+    FogCoordinate = 33873,
 
     [NativeName("GL_FRAGMENT_DEPTH")]
-    FragmentDepth = unchecked((uint)0x8452),
+    FragmentDepth = 33874,
 
     [NativeName("GL_FOG_COORD")]
-    FogCoord = unchecked((uint)0x8451),
+    FogCoord = 33873,
 
     [NativeName("GL_FOG_COORDINATE_EXT")]
-    FogCoordinateEXT = unchecked((uint)0x8451),
+    FogCoordinateEXT = 33873,
 
     [NativeName("GL_FRAGMENT_DEPTH_EXT")]
-    FragmentDepthEXT = unchecked((uint)0x8452),
+    FragmentDepthEXT = 33874,
 }

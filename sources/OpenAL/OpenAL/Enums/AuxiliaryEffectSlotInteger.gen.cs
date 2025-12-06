@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum AuxiliaryEffectSlotInteger : uint
 {
     [NativeName("AL_EFFECTSLOT_EFFECT")]
-    Effect = unchecked((uint)0x0001),
+    Effect = 1,
 
     [NativeName("AL_EFFECTSLOT_AUXILIARY_SEND_AUTO")]
-    AuxiliarySendAuto = unchecked((uint)0x0003),
+    AuxiliarySendAuto = 3,
 
     [NativeName("AL_EFFECTSLOT_TARGET_SOFT")]
-    TargetSOFT = unchecked((uint)0x199C),
+    TargetSOFT = 6556,
 }

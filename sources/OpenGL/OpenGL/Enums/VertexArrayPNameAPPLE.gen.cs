@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum VertexArrayPNameAPPLE : uint
 {
     [NativeName("GL_STORAGE_CACHED_APPLE")]
-    Cached = unchecked((uint)0x85BE),
+    Cached = 34238,
 
     [NativeName("GL_STORAGE_SHARED_APPLE")]
-    Shared = unchecked((uint)0x85BF),
+    Shared = 34239,
 
     [NativeName("GL_STORAGE_CLIENT_APPLE")]
-    Client = unchecked((uint)0x85B4),
+    Client = 34228,
 }

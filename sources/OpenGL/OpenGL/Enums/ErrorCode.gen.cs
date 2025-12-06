@@ -11,41 +11,41 @@ namespace Silk.NET.OpenGL;
 public enum ErrorCode : uint
 {
     [NativeName("GL_NO_ERROR")]
-    NoError = unchecked((uint)0),
+    NoError = 0,
 
     [NativeName("GL_INVALID_ENUM")]
-    InvalidEnum = unchecked((uint)0x0500),
+    InvalidEnum = 1280,
 
     [NativeName("GL_INVALID_VALUE")]
-    InvalidValue = unchecked((uint)0x0501),
+    InvalidValue = 1281,
 
     [NativeName("GL_INVALID_OPERATION")]
-    InvalidOperation = unchecked((uint)0x0502),
+    InvalidOperation = 1282,
 
     [NativeName("GL_STACK_OVERFLOW")]
-    StackOverflow = unchecked((uint)0x0503),
+    StackOverflow = 1283,
 
     [NativeName("GL_STACK_UNDERFLOW")]
-    StackUnderflow = unchecked((uint)0x0504),
+    StackUnderflow = 1284,
 
     [NativeName("GL_OUT_OF_MEMORY")]
-    OutOfMemory = unchecked((uint)0x0505),
+    OutOfMemory = 1285,
 
     [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
-    InvalidFramebufferOperationOES = unchecked((uint)0x0506),
+    InvalidFramebufferOperationOES = 1286,
 
     [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION")]
-    InvalidFramebufferOperation = unchecked((uint)0x0506),
+    InvalidFramebufferOperation = 1286,
 
     [NativeName("GL_TABLE_TOO_LARGE")]
-    TableTooLarge = unchecked((uint)0x8031),
+    TableTooLarge = 32817,
 
     [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_EXT")]
-    InvalidFramebufferOperationEXT = unchecked((uint)0x0506),
+    InvalidFramebufferOperationEXT = 1286,
 
     [NativeName("GL_TABLE_TOO_LARGE_EXT")]
-    TableTooLargeEXT = unchecked((uint)0x8031),
+    TableTooLargeEXT = 32817,
 
     [NativeName("GL_TEXTURE_TOO_LARGE_EXT")]
-    TextureTooLargeEXT = unchecked((uint)0x8065),
+    TextureTooLargeEXT = 32869,
 }

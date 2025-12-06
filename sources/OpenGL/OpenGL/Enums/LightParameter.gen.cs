@@ -11,32 +11,32 @@ namespace Silk.NET.OpenGL;
 public enum LightParameter : uint
 {
     [NativeName("GL_AMBIENT")]
-    Ambient = unchecked((uint)0x1200),
+    Ambient = 4608,
 
     [NativeName("GL_DIFFUSE")]
-    Diffuse = unchecked((uint)0x1201),
+    Diffuse = 4609,
 
     [NativeName("GL_SPECULAR")]
-    Specular = unchecked((uint)0x1202),
+    Specular = 4610,
 
     [NativeName("GL_POSITION")]
-    Position = unchecked((uint)0x1203),
+    Position = 4611,
 
     [NativeName("GL_SPOT_DIRECTION")]
-    SpotDirection = unchecked((uint)0x1204),
+    SpotDirection = 4612,
 
     [NativeName("GL_SPOT_EXPONENT")]
-    SpotExponent = unchecked((uint)0x1205),
+    SpotExponent = 4613,
 
     [NativeName("GL_SPOT_CUTOFF")]
-    SpotCutoff = unchecked((uint)0x1206),
+    SpotCutoff = 4614,
 
     [NativeName("GL_CONSTANT_ATTENUATION")]
-    ConstantAttenuation = unchecked((uint)0x1207),
+    ConstantAttenuation = 4615,
 
     [NativeName("GL_LINEAR_ATTENUATION")]
-    LinearAttenuation = unchecked((uint)0x1208),
+    LinearAttenuation = 4616,
 
     [NativeName("GL_QUADRATIC_ATTENUATION")]
-    QuadraticAttenuation = unchecked((uint)0x1209),
+    QuadraticAttenuation = 4617,
 }

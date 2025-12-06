@@ -11,218 +11,218 @@ namespace Silk.NET.OpenGL;
 public enum InternalFormatPName : uint
 {
     [NativeName("GL_SAMPLES")]
-    Samples = unchecked((uint)0x80A9),
+    Samples = 32937,
 
     [NativeName("GL_GENERATE_MIPMAP")]
-    GenerateMipmap = unchecked((uint)0x8191),
+    GenerateMipmap = 33169,
 
     [NativeName("GL_TEXTURE_COMPRESSED")]
-    TextureCompressed = unchecked((uint)0x86A1),
+    TextureCompressed = 34465,
 
     [NativeName("GL_NUM_SAMPLE_COUNTS")]
-    NumSampleCounts = unchecked((uint)0x9380),
+    NumSampleCounts = 37760,
 
     [NativeName("GL_IMAGE_FORMAT_COMPATIBILITY_TYPE")]
-    ImageFormatCompatibilityType = unchecked((uint)0x90C7),
+    ImageFormatCompatibilityType = 37063,
 
     [NativeName("GL_INTERNALFORMAT_SUPPORTED")]
-    InternalformatSupported = unchecked((uint)0x826F),
+    InternalformatSupported = 33391,
 
     [NativeName("GL_INTERNALFORMAT_PREFERRED")]
-    InternalformatPreferred = unchecked((uint)0x8270),
+    InternalformatPreferred = 33392,
 
     [NativeName("GL_INTERNALFORMAT_RED_SIZE")]
-    InternalformatRedSize = unchecked((uint)0x8271),
+    InternalformatRedSize = 33393,
 
     [NativeName("GL_INTERNALFORMAT_GREEN_SIZE")]
-    InternalformatGreenSize = unchecked((uint)0x8272),
+    InternalformatGreenSize = 33394,
 
     [NativeName("GL_INTERNALFORMAT_BLUE_SIZE")]
-    InternalformatBlueSize = unchecked((uint)0x8273),
+    InternalformatBlueSize = 33395,
 
     [NativeName("GL_INTERNALFORMAT_ALPHA_SIZE")]
-    InternalformatAlphaSize = unchecked((uint)0x8274),
+    InternalformatAlphaSize = 33396,
 
     [NativeName("GL_INTERNALFORMAT_DEPTH_SIZE")]
-    InternalformatDepthSize = unchecked((uint)0x8275),
+    InternalformatDepthSize = 33397,
 
     [NativeName("GL_INTERNALFORMAT_STENCIL_SIZE")]
-    InternalformatStencilSize = unchecked((uint)0x8276),
+    InternalformatStencilSize = 33398,
 
     [NativeName("GL_INTERNALFORMAT_SHARED_SIZE")]
-    InternalformatSharedSize = unchecked((uint)0x8277),
+    InternalformatSharedSize = 33399,
 
     [NativeName("GL_INTERNALFORMAT_RED_TYPE")]
-    InternalformatRedType = unchecked((uint)0x8278),
+    InternalformatRedType = 33400,
 
     [NativeName("GL_INTERNALFORMAT_GREEN_TYPE")]
-    InternalformatGreenType = unchecked((uint)0x8279),
+    InternalformatGreenType = 33401,
 
     [NativeName("GL_INTERNALFORMAT_BLUE_TYPE")]
-    InternalformatBlueType = unchecked((uint)0x827A),
+    InternalformatBlueType = 33402,
 
     [NativeName("GL_INTERNALFORMAT_ALPHA_TYPE")]
-    InternalformatAlphaType = unchecked((uint)0x827B),
+    InternalformatAlphaType = 33403,
 
     [NativeName("GL_INTERNALFORMAT_DEPTH_TYPE")]
-    InternalformatDepthType = unchecked((uint)0x827C),
+    InternalformatDepthType = 33404,
 
     [NativeName("GL_INTERNALFORMAT_STENCIL_TYPE")]
-    InternalformatStencilType = unchecked((uint)0x827D),
+    InternalformatStencilType = 33405,
 
     [NativeName("GL_MAX_WIDTH")]
-    MaxWidth = unchecked((uint)0x827E),
+    MaxWidth = 33406,
 
     [NativeName("GL_MAX_HEIGHT")]
-    MaxHeight = unchecked((uint)0x827F),
+    MaxHeight = 33407,
 
     [NativeName("GL_MAX_DEPTH")]
-    MaxDepth = unchecked((uint)0x8280),
+    MaxDepth = 33408,
 
     [NativeName("GL_MAX_LAYERS")]
-    MaxLayers = unchecked((uint)0x8281),
+    MaxLayers = 33409,
 
     [NativeName("GL_COLOR_COMPONENTS")]
-    ColorComponents = unchecked((uint)0x8283),
+    ColorComponents = 33411,
 
     [NativeName("GL_COLOR_RENDERABLE")]
-    ColorRenderable = unchecked((uint)0x8286),
+    ColorRenderable = 33414,
 
     [NativeName("GL_DEPTH_RENDERABLE")]
-    DepthRenderable = unchecked((uint)0x8287),
+    DepthRenderable = 33415,
 
     [NativeName("GL_STENCIL_RENDERABLE")]
-    StencilRenderable = unchecked((uint)0x8288),
+    StencilRenderable = 33416,
 
     [NativeName("GL_FRAMEBUFFER_RENDERABLE")]
-    FramebufferRenderable = unchecked((uint)0x8289),
+    FramebufferRenderable = 33417,
 
     [NativeName("GL_FRAMEBUFFER_RENDERABLE_LAYERED")]
-    FramebufferRenderableLayered = unchecked((uint)0x828A),
+    FramebufferRenderableLayered = 33418,
 
     [NativeName("GL_FRAMEBUFFER_BLEND")]
-    FramebufferBlend = unchecked((uint)0x828B),
+    FramebufferBlend = 33419,
 
     [NativeName("GL_READ_PIXELS")]
-    ReadPixels = unchecked((uint)0x828C),
+    ReadPixels = 33420,
 
     [NativeName("GL_READ_PIXELS_FORMAT")]
-    ReadPixelsFormat = unchecked((uint)0x828D),
+    ReadPixelsFormat = 33421,
 
     [NativeName("GL_READ_PIXELS_TYPE")]
-    ReadPixelsType = unchecked((uint)0x828E),
+    ReadPixelsType = 33422,
 
     [NativeName("GL_TEXTURE_IMAGE_FORMAT")]
-    TextureImageFormat = unchecked((uint)0x828F),
+    TextureImageFormat = 33423,
 
     [NativeName("GL_TEXTURE_IMAGE_TYPE")]
-    TextureImageType = unchecked((uint)0x8290),
+    TextureImageType = 33424,
 
     [NativeName("GL_GET_TEXTURE_IMAGE_FORMAT")]
-    GetTextureImageFormat = unchecked((uint)0x8291),
+    GetTextureImageFormat = 33425,
 
     [NativeName("GL_GET_TEXTURE_IMAGE_TYPE")]
-    GetTextureImageType = unchecked((uint)0x8292),
+    GetTextureImageType = 33426,
 
     [NativeName("GL_MIPMAP")]
-    Mipmap = unchecked((uint)0x8293),
+    Mipmap = 33427,
 
     [NativeName("GL_AUTO_GENERATE_MIPMAP")]
-    AutoGenerateMipmap = unchecked((uint)0x8295),
+    AutoGenerateMipmap = 33429,
 
     [NativeName("GL_COLOR_ENCODING")]
-    ColorEncoding = unchecked((uint)0x8296),
+    ColorEncoding = 33430,
 
     [NativeName("GL_SRGB_READ")]
-    SrgbRead = unchecked((uint)0x8297),
+    SrgbRead = 33431,
 
     [NativeName("GL_SRGB_WRITE")]
-    SrgbWrite = unchecked((uint)0x8298),
+    SrgbWrite = 33432,
 
     [NativeName("GL_FILTER")]
-    Filter = unchecked((uint)0x829A),
+    Filter = 33434,
 
     [NativeName("GL_VERTEX_TEXTURE")]
-    VertexTexture = unchecked((uint)0x829B),
+    VertexTexture = 33435,
 
     [NativeName("GL_TESS_CONTROL_TEXTURE")]
-    TessControlTexture = unchecked((uint)0x829C),
+    TessControlTexture = 33436,
 
     [NativeName("GL_TESS_EVALUATION_TEXTURE")]
-    TessEvaluationTexture = unchecked((uint)0x829D),
+    TessEvaluationTexture = 33437,
 
     [NativeName("GL_GEOMETRY_TEXTURE")]
-    GeometryTexture = unchecked((uint)0x829E),
+    GeometryTexture = 33438,
 
     [NativeName("GL_FRAGMENT_TEXTURE")]
-    FragmentTexture = unchecked((uint)0x829F),
+    FragmentTexture = 33439,
 
     [NativeName("GL_COMPUTE_TEXTURE")]
-    ComputeTexture = unchecked((uint)0x82A0),
+    ComputeTexture = 33440,
 
     [NativeName("GL_TEXTURE_SHADOW")]
-    TextureShadow = unchecked((uint)0x82A1),
+    TextureShadow = 33441,
 
     [NativeName("GL_TEXTURE_GATHER")]
-    TextureGather = unchecked((uint)0x82A2),
+    TextureGather = 33442,
 
     [NativeName("GL_TEXTURE_GATHER_SHADOW")]
-    TextureGatherShadow = unchecked((uint)0x82A3),
+    TextureGatherShadow = 33443,
 
     [NativeName("GL_SHADER_IMAGE_LOAD")]
-    ShaderImageLoad = unchecked((uint)0x82A4),
+    ShaderImageLoad = 33444,
 
     [NativeName("GL_SHADER_IMAGE_STORE")]
-    ShaderImageStore = unchecked((uint)0x82A5),
+    ShaderImageStore = 33445,
 
     [NativeName("GL_SHADER_IMAGE_ATOMIC")]
-    ShaderImageAtomic = unchecked((uint)0x82A6),
+    ShaderImageAtomic = 33446,
 
     [NativeName("GL_IMAGE_TEXEL_SIZE")]
-    ImageTexelSize = unchecked((uint)0x82A7),
+    ImageTexelSize = 33447,
 
     [NativeName("GL_IMAGE_COMPATIBILITY_CLASS")]
-    ImageCompatibilityClass = unchecked((uint)0x82A8),
+    ImageCompatibilityClass = 33448,
 
     [NativeName("GL_IMAGE_PIXEL_FORMAT")]
-    ImagePixelFormat = unchecked((uint)0x82A9),
+    ImagePixelFormat = 33449,
 
     [NativeName("GL_IMAGE_PIXEL_TYPE")]
-    ImagePixelType = unchecked((uint)0x82AA),
+    ImagePixelType = 33450,
 
     [NativeName("GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_TEST")]
-    SimultaneousTextureAndDepthTest = unchecked((uint)0x82AC),
+    SimultaneousTextureAndDepthTest = 33452,
 
     [NativeName("GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_TEST")]
-    SimultaneousTextureAndStencilTest = unchecked((uint)0x82AD),
+    SimultaneousTextureAndStencilTest = 33453,
 
     [NativeName("GL_SIMULTANEOUS_TEXTURE_AND_DEPTH_WRITE")]
-    SimultaneousTextureAndDepthWrite = unchecked((uint)0x82AE),
+    SimultaneousTextureAndDepthWrite = 33454,
 
     [NativeName("GL_SIMULTANEOUS_TEXTURE_AND_STENCIL_WRITE")]
-    SimultaneousTextureAndStencilWrite = unchecked((uint)0x82AF),
+    SimultaneousTextureAndStencilWrite = 33455,
 
     [NativeName("GL_TEXTURE_COMPRESSED_BLOCK_WIDTH")]
-    TextureCompressedBlockWidth = unchecked((uint)0x82B1),
+    TextureCompressedBlockWidth = 33457,
 
     [NativeName("GL_TEXTURE_COMPRESSED_BLOCK_HEIGHT")]
-    TextureCompressedBlockHeight = unchecked((uint)0x82B2),
+    TextureCompressedBlockHeight = 33458,
 
     [NativeName("GL_TEXTURE_COMPRESSED_BLOCK_SIZE")]
-    TextureCompressedBlockSize = unchecked((uint)0x82B3),
+    TextureCompressedBlockSize = 33459,
 
     [NativeName("GL_CLEAR_BUFFER")]
-    ClearBuffer = unchecked((uint)0x82B4),
+    ClearBuffer = 33460,
 
     [NativeName("GL_TEXTURE_VIEW")]
-    TextureView = unchecked((uint)0x82B5),
+    TextureView = 33461,
 
     [NativeName("GL_VIEW_COMPATIBILITY_CLASS")]
-    ViewCompatibilityClass = unchecked((uint)0x82B6),
+    ViewCompatibilityClass = 33462,
 
     [NativeName("GL_CLEAR_TEXTURE")]
-    ClearTexture = unchecked((uint)0x9365),
+    ClearTexture = 37733,
 
     [NativeName("GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
-    NumSurfaceCompressionFixedRatesEXT = unchecked((uint)0x8F6E),
+    NumSurfaceCompressionFixedRatesEXT = 36718,
 }

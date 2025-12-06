@@ -14,8 +14,8 @@ public enum SyncObjectMask : uint
     None = 0x0,
 
     [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
-    FlushCommandsBitAPPLE = unchecked((uint)0x00000001),
+    FlushCommandsBitAPPLE = 0x1,
 
     [NativeName("GL_SYNC_FLUSH_COMMANDS_BIT")]
-    FlushCommandsBit = unchecked((uint)0x00000001),
+    FlushCommandsBit = 0x1,
 }

@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum HistogramTargetEXT : uint
 {
     [NativeName("GL_HISTOGRAM")]
-    Histogram = unchecked((uint)0x8024),
+    Histogram = 32804,
 
     [NativeName("GL_PROXY_HISTOGRAM")]
-    ProxyHistogram = unchecked((uint)0x8025),
+    ProxyHistogram = 32805,
 
     [NativeName("GL_HISTOGRAM_EXT")]
-    HistogramEXT = unchecked((uint)0x8024),
+    HistogramEXT = 32804,
 
     [NativeName("GL_PROXY_HISTOGRAM_EXT")]
-    ProxyHistogramEXT = unchecked((uint)0x8025),
+    ProxyHistogramEXT = 32805,
 }

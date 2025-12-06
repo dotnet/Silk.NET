@@ -14,5 +14,5 @@ namespace Silk.NET.OpenAL;
 public enum BufferFloat : uint
 {
     [NativeName("AL_SEC_LENGTH_SOFT")]
-    SecLengthSOFT = unchecked((uint)0x200B),
+    SecLengthSOFT = 8203,
 }

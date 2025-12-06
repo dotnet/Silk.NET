@@ -14,20 +14,20 @@ namespace Silk.NET.OpenAL;
 public enum DoublePName : uint
 {
     [NativeName("AL_DEBUG_LOGGED_MESSAGES_EXT")]
-    DebugLoggedMessagesEXT = unchecked((uint)0x19C7),
+    DebugLoggedMessagesEXT = 6599,
 
     [NativeName("AL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_EXT")]
-    DebugNextLoggedMessageLengthEXT = unchecked((uint)0x19C8),
+    DebugNextLoggedMessageLengthEXT = 6600,
 
     [NativeName("AL_MAX_DEBUG_MESSAGE_LENGTH_EXT")]
-    MaxDebugMessageLengthEXT = unchecked((uint)0x19C9),
+    MaxDebugMessageLengthEXT = 6601,
 
     [NativeName("AL_MAX_DEBUG_LOGGED_MESSAGES_EXT")]
-    MaxDebugLoggedMessagesEXT = unchecked((uint)0x19CA),
+    MaxDebugLoggedMessagesEXT = 6602,
 
     [NativeName("AL_MAX_DEBUG_GROUP_STACK_DEPTH_EXT")]
-    MaxDebugGroupStackDepthEXT = unchecked((uint)0x19CB),
+    MaxDebugGroupStackDepthEXT = 6603,
 
     [NativeName("AL_MAX_LABEL_LENGTH_EXT")]
-    MaxLabelLengthEXT = unchecked((uint)0x19CC),
+    MaxLabelLengthEXT = 6604,
 }

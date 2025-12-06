@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum MeshMode2 : uint
 {
     [NativeName("GL_POINT")]
-    Point = unchecked((uint)0x1B00),
+    Point = 6912,
 
     [NativeName("GL_LINE")]
-    Line = unchecked((uint)0x1B01),
+    Line = 6913,
 
     [NativeName("GL_FILL")]
-    Fill = unchecked((uint)0x1B02),
+    Fill = 6914,
 }

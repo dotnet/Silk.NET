@@ -14,92 +14,92 @@ namespace Silk.NET.OpenAL;
 public enum VocalMorpherPhoneme : uint
 {
     [NativeName("AL_VOCAL_MORPHER_PHONEME_A")]
-    A = unchecked((uint)0),
+    A = 0,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_E")]
-    E = unchecked((uint)1),
+    E = 1,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_I")]
-    I = unchecked((uint)2),
+    I = 2,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_O")]
-    O = unchecked((uint)3),
+    O = 3,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_U")]
-    U = unchecked((uint)4),
+    U = 4,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_AA")]
-    Aa = unchecked((uint)5),
+    Aa = 5,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_AE")]
-    Ae = unchecked((uint)6),
+    Ae = 6,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_AH")]
-    Ah = unchecked((uint)7),
+    Ah = 7,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_AO")]
-    Ao = unchecked((uint)8),
+    Ao = 8,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_EH")]
-    Eh = unchecked((uint)9),
+    Eh = 9,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_ER")]
-    Er = unchecked((uint)10),
+    Er = 10,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_IH")]
-    Ih = unchecked((uint)11),
+    Ih = 11,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_IY")]
-    Iy = unchecked((uint)12),
+    Iy = 12,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_UH")]
-    Uh = unchecked((uint)13),
+    Uh = 13,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_UW")]
-    Uw = unchecked((uint)14),
+    Uw = 14,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_B")]
-    B = unchecked((uint)15),
+    B = 15,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_D")]
-    D = unchecked((uint)16),
+    D = 16,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_F")]
-    F = unchecked((uint)17),
+    F = 17,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_G")]
-    G = unchecked((uint)18),
+    G = 18,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_J")]
-    J = unchecked((uint)19),
+    J = 19,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_K")]
-    K = unchecked((uint)20),
+    K = 20,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_L")]
-    L = unchecked((uint)21),
+    L = 21,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_M")]
-    M = unchecked((uint)22),
+    M = 22,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_N")]
-    N = unchecked((uint)23),
+    N = 23,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_P")]
-    P = unchecked((uint)24),
+    P = 24,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_R")]
-    R = unchecked((uint)25),
+    R = 25,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_S")]
-    S = unchecked((uint)26),
+    S = 26,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_T")]
-    T = unchecked((uint)27),
+    T = 27,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_V")]
-    V = unchecked((uint)28),
+    V = 28,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEME_Z")]
-    Z = unchecked((uint)29),
+    Z = 29,
 }

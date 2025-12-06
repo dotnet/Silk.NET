@@ -14,32 +14,32 @@ namespace Silk.NET.OpenAL;
 public enum SampleTypeSOFT : uint
 {
     [NativeName("AL_BYTE_SOFT")]
-    Byte = unchecked((uint)0x1400),
+    Byte = 5120,
 
     [NativeName("AL_UNSIGNED_BYTE_SOFT")]
-    UnsignedByte = unchecked((uint)0x1401),
+    UnsignedByte = 5121,
 
     [NativeName("AL_SHORT_SOFT")]
-    Short = unchecked((uint)0x1402),
+    Short = 5122,
 
     [NativeName("AL_UNSIGNED_SHORT_SOFT")]
-    UnsignedShort = unchecked((uint)0x1403),
+    UnsignedShort = 5123,
 
     [NativeName("AL_INT_SOFT")]
-    Int = unchecked((uint)0x1404),
+    Int = 5124,
 
     [NativeName("AL_UNSIGNED_INT_SOFT")]
-    UnsignedInt = unchecked((uint)0x1405),
+    UnsignedInt = 5125,
 
     [NativeName("AL_FLOAT_SOFT")]
-    Float = unchecked((uint)0x1406),
+    Float = 5126,
 
     [NativeName("AL_DOUBLE_SOFT")]
-    Double = unchecked((uint)0x1407),
+    Double = 5127,
 
     [NativeName("AL_BYTE3_SOFT")]
-    Byte3 = unchecked((uint)0x1408),
+    Byte3 = 5128,
 
     [NativeName("AL_UNSIGNED_BYTE3_SOFT")]
-    UnsignedByte3 = unchecked((uint)0x1409),
+    UnsignedByte3 = 5129,
 }

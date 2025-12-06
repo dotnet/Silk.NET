@@ -14,56 +14,56 @@ public enum UseProgramStageMask : uint
     None = 0x0,
 
     [NativeName("GL_VERTEX_SHADER_BIT")]
-    VertexShaderBit = unchecked((uint)0x00000001),
+    VertexShaderBit = 0x1,
 
     [NativeName("GL_FRAGMENT_SHADER_BIT")]
-    FragmentShaderBit = unchecked((uint)0x00000002),
+    FragmentShaderBit = 0x2,
 
     [NativeName("GL_GEOMETRY_SHADER_BIT")]
-    GeometryShaderBit = unchecked((uint)0x00000004),
+    GeometryShaderBit = 0x4,
 
     [NativeName("GL_TESS_CONTROL_SHADER_BIT")]
-    TessControlShaderBit = unchecked((uint)0x00000008),
+    TessControlShaderBit = 0x8,
 
     [NativeName("GL_TESS_EVALUATION_SHADER_BIT")]
-    TessEvaluationShaderBit = unchecked((uint)0x00000010),
+    TessEvaluationShaderBit = 0x10,
 
     [NativeName("GL_ALL_SHADER_BITS")]
-    AllShaderBits = unchecked((uint)0xFFFFFFFF),
+    AllShaderBits = 0xFFFFFFFF,
 
     [NativeName("GL_COMPUTE_SHADER_BIT")]
-    ComputeShaderBit = unchecked((uint)0x00000020),
+    ComputeShaderBit = 0x20,
 
     [NativeName("GL_MESH_SHADER_BIT_NV")]
-    MeshShaderBitNV = unchecked((uint)0x00000040),
+    MeshShaderBitNV = 0x40,
 
     [NativeName("GL_TASK_SHADER_BIT_NV")]
-    TaskShaderBitNV = unchecked((uint)0x00000080),
+    TaskShaderBitNV = 0x80,
 
     [NativeName("GL_GEOMETRY_SHADER_BIT_OES")]
-    GeometryShaderBitOES = unchecked((uint)0x00000004),
+    GeometryShaderBitOES = 0x4,
 
     [NativeName("GL_TESS_CONTROL_SHADER_BIT_OES")]
-    TessControlShaderBitOES = unchecked((uint)0x00000008),
+    TessControlShaderBitOES = 0x8,
 
     [NativeName("GL_TESS_EVALUATION_SHADER_BIT_OES")]
-    TessEvaluationShaderBitOES = unchecked((uint)0x00000010),
+    TessEvaluationShaderBitOES = 0x10,
 
     [NativeName("GL_GEOMETRY_SHADER_BIT_EXT")]
-    GeometryShaderBitEXT = unchecked((uint)0x00000004),
+    GeometryShaderBitEXT = 0x4,
 
     [NativeName("GL_VERTEX_SHADER_BIT_EXT")]
-    VertexShaderBitEXT = unchecked((uint)0x00000001),
+    VertexShaderBitEXT = 0x1,
 
     [NativeName("GL_FRAGMENT_SHADER_BIT_EXT")]
-    FragmentShaderBitEXT = unchecked((uint)0x00000002),
+    FragmentShaderBitEXT = 0x2,
 
     [NativeName("GL_ALL_SHADER_BITS_EXT")]
-    AllShaderBitsEXT = unchecked((uint)0xFFFFFFFF),
+    AllShaderBitsEXT = 0xFFFFFFFF,
 
     [NativeName("GL_TESS_CONTROL_SHADER_BIT_EXT")]
-    TessControlShaderBitEXT = unchecked((uint)0x00000008),
+    TessControlShaderBitEXT = 0x8,
 
     [NativeName("GL_TESS_EVALUATION_SHADER_BIT_EXT")]
-    TessEvaluationShaderBitEXT = unchecked((uint)0x00000010),
+    TessEvaluationShaderBitEXT = 0x10,
 }

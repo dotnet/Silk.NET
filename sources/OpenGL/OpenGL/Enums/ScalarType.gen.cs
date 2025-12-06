@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum ScalarType : uint
 {
     [NativeName("GL_UNSIGNED_BYTE")]
-    UnsignedByte = unchecked((uint)0x1401),
+    UnsignedByte = 5121,
 
     [NativeName("GL_UNSIGNED_SHORT")]
-    UnsignedShort = unchecked((uint)0x1403),
+    UnsignedShort = 5123,
 
     [NativeName("GL_UNSIGNED_INT")]
-    UnsignedInt = unchecked((uint)0x1405),
+    UnsignedInt = 5125,
 }

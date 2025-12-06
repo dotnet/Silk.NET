@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum LightModelParameter : uint
 {
     [NativeName("GL_LIGHT_MODEL_AMBIENT")]
-    Ambient = unchecked((uint)0x0B53),
+    Ambient = 2899,
 
     [NativeName("GL_LIGHT_MODEL_TWO_SIDE")]
-    TwoSide = unchecked((uint)0x0B52),
+    TwoSide = 2898,
 
     [NativeName("GL_LIGHT_MODEL_LOCAL_VIEWER")]
-    LocalViewer = unchecked((uint)0x0B51),
+    LocalViewer = 2897,
 
     [NativeName("GL_LIGHT_MODEL_COLOR_CONTROL")]
-    ColorControl = unchecked((uint)0x81F8),
+    ColorControl = 33272,
 
     [NativeName("GL_LIGHT_MODEL_COLOR_CONTROL_EXT")]
-    ColorControlEXT = unchecked((uint)0x81F8),
+    ColorControlEXT = 33272,
 }

@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum VocalMorpherWaveform : uint
 {
     [NativeName("AL_VOCAL_MORPHER_WAVEFORM_SINUSOID")]
-    Sinusoid = unchecked((uint)0),
+    Sinusoid = 0,
 
     [NativeName("AL_VOCAL_MORPHER_WAVEFORM_TRIANGLE")]
-    Triangle = unchecked((uint)1),
+    Triangle = 1,
 
     [NativeName("AL_VOCAL_MORPHER_WAVEFORM_SAWTOOTH")]
-    Sawtooth = unchecked((uint)2),
+    Sawtooth = 2,
 }

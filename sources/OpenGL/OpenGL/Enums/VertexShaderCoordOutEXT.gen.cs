@@ -11,35 +11,35 @@ namespace Silk.NET.OpenGL;
 public enum VertexShaderCoordOutEXT : uint
 {
     [NativeName("GL_X_EXT")]
-    X = unchecked((uint)0x87D5),
+    X = 34773,
 
     [NativeName("GL_Y_EXT")]
-    Y = unchecked((uint)0x87D6),
+    Y = 34774,
 
     [NativeName("GL_Z_EXT")]
-    Z = unchecked((uint)0x87D7),
+    Z = 34775,
 
     [NativeName("GL_W_EXT")]
-    W = unchecked((uint)0x87D8),
+    W = 34776,
 
     [NativeName("GL_NEGATIVE_X_EXT")]
-    NegativeX = unchecked((uint)0x87D9),
+    NegativeX = 34777,
 
     [NativeName("GL_NEGATIVE_Y_EXT")]
-    NegativeY = unchecked((uint)0x87DA),
+    NegativeY = 34778,
 
     [NativeName("GL_NEGATIVE_Z_EXT")]
-    NegativeZ = unchecked((uint)0x87DB),
+    NegativeZ = 34779,
 
     [NativeName("GL_NEGATIVE_W_EXT")]
-    NegativeW = unchecked((uint)0x87DC),
+    NegativeW = 34780,
 
     [NativeName("GL_ZERO_EXT")]
-    Zero = unchecked((uint)0x87DD),
+    Zero = 34781,
 
     [NativeName("GL_ONE_EXT")]
-    One = unchecked((uint)0x87DE),
+    One = 34782,
 
     [NativeName("GL_NEGATIVE_ONE_EXT")]
-    NegativeOne = unchecked((uint)0x87DF),
+    NegativeOne = 34783,
 }

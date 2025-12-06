@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum ParameterRangeEXT : uint
 {
     [NativeName("GL_NORMALIZED_RANGE_EXT")]
-    NormalizedRange = unchecked((uint)0x87E0),
+    NormalizedRange = 34784,
 
     [NativeName("GL_FULL_RANGE_EXT")]
-    FullRange = unchecked((uint)0x87E1),
+    FullRange = 34785,
 }

@@ -14,23 +14,23 @@ namespace Silk.NET.OpenAL;
 public enum DistanceModel : uint
 {
     [NativeName("AL_NONE")]
-    None = unchecked((uint)0),
+    None = 0,
 
     [NativeName("AL_INVERSE_DISTANCE")]
-    InverseDistance = unchecked((uint)0xD001),
+    InverseDistance = 53249,
 
     [NativeName("AL_INVERSE_DISTANCE_CLAMPED")]
-    InverseDistanceClamped = unchecked((uint)0xD002),
+    InverseDistanceClamped = 53250,
 
     [NativeName("AL_LINEAR_DISTANCE")]
-    LinearDistance = unchecked((uint)0xD003),
+    LinearDistance = 53251,
 
     [NativeName("AL_LINEAR_DISTANCE_CLAMPED")]
-    LinearDistanceClamped = unchecked((uint)0xD004),
+    LinearDistanceClamped = 53252,
 
     [NativeName("AL_EXPONENT_DISTANCE")]
-    ExponentDistance = unchecked((uint)0xD005),
+    ExponentDistance = 53253,
 
     [NativeName("AL_EXPONENT_DISTANCE_CLAMPED")]
-    ExponentDistanceClamped = unchecked((uint)0xD006),
+    ExponentDistanceClamped = 53254,
 }

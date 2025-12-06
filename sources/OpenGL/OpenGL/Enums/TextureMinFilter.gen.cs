@@ -11,35 +11,35 @@ namespace Silk.NET.OpenGL;
 public enum TextureMinFilter : uint
 {
     [NativeName("GL_NEAREST")]
-    Nearest = unchecked((uint)0x2600),
+    Nearest = 9728,
 
     [NativeName("GL_LINEAR")]
-    Linear = unchecked((uint)0x2601),
+    Linear = 9729,
 
     [NativeName("GL_NEAREST_MIPMAP_NEAREST")]
-    NearestMipmapNearest = unchecked((uint)0x2700),
+    NearestMipmapNearest = 9984,
 
     [NativeName("GL_LINEAR_MIPMAP_NEAREST")]
-    LinearMipmapNearest = unchecked((uint)0x2701),
+    LinearMipmapNearest = 9985,
 
     [NativeName("GL_NEAREST_MIPMAP_LINEAR")]
-    NearestMipmapLinear = unchecked((uint)0x2702),
+    NearestMipmapLinear = 9986,
 
     [NativeName("GL_LINEAR_MIPMAP_LINEAR")]
-    LinearMipmapLinear = unchecked((uint)0x2703),
+    LinearMipmapLinear = 9987,
 
     [NativeName("GL_FILTER4_SGIS")]
-    Filter4SGIS = unchecked((uint)0x8146),
+    Filter4SGIS = 33094,
 
     [NativeName("GL_LINEAR_CLIPMAP_LINEAR_SGIX")]
-    LinearClipmapLinearSGIX = unchecked((uint)0x8170),
+    LinearClipmapLinearSGIX = 33136,
 
     [NativeName("GL_NEAREST_CLIPMAP_NEAREST_SGIX")]
-    NearestClipmapNearestSGIX = unchecked((uint)0x844D),
+    NearestClipmapNearestSGIX = 33869,
 
     [NativeName("GL_NEAREST_CLIPMAP_LINEAR_SGIX")]
-    NearestClipmapLinearSGIX = unchecked((uint)0x844E),
+    NearestClipmapLinearSGIX = 33870,
 
     [NativeName("GL_LINEAR_CLIPMAP_NEAREST_SGIX")]
-    LinearClipmapNearestSGIX = unchecked((uint)0x844F),
+    LinearClipmapNearestSGIX = 33871,
 }

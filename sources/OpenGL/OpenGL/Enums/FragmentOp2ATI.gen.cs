@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum FragmentOp2ATI : uint
 {
     [NativeName("GL_ADD_ATI")]
-    Add = unchecked((uint)0x8963),
+    Add = 35171,
 
     [NativeName("GL_MUL_ATI")]
-    Mul = unchecked((uint)0x8964),
+    Mul = 35172,
 
     [NativeName("GL_SUB_ATI")]
-    Sub = unchecked((uint)0x8965),
+    Sub = 35173,
 
     [NativeName("GL_DOT3_ATI")]
-    Dot3 = unchecked((uint)0x8966),
+    Dot3 = 35174,
 
     [NativeName("GL_DOT4_ATI")]
-    Dot4 = unchecked((uint)0x8967),
+    Dot4 = 35175,
 }

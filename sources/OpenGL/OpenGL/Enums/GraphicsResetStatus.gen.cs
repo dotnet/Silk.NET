@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum GraphicsResetStatus : uint
 {
     [NativeName("GL_NO_ERROR")]
-    NoError = unchecked((uint)0),
+    NoError = 0,
 
     [NativeName("GL_GUILTY_CONTEXT_RESET")]
-    GuiltyContextReset = unchecked((uint)0x8253),
+    GuiltyContextReset = 33363,
 
     [NativeName("GL_INNOCENT_CONTEXT_RESET")]
-    InnocentContextReset = unchecked((uint)0x8254),
+    InnocentContextReset = 33364,
 
     [NativeName("GL_UNKNOWN_CONTEXT_RESET")]
-    UnknownContextReset = unchecked((uint)0x8255),
+    UnknownContextReset = 33365,
 }

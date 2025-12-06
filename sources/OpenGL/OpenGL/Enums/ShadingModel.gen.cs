@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum ShadingModel : uint
 {
     [NativeName("GL_FLAT")]
-    Flat = unchecked((uint)0x1D00),
+    Flat = 7424,
 
     [NativeName("GL_SMOOTH")]
-    Smooth = unchecked((uint)0x1D01),
+    Smooth = 7425,
 }

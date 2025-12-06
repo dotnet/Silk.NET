@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum SeparableTarget : uint
 {
     [NativeName("GL_SEPARABLE_2D")]
-    Separable2D = unchecked((uint)0x8012),
+    Separable2D = 32786,
 }

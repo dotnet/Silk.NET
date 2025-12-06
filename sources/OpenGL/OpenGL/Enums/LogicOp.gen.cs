@@ -11,50 +11,50 @@ namespace Silk.NET.OpenGL;
 public enum LogicOp : uint
 {
     [NativeName("GL_CLEAR")]
-    Clear = unchecked((uint)0x1500),
+    Clear = 5376,
 
     [NativeName("GL_AND")]
-    And = unchecked((uint)0x1501),
+    And = 5377,
 
     [NativeName("GL_AND_REVERSE")]
-    AndReverse = unchecked((uint)0x1502),
+    AndReverse = 5378,
 
     [NativeName("GL_COPY")]
-    Copy = unchecked((uint)0x1503),
+    Copy = 5379,
 
     [NativeName("GL_AND_INVERTED")]
-    AndInverted = unchecked((uint)0x1504),
+    AndInverted = 5380,
 
     [NativeName("GL_NOOP")]
-    Noop = unchecked((uint)0x1505),
+    Noop = 5381,
 
     [NativeName("GL_XOR")]
-    Xor = unchecked((uint)0x1506),
+    Xor = 5382,
 
     [NativeName("GL_OR")]
-    Or = unchecked((uint)0x1507),
+    Or = 5383,
 
     [NativeName("GL_NOR")]
-    Nor = unchecked((uint)0x1508),
+    Nor = 5384,
 
     [NativeName("GL_EQUIV")]
-    Equiv = unchecked((uint)0x1509),
+    Equiv = 5385,
 
     [NativeName("GL_INVERT")]
-    Invert = unchecked((uint)0x150A),
+    Invert = 5386,
 
     [NativeName("GL_OR_REVERSE")]
-    OrReverse = unchecked((uint)0x150B),
+    OrReverse = 5387,
 
     [NativeName("GL_COPY_INVERTED")]
-    CopyInverted = unchecked((uint)0x150C),
+    CopyInverted = 5388,
 
     [NativeName("GL_OR_INVERTED")]
-    OrInverted = unchecked((uint)0x150D),
+    OrInverted = 5389,
 
     [NativeName("GL_NAND")]
-    Nand = unchecked((uint)0x150E),
+    Nand = 5390,
 
     [NativeName("GL_SET")]
-    Set = unchecked((uint)0x150F),
+    Set = 5391,
 }

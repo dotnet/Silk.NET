@@ -11,32 +11,32 @@ namespace Silk.NET.OpenGL;
 public enum ListNameType : uint
 {
     [NativeName("GL_BYTE")]
-    Byte = unchecked((uint)0x1400),
+    Byte = 5120,
 
     [NativeName("GL_UNSIGNED_BYTE")]
-    UnsignedByte = unchecked((uint)0x1401),
+    UnsignedByte = 5121,
 
     [NativeName("GL_SHORT")]
-    Short = unchecked((uint)0x1402),
+    Short = 5122,
 
     [NativeName("GL_UNSIGNED_SHORT")]
-    UnsignedShort = unchecked((uint)0x1403),
+    UnsignedShort = 5123,
 
     [NativeName("GL_FLOAT")]
-    Float = unchecked((uint)0x1406),
+    Float = 5126,
 
     [NativeName("GL_UNSIGNED_INT")]
-    UnsignedInt = unchecked((uint)0x1405),
+    UnsignedInt = 5125,
 
     [NativeName("GL_INT")]
-    Int = unchecked((uint)0x1404),
+    Int = 5124,
 
     [NativeName("GL_2_BYTES")]
-    X2Bytes = unchecked((uint)0x1407),
+    X2Bytes = 5127,
 
     [NativeName("GL_3_BYTES")]
-    X3Bytes = unchecked((uint)0x1408),
+    X3Bytes = 5128,
 
     [NativeName("GL_4_BYTES")]
-    X4Bytes = unchecked((uint)0x1409),
+    X4Bytes = 5129,
 }

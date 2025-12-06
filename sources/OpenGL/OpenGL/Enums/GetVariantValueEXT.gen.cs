@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum GetVariantValueEXT : uint
 {
     [NativeName("GL_VARIANT_VALUE_EXT")]
-    Value = unchecked((uint)0x87E4),
+    Value = 34788,
 
     [NativeName("GL_VARIANT_DATATYPE_EXT")]
-    Datatype = unchecked((uint)0x87E5),
+    Datatype = 34789,
 
     [NativeName("GL_VARIANT_ARRAY_STRIDE_EXT")]
-    ArrayStride = unchecked((uint)0x87E6),
+    ArrayStride = 34790,
 
     [NativeName("GL_VARIANT_ARRAY_TYPE_EXT")]
-    ArrayType = unchecked((uint)0x87E7),
+    ArrayType = 34791,
 }

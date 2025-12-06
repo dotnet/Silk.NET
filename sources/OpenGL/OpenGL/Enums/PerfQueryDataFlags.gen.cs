@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum PerfQueryDataFlags : uint
 {
     [NativeName("GL_PERFQUERY_WAIT_INTEL")]
-    WaitINTEL = unchecked((uint)0x83FB),
+    WaitINTEL = 33787,
 
     [NativeName("GL_PERFQUERY_FLUSH_INTEL")]
-    FlushINTEL = unchecked((uint)0x83FA),
+    FlushINTEL = 33786,
 
     [NativeName("GL_PERFQUERY_DONOT_FLUSH_INTEL")]
-    DonotFlushINTEL = unchecked((uint)0x83F9),
+    DonotFlushINTEL = 33785,
 }

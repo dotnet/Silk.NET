@@ -14,14 +14,14 @@ namespace Silk.NET.OpenAL;
 public enum SourceState : uint
 {
     [NativeName("AL_INITIAL")]
-    Initial = unchecked((uint)0x1011),
+    Initial = 4113,
 
     [NativeName("AL_PLAYING")]
-    Playing = unchecked((uint)0x1012),
+    Playing = 4114,
 
     [NativeName("AL_PAUSED")]
-    Paused = unchecked((uint)0x1013),
+    Paused = 4115,
 
     [NativeName("AL_STOPPED")]
-    Stopped = unchecked((uint)0x1014),
+    Stopped = 4116,
 }

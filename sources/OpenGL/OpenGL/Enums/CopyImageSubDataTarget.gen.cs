@@ -11,35 +11,35 @@ namespace Silk.NET.OpenGL;
 public enum CopyImageSubDataTarget : uint
 {
     [NativeName("GL_TEXTURE_2D")]
-    Texture2D = unchecked((uint)0x0DE1),
+    Texture2D = 3553,
 
     [NativeName("GL_TEXTURE_1D")]
-    Texture1D = unchecked((uint)0x0DE0),
+    Texture1D = 3552,
 
     [NativeName("GL_TEXTURE_3D")]
-    Texture3D = unchecked((uint)0x806F),
+    Texture3D = 32879,
 
     [NativeName("GL_TEXTURE_CUBE_MAP")]
-    TextureCubeMap = unchecked((uint)0x8513),
+    TextureCubeMap = 34067,
 
     [NativeName("GL_TEXTURE_1D_ARRAY")]
-    Texture1DArray = unchecked((uint)0x8C18),
+    Texture1DArray = 35864,
 
     [NativeName("GL_TEXTURE_2D_ARRAY")]
-    Texture2DArray = unchecked((uint)0x8C1A),
+    Texture2DArray = 35866,
 
     [NativeName("GL_RENDERBUFFER")]
-    Renderbuffer = unchecked((uint)0x8D41),
+    Renderbuffer = 36161,
 
     [NativeName("GL_TEXTURE_RECTANGLE")]
-    TextureRectANGLE = unchecked((uint)0x84F5),
+    TextureRectANGLE = 34037,
 
     [NativeName("GL_TEXTURE_2D_MULTISAMPLE")]
-    Texture2DMultisample = unchecked((uint)0x9100),
+    Texture2DMultisample = 37120,
 
     [NativeName("GL_TEXTURE_2D_MULTISAMPLE_ARRAY")]
-    Texture2DMultisampleArray = unchecked((uint)0x9102),
+    Texture2DMultisampleArray = 37122,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY")]
-    TextureCubeMapArray = unchecked((uint)0x9009),
+    TextureCubeMapArray = 36873,
 }

@@ -11,26 +11,26 @@ namespace Silk.NET.OpenGL;
 public enum ColorPointerType : uint
 {
     [NativeName("GL_BYTE")]
-    Byte = unchecked((uint)0x1400),
+    Byte = 5120,
 
     [NativeName("GL_UNSIGNED_BYTE")]
-    UnsignedByte = unchecked((uint)0x1401),
+    UnsignedByte = 5121,
 
     [NativeName("GL_SHORT")]
-    Short = unchecked((uint)0x1402),
+    Short = 5122,
 
     [NativeName("GL_UNSIGNED_SHORT")]
-    UnsignedShort = unchecked((uint)0x1403),
+    UnsignedShort = 5123,
 
     [NativeName("GL_FLOAT")]
-    Float = unchecked((uint)0x1406),
+    Float = 5126,
 
     [NativeName("GL_UNSIGNED_INT")]
-    UnsignedInt = unchecked((uint)0x1405),
+    UnsignedInt = 5125,
 
     [NativeName("GL_INT")]
-    Int = unchecked((uint)0x1404),
+    Int = 5124,
 
     [NativeName("GL_DOUBLE")]
-    Double = unchecked((uint)0x140A),
+    Double = 5130,
 }

@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum PathGenMode : uint
 {
     [NativeName("GL_CONSTANT")]
-    Constant = unchecked((uint)0x8576),
+    Constant = 34166,
 
     [NativeName("GL_NONE")]
-    None = unchecked((uint)0),
+    None = 0,
 
     [NativeName("GL_EYE_LINEAR")]
-    EyeLinear = unchecked((uint)0x2400),
+    EyeLinear = 9216,
 
     [NativeName("GL_OBJECT_LINEAR")]
-    ObjectLinear = unchecked((uint)0x2401),
+    ObjectLinear = 9217,
 
     [NativeName("GL_PATH_OBJECT_BOUNDING_BOX_NV")]
-    PathObjectBoundingBoxNV = unchecked((uint)0x908A),
+    PathObjectBoundingBoxNV = 37002,
 }

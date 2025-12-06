@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum EffectBandPass : uint
 {
     [NativeName("AL_BANDPASS_GAIN")]
-    Gain = unchecked((uint)0x0001),
+    Gain = 1,
 
     [NativeName("AL_BANDPASS_GAINLF")]
-    Gainlf = unchecked((uint)0x0002),
+    Gainlf = 2,
 
     [NativeName("AL_BANDPASS_GAINHF")]
-    Gainhf = unchecked((uint)0x0003),
+    Gainhf = 3,
 }

@@ -14,17 +14,17 @@ namespace Silk.NET.OpenAL;
 public enum EffectDistortion : uint
 {
     [NativeName("AL_DISTORTION_EDGE")]
-    Edge = unchecked((uint)0x0001),
+    Edge = 1,
 
     [NativeName("AL_DISTORTION_GAIN")]
-    Gain = unchecked((uint)0x0002),
+    Gain = 2,
 
     [NativeName("AL_DISTORTION_LOWPASS_CUTOFF")]
-    LowpassCutoff = unchecked((uint)0x0003),
+    LowpassCutoff = 3,
 
     [NativeName("AL_DISTORTION_EQCENTER")]
-    Eqcenter = unchecked((uint)0x0004),
+    Eqcenter = 4,
 
     [NativeName("AL_DISTORTION_EQBANDWIDTH")]
-    Eqbandwidth = unchecked((uint)0x0005),
+    Eqbandwidth = 5,
 }

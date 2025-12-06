@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum TextureNormalModeEXT : uint
 {
     [NativeName("GL_PERTURB_EXT")]
-    Perturb = unchecked((uint)0x85AE),
+    Perturb = 34222,
 }

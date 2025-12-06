@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum Buffer : uint
 {
     [NativeName("GL_COLOR")]
-    Color = unchecked((uint)0x1800),
+    Color = 6144,
 
     [NativeName("GL_DEPTH")]
-    Depth = unchecked((uint)0x1801),
+    Depth = 6145,
 
     [NativeName("GL_STENCIL")]
-    Stencil = unchecked((uint)0x1802),
+    Stencil = 6146,
 }

@@ -11,32 +11,32 @@ namespace Silk.NET.OpenGL;
 public enum TextureWrapMode : uint
 {
     [NativeName("GL_LINEAR_MIPMAP_LINEAR")]
-    LinearMipmapLinear = unchecked((uint)0x2703),
+    LinearMipmapLinear = 9987,
 
     [NativeName("GL_REPEAT")]
-    Repeat = unchecked((uint)0x2901),
+    Repeat = 10497,
 
     [NativeName("GL_CLAMP_TO_EDGE")]
-    ClampToEdge = unchecked((uint)0x812F),
+    ClampToEdge = 33071,
 
     [NativeName("GL_CLAMP")]
-    Clamp = unchecked((uint)0x2900),
+    Clamp = 10496,
 
     [NativeName("GL_CLAMP_TO_BORDER")]
-    ClampToBorder = unchecked((uint)0x812D),
+    ClampToBorder = 33069,
 
     [NativeName("GL_MIRRORED_REPEAT")]
-    MirroredRepeat = unchecked((uint)0x8370),
+    MirroredRepeat = 33648,
 
     [NativeName("GL_CLAMP_TO_BORDER_ARB")]
-    ClampToBorderARB = unchecked((uint)0x812D),
+    ClampToBorderARB = 33069,
 
     [NativeName("GL_CLAMP_TO_BORDER_SGIS")]
-    ClampToBorderSGIS = unchecked((uint)0x812D),
+    ClampToBorderSGIS = 33069,
 
     [NativeName("GL_CLAMP_TO_EDGE_SGIS")]
-    ClampToEdgeSGIS = unchecked((uint)0x812F),
+    ClampToEdgeSGIS = 33071,
 
     [NativeName("GL_CLAMP_TO_BORDER_NV")]
-    ClampToBorderNV = unchecked((uint)0x812D),
+    ClampToBorderNV = 33069,
 }

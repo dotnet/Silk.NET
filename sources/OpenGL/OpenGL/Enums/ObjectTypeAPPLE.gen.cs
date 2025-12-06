@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum ObjectTypeAPPLE : uint
 {
     [NativeName("GL_DRAW_PIXELS_APPLE")]
-    DrawPixels = unchecked((uint)0x8A0A),
+    DrawPixels = 35338,
 
     [NativeName("GL_FENCE_APPLE")]
-    Fence = unchecked((uint)0x8A0B),
+    Fence = 35339,
 }

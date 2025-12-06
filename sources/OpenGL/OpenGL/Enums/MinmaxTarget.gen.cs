@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum MinmaxTarget : uint
 {
     [NativeName("GL_MINMAX")]
-    Minmax = unchecked((uint)0x802E),
+    Minmax = 32814,
 }

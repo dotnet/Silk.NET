@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum SyncStatus : uint
 {
     [NativeName("GL_ALREADY_SIGNALED")]
-    AlreadySignaled = unchecked((uint)0x911A),
+    AlreadySignaled = 37146,
 
     [NativeName("GL_TIMEOUT_EXPIRED")]
-    TimeoutExpired = unchecked((uint)0x911B),
+    TimeoutExpired = 37147,
 
     [NativeName("GL_CONDITION_SATISFIED")]
-    ConditionSatisfied = unchecked((uint)0x911C),
+    ConditionSatisfied = 37148,
 
     [NativeName("GL_WAIT_FAILED")]
-    WaitFailed = unchecked((uint)0x911D),
+    WaitFailed = 37149,
 }

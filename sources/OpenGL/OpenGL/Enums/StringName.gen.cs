@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum StringName : uint
 {
     [NativeName("GL_VENDOR")]
-    Vendor = unchecked((uint)0x1F00),
+    Vendor = 7936,
 
     [NativeName("GL_RENDERER")]
-    Renderer = unchecked((uint)0x1F01),
+    Renderer = 7937,
 
     [NativeName("GL_VERSION")]
-    Version = unchecked((uint)0x1F02),
+    Version = 7938,
 
     [NativeName("GL_EXTENSIONS")]
-    Extensions = unchecked((uint)0x1F03),
+    Extensions = 7939,
 
     [NativeName("GL_SHADING_LANGUAGE_VERSION")]
-    ShadingLanguageVersion = unchecked((uint)0x8B8C),
+    ShadingLanguageVersion = 35724,
 }

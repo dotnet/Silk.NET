@@ -11,32 +11,32 @@ namespace Silk.NET.OpenGL;
 public enum QueryTarget : uint
 {
     [NativeName("GL_SAMPLES_PASSED")]
-    SamplesPassed = unchecked((uint)0x8914),
+    SamplesPassed = 35092,
 
     [NativeName("GL_PRIMITIVES_GENERATED")]
-    PrimitivesGenerated = unchecked((uint)0x8C87),
+    PrimitivesGenerated = 35975,
 
     [NativeName("GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN")]
-    TransformFeedbackPrimitivesWritten = unchecked((uint)0x8C88),
+    TransformFeedbackPrimitivesWritten = 35976,
 
     [NativeName("GL_ANY_SAMPLES_PASSED")]
-    AnySamplesPassed = unchecked((uint)0x8C2F),
+    AnySamplesPassed = 35887,
 
     [NativeName("GL_TIME_ELAPSED")]
-    TimeElapsed = unchecked((uint)0x88BF),
+    TimeElapsed = 35007,
 
     [NativeName("GL_ANY_SAMPLES_PASSED_CONSERVATIVE")]
-    AnySamplesPassedConservative = unchecked((uint)0x8D6A),
+    AnySamplesPassedConservative = 36202,
 
     [NativeName("GL_VERTICES_SUBMITTED")]
-    VerticesSubmitted = unchecked((uint)0x82EE),
+    VerticesSubmitted = 33518,
 
     [NativeName("GL_PRIMITIVES_SUBMITTED")]
-    PrimitivesSubmitted = unchecked((uint)0x82EF),
+    PrimitivesSubmitted = 33519,
 
     [NativeName("GL_VERTEX_SHADER_INVOCATIONS")]
-    VertexShaderInvocations = unchecked((uint)0x82F0),
+    VertexShaderInvocations = 33520,
 
     [NativeName("GL_TRANSFORM_FEEDBACK_OVERFLOW")]
-    TransformFeedbackOverflow = unchecked((uint)0x82EC),
+    TransformFeedbackOverflow = 33516,
 }

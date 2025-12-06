@@ -11,104 +11,104 @@ namespace Silk.NET.OpenGL;
 public enum FramebufferAttachmentParameterName : uint
 {
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES")]
-    ObjectTypeOES = unchecked((uint)0x8CD0),
+    ObjectTypeOES = 36048,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES")]
-    ObjectNameOES = unchecked((uint)0x8CD1),
+    ObjectNameOES = 36049,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES")]
-    TextureLevelOES = unchecked((uint)0x8CD2),
+    TextureLevelOES = 36050,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES")]
-    TextureCubeMapFaceOES = unchecked((uint)0x8CD3),
+    TextureCubeMapFaceOES = 36051,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT")]
-    TextureSamplesEXT = unchecked((uint)0x8D6C),
+    TextureSamplesEXT = 36204,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING_EXT")]
-    ColorEncodingEXT = unchecked((uint)0x8210),
+    ColorEncodingEXT = 33296,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING")]
-    ColorEncoding = unchecked((uint)0x8210),
+    ColorEncoding = 33296,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE")]
-    ComponentType = unchecked((uint)0x8211),
+    ComponentType = 33297,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_RED_SIZE")]
-    RedSize = unchecked((uint)0x8212),
+    RedSize = 33298,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_GREEN_SIZE")]
-    GreenSize = unchecked((uint)0x8213),
+    GreenSize = 33299,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_BLUE_SIZE")]
-    BlueSize = unchecked((uint)0x8214),
+    BlueSize = 33300,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE")]
-    AlphaSize = unchecked((uint)0x8215),
+    AlphaSize = 33301,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE")]
-    DepthSize = unchecked((uint)0x8216),
+    DepthSize = 33302,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE")]
-    StencilSize = unchecked((uint)0x8217),
+    StencilSize = 33303,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE")]
-    ObjectType = unchecked((uint)0x8CD0),
+    ObjectType = 36048,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME")]
-    ObjectName = unchecked((uint)0x8CD1),
+    ObjectName = 36049,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL")]
-    TextureLevel = unchecked((uint)0x8CD2),
+    TextureLevel = 36050,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE")]
-    TextureCubeMapFace = unchecked((uint)0x8CD3),
+    TextureCubeMapFace = 36051,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER")]
-    TextureLayer = unchecked((uint)0x8CD4),
+    TextureLayer = 36052,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED")]
-    Layered = unchecked((uint)0x8DA7),
+    Layered = 36263,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_ARB")]
-    LayeredARB = unchecked((uint)0x8DA7),
+    LayeredARB = 36263,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_EXT")]
-    ObjectTypeEXT = unchecked((uint)0x8CD0),
+    ObjectTypeEXT = 36048,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_EXT")]
-    ObjectNameEXT = unchecked((uint)0x8CD1),
+    ObjectNameEXT = 36049,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_EXT")]
-    TextureLevelEXT = unchecked((uint)0x8CD2),
+    TextureLevelEXT = 36050,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_EXT")]
-    TextureCubeMapFaceEXT = unchecked((uint)0x8CD3),
+    TextureCubeMapFaceEXT = 36051,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_EXT")]
-    Texture3DZoffsetEXT = unchecked((uint)0x8CD4),
+    Texture3DZoffsetEXT = 36052,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_EXT")]
-    LayeredEXT = unchecked((uint)0x8DA7),
+    LayeredEXT = 36263,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER_EXT")]
-    TextureLayerEXT = unchecked((uint)0x8CD4),
+    TextureLayerEXT = 36052,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR")]
-    TextureNumViewsOVR = unchecked((uint)0x9630),
+    TextureNumViewsOVR = 38448,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR")]
-    TextureBaseViewIndexOVR = unchecked((uint)0x9632),
+    TextureBaseViewIndexOVR = 38450,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_LAYERED_OES")]
-    LayeredOES = unchecked((uint)0x8DA7),
+    LayeredOES = 36263,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_3D_ZOFFSET_OES")]
-    Texture3DZoffsetOES = unchecked((uint)0x8CD4),
+    Texture3DZoffsetOES = 36052,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE_EXT")]
-    ComponentTypeEXT = unchecked((uint)0x8211),
+    ComponentTypeEXT = 33297,
 
     [NativeName("GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SCALE_IMG")]
-    TextureScaleIMG = unchecked((uint)0x913F),
+    TextureScaleIMG = 37183,
 }

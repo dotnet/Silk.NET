@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum Boolean : uint
 {
     [NativeName("GL_FALSE")]
-    False = unchecked((uint)0),
+    False = 0,
 
     [NativeName("GL_TRUE")]
-    True = unchecked((uint)1),
+    True = 1,
 }

@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum TransformFeedbackTokenNV : uint
 {
     [NativeName("GL_NEXT_BUFFER_NV")]
-    NextBuffer = unchecked((uint)-2),
+    NextBuffer = 4294967294,
 
     [NativeName("GL_SKIP_COMPONENTS4_NV")]
-    SkipComponents4 = unchecked((uint)-3),
+    SkipComponents4 = 4294967293,
 
     [NativeName("GL_SKIP_COMPONENTS3_NV")]
-    SkipComponents3 = unchecked((uint)-4),
+    SkipComponents3 = 4294967292,
 
     [NativeName("GL_SKIP_COMPONENTS2_NV")]
-    SkipComponents2 = unchecked((uint)-5),
+    SkipComponents2 = 4294967291,
 
     [NativeName("GL_SKIP_COMPONENTS1_NV")]
-    SkipComponents1 = unchecked((uint)-6),
+    SkipComponents1 = 4294967290,
 }

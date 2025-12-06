@@ -11,242 +11,242 @@ namespace Silk.NET.OpenGL;
 public enum TextureEnvParameter : uint
 {
     [NativeName("GL_TEXTURE_ENV_MODE")]
-    TextureEnvMode = unchecked((uint)0x2200),
+    TextureEnvMode = 8704,
 
     [NativeName("GL_TEXTURE_ENV_COLOR")]
-    TextureEnvColor = unchecked((uint)0x2201),
+    TextureEnvColor = 8705,
 
     [NativeName("GL_COMBINE")]
-    Combine = unchecked((uint)0x8570),
+    Combine = 34160,
 
     [NativeName("GL_COMBINE_RGB")]
-    CombineRgb = unchecked((uint)0x8571),
+    CombineRgb = 34161,
 
     [NativeName("GL_COMBINE_ALPHA")]
-    CombineAlpha = unchecked((uint)0x8572),
+    CombineAlpha = 34162,
 
     [NativeName("GL_RGB_SCALE")]
-    RgbScale = unchecked((uint)0x8573),
+    RgbScale = 34163,
 
     [NativeName("GL_ADD_SIGNED")]
-    AddSigned = unchecked((uint)0x8574),
+    AddSigned = 34164,
 
     [NativeName("GL_INTERPOLATE")]
-    Interpolate = unchecked((uint)0x8575),
+    Interpolate = 34165,
 
     [NativeName("GL_CONSTANT")]
-    Constant = unchecked((uint)0x8576),
+    Constant = 34166,
 
     [NativeName("GL_PRIMARY_COLOR")]
-    PrimaryColor = unchecked((uint)0x8577),
+    PrimaryColor = 34167,
 
     [NativeName("GL_PREVIOUS")]
-    Previous = unchecked((uint)0x8578),
+    Previous = 34168,
 
     [NativeName("GL_OPERAND0_RGB")]
-    Operand0Rgb = unchecked((uint)0x8590),
+    Operand0Rgb = 34192,
 
     [NativeName("GL_OPERAND1_RGB")]
-    Operand1Rgb = unchecked((uint)0x8591),
+    Operand1Rgb = 34193,
 
     [NativeName("GL_OPERAND2_RGB")]
-    Operand2Rgb = unchecked((uint)0x8592),
+    Operand2Rgb = 34194,
 
     [NativeName("GL_OPERAND0_ALPHA")]
-    Operand0Alpha = unchecked((uint)0x8598),
+    Operand0Alpha = 34200,
 
     [NativeName("GL_OPERAND1_ALPHA")]
-    Operand1Alpha = unchecked((uint)0x8599),
+    Operand1Alpha = 34201,
 
     [NativeName("GL_OPERAND2_ALPHA")]
-    Operand2Alpha = unchecked((uint)0x859A),
+    Operand2Alpha = 34202,
 
     [NativeName("GL_ALPHA_SCALE")]
-    AlphaScale = unchecked((uint)0x0D1C),
+    AlphaScale = 3356,
 
     [NativeName("GL_SRC0_RGB")]
-    Src0Rgb = unchecked((uint)0x8580),
+    Src0Rgb = 34176,
 
     [NativeName("GL_SRC1_RGB")]
-    Src1Rgb = unchecked((uint)0x8581),
+    Src1Rgb = 34177,
 
     [NativeName("GL_SRC2_RGB")]
-    Src2Rgb = unchecked((uint)0x8582),
+    Src2Rgb = 34178,
 
     [NativeName("GL_SRC0_ALPHA")]
-    Src0Alpha = unchecked((uint)0x8588),
+    Src0Alpha = 34184,
 
     [NativeName("GL_SRC1_ALPHA")]
-    Src1Alpha = unchecked((uint)0x8589),
+    Src1Alpha = 34185,
 
     [NativeName("GL_SRC2_ALPHA")]
-    Src2Alpha = unchecked((uint)0x858A),
+    Src2Alpha = 34186,
 
     [NativeName("GL_SOURCE0_RGB")]
-    Source0Rgb = unchecked((uint)0x8580),
+    Source0Rgb = 34176,
 
     [NativeName("GL_SOURCE1_RGB")]
-    Source1Rgb = unchecked((uint)0x8581),
+    Source1Rgb = 34177,
 
     [NativeName("GL_SOURCE2_RGB")]
-    Source2Rgb = unchecked((uint)0x8582),
+    Source2Rgb = 34178,
 
     [NativeName("GL_SOURCE0_ALPHA")]
-    Source0Alpha = unchecked((uint)0x8588),
+    Source0Alpha = 34184,
 
     [NativeName("GL_SOURCE1_ALPHA")]
-    Source1Alpha = unchecked((uint)0x8589),
+    Source1Alpha = 34185,
 
     [NativeName("GL_SOURCE2_ALPHA")]
-    Source2Alpha = unchecked((uint)0x858A),
+    Source2Alpha = 34186,
 
     [NativeName("GL_TEXTURE_LOD_BIAS")]
-    TextureLodBias = unchecked((uint)0x8501),
+    TextureLodBias = 34049,
 
     [NativeName("GL_COORD_REPLACE")]
-    CoordReplace = unchecked((uint)0x8862),
+    CoordReplace = 34914,
 
     [NativeName("GL_COMBINE_ARB")]
-    CombineARB = unchecked((uint)0x8570),
+    CombineARB = 34160,
 
     [NativeName("GL_COMBINE_RGB_ARB")]
-    CombineRgbARB = unchecked((uint)0x8571),
+    CombineRgbARB = 34161,
 
     [NativeName("GL_COMBINE_ALPHA_ARB")]
-    CombineAlphaARB = unchecked((uint)0x8572),
+    CombineAlphaARB = 34162,
 
     [NativeName("GL_SOURCE0_RGB_ARB")]
-    Source0RgbARB = unchecked((uint)0x8580),
+    Source0RgbARB = 34176,
 
     [NativeName("GL_SOURCE1_RGB_ARB")]
-    Source1RgbARB = unchecked((uint)0x8581),
+    Source1RgbARB = 34177,
 
     [NativeName("GL_SOURCE2_RGB_ARB")]
-    Source2RgbARB = unchecked((uint)0x8582),
+    Source2RgbARB = 34178,
 
     [NativeName("GL_SOURCE0_ALPHA_ARB")]
-    Source0AlphaARB = unchecked((uint)0x8588),
+    Source0AlphaARB = 34184,
 
     [NativeName("GL_SOURCE1_ALPHA_ARB")]
-    Source1AlphaARB = unchecked((uint)0x8589),
+    Source1AlphaARB = 34185,
 
     [NativeName("GL_SOURCE2_ALPHA_ARB")]
-    Source2AlphaARB = unchecked((uint)0x858A),
+    Source2AlphaARB = 34186,
 
     [NativeName("GL_OPERAND0_RGB_ARB")]
-    Operand0RgbARB = unchecked((uint)0x8590),
+    Operand0RgbARB = 34192,
 
     [NativeName("GL_OPERAND1_RGB_ARB")]
-    Operand1RgbARB = unchecked((uint)0x8591),
+    Operand1RgbARB = 34193,
 
     [NativeName("GL_OPERAND2_RGB_ARB")]
-    Operand2RgbARB = unchecked((uint)0x8592),
+    Operand2RgbARB = 34194,
 
     [NativeName("GL_OPERAND0_ALPHA_ARB")]
-    Operand0AlphaARB = unchecked((uint)0x8598),
+    Operand0AlphaARB = 34200,
 
     [NativeName("GL_OPERAND1_ALPHA_ARB")]
-    Operand1AlphaARB = unchecked((uint)0x8599),
+    Operand1AlphaARB = 34201,
 
     [NativeName("GL_OPERAND2_ALPHA_ARB")]
-    Operand2AlphaARB = unchecked((uint)0x859A),
+    Operand2AlphaARB = 34202,
 
     [NativeName("GL_RGB_SCALE_ARB")]
-    RgbScaleARB = unchecked((uint)0x8573),
+    RgbScaleARB = 34163,
 
     [NativeName("GL_ADD_SIGNED_ARB")]
-    AddSignedARB = unchecked((uint)0x8574),
+    AddSignedARB = 34164,
 
     [NativeName("GL_INTERPOLATE_ARB")]
-    InterpolateARB = unchecked((uint)0x8575),
+    InterpolateARB = 34165,
 
     [NativeName("GL_CONSTANT_ARB")]
-    ConstantARB = unchecked((uint)0x8576),
+    ConstantARB = 34166,
 
     [NativeName("GL_PRIMARY_COLOR_ARB")]
-    PrimaryColorARB = unchecked((uint)0x8577),
+    PrimaryColorARB = 34167,
 
     [NativeName("GL_PREVIOUS_ARB")]
-    PreviousARB = unchecked((uint)0x8578),
+    PreviousARB = 34168,
 
     [NativeName("GL_COMBINE_EXT")]
-    CombineEXT = unchecked((uint)0x8570),
+    CombineEXT = 34160,
 
     [NativeName("GL_COMBINE_RGB_EXT")]
-    CombineRgbEXT = unchecked((uint)0x8571),
+    CombineRgbEXT = 34161,
 
     [NativeName("GL_COMBINE_ALPHA_EXT")]
-    CombineAlphaEXT = unchecked((uint)0x8572),
+    CombineAlphaEXT = 34162,
 
     [NativeName("GL_RGB_SCALE_EXT")]
-    RgbScaleEXT = unchecked((uint)0x8573),
+    RgbScaleEXT = 34163,
 
     [NativeName("GL_ADD_SIGNED_EXT")]
-    AddSignedEXT = unchecked((uint)0x8574),
+    AddSignedEXT = 34164,
 
     [NativeName("GL_INTERPOLATE_EXT")]
-    InterpolateEXT = unchecked((uint)0x8575),
+    InterpolateEXT = 34165,
 
     [NativeName("GL_CONSTANT_EXT")]
-    ConstantEXT = unchecked((uint)0x8576),
+    ConstantEXT = 34166,
 
     [NativeName("GL_PRIMARY_COLOR_EXT")]
-    PrimaryColorEXT = unchecked((uint)0x8577),
+    PrimaryColorEXT = 34167,
 
     [NativeName("GL_PREVIOUS_EXT")]
-    PreviousEXT = unchecked((uint)0x8578),
+    PreviousEXT = 34168,
 
     [NativeName("GL_SOURCE0_RGB_EXT")]
-    Source0RgbEXT = unchecked((uint)0x8580),
+    Source0RgbEXT = 34176,
 
     [NativeName("GL_SOURCE1_RGB_EXT")]
-    Source1RgbEXT = unchecked((uint)0x8581),
+    Source1RgbEXT = 34177,
 
     [NativeName("GL_SOURCE2_RGB_EXT")]
-    Source2RgbEXT = unchecked((uint)0x8582),
+    Source2RgbEXT = 34178,
 
     [NativeName("GL_SOURCE0_ALPHA_EXT")]
-    Source0AlphaEXT = unchecked((uint)0x8588),
+    Source0AlphaEXT = 34184,
 
     [NativeName("GL_SOURCE1_ALPHA_EXT")]
-    Source1AlphaEXT = unchecked((uint)0x8589),
+    Source1AlphaEXT = 34185,
 
     [NativeName("GL_SOURCE2_ALPHA_EXT")]
-    Source2AlphaEXT = unchecked((uint)0x858A),
+    Source2AlphaEXT = 34186,
 
     [NativeName("GL_OPERAND0_RGB_EXT")]
-    Operand0RgbEXT = unchecked((uint)0x8590),
+    Operand0RgbEXT = 34192,
 
     [NativeName("GL_OPERAND1_RGB_EXT")]
-    Operand1RgbEXT = unchecked((uint)0x8591),
+    Operand1RgbEXT = 34193,
 
     [NativeName("GL_OPERAND2_RGB_EXT")]
-    Operand2RgbEXT = unchecked((uint)0x8592),
+    Operand2RgbEXT = 34194,
 
     [NativeName("GL_OPERAND0_ALPHA_EXT")]
-    Operand0AlphaEXT = unchecked((uint)0x8598),
+    Operand0AlphaEXT = 34200,
 
     [NativeName("GL_OPERAND1_ALPHA_EXT")]
-    Operand1AlphaEXT = unchecked((uint)0x8599),
+    Operand1AlphaEXT = 34201,
 
     [NativeName("GL_OPERAND2_ALPHA_EXT")]
-    Operand2AlphaEXT = unchecked((uint)0x859A),
+    Operand2AlphaEXT = 34202,
 
     [NativeName("GL_CONSTANT_NV")]
-    ConstantNV = unchecked((uint)0x8576),
+    ConstantNV = 34166,
 
     [NativeName("GL_SOURCE3_RGB_NV")]
-    Source3RgbNV = unchecked((uint)0x8583),
+    Source3RgbNV = 34179,
 
     [NativeName("GL_SOURCE3_ALPHA_NV")]
-    Source3AlphaNV = unchecked((uint)0x858B),
+    Source3AlphaNV = 34187,
 
     [NativeName("GL_OPERAND3_RGB_NV")]
-    Operand3RgbNV = unchecked((uint)0x8593),
+    Operand3RgbNV = 34195,
 
     [NativeName("GL_OPERAND3_ALPHA_NV")]
-    Operand3AlphaNV = unchecked((uint)0x859B),
+    Operand3AlphaNV = 34203,
 
     [NativeName("GL_SRC1_ALPHA_EXT")]
-    Src1AlphaEXT = unchecked((uint)0x8589),
+    Src1AlphaEXT = 34185,
 }

@@ -14,29 +14,29 @@ namespace Silk.NET.OpenAL;
 public enum FloatPName : uint
 {
     [NativeName("AL_DOPPLER_FACTOR")]
-    DopplerFactor = unchecked((uint)0xC000),
+    DopplerFactor = 49152,
 
     [NativeName("AL_DOPPLER_VELOCITY")]
-    DopplerVelocity = unchecked((uint)0xC001),
+    DopplerVelocity = 49153,
 
     [NativeName("AL_SPEED_OF_SOUND")]
-    SpeedOfSound = unchecked((uint)0xC003),
+    SpeedOfSound = 49155,
 
     [NativeName("AL_DEBUG_LOGGED_MESSAGES_EXT")]
-    DebugLoggedMessagesEXT = unchecked((uint)0x19C7),
+    DebugLoggedMessagesEXT = 6599,
 
     [NativeName("AL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_EXT")]
-    DebugNextLoggedMessageLengthEXT = unchecked((uint)0x19C8),
+    DebugNextLoggedMessageLengthEXT = 6600,
 
     [NativeName("AL_MAX_DEBUG_MESSAGE_LENGTH_EXT")]
-    MaxDebugMessageLengthEXT = unchecked((uint)0x19C9),
+    MaxDebugMessageLengthEXT = 6601,
 
     [NativeName("AL_MAX_DEBUG_LOGGED_MESSAGES_EXT")]
-    MaxDebugLoggedMessagesEXT = unchecked((uint)0x19CA),
+    MaxDebugLoggedMessagesEXT = 6602,
 
     [NativeName("AL_MAX_DEBUG_GROUP_STACK_DEPTH_EXT")]
-    MaxDebugGroupStackDepthEXT = unchecked((uint)0x19CB),
+    MaxDebugGroupStackDepthEXT = 6603,
 
     [NativeName("AL_MAX_LABEL_LENGTH_EXT")]
-    MaxLabelLengthEXT = unchecked((uint)0x19CC),
+    MaxLabelLengthEXT = 6604,
 }

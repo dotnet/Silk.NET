@@ -11,62 +11,62 @@ namespace Silk.NET.OpenGL;
 public enum ColorTableParameterPName : uint
 {
     [NativeName("GL_COLOR_TABLE_SCALE")]
-    Scale = unchecked((uint)0x80D6),
+    Scale = 32982,
 
     [NativeName("GL_COLOR_TABLE_BIAS")]
-    Bias = unchecked((uint)0x80D7),
+    Bias = 32983,
 
     [NativeName("GL_COLOR_TABLE_FORMAT")]
-    Format = unchecked((uint)0x80D8),
+    Format = 32984,
 
     [NativeName("GL_COLOR_TABLE_WIDTH")]
-    Width = unchecked((uint)0x80D9),
+    Width = 32985,
 
     [NativeName("GL_COLOR_TABLE_RED_SIZE")]
-    RedSize = unchecked((uint)0x80DA),
+    RedSize = 32986,
 
     [NativeName("GL_COLOR_TABLE_GREEN_SIZE")]
-    GreenSize = unchecked((uint)0x80DB),
+    GreenSize = 32987,
 
     [NativeName("GL_COLOR_TABLE_BLUE_SIZE")]
-    BlueSize = unchecked((uint)0x80DC),
+    BlueSize = 32988,
 
     [NativeName("GL_COLOR_TABLE_ALPHA_SIZE")]
-    AlphaSize = unchecked((uint)0x80DD),
+    AlphaSize = 32989,
 
     [NativeName("GL_COLOR_TABLE_LUMINANCE_SIZE")]
-    LuminanceSize = unchecked((uint)0x80DE),
+    LuminanceSize = 32990,
 
     [NativeName("GL_COLOR_TABLE_INTENSITY_SIZE")]
-    IntensitySize = unchecked((uint)0x80DF),
+    IntensitySize = 32991,
 
     [NativeName("GL_COLOR_TABLE_SCALE_SGI")]
-    ScaleSGI = unchecked((uint)0x80D6),
+    ScaleSGI = 32982,
 
     [NativeName("GL_COLOR_TABLE_BIAS_SGI")]
-    BiasSGI = unchecked((uint)0x80D7),
+    BiasSGI = 32983,
 
     [NativeName("GL_COLOR_TABLE_FORMAT_SGI")]
-    FormatSGI = unchecked((uint)0x80D8),
+    FormatSGI = 32984,
 
     [NativeName("GL_COLOR_TABLE_WIDTH_SGI")]
-    WidthSGI = unchecked((uint)0x80D9),
+    WidthSGI = 32985,
 
     [NativeName("GL_COLOR_TABLE_RED_SIZE_SGI")]
-    RedSizeSGI = unchecked((uint)0x80DA),
+    RedSizeSGI = 32986,
 
     [NativeName("GL_COLOR_TABLE_GREEN_SIZE_SGI")]
-    GreenSizeSGI = unchecked((uint)0x80DB),
+    GreenSizeSGI = 32987,
 
     [NativeName("GL_COLOR_TABLE_BLUE_SIZE_SGI")]
-    BlueSizeSGI = unchecked((uint)0x80DC),
+    BlueSizeSGI = 32988,
 
     [NativeName("GL_COLOR_TABLE_ALPHA_SIZE_SGI")]
-    AlphaSizeSGI = unchecked((uint)0x80DD),
+    AlphaSizeSGI = 32989,
 
     [NativeName("GL_COLOR_TABLE_LUMINANCE_SIZE_SGI")]
-    LuminanceSizeSGI = unchecked((uint)0x80DE),
+    LuminanceSizeSGI = 32990,
 
     [NativeName("GL_COLOR_TABLE_INTENSITY_SIZE_SGI")]
-    IntensitySizeSGI = unchecked((uint)0x80DF),
+    IntensitySizeSGI = 32991,
 }

@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum CombinerParameterNV : uint
 {
     [NativeName("GL_COMBINER_INPUT_NV")]
-    Input = unchecked((uint)0x8542),
+    Input = 34114,
 
     [NativeName("GL_COMBINER_MAPPING_NV")]
-    Mapping = unchecked((uint)0x8543),
+    Mapping = 34115,
 
     [NativeName("GL_COMBINER_COMPONENT_USAGE_NV")]
-    ComponentUsage = unchecked((uint)0x8544),
+    ComponentUsage = 34116,
 }

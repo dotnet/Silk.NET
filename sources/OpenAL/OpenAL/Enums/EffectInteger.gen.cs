@@ -14,41 +14,41 @@ namespace Silk.NET.OpenAL;
 public enum EffectInteger : uint
 {
     [NativeName("AL_EAXREVERB_DECAY_HFLIMIT")]
-    EaxreverbDecayHflimit = unchecked((uint)0x0017),
+    EaxreverbDecayHflimit = 23,
 
     [NativeName("AL_CHORUS_WAVEFORM")]
-    ChorusWaveform = unchecked((uint)0x0001),
+    ChorusWaveform = 1,
 
     [NativeName("AL_CHORUS_PHASE")]
-    ChorusPhase = unchecked((uint)0x0002),
+    ChorusPhase = 2,
 
     [NativeName("AL_FREQUENCY_SHIFTER_LEFT_DIRECTION")]
-    FrequencyShifterLeftDirection = unchecked((uint)0x0002),
+    FrequencyShifterLeftDirection = 2,
 
     [NativeName("AL_FREQUENCY_SHIFTER_RIGHT_DIRECTION")]
-    FrequencyShifterRightDirection = unchecked((uint)0x0003),
+    FrequencyShifterRightDirection = 3,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEMEA")]
-    VocalMorpherPhonemea = unchecked((uint)0x0001),
+    VocalMorpherPhonemea = 1,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEMEA_COARSE_TUNING")]
-    VocalMorpherPhonemeaCoarseTuning = unchecked((uint)0x0002),
+    VocalMorpherPhonemeaCoarseTuning = 2,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEMEB")]
-    VocalMorpherPhonemeb = unchecked((uint)0x0003),
+    VocalMorpherPhonemeb = 3,
 
     [NativeName("AL_VOCAL_MORPHER_PHONEMEB_COARSE_TUNING")]
-    VocalMorpherPhonemebCoarseTuning = unchecked((uint)0x0004),
+    VocalMorpherPhonemebCoarseTuning = 4,
 
     [NativeName("AL_VOCAL_MORPHER_WAVEFORM")]
-    VocalMorpherWaveform = unchecked((uint)0x0005),
+    VocalMorpherWaveform = 5,
 
     [NativeName("AL_RING_MODULATOR_WAVEFORM")]
-    RingModulatorWaveform = unchecked((uint)0x0003),
+    RingModulatorWaveform = 3,
 
     [NativeName("AL_COMPRESSOR_ONOFF")]
-    CompressorOnoff = unchecked((uint)0x0001),
+    CompressorOnoff = 1,
 
     [NativeName("AL_EFFECT_TYPE")]
-    EffectType = unchecked((uint)0x8001),
+    EffectType = 32769,
 }

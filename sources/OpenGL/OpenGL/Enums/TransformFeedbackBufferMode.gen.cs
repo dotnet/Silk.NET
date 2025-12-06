@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum TransformFeedbackBufferMode : uint
 {
     [NativeName("GL_INTERLEAVED_ATTRIBS")]
-    InterleavedAttribs = unchecked((uint)0x8C8C),
+    InterleavedAttribs = 35980,
 
     [NativeName("GL_SEPARATE_ATTRIBS")]
-    SeparateAttribs = unchecked((uint)0x8C8D),
+    SeparateAttribs = 35981,
 }

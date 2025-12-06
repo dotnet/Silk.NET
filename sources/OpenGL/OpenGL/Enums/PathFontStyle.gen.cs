@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum PathFontStyle : uint
 {
     [NativeName("GL_NONE")]
-    None = unchecked((uint)0),
+    None = 0,
 
     [NativeName("GL_BOLD_BIT_NV")]
-    BoldBitNV = unchecked((uint)0x01),
+    BoldBitNV = 1,
 
     [NativeName("GL_ITALIC_BIT_NV")]
-    ItalicBitNV = unchecked((uint)0x02),
+    ItalicBitNV = 2,
 }

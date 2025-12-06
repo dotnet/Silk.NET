@@ -14,23 +14,23 @@ namespace Silk.NET.OpenAL;
 public enum RenderFormatChannelSOFT : uint
 {
     [NativeName("ALC_MONO_SOFT")]
-    Mono = unchecked((uint)0x1500),
+    Mono = 5376,
 
     [NativeName("ALC_STEREO_SOFT")]
-    Stereo = unchecked((uint)0x1501),
+    Stereo = 5377,
 
     [NativeName("ALC_QUAD_SOFT")]
-    Quad = unchecked((uint)0x1503),
+    Quad = 5379,
 
     [NativeName("ALC_5POINT1_SOFT")]
-    X5Point1 = unchecked((uint)0x1504),
+    X5Point1 = 5380,
 
     [NativeName("ALC_6POINT1_SOFT")]
-    X6Point1 = unchecked((uint)0x1505),
+    X6Point1 = 5381,
 
     [NativeName("ALC_7POINT1_SOFT")]
-    X7Point1 = unchecked((uint)0x1506),
+    X7Point1 = 5382,
 
     [NativeName("ALC_BFORMAT3D_SOFT")]
-    Bformat3D = unchecked((uint)0x1507),
+    Bformat3D = 5383,
 }

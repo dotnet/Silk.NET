@@ -14,95 +14,95 @@ public enum MemoryBarrierMask : uint
     None = 0x0,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT")]
-    VertexAttribArrayBarrierBit = unchecked((uint)0x00000001),
+    VertexAttribArrayBarrierBit = 0x1,
 
     [NativeName("GL_ELEMENT_ARRAY_BARRIER_BIT")]
-    ElementArrayBarrierBit = unchecked((uint)0x00000002),
+    ElementArrayBarrierBit = 0x2,
 
     [NativeName("GL_UNIFORM_BARRIER_BIT")]
-    UniformBarrierBit = unchecked((uint)0x00000004),
+    UniformBarrierBit = 0x4,
 
     [NativeName("GL_TEXTURE_FETCH_BARRIER_BIT")]
-    TextureFetchBarrierBit = unchecked((uint)0x00000008),
+    TextureFetchBarrierBit = 0x8,
 
     [NativeName("GL_SHADER_IMAGE_ACCESS_BARRIER_BIT")]
-    ShaderImageAccessBarrierBit = unchecked((uint)0x00000020),
+    ShaderImageAccessBarrierBit = 0x20,
 
     [NativeName("GL_COMMAND_BARRIER_BIT")]
-    CommandBarrierBit = unchecked((uint)0x00000040),
+    CommandBarrierBit = 0x40,
 
     [NativeName("GL_PIXEL_BUFFER_BARRIER_BIT")]
-    PixelBufferBarrierBit = unchecked((uint)0x00000080),
+    PixelBufferBarrierBit = 0x80,
 
     [NativeName("GL_TEXTURE_UPDATE_BARRIER_BIT")]
-    TextureUpdateBarrierBit = unchecked((uint)0x00000100),
+    TextureUpdateBarrierBit = 0x100,
 
     [NativeName("GL_BUFFER_UPDATE_BARRIER_BIT")]
-    BufferUpdateBarrierBit = unchecked((uint)0x00000200),
+    BufferUpdateBarrierBit = 0x200,
 
     [NativeName("GL_FRAMEBUFFER_BARRIER_BIT")]
-    FramebufferBarrierBit = unchecked((uint)0x00000400),
+    FramebufferBarrierBit = 0x400,
 
     [NativeName("GL_TRANSFORM_FEEDBACK_BARRIER_BIT")]
-    TransformFeedbackBarrierBit = unchecked((uint)0x00000800),
+    TransformFeedbackBarrierBit = 0x800,
 
     [NativeName("GL_ATOMIC_COUNTER_BARRIER_BIT")]
-    AtomicCounterBarrierBit = unchecked((uint)0x00001000),
+    AtomicCounterBarrierBit = 0x1000,
 
     [NativeName("GL_ALL_BARRIER_BITS")]
-    AllBarrierBits = unchecked((uint)0xFFFFFFFF),
+    AllBarrierBits = 0xFFFFFFFF,
 
     [NativeName("GL_SHADER_STORAGE_BARRIER_BIT")]
-    ShaderStorageBarrierBit = unchecked((uint)0x00002000),
+    ShaderStorageBarrierBit = 0x2000,
 
     [NativeName("GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT")]
-    ClientMappedBufferBarrierBit = unchecked((uint)0x00004000),
+    ClientMappedBufferBarrierBit = 0x4000,
 
     [NativeName("GL_QUERY_BUFFER_BARRIER_BIT")]
-    QueryBufferBarrierBit = unchecked((uint)0x00008000),
+    QueryBufferBarrierBit = 0x8000,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT_EXT")]
-    VertexAttribArrayBarrierBitEXT = unchecked((uint)0x00000001),
+    VertexAttribArrayBarrierBitEXT = 0x1,
 
     [NativeName("GL_ELEMENT_ARRAY_BARRIER_BIT_EXT")]
-    ElementArrayBarrierBitEXT = unchecked((uint)0x00000002),
+    ElementArrayBarrierBitEXT = 0x2,
 
     [NativeName("GL_UNIFORM_BARRIER_BIT_EXT")]
-    UniformBarrierBitEXT = unchecked((uint)0x00000004),
+    UniformBarrierBitEXT = 0x4,
 
     [NativeName("GL_TEXTURE_FETCH_BARRIER_BIT_EXT")]
-    TextureFetchBarrierBitEXT = unchecked((uint)0x00000008),
+    TextureFetchBarrierBitEXT = 0x8,
 
     [NativeName("GL_SHADER_IMAGE_ACCESS_BARRIER_BIT_EXT")]
-    ShaderImageAccessBarrierBitEXT = unchecked((uint)0x00000020),
+    ShaderImageAccessBarrierBitEXT = 0x20,
 
     [NativeName("GL_COMMAND_BARRIER_BIT_EXT")]
-    CommandBarrierBitEXT = unchecked((uint)0x00000040),
+    CommandBarrierBitEXT = 0x40,
 
     [NativeName("GL_PIXEL_BUFFER_BARRIER_BIT_EXT")]
-    PixelBufferBarrierBitEXT = unchecked((uint)0x00000080),
+    PixelBufferBarrierBitEXT = 0x80,
 
     [NativeName("GL_TEXTURE_UPDATE_BARRIER_BIT_EXT")]
-    TextureUpdateBarrierBitEXT = unchecked((uint)0x00000100),
+    TextureUpdateBarrierBitEXT = 0x100,
 
     [NativeName("GL_BUFFER_UPDATE_BARRIER_BIT_EXT")]
-    BufferUpdateBarrierBitEXT = unchecked((uint)0x00000200),
+    BufferUpdateBarrierBitEXT = 0x200,
 
     [NativeName("GL_FRAMEBUFFER_BARRIER_BIT_EXT")]
-    FramebufferBarrierBitEXT = unchecked((uint)0x00000400),
+    FramebufferBarrierBitEXT = 0x400,
 
     [NativeName("GL_TRANSFORM_FEEDBACK_BARRIER_BIT_EXT")]
-    TransformFeedbackBarrierBitEXT = unchecked((uint)0x00000800),
+    TransformFeedbackBarrierBitEXT = 0x800,
 
     [NativeName("GL_ATOMIC_COUNTER_BARRIER_BIT_EXT")]
-    AtomicCounterBarrierBitEXT = unchecked((uint)0x00001000),
+    AtomicCounterBarrierBitEXT = 0x1000,
 
     [NativeName("GL_ALL_BARRIER_BITS_EXT")]
-    AllBarrierBitsEXT = unchecked((uint)0xFFFFFFFF),
+    AllBarrierBitsEXT = 0xFFFFFFFF,
 
     [NativeName("GL_SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV")]
-    ShaderGlobalAccessBarrierBitNV = unchecked((uint)0x00000010),
+    ShaderGlobalAccessBarrierBitNV = 0x10,
 
     [NativeName("GL_CLIENT_MAPPED_BUFFER_BARRIER_BIT_EXT")]
-    ClientMappedBufferBarrierBitEXT = unchecked((uint)0x00004000),
+    ClientMappedBufferBarrierBitEXT = 0x4000,
 }

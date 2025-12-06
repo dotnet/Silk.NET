@@ -14,17 +14,17 @@ namespace Silk.NET.OpenAL;
 public enum ObjectIdentifier : uint
 {
     [NativeName("AL_BUFFER_EXT")]
-    BufferEXT = unchecked((uint)0x1009),
+    BufferEXT = 4105,
 
     [NativeName("AL_SOURCE_EXT")]
-    SourceEXT = unchecked((uint)0x19D0),
+    SourceEXT = 6608,
 
     [NativeName("AL_FILTER_EXT")]
-    FilterEXT = unchecked((uint)0x19D1),
+    FilterEXT = 6609,
 
     [NativeName("AL_EFFECT_EXT")]
-    EffectEXT = unchecked((uint)0x19D2),
+    EffectEXT = 6610,
 
     [NativeName("AL_AUXILIARY_EFFECT_SLOT_EXT")]
-    AuxiliaryEffectSlotEXT = unchecked((uint)0x19D3),
+    AuxiliaryEffectSlotEXT = 6611,
 }

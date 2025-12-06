@@ -14,47 +14,47 @@ namespace Silk.NET.OpenAL;
 public enum ContextAttribute : uint
 {
     [NativeName("ALC_FREQUENCY")]
-    Frequency = unchecked((uint)0x1007),
+    Frequency = 4103,
 
     [NativeName("ALC_REFRESH")]
-    Refresh = unchecked((uint)0x1008),
+    Refresh = 4104,
 
     [NativeName("ALC_SYNC")]
-    Sync = unchecked((uint)0x1009),
+    Sync = 4105,
 
     [NativeName("ALC_MONO_SOURCES")]
-    MonoSources = unchecked((uint)0x1010),
+    MonoSources = 4112,
 
     [NativeName("ALC_STEREO_SOURCES")]
-    StereoSources = unchecked((uint)0x1011),
+    StereoSources = 4113,
 
     [NativeName("ALC_FORMAT_CHANNELS_SOFT")]
-    FormatChannelsSOFT = unchecked((uint)0x1990),
+    FormatChannelsSOFT = 6544,
 
     [NativeName("ALC_FORMAT_TYPE_SOFT")]
-    FormatTypeSOFT = unchecked((uint)0x1991),
+    FormatTypeSOFT = 6545,
 
     [NativeName("ALC_DEFAULT_FILTER_ORDER")]
-    DefaultFilterOrder = unchecked((uint)0x1100),
+    DefaultFilterOrder = 4352,
 
     [NativeName("ALC_HRTF_SOFT")]
-    HrtfSOFT = unchecked((uint)0x1992),
+    HrtfSOFT = 6546,
 
     [NativeName("ALC_HRTF_ID_SOFT")]
-    HrtfIdSOFT = unchecked((uint)0x1996),
+    HrtfIdSOFT = 6550,
 
     [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
-    OutputLimiterSOFT = unchecked((uint)0x199A),
+    OutputLimiterSOFT = 6554,
 
     [NativeName("ALC_AMBISONIC_LAYOUT_SOFT")]
-    AmbisonicLayoutSOFT = unchecked((uint)0x1997),
+    AmbisonicLayoutSOFT = 6551,
 
     [NativeName("ALC_AMBISONIC_SCALING_SOFT")]
-    AmbisonicScalingSOFT = unchecked((uint)0x1998),
+    AmbisonicScalingSOFT = 6552,
 
     [NativeName("ALC_AMBISONIC_ORDER_SOFT")]
-    AmbisonicOrderSOFT = unchecked((uint)0x1999),
+    AmbisonicOrderSOFT = 6553,
 
     [NativeName("ALC_OUTPUT_MODE_SOFT")]
-    OutputModeSOFT = unchecked((uint)0x19AC),
+    OutputModeSOFT = 6572,
 }

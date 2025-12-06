@@ -11,128 +11,128 @@ namespace Silk.NET.OpenGL;
 public enum PixelStoreParameter : uint
 {
     [NativeName("GL_UNPACK_ALIGNMENT")]
-    UnpackAlignment = unchecked((uint)0x0CF5),
+    UnpackAlignment = 3317,
 
     [NativeName("GL_PACK_ALIGNMENT")]
-    PackAlignment = unchecked((uint)0x0D05),
+    PackAlignment = 3333,
 
     [NativeName("GL_UNPACK_SWAP_BYTES")]
-    UnpackSwapBytes = unchecked((uint)0x0CF0),
+    UnpackSwapBytes = 3312,
 
     [NativeName("GL_UNPACK_LSB_FIRST")]
-    UnpackLsbFirst = unchecked((uint)0x0CF1),
+    UnpackLsbFirst = 3313,
 
     [NativeName("GL_UNPACK_ROW_LENGTH")]
-    UnpackRowLength = unchecked((uint)0x0CF2),
+    UnpackRowLength = 3314,
 
     [NativeName("GL_UNPACK_SKIP_ROWS")]
-    UnpackSkipRows = unchecked((uint)0x0CF3),
+    UnpackSkipRows = 3315,
 
     [NativeName("GL_UNPACK_SKIP_PIXELS")]
-    UnpackSkipPixels = unchecked((uint)0x0CF4),
+    UnpackSkipPixels = 3316,
 
     [NativeName("GL_PACK_SWAP_BYTES")]
-    PackSwapBytes = unchecked((uint)0x0D00),
+    PackSwapBytes = 3328,
 
     [NativeName("GL_PACK_LSB_FIRST")]
-    PackLsbFirst = unchecked((uint)0x0D01),
+    PackLsbFirst = 3329,
 
     [NativeName("GL_PACK_ROW_LENGTH")]
-    PackRowLength = unchecked((uint)0x0D02),
+    PackRowLength = 3330,
 
     [NativeName("GL_PACK_SKIP_ROWS")]
-    PackSkipRows = unchecked((uint)0x0D03),
+    PackSkipRows = 3331,
 
     [NativeName("GL_PACK_SKIP_PIXELS")]
-    PackSkipPixels = unchecked((uint)0x0D04),
+    PackSkipPixels = 3332,
 
     [NativeName("GL_PACK_SKIP_IMAGES")]
-    PackSkipImages = unchecked((uint)0x806B),
+    PackSkipImages = 32875,
 
     [NativeName("GL_PACK_IMAGE_HEIGHT")]
-    PackImageHeight = unchecked((uint)0x806C),
+    PackImageHeight = 32876,
 
     [NativeName("GL_UNPACK_SKIP_IMAGES")]
-    UnpackSkipImages = unchecked((uint)0x806D),
+    UnpackSkipImages = 32877,
 
     [NativeName("GL_UNPACK_IMAGE_HEIGHT")]
-    UnpackImageHeight = unchecked((uint)0x806E),
+    UnpackImageHeight = 32878,
 
     [NativeName("GL_PACK_SKIP_IMAGES_EXT")]
-    PackSkipImagesEXT = unchecked((uint)0x806B),
+    PackSkipImagesEXT = 32875,
 
     [NativeName("GL_PACK_IMAGE_HEIGHT_EXT")]
-    PackImageHeightEXT = unchecked((uint)0x806C),
+    PackImageHeightEXT = 32876,
 
     [NativeName("GL_UNPACK_SKIP_IMAGES_EXT")]
-    UnpackSkipImagesEXT = unchecked((uint)0x806D),
+    UnpackSkipImagesEXT = 32877,
 
     [NativeName("GL_UNPACK_IMAGE_HEIGHT_EXT")]
-    UnpackImageHeightEXT = unchecked((uint)0x806E),
+    UnpackImageHeightEXT = 32878,
 
     [NativeName("GL_PACK_RESAMPLE_OML")]
-    PackResampleOML = unchecked((uint)0x8984),
+    PackResampleOML = 35204,
 
     [NativeName("GL_UNPACK_RESAMPLE_OML")]
-    UnpackResampleOML = unchecked((uint)0x8985),
+    UnpackResampleOML = 35205,
 
     [NativeName("GL_PACK_SKIP_VOLUMES_SGIS")]
-    PackSkipVolumesSGIS = unchecked((uint)0x8130),
+    PackSkipVolumesSGIS = 33072,
 
     [NativeName("GL_PACK_IMAGE_DEPTH_SGIS")]
-    PackImageDepthSGIS = unchecked((uint)0x8131),
+    PackImageDepthSGIS = 33073,
 
     [NativeName("GL_UNPACK_SKIP_VOLUMES_SGIS")]
-    UnpackSkipVolumesSGIS = unchecked((uint)0x8132),
+    UnpackSkipVolumesSGIS = 33074,
 
     [NativeName("GL_UNPACK_IMAGE_DEPTH_SGIS")]
-    UnpackImageDepthSGIS = unchecked((uint)0x8133),
+    UnpackImageDepthSGIS = 33075,
 
     [NativeName("GL_PIXEL_TILE_WIDTH_SGIX")]
-    PixelTileWidthSGIX = unchecked((uint)0x8140),
+    PixelTileWidthSGIX = 33088,
 
     [NativeName("GL_PIXEL_TILE_HEIGHT_SGIX")]
-    PixelTileHeightSGIX = unchecked((uint)0x8141),
+    PixelTileHeightSGIX = 33089,
 
     [NativeName("GL_PIXEL_TILE_GRID_WIDTH_SGIX")]
-    PixelTileGridWidthSGIX = unchecked((uint)0x8142),
+    PixelTileGridWidthSGIX = 33090,
 
     [NativeName("GL_PIXEL_TILE_GRID_HEIGHT_SGIX")]
-    PixelTileGridHeightSGIX = unchecked((uint)0x8143),
+    PixelTileGridHeightSGIX = 33091,
 
     [NativeName("GL_PIXEL_TILE_GRID_DEPTH_SGIX")]
-    PixelTileGridDepthSGIX = unchecked((uint)0x8144),
+    PixelTileGridDepthSGIX = 33092,
 
     [NativeName("GL_PIXEL_TILE_CACHE_SIZE_SGIX")]
-    PixelTileCacheSizeSGIX = unchecked((uint)0x8145),
+    PixelTileCacheSizeSGIX = 33093,
 
     [NativeName("GL_PACK_RESAMPLE_SGIX")]
-    PackResampleSGIX = unchecked((uint)0x842E),
+    PackResampleSGIX = 33838,
 
     [NativeName("GL_UNPACK_RESAMPLE_SGIX")]
-    UnpackResampleSGIX = unchecked((uint)0x842F),
+    UnpackResampleSGIX = 33839,
 
     [NativeName("GL_PACK_SUBSAMPLE_RATE_SGIX")]
-    PackSubsampleRateSGIX = unchecked((uint)0x85A0),
+    PackSubsampleRateSGIX = 34208,
 
     [NativeName("GL_UNPACK_SUBSAMPLE_RATE_SGIX")]
-    UnpackSubsampleRateSGIX = unchecked((uint)0x85A1),
+    UnpackSubsampleRateSGIX = 34209,
 
     [NativeName("GL_UNPACK_ROW_LENGTH_EXT")]
-    UnpackRowLengthEXT = unchecked((uint)0x0CF2),
+    UnpackRowLengthEXT = 3314,
 
     [NativeName("GL_UNPACK_SKIP_ROWS_EXT")]
-    UnpackSkipRowsEXT = unchecked((uint)0x0CF3),
+    UnpackSkipRowsEXT = 3315,
 
     [NativeName("GL_UNPACK_SKIP_PIXELS_EXT")]
-    UnpackSkipPixelsEXT = unchecked((uint)0x0CF4),
+    UnpackSkipPixelsEXT = 3316,
 
     [NativeName("GL_PACK_ROW_LENGTH_NV")]
-    PackRowLengthNV = unchecked((uint)0x0D02),
+    PackRowLengthNV = 3330,
 
     [NativeName("GL_PACK_SKIP_ROWS_NV")]
-    PackSkipRowsNV = unchecked((uint)0x0D03),
+    PackSkipRowsNV = 3331,
 
     [NativeName("GL_PACK_SKIP_PIXELS_NV")]
-    PackSkipPixelsNV = unchecked((uint)0x0D04),
+    PackSkipPixelsNV = 3332,
 }

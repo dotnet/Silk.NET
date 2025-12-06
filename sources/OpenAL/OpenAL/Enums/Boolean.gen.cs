@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum Boolean : uint
 {
     [NativeName("AL_FALSE")]
-    False = unchecked((uint)0),
+    False = 0,
 
     [NativeName("AL_TRUE")]
-    True = unchecked((uint)1),
+    True = 1,
 }

@@ -14,11 +14,11 @@ public enum ClientAttribMask : uint
     None = 0x0,
 
     [NativeName("GL_CLIENT_PIXEL_STORE_BIT")]
-    PixelStoreBit = unchecked((uint)0x00000001),
+    PixelStoreBit = 0x1,
 
     [NativeName("GL_CLIENT_VERTEX_ARRAY_BIT")]
-    VertexArrayBit = unchecked((uint)0x00000002),
+    VertexArrayBit = 0x2,
 
     [NativeName("GL_CLIENT_ALL_ATTRIB_BITS")]
-    AllAttribBits = unchecked((uint)0xFFFFFFFF),
+    AllAttribBits = 0xFFFFFFFF,
 }

@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum ProgramStringProperty : uint
 {
     [NativeName("GL_PROGRAM_STRING_ARB")]
-    ProgramStringARB = unchecked((uint)0x8628),
+    ProgramStringARB = 34344,
 }

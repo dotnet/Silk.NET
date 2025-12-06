@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum FramebufferParameterName : uint
 {
     [NativeName("GL_FRAMEBUFFER_DEFAULT_WIDTH")]
-    Width = unchecked((uint)0x9310),
+    Width = 37648,
 
     [NativeName("GL_FRAMEBUFFER_DEFAULT_HEIGHT")]
-    Height = unchecked((uint)0x9311),
+    Height = 37649,
 
     [NativeName("GL_FRAMEBUFFER_DEFAULT_LAYERS")]
-    Layers = unchecked((uint)0x9312),
+    Layers = 37650,
 
     [NativeName("GL_FRAMEBUFFER_DEFAULT_SAMPLES")]
-    Samples = unchecked((uint)0x9313),
+    Samples = 37651,
 
     [NativeName("GL_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS")]
-    FixedSampleLocations = unchecked((uint)0x9314),
+    FixedSampleLocations = 37652,
 }

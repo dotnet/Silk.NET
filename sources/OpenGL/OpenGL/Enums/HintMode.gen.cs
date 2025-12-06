@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum HintMode : uint
 {
     [NativeName("GL_DONT_CARE")]
-    DontCare = unchecked((uint)0x1100),
+    DontCare = 4352,
 
     [NativeName("GL_FASTEST")]
-    Fastest = unchecked((uint)0x1101),
+    Fastest = 4353,
 
     [NativeName("GL_NICEST")]
-    Nicest = unchecked((uint)0x1102),
+    Nicest = 4354,
 }

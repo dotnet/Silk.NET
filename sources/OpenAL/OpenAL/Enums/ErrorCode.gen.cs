@@ -14,44 +14,44 @@ namespace Silk.NET.OpenAL;
 public enum ErrorCode : uint
 {
     [NativeName("AL_NO_ERROR")]
-    NoError = unchecked((uint)0),
+    NoError = 0,
 
     [NativeName("AL_INVALID_NAME")]
-    InvalidName = unchecked((uint)0xA001),
+    InvalidName = 40961,
 
     [NativeName("AL_INVALID_ENUM")]
-    InvalidEnum = unchecked((uint)0xA002),
+    InvalidEnum = 40962,
 
     [NativeName("AL_INVALID_VALUE")]
-    InvalidValue = unchecked((uint)0xA003),
+    InvalidValue = 40963,
 
     [NativeName("AL_INVALID_OPERATION")]
-    InvalidOperation = unchecked((uint)0xA004),
+    InvalidOperation = 40964,
 
     [NativeName("AL_OUT_OF_MEMORY")]
-    OutOfMemory = unchecked((uint)0xA005),
+    OutOfMemory = 40965,
 
     [NativeName("AL_STACK_OVERFLOW_EXT")]
-    StackOverflowEXT = unchecked((uint)0x19CD),
+    StackOverflowEXT = 6605,
 
     [NativeName("AL_STACK_UNDERFLOW_EXT")]
-    StackUnderflowEXT = unchecked((uint)0x19CE),
+    StackUnderflowEXT = 6606,
 
     [NativeName("ALC_NO_ERROR")]
-    CNoError = unchecked((uint)0),
+    CNoError = 0,
 
     [NativeName("ALC_INVALID_DEVICE")]
-    CInvalidDevice = unchecked((uint)0xA001),
+    CInvalidDevice = 40961,
 
     [NativeName("ALC_INVALID_CONTEXT")]
-    CInvalidContext = unchecked((uint)0xA002),
+    CInvalidContext = 40962,
 
     [NativeName("ALC_INVALID_ENUM")]
-    CInvalidEnum = unchecked((uint)0xA003),
+    CInvalidEnum = 40963,
 
     [NativeName("ALC_INVALID_VALUE")]
-    CInvalidValue = unchecked((uint)0xA004),
+    CInvalidValue = 40964,
 
     [NativeName("ALC_OUT_OF_MEMORY")]
-    COutOfMemory = unchecked((uint)0xA005),
+    COutOfMemory = 40965,
 }

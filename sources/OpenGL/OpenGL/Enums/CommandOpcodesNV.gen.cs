@@ -11,59 +11,59 @@ namespace Silk.NET.OpenGL;
 public enum CommandOpcodesNV : uint
 {
     [NativeName("GL_TERMINATE_SEQUENCE_COMMAND_NV")]
-    TerminateSequenceCommand = unchecked((uint)0x0000),
+    TerminateSequenceCommand = 0,
 
     [NativeName("GL_NOP_COMMAND_NV")]
-    NopCommand = unchecked((uint)0x0001),
+    NopCommand = 1,
 
     [NativeName("GL_DRAW_ELEMENTS_COMMAND_NV")]
-    DrawElementsCommand = unchecked((uint)0x0002),
+    DrawElementsCommand = 2,
 
     [NativeName("GL_DRAW_ARRAYS_COMMAND_NV")]
-    DrawArraysCommand = unchecked((uint)0x0003),
+    DrawArraysCommand = 3,
 
     [NativeName("GL_DRAW_ELEMENTS_STRIP_COMMAND_NV")]
-    DrawElementsStripCommand = unchecked((uint)0x0004),
+    DrawElementsStripCommand = 4,
 
     [NativeName("GL_DRAW_ARRAYS_STRIP_COMMAND_NV")]
-    DrawArraysStripCommand = unchecked((uint)0x0005),
+    DrawArraysStripCommand = 5,
 
     [NativeName("GL_DRAW_ELEMENTS_INSTANCED_COMMAND_NV")]
-    DrawElementsInstancedCommand = unchecked((uint)0x0006),
+    DrawElementsInstancedCommand = 6,
 
     [NativeName("GL_DRAW_ARRAYS_INSTANCED_COMMAND_NV")]
-    DrawArraysInstancedCommand = unchecked((uint)0x0007),
+    DrawArraysInstancedCommand = 7,
 
     [NativeName("GL_ELEMENT_ADDRESS_COMMAND_NV")]
-    ElementAddressCommand = unchecked((uint)0x0008),
+    ElementAddressCommand = 8,
 
     [NativeName("GL_ATTRIBUTE_ADDRESS_COMMAND_NV")]
-    AttributeAddressCommand = unchecked((uint)0x0009),
+    AttributeAddressCommand = 9,
 
     [NativeName("GL_UNIFORM_ADDRESS_COMMAND_NV")]
-    UniformAddressCommand = unchecked((uint)0x000A),
+    UniformAddressCommand = 10,
 
     [NativeName("GL_BLEND_COLOR_COMMAND_NV")]
-    BlendColorCommand = unchecked((uint)0x000B),
+    BlendColorCommand = 11,
 
     [NativeName("GL_STENCIL_REF_COMMAND_NV")]
-    StencilRefCommand = unchecked((uint)0x000C),
+    StencilRefCommand = 12,
 
     [NativeName("GL_LINE_WIDTH_COMMAND_NV")]
-    LineWidthCommand = unchecked((uint)0x000D),
+    LineWidthCommand = 13,
 
     [NativeName("GL_POLYGON_OFFSET_COMMAND_NV")]
-    PolygonOffsetCommand = unchecked((uint)0x000E),
+    PolygonOffsetCommand = 14,
 
     [NativeName("GL_ALPHA_REF_COMMAND_NV")]
-    AlphaRefCommand = unchecked((uint)0x000F),
+    AlphaRefCommand = 15,
 
     [NativeName("GL_VIEWPORT_COMMAND_NV")]
-    ViewportCommand = unchecked((uint)0x0010),
+    ViewportCommand = 16,
 
     [NativeName("GL_SCISSOR_COMMAND_NV")]
-    ScissorCommand = unchecked((uint)0x0011),
+    ScissorCommand = 17,
 
     [NativeName("GL_FRONT_FACE_COMMAND_NV")]
-    FrontFaceCommand = unchecked((uint)0x0012),
+    FrontFaceCommand = 18,
 }

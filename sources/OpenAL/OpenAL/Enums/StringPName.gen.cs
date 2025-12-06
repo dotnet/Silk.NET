@@ -14,17 +14,17 @@ namespace Silk.NET.OpenAL;
 public enum StringPName : uint
 {
     [NativeName("AL_VENDOR")]
-    Vendor = unchecked((uint)0xB001),
+    Vendor = 45057,
 
     [NativeName("AL_VERSION")]
-    Version = unchecked((uint)0xB002),
+    Version = 45058,
 
     [NativeName("AL_RENDERER")]
-    Renderer = unchecked((uint)0xB003),
+    Renderer = 45059,
 
     [NativeName("AL_EXTENSIONS")]
-    Extensions = unchecked((uint)0xB004),
+    Extensions = 45060,
 
     [NativeName("AL_RESAMPLER_NAME_SOFT")]
-    ResamplerNameSOFT = unchecked((uint)0x1213),
+    ResamplerNameSOFT = 4627,
 }

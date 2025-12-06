@@ -11,23 +11,23 @@ namespace Silk.NET.OpenGL;
 public enum PipelineParameterName : uint
 {
     [NativeName("GL_FRAGMENT_SHADER")]
-    FragmentShader = unchecked((uint)0x8B30),
+    FragmentShader = 35632,
 
     [NativeName("GL_VERTEX_SHADER")]
-    VertexShader = unchecked((uint)0x8B31),
+    VertexShader = 35633,
 
     [NativeName("GL_INFO_LOG_LENGTH")]
-    InfoLogLength = unchecked((uint)0x8B84),
+    InfoLogLength = 35716,
 
     [NativeName("GL_GEOMETRY_SHADER")]
-    GeometryShader = unchecked((uint)0x8DD9),
+    GeometryShader = 36313,
 
     [NativeName("GL_TESS_EVALUATION_SHADER")]
-    TessEvaluationShader = unchecked((uint)0x8E87),
+    TessEvaluationShader = 36487,
 
     [NativeName("GL_TESS_CONTROL_SHADER")]
-    TessControlShader = unchecked((uint)0x8E88),
+    TessControlShader = 36488,
 
     [NativeName("GL_ACTIVE_PROGRAM")]
-    ActiveProgram = unchecked((uint)0x8259),
+    ActiveProgram = 33369,
 }

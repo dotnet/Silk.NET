@@ -11,137 +11,137 @@ namespace Silk.NET.OpenGL;
 public enum PathCoordType : uint
 {
     [NativeName("GL_CLOSE_PATH_NV")]
-    ClosePathNV = unchecked((uint)0x00),
+    ClosePathNV = 0,
 
     [NativeName("GL_MOVE_TO_NV")]
-    MoveToNV = unchecked((uint)0x02),
+    MoveToNV = 2,
 
     [NativeName("GL_RELATIVE_MOVE_TO_NV")]
-    RelativeMoveToNV = unchecked((uint)0x03),
+    RelativeMoveToNV = 3,
 
     [NativeName("GL_LINE_TO_NV")]
-    LineToNV = unchecked((uint)0x04),
+    LineToNV = 4,
 
     [NativeName("GL_RELATIVE_LINE_TO_NV")]
-    RelativeLineToNV = unchecked((uint)0x05),
+    RelativeLineToNV = 5,
 
     [NativeName("GL_HORIZONTAL_LINE_TO_NV")]
-    HorizontalLineToNV = unchecked((uint)0x06),
+    HorizontalLineToNV = 6,
 
     [NativeName("GL_RELATIVE_HORIZONTAL_LINE_TO_NV")]
-    RelativeHorizontalLineToNV = unchecked((uint)0x07),
+    RelativeHorizontalLineToNV = 7,
 
     [NativeName("GL_VERTICAL_LINE_TO_NV")]
-    VerticalLineToNV = unchecked((uint)0x08),
+    VerticalLineToNV = 8,
 
     [NativeName("GL_RELATIVE_VERTICAL_LINE_TO_NV")]
-    RelativeVerticalLineToNV = unchecked((uint)0x09),
+    RelativeVerticalLineToNV = 9,
 
     [NativeName("GL_QUADRATIC_CURVE_TO_NV")]
-    QuadraticCurveToNV = unchecked((uint)0x0A),
+    QuadraticCurveToNV = 10,
 
     [NativeName("GL_RELATIVE_QUADRATIC_CURVE_TO_NV")]
-    RelativeQuadraticCurveToNV = unchecked((uint)0x0B),
+    RelativeQuadraticCurveToNV = 11,
 
     [NativeName("GL_CUBIC_CURVE_TO_NV")]
-    CubicCurveToNV = unchecked((uint)0x0C),
+    CubicCurveToNV = 12,
 
     [NativeName("GL_RELATIVE_CUBIC_CURVE_TO_NV")]
-    RelativeCubicCurveToNV = unchecked((uint)0x0D),
+    RelativeCubicCurveToNV = 13,
 
     [NativeName("GL_SMOOTH_QUADRATIC_CURVE_TO_NV")]
-    SmoothQuadraticCurveToNV = unchecked((uint)0x0E),
+    SmoothQuadraticCurveToNV = 14,
 
     [NativeName("GL_RELATIVE_SMOOTH_QUADRATIC_CURVE_TO_NV")]
-    RelativeSmoothQuadraticCurveToNV = unchecked((uint)0x0F),
+    RelativeSmoothQuadraticCurveToNV = 15,
 
     [NativeName("GL_SMOOTH_CUBIC_CURVE_TO_NV")]
-    SmoothCubicCurveToNV = unchecked((uint)0x10),
+    SmoothCubicCurveToNV = 16,
 
     [NativeName("GL_RELATIVE_SMOOTH_CUBIC_CURVE_TO_NV")]
-    RelativeSmoothCubicCurveToNV = unchecked((uint)0x11),
+    RelativeSmoothCubicCurveToNV = 17,
 
     [NativeName("GL_SMALL_CCW_ARC_TO_NV")]
-    SmallCcwArcToNV = unchecked((uint)0x12),
+    SmallCcwArcToNV = 18,
 
     [NativeName("GL_RELATIVE_SMALL_CCW_ARC_TO_NV")]
-    RelativeSmallCcwArcToNV = unchecked((uint)0x13),
+    RelativeSmallCcwArcToNV = 19,
 
     [NativeName("GL_SMALL_CW_ARC_TO_NV")]
-    SmallCwArcToNV = unchecked((uint)0x14),
+    SmallCwArcToNV = 20,
 
     [NativeName("GL_RELATIVE_SMALL_CW_ARC_TO_NV")]
-    RelativeSmallCwArcToNV = unchecked((uint)0x15),
+    RelativeSmallCwArcToNV = 21,
 
     [NativeName("GL_LARGE_CCW_ARC_TO_NV")]
-    LargeCcwArcToNV = unchecked((uint)0x16),
+    LargeCcwArcToNV = 22,
 
     [NativeName("GL_RELATIVE_LARGE_CCW_ARC_TO_NV")]
-    RelativeLargeCcwArcToNV = unchecked((uint)0x17),
+    RelativeLargeCcwArcToNV = 23,
 
     [NativeName("GL_LARGE_CW_ARC_TO_NV")]
-    LargeCwArcToNV = unchecked((uint)0x18),
+    LargeCwArcToNV = 24,
 
     [NativeName("GL_RELATIVE_LARGE_CW_ARC_TO_NV")]
-    RelativeLargeCwArcToNV = unchecked((uint)0x19),
+    RelativeLargeCwArcToNV = 25,
 
     [NativeName("GL_RESTART_PATH_NV")]
-    RestartPathNV = unchecked((uint)0xF0),
+    RestartPathNV = 240,
 
     [NativeName("GL_DUP_FIRST_CUBIC_CURVE_TO_NV")]
-    DupFirstCubicCurveToNV = unchecked((uint)0xF2),
+    DupFirstCubicCurveToNV = 242,
 
     [NativeName("GL_DUP_LAST_CUBIC_CURVE_TO_NV")]
-    DupLastCubicCurveToNV = unchecked((uint)0xF4),
+    DupLastCubicCurveToNV = 244,
 
     [NativeName("GL_RECT_NV")]
-    RectNV = unchecked((uint)0xF6),
+    RectNV = 246,
 
     [NativeName("GL_CIRCULAR_CCW_ARC_TO_NV")]
-    CircularCcwArcToNV = unchecked((uint)0xF8),
+    CircularCcwArcToNV = 248,
 
     [NativeName("GL_CIRCULAR_CW_ARC_TO_NV")]
-    CircularCwArcToNV = unchecked((uint)0xFA),
+    CircularCwArcToNV = 250,
 
     [NativeName("GL_CIRCULAR_TANGENT_ARC_TO_NV")]
-    CircularTangentArcToNV = unchecked((uint)0xFC),
+    CircularTangentArcToNV = 252,
 
     [NativeName("GL_ARC_TO_NV")]
-    ArcToNV = unchecked((uint)0xFE),
+    ArcToNV = 254,
 
     [NativeName("GL_RELATIVE_ARC_TO_NV")]
-    RelativeArcToNV = unchecked((uint)0xFF),
+    RelativeArcToNV = 255,
 
     [NativeName("GL_ROUNDED_RECT_NV")]
-    RoundedRectNV = unchecked((uint)0xE8),
+    RoundedRectNV = 232,
 
     [NativeName("GL_RELATIVE_ROUNDED_RECT_NV")]
-    RelativeRoundedRectNV = unchecked((uint)0xE9),
+    RelativeRoundedRectNV = 233,
 
     [NativeName("GL_ROUNDED_RECT2_NV")]
-    RoundedRect2NV = unchecked((uint)0xEA),
+    RoundedRect2NV = 234,
 
     [NativeName("GL_RELATIVE_ROUNDED_RECT2_NV")]
-    RelativeRoundedRect2NV = unchecked((uint)0xEB),
+    RelativeRoundedRect2NV = 235,
 
     [NativeName("GL_ROUNDED_RECT4_NV")]
-    RoundedRect4NV = unchecked((uint)0xEC),
+    RoundedRect4NV = 236,
 
     [NativeName("GL_RELATIVE_ROUNDED_RECT4_NV")]
-    RelativeRoundedRect4NV = unchecked((uint)0xED),
+    RelativeRoundedRect4NV = 237,
 
     [NativeName("GL_ROUNDED_RECT8_NV")]
-    RoundedRect8NV = unchecked((uint)0xEE),
+    RoundedRect8NV = 238,
 
     [NativeName("GL_RELATIVE_ROUNDED_RECT8_NV")]
-    RelativeRoundedRect8NV = unchecked((uint)0xEF),
+    RelativeRoundedRect8NV = 239,
 
     [NativeName("GL_RELATIVE_RECT_NV")]
-    RelativeRectNV = unchecked((uint)0xF7),
+    RelativeRectNV = 247,
 
     [NativeName("GL_CONIC_CURVE_TO_NV")]
-    ConicCurveToNV = unchecked((uint)0x1A),
+    ConicCurveToNV = 26,
 
     [NativeName("GL_RELATIVE_CONIC_CURVE_TO_NV")]
-    RelativeConicCurveToNV = unchecked((uint)0x1B),
+    RelativeConicCurveToNV = 27,
 }

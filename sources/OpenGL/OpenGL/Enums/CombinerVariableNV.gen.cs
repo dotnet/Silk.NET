@@ -11,23 +11,23 @@ namespace Silk.NET.OpenGL;
 public enum CombinerVariableNV : uint
 {
     [NativeName("GL_VARIABLE_A_NV")]
-    A = unchecked((uint)0x8523),
+    A = 34083,
 
     [NativeName("GL_VARIABLE_B_NV")]
-    B = unchecked((uint)0x8524),
+    B = 34084,
 
     [NativeName("GL_VARIABLE_C_NV")]
-    C = unchecked((uint)0x8525),
+    C = 34085,
 
     [NativeName("GL_VARIABLE_D_NV")]
-    D = unchecked((uint)0x8526),
+    D = 34086,
 
     [NativeName("GL_VARIABLE_E_NV")]
-    E = unchecked((uint)0x8527),
+    E = 34087,
 
     [NativeName("GL_VARIABLE_F_NV")]
-    F = unchecked((uint)0x8528),
+    F = 34088,
 
     [NativeName("GL_VARIABLE_G_NV")]
-    G = unchecked((uint)0x8529),
+    G = 34089,
 }

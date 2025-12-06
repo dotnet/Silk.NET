@@ -14,8 +14,8 @@ public enum ContextProfileMask : uint
     None = 0x0,
 
     [NativeName("GL_CONTEXT_CORE_PROFILE_BIT")]
-    CoreProfileBit = unchecked((uint)0x00000001),
+    CoreProfileBit = 0x1,
 
     [NativeName("GL_CONTEXT_COMPATIBILITY_PROFILE_BIT")]
-    CompatibilityProfileBit = unchecked((uint)0x00000002),
+    CompatibilityProfileBit = 0x2,
 }

@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum AccumOp : uint
 {
     [NativeName("GL_ADD")]
-    Add = unchecked((uint)0x0104),
+    Add = 260,
 
     [NativeName("GL_ACCUM")]
-    Accum = unchecked((uint)0x0100),
+    Accum = 256,
 
     [NativeName("GL_LOAD")]
-    Load = unchecked((uint)0x0101),
+    Load = 257,
 
     [NativeName("GL_RETURN")]
-    Return = unchecked((uint)0x0102),
+    Return = 258,
 
     [NativeName("GL_MULT")]
-    Mult = unchecked((uint)0x0103),
+    Mult = 259,
 }

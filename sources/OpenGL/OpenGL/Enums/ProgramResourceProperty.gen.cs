@@ -11,92 +11,92 @@ namespace Silk.NET.OpenGL;
 public enum ProgramResourceProperty : uint
 {
     [NativeName("GL_NUM_COMPATIBLE_SUBROUTINES")]
-    NumCompatibleSubroutines = unchecked((uint)0x8E4A),
+    NumCompatibleSubroutines = 36426,
 
     [NativeName("GL_COMPATIBLE_SUBROUTINES")]
-    CompatibleSubroutines = unchecked((uint)0x8E4B),
+    CompatibleSubroutines = 36427,
 
     [NativeName("GL_UNIFORM")]
-    Uniform = unchecked((uint)0x92E1),
+    Uniform = 37601,
 
     [NativeName("GL_NAME_LENGTH")]
-    NameLength = unchecked((uint)0x92F9),
+    NameLength = 37625,
 
     [NativeName("GL_TYPE")]
-    Type = unchecked((uint)0x92FA),
+    Type = 37626,
 
     [NativeName("GL_ARRAY_SIZE")]
-    ArraySize = unchecked((uint)0x92FB),
+    ArraySize = 37627,
 
     [NativeName("GL_OFFSET")]
-    Offset = unchecked((uint)0x92FC),
+    Offset = 37628,
 
     [NativeName("GL_BLOCK_INDEX")]
-    BlockIndex = unchecked((uint)0x92FD),
+    BlockIndex = 37629,
 
     [NativeName("GL_ARRAY_STRIDE")]
-    ArrayStride = unchecked((uint)0x92FE),
+    ArrayStride = 37630,
 
     [NativeName("GL_MATRIX_STRIDE")]
-    MatrixStride = unchecked((uint)0x92FF),
+    MatrixStride = 37631,
 
     [NativeName("GL_IS_ROW_MAJOR")]
-    IsRowMajor = unchecked((uint)0x9300),
+    IsRowMajor = 37632,
 
     [NativeName("GL_ATOMIC_COUNTER_BUFFER_INDEX")]
-    AtomicCounterBufferIndex = unchecked((uint)0x9301),
+    AtomicCounterBufferIndex = 37633,
 
     [NativeName("GL_BUFFER_BINDING")]
-    BufferBinding = unchecked((uint)0x9302),
+    BufferBinding = 37634,
 
     [NativeName("GL_BUFFER_DATA_SIZE")]
-    BufferDataSize = unchecked((uint)0x9303),
+    BufferDataSize = 37635,
 
     [NativeName("GL_NUM_ACTIVE_VARIABLES")]
-    NumActiveVariables = unchecked((uint)0x9304),
+    NumActiveVariables = 37636,
 
     [NativeName("GL_ACTIVE_VARIABLES")]
-    ActiveVariables = unchecked((uint)0x9305),
+    ActiveVariables = 37637,
 
     [NativeName("GL_REFERENCED_BY_VERTEX_SHADER")]
-    ReferencedByVertexShader = unchecked((uint)0x9306),
+    ReferencedByVertexShader = 37638,
 
     [NativeName("GL_REFERENCED_BY_TESS_CONTROL_SHADER")]
-    ReferencedByTessControlShader = unchecked((uint)0x9307),
+    ReferencedByTessControlShader = 37639,
 
     [NativeName("GL_REFERENCED_BY_TESS_EVALUATION_SHADER")]
-    ReferencedByTessEvaluationShader = unchecked((uint)0x9308),
+    ReferencedByTessEvaluationShader = 37640,
 
     [NativeName("GL_REFERENCED_BY_GEOMETRY_SHADER")]
-    ReferencedByGeometryShader = unchecked((uint)0x9309),
+    ReferencedByGeometryShader = 37641,
 
     [NativeName("GL_REFERENCED_BY_FRAGMENT_SHADER")]
-    ReferencedByFragmentShader = unchecked((uint)0x930A),
+    ReferencedByFragmentShader = 37642,
 
     [NativeName("GL_REFERENCED_BY_COMPUTE_SHADER")]
-    ReferencedByComputeShader = unchecked((uint)0x930B),
+    ReferencedByComputeShader = 37643,
 
     [NativeName("GL_TOP_LEVEL_ARRAY_SIZE")]
-    TopLevelArraySize = unchecked((uint)0x930C),
+    TopLevelArraySize = 37644,
 
     [NativeName("GL_TOP_LEVEL_ARRAY_STRIDE")]
-    TopLevelArrayStride = unchecked((uint)0x930D),
+    TopLevelArrayStride = 37645,
 
     [NativeName("GL_LOCATION")]
-    Location = unchecked((uint)0x930E),
+    Location = 37646,
 
     [NativeName("GL_LOCATION_INDEX")]
-    LocationIndex = unchecked((uint)0x930F),
+    LocationIndex = 37647,
 
     [NativeName("GL_IS_PER_PATCH")]
-    IsPerPatch = unchecked((uint)0x92E7),
+    IsPerPatch = 37607,
 
     [NativeName("GL_LOCATION_COMPONENT")]
-    LocationComponent = unchecked((uint)0x934A),
+    LocationComponent = 37706,
 
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_INDEX")]
-    TransformFeedbackBufferIndex = unchecked((uint)0x934B),
+    TransformFeedbackBufferIndex = 37707,
 
     [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER_STRIDE")]
-    TransformFeedbackBufferStride = unchecked((uint)0x934C),
+    TransformFeedbackBufferStride = 37708,
 }

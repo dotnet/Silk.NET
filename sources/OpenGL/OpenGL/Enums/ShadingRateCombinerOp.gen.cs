@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum ShadingRateCombinerOp : uint
 {
     [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_KEEP_EXT")]
-    KeepEXT = unchecked((uint)0x96D2),
+    KeepEXT = 38610,
 
     [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_EXT")]
-    ReplaceEXT = unchecked((uint)0x96D3),
+    ReplaceEXT = 38611,
 
     [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_EXT")]
-    MinEXT = unchecked((uint)0x96D4),
+    MinEXT = 38612,
 
     [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_EXT")]
-    MaxEXT = unchecked((uint)0x96D5),
+    MaxEXT = 38613,
 
     [NativeName("GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_EXT")]
-    MulEXT = unchecked((uint)0x96D6),
+    MulEXT = 38614,
 }

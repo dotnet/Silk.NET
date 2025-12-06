@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum TextureCompareMode : uint
 {
     [NativeName("GL_NONE")]
-    None = unchecked((uint)0),
+    None = 0,
 
     [NativeName("GL_COMPARE_R_TO_TEXTURE")]
-    CompareRToTexture = unchecked((uint)0x884E),
+    CompareRToTexture = 34894,
 
     [NativeName("GL_COMPARE_REF_TO_TEXTURE")]
-    CompareRefToTexture = unchecked((uint)0x884E),
+    CompareRefToTexture = 34894,
 }

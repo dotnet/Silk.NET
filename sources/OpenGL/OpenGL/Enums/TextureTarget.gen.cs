@@ -11,209 +11,209 @@ namespace Silk.NET.OpenGL;
 public enum TextureTarget : uint
 {
     [NativeName("GL_TEXTURE_2D")]
-    Texture2D = unchecked((uint)0x0DE1),
+    Texture2D = 3553,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapOES = unchecked((uint)0x8513),
+    TextureCubeMapOES = 34067,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES")]
-    TextureCubeMapPositiveXOES = unchecked((uint)0x8515),
+    TextureCubeMapPositiveXOES = 34069,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES")]
-    TextureCubeMapNegativeXOES = unchecked((uint)0x8516),
+    TextureCubeMapNegativeXOES = 34070,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES")]
-    TextureCubeMapPositiveYOES = unchecked((uint)0x8517),
+    TextureCubeMapPositiveYOES = 34071,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES")]
-    TextureCubeMapNegativeYOES = unchecked((uint)0x8518),
+    TextureCubeMapNegativeYOES = 34072,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES")]
-    TextureCubeMapPositiveZOES = unchecked((uint)0x8519),
+    TextureCubeMapPositiveZOES = 34073,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES")]
-    TextureCubeMapNegativeZOES = unchecked((uint)0x851A),
+    TextureCubeMapNegativeZOES = 34074,
 
     [NativeName("GL_TEXTURE_1D")]
-    Texture1D = unchecked((uint)0x0DE0),
+    Texture1D = 3552,
 
     [NativeName("GL_PROXY_TEXTURE_1D")]
-    ProxyTexture1D = unchecked((uint)0x8063),
+    ProxyTexture1D = 32867,
 
     [NativeName("GL_PROXY_TEXTURE_2D")]
-    ProxyTexture2D = unchecked((uint)0x8064),
+    ProxyTexture2D = 32868,
 
     [NativeName("GL_TEXTURE_3D")]
-    Texture3D = unchecked((uint)0x806F),
+    Texture3D = 32879,
 
     [NativeName("GL_PROXY_TEXTURE_3D")]
-    ProxyTexture3D = unchecked((uint)0x8070),
+    ProxyTexture3D = 32880,
 
     [NativeName("GL_TEXTURE_CUBE_MAP")]
-    TextureCubeMap = unchecked((uint)0x8513),
+    TextureCubeMap = 34067,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X")]
-    TextureCubeMapPositiveX = unchecked((uint)0x8515),
+    TextureCubeMapPositiveX = 34069,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X")]
-    TextureCubeMapNegativeX = unchecked((uint)0x8516),
+    TextureCubeMapNegativeX = 34070,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y")]
-    TextureCubeMapPositiveY = unchecked((uint)0x8517),
+    TextureCubeMapPositiveY = 34071,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y")]
-    TextureCubeMapNegativeY = unchecked((uint)0x8518),
+    TextureCubeMapNegativeY = 34072,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z")]
-    TextureCubeMapPositiveZ = unchecked((uint)0x8519),
+    TextureCubeMapPositiveZ = 34073,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z")]
-    TextureCubeMapNegativeZ = unchecked((uint)0x851A),
+    TextureCubeMapNegativeZ = 34074,
 
     [NativeName("GL_PROXY_TEXTURE_CUBE_MAP")]
-    ProxyTextureCubeMap = unchecked((uint)0x851B),
+    ProxyTextureCubeMap = 34075,
 
     [NativeName("GL_TEXTURE_1D_ARRAY")]
-    Texture1DArray = unchecked((uint)0x8C18),
+    Texture1DArray = 35864,
 
     [NativeName("GL_PROXY_TEXTURE_1D_ARRAY")]
-    ProxyTexture1DArray = unchecked((uint)0x8C19),
+    ProxyTexture1DArray = 35865,
 
     [NativeName("GL_TEXTURE_2D_ARRAY")]
-    Texture2DArray = unchecked((uint)0x8C1A),
+    Texture2DArray = 35866,
 
     [NativeName("GL_PROXY_TEXTURE_2D_ARRAY")]
-    ProxyTexture2DArray = unchecked((uint)0x8C1B),
+    ProxyTexture2DArray = 35867,
 
     [NativeName("GL_RENDERBUFFER")]
-    Renderbuffer = unchecked((uint)0x8D41),
+    Renderbuffer = 36161,
 
     [NativeName("GL_TEXTURE_BUFFER")]
-    TextureBuffer = unchecked((uint)0x8C2A),
+    TextureBuffer = 35882,
 
     [NativeName("GL_TEXTURE_RECTANGLE")]
-    TextureRectANGLE = unchecked((uint)0x84F5),
+    TextureRectANGLE = 34037,
 
     [NativeName("GL_PROXY_TEXTURE_RECTANGLE")]
-    ProxyTextureRectANGLE = unchecked((uint)0x84F7),
+    ProxyTextureRectANGLE = 34039,
 
     [NativeName("GL_TEXTURE_2D_MULTISAMPLE")]
-    Texture2DMultisample = unchecked((uint)0x9100),
+    Texture2DMultisample = 37120,
 
     [NativeName("GL_PROXY_TEXTURE_2D_MULTISAMPLE")]
-    ProxyTexture2DMultisample = unchecked((uint)0x9101),
+    ProxyTexture2DMultisample = 37121,
 
     [NativeName("GL_TEXTURE_2D_MULTISAMPLE_ARRAY")]
-    Texture2DMultisampleArray = unchecked((uint)0x9102),
+    Texture2DMultisampleArray = 37122,
 
     [NativeName("GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY")]
-    ProxyTexture2DMultisampleArray = unchecked((uint)0x9103),
+    ProxyTexture2DMultisampleArray = 37123,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY")]
-    TextureCubeMapArray = unchecked((uint)0x9009),
+    TextureCubeMapArray = 36873,
 
     [NativeName("GL_PROXY_TEXTURE_CUBE_MAP_ARRAY")]
-    ProxyTextureCubeMapArray = unchecked((uint)0x900B),
+    ProxyTextureCubeMapArray = 36875,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_ARB")]
-    TextureCubeMapARB = unchecked((uint)0x8513),
+    TextureCubeMapARB = 34067,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_ARB")]
-    TextureCubeMapPositiveXARB = unchecked((uint)0x8515),
+    TextureCubeMapPositiveXARB = 34069,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_ARB")]
-    TextureCubeMapNegativeXARB = unchecked((uint)0x8516),
+    TextureCubeMapNegativeXARB = 34070,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_ARB")]
-    TextureCubeMapPositiveYARB = unchecked((uint)0x8517),
+    TextureCubeMapPositiveYARB = 34071,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_ARB")]
-    TextureCubeMapNegativeYARB = unchecked((uint)0x8518),
+    TextureCubeMapNegativeYARB = 34072,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_ARB")]
-    TextureCubeMapPositiveZARB = unchecked((uint)0x8519),
+    TextureCubeMapPositiveZARB = 34073,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_ARB")]
-    TextureCubeMapNegativeZARB = unchecked((uint)0x851A),
+    TextureCubeMapNegativeZARB = 34074,
 
     [NativeName("GL_PROXY_TEXTURE_CUBE_MAP_ARB")]
-    ProxyTextureCubeMapARB = unchecked((uint)0x851B),
+    ProxyTextureCubeMapARB = 34075,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_ARB")]
-    TextureCubeMapArrayARB = unchecked((uint)0x9009),
+    TextureCubeMapArrayARB = 36873,
 
     [NativeName("GL_PROXY_TEXTURE_CUBE_MAP_ARRAY_ARB")]
-    ProxyTextureCubeMapArrayARB = unchecked((uint)0x900B),
+    ProxyTextureCubeMapArrayARB = 36875,
 
     [NativeName("GL_TEXTURE_RECTANGLE_ARB")]
-    TextureRectangleARB = unchecked((uint)0x84F5),
+    TextureRectangleARB = 34037,
 
     [NativeName("GL_PROXY_TEXTURE_RECTANGLE_ARB")]
-    ProxyTextureRectangleARB = unchecked((uint)0x84F7),
+    ProxyTextureRectangleARB = 34039,
 
     [NativeName("GL_PROXY_TEXTURE_1D_EXT")]
-    ProxyTexture1DEXT = unchecked((uint)0x8063),
+    ProxyTexture1DEXT = 32867,
 
     [NativeName("GL_PROXY_TEXTURE_2D_EXT")]
-    ProxyTexture2DEXT = unchecked((uint)0x8064),
+    ProxyTexture2DEXT = 32868,
 
     [NativeName("GL_TEXTURE_3D_EXT")]
-    Texture3DEXT = unchecked((uint)0x806F),
+    Texture3DEXT = 32879,
 
     [NativeName("GL_PROXY_TEXTURE_3D_EXT")]
-    ProxyTexture3DEXT = unchecked((uint)0x8070),
+    ProxyTexture3DEXT = 32880,
 
     [NativeName("GL_PROXY_TEXTURE_1D_ARRAY_EXT")]
-    ProxyTexture1DArrayEXT = unchecked((uint)0x8C19),
+    ProxyTexture1DArrayEXT = 35865,
 
     [NativeName("GL_PROXY_TEXTURE_2D_ARRAY_EXT")]
-    ProxyTexture2DArrayEXT = unchecked((uint)0x8C1B),
+    ProxyTexture2DArrayEXT = 35867,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_EXT")]
-    TextureCubeMapEXT = unchecked((uint)0x8513),
+    TextureCubeMapEXT = 34067,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_EXT")]
-    TextureCubeMapPositiveXEXT = unchecked((uint)0x8515),
+    TextureCubeMapPositiveXEXT = 34069,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_EXT")]
-    TextureCubeMapNegativeXEXT = unchecked((uint)0x8516),
+    TextureCubeMapNegativeXEXT = 34070,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_EXT")]
-    TextureCubeMapPositiveYEXT = unchecked((uint)0x8517),
+    TextureCubeMapPositiveYEXT = 34071,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_EXT")]
-    TextureCubeMapNegativeYEXT = unchecked((uint)0x8518),
+    TextureCubeMapNegativeYEXT = 34072,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_EXT")]
-    TextureCubeMapPositiveZEXT = unchecked((uint)0x8519),
+    TextureCubeMapPositiveZEXT = 34073,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_EXT")]
-    TextureCubeMapNegativeZEXT = unchecked((uint)0x851A),
+    TextureCubeMapNegativeZEXT = 34074,
 
     [NativeName("GL_PROXY_TEXTURE_CUBE_MAP_EXT")]
-    ProxyTextureCubeMapEXT = unchecked((uint)0x851B),
+    ProxyTextureCubeMapEXT = 34075,
 
     [NativeName("GL_TEXTURE_RECTANGLE_NV")]
-    TextureRectangleNV = unchecked((uint)0x84F5),
+    TextureRectangleNV = 34037,
 
     [NativeName("GL_PROXY_TEXTURE_RECTANGLE_NV")]
-    ProxyTextureRectangleNV = unchecked((uint)0x84F7),
+    ProxyTextureRectangleNV = 34039,
 
     [NativeName("GL_DETAIL_TEXTURE_2D_SGIS")]
-    DetailTexture2DSGIS = unchecked((uint)0x8095),
+    DetailTexture2DSGIS = 32917,
 
     [NativeName("GL_TEXTURE_4D_SGIS")]
-    Texture4DSGIS = unchecked((uint)0x8134),
+    Texture4DSGIS = 33076,
 
     [NativeName("GL_PROXY_TEXTURE_4D_SGIS")]
-    ProxyTexture4DSGIS = unchecked((uint)0x8135),
+    ProxyTexture4DSGIS = 33077,
 
     [NativeName("GL_TEXTURE_3D_OES")]
-    Texture3DOES = unchecked((uint)0x806F),
+    Texture3DOES = 32879,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_OES")]
-    TextureCubeMapArrayOES = unchecked((uint)0x9009),
+    TextureCubeMapArrayOES = 36873,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_EXT")]
-    TextureCubeMapArrayEXT = unchecked((uint)0x9009),
+    TextureCubeMapArrayEXT = 36873,
 }

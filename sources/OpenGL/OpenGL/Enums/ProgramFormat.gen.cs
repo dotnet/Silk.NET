@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum ProgramFormat : uint
 {
     [NativeName("GL_PROGRAM_FORMAT_ASCII_ARB")]
-    ProgramFormatAsciiARB = unchecked((uint)0x8875),
+    ProgramFormatAsciiARB = 34933,
 }

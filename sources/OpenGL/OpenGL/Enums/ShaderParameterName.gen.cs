@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum ShaderParameterName : uint
 {
     [NativeName("GL_SHADER_TYPE")]
-    ShaderType = unchecked((uint)0x8B4F),
+    ShaderType = 35663,
 
     [NativeName("GL_DELETE_STATUS")]
-    DeleteStatus = unchecked((uint)0x8B80),
+    DeleteStatus = 35712,
 
     [NativeName("GL_COMPILE_STATUS")]
-    CompileStatus = unchecked((uint)0x8B81),
+    CompileStatus = 35713,
 
     [NativeName("GL_INFO_LOG_LENGTH")]
-    InfoLogLength = unchecked((uint)0x8B84),
+    InfoLogLength = 35716,
 
     [NativeName("GL_SHADER_SOURCE_LENGTH")]
-    ShaderSourceLength = unchecked((uint)0x8B88),
+    ShaderSourceLength = 35720,
 }

@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum FogCoordinatePointerType : uint
 {
     [NativeName("GL_FLOAT")]
-    Float = unchecked((uint)0x1406),
+    Float = 5126,
 
     [NativeName("GL_DOUBLE")]
-    Double = unchecked((uint)0x140A),
+    Double = 5130,
 }

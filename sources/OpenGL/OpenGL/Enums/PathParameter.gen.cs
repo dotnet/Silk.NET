@@ -11,74 +11,74 @@ namespace Silk.NET.OpenGL;
 public enum PathParameter : uint
 {
     [NativeName("GL_PATH_STROKE_WIDTH_NV")]
-    StrokeWidthNV = unchecked((uint)0x9075),
+    StrokeWidthNV = 36981,
 
     [NativeName("GL_PATH_END_CAPS_NV")]
-    EndCapsNV = unchecked((uint)0x9076),
+    EndCapsNV = 36982,
 
     [NativeName("GL_PATH_INITIAL_END_CAP_NV")]
-    InitialEndCapNV = unchecked((uint)0x9077),
+    InitialEndCapNV = 36983,
 
     [NativeName("GL_PATH_TERMINAL_END_CAP_NV")]
-    TerminalEndCapNV = unchecked((uint)0x9078),
+    TerminalEndCapNV = 36984,
 
     [NativeName("GL_PATH_JOIN_STYLE_NV")]
-    JoinStyleNV = unchecked((uint)0x9079),
+    JoinStyleNV = 36985,
 
     [NativeName("GL_PATH_MITER_LIMIT_NV")]
-    MiterLimitNV = unchecked((uint)0x907A),
+    MiterLimitNV = 36986,
 
     [NativeName("GL_PATH_DASH_CAPS_NV")]
-    DashCapsNV = unchecked((uint)0x907B),
+    DashCapsNV = 36987,
 
     [NativeName("GL_PATH_INITIAL_DASH_CAP_NV")]
-    InitialDashCapNV = unchecked((uint)0x907C),
+    InitialDashCapNV = 36988,
 
     [NativeName("GL_PATH_TERMINAL_DASH_CAP_NV")]
-    TerminalDashCapNV = unchecked((uint)0x907D),
+    TerminalDashCapNV = 36989,
 
     [NativeName("GL_PATH_DASH_OFFSET_NV")]
-    DashOffsetNV = unchecked((uint)0x907E),
+    DashOffsetNV = 36990,
 
     [NativeName("GL_PATH_CLIENT_LENGTH_NV")]
-    ClientLengthNV = unchecked((uint)0x907F),
+    ClientLengthNV = 36991,
 
     [NativeName("GL_PATH_FILL_MODE_NV")]
-    FillModeNV = unchecked((uint)0x9080),
+    FillModeNV = 36992,
 
     [NativeName("GL_PATH_FILL_MASK_NV")]
-    FillMaskNV = unchecked((uint)0x9081),
+    FillMaskNV = 36993,
 
     [NativeName("GL_PATH_FILL_COVER_MODE_NV")]
-    FillCoverModeNV = unchecked((uint)0x9082),
+    FillCoverModeNV = 36994,
 
     [NativeName("GL_PATH_STROKE_COVER_MODE_NV")]
-    StrokeCoverModeNV = unchecked((uint)0x9083),
+    StrokeCoverModeNV = 36995,
 
     [NativeName("GL_PATH_STROKE_MASK_NV")]
-    StrokeMaskNV = unchecked((uint)0x9084),
+    StrokeMaskNV = 36996,
 
     [NativeName("GL_PATH_OBJECT_BOUNDING_BOX_NV")]
-    ObjectBoundingBoxNV = unchecked((uint)0x908A),
+    ObjectBoundingBoxNV = 37002,
 
     [NativeName("GL_PATH_COMMAND_COUNT_NV")]
-    CommandCountNV = unchecked((uint)0x909D),
+    CommandCountNV = 37021,
 
     [NativeName("GL_PATH_COORD_COUNT_NV")]
-    CoordCountNV = unchecked((uint)0x909E),
+    CoordCountNV = 37022,
 
     [NativeName("GL_PATH_DASH_ARRAY_COUNT_NV")]
-    DashArrayCountNV = unchecked((uint)0x909F),
+    DashArrayCountNV = 37023,
 
     [NativeName("GL_PATH_COMPUTED_LENGTH_NV")]
-    ComputedLengthNV = unchecked((uint)0x90A0),
+    ComputedLengthNV = 37024,
 
     [NativeName("GL_PATH_FILL_BOUNDING_BOX_NV")]
-    FillBoundingBoxNV = unchecked((uint)0x90A1),
+    FillBoundingBoxNV = 37025,
 
     [NativeName("GL_PATH_STROKE_BOUNDING_BOX_NV")]
-    StrokeBoundingBoxNV = unchecked((uint)0x90A2),
+    StrokeBoundingBoxNV = 37026,
 
     [NativeName("GL_PATH_DASH_OFFSET_RESET_NV")]
-    DashOffsetResetNV = unchecked((uint)0x90B4),
+    DashOffsetResetNV = 37044,
 }

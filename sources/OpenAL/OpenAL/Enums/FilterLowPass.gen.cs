@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum FilterLowPass : uint
 {
     [NativeName("AL_LOWPASS_GAIN")]
-    Gain = unchecked((uint)0x0001),
+    Gain = 1,
 
     [NativeName("AL_LOWPASS_GAINHF")]
-    Gainhf = unchecked((uint)0x0002),
+    Gainhf = 2,
 }

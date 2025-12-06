@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum FlangerWaveform : uint
 {
     [NativeName("AL_FLANGER_WAVEFORM_SINUSOID")]
-    Sinusoid = unchecked((uint)0),
+    Sinusoid = 0,
 
     [NativeName("AL_FLANGER_WAVEFORM_TRIANGLE")]
-    Triangle = unchecked((uint)1),
+    Triangle = 1,
 }

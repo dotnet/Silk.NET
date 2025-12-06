@@ -11,35 +11,35 @@ namespace Silk.NET.OpenGL;
 public enum GetFramebufferParameter : uint
 {
     [NativeName("GL_SAMPLE_BUFFERS")]
-    SampleBuffers = unchecked((uint)0x80A8),
+    SampleBuffers = 32936,
 
     [NativeName("GL_SAMPLES")]
-    Samples = unchecked((uint)0x80A9),
+    Samples = 32937,
 
     [NativeName("GL_DOUBLEBUFFER")]
-    Doublebuffer = unchecked((uint)0x0C32),
+    Doublebuffer = 3122,
 
     [NativeName("GL_STEREO")]
-    Stereo = unchecked((uint)0x0C33),
+    Stereo = 3123,
 
     [NativeName("GL_IMPLEMENTATION_COLOR_READ_TYPE")]
-    ImplementationColorReadType = unchecked((uint)0x8B9A),
+    ImplementationColorReadType = 35738,
 
     [NativeName("GL_IMPLEMENTATION_COLOR_READ_FORMAT")]
-    ImplementationColorReadFormat = unchecked((uint)0x8B9B),
+    ImplementationColorReadFormat = 35739,
 
     [NativeName("GL_FRAMEBUFFER_DEFAULT_WIDTH")]
-    FramebufferDefaultWidth = unchecked((uint)0x9310),
+    FramebufferDefaultWidth = 37648,
 
     [NativeName("GL_FRAMEBUFFER_DEFAULT_HEIGHT")]
-    FramebufferDefaultHeight = unchecked((uint)0x9311),
+    FramebufferDefaultHeight = 37649,
 
     [NativeName("GL_FRAMEBUFFER_DEFAULT_LAYERS")]
-    FramebufferDefaultLayers = unchecked((uint)0x9312),
+    FramebufferDefaultLayers = 37650,
 
     [NativeName("GL_FRAMEBUFFER_DEFAULT_SAMPLES")]
-    FramebufferDefaultSamples = unchecked((uint)0x9313),
+    FramebufferDefaultSamples = 37651,
 
     [NativeName("GL_FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS")]
-    FramebufferDefaultFixedSampleLocations = unchecked((uint)0x9314),
+    FramebufferDefaultFixedSampleLocations = 37652,
 }

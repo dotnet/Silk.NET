@@ -14,14 +14,14 @@ namespace Silk.NET.OpenAL;
 public enum EffectAutowah : uint
 {
     [NativeName("AL_AUTOWAH_ATTACK_TIME")]
-    AttackTime = unchecked((uint)0x0001),
+    AttackTime = 1,
 
     [NativeName("AL_AUTOWAH_RELEASE_TIME")]
-    ReleaseTime = unchecked((uint)0x0002),
+    ReleaseTime = 2,
 
     [NativeName("AL_AUTOWAH_RESONANCE")]
-    Resonance = unchecked((uint)0x0003),
+    Resonance = 3,
 
     [NativeName("AL_AUTOWAH_PEAK_GAIN")]
-    PeakGain = unchecked((uint)0x0004),
+    PeakGain = 4,
 }

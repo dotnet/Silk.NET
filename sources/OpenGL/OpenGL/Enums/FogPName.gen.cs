@@ -11,20 +11,20 @@ namespace Silk.NET.OpenGL;
 public enum FogPName : uint
 {
     [NativeName("GL_FOG_DENSITY")]
-    Density = unchecked((uint)0x0B62),
+    Density = 2914,
 
     [NativeName("GL_FOG_START")]
-    Start = unchecked((uint)0x0B63),
+    Start = 2915,
 
     [NativeName("GL_FOG_END")]
-    End = unchecked((uint)0x0B64),
+    End = 2916,
 
     [NativeName("GL_FOG_MODE")]
-    Mode = unchecked((uint)0x0B65),
+    Mode = 2917,
 
     [NativeName("GL_FOG_INDEX")]
-    Index = unchecked((uint)0x0B61),
+    Index = 2913,
 
     [NativeName("GL_FOG_COORD_SRC")]
-    CoordSrc = unchecked((uint)0x8450),
+    CoordSrc = 33872,
 }

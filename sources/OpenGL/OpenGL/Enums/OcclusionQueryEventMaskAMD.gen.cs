@@ -14,17 +14,17 @@ public enum OcclusionQueryEventMaskAMD : uint
     None = 0x0,
 
     [NativeName("GL_QUERY_DEPTH_PASS_EVENT_BIT_AMD")]
-    DepthPassEventBit = unchecked((uint)0x00000001),
+    DepthPassEventBit = 0x1,
 
     [NativeName("GL_QUERY_DEPTH_FAIL_EVENT_BIT_AMD")]
-    DepthFailEventBit = unchecked((uint)0x00000002),
+    DepthFailEventBit = 0x2,
 
     [NativeName("GL_QUERY_STENCIL_FAIL_EVENT_BIT_AMD")]
-    StencilFailEventBit = unchecked((uint)0x00000004),
+    StencilFailEventBit = 0x4,
 
     [NativeName("GL_QUERY_DEPTH_BOUNDS_FAIL_EVENT_BIT_AMD")]
-    DepthBoundsFailEventBit = unchecked((uint)0x00000008),
+    DepthBoundsFailEventBit = 0x8,
 
     [NativeName("GL_QUERY_ALL_EVENT_BITS_AMD")]
-    AllEventBits = unchecked((uint)0xFFFFFFFF),
+    AllEventBits = 0xFFFFFFFF,
 }

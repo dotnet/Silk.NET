@@ -14,14 +14,14 @@ namespace Silk.NET.OpenAL;
 public enum FilterType : uint
 {
     [NativeName("AL_FILTER_NULL")]
-    Null = unchecked((uint)0x0000),
+    Null = 0,
 
     [NativeName("AL_FILTER_LOWPASS")]
-    Lowpass = unchecked((uint)0x0001),
+    Lowpass = 1,
 
     [NativeName("AL_FILTER_HIGHPASS")]
-    Highpass = unchecked((uint)0x0002),
+    Highpass = 2,
 
     [NativeName("AL_FILTER_BANDPASS")]
-    Bandpass = unchecked((uint)0x0003),
+    Bandpass = 3,
 }

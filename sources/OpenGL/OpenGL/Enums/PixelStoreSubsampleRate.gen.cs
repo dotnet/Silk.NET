@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum PixelStoreSubsampleRate : uint
 {
     [NativeName("GL_PIXEL_SUBSAMPLE_4444_SGIX")]
-    Subsample4444SGIX = unchecked((uint)0x85A2),
+    Subsample4444SGIX = 34210,
 
     [NativeName("GL_PIXEL_SUBSAMPLE_2424_SGIX")]
-    Subsample2424SGIX = unchecked((uint)0x85A3),
+    Subsample2424SGIX = 34211,
 
     [NativeName("GL_PIXEL_SUBSAMPLE_4242_SGIX")]
-    Subsample4242SGIX = unchecked((uint)0x85A4),
+    Subsample4242SGIX = 34212,
 }

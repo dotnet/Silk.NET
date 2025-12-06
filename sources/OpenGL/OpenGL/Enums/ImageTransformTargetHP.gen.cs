@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum ImageTransformTargetHP : uint
 {
     [NativeName("GL_IMAGE_TRANSFORM_2D_HP")]
-    ImageTransform2D = unchecked((uint)0x8161),
+    ImageTransform2D = 33121,
 }

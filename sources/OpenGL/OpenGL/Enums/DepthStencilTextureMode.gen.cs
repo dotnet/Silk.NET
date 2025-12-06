@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum DepthStencilTextureMode : uint
 {
     [NativeName("GL_STENCIL_INDEX")]
-    StencilIndex = unchecked((uint)0x1901),
+    StencilIndex = 6401,
 
     [NativeName("GL_DEPTH_COMPONENT")]
-    DepthComponent = unchecked((uint)0x1902),
+    DepthComponent = 6402,
 }

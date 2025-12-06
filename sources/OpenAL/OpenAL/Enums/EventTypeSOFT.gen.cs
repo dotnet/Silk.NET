@@ -14,20 +14,20 @@ namespace Silk.NET.OpenAL;
 public enum EventTypeSOFT : uint
 {
     [NativeName("AL_EVENT_TYPE_BUFFER_COMPLETED_SOFT")]
-    EventTypeBufferCompleted = unchecked((uint)0x19A4),
+    EventTypeBufferCompleted = 6564,
 
     [NativeName("AL_EVENT_TYPE_SOURCE_STATE_CHANGED_SOFT")]
-    EventTypeSourceStateChanged = unchecked((uint)0x19A5),
+    EventTypeSourceStateChanged = 6565,
 
     [NativeName("AL_EVENT_TYPE_DISCONNECTED_SOFT")]
-    EventTypeDisconnected = unchecked((uint)0x19A6),
+    EventTypeDisconnected = 6566,
 
     [NativeName("ALC_EVENT_TYPE_DEFAULT_DEVICE_CHANGED_SOFT")]
-    CEventTypeDefaultDeviceChanged = unchecked((uint)0x19D6),
+    CEventTypeDefaultDeviceChanged = 6614,
 
     [NativeName("ALC_EVENT_TYPE_DEVICE_ADDED_SOFT")]
-    CEventTypeDeviceAdded = unchecked((uint)0x19D7),
+    CEventTypeDeviceAdded = 6615,
 
     [NativeName("ALC_EVENT_TYPE_DEVICE_REMOVED_SOFT")]
-    CEventTypeDeviceRemoved = unchecked((uint)0x19D8),
+    CEventTypeDeviceRemoved = 6616,
 }

@@ -14,77 +14,77 @@ public enum AttribMask : uint
     None = 0x0,
 
     [NativeName("GL_DEPTH_BUFFER_BIT")]
-    DepthBufferBit = unchecked((uint)0x00000100),
+    DepthBufferBit = 0x100,
 
     [NativeName("GL_STENCIL_BUFFER_BIT")]
-    StencilBufferBit = unchecked((uint)0x00000400),
+    StencilBufferBit = 0x400,
 
     [NativeName("GL_COLOR_BUFFER_BIT")]
-    ColorBufferBit = unchecked((uint)0x00004000),
+    ColorBufferBit = 0x4000,
 
     [NativeName("GL_CURRENT_BIT")]
-    CurrentBit = unchecked((uint)0x00000001),
+    CurrentBit = 0x1,
 
     [NativeName("GL_POINT_BIT")]
-    PointBit = unchecked((uint)0x00000002),
+    PointBit = 0x2,
 
     [NativeName("GL_LINE_BIT")]
-    LineBit = unchecked((uint)0x00000004),
+    LineBit = 0x4,
 
     [NativeName("GL_POLYGON_BIT")]
-    PolygonBit = unchecked((uint)0x00000008),
+    PolygonBit = 0x8,
 
     [NativeName("GL_POLYGON_STIPPLE_BIT")]
-    PolygonStippleBit = unchecked((uint)0x00000010),
+    PolygonStippleBit = 0x10,
 
     [NativeName("GL_PIXEL_MODE_BIT")]
-    PixelModeBit = unchecked((uint)0x00000020),
+    PixelModeBit = 0x20,
 
     [NativeName("GL_LIGHTING_BIT")]
-    LightingBit = unchecked((uint)0x00000040),
+    LightingBit = 0x40,
 
     [NativeName("GL_FOG_BIT")]
-    FogBit = unchecked((uint)0x00000080),
+    FogBit = 0x80,
 
     [NativeName("GL_ACCUM_BUFFER_BIT")]
-    AccumBufferBit = unchecked((uint)0x00000200),
+    AccumBufferBit = 0x200,
 
     [NativeName("GL_VIEWPORT_BIT")]
-    ViewportBit = unchecked((uint)0x00000800),
+    ViewportBit = 0x800,
 
     [NativeName("GL_TRANSFORM_BIT")]
-    TransformBit = unchecked((uint)0x00001000),
+    TransformBit = 0x1000,
 
     [NativeName("GL_ENABLE_BIT")]
-    EnableBit = unchecked((uint)0x00002000),
+    EnableBit = 0x2000,
 
     [NativeName("GL_HINT_BIT")]
-    HintBit = unchecked((uint)0x00008000),
+    HintBit = 0x8000,
 
     [NativeName("GL_EVAL_BIT")]
-    EvalBit = unchecked((uint)0x00010000),
+    EvalBit = 0x10000,
 
     [NativeName("GL_LIST_BIT")]
-    ListBit = unchecked((uint)0x00020000),
+    ListBit = 0x20000,
 
     [NativeName("GL_TEXTURE_BIT")]
-    TextureBit = unchecked((uint)0x00040000),
+    TextureBit = 0x40000,
 
     [NativeName("GL_SCISSOR_BIT")]
-    ScissorBit = unchecked((uint)0x00080000),
+    ScissorBit = 0x80000,
 
     [NativeName("GL_ALL_ATTRIB_BITS")]
-    AllAttribBits = unchecked((uint)0xFFFFFFFF),
+    AllAttribBits = 0xFFFFFFFF,
 
     [NativeName("GL_MULTISAMPLE_BIT")]
-    MultisampleBit = unchecked((uint)0x20000000),
+    MultisampleBit = 0x20000000,
 
     [NativeName("GL_MULTISAMPLE_BIT_ARB")]
-    MultisampleBitARB = unchecked((uint)0x20000000),
+    MultisampleBitARB = 0x20000000,
 
     [NativeName("GL_MULTISAMPLE_BIT_3DFX")]
-    MultisampleBit3DFX = unchecked((uint)0x20000000),
+    MultisampleBit3DFX = 0x20000000,
 
     [NativeName("GL_MULTISAMPLE_BIT_EXT")]
-    MultisampleBitEXT = unchecked((uint)0x20000000),
+    MultisampleBitEXT = 0x20000000,
 }

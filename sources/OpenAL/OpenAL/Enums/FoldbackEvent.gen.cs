@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum FoldbackEvent : uint
 {
     [NativeName("AL_FOLDBACK_EVENT_BLOCK")]
-    Block = unchecked((uint)0x4112),
+    Block = 16658,
 
     [NativeName("AL_FOLDBACK_EVENT_START")]
-    Start = unchecked((uint)0x4111),
+    Start = 16657,
 
     [NativeName("AL_FOLDBACK_EVENT_STOP")]
-    Stop = unchecked((uint)0x4113),
+    Stop = 16659,
 }

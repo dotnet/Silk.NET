@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum SpriteModeSGIX : uint
 {
     [NativeName("GL_SPRITE_AXIAL_SGIX")]
-    Axial = unchecked((uint)0x814C),
+    Axial = 33100,
 
     [NativeName("GL_SPRITE_OBJECT_ALIGNED_SGIX")]
-    ObjectAligned = unchecked((uint)0x814D),
+    ObjectAligned = 33101,
 
     [NativeName("GL_SPRITE_EYE_ALIGNED_SGIX")]
-    EyeAligned = unchecked((uint)0x814E),
+    EyeAligned = 33102,
 }

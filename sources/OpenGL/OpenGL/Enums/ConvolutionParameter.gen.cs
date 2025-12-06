@@ -11,53 +11,53 @@ namespace Silk.NET.OpenGL;
 public enum ConvolutionParameter : uint
 {
     [NativeName("GL_CONVOLUTION_BORDER_MODE")]
-    ConvolutionBorderMode = unchecked((uint)0x8013),
+    ConvolutionBorderMode = 32787,
 
     [NativeName("GL_CONVOLUTION_FILTER_SCALE")]
-    ConvolutionFilterScale = unchecked((uint)0x8014),
+    ConvolutionFilterScale = 32788,
 
     [NativeName("GL_CONVOLUTION_FILTER_BIAS")]
-    ConvolutionFilterBias = unchecked((uint)0x8015),
+    ConvolutionFilterBias = 32789,
 
     [NativeName("GL_CONVOLUTION_FORMAT")]
-    ConvolutionFormat = unchecked((uint)0x8017),
+    ConvolutionFormat = 32791,
 
     [NativeName("GL_CONVOLUTION_WIDTH")]
-    ConvolutionWidth = unchecked((uint)0x8018),
+    ConvolutionWidth = 32792,
 
     [NativeName("GL_CONVOLUTION_HEIGHT")]
-    ConvolutionHeight = unchecked((uint)0x8019),
+    ConvolutionHeight = 32793,
 
     [NativeName("GL_MAX_CONVOLUTION_WIDTH")]
-    MaxConvolutionWidth = unchecked((uint)0x801A),
+    MaxConvolutionWidth = 32794,
 
     [NativeName("GL_MAX_CONVOLUTION_HEIGHT")]
-    MaxConvolutionHeight = unchecked((uint)0x801B),
+    MaxConvolutionHeight = 32795,
 
     [NativeName("GL_CONVOLUTION_BORDER_COLOR")]
-    ConvolutionBorderColor = unchecked((uint)0x8154),
+    ConvolutionBorderColor = 33108,
 
     [NativeName("GL_CONVOLUTION_BORDER_MODE_EXT")]
-    ConvolutionBorderModeEXT = unchecked((uint)0x8013),
+    ConvolutionBorderModeEXT = 32787,
 
     [NativeName("GL_CONVOLUTION_FILTER_SCALE_EXT")]
-    ConvolutionFilterScaleEXT = unchecked((uint)0x8014),
+    ConvolutionFilterScaleEXT = 32788,
 
     [NativeName("GL_CONVOLUTION_FILTER_BIAS_EXT")]
-    ConvolutionFilterBiasEXT = unchecked((uint)0x8015),
+    ConvolutionFilterBiasEXT = 32789,
 
     [NativeName("GL_CONVOLUTION_FORMAT_EXT")]
-    ConvolutionFormatEXT = unchecked((uint)0x8017),
+    ConvolutionFormatEXT = 32791,
 
     [NativeName("GL_CONVOLUTION_WIDTH_EXT")]
-    ConvolutionWidthEXT = unchecked((uint)0x8018),
+    ConvolutionWidthEXT = 32792,
 
     [NativeName("GL_CONVOLUTION_HEIGHT_EXT")]
-    ConvolutionHeightEXT = unchecked((uint)0x8019),
+    ConvolutionHeightEXT = 32793,
 
     [NativeName("GL_MAX_CONVOLUTION_WIDTH_EXT")]
-    MaxConvolutionWidthEXT = unchecked((uint)0x801A),
+    MaxConvolutionWidthEXT = 32794,
 
     [NativeName("GL_MAX_CONVOLUTION_HEIGHT_EXT")]
-    MaxConvolutionHeightEXT = unchecked((uint)0x801B),
+    MaxConvolutionHeightEXT = 32795,
 }

@@ -14,5 +14,5 @@ namespace Silk.NET.OpenAL;
 public enum AuxiliaryEffectSlotFloat : uint
 {
     [NativeName("AL_EFFECTSLOT_GAIN")]
-    EffectslotGain = unchecked((uint)0x0002),
+    EffectslotGain = 2,
 }

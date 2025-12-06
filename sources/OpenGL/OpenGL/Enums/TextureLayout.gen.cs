@@ -11,29 +11,29 @@ namespace Silk.NET.OpenGL;
 public enum TextureLayout : uint
 {
     [NativeName("GL_LAYOUT_GENERAL_EXT")]
-    GeneralEXT = unchecked((uint)0x958D),
+    GeneralEXT = 38285,
 
     [NativeName("GL_LAYOUT_COLOR_ATTACHMENT_EXT")]
-    ColorAttachmentEXT = unchecked((uint)0x958E),
+    ColorAttachmentEXT = 38286,
 
     [NativeName("GL_LAYOUT_DEPTH_STENCIL_ATTACHMENT_EXT")]
-    DepthStencilAttachmentEXT = unchecked((uint)0x958F),
+    DepthStencilAttachmentEXT = 38287,
 
     [NativeName("GL_LAYOUT_DEPTH_STENCIL_READ_ONLY_EXT")]
-    DepthStencilReadOnlyEXT = unchecked((uint)0x9590),
+    DepthStencilReadOnlyEXT = 38288,
 
     [NativeName("GL_LAYOUT_SHADER_READ_ONLY_EXT")]
-    ShaderReadOnlyEXT = unchecked((uint)0x9591),
+    ShaderReadOnlyEXT = 38289,
 
     [NativeName("GL_LAYOUT_TRANSFER_SRC_EXT")]
-    TransferSrcEXT = unchecked((uint)0x9592),
+    TransferSrcEXT = 38290,
 
     [NativeName("GL_LAYOUT_TRANSFER_DST_EXT")]
-    TransferDstEXT = unchecked((uint)0x9593),
+    TransferDstEXT = 38291,
 
     [NativeName("GL_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_EXT")]
-    DepthReadOnlyStencilAttachmentEXT = unchecked((uint)0x9530),
+    DepthReadOnlyStencilAttachmentEXT = 38192,
 
     [NativeName("GL_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_EXT")]
-    DepthAttachmentStencilReadOnlyEXT = unchecked((uint)0x9531),
+    DepthAttachmentStencilReadOnlyEXT = 38193,
 }

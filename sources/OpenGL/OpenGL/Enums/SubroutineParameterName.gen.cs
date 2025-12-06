@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum SubroutineParameterName : uint
 {
     [NativeName("GL_UNIFORM_SIZE")]
-    UniformSize = unchecked((uint)0x8A38),
+    UniformSize = 35384,
 
     [NativeName("GL_UNIFORM_NAME_LENGTH")]
-    UniformNameLength = unchecked((uint)0x8A39),
+    UniformNameLength = 35385,
 
     [NativeName("GL_NUM_COMPATIBLE_SUBROUTINES")]
-    NumCompatibleSubroutines = unchecked((uint)0x8E4A),
+    NumCompatibleSubroutines = 36426,
 
     [NativeName("GL_COMPATIBLE_SUBROUTINES")]
-    CompatibleSubroutines = unchecked((uint)0x8E4B),
+    CompatibleSubroutines = 36427,
 }

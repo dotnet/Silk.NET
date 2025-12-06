@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum EffectRingModulator : uint
 {
     [NativeName("AL_RING_MODULATOR_FREQUENCY")]
-    Frequency = unchecked((uint)0x0001),
+    Frequency = 1,
 
     [NativeName("AL_RING_MODULATOR_HIGHPASS_CUTOFF")]
-    HighpassCutoff = unchecked((uint)0x0002),
+    HighpassCutoff = 2,
 
     [NativeName("AL_RING_MODULATOR_WAVEFORM")]
-    Waveform = unchecked((uint)0x0003),
+    Waveform = 3,
 }

@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum ContainerType : uint
 {
     [NativeName("GL_PROGRAM_OBJECT_ARB")]
-    ProgramObjectARB = unchecked((uint)0x8B40),
+    ProgramObjectARB = 35648,
 
     [NativeName("GL_PROGRAM_OBJECT_EXT")]
-    ProgramObjectEXT = unchecked((uint)0x8B40),
+    ProgramObjectEXT = 35648,
 }

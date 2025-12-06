@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum TextureEnvTarget : uint
 {
     [NativeName("GL_TEXTURE_ENV")]
-    TextureENV = unchecked((uint)0x2300),
+    TextureENV = 8960,
 
     [NativeName("GL_TEXTURE_FILTER_CONTROL")]
-    TextureFilterControl = unchecked((uint)0x8500),
+    TextureFilterControl = 34048,
 
     [NativeName("GL_POINT_SPRITE")]
-    PointSprite = unchecked((uint)0x8861),
+    PointSprite = 34913,
 }

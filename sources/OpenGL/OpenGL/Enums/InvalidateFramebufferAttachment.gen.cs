@@ -11,224 +11,224 @@ namespace Silk.NET.OpenGL;
 public enum InvalidateFramebufferAttachment : uint
 {
     [NativeName("GL_COLOR_ATTACHMENT0_OES")]
-    ColorAttachment0OES = unchecked((uint)0x8CE0),
+    ColorAttachment0OES = 36064,
 
     [NativeName("GL_DEPTH_ATTACHMENT_OES")]
-    DepthAttachmentOES = unchecked((uint)0x8D00),
+    DepthAttachmentOES = 36096,
 
     [NativeName("GL_STENCIL_ATTACHMENT_OES")]
-    StencilAttachmentOES = unchecked((uint)0x8D20),
+    StencilAttachmentOES = 36128,
 
     [NativeName("GL_COLOR")]
-    Color = unchecked((uint)0x1800),
+    Color = 6144,
 
     [NativeName("GL_DEPTH")]
-    Depth = unchecked((uint)0x1801),
+    Depth = 6145,
 
     [NativeName("GL_STENCIL")]
-    Stencil = unchecked((uint)0x1802),
+    Stencil = 6146,
 
     [NativeName("GL_DEPTH_STENCIL_ATTACHMENT")]
-    DepthStencilAttachment = unchecked((uint)0x821A),
+    DepthStencilAttachment = 33306,
 
     [NativeName("GL_COLOR_ATTACHMENT0")]
-    ColorAttachment0 = unchecked((uint)0x8CE0),
+    ColorAttachment0 = 36064,
 
     [NativeName("GL_COLOR_ATTACHMENT1")]
-    ColorAttachment1 = unchecked((uint)0x8CE1),
+    ColorAttachment1 = 36065,
 
     [NativeName("GL_COLOR_ATTACHMENT2")]
-    ColorAttachment2 = unchecked((uint)0x8CE2),
+    ColorAttachment2 = 36066,
 
     [NativeName("GL_COLOR_ATTACHMENT3")]
-    ColorAttachment3 = unchecked((uint)0x8CE3),
+    ColorAttachment3 = 36067,
 
     [NativeName("GL_COLOR_ATTACHMENT4")]
-    ColorAttachment4 = unchecked((uint)0x8CE4),
+    ColorAttachment4 = 36068,
 
     [NativeName("GL_COLOR_ATTACHMENT5")]
-    ColorAttachment5 = unchecked((uint)0x8CE5),
+    ColorAttachment5 = 36069,
 
     [NativeName("GL_COLOR_ATTACHMENT6")]
-    ColorAttachment6 = unchecked((uint)0x8CE6),
+    ColorAttachment6 = 36070,
 
     [NativeName("GL_COLOR_ATTACHMENT7")]
-    ColorAttachment7 = unchecked((uint)0x8CE7),
+    ColorAttachment7 = 36071,
 
     [NativeName("GL_COLOR_ATTACHMENT8")]
-    ColorAttachment8 = unchecked((uint)0x8CE8),
+    ColorAttachment8 = 36072,
 
     [NativeName("GL_COLOR_ATTACHMENT9")]
-    ColorAttachment9 = unchecked((uint)0x8CE9),
+    ColorAttachment9 = 36073,
 
     [NativeName("GL_COLOR_ATTACHMENT10")]
-    ColorAttachment10 = unchecked((uint)0x8CEA),
+    ColorAttachment10 = 36074,
 
     [NativeName("GL_COLOR_ATTACHMENT11")]
-    ColorAttachment11 = unchecked((uint)0x8CEB),
+    ColorAttachment11 = 36075,
 
     [NativeName("GL_COLOR_ATTACHMENT12")]
-    ColorAttachment12 = unchecked((uint)0x8CEC),
+    ColorAttachment12 = 36076,
 
     [NativeName("GL_COLOR_ATTACHMENT13")]
-    ColorAttachment13 = unchecked((uint)0x8CED),
+    ColorAttachment13 = 36077,
 
     [NativeName("GL_COLOR_ATTACHMENT14")]
-    ColorAttachment14 = unchecked((uint)0x8CEE),
+    ColorAttachment14 = 36078,
 
     [NativeName("GL_COLOR_ATTACHMENT15")]
-    ColorAttachment15 = unchecked((uint)0x8CEF),
+    ColorAttachment15 = 36079,
 
     [NativeName("GL_COLOR_ATTACHMENT16")]
-    ColorAttachment16 = unchecked((uint)0x8CF0),
+    ColorAttachment16 = 36080,
 
     [NativeName("GL_COLOR_ATTACHMENT17")]
-    ColorAttachment17 = unchecked((uint)0x8CF1),
+    ColorAttachment17 = 36081,
 
     [NativeName("GL_COLOR_ATTACHMENT18")]
-    ColorAttachment18 = unchecked((uint)0x8CF2),
+    ColorAttachment18 = 36082,
 
     [NativeName("GL_COLOR_ATTACHMENT19")]
-    ColorAttachment19 = unchecked((uint)0x8CF3),
+    ColorAttachment19 = 36083,
 
     [NativeName("GL_COLOR_ATTACHMENT20")]
-    ColorAttachment20 = unchecked((uint)0x8CF4),
+    ColorAttachment20 = 36084,
 
     [NativeName("GL_COLOR_ATTACHMENT21")]
-    ColorAttachment21 = unchecked((uint)0x8CF5),
+    ColorAttachment21 = 36085,
 
     [NativeName("GL_COLOR_ATTACHMENT22")]
-    ColorAttachment22 = unchecked((uint)0x8CF6),
+    ColorAttachment22 = 36086,
 
     [NativeName("GL_COLOR_ATTACHMENT23")]
-    ColorAttachment23 = unchecked((uint)0x8CF7),
+    ColorAttachment23 = 36087,
 
     [NativeName("GL_COLOR_ATTACHMENT24")]
-    ColorAttachment24 = unchecked((uint)0x8CF8),
+    ColorAttachment24 = 36088,
 
     [NativeName("GL_COLOR_ATTACHMENT25")]
-    ColorAttachment25 = unchecked((uint)0x8CF9),
+    ColorAttachment25 = 36089,
 
     [NativeName("GL_COLOR_ATTACHMENT26")]
-    ColorAttachment26 = unchecked((uint)0x8CFA),
+    ColorAttachment26 = 36090,
 
     [NativeName("GL_COLOR_ATTACHMENT27")]
-    ColorAttachment27 = unchecked((uint)0x8CFB),
+    ColorAttachment27 = 36091,
 
     [NativeName("GL_COLOR_ATTACHMENT28")]
-    ColorAttachment28 = unchecked((uint)0x8CFC),
+    ColorAttachment28 = 36092,
 
     [NativeName("GL_COLOR_ATTACHMENT29")]
-    ColorAttachment29 = unchecked((uint)0x8CFD),
+    ColorAttachment29 = 36093,
 
     [NativeName("GL_COLOR_ATTACHMENT30")]
-    ColorAttachment30 = unchecked((uint)0x8CFE),
+    ColorAttachment30 = 36094,
 
     [NativeName("GL_COLOR_ATTACHMENT31")]
-    ColorAttachment31 = unchecked((uint)0x8CFF),
+    ColorAttachment31 = 36095,
 
     [NativeName("GL_DEPTH_ATTACHMENT")]
-    DepthAttachment = unchecked((uint)0x8D00),
+    DepthAttachment = 36096,
 
     [NativeName("GL_COLOR_ATTACHMENT0_EXT")]
-    ColorAttachment0EXT = unchecked((uint)0x8CE0),
+    ColorAttachment0EXT = 36064,
 
     [NativeName("GL_COLOR_ATTACHMENT1_EXT")]
-    ColorAttachment1EXT = unchecked((uint)0x8CE1),
+    ColorAttachment1EXT = 36065,
 
     [NativeName("GL_COLOR_ATTACHMENT2_EXT")]
-    ColorAttachment2EXT = unchecked((uint)0x8CE2),
+    ColorAttachment2EXT = 36066,
 
     [NativeName("GL_COLOR_ATTACHMENT3_EXT")]
-    ColorAttachment3EXT = unchecked((uint)0x8CE3),
+    ColorAttachment3EXT = 36067,
 
     [NativeName("GL_COLOR_ATTACHMENT4_EXT")]
-    ColorAttachment4EXT = unchecked((uint)0x8CE4),
+    ColorAttachment4EXT = 36068,
 
     [NativeName("GL_COLOR_ATTACHMENT5_EXT")]
-    ColorAttachment5EXT = unchecked((uint)0x8CE5),
+    ColorAttachment5EXT = 36069,
 
     [NativeName("GL_COLOR_ATTACHMENT6_EXT")]
-    ColorAttachment6EXT = unchecked((uint)0x8CE6),
+    ColorAttachment6EXT = 36070,
 
     [NativeName("GL_COLOR_ATTACHMENT7_EXT")]
-    ColorAttachment7EXT = unchecked((uint)0x8CE7),
+    ColorAttachment7EXT = 36071,
 
     [NativeName("GL_COLOR_ATTACHMENT8_EXT")]
-    ColorAttachment8EXT = unchecked((uint)0x8CE8),
+    ColorAttachment8EXT = 36072,
 
     [NativeName("GL_COLOR_ATTACHMENT9_EXT")]
-    ColorAttachment9EXT = unchecked((uint)0x8CE9),
+    ColorAttachment9EXT = 36073,
 
     [NativeName("GL_COLOR_ATTACHMENT10_EXT")]
-    ColorAttachment10EXT = unchecked((uint)0x8CEA),
+    ColorAttachment10EXT = 36074,
 
     [NativeName("GL_COLOR_ATTACHMENT11_EXT")]
-    ColorAttachment11EXT = unchecked((uint)0x8CEB),
+    ColorAttachment11EXT = 36075,
 
     [NativeName("GL_COLOR_ATTACHMENT12_EXT")]
-    ColorAttachment12EXT = unchecked((uint)0x8CEC),
+    ColorAttachment12EXT = 36076,
 
     [NativeName("GL_COLOR_ATTACHMENT13_EXT")]
-    ColorAttachment13EXT = unchecked((uint)0x8CED),
+    ColorAttachment13EXT = 36077,
 
     [NativeName("GL_COLOR_ATTACHMENT14_EXT")]
-    ColorAttachment14EXT = unchecked((uint)0x8CEE),
+    ColorAttachment14EXT = 36078,
 
     [NativeName("GL_COLOR_ATTACHMENT15_EXT")]
-    ColorAttachment15EXT = unchecked((uint)0x8CEF),
+    ColorAttachment15EXT = 36079,
 
     [NativeName("GL_DEPTH_ATTACHMENT_EXT")]
-    DepthAttachmentEXT = unchecked((uint)0x8D00),
+    DepthAttachmentEXT = 36096,
 
     [NativeName("GL_STENCIL_ATTACHMENT_EXT")]
-    StencilAttachmentEXT = unchecked((uint)0x8D20),
+    StencilAttachmentEXT = 36128,
 
     [NativeName("GL_COLOR_ATTACHMENT0_NV")]
-    ColorAttachment0NV = unchecked((uint)0x8CE0),
+    ColorAttachment0NV = 36064,
 
     [NativeName("GL_COLOR_ATTACHMENT1_NV")]
-    ColorAttachment1NV = unchecked((uint)0x8CE1),
+    ColorAttachment1NV = 36065,
 
     [NativeName("GL_COLOR_ATTACHMENT2_NV")]
-    ColorAttachment2NV = unchecked((uint)0x8CE2),
+    ColorAttachment2NV = 36066,
 
     [NativeName("GL_COLOR_ATTACHMENT3_NV")]
-    ColorAttachment3NV = unchecked((uint)0x8CE3),
+    ColorAttachment3NV = 36067,
 
     [NativeName("GL_COLOR_ATTACHMENT4_NV")]
-    ColorAttachment4NV = unchecked((uint)0x8CE4),
+    ColorAttachment4NV = 36068,
 
     [NativeName("GL_COLOR_ATTACHMENT5_NV")]
-    ColorAttachment5NV = unchecked((uint)0x8CE5),
+    ColorAttachment5NV = 36069,
 
     [NativeName("GL_COLOR_ATTACHMENT6_NV")]
-    ColorAttachment6NV = unchecked((uint)0x8CE6),
+    ColorAttachment6NV = 36070,
 
     [NativeName("GL_COLOR_ATTACHMENT7_NV")]
-    ColorAttachment7NV = unchecked((uint)0x8CE7),
+    ColorAttachment7NV = 36071,
 
     [NativeName("GL_COLOR_ATTACHMENT8_NV")]
-    ColorAttachment8NV = unchecked((uint)0x8CE8),
+    ColorAttachment8NV = 36072,
 
     [NativeName("GL_COLOR_ATTACHMENT9_NV")]
-    ColorAttachment9NV = unchecked((uint)0x8CE9),
+    ColorAttachment9NV = 36073,
 
     [NativeName("GL_COLOR_ATTACHMENT10_NV")]
-    ColorAttachment10NV = unchecked((uint)0x8CEA),
+    ColorAttachment10NV = 36074,
 
     [NativeName("GL_COLOR_ATTACHMENT11_NV")]
-    ColorAttachment11NV = unchecked((uint)0x8CEB),
+    ColorAttachment11NV = 36075,
 
     [NativeName("GL_COLOR_ATTACHMENT12_NV")]
-    ColorAttachment12NV = unchecked((uint)0x8CEC),
+    ColorAttachment12NV = 36076,
 
     [NativeName("GL_COLOR_ATTACHMENT13_NV")]
-    ColorAttachment13NV = unchecked((uint)0x8CED),
+    ColorAttachment13NV = 36077,
 
     [NativeName("GL_COLOR_ATTACHMENT14_NV")]
-    ColorAttachment14NV = unchecked((uint)0x8CEE),
+    ColorAttachment14NV = 36078,
 
     [NativeName("GL_COLOR_ATTACHMENT15_NV")]
-    ColorAttachment15NV = unchecked((uint)0x8CEF),
+    ColorAttachment15NV = 36079,
 }

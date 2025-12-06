@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum PixelTransformTargetEXT : uint
 {
     [NativeName("GL_PIXEL_TRANSFORM_2D_EXT")]
-    PixelTransform2D = unchecked((uint)0x8330),
+    PixelTransform2D = 33584,
 }

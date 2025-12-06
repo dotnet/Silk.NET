@@ -11,35 +11,35 @@ namespace Silk.NET.OpenGL;
 public enum ObjectIdentifier : uint
 {
     [NativeName("GL_VERTEX_ARRAY")]
-    VertexArray = unchecked((uint)0x8074),
+    VertexArray = 32884,
 
     [NativeName("GL_TEXTURE")]
-    Texture = unchecked((uint)0x1702),
+    Texture = 5890,
 
     [NativeName("GL_FRAMEBUFFER")]
-    Framebuffer = unchecked((uint)0x8D40),
+    Framebuffer = 36160,
 
     [NativeName("GL_RENDERBUFFER")]
-    Renderbuffer = unchecked((uint)0x8D41),
+    Renderbuffer = 36161,
 
     [NativeName("GL_TRANSFORM_FEEDBACK")]
-    TransformFeedback = unchecked((uint)0x8E22),
+    TransformFeedback = 36386,
 
     [NativeName("GL_BUFFER")]
-    Buffer = unchecked((uint)0x82E0),
+    Buffer = 33504,
 
     [NativeName("GL_SHADER")]
-    Shader = unchecked((uint)0x82E1),
+    Shader = 33505,
 
     [NativeName("GL_PROGRAM")]
-    Program = unchecked((uint)0x82E2),
+    Program = 33506,
 
     [NativeName("GL_QUERY")]
-    Query = unchecked((uint)0x82E3),
+    Query = 33507,
 
     [NativeName("GL_PROGRAM_PIPELINE")]
-    ProgramPipeline = unchecked((uint)0x82E4),
+    ProgramPipeline = 33508,
 
     [NativeName("GL_SAMPLER")]
-    Sampler = unchecked((uint)0x82E6),
+    Sampler = 33510,
 }

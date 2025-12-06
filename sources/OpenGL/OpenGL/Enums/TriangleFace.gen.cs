@@ -11,11 +11,11 @@ namespace Silk.NET.OpenGL;
 public enum TriangleFace : uint
 {
     [NativeName("GL_FRONT")]
-    Front = unchecked((uint)0x0404),
+    Front = 1028,
 
     [NativeName("GL_BACK")]
-    Back = unchecked((uint)0x0405),
+    Back = 1029,
 
     [NativeName("GL_FRONT_AND_BACK")]
-    FrontAndBack = unchecked((uint)0x0408),
+    FrontAndBack = 1032,
 }

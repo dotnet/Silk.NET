@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum QueryObjectParameterName : uint
 {
     [NativeName("GL_QUERY_RESULT")]
-    Result = unchecked((uint)0x8866),
+    Result = 34918,
 
     [NativeName("GL_QUERY_RESULT_AVAILABLE")]
-    ResultAvailable = unchecked((uint)0x8867),
+    ResultAvailable = 34919,
 
     [NativeName("GL_QUERY_RESULT_NO_WAIT")]
-    ResultNoWait = unchecked((uint)0x9194),
+    ResultNoWait = 37268,
 
     [NativeName("GL_QUERY_TARGET")]
-    Target = unchecked((uint)0x82EA),
+    Target = 33514,
 }

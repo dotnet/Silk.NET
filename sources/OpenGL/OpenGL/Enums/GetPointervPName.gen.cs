@@ -11,53 +11,53 @@ namespace Silk.NET.OpenGL;
 public enum GetPointervPName : uint
 {
     [NativeName("GL_VERTEX_ARRAY_POINTER")]
-    VertexArrayPointer = unchecked((uint)0x808E),
+    VertexArrayPointer = 32910,
 
     [NativeName("GL_NORMAL_ARRAY_POINTER")]
-    NormalArrayPointer = unchecked((uint)0x808F),
+    NormalArrayPointer = 32911,
 
     [NativeName("GL_COLOR_ARRAY_POINTER")]
-    ColorArrayPointer = unchecked((uint)0x8090),
+    ColorArrayPointer = 32912,
 
     [NativeName("GL_TEXTURE_COORD_ARRAY_POINTER")]
-    TextureCoordArrayPointer = unchecked((uint)0x8092),
+    TextureCoordArrayPointer = 32914,
 
     [NativeName("GL_INDEX_ARRAY_POINTER")]
-    IndexArrayPointer = unchecked((uint)0x8091),
+    IndexArrayPointer = 32913,
 
     [NativeName("GL_EDGE_FLAG_ARRAY_POINTER")]
-    EdgeFlagArrayPointer = unchecked((uint)0x8093),
+    EdgeFlagArrayPointer = 32915,
 
     [NativeName("GL_FEEDBACK_BUFFER_POINTER")]
-    FeedbackBufferPointer = unchecked((uint)0x0DF0),
+    FeedbackBufferPointer = 3568,
 
     [NativeName("GL_SELECTION_BUFFER_POINTER")]
-    SelectionBufferPointer = unchecked((uint)0x0DF3),
+    SelectionBufferPointer = 3571,
 
     [NativeName("GL_DEBUG_CALLBACK_FUNCTION")]
-    DebugCallbackFunction = unchecked((uint)0x8244),
+    DebugCallbackFunction = 33348,
 
     [NativeName("GL_DEBUG_CALLBACK_USER_PARAM")]
-    DebugCallbackUserParam = unchecked((uint)0x8245),
+    DebugCallbackUserParam = 33349,
 
     [NativeName("GL_VERTEX_ARRAY_POINTER_EXT")]
-    VertexArrayPointerEXT = unchecked((uint)0x808E),
+    VertexArrayPointerEXT = 32910,
 
     [NativeName("GL_NORMAL_ARRAY_POINTER_EXT")]
-    NormalArrayPointerEXT = unchecked((uint)0x808F),
+    NormalArrayPointerEXT = 32911,
 
     [NativeName("GL_COLOR_ARRAY_POINTER_EXT")]
-    ColorArrayPointerEXT = unchecked((uint)0x8090),
+    ColorArrayPointerEXT = 32912,
 
     [NativeName("GL_INDEX_ARRAY_POINTER_EXT")]
-    IndexArrayPointerEXT = unchecked((uint)0x8091),
+    IndexArrayPointerEXT = 32913,
 
     [NativeName("GL_TEXTURE_COORD_ARRAY_POINTER_EXT")]
-    TextureCoordArrayPointerEXT = unchecked((uint)0x8092),
+    TextureCoordArrayPointerEXT = 32914,
 
     [NativeName("GL_EDGE_FLAG_ARRAY_POINTER_EXT")]
-    EdgeFlagArrayPointerEXT = unchecked((uint)0x8093),
+    EdgeFlagArrayPointerEXT = 32915,
 
     [NativeName("GL_INSTRUMENT_BUFFER_POINTER_SGIX")]
-    InstrumentBufferPointerSGIX = unchecked((uint)0x8180),
+    InstrumentBufferPointerSGIX = 33152,
 }

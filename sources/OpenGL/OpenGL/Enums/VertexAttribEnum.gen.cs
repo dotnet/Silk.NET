@@ -11,29 +11,29 @@ namespace Silk.NET.OpenGL;
 public enum VertexAttribEnum : uint
 {
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING")]
-    VertexAttribArrayBufferBinding = unchecked((uint)0x889F),
+    VertexAttribArrayBufferBinding = 34975,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_ENABLED")]
-    VertexAttribArrayEnabled = unchecked((uint)0x8622),
+    VertexAttribArrayEnabled = 34338,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_SIZE")]
-    VertexAttribArraySize = unchecked((uint)0x8623),
+    VertexAttribArraySize = 34339,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_STRIDE")]
-    VertexAttribArrayStride = unchecked((uint)0x8624),
+    VertexAttribArrayStride = 34340,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_TYPE")]
-    VertexAttribArrayType = unchecked((uint)0x8625),
+    VertexAttribArrayType = 34341,
 
     [NativeName("GL_CURRENT_VERTEX_ATTRIB")]
-    CurrentVertexAttrib = unchecked((uint)0x8626),
+    CurrentVertexAttrib = 34342,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_NORMALIZED")]
-    VertexAttribArrayNormalized = unchecked((uint)0x886A),
+    VertexAttribArrayNormalized = 34922,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_INTEGER")]
-    VertexAttribArrayInteger = unchecked((uint)0x88FD),
+    VertexAttribArrayInteger = 35069,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR")]
-    VertexAttribArrayDivisor = unchecked((uint)0x88FE),
+    VertexAttribArrayDivisor = 35070,
 }

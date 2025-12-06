@@ -11,44 +11,44 @@ namespace Silk.NET.OpenGL;
 public enum ColorTableTargetSGI : uint
 {
     [NativeName("GL_COLOR_TABLE")]
-    ColorTable = unchecked((uint)0x80D0),
+    ColorTable = 32976,
 
     [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE")]
-    PostConvolutionColorTable = unchecked((uint)0x80D1),
+    PostConvolutionColorTable = 32977,
 
     [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE")]
-    PostColorMatrixColorTable = unchecked((uint)0x80D2),
+    PostColorMatrixColorTable = 32978,
 
     [NativeName("GL_PROXY_COLOR_TABLE")]
-    ProxyColorTable = unchecked((uint)0x80D3),
+    ProxyColorTable = 32979,
 
     [NativeName("GL_PROXY_POST_CONVOLUTION_COLOR_TABLE")]
-    ProxyPostConvolutionColorTable = unchecked((uint)0x80D4),
+    ProxyPostConvolutionColorTable = 32980,
 
     [NativeName("GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE")]
-    ProxyPostColorMatrixColorTable = unchecked((uint)0x80D5),
+    ProxyPostColorMatrixColorTable = 32981,
 
     [NativeName("GL_COLOR_TABLE_SGI")]
-    ColorTableSGI = unchecked((uint)0x80D0),
+    ColorTableSGI = 32976,
 
     [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE_SGI")]
-    PostConvolutionColorTableSGI = unchecked((uint)0x80D1),
+    PostConvolutionColorTableSGI = 32977,
 
     [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
-    PostColorMatrixColorTableSGI = unchecked((uint)0x80D2),
+    PostColorMatrixColorTableSGI = 32978,
 
     [NativeName("GL_PROXY_COLOR_TABLE_SGI")]
-    ProxyColorTableSGI = unchecked((uint)0x80D3),
+    ProxyColorTableSGI = 32979,
 
     [NativeName("GL_PROXY_POST_CONVOLUTION_COLOR_TABLE_SGI")]
-    ProxyPostConvolutionColorTableSGI = unchecked((uint)0x80D4),
+    ProxyPostConvolutionColorTableSGI = 32980,
 
     [NativeName("GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
-    ProxyPostColorMatrixColorTableSGI = unchecked((uint)0x80D5),
+    ProxyPostColorMatrixColorTableSGI = 32981,
 
     [NativeName("GL_TEXTURE_COLOR_TABLE_SGI")]
-    TextureColorTableSGI = unchecked((uint)0x80BC),
+    TextureColorTableSGI = 32956,
 
     [NativeName("GL_PROXY_TEXTURE_COLOR_TABLE_SGI")]
-    ProxyTextureColorTableSGI = unchecked((uint)0x80BD),
+    ProxyTextureColorTableSGI = 32957,
 }

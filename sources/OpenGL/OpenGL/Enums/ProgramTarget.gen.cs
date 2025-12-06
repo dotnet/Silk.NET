@@ -11,23 +11,23 @@ namespace Silk.NET.OpenGL;
 public enum ProgramTarget : uint
 {
     [NativeName("GL_FRAGMENT_PROGRAM_ARB")]
-    FragmentProgramARB = unchecked((uint)0x8804),
+    FragmentProgramARB = 34820,
 
     [NativeName("GL_VERTEX_PROGRAM_ARB")]
-    VertexProgramARB = unchecked((uint)0x8620),
+    VertexProgramARB = 34336,
 
     [NativeName("GL_TEXT_FRAGMENT_SHADER_ATI")]
-    TextFragmentShaderATI = unchecked((uint)0x8200),
+    TextFragmentShaderATI = 33280,
 
     [NativeName("GL_COMPUTE_PROGRAM_NV")]
-    ComputeProgramNV = unchecked((uint)0x90FB),
+    ComputeProgramNV = 37115,
 
     [NativeName("GL_GEOMETRY_PROGRAM_NV")]
-    GeometryProgramNV = unchecked((uint)0x8C26),
+    GeometryProgramNV = 35878,
 
     [NativeName("GL_TESS_CONTROL_PROGRAM_NV")]
-    TessControlProgramNV = unchecked((uint)0x891E),
+    TessControlProgramNV = 35102,
 
     [NativeName("GL_TESS_EVALUATION_PROGRAM_NV")]
-    TessEvaluationProgramNV = unchecked((uint)0x891F),
+    TessEvaluationProgramNV = 35103,
 }

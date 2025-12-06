@@ -14,20 +14,20 @@ namespace Silk.NET.OpenAL;
 public enum EffectChorus : uint
 {
     [NativeName("AL_CHORUS_WAVEFORM")]
-    Waveform = unchecked((uint)0x0001),
+    Waveform = 1,
 
     [NativeName("AL_CHORUS_PHASE")]
-    Phase = unchecked((uint)0x0002),
+    Phase = 2,
 
     [NativeName("AL_CHORUS_RATE")]
-    Rate = unchecked((uint)0x0003),
+    Rate = 3,
 
     [NativeName("AL_CHORUS_DEPTH")]
-    Depth = unchecked((uint)0x0004),
+    Depth = 4,
 
     [NativeName("AL_CHORUS_FEEDBACK")]
-    Feedback = unchecked((uint)0x0005),
+    Feedback = 5,
 
     [NativeName("AL_CHORUS_DELAY")]
-    Delay = unchecked((uint)0x0006),
+    Delay = 6,
 }

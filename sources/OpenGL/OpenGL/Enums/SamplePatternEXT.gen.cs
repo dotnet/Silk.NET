@@ -11,23 +11,23 @@ namespace Silk.NET.OpenGL;
 public enum SamplePatternEXT : uint
 {
     [NativeName("GL_1PASS_EXT")]
-    X1Pass = unchecked((uint)0x80A1),
+    X1Pass = 32929,
 
     [NativeName("GL_2PASS_0_EXT")]
-    X2Pass0 = unchecked((uint)0x80A2),
+    X2Pass0 = 32930,
 
     [NativeName("GL_2PASS_1_EXT")]
-    X2Pass1 = unchecked((uint)0x80A3),
+    X2Pass1 = 32931,
 
     [NativeName("GL_4PASS_0_EXT")]
-    X4Pass0 = unchecked((uint)0x80A4),
+    X4Pass0 = 32932,
 
     [NativeName("GL_4PASS_1_EXT")]
-    X4Pass1 = unchecked((uint)0x80A5),
+    X4Pass1 = 32933,
 
     [NativeName("GL_4PASS_2_EXT")]
-    X4Pass2 = unchecked((uint)0x80A6),
+    X4Pass2 = 32934,
 
     [NativeName("GL_4PASS_3_EXT")]
-    X4Pass3 = unchecked((uint)0x80A7),
+    X4Pass3 = 32935,
 }

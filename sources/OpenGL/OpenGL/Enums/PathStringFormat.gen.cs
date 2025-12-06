@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum PathStringFormat : uint
 {
     [NativeName("GL_PATH_FORMAT_SVG_NV")]
-    SvgNV = unchecked((uint)0x9070),
+    SvgNV = 36976,
 
     [NativeName("GL_PATH_FORMAT_PS_NV")]
-    PsNV = unchecked((uint)0x9071),
+    PsNV = 36977,
 }

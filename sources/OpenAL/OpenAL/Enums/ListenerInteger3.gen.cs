@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum ListenerInteger3 : uint
 {
     [NativeName("AL_DIRECTION")]
-    Direction = unchecked((uint)0x1005),
+    Direction = 4101,
 
     [NativeName("AL_VELOCITY")]
-    Velocity = unchecked((uint)0x1006),
+    Velocity = 4102,
 }

@@ -14,62 +14,62 @@ namespace Silk.NET.OpenAL;
 public enum ContextInteger : uint
 {
     [NativeName("ALC_FREQUENCY")]
-    Frequency = unchecked((uint)0x1007),
+    Frequency = 4103,
 
     [NativeName("ALC_REFRESH")]
-    Refresh = unchecked((uint)0x1008),
+    Refresh = 4104,
 
     [NativeName("ALC_MAJOR_VERSION")]
-    MajorVersion = unchecked((uint)0x1000),
+    MajorVersion = 4096,
 
     [NativeName("ALC_MINOR_VERSION")]
-    MinorVersion = unchecked((uint)0x1001),
+    MinorVersion = 4097,
 
     [NativeName("ALC_ATTRIBUTES_SIZE")]
-    AttributesSize = unchecked((uint)0x1002),
+    AttributesSize = 4098,
 
     [NativeName("ALC_ALL_ATTRIBUTES")]
-    AllAttributes = unchecked((uint)0x1003),
+    AllAttributes = 4099,
 
     [NativeName("ALC_MONO_SOURCES")]
-    MonoSources = unchecked((uint)0x1010),
+    MonoSources = 4112,
 
     [NativeName("ALC_STEREO_SOURCES")]
-    StereoSources = unchecked((uint)0x1011),
+    StereoSources = 4113,
 
     [NativeName("ALC_CAPTURE_SAMPLES")]
-    CaptureSamples = unchecked((uint)0x312),
+    CaptureSamples = 786,
 
     [NativeName("ALC_DEFAULT_FILTER_ORDER")]
-    DefaultFilterOrder = unchecked((uint)0x1100),
+    DefaultFilterOrder = 4352,
 
     [NativeName("ALC_HRTF_SOFT")]
-    HrtfSOFT = unchecked((uint)0x1992),
+    HrtfSOFT = 6546,
 
     [NativeName("ALC_HRTF_STATUS_SOFT")]
-    HrtfStatusSOFT = unchecked((uint)0x1993),
+    HrtfStatusSOFT = 6547,
 
     [NativeName("ALC_NUM_HRTF_SPECIFIERS_SOFT")]
-    NumHrtfSpecifiersSOFT = unchecked((uint)0x1994),
+    NumHrtfSpecifiersSOFT = 6548,
 
     [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
-    OutputLimiterSOFT = unchecked((uint)0x199A),
+    OutputLimiterSOFT = 6554,
 
     [NativeName("ALC_DEVICE_CLOCK_SOFT")]
-    DeviceClockSOFT = unchecked((uint)0x1600),
+    DeviceClockSOFT = 5632,
 
     [NativeName("ALC_DEVICE_LATENCY_SOFT")]
-    DeviceLatencySOFT = unchecked((uint)0x1601),
+    DeviceLatencySOFT = 5633,
 
     [NativeName("ALC_DEVICE_CLOCK_LATENCY_SOFT")]
-    DeviceClockLatencySOFT = unchecked((uint)0x1602),
+    DeviceClockLatencySOFT = 5634,
 
     [NativeName("ALC_MAX_AMBISONIC_ORDER_SOFT")]
-    MaxAmbisonicOrderSOFT = unchecked((uint)0x199B),
+    MaxAmbisonicOrderSOFT = 6555,
 
     [NativeName("ALC_OUTPUT_MODE_SOFT")]
-    OutputModeSOFT = unchecked((uint)0x19AC),
+    OutputModeSOFT = 6572,
 
     [NativeName("ALC_CONTEXT_FLAGS_EXT")]
-    ContextFlagsEXT = unchecked((uint)0x19CF),
+    ContextFlagsEXT = 6607,
 }

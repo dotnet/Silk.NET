@@ -14,50 +14,50 @@ namespace Silk.NET.OpenAL;
 public enum EffectType : uint
 {
     [NativeName("AL_EFFECT_NULL")]
-    Null = unchecked((uint)0x0000),
+    Null = 0,
 
     [NativeName("AL_EFFECT_REVERB")]
-    Reverb = unchecked((uint)0x0001),
+    Reverb = 1,
 
     [NativeName("AL_EFFECT_CHORUS")]
-    Chorus = unchecked((uint)0x0002),
+    Chorus = 2,
 
     [NativeName("AL_EFFECT_DISTORTION")]
-    Distortion = unchecked((uint)0x0003),
+    Distortion = 3,
 
     [NativeName("AL_EFFECT_ECHO")]
-    Echo = unchecked((uint)0x0004),
+    Echo = 4,
 
     [NativeName("AL_EFFECT_FLANGER")]
-    Flanger = unchecked((uint)0x0005),
+    Flanger = 5,
 
     [NativeName("AL_EFFECT_FREQUENCY_SHIFTER")]
-    FrequencyShifter = unchecked((uint)0x0006),
+    FrequencyShifter = 6,
 
     [NativeName("AL_EFFECT_VOCAL_MORPHER")]
-    VocalMorpher = unchecked((uint)0x0007),
+    VocalMorpher = 7,
 
     [NativeName("AL_EFFECT_PITCH_SHIFTER")]
-    PitchShifter = unchecked((uint)0x0008),
+    PitchShifter = 8,
 
     [NativeName("AL_EFFECT_RING_MODULATOR")]
-    RingModulator = unchecked((uint)0x0009),
+    RingModulator = 9,
 
     [NativeName("AL_EFFECT_AUTOWAH")]
-    Autowah = unchecked((uint)0x000A),
+    Autowah = 10,
 
     [NativeName("AL_EFFECT_COMPRESSOR")]
-    Compressor = unchecked((uint)0x000B),
+    Compressor = 11,
 
     [NativeName("AL_EFFECT_EQUALIZER")]
-    Equalizer = unchecked((uint)0x000C),
+    Equalizer = 12,
 
     [NativeName("AL_EFFECT_EAXREVERB")]
-    Eaxreverb = unchecked((uint)0x8000),
+    Eaxreverb = 32768,
 
     [NativeName("AL_EFFECT_DEDICATED_DIALOGUE")]
-    DedicatedDialogue = unchecked((uint)0x9001),
+    DedicatedDialogue = 36865,
 
     [NativeName("AL_EFFECT_DEDICATED_LOW_FREQUENCY_EFFECT")]
-    DedicatedLowFrequencyEffect = unchecked((uint)0x9000),
+    DedicatedLowFrequencyEffect = 36864,
 }

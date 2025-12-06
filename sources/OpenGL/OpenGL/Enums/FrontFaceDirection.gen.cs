@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum FrontFaceDirection : uint
 {
     [NativeName("GL_CW")]
-    Cw = unchecked((uint)0x0900),
+    Cw = 2304,
 
     [NativeName("GL_CCW")]
-    Ccw = unchecked((uint)0x0901),
+    Ccw = 2305,
 }

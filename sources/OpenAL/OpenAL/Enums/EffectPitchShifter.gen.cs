@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum EffectPitchShifter : uint
 {
     [NativeName("AL_PITCH_SHIFTER_COARSE_TUNE")]
-    CoarseTune = unchecked((uint)0x0001),
+    CoarseTune = 1,
 
     [NativeName("AL_PITCH_SHIFTER_FINE_TUNE")]
-    FineTune = unchecked((uint)0x0002),
+    FineTune = 2,
 }

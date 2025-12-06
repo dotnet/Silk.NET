@@ -14,62 +14,62 @@ namespace Silk.NET.OpenAL;
 public enum SourceInteger : uint
 {
     [NativeName("AL_CONE_INNER_ANGLE")]
-    ConeInnerAngle = unchecked((uint)0x1001),
+    ConeInnerAngle = 4097,
 
     [NativeName("AL_CONE_OUTER_ANGLE")]
-    ConeOuterAngle = unchecked((uint)0x1002),
+    ConeOuterAngle = 4098,
 
     [NativeName("AL_BUFFER")]
-    Buffer = unchecked((uint)0x1009),
+    Buffer = 4105,
 
     [NativeName("AL_SOURCE_STATE")]
-    SourceState = unchecked((uint)0x1010),
+    SourceState = 4112,
 
     [NativeName("AL_BUFFERS_QUEUED")]
-    BuffersQueued = unchecked((uint)0x1015),
+    BuffersQueued = 4117,
 
     [NativeName("AL_BUFFERS_PROCESSED")]
-    BuffersProcessed = unchecked((uint)0x1016),
+    BuffersProcessed = 4118,
 
     [NativeName("AL_SEC_OFFSET")]
-    SecOffset = unchecked((uint)0x1024),
+    SecOffset = 4132,
 
     [NativeName("AL_SAMPLE_OFFSET")]
-    SampleOffset = unchecked((uint)0x1025),
+    SampleOffset = 4133,
 
     [NativeName("AL_BYTE_OFFSET")]
-    ByteOffset = unchecked((uint)0x1026),
+    ByteOffset = 4134,
 
     [NativeName("AL_SOURCE_TYPE")]
-    SourceType = unchecked((uint)0x1027),
+    SourceType = 4135,
 
     [NativeName("AL_DIRECT_FILTER")]
-    DirectFilter = unchecked((uint)0x20005),
+    DirectFilter = 131077,
 
     [NativeName("AL_AUXILIARY_SEND_FILTER")]
-    AuxiliarySendFilter = unchecked((uint)0x20006),
+    AuxiliarySendFilter = 131078,
 
     [NativeName("AL_AIR_ABSORPTION_FACTOR")]
-    AirAbsorptionFactor = unchecked((uint)0x20007),
+    AirAbsorptionFactor = 131079,
 
     [NativeName("AL_ROOM_ROLLOFF_FACTOR")]
-    RoomRolloffFactor = unchecked((uint)0x20008),
+    RoomRolloffFactor = 131080,
 
     [NativeName("AL_DIRECT_CHANNELS_SOFT")]
-    DirectChannelsSOFT = unchecked((uint)0x1033),
+    DirectChannelsSOFT = 4147,
 
     [NativeName("AL_SAMPLE_OFFSET_LATENCY_SOFT")]
-    SampleOffsetLatencySOFT = unchecked((uint)0x1200),
+    SampleOffsetLatencySOFT = 4608,
 
     [NativeName("AL_SOURCE_RESAMPLER_SOFT")]
-    SourceResamplerSOFT = unchecked((uint)0x1212),
+    SourceResamplerSOFT = 4626,
 
     [NativeName("AL_SOURCE_SPATIALIZE_SOFT")]
-    SourceSpatializeSOFT = unchecked((uint)0x1214),
+    SourceSpatializeSOFT = 4628,
 
     [NativeName("AL_SAMPLE_OFFSET_CLOCK_SOFT")]
-    SampleOffsetClockSOFT = unchecked((uint)0x1202),
+    SampleOffsetClockSOFT = 4610,
 
     [NativeName("AL_STEREO_MODE_SOFT")]
-    StereoModeSOFT = unchecked((uint)0x19B0),
+    StereoModeSOFT = 6576,
 }

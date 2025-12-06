@@ -11,14 +11,14 @@ namespace Silk.NET.OpenGL;
 public enum FramebufferTarget : uint
 {
     [NativeName("GL_FRAMEBUFFER_OES")]
-    FramebufferOES = unchecked((uint)0x8D40),
+    FramebufferOES = 36160,
 
     [NativeName("GL_READ_FRAMEBUFFER")]
-    ReadFramebuffer = unchecked((uint)0x8CA8),
+    ReadFramebuffer = 36008,
 
     [NativeName("GL_DRAW_FRAMEBUFFER")]
-    DrawFramebuffer = unchecked((uint)0x8CA9),
+    DrawFramebuffer = 36009,
 
     [NativeName("GL_FRAMEBUFFER")]
-    Framebuffer = unchecked((uint)0x8D40),
+    Framebuffer = 36160,
 }

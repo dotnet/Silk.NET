@@ -14,35 +14,35 @@ namespace Silk.NET.OpenAL;
 public enum IntegerPName : uint
 {
     [NativeName("AL_DISTANCE_MODEL")]
-    DistanceModel = unchecked((uint)0xD000),
+    DistanceModel = 53248,
 
     [NativeName("AL_GAIN_LIMIT_SOFT")]
-    GainLimitSOFT = unchecked((uint)0x200E),
+    GainLimitSOFT = 8206,
 
     [NativeName("AL_NUM_RESAMPLERS_SOFT")]
-    NumResamplersSOFT = unchecked((uint)0x1210),
+    NumResamplersSOFT = 4624,
 
     [NativeName("AL_DEFAULT_RESAMPLER_SOFT")]
-    DefaultResamplerSOFT = unchecked((uint)0x1211),
+    DefaultResamplerSOFT = 4625,
 
     [NativeName("AL_DEBUG_LOGGED_MESSAGES_EXT")]
-    DebugLoggedMessagesEXT = unchecked((uint)0x19C7),
+    DebugLoggedMessagesEXT = 6599,
 
     [NativeName("AL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_EXT")]
-    DebugNextLoggedMessageLengthEXT = unchecked((uint)0x19C8),
+    DebugNextLoggedMessageLengthEXT = 6600,
 
     [NativeName("AL_MAX_DEBUG_MESSAGE_LENGTH_EXT")]
-    MaxDebugMessageLengthEXT = unchecked((uint)0x19C9),
+    MaxDebugMessageLengthEXT = 6601,
 
     [NativeName("AL_MAX_DEBUG_LOGGED_MESSAGES_EXT")]
-    MaxDebugLoggedMessagesEXT = unchecked((uint)0x19CA),
+    MaxDebugLoggedMessagesEXT = 6602,
 
     [NativeName("AL_MAX_DEBUG_GROUP_STACK_DEPTH_EXT")]
-    MaxDebugGroupStackDepthEXT = unchecked((uint)0x19CB),
+    MaxDebugGroupStackDepthEXT = 6603,
 
     [NativeName("AL_MAX_LABEL_LENGTH_EXT")]
-    MaxLabelLengthEXT = unchecked((uint)0x19CC),
+    MaxLabelLengthEXT = 6604,
 
     [NativeName("AL_CONTEXT_FLAGS_EXT")]
-    ContextFlagsEXT = unchecked((uint)0x19CF),
+    ContextFlagsEXT = 6607,
 }

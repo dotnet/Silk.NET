@@ -11,29 +11,29 @@ namespace Silk.NET.OpenGL;
 public enum FramebufferStatus : uint
 {
     [NativeName("GL_FRAMEBUFFER_UNDEFINED")]
-    Undefined = unchecked((uint)0x8219),
+    Undefined = 33305,
 
     [NativeName("GL_FRAMEBUFFER_COMPLETE")]
-    Complete = unchecked((uint)0x8CD5),
+    Complete = 36053,
 
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT")]
-    IncompleteAttachment = unchecked((uint)0x8CD6),
+    IncompleteAttachment = 36054,
 
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT")]
-    IncompleteMissingAttachment = unchecked((uint)0x8CD7),
+    IncompleteMissingAttachment = 36055,
 
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER")]
-    IncompleteDrawBuffer = unchecked((uint)0x8CDB),
+    IncompleteDrawBuffer = 36059,
 
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER")]
-    IncompleteReadBuffer = unchecked((uint)0x8CDC),
+    IncompleteReadBuffer = 36060,
 
     [NativeName("GL_FRAMEBUFFER_UNSUPPORTED")]
-    Unsupported = unchecked((uint)0x8CDD),
+    Unsupported = 36061,
 
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE")]
-    IncompleteMultisample = unchecked((uint)0x8D56),
+    IncompleteMultisample = 36182,
 
     [NativeName("GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS")]
-    IncompleteLayerTargets = unchecked((uint)0x8DA8),
+    IncompleteLayerTargets = 36264,
 }

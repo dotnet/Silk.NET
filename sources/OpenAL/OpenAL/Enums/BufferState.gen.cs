@@ -14,11 +14,11 @@ namespace Silk.NET.OpenAL;
 public enum BufferState : uint
 {
     [NativeName("AL_UNUSED")]
-    Unused = unchecked((uint)0x2010),
+    Unused = 8208,
 
     [NativeName("AL_PENDING")]
-    Pending = unchecked((uint)0x2011),
+    Pending = 8209,
 
     [NativeName("AL_PROCESSED")]
-    Processed = unchecked((uint)0x2012),
+    Processed = 8210,
 }

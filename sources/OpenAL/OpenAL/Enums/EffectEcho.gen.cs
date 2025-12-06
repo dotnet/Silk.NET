@@ -14,17 +14,17 @@ namespace Silk.NET.OpenAL;
 public enum EffectEcho : uint
 {
     [NativeName("AL_ECHO_DELAY")]
-    Delay = unchecked((uint)0x0001),
+    Delay = 1,
 
     [NativeName("AL_ECHO_LRDELAY")]
-    Lrdelay = unchecked((uint)0x0002),
+    Lrdelay = 2,
 
     [NativeName("AL_ECHO_DAMPING")]
-    Damping = unchecked((uint)0x0003),
+    Damping = 3,
 
     [NativeName("AL_ECHO_FEEDBACK")]
-    Feedback = unchecked((uint)0x0004),
+    Feedback = 4,
 
     [NativeName("AL_ECHO_SPREAD")]
-    Spread = unchecked((uint)0x0005),
+    Spread = 5,
 }

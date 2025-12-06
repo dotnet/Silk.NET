@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum SyncCondition : uint
 {
     [NativeName("GL_SYNC_GPU_COMMANDS_COMPLETE")]
-    SyncGpuCommandsComplete = unchecked((uint)0x9117),
+    SyncGpuCommandsComplete = 37143,
 }

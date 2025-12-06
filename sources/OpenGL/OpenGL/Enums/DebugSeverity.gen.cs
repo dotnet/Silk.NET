@@ -11,17 +11,17 @@ namespace Silk.NET.OpenGL;
 public enum DebugSeverity : uint
 {
     [NativeName("GL_DONT_CARE")]
-    DontCare = unchecked((uint)0x1100),
+    DontCare = 4352,
 
     [NativeName("GL_DEBUG_SEVERITY_HIGH")]
-    DebugSeverityHigh = unchecked((uint)0x9146),
+    DebugSeverityHigh = 37190,
 
     [NativeName("GL_DEBUG_SEVERITY_MEDIUM")]
-    DebugSeverityMedium = unchecked((uint)0x9147),
+    DebugSeverityMedium = 37191,
 
     [NativeName("GL_DEBUG_SEVERITY_LOW")]
-    DebugSeverityLow = unchecked((uint)0x9148),
+    DebugSeverityLow = 37192,
 
     [NativeName("GL_DEBUG_SEVERITY_NOTIFICATION")]
-    DebugSeverityNotification = unchecked((uint)0x826B),
+    DebugSeverityNotification = 33387,
 }

@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum FoldbackMode : uint
 {
     [NativeName("AL_FOLDBACK_MODE_MONO")]
-    Mono = unchecked((uint)0x4101),
+    Mono = 16641,
 
     [NativeName("AL_FOLDBACK_MODE_STEREO")]
-    Stereo = unchecked((uint)0x4102),
+    Stereo = 16642,
 }

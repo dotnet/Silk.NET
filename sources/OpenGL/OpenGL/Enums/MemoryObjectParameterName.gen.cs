@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum MemoryObjectParameterName : uint
 {
     [NativeName("GL_DEDICATED_MEMORY_OBJECT_EXT")]
-    DedicatedMemoryObjectEXT = unchecked((uint)0x9581),
+    DedicatedMemoryObjectEXT = 38273,
 
     [NativeName("GL_PROTECTED_MEMORY_OBJECT_EXT")]
-    ProtectedMemoryObjectEXT = unchecked((uint)0x959B),
+    ProtectedMemoryObjectEXT = 38299,
 }

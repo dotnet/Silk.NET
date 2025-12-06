@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum PixelTexGenParameterNameSGIS : uint
 {
     [NativeName("GL_PIXEL_FRAGMENT_RGB_SOURCE_SGIS")]
-    RgbSource = unchecked((uint)0x8354),
+    RgbSource = 33620,
 
     [NativeName("GL_PIXEL_FRAGMENT_ALPHA_SOURCE_SGIS")]
-    AlphaSource = unchecked((uint)0x8355),
+    AlphaSource = 33621,
 }

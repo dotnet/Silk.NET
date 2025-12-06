@@ -14,26 +14,26 @@ public enum ContextFlagMask : uint
     None = 0x0,
 
     [NativeName("GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT")]
-    ForwardCompatibleBit = unchecked((uint)0x00000001),
+    ForwardCompatibleBit = 0x1,
 
     [NativeName("GL_CONTEXT_FLAG_DEBUG_BIT")]
-    DebugBit = unchecked((uint)0x00000002),
+    DebugBit = 0x2,
 
     [NativeName("GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT")]
-    RobustAccessBit = unchecked((uint)0x00000004),
+    RobustAccessBit = 0x4,
 
     [NativeName("GL_CONTEXT_FLAG_NO_ERROR_BIT")]
-    NoErrorBit = unchecked((uint)0x00000008),
+    NoErrorBit = 0x8,
 
     [NativeName("GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB")]
-    RobustAccessBitARB = unchecked((uint)0x00000004),
+    RobustAccessBitARB = 0x4,
 
     [NativeName("GL_CONTEXT_FLAG_NO_ERROR_BIT_KHR")]
-    NoErrorBitKHR = unchecked((uint)0x00000008),
+    NoErrorBitKHR = 0x8,
 
     [NativeName("GL_CONTEXT_FLAG_DEBUG_BIT_KHR")]
-    DebugBitKHR = unchecked((uint)0x00000002),
+    DebugBitKHR = 0x2,
 
     [NativeName("GL_CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT")]
-    ProtectedContentBitEXT = unchecked((uint)0x00000010),
+    ProtectedContentBitEXT = 0x10,
 }

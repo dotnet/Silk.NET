@@ -11,446 +11,446 @@ namespace Silk.NET.OpenGL;
 public enum AttributeType : uint
 {
     [NativeName("GL_FLOAT")]
-    Float = unchecked((uint)0x1406),
+    Float = 5126,
 
     [NativeName("GL_UNSIGNED_INT")]
-    UnsignedInt = unchecked((uint)0x1405),
+    UnsignedInt = 5125,
 
     [NativeName("GL_INT")]
-    Int = unchecked((uint)0x1404),
+    Int = 5124,
 
     [NativeName("GL_DOUBLE")]
-    Double = unchecked((uint)0x140A),
+    Double = 5130,
 
     [NativeName("GL_FLOAT_VEC2")]
-    FloatVec2 = unchecked((uint)0x8B50),
+    FloatVec2 = 35664,
 
     [NativeName("GL_FLOAT_VEC3")]
-    FloatVec3 = unchecked((uint)0x8B51),
+    FloatVec3 = 35665,
 
     [NativeName("GL_FLOAT_VEC4")]
-    FloatVec4 = unchecked((uint)0x8B52),
+    FloatVec4 = 35666,
 
     [NativeName("GL_INT_VEC2")]
-    IntVec2 = unchecked((uint)0x8B53),
+    IntVec2 = 35667,
 
     [NativeName("GL_INT_VEC3")]
-    IntVec3 = unchecked((uint)0x8B54),
+    IntVec3 = 35668,
 
     [NativeName("GL_INT_VEC4")]
-    IntVec4 = unchecked((uint)0x8B55),
+    IntVec4 = 35669,
 
     [NativeName("GL_BOOL")]
-    Bool = unchecked((uint)0x8B56),
+    Bool = 35670,
 
     [NativeName("GL_BOOL_VEC2")]
-    BoolVec2 = unchecked((uint)0x8B57),
+    BoolVec2 = 35671,
 
     [NativeName("GL_BOOL_VEC3")]
-    BoolVec3 = unchecked((uint)0x8B58),
+    BoolVec3 = 35672,
 
     [NativeName("GL_BOOL_VEC4")]
-    BoolVec4 = unchecked((uint)0x8B59),
+    BoolVec4 = 35673,
 
     [NativeName("GL_FLOAT_MAT2")]
-    FloatMat2 = unchecked((uint)0x8B5A),
+    FloatMat2 = 35674,
 
     [NativeName("GL_FLOAT_MAT3")]
-    FloatMat3 = unchecked((uint)0x8B5B),
+    FloatMat3 = 35675,
 
     [NativeName("GL_FLOAT_MAT4")]
-    FloatMat4 = unchecked((uint)0x8B5C),
+    FloatMat4 = 35676,
 
     [NativeName("GL_SAMPLER_1D")]
-    Sampler1D = unchecked((uint)0x8B5D),
+    Sampler1D = 35677,
 
     [NativeName("GL_SAMPLER_2D")]
-    Sampler2D = unchecked((uint)0x8B5E),
+    Sampler2D = 35678,
 
     [NativeName("GL_SAMPLER_3D")]
-    Sampler3D = unchecked((uint)0x8B5F),
+    Sampler3D = 35679,
 
     [NativeName("GL_SAMPLER_CUBE")]
-    SamplerCube = unchecked((uint)0x8B60),
+    SamplerCube = 35680,
 
     [NativeName("GL_SAMPLER_1D_SHADOW")]
-    Sampler1DShadow = unchecked((uint)0x8B61),
+    Sampler1DShadow = 35681,
 
     [NativeName("GL_SAMPLER_2D_SHADOW")]
-    Sampler2DShadow = unchecked((uint)0x8B62),
+    Sampler2DShadow = 35682,
 
     [NativeName("GL_FLOAT_MAT2x3")]
-    FloatMat2X3 = unchecked((uint)0x8B65),
+    FloatMat2X3 = 35685,
 
     [NativeName("GL_FLOAT_MAT2x4")]
-    FloatMat2X4 = unchecked((uint)0x8B66),
+    FloatMat2X4 = 35686,
 
     [NativeName("GL_FLOAT_MAT3x2")]
-    FloatMat3X2 = unchecked((uint)0x8B67),
+    FloatMat3X2 = 35687,
 
     [NativeName("GL_FLOAT_MAT3x4")]
-    FloatMat3X4 = unchecked((uint)0x8B68),
+    FloatMat3X4 = 35688,
 
     [NativeName("GL_FLOAT_MAT4x2")]
-    FloatMat4X2 = unchecked((uint)0x8B69),
+    FloatMat4X2 = 35689,
 
     [NativeName("GL_FLOAT_MAT4x3")]
-    FloatMat4X3 = unchecked((uint)0x8B6A),
+    FloatMat4X3 = 35690,
 
     [NativeName("GL_SAMPLER_1D_ARRAY_SHADOW")]
-    Sampler1DArrayShadow = unchecked((uint)0x8DC3),
+    Sampler1DArrayShadow = 36291,
 
     [NativeName("GL_SAMPLER_2D_ARRAY_SHADOW")]
-    Sampler2DArrayShadow = unchecked((uint)0x8DC4),
+    Sampler2DArrayShadow = 36292,
 
     [NativeName("GL_SAMPLER_CUBE_SHADOW")]
-    SamplerCubeShadow = unchecked((uint)0x8DC5),
+    SamplerCubeShadow = 36293,
 
     [NativeName("GL_UNSIGNED_INT_VEC2")]
-    UnsignedIntVec2 = unchecked((uint)0x8DC6),
+    UnsignedIntVec2 = 36294,
 
     [NativeName("GL_UNSIGNED_INT_VEC3")]
-    UnsignedIntVec3 = unchecked((uint)0x8DC7),
+    UnsignedIntVec3 = 36295,
 
     [NativeName("GL_UNSIGNED_INT_VEC4")]
-    UnsignedIntVec4 = unchecked((uint)0x8DC8),
+    UnsignedIntVec4 = 36296,
 
     [NativeName("GL_INT_SAMPLER_1D")]
-    IntSampler1D = unchecked((uint)0x8DC9),
+    IntSampler1D = 36297,
 
     [NativeName("GL_INT_SAMPLER_2D")]
-    IntSampler2D = unchecked((uint)0x8DCA),
+    IntSampler2D = 36298,
 
     [NativeName("GL_INT_SAMPLER_3D")]
-    IntSampler3D = unchecked((uint)0x8DCB),
+    IntSampler3D = 36299,
 
     [NativeName("GL_INT_SAMPLER_CUBE")]
-    IntSamplerCube = unchecked((uint)0x8DCC),
+    IntSamplerCube = 36300,
 
     [NativeName("GL_INT_SAMPLER_1D_ARRAY")]
-    IntSampler1DArray = unchecked((uint)0x8DCE),
+    IntSampler1DArray = 36302,
 
     [NativeName("GL_INT_SAMPLER_2D_ARRAY")]
-    IntSampler2DArray = unchecked((uint)0x8DCF),
+    IntSampler2DArray = 36303,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_1D")]
-    UnsignedIntSampler1D = unchecked((uint)0x8DD1),
+    UnsignedIntSampler1D = 36305,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_2D")]
-    UnsignedIntSampler2D = unchecked((uint)0x8DD2),
+    UnsignedIntSampler2D = 36306,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_3D")]
-    UnsignedIntSampler3D = unchecked((uint)0x8DD3),
+    UnsignedIntSampler3D = 36307,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE")]
-    UnsignedIntSamplerCube = unchecked((uint)0x8DD4),
+    UnsignedIntSamplerCube = 36308,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_1D_ARRAY")]
-    UnsignedIntSampler1DArray = unchecked((uint)0x8DD6),
+    UnsignedIntSampler1DArray = 36310,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_ARRAY")]
-    UnsignedIntSampler2DArray = unchecked((uint)0x8DD7),
+    UnsignedIntSampler2DArray = 36311,
 
     [NativeName("GL_SAMPLER_2D_RECT")]
-    Sampler2DRect = unchecked((uint)0x8B63),
+    Sampler2DRect = 35683,
 
     [NativeName("GL_SAMPLER_2D_RECT_SHADOW")]
-    Sampler2DRectShadow = unchecked((uint)0x8B64),
+    Sampler2DRectShadow = 35684,
 
     [NativeName("GL_SAMPLER_BUFFER")]
-    SamplerBuffer = unchecked((uint)0x8DC2),
+    SamplerBuffer = 36290,
 
     [NativeName("GL_INT_SAMPLER_2D_RECT")]
-    IntSampler2DRect = unchecked((uint)0x8DCD),
+    IntSampler2DRect = 36301,
 
     [NativeName("GL_INT_SAMPLER_BUFFER")]
-    IntSamplerBuffer = unchecked((uint)0x8DD0),
+    IntSamplerBuffer = 36304,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_RECT")]
-    UnsignedIntSampler2DRect = unchecked((uint)0x8DD5),
+    UnsignedIntSampler2DRect = 36309,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_BUFFER")]
-    UnsignedIntSamplerBuffer = unchecked((uint)0x8DD8),
+    UnsignedIntSamplerBuffer = 36312,
 
     [NativeName("GL_SAMPLER_2D_MULTISAMPLE")]
-    Sampler2DMultisample = unchecked((uint)0x9108),
+    Sampler2DMultisample = 37128,
 
     [NativeName("GL_INT_SAMPLER_2D_MULTISAMPLE")]
-    IntSampler2DMultisample = unchecked((uint)0x9109),
+    IntSampler2DMultisample = 37129,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE")]
-    UnsignedIntSampler2DMultisample = unchecked((uint)0x910A),
+    UnsignedIntSampler2DMultisample = 37130,
 
     [NativeName("GL_SAMPLER_2D_MULTISAMPLE_ARRAY")]
-    Sampler2DMultisampleArray = unchecked((uint)0x910B),
+    Sampler2DMultisampleArray = 37131,
 
     [NativeName("GL_INT_SAMPLER_2D_MULTISAMPLE_ARRAY")]
-    IntSampler2DMultisampleArray = unchecked((uint)0x910C),
+    IntSampler2DMultisampleArray = 37132,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_2D_MULTISAMPLE_ARRAY")]
-    UnsignedIntSampler2DMultisampleArray = unchecked((uint)0x910D),
+    UnsignedIntSampler2DMultisampleArray = 37133,
 
     [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY")]
-    SamplerCubeMapArray = unchecked((uint)0x900C),
+    SamplerCubeMapArray = 36876,
 
     [NativeName("GL_SAMPLER_CUBE_MAP_ARRAY_SHADOW")]
-    SamplerCubeMapArrayShadow = unchecked((uint)0x900D),
+    SamplerCubeMapArrayShadow = 36877,
 
     [NativeName("GL_INT_SAMPLER_CUBE_MAP_ARRAY")]
-    IntSamplerCubeMapArray = unchecked((uint)0x900E),
+    IntSamplerCubeMapArray = 36878,
 
     [NativeName("GL_UNSIGNED_INT_SAMPLER_CUBE_MAP_ARRAY")]
-    UnsignedIntSamplerCubeMapArray = unchecked((uint)0x900F),
+    UnsignedIntSamplerCubeMapArray = 36879,
 
     [NativeName("GL_DOUBLE_VEC2")]
-    DoubleVec2 = unchecked((uint)0x8FFC),
+    DoubleVec2 = 36860,
 
     [NativeName("GL_DOUBLE_VEC3")]
-    DoubleVec3 = unchecked((uint)0x8FFD),
+    DoubleVec3 = 36861,
 
     [NativeName("GL_DOUBLE_VEC4")]
-    DoubleVec4 = unchecked((uint)0x8FFE),
+    DoubleVec4 = 36862,
 
     [NativeName("GL_DOUBLE_MAT2")]
-    DoubleMat2 = unchecked((uint)0x8F46),
+    DoubleMat2 = 36678,
 
     [NativeName("GL_DOUBLE_MAT3")]
-    DoubleMat3 = unchecked((uint)0x8F47),
+    DoubleMat3 = 36679,
 
     [NativeName("GL_DOUBLE_MAT4")]
-    DoubleMat4 = unchecked((uint)0x8F48),
+    DoubleMat4 = 36680,
 
     [NativeName("GL_DOUBLE_MAT2x3")]
-    DoubleMat2X3 = unchecked((uint)0x8F49),
+    DoubleMat2X3 = 36681,
 
     [NativeName("GL_DOUBLE_MAT2x4")]
-    DoubleMat2X4 = unchecked((uint)0x8F4A),
+    DoubleMat2X4 = 36682,
 
     [NativeName("GL_DOUBLE_MAT3x2")]
-    DoubleMat3X2 = unchecked((uint)0x8F4B),
+    DoubleMat3X2 = 36683,
 
     [NativeName("GL_DOUBLE_MAT3x4")]
-    DoubleMat3X4 = unchecked((uint)0x8F4C),
+    DoubleMat3X4 = 36684,
 
     [NativeName("GL_DOUBLE_MAT4x2")]
-    DoubleMat4X2 = unchecked((uint)0x8F4D),
+    DoubleMat4X2 = 36685,
 
     [NativeName("GL_DOUBLE_MAT4x3")]
-    DoubleMat4X3 = unchecked((uint)0x8F4E),
+    DoubleMat4X3 = 36686,
 
     [NativeName("GL_IMAGE_1D")]
-    Image1D = unchecked((uint)0x904C),
+    Image1D = 36940,
 
     [NativeName("GL_IMAGE_2D")]
-    Image2D = unchecked((uint)0x904D),
+    Image2D = 36941,
 
     [NativeName("GL_IMAGE_3D")]
-    Image3D = unchecked((uint)0x904E),
+    Image3D = 36942,
 
     [NativeName("GL_IMAGE_2D_RECT")]
-    Image2DRect = unchecked((uint)0x904F),
+    Image2DRect = 36943,
 
     [NativeName("GL_IMAGE_CUBE")]
-    ImageCube = unchecked((uint)0x9050),
+    ImageCube = 36944,
 
     [NativeName("GL_IMAGE_BUFFER")]
-    ImageBuffer = unchecked((uint)0x9051),
+    ImageBuffer = 36945,
 
     [NativeName("GL_IMAGE_1D_ARRAY")]
-    Image1DArray = unchecked((uint)0x9052),
+    Image1DArray = 36946,
 
     [NativeName("GL_IMAGE_2D_ARRAY")]
-    Image2DArray = unchecked((uint)0x9053),
+    Image2DArray = 36947,
 
     [NativeName("GL_IMAGE_CUBE_MAP_ARRAY")]
-    ImageCubeMapArray = unchecked((uint)0x9054),
+    ImageCubeMapArray = 36948,
 
     [NativeName("GL_IMAGE_2D_MULTISAMPLE")]
-    Image2DMultisample = unchecked((uint)0x9055),
+    Image2DMultisample = 36949,
 
     [NativeName("GL_IMAGE_2D_MULTISAMPLE_ARRAY")]
-    Image2DMultisampleArray = unchecked((uint)0x9056),
+    Image2DMultisampleArray = 36950,
 
     [NativeName("GL_INT_IMAGE_1D")]
-    IntImage1D = unchecked((uint)0x9057),
+    IntImage1D = 36951,
 
     [NativeName("GL_INT_IMAGE_2D")]
-    IntImage2D = unchecked((uint)0x9058),
+    IntImage2D = 36952,
 
     [NativeName("GL_INT_IMAGE_3D")]
-    IntImage3D = unchecked((uint)0x9059),
+    IntImage3D = 36953,
 
     [NativeName("GL_INT_IMAGE_2D_RECT")]
-    IntImage2DRect = unchecked((uint)0x905A),
+    IntImage2DRect = 36954,
 
     [NativeName("GL_INT_IMAGE_CUBE")]
-    IntImageCube = unchecked((uint)0x905B),
+    IntImageCube = 36955,
 
     [NativeName("GL_INT_IMAGE_BUFFER")]
-    IntImageBuffer = unchecked((uint)0x905C),
+    IntImageBuffer = 36956,
 
     [NativeName("GL_INT_IMAGE_1D_ARRAY")]
-    IntImage1DArray = unchecked((uint)0x905D),
+    IntImage1DArray = 36957,
 
     [NativeName("GL_INT_IMAGE_2D_ARRAY")]
-    IntImage2DArray = unchecked((uint)0x905E),
+    IntImage2DArray = 36958,
 
     [NativeName("GL_INT_IMAGE_CUBE_MAP_ARRAY")]
-    IntImageCubeMapArray = unchecked((uint)0x905F),
+    IntImageCubeMapArray = 36959,
 
     [NativeName("GL_INT_IMAGE_2D_MULTISAMPLE")]
-    IntImage2DMultisample = unchecked((uint)0x9060),
+    IntImage2DMultisample = 36960,
 
     [NativeName("GL_INT_IMAGE_2D_MULTISAMPLE_ARRAY")]
-    IntImage2DMultisampleArray = unchecked((uint)0x9061),
+    IntImage2DMultisampleArray = 36961,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_1D")]
-    UnsignedIntImage1D = unchecked((uint)0x9062),
+    UnsignedIntImage1D = 36962,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D")]
-    UnsignedIntImage2D = unchecked((uint)0x9063),
+    UnsignedIntImage2D = 36963,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_3D")]
-    UnsignedIntImage3D = unchecked((uint)0x9064),
+    UnsignedIntImage3D = 36964,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D_RECT")]
-    UnsignedIntImage2DRect = unchecked((uint)0x9065),
+    UnsignedIntImage2DRect = 36965,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_CUBE")]
-    UnsignedIntImageCube = unchecked((uint)0x9066),
+    UnsignedIntImageCube = 36966,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_BUFFER")]
-    UnsignedIntImageBuffer = unchecked((uint)0x9067),
+    UnsignedIntImageBuffer = 36967,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_1D_ARRAY")]
-    UnsignedIntImage1DArray = unchecked((uint)0x9068),
+    UnsignedIntImage1DArray = 36968,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D_ARRAY")]
-    UnsignedIntImage2DArray = unchecked((uint)0x9069),
+    UnsignedIntImage2DArray = 36969,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_CUBE_MAP_ARRAY")]
-    UnsignedIntImageCubeMapArray = unchecked((uint)0x906A),
+    UnsignedIntImageCubeMapArray = 36970,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE")]
-    UnsignedIntImage2DMultisample = unchecked((uint)0x906B),
+    UnsignedIntImage2DMultisample = 36971,
 
     [NativeName("GL_UNSIGNED_INT_IMAGE_2D_MULTISAMPLE_ARRAY")]
-    UnsignedIntImage2DMultisampleArray = unchecked((uint)0x906C),
+    UnsignedIntImage2DMultisampleArray = 36972,
 
     [NativeName("GL_UNSIGNED_INT64_ARB")]
-    UnsignedInt64ARB = unchecked((uint)0x140F),
+    UnsignedInt64ARB = 5135,
 
     [NativeName("GL_INT64_ARB")]
-    Int64ARB = unchecked((uint)0x140E),
+    Int64ARB = 5134,
 
     [NativeName("GL_INT64_VEC2_ARB")]
-    Int64Vec2ARB = unchecked((uint)0x8FE9),
+    Int64Vec2ARB = 36841,
 
     [NativeName("GL_INT64_VEC3_ARB")]
-    Int64Vec3ARB = unchecked((uint)0x8FEA),
+    Int64Vec3ARB = 36842,
 
     [NativeName("GL_INT64_VEC4_ARB")]
-    Int64Vec4ARB = unchecked((uint)0x8FEB),
+    Int64Vec4ARB = 36843,
 
     [NativeName("GL_UNSIGNED_INT64_VEC2_ARB")]
-    UnsignedInt64Vec2ARB = unchecked((uint)0x8FF5),
+    UnsignedInt64Vec2ARB = 36853,
 
     [NativeName("GL_UNSIGNED_INT64_VEC3_ARB")]
-    UnsignedInt64Vec3ARB = unchecked((uint)0x8FF6),
+    UnsignedInt64Vec3ARB = 36854,
 
     [NativeName("GL_UNSIGNED_INT64_VEC4_ARB")]
-    UnsignedInt64Vec4ARB = unchecked((uint)0x8FF7),
+    UnsignedInt64Vec4ARB = 36855,
 
     [NativeName("GL_FLOAT_VEC2_ARB")]
-    FloatVec2ARB = unchecked((uint)0x8B50),
+    FloatVec2ARB = 35664,
 
     [NativeName("GL_FLOAT_VEC3_ARB")]
-    FloatVec3ARB = unchecked((uint)0x8B51),
+    FloatVec3ARB = 35665,
 
     [NativeName("GL_FLOAT_VEC4_ARB")]
-    FloatVec4ARB = unchecked((uint)0x8B52),
+    FloatVec4ARB = 35666,
 
     [NativeName("GL_INT_VEC2_ARB")]
-    IntVec2ARB = unchecked((uint)0x8B53),
+    IntVec2ARB = 35667,
 
     [NativeName("GL_INT_VEC3_ARB")]
-    IntVec3ARB = unchecked((uint)0x8B54),
+    IntVec3ARB = 35668,
 
     [NativeName("GL_INT_VEC4_ARB")]
-    IntVec4ARB = unchecked((uint)0x8B55),
+    IntVec4ARB = 35669,
 
     [NativeName("GL_BOOL_ARB")]
-    BoolARB = unchecked((uint)0x8B56),
+    BoolARB = 35670,
 
     [NativeName("GL_BOOL_VEC2_ARB")]
-    BoolVec2ARB = unchecked((uint)0x8B57),
+    BoolVec2ARB = 35671,
 
     [NativeName("GL_BOOL_VEC3_ARB")]
-    BoolVec3ARB = unchecked((uint)0x8B58),
+    BoolVec3ARB = 35672,
 
     [NativeName("GL_BOOL_VEC4_ARB")]
-    BoolVec4ARB = unchecked((uint)0x8B59),
+    BoolVec4ARB = 35673,
 
     [NativeName("GL_FLOAT_MAT2_ARB")]
-    FloatMat2ARB = unchecked((uint)0x8B5A),
+    FloatMat2ARB = 35674,
 
     [NativeName("GL_FLOAT_MAT3_ARB")]
-    FloatMat3ARB = unchecked((uint)0x8B5B),
+    FloatMat3ARB = 35675,
 
     [NativeName("GL_FLOAT_MAT4_ARB")]
-    FloatMat4ARB = unchecked((uint)0x8B5C),
+    FloatMat4ARB = 35676,
 
     [NativeName("GL_SAMPLER_1D_ARB")]
-    Sampler1DARB = unchecked((uint)0x8B5D),
+    Sampler1DARB = 35677,
 
     [NativeName("GL_SAMPLER_2D_ARB")]
-    Sampler2DARB = unchecked((uint)0x8B5E),
+    Sampler2DARB = 35678,
 
     [NativeName("GL_SAMPLER_3D_ARB")]
-    Sampler3DARB = unchecked((uint)0x8B5F),
+    Sampler3DARB = 35679,
 
     [NativeName("GL_SAMPLER_CUBE_ARB")]
-    SamplerCubeARB = unchecked((uint)0x8B60),
+    SamplerCubeARB = 35680,
 
     [NativeName("GL_SAMPLER_1D_SHADOW_ARB")]
-    Sampler1DShadowARB = unchecked((uint)0x8B61),
+    Sampler1DShadowARB = 35681,
 
     [NativeName("GL_SAMPLER_2D_SHADOW_ARB")]
-    Sampler2DShadowARB = unchecked((uint)0x8B62),
+    Sampler2DShadowARB = 35682,
 
     [NativeName("GL_SAMPLER_2D_RECT_ARB")]
-    Sampler2DRectARB = unchecked((uint)0x8B63),
+    Sampler2DRectARB = 35683,
 
     [NativeName("GL_SAMPLER_2D_RECT_SHADOW_ARB")]
-    Sampler2DRectShadowARB = unchecked((uint)0x8B64),
+    Sampler2DRectShadowARB = 35684,
 
     [NativeName("GL_INT64_NV")]
-    Int64NV = unchecked((uint)0x140E),
+    Int64NV = 5134,
 
     [NativeName("GL_UNSIGNED_INT64_NV")]
-    UnsignedInt64NV = unchecked((uint)0x140F),
+    UnsignedInt64NV = 5135,
 
     [NativeName("GL_SAMPLER_3D_OES")]
-    Sampler3DOES = unchecked((uint)0x8B5F),
+    Sampler3DOES = 35679,
 
     [NativeName("GL_SAMPLER_2D_SHADOW_EXT")]
-    Sampler2DShadowEXT = unchecked((uint)0x8B62),
+    Sampler2DShadowEXT = 35682,
 
     [NativeName("GL_FLOAT_MAT2x3_NV")]
-    FloatMat2X3NV = unchecked((uint)0x8B65),
+    FloatMat2X3NV = 35685,
 
     [NativeName("GL_FLOAT_MAT2x4_NV")]
-    FloatMat2X4NV = unchecked((uint)0x8B66),
+    FloatMat2X4NV = 35686,
 
     [NativeName("GL_FLOAT_MAT3x2_NV")]
-    FloatMat3X2NV = unchecked((uint)0x8B67),
+    FloatMat3X2NV = 35687,
 
     [NativeName("GL_FLOAT_MAT3x4_NV")]
-    FloatMat3X4NV = unchecked((uint)0x8B68),
+    FloatMat3X4NV = 35688,
 
     [NativeName("GL_FLOAT_MAT4x2_NV")]
-    FloatMat4X2NV = unchecked((uint)0x8B69),
+    FloatMat4X2NV = 35689,
 
     [NativeName("GL_FLOAT_MAT4x3_NV")]
-    FloatMat4X3NV = unchecked((uint)0x8B6A),
+    FloatMat4X3NV = 35690,
 }

@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum MapParameterNV : uint
 {
     [NativeName("GL_MAP_TESSELLATION_NV")]
-    MapTessellation = unchecked((uint)0x86C2),
+    MapTessellation = 34498,
 }

@@ -11,8 +11,8 @@ namespace Silk.NET.OpenGL;
 public enum ListMode : uint
 {
     [NativeName("GL_COMPILE")]
-    Compile = unchecked((uint)0x1300),
+    Compile = 4864,
 
     [NativeName("GL_COMPILE_AND_EXECUTE")]
-    CompileAndExecute = unchecked((uint)0x1301),
+    CompileAndExecute = 4865,
 }

@@ -14,8 +14,8 @@ namespace Silk.NET.OpenAL;
 public enum BufferPointerSOFT : uint
 {
     [NativeName("AL_BUFFER_CALLBACK_FUNCTION_SOFT")]
-    Function = unchecked((uint)0x19A0),
+    Function = 6560,
 
     [NativeName("AL_BUFFER_CALLBACK_USER_PARAM_SOFT")]
-    UserParam = unchecked((uint)0x19A1),
+    UserParam = 6561,
 }

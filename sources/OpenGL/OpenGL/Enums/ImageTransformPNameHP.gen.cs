@@ -11,32 +11,32 @@ namespace Silk.NET.OpenGL;
 public enum ImageTransformPNameHP : uint
 {
     [NativeName("GL_IMAGE_SCALE_X_HP")]
-    ScaleX = unchecked((uint)0x8155),
+    ScaleX = 33109,
 
     [NativeName("GL_IMAGE_SCALE_Y_HP")]
-    ScaleY = unchecked((uint)0x8156),
+    ScaleY = 33110,
 
     [NativeName("GL_IMAGE_TRANSLATE_X_HP")]
-    TranslateX = unchecked((uint)0x8157),
+    TranslateX = 33111,
 
     [NativeName("GL_IMAGE_TRANSLATE_Y_HP")]
-    TranslateY = unchecked((uint)0x8158),
+    TranslateY = 33112,
 
     [NativeName("GL_IMAGE_ROTATE_ANGLE_HP")]
-    RotateAngle = unchecked((uint)0x8159),
+    RotateAngle = 33113,
 
     [NativeName("GL_IMAGE_ROTATE_ORIGIN_X_HP")]
-    RotateOriginX = unchecked((uint)0x815A),
+    RotateOriginX = 33114,
 
     [NativeName("GL_IMAGE_ROTATE_ORIGIN_Y_HP")]
-    RotateOriginY = unchecked((uint)0x815B),
+    RotateOriginY = 33115,
 
     [NativeName("GL_IMAGE_MAG_FILTER_HP")]
-    MagFilter = unchecked((uint)0x815C),
+    MagFilter = 33116,
 
     [NativeName("GL_IMAGE_MIN_FILTER_HP")]
-    MinFilter = unchecked((uint)0x815D),
+    MinFilter = 33117,
 
     [NativeName("GL_IMAGE_CUBIC_WEIGHT_HP")]
-    CubicWeight = unchecked((uint)0x815E),
+    CubicWeight = 33118,
 }

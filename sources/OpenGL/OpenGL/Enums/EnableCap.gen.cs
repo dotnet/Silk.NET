@@ -11,434 +11,434 @@ namespace Silk.NET.OpenGL;
 public enum EnableCap : uint
 {
     [NativeName("GL_CLIP_PLANE0")]
-    ClipPlane0 = unchecked((uint)0x3000),
+    ClipPlane0 = 12288,
 
     [NativeName("GL_CLIP_PLANE1")]
-    ClipPlane1 = unchecked((uint)0x3001),
+    ClipPlane1 = 12289,
 
     [NativeName("GL_CLIP_PLANE2")]
-    ClipPlane2 = unchecked((uint)0x3002),
+    ClipPlane2 = 12290,
 
     [NativeName("GL_CLIP_PLANE3")]
-    ClipPlane3 = unchecked((uint)0x3003),
+    ClipPlane3 = 12291,
 
     [NativeName("GL_CLIP_PLANE4")]
-    ClipPlane4 = unchecked((uint)0x3004),
+    ClipPlane4 = 12292,
 
     [NativeName("GL_CLIP_PLANE5")]
-    ClipPlane5 = unchecked((uint)0x3005),
+    ClipPlane5 = 12293,
 
     [NativeName("GL_FOG")]
-    Fog = unchecked((uint)0x0B60),
+    Fog = 2912,
 
     [NativeName("GL_LIGHTING")]
-    Lighting = unchecked((uint)0x0B50),
+    Lighting = 2896,
 
     [NativeName("GL_TEXTURE_2D")]
-    Texture2D = unchecked((uint)0x0DE1),
+    Texture2D = 3553,
 
     [NativeName("GL_CULL_FACE")]
-    CullFace = unchecked((uint)0x0B44),
+    CullFace = 2884,
 
     [NativeName("GL_ALPHA_TEST")]
-    AlphaTest = unchecked((uint)0x0BC0),
+    AlphaTest = 3008,
 
     [NativeName("GL_BLEND")]
-    Blend = unchecked((uint)0x0BE2),
+    Blend = 3042,
 
     [NativeName("GL_COLOR_LOGIC_OP")]
-    ColorLogicOp = unchecked((uint)0x0BF2),
+    ColorLogicOp = 3058,
 
     [NativeName("GL_DITHER")]
-    Dither = unchecked((uint)0x0BD0),
+    Dither = 3024,
 
     [NativeName("GL_STENCIL_TEST")]
-    StencilTest = unchecked((uint)0x0B90),
+    StencilTest = 2960,
 
     [NativeName("GL_DEPTH_TEST")]
-    DepthTest = unchecked((uint)0x0B71),
+    DepthTest = 2929,
 
     [NativeName("GL_POINT_SMOOTH")]
-    PointSmooth = unchecked((uint)0x0B10),
+    PointSmooth = 2832,
 
     [NativeName("GL_LINE_SMOOTH")]
-    LineSmooth = unchecked((uint)0x0B20),
+    LineSmooth = 2848,
 
     [NativeName("GL_SCISSOR_TEST")]
-    ScissorTest = unchecked((uint)0x0C11),
+    ScissorTest = 3089,
 
     [NativeName("GL_COLOR_MATERIAL")]
-    ColorMaterial = unchecked((uint)0x0B57),
+    ColorMaterial = 2903,
 
     [NativeName("GL_NORMALIZE")]
-    Normalize = unchecked((uint)0x0BA1),
+    Normalize = 2977,
 
     [NativeName("GL_VERTEX_ARRAY")]
-    VertexArray = unchecked((uint)0x8074),
+    VertexArray = 32884,
 
     [NativeName("GL_NORMAL_ARRAY")]
-    NormalArray = unchecked((uint)0x8075),
+    NormalArray = 32885,
 
     [NativeName("GL_COLOR_ARRAY")]
-    ColorArray = unchecked((uint)0x8076),
+    ColorArray = 32886,
 
     [NativeName("GL_TEXTURE_COORD_ARRAY")]
-    TextureCoordArray = unchecked((uint)0x8078),
+    TextureCoordArray = 32888,
 
     [NativeName("GL_MULTISAMPLE")]
-    Multisample = unchecked((uint)0x809D),
+    Multisample = 32925,
 
     [NativeName("GL_SAMPLE_ALPHA_TO_COVERAGE")]
-    SampleAlphaToCoverage = unchecked((uint)0x809E),
+    SampleAlphaToCoverage = 32926,
 
     [NativeName("GL_SAMPLE_ALPHA_TO_ONE")]
-    SampleAlphaToOne = unchecked((uint)0x809F),
+    SampleAlphaToOne = 32927,
 
     [NativeName("GL_SAMPLE_COVERAGE")]
-    SampleCoverage = unchecked((uint)0x80A0),
+    SampleCoverage = 32928,
 
     [NativeName("GL_POLYGON_OFFSET_FILL")]
-    PolygonOffsetFill = unchecked((uint)0x8037),
+    PolygonOffsetFill = 32823,
 
     [NativeName("GL_LIGHT0")]
-    Light0 = unchecked((uint)0x4000),
+    Light0 = 16384,
 
     [NativeName("GL_LIGHT1")]
-    Light1 = unchecked((uint)0x4001),
+    Light1 = 16385,
 
     [NativeName("GL_LIGHT2")]
-    Light2 = unchecked((uint)0x4002),
+    Light2 = 16386,
 
     [NativeName("GL_LIGHT3")]
-    Light3 = unchecked((uint)0x4003),
+    Light3 = 16387,
 
     [NativeName("GL_LIGHT4")]
-    Light4 = unchecked((uint)0x4004),
+    Light4 = 16388,
 
     [NativeName("GL_LIGHT5")]
-    Light5 = unchecked((uint)0x4005),
+    Light5 = 16389,
 
     [NativeName("GL_LIGHT6")]
-    Light6 = unchecked((uint)0x4006),
+    Light6 = 16390,
 
     [NativeName("GL_LIGHT7")]
-    Light7 = unchecked((uint)0x4007),
+    Light7 = 16391,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapOES = unchecked((uint)0x8513),
+    TextureCubeMapOES = 34067,
 
     [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStrOES = unchecked((uint)0x8D60),
+    TextureGenStrOES = 36192,
 
     [NativeName("GL_POLYGON_SMOOTH")]
-    PolygonSmooth = unchecked((uint)0x0B41),
+    PolygonSmooth = 2881,
 
     [NativeName("GL_TEXTURE_1D")]
-    Texture1D = unchecked((uint)0x0DE0),
+    Texture1D = 3552,
 
     [NativeName("GL_LINE_STIPPLE")]
-    LineStipple = unchecked((uint)0x0B24),
+    LineStipple = 2852,
 
     [NativeName("GL_POLYGON_STIPPLE")]
-    PolygonStipple = unchecked((uint)0x0B42),
+    PolygonStipple = 2882,
 
     [NativeName("GL_TEXTURE_GEN_S")]
-    TextureGenS = unchecked((uint)0x0C60),
+    TextureGenS = 3168,
 
     [NativeName("GL_TEXTURE_GEN_T")]
-    TextureGenT = unchecked((uint)0x0C61),
+    TextureGenT = 3169,
 
     [NativeName("GL_TEXTURE_GEN_R")]
-    TextureGenR = unchecked((uint)0x0C62),
+    TextureGenR = 3170,
 
     [NativeName("GL_TEXTURE_GEN_Q")]
-    TextureGenQ = unchecked((uint)0x0C63),
+    TextureGenQ = 3171,
 
     [NativeName("GL_AUTO_NORMAL")]
-    AutoNormal = unchecked((uint)0x0D80),
+    AutoNormal = 3456,
 
     [NativeName("GL_MAP1_COLOR_4")]
-    Map1Color4 = unchecked((uint)0x0D90),
+    Map1Color4 = 3472,
 
     [NativeName("GL_MAP1_INDEX")]
-    Map1Index = unchecked((uint)0x0D91),
+    Map1Index = 3473,
 
     [NativeName("GL_MAP1_NORMAL")]
-    Map1Normal = unchecked((uint)0x0D92),
+    Map1Normal = 3474,
 
     [NativeName("GL_MAP1_TEXTURE_COORD_1")]
-    Map1TextureCoord1 = unchecked((uint)0x0D93),
+    Map1TextureCoord1 = 3475,
 
     [NativeName("GL_MAP1_TEXTURE_COORD_2")]
-    Map1TextureCoord2 = unchecked((uint)0x0D94),
+    Map1TextureCoord2 = 3476,
 
     [NativeName("GL_MAP1_TEXTURE_COORD_3")]
-    Map1TextureCoord3 = unchecked((uint)0x0D95),
+    Map1TextureCoord3 = 3477,
 
     [NativeName("GL_MAP1_TEXTURE_COORD_4")]
-    Map1TextureCoord4 = unchecked((uint)0x0D96),
+    Map1TextureCoord4 = 3478,
 
     [NativeName("GL_MAP1_VERTEX_3")]
-    Map1Vertex3 = unchecked((uint)0x0D97),
+    Map1Vertex3 = 3479,
 
     [NativeName("GL_MAP1_VERTEX_4")]
-    Map1Vertex4 = unchecked((uint)0x0D98),
+    Map1Vertex4 = 3480,
 
     [NativeName("GL_MAP2_COLOR_4")]
-    Map2Color4 = unchecked((uint)0x0DB0),
+    Map2Color4 = 3504,
 
     [NativeName("GL_MAP2_INDEX")]
-    Map2Index = unchecked((uint)0x0DB1),
+    Map2Index = 3505,
 
     [NativeName("GL_MAP2_NORMAL")]
-    Map2Normal = unchecked((uint)0x0DB2),
+    Map2Normal = 3506,
 
     [NativeName("GL_MAP2_TEXTURE_COORD_1")]
-    Map2TextureCoord1 = unchecked((uint)0x0DB3),
+    Map2TextureCoord1 = 3507,
 
     [NativeName("GL_MAP2_TEXTURE_COORD_2")]
-    Map2TextureCoord2 = unchecked((uint)0x0DB4),
+    Map2TextureCoord2 = 3508,
 
     [NativeName("GL_MAP2_TEXTURE_COORD_3")]
-    Map2TextureCoord3 = unchecked((uint)0x0DB5),
+    Map2TextureCoord3 = 3509,
 
     [NativeName("GL_MAP2_TEXTURE_COORD_4")]
-    Map2TextureCoord4 = unchecked((uint)0x0DB6),
+    Map2TextureCoord4 = 3510,
 
     [NativeName("GL_MAP2_VERTEX_3")]
-    Map2Vertex3 = unchecked((uint)0x0DB7),
+    Map2Vertex3 = 3511,
 
     [NativeName("GL_MAP2_VERTEX_4")]
-    Map2Vertex4 = unchecked((uint)0x0DB8),
+    Map2Vertex4 = 3512,
 
     [NativeName("GL_POLYGON_OFFSET_POINT")]
-    PolygonOffsetPoint = unchecked((uint)0x2A01),
+    PolygonOffsetPoint = 10753,
 
     [NativeName("GL_POLYGON_OFFSET_LINE")]
-    PolygonOffsetLine = unchecked((uint)0x2A02),
+    PolygonOffsetLine = 10754,
 
     [NativeName("GL_INDEX_LOGIC_OP")]
-    IndexLogicOp = unchecked((uint)0x0BF1),
+    IndexLogicOp = 3057,
 
     [NativeName("GL_INDEX_ARRAY")]
-    IndexArray = unchecked((uint)0x8077),
+    IndexArray = 32887,
 
     [NativeName("GL_EDGE_FLAG_ARRAY")]
-    EdgeFlagArray = unchecked((uint)0x8079),
+    EdgeFlagArray = 32889,
 
     [NativeName("GL_TEXTURE_CUBE_MAP")]
-    TextureCubeMap = unchecked((uint)0x8513),
+    TextureCubeMap = 34067,
 
     [NativeName("GL_CLIP_DISTANCE0")]
-    ClipDistance0 = unchecked((uint)0x3000),
+    ClipDistance0 = 12288,
 
     [NativeName("GL_CLIP_DISTANCE1")]
-    ClipDistance1 = unchecked((uint)0x3001),
+    ClipDistance1 = 12289,
 
     [NativeName("GL_CLIP_DISTANCE2")]
-    ClipDistance2 = unchecked((uint)0x3002),
+    ClipDistance2 = 12290,
 
     [NativeName("GL_CLIP_DISTANCE3")]
-    ClipDistance3 = unchecked((uint)0x3003),
+    ClipDistance3 = 12291,
 
     [NativeName("GL_CLIP_DISTANCE4")]
-    ClipDistance4 = unchecked((uint)0x3004),
+    ClipDistance4 = 12292,
 
     [NativeName("GL_CLIP_DISTANCE5")]
-    ClipDistance5 = unchecked((uint)0x3005),
+    ClipDistance5 = 12293,
 
     [NativeName("GL_CLIP_DISTANCE6")]
-    ClipDistance6 = unchecked((uint)0x3006),
+    ClipDistance6 = 12294,
 
     [NativeName("GL_CLIP_DISTANCE7")]
-    ClipDistance7 = unchecked((uint)0x3007),
+    ClipDistance7 = 12295,
 
     [NativeName("GL_RASTERIZER_DISCARD")]
-    RasterizerDiscard = unchecked((uint)0x8C89),
+    RasterizerDiscard = 35977,
 
     [NativeName("GL_FRAMEBUFFER_SRGB")]
-    FramebufferSrgb = unchecked((uint)0x8DB9),
+    FramebufferSrgb = 36281,
 
     [NativeName("GL_TEXTURE_RECTANGLE")]
-    TextureRectANGLE = unchecked((uint)0x84F5),
+    TextureRectANGLE = 34037,
 
     [NativeName("GL_PRIMITIVE_RESTART")]
-    PrimitiveRestart = unchecked((uint)0x8F9D),
+    PrimitiveRestart = 36765,
 
     [NativeName("GL_PROGRAM_POINT_SIZE")]
-    ProgramPointSize = unchecked((uint)0x8642),
+    ProgramPointSize = 34370,
 
     [NativeName("GL_DEPTH_CLAMP")]
-    DepthClamp = unchecked((uint)0x864F),
+    DepthClamp = 34383,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_SEAMLESS")]
-    TextureCubeMapSeamless = unchecked((uint)0x884F),
+    TextureCubeMapSeamless = 34895,
 
     [NativeName("GL_SAMPLE_MASK")]
-    SampleMask = unchecked((uint)0x8E51),
+    SampleMask = 36433,
 
     [NativeName("GL_SAMPLE_SHADING")]
-    SampleShading = unchecked((uint)0x8C36),
+    SampleShading = 35894,
 
     [NativeName("GL_PRIMITIVE_RESTART_FIXED_INDEX")]
-    PrimitiveRestartFixedIndex = unchecked((uint)0x8D69),
+    PrimitiveRestartFixedIndex = 36201,
 
     [NativeName("GL_DEBUG_OUTPUT_SYNCHRONOUS")]
-    DebugOutputSynchronous = unchecked((uint)0x8242),
+    DebugOutputSynchronous = 33346,
 
     [NativeName("GL_DEBUG_OUTPUT")]
-    DebugOutput = unchecked((uint)0x92E0),
+    DebugOutput = 37600,
 
     [NativeName("GL_COLOR_TABLE")]
-    ColorTable = unchecked((uint)0x80D0),
+    ColorTable = 32976,
 
     [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE")]
-    PostConvolutionColorTable = unchecked((uint)0x80D1),
+    PostConvolutionColorTable = 32977,
 
     [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE")]
-    PostColorMatrixColorTable = unchecked((uint)0x80D2),
+    PostColorMatrixColorTable = 32978,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_ARB")]
-    TextureCubeMapARB = unchecked((uint)0x8513),
+    TextureCubeMapARB = 34067,
 
     [NativeName("GL_TEXTURE_RECTANGLE_ARB")]
-    TextureRectangleARB = unchecked((uint)0x84F5),
+    TextureRectangleARB = 34037,
 
     [NativeName("GL_CONVOLUTION_1D_EXT")]
-    Convolution1DEXT = unchecked((uint)0x8010),
+    Convolution1DEXT = 32784,
 
     [NativeName("GL_CONVOLUTION_2D_EXT")]
-    Convolution2DEXT = unchecked((uint)0x8011),
+    Convolution2DEXT = 32785,
 
     [NativeName("GL_SEPARABLE_2D_EXT")]
-    Separable2DEXT = unchecked((uint)0x8012),
+    Separable2DEXT = 32786,
 
     [NativeName("GL_HISTOGRAM_EXT")]
-    HistogramEXT = unchecked((uint)0x8024),
+    HistogramEXT = 32804,
 
     [NativeName("GL_MINMAX_EXT")]
-    MinmaxEXT = unchecked((uint)0x802E),
+    MinmaxEXT = 32814,
 
     [NativeName("GL_RESCALE_NORMAL_EXT")]
-    RescaleNormalEXT = unchecked((uint)0x803A),
+    RescaleNormalEXT = 32826,
 
     [NativeName("GL_SHARED_TEXTURE_PALETTE_EXT")]
-    SharedTexturePaletteEXT = unchecked((uint)0x81FB),
+    SharedTexturePaletteEXT = 33275,
 
     [NativeName("GL_TEXTURE_3D_EXT")]
-    Texture3DEXT = unchecked((uint)0x806F),
+    Texture3DEXT = 32879,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_EXT")]
-    TextureCubeMapEXT = unchecked((uint)0x8513),
+    TextureCubeMapEXT = 34067,
 
     [NativeName("GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
-    ShadingRateImagePerPrimitiveNV = unchecked((uint)0x95B1),
+    ShadingRateImagePerPrimitiveNV = 38321,
 
     [NativeName("GL_TEXTURE_RECTANGLE_NV")]
-    TextureRectangleNV = unchecked((uint)0x84F5),
+    TextureRectangleNV = 34037,
 
     [NativeName("GL_MULTISAMPLE_SGIS")]
-    MultisampleSGIS = unchecked((uint)0x809D),
+    MultisampleSGIS = 32925,
 
     [NativeName("GL_SAMPLE_ALPHA_TO_MASK_SGIS")]
-    SampleAlphaToMaskSGIS = unchecked((uint)0x809E),
+    SampleAlphaToMaskSGIS = 32926,
 
     [NativeName("GL_SAMPLE_ALPHA_TO_ONE_SGIS")]
-    SampleAlphaToOneSGIS = unchecked((uint)0x809F),
+    SampleAlphaToOneSGIS = 32927,
 
     [NativeName("GL_SAMPLE_MASK_SGIS")]
-    SampleMaskSGIS = unchecked((uint)0x80A0),
+    SampleMaskSGIS = 32928,
 
     [NativeName("GL_PIXEL_TEXTURE_SGIS")]
-    PixelTextureSGIS = unchecked((uint)0x8353),
+    PixelTextureSGIS = 33619,
 
     [NativeName("GL_TEXTURE_4D_SGIS")]
-    Texture4DSGIS = unchecked((uint)0x8134),
+    Texture4DSGIS = 33076,
 
     [NativeName("GL_ASYNC_HISTOGRAM_SGIX")]
-    AsyncHistogramSGIX = unchecked((uint)0x832C),
+    AsyncHistogramSGIX = 33580,
 
     [NativeName("GL_ASYNC_TEX_IMAGE_SGIX")]
-    AsyncTexImageSGIX = unchecked((uint)0x835C),
+    AsyncTexImageSGIX = 33628,
 
     [NativeName("GL_ASYNC_DRAW_PIXELS_SGIX")]
-    AsyncDrawPixelsSGIX = unchecked((uint)0x835D),
+    AsyncDrawPixelsSGIX = 33629,
 
     [NativeName("GL_ASYNC_READ_PIXELS_SGIX")]
-    AsyncReadPixelsSGIX = unchecked((uint)0x835E),
+    AsyncReadPixelsSGIX = 33630,
 
     [NativeName("GL_CALLIGRAPHIC_FRAGMENT_SGIX")]
-    CalligraphicFragmentSGIX = unchecked((uint)0x8183),
+    CalligraphicFragmentSGIX = 33155,
 
     [NativeName("GL_FOG_OFFSET_SGIX")]
-    FogOffsetSGIX = unchecked((uint)0x8198),
+    FogOffsetSGIX = 33176,
 
     [NativeName("GL_FRAGMENT_LIGHTING_SGIX")]
-    FragmentLightingSGIX = unchecked((uint)0x8400),
+    FragmentLightingSGIX = 33792,
 
     [NativeName("GL_FRAGMENT_COLOR_MATERIAL_SGIX")]
-    FragmentColorMaterialSGIX = unchecked((uint)0x8401),
+    FragmentColorMaterialSGIX = 33793,
 
     [NativeName("GL_FRAGMENT_LIGHT0_SGIX")]
-    FragmentLight0SGIX = unchecked((uint)0x840C),
+    FragmentLight0SGIX = 33804,
 
     [NativeName("GL_FRAGMENT_LIGHT1_SGIX")]
-    FragmentLight1SGIX = unchecked((uint)0x840D),
+    FragmentLight1SGIX = 33805,
 
     [NativeName("GL_FRAGMENT_LIGHT2_SGIX")]
-    FragmentLight2SGIX = unchecked((uint)0x840E),
+    FragmentLight2SGIX = 33806,
 
     [NativeName("GL_FRAGMENT_LIGHT3_SGIX")]
-    FragmentLight3SGIX = unchecked((uint)0x840F),
+    FragmentLight3SGIX = 33807,
 
     [NativeName("GL_FRAGMENT_LIGHT4_SGIX")]
-    FragmentLight4SGIX = unchecked((uint)0x8410),
+    FragmentLight4SGIX = 33808,
 
     [NativeName("GL_FRAGMENT_LIGHT5_SGIX")]
-    FragmentLight5SGIX = unchecked((uint)0x8411),
+    FragmentLight5SGIX = 33809,
 
     [NativeName("GL_FRAGMENT_LIGHT6_SGIX")]
-    FragmentLight6SGIX = unchecked((uint)0x8412),
+    FragmentLight6SGIX = 33810,
 
     [NativeName("GL_FRAGMENT_LIGHT7_SGIX")]
-    FragmentLight7SGIX = unchecked((uint)0x8413),
+    FragmentLight7SGIX = 33811,
 
     [NativeName("GL_FRAMEZOOM_SGIX")]
-    FramezoomSGIX = unchecked((uint)0x818B),
+    FramezoomSGIX = 33163,
 
     [NativeName("GL_INTERLACE_SGIX")]
-    InterlaceSGIX = unchecked((uint)0x8094),
+    InterlaceSGIX = 32916,
 
     [NativeName("GL_IR_INSTRUMENT1_SGIX")]
-    IrInstrument1SGIX = unchecked((uint)0x817F),
+    IrInstrument1SGIX = 33151,
 
     [NativeName("GL_PIXEL_TEX_GEN_SGIX")]
-    PixelTexGenSGIX = unchecked((uint)0x8139),
+    PixelTexGenSGIX = 33081,
 
     [NativeName("GL_REFERENCE_PLANE_SGIX")]
-    ReferencePlaneSGIX = unchecked((uint)0x817D),
+    ReferencePlaneSGIX = 33149,
 
     [NativeName("GL_SPRITE_SGIX")]
-    SpriteSGIX = unchecked((uint)0x8148),
+    SpriteSGIX = 33096,
 
     [NativeName("GL_COLOR_TABLE_SGI")]
-    ColorTableSGI = unchecked((uint)0x80D0),
+    ColorTableSGI = 32976,
 
     [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE_SGI")]
-    PostConvolutionColorTableSGI = unchecked((uint)0x80D1),
+    PostConvolutionColorTableSGI = 32977,
 
     [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
-    PostColorMatrixColorTableSGI = unchecked((uint)0x80D2),
+    PostColorMatrixColorTableSGI = 32978,
 
     [NativeName("GL_TEXTURE_COLOR_TABLE_SGI")]
-    TextureColorTableSGI = unchecked((uint)0x80BC),
+    TextureColorTableSGI = 32956,
 
     [NativeName("GL_FETCH_PER_SAMPLE_ARM")]
-    FetchPerSampleARM = unchecked((uint)0x8F65),
+    FetchPerSampleARM = 36709,
 
     [NativeName("GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
-    FramebufferFetchNoncoherentQCOM = unchecked((uint)0x96A2),
+    FramebufferFetchNoncoherentQCOM = 38562,
 
     [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
-    ShadingRatePreserveAspectRatioQCOM = unchecked((uint)0x96A5),
+    ShadingRatePreserveAspectRatioQCOM = 38565,
 }

@@ -11,92 +11,92 @@ namespace Silk.NET.OpenGL;
 public enum ReadBufferMode : uint
 {
     [NativeName("GL_FRONT")]
-    Front = unchecked((uint)0x0404),
+    Front = 1028,
 
     [NativeName("GL_BACK")]
-    Back = unchecked((uint)0x0405),
+    Back = 1029,
 
     [NativeName("GL_NONE_OES")]
-    NoneOES = unchecked((uint)0),
+    NoneOES = 0,
 
     [NativeName("GL_NONE")]
-    None = unchecked((uint)0),
+    None = 0,
 
     [NativeName("GL_FRONT_LEFT")]
-    FrontLeft = unchecked((uint)0x0400),
+    FrontLeft = 1024,
 
     [NativeName("GL_FRONT_RIGHT")]
-    FrontRight = unchecked((uint)0x0401),
+    FrontRight = 1025,
 
     [NativeName("GL_BACK_LEFT")]
-    BackLeft = unchecked((uint)0x0402),
+    BackLeft = 1026,
 
     [NativeName("GL_BACK_RIGHT")]
-    BackRight = unchecked((uint)0x0403),
+    BackRight = 1027,
 
     [NativeName("GL_LEFT")]
-    Left = unchecked((uint)0x0406),
+    Left = 1030,
 
     [NativeName("GL_RIGHT")]
-    Right = unchecked((uint)0x0407),
+    Right = 1031,
 
     [NativeName("GL_AUX0")]
-    Aux0 = unchecked((uint)0x0409),
+    Aux0 = 1033,
 
     [NativeName("GL_AUX1")]
-    Aux1 = unchecked((uint)0x040A),
+    Aux1 = 1034,
 
     [NativeName("GL_AUX2")]
-    Aux2 = unchecked((uint)0x040B),
+    Aux2 = 1035,
 
     [NativeName("GL_AUX3")]
-    Aux3 = unchecked((uint)0x040C),
+    Aux3 = 1036,
 
     [NativeName("GL_COLOR_ATTACHMENT0")]
-    ColorAttachment0 = unchecked((uint)0x8CE0),
+    ColorAttachment0 = 36064,
 
     [NativeName("GL_COLOR_ATTACHMENT1")]
-    ColorAttachment1 = unchecked((uint)0x8CE1),
+    ColorAttachment1 = 36065,
 
     [NativeName("GL_COLOR_ATTACHMENT2")]
-    ColorAttachment2 = unchecked((uint)0x8CE2),
+    ColorAttachment2 = 36066,
 
     [NativeName("GL_COLOR_ATTACHMENT3")]
-    ColorAttachment3 = unchecked((uint)0x8CE3),
+    ColorAttachment3 = 36067,
 
     [NativeName("GL_COLOR_ATTACHMENT4")]
-    ColorAttachment4 = unchecked((uint)0x8CE4),
+    ColorAttachment4 = 36068,
 
     [NativeName("GL_COLOR_ATTACHMENT5")]
-    ColorAttachment5 = unchecked((uint)0x8CE5),
+    ColorAttachment5 = 36069,
 
     [NativeName("GL_COLOR_ATTACHMENT6")]
-    ColorAttachment6 = unchecked((uint)0x8CE6),
+    ColorAttachment6 = 36070,
 
     [NativeName("GL_COLOR_ATTACHMENT7")]
-    ColorAttachment7 = unchecked((uint)0x8CE7),
+    ColorAttachment7 = 36071,
 
     [NativeName("GL_COLOR_ATTACHMENT8")]
-    ColorAttachment8 = unchecked((uint)0x8CE8),
+    ColorAttachment8 = 36072,
 
     [NativeName("GL_COLOR_ATTACHMENT9")]
-    ColorAttachment9 = unchecked((uint)0x8CE9),
+    ColorAttachment9 = 36073,
 
     [NativeName("GL_COLOR_ATTACHMENT10")]
-    ColorAttachment10 = unchecked((uint)0x8CEA),
+    ColorAttachment10 = 36074,
 
     [NativeName("GL_COLOR_ATTACHMENT11")]
-    ColorAttachment11 = unchecked((uint)0x8CEB),
+    ColorAttachment11 = 36075,
 
     [NativeName("GL_COLOR_ATTACHMENT12")]
-    ColorAttachment12 = unchecked((uint)0x8CEC),
+    ColorAttachment12 = 36076,
 
     [NativeName("GL_COLOR_ATTACHMENT13")]
-    ColorAttachment13 = unchecked((uint)0x8CED),
+    ColorAttachment13 = 36077,
 
     [NativeName("GL_COLOR_ATTACHMENT14")]
-    ColorAttachment14 = unchecked((uint)0x8CEE),
+    ColorAttachment14 = 36078,
 
     [NativeName("GL_COLOR_ATTACHMENT15")]
-    ColorAttachment15 = unchecked((uint)0x8CEF),
+    ColorAttachment15 = 36079,
 }

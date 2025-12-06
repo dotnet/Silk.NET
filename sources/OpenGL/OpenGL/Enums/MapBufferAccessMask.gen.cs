@@ -14,50 +14,50 @@ public enum MapBufferAccessMask : uint
     None = 0x0,
 
     [NativeName("GL_MAP_READ_BIT_EXT")]
-    ReadBitEXT = unchecked((uint)0x0001),
+    ReadBitEXT = 0x1,
 
     [NativeName("GL_MAP_WRITE_BIT_EXT")]
-    WriteBitEXT = unchecked((uint)0x0002),
+    WriteBitEXT = 0x2,
 
     [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
-    InvalidateRangeBitEXT = unchecked((uint)0x0004),
+    InvalidateRangeBitEXT = 0x4,
 
     [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
-    InvalidateBufferBitEXT = unchecked((uint)0x0008),
+    InvalidateBufferBitEXT = 0x8,
 
     [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
-    FlushExplicitBitEXT = unchecked((uint)0x0010),
+    FlushExplicitBitEXT = 0x10,
 
     [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
-    UnsynchronizedBitEXT = unchecked((uint)0x0020),
+    UnsynchronizedBitEXT = 0x20,
 
     [NativeName("GL_MAP_READ_BIT")]
-    ReadBit = unchecked((uint)0x0001),
+    ReadBit = 0x1,
 
     [NativeName("GL_MAP_WRITE_BIT")]
-    WriteBit = unchecked((uint)0x0002),
+    WriteBit = 0x2,
 
     [NativeName("GL_MAP_INVALIDATE_RANGE_BIT")]
-    InvalidateRangeBit = unchecked((uint)0x0004),
+    InvalidateRangeBit = 0x4,
 
     [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT")]
-    InvalidateBufferBit = unchecked((uint)0x0008),
+    InvalidateBufferBit = 0x8,
 
     [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT")]
-    FlushExplicitBit = unchecked((uint)0x0010),
+    FlushExplicitBit = 0x10,
 
     [NativeName("GL_MAP_UNSYNCHRONIZED_BIT")]
-    UnsynchronizedBit = unchecked((uint)0x0020),
+    UnsynchronizedBit = 0x20,
 
     [NativeName("GL_MAP_PERSISTENT_BIT")]
-    PersistentBit = unchecked((uint)0x0040),
+    PersistentBit = 0x40,
 
     [NativeName("GL_MAP_COHERENT_BIT")]
-    CoherentBit = unchecked((uint)0x0080),
+    CoherentBit = 0x80,
 
     [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
-    PersistentBitEXT = unchecked((uint)0x0040),
+    PersistentBitEXT = 0x40,
 
     [NativeName("GL_MAP_COHERENT_BIT_EXT")]
-    CoherentBitEXT = unchecked((uint)0x0080),
+    CoherentBitEXT = 0x80,
 }

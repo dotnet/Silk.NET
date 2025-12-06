@@ -11,20 +11,20 @@ namespace Silk.NET.OpenGL;
 public enum ColorTableTarget : uint
 {
     [NativeName("GL_COLOR_TABLE")]
-    ColorTable = unchecked((uint)0x80D0),
+    ColorTable = 32976,
 
     [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE")]
-    PostConvolutionColorTable = unchecked((uint)0x80D1),
+    PostConvolutionColorTable = 32977,
 
     [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE")]
-    PostColorMatrixColorTable = unchecked((uint)0x80D2),
+    PostColorMatrixColorTable = 32978,
 
     [NativeName("GL_PROXY_COLOR_TABLE")]
-    ProxyColorTable = unchecked((uint)0x80D3),
+    ProxyColorTable = 32979,
 
     [NativeName("GL_PROXY_POST_CONVOLUTION_COLOR_TABLE")]
-    ProxyPostConvolutionColorTable = unchecked((uint)0x80D4),
+    ProxyPostConvolutionColorTable = 32980,
 
     [NativeName("GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE")]
-    ProxyPostColorMatrixColorTable = unchecked((uint)0x80D5),
+    ProxyPostColorMatrixColorTable = 32981,
 }

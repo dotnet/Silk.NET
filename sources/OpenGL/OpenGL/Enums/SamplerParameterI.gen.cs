@@ -11,26 +11,26 @@ namespace Silk.NET.OpenGL;
 public enum SamplerParameterI : uint
 {
     [NativeName("GL_TEXTURE_MAG_FILTER")]
-    MagFilter = unchecked((uint)0x2800),
+    MagFilter = 10240,
 
     [NativeName("GL_TEXTURE_MIN_FILTER")]
-    MinFilter = unchecked((uint)0x2801),
+    MinFilter = 10241,
 
     [NativeName("GL_TEXTURE_WRAP_S")]
-    WrapS = unchecked((uint)0x2802),
+    WrapS = 10242,
 
     [NativeName("GL_TEXTURE_WRAP_T")]
-    WrapT = unchecked((uint)0x2803),
+    WrapT = 10243,
 
     [NativeName("GL_TEXTURE_WRAP_R")]
-    WrapR = unchecked((uint)0x8072),
+    WrapR = 32882,
 
     [NativeName("GL_TEXTURE_COMPARE_MODE")]
-    CompareMode = unchecked((uint)0x884C),
+    CompareMode = 34892,
 
     [NativeName("GL_TEXTURE_COMPARE_FUNC")]
-    CompareFunc = unchecked((uint)0x884D),
+    CompareFunc = 34893,
 
     [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
+    UnnormalizedCoordinatesARM = 36714,
 }
