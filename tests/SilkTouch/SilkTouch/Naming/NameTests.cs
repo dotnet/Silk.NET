@@ -14,15 +14,15 @@ public class NameTests : NameTrimmer
     {
         var test = new Dictionary<string, CandidateNames>
         {
-            { "GLFWallocator", new CandidateNames("GLFWallocator", null) },
-            { "GLFWgammaramp", new CandidateNames("GLFWgammaramp", null) },
-            { "GLFWgamepadstate", new CandidateNames("GLFWgamepadstate", null) },
-            { "GLFWvidmode", new CandidateNames("GLFWvidmode", null) },
-            { "GLFWimage", new CandidateNames("GLFWimage", null) },
-            { "Glfw", new CandidateNames("Glfw", null) },
-            { "GLFWcursor", new CandidateNames("GLFWcursor", null) },
-            { "GLFWmonitor", new CandidateNames("GLFWmonitor", null) },
-            { "GLFWwindow", new CandidateNames("GLFWwindow", null) },
+            { "GLFWallocator", new CandidateNames("GLFWallocator", []) },
+            { "GLFWgammaramp", new CandidateNames("GLFWgammaramp", []) },
+            { "GLFWgamepadstate", new CandidateNames("GLFWgamepadstate", []) },
+            { "GLFWvidmode", new CandidateNames("GLFWvidmode", []) },
+            { "GLFWimage", new CandidateNames("GLFWimage", []) },
+            { "Glfw", new CandidateNames("Glfw", []) },
+            { "GLFWcursor", new CandidateNames("GLFWcursor", []) },
+            { "GLFWmonitor", new CandidateNames("GLFWmonitor", []) },
+            { "GLFWwindow", new CandidateNames("GLFWwindow", []) },
         };
         Assert.That(
             GetPrefix(null, hint, test, null, null, false, true)?.Prefix,
@@ -62,10 +62,10 @@ public class NameTests : NameTrimmer
     {
         var test = new Dictionary<string, CandidateNames>
         {
-            { "GL_2X_BIT_ATI", new CandidateNames("GL_2X_BIT_ATI", null) },
-            { "GL_COMP_BIT_ATI", new CandidateNames("GL_COMP_BIT_ATI", null) },
-            { "GL_NEGATE_BIT_ATI", new CandidateNames("GL_NEGATE_BIT_ATI", null) },
-            { "GL_BIAS_BIT_ATI", new CandidateNames("GL_BIAS_BIT_ATI", null) },
+            { "GL_2X_BIT_ATI", new CandidateNames("GL_2X_BIT_ATI", []) },
+            { "GL_COMP_BIT_ATI", new CandidateNames("GL_COMP_BIT_ATI", []) },
+            { "GL_NEGATE_BIT_ATI", new CandidateNames("GL_NEGATE_BIT_ATI", []) },
+            { "GL_BIAS_BIT_ATI", new CandidateNames("GL_BIAS_BIT_ATI", []) },
         };
         Trim(
             new NameTrimmerContext
@@ -94,8 +94,8 @@ public class NameTests : NameTrimmer
     {
         var test = new Dictionary<string, CandidateNames>
         {
-            { "GL_EVAL_2D_NV", new CandidateNames("GL_EVAL_2D_NV", null) },
-            { "GL_EVAL_TRIANGULAR_2D_NV", new CandidateNames("GL_EVAL_TRIANGULAR_2D_NV", null) },
+            { "GL_EVAL_2D_NV", new CandidateNames("GL_EVAL_2D_NV", []) },
+            { "GL_EVAL_TRIANGULAR_2D_NV", new CandidateNames("GL_EVAL_TRIANGULAR_2D_NV", []) },
         };
         Trim(
             new NameTrimmerContext
@@ -129,7 +129,7 @@ public class NameTests : NameTrimmer
     {
         var names = new Dictionary<string, CandidateNames>
         {
-            { "GL_FILL_NV", new CandidateNames("GL_FILL_NV", null) },
+            { "GL_FILL_NV", new CandidateNames("GL_FILL_NV", []) },
         };
         var ctx = new NameTrimmerContext
         {
@@ -148,7 +148,7 @@ public class NameTests : NameTrimmer
     {
         var names = new Dictionary<string, CandidateNames>
         {
-            { "ALC_CONTEXT_DEBUG_BIT_EXT", new CandidateNames("ALC_CONTEXT_DEBUG_BIT_EXT", null) },
+            { "ALC_CONTEXT_DEBUG_BIT_EXT", new CandidateNames("ALC_CONTEXT_DEBUG_BIT_EXT", []) },
         };
         var ctx = new NameTrimmerContext
         {

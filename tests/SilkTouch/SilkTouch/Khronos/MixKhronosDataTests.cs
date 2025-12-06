@@ -379,9 +379,9 @@ public class MixKhronosDataTests
         };
         var names = new Dictionary<string, CandidateNames>
         {
-            { "AL_VOCAL_MORPHER_PHONEME_A", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_A", null) },
-            { "AL_VOCAL_MORPHER_PHONEME_E", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_E", null) },
-            { "AL_VOCAL_MORPHER_PHONEME_I", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_I", null) },
+            { "AL_VOCAL_MORPHER_PHONEME_A", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_A", []) },
+            { "AL_VOCAL_MORPHER_PHONEME_E", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_E", []) },
+            { "AL_VOCAL_MORPHER_PHONEME_I", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_I", []) },
         };
         var ctx = new NameTrimmerContext
         {
