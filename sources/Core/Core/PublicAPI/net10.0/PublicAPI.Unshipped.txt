@@ -3,7 +3,7 @@ override Silk.NET.Core.AndroidPlatformInfo.GetHashCode() -> int
 override Silk.NET.Core.CocoaPlatformInfo.GetHashCode() -> int
 override Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.GetHashCode() -> int
 override Silk.NET.Core.Constant<TUnderlying, TEnum1>.GetHashCode() -> int
-override Silk.NET.Core.EglPlatformInfo.GetHashCode() -> int
+override Silk.NET.Core.EGLPlatformInfo.GetHashCode() -> int
 override Silk.NET.Core.MaybeBool<T, TScheme>.GetHashCode() -> int
 override Silk.NET.Core.MaybeBool<T>.GetHashCode() -> int
 override Silk.NET.Core.NullPtr.GetHashCode() -> int
@@ -102,15 +102,15 @@ Silk.NET.Core.CppAttributeListAttribute.CppAttributeListAttribute(string! attrib
 Silk.NET.Core.Default
 Silk.NET.Core.Default.Default() -> void
 Silk.NET.Core.DSL
-Silk.NET.Core.EglPlatformInfo
-Silk.NET.Core.EglPlatformInfo.Deconstruct(out nint Display, out nint Surface) -> void
-Silk.NET.Core.EglPlatformInfo.Display.get -> nint
-Silk.NET.Core.EglPlatformInfo.Display.init -> void
-Silk.NET.Core.EglPlatformInfo.EglPlatformInfo() -> void
-Silk.NET.Core.EglPlatformInfo.EglPlatformInfo(nint Display, nint Surface) -> void
-Silk.NET.Core.EglPlatformInfo.Equals(Silk.NET.Core.EglPlatformInfo other) -> bool
-Silk.NET.Core.EglPlatformInfo.Surface.get -> nint
-Silk.NET.Core.EglPlatformInfo.Surface.init -> void
+Silk.NET.Core.EGLPlatformInfo
+Silk.NET.Core.EGLPlatformInfo.Deconstruct(out nint Display, out nint Surface) -> void
+Silk.NET.Core.EGLPlatformInfo.Display.get -> nint
+Silk.NET.Core.EGLPlatformInfo.Display.init -> void
+Silk.NET.Core.EGLPlatformInfo.EGLPlatformInfo() -> void
+Silk.NET.Core.EGLPlatformInfo.EGLPlatformInfo(nint Display, nint Surface) -> void
+Silk.NET.Core.EGLPlatformInfo.Equals(Silk.NET.Core.EGLPlatformInfo other) -> bool
+Silk.NET.Core.EGLPlatformInfo.Surface.get -> nint
+Silk.NET.Core.EGLPlatformInfo.Surface.init -> void
 Silk.NET.Core.IBoolScheme
 Silk.NET.Core.IBoolScheme.False<T>() -> T
 Silk.NET.Core.IBoolScheme.IsTrue<T>(T value) -> bool
@@ -403,8 +403,8 @@ static Silk.NET.Core.Constant<TUnderlying, TEnum1>.operator !=(Silk.NET.Core.Con
 static Silk.NET.Core.Constant<TUnderlying, TEnum1>.operator ==(Silk.NET.Core.Constant<TUnderlying, TEnum1> left, Silk.NET.Core.Constant<TUnderlying, TEnum1> right) -> bool
 static Silk.NET.Core.Default.True<T>() -> T
 static Silk.NET.Core.DSL.nullptr.get -> Silk.NET.Core.NullPtr
-static Silk.NET.Core.EglPlatformInfo.operator !=(Silk.NET.Core.EglPlatformInfo left, Silk.NET.Core.EglPlatformInfo right) -> bool
-static Silk.NET.Core.EglPlatformInfo.operator ==(Silk.NET.Core.EglPlatformInfo left, Silk.NET.Core.EglPlatformInfo right) -> bool
+static Silk.NET.Core.EGLPlatformInfo.operator !=(Silk.NET.Core.EGLPlatformInfo left, Silk.NET.Core.EGLPlatformInfo right) -> bool
+static Silk.NET.Core.EGLPlatformInfo.operator ==(Silk.NET.Core.EGLPlatformInfo left, Silk.NET.Core.EGLPlatformInfo right) -> bool
 static Silk.NET.Core.Loader.LoaderInterface.AlternativeNames.get -> System.Collections.Generic.Dictionary<string!, System.Collections.Generic.List<string!>!>!
 static Silk.NET.Core.Loader.LoaderInterface.LoadAlternativeNames(string! libraryName, System.Reflection.Assembly! assembly, System.Runtime.InteropServices.DllImportSearchPath? searchPath) -> nint
 static Silk.NET.Core.Loader.LoaderInterface.LoadLibrary(string! name, System.Reflection.Assembly! asm) -> nint
@@ -848,8 +848,8 @@ static Silk.NET.Core.X11PlatformInfo.operator ==(Silk.NET.Core.X11PlatformInfo l
 ~override Silk.NET.Core.Constant<TUnderlying, TEnum1, TEnum2>.ToString() -> string
 ~override Silk.NET.Core.Constant<TUnderlying, TEnum1>.Equals(object obj) -> bool
 ~override Silk.NET.Core.Constant<TUnderlying, TEnum1>.ToString() -> string
-~override Silk.NET.Core.EglPlatformInfo.Equals(object obj) -> bool
-~override Silk.NET.Core.EglPlatformInfo.ToString() -> string
+~override Silk.NET.Core.EGLPlatformInfo.Equals(object obj) -> bool
+~override Silk.NET.Core.EGLPlatformInfo.ToString() -> string
 ~override Silk.NET.Core.MaybeBool<T, TScheme>.Equals(object obj) -> bool
 ~override Silk.NET.Core.MaybeBool<T, TScheme>.ToString() -> string
 ~override Silk.NET.Core.MaybeBool<T>.Equals(object obj) -> bool
