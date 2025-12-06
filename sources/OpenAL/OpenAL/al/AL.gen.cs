@@ -4106,8 +4106,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [NativeName("alGetError")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alGetError")]
-        public static Constant<int, ErrorCode> GetError() =>
-            (Constant<int, ErrorCode>)(int)GetErrorRaw();
+        public static Constant<int, ALEnum, ErrorCode> GetError() =>
+            (Constant<int, ALEnum, ErrorCode>)(int)GetErrorRaw();
 
         [NativeName("alGetErrorDirect")]
         [
@@ -4115,8 +4115,8 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
-        public static Constant<int, ErrorCode> GetErrorDirect(ContextHandle context) =>
-            (Constant<int, ErrorCode>)(int)GetErrorDirectRawDirect(context);
+        public static Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context) =>
+            (Constant<int, ALEnum, ErrorCode>)(int)GetErrorDirectRawDirect(context);
 
         [NativeName("alGetErrorDirect")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetErrorDirect")]
@@ -12201,7 +12201,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Constant<int, ErrorCode> GetError() => T.GetError();
+        public Constant<int, ALEnum, ErrorCode> GetError() => T.GetError();
 
         [NativeName("alGetErrorDirect")]
         [
@@ -12212,7 +12212,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Constant<int, ErrorCode> GetErrorDirect(ContextHandle context) =>
+        public Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context) =>
             T.GetErrorDirect(context);
 
         [NativeName("alGetErrorDirect")]
@@ -21151,7 +21151,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Constant<int, ErrorCode> GetError() => Underlying.Value!.GetError();
+        public static Constant<int, ALEnum, ErrorCode> GetError() => Underlying.Value!.GetError();
 
         [NativeName("alGetErrorDirect")]
         [
@@ -21162,7 +21162,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Constant<int, ErrorCode> GetErrorDirect(ContextHandle context) =>
+        public static Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context) =>
             Underlying.Value!.GetErrorDirect(context);
 
         [NativeName("alGetErrorDirect")]
@@ -34299,14 +34299,14 @@ public unsafe partial class AL : IAL, IAL.Static
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Constant<int, ErrorCode> IAL.GetError() =>
-        (Constant<int, ErrorCode>)(int)((IAL)this).GetErrorRaw();
+    Constant<int, ALEnum, ErrorCode> IAL.GetError() =>
+        (Constant<int, ALEnum, ErrorCode>)(int)((IAL)this).GetErrorRaw();
 
     [NativeName("alGetError")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Constant<int, ErrorCode> GetError() => ThisThread.GetError();
+    public static Constant<int, ALEnum, ErrorCode> GetError() => ThisThread.GetError();
 
     [NativeName("alGetErrorDirect")]
     [
@@ -34315,8 +34315,8 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Constant<int, ErrorCode> IAL.GetErrorDirect(ContextHandle context) =>
-        (Constant<int, ErrorCode>)(int)((IAL)this).GetErrorDirectRawDirect(context);
+    Constant<int, ALEnum, ErrorCode> IAL.GetErrorDirect(ContextHandle context) =>
+        (Constant<int, ALEnum, ErrorCode>)(int)((IAL)this).GetErrorDirectRawDirect(context);
 
     [NativeName("alGetErrorDirect")]
     [
@@ -34325,7 +34325,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Constant<int, ErrorCode> GetErrorDirect(ContextHandle context) =>
+    public static Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context) =>
         ThisThread.GetErrorDirect(context);
 
     [NativeName("alGetErrorDirect")]

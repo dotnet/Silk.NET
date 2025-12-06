@@ -2920,7 +2920,7 @@ public unsafe partial interface IAL
         [NativeName("alGetError")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alGetError")]
-        static abstract Constant<int, ErrorCode> GetError();
+        static abstract Constant<int, ALEnum, ErrorCode> GetError();
 
         [NativeName("alGetErrorDirect")]
         [
@@ -2928,7 +2928,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
-        static abstract Constant<int, ErrorCode> GetErrorDirect(ContextHandle context);
+        static abstract Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context);
 
         [NativeName("alGetErrorDirect")]
         [
@@ -8691,7 +8691,7 @@ public unsafe partial interface IAL
     [NativeName("alGetError")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alGetError")]
-    Constant<int, ErrorCode> GetError();
+    Constant<int, ALEnum, ErrorCode> GetError();
 
     [NativeName("alGetErrorDirect")]
     [
@@ -8699,7 +8699,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
-    Constant<int, ErrorCode> GetErrorDirect(ContextHandle context);
+    Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context);
 
     [NativeName("alGetErrorDirect")]
     [

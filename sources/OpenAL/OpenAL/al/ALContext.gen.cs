@@ -185,7 +185,7 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
         public static Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
-            Constant<int, EventTypeSOFT> eventType,
+            Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
             Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
         ) =>
             (Constant<int, ALCEnum, EventSupportSOFT>)
@@ -223,8 +223,8 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         [NativeName("alcGetError")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetError")]
-        public static Constant<int, ErrorCode> GetError(DeviceHandle device) =>
-            (Constant<int, ErrorCode>)(int)GetErrorRaw(device);
+        public static Constant<int, ALCEnum, ContextErrorCode> GetError(DeviceHandle device) =>
+            (Constant<int, ALCEnum, ContextErrorCode>)(int)GetErrorRaw(device);
 
         [NativeName("alcGetError")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alcGetError")]
@@ -797,7 +797,7 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
-            Constant<int, EventTypeSOFT> eventType,
+            Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
             Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
         ) => T.EventIsSupportedSOFT(eventType, deviceType);
 
@@ -842,7 +842,8 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public Constant<int, ErrorCode> GetError(DeviceHandle device) => T.GetError(device);
+        public Constant<int, ALCEnum, ContextErrorCode> GetError(DeviceHandle device) =>
+            T.GetError(device);
 
         [NativeName("alcGetError")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -1424,7 +1425,7 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
-            Constant<int, EventTypeSOFT> eventType,
+            Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
             Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
         ) => Underlying.Value!.EventIsSupportedSOFT(eventType, deviceType);
 
@@ -1474,7 +1475,7 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static Constant<int, ErrorCode> GetError(DeviceHandle device) =>
+        public static Constant<int, ALCEnum, ContextErrorCode> GetError(DeviceHandle device) =>
             Underlying.Value!.GetError(device);
 
         [NativeName("alcGetError")]
@@ -2337,7 +2338,7 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Constant<int, ALCEnum, EventSupportSOFT> IALContext.EventIsSupportedSOFT(
-        Constant<int, EventTypeSOFT> eventType,
+        Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
         Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
     ) =>
         (Constant<int, ALCEnum, EventSupportSOFT>)
@@ -2348,7 +2349,7 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
-        Constant<int, EventTypeSOFT> eventType,
+        Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
         Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
     ) => ThisThread.EventIsSupportedSOFT(eventType, deviceType);
 
@@ -2434,14 +2435,14 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    Constant<int, ErrorCode> IALContext.GetError(DeviceHandle device) =>
-        (Constant<int, ErrorCode>)(int)((IALContext)this).GetErrorRaw(device);
+    Constant<int, ALCEnum, ContextErrorCode> IALContext.GetError(DeviceHandle device) =>
+        (Constant<int, ALCEnum, ContextErrorCode>)(int)((IALContext)this).GetErrorRaw(device);
 
     [NativeName("alcGetError")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static Constant<int, ErrorCode> GetError(DeviceHandle device) =>
+    public static Constant<int, ALCEnum, ContextErrorCode> GetError(DeviceHandle device) =>
         ThisThread.GetError(device);
 
     [NativeName("alcGetError")]

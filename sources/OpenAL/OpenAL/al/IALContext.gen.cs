@@ -132,7 +132,7 @@ public unsafe partial interface IALContext
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
         static abstract Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
-            Constant<int, EventTypeSOFT> eventType,
+            Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
             Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
         );
 
@@ -159,7 +159,7 @@ public unsafe partial interface IALContext
         [NativeName("alcGetError")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetError")]
-        static abstract Constant<int, ErrorCode> GetError(DeviceHandle device);
+        static abstract Constant<int, ALCEnum, ContextErrorCode> GetError(DeviceHandle device);
 
         [NativeName("alcGetError")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -504,7 +504,7 @@ public unsafe partial interface IALContext
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
     Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
-        Constant<int, EventTypeSOFT> eventType,
+        Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
         Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
     );
 
@@ -531,7 +531,7 @@ public unsafe partial interface IALContext
     [NativeName("alcGetError")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
-    Constant<int, ErrorCode> GetError(DeviceHandle device);
+    Constant<int, ALCEnum, ContextErrorCode> GetError(DeviceHandle device);
 
     [NativeName("alcGetError")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]

@@ -10,30 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ErrorCode")]
-public enum ErrorCode : uint
+[NativeName("SystemEventTypeSOFT")]
+public enum SystemEventTypeSOFT : uint
 {
-    [NativeName("AL_NO_ERROR")]
-    NoError = 0,
+    [NativeName("ALC_EVENT_TYPE_DEFAULT_DEVICE_CHANGED_SOFT")]
+    DefaultDeviceChanged = 6614,
 
-    [NativeName("AL_INVALID_NAME")]
-    InvalidName = 40961,
+    [NativeName("ALC_EVENT_TYPE_DEVICE_ADDED_SOFT")]
+    DeviceAdded = 6615,
 
-    [NativeName("AL_INVALID_ENUM")]
-    InvalidEnum = 40962,
-
-    [NativeName("AL_INVALID_VALUE")]
-    InvalidValue = 40963,
-
-    [NativeName("AL_INVALID_OPERATION")]
-    InvalidOperation = 40964,
-
-    [NativeName("AL_OUT_OF_MEMORY")]
-    OutOfMemory = 40965,
-
-    [NativeName("AL_STACK_OVERFLOW_EXT")]
-    StackOverflowEXT = 6605,
-
-    [NativeName("AL_STACK_UNDERFLOW_EXT")]
-    StackUnderflowEXT = 6606,
+    [NativeName("ALC_EVENT_TYPE_DEVICE_REMOVED_SOFT")]
+    DeviceRemoved = 6616,
 }

@@ -10,30 +10,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ErrorCode")]
-public enum ErrorCode : uint
+[NativeName("ContextErrorCode")]
+public enum ContextErrorCode : uint
 {
-    [NativeName("AL_NO_ERROR")]
+    [NativeName("ALC_NO_ERROR")]
     NoError = 0,
 
-    [NativeName("AL_INVALID_NAME")]
-    InvalidName = 40961,
+    [NativeName("ALC_INVALID_DEVICE")]
+    InvalidDevice = 40961,
 
-    [NativeName("AL_INVALID_ENUM")]
-    InvalidEnum = 40962,
+    [NativeName("ALC_INVALID_CONTEXT")]
+    InvalidContext = 40962,
 
-    [NativeName("AL_INVALID_VALUE")]
-    InvalidValue = 40963,
+    [NativeName("ALC_INVALID_ENUM")]
+    InvalidEnum = 40963,
 
-    [NativeName("AL_INVALID_OPERATION")]
-    InvalidOperation = 40964,
+    [NativeName("ALC_INVALID_VALUE")]
+    InvalidValue = 40964,
 
-    [NativeName("AL_OUT_OF_MEMORY")]
+    [NativeName("ALC_OUT_OF_MEMORY")]
     OutOfMemory = 40965,
-
-    [NativeName("AL_STACK_OVERFLOW_EXT")]
-    StackOverflowEXT = 6605,
-
-    [NativeName("AL_STACK_UNDERFLOW_EXT")]
-    StackUnderflowEXT = 6606,
 }
