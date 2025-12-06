@@ -47,12 +47,12 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGl
         if (IsSurfaceInitialized)
         {
             throw new InvalidOperationException(
-                "The OpenGl context cannot be accessed as it was not enabled during "
+                "The OpenGL context cannot be accessed as it was not enabled during "
                     + "ISurfaceApplication.Initialize<TSurface>(TSurface)."
             );
         }
         throw new InvalidOperationException(
-            "The OpenGl context cannot be accessed until ISurfaceApplication.Initialize<TSurface>(TSurface) "
+            "The OpenGL context cannot be accessed until ISurfaceApplication.Initialize<TSurface>(TSurface) "
                 + "has finished executing, consider using the Surface.Created callback instead."
         );
     }
@@ -217,7 +217,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGl
         if (Handle == nullptr && isInitializing)
         {
             throw new InvalidOperationException(
-                "Attempted to initialize OpenGl context before window initialization - this should not be possible "
+                "Attempted to initialize OpenGL context before window initialization - this should not be possible "
                     + "with normal usage. Please report this at https://github.com/dotnet/Silk.NET"
             );
         }
@@ -229,7 +229,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGl
             && GetDummyWindow(Sdl.WindowOpengl, nFlags: Sdl.WindowVulkan) == nullptr
         )
         {
-            // Guess OpenGl isn't supported after all...
+            // Guess OpenGL isn't supported after all...
             ClearErrorIf(!isInitializing);
             return false;
         }
@@ -251,7 +251,7 @@ internal partial class SdlSurfaceComponents : ISurfaceOpenGl
             if (isInitializing)
             {
                 throw new NotSupportedException(
-                    "On this platform, SharedContext must be either a Silk.NET.SDL.SdlContext an OpenGl component "
+                    "On this platform, SharedContext must be either a Silk.NET.SDL.SdlContext an OpenGL component "
                         + "retrieved from a surface created using ISurfaceApplication.Run<T>() or "
                         + "IDetachedSurfaceLifecycle.TryCreate<T>(out IDetachedSurfaceLifecycle?)."
                 );
