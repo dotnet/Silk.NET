@@ -4,12 +4,12 @@
 namespace Silk.NET.SDL;
 
 /// <summary>
-/// Represents an OpenGl context created using SDL.
+/// Represents an OpenGL context created using SDL.
 /// </summary>
 public class SdlContext : IGlContext
 {
     /// <summary>
-    /// Creates an OpenGl context using SDL.
+    /// Creates an OpenGL context using SDL.
     /// </summary>
     /// <param name="window">The window to associate the context with.</param>
     /// <param name="attributes">The context attributes.</param>
@@ -24,7 +24,7 @@ public class SdlContext : IGlContext
         Api = sdl ?? Sdl.Instance;
         foreach (var (attr, value) in attributes)
         {
-            Expect(Api.GlSetAttribute(attr, value), "set OpenGl context attribute");
+            Expect(Api.GlSetAttribute(attr, value), "set OpenGL context attribute");
         }
 
         Window = window;
@@ -36,11 +36,11 @@ public class SdlContext : IGlContext
 
         var ctxError = (string)Api.GetError();
         Api.ClearError();
-        throw new SdlException($"Failed to create OpenGl context: {ctxError}");
+        throw new SdlException($"Failed to create OpenGL context: {ctxError}");
     }
 
     /// <summary>
-    /// Creates an OpenGl context using SDL.
+    /// Creates an OpenGL context using SDL.
     /// </summary>
     /// <param name="window">The window to associate the context with.</param>
     /// <param name="attributes">The context attributes.</param>
@@ -50,7 +50,7 @@ public class SdlContext : IGlContext
         : this(window, attributes, sdl) { }
 
     /// <summary>
-    /// Creates an OpenGl context using SDL.
+    /// Creates an OpenGL context using SDL.
     /// </summary>
     /// <param name="window">The window to associate the context with.</param>
     /// <param name="attributes">The context attributes.</param>
@@ -83,12 +83,12 @@ public class SdlContext : IGlContext
     public ISdl Api { get; }
 
     /// <inheritdoc />
-    public void Dispose() => Expect(Api.GlDestroyContext(Context), "dispose OpenGl context");
+    public void Dispose() => Expect(Api.GlDestroyContext(Context), "dispose OpenGL context");
 
     /// <inheritdoc />
     public unsafe void* LoadFunction(string functionName, string libraryNameHint)
     {
-        var ret = libraryNameHint.Contains("EGl")
+        var ret = libraryNameHint.Contains("EGL")
             ? Api.EglGetProcAddress(libraryNameHint)
             : Api.GlGetProcAddress(functionName);
         Api.ClearError();
