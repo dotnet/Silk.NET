@@ -8261,10 +8261,10 @@ public enum GlEnum : uint
     MultisampleBit3DFX = 536870912,
 
     [NativeName("GL_COMPRESSED_RGB_FXT1_3DFX")]
-    CompressedRgbFxt1X3DFX = 34480,
+    CompressedRgbFxt13DFX = 34480,
 
     [NativeName("GL_COMPRESSED_RGBA_FXT1_3DFX")]
-    CompressedRgbaFxt1X3DFX = 34481,
+    CompressedRgbaFxt13DFX = 34481,
 
     [NativeName("GL_FACTOR_MIN_AMD")]
     FactorMinAMD = 36892,
@@ -11618,16 +11618,16 @@ public enum GlEnum : uint
     VertexShaderOptimizedEXT = 34772,
 
     [NativeName("GL_X_EXT")]
-    Xext = 34773,
+    XEXT = 34773,
 
     [NativeName("GL_Y_EXT")]
-    Yext = 34774,
+    YEXT = 34774,
 
     [NativeName("GL_Z_EXT")]
-    Zext = 34775,
+    ZEXT = 34775,
 
     [NativeName("GL_W_EXT")]
-    Wext = 34776,
+    WEXT = 34776,
 
     [NativeName("GL_NEGATIVE_X_EXT")]
     NegativeXEXT = 34777,

@@ -177,7 +177,9 @@
         "GlobalPrefixHints": ["gl"],
         "PrefixOverrides": {
           "SyncObjectMask": "GL_SYNC",
-          "OcclusionQueryParameterNameNV": "GL"
+          "OcclusionQueryParameterNameNV": "GL",
+          "TexStorageAttribs": "GL",
+          "ContainerType": "GL"
         }
       },
       "TransformEnums": {
