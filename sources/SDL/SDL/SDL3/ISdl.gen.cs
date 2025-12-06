@@ -8829,14 +8829,6 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSize")]
         static abstract byte SetWindowSizeRaw(WindowHandle window, int w, int h);
 
-        [NativeName("SDL_SetWindowsMessageHook")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowsMessageHook")]
-        static abstract void SetWindowsMessageHook(WindowsMessageHook callback, void* userdata);
-
-        [NativeName("SDL_SetWindowsMessageHook")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowsMessageHook")]
-        static abstract void SetWindowsMessageHook(WindowsMessageHook callback, Ref userdata);
-
         [NativeName("SDL_SetWindowSurfaceVSync")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSurfaceVSync")]
         static abstract MaybeBool<byte> SetWindowSurfaceVSync(WindowHandle window, int vsync);
@@ -18243,14 +18235,6 @@ public unsafe partial interface ISdl
     [NativeName("SDL_SetWindowSize")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSize")]
     byte SetWindowSizeRaw(WindowHandle window, int w, int h);
-
-    [NativeName("SDL_SetWindowsMessageHook")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowsMessageHook")]
-    void SetWindowsMessageHook(WindowsMessageHook callback, void* userdata);
-
-    [NativeName("SDL_SetWindowsMessageHook")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowsMessageHook")]
-    void SetWindowsMessageHook(WindowsMessageHook callback, Ref userdata);
 
     [NativeName("SDL_SetWindowSurfaceVSync")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowSurfaceVSync")]

@@ -2,6 +2,7 @@
 @../remap.rsp
 --exclude
 SDL_SetX11EventHook
+SDL_SetWindowsMessageHook
 SDL_FUNCTION
 SDL_SIZE_MAX
 SDL_memcpy
