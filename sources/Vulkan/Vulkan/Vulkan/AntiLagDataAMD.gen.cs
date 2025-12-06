@@ -54,7 +54,7 @@ public unsafe partial struct AntiLagDataAMD
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    public uint MaxFps;
+    public uint MaxFPS;
 
     [NativeName("pPresentationInfo")]
     [SupportedApiProfile(

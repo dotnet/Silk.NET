@@ -49,5 +49,5 @@ public unsafe partial struct PipelineFragmentShadingRateEnumStateCreateInfoNV
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    public PipelineFragmentShadingRateEnumStateCreateInfoNvCombinerOps CombinerOps;
+    public PipelineFragmentShadingRateEnumStateCreateInfoNVCombinerOps CombinerOps;
 }

@@ -13,11 +13,11 @@ public enum InternalFormatPName : uint
     [NativeName("GL_SAMPLES")]
     Samples = 32937,
 
-    [NativeName("GL_GENERATE_MIPMAP")]
-    GenerateMipmap = 33169,
-
     [NativeName("GL_TEXTURE_COMPRESSED")]
     TextureCompressed = 34465,
+
+    [NativeName("GL_GENERATE_MIPMAP")]
+    GenerateMipmap = 33169,
 
     [NativeName("GL_NUM_SAMPLE_COUNTS")]
     NumSampleCounts = 37760,

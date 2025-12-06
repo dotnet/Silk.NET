@@ -13,12 +13,6 @@ public enum BufferStorageMask : uint
 {
     None = 0x0,
 
-    [NativeName("GL_MAP_READ_BIT_EXT")]
-    MapReadBitEXT = 0x1,
-
-    [NativeName("GL_MAP_WRITE_BIT_EXT")]
-    MapWriteBitEXT = 0x2,
-
     [NativeName("GL_MAP_READ_BIT")]
     MapReadBit = 0x1,
 
@@ -57,4 +51,10 @@ public enum BufferStorageMask : uint
 
     [NativeName("GL_CLIENT_STORAGE_BIT_EXT")]
     ClientStorageBitEXT = 0x200,
+
+    [NativeName("GL_MAP_READ_BIT_EXT")]
+    MapReadBitEXT = 0x1,
+
+    [NativeName("GL_MAP_WRITE_BIT_EXT")]
+    MapWriteBitEXT = 0x2,
 }

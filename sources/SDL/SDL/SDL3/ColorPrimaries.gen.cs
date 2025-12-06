@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_ColorPrimaries")]
-public enum ColorPrimaries
+public enum ColorPrimaries : uint
 {
     [NativeName("SDL_COLOR_PRIMARIES_UNKNOWN")]
     Unknown = 0,
@@ -21,7 +21,7 @@ public enum ColorPrimaries
     Unspecified = 2,
 
     [NativeName("SDL_COLOR_PRIMARIES_BT470M")]
-    Bt470M = 4,
+    BT470M = 4,
 
     [NativeName("SDL_COLOR_PRIMARIES_BT470BG")]
     Bt470Bg = 5,

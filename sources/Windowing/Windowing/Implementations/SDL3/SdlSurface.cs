@@ -17,7 +17,7 @@ internal class SdlSurface : Surface, IDisposable
     // `surface is ISurfaceWindow` instead of `surface.Window`)
     internal SdlSurfaceComponents Impl { get; }
     internal SdlSurface? Parent { get; set; }
-    public override ISurfaceOpenGl? OpenGl => SdlSurfaceComponents.IsOpenGlEnabled ? Impl : null;
+    public override ISurfaceOpenGL? OpenGL => SdlSurfaceComponents.IsOpenGLEnabled ? Impl : null;
     public override ISurfaceWindow? Window => SdlSurfaceComponents.IsWindowEnabled ? Impl : null;
     public override ISurfaceDisplay? Display => SdlSurfaceComponents.IsDisplayEnabled ? Impl : null;
     public override ISurfaceVulkan? Vulkan => SdlSurfaceComponents.IsVulkanEnabled ? Impl : null;
@@ -102,13 +102,13 @@ internal class SdlSurface : Surface, IDisposable
             return true;
         }
 
-        if (typeof(TPlatformInfo) == typeof(EglPlatformInfo))
+        if (typeof(TPlatformInfo) == typeof(EGLPlatformInfo))
         {
             info = (TPlatformInfo)
                 (object)
-                    new EglPlatformInfo(
-                        (nint)Sdl.EglGetCurrentDisplay(),
-                        (nint)Sdl.EglGetWindowSurface(Impl.Handle)
+                    new EGLPlatformInfo(
+                        (nint)Sdl.EGLGetCurrentDisplay(),
+                        (nint)Sdl.EGLGetWindowSurface(Impl.Handle)
                     );
             Sdl.ClearError();
             return true;

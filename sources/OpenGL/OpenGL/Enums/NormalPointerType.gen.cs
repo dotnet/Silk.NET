@@ -16,11 +16,11 @@ public enum NormalPointerType : uint
     [NativeName("GL_SHORT")]
     Short = 5122,
 
-    [NativeName("GL_FLOAT")]
-    Float = 5126,
-
     [NativeName("GL_INT")]
     Int = 5124,
+
+    [NativeName("GL_FLOAT")]
+    Float = 5126,
 
     [NativeName("GL_DOUBLE")]
     Double = 5130,

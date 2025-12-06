@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [NativeName("CopyImageSubDataTarget")]
 public enum CopyImageSubDataTarget : uint
 {
-    [NativeName("GL_TEXTURE_2D")]
-    Texture2D = 3553,
-
     [NativeName("GL_TEXTURE_1D")]
     Texture1D = 3552,
+
+    [NativeName("GL_TEXTURE_2D")]
+    Texture2D = 3553,
 
     [NativeName("GL_TEXTURE_3D")]
     Texture3D = 32879,

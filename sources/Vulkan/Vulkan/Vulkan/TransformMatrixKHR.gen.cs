@@ -21,5 +21,5 @@ public partial struct TransformMatrixKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public TransformMatrixKhrMatrix Matrix;
+    public TransformMatrixKHRMatrix Matrix;
 }

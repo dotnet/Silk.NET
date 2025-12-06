@@ -10,134 +10,35 @@ namespace Silk.NET.OpenGL;
 [NativeName("GetPName")]
 public enum GetPName : uint
 {
-    [NativeName("GL_CLIP_PLANE0")]
-    ClipPlane0 = 12288,
+    [NativeName("GL_POINT_SIZE")]
+    PointSize = 2833,
 
-    [NativeName("GL_CLIP_PLANE1")]
-    ClipPlane1 = 12289,
+    [NativeName("GL_POINT_SIZE_RANGE")]
+    PointSizeRange = 2834,
 
-    [NativeName("GL_CLIP_PLANE2")]
-    ClipPlane2 = 12290,
-
-    [NativeName("GL_CLIP_PLANE3")]
-    ClipPlane3 = 12291,
-
-    [NativeName("GL_CLIP_PLANE4")]
-    ClipPlane4 = 12292,
-
-    [NativeName("GL_CLIP_PLANE5")]
-    ClipPlane5 = 12293,
-
-    [NativeName("GL_FOG")]
-    Fog = 2912,
-
-    [NativeName("GL_LIGHTING")]
-    Lighting = 2896,
-
-    [NativeName("GL_TEXTURE_2D")]
-    Texture2D = 3553,
-
-    [NativeName("GL_CULL_FACE")]
-    CullFace = 2884,
-
-    [NativeName("GL_ALPHA_TEST")]
-    AlphaTest = 3008,
-
-    [NativeName("GL_BLEND")]
-    Blend = 3042,
-
-    [NativeName("GL_COLOR_LOGIC_OP")]
-    ColorLogicOp = 3058,
-
-    [NativeName("GL_DITHER")]
-    Dither = 3024,
-
-    [NativeName("GL_STENCIL_TEST")]
-    StencilTest = 2960,
-
-    [NativeName("GL_DEPTH_TEST")]
-    DepthTest = 2929,
-
-    [NativeName("GL_POINT_SMOOTH")]
-    PointSmooth = 2832,
+    [NativeName("GL_POINT_SIZE_GRANULARITY")]
+    PointSizeGranularity = 2835,
 
     [NativeName("GL_LINE_SMOOTH")]
     LineSmooth = 2848,
 
-    [NativeName("GL_SCISSOR_TEST")]
-    ScissorTest = 3089,
-
-    [NativeName("GL_COLOR_MATERIAL")]
-    ColorMaterial = 2903,
-
-    [NativeName("GL_NORMALIZE")]
-    Normalize = 2977,
-
-    [NativeName("GL_VERTEX_ARRAY")]
-    VertexArray = 32884,
-
-    [NativeName("GL_NORMAL_ARRAY")]
-    NormalArray = 32885,
-
-    [NativeName("GL_COLOR_ARRAY")]
-    ColorArray = 32886,
-
-    [NativeName("GL_TEXTURE_COORD_ARRAY")]
-    TextureCoordArray = 32888,
-
-    [NativeName("GL_FOG_DENSITY")]
-    FogDensity = 2914,
-
-    [NativeName("GL_FOG_START")]
-    FogStart = 2915,
-
-    [NativeName("GL_FOG_END")]
-    FogEnd = 2916,
-
-    [NativeName("GL_FOG_MODE")]
-    FogMode = 2917,
-
-    [NativeName("GL_FOG_COLOR")]
-    FogColor = 2918,
-
-    [NativeName("GL_CURRENT_COLOR")]
-    CurrentColor = 2816,
-
-    [NativeName("GL_CURRENT_NORMAL")]
-    CurrentNormal = 2818,
-
-    [NativeName("GL_CURRENT_TEXTURE_COORDS")]
-    CurrentTextureCoords = 2819,
-
-    [NativeName("GL_POINT_SIZE")]
-    PointSize = 2833,
-
-    [NativeName("GL_POINT_SIZE_MIN")]
-    PointSizeMin = 33062,
-
-    [NativeName("GL_POINT_SIZE_MAX")]
-    PointSizeMax = 33063,
-
-    [NativeName("GL_POINT_FADE_THRESHOLD_SIZE")]
-    PointFadeThresholdSize = 33064,
-
-    [NativeName("GL_POINT_DISTANCE_ATTENUATION")]
-    PointDistanceAttenuation = 33065,
-
-    [NativeName("GL_SMOOTH_POINT_SIZE_RANGE")]
-    SmoothPointSizeRange = 2834,
-
     [NativeName("GL_LINE_WIDTH")]
     LineWidth = 2849,
 
-    [NativeName("GL_SMOOTH_LINE_WIDTH_RANGE")]
-    SmoothLineWidthRange = 2850,
+    [NativeName("GL_LINE_WIDTH_RANGE")]
+    LineWidthRange = 2850,
 
-    [NativeName("GL_ALIASED_POINT_SIZE_RANGE")]
-    AliasedPointSizeRange = 33901,
+    [NativeName("GL_LINE_WIDTH_GRANULARITY")]
+    LineWidthGranularity = 2851,
 
-    [NativeName("GL_ALIASED_LINE_WIDTH_RANGE")]
-    AliasedLineWidthRange = 33902,
+    [NativeName("GL_POLYGON_MODE")]
+    PolygonMode = 2880,
+
+    [NativeName("GL_POLYGON_SMOOTH")]
+    PolygonSmooth = 2881,
+
+    [NativeName("GL_CULL_FACE")]
+    CullFace = 2884,
 
     [NativeName("GL_CULL_FACE_MODE")]
     CullFaceMode = 2885,
@@ -145,11 +46,11 @@ public enum GetPName : uint
     [NativeName("GL_FRONT_FACE")]
     FrontFace = 2886,
 
-    [NativeName("GL_SHADE_MODEL")]
-    ShadeModel = 2900,
-
     [NativeName("GL_DEPTH_RANGE")]
     DepthRange = 2928,
+
+    [NativeName("GL_DEPTH_TEST")]
+    DepthTest = 2929,
 
     [NativeName("GL_DEPTH_WRITEMASK")]
     DepthWritemask = 2930,
@@ -159,6 +60,9 @@ public enum GetPName : uint
 
     [NativeName("GL_DEPTH_FUNC")]
     DepthFunc = 2932,
+
+    [NativeName("GL_STENCIL_TEST")]
+    StencilTest = 2960,
 
     [NativeName("GL_STENCIL_CLEAR_VALUE")]
     StencilClearValue = 2961,
@@ -184,35 +88,11 @@ public enum GetPName : uint
     [NativeName("GL_STENCIL_WRITEMASK")]
     StencilWritemask = 2968,
 
-    [NativeName("GL_MATRIX_MODE")]
-    MatrixMode = 2976,
-
     [NativeName("GL_VIEWPORT")]
     Viewport = 2978,
 
-    [NativeName("GL_MODELVIEW_STACK_DEPTH")]
-    ModelviewStackDepth = 2979,
-
-    [NativeName("GL_PROJECTION_STACK_DEPTH")]
-    ProjectionStackDepth = 2980,
-
-    [NativeName("GL_TEXTURE_STACK_DEPTH")]
-    TextureStackDepth = 2981,
-
-    [NativeName("GL_MODELVIEW_MATRIX")]
-    ModelviewMatrix = 2982,
-
-    [NativeName("GL_PROJECTION_MATRIX")]
-    ProjectionMatrix = 2983,
-
-    [NativeName("GL_TEXTURE_MATRIX")]
-    TextureMatrix = 2984,
-
-    [NativeName("GL_ALPHA_TEST_FUNC")]
-    AlphaTestFunc = 3009,
-
-    [NativeName("GL_ALPHA_TEST_REF")]
-    AlphaTestRef = 3010,
+    [NativeName("GL_DITHER")]
+    Dither = 3024,
 
     [NativeName("GL_BLEND_DST")]
     BlendDst = 3040,
@@ -220,212 +100,11 @@ public enum GetPName : uint
     [NativeName("GL_BLEND_SRC")]
     BlendSrc = 3041,
 
+    [NativeName("GL_BLEND")]
+    Blend = 3042,
+
     [NativeName("GL_LOGIC_OP_MODE")]
     LogicOpMode = 3056,
-
-    [NativeName("GL_SCISSOR_BOX")]
-    ScissorBox = 3088,
-
-    [NativeName("GL_COLOR_CLEAR_VALUE")]
-    ColorClearValue = 3106,
-
-    [NativeName("GL_COLOR_WRITEMASK")]
-    ColorWritemask = 3107,
-
-    [NativeName("GL_MAX_LIGHTS")]
-    MaxLights = 3377,
-
-    [NativeName("GL_MAX_CLIP_PLANES")]
-    MaxClipPlanes = 3378,
-
-    [NativeName("GL_MAX_TEXTURE_SIZE")]
-    MaxTextureSize = 3379,
-
-    [NativeName("GL_MAX_MODELVIEW_STACK_DEPTH")]
-    MaxModelviewStackDepth = 3382,
-
-    [NativeName("GL_MAX_PROJECTION_STACK_DEPTH")]
-    MaxProjectionStackDepth = 3384,
-
-    [NativeName("GL_MAX_TEXTURE_STACK_DEPTH")]
-    MaxTextureStackDepth = 3385,
-
-    [NativeName("GL_MAX_VIEWPORT_DIMS")]
-    MaxViewportDims = 3386,
-
-    [NativeName("GL_SUBPIXEL_BITS")]
-    SubpixelBits = 3408,
-
-    [NativeName("GL_RED_BITS")]
-    RedBits = 3410,
-
-    [NativeName("GL_GREEN_BITS")]
-    GreenBits = 3411,
-
-    [NativeName("GL_BLUE_BITS")]
-    BlueBits = 3412,
-
-    [NativeName("GL_ALPHA_BITS")]
-    AlphaBits = 3413,
-
-    [NativeName("GL_DEPTH_BITS")]
-    DepthBits = 3414,
-
-    [NativeName("GL_STENCIL_BITS")]
-    StencilBits = 3415,
-
-    [NativeName("GL_POLYGON_OFFSET_UNITS")]
-    PolygonOffsetUnits = 10752,
-
-    [NativeName("GL_POLYGON_OFFSET_FILL")]
-    PolygonOffsetFill = 32823,
-
-    [NativeName("GL_POLYGON_OFFSET_FACTOR")]
-    PolygonOffsetFactor = 32824,
-
-    [NativeName("GL_TEXTURE_BINDING_2D")]
-    TextureBinding2D = 32873,
-
-    [NativeName("GL_VERTEX_ARRAY_SIZE")]
-    VertexArraySize = 32890,
-
-    [NativeName("GL_VERTEX_ARRAY_TYPE")]
-    VertexArrayType = 32891,
-
-    [NativeName("GL_VERTEX_ARRAY_STRIDE")]
-    VertexArrayStride = 32892,
-
-    [NativeName("GL_NORMAL_ARRAY_TYPE")]
-    NormalArrayType = 32894,
-
-    [NativeName("GL_NORMAL_ARRAY_STRIDE")]
-    NormalArrayStride = 32895,
-
-    [NativeName("GL_COLOR_ARRAY_SIZE")]
-    ColorArraySize = 32897,
-
-    [NativeName("GL_COLOR_ARRAY_TYPE")]
-    ColorArrayType = 32898,
-
-    [NativeName("GL_COLOR_ARRAY_STRIDE")]
-    ColorArrayStride = 32899,
-
-    [NativeName("GL_TEXTURE_COORD_ARRAY_SIZE")]
-    TextureCoordArraySize = 32904,
-
-    [NativeName("GL_TEXTURE_COORD_ARRAY_TYPE")]
-    TextureCoordArrayType = 32905,
-
-    [NativeName("GL_TEXTURE_COORD_ARRAY_STRIDE")]
-    TextureCoordArrayStride = 32906,
-
-    [NativeName("GL_SAMPLE_BUFFERS")]
-    SampleBuffers = 32936,
-
-    [NativeName("GL_SAMPLES")]
-    Samples = 32937,
-
-    [NativeName("GL_SAMPLE_COVERAGE_VALUE")]
-    SampleCoverageValue = 32938,
-
-    [NativeName("GL_SAMPLE_COVERAGE_INVERT")]
-    SampleCoverageInvert = 32939,
-
-    [NativeName("GL_NUM_COMPRESSED_TEXTURE_FORMATS")]
-    NumCompressedTextureFormats = 34466,
-
-    [NativeName("GL_COMPRESSED_TEXTURE_FORMATS")]
-    CompressedTextureFormats = 34467,
-
-    [NativeName("GL_PERSPECTIVE_CORRECTION_HINT")]
-    PerspectiveCorrectionHint = 3152,
-
-    [NativeName("GL_POINT_SMOOTH_HINT")]
-    PointSmoothHint = 3153,
-
-    [NativeName("GL_LINE_SMOOTH_HINT")]
-    LineSmoothHint = 3154,
-
-    [NativeName("GL_FOG_HINT")]
-    FogHint = 3156,
-
-    [NativeName("GL_LIGHT_MODEL_AMBIENT")]
-    LightModelAmbient = 2899,
-
-    [NativeName("GL_LIGHT_MODEL_TWO_SIDE")]
-    LightModelTwoSide = 2898,
-
-    [NativeName("GL_UNPACK_ALIGNMENT")]
-    UnpackAlignment = 3317,
-
-    [NativeName("GL_PACK_ALIGNMENT")]
-    PackAlignment = 3333,
-
-    [NativeName("GL_ACTIVE_TEXTURE")]
-    ActiveTexture = 34016,
-
-    [NativeName("GL_LIGHT0")]
-    Light0 = 16384,
-
-    [NativeName("GL_LIGHT1")]
-    Light1 = 16385,
-
-    [NativeName("GL_LIGHT2")]
-    Light2 = 16386,
-
-    [NativeName("GL_LIGHT3")]
-    Light3 = 16387,
-
-    [NativeName("GL_LIGHT4")]
-    Light4 = 16388,
-
-    [NativeName("GL_LIGHT5")]
-    Light5 = 16389,
-
-    [NativeName("GL_LIGHT6")]
-    Light6 = 16390,
-
-    [NativeName("GL_LIGHT7")]
-    Light7 = 16391,
-
-    [NativeName("GL_ARRAY_BUFFER_BINDING")]
-    ArrayBufferBinding = 34964,
-
-    [NativeName("GL_ELEMENT_ARRAY_BUFFER_BINDING")]
-    ElementArrayBufferBinding = 34965,
-
-    [NativeName("GL_ALPHA_SCALE")]
-    AlphaScale = 3356,
-
-    [NativeName("GL_BLEND_EQUATION_OES")]
-    BlendEquationOES = 32777,
-
-    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_OES")]
-    TextureBindingCubeMapOES = 34068,
-
-    [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES")]
-    MaxCubeMapTextureSizeOES = 34076,
-
-    [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStrOES = 36192,
-
-    [NativeName("GL_POINT_SIZE_RANGE")]
-    PointSizeRange = 2834,
-
-    [NativeName("GL_POINT_SIZE_GRANULARITY")]
-    PointSizeGranularity = 2835,
-
-    [NativeName("GL_LINE_WIDTH_RANGE")]
-    LineWidthRange = 2850,
-
-    [NativeName("GL_LINE_WIDTH_GRANULARITY")]
-    LineWidthGranularity = 2851,
-
-    [NativeName("GL_POLYGON_MODE")]
-    PolygonMode = 2880,
-
-    [NativeName("GL_POLYGON_SMOOTH")]
-    PolygonSmooth = 2881,
 
     [NativeName("GL_DRAW_BUFFER")]
     DrawBuffer = 3073,
@@ -433,11 +112,26 @@ public enum GetPName : uint
     [NativeName("GL_READ_BUFFER")]
     ReadBuffer = 3074,
 
+    [NativeName("GL_SCISSOR_BOX")]
+    ScissorBox = 3088,
+
+    [NativeName("GL_SCISSOR_TEST")]
+    ScissorTest = 3089,
+
+    [NativeName("GL_COLOR_CLEAR_VALUE")]
+    ColorClearValue = 3106,
+
+    [NativeName("GL_COLOR_WRITEMASK")]
+    ColorWritemask = 3107,
+
     [NativeName("GL_DOUBLEBUFFER")]
     Doublebuffer = 3122,
 
     [NativeName("GL_STEREO")]
     Stereo = 3123,
+
+    [NativeName("GL_LINE_SMOOTH_HINT")]
+    LineSmoothHint = 3154,
 
     [NativeName("GL_POLYGON_SMOOTH_HINT")]
     PolygonSmoothHint = 3155,
@@ -457,6 +151,9 @@ public enum GetPName : uint
     [NativeName("GL_UNPACK_SKIP_PIXELS")]
     UnpackSkipPixels = 3316,
 
+    [NativeName("GL_UNPACK_ALIGNMENT")]
+    UnpackAlignment = 3317,
+
     [NativeName("GL_PACK_SWAP_BYTES")]
     PackSwapBytes = 3328,
 
@@ -472,11 +169,35 @@ public enum GetPName : uint
     [NativeName("GL_PACK_SKIP_PIXELS")]
     PackSkipPixels = 3332,
 
+    [NativeName("GL_PACK_ALIGNMENT")]
+    PackAlignment = 3333,
+
+    [NativeName("GL_MAX_TEXTURE_SIZE")]
+    MaxTextureSize = 3379,
+
+    [NativeName("GL_MAX_VIEWPORT_DIMS")]
+    MaxViewportDims = 3386,
+
+    [NativeName("GL_SUBPIXEL_BITS")]
+    SubpixelBits = 3408,
+
     [NativeName("GL_TEXTURE_1D")]
     Texture1D = 3552,
 
+    [NativeName("GL_TEXTURE_2D")]
+    Texture2D = 3553,
+
+    [NativeName("GL_CURRENT_COLOR")]
+    CurrentColor = 2816,
+
     [NativeName("GL_CURRENT_INDEX")]
     CurrentIndex = 2817,
+
+    [NativeName("GL_CURRENT_NORMAL")]
+    CurrentNormal = 2818,
+
+    [NativeName("GL_CURRENT_TEXTURE_COORDS")]
+    CurrentTextureCoords = 2819,
 
     [NativeName("GL_CURRENT_RASTER_COLOR")]
     CurrentRasterColor = 2820,
@@ -495,6 +216,9 @@ public enum GetPName : uint
 
     [NativeName("GL_CURRENT_RASTER_DISTANCE")]
     CurrentRasterDistance = 2825,
+
+    [NativeName("GL_POINT_SMOOTH")]
+    PointSmooth = 2832,
 
     [NativeName("GL_LINE_STIPPLE")]
     LineStipple = 2852,
@@ -523,8 +247,20 @@ public enum GetPName : uint
     [NativeName("GL_EDGE_FLAG")]
     EdgeFlag = 2883,
 
+    [NativeName("GL_LIGHTING")]
+    Lighting = 2896,
+
     [NativeName("GL_LIGHT_MODEL_LOCAL_VIEWER")]
     LightModelLocalViewer = 2897,
+
+    [NativeName("GL_LIGHT_MODEL_TWO_SIDE")]
+    LightModelTwoSide = 2898,
+
+    [NativeName("GL_LIGHT_MODEL_AMBIENT")]
+    LightModelAmbient = 2899,
+
+    [NativeName("GL_SHADE_MODEL")]
+    ShadeModel = 2900,
 
     [NativeName("GL_COLOR_MATERIAL_FACE")]
     ColorMaterialFace = 2901,
@@ -532,14 +268,68 @@ public enum GetPName : uint
     [NativeName("GL_COLOR_MATERIAL_PARAMETER")]
     ColorMaterialParameter = 2902,
 
+    [NativeName("GL_COLOR_MATERIAL")]
+    ColorMaterial = 2903,
+
+    [NativeName("GL_FOG")]
+    Fog = 2912,
+
     [NativeName("GL_FOG_INDEX")]
     FogIndex = 2913,
+
+    [NativeName("GL_FOG_DENSITY")]
+    FogDensity = 2914,
+
+    [NativeName("GL_FOG_START")]
+    FogStart = 2915,
+
+    [NativeName("GL_FOG_END")]
+    FogEnd = 2916,
+
+    [NativeName("GL_FOG_MODE")]
+    FogMode = 2917,
+
+    [NativeName("GL_FOG_COLOR")]
+    FogColor = 2918,
 
     [NativeName("GL_ACCUM_CLEAR_VALUE")]
     AccumClearValue = 2944,
 
+    [NativeName("GL_MATRIX_MODE")]
+    MatrixMode = 2976,
+
+    [NativeName("GL_NORMALIZE")]
+    Normalize = 2977,
+
+    [NativeName("GL_MODELVIEW_STACK_DEPTH")]
+    ModelviewStackDepth = 2979,
+
+    [NativeName("GL_PROJECTION_STACK_DEPTH")]
+    ProjectionStackDepth = 2980,
+
+    [NativeName("GL_TEXTURE_STACK_DEPTH")]
+    TextureStackDepth = 2981,
+
+    [NativeName("GL_MODELVIEW_MATRIX")]
+    ModelviewMatrix = 2982,
+
+    [NativeName("GL_PROJECTION_MATRIX")]
+    ProjectionMatrix = 2983,
+
+    [NativeName("GL_TEXTURE_MATRIX")]
+    TextureMatrix = 2984,
+
     [NativeName("GL_ATTRIB_STACK_DEPTH")]
     AttribStackDepth = 2992,
+
+    [NativeName("GL_ALPHA_TEST")]
+    AlphaTest = 3008,
+
+    [NativeName("GL_ALPHA_TEST_FUNC")]
+    AlphaTestFunc = 3009,
+
+    [NativeName("GL_ALPHA_TEST_REF")]
+    AlphaTestRef = 3010,
 
     [NativeName("GL_LOGIC_OP")]
     LogicOp = 3057,
@@ -561,6 +351,15 @@ public enum GetPName : uint
 
     [NativeName("GL_RENDER_MODE")]
     RenderMode = 3136,
+
+    [NativeName("GL_PERSPECTIVE_CORRECTION_HINT")]
+    PerspectiveCorrectionHint = 3152,
+
+    [NativeName("GL_POINT_SMOOTH_HINT")]
+    PointSmoothHint = 3153,
+
+    [NativeName("GL_FOG_HINT")]
+    FogHint = 3156,
 
     [NativeName("GL_TEXTURE_GEN_S")]
     TextureGenS = 3168,
@@ -640,6 +439,9 @@ public enum GetPName : uint
     [NativeName("GL_BLUE_BIAS")]
     BlueBias = 3355,
 
+    [NativeName("GL_ALPHA_SCALE")]
+    AlphaScale = 3356,
+
     [NativeName("GL_ALPHA_BIAS")]
     AlphaBias = 3357,
 
@@ -652,17 +454,50 @@ public enum GetPName : uint
     [NativeName("GL_MAX_EVAL_ORDER")]
     MaxEvalOrder = 3376,
 
+    [NativeName("GL_MAX_LIGHTS")]
+    MaxLights = 3377,
+
+    [NativeName("GL_MAX_CLIP_PLANES")]
+    MaxClipPlanes = 3378,
+
     [NativeName("GL_MAX_PIXEL_MAP_TABLE")]
     MaxPixelMapTable = 3380,
 
     [NativeName("GL_MAX_ATTRIB_STACK_DEPTH")]
     MaxAttribStackDepth = 3381,
 
+    [NativeName("GL_MAX_MODELVIEW_STACK_DEPTH")]
+    MaxModelviewStackDepth = 3382,
+
     [NativeName("GL_MAX_NAME_STACK_DEPTH")]
     MaxNameStackDepth = 3383,
 
+    [NativeName("GL_MAX_PROJECTION_STACK_DEPTH")]
+    MaxProjectionStackDepth = 3384,
+
+    [NativeName("GL_MAX_TEXTURE_STACK_DEPTH")]
+    MaxTextureStackDepth = 3385,
+
     [NativeName("GL_INDEX_BITS")]
     IndexBits = 3409,
+
+    [NativeName("GL_RED_BITS")]
+    RedBits = 3410,
+
+    [NativeName("GL_GREEN_BITS")]
+    GreenBits = 3411,
+
+    [NativeName("GL_BLUE_BITS")]
+    BlueBits = 3412,
+
+    [NativeName("GL_ALPHA_BITS")]
+    AlphaBits = 3413,
+
+    [NativeName("GL_DEPTH_BITS")]
+    DepthBits = 3414,
+
+    [NativeName("GL_STENCIL_BITS")]
+    StencilBits = 3415,
 
     [NativeName("GL_ACCUM_RED_BITS")]
     AccumRedBits = 3416,
@@ -748,14 +583,71 @@ public enum GetPName : uint
     [NativeName("GL_MAP2_GRID_SEGMENTS")]
     Map2GridSegments = 3539,
 
+    [NativeName("GL_CLIP_PLANE0")]
+    ClipPlane0 = 12288,
+
+    [NativeName("GL_CLIP_PLANE1")]
+    ClipPlane1 = 12289,
+
+    [NativeName("GL_CLIP_PLANE2")]
+    ClipPlane2 = 12290,
+
+    [NativeName("GL_CLIP_PLANE3")]
+    ClipPlane3 = 12291,
+
+    [NativeName("GL_CLIP_PLANE4")]
+    ClipPlane4 = 12292,
+
+    [NativeName("GL_CLIP_PLANE5")]
+    ClipPlane5 = 12293,
+
+    [NativeName("GL_LIGHT0")]
+    Light0 = 16384,
+
+    [NativeName("GL_LIGHT1")]
+    Light1 = 16385,
+
+    [NativeName("GL_LIGHT2")]
+    Light2 = 16386,
+
+    [NativeName("GL_LIGHT3")]
+    Light3 = 16387,
+
+    [NativeName("GL_LIGHT4")]
+    Light4 = 16388,
+
+    [NativeName("GL_LIGHT5")]
+    Light5 = 16389,
+
+    [NativeName("GL_LIGHT6")]
+    Light6 = 16390,
+
+    [NativeName("GL_LIGHT7")]
+    Light7 = 16391,
+
+    [NativeName("GL_COLOR_LOGIC_OP")]
+    ColorLogicOp = 3058,
+
+    [NativeName("GL_POLYGON_OFFSET_UNITS")]
+    PolygonOffsetUnits = 10752,
+
     [NativeName("GL_POLYGON_OFFSET_POINT")]
     PolygonOffsetPoint = 10753,
 
     [NativeName("GL_POLYGON_OFFSET_LINE")]
     PolygonOffsetLine = 10754,
 
+    [NativeName("GL_POLYGON_OFFSET_FILL")]
+    PolygonOffsetFill = 32823,
+
+    [NativeName("GL_POLYGON_OFFSET_FACTOR")]
+    PolygonOffsetFactor = 32824,
+
     [NativeName("GL_TEXTURE_BINDING_1D")]
     TextureBinding1D = 32872,
+
+    [NativeName("GL_TEXTURE_BINDING_2D")]
+    TextureBinding2D = 32873,
 
     [NativeName("GL_CLIENT_ATTRIB_STACK_DEPTH")]
     ClientAttribStackDepth = 2993,
@@ -775,17 +667,62 @@ public enum GetPName : uint
     [NativeName("GL_SELECTION_BUFFER_SIZE")]
     SelectionBufferSize = 3572,
 
+    [NativeName("GL_VERTEX_ARRAY")]
+    VertexArray = 32884,
+
+    [NativeName("GL_NORMAL_ARRAY")]
+    NormalArray = 32885,
+
+    [NativeName("GL_COLOR_ARRAY")]
+    ColorArray = 32886,
+
     [NativeName("GL_INDEX_ARRAY")]
     IndexArray = 32887,
 
+    [NativeName("GL_TEXTURE_COORD_ARRAY")]
+    TextureCoordArray = 32888,
+
     [NativeName("GL_EDGE_FLAG_ARRAY")]
     EdgeFlagArray = 32889,
+
+    [NativeName("GL_VERTEX_ARRAY_SIZE")]
+    VertexArraySize = 32890,
+
+    [NativeName("GL_VERTEX_ARRAY_TYPE")]
+    VertexArrayType = 32891,
+
+    [NativeName("GL_VERTEX_ARRAY_STRIDE")]
+    VertexArrayStride = 32892,
+
+    [NativeName("GL_NORMAL_ARRAY_TYPE")]
+    NormalArrayType = 32894,
+
+    [NativeName("GL_NORMAL_ARRAY_STRIDE")]
+    NormalArrayStride = 32895,
+
+    [NativeName("GL_COLOR_ARRAY_SIZE")]
+    ColorArraySize = 32897,
+
+    [NativeName("GL_COLOR_ARRAY_TYPE")]
+    ColorArrayType = 32898,
+
+    [NativeName("GL_COLOR_ARRAY_STRIDE")]
+    ColorArrayStride = 32899,
 
     [NativeName("GL_INDEX_ARRAY_TYPE")]
     IndexArrayType = 32901,
 
     [NativeName("GL_INDEX_ARRAY_STRIDE")]
     IndexArrayStride = 32902,
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY_SIZE")]
+    TextureCoordArraySize = 32904,
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY_TYPE")]
+    TextureCoordArrayType = 32905,
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY_STRIDE")]
+    TextureCoordArrayStride = 32906,
 
     [NativeName("GL_EDGE_FLAG_ARRAY_STRIDE")]
     EdgeFlagArrayStride = 32908,
@@ -814,14 +751,41 @@ public enum GetPName : uint
     [NativeName("GL_MAX_ELEMENTS_INDICES")]
     MaxElementsIndices = 33001,
 
+    [NativeName("GL_SMOOTH_POINT_SIZE_RANGE")]
+    SmoothPointSizeRange = 2834,
+
     [NativeName("GL_SMOOTH_POINT_SIZE_GRANULARITY")]
     SmoothPointSizeGranularity = 2835,
+
+    [NativeName("GL_SMOOTH_LINE_WIDTH_RANGE")]
+    SmoothLineWidthRange = 2850,
 
     [NativeName("GL_SMOOTH_LINE_WIDTH_GRANULARITY")]
     SmoothLineWidthGranularity = 2851,
 
+    [NativeName("GL_ALIASED_LINE_WIDTH_RANGE")]
+    AliasedLineWidthRange = 33902,
+
     [NativeName("GL_LIGHT_MODEL_COLOR_CONTROL")]
     LightModelColorControl = 33272,
+
+    [NativeName("GL_ALIASED_POINT_SIZE_RANGE")]
+    AliasedPointSizeRange = 33901,
+
+    [NativeName("GL_ACTIVE_TEXTURE")]
+    ActiveTexture = 34016,
+
+    [NativeName("GL_SAMPLE_BUFFERS")]
+    SampleBuffers = 32936,
+
+    [NativeName("GL_SAMPLES")]
+    Samples = 32937,
+
+    [NativeName("GL_SAMPLE_COVERAGE_VALUE")]
+    SampleCoverageValue = 32938,
+
+    [NativeName("GL_SAMPLE_COVERAGE_INVERT")]
+    SampleCoverageInvert = 32939,
 
     [NativeName("GL_TEXTURE_BINDING_CUBE_MAP")]
     TextureBindingCubeMap = 34068,
@@ -831,6 +795,12 @@ public enum GetPName : uint
 
     [NativeName("GL_TEXTURE_COMPRESSION_HINT")]
     TextureCompressionHint = 34031,
+
+    [NativeName("GL_NUM_COMPRESSED_TEXTURE_FORMATS")]
+    NumCompressedTextureFormats = 34466,
+
+    [NativeName("GL_COMPRESSED_TEXTURE_FORMATS")]
+    CompressedTextureFormats = 34467,
 
     [NativeName("GL_BLEND_DST_RGB")]
     BlendDstRgb = 32968,
@@ -844,14 +814,32 @@ public enum GetPName : uint
     [NativeName("GL_BLEND_SRC_ALPHA")]
     BlendSrcAlpha = 32971,
 
+    [NativeName("GL_POINT_FADE_THRESHOLD_SIZE")]
+    PointFadeThresholdSize = 33064,
+
     [NativeName("GL_MAX_TEXTURE_LOD_BIAS")]
     MaxTextureLodBias = 34045,
+
+    [NativeName("GL_POINT_SIZE_MIN")]
+    PointSizeMin = 33062,
+
+    [NativeName("GL_POINT_SIZE_MAX")]
+    PointSizeMax = 33063,
+
+    [NativeName("GL_POINT_DISTANCE_ATTENUATION")]
+    PointDistanceAttenuation = 33065,
 
     [NativeName("GL_BLEND_COLOR")]
     BlendColor = 32773,
 
     [NativeName("GL_BLEND_EQUATION")]
     BlendEquation = 32777,
+
+    [NativeName("GL_ARRAY_BUFFER_BINDING")]
+    ArrayBufferBinding = 34964,
+
+    [NativeName("GL_ELEMENT_ARRAY_BUFFER_BINDING")]
+    ElementArrayBufferBinding = 34965,
 
     [NativeName("GL_BLEND_EQUATION_RGB")]
     BlendEquationRgb = 32777,
@@ -1827,4 +1815,16 @@ public enum GetPName : uint
 
     [NativeName("GL_SHADING_RATE_QCOM")]
     ShadingRateQCOM = 38564,
+
+    [NativeName("GL_BLEND_EQUATION_OES")]
+    BlendEquationOES = 32777,
+
+    [NativeName("GL_TEXTURE_BINDING_CUBE_MAP_OES")]
+    TextureBindingCubeMapOES = 34068,
+
+    [NativeName("GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES")]
+    MaxCubeMapTextureSizeOES = 34076,
+
+    [NativeName("GL_TEXTURE_GEN_STR_OES")]
+    TextureGenStrOES = 36192,
 }

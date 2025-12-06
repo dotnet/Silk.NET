@@ -17,7 +17,7 @@ public partial struct ClusterAccelerationStructureBuildTriangleClusterTemplateIn
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint ClusterId;
+    public uint ClusterID;
 
     [NativeName("clusterFlags")]
     [SupportedApiProfile(

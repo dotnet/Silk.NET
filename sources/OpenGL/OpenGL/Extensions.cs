@@ -3,14 +3,14 @@
 
 namespace Silk.NET.OpenGL;
 
-public partial class Gl
+public partial class GL
 {
     public static void ThrowError()
     {
         var err = GetError();
         if (err != ErrorCode.NoError)
         {
-            static void Throw(ErrorCode err) => throw new OpenGlException(err);
+            static void Throw(ErrorCode err) => throw new OpenGLException(err);
             Throw(err);
         }
     }
@@ -18,12 +18,12 @@ public partial class Gl
 
 public static class Extensions
 {
-    public static void ThrowError(this IGl gl)
+    public static void ThrowError(this IGL gl)
     {
         var err = gl.GetError();
         if (err != ErrorCode.NoError)
         {
-            static void Throw(ErrorCode err) => throw new OpenGlException(err);
+            static void Throw(ErrorCode err) => throw new OpenGLException(err);
             Throw(err);
         }
     }

@@ -3,7 +3,10 @@
 // Generated using the OpenAL Soft headers and corresponding dependencies.
 // Original source is licensed under the LGPL 2.0 license. Please note that while bindings are able to be MIT due to
 // being header-derived only, implementations of the headers may have a less permissive license.
+using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
@@ -20,19 +23,19 @@ public partial struct EfxEaxReverbProperties
     public float FlGain;
 
     [NativeName("flGainHF")]
-    public float FlGainHf;
+    public float FlGainHF;
 
     [NativeName("flGainLF")]
-    public float FlGainLf;
+    public float FlGainLF;
 
     [NativeName("flDecayTime")]
     public float FlDecayTime;
 
     [NativeName("flDecayHFRatio")]
-    public float FlDecayHfRatio;
+    public float FlDecayHFRatio;
 
     [NativeName("flDecayLFRatio")]
-    public float FlDecayLfRatio;
+    public float FlDecayLFRatio;
 
     [NativeName("flReflectionsGain")]
     public float FlReflectionsGain;
@@ -65,17 +68,17 @@ public partial struct EfxEaxReverbProperties
     public float FlModulationDepth;
 
     [NativeName("flAirAbsorptionGainHF")]
-    public float FlAirAbsorptionGainHf;
+    public float FlAirAbsorptionGainHF;
 
     [NativeName("flHFReference")]
-    public float FlHfReference;
+    public float FlHFReference;
 
     [NativeName("flLFReference")]
-    public float FlLfReference;
+    public float FlLFReference;
 
     [NativeName("flRoomRolloffFactor")]
     public float FlRoomRolloffFactor;
 
     [NativeName("iDecayHFLimit")]
-    public int IDecayHfLimit;
+    public int IDecayHFLimit;
 }

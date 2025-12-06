@@ -21,7 +21,7 @@ public partial struct DeviceFaultVendorInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultVendorInfoExtDescription Description;
+    public DeviceFaultVendorInfoEXTDescription Description;
 
     [NativeName("vendorFaultCode")]
     [SupportedApiProfile(

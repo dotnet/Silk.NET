@@ -10,15 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("InvalidateFramebufferAttachment")]
 public enum InvalidateFramebufferAttachment : uint
 {
-    [NativeName("GL_COLOR_ATTACHMENT0_OES")]
-    ColorAttachment0OES = 36064,
-
-    [NativeName("GL_DEPTH_ATTACHMENT_OES")]
-    DepthAttachmentOES = 36096,
-
-    [NativeName("GL_STENCIL_ATTACHMENT_OES")]
-    StencilAttachmentOES = 36128,
-
     [NativeName("GL_COLOR")]
     Color = 6144,
 
@@ -231,4 +222,13 @@ public enum InvalidateFramebufferAttachment : uint
 
     [NativeName("GL_COLOR_ATTACHMENT15_NV")]
     ColorAttachment15NV = 36079,
+
+    [NativeName("GL_COLOR_ATTACHMENT0_OES")]
+    ColorAttachment0OES = 36064,
+
+    [NativeName("GL_DEPTH_ATTACHMENT_OES")]
+    DepthAttachmentOES = 36096,
+
+    [NativeName("GL_STENCIL_ATTACHMENT_OES")]
+    StencilAttachmentOES = 36128,
 }

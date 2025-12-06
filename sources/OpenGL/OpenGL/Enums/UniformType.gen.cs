@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [NativeName("UniformType")]
 public enum UniformType : uint
 {
-    [NativeName("GL_FLOAT")]
-    Float = 5126,
+    [NativeName("GL_INT")]
+    Int = 5124,
 
     [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = 5125,
 
-    [NativeName("GL_INT")]
-    Int = 5124,
+    [NativeName("GL_FLOAT")]
+    Float = 5126,
 
     [NativeName("GL_DOUBLE")]
     Double = 5130,
@@ -80,22 +80,22 @@ public enum UniformType : uint
     Sampler2DShadow = 35682,
 
     [NativeName("GL_FLOAT_MAT2x3")]
-    FloatMat2X3 = 35685,
+    FloatMAT2X3 = 35685,
 
     [NativeName("GL_FLOAT_MAT2x4")]
-    FloatMat2X4 = 35686,
+    FloatMAT2X4 = 35686,
 
     [NativeName("GL_FLOAT_MAT3x2")]
-    FloatMat3X2 = 35687,
+    FloatMAT3X2 = 35687,
 
     [NativeName("GL_FLOAT_MAT3x4")]
-    FloatMat3X4 = 35688,
+    FloatMAT3X4 = 35688,
 
     [NativeName("GL_FLOAT_MAT4x2")]
-    FloatMat4X2 = 35689,
+    FloatMAT4X2 = 35689,
 
     [NativeName("GL_FLOAT_MAT4x3")]
-    FloatMat4X3 = 35690,
+    FloatMAT4X3 = 35690,
 
     [NativeName("GL_SAMPLER_1D_ARRAY")]
     Sampler1DArray = 36288,
@@ -227,20 +227,20 @@ public enum UniformType : uint
     DoubleMat4 = 36680,
 
     [NativeName("GL_DOUBLE_MAT2x3")]
-    DoubleMat2X3 = 36681,
+    DoubleMAT2X3 = 36681,
 
     [NativeName("GL_DOUBLE_MAT2x4")]
-    DoubleMat2X4 = 36682,
+    DoubleMAT2X4 = 36682,
 
     [NativeName("GL_DOUBLE_MAT3x2")]
-    DoubleMat3X2 = 36683,
+    DoubleMAT3X2 = 36683,
 
     [NativeName("GL_DOUBLE_MAT3x4")]
-    DoubleMat3X4 = 36684,
+    DoubleMAT3X4 = 36684,
 
     [NativeName("GL_DOUBLE_MAT4x2")]
-    DoubleMat4X2 = 36685,
+    DoubleMAT4X2 = 36685,
 
     [NativeName("GL_DOUBLE_MAT4x3")]
-    DoubleMat4X3 = 36686,
+    DoubleMAT4X3 = 36686,
 }

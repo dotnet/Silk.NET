@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [NativeName("LightModelParameter")]
 public enum LightModelParameter : uint
 {
-    [NativeName("GL_LIGHT_MODEL_AMBIENT")]
-    Ambient = 2899,
+    [NativeName("GL_LIGHT_MODEL_LOCAL_VIEWER")]
+    LocalViewer = 2897,
 
     [NativeName("GL_LIGHT_MODEL_TWO_SIDE")]
     TwoSide = 2898,
 
-    [NativeName("GL_LIGHT_MODEL_LOCAL_VIEWER")]
-    LocalViewer = 2897,
+    [NativeName("GL_LIGHT_MODEL_AMBIENT")]
+    Ambient = 2899,
 
     [NativeName("GL_LIGHT_MODEL_COLOR_CONTROL")]
     ColorControl = 33272,

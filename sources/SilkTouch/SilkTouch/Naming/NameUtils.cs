@@ -37,14 +37,16 @@ public static partial class NameUtils
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
     );
 
-    private static readonly IStringTransformer[] _prettifyTransformers = [new NameTransformer()];
-
     /// <summary>
     /// Prettifies the given string.
     /// </summary>
     /// <param name="str">The string to prettify.</param>
+    /// <param name="nameTransformer">
+    /// The transformer that mutates a humanised string before being converted back to pascal case.
+    /// </param>
+    /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
     /// <returns>The pretty string.</returns>
-    public static string Prettify(this string str)
+    public static string Prettify(this string str, ICulturedStringTransformer nameTransformer, bool allowAllCaps = false)
     {
         if (str.Length == 0)
         {
@@ -55,7 +57,7 @@ public static partial class NameUtils
             null,
             str.LenientUnderscore()
                 .Humanize()
-                .Transform(_prettifyTransformers)
+                .Transform(nameTransformer)
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
@@ -67,7 +69,7 @@ public static partial class NameUtils
 
         // Disallow all capitals
         var retSpan = ret.AsSpan();
-        if (retSpan.IndexOfAny(NotUppercase) == -1)
+        if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
         {
             Span<char> caps = stackalloc char[retSpan.Length - 1];
             retSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
@@ -241,7 +243,7 @@ public static partial class NameUtils
     [GeneratedRegex(@"([\p{Lu}]+)([\p{Lu}][\p{Ll}])")]
     private static partial Regex LowerUpperLower();
 
-    private partial class NameTransformer : ICulturedStringTransformer
+    internal partial class NameTransformer(int longAcronymThreshold) : ICulturedStringTransformer
     {
         public string Transform(string input) => Transform(input, null);
 
@@ -258,7 +260,18 @@ public static partial class NameUtils
                     continue;
                 }
 
-                word = MakeFirstLetterUpper(word, culture);
+                if (
+                    word.Length > longAcronymThreshold
+                    || !AllCapitals(word)
+                    || (
+                        AllCapitals(input)
+                        && input.Length > longAcronymThreshold
+                        && matches.Length > 1
+                    )
+                )
+                {
+                    word = MakeFirstLetterUpper(word, culture);
+                }
 
                 for (var j = i - 1; j >= 0; j--)
                 {

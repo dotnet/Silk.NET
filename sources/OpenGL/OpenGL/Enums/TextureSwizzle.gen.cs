@@ -16,9 +16,6 @@ public enum TextureSwizzle : uint
     [NativeName("GL_ONE")]
     One = 1,
 
-    [NativeName("GL_ALPHA")]
-    Alpha = 6406,
-
     [NativeName("GL_RED")]
     Red = 6403,
 
@@ -27,4 +24,7 @@ public enum TextureSwizzle : uint
 
     [NativeName("GL_BLUE")]
     Blue = 6405,
+
+    [NativeName("GL_ALPHA")]
+    Alpha = 6406,
 }

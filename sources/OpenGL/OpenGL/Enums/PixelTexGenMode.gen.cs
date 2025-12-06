@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("PixelTexGenModeSGIX")]
 public enum PixelTexGenMode : uint
 {
+    [NativeName("GL_NONE")]
+    None = 0,
+
     [NativeName("GL_ALPHA")]
     Alpha = 6406,
 
@@ -18,7 +21,4 @@ public enum PixelTexGenMode : uint
 
     [NativeName("GL_RGBA")]
     Rgba = 6408,
-
-    [NativeName("GL_NONE")]
-    None = 0,
 }

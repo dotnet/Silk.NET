@@ -19,11 +19,11 @@ public enum GetPointervPName : uint
     [NativeName("GL_COLOR_ARRAY_POINTER")]
     ColorArrayPointer = 32912,
 
-    [NativeName("GL_TEXTURE_COORD_ARRAY_POINTER")]
-    TextureCoordArrayPointer = 32914,
-
     [NativeName("GL_INDEX_ARRAY_POINTER")]
     IndexArrayPointer = 32913,
+
+    [NativeName("GL_TEXTURE_COORD_ARRAY_POINTER")]
+    TextureCoordArrayPointer = 32914,
 
     [NativeName("GL_EDGE_FLAG_ARRAY_POINTER")]
     EdgeFlagArrayPointer = 32915,

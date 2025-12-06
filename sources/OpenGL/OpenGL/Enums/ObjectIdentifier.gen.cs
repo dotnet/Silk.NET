@@ -10,11 +10,11 @@ namespace Silk.NET.OpenGL;
 [NativeName("ObjectIdentifier")]
 public enum ObjectIdentifier : uint
 {
-    [NativeName("GL_VERTEX_ARRAY")]
-    VertexArray = 32884,
-
     [NativeName("GL_TEXTURE")]
     Texture = 5890,
+
+    [NativeName("GL_VERTEX_ARRAY")]
+    VertexArray = 32884,
 
     [NativeName("GL_FRAMEBUFFER")]
     Framebuffer = 36160,

@@ -5,7 +5,7 @@ _GUID
 --file
 openal-soft-al.h
 --methodClassName
-Al
+AL
 --namespace
 Silk.NET.OpenAL
 --output

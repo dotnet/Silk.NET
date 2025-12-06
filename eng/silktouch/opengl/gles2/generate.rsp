@@ -6,7 +6,7 @@ WIN32_LEAN_AND_MEAN
 --file
 opengl-gl.h
 --methodClassName
-Gl
+GL
 --namespace
 Silk.NET.OpenGL
 --output

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
+using System;
 using System.Runtime.InteropServices;
 using NUnit.Framework;
 
@@ -31,6 +32,13 @@ public static unsafe partial class SDL_GamepadSensorEventTests
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(GamepadSensorEvent), Is.EqualTo(48));
+        if (Environment.Is64BitProcess)
+        {
+            Assert.That(sizeof(GamepadSensorEvent), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(GamepadSensorEvent), Is.EqualTo(36));
+        }
     }
 }

@@ -18,7 +18,7 @@ public partial struct PresentTimeGOOGLE
         ["VK_GOOGLE_display_timing"],
         ImpliesSets = ["VK_KHR_swapchain"]
     )]
-    public uint PresentId;
+    public uint PresentID;
 
     [NativeName("desiredPresentTime")]
     [SupportedApiProfile(

@@ -22,14 +22,14 @@ public enum ListNameType : uint
     [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = 5123,
 
-    [NativeName("GL_FLOAT")]
-    Float = 5126,
+    [NativeName("GL_INT")]
+    Int = 5124,
 
     [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = 5125,
 
-    [NativeName("GL_INT")]
-    Int = 5124,
+    [NativeName("GL_FLOAT")]
+    Float = 5126,
 
     [NativeName("GL_2_BYTES")]
     X2Bytes = 5127,

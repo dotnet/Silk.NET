@@ -9,12 +9,12 @@ using System.Numerics;
 /// interface with which the platform's multimedia capabilities can be configured and the execution of the application
 /// within the surface controlled.
 /// </summary>
-public abstract class Surface : IGlContextSource, INativeWindow
+public abstract class Surface : IGLContextSource, INativeWindow
 {
     /// <summary>
     /// Gets the OpenGL configuration of the surface, if supported.
     /// </summary>
-    public virtual ISurfaceOpenGl? OpenGl => null;
+    public virtual ISurfaceOpenGL? OpenGL => null;
 
     /// <summary>
     /// Gets the configuration for the window in which the surface is being drawn.
@@ -41,7 +41,7 @@ public abstract class Surface : IGlContextSource, INativeWindow
     /// </summary>
     public virtual ISurfaceScale? Scale => null;
 
-    IGlContext? IGlContextSource.GlContext => OpenGl;
+    IGLContext? IGLContextSource.GLContext => OpenGL;
 
     /// <summary>
     /// Gets the size <b>in pixels</b> of the area drawable within the surface.
@@ -254,16 +254,16 @@ public abstract class Surface : IGlContextSource, INativeWindow
     {
         if (
             !TimeCheck(ref _lastRender, _renderFrequency, out var diff)
-            && OpenGl is not { IsEnabled: true, VSync: true }
+            && OpenGL is not { IsEnabled: true, VSync: true }
         )
         {
             return;
         }
 
         Render?.Invoke(new SurfaceTimingEvent(this, diff / (double)Stopwatch.Frequency));
-        if (OpenGl is { IsEnabled: true, IsCurrent: true, ShouldSwapAutomatically: true })
+        if (OpenGL is { IsEnabled: true, IsCurrent: true, ShouldSwapAutomatically: true })
         {
-            OpenGl.SwapBuffers();
+            OpenGL.SwapBuffers();
         }
     }
 

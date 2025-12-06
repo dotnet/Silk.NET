@@ -8,40 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuTextureTransferInfo"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GPUTextureTransferInfo"/> struct.</summary>
 public static unsafe partial class SDL_GPUTextureTransferInfoTests
 {
-    /// <summary>Validates that the <see cref = "GpuTextureTransferInfo"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GPUTextureTransferInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GpuTextureTransferInfo>(),
-            Is.EqualTo(sizeof(GpuTextureTransferInfo))
+            Marshal.SizeOf<GPUTextureTransferInfo>(),
+            Is.EqualTo(sizeof(GPUTextureTransferInfo))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GpuTextureTransferInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GPUTextureTransferInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuTextureTransferInfo).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GPUTextureTransferInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuTextureTransferInfo"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GPUTextureTransferInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GpuTextureTransferInfo), Is.EqualTo(24));
+            Assert.That(sizeof(GPUTextureTransferInfo), Is.EqualTo(24));
         }
         else
         {
-            Assert.That(sizeof(GpuTextureTransferInfo), Is.EqualTo(16));
+            Assert.That(sizeof(GPUTextureTransferInfo), Is.EqualTo(16));
         }
     }
 }

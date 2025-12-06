@@ -10,12 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("PixelStoreParameter")]
 public enum PixelStoreParameter : uint
 {
-    [NativeName("GL_UNPACK_ALIGNMENT")]
-    UnpackAlignment = 3317,
-
-    [NativeName("GL_PACK_ALIGNMENT")]
-    PackAlignment = 3333,
-
     [NativeName("GL_UNPACK_SWAP_BYTES")]
     UnpackSwapBytes = 3312,
 
@@ -31,6 +25,9 @@ public enum PixelStoreParameter : uint
     [NativeName("GL_UNPACK_SKIP_PIXELS")]
     UnpackSkipPixels = 3316,
 
+    [NativeName("GL_UNPACK_ALIGNMENT")]
+    UnpackAlignment = 3317,
+
     [NativeName("GL_PACK_SWAP_BYTES")]
     PackSwapBytes = 3328,
 
@@ -45,6 +42,9 @@ public enum PixelStoreParameter : uint
 
     [NativeName("GL_PACK_SKIP_PIXELS")]
     PackSkipPixels = 3332,
+
+    [NativeName("GL_PACK_ALIGNMENT")]
+    PackAlignment = 3333,
 
     [NativeName("GL_PACK_SKIP_IMAGES")]
     PackSkipImages = 32875,

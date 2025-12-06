@@ -22,19 +22,19 @@ public unsafe partial struct HdrMetadataEXT
 
     [NativeName("displayPrimaryRed")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XyColorEXT DisplayPrimaryRed;
+    public XYColorEXT DisplayPrimaryRed;
 
     [NativeName("displayPrimaryGreen")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XyColorEXT DisplayPrimaryGreen;
+    public XYColorEXT DisplayPrimaryGreen;
 
     [NativeName("displayPrimaryBlue")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XyColorEXT DisplayPrimaryBlue;
+    public XYColorEXT DisplayPrimaryBlue;
 
     [NativeName("whitePoint")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XyColorEXT WhitePoint;
+    public XYColorEXT WhitePoint;
 
     [NativeName("maxLuminance")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]

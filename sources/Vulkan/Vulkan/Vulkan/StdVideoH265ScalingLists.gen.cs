@@ -30,9 +30,9 @@ public partial struct StdVideoH265ScalingLists
 
     [NativeName("ScalingListDCCoef16x16")]
     [SupportedApiProfile("vulkan")]
-    public StdVideoH265ScalingListsScalingListDcCoef16X16 ScalingListDcCoef16X16;
+    public StdVideoH265ScalingListsScalingListDCCoef16X16 ScalingListDCCoef16X16;
 
     [NativeName("ScalingListDCCoef32x32")]
     [SupportedApiProfile("vulkan")]
-    public StdVideoH265ScalingListsScalingListDcCoef32X32 ScalingListDcCoef32X32;
+    public StdVideoH265ScalingListsScalingListDCCoef32X32 ScalingListDCCoef32X32;
 }

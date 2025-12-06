@@ -34,7 +34,7 @@ public unsafe partial struct VideoEncodeH264SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint WriteStdSps;
+    public uint WriteStdSPS;
 
     [NativeName("writeStdPPS")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public unsafe partial struct VideoEncodeH264SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint WriteStdPps;
+    public uint WriteStdPPS;
 
     [NativeName("stdSPSId")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public unsafe partial struct VideoEncodeH264SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdSpsId;
+    public uint StdSPSId;
 
     [NativeName("stdPPSId")]
     [SupportedApiProfile(
@@ -58,5 +58,5 @@ public unsafe partial struct VideoEncodeH264SessionParametersGetInfoKHR
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdPpsId;
+    public uint StdPPSId;
 }

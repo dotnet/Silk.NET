@@ -38,5 +38,5 @@ public partial struct ShaderStatisticsInfoAMD
 
     [NativeName("computeWorkGroupSize")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    public ShaderStatisticsInfoAmdComputeWorkGroupSize ComputeWorkGroupSize;
+    public ShaderStatisticsInfoAMDComputeWorkGroupSize ComputeWorkGroupSize;
 }

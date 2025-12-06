@@ -18,10 +18,10 @@ public unsafe partial struct DropEvent
     public uint Reserved;
 
     [NativeName("timestamp")]
-    public ulong Timestamp;
+    public nuint Timestamp;
 
     [NativeName("windowID")]
-    public uint WindowId;
+    public uint WindowID;
 
     [NativeName("x")]
     public float X;

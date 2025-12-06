@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_InitStatus")]
-public enum InitStatus
+public enum InitStatus : uint
 {
     [NativeName("SDL_INIT_STATUS_UNINITIALIZED")]
     Uninitialized = 0,

@@ -18,10 +18,10 @@ public unsafe partial struct TextEditingCandidatesEvent
     public uint Reserved;
 
     [NativeName("timestamp")]
-    public ulong Timestamp;
+    public nuint Timestamp;
 
     [NativeName("windowID")]
-    public uint WindowId;
+    public uint WindowID;
 
     [NativeName("candidates")]
     public sbyte** Candidates;

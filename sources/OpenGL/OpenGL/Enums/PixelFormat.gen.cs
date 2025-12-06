@@ -13,29 +13,8 @@ public enum PixelFormat : uint
     [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = 5123,
 
-    [NativeName("GL_ALPHA")]
-    Alpha = 6406,
-
-    [NativeName("GL_RGB")]
-    Rgb = 6407,
-
-    [NativeName("GL_RGBA")]
-    Rgba = 6408,
-
-    [NativeName("GL_LUMINANCE")]
-    Luminance = 6409,
-
-    [NativeName("GL_LUMINANCE_ALPHA")]
-    LuminanceAlpha = 6410,
-
     [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = 5125,
-
-    [NativeName("GL_BGRA_EXT")]
-    BgraEXT = 32993,
-
-    [NativeName("GL_BGRA_IMG")]
-    BgraIMG = 32993,
 
     [NativeName("GL_STENCIL_INDEX")]
     StencilIndex = 6401,
@@ -52,8 +31,23 @@ public enum PixelFormat : uint
     [NativeName("GL_BLUE")]
     Blue = 6405,
 
+    [NativeName("GL_ALPHA")]
+    Alpha = 6406,
+
+    [NativeName("GL_RGB")]
+    Rgb = 6407,
+
+    [NativeName("GL_RGBA")]
+    Rgba = 6408,
+
     [NativeName("GL_COLOR_INDEX")]
     ColorIndex = 6400,
+
+    [NativeName("GL_LUMINANCE")]
+    Luminance = 6409,
+
+    [NativeName("GL_LUMINANCE_ALPHA")]
+    LuminanceAlpha = 6410,
 
     [NativeName("GL_BGR")]
     Bgr = 32992,
@@ -97,6 +91,9 @@ public enum PixelFormat : uint
     [NativeName("GL_BGR_EXT")]
     BgrEXT = 32992,
 
+    [NativeName("GL_BGRA_EXT")]
+    BgraEXT = 32993,
+
     [NativeName("GL_CMYK_EXT")]
     CmykEXT = 32780,
 
@@ -111,4 +108,7 @@ public enum PixelFormat : uint
 
     [NativeName("GL_RED_EXT")]
     RedEXT = 6403,
+
+    [NativeName("GL_BGRA_IMG")]
+    BgraIMG = 32993,
 }

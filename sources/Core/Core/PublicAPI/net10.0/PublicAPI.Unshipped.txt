@@ -115,16 +115,16 @@ Silk.NET.Core.IBoolScheme
 Silk.NET.Core.IBoolScheme.False<T>() -> T
 Silk.NET.Core.IBoolScheme.IsTrue<T>(T value) -> bool
 Silk.NET.Core.IBoolScheme.True<T>() -> T
-Silk.NET.Core.IGlContext
-Silk.NET.Core.IGlContext.IsCurrent.get -> bool
-Silk.NET.Core.IGlContext.IsCurrent.set -> void
-Silk.NET.Core.IGlContext.SwapBuffers() -> void
-Silk.NET.Core.IGlContext.SwapInterval.get -> int
-Silk.NET.Core.IGlContext.SwapInterval.set -> void
-Silk.NET.Core.IGlContext.VSync.get -> bool
-Silk.NET.Core.IGlContext.VSync.set -> void
-Silk.NET.Core.IGlContextSource
-Silk.NET.Core.IGlContextSource.GlContext.get -> Silk.NET.Core.IGlContext?
+Silk.NET.Core.IGLContext
+Silk.NET.Core.IGLContext.IsCurrent.get -> bool
+Silk.NET.Core.IGLContext.IsCurrent.set -> void
+Silk.NET.Core.IGLContext.SwapBuffers() -> void
+Silk.NET.Core.IGLContext.SwapInterval.get -> int
+Silk.NET.Core.IGLContext.SwapInterval.set -> void
+Silk.NET.Core.IGLContext.VSync.get -> bool
+Silk.NET.Core.IGLContext.VSync.set -> void
+Silk.NET.Core.IGLContextSource
+Silk.NET.Core.IGLContextSource.GLContext.get -> Silk.NET.Core.IGLContext?
 Silk.NET.Core.INativeWindow
 Silk.NET.Core.INativeWindow.TryGetPlatformInfo<TPlatformInfo>(out TPlatformInfo? info) -> bool
 Silk.NET.Core.Loader.DefaultNativeContext

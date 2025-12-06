@@ -10,6 +10,15 @@ namespace Silk.NET.OpenGL;
 [NativeName("TextureParameterName")]
 public enum TextureParameterName : uint
 {
+    [NativeName("GL_TEXTURE_WIDTH")]
+    TextureWidth = 4096,
+
+    [NativeName("GL_TEXTURE_HEIGHT")]
+    TextureHeight = 4097,
+
+    [NativeName("GL_TEXTURE_BORDER_COLOR")]
+    TextureBorderColor = 4100,
+
     [NativeName("GL_TEXTURE_MAG_FILTER")]
     TextureMagFilter = 10240,
 
@@ -21,18 +30,6 @@ public enum TextureParameterName : uint
 
     [NativeName("GL_TEXTURE_WRAP_T")]
     TextureWrapT = 10243,
-
-    [NativeName("GL_GENERATE_MIPMAP")]
-    GenerateMipmap = 33169,
-
-    [NativeName("GL_TEXTURE_WIDTH")]
-    TextureWidth = 4096,
-
-    [NativeName("GL_TEXTURE_HEIGHT")]
-    TextureHeight = 4097,
-
-    [NativeName("GL_TEXTURE_BORDER_COLOR")]
-    TextureBorderColor = 4100,
 
     [NativeName("GL_TEXTURE_COMPONENTS")]
     TextureComponents = 4099,
@@ -90,6 +87,9 @@ public enum TextureParameterName : uint
 
     [NativeName("GL_TEXTURE_COMPARE_FUNC")]
     TextureCompareFunc = 34893,
+
+    [NativeName("GL_GENERATE_MIPMAP")]
+    GenerateMipmap = 33169,
 
     [NativeName("GL_TEXTURE_SWIZZLE_R")]
     TextureSwizzleR = 36418,

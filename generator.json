@@ -174,6 +174,7 @@
         ]
       },
       "PrettifyNames": {
+        "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["gl"],
         "PrefixOverrides": {
           "SyncObjectMask": "GL_SYNC",
@@ -228,7 +229,7 @@
       },
       "ChangeNativeClass": {
         "NewClasses": {
-          "(alc|ALC_).*": "AlContext",
+          "(alc|ALC_).*": "ALContext",
           "EFX_REVERB_PRESET_.*": "EfxReverbPreset"
         }
       },
@@ -273,9 +274,10 @@
         ]
       },
       "PrettifyNames": {
+        "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["alc", "al"],
         "NameOverrides": {
-          "AlContext": "AlContext",
+          "ALContext": "ALContext",
           "EFXEAXREVERBPROPERTIES": "EfxEaxReverbProperties",
           "EFXEAXREVERBPROPERTIES_flReflectionsPan": "EfxEaxReverbPropertiesFlReflectionsPan",
           "EFXEAXREVERBPROPERTIES_flLateReverbPan": "EfxEaxReverbPropertiesFlLateReverbPan",
@@ -291,10 +293,10 @@
           "ALDEBUGPROCEXTDelegate": "DebugProcDelegateEXT",
           "LPALFOLDBACKCALLBACK": "FoldbackCallback",
           "LPALFOLDBACKCALLBACKDelegate": "FoldbackCallbackDelegate",
-          "EAXSetDirect": "EaxSetDirect",
-          "EAXGetDirect": "EaxGetDirect",
-          "EAXGetBufferModeDirect": "EaxGetBufferModeDirect",
-          "EAXSetBufferModeDirect": "EaxSetBufferModeDirect"
+          "EAXSetDirect": "EAXSetDirect",
+          "EAXGetDirect": "EAXGetDirect",
+          "EAXGetBufferModeDirect": "EAXGetBufferModeDirect",
+          "EAXSetBufferModeDirect": "EAXSetBufferModeDirect"
         }
       },
       "TransformEnums": {
@@ -393,6 +395,7 @@
         "HandleSuffixOrder": 1
       },
       "PrettifyNames": {
+        "LongAcronymThreshold": 4,
         "GlobalPrefixHints": ["PFN_vk","vk"],
         "PrefixOverrides": {
           "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2",

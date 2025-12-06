@@ -43,9 +43,6 @@ public enum BlendingFactor : uint
     [NativeName("GL_SRC_ALPHA_SATURATE")]
     SrcAlphaSaturate = 776,
 
-    [NativeName("GL_SRC1_ALPHA")]
-    Src1Alpha = 34185,
-
     [NativeName("GL_CONSTANT_COLOR")]
     ConstantColor = 32769,
 
@@ -57,6 +54,9 @@ public enum BlendingFactor : uint
 
     [NativeName("GL_ONE_MINUS_CONSTANT_ALPHA")]
     OneMinusConstantAlpha = 32772,
+
+    [NativeName("GL_SRC1_ALPHA")]
+    Src1Alpha = 34185,
 
     [NativeName("GL_SRC1_COLOR")]
     Src1Color = 35065,

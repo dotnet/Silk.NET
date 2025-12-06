@@ -31,5 +31,5 @@ public partial struct GeometryDataNV
             "VK_VERSION_1_1",
         ]
     )]
-    public GeometryAabbNV Aabbs;
+    public GeometryAABBNV Aabbs;
 }

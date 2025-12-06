@@ -10,32 +10,11 @@ namespace Silk.NET.OpenGL;
 [NativeName("TextureTarget")]
 public enum TextureTarget : uint
 {
-    [NativeName("GL_TEXTURE_2D")]
-    Texture2D = 3553,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapOES = 34067,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES")]
-    TextureCubeMapPositiveXOES = 34069,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES")]
-    TextureCubeMapNegativeXOES = 34070,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES")]
-    TextureCubeMapPositiveYOES = 34071,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES")]
-    TextureCubeMapNegativeYOES = 34072,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES")]
-    TextureCubeMapPositiveZOES = 34073,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES")]
-    TextureCubeMapNegativeZOES = 34074,
-
     [NativeName("GL_TEXTURE_1D")]
     Texture1D = 3552,
+
+    [NativeName("GL_TEXTURE_2D")]
+    Texture2D = 3553,
 
     [NativeName("GL_PROXY_TEXTURE_1D")]
     ProxyTexture1D = 32867,
@@ -216,4 +195,25 @@ public enum TextureTarget : uint
 
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_EXT")]
     TextureCubeMapArrayEXT = 36873,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
+    TextureCubeMapOES = 34067,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_X_OES")]
+    TextureCubeMapPositiveXOES = 34069,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_X_OES")]
+    TextureCubeMapNegativeXOES = 34070,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Y_OES")]
+    TextureCubeMapPositiveYOES = 34071,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Y_OES")]
+    TextureCubeMapNegativeYOES = 34072,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_POSITIVE_Z_OES")]
+    TextureCubeMapPositiveZOES = 34073,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_NEGATIVE_Z_OES")]
+    TextureCubeMapNegativeZOES = 34074,
 }

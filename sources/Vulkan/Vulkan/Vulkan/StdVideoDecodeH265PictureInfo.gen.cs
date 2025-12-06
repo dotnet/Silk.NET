@@ -37,7 +37,7 @@ public partial struct StdVideoDecodeH265PictureInfo
 
     [NativeName("NumBitsForSTRefPicSetInSlice")]
     [SupportedApiProfile("vulkan")]
-    public ushort NumBitsForStRefPicSetInSlice;
+    public ushort NumBitsForSTRefPicSetInSlice;
 
     [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]

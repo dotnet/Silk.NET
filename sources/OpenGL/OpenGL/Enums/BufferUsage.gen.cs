@@ -10,12 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("BufferUsageARB")]
 public enum BufferUsage : uint
 {
-    [NativeName("GL_STATIC_DRAW")]
-    StaticDraw = 35044,
-
-    [NativeName("GL_DYNAMIC_DRAW")]
-    DynamicDraw = 35048,
-
     [NativeName("GL_STREAM_DRAW")]
     StreamDraw = 35040,
 
@@ -25,11 +19,17 @@ public enum BufferUsage : uint
     [NativeName("GL_STREAM_COPY")]
     StreamCopy = 35042,
 
+    [NativeName("GL_STATIC_DRAW")]
+    StaticDraw = 35044,
+
     [NativeName("GL_STATIC_READ")]
     StaticRead = 35045,
 
     [NativeName("GL_STATIC_COPY")]
     StaticCopy = 35046,
+
+    [NativeName("GL_DYNAMIC_DRAW")]
+    DynamicDraw = 35048,
 
     [NativeName("GL_DYNAMIC_READ")]
     DynamicRead = 35049,

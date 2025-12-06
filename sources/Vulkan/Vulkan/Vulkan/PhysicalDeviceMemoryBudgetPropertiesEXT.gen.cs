@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
             "VK_EXT_memory_budget+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceMemoryBudgetPropertiesExtHeapBudget HeapBudget;
+    public PhysicalDeviceMemoryBudgetPropertiesEXTHeapBudget HeapBudget;
 
     [NativeName("heapUsage")]
     [SupportedApiProfile(
@@ -54,5 +54,5 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
             "VK_EXT_memory_budget+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceMemoryBudgetPropertiesExtHeapUsage HeapUsage;
+    public PhysicalDeviceMemoryBudgetPropertiesEXTHeapUsage HeapUsage;
 }

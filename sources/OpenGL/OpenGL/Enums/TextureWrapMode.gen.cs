@@ -16,11 +16,11 @@ public enum TextureWrapMode : uint
     [NativeName("GL_REPEAT")]
     Repeat = 10497,
 
-    [NativeName("GL_CLAMP_TO_EDGE")]
-    ClampToEdge = 33071,
-
     [NativeName("GL_CLAMP")]
     Clamp = 10496,
+
+    [NativeName("GL_CLAMP_TO_EDGE")]
+    ClampToEdge = 33071,
 
     [NativeName("GL_CLAMP_TO_BORDER")]
     ClampToBorder = 33069,

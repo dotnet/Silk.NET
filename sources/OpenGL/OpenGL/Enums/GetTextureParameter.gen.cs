@@ -10,6 +10,15 @@ namespace Silk.NET.OpenGL;
 [NativeName("GetTextureParameter")]
 public enum GetTextureParameter : uint
 {
+    [NativeName("GL_TEXTURE_WIDTH")]
+    TextureWidth = 4096,
+
+    [NativeName("GL_TEXTURE_HEIGHT")]
+    TextureHeight = 4097,
+
+    [NativeName("GL_TEXTURE_BORDER_COLOR")]
+    TextureBorderColor = 4100,
+
     [NativeName("GL_TEXTURE_MAG_FILTER")]
     TextureMagFilter = 10240,
 
@@ -21,21 +30,6 @@ public enum GetTextureParameter : uint
 
     [NativeName("GL_TEXTURE_WRAP_T")]
     TextureWrapT = 10243,
-
-    [NativeName("GL_NORMAL_MAP_OES")]
-    NormalMapOES = 34065,
-
-    [NativeName("GL_REFLECTION_MAP_OES")]
-    ReflectionMapOES = 34066,
-
-    [NativeName("GL_TEXTURE_WIDTH")]
-    TextureWidth = 4096,
-
-    [NativeName("GL_TEXTURE_HEIGHT")]
-    TextureHeight = 4097,
-
-    [NativeName("GL_TEXTURE_BORDER_COLOR")]
-    TextureBorderColor = 4100,
 
     [NativeName("GL_TEXTURE_COMPONENTS")]
     TextureComponents = 4099,
@@ -207,4 +201,10 @@ public enum GetTextureParameter : uint
 
     [NativeName("GL_TEXTURE_BORDER_COLOR_NV")]
     TextureBorderColorNV = 4100,
+
+    [NativeName("GL_NORMAL_MAP_OES")]
+    NormalMapOES = 34065,
+
+    [NativeName("GL_REFLECTION_MAP_OES")]
+    ReflectionMapOES = 34066,
 }

@@ -10,12 +10,12 @@ namespace Silk.NET.OpenGL;
 [NativeName("CombinerComponentUsageNV")]
 public enum CombinerComponentUsage : uint
 {
+    [NativeName("GL_BLUE")]
+    Blue = 6405,
+
     [NativeName("GL_ALPHA")]
     Alpha = 6406,
 
     [NativeName("GL_RGB")]
     Rgb = 6407,
-
-    [NativeName("GL_BLUE")]
-    Blue = 6405,
 }

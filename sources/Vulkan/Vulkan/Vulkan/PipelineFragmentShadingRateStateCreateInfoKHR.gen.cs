@@ -58,5 +58,5 @@ public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public PipelineFragmentShadingRateStateCreateInfoKhrCombinerOps CombinerOps;
+    public PipelineFragmentShadingRateStateCreateInfoKHRCombinerOps CombinerOps;
 }

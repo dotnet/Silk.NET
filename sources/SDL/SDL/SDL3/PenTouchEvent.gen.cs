@@ -18,10 +18,10 @@ public partial struct PenTouchEvent
     public uint Reserved;
 
     [NativeName("timestamp")]
-    public ulong Timestamp;
+    public nuint Timestamp;
 
     [NativeName("windowID")]
-    public uint WindowId;
+    public uint WindowID;
 
     [NativeName("which")]
     public uint Which;

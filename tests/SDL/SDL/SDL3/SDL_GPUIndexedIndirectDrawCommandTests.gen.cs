@@ -7,33 +7,33 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuIndexedIndirectDrawCommand"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GPUIndexedIndirectDrawCommand"/> struct.</summary>
 public static unsafe partial class SDL_GPUIndexedIndirectDrawCommandTests
 {
-    /// <summary>Validates that the <see cref = "GpuIndexedIndirectDrawCommand"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GPUIndexedIndirectDrawCommand"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GpuIndexedIndirectDrawCommand>(),
-            Is.EqualTo(sizeof(GpuIndexedIndirectDrawCommand))
+            Marshal.SizeOf<GPUIndexedIndirectDrawCommand>(),
+            Is.EqualTo(sizeof(GPUIndexedIndirectDrawCommand))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GpuIndexedIndirectDrawCommand"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GPUIndexedIndirectDrawCommand"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuIndexedIndirectDrawCommand).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GPUIndexedIndirectDrawCommand).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuIndexedIndirectDrawCommand"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GPUIndexedIndirectDrawCommand"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(GpuIndexedIndirectDrawCommand), Is.EqualTo(20));
+        Assert.That(sizeof(GPUIndexedIndirectDrawCommand), Is.EqualTo(20));
     }
 }

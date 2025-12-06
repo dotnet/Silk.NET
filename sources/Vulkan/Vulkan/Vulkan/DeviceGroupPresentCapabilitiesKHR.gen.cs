@@ -37,7 +37,7 @@ public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
         ImpliesSets = ["VK_KHR_surface"],
         RequireAll = true
     )]
-    public DeviceGroupPresentCapabilitiesKhrPresentMask PresentMask;
+    public DeviceGroupPresentCapabilitiesKHRPresentMask PresentMask;
 
     [NativeName("modes")]
     [SupportedApiProfile(

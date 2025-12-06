@@ -10,18 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("DrawBufferMode")]
 public enum DrawBufferMode : uint
 {
-    [NativeName("GL_FRONT")]
-    Front = 1028,
-
-    [NativeName("GL_BACK")]
-    Back = 1029,
-
-    [NativeName("GL_FRONT_AND_BACK")]
-    FrontAndBack = 1032,
-
-    [NativeName("GL_NONE_OES")]
-    NoneOES = 0,
-
     [NativeName("GL_NONE")]
     None = 0,
 
@@ -37,11 +25,20 @@ public enum DrawBufferMode : uint
     [NativeName("GL_BACK_RIGHT")]
     BackRight = 1027,
 
+    [NativeName("GL_FRONT")]
+    Front = 1028,
+
+    [NativeName("GL_BACK")]
+    Back = 1029,
+
     [NativeName("GL_LEFT")]
     Left = 1030,
 
     [NativeName("GL_RIGHT")]
     Right = 1031,
+
+    [NativeName("GL_FRONT_AND_BACK")]
+    FrontAndBack = 1032,
 
     [NativeName("GL_AUX0")]
     Aux0 = 1033,
@@ -198,4 +195,7 @@ public enum DrawBufferMode : uint
 
     [NativeName("GL_COLOR_ATTACHMENT15_NV")]
     ColorAttachment15NV = 36079,
+
+    [NativeName("GL_NONE_OES")]
+    NoneOES = 0,
 }

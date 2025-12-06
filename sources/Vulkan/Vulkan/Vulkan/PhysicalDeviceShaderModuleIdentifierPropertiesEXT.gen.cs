@@ -46,5 +46,5 @@ public unsafe partial struct PhysicalDeviceShaderModuleIdentifierPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public PhysicalDeviceShaderModuleIdentifierPropertiesExtShaderModuleIdentifierAlgorithmUuid ShaderModuleIdentifierAlgorithmUuid;
+    public PhysicalDeviceShaderModuleIdentifierPropertiesEXTShaderModuleIdentifierAlgorithmUUID ShaderModuleIdentifierAlgorithmUUID;
 }

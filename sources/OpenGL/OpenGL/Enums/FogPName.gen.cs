@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("FogPName")]
 public enum FogPName : uint
 {
+    [NativeName("GL_FOG_INDEX")]
+    Index = 2913,
+
     [NativeName("GL_FOG_DENSITY")]
     Density = 2914,
 
@@ -21,9 +24,6 @@ public enum FogPName : uint
 
     [NativeName("GL_FOG_MODE")]
     Mode = 2917,
-
-    [NativeName("GL_FOG_INDEX")]
-    Index = 2913,
 
     [NativeName("GL_FOG_COORD_SRC")]
     CoordSrc = 33872,

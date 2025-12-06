@@ -101,7 +101,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
         ],
         MinVersion = "1.4"
     )]
-    public PhysicalDeviceHostImageCopyPropertiesOptimalTilingLayoutUuid OptimalTilingLayoutUuid;
+    public PhysicalDeviceHostImageCopyPropertiesOptimalTilingLayoutUUID OptimalTilingLayoutUUID;
 
     [NativeName("identicalMemoryTypeRequirements")]
     [SupportedApiProfile(

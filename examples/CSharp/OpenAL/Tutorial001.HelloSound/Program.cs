@@ -1,9 +1,9 @@
 ﻿using NAudio.Wave;
 using Silk.NET.OpenAL;
 
-// NOTE: If you prefer, you can use the static AlContext and Al functions instead of creating an API object!
+// NOTE: If you prefer, you can use the static ALContext and AL functions instead of creating an API object!
 // Learn more: https://dotnet.github.io/Silk.NET/docs/v3/silk.net/static-vs-instance-bindings
-var alc = AlContext.Create(); // TODO disposable
+var alc = ALContext.Create(); // TODO disposable
 
 // Open an audio device.
 var device = alc.OpenDevice("");
@@ -34,12 +34,12 @@ foreach (
         [StringPName.Vendor, StringPName.Extensions, StringPName.Renderer, StringPName.Version]
 )
 {
-    Console.WriteLine($"{pname}: {Al.GetString(pname).ReadToString()}");
+    Console.WriteLine($"{pname}: {AL.GetString(pname).ReadToString()}");
 }
 
 // Create an audio source and a buffer to store the audio data played by that source.
-var source = Al.GenSource();
-var buffer = Al.GenBuffer();
+var source = AL.GenSource();
+var buffer = AL.GenBuffer();
 
 // We're using NAudio to read the WAV file into a buffer we can then pass to OpenAL.
 // We do have to do a little bit of work to map wavReader.WaveFormat into OpenAL's Format enum though.
@@ -53,27 +53,27 @@ for (var i = 0; i < sampleSize; i += wavReader.Read(sampleBuffer, i, sampleBuffe
 
 // Upload the audio data to the audio device.
 var format = ConvertFormat(wavReader.WaveFormat);
-Al.BufferData(buffer, format, sampleBuffer, sampleBuffer.Length, wavReader.WaveFormat.SampleRate);
-Al.ThrowError();
+AL.BufferData(buffer, format, sampleBuffer, sampleBuffer.Length, wavReader.WaveFormat.SampleRate);
+AL.ThrowError();
 
 // Configure the audio source to loop its audio, and play it!
 // TODO this is crap - we should have a boolean overload.
-Al.Source(source, (AlEnum)SourceBoolean.Looping, 1);
-Al.Source(source, SourceInteger.Buffer, (int)buffer);
-Al.SourcePlay(source);
-Al.ThrowError();
+AL.Source(source, (ALEnum)SourceBoolean.Looping, 1);
+AL.Source(source, SourceInteger.Buffer, (int)buffer);
+AL.SourcePlay(source);
+AL.ThrowError();
 
 Console.WriteLine("Press Enter to Exit...");
 Console.ReadLine();
 
 // Stop playing audio.
-Al.SourceStop(source);
+AL.SourceStop(source);
 
 // Cleanup!
-Al.DeleteSource(source);
-Al.DeleteBuffer(buffer);
-AlContext.DestroyContext(context);
-AlContext.CloseDevice(device);
+AL.DeleteSource(source);
+AL.DeleteBuffer(buffer);
+ALContext.DestroyContext(context);
+ALContext.CloseDevice(device);
 return;
 
 static Format ConvertFormat(WaveFormat format) =>

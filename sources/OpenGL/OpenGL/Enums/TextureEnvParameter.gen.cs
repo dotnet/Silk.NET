@@ -10,6 +10,9 @@ namespace Silk.NET.OpenGL;
 [NativeName("TextureEnvParameter")]
 public enum TextureEnvParameter : uint
 {
+    [NativeName("GL_ALPHA_SCALE")]
+    AlphaScale = 3356,
+
     [NativeName("GL_TEXTURE_ENV_MODE")]
     TextureEnvMode = 8704,
 
@@ -24,63 +27,6 @@ public enum TextureEnvParameter : uint
 
     [NativeName("GL_COMBINE_ALPHA")]
     CombineAlpha = 34162,
-
-    [NativeName("GL_RGB_SCALE")]
-    RgbScale = 34163,
-
-    [NativeName("GL_ADD_SIGNED")]
-    AddSigned = 34164,
-
-    [NativeName("GL_INTERPOLATE")]
-    Interpolate = 34165,
-
-    [NativeName("GL_CONSTANT")]
-    Constant = 34166,
-
-    [NativeName("GL_PRIMARY_COLOR")]
-    PrimaryColor = 34167,
-
-    [NativeName("GL_PREVIOUS")]
-    Previous = 34168,
-
-    [NativeName("GL_OPERAND0_RGB")]
-    Operand0Rgb = 34192,
-
-    [NativeName("GL_OPERAND1_RGB")]
-    Operand1Rgb = 34193,
-
-    [NativeName("GL_OPERAND2_RGB")]
-    Operand2Rgb = 34194,
-
-    [NativeName("GL_OPERAND0_ALPHA")]
-    Operand0Alpha = 34200,
-
-    [NativeName("GL_OPERAND1_ALPHA")]
-    Operand1Alpha = 34201,
-
-    [NativeName("GL_OPERAND2_ALPHA")]
-    Operand2Alpha = 34202,
-
-    [NativeName("GL_ALPHA_SCALE")]
-    AlphaScale = 3356,
-
-    [NativeName("GL_SRC0_RGB")]
-    Src0Rgb = 34176,
-
-    [NativeName("GL_SRC1_RGB")]
-    Src1Rgb = 34177,
-
-    [NativeName("GL_SRC2_RGB")]
-    Src2Rgb = 34178,
-
-    [NativeName("GL_SRC0_ALPHA")]
-    Src0Alpha = 34184,
-
-    [NativeName("GL_SRC1_ALPHA")]
-    Src1Alpha = 34185,
-
-    [NativeName("GL_SRC2_ALPHA")]
-    Src2Alpha = 34186,
 
     [NativeName("GL_SOURCE0_RGB")]
     Source0Rgb = 34176,
@@ -100,8 +46,62 @@ public enum TextureEnvParameter : uint
     [NativeName("GL_SOURCE2_ALPHA")]
     Source2Alpha = 34186,
 
+    [NativeName("GL_OPERAND0_RGB")]
+    Operand0Rgb = 34192,
+
+    [NativeName("GL_OPERAND1_RGB")]
+    Operand1Rgb = 34193,
+
+    [NativeName("GL_OPERAND2_RGB")]
+    Operand2Rgb = 34194,
+
+    [NativeName("GL_OPERAND0_ALPHA")]
+    Operand0Alpha = 34200,
+
+    [NativeName("GL_OPERAND1_ALPHA")]
+    Operand1Alpha = 34201,
+
+    [NativeName("GL_OPERAND2_ALPHA")]
+    Operand2Alpha = 34202,
+
+    [NativeName("GL_RGB_SCALE")]
+    RgbScale = 34163,
+
+    [NativeName("GL_ADD_SIGNED")]
+    AddSigned = 34164,
+
+    [NativeName("GL_INTERPOLATE")]
+    Interpolate = 34165,
+
+    [NativeName("GL_CONSTANT")]
+    Constant = 34166,
+
+    [NativeName("GL_PRIMARY_COLOR")]
+    PrimaryColor = 34167,
+
+    [NativeName("GL_PREVIOUS")]
+    Previous = 34168,
+
     [NativeName("GL_TEXTURE_LOD_BIAS")]
     TextureLodBias = 34049,
+
+    [NativeName("GL_SRC1_ALPHA")]
+    Src1Alpha = 34185,
+
+    [NativeName("GL_SRC0_RGB")]
+    Src0Rgb = 34176,
+
+    [NativeName("GL_SRC1_RGB")]
+    Src1Rgb = 34177,
+
+    [NativeName("GL_SRC2_RGB")]
+    Src2Rgb = 34178,
+
+    [NativeName("GL_SRC0_ALPHA")]
+    Src0Alpha = 34184,
+
+    [NativeName("GL_SRC2_ALPHA")]
+    Src2Alpha = 34186,
 
     [NativeName("GL_COORD_REPLACE")]
     CoordReplace = 34914,

@@ -13,14 +13,14 @@ internal class MyApplication : ISurfaceApplication
     {
         float[] vertices = [-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.0f, 0.5f, 0.0f];
 
-        if (surface.OpenGl is null)
+        if (surface.OpenGL is null)
         {
             throw new PlatformNotSupportedException("OpenGL is not supported.");
         }
 
         // Enable OpenGL context creation for our surface.
-        surface.OpenGl.Profile = OpenGlContextProfile.Core;
-        surface.OpenGl.Version = new Version32(3, 3);
+        surface.OpenGL.Profile = OpenGLContextProfile.Core;
+        surface.OpenGL.Version = new Version32(3, 3);
 
         var vbo = 0u;
         var vao = 0u;
@@ -35,23 +35,23 @@ internal class MyApplication : ISurfaceApplication
             foreach (StringName val in Enum.GetValues(typeof(StringName)))
 #pragma warning restore IL3050
             {
-                Console.WriteLine($"{val} = {Gl.GetString(val).ReadToString()}");
+                Console.WriteLine($"{val} = {GL.GetString(val).ReadToString()}");
             }
             Console.WriteLine("=== END OPENGL INFORMATION");
 
             // Create the vertex buffer.
-            vbo = Gl.GenBuffer();
-            Gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-            Gl.BindBuffer(BufferTarget.ArrayBuffer, vbo);
-            Gl.BufferData(
+            vbo = GL.GenBuffer();
+            GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+            GL.BindBuffer(BufferTarget.ArrayBuffer, vbo);
+            GL.BufferData(
                 BufferTarget.ArrayBuffer,
                 (nuint)(vertices.Length * sizeof(float)),
                 vertices[0].AsRef(), // TODO simplify this
                 BufferUsage.StaticDraw
             );
-            vao = Gl.GenVertexArray();
-            Gl.BindVertexArray(vao);
-            Gl.VertexAttribPointer(
+            vao = GL.GenVertexArray();
+            GL.BindVertexArray(vao);
+            GL.VertexAttribPointer(
                 0,
                 3,
                 VertexAttribPointerType.Float,
@@ -59,9 +59,9 @@ internal class MyApplication : ISurfaceApplication
                 3 * sizeof(float),
                 nullptr
             );
-            Gl.EnableVertexAttribArray(0);
-            var vert = Gl.CreateShader(ShaderType.VertexShader);
-            var frag = Gl.CreateShader(ShaderType.FragmentShader);
+            GL.EnableVertexAttribArray(0);
+            var vert = GL.CreateShader(ShaderType.VertexShader);
+            var frag = GL.CreateShader(ShaderType.FragmentShader);
 
             const string vertSource = """
                 #version 330 core
@@ -72,7 +72,7 @@ internal class MyApplication : ISurfaceApplication
                 }
                 """;
             var vertSourceLength = vertSource.Length;
-            Gl.ShaderSource(vert, 1, new[] { vertSource }, vertSourceLength.AsRef());
+            GL.ShaderSource(vert, 1, new[] { vertSource }, vertSourceLength.AsRef());
             const string fragSource = """
                 #version 330
                 out vec4 outputColor;
@@ -82,26 +82,26 @@ internal class MyApplication : ISurfaceApplication
                 }
                 """;
             var fragSourceLength = fragSource.Length;
-            Gl.ShaderSource(frag, 1, new[] { fragSource }, fragSourceLength.AsRef());
-            Gl.CompileShader(vert);
-            Gl.CompileShader(frag);
-            prog = Gl.CreateProgram();
-            Gl.AttachShader(prog, vert);
-            Gl.AttachShader(prog, frag);
-            Gl.LinkProgram(prog);
-            Gl.DeleteShader(vert);
-            Gl.DeleteShader(frag);
-            Gl.UseProgram(prog);
+            GL.ShaderSource(frag, 1, new[] { fragSource }, fragSourceLength.AsRef());
+            GL.CompileShader(vert);
+            GL.CompileShader(frag);
+            prog = GL.CreateProgram();
+            GL.AttachShader(prog, vert);
+            GL.AttachShader(prog, frag);
+            GL.LinkProgram(prog);
+            GL.DeleteShader(vert);
+            GL.DeleteShader(frag);
+            GL.UseProgram(prog);
         };
         surface.Render += _ =>
         {
-            Gl.Clear(ClearBufferMask.ColorBufferBit);
-            Gl.DrawArrays(PrimitiveType.Triangles, 0, 3);
+            GL.Clear(ClearBufferMask.ColorBufferBit);
+            GL.DrawArrays(PrimitiveType.Triangles, 0, 3);
         };
         surface.Terminating += _ =>
         {
-            Gl.DeleteVertexArray(vao);
-            Gl.DeleteBuffer(vbo);
+            GL.DeleteVertexArray(vao);
+            GL.DeleteBuffer(vbo);
         };
     }
 

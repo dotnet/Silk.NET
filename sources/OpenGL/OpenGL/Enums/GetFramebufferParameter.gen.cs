@@ -10,17 +10,17 @@ namespace Silk.NET.OpenGL;
 [NativeName("GetFramebufferParameter")]
 public enum GetFramebufferParameter : uint
 {
-    [NativeName("GL_SAMPLE_BUFFERS")]
-    SampleBuffers = 32936,
-
-    [NativeName("GL_SAMPLES")]
-    Samples = 32937,
-
     [NativeName("GL_DOUBLEBUFFER")]
     Doublebuffer = 3122,
 
     [NativeName("GL_STEREO")]
     Stereo = 3123,
+
+    [NativeName("GL_SAMPLE_BUFFERS")]
+    SampleBuffers = 32936,
+
+    [NativeName("GL_SAMPLES")]
+    Samples = 32937,
 
     [NativeName("GL_IMPLEMENTATION_COLOR_READ_TYPE")]
     ImplementationColorReadType = 35738,

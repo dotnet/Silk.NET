@@ -54,7 +54,7 @@ public unsafe partial struct FrameBoundaryEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public ulong FrameId;
+    public ulong FrameID;
 
     [NativeName("imageCount")]
     [SupportedApiProfile(

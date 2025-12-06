@@ -13,5 +13,5 @@ public unsafe delegate byte StorageInterfaceReadFileDelegate(
     void* arg0,
     sbyte* arg1,
     void* arg2,
-    ulong arg3
+    nuint arg3
 );

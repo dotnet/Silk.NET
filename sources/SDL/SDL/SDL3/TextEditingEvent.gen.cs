@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -17,10 +18,10 @@ public unsafe partial struct TextEditingEvent
     public uint Reserved;
 
     [NativeName("timestamp")]
-    public ulong Timestamp;
+    public nuint Timestamp;
 
     [NativeName("windowID")]
-    public uint WindowId;
+    public uint WindowID;
 
     [NativeName("text")]
     public sbyte* Text;

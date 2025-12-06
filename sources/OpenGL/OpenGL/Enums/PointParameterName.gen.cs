@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [NativeName("PointParameterNameARB")]
 public enum PointParameterName : uint
 {
+    [NativeName("GL_POINT_FADE_THRESHOLD_SIZE")]
+    PointFadeThresholdSize = 33064,
+
     [NativeName("GL_POINT_SIZE_MIN")]
     PointSizeMin = 33062,
 
     [NativeName("GL_POINT_SIZE_MAX")]
     PointSizeMax = 33063,
-
-    [NativeName("GL_POINT_FADE_THRESHOLD_SIZE")]
-    PointFadeThresholdSize = 33064,
 
     [NativeName("GL_POINT_DISTANCE_ATTENUATION")]
     PointDistanceAttenuation = 33065,

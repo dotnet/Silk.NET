@@ -25,7 +25,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public PartitionedAccelerationStructureWriteInstanceDataNvExplicitAabb ExplicitAabb;
+    public PartitionedAccelerationStructureWriteInstanceDataNVExplicitAABB ExplicitAABB;
 
     [NativeName("instanceID")]
     [SupportedApiProfile(
@@ -33,7 +33,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint InstanceId;
+    public uint InstanceID;
 
     [NativeName("instanceMask")]
     [SupportedApiProfile(

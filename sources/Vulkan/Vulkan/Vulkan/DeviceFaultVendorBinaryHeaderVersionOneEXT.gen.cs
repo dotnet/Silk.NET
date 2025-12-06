@@ -42,7 +42,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public uint VendorId;
+    public uint VendorID;
 
     [NativeName("deviceID")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public uint DeviceId;
+    public uint DeviceID;
 
     [NativeName("driverVersion")]
     [SupportedApiProfile(
@@ -75,7 +75,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultVendorBinaryHeaderVersionOneExtPipelineCacheUuid PipelineCacheUuid;
+    public DeviceFaultVendorBinaryHeaderVersionOneEXTPipelineCacheUUID PipelineCacheUUID;
 
     [NativeName("applicationNameOffset")]
     [SupportedApiProfile(

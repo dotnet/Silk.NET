@@ -16,14 +16,14 @@ public enum TextureEnvMode : uint
     [NativeName("GL_REPLACE")]
     Replace = 7681,
 
+    [NativeName("GL_ADD")]
+    Add = 260,
+
     [NativeName("GL_MODULATE")]
     Modulate = 8448,
 
     [NativeName("GL_DECAL")]
     Decal = 8449,
-
-    [NativeName("GL_ADD")]
-    Add = 260,
 
     [NativeName("GL_COMBINE")]
     Combine = 34160,

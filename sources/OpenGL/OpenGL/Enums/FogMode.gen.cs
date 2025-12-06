@@ -10,14 +10,14 @@ namespace Silk.NET.OpenGL;
 [NativeName("FogMode")]
 public enum FogMode : uint
 {
+    [NativeName("GL_LINEAR")]
+    Linear = 9729,
+
     [NativeName("GL_EXP")]
     Exp = 2048,
 
     [NativeName("GL_EXP2")]
     Exp2 = 2049,
-
-    [NativeName("GL_LINEAR")]
-    Linear = 9729,
 
     [NativeName("GL_FOG_FUNC_SGIS")]
     FogFuncSGIS = 33066,

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -43,6 +44,12 @@ public class PrettifyNames(
         public Version? TrimmerBaseline { get; init; } = new(3, 0);
 
         /// <summary>
+        /// The maximum length of an all capitals string to be treated as a single acronym, rather than as an all
+        /// capitals word.
+        /// </summary>
+        public int? LongAcronymThreshold { get; init; }
+
+        /// <summary>
         /// Multiple candidate name prefixes that may apply across all of the bindings generated.
         /// </summary>
         public IReadOnlyList<string>? GlobalPrefixHints { get; init; }
@@ -73,6 +80,8 @@ public class PrettifyNames(
         // The dictionary containing mappings from the original type names to the new names of the type and its members
         var newNames = new Dictionary<string, RenamedType>();
 
+        var nameTransformer = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3); // TODO: Change to 2 in next PR to match framework design guidelines
+
         // Trim the trimmable names if the trimmer baseline is set
         // Otherwise, we just prettify the trimmable names
         if (cfg.TrimmerBaseline is null)
@@ -81,9 +90,9 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions)) in visitor.TrimmableTypes)
             {
                 newNames[name] = new RenamedType(
-                    ApplyPrettifyOnlyPipeline(null, name, cfg.NameOverrides, visitor.AffixTypes),
-                    nonFunctions.ToDictionary(x => x, x => ApplyPrettifyOnlyPipeline(name, x, cfg.NameOverrides, visitor.AffixTypes)),
-                    functions.ToDictionary(x => x.Name, x => ApplyPrettifyOnlyPipeline(name, x.Name, cfg.NameOverrides, visitor.AffixTypes))
+                    ApplyPrettifyOnlyPipeline(null, name, cfg.NameOverrides, visitor.AffixTypes, nameTransformer),
+                    nonFunctions.ToDictionary(x => x, x => ApplyPrettifyOnlyPipeline(name, x, cfg.NameOverrides, visitor.AffixTypes, nameTransformer)),
+                    functions.ToDictionary(x => x.Name, x => ApplyPrettifyOnlyPipeline(name, x.Name, cfg.NameOverrides, visitor.AffixTypes, nameTransformer))
                 );
             }
         }
@@ -99,7 +108,7 @@ public class PrettifyNames(
                 .SelectMany(x => x.Get(ctx.JobKey))
                 .Append(new NameAffixerEarlyTrimmer(visitor.AffixTypes))
                 .Append(new NameAffixerLateTrimmer(visitor.AffixTypes))
-                .Append(new PrettifyNamesTrimmer())
+                .Append(new PrettifyNamesTrimmer(nameTransformer))
                 .OrderBy(x => x.Order)
                 .ToArray();
 
@@ -191,12 +200,12 @@ public class PrettifyNames(
         {
             if (!newNames.TryGetValue(typeName, out var renamedType))
             {
-                renamedType = new RenamedType(ApplyPrettifyOnlyPipeline(null, typeName, cfg.NameOverrides, visitor.AffixTypes), [], []);
+                renamedType = new RenamedType(ApplyPrettifyOnlyPipeline(null, typeName, cfg.NameOverrides, visitor.AffixTypes, nameTransformer), [], []);
             }
 
             foreach (var memberName in memberNames)
             {
-                renamedType.NonFunctions[memberName] = ApplyPrettifyOnlyPipeline(typeName, memberName, cfg.NameOverrides, visitor.AffixTypes);
+                renamedType.NonFunctions[memberName] = ApplyPrettifyOnlyPipeline(typeName, memberName, cfg.NameOverrides, visitor.AffixTypes, nameTransformer);
             }
 
             newNames[typeName] = renamedType;
@@ -364,7 +373,8 @@ public class PrettifyNames(
         string? container,
         string name,
         Dictionary<string, string> nameOverrides,
-        Dictionary<string, TypeAffixData> affixTypes)
+        Dictionary<string, TypeAffixData> affixTypes,
+        ICulturedStringTransformer nameTransformer)
     {
         // Check for overrides
         foreach (var (nativeName, overriddenName) in nameOverrides)
@@ -397,9 +407,12 @@ public class PrettifyNames(
             }
         }
 
+        // Be lenient about caps for type names (e.g. GL)
+        var allowAllCaps = container == null;
+
         var result = name;
         result = RemoveAffixes(result, container, name, affixTypes, null);
-        result = result.Prettify();
+        result = result.Prettify(nameTransformer, allowAllCaps);
         result = ApplyAffixes(result, container, name, affixTypes, null);
 
         return result;
@@ -1393,7 +1406,7 @@ public class PrettifyNames(
         }
     }
 
-    private class PrettifyNamesTrimmer : INameTrimmer
+    private class PrettifyNamesTrimmer(ICulturedStringTransformer nameTransformer) : INameTrimmer
     {
         /// <inheritdoc/>
         public Version Version => new(0, 0, 0);
@@ -1405,12 +1418,15 @@ public class PrettifyNames(
         {
             foreach (var (original, (primary, secondary)) in context.Names)
             {
+                // Be lenient about caps for type names (e.g. GL)
+                var allowAllCaps = context.Container == null;
+
                 for (var i = 0; i < secondary.Count; i++)
                 {
-                    secondary[i] = secondary[i].Prettify();
+                    secondary[i] = secondary[i].Prettify(nameTransformer, allowAllCaps);
                 }
 
-                context.Names[original] = new CandidateNames(primary.Prettify(), secondary);
+                context.Names[original] = new CandidateNames(primary.Prettify(nameTransformer, allowAllCaps), secondary);
             }
         }
     }

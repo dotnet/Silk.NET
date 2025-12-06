@@ -54,7 +54,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutablePropertiesKhrName Name;
+    public PipelineExecutablePropertiesKHRName Name;
 
     [NativeName("description")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutablePropertiesKhrDescription Description;
+    public PipelineExecutablePropertiesKHRDescription Description;
 
     [NativeName("subgroupSize")]
     [SupportedApiProfile(

@@ -3,12 +3,11 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_SystemTheme")]
-public enum SystemTheme
+public enum SystemTheme : uint
 {
     [NativeName("SDL_SYSTEM_THEME_UNKNOWN")]
     Unknown = 0,

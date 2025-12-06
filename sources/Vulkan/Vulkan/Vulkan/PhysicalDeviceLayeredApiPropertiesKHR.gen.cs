@@ -22,17 +22,17 @@ public unsafe partial struct PhysicalDeviceLayeredApiPropertiesKHR
 
     [NativeName("vendorID")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public uint VendorId;
+    public uint VendorID;
 
     [NativeName("deviceID")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public uint DeviceId;
+    public uint DeviceID;
 
     [NativeName("layeredAPI")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public PhysicalDeviceLayeredApiKHR LayeredApi;
+    public PhysicalDeviceLayeredApiKHR LayeredAPI;
 
     [NativeName("deviceName")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public PhysicalDeviceLayeredApiPropertiesKhrDeviceName DeviceName;
+    public PhysicalDeviceLayeredApiPropertiesKHRDeviceName DeviceName;
 }

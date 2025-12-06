@@ -65,7 +65,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceMeshShaderPropertiesNvMaxTaskWorkGroupSize MaxTaskWorkGroupSize;
+    public PhysicalDeviceMeshShaderPropertiesNVMaxTaskWorkGroupSize MaxTaskWorkGroupSize;
 
     [NativeName("maxTaskTotalMemorySize")]
     [SupportedApiProfile(
@@ -109,7 +109,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
             "VK_NV_mesh_shader+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceMeshShaderPropertiesNvMaxMeshWorkGroupSize MaxMeshWorkGroupSize;
+    public PhysicalDeviceMeshShaderPropertiesNVMaxMeshWorkGroupSize MaxMeshWorkGroupSize;
 
     [NativeName("maxMeshTotalMemorySize")]
     [SupportedApiProfile(

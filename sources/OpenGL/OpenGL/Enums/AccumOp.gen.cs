@@ -10,9 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("AccumOp")]
 public enum AccumOp : uint
 {
-    [NativeName("GL_ADD")]
-    Add = 260,
-
     [NativeName("GL_ACCUM")]
     Accum = 256,
 
@@ -24,4 +21,7 @@ public enum AccumOp : uint
 
     [NativeName("GL_MULT")]
     Mult = 259,
+
+    [NativeName("GL_ADD")]
+    Add = 260,
 }

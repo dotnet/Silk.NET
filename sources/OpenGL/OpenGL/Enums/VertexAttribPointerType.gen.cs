@@ -22,17 +22,14 @@ public enum VertexAttribPointerType : uint
     [NativeName("GL_UNSIGNED_SHORT")]
     UnsignedShort = 5123,
 
-    [NativeName("GL_FLOAT")]
-    Float = 5126,
-
-    [NativeName("GL_FIXED")]
-    Fixed = 5132,
+    [NativeName("GL_INT")]
+    Int = 5124,
 
     [NativeName("GL_UNSIGNED_INT")]
     UnsignedInt = 5125,
 
-    [NativeName("GL_INT")]
-    Int = 5124,
+    [NativeName("GL_FLOAT")]
+    Float = 5126,
 
     [NativeName("GL_DOUBLE")]
     Double = 5130,
@@ -48,6 +45,9 @@ public enum VertexAttribPointerType : uint
 
     [NativeName("GL_INT_2_10_10_10_REV")]
     Int2X10X10X10Rev = 36255,
+
+    [NativeName("GL_FIXED")]
+    Fixed = 5132,
 
     [NativeName("GL_UNSIGNED_INT64_ARB")]
     UnsignedInt64ARB = 5135,

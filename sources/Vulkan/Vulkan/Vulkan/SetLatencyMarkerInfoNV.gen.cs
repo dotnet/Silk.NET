@@ -49,7 +49,7 @@ public unsafe partial struct SetLatencyMarkerInfoNV
             "VK_VERSION_1_2+VK_KHR_present_id2",
         ]
     )]
-    public ulong PresentId;
+    public ulong PresentID;
 
     [NativeName("marker")]
     [SupportedApiProfile(

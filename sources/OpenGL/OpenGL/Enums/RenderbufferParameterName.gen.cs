@@ -10,42 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("RenderbufferParameterName")]
 public enum RenderbufferParameterName : uint
 {
-    [NativeName("GL_RENDERBUFFER_WIDTH_OES")]
-    WidthOES = 36162,
-
-    [NativeName("GL_RENDERBUFFER_HEIGHT_OES")]
-    HeightOES = 36163,
-
-    [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_OES")]
-    InternalFormatOES = 36164,
-
-    [NativeName("GL_RENDERBUFFER_RED_SIZE_OES")]
-    RedSizeOES = 36176,
-
-    [NativeName("GL_RENDERBUFFER_GREEN_SIZE_OES")]
-    GreenSizeOES = 36177,
-
-    [NativeName("GL_RENDERBUFFER_BLUE_SIZE_OES")]
-    BlueSizeOES = 36178,
-
-    [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_OES")]
-    AlphaSizeOES = 36179,
-
-    [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_OES")]
-    DepthSizeOES = 36180,
-
-    [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_OES")]
-    StencilSizeOES = 36181,
-
-    [NativeName("GL_RENDERBUFFER_SAMPLES_APPLE")]
-    SamplesAPPLE = 36011,
-
-    [NativeName("GL_RENDERBUFFER_SAMPLES_EXT")]
-    SamplesEXT = 36011,
-
-    [NativeName("GL_RENDERBUFFER_SAMPLES_IMG")]
-    SamplesIMG = 37171,
-
     [NativeName("GL_RENDERBUFFER_SAMPLES")]
     Samples = 36011,
 
@@ -78,6 +42,9 @@ public enum RenderbufferParameterName : uint
 
     [NativeName("GL_RENDERBUFFER_STORAGE_SAMPLES_AMD")]
     StorageSamplesAMD = 37298,
+
+    [NativeName("GL_RENDERBUFFER_SAMPLES_EXT")]
+    SamplesEXT = 36011,
 
     [NativeName("GL_RENDERBUFFER_WIDTH_EXT")]
     WidthEXT = 36162,
@@ -115,6 +82,39 @@ public enum RenderbufferParameterName : uint
     [NativeName("GL_RENDERBUFFER_SAMPLES_ANGLE")]
     SamplesANGLE = 36011,
 
+    [NativeName("GL_RENDERBUFFER_SAMPLES_APPLE")]
+    SamplesAPPLE = 36011,
+
+    [NativeName("GL_RENDERBUFFER_SAMPLES_IMG")]
+    SamplesIMG = 37171,
+
     [NativeName("GL_RENDERBUFFER_SAMPLES_NV")]
     SamplesNV = 36011,
+
+    [NativeName("GL_RENDERBUFFER_WIDTH_OES")]
+    WidthOES = 36162,
+
+    [NativeName("GL_RENDERBUFFER_HEIGHT_OES")]
+    HeightOES = 36163,
+
+    [NativeName("GL_RENDERBUFFER_INTERNAL_FORMAT_OES")]
+    InternalFormatOES = 36164,
+
+    [NativeName("GL_RENDERBUFFER_RED_SIZE_OES")]
+    RedSizeOES = 36176,
+
+    [NativeName("GL_RENDERBUFFER_GREEN_SIZE_OES")]
+    GreenSizeOES = 36177,
+
+    [NativeName("GL_RENDERBUFFER_BLUE_SIZE_OES")]
+    BlueSizeOES = 36178,
+
+    [NativeName("GL_RENDERBUFFER_ALPHA_SIZE_OES")]
+    AlphaSizeOES = 36179,
+
+    [NativeName("GL_RENDERBUFFER_DEPTH_SIZE_OES")]
+    DepthSizeOES = 36180,
+
+    [NativeName("GL_RENDERBUFFER_STENCIL_SIZE_OES")]
+    StencilSizeOES = 36181,
 }

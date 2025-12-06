@@ -7,33 +7,33 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuDepthStencilState"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GPUDepthStencilState"/> struct.</summary>
 public static unsafe partial class SDL_GPUDepthStencilStateTests
 {
-    /// <summary>Validates that the <see cref = "GpuDepthStencilState"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GPUDepthStencilState"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GpuDepthStencilState>(),
-            Is.EqualTo(sizeof(GpuDepthStencilState))
+            Marshal.SizeOf<GPUDepthStencilState>(),
+            Is.EqualTo(sizeof(GPUDepthStencilState))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GpuDepthStencilState"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GPUDepthStencilState"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuDepthStencilState).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GPUDepthStencilState).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuDepthStencilState"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GPUDepthStencilState"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(GpuDepthStencilState), Is.EqualTo(44));
+        Assert.That(sizeof(GPUDepthStencilState), Is.EqualTo(44));
     }
 }

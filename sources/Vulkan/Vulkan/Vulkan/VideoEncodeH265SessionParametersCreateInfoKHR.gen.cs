@@ -34,7 +34,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersCreateInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint MaxStdVpsCount;
+    public uint MaxStdVPSCount;
 
     [NativeName("maxStdSPSCount")]
     [SupportedApiProfile(
@@ -42,7 +42,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersCreateInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint MaxStdSpsCount;
+    public uint MaxStdSPSCount;
 
     [NativeName("maxStdPPSCount")]
     [SupportedApiProfile(
@@ -50,7 +50,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersCreateInfoKHR
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint MaxStdPpsCount;
+    public uint MaxStdPPSCount;
 
     [NativeName("pParametersAddInfo")]
     [SupportedApiProfile(

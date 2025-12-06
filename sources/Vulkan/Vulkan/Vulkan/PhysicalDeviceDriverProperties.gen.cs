@@ -72,7 +72,7 @@ public unsafe partial struct PhysicalDeviceDriverProperties
         ],
         MinVersion = "1.2"
     )]
-    public DriverId DriverId;
+    public DriverId DriverID;
 
     [NativeName("driverName")]
     [SupportedApiProfile(

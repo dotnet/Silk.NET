@@ -10,9 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("PathGenMode")]
 public enum PathGenMode : uint
 {
-    [NativeName("GL_CONSTANT")]
-    Constant = 34166,
-
     [NativeName("GL_NONE")]
     None = 0,
 
@@ -21,6 +18,9 @@ public enum PathGenMode : uint
 
     [NativeName("GL_OBJECT_LINEAR")]
     ObjectLinear = 9217,
+
+    [NativeName("GL_CONSTANT")]
+    Constant = 34166,
 
     [NativeName("GL_PATH_OBJECT_BOUNDING_BOX_NV")]
     PathObjectBoundingBoxNV = 37002,

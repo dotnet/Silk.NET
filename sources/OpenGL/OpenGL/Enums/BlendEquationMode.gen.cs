@@ -10,12 +10,6 @@ namespace Silk.NET.OpenGL;
 [NativeName("BlendEquationModeEXT")]
 public enum BlendEquationMode : uint
 {
-    [NativeName("GL_MIN_EXT")]
-    MinEXT = 32775,
-
-    [NativeName("GL_MAX_EXT")]
-    MaxEXT = 32776,
-
     [NativeName("GL_FUNC_ADD")]
     FuncAdd = 32774,
 
@@ -30,6 +24,12 @@ public enum BlendEquationMode : uint
 
     [NativeName("GL_MAX")]
     Max = 32776,
+
+    [NativeName("GL_MIN_EXT")]
+    MinEXT = 32775,
+
+    [NativeName("GL_MAX_EXT")]
+    MaxEXT = 32776,
 
     [NativeName("GL_FUNC_ADD_EXT")]
     FuncAddEXT = 32774,

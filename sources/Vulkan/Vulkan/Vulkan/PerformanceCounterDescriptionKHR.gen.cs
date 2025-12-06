@@ -53,7 +53,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionKhrName Name;
+    public PerformanceCounterDescriptionKHRName Name;
 
     [NativeName("category")]
     [SupportedApiProfile(
@@ -64,7 +64,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionKhrCategory Category;
+    public PerformanceCounterDescriptionKHRCategory Category;
 
     [NativeName("description")]
     [SupportedApiProfile(
@@ -75,5 +75,5 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionKhrDescription Description;
+    public PerformanceCounterDescriptionKHRDescription Description;
 }

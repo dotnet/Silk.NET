@@ -10,137 +10,59 @@ namespace Silk.NET.OpenGL;
 [NativeName("EnableCap")]
 public enum EnableCap : uint
 {
-    [NativeName("GL_CLIP_PLANE0")]
-    ClipPlane0 = 12288,
-
-    [NativeName("GL_CLIP_PLANE1")]
-    ClipPlane1 = 12289,
-
-    [NativeName("GL_CLIP_PLANE2")]
-    ClipPlane2 = 12290,
-
-    [NativeName("GL_CLIP_PLANE3")]
-    ClipPlane3 = 12291,
-
-    [NativeName("GL_CLIP_PLANE4")]
-    ClipPlane4 = 12292,
-
-    [NativeName("GL_CLIP_PLANE5")]
-    ClipPlane5 = 12293,
-
-    [NativeName("GL_FOG")]
-    Fog = 2912,
-
-    [NativeName("GL_LIGHTING")]
-    Lighting = 2896,
-
-    [NativeName("GL_TEXTURE_2D")]
-    Texture2D = 3553,
-
-    [NativeName("GL_CULL_FACE")]
-    CullFace = 2884,
-
-    [NativeName("GL_ALPHA_TEST")]
-    AlphaTest = 3008,
-
-    [NativeName("GL_BLEND")]
-    Blend = 3042,
-
-    [NativeName("GL_COLOR_LOGIC_OP")]
-    ColorLogicOp = 3058,
-
-    [NativeName("GL_DITHER")]
-    Dither = 3024,
-
-    [NativeName("GL_STENCIL_TEST")]
-    StencilTest = 2960,
-
-    [NativeName("GL_DEPTH_TEST")]
-    DepthTest = 2929,
-
-    [NativeName("GL_POINT_SMOOTH")]
-    PointSmooth = 2832,
-
     [NativeName("GL_LINE_SMOOTH")]
     LineSmooth = 2848,
-
-    [NativeName("GL_SCISSOR_TEST")]
-    ScissorTest = 3089,
-
-    [NativeName("GL_COLOR_MATERIAL")]
-    ColorMaterial = 2903,
-
-    [NativeName("GL_NORMALIZE")]
-    Normalize = 2977,
-
-    [NativeName("GL_VERTEX_ARRAY")]
-    VertexArray = 32884,
-
-    [NativeName("GL_NORMAL_ARRAY")]
-    NormalArray = 32885,
-
-    [NativeName("GL_COLOR_ARRAY")]
-    ColorArray = 32886,
-
-    [NativeName("GL_TEXTURE_COORD_ARRAY")]
-    TextureCoordArray = 32888,
-
-    [NativeName("GL_MULTISAMPLE")]
-    Multisample = 32925,
-
-    [NativeName("GL_SAMPLE_ALPHA_TO_COVERAGE")]
-    SampleAlphaToCoverage = 32926,
-
-    [NativeName("GL_SAMPLE_ALPHA_TO_ONE")]
-    SampleAlphaToOne = 32927,
-
-    [NativeName("GL_SAMPLE_COVERAGE")]
-    SampleCoverage = 32928,
-
-    [NativeName("GL_POLYGON_OFFSET_FILL")]
-    PolygonOffsetFill = 32823,
-
-    [NativeName("GL_LIGHT0")]
-    Light0 = 16384,
-
-    [NativeName("GL_LIGHT1")]
-    Light1 = 16385,
-
-    [NativeName("GL_LIGHT2")]
-    Light2 = 16386,
-
-    [NativeName("GL_LIGHT3")]
-    Light3 = 16387,
-
-    [NativeName("GL_LIGHT4")]
-    Light4 = 16388,
-
-    [NativeName("GL_LIGHT5")]
-    Light5 = 16389,
-
-    [NativeName("GL_LIGHT6")]
-    Light6 = 16390,
-
-    [NativeName("GL_LIGHT7")]
-    Light7 = 16391,
-
-    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
-    TextureCubeMapOES = 34067,
-
-    [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStrOES = 36192,
 
     [NativeName("GL_POLYGON_SMOOTH")]
     PolygonSmooth = 2881,
 
+    [NativeName("GL_CULL_FACE")]
+    CullFace = 2884,
+
+    [NativeName("GL_DEPTH_TEST")]
+    DepthTest = 2929,
+
+    [NativeName("GL_STENCIL_TEST")]
+    StencilTest = 2960,
+
+    [NativeName("GL_DITHER")]
+    Dither = 3024,
+
+    [NativeName("GL_BLEND")]
+    Blend = 3042,
+
+    [NativeName("GL_SCISSOR_TEST")]
+    ScissorTest = 3089,
+
     [NativeName("GL_TEXTURE_1D")]
     Texture1D = 3552,
+
+    [NativeName("GL_TEXTURE_2D")]
+    Texture2D = 3553,
+
+    [NativeName("GL_POINT_SMOOTH")]
+    PointSmooth = 2832,
 
     [NativeName("GL_LINE_STIPPLE")]
     LineStipple = 2852,
 
     [NativeName("GL_POLYGON_STIPPLE")]
     PolygonStipple = 2882,
+
+    [NativeName("GL_LIGHTING")]
+    Lighting = 2896,
+
+    [NativeName("GL_COLOR_MATERIAL")]
+    ColorMaterial = 2903,
+
+    [NativeName("GL_FOG")]
+    Fog = 2912,
+
+    [NativeName("GL_NORMALIZE")]
+    Normalize = 2977,
+
+    [NativeName("GL_ALPHA_TEST")]
+    AlphaTest = 3008,
 
     [NativeName("GL_TEXTURE_GEN_S")]
     TextureGenS = 3168,
@@ -211,20 +133,92 @@ public enum EnableCap : uint
     [NativeName("GL_MAP2_VERTEX_4")]
     Map2Vertex4 = 3512,
 
+    [NativeName("GL_CLIP_PLANE0")]
+    ClipPlane0 = 12288,
+
+    [NativeName("GL_CLIP_PLANE1")]
+    ClipPlane1 = 12289,
+
+    [NativeName("GL_CLIP_PLANE2")]
+    ClipPlane2 = 12290,
+
+    [NativeName("GL_CLIP_PLANE3")]
+    ClipPlane3 = 12291,
+
+    [NativeName("GL_CLIP_PLANE4")]
+    ClipPlane4 = 12292,
+
+    [NativeName("GL_CLIP_PLANE5")]
+    ClipPlane5 = 12293,
+
+    [NativeName("GL_LIGHT0")]
+    Light0 = 16384,
+
+    [NativeName("GL_LIGHT1")]
+    Light1 = 16385,
+
+    [NativeName("GL_LIGHT2")]
+    Light2 = 16386,
+
+    [NativeName("GL_LIGHT3")]
+    Light3 = 16387,
+
+    [NativeName("GL_LIGHT4")]
+    Light4 = 16388,
+
+    [NativeName("GL_LIGHT5")]
+    Light5 = 16389,
+
+    [NativeName("GL_LIGHT6")]
+    Light6 = 16390,
+
+    [NativeName("GL_LIGHT7")]
+    Light7 = 16391,
+
+    [NativeName("GL_COLOR_LOGIC_OP")]
+    ColorLogicOp = 3058,
+
     [NativeName("GL_POLYGON_OFFSET_POINT")]
     PolygonOffsetPoint = 10753,
 
     [NativeName("GL_POLYGON_OFFSET_LINE")]
     PolygonOffsetLine = 10754,
 
+    [NativeName("GL_POLYGON_OFFSET_FILL")]
+    PolygonOffsetFill = 32823,
+
     [NativeName("GL_INDEX_LOGIC_OP")]
     IndexLogicOp = 3057,
+
+    [NativeName("GL_VERTEX_ARRAY")]
+    VertexArray = 32884,
+
+    [NativeName("GL_NORMAL_ARRAY")]
+    NormalArray = 32885,
+
+    [NativeName("GL_COLOR_ARRAY")]
+    ColorArray = 32886,
 
     [NativeName("GL_INDEX_ARRAY")]
     IndexArray = 32887,
 
+    [NativeName("GL_TEXTURE_COORD_ARRAY")]
+    TextureCoordArray = 32888,
+
     [NativeName("GL_EDGE_FLAG_ARRAY")]
     EdgeFlagArray = 32889,
+
+    [NativeName("GL_MULTISAMPLE")]
+    Multisample = 32925,
+
+    [NativeName("GL_SAMPLE_ALPHA_TO_COVERAGE")]
+    SampleAlphaToCoverage = 32926,
+
+    [NativeName("GL_SAMPLE_ALPHA_TO_ONE")]
+    SampleAlphaToOne = 32927,
+
+    [NativeName("GL_SAMPLE_COVERAGE")]
+    SampleCoverage = 32928,
 
     [NativeName("GL_TEXTURE_CUBE_MAP")]
     TextureCubeMap = 34067,
@@ -441,4 +435,10 @@ public enum EnableCap : uint
 
     [NativeName("GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
     ShadingRatePreserveAspectRatioQCOM = 38565,
+
+    [NativeName("GL_TEXTURE_CUBE_MAP_OES")]
+    TextureCubeMapOES = 34067,
+
+    [NativeName("GL_TEXTURE_GEN_STR_OES")]
+    TextureGenStrOES = 36192,
 }
