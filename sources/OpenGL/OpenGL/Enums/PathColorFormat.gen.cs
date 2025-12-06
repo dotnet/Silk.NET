@@ -7,14 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("PathColorFormat")]
 public enum PathColorFormat : uint
 {
-    None = unchecked((uint)0),
-    Alpha = unchecked((uint)0x1906),
-    Rgb = unchecked((uint)0x1907),
-    Rgba = unchecked((uint)0x1908),
-    Luminance = unchecked((uint)0x1909),
-    LuminanceAlpha = unchecked((uint)0x190A),
-    Intensity = unchecked((uint)0x8049),
+    [NativeName("GL_ALPHA")]
+    Alpha = 6406,
+
+    [NativeName("GL_RGB")]
+    Rgb = 6407,
+
+    [NativeName("GL_RGBA")]
+    Rgba = 6408,
+
+    [NativeName("GL_LUMINANCE")]
+    Luminance = 6409,
+
+    [NativeName("GL_LUMINANCE_ALPHA")]
+    LuminanceAlpha = 6410,
+
+    [NativeName("GL_NONE")]
+    None = 0,
+
+    [NativeName("GL_INTENSITY")]
+    Intensity = 32841,
 }

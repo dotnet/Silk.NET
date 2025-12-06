@@ -8,40 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GPUDepthStencilTargetInfo"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GpuDepthStencilTargetInfo"/> struct.</summary>
 public static unsafe partial class SDL_GPUDepthStencilTargetInfoTests
 {
-    /// <summary>Validates that the <see cref = "GPUDepthStencilTargetInfo"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GpuDepthStencilTargetInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GPUDepthStencilTargetInfo>(),
-            Is.EqualTo(sizeof(GPUDepthStencilTargetInfo))
+            Marshal.SizeOf<GpuDepthStencilTargetInfo>(),
+            Is.EqualTo(sizeof(GpuDepthStencilTargetInfo))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GPUDepthStencilTargetInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GpuDepthStencilTargetInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GPUDepthStencilTargetInfo).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GpuDepthStencilTargetInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GPUDepthStencilTargetInfo"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GpuDepthStencilTargetInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GPUDepthStencilTargetInfo), Is.EqualTo(32));
+            Assert.That(sizeof(GpuDepthStencilTargetInfo), Is.EqualTo(32));
         }
         else
         {
-            Assert.That(sizeof(GPUDepthStencilTargetInfo), Is.EqualTo(28));
+            Assert.That(sizeof(GpuDepthStencilTargetInfo), Is.EqualTo(28));
         }
     }
 }

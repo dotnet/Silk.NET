@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineDepthStencilStateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineDepthStencilStateCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +31,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +50,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineDepthStencilStateCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,7 +69,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public PipelineDepthStencilStateCreateFlags Flags;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("depthTestEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +88,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public uint DepthTestEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("depthWriteEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -105,6 +107,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public uint DepthWriteEnable;
 
+    [NativeName("depthCompareOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -123,7 +126,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public CompareOp DepthCompareOp;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("depthBoundsTestEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -142,7 +145,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public uint DepthBoundsTestEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("stencilTestEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -161,6 +164,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public uint StencilTestEnable;
 
+    [NativeName("front")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -179,6 +183,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public StencilOpState Front;
 
+    [NativeName("back")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -197,6 +202,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public StencilOpState Back;
 
+    [NativeName("minDepthBounds")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -215,6 +221,7 @@ public unsafe partial struct PipelineDepthStencilStateCreateInfo
     )]
     public float MinDepthBounds;
 
+    [NativeName("maxDepthBounds")]
     [SupportedApiProfile(
         "vulkan",
         [

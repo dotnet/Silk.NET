@@ -7,35 +7,39 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkCubicFilterWeightsQCOM")]
 [SupportedApiProfile("vulkan")]
 public enum CubicFilterWeightsQCOM : uint
 {
+    [NativeName("VK_CUBIC_FILTER_WEIGHTS_CATMULL_ROM_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
-    CatmullRomQCOM = 0,
+    CatmullRom = 0,
 
+    [NativeName("VK_CUBIC_FILTER_WEIGHTS_ZERO_TANGENT_CARDINAL_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
-    ZeroTangentCardinalQCOM = 1,
+    ZeroTangentCardinal = 1,
 
+    [NativeName("VK_CUBIC_FILTER_WEIGHTS_B_SPLINE_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
-    BSplineQCOM = 2,
+    BSpline = 2,
 
+    [NativeName("VK_CUBIC_FILTER_WEIGHTS_MITCHELL_NETRAVALI_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],
         ImpliesSets = ["VK_EXT_filter_cubic"]
     )]
-    MitchellNetravaliQCOM = 3,
+    MitchellNetravali = 3,
 }

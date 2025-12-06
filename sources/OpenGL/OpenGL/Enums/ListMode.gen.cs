@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ListMode")]
 public enum ListMode : uint
 {
-    Compile = unchecked((uint)0x1300),
-    CompileAndExecute = unchecked((uint)0x1301),
+    [NativeName("GL_COMPILE")]
+    Compile = 4864,
+
+    [NativeName("GL_COMPILE_AND_EXECUTE")]
+    CompileAndExecute = 4865,
 }

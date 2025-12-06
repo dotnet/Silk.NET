@@ -8,31 +8,34 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkVideoEncodeH265CtbSizeFlagBitsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoEncodeH265CtbSizeFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CTB_SIZE_16_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size16BitKHR = 0x1,
+    Size16Bit = 0x1,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CTB_SIZE_32_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size32BitKHR = 0x2,
+    Size32Bit = 0x2,
 
+    [NativeName("VK_VIDEO_ENCODE_H265_CTB_SIZE_64_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Size64BitKHR = 0x4,
+    Size64Bit = 0x4,
 }

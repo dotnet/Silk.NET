@@ -8,21 +8,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkBlockMatchWindowCompareModeQCOM")]
 [SupportedApiProfile("vulkan")]
 public enum BlockMatchWindowCompareModeQCOM : uint
 {
+    [NativeName("VK_BLOCK_MATCH_WINDOW_COMPARE_MODE_MIN_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
-    MinQCOM = 0,
+    Min = 0,
 
+    [NativeName("VK_BLOCK_MATCH_WINDOW_COMPARE_MODE_MAX_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],
         ImpliesSets = ["VK_QCOM_image_processing"]
     )]
-    MaxQCOM = 1,
+    Max = 1,
 }

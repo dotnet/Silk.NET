@@ -7,17 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Color")]
 public partial struct Color
 {
-    [NativeTypeName("Uint8")]
+    [NativeName("r")]
     public byte R;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("g")]
     public byte G;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("b")]
     public byte B;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("a")]
     public byte A;
 }

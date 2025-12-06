@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccelerationStructureGeometrySpheresDataNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -18,7 +20,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -26,6 +28,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
     )]
     public void* PNext;
 
+    [NativeName("vertexFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -33,6 +36,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
     )]
     public Format VertexFormat;
 
+    [NativeName("vertexData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -40,7 +44,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
     )]
     public DeviceOrHostAddressConstKHR VertexData;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("vertexStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -48,6 +52,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
     )]
     public ulong VertexStride;
 
+    [NativeName("radiusFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -55,6 +60,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
     )]
     public Format RadiusFormat;
 
+    [NativeName("radiusData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -62,7 +68,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
     )]
     public DeviceOrHostAddressConstKHR RadiusData;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("radiusStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -70,6 +76,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
     )]
     public ulong RadiusStride;
 
+    [NativeName("indexType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -77,6 +84,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
     )]
     public IndexType IndexType;
 
+    [NativeName("indexData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -84,7 +92,7 @@ public unsafe partial struct AccelerationStructureGeometrySpheresDataNV
     )]
     public DeviceOrHostAddressConstKHR IndexData;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("indexStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],

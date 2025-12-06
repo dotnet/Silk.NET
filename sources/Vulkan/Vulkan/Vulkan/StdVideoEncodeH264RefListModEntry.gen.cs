@@ -8,17 +8,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoEncodeH264RefListModEntry")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH264RefListModEntry
 {
+    [NativeName("modification_of_pic_nums_idc")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264ModificationOfPicNumsIdc ModificationOfPicNumsIdc;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("abs_diff_pic_num_minus1")]
     [SupportedApiProfile("vulkan")]
     public ushort AbsDiffPicNumMinus1;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("long_term_pic_num")]
     [SupportedApiProfile("vulkan")]
     public ushort LongTermPicNum;
 }

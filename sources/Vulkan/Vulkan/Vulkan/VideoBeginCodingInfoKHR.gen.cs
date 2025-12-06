@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoBeginCodingInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoBeginCodingInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -18,7 +20,7 @@ public unsafe partial struct VideoBeginCodingInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -26,7 +28,7 @@ public unsafe partial struct VideoBeginCodingInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkVideoBeginCodingFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -34,23 +36,23 @@ public unsafe partial struct VideoBeginCodingInfoKHR
     )]
     public uint Flags;
 
-    [NativeTypeName("VkVideoSessionKHR")]
+    [NativeName("videoSession")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public VideoSessionKHRHandle VideoSession;
+    public VideoSessionHandleKHR VideoSession;
 
-    [NativeTypeName("VkVideoSessionParametersKHR")]
+    [NativeName("videoSessionParameters")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    public VideoSessionParametersKHRHandle VideoSessionParameters;
+    public VideoSessionParametersHandleKHR VideoSessionParameters;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("referenceSlotCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -58,7 +60,7 @@ public unsafe partial struct VideoBeginCodingInfoKHR
     )]
     public uint ReferenceSlotCount;
 
-    [NativeTypeName("const VkVideoReferenceSlotInfoKHR *")]
+    [NativeName("pReferenceSlots")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

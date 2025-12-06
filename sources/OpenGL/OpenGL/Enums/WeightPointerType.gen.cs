@@ -7,15 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("WeightPointerTypeARB")]
 public enum WeightPointerType : uint
 {
-    Byte = unchecked((uint)0x1400),
-    UnsignedByte = unchecked((uint)0x1401),
-    Short = unchecked((uint)0x1402),
-    UnsignedShort = unchecked((uint)0x1403),
-    Int = unchecked((uint)0x1404),
-    UnsignedInt = unchecked((uint)0x1405),
-    Float = unchecked((uint)0x1406),
-    Double = unchecked((uint)0x140A),
+    [NativeName("GL_BYTE")]
+    Byte = 5120,
+
+    [NativeName("GL_UNSIGNED_BYTE")]
+    UnsignedByte = 5121,
+
+    [NativeName("GL_SHORT")]
+    Short = 5122,
+
+    [NativeName("GL_UNSIGNED_SHORT")]
+    UnsignedShort = 5123,
+
+    [NativeName("GL_FLOAT")]
+    Float = 5126,
+
+    [NativeName("GL_UNSIGNED_INT")]
+    UnsignedInt = 5125,
+
+    [NativeName("GL_INT")]
+    Int = 5124,
+
+    [NativeName("GL_DOUBLE")]
+    Double = 5130,
 }

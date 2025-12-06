@@ -7,15 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("TextureEnvMode")]
 public enum TextureEnvMode : uint
 {
-    Blend = unchecked((uint)0x0BE2),
-    Replace = unchecked((uint)0x1E01),
-    Add = unchecked((uint)0x0104),
-    Modulate = unchecked((uint)0x2100),
-    Decal = unchecked((uint)0x2101),
-    Combine = unchecked((uint)0x8570),
-    ReplaceEXT = unchecked((uint)0x8062),
-    TextureEnvBiasSGIX = unchecked((uint)0x80BE),
+    [NativeName("GL_BLEND")]
+    Blend = 3042,
+
+    [NativeName("GL_REPLACE")]
+    Replace = 7681,
+
+    [NativeName("GL_MODULATE")]
+    Modulate = 8448,
+
+    [NativeName("GL_DECAL")]
+    Decal = 8449,
+
+    [NativeName("GL_ADD")]
+    Add = 260,
+
+    [NativeName("GL_COMBINE")]
+    Combine = 34160,
+
+    [NativeName("GL_REPLACE_EXT")]
+    ReplaceEXT = 32866,
+
+    [NativeName("GL_TEXTURE_ENV_BIAS_SGIX")]
+    TextureEnvBiasSGIX = 32958,
 }

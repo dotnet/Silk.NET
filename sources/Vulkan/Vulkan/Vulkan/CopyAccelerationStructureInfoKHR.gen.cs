@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCopyAccelerationStructureInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyAccelerationStructureInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -21,7 +23,7 @@ public unsafe partial struct CopyAccelerationStructureInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -32,7 +34,7 @@ public unsafe partial struct CopyAccelerationStructureInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkAccelerationStructureKHR")]
+    [NativeName("src")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -41,9 +43,9 @@ public unsafe partial struct CopyAccelerationStructureInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHRHandle Src;
+    public AccelerationStructureHandleKHR Src;
 
-    [NativeTypeName("VkAccelerationStructureKHR")]
+    [NativeName("dst")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -52,8 +54,9 @@ public unsafe partial struct CopyAccelerationStructureInfoKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public AccelerationStructureKHRHandle Dst;
+    public AccelerationStructureHandleKHR Dst;
 
+    [NativeName("mode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

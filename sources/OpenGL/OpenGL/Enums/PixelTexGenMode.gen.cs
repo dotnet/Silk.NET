@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("PixelTexGenModeSGIX")]
 public enum PixelTexGenMode : uint
 {
-    None = unchecked((uint)0),
-    Alpha = unchecked((uint)0x1906),
-    Rgb = unchecked((uint)0x1907),
-    Rgba = unchecked((uint)0x1908),
+    [NativeName("GL_ALPHA")]
+    Alpha = 6406,
+
+    [NativeName("GL_RGB")]
+    Rgb = 6407,
+
+    [NativeName("GL_RGBA")]
+    Rgba = 6408,
+
+    [NativeName("GL_NONE")]
+    None = 0,
 }

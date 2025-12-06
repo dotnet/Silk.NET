@@ -7,71 +7,198 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FragmentShaderTextureSourceATI")]
 public enum FragmentShaderTextureSource : uint
 {
-    Texture0 = unchecked((uint)0x84C0),
-    Texture1 = unchecked((uint)0x84C1),
-    Texture2 = unchecked((uint)0x84C2),
-    Texture3 = unchecked((uint)0x84C3),
-    Texture4 = unchecked((uint)0x84C4),
-    Texture5 = unchecked((uint)0x84C5),
-    Texture6 = unchecked((uint)0x84C6),
-    Texture7 = unchecked((uint)0x84C7),
-    Texture8 = unchecked((uint)0x84C8),
-    Texture9 = unchecked((uint)0x84C9),
-    Texture10 = unchecked((uint)0x84CA),
-    Texture11 = unchecked((uint)0x84CB),
-    Texture12 = unchecked((uint)0x84CC),
-    Texture13 = unchecked((uint)0x84CD),
-    Texture14 = unchecked((uint)0x84CE),
-    Texture15 = unchecked((uint)0x84CF),
-    Texture16 = unchecked((uint)0x84D0),
-    Texture17 = unchecked((uint)0x84D1),
-    Texture18 = unchecked((uint)0x84D2),
-    Texture19 = unchecked((uint)0x84D3),
-    Texture20 = unchecked((uint)0x84D4),
-    Texture21 = unchecked((uint)0x84D5),
-    Texture22 = unchecked((uint)0x84D6),
-    Texture23 = unchecked((uint)0x84D7),
-    Texture24 = unchecked((uint)0x84D8),
-    Texture25 = unchecked((uint)0x84D9),
-    Texture26 = unchecked((uint)0x84DA),
-    Texture27 = unchecked((uint)0x84DB),
-    Texture28 = unchecked((uint)0x84DC),
-    Texture29 = unchecked((uint)0x84DD),
-    Texture30 = unchecked((uint)0x84DE),
-    Texture31 = unchecked((uint)0x84DF),
-    Reg0ATI = unchecked((uint)0x8921),
-    Reg1ATI = unchecked((uint)0x8922),
-    Reg2ATI = unchecked((uint)0x8923),
-    Reg3ATI = unchecked((uint)0x8924),
-    Reg4ATI = unchecked((uint)0x8925),
-    Reg5ATI = unchecked((uint)0x8926),
-    Reg6ATI = unchecked((uint)0x8927),
-    Reg7ATI = unchecked((uint)0x8928),
-    Reg8ATI = unchecked((uint)0x8929),
-    Reg9ATI = unchecked((uint)0x892A),
-    Reg10ATI = unchecked((uint)0x892B),
-    Reg11ATI = unchecked((uint)0x892C),
-    Reg12ATI = unchecked((uint)0x892D),
-    Reg13ATI = unchecked((uint)0x892E),
-    Reg14ATI = unchecked((uint)0x892F),
-    Reg15ATI = unchecked((uint)0x8930),
-    Reg16ATI = unchecked((uint)0x8931),
-    Reg17ATI = unchecked((uint)0x8932),
-    Reg18ATI = unchecked((uint)0x8933),
-    Reg19ATI = unchecked((uint)0x8934),
-    Reg20ATI = unchecked((uint)0x8935),
-    Reg21ATI = unchecked((uint)0x8936),
-    Reg22ATI = unchecked((uint)0x8937),
-    Reg23ATI = unchecked((uint)0x8938),
-    Reg24ATI = unchecked((uint)0x8939),
-    Reg25ATI = unchecked((uint)0x893A),
-    Reg26ATI = unchecked((uint)0x893B),
-    Reg27ATI = unchecked((uint)0x893C),
-    Reg28ATI = unchecked((uint)0x893D),
-    Reg29ATI = unchecked((uint)0x893E),
-    Reg30ATI = unchecked((uint)0x893F),
-    Reg31ATI = unchecked((uint)0x8940),
+    [NativeName("GL_TEXTURE0")]
+    Texture0 = 33984,
+
+    [NativeName("GL_TEXTURE1")]
+    Texture1 = 33985,
+
+    [NativeName("GL_TEXTURE2")]
+    Texture2 = 33986,
+
+    [NativeName("GL_TEXTURE3")]
+    Texture3 = 33987,
+
+    [NativeName("GL_TEXTURE4")]
+    Texture4 = 33988,
+
+    [NativeName("GL_TEXTURE5")]
+    Texture5 = 33989,
+
+    [NativeName("GL_TEXTURE6")]
+    Texture6 = 33990,
+
+    [NativeName("GL_TEXTURE7")]
+    Texture7 = 33991,
+
+    [NativeName("GL_TEXTURE8")]
+    Texture8 = 33992,
+
+    [NativeName("GL_TEXTURE9")]
+    Texture9 = 33993,
+
+    [NativeName("GL_TEXTURE10")]
+    Texture10 = 33994,
+
+    [NativeName("GL_TEXTURE11")]
+    Texture11 = 33995,
+
+    [NativeName("GL_TEXTURE12")]
+    Texture12 = 33996,
+
+    [NativeName("GL_TEXTURE13")]
+    Texture13 = 33997,
+
+    [NativeName("GL_TEXTURE14")]
+    Texture14 = 33998,
+
+    [NativeName("GL_TEXTURE15")]
+    Texture15 = 33999,
+
+    [NativeName("GL_TEXTURE16")]
+    Texture16 = 34000,
+
+    [NativeName("GL_TEXTURE17")]
+    Texture17 = 34001,
+
+    [NativeName("GL_TEXTURE18")]
+    Texture18 = 34002,
+
+    [NativeName("GL_TEXTURE19")]
+    Texture19 = 34003,
+
+    [NativeName("GL_TEXTURE20")]
+    Texture20 = 34004,
+
+    [NativeName("GL_TEXTURE21")]
+    Texture21 = 34005,
+
+    [NativeName("GL_TEXTURE22")]
+    Texture22 = 34006,
+
+    [NativeName("GL_TEXTURE23")]
+    Texture23 = 34007,
+
+    [NativeName("GL_TEXTURE24")]
+    Texture24 = 34008,
+
+    [NativeName("GL_TEXTURE25")]
+    Texture25 = 34009,
+
+    [NativeName("GL_TEXTURE26")]
+    Texture26 = 34010,
+
+    [NativeName("GL_TEXTURE27")]
+    Texture27 = 34011,
+
+    [NativeName("GL_TEXTURE28")]
+    Texture28 = 34012,
+
+    [NativeName("GL_TEXTURE29")]
+    Texture29 = 34013,
+
+    [NativeName("GL_TEXTURE30")]
+    Texture30 = 34014,
+
+    [NativeName("GL_TEXTURE31")]
+    Texture31 = 34015,
+
+    [NativeName("GL_REG_0_ATI")]
+    Reg0ATI = 35105,
+
+    [NativeName("GL_REG_1_ATI")]
+    Reg1ATI = 35106,
+
+    [NativeName("GL_REG_2_ATI")]
+    Reg2ATI = 35107,
+
+    [NativeName("GL_REG_3_ATI")]
+    Reg3ATI = 35108,
+
+    [NativeName("GL_REG_4_ATI")]
+    Reg4ATI = 35109,
+
+    [NativeName("GL_REG_5_ATI")]
+    Reg5ATI = 35110,
+
+    [NativeName("GL_REG_6_ATI")]
+    Reg6ATI = 35111,
+
+    [NativeName("GL_REG_7_ATI")]
+    Reg7ATI = 35112,
+
+    [NativeName("GL_REG_8_ATI")]
+    Reg8ATI = 35113,
+
+    [NativeName("GL_REG_9_ATI")]
+    Reg9ATI = 35114,
+
+    [NativeName("GL_REG_10_ATI")]
+    Reg10ATI = 35115,
+
+    [NativeName("GL_REG_11_ATI")]
+    Reg11ATI = 35116,
+
+    [NativeName("GL_REG_12_ATI")]
+    Reg12ATI = 35117,
+
+    [NativeName("GL_REG_13_ATI")]
+    Reg13ATI = 35118,
+
+    [NativeName("GL_REG_14_ATI")]
+    Reg14ATI = 35119,
+
+    [NativeName("GL_REG_15_ATI")]
+    Reg15ATI = 35120,
+
+    [NativeName("GL_REG_16_ATI")]
+    Reg16ATI = 35121,
+
+    [NativeName("GL_REG_17_ATI")]
+    Reg17ATI = 35122,
+
+    [NativeName("GL_REG_18_ATI")]
+    Reg18ATI = 35123,
+
+    [NativeName("GL_REG_19_ATI")]
+    Reg19ATI = 35124,
+
+    [NativeName("GL_REG_20_ATI")]
+    Reg20ATI = 35125,
+
+    [NativeName("GL_REG_21_ATI")]
+    Reg21ATI = 35126,
+
+    [NativeName("GL_REG_22_ATI")]
+    Reg22ATI = 35127,
+
+    [NativeName("GL_REG_23_ATI")]
+    Reg23ATI = 35128,
+
+    [NativeName("GL_REG_24_ATI")]
+    Reg24ATI = 35129,
+
+    [NativeName("GL_REG_25_ATI")]
+    Reg25ATI = 35130,
+
+    [NativeName("GL_REG_26_ATI")]
+    Reg26ATI = 35131,
+
+    [NativeName("GL_REG_27_ATI")]
+    Reg27ATI = 35132,
+
+    [NativeName("GL_REG_28_ATI")]
+    Reg28ATI = 35133,
+
+    [NativeName("GL_REG_29_ATI")]
+    Reg29ATI = 35134,
+
+    [NativeName("GL_REG_30_ATI")]
+    Reg30ATI = 35135,
+
+    [NativeName("GL_REG_31_ATI")]
+    Reg31ATI = 35136,
 }

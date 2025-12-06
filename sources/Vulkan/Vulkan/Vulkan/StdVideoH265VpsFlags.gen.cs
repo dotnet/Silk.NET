@@ -8,15 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH265VpsFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265VpsFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("vps_temporal_id_nesting_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint vps_temporal_id_nesting_flag
+    public uint VpsTemporalIdNestingFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -24,9 +26,9 @@ public partial struct StdVideoH265VpsFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("vps_sub_layer_ordering_info_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint vps_sub_layer_ordering_info_present_flag
+    public uint VpsSubLayerOrderingInfoPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -34,9 +36,9 @@ public partial struct StdVideoH265VpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("vps_timing_info_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint vps_timing_info_present_flag
+    public uint VpsTimingInfoPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -44,9 +46,9 @@ public partial struct StdVideoH265VpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("vps_poc_proportional_to_timing_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint vps_poc_proportional_to_timing_flag
+    public uint VpsPocProportionalToTimingFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }

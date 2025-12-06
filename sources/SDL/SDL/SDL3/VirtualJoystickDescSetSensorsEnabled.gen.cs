@@ -6,7 +6,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[Transformed]
+[NativeName("SDL_VirtualJoystickDesc_SetSensorsEnabled")]
 public readonly unsafe struct VirtualJoystickDescSetSensorsEnabled : IDisposable
 {
     private readonly void* Pointer;

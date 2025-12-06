@@ -8,15 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoDecodeH264PictureInfoFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeH264PictureInfoFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("field_pic_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint field_pic_flag
+    public uint FieldPicFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -24,9 +26,9 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("is_intra")]
     [SupportedApiProfile("vulkan")]
-    public uint is_intra
+    public uint IsIntra
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -34,7 +36,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("IdrPicFlag")]
     [SupportedApiProfile("vulkan")]
     public uint IdrPicFlag
     {
@@ -44,9 +46,9 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("bottom_field_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint bottom_field_flag
+    public uint BottomFieldFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -54,9 +56,9 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("is_reference")]
     [SupportedApiProfile("vulkan")]
-    public uint is_reference
+    public uint IsReference
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0x1u; }
@@ -64,9 +66,9 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("complementary_field_pair")]
     [SupportedApiProfile("vulkan")]
-    public uint complementary_field_pair
+    public uint ComplementaryFieldPair
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 5) & 0x1u; }

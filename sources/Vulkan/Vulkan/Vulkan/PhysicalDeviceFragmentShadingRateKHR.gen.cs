@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceFragmentShadingRateKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentShadingRateKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -22,6 +24,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkSampleCountFlags")]
+    [NativeName("sampleCounts")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -45,6 +48,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateKHR
     )]
     public SampleCountFlags SampleCounts;
 
+    [NativeName("fragmentSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],

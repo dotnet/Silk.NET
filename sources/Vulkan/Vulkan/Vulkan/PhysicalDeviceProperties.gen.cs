@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceProperties
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("apiVersion")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +40,7 @@ public partial struct PhysicalDeviceProperties
     )]
     public uint ApiVersion;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("driverVersion")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +69,7 @@ public partial struct PhysicalDeviceProperties
     )]
     public uint DriverVersion;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("vendorID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -95,9 +96,9 @@ public partial struct PhysicalDeviceProperties
         ],
         MinVersion = "1.0"
     )]
-    public uint VendorID;
+    public uint VendorId;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("deviceID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -124,8 +125,9 @@ public partial struct PhysicalDeviceProperties
         ],
         MinVersion = "1.0"
     )]
-    public uint DeviceID;
+    public uint DeviceId;
 
+    [NativeName("deviceType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -154,7 +156,7 @@ public partial struct PhysicalDeviceProperties
     )]
     public PhysicalDeviceType DeviceType;
 
-    [NativeTypeName("char[256]")]
+    [NativeName("deviceName")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -183,7 +185,7 @@ public partial struct PhysicalDeviceProperties
     )]
     public PhysicalDevicePropertiesDeviceName DeviceName;
 
-    [NativeTypeName("uint8_t[16]")]
+    [NativeName("pipelineCacheUUID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -210,8 +212,9 @@ public partial struct PhysicalDeviceProperties
         ],
         MinVersion = "1.0"
     )]
-    public PhysicalDevicePropertiesPipelineCacheUUID PipelineCacheUUID;
+    public PhysicalDevicePropertiesPipelineCacheUuid PipelineCacheUuid;
 
+    [NativeName("limits")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -240,6 +243,7 @@ public partial struct PhysicalDeviceProperties
     )]
     public PhysicalDeviceLimits Limits;
 
+    [NativeName("sparseProperties")]
     [SupportedApiProfile(
         "vulkan",
         [

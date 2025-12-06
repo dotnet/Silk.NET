@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("RenderbufferTarget")]
 public enum RenderbufferTarget : uint
 {
-    Renderbuffer = unchecked((uint)0x8D41),
-    RenderbufferOES = unchecked((uint)0x8D41),
+    [NativeName("GL_RENDERBUFFER_OES")]
+    RenderbufferOES = 36161,
+
+    [NativeName("GL_RENDERBUFFER")]
+    Renderbuffer = 36161,
 }

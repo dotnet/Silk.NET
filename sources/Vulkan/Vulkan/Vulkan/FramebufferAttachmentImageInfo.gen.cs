@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkFramebufferAttachmentImageInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FramebufferAttachmentImageInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,7 +27,7 @@ public unsafe partial struct FramebufferAttachmentImageInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +42,7 @@ public unsafe partial struct FramebufferAttachmentImageInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkImageCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -55,7 +57,7 @@ public unsafe partial struct FramebufferAttachmentImageInfo
     )]
     public ImageCreateFlags Flags;
 
-    [NativeTypeName("VkImageUsageFlags")]
+    [NativeName("usage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +72,7 @@ public unsafe partial struct FramebufferAttachmentImageInfo
     )]
     public ImageUsageFlags Usage;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("width")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -85,7 +87,7 @@ public unsafe partial struct FramebufferAttachmentImageInfo
     )]
     public uint Width;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("height")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -100,7 +102,7 @@ public unsafe partial struct FramebufferAttachmentImageInfo
     )]
     public uint Height;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("layerCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -115,7 +117,7 @@ public unsafe partial struct FramebufferAttachmentImageInfo
     )]
     public uint LayerCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("viewFormatCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -130,7 +132,7 @@ public unsafe partial struct FramebufferAttachmentImageInfo
     )]
     public uint ViewFormatCount;
 
-    [NativeTypeName("const VkFormat *")]
+    [NativeName("pViewFormats")]
     [SupportedApiProfile(
         "vulkan",
         [

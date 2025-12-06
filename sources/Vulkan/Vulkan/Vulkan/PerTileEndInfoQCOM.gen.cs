@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPerTileEndInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerTileEndInfoQCOM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -21,7 +23,7 @@ public unsafe partial struct PerTileEndInfoQCOM
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],

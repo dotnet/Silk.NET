@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceConditionalRenderingFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conditional_rendering"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conditional_rendering"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("conditionalRendering")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conditional_rendering"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
     )]
     public uint ConditionalRendering;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("inheritedConditionalRendering")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conditional_rendering"],

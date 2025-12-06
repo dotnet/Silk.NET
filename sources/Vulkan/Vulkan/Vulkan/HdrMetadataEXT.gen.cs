@@ -8,37 +8,47 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkHdrMetadataEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct HdrMetadataEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     public void* PNext;
 
+    [NativeName("displayPrimaryRed")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XYColorEXT DisplayPrimaryRed;
+    public XyColorEXT DisplayPrimaryRed;
 
+    [NativeName("displayPrimaryGreen")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XYColorEXT DisplayPrimaryGreen;
+    public XyColorEXT DisplayPrimaryGreen;
 
+    [NativeName("displayPrimaryBlue")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XYColorEXT DisplayPrimaryBlue;
+    public XyColorEXT DisplayPrimaryBlue;
 
+    [NativeName("whitePoint")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
-    public XYColorEXT WhitePoint;
+    public XyColorEXT WhitePoint;
 
+    [NativeName("maxLuminance")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     public float MaxLuminance;
 
+    [NativeName("minLuminance")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     public float MinLuminance;
 
+    [NativeName("maxContentLightLevel")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     public float MaxContentLightLevel;
 
+    [NativeName("maxFrameAverageLightLevel")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     public float MaxFrameAverageLightLevel;
 }

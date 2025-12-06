@@ -8,11 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkVideoEncodeContentFlagBitsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoEncodeContentFlagsKHR : uint
 {
+    [NativeName("VK_VIDEO_ENCODE_CONTENT_DEFAULT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -21,8 +22,9 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DefaultKHR = 0x0,
+    Default = 0x0,
 
+    [NativeName("VK_VIDEO_ENCODE_CONTENT_CAMERA_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -31,8 +33,9 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    CameraBitKHR = 0x1,
+    CameraBit = 0x1,
 
+    [NativeName("VK_VIDEO_ENCODE_CONTENT_DESKTOP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -41,8 +44,9 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DesktopBitKHR = 0x2,
+    DesktopBit = 0x2,
 
+    [NativeName("VK_VIDEO_ENCODE_CONTENT_RENDERED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -51,5 +55,5 @@ public enum VideoEncodeContentFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    RenderedBitKHR = 0x4,
+    RenderedBit = 0x4,
 }

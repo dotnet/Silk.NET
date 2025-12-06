@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineCreationFeedback")]
 [SupportedApiProfile("vulkan")]
 public partial struct PipelineCreationFeedback
 {
-    [NativeTypeName("VkPipelineCreationFeedbackFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -26,7 +27,7 @@ public partial struct PipelineCreationFeedback
     )]
     public PipelineCreationFeedbackFlags Flags;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("duration")]
     [SupportedApiProfile(
         "vulkan",
         [

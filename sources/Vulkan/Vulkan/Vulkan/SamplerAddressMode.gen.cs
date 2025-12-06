@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSamplerAddressMode")]
 [SupportedApiProfile("vulkan")]
 public enum SamplerAddressMode : uint
 {
+    [NativeName("VK_SAMPLER_ADDRESS_MODE_REPEAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,6 +36,7 @@ public enum SamplerAddressMode : uint
     )]
     Repeat = 0,
 
+    [NativeName("VK_SAMPLER_ADDRESS_MODE_MIRRORED_REPEAT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,6 +60,7 @@ public enum SamplerAddressMode : uint
     )]
     MirroredRepeat = 1,
 
+    [NativeName("VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -81,6 +84,7 @@ public enum SamplerAddressMode : uint
     )]
     ClampToEdge = 2,
 
+    [NativeName("VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_BORDER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -104,6 +108,7 @@ public enum SamplerAddressMode : uint
     )]
     ClampToBorder = 3,
 
+    [NativeName("VK_SAMPLER_ADDRESS_MODE_MIRROR_CLAMP_TO_EDGE")]
     [SupportedApiProfile(
         "vulkan",
         [

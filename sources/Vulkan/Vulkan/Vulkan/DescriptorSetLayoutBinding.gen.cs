@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDescriptorSetLayoutBinding")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorSetLayoutBinding
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("binding")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,6 +35,7 @@ public unsafe partial struct DescriptorSetLayoutBinding
     )]
     public uint Binding;
 
+    [NativeName("descriptorType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +59,7 @@ public unsafe partial struct DescriptorSetLayoutBinding
     )]
     public DescriptorType DescriptorType;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("descriptorCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -81,7 +83,7 @@ public unsafe partial struct DescriptorSetLayoutBinding
     )]
     public uint DescriptorCount;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("stageFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -105,7 +107,7 @@ public unsafe partial struct DescriptorSetLayoutBinding
     )]
     public ShaderStageFlags StageFlags;
 
-    [NativeTypeName("const VkSampler *")]
+    [NativeName("pImmutableSamplers")]
     [SupportedApiProfile(
         "vulkan",
         [

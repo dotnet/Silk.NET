@@ -10,10 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("ContextAmbisonicScalingSOFT")]
 public enum ContextAmbisonicScalingSOFT : uint
 {
-    Fuma = unchecked((uint)0x0000),
-    Sn3D = unchecked((uint)0x0001),
-    N3D = unchecked((uint)0x0002),
+    [NativeName("ALC_FUMA_SOFT")]
+    Fuma = 0,
+
+    [NativeName("ALC_SN3D_SOFT")]
+    Sn3D = 1,
+
+    [NativeName("ALC_N3D_SOFT")]
+    N3D = 2,
 }

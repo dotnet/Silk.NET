@@ -8,16 +8,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkShaderInfoTypeAMD")]
 [SupportedApiProfile("vulkan")]
 public enum ShaderInfoTypeAMD : uint
 {
+    [NativeName("VK_SHADER_INFO_TYPE_STATISTICS_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    StatisticsAMD = 0,
+    Statistics = 0,
 
+    [NativeName("VK_SHADER_INFO_TYPE_BINARY_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    BinaryAMD = 1,
+    Binary = 1,
 
+    [NativeName("VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
-    DisassemblyAMD = 2,
+    Disassembly = 2,
 }

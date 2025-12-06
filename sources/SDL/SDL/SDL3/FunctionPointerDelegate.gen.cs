@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_FunctionPointer")]
 public unsafe delegate void FunctionPointerDelegate();

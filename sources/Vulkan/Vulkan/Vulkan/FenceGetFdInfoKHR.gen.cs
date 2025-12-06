@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkFenceGetFdInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FenceGetFdInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],
@@ -20,7 +22,7 @@ public unsafe partial struct FenceGetFdInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],
@@ -31,7 +33,7 @@ public unsafe partial struct FenceGetFdInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkFence")]
+    [NativeName("fence")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],
@@ -42,6 +44,7 @@ public unsafe partial struct FenceGetFdInfoKHR
     )]
     public FenceHandle Fence;
 
+    [NativeName("handleType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_fd"],

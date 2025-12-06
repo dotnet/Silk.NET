@@ -6,10 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkExternalMemoryProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct ExternalMemoryProperties
 {
-    [NativeTypeName("VkExternalMemoryFeatureFlags")]
+    [NativeName("externalMemoryFeatures")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +35,7 @@ public partial struct ExternalMemoryProperties
     )]
     public ExternalMemoryFeatureFlags ExternalMemoryFeatures;
 
-    [NativeTypeName("VkExternalMemoryHandleTypeFlags")]
+    [NativeName("exportFromImportedHandleTypes")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -59,7 +60,7 @@ public partial struct ExternalMemoryProperties
     )]
     public ExternalMemoryHandleTypeFlags ExportFromImportedHandleTypes;
 
-    [NativeTypeName("VkExternalMemoryHandleTypeFlags")]
+    [NativeName("compatibleHandleTypes")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -10,13 +10,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("ListenerPName")]
 public enum ListenerPName : uint
 {
-    Position = unchecked((uint)0x1004),
-    Direction = unchecked((uint)0x1005),
-    Velocity = unchecked((uint)0x1006),
-    Orientation = unchecked((uint)0x100F),
-    ConeOuterGain = unchecked((uint)0x1022),
-    MetersPerUnit = unchecked((uint)0x20004),
+    [NativeName("AL_POSITION")]
+    Position = 4100,
+
+    [NativeName("AL_DIRECTION")]
+    Direction = 4101,
+
+    [NativeName("AL_VELOCITY")]
+    Velocity = 4102,
+
+    [NativeName("AL_ORIENTATION")]
+    Orientation = 4111,
+
+    [NativeName("AL_CONE_OUTER_GAIN")]
+    ConeOuterGain = 4130,
+
+    [NativeName("AL_METERS_PER_UNIT")]
+    MetersPerUnit = 131076,
 }

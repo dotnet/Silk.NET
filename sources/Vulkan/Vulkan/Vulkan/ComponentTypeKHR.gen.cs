@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkComponentTypeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum ComponentTypeKHR : uint
 {
+    [NativeName("VK_COMPONENT_TYPE_FLOAT16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -19,8 +20,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Float16KHR = 0,
+    Float16 = 0,
 
+    [NativeName("VK_COMPONENT_TYPE_FLOAT32_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -29,8 +31,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Float32KHR = 1,
+    Float32 = 1,
 
+    [NativeName("VK_COMPONENT_TYPE_FLOAT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -39,8 +42,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Float64KHR = 2,
+    Float64 = 2,
 
+    [NativeName("VK_COMPONENT_TYPE_SINT8_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -49,8 +53,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Sint8KHR = 3,
+    Sint8 = 3,
 
+    [NativeName("VK_COMPONENT_TYPE_SINT16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -59,8 +64,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Sint16KHR = 4,
+    Sint16 = 4,
 
+    [NativeName("VK_COMPONENT_TYPE_SINT32_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -69,8 +75,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Sint32KHR = 5,
+    Sint32 = 5,
 
+    [NativeName("VK_COMPONENT_TYPE_SINT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -79,8 +86,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Sint64KHR = 6,
+    Sint64 = 6,
 
+    [NativeName("VK_COMPONENT_TYPE_UINT8_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -89,8 +97,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Uint8KHR = 7,
+    Uint8 = 7,
 
+    [NativeName("VK_COMPONENT_TYPE_UINT16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -99,8 +108,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Uint16KHR = 8,
+    Uint16 = 8,
 
+    [NativeName("VK_COMPONENT_TYPE_UINT32_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -109,8 +119,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Uint32KHR = 9,
+    Uint32 = 9,
 
+    [NativeName("VK_COMPONENT_TYPE_UINT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -119,8 +130,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    Uint64KHR = 10,
+    Uint64 = 10,
 
+    [NativeName("VK_COMPONENT_TYPE_BFLOAT16_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix", "VK_KHR_shader_bfloat16"],
@@ -130,8 +142,9 @@ public enum ComponentTypeKHR : uint
         ],
         RequireAll = true
     )]
-    Bfloat16KHR = 1000141000,
+    Bfloat16 = 1000141000,
 
+    [NativeName("VK_COMPONENT_TYPE_SINT8_PACKED_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -142,6 +155,7 @@ public enum ComponentTypeKHR : uint
     )]
     Sint8PackedNV = 1000491000,
 
+    [NativeName("VK_COMPONENT_TYPE_UINT8_PACKED_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -152,6 +166,7 @@ public enum ComponentTypeKHR : uint
     )]
     Uint8PackedNV = 1000491001,
 
+    [NativeName("VK_COMPONENT_TYPE_FLOAT8_E4M3_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_float8", "VK_KHR_cooperative_matrix"],
@@ -163,6 +178,7 @@ public enum ComponentTypeKHR : uint
     )]
     Float8E4M3EXT = 1000491002,
 
+    [NativeName("VK_COMPONENT_TYPE_FLOAT8_E5M2_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_float8", "VK_KHR_cooperative_matrix"],
@@ -174,6 +190,7 @@ public enum ComponentTypeKHR : uint
     )]
     Float8E5M2EXT = 1000491003,
 
+    [NativeName("VK_COMPONENT_TYPE_FLOAT16_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -182,8 +199,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Float16NV = Float16KHR,
+    Float16NV = Float16,
 
+    [NativeName("VK_COMPONENT_TYPE_FLOAT32_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -192,8 +210,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Float32NV = Float32KHR,
+    Float32NV = Float32,
 
+    [NativeName("VK_COMPONENT_TYPE_FLOAT64_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -202,8 +221,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Float64NV = Float64KHR,
+    Float64NV = Float64,
 
+    [NativeName("VK_COMPONENT_TYPE_SINT8_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -212,8 +232,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Sint8NV = Sint8KHR,
+    Sint8NV = Sint8,
 
+    [NativeName("VK_COMPONENT_TYPE_SINT16_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -222,8 +243,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Sint16NV = Sint16KHR,
+    Sint16NV = Sint16,
 
+    [NativeName("VK_COMPONENT_TYPE_SINT32_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -232,8 +254,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Sint32NV = Sint32KHR,
+    Sint32NV = Sint32,
 
+    [NativeName("VK_COMPONENT_TYPE_SINT64_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -242,8 +265,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Sint64NV = Sint64KHR,
+    Sint64NV = Sint64,
 
+    [NativeName("VK_COMPONENT_TYPE_UINT8_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -252,8 +276,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Uint8NV = Uint8KHR,
+    Uint8NV = Uint8,
 
+    [NativeName("VK_COMPONENT_TYPE_UINT16_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -262,8 +287,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Uint16NV = Uint16KHR,
+    Uint16NV = Uint16,
 
+    [NativeName("VK_COMPONENT_TYPE_UINT32_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -272,8 +298,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Uint32NV = Uint32KHR,
+    Uint32NV = Uint32,
 
+    [NativeName("VK_COMPONENT_TYPE_UINT64_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix"],
@@ -282,8 +309,9 @@ public enum ComponentTypeKHR : uint
             "VK_NV_cooperative_matrix+VK_VERSION_1_1",
         ]
     )]
-    Uint64NV = Uint64KHR,
+    Uint64NV = Uint64,
 
+    [NativeName("VK_COMPONENT_TYPE_FLOAT_E4M3_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -294,6 +322,7 @@ public enum ComponentTypeKHR : uint
     )]
     FloatE4M3NV = Float8E4M3EXT,
 
+    [NativeName("VK_COMPONENT_TYPE_FLOAT_E5M2_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],

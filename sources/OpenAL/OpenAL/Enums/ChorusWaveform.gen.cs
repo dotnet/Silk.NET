@@ -10,9 +10,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("ChorusWaveform")]
 public enum ChorusWaveform : uint
 {
-    Sinusoid = unchecked((uint)0),
-    Triangle = unchecked((uint)1),
+    [NativeName("AL_CHORUS_WAVEFORM_SINUSOID")]
+    Sinusoid = 0,
+
+    [NativeName("AL_CHORUS_WAVEFORM_TRIANGLE")]
+    Triangle = 1,
 }

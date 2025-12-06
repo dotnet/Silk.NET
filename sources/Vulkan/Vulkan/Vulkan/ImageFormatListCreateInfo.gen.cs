@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImageFormatListCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageFormatListCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +32,7 @@ public unsafe partial struct ImageFormatListCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +53,7 @@ public unsafe partial struct ImageFormatListCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("viewFormatCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -72,7 +74,7 @@ public unsafe partial struct ImageFormatListCreateInfo
     )]
     public uint ViewFormatCount;
 
-    [NativeTypeName("const VkFormat *")]
+    [NativeName("pViewFormats")]
     [SupportedApiProfile(
         "vulkan",
         [

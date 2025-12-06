@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkCooperativeVectorMatrixLayoutNV")]
 [SupportedApiProfile("vulkan")]
 public enum CooperativeVectorMatrixLayoutNV : uint
 {
+    [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_ROW_MAJOR_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -20,8 +21,9 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    RowMajorNV = 0,
+    RowMajor = 0,
 
+    [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_COLUMN_MAJOR_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -30,8 +32,9 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    ColumnMajorNV = 1,
+    ColumnMajor = 1,
 
+    [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_INFERENCING_OPTIMAL_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -40,8 +43,9 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    InferencingOptimalNV = 2,
+    InferencingOptimal = 2,
 
+    [NativeName("VK_COOPERATIVE_VECTOR_MATRIX_LAYOUT_TRAINING_OPTIMAL_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -50,5 +54,5 @@ public enum CooperativeVectorMatrixLayoutNV : uint
             "VK_NV_cooperative_vector+VK_VERSION_1_1",
         ]
     )]
-    TrainingOptimalNV = 3,
+    TrainingOptimal = 3,
 }

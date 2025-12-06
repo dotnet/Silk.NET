@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSubpassDependency")]
 [SupportedApiProfile("vulkan")]
 public partial struct SubpassDependency
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("srcSubpass")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +31,7 @@ public partial struct SubpassDependency
     )]
     public uint SrcSubpass;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dstSubpass")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -49,7 +50,7 @@ public partial struct SubpassDependency
     )]
     public uint DstSubpass;
 
-    [NativeTypeName("VkPipelineStageFlags")]
+    [NativeName("srcStageMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +69,7 @@ public partial struct SubpassDependency
     )]
     public PipelineStageFlags SrcStageMask;
 
-    [NativeTypeName("VkPipelineStageFlags")]
+    [NativeName("dstStageMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +88,7 @@ public partial struct SubpassDependency
     )]
     public PipelineStageFlags DstStageMask;
 
-    [NativeTypeName("VkAccessFlags")]
+    [NativeName("srcAccessMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -106,7 +107,7 @@ public partial struct SubpassDependency
     )]
     public AccessFlags SrcAccessMask;
 
-    [NativeTypeName("VkAccessFlags")]
+    [NativeName("dstAccessMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -125,7 +126,7 @@ public partial struct SubpassDependency
     )]
     public AccessFlags DstAccessMask;
 
-    [NativeTypeName("VkDependencyFlags")]
+    [NativeName("dependencyFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

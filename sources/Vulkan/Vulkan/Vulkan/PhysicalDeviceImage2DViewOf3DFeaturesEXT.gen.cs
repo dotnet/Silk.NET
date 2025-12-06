@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceImage2DViewOf3DFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImage2DViewOf3DFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_2d_view_of_3d"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceImage2DViewOf3DFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_2d_view_of_3d"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceImage2DViewOf3DFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("image2DViewOf3D")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_2d_view_of_3d"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceImage2DViewOf3DFeaturesEXT
     )]
     public uint Image2DViewOf3D;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("sampler2DViewOf3D")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_2d_view_of_3d"],

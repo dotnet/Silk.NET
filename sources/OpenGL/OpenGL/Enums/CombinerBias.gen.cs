@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("CombinerBiasNV")]
 public enum CombinerBias : uint
 {
-    None = unchecked((uint)0),
-    BiasByNegativeOneHalfNV = unchecked((uint)0x8541),
+    [NativeName("GL_NONE")]
+    None = 0,
+
+    [NativeName("GL_BIAS_BY_NEGATIVE_ONE_HALF_NV")]
+    BiasByNegativeOneHalfNV = 34113,
 }

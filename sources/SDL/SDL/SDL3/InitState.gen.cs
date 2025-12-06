@@ -7,11 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_InitState")]
 public unsafe partial struct InitState
 {
+    [NativeName("status")]
     public AtomicInt Status;
 
-    [NativeTypeName("SDL_ThreadID")]
+    [NativeName("thread")]
     public ulong Thread;
+
+    [NativeName("reserved")]
     public void* Reserved;
 }

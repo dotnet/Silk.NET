@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRenderPassInputAttachmentAspectCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassInputAttachmentAspectCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -26,7 +28,7 @@ public unsafe partial struct RenderPassInputAttachmentAspectCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -43,7 +45,7 @@ public unsafe partial struct RenderPassInputAttachmentAspectCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("aspectReferenceCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +62,7 @@ public unsafe partial struct RenderPassInputAttachmentAspectCreateInfo
     )]
     public uint AspectReferenceCount;
 
-    [NativeTypeName("const VkInputAttachmentAspectReference *")]
+    [NativeName("pAspectReferences")]
     [SupportedApiProfile(
         "vulkan",
         [

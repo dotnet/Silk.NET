@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkExternalFenceFeatureFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ExternalFenceFeatureFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_EXTERNAL_FENCE_FEATURE_EXPORTABLE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,6 +39,7 @@ public enum ExternalFenceFeatureFlags : uint
     )]
     ExportableBit = 0x1,
 
+    [NativeName("VK_EXTERNAL_FENCE_FEATURE_IMPORTABLE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,6 +64,7 @@ public enum ExternalFenceFeatureFlags : uint
     )]
     ImportableBit = 0x2,
 
+    [NativeName("VK_EXTERNAL_FENCE_FEATURE_EXPORTABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_capabilities"],
@@ -72,6 +75,7 @@ public enum ExternalFenceFeatureFlags : uint
     )]
     ExportableBitKHR = ExportableBit,
 
+    [NativeName("VK_EXTERNAL_FENCE_FEATURE_IMPORTABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence_capabilities"],

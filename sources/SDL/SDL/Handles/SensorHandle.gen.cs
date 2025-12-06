@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Sensor")]
 public readonly unsafe partial struct SensorHandle
 {
     public readonly void* Handle;
+
+    public SensorHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(SensorHandle other) => Handle == other.Handle;
 

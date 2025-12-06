@@ -7,13 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("PrecisionType")]
 public enum PrecisionType : uint
 {
-    LowFloat = unchecked((uint)0x8DF0),
-    MediumFloat = unchecked((uint)0x8DF1),
-    HighFloat = unchecked((uint)0x8DF2),
-    LowInt = unchecked((uint)0x8DF3),
-    MediumInt = unchecked((uint)0x8DF4),
-    HighInt = unchecked((uint)0x8DF5),
+    [NativeName("GL_LOW_FLOAT")]
+    LowFloat = 36336,
+
+    [NativeName("GL_MEDIUM_FLOAT")]
+    MediumFloat = 36337,
+
+    [NativeName("GL_HIGH_FLOAT")]
+    HighFloat = 36338,
+
+    [NativeName("GL_LOW_INT")]
+    LowInt = 36339,
+
+    [NativeName("GL_MEDIUM_INT")]
+    MediumInt = 36340,
+
+    [NativeName("GL_HIGH_INT")]
+    HighInt = 36341,
 }

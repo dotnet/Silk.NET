@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceDeviceMemoryReportCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -21,7 +23,7 @@ public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -32,7 +34,7 @@ public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceMemoryReportFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -43,7 +45,7 @@ public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT
     )]
     public uint Flags;
 
-    [NativeTypeName("PFN_vkDeviceMemoryReportCallbackEXT")]
+    [NativeName("pfnUserCallback")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -52,8 +54,9 @@ public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT
             "VK_EXT_device_memory_report+VK_VERSION_1_1",
         ]
     )]
-    public PFNVkDeviceMemoryReportCallbackEXT PfnUserCallback;
+    public DeviceMemoryReportCallbackEXT PfnUserCallback;
 
+    [NativeName("pUserData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],

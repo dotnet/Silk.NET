@@ -7,81 +7,84 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_VirtualJoystickDesc")]
 public unsafe partial struct VirtualJoystickDesc
 {
-    [NativeTypeName("Uint32")]
+    [NativeName("version")]
     public uint Version;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("type")]
     public ushort Type;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("padding")]
     public ushort Padding;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("vendor_id")]
     public ushort VendorId;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("product_id")]
     public ushort ProductId;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("naxes")]
     public ushort Naxes;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("nbuttons")]
     public ushort Nbuttons;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("nballs")]
     public ushort Nballs;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("nhats")]
     public ushort Nhats;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("ntouchpads")]
     public ushort Ntouchpads;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("nsensors")]
     public ushort Nsensors;
 
-    [NativeTypeName("Uint16[2]")]
+    [NativeName("padding2")]
     public VirtualJoystickDescPadding2 Padding2;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("button_mask")]
     public uint ButtonMask;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("axis_mask")]
     public uint AxisMask;
 
-    [NativeTypeName("const char *")]
+    [NativeName("name")]
     public sbyte* Name;
 
-    [NativeTypeName("const SDL_VirtualJoystickTouchpadDesc *")]
+    [NativeName("touchpads")]
     public VirtualJoystickTouchpadDesc* Touchpads;
 
-    [NativeTypeName("const SDL_VirtualJoystickSensorDesc *")]
+    [NativeName("sensors")]
     public VirtualJoystickSensorDesc* Sensors;
+
+    [NativeName("userdata")]
     public void* Userdata;
 
-    [NativeTypeName("void (*)(void *)")]
+    [NativeName("Update")]
     public VirtualJoystickDescUpdate Update;
 
-    [NativeTypeName("void (*)(void *, int)")]
+    [NativeName("SetPlayerIndex")]
     public VirtualJoystickDescSetPlayerIndex SetPlayerIndex;
 
-    [NativeTypeName("bool (*)(void *, Uint16, Uint16)")]
+    [NativeName("Rumble")]
     public VirtualJoystickDescRumble Rumble;
 
-    [NativeTypeName("bool (*)(void *, Uint16, Uint16)")]
+    [NativeName("RumbleTriggers")]
     public VirtualJoystickDescRumbleTriggers RumbleTriggers;
 
-    [NativeTypeName("bool (*)(void *, Uint8, Uint8, Uint8)")]
-    public VirtualJoystickDescSetLED SetLED;
+    [NativeName("SetLED")]
+    public VirtualJoystickDescSetLed SetLed;
 
-    [NativeTypeName("bool (*)(void *, const void *, int)")]
+    [NativeName("SendEffect")]
     public VirtualJoystickDescSendEffect SendEffect;
 
-    [NativeTypeName("bool (*)(void *, bool)")]
+    [NativeName("SetSensorsEnabled")]
     public VirtualJoystickDescSetSensorsEnabled SetSensorsEnabled;
 
-    [NativeTypeName("void (*)(void *)")]
+    [NativeName("Cleanup")]
     public VirtualJoystickDescCleanup Cleanup;
 }

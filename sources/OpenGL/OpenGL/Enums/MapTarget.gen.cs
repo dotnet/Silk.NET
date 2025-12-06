@@ -7,27 +7,66 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("MapTarget")]
 public enum MapTarget : uint
 {
-    Map1Color4 = unchecked((uint)0x0D90),
-    Map1Index = unchecked((uint)0x0D91),
-    Map1Normal = unchecked((uint)0x0D92),
-    Map1TextureCoord1 = unchecked((uint)0x0D93),
-    Map1TextureCoord2 = unchecked((uint)0x0D94),
-    Map1TextureCoord3 = unchecked((uint)0x0D95),
-    Map1TextureCoord4 = unchecked((uint)0x0D96),
-    Map1Vertex3 = unchecked((uint)0x0D97),
-    Map1Vertex4 = unchecked((uint)0x0D98),
-    Map2Color4 = unchecked((uint)0x0DB0),
-    Map2Index = unchecked((uint)0x0DB1),
-    Map2Normal = unchecked((uint)0x0DB2),
-    Map2TextureCoord1 = unchecked((uint)0x0DB3),
-    Map2TextureCoord2 = unchecked((uint)0x0DB4),
-    Map2TextureCoord3 = unchecked((uint)0x0DB5),
-    Map2TextureCoord4 = unchecked((uint)0x0DB6),
-    Map2Vertex3 = unchecked((uint)0x0DB7),
-    Map2Vertex4 = unchecked((uint)0x0DB8),
-    GeometryDeformationSGIX = unchecked((uint)0x8194),
-    TextureDeformationSGIX = unchecked((uint)0x8195),
+    [NativeName("GL_MAP1_COLOR_4")]
+    Map1Color4 = 3472,
+
+    [NativeName("GL_MAP1_INDEX")]
+    Map1Index = 3473,
+
+    [NativeName("GL_MAP1_NORMAL")]
+    Map1Normal = 3474,
+
+    [NativeName("GL_MAP1_TEXTURE_COORD_1")]
+    Map1TextureCoord1 = 3475,
+
+    [NativeName("GL_MAP1_TEXTURE_COORD_2")]
+    Map1TextureCoord2 = 3476,
+
+    [NativeName("GL_MAP1_TEXTURE_COORD_3")]
+    Map1TextureCoord3 = 3477,
+
+    [NativeName("GL_MAP1_TEXTURE_COORD_4")]
+    Map1TextureCoord4 = 3478,
+
+    [NativeName("GL_MAP1_VERTEX_3")]
+    Map1Vertex3 = 3479,
+
+    [NativeName("GL_MAP1_VERTEX_4")]
+    Map1Vertex4 = 3480,
+
+    [NativeName("GL_MAP2_COLOR_4")]
+    Map2Color4 = 3504,
+
+    [NativeName("GL_MAP2_INDEX")]
+    Map2Index = 3505,
+
+    [NativeName("GL_MAP2_NORMAL")]
+    Map2Normal = 3506,
+
+    [NativeName("GL_MAP2_TEXTURE_COORD_1")]
+    Map2TextureCoord1 = 3507,
+
+    [NativeName("GL_MAP2_TEXTURE_COORD_2")]
+    Map2TextureCoord2 = 3508,
+
+    [NativeName("GL_MAP2_TEXTURE_COORD_3")]
+    Map2TextureCoord3 = 3509,
+
+    [NativeName("GL_MAP2_TEXTURE_COORD_4")]
+    Map2TextureCoord4 = 3510,
+
+    [NativeName("GL_MAP2_VERTEX_3")]
+    Map2Vertex3 = 3511,
+
+    [NativeName("GL_MAP2_VERTEX_4")]
+    Map2Vertex4 = 3512,
+
+    [NativeName("GL_GEOMETRY_DEFORMATION_SGIX")]
+    GeometryDeformationSGIX = 33172,
+
+    [NativeName("GL_TEXTURE_DEFORMATION_SGIX")]
+    TextureDeformationSGIX = 33173,
 }

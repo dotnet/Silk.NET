@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("CombinerComponentUsageNV")]
 public enum CombinerComponentUsage : uint
 {
-    Blue = unchecked((uint)0x1905),
-    Alpha = unchecked((uint)0x1906),
-    Rgb = unchecked((uint)0x1907),
+    [NativeName("GL_ALPHA")]
+    Alpha = 6406,
+
+    [NativeName("GL_RGB")]
+    Rgb = 6407,
+
+    [NativeName("GL_BLUE")]
+    Blue = 6405,
 }

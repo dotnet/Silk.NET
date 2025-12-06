@@ -7,13 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("TextureSwizzle")]
 public enum TextureSwizzle : uint
 {
-    Zero = unchecked((uint)0),
-    One = unchecked((uint)1),
-    Red = unchecked((uint)0x1903),
-    Green = unchecked((uint)0x1904),
-    Blue = unchecked((uint)0x1905),
-    Alpha = unchecked((uint)0x1906),
+    [NativeName("GL_ZERO")]
+    Zero = 0,
+
+    [NativeName("GL_ONE")]
+    One = 1,
+
+    [NativeName("GL_ALPHA")]
+    Alpha = 6406,
+
+    [NativeName("GL_RED")]
+    Red = 6403,
+
+    [NativeName("GL_GREEN")]
+    Green = 6404,
+
+    [NativeName("GL_BLUE")]
+    Blue = 6405,
 }

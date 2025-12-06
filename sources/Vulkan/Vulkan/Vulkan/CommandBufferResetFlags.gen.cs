@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkCommandBufferResetFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum CommandBufferResetFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_COMMAND_BUFFER_RESET_RELEASE_RESOURCES_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkIndirectCommandsPushConstantTokenEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct IndirectCommandsPushConstantTokenEXT
 {
+    [NativeName("updateRange")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

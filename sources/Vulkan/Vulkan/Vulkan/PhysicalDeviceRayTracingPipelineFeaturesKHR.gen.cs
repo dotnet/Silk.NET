@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceRayTracingPipelineFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("rayTracingPipeline")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
     )]
     public uint RayTracingPipeline;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("rayTracingPipelineShaderGroupHandleCaptureReplay")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
     )]
     public uint RayTracingPipelineShaderGroupHandleCaptureReplay;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("rayTracingPipelineShaderGroupHandleCaptureReplayMixed")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -64,7 +67,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
     )]
     public uint RayTracingPipelineShaderGroupHandleCaptureReplayMixed;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("rayTracingPipelineTraceRaysIndirect")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -75,7 +78,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelineFeaturesKHR
     )]
     public uint RayTracingPipelineTraceRaysIndirect;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("rayTraversalPrimitiveCulling")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_query", "VK_KHR_ray_tracing_pipeline"],

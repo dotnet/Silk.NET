@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceShadingRateImagePropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShadingRateImagePropertiesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceShadingRateImagePropertiesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -31,6 +34,7 @@ public unsafe partial struct PhysicalDeviceShadingRateImagePropertiesNV
     )]
     public void* PNext;
 
+    [NativeName("shadingRateTexelSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -41,7 +45,7 @@ public unsafe partial struct PhysicalDeviceShadingRateImagePropertiesNV
     )]
     public Extent2D ShadingRateTexelSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("shadingRatePaletteSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -52,7 +56,7 @@ public unsafe partial struct PhysicalDeviceShadingRateImagePropertiesNV
     )]
     public uint ShadingRatePaletteSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("shadingRateMaxCoarseSamples")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],

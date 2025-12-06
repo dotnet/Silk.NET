@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceBorderColorSwizzleFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_border_color_swizzle"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_border_color_swizzle"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("borderColorSwizzle")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_border_color_swizzle"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDeviceBorderColorSwizzleFeaturesEXT
     )]
     public uint BorderColorSwizzle;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("borderColorSwizzleFromImage")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_border_color_swizzle"],

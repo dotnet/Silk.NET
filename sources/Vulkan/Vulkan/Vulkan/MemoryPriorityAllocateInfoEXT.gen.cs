@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMemoryPriorityAllocateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryPriorityAllocateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_priority"],
@@ -21,7 +23,7 @@ public unsafe partial struct MemoryPriorityAllocateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_priority"],
@@ -32,6 +34,7 @@ public unsafe partial struct MemoryPriorityAllocateInfoEXT
     )]
     public void* PNext;
 
+    [NativeName("priority")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_priority"],

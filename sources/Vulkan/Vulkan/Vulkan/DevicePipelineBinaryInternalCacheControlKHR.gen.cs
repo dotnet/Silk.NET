@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDevicePipelineBinaryInternalCacheControlKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DevicePipelineBinaryInternalCacheControlKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -21,7 +23,7 @@ public unsafe partial struct DevicePipelineBinaryInternalCacheControlKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -32,7 +34,7 @@ public unsafe partial struct DevicePipelineBinaryInternalCacheControlKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("disableInternalCache")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],

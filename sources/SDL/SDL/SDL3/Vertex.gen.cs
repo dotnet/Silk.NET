@@ -7,9 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Vertex")]
 public partial struct Vertex
 {
+    [NativeName("position")]
     public FPoint Position;
+
+    [NativeName("color")]
     public FColor Color;
+
+    [NativeName("tex_coord")]
     public FPoint TexCoord;
 }

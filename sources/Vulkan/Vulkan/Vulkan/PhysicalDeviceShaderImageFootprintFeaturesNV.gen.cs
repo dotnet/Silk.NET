@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceShaderImageFootprintFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderImageFootprintFeaturesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shader_image_footprint"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceShaderImageFootprintFeaturesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shader_image_footprint"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceShaderImageFootprintFeaturesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("imageFootprint")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shader_image_footprint"],

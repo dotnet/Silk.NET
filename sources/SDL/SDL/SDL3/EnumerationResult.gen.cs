@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum EnumerationResult : uint
+[NativeName("SDL_EnumerationResult")]
+public enum EnumerationResult
 {
-    Continue,
-    Success,
-    Failure,
+    [NativeName("SDL_ENUM_CONTINUE")]
+    Continue = 0,
+
+    [NativeName("SDL_ENUM_SUCCESS")]
+    Success = 1,
+
+    [NativeName("SDL_ENUM_FAILURE")]
+    Failure = 2,
 }

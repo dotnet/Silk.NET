@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImageDrmFormatModifierExplicitCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageDrmFormatModifierExplicitCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -21,7 +23,7 @@ public unsafe partial struct ImageDrmFormatModifierExplicitCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -33,7 +35,7 @@ public unsafe partial struct ImageDrmFormatModifierExplicitCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("drmFormatModifier")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -45,7 +47,7 @@ public unsafe partial struct ImageDrmFormatModifierExplicitCreateInfoEXT
     )]
     public ulong DrmFormatModifier;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("drmFormatModifierPlaneCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -57,7 +59,7 @@ public unsafe partial struct ImageDrmFormatModifierExplicitCreateInfoEXT
     )]
     public uint DrmFormatModifierPlaneCount;
 
-    [NativeTypeName("const VkSubresourceLayout *")]
+    [NativeName("pPlaneLayouts")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],

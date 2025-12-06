@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineRobustnessCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRobustnessCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -17,7 +19,7 @@ public unsafe partial struct PipelineRobustnessCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -25,6 +27,7 @@ public unsafe partial struct PipelineRobustnessCreateInfo
     )]
     public void* PNext;
 
+    [NativeName("storageBuffers")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -32,6 +35,7 @@ public unsafe partial struct PipelineRobustnessCreateInfo
     )]
     public PipelineRobustnessBufferBehavior StorageBuffers;
 
+    [NativeName("uniformBuffers")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -39,6 +43,7 @@ public unsafe partial struct PipelineRobustnessCreateInfo
     )]
     public PipelineRobustnessBufferBehavior UniformBuffers;
 
+    [NativeName("vertexInputs")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -46,6 +51,7 @@ public unsafe partial struct PipelineRobustnessCreateInfo
     )]
     public PipelineRobustnessBufferBehavior VertexInputs;
 
+    [NativeName("images")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],

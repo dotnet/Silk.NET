@@ -7,16 +7,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("TextureMagFilter")]
 public enum TextureMagFilter : uint
 {
-    Nearest = unchecked((uint)0x2600),
-    Linear = unchecked((uint)0x2601),
-    LinearDetailSGIS = unchecked((uint)0x8097),
-    LinearDetailAlphaSGIS = unchecked((uint)0x8098),
-    LinearDetailColorSGIS = unchecked((uint)0x8099),
-    LinearSharpenSGIS = unchecked((uint)0x80AD),
-    LinearSharpenAlphaSGIS = unchecked((uint)0x80AE),
-    LinearSharpenColorSGIS = unchecked((uint)0x80AF),
-    Filter4Sgis = unchecked((uint)0x8146),
+    [NativeName("GL_NEAREST")]
+    Nearest = 9728,
+
+    [NativeName("GL_LINEAR")]
+    Linear = 9729,
+
+    [NativeName("GL_LINEAR_DETAIL_SGIS")]
+    LinearDetailSGIS = 32919,
+
+    [NativeName("GL_LINEAR_DETAIL_ALPHA_SGIS")]
+    LinearDetailAlphaSGIS = 32920,
+
+    [NativeName("GL_LINEAR_DETAIL_COLOR_SGIS")]
+    LinearDetailColorSGIS = 32921,
+
+    [NativeName("GL_LINEAR_SHARPEN_SGIS")]
+    LinearSharpenSGIS = 32941,
+
+    [NativeName("GL_LINEAR_SHARPEN_ALPHA_SGIS")]
+    LinearSharpenAlphaSGIS = 32942,
+
+    [NativeName("GL_LINEAR_SHARPEN_COLOR_SGIS")]
+    LinearSharpenColorSGIS = 32943,
+
+    [NativeName("GL_FILTER4_SGIS")]
+    Filter4SGIS = 33094,
 }

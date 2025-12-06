@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceVulkan11Features")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVulkan11Features
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,6 +33,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +54,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("storageBuffer16BitAccess")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -59,7 +62,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
     )]
     public uint StorageBuffer16BitAccess;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("uniformAndStorageBuffer16BitAccess")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -80,7 +83,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
     )]
     public uint UniformAndStorageBuffer16BitAccess;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("storagePushConstant16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -101,7 +104,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
     )]
     public uint StoragePushConstant16;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("storageInputOutput16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -122,7 +125,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
     )]
     public uint StorageInputOutput16;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("multiview")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -130,7 +133,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
     )]
     public uint Multiview;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("multiviewGeometryShader")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -151,7 +154,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
     )]
     public uint MultiviewGeometryShader;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("multiviewTessellationShader")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -172,15 +175,15 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
     )]
     public uint MultiviewTessellationShader;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("variablePointersStorageBuffer")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint VariablePointersStorageBuffer;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("variablePointers")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint VariablePointers;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("protectedMemory")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -201,11 +204,11 @@ public unsafe partial struct PhysicalDeviceVulkan11Features
     )]
     public uint ProtectedMemory;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("samplerYcbcrConversion")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint SamplerYcbcrConversion;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderDrawParameters")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],

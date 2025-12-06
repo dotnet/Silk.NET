@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceMemoryReportCallbackDataEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceMemoryReportCallbackDataEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -21,6 +23,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -31,7 +34,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceMemoryReportFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -42,6 +45,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
     )]
     public uint Flags;
 
+    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -52,7 +56,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
     )]
     public DeviceMemoryReportEventTypeEXT Type;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("memoryObjectId")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -63,7 +67,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
     )]
     public ulong MemoryObjectId;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -74,6 +78,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
     )]
     public ulong Size;
 
+    [NativeName("objectType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -84,7 +89,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
     )]
     public ObjectType ObjectType;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("objectHandle")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -95,7 +100,7 @@ public unsafe partial struct DeviceMemoryReportCallbackDataEXT
     )]
     public ulong ObjectHandle;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("heapIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],

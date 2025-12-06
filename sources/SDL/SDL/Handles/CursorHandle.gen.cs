@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Cursor")]
 public readonly unsafe partial struct CursorHandle
 {
     public readonly void* Handle;
+
+    public CursorHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(CursorHandle other) => Handle == other.Handle;
 

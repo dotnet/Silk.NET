@@ -7,8 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("EvalMapsModeNV")]
 public enum EvalMapsModeNV : uint
 {
-    Fill = unchecked((uint)0x1B02),
+    [NativeName("GL_FILL_NV")]
+    Fill = 6914,
 }

@@ -7,20 +7,45 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ErrorCode")]
 public enum ErrorCode : uint
 {
-    NoError = unchecked((uint)0),
-    InvalidEnum = unchecked((uint)0x0500),
-    InvalidValue = unchecked((uint)0x0501),
-    InvalidOperation = unchecked((uint)0x0502),
-    OutOfMemory = unchecked((uint)0x0505),
-    StackOverflow = unchecked((uint)0x0503),
-    StackUnderflow = unchecked((uint)0x0504),
-    InvalidFramebufferOperation = unchecked((uint)0x0506),
-    TableTooLarge = unchecked((uint)0x8031),
-    InvalidFramebufferOperationEXT = unchecked((uint)0x0506),
-    TableTooLargeEXT = unchecked((uint)0x8031),
-    TextureTooLargeEXT = unchecked((uint)0x8065),
-    InvalidFramebufferOperationOES = unchecked((uint)0x0506),
+    [NativeName("GL_NO_ERROR")]
+    NoError = 0,
+
+    [NativeName("GL_INVALID_ENUM")]
+    InvalidEnum = 1280,
+
+    [NativeName("GL_INVALID_VALUE")]
+    InvalidValue = 1281,
+
+    [NativeName("GL_INVALID_OPERATION")]
+    InvalidOperation = 1282,
+
+    [NativeName("GL_STACK_OVERFLOW")]
+    StackOverflow = 1283,
+
+    [NativeName("GL_STACK_UNDERFLOW")]
+    StackUnderflow = 1284,
+
+    [NativeName("GL_OUT_OF_MEMORY")]
+    OutOfMemory = 1285,
+
+    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_OES")]
+    InvalidFramebufferOperationOES = 1286,
+
+    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION")]
+    InvalidFramebufferOperation = 1286,
+
+    [NativeName("GL_TABLE_TOO_LARGE")]
+    TableTooLarge = 32817,
+
+    [NativeName("GL_INVALID_FRAMEBUFFER_OPERATION_EXT")]
+    InvalidFramebufferOperationEXT = 1286,
+
+    [NativeName("GL_TABLE_TOO_LARGE_EXT")]
+    TableTooLargeEXT = 32817,
+
+    [NativeName("GL_TEXTURE_TOO_LARGE_EXT")]
+    TextureTooLargeEXT = 32869,
 }

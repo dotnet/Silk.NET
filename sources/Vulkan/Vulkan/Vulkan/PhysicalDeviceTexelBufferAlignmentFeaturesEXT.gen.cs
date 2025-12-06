@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTexelBufferAlignmentFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texel_buffer_alignment"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texel_buffer_alignment"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceTexelBufferAlignmentFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("texelBufferAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texel_buffer_alignment"],

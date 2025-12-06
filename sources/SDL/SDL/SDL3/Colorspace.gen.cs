@@ -8,20 +8,45 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum Colorspace : uint
+[NativeName("SDL_Colorspace")]
+public enum Colorspace
 {
+    [NativeName("SDL_COLORSPACE_UNKNOWN")]
     Unknown = 0,
-    Srgb = 0x120005a0U,
-    SrgbLinear = 0x12000500U,
-    Hdr10 = 0x12002600U,
-    Jpeg = 0x220004c6U,
-    Bt601Limited = 0x211018c6U,
-    Bt601Full = 0x221018c6U,
-    Bt709Limited = 0x21100421U,
-    Bt709Full = 0x22100421U,
-    Bt2020Limited = 0x21102609U,
-    Bt2020Full = 0x22102609U,
+
+    [NativeName("SDL_COLORSPACE_SRGB")]
+    Srgb = 301991328,
+
+    [NativeName("SDL_COLORSPACE_SRGB_LINEAR")]
+    SrgbLinear = 301991168,
+
+    [NativeName("SDL_COLORSPACE_HDR10")]
+    Hdr10 = 301999616,
+
+    [NativeName("SDL_COLORSPACE_JPEG")]
+    Jpeg = 570426566,
+
+    [NativeName("SDL_COLORSPACE_BT601_LIMITED")]
+    Bt601Limited = 554703046,
+
+    [NativeName("SDL_COLORSPACE_BT601_FULL")]
+    Bt601Full = 571480262,
+
+    [NativeName("SDL_COLORSPACE_BT709_LIMITED")]
+    Bt709Limited = 554697761,
+
+    [NativeName("SDL_COLORSPACE_BT709_FULL")]
+    Bt709Full = 571474977,
+
+    [NativeName("SDL_COLORSPACE_BT2020_LIMITED")]
+    Bt2020Limited = 554706441,
+
+    [NativeName("SDL_COLORSPACE_BT2020_FULL")]
+    Bt2020Full = 571483657,
+
+    [NativeName("SDL_COLORSPACE_RGB_DEFAULT")]
     RgbDefault = Srgb,
+
+    [NativeName("SDL_COLORSPACE_YUV_DEFAULT")]
     YuvDefault = Jpeg,
 }

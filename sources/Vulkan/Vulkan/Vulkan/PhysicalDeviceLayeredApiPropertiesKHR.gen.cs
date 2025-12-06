@@ -8,27 +8,31 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceLayeredApiPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLayeredApiPropertiesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("vendorID")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public uint VendorID;
+    public uint VendorId;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("deviceID")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public uint DeviceID;
+    public uint DeviceId;
 
+    [NativeName("layeredAPI")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public PhysicalDeviceLayeredApiKHR LayeredAPI;
+    public PhysicalDeviceLayeredApiKHR LayeredApi;
 
-    [NativeTypeName("char[256]")]
+    [NativeName("deviceName")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public PhysicalDeviceLayeredApiPropertiesKHRDeviceName DeviceName;
+    public PhysicalDeviceLayeredApiPropertiesKhrDeviceName DeviceName;
 }

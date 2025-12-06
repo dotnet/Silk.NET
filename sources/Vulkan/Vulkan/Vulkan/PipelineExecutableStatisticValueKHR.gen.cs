@@ -7,12 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineExecutableStatisticValueKHR")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public partial struct PipelineExecutableStatisticValueKHR
 {
+    [NativeName("b32")]
     [FieldOffset(0)]
-    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -23,8 +24,8 @@ public partial struct PipelineExecutableStatisticValueKHR
     )]
     public uint B32;
 
+    [NativeName("i64")]
     [FieldOffset(0)]
-    [NativeTypeName("int64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -35,8 +36,8 @@ public partial struct PipelineExecutableStatisticValueKHR
     )]
     public long I64;
 
+    [NativeName("u64")]
     [FieldOffset(0)]
-    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -47,6 +48,7 @@ public partial struct PipelineExecutableStatisticValueKHR
     )]
     public ulong U64;
 
+    [NativeName("f64")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",

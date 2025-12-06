@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_HintCallback")]
 public unsafe delegate void HintCallbackDelegate(void* arg0, sbyte* arg1, sbyte* arg2, sbyte* arg3);

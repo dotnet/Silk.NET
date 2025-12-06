@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_max_num_reorder_pics_e__FixedBuffer")]
 [InlineArray(7)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265DecPicBufMgrMaxNumReorderPics
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

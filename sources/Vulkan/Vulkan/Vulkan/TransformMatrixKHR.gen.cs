@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkTransformMatrixKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct TransformMatrixKHR
 {
-    [NativeTypeName("float[3][4]")]
+    [NativeName("matrix")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -20,5 +21,5 @@ public partial struct TransformMatrixKHR
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    public TransformMatrixKHRMatrix Matrix;
+    public TransformMatrixKhrMatrix Matrix;
 }

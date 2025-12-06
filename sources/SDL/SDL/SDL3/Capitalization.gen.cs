@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum Capitalization : uint
+[NativeName("SDL_Capitalization")]
+public enum Capitalization
 {
-    None,
-    Sentences,
-    Words,
-    Letters,
+    [NativeName("SDL_CAPITALIZE_NONE")]
+    None = 0,
+
+    [NativeName("SDL_CAPITALIZE_SENTENCES")]
+    Sentences = 1,
+
+    [NativeName("SDL_CAPITALIZE_WORDS")]
+    Words = 2,
+
+    [NativeName("SDL_CAPITALIZE_LETTERS")]
+    Letters = 3,
 }

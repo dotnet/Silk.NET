@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkInstanceCreateFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum InstanceCreateFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_portability_enumeration"])]
     EnumeratePortabilityBitKHR = 0x1,
 }

@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AudioStream")]
 public readonly unsafe partial struct AudioStreamHandle
 {
     public readonly void* Handle;
+
+    public AudioStreamHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(AudioStreamHandle other) => Handle == other.Handle;
 

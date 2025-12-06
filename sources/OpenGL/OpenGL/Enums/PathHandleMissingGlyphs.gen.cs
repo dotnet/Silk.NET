@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("PathHandleMissingGlyphs")]
 public enum PathHandleMissingGlyphs : uint
 {
-    SkipMissingGlyphNV = unchecked((uint)0x90A9),
-    UseMissingGlyphNV = unchecked((uint)0x90AA),
+    [NativeName("GL_SKIP_MISSING_GLYPH_NV")]
+    SkipMissingGlyphNV = 37033,
+
+    [NativeName("GL_USE_MISSING_GLYPH_NV")]
+    UseMissingGlyphNV = 37034,
 }

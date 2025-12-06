@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineBinaryKeyKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineBinaryKeyKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -21,6 +23,7 @@ public unsafe partial struct PipelineBinaryKeyKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -31,7 +34,7 @@ public unsafe partial struct PipelineBinaryKeyKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("keySize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -42,7 +45,7 @@ public unsafe partial struct PipelineBinaryKeyKHR
     )]
     public uint KeySize;
 
-    [NativeTypeName("uint8_t[32]")]
+    [NativeName("key")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -51,5 +54,5 @@ public unsafe partial struct PipelineBinaryKeyKHR
             "VK_KHR_pipeline_binary+VK_VERSION_1_4",
         ]
     )]
-    public PipelineBinaryKeyKHRKey Key;
+    public PipelineBinaryKeyKhrKey Key;
 }

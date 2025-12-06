@@ -8,17 +8,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("_input_e__Union")]
 [StructLayout(LayoutKind.Explicit)]
 public partial struct GamepadBindingInput
 {
+    [NativeName("button")]
     [FieldOffset(0)]
     public int Button;
 
+    [NativeName("axis")]
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L269_C9")]
     public GamepadBindingInputAxis Axis;
 
+    [NativeName("hat")]
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L276_C9")]
     public GamepadBindingInputHat Hat;
 }

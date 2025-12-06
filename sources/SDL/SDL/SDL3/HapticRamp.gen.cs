@@ -7,39 +7,42 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_HapticRamp")]
 public partial struct HapticRamp
 {
-    [NativeTypeName("Uint16")]
+    [NativeName("type")]
     public ushort Type;
+
+    [NativeName("direction")]
     public HapticDirection Direction;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("length")]
     public uint Length;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("delay")]
     public ushort Delay;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("button")]
     public ushort Button;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("interval")]
     public ushort Interval;
 
-    [NativeTypeName("Sint16")]
+    [NativeName("start")]
     public short Start;
 
-    [NativeTypeName("Sint16")]
+    [NativeName("end")]
     public short End;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("attack_length")]
     public ushort AttackLength;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("attack_level")]
     public ushort AttackLevel;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("fade_length")]
     public ushort FadeLength;
 
-    [NativeTypeName("Uint16")]
+    [NativeName("fade_level")]
     public ushort FadeLevel;
 }

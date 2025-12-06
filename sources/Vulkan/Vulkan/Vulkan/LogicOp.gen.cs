@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkLogicOp")]
 [SupportedApiProfile("vulkan")]
 public enum LogicOp : uint
 {
+    [NativeName("VK_LOGIC_OP_CLEAR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,6 +30,7 @@ public enum LogicOp : uint
     )]
     Clear = 0,
 
+    [NativeName("VK_LOGIC_OP_AND")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -47,6 +49,7 @@ public enum LogicOp : uint
     )]
     And = 1,
 
+    [NativeName("VK_LOGIC_OP_AND_REVERSE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -65,6 +68,7 @@ public enum LogicOp : uint
     )]
     AndReverse = 2,
 
+    [NativeName("VK_LOGIC_OP_COPY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -83,6 +87,7 @@ public enum LogicOp : uint
     )]
     Copy = 3,
 
+    [NativeName("VK_LOGIC_OP_AND_INVERTED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -101,6 +106,7 @@ public enum LogicOp : uint
     )]
     AndInverted = 4,
 
+    [NativeName("VK_LOGIC_OP_NO_OP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -119,6 +125,7 @@ public enum LogicOp : uint
     )]
     NoOp = 5,
 
+    [NativeName("VK_LOGIC_OP_XOR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -137,6 +144,7 @@ public enum LogicOp : uint
     )]
     Xor = 6,
 
+    [NativeName("VK_LOGIC_OP_OR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -155,6 +163,7 @@ public enum LogicOp : uint
     )]
     Or = 7,
 
+    [NativeName("VK_LOGIC_OP_NOR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -173,6 +182,7 @@ public enum LogicOp : uint
     )]
     Nor = 8,
 
+    [NativeName("VK_LOGIC_OP_EQUIVALENT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -191,6 +201,7 @@ public enum LogicOp : uint
     )]
     Equivalent = 9,
 
+    [NativeName("VK_LOGIC_OP_INVERT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -209,6 +220,7 @@ public enum LogicOp : uint
     )]
     Invert = 10,
 
+    [NativeName("VK_LOGIC_OP_OR_REVERSE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -227,6 +239,7 @@ public enum LogicOp : uint
     )]
     OrReverse = 11,
 
+    [NativeName("VK_LOGIC_OP_COPY_INVERTED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -245,6 +258,7 @@ public enum LogicOp : uint
     )]
     CopyInverted = 12,
 
+    [NativeName("VK_LOGIC_OP_OR_INVERTED")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -263,6 +277,7 @@ public enum LogicOp : uint
     )]
     OrInverted = 13,
 
+    [NativeName("VK_LOGIC_OP_NAND")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -281,6 +296,7 @@ public enum LogicOp : uint
     )]
     Nand = 14,
 
+    [NativeName("VK_LOGIC_OP_SET")]
     [SupportedApiProfile(
         "vulkan",
         [

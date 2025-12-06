@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkReleaseSwapchainImagesInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ReleaseSwapchainImagesInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -22,7 +24,7 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -34,7 +36,7 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkSwapchainKHR")]
+    [NativeName("swapchain")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -44,9 +46,9 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
             "VK_KHR_swapchain_maintenance1+VK_KHR_swapchain",
         ]
     )]
-    public SwapchainKHRHandle Swapchain;
+    public SwapchainHandleKHR Swapchain;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("imageIndexCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -58,7 +60,7 @@ public unsafe partial struct ReleaseSwapchainImagesInfoKHR
     )]
     public uint ImageIndexCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pImageIndices")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],

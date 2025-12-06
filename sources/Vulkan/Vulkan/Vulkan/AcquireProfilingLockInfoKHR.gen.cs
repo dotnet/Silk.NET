@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAcquireProfilingLockInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AcquireProfilingLockInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -21,7 +23,7 @@ public unsafe partial struct AcquireProfilingLockInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -32,7 +34,7 @@ public unsafe partial struct AcquireProfilingLockInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkAcquireProfilingLockFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -43,7 +45,7 @@ public unsafe partial struct AcquireProfilingLockInfoKHR
     )]
     public AcquireProfilingLockFlagsKHR Flags;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("timeout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],

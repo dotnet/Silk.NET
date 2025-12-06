@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkLayerProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct LayerProperties
 {
-    [NativeTypeName("char[256]")]
+    [NativeName("layerName")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +40,7 @@ public partial struct LayerProperties
     )]
     public LayerPropertiesLayerName LayerName;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("specVersion")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +69,7 @@ public partial struct LayerProperties
     )]
     public uint SpecVersion;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("implementationVersion")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +98,7 @@ public partial struct LayerProperties
     )]
     public uint ImplementationVersion;
 
-    [NativeTypeName("char[256]")]
+    [NativeName("description")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineShaderStageCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineShaderStageCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +35,7 @@ public unsafe partial struct PipelineShaderStageCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +59,7 @@ public unsafe partial struct PipelineShaderStageCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineShaderStageCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -81,6 +83,7 @@ public unsafe partial struct PipelineShaderStageCreateInfo
     )]
     public PipelineShaderStageCreateFlags Flags;
 
+    [NativeName("stage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -104,7 +107,7 @@ public unsafe partial struct PipelineShaderStageCreateInfo
     )]
     public ShaderStageFlags Stage;
 
-    [NativeTypeName("VkShaderModule")]
+    [NativeName("module")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +131,7 @@ public unsafe partial struct PipelineShaderStageCreateInfo
     )]
     public ShaderModuleHandle Module;
 
-    [NativeTypeName("const char *")]
+    [NativeName("pName")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -152,7 +155,7 @@ public unsafe partial struct PipelineShaderStageCreateInfo
     )]
     public sbyte* PName;
 
-    [NativeTypeName("const VkSpecializationInfo *")]
+    [NativeName("pSpecializationInfo")]
     [SupportedApiProfile(
         "vulkan",
         [

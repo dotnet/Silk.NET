@@ -7,8 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("BindTransformFeedbackTarget")]
 public enum BindTransformFeedbackTarget : uint
 {
-    TransformFeedback = unchecked((uint)0x8E22),
+    [NativeName("GL_TRANSFORM_FEEDBACK")]
+    TransformFeedback = 36386,
 }

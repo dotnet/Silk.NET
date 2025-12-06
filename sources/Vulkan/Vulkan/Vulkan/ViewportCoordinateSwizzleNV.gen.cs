@@ -8,31 +8,39 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkViewportCoordinateSwizzleNV")]
 [SupportedApiProfile("vulkan")]
 public enum ViewportCoordinateSwizzleNV : uint
 {
+    [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_POSITIVE_X_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    PositiveXNV = 0,
+    PositiveX = 0,
 
+    [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_NEGATIVE_X_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    NegativeXNV = 1,
+    NegativeX = 1,
 
+    [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_POSITIVE_Y_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    PositiveYNV = 2,
+    PositiveY = 2,
 
+    [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_NEGATIVE_Y_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    NegativeYNV = 3,
+    NegativeY = 3,
 
+    [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_POSITIVE_Z_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    PositiveZNV = 4,
+    PositiveZ = 4,
 
+    [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_NEGATIVE_Z_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    NegativeZNV = 5,
+    NegativeZ = 5,
 
+    [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_POSITIVE_W_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    PositiveWNV = 6,
+    PositiveW = 6,
 
+    [NativeName("VK_VIEWPORT_COORDINATE_SWIZZLE_NEGATIVE_W_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
-    NegativeWNV = 7,
+    NegativeW = 7,
 }

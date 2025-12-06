@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkDriverId")]
 [SupportedApiProfile("vulkan")]
 public enum DriverId : uint
 {
+    [NativeName("VK_DRIVER_ID_AMD_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -32,6 +33,7 @@ public enum DriverId : uint
     )]
     AmdProprietary = 1,
 
+    [NativeName("VK_DRIVER_ID_AMD_OPEN_SOURCE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -52,6 +54,7 @@ public enum DriverId : uint
     )]
     AmdOpenSource = 2,
 
+    [NativeName("VK_DRIVER_ID_MESA_RADV")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -72,6 +75,7 @@ public enum DriverId : uint
     )]
     MesaRadv = 3,
 
+    [NativeName("VK_DRIVER_ID_NVIDIA_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -92,6 +96,7 @@ public enum DriverId : uint
     )]
     NvidiaProprietary = 4,
 
+    [NativeName("VK_DRIVER_ID_INTEL_PROPRIETARY_WINDOWS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -112,6 +117,7 @@ public enum DriverId : uint
     )]
     IntelProprietaryWindows = 5,
 
+    [NativeName("VK_DRIVER_ID_INTEL_OPEN_SOURCE_MESA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -132,6 +138,7 @@ public enum DriverId : uint
     )]
     IntelOpenSourceMESA = 6,
 
+    [NativeName("VK_DRIVER_ID_IMAGINATION_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -152,6 +159,7 @@ public enum DriverId : uint
     )]
     ImaginationProprietary = 7,
 
+    [NativeName("VK_DRIVER_ID_QUALCOMM_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -172,6 +180,7 @@ public enum DriverId : uint
     )]
     QualcommProprietary = 8,
 
+    [NativeName("VK_DRIVER_ID_ARM_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -192,6 +201,7 @@ public enum DriverId : uint
     )]
     ArmProprietary = 9,
 
+    [NativeName("VK_DRIVER_ID_GOOGLE_SWIFTSHADER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -212,6 +222,7 @@ public enum DriverId : uint
     )]
     GoogleSwiftshader = 10,
 
+    [NativeName("VK_DRIVER_ID_GGP_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -232,6 +243,7 @@ public enum DriverId : uint
     )]
     GgpProprietary = 11,
 
+    [NativeName("VK_DRIVER_ID_BROADCOM_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -252,6 +264,7 @@ public enum DriverId : uint
     )]
     BroadcomProprietary = 12,
 
+    [NativeName("VK_DRIVER_ID_MESA_LLVMPIPE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -272,6 +285,7 @@ public enum DriverId : uint
     )]
     MesaLlvmpipe = 13,
 
+    [NativeName("VK_DRIVER_ID_MOLTENVK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -292,6 +306,7 @@ public enum DriverId : uint
     )]
     Moltenvk = 14,
 
+    [NativeName("VK_DRIVER_ID_COREAVI_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -312,6 +327,7 @@ public enum DriverId : uint
     )]
     CoreaviProprietary = 15,
 
+    [NativeName("VK_DRIVER_ID_JUICE_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -332,6 +348,7 @@ public enum DriverId : uint
     )]
     JuiceProprietary = 16,
 
+    [NativeName("VK_DRIVER_ID_VERISILICON_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -352,6 +369,7 @@ public enum DriverId : uint
     )]
     VerisiliconProprietary = 17,
 
+    [NativeName("VK_DRIVER_ID_MESA_TURNIP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -372,6 +390,7 @@ public enum DriverId : uint
     )]
     MesaTurnip = 18,
 
+    [NativeName("VK_DRIVER_ID_MESA_V3DV")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -392,6 +411,7 @@ public enum DriverId : uint
     )]
     MesaV3Dv = 19,
 
+    [NativeName("VK_DRIVER_ID_MESA_PANVK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -412,6 +432,7 @@ public enum DriverId : uint
     )]
     MesaPanvk = 20,
 
+    [NativeName("VK_DRIVER_ID_SAMSUNG_PROPRIETARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -432,6 +453,7 @@ public enum DriverId : uint
     )]
     SamsungProprietary = 21,
 
+    [NativeName("VK_DRIVER_ID_MESA_VENUS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -452,6 +474,7 @@ public enum DriverId : uint
     )]
     MesaVenus = 22,
 
+    [NativeName("VK_DRIVER_ID_MESA_DOZEN")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -472,6 +495,7 @@ public enum DriverId : uint
     )]
     MesaDozen = 23,
 
+    [NativeName("VK_DRIVER_ID_MESA_NVK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -492,6 +516,7 @@ public enum DriverId : uint
     )]
     MesaNvk = 24,
 
+    [NativeName("VK_DRIVER_ID_IMAGINATION_OPEN_SOURCE_MESA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -512,6 +537,7 @@ public enum DriverId : uint
     )]
     ImaginationOpenSourceMESA = 25,
 
+    [NativeName("VK_DRIVER_ID_MESA_HONEYKRISP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -532,6 +558,7 @@ public enum DriverId : uint
     )]
     MesaHoneykrisp = 26,
 
+    [NativeName("VK_DRIVER_ID_VULKAN_SC_EMULATION_ON_VULKAN")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -552,6 +579,7 @@ public enum DriverId : uint
     )]
     VulkanScEmulationOnVulkan = 27,
 
+    [NativeName("VK_DRIVER_ID_MESA_KOSMICKRISP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -572,6 +600,7 @@ public enum DriverId : uint
     )]
     MesaKosmickrisp = 28,
 
+    [NativeName("VK_DRIVER_ID_AMD_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -582,6 +611,7 @@ public enum DriverId : uint
     )]
     AmdProprietaryKHR = AmdProprietary,
 
+    [NativeName("VK_DRIVER_ID_AMD_OPEN_SOURCE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -592,6 +622,7 @@ public enum DriverId : uint
     )]
     AmdOpenSourceKHR = AmdOpenSource,
 
+    [NativeName("VK_DRIVER_ID_MESA_RADV_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -602,6 +633,7 @@ public enum DriverId : uint
     )]
     MesaRadvKHR = MesaRadv,
 
+    [NativeName("VK_DRIVER_ID_NVIDIA_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -612,6 +644,7 @@ public enum DriverId : uint
     )]
     NvidiaProprietaryKHR = NvidiaProprietary,
 
+    [NativeName("VK_DRIVER_ID_INTEL_PROPRIETARY_WINDOWS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -622,6 +655,7 @@ public enum DriverId : uint
     )]
     IntelProprietaryWindowsKHR = IntelProprietaryWindows,
 
+    [NativeName("VK_DRIVER_ID_INTEL_OPEN_SOURCE_MESA_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -632,6 +666,7 @@ public enum DriverId : uint
     )]
     IntelOpenSourceMesaKHR = IntelOpenSourceMESA,
 
+    [NativeName("VK_DRIVER_ID_IMAGINATION_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -642,6 +677,7 @@ public enum DriverId : uint
     )]
     ImaginationProprietaryKHR = ImaginationProprietary,
 
+    [NativeName("VK_DRIVER_ID_QUALCOMM_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -652,6 +688,7 @@ public enum DriverId : uint
     )]
     QualcommProprietaryKHR = QualcommProprietary,
 
+    [NativeName("VK_DRIVER_ID_ARM_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -662,6 +699,7 @@ public enum DriverId : uint
     )]
     ArmProprietaryKHR = ArmProprietary,
 
+    [NativeName("VK_DRIVER_ID_GOOGLE_SWIFTSHADER_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -672,6 +710,7 @@ public enum DriverId : uint
     )]
     GoogleSwiftshaderKHR = GoogleSwiftshader,
 
+    [NativeName("VK_DRIVER_ID_GGP_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],
@@ -682,6 +721,7 @@ public enum DriverId : uint
     )]
     GgpProprietaryKHR = GgpProprietary,
 
+    [NativeName("VK_DRIVER_ID_BROADCOM_PROPRIETARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_driver_properties"],

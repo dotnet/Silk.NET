@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceNestedCommandBufferFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceNestedCommandBufferFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_nested_command_buffer"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_nested_command_buffer"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("nestedCommandBuffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_nested_command_buffer"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferFeaturesEXT
     )]
     public uint NestedCommandBuffer;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("nestedCommandBufferRendering")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_nested_command_buffer"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferFeaturesEXT
     )]
     public uint NestedCommandBufferRendering;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("nestedCommandBufferSimultaneousUse")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_nested_command_buffer"],

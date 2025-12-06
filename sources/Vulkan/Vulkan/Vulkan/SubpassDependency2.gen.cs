@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSubpassDependency2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SubpassDependency2
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,7 +27,7 @@ public unsafe partial struct SubpassDependency2
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +42,7 @@ public unsafe partial struct SubpassDependency2
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("srcSubpass")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -55,7 +57,7 @@ public unsafe partial struct SubpassDependency2
     )]
     public uint SrcSubpass;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dstSubpass")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +72,7 @@ public unsafe partial struct SubpassDependency2
     )]
     public uint DstSubpass;
 
-    [NativeTypeName("VkPipelineStageFlags")]
+    [NativeName("srcStageMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -85,7 +87,7 @@ public unsafe partial struct SubpassDependency2
     )]
     public PipelineStageFlags SrcStageMask;
 
-    [NativeTypeName("VkPipelineStageFlags")]
+    [NativeName("dstStageMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -100,7 +102,7 @@ public unsafe partial struct SubpassDependency2
     )]
     public PipelineStageFlags DstStageMask;
 
-    [NativeTypeName("VkAccessFlags")]
+    [NativeName("srcAccessMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -115,7 +117,7 @@ public unsafe partial struct SubpassDependency2
     )]
     public AccessFlags SrcAccessMask;
 
-    [NativeTypeName("VkAccessFlags")]
+    [NativeName("dstAccessMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -130,7 +132,7 @@ public unsafe partial struct SubpassDependency2
     )]
     public AccessFlags DstAccessMask;
 
-    [NativeTypeName("VkDependencyFlags")]
+    [NativeName("dependencyFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -145,7 +147,7 @@ public unsafe partial struct SubpassDependency2
     )]
     public DependencyFlags DependencyFlags;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("viewOffset")]
     [SupportedApiProfile(
         "vulkan",
         [

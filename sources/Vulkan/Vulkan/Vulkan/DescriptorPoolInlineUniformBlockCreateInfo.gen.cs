@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDescriptorPoolInlineUniformBlockCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorPoolInlineUniformBlockCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -24,7 +26,7 @@ public unsafe partial struct DescriptorPoolInlineUniformBlockCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public unsafe partial struct DescriptorPoolInlineUniformBlockCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxInlineUniformBlockBindings")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkFrameBoundaryEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FrameBoundaryEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -21,7 +23,7 @@ public unsafe partial struct FrameBoundaryEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -32,7 +34,7 @@ public unsafe partial struct FrameBoundaryEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkFrameBoundaryFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -43,7 +45,7 @@ public unsafe partial struct FrameBoundaryEXT
     )]
     public FrameBoundaryFlagsEXT Flags;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("frameID")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -52,9 +54,9 @@ public unsafe partial struct FrameBoundaryEXT
             "VK_EXT_frame_boundary+VK_VERSION_1_1",
         ]
     )]
-    public ulong FrameID;
+    public ulong FrameId;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("imageCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -65,7 +67,7 @@ public unsafe partial struct FrameBoundaryEXT
     )]
     public uint ImageCount;
 
-    [NativeTypeName("const VkImage *")]
+    [NativeName("pImages")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -76,7 +78,7 @@ public unsafe partial struct FrameBoundaryEXT
     )]
     public ImageHandle* PImages;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("bufferCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -87,7 +89,7 @@ public unsafe partial struct FrameBoundaryEXT
     )]
     public uint BufferCount;
 
-    [NativeTypeName("const VkBuffer *")]
+    [NativeName("pBuffers")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -98,7 +100,7 @@ public unsafe partial struct FrameBoundaryEXT
     )]
     public BufferHandle* PBuffers;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("tagName")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -109,7 +111,7 @@ public unsafe partial struct FrameBoundaryEXT
     )]
     public ulong TagName;
 
-    [NativeTypeName("size_t")]
+    [NativeName("tagSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],
@@ -120,7 +122,7 @@ public unsafe partial struct FrameBoundaryEXT
     )]
     public nuint TagSize;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pTag")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_frame_boundary"],

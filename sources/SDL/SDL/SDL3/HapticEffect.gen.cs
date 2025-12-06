@@ -7,28 +7,35 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_HapticEffect")]
 [StructLayout(LayoutKind.Explicit)]
 public partial struct HapticEffect
 {
+    [NativeName("type")]
     [FieldOffset(0)]
-    [NativeTypeName("Uint16")]
     public ushort Type;
 
+    [NativeName("constant")]
     [FieldOffset(0)]
     public HapticConstant Constant;
 
+    [NativeName("periodic")]
     [FieldOffset(0)]
     public HapticPeriodic Periodic;
 
+    [NativeName("condition")]
     [FieldOffset(0)]
     public HapticCondition Condition;
 
+    [NativeName("ramp")]
     [FieldOffset(0)]
     public HapticRamp Ramp;
 
+    [NativeName("leftright")]
     [FieldOffset(0)]
     public HapticLeftRight Leftright;
 
+    [NativeName("custom")]
     [FieldOffset(0)]
     public HapticCustom Custom;
 }

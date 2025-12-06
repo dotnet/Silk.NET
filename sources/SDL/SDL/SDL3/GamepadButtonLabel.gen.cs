@@ -7,16 +7,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum GamepadButtonLabel : uint
+[NativeName("SDL_GamepadButtonLabel")]
+public enum GamepadButtonLabel
 {
-    Unknown,
-    A,
-    B,
-    X,
-    Y,
-    Cross,
-    Circle,
-    Square,
-    Triangle,
+    [NativeName("SDL_GAMEPAD_BUTTON_LABEL_UNKNOWN")]
+    Unknown = 0,
+
+    [NativeName("SDL_GAMEPAD_BUTTON_LABEL_A")]
+    A = 1,
+
+    [NativeName("SDL_GAMEPAD_BUTTON_LABEL_B")]
+    B = 2,
+
+    [NativeName("SDL_GAMEPAD_BUTTON_LABEL_X")]
+    X = 3,
+
+    [NativeName("SDL_GAMEPAD_BUTTON_LABEL_Y")]
+    Y = 4,
+
+    [NativeName("SDL_GAMEPAD_BUTTON_LABEL_CROSS")]
+    Cross = 5,
+
+    [NativeName("SDL_GAMEPAD_BUTTON_LABEL_CIRCLE")]
+    Circle = 6,
+
+    [NativeName("SDL_GAMEPAD_BUTTON_LABEL_SQUARE")]
+    Square = 7,
+
+    [NativeName("SDL_GAMEPAD_BUTTON_LABEL_TRIANGLE")]
+    Triangle = 8,
 }

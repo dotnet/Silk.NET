@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkFormatFeatureFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum FormatFeatureFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -43,6 +44,7 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageBit = 0x1,
 
+    [NativeName("VK_FORMAT_FEATURE_STORAGE_IMAGE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -71,6 +73,7 @@ public enum FormatFeatureFlags : uint
     )]
     StorageImageBit = 0x2,
 
+    [NativeName("VK_FORMAT_FEATURE_STORAGE_IMAGE_ATOMIC_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,6 +102,7 @@ public enum FormatFeatureFlags : uint
     )]
     StorageImageAtomicBit = 0x4,
 
+    [NativeName("VK_FORMAT_FEATURE_UNIFORM_TEXEL_BUFFER_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -127,6 +131,7 @@ public enum FormatFeatureFlags : uint
     )]
     UniformTexelBufferBit = 0x8,
 
+    [NativeName("VK_FORMAT_FEATURE_STORAGE_TEXEL_BUFFER_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -155,6 +160,7 @@ public enum FormatFeatureFlags : uint
     )]
     StorageTexelBufferBit = 0x10,
 
+    [NativeName("VK_FORMAT_FEATURE_STORAGE_TEXEL_BUFFER_ATOMIC_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -183,6 +189,7 @@ public enum FormatFeatureFlags : uint
     )]
     StorageTexelBufferAtomicBit = 0x20,
 
+    [NativeName("VK_FORMAT_FEATURE_VERTEX_BUFFER_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -211,6 +218,7 @@ public enum FormatFeatureFlags : uint
     )]
     VertexBufferBit = 0x40,
 
+    [NativeName("VK_FORMAT_FEATURE_COLOR_ATTACHMENT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -239,6 +247,7 @@ public enum FormatFeatureFlags : uint
     )]
     ColorAttachmentBit = 0x80,
 
+    [NativeName("VK_FORMAT_FEATURE_COLOR_ATTACHMENT_BLEND_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -267,6 +276,7 @@ public enum FormatFeatureFlags : uint
     )]
     ColorAttachmentBlendBit = 0x100,
 
+    [NativeName("VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -295,6 +305,7 @@ public enum FormatFeatureFlags : uint
     )]
     DepthStencilAttachmentBit = 0x200,
 
+    [NativeName("VK_FORMAT_FEATURE_BLIT_SRC_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -323,6 +334,7 @@ public enum FormatFeatureFlags : uint
     )]
     BlitSrcBit = 0x400,
 
+    [NativeName("VK_FORMAT_FEATURE_BLIT_DST_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -351,6 +363,7 @@ public enum FormatFeatureFlags : uint
     )]
     BlitDstBit = 0x800,
 
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_LINEAR_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -379,6 +392,7 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageFilterLinearBit = 0x1000,
 
+    [NativeName("VK_FORMAT_FEATURE_TRANSFER_SRC_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -403,6 +417,7 @@ public enum FormatFeatureFlags : uint
     )]
     TransferSrcBit = 0x4000,
 
+    [NativeName("VK_FORMAT_FEATURE_TRANSFER_DST_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -427,6 +442,7 @@ public enum FormatFeatureFlags : uint
     )]
     TransferDstBit = 0x8000,
 
+    [NativeName("VK_FORMAT_FEATURE_MIDPOINT_CHROMA_SAMPLES_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -447,6 +463,7 @@ public enum FormatFeatureFlags : uint
     )]
     MidpointChromaSamplesBit = 0x20000,
 
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -467,6 +484,9 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageYcbcrConversionLinearFilterBit = 0x40000,
 
+    [NativeName(
+        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_SEPARATE_RECONSTRUCTION_FILTER_BIT"
+    )]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -487,6 +507,9 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageYcbcrConversionSeparateReconstructionFilterBit = 0x80000,
 
+    [NativeName(
+        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_BIT"
+    )]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -507,6 +530,9 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageYcbcrConversionChromaReconstructionExplicitBit = 0x100000,
 
+    [NativeName(
+        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_FORCEABLE_BIT"
+    )]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -527,6 +553,7 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit = 0x200000,
 
+    [NativeName("VK_FORMAT_FEATURE_DISJOINT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -547,6 +574,7 @@ public enum FormatFeatureFlags : uint
     )]
     DisjointBit = 0x400000,
 
+    [NativeName("VK_FORMAT_FEATURE_COSITED_CHROMA_SAMPLES_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -567,6 +595,7 @@ public enum FormatFeatureFlags : uint
     )]
     CositedChromaSamplesBit = 0x800000,
 
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_MINMAX_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -584,6 +613,7 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageFilterMinmaxBit = 0x10000,
 
+    [NativeName("VK_FORMAT_FEATURE_VIDEO_DECODE_OUTPUT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -594,6 +624,7 @@ public enum FormatFeatureFlags : uint
     )]
     VideoDecodeOutputBitKHR = 0x2000000,
 
+    [NativeName("VK_FORMAT_FEATURE_VIDEO_DECODE_DPB_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -604,6 +635,7 @@ public enum FormatFeatureFlags : uint
     )]
     VideoDecodeDpbBitKHR = 0x4000000,
 
+    [NativeName("VK_FORMAT_FEATURE_ACCELERATION_STRUCTURE_VERTEX_BUFFER_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -614,9 +646,11 @@ public enum FormatFeatureFlags : uint
     )]
     AccelerationStructureVertexBufferBitKHR = 0x20000000,
 
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     SampledImageFilterCubicBitEXT = 0x2000,
 
+    [NativeName("VK_FORMAT_FEATURE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],
@@ -627,6 +661,7 @@ public enum FormatFeatureFlags : uint
     )]
     FragmentDensityMapBitEXT = 0x1000000,
 
+    [NativeName("VK_FORMAT_FEATURE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -638,6 +673,7 @@ public enum FormatFeatureFlags : uint
     )]
     FragmentShadingRateAttachmentBitKHR = 0x40000000,
 
+    [NativeName("VK_FORMAT_FEATURE_VIDEO_ENCODE_INPUT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -648,6 +684,7 @@ public enum FormatFeatureFlags : uint
     )]
     VideoEncodeInputBitKHR = 0x8000000,
 
+    [NativeName("VK_FORMAT_FEATURE_VIDEO_ENCODE_DPB_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -658,15 +695,19 @@ public enum FormatFeatureFlags : uint
     )]
     VideoEncodeDpbBitKHR = 0x10000000,
 
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_filter_cubic"])]
     SampledImageFilterCubicBitIMG = SampledImageFilterCubicBitEXT,
 
+    [NativeName("VK_FORMAT_FEATURE_TRANSFER_SRC_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
     TransferSrcBitKHR = TransferSrcBit,
 
+    [NativeName("VK_FORMAT_FEATURE_TRANSFER_DST_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance1"])]
     TransferDstBitKHR = TransferDstBit,
 
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_MINMAX_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sampler_filter_minmax"],
@@ -677,6 +718,7 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageFilterMinmaxBitEXT = SampledImageFilterMinmaxBit,
 
+    [NativeName("VK_FORMAT_FEATURE_MIDPOINT_CHROMA_SAMPLES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -687,6 +729,7 @@ public enum FormatFeatureFlags : uint
     )]
     MidpointChromaSamplesBitKHR = MidpointChromaSamplesBit,
 
+    [NativeName("VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_LINEAR_FILTER_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -697,6 +740,9 @@ public enum FormatFeatureFlags : uint
     )]
     SampledImageYcbcrConversionLinearFilterBitKHR = SampledImageYcbcrConversionLinearFilterBit,
 
+    [NativeName(
+        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_SEPARATE_RECONSTRUCTION_FILTER_BIT_KHR"
+    )]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -708,6 +754,9 @@ public enum FormatFeatureFlags : uint
     SampledImageYcbcrConversionSeparateReconstructionFilterBitKHR =
         SampledImageYcbcrConversionSeparateReconstructionFilterBit,
 
+    [NativeName(
+        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_BIT_KHR"
+    )]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -719,6 +768,9 @@ public enum FormatFeatureFlags : uint
     SampledImageYcbcrConversionChromaReconstructionExplicitBitKHR =
         SampledImageYcbcrConversionChromaReconstructionExplicitBit,
 
+    [NativeName(
+        "VK_FORMAT_FEATURE_SAMPLED_IMAGE_YCBCR_CONVERSION_CHROMA_RECONSTRUCTION_EXPLICIT_FORCEABLE_BIT_KHR"
+    )]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -730,6 +782,7 @@ public enum FormatFeatureFlags : uint
     SampledImageYcbcrConversionChromaReconstructionExplicitForceableBitKHR =
         SampledImageYcbcrConversionChromaReconstructionExplicitForceableBit,
 
+    [NativeName("VK_FORMAT_FEATURE_DISJOINT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -740,6 +793,7 @@ public enum FormatFeatureFlags : uint
     )]
     DisjointBitKHR = DisjointBit,
 
+    [NativeName("VK_FORMAT_FEATURE_COSITED_CHROMA_SAMPLES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],

@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImageViewUsageCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageViewUsageCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +36,7 @@ public unsafe partial struct ImageViewUsageCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -59,7 +61,7 @@ public unsafe partial struct ImageViewUsageCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkImageUsageFlags")]
+    [NativeName("usage")]
     [SupportedApiProfile(
         "vulkan",
         [

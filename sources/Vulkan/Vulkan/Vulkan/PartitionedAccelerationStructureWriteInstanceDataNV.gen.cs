@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPartitionedAccelerationStructureWriteInstanceDataNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
 {
+    [NativeName("transform")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -17,23 +19,23 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
     )]
     public TransformMatrixKHR Transform;
 
-    [NativeTypeName("float[6]")]
+    [NativeName("explicitAABB")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public PartitionedAccelerationStructureWriteInstanceDataNVExplicitAABB ExplicitAABB;
+    public PartitionedAccelerationStructureWriteInstanceDataNvExplicitAabb ExplicitAabb;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("instanceID")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint InstanceID;
+    public uint InstanceId;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("instanceMask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -41,7 +43,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
     )]
     public uint InstanceMask;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("instanceContributionToHitGroupIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -49,7 +51,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
     )]
     public uint InstanceContributionToHitGroupIndex;
 
-    [NativeTypeName("VkPartitionedAccelerationStructureInstanceFlagsNV")]
+    [NativeName("instanceFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -57,7 +59,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
     )]
     public PartitionedAccelerationStructureInstanceFlagsNV InstanceFlags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("instanceIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -65,7 +67,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
     )]
     public uint InstanceIndex;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("partitionIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -73,7 +75,7 @@ public partial struct PartitionedAccelerationStructureWriteInstanceDataNV
     )]
     public uint PartitionIndex;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("accelerationStructure")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

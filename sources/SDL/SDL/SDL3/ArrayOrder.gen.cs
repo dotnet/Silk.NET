@@ -7,14 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum ArrayOrder : uint
+[NativeName("SDL_ArrayOrder")]
+public enum ArrayOrder
 {
-    None,
-    Rgb,
-    Rgba,
-    Argb,
-    Bgr,
-    Bgra,
-    Abgr,
+    [NativeName("SDL_ARRAYORDER_NONE")]
+    None = 0,
+
+    [NativeName("SDL_ARRAYORDER_RGB")]
+    Rgb = 1,
+
+    [NativeName("SDL_ARRAYORDER_RGBA")]
+    Rgba = 2,
+
+    [NativeName("SDL_ARRAYORDER_ARGB")]
+    Argb = 3,
+
+    [NativeName("SDL_ARRAYORDER_BGR")]
+    Bgr = 4,
+
+    [NativeName("SDL_ARRAYORDER_BGRA")]
+    Bgra = 5,
+
+    [NativeName("SDL_ARRAYORDER_ABGR")]
+    Abgr = 6,
 }

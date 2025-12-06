@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkLatencySleepModeInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct LatencySleepModeInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -22,7 +24,7 @@ public unsafe partial struct LatencySleepModeInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -35,7 +37,7 @@ public unsafe partial struct LatencySleepModeInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("lowLatencyMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -48,7 +50,7 @@ public unsafe partial struct LatencySleepModeInfoNV
     )]
     public uint LowLatencyMode;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("lowLatencyBoost")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -61,7 +63,7 @@ public unsafe partial struct LatencySleepModeInfoNV
     )]
     public uint LowLatencyBoost;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("minimumIntervalUs")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],

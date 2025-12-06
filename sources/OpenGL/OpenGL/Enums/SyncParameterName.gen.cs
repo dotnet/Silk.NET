@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("SyncParameterName")]
 public enum SyncParameterName : uint
 {
-    ObjectType = unchecked((uint)0x9112),
-    SyncCondition = unchecked((uint)0x9113),
-    SyncStatus = unchecked((uint)0x9114),
-    SyncFlags = unchecked((uint)0x9115),
+    [NativeName("GL_OBJECT_TYPE")]
+    ObjectType = 37138,
+
+    [NativeName("GL_SYNC_CONDITION")]
+    SyncCondition = 37139,
+
+    [NativeName("GL_SYNC_STATUS")]
+    SyncStatus = 37140,
+
+    [NativeName("GL_SYNC_FLAGS")]
+    SyncFlags = 37141,
 }

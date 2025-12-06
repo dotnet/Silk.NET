@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FogPointerTypeIBM")]
 public enum FogPointerTypeIBM : uint
 {
-    Float = unchecked((uint)0x1406),
-    Double = unchecked((uint)0x140A),
+    [NativeName("GL_FLOAT")]
+    Float = 5126,
+
+    [NativeName("GL_DOUBLE")]
+    Double = 5130,
 }

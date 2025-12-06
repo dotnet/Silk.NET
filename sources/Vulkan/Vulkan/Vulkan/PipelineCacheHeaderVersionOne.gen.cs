@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineCacheHeaderVersionOne")]
 [SupportedApiProfile("vulkan")]
 public partial struct PipelineCacheHeaderVersionOne
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("headerSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,6 +36,7 @@ public partial struct PipelineCacheHeaderVersionOne
     )]
     public uint HeaderSize;
 
+    [NativeName("headerVersion")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,7 +60,7 @@ public partial struct PipelineCacheHeaderVersionOne
     )]
     public PipelineCacheHeaderVersion HeaderVersion;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("vendorID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -80,9 +82,9 @@ public partial struct PipelineCacheHeaderVersionOne
         ],
         MinVersion = "1.0"
     )]
-    public uint VendorID;
+    public uint VendorId;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("deviceID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -104,9 +106,9 @@ public partial struct PipelineCacheHeaderVersionOne
         ],
         MinVersion = "1.0"
     )]
-    public uint DeviceID;
+    public uint DeviceId;
 
-    [NativeTypeName("uint8_t[16]")]
+    [NativeName("pipelineCacheUUID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,5 +130,5 @@ public partial struct PipelineCacheHeaderVersionOne
         ],
         MinVersion = "1.0"
     )]
-    public PipelineCacheHeaderVersionOnePipelineCacheUUID PipelineCacheUUID;
+    public PipelineCacheHeaderVersionOnePipelineCacheUuid PipelineCacheUuid;
 }

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBufferDeviceAddressCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BufferDeviceAddressCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_buffer_device_address"],
@@ -21,7 +23,7 @@ public unsafe partial struct BufferDeviceAddressCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_buffer_device_address"],
@@ -32,7 +34,7 @@ public unsafe partial struct BufferDeviceAddressCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("deviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_buffer_device_address"],

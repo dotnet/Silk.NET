@@ -8,11 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum InitStatus : uint
+[NativeName("SDL_InitStatus")]
+public enum InitStatus
 {
-    Uninitialized,
-    Initializing,
-    Initialized,
-    Uninitializing,
+    [NativeName("SDL_INIT_STATUS_UNINITIALIZED")]
+    Uninitialized = 0,
+
+    [NativeName("SDL_INIT_STATUS_INITIALIZING")]
+    Initializing = 1,
+
+    [NativeName("SDL_INIT_STATUS_INITIALIZED")]
+    Initialized = 2,
+
+    [NativeName("SDL_INIT_STATUS_UNINITIALIZING")]
+    Uninitializing = 3,
 }

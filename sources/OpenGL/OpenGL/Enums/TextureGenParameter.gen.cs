@@ -7,15 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("TextureGenParameter")]
 public enum TextureGenParameter : uint
 {
-    TextureGenMode = unchecked((uint)0x2500),
-    ObjectPlane = unchecked((uint)0x2501),
-    EyePlane = unchecked((uint)0x2502),
-    EyePointSGIS = unchecked((uint)0x81F4),
-    ObjectPointSGIS = unchecked((uint)0x81F5),
-    EyeLineSGIS = unchecked((uint)0x81F6),
-    ObjectLineSGIS = unchecked((uint)0x81F7),
-    TextureGenModeOES = unchecked((uint)0x2500),
+    [NativeName("GL_TEXTURE_GEN_MODE_OES")]
+    TextureGenModeOES = 9472,
+
+    [NativeName("GL_TEXTURE_GEN_MODE")]
+    TextureGenMode = 9472,
+
+    [NativeName("GL_OBJECT_PLANE")]
+    ObjectPlane = 9473,
+
+    [NativeName("GL_EYE_PLANE")]
+    EyePlane = 9474,
+
+    [NativeName("GL_EYE_POINT_SGIS")]
+    EyePointSGIS = 33268,
+
+    [NativeName("GL_OBJECT_POINT_SGIS")]
+    ObjectPointSGIS = 33269,
+
+    [NativeName("GL_EYE_LINE_SGIS")]
+    EyeLineSGIS = 33270,
+
+    [NativeName("GL_OBJECT_LINE_SGIS")]
+    ObjectLineSGIS = 33271,
 }

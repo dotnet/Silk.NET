@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineRasterizationStateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRasterizationStateCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -28,7 +30,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -47,7 +49,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineRasterizationStateCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -66,7 +68,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public uint Flags;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("depthClampEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -85,7 +87,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public uint DepthClampEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("rasterizerDiscardEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -104,6 +106,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public uint RasterizerDiscardEnable;
 
+    [NativeName("polygonMode")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -122,7 +125,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public PolygonMode PolygonMode;
 
-    [NativeTypeName("VkCullModeFlags")]
+    [NativeName("cullMode")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -141,6 +144,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public CullModeFlags CullMode;
 
+    [NativeName("frontFace")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -159,7 +163,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public FrontFace FrontFace;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("depthBiasEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -178,6 +182,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public uint DepthBiasEnable;
 
+    [NativeName("depthBiasConstantFactor")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -196,9 +201,11 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public float DepthBiasConstantFactor;
 
+    [NativeName("depthBiasClamp")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public float DepthBiasClamp;
 
+    [NativeName("depthBiasSlopeFactor")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -217,6 +224,7 @@ public unsafe partial struct PipelineRasterizationStateCreateInfo
     )]
     public float DepthBiasSlopeFactor;
 
+    [NativeName("lineWidth")]
     [SupportedApiProfile(
         "vulkan",
         [

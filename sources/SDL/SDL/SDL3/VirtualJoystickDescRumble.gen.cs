@@ -6,7 +6,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[Transformed]
+[NativeName("SDL_VirtualJoystickDesc_Rumble")]
 public readonly unsafe struct VirtualJoystickDescRumble : IDisposable
 {
     private readonly void* Pointer;

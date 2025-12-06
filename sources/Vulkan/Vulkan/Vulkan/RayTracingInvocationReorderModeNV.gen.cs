@@ -8,21 +8,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkRayTracingInvocationReorderModeNV")]
 [SupportedApiProfile("vulkan")]
 public enum RayTracingInvocationReorderModeNV : uint
 {
+    [NativeName("VK_RAY_TRACING_INVOCATION_REORDER_MODE_NONE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_invocation_reorder"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    NoneNV = 0,
+    None = 0,
 
+    [NativeName("VK_RAY_TRACING_INVOCATION_REORDER_MODE_REORDER_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_invocation_reorder"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    ReorderNV = 1,
+    Reorder = 1,
 }

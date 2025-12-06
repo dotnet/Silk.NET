@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSamplerCubicWeightsCreateInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerCubicWeightsCreateInfoQCOM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],
@@ -18,7 +20,7 @@ public unsafe partial struct SamplerCubicWeightsCreateInfoQCOM
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],
@@ -26,6 +28,7 @@ public unsafe partial struct SamplerCubicWeightsCreateInfoQCOM
     )]
     public void* PNext;
 
+    [NativeName("cubicWeights")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_filter_cubic_weights"],

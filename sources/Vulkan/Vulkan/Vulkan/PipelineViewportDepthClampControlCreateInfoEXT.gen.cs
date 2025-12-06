@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineViewportDepthClampControlCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineViewportDepthClampControlCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clamp_control"],
@@ -21,7 +23,7 @@ public unsafe partial struct PipelineViewportDepthClampControlCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clamp_control"],
@@ -32,6 +34,7 @@ public unsafe partial struct PipelineViewportDepthClampControlCreateInfoEXT
     )]
     public void* PNext;
 
+    [NativeName("depthClampMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clamp_control"],
@@ -42,7 +45,7 @@ public unsafe partial struct PipelineViewportDepthClampControlCreateInfoEXT
     )]
     public DepthClampModeEXT DepthClampMode;
 
-    [NativeTypeName("const VkDepthClampRangeEXT *")]
+    [NativeName("pDepthClampRange")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clamp_control"],

@@ -7,20 +7,45 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("VertexAttribPropertyARB")]
 public enum VertexAttribProperty : uint
 {
-    VertexAttribArrayBufferBinding = unchecked((uint)0x889F),
-    VertexAttribArrayEnabled = unchecked((uint)0x8622),
-    VertexAttribArraySize = unchecked((uint)0x8623),
-    VertexAttribArrayStride = unchecked((uint)0x8624),
-    VertexAttribArrayType = unchecked((uint)0x8625),
-    CurrentVertexAttrib = unchecked((uint)0x8626),
-    VertexAttribArrayNormalized = unchecked((uint)0x886A),
-    VertexAttribArrayInteger = unchecked((uint)0x88FD),
-    VertexAttribArrayDivisor = unchecked((uint)0x88FE),
-    VertexAttribArrayLong = unchecked((uint)0x874E),
-    VertexAttribBinding = unchecked((uint)0x82D4),
-    VertexAttribRelativeOffset = unchecked((uint)0x82D5),
-    VertexAttribArrayIntegerEXT = unchecked((uint)0x88FD),
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING")]
+    VertexAttribArrayBufferBinding = 34975,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_ENABLED")]
+    VertexAttribArrayEnabled = 34338,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_SIZE")]
+    VertexAttribArraySize = 34339,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_STRIDE")]
+    VertexAttribArrayStride = 34340,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_TYPE")]
+    VertexAttribArrayType = 34341,
+
+    [NativeName("GL_CURRENT_VERTEX_ATTRIB")]
+    CurrentVertexAttrib = 34342,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_NORMALIZED")]
+    VertexAttribArrayNormalized = 34922,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_INTEGER")]
+    VertexAttribArrayInteger = 35069,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR")]
+    VertexAttribArrayDivisor = 35070,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_LONG")]
+    VertexAttribArrayLong = 34638,
+
+    [NativeName("GL_VERTEX_ATTRIB_BINDING")]
+    VertexAttribBinding = 33492,
+
+    [NativeName("GL_VERTEX_ATTRIB_RELATIVE_OFFSET")]
+    VertexAttribRelativeOffset = 33493,
+
+    [NativeName("GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT")]
+    VertexAttribArrayIntegerEXT = 35069,
 }

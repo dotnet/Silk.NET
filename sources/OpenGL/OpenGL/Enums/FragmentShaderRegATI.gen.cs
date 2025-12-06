@@ -7,39 +7,102 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FragmentShaderRegATI")]
 public enum FragmentShaderRegATI : uint
 {
-    Reg0 = unchecked((uint)0x8921),
-    Reg1 = unchecked((uint)0x8922),
-    Reg2 = unchecked((uint)0x8923),
-    Reg3 = unchecked((uint)0x8924),
-    Reg4 = unchecked((uint)0x8925),
-    Reg5 = unchecked((uint)0x8926),
-    Reg6 = unchecked((uint)0x8927),
-    Reg7 = unchecked((uint)0x8928),
-    Reg8 = unchecked((uint)0x8929),
-    Reg9 = unchecked((uint)0x892A),
-    Reg10 = unchecked((uint)0x892B),
-    Reg11 = unchecked((uint)0x892C),
-    Reg12 = unchecked((uint)0x892D),
-    Reg13 = unchecked((uint)0x892E),
-    Reg14 = unchecked((uint)0x892F),
-    Reg15 = unchecked((uint)0x8930),
-    Reg16 = unchecked((uint)0x8931),
-    Reg17 = unchecked((uint)0x8932),
-    Reg18 = unchecked((uint)0x8933),
-    Reg19 = unchecked((uint)0x8934),
-    Reg20 = unchecked((uint)0x8935),
-    Reg21 = unchecked((uint)0x8936),
-    Reg22 = unchecked((uint)0x8937),
-    Reg23 = unchecked((uint)0x8938),
-    Reg24 = unchecked((uint)0x8939),
-    Reg25 = unchecked((uint)0x893A),
-    Reg26 = unchecked((uint)0x893B),
-    Reg27 = unchecked((uint)0x893C),
-    Reg28 = unchecked((uint)0x893D),
-    Reg29 = unchecked((uint)0x893E),
-    Reg30 = unchecked((uint)0x893F),
-    Reg31 = unchecked((uint)0x8940),
+    [NativeName("GL_REG_0_ATI")]
+    Reg0 = 35105,
+
+    [NativeName("GL_REG_1_ATI")]
+    Reg1 = 35106,
+
+    [NativeName("GL_REG_2_ATI")]
+    Reg2 = 35107,
+
+    [NativeName("GL_REG_3_ATI")]
+    Reg3 = 35108,
+
+    [NativeName("GL_REG_4_ATI")]
+    Reg4 = 35109,
+
+    [NativeName("GL_REG_5_ATI")]
+    Reg5 = 35110,
+
+    [NativeName("GL_REG_6_ATI")]
+    Reg6 = 35111,
+
+    [NativeName("GL_REG_7_ATI")]
+    Reg7 = 35112,
+
+    [NativeName("GL_REG_8_ATI")]
+    Reg8 = 35113,
+
+    [NativeName("GL_REG_9_ATI")]
+    Reg9 = 35114,
+
+    [NativeName("GL_REG_10_ATI")]
+    Reg10 = 35115,
+
+    [NativeName("GL_REG_11_ATI")]
+    Reg11 = 35116,
+
+    [NativeName("GL_REG_12_ATI")]
+    Reg12 = 35117,
+
+    [NativeName("GL_REG_13_ATI")]
+    Reg13 = 35118,
+
+    [NativeName("GL_REG_14_ATI")]
+    Reg14 = 35119,
+
+    [NativeName("GL_REG_15_ATI")]
+    Reg15 = 35120,
+
+    [NativeName("GL_REG_16_ATI")]
+    Reg16 = 35121,
+
+    [NativeName("GL_REG_17_ATI")]
+    Reg17 = 35122,
+
+    [NativeName("GL_REG_18_ATI")]
+    Reg18 = 35123,
+
+    [NativeName("GL_REG_19_ATI")]
+    Reg19 = 35124,
+
+    [NativeName("GL_REG_20_ATI")]
+    Reg20 = 35125,
+
+    [NativeName("GL_REG_21_ATI")]
+    Reg21 = 35126,
+
+    [NativeName("GL_REG_22_ATI")]
+    Reg22 = 35127,
+
+    [NativeName("GL_REG_23_ATI")]
+    Reg23 = 35128,
+
+    [NativeName("GL_REG_24_ATI")]
+    Reg24 = 35129,
+
+    [NativeName("GL_REG_25_ATI")]
+    Reg25 = 35130,
+
+    [NativeName("GL_REG_26_ATI")]
+    Reg26 = 35131,
+
+    [NativeName("GL_REG_27_ATI")]
+    Reg27 = 35132,
+
+    [NativeName("GL_REG_28_ATI")]
+    Reg28 = 35133,
+
+    [NativeName("GL_REG_29_ATI")]
+    Reg29 = 35134,
+
+    [NativeName("GL_REG_30_ATI")]
+    Reg30 = 35135,
+
+    [NativeName("GL_REG_31_ATI")]
+    Reg31 = 35136,
 }

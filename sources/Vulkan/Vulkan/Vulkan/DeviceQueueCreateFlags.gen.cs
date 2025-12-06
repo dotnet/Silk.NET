@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkDeviceQueueCreateFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum DeviceQueueCreateFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_DEVICE_QUEUE_CREATE_PROTECTED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [

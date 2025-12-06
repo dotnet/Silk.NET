@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkPipelineCompilerControlFlagBitsAMD")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum PipelineCompilerControlFlagsAMD : uint
 {
     None = 0x0,

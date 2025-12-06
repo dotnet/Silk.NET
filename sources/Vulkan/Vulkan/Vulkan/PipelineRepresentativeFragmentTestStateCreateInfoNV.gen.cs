@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineRepresentativeFragmentTestStateCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRepresentativeFragmentTestStateCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_representative_fragment_test"],
@@ -21,7 +23,7 @@ public unsafe partial struct PipelineRepresentativeFragmentTestStateCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_representative_fragment_test"],
@@ -32,7 +34,7 @@ public unsafe partial struct PipelineRepresentativeFragmentTestStateCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("representativeFragmentTestEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_representative_fragment_test"],

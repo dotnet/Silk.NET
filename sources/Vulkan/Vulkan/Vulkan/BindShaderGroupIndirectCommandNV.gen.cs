@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBindShaderGroupIndirectCommandNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct BindShaderGroupIndirectCommandNV
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("groupIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

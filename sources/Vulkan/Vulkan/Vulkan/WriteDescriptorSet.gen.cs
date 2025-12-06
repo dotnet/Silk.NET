@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkWriteDescriptorSet")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteDescriptorSet
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +36,7 @@ public unsafe partial struct WriteDescriptorSet
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,7 +60,7 @@ public unsafe partial struct WriteDescriptorSet
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDescriptorSet")]
+    [NativeName("dstSet")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -82,7 +84,7 @@ public unsafe partial struct WriteDescriptorSet
     )]
     public DescriptorSetHandle DstSet;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dstBinding")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -106,7 +108,7 @@ public unsafe partial struct WriteDescriptorSet
     )]
     public uint DstBinding;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dstArrayElement")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -130,7 +132,7 @@ public unsafe partial struct WriteDescriptorSet
     )]
     public uint DstArrayElement;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("descriptorCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -154,6 +156,7 @@ public unsafe partial struct WriteDescriptorSet
     )]
     public uint DescriptorCount;
 
+    [NativeName("descriptorType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -177,7 +180,7 @@ public unsafe partial struct WriteDescriptorSet
     )]
     public DescriptorType DescriptorType;
 
-    [NativeTypeName("const VkDescriptorImageInfo *")]
+    [NativeName("pImageInfo")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -201,7 +204,7 @@ public unsafe partial struct WriteDescriptorSet
     )]
     public DescriptorImageInfo* PImageInfo;
 
-    [NativeTypeName("const VkDescriptorBufferInfo *")]
+    [NativeName("pBufferInfo")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -225,7 +228,7 @@ public unsafe partial struct WriteDescriptorSet
     )]
     public DescriptorBufferInfo* PBufferInfo;
 
-    [NativeTypeName("const VkBufferView *")]
+    [NativeName("pTexelBufferView")]
     [SupportedApiProfile(
         "vulkan",
         [

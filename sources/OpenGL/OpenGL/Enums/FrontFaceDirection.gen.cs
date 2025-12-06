@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FrontFaceDirection")]
 public enum FrontFaceDirection : uint
 {
-    Cw = unchecked((uint)0x0900),
-    Ccw = unchecked((uint)0x0901),
+    [NativeName("GL_CW")]
+    Cw = 2304,
+
+    [NativeName("GL_CCW")]
+    Ccw = 2305,
 }

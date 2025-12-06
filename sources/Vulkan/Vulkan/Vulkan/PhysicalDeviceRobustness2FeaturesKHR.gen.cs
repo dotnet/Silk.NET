@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceRobustness2FeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRobustness2FeaturesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_robustness2"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceRobustness2FeaturesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_robustness2"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceRobustness2FeaturesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("robustBufferAccess2")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_robustness2"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceRobustness2FeaturesKHR
     )]
     public uint RobustBufferAccess2;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("robustImageAccess2")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_robustness2"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDeviceRobustness2FeaturesKHR
     )]
     public uint RobustImageAccess2;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("nullDescriptor")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_robustness2"],

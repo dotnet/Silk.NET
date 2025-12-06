@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("HistogramTargetEXT")]
 public enum HistogramTargetEXT : uint
 {
-    Histogram = unchecked((uint)0x8024),
-    ProxyHistogram = unchecked((uint)0x8025),
-    HistogramEXT = unchecked((uint)0x8024),
-    ProxyHistogramEXT = unchecked((uint)0x8025),
+    [NativeName("GL_HISTOGRAM")]
+    Histogram = 32804,
+
+    [NativeName("GL_PROXY_HISTOGRAM")]
+    ProxyHistogram = 32805,
+
+    [NativeName("GL_HISTOGRAM_EXT")]
+    HistogramEXT = 32804,
+
+    [NativeName("GL_PROXY_HISTOGRAM_EXT")]
+    ProxyHistogramEXT = 32805,
 }

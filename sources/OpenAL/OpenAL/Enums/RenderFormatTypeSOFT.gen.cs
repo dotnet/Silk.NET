@@ -10,14 +10,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("RenderFormatTypeSOFT")]
 public enum RenderFormatTypeSOFT : uint
 {
-    Byte = unchecked((uint)0x1400),
-    UnsignedByte = unchecked((uint)0x1401),
-    Short = unchecked((uint)0x1402),
-    UnsignedShort = unchecked((uint)0x1403),
-    Int = unchecked((uint)0x1404),
-    UnsignedInt = unchecked((uint)0x1405),
-    Float = unchecked((uint)0x1406),
+    [NativeName("ALC_BYTE_SOFT")]
+    Byte = 5120,
+
+    [NativeName("ALC_UNSIGNED_BYTE_SOFT")]
+    UnsignedByte = 5121,
+
+    [NativeName("ALC_SHORT_SOFT")]
+    Short = 5122,
+
+    [NativeName("ALC_UNSIGNED_SHORT_SOFT")]
+    UnsignedShort = 5123,
+
+    [NativeName("ALC_INT_SOFT")]
+    Int = 5124,
+
+    [NativeName("ALC_UNSIGNED_INT_SOFT")]
+    UnsignedInt = 5125,
+
+    [NativeName("ALC_FLOAT_SOFT")]
+    Float = 5126,
 }

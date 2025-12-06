@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkClusterAccelerationStructureCommandsInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -17,6 +19,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -24,6 +27,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
     )]
     public void* PNext;
 
+    [NativeName("input")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -31,7 +35,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
     )]
     public ClusterAccelerationStructureInputInfoNV Input;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("dstImplicitData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -39,7 +43,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
     )]
     public ulong DstImplicitData;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("scratchData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -47,6 +51,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
     )]
     public ulong ScratchData;
 
+    [NativeName("dstAddressesArray")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -54,6 +59,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
     )]
     public StridedDeviceAddressRegionKHR DstAddressesArray;
 
+    [NativeName("dstSizesArray")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -61,6 +67,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
     )]
     public StridedDeviceAddressRegionKHR DstSizesArray;
 
+    [NativeName("srcInfosArray")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -68,7 +75,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
     )]
     public StridedDeviceAddressRegionKHR SrcInfosArray;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("srcInfosCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -76,7 +83,7 @@ public unsafe partial struct ClusterAccelerationStructureCommandsInfoNV
     )]
     public ulong SrcInfosCount;
 
-    [NativeTypeName("VkClusterAccelerationStructureAddressResolutionFlagsNV")]
+    [NativeName("addressResolutionFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

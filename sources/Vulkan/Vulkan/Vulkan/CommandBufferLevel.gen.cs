@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkCommandBufferLevel")]
 [SupportedApiProfile("vulkan")]
 public enum CommandBufferLevel : uint
 {
+    [NativeName("VK_COMMAND_BUFFER_LEVEL_PRIMARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,6 +40,7 @@ public enum CommandBufferLevel : uint
     )]
     Primary = 0,
 
+    [NativeName("VK_COMMAND_BUFFER_LEVEL_SECONDARY")]
     [SupportedApiProfile(
         "vulkan",
         [

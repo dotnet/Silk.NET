@@ -10,10 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("SourceInteger3")]
 public enum SourceInteger3 : uint
 {
-    Position = unchecked((uint)0x1004),
-    Direction = unchecked((uint)0x1005),
-    Velocity = unchecked((uint)0x1006),
+    [NativeName("AL_POSITION")]
+    Position = 4100,
+
+    [NativeName("AL_DIRECTION")]
+    Direction = 4101,
+
+    [NativeName("AL_VELOCITY")]
+    Velocity = 4102,
 }

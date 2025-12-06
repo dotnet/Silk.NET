@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceInlineUniformBlockProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceInlineUniformBlockProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,6 +27,7 @@ public unsafe partial struct PhysicalDeviceInlineUniformBlockProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +42,7 @@ public unsafe partial struct PhysicalDeviceInlineUniformBlockProperties
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxInlineUniformBlockSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,7 +57,7 @@ public unsafe partial struct PhysicalDeviceInlineUniformBlockProperties
     )]
     public uint MaxInlineUniformBlockSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxPerStageDescriptorInlineUniformBlocks")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +72,7 @@ public unsafe partial struct PhysicalDeviceInlineUniformBlockProperties
     )]
     public uint MaxPerStageDescriptorInlineUniformBlocks;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +87,7 @@ public unsafe partial struct PhysicalDeviceInlineUniformBlockProperties
     )]
     public uint MaxPerStageDescriptorUpdateAfterBindInlineUniformBlocks;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxDescriptorSetInlineUniformBlocks")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +102,7 @@ public unsafe partial struct PhysicalDeviceInlineUniformBlockProperties
     )]
     public uint MaxDescriptorSetInlineUniformBlocks;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxDescriptorSetUpdateAfterBindInlineUniformBlocks")]
     [SupportedApiProfile(
         "vulkan",
         [

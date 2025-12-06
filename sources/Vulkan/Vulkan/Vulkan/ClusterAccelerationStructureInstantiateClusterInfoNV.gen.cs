@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkClusterAccelerationStructureInstantiateClusterInfoNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct ClusterAccelerationStructureInstantiateClusterInfoNV
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("clusterIdOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -19,6 +20,7 @@ public partial struct ClusterAccelerationStructureInstantiateClusterInfoNV
     )]
     public uint ClusterIdOffset;
 
+    [NativeName("_bitfield")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -26,13 +28,13 @@ public partial struct ClusterAccelerationStructureInstantiateClusterInfoNV
     )]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 24")]
+    [NativeName("geometryIndexOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint geometryIndexOffset
+    public uint GeometryIndexOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0xFFFFFFu; }
@@ -40,13 +42,13 @@ public partial struct ClusterAccelerationStructureInstantiateClusterInfoNV
         set { Bitfield = (Bitfield & ~0xFFFFFFu) | (value & 0xFFFFFFu); }
     }
 
-    [NativeTypeName("uint32_t : 8")]
+    [NativeName("reserved")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 24) & 0xFFu; }
@@ -54,7 +56,7 @@ public partial struct ClusterAccelerationStructureInstantiateClusterInfoNV
         set { Bitfield = (Bitfield & ~(0xFFu << 24)) | ((value & 0xFFu) << 24); }
     }
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("clusterTemplateAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -62,6 +64,7 @@ public partial struct ClusterAccelerationStructureInstantiateClusterInfoNV
     )]
     public ulong ClusterTemplateAddress;
 
+    [NativeName("vertexBuffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

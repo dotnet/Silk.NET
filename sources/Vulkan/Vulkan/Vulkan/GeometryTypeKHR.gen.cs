@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkGeometryTypeKHR")]
 [SupportedApiProfile("vulkan")]
 public enum GeometryTypeKHR : uint
 {
+    [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -20,8 +21,9 @@ public enum GeometryTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TrianglesKHR = 0,
+    Triangles = 0,
 
+    [NativeName("VK_GEOMETRY_TYPE_AABBS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -30,8 +32,9 @@ public enum GeometryTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    AabbsKHR = 1,
+    Aabbs = 1,
 
+    [NativeName("VK_GEOMETRY_TYPE_INSTANCES_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -40,8 +43,9 @@ public enum GeometryTypeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    InstancesKHR = 2,
+    Instances = 2,
 
+    [NativeName("VK_GEOMETRY_TYPE_SPHERES_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -49,6 +53,7 @@ public enum GeometryTypeKHR : uint
     )]
     SpheresNV = 1000429004,
 
+    [NativeName("VK_GEOMETRY_TYPE_LINEAR_SWEPT_SPHERES_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_linear_swept_spheres"],
@@ -56,6 +61,7 @@ public enum GeometryTypeKHR : uint
     )]
     LinearSweptSpheresNV = 1000429005,
 
+    [NativeName("VK_GEOMETRY_TYPE_TRIANGLES_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -64,8 +70,9 @@ public enum GeometryTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TrianglesNV = TrianglesKHR,
+    TrianglesNV = Triangles,
 
+    [NativeName("VK_GEOMETRY_TYPE_AABBS_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -74,5 +81,5 @@ public enum GeometryTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    AabbsNV = AabbsKHR,
+    AabbsNV = Aabbs,
 }

@@ -10,12 +10,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("ObjectIdentifier")]
 public enum ObjectIdentifier : uint
 {
-    BufferEXT = unchecked((uint)0x1009),
-    SourceEXT = unchecked((uint)0x19D0),
-    FilterEXT = unchecked((uint)0x19D1),
-    EffectEXT = unchecked((uint)0x19D2),
-    AuxiliaryEffectSlotEXT = unchecked((uint)0x19D3),
+    [NativeName("AL_BUFFER_EXT")]
+    BufferEXT = 4105,
+
+    [NativeName("AL_SOURCE_EXT")]
+    SourceEXT = 6608,
+
+    [NativeName("AL_FILTER_EXT")]
+    FilterEXT = 6609,
+
+    [NativeName("AL_EFFECT_EXT")]
+    EffectEXT = 6610,
+
+    [NativeName("AL_AUXILIARY_EFFECT_SLOT_EXT")]
+    AuxiliaryEffectSlotEXT = 6611,
 }

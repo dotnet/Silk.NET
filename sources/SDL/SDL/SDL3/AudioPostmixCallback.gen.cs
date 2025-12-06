@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AudioPostmixCallback")]
 public readonly unsafe struct AudioPostmixCallback : IDisposable
 {
     private readonly void* Pointer;

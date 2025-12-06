@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_ScalingList8x8_e__FixedBuffer")]
 [InlineArray(6 * 64)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264ScalingListsScalingList8X8
 {
+    [NativeName("e0_0")]
     [SupportedApiProfile("vulkan")]
     public byte E0X0;
 }

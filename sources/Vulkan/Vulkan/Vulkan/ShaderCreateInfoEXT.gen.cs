@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkShaderCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ShaderCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -22,7 +24,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -34,7 +36,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkShaderCreateFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -46,6 +48,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public ShaderCreateFlagsEXT Flags;
 
+    [NativeName("stage")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -57,7 +60,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public ShaderStageFlags Stage;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("nextStage")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -69,6 +72,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public ShaderStageFlags NextStage;
 
+    [NativeName("codeType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -80,7 +84,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public ShaderCodeTypeEXT CodeType;
 
-    [NativeTypeName("size_t")]
+    [NativeName("codeSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -92,7 +96,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public nuint CodeSize;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pCode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -104,7 +108,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public void* PCode;
 
-    [NativeTypeName("const char *")]
+    [NativeName("pName")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -116,7 +120,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public sbyte* PName;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("setLayoutCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -128,7 +132,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public uint SetLayoutCount;
 
-    [NativeTypeName("const VkDescriptorSetLayout *")]
+    [NativeName("pSetLayouts")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -140,7 +144,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public DescriptorSetLayoutHandle* PSetLayouts;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("pushConstantRangeCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -152,7 +156,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public uint PushConstantRangeCount;
 
-    [NativeTypeName("const VkPushConstantRange *")]
+    [NativeName("pPushConstantRanges")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -164,7 +168,7 @@ public unsafe partial struct ShaderCreateInfoEXT
     )]
     public PushConstantRange* PPushConstantRanges;
 
-    [NativeTypeName("const VkSpecializationInfo *")]
+    [NativeName("pSpecializationInfo")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],

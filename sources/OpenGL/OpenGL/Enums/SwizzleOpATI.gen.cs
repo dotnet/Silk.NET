@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("SwizzleOpATI")]
 public enum SwizzleOpATI : uint
 {
-    Str = unchecked((uint)0x8976),
-    Stq = unchecked((uint)0x8977),
-    StrDr = unchecked((uint)0x8978),
-    StqDq = unchecked((uint)0x8979),
+    [NativeName("GL_SWIZZLE_STR_ATI")]
+    Str = 35190,
+
+    [NativeName("GL_SWIZZLE_STQ_ATI")]
+    Stq = 35191,
+
+    [NativeName("GL_SWIZZLE_STR_DR_ATI")]
+    StrDr = 35192,
+
+    [NativeName("GL_SWIZZLE_STQ_DQ_ATI")]
+    StqDq = 35193,
 }

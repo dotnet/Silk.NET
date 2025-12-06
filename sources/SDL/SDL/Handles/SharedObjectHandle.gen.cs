@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_SharedObject")]
 public readonly unsafe partial struct SharedObjectHandle
 {
     public readonly void* Handle;
+
+    public SharedObjectHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(SharedObjectHandle other) => Handle == other.Handle;
 

@@ -8,14 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkDataGraphPipelineSessionBindPointTypeARM")]
 [SupportedApiProfile("vulkan")]
 public enum DataGraphPipelineSessionBindPointTypeARM : uint
 {
+    [NativeName("VK_DATA_GRAPH_PIPELINE_SESSION_BIND_POINT_TYPE_MEMORY_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    MemoryARM = 0,
+    Memory = 0,
 }

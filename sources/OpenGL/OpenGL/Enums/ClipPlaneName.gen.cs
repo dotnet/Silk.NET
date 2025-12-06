@@ -7,21 +7,48 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ClipPlaneName")]
 public enum ClipPlaneName : uint
 {
-    Plane0 = unchecked((uint)0x3000),
-    Plane1 = unchecked((uint)0x3001),
-    Plane2 = unchecked((uint)0x3002),
-    Plane3 = unchecked((uint)0x3003),
-    Plane4 = unchecked((uint)0x3004),
-    Plane5 = unchecked((uint)0x3005),
-    Distance0 = unchecked((uint)0x3000),
-    Distance1 = unchecked((uint)0x3001),
-    Distance2 = unchecked((uint)0x3002),
-    Distance3 = unchecked((uint)0x3003),
-    Distance4 = unchecked((uint)0x3004),
-    Distance5 = unchecked((uint)0x3005),
-    Distance6 = unchecked((uint)0x3006),
-    Distance7 = unchecked((uint)0x3007),
+    [NativeName("GL_CLIP_PLANE0")]
+    Plane0 = 12288,
+
+    [NativeName("GL_CLIP_PLANE1")]
+    Plane1 = 12289,
+
+    [NativeName("GL_CLIP_PLANE2")]
+    Plane2 = 12290,
+
+    [NativeName("GL_CLIP_PLANE3")]
+    Plane3 = 12291,
+
+    [NativeName("GL_CLIP_PLANE4")]
+    Plane4 = 12292,
+
+    [NativeName("GL_CLIP_PLANE5")]
+    Plane5 = 12293,
+
+    [NativeName("GL_CLIP_DISTANCE0")]
+    Distance0 = 12288,
+
+    [NativeName("GL_CLIP_DISTANCE1")]
+    Distance1 = 12289,
+
+    [NativeName("GL_CLIP_DISTANCE2")]
+    Distance2 = 12290,
+
+    [NativeName("GL_CLIP_DISTANCE3")]
+    Distance3 = 12291,
+
+    [NativeName("GL_CLIP_DISTANCE4")]
+    Distance4 = 12292,
+
+    [NativeName("GL_CLIP_DISTANCE5")]
+    Distance5 = 12293,
+
+    [NativeName("GL_CLIP_DISTANCE6")]
+    Distance6 = 12294,
+
+    [NativeName("GL_CLIP_DISTANCE7")]
+    Distance7 = 12295,
 }

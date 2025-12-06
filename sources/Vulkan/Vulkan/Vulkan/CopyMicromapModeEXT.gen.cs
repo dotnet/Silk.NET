@@ -6,10 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkCopyMicromapModeEXT")]
 [SupportedApiProfile("vulkan")]
 public enum CopyMicromapModeEXT : uint
 {
+    [NativeName("VK_COPY_MICROMAP_MODE_CLONE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -18,8 +19,9 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    CloneEXT = 0,
+    Clone = 0,
 
+    [NativeName("VK_COPY_MICROMAP_MODE_SERIALIZE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -28,8 +30,9 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    SerializeEXT = 1,
+    Serialize = 1,
 
+    [NativeName("VK_COPY_MICROMAP_MODE_DESERIALIZE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -38,8 +41,9 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    DeserializeEXT = 2,
+    Deserialize = 2,
 
+    [NativeName("VK_COPY_MICROMAP_MODE_COMPACT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -48,5 +52,5 @@ public enum CopyMicromapModeEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    CompactEXT = 3,
+    Compact = 3,
 }

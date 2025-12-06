@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkQueueFamilyProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct QueueFamilyProperties
 {
-    [NativeTypeName("VkQueueFlags")]
+    [NativeName("queueFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +41,7 @@ public partial struct QueueFamilyProperties
     )]
     public QueueFlags QueueFlags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queueCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +70,7 @@ public partial struct QueueFamilyProperties
     )]
     public uint QueueCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("timestampValidBits")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,6 +99,7 @@ public partial struct QueueFamilyProperties
     )]
     public uint TimestampValidBits;
 
+    [NativeName("minImageTransferGranularity")]
     [SupportedApiProfile(
         "vulkan",
         [

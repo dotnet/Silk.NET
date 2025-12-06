@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AudioPostmixCallback")]
 public unsafe delegate void AudioPostmixCallbackDelegate(
     void* arg0,
     AudioSpec* arg1,

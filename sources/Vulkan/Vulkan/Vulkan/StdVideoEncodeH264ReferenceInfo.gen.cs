@@ -8,32 +8,35 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoEncodeH264ReferenceInfo")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH264ReferenceInfo
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH264ReferenceInfoFlags Flags;
 
+    [NativeName("primary_pic_type")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264PictureType PrimaryPicType;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("FrameNum")]
     [SupportedApiProfile("vulkan")]
     public uint FrameNum;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("PicOrderCnt")]
     [SupportedApiProfile("vulkan")]
     public int PicOrderCnt;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("long_term_pic_num")]
     [SupportedApiProfile("vulkan")]
     public ushort LongTermPicNum;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("long_term_frame_idx")]
     [SupportedApiProfile("vulkan")]
     public ushort LongTermFrameIdx;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("temporal_id")]
     [SupportedApiProfile("vulkan")]
     public byte TemporalId;
 }

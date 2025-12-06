@@ -10,17 +10,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("EffectEqualizer")]
 public enum EffectEqualizer : uint
 {
-    LowGain = unchecked((uint)0x0001),
-    LowCutoff = unchecked((uint)0x0002),
-    Mid1Gain = unchecked((uint)0x0003),
-    Mid1Center = unchecked((uint)0x0004),
-    Mid1Width = unchecked((uint)0x0005),
-    Mid2Gain = unchecked((uint)0x0006),
-    Mid2Center = unchecked((uint)0x0007),
-    Mid2Width = unchecked((uint)0x0008),
-    HighGain = unchecked((uint)0x0009),
-    HighCutoff = unchecked((uint)0x000A),
+    [NativeName("AL_EQUALIZER_LOW_GAIN")]
+    LowGain = 1,
+
+    [NativeName("AL_EQUALIZER_LOW_CUTOFF")]
+    LowCutoff = 2,
+
+    [NativeName("AL_EQUALIZER_MID1_GAIN")]
+    Mid1Gain = 3,
+
+    [NativeName("AL_EQUALIZER_MID1_CENTER")]
+    Mid1Center = 4,
+
+    [NativeName("AL_EQUALIZER_MID1_WIDTH")]
+    Mid1Width = 5,
+
+    [NativeName("AL_EQUALIZER_MID2_GAIN")]
+    Mid2Gain = 6,
+
+    [NativeName("AL_EQUALIZER_MID2_CENTER")]
+    Mid2Center = 7,
+
+    [NativeName("AL_EQUALIZER_MID2_WIDTH")]
+    Mid2Width = 8,
+
+    [NativeName("AL_EQUALIZER_HIGH_GAIN")]
+    HighGain = 9,
+
+    [NativeName("AL_EQUALIZER_HIGH_CUTOFF")]
+    HighCutoff = 10,
 }

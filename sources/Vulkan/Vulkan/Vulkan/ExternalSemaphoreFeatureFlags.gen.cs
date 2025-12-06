@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkExternalSemaphoreFeatureFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ExternalSemaphoreFeatureFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,6 +40,7 @@ public enum ExternalSemaphoreFeatureFlags : uint
     )]
     ExportableBit = 0x1,
 
+    [NativeName("VK_EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,6 +65,7 @@ public enum ExternalSemaphoreFeatureFlags : uint
     )]
     ImportableBit = 0x2,
 
+    [NativeName("VK_EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore_capabilities"],
@@ -73,6 +76,7 @@ public enum ExternalSemaphoreFeatureFlags : uint
     )]
     ExportableBitKHR = ExportableBit,
 
+    [NativeName("VK_EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore_capabilities"],

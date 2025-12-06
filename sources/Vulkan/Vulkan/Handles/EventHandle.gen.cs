@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkEvent")]
 public readonly unsafe partial struct EventHandle
 {
     public readonly void* Handle;
+
+    public EventHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(EventHandle other) => Handle == other.Handle;
 

@@ -8,37 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GPUShaderCreateInfo"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GpuShaderCreateInfo"/> struct.</summary>
 public static unsafe partial class SDL_GPUShaderCreateInfoTests
 {
-    /// <summary>Validates that the <see cref = "GPUShaderCreateInfo"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GpuShaderCreateInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<GPUShaderCreateInfo>(), Is.EqualTo(sizeof(GPUShaderCreateInfo)));
+        Assert.That(Marshal.SizeOf<GpuShaderCreateInfo>(), Is.EqualTo(sizeof(GpuShaderCreateInfo)));
     }
 
-    /// <summary>Validates that the <see cref = "GPUShaderCreateInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GpuShaderCreateInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GPUShaderCreateInfo).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GpuShaderCreateInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GPUShaderCreateInfo"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GpuShaderCreateInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GPUShaderCreateInfo), Is.EqualTo(56));
+            Assert.That(sizeof(GpuShaderCreateInfo), Is.EqualTo(56));
         }
         else
         {
-            Assert.That(sizeof(GPUShaderCreateInfo), Is.EqualTo(40));
+            Assert.That(sizeof(GpuShaderCreateInfo), Is.EqualTo(40));
         }
     }
 }

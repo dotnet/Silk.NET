@@ -10,9 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
+[NativeName("ALCdevice")]
 public readonly unsafe partial struct DeviceHandle
 {
     public readonly void* Handle;
+
+    public DeviceHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(DeviceHandle other) => Handle == other.Handle;
 

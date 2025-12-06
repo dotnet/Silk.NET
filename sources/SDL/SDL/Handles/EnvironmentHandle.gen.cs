@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Environment")]
 public readonly unsafe partial struct EnvironmentHandle
 {
     public readonly void* Handle;
+
+    public EnvironmentHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(EnvironmentHandle other) => Handle == other.Handle;
 

@@ -7,8 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("TexBumpParameterATI")]
 public enum TexBumpParameterATI : uint
 {
-    BumpRotMatrix = unchecked((uint)0x8775),
+    [NativeName("GL_BUMP_ROT_MATRIX_ATI")]
+    BumpRotMatrix = 34677,
 }

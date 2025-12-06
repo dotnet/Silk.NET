@@ -7,11 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkOpticalFlowUsageFlagBitsNV")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum OpticalFlowUsageFlagsNV : uint
 {
+    [NativeName("VK_OPTICAL_FLOW_USAGE_UNKNOWN_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -21,8 +22,9 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    UnknownNV = 0x0,
+    Unknown = 0x0,
 
+    [NativeName("VK_OPTICAL_FLOW_USAGE_INPUT_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -32,8 +34,9 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    InputBitNV = 0x1,
+    InputBit = 0x1,
 
+    [NativeName("VK_OPTICAL_FLOW_USAGE_OUTPUT_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -43,8 +46,9 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    OutputBitNV = 0x2,
+    OutputBit = 0x2,
 
+    [NativeName("VK_OPTICAL_FLOW_USAGE_HINT_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -54,8 +58,9 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    HintBitNV = 0x4,
+    HintBit = 0x4,
 
+    [NativeName("VK_OPTICAL_FLOW_USAGE_COST_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -65,8 +70,9 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CostBitNV = 0x8,
+    CostBit = 0x8,
 
+    [NativeName("VK_OPTICAL_FLOW_USAGE_GLOBAL_FLOW_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -76,5 +82,5 @@ public enum OpticalFlowUsageFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    GlobalFlowBitNV = 0x10,
+    GlobalFlowBit = 0x10,
 }

@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceFragmentDensityMapPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentDensityMapPropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapPropertiesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],
@@ -30,6 +33,7 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapPropertiesEXT
     )]
     public void* PNext;
 
+    [NativeName("minFragmentDensityTexelSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],
@@ -40,6 +44,7 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapPropertiesEXT
     )]
     public Extent2D MinFragmentDensityTexelSize;
 
+    [NativeName("maxFragmentDensityTexelSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],
@@ -50,7 +55,7 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMapPropertiesEXT
     )]
     public Extent2D MaxFragmentDensityTexelSize;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("fragmentDensityInvocations")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],

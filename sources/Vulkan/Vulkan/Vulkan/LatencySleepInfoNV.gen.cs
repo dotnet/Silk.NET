@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkLatencySleepInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct LatencySleepInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -23,7 +25,7 @@ public unsafe partial struct LatencySleepInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -36,7 +38,7 @@ public unsafe partial struct LatencySleepInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkSemaphore")]
+    [NativeName("signalSemaphore")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -49,7 +51,7 @@ public unsafe partial struct LatencySleepInfoNV
     )]
     public SemaphoreHandle SignalSemaphore;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("value")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],

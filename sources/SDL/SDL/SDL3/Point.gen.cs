@@ -7,8 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Point")]
 public partial struct Point
 {
+    [NativeName("x")]
     public int X;
+
+    [NativeName("y")]
     public int Y;
 }

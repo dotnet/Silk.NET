@@ -7,49 +7,51 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoDecodeH265PictureInfo")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeH265PictureInfo
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH265PictureInfoFlags Flags;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("sps_video_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte SpsVideoParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("pps_seq_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte PpsSeqParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("pps_pic_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte PpsPicParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("NumDeltaPocsOfRefRpsIdx")]
     [SupportedApiProfile("vulkan")]
     public byte NumDeltaPocsOfRefRpsIdx;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("PicOrderCntVal")]
     [SupportedApiProfile("vulkan")]
     public int PicOrderCntVal;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("NumBitsForSTRefPicSetInSlice")]
     [SupportedApiProfile("vulkan")]
-    public ushort NumBitsForSTRefPicSetInSlice;
+    public ushort NumBitsForStRefPicSetInSlice;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
     public ushort Reserved;
 
-    [NativeTypeName("uint8_t[8]")]
+    [NativeName("RefPicSetStCurrBefore")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH265PictureInfoRefPicSetStCurrBefore RefPicSetStCurrBefore;
 
-    [NativeTypeName("uint8_t[8]")]
+    [NativeName("RefPicSetStCurrAfter")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH265PictureInfoRefPicSetStCurrAfter RefPicSetStCurrAfter;
 
-    [NativeTypeName("uint8_t[8]")]
+    [NativeName("RefPicSetLtCurr")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeH265PictureInfoRefPicSetLtCurr RefPicSetLtCurr;
 }

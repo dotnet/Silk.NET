@@ -7,11 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_DialogFileFilter")]
 public unsafe partial struct DialogFileFilter
 {
-    [NativeTypeName("const char *")]
+    [NativeName("name")]
     public sbyte* Name;
 
-    [NativeTypeName("const char *")]
+    [NativeName("pattern")]
     public sbyte* Pattern;
 }

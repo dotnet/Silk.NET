@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum AppResult : uint
+[NativeName("SDL_AppResult")]
+public enum AppResult
 {
-    Continue,
-    Success,
-    Failure,
+    [NativeName("SDL_APP_CONTINUE")]
+    Continue = 0,
+
+    [NativeName("SDL_APP_SUCCESS")]
+    Success = 1,
+
+    [NativeName("SDL_APP_FAILURE")]
+    Failure = 2,
 }

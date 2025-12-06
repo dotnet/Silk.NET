@@ -7,8 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ProgramStringProperty")]
 public enum ProgramStringProperty : uint
 {
-    ProgramStringARB = unchecked((uint)0x8628),
+    [NativeName("GL_PROGRAM_STRING_ARB")]
+    ProgramStringARB = 34344,
 }

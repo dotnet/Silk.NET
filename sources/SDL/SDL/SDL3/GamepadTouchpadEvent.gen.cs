@@ -8,25 +8,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GamepadTouchpadEvent")]
 public partial struct GamepadTouchpadEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public ulong Timestamp;
 
-    [NativeTypeName("SDL_JoystickID")]
+    [NativeName("which")]
     public uint Which;
 
-    [NativeTypeName("Sint32")]
+    [NativeName("touchpad")]
     public int Touchpad;
 
-    [NativeTypeName("Sint32")]
+    [NativeName("finger")]
     public int Finger;
+
+    [NativeName("x")]
     public float X;
+
+    [NativeName("y")]
     public float Y;
+
+    [NativeName("pressure")]
     public float Pressure;
 }

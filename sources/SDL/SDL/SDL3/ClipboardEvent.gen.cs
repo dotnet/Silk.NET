@@ -7,22 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_ClipboardEvent")]
 public unsafe partial struct ClipboardEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public ulong Timestamp;
 
-    [NativeTypeName("bool")]
+    [NativeName("owner")]
     public byte Owner;
 
-    [NativeTypeName("Sint32")]
+    [NativeName("num_mime_types")]
     public int NumMimeTypes;
 
-    [NativeTypeName("const char **")]
+    [NativeName("mime_types")]
     public sbyte** MimeTypes;
 }

@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDescriptorIndexingFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,6 +29,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -44,7 +47,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderInputAttachmentArrayDynamicIndexing")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +65,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint ShaderInputAttachmentArrayDynamicIndexing;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderUniformTexelBufferArrayDynamicIndexing")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -70,7 +73,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint ShaderUniformTexelBufferArrayDynamicIndexing;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderStorageTexelBufferArrayDynamicIndexing")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -78,7 +81,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint ShaderStorageTexelBufferArrayDynamicIndexing;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderUniformBufferArrayNonUniformIndexing")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,7 +99,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint ShaderUniformBufferArrayNonUniformIndexing;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderSampledImageArrayNonUniformIndexing")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -104,7 +107,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint ShaderSampledImageArrayNonUniformIndexing;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderStorageBufferArrayNonUniformIndexing")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -112,7 +115,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint ShaderStorageBufferArrayNonUniformIndexing;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderStorageImageArrayNonUniformIndexing")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -130,7 +133,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint ShaderStorageImageArrayNonUniformIndexing;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderInputAttachmentArrayNonUniformIndexing")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -148,7 +151,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint ShaderInputAttachmentArrayNonUniformIndexing;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderUniformTexelBufferArrayNonUniformIndexing")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -156,7 +159,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint ShaderUniformTexelBufferArrayNonUniformIndexing;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderStorageTexelBufferArrayNonUniformIndexing")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -174,7 +177,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint ShaderStorageTexelBufferArrayNonUniformIndexing;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingUniformBufferUpdateAfterBind")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -192,7 +195,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint DescriptorBindingUniformBufferUpdateAfterBind;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingSampledImageUpdateAfterBind")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -200,7 +203,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint DescriptorBindingSampledImageUpdateAfterBind;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingStorageImageUpdateAfterBind")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -208,7 +211,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint DescriptorBindingStorageImageUpdateAfterBind;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingStorageBufferUpdateAfterBind")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -216,7 +219,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint DescriptorBindingStorageBufferUpdateAfterBind;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingUniformTexelBufferUpdateAfterBind")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -224,7 +227,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint DescriptorBindingUniformTexelBufferUpdateAfterBind;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingStorageTexelBufferUpdateAfterBind")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -232,7 +235,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint DescriptorBindingStorageTexelBufferUpdateAfterBind;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingUpdateUnusedWhilePending")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -240,7 +243,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint DescriptorBindingUpdateUnusedWhilePending;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingPartiallyBound")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -248,7 +251,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint DescriptorBindingPartiallyBound;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingVariableDescriptorCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -266,7 +269,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     )]
     public uint DescriptorBindingVariableDescriptorCount;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("runtimeDescriptorArray")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],

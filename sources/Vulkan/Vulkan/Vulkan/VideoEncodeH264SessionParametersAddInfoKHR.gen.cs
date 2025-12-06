@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeH264SessionParametersAddInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH264SessionParametersAddInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -17,7 +19,7 @@ public unsafe partial struct VideoEncodeH264SessionParametersAddInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -25,35 +27,35 @@ public unsafe partial struct VideoEncodeH264SessionParametersAddInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("stdSPSCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdSPSCount;
+    public uint StdSpsCount;
 
-    [NativeTypeName("const StdVideoH264SequenceParameterSet *")]
+    [NativeName("pStdSPSs")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoH264SequenceParameterSet* PStdSPSs;
+    public StdVideoH264SequenceParameterSet* PStdSpSs;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("stdPPSCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public uint StdPPSCount;
+    public uint StdPpsCount;
 
-    [NativeTypeName("const StdVideoH264PictureParameterSet *")]
+    [NativeName("pStdPPSs")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public StdVideoH264PictureParameterSet* PStdPPSs;
+    public StdVideoH264PictureParameterSet* PStdPpSs;
 }

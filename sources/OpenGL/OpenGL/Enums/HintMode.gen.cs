@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("HintMode")]
 public enum HintMode : uint
 {
-    DontCare = unchecked((uint)0x1100),
-    Fastest = unchecked((uint)0x1101),
-    Nicest = unchecked((uint)0x1102),
+    [NativeName("GL_DONT_CARE")]
+    DontCare = 4352,
+
+    [NativeName("GL_FASTEST")]
+    Fastest = 4353,
+
+    [NativeName("GL_NICEST")]
+    Nicest = 4354,
 }

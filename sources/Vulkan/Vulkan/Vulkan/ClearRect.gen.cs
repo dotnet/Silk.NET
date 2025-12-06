@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkClearRect")]
 [SupportedApiProfile("vulkan")]
 public partial struct ClearRect
 {
+    [NativeName("rect")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -28,7 +30,7 @@ public partial struct ClearRect
     )]
     public Rect2D Rect;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("baseArrayLayer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -47,7 +49,7 @@ public partial struct ClearRect
     )]
     public uint BaseArrayLayer;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("layerCount")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceTransformFeedbackPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTransformFeedbackStreams")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public uint MaxTransformFeedbackStreams;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTransformFeedbackBuffers")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public uint MaxTransformFeedbackBuffers;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("maxTransformFeedbackBufferSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -64,7 +67,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public ulong MaxTransformFeedbackBufferSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTransformFeedbackStreamDataSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -75,7 +78,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public uint MaxTransformFeedbackStreamDataSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTransformFeedbackBufferDataSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -86,7 +89,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public uint MaxTransformFeedbackBufferDataSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxTransformFeedbackBufferDataStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -97,7 +100,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public uint MaxTransformFeedbackBufferDataStride;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("transformFeedbackQueries")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -108,7 +111,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public uint TransformFeedbackQueries;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("transformFeedbackStreamsLinesTriangles")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -119,7 +122,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public uint TransformFeedbackStreamsLinesTriangles;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("transformFeedbackRasterizationStreamSelect")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -130,7 +133,7 @@ public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     )]
     public uint TransformFeedbackRasterizationStreamSelect;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("transformFeedbackDraw")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],

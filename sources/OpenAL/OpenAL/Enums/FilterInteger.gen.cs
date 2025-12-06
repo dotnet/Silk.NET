@@ -10,8 +10,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("FilterInteger")]
 public enum FilterInteger : uint
 {
-    FilterType = unchecked((uint)0x8001),
+    [NativeName("AL_FILTER_TYPE")]
+    FilterType = 32769,
 }

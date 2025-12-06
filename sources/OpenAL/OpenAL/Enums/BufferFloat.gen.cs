@@ -10,8 +10,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("BufferFloat")]
 public enum BufferFloat : uint
 {
-    SecLengthSOFT = unchecked((uint)0x200B),
+    [NativeName("AL_SEC_LENGTH_SOFT")]
+    SecLengthSOFT = 8203,
 }

@@ -10,23 +10,54 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("EffectType")]
 public enum EffectType : uint
 {
-    Null = unchecked((uint)0x0000),
-    Reverb = unchecked((uint)0x0001),
-    Chorus = unchecked((uint)0x0002),
-    Distortion = unchecked((uint)0x0003),
-    Echo = unchecked((uint)0x0004),
-    Flanger = unchecked((uint)0x0005),
-    FrequencyShifter = unchecked((uint)0x0006),
-    VocalMorpher = unchecked((uint)0x0007),
-    PitchShifter = unchecked((uint)0x0008),
-    RingModulator = unchecked((uint)0x0009),
-    Autowah = unchecked((uint)0x000A),
-    Compressor = unchecked((uint)0x000B),
-    Equalizer = unchecked((uint)0x000C),
-    Eaxreverb = unchecked((uint)0x8000),
-    DedicatedDialogue = unchecked((uint)0x9001),
-    DedicatedLowFrequencyEffect = unchecked((uint)0x9000),
+    [NativeName("AL_EFFECT_NULL")]
+    Null = 0,
+
+    [NativeName("AL_EFFECT_REVERB")]
+    Reverb = 1,
+
+    [NativeName("AL_EFFECT_CHORUS")]
+    Chorus = 2,
+
+    [NativeName("AL_EFFECT_DISTORTION")]
+    Distortion = 3,
+
+    [NativeName("AL_EFFECT_ECHO")]
+    Echo = 4,
+
+    [NativeName("AL_EFFECT_FLANGER")]
+    Flanger = 5,
+
+    [NativeName("AL_EFFECT_FREQUENCY_SHIFTER")]
+    FrequencyShifter = 6,
+
+    [NativeName("AL_EFFECT_VOCAL_MORPHER")]
+    VocalMorpher = 7,
+
+    [NativeName("AL_EFFECT_PITCH_SHIFTER")]
+    PitchShifter = 8,
+
+    [NativeName("AL_EFFECT_RING_MODULATOR")]
+    RingModulator = 9,
+
+    [NativeName("AL_EFFECT_AUTOWAH")]
+    Autowah = 10,
+
+    [NativeName("AL_EFFECT_COMPRESSOR")]
+    Compressor = 11,
+
+    [NativeName("AL_EFFECT_EQUALIZER")]
+    Equalizer = 12,
+
+    [NativeName("AL_EFFECT_EAXREVERB")]
+    Eaxreverb = 32768,
+
+    [NativeName("AL_EFFECT_DEDICATED_DIALOGUE")]
+    DedicatedDialogue = 36865,
+
+    [NativeName("AL_EFFECT_DEDICATED_LOW_FREQUENCY_EFFECT")]
+    DedicatedLowFrequencyEffect = 36864,
 }

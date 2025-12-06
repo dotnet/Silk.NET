@@ -7,10 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_JoystickConnectionState")]
 public enum JoystickConnectionState
 {
+    [NativeName("SDL_JOYSTICK_CONNECTION_INVALID")]
     Invalid = -1,
-    Unknown,
-    Wired,
-    Wireless,
+
+    [NativeName("SDL_JOYSTICK_CONNECTION_UNKNOWN")]
+    Unknown = 0,
+
+    [NativeName("SDL_JOYSTICK_CONNECTION_WIRED")]
+    Wired = 1,
+
+    [NativeName("SDL_JOYSTICK_CONNECTION_WIRELESS")]
+    Wireless = 2,
 }

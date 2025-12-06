@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAttachmentDescription2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AttachmentDescription2
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -24,7 +26,7 @@ public unsafe partial struct AttachmentDescription2
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public unsafe partial struct AttachmentDescription2
     )]
     public void* PNext;
 
-    [NativeTypeName("VkAttachmentDescriptionFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,6 +56,7 @@ public unsafe partial struct AttachmentDescription2
     )]
     public AttachmentDescriptionFlags Flags;
 
+    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,6 +71,7 @@ public unsafe partial struct AttachmentDescription2
     )]
     public Format Format;
 
+    [NativeName("samples")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -82,6 +86,7 @@ public unsafe partial struct AttachmentDescription2
     )]
     public SampleCountFlags Samples;
 
+    [NativeName("loadOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,6 +101,7 @@ public unsafe partial struct AttachmentDescription2
     )]
     public AttachmentLoadOp LoadOp;
 
+    [NativeName("storeOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -110,6 +116,7 @@ public unsafe partial struct AttachmentDescription2
     )]
     public AttachmentStoreOp StoreOp;
 
+    [NativeName("stencilLoadOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -124,6 +131,7 @@ public unsafe partial struct AttachmentDescription2
     )]
     public AttachmentLoadOp StencilLoadOp;
 
+    [NativeName("stencilStoreOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -138,6 +146,7 @@ public unsafe partial struct AttachmentDescription2
     )]
     public AttachmentStoreOp StencilStoreOp;
 
+    [NativeName("initialLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -152,6 +161,7 @@ public unsafe partial struct AttachmentDescription2
     )]
     public ImageLayout InitialLayout;
 
+    [NativeName("finalLayout")]
     [SupportedApiProfile(
         "vulkan",
         [

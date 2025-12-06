@@ -8,21 +8,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkTensorDependencyInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TensorDependencyInfoARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("tensorMemoryBarrierCount")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint TensorMemoryBarrierCount;
 
-    [NativeTypeName("const VkTensorMemoryBarrierARM *")]
+    [NativeName("pTensorMemoryBarriers")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorMemoryBarrierARM* PTensorMemoryBarriers;
 }

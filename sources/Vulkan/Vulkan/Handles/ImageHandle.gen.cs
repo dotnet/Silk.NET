@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImage")]
 public readonly unsafe partial struct ImageHandle
 {
     public readonly void* Handle;
+
+    public ImageHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(ImageHandle other) => Handle == other.Handle;
 

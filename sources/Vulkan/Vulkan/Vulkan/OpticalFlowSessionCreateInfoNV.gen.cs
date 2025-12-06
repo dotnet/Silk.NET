@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkOpticalFlowSessionCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct OpticalFlowSessionCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -22,6 +24,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -33,7 +36,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("width")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -45,7 +48,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
     )]
     public uint Width;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("height")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -57,6 +60,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
     )]
     public uint Height;
 
+    [NativeName("imageFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -68,6 +72,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
     )]
     public Format ImageFormat;
 
+    [NativeName("flowVectorFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -79,6 +84,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
     )]
     public Format FlowVectorFormat;
 
+    [NativeName("costFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -90,7 +96,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
     )]
     public Format CostFormat;
 
-    [NativeTypeName("VkOpticalFlowGridSizeFlagsNV")]
+    [NativeName("outputGridSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -102,7 +108,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
     )]
     public OpticalFlowGridSizeFlagsNV OutputGridSize;
 
-    [NativeTypeName("VkOpticalFlowGridSizeFlagsNV")]
+    [NativeName("hintGridSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -114,6 +120,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
     )]
     public OpticalFlowGridSizeFlagsNV HintGridSize;
 
+    [NativeName("performanceLevel")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -125,7 +132,7 @@ public unsafe partial struct OpticalFlowSessionCreateInfoNV
     )]
     public OpticalFlowPerformanceLevelNV PerformanceLevel;
 
-    [NativeTypeName("VkOpticalFlowSessionCreateFlagsNV")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],

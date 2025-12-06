@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkObjectType")]
 [SupportedApiProfile("vulkan")]
 public enum ObjectType : uint
 {
+    [NativeName("VK_OBJECT_TYPE_UNKNOWN")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,6 +41,7 @@ public enum ObjectType : uint
     )]
     Unknown = 0,
 
+    [NativeName("VK_OBJECT_TYPE_INSTANCE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,6 +70,7 @@ public enum ObjectType : uint
     )]
     Instance = 1,
 
+    [NativeName("VK_OBJECT_TYPE_PHYSICAL_DEVICE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,6 +99,7 @@ public enum ObjectType : uint
     )]
     PhysicalDevice = 2,
 
+    [NativeName("VK_OBJECT_TYPE_DEVICE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -124,6 +128,7 @@ public enum ObjectType : uint
     )]
     Device = 3,
 
+    [NativeName("VK_OBJECT_TYPE_QUEUE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -152,6 +157,7 @@ public enum ObjectType : uint
     )]
     Queue = 4,
 
+    [NativeName("VK_OBJECT_TYPE_SEMAPHORE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -180,6 +186,7 @@ public enum ObjectType : uint
     )]
     Semaphore = 5,
 
+    [NativeName("VK_OBJECT_TYPE_COMMAND_BUFFER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -208,6 +215,7 @@ public enum ObjectType : uint
     )]
     CommandBuffer = 6,
 
+    [NativeName("VK_OBJECT_TYPE_FENCE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -236,6 +244,7 @@ public enum ObjectType : uint
     )]
     Fence = 7,
 
+    [NativeName("VK_OBJECT_TYPE_DEVICE_MEMORY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -264,6 +273,7 @@ public enum ObjectType : uint
     )]
     DeviceMemory = 8,
 
+    [NativeName("VK_OBJECT_TYPE_BUFFER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -292,6 +302,7 @@ public enum ObjectType : uint
     )]
     Buffer = 9,
 
+    [NativeName("VK_OBJECT_TYPE_IMAGE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -320,6 +331,7 @@ public enum ObjectType : uint
     )]
     Image = 10,
 
+    [NativeName("VK_OBJECT_TYPE_EVENT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -348,6 +360,7 @@ public enum ObjectType : uint
     )]
     Event = 11,
 
+    [NativeName("VK_OBJECT_TYPE_QUERY_POOL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -376,6 +389,7 @@ public enum ObjectType : uint
     )]
     QueryPool = 12,
 
+    [NativeName("VK_OBJECT_TYPE_BUFFER_VIEW")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -404,6 +418,7 @@ public enum ObjectType : uint
     )]
     BufferView = 13,
 
+    [NativeName("VK_OBJECT_TYPE_IMAGE_VIEW")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -432,6 +447,7 @@ public enum ObjectType : uint
     )]
     ImageView = 14,
 
+    [NativeName("VK_OBJECT_TYPE_SHADER_MODULE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -460,6 +476,7 @@ public enum ObjectType : uint
     )]
     ShaderModule = 15,
 
+    [NativeName("VK_OBJECT_TYPE_PIPELINE_CACHE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -488,6 +505,7 @@ public enum ObjectType : uint
     )]
     PipelineCache = 16,
 
+    [NativeName("VK_OBJECT_TYPE_PIPELINE_LAYOUT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -516,6 +534,7 @@ public enum ObjectType : uint
     )]
     PipelineLayout = 17,
 
+    [NativeName("VK_OBJECT_TYPE_RENDER_PASS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -544,6 +563,7 @@ public enum ObjectType : uint
     )]
     RenderPass = 18,
 
+    [NativeName("VK_OBJECT_TYPE_PIPELINE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -572,6 +592,7 @@ public enum ObjectType : uint
     )]
     Pipeline = 19,
 
+    [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_SET_LAYOUT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -600,6 +621,7 @@ public enum ObjectType : uint
     )]
     DescriptorSetLayout = 20,
 
+    [NativeName("VK_OBJECT_TYPE_SAMPLER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -628,6 +650,7 @@ public enum ObjectType : uint
     )]
     Sampler = 21,
 
+    [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_POOL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -656,6 +679,7 @@ public enum ObjectType : uint
     )]
     DescriptorPool = 22,
 
+    [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_SET")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -684,6 +708,7 @@ public enum ObjectType : uint
     )]
     DescriptorSet = 23,
 
+    [NativeName("VK_OBJECT_TYPE_FRAMEBUFFER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -712,6 +737,7 @@ public enum ObjectType : uint
     )]
     Framebuffer = 24,
 
+    [NativeName("VK_OBJECT_TYPE_COMMAND_POOL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -740,6 +766,7 @@ public enum ObjectType : uint
     )]
     CommandPool = 25,
 
+    [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -760,6 +787,7 @@ public enum ObjectType : uint
     )]
     DescriptorUpdateTemplate = 1000085000,
 
+    [NativeName("VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -780,6 +808,7 @@ public enum ObjectType : uint
     )]
     SamplerYcbcrConversion = 1000156000,
 
+    [NativeName("VK_OBJECT_TYPE_PRIVATE_DATA_SLOT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -796,21 +825,27 @@ public enum ObjectType : uint
     )]
     PrivateDataSlot = 1000295000,
 
+    [NativeName("VK_OBJECT_TYPE_SURFACE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     SurfaceKHR = 1000000000,
 
+    [NativeName("VK_OBJECT_TYPE_SWAPCHAIN_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_swapchain"], ImpliesSets = ["VK_KHR_surface"])]
     SwapchainKHR = 1000001000,
 
+    [NativeName("VK_OBJECT_TYPE_DISPLAY_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     DisplayKHR = 1000002000,
 
+    [NativeName("VK_OBJECT_TYPE_DISPLAY_MODE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     DisplayModeKHR = 1000002001,
 
+    [NativeName("VK_OBJECT_TYPE_DEBUG_REPORT_CALLBACK_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
     DebugReportCallbackEXT = 1000011000,
 
+    [NativeName("VK_OBJECT_TYPE_VIDEO_SESSION_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -818,6 +853,7 @@ public enum ObjectType : uint
     )]
     VideoSessionKHR = 1000023000,
 
+    [NativeName("VK_OBJECT_TYPE_VIDEO_SESSION_PARAMETERS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -825,15 +861,19 @@ public enum ObjectType : uint
     )]
     VideoSessionParametersKHR = 1000023001,
 
+    [NativeName("VK_OBJECT_TYPE_CU_MODULE_NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     CuModuleNVX = 1000029000,
 
+    [NativeName("VK_OBJECT_TYPE_CU_FUNCTION_NVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     CuFunctionNVX = 1000029001,
 
+    [NativeName("VK_OBJECT_TYPE_DEBUG_UTILS_MESSENGER_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     DebugUtilsMessengerEXT = 1000128000,
 
+    [NativeName("VK_OBJECT_TYPE_ACCELERATION_STRUCTURE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -844,9 +884,11 @@ public enum ObjectType : uint
     )]
     AccelerationStructureKHR = 1000150000,
 
+    [NativeName("VK_OBJECT_TYPE_VALIDATION_CACHE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_cache"])]
     ValidationCacheEXT = 1000160000,
 
+    [NativeName("VK_OBJECT_TYPE_ACCELERATION_STRUCTURE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -857,12 +899,15 @@ public enum ObjectType : uint
     )]
     AccelerationStructureNV = 1000165000,
 
+    [NativeName("VK_OBJECT_TYPE_PERFORMANCE_CONFIGURATION_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    PerformanceConfigurationIntel = 1000210000,
+    PerformanceConfigurationINTEL = 1000210000,
 
+    [NativeName("VK_OBJECT_TYPE_DEFERRED_OPERATION_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_deferred_host_operations"])]
     DeferredOperationKHR = 1000268000,
 
+    [NativeName("VK_OBJECT_TYPE_INDIRECT_COMMANDS_LAYOUT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -870,6 +915,7 @@ public enum ObjectType : uint
     )]
     IndirectCommandsLayoutNV = 1000277000,
 
+    [NativeName("VK_OBJECT_TYPE_BUFFER_COLLECTION_FUCHSIA")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_FUCHSIA_buffer_collection"],
@@ -878,8 +924,9 @@ public enum ObjectType : uint
             "VK_FUCHSIA_external_memory+VK_VERSION_1_1",
         ]
     )]
-    BufferCollectionFuchsia = 1000366000,
+    BufferCollectionFUCHSIA = 1000366000,
 
+    [NativeName("VK_OBJECT_TYPE_MICROMAP_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -890,12 +937,15 @@ public enum ObjectType : uint
     )]
     MicromapEXT = 1000396000,
 
+    [NativeName("VK_OBJECT_TYPE_TENSOR_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorARM = 1000460000,
 
+    [NativeName("VK_OBJECT_TYPE_TENSOR_VIEW_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     TensorViewARM = 1000460001,
 
+    [NativeName("VK_OBJECT_TYPE_OPTICAL_FLOW_SESSION_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -907,6 +957,7 @@ public enum ObjectType : uint
     )]
     OpticalFlowSessionNV = 1000464000,
 
+    [NativeName("VK_OBJECT_TYPE_SHADER_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_shader_object"],
@@ -918,6 +969,7 @@ public enum ObjectType : uint
     )]
     ShaderEXT = 1000482000,
 
+    [NativeName("VK_OBJECT_TYPE_PIPELINE_BINARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -928,6 +980,7 @@ public enum ObjectType : uint
     )]
     PipelineBinaryKHR = 1000483000,
 
+    [NativeName("VK_OBJECT_TYPE_DATA_GRAPH_PIPELINE_SESSION_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -935,9 +988,11 @@ public enum ObjectType : uint
     )]
     DataGraphPipelineSessionARM = 1000507000,
 
+    [NativeName("VK_OBJECT_TYPE_EXTERNAL_COMPUTE_QUEUE_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     ExternalComputeQueueNV = 1000556000,
 
+    [NativeName("VK_OBJECT_TYPE_INDIRECT_COMMANDS_LAYOUT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -949,6 +1004,7 @@ public enum ObjectType : uint
     )]
     IndirectCommandsLayoutEXT = 1000572000,
 
+    [NativeName("VK_OBJECT_TYPE_INDIRECT_EXECUTION_SET_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -960,9 +1016,11 @@ public enum ObjectType : uint
     )]
     IndirectExecutionSetEXT = 1000572001,
 
+    [NativeName("VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
     DescriptorUpdateTemplateKHR = DescriptorUpdateTemplate,
 
+    [NativeName("VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -973,6 +1031,7 @@ public enum ObjectType : uint
     )]
     SamplerYcbcrConversionKHR = SamplerYcbcrConversion,
 
+    [NativeName("VK_OBJECT_TYPE_PRIVATE_DATA_SLOT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_private_data"],

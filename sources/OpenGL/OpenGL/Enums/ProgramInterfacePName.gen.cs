@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ProgramInterfacePName")]
 public enum ProgramInterfacePName : uint
 {
-    ActiveResources = unchecked((uint)0x92F5),
-    MaxNameLength = unchecked((uint)0x92F6),
-    MaxNumActiveVariables = unchecked((uint)0x92F7),
-    MaxNumCompatibleSubroutines = unchecked((uint)0x92F8),
+    [NativeName("GL_ACTIVE_RESOURCES")]
+    ActiveResources = 37621,
+
+    [NativeName("GL_MAX_NAME_LENGTH")]
+    MaxNameLength = 37622,
+
+    [NativeName("GL_MAX_NUM_ACTIVE_VARIABLES")]
+    MaxNumActiveVariables = 37623,
+
+    [NativeName("GL_MAX_NUM_COMPATIBLE_SUBROUTINES")]
+    MaxNumCompatibleSubroutines = 37624,
 }

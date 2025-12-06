@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkShaderGroupShaderKHR")]
 [SupportedApiProfile("vulkan")]
 public enum ShaderGroupShaderKHR : uint
 {
+    [NativeName("VK_SHADER_GROUP_SHADER_GENERAL_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -20,8 +21,9 @@ public enum ShaderGroupShaderKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    GeneralKHR = 0,
+    General = 0,
 
+    [NativeName("VK_SHADER_GROUP_SHADER_CLOSEST_HIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -30,8 +32,9 @@ public enum ShaderGroupShaderKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ClosestHitKHR = 1,
+    ClosestHit = 1,
 
+    [NativeName("VK_SHADER_GROUP_SHADER_ANY_HIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -40,8 +43,9 @@ public enum ShaderGroupShaderKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    AnyHitKHR = 2,
+    AnyHit = 2,
 
+    [NativeName("VK_SHADER_GROUP_SHADER_INTERSECTION_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -50,5 +54,5 @@ public enum ShaderGroupShaderKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    IntersectionKHR = 3,
+    Intersection = 3,
 }

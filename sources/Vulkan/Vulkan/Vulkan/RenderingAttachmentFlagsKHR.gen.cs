@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkRenderingAttachmentFlagBitsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum RenderingAttachmentFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_RENDERING_ATTACHMENT_INPUT_ATTACHMENT_FEEDBACK_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,8 +28,9 @@ public enum RenderingAttachmentFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    InputAttachmentFeedbackBitKHR = 0x1,
+    InputAttachmentFeedbackBit = 0x1,
 
+    [NativeName("VK_RENDERING_ATTACHMENT_RESOLVE_SKIP_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10+VK_KHR_dynamic_rendering", "VK_KHR_maintenance10+VK_VERSION_1_3"],
@@ -37,8 +39,9 @@ public enum RenderingAttachmentFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    ResolveSkipTransferFunctionBitKHR = 0x2,
+    ResolveSkipTransferFunctionBit = 0x2,
 
+    [NativeName("VK_RENDERING_ATTACHMENT_RESOLVE_ENABLE_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10+VK_KHR_dynamic_rendering", "VK_KHR_maintenance10+VK_VERSION_1_3"],
@@ -47,5 +50,5 @@ public enum RenderingAttachmentFlagsKHR : uint
             "VK_KHR_maintenance10+VK_VERSION_1_1",
         ]
     )]
-    ResolveEnableTransferFunctionBitKHR = 0x4,
+    ResolveEnableTransferFunctionBit = 0x4,
 }

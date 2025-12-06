@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum FileDialogType : uint
+[NativeName("SDL_FileDialogType")]
+public enum FileDialogType
 {
-    Openfile,
-    Savefile,
-    Openfolder,
+    [NativeName("SDL_FILEDIALOG_OPENFILE")]
+    Openfile = 0,
+
+    [NativeName("SDL_FILEDIALOG_SAVEFILE")]
+    Savefile = 1,
+
+    [NativeName("SDL_FILEDIALOG_OPENFOLDER")]
+    Openfolder = 2,
 }

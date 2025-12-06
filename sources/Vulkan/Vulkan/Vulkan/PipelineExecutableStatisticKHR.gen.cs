@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineExecutableStatisticKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineExecutableStatisticKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -21,6 +23,7 @@ public unsafe partial struct PipelineExecutableStatisticKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -31,7 +34,7 @@ public unsafe partial struct PipelineExecutableStatisticKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("char[256]")]
+    [NativeName("name")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -40,9 +43,9 @@ public unsafe partial struct PipelineExecutableStatisticKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutableStatisticKHRName Name;
+    public PipelineExecutableStatisticKhrName Name;
 
-    [NativeTypeName("char[256]")]
+    [NativeName("description")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -51,8 +54,9 @@ public unsafe partial struct PipelineExecutableStatisticKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutableStatisticKHRDescription Description;
+    public PipelineExecutableStatisticKhrDescription Description;
 
+    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -63,6 +67,7 @@ public unsafe partial struct PipelineExecutableStatisticKHR
     )]
     public PipelineExecutableStatisticFormatKHR Format;
 
+    [NativeName("value")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],

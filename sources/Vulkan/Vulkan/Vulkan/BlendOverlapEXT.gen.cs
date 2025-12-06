@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkBlendOverlapEXT")]
 [SupportedApiProfile("vulkan")]
 public enum BlendOverlapEXT : uint
 {
+    [NativeName("VK_BLEND_OVERLAP_UNCORRELATED_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -20,8 +21,9 @@ public enum BlendOverlapEXT : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    UncorrelatedEXT = 0,
+    Uncorrelated = 0,
 
+    [NativeName("VK_BLEND_OVERLAP_DISJOINT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -30,8 +32,9 @@ public enum BlendOverlapEXT : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    DisjointEXT = 1,
+    Disjoint = 1,
 
+    [NativeName("VK_BLEND_OVERLAP_CONJOINT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -40,5 +43,5 @@ public enum BlendOverlapEXT : uint
             "VK_EXT_blend_operation_advanced+VK_VERSION_1_1",
         ]
     )]
-    ConjointEXT = 2,
+    Conjoint = 2,
 }

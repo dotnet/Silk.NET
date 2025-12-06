@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMapMemoryPlacedFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMapMemoryPlacedFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_map_memory_placed"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceMapMemoryPlacedFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_map_memory_placed"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceMapMemoryPlacedFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("memoryMapPlaced")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_map_memory_placed"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDeviceMapMemoryPlacedFeaturesEXT
     )]
     public uint MemoryMapPlaced;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("memoryMapRangePlaced")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_map_memory_placed"],
@@ -52,7 +55,7 @@ public unsafe partial struct PhysicalDeviceMapMemoryPlacedFeaturesEXT
     )]
     public uint MemoryMapRangePlaced;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("memoryUnmapReserve")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_map_memory_placed"],

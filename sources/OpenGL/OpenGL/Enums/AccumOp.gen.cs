@@ -7,12 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("AccumOp")]
 public enum AccumOp : uint
 {
-    Accum = unchecked((uint)0x0100),
-    Load = unchecked((uint)0x0101),
-    Return = unchecked((uint)0x0102),
-    Mult = unchecked((uint)0x0103),
-    Add = unchecked((uint)0x0104),
+    [NativeName("GL_ADD")]
+    Add = 260,
+
+    [NativeName("GL_ACCUM")]
+    Accum = 256,
+
+    [NativeName("GL_LOAD")]
+    Load = 257,
+
+    [NativeName("GL_RETURN")]
+    Return = 258,
+
+    [NativeName("GL_MULT")]
+    Mult = 259,
 }

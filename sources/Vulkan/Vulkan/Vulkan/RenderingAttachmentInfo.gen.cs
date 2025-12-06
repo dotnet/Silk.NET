@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRenderingAttachmentInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderingAttachmentInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -17,7 +19,7 @@ public unsafe partial struct RenderingAttachmentInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -25,7 +27,7 @@ public unsafe partial struct RenderingAttachmentInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkImageView")]
+    [NativeName("imageView")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -33,6 +35,7 @@ public unsafe partial struct RenderingAttachmentInfo
     )]
     public ImageViewHandle ImageView;
 
+    [NativeName("imageLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -40,6 +43,7 @@ public unsafe partial struct RenderingAttachmentInfo
     )]
     public ImageLayout ImageLayout;
 
+    [NativeName("resolveMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -47,7 +51,7 @@ public unsafe partial struct RenderingAttachmentInfo
     )]
     public ResolveModeFlags ResolveMode;
 
-    [NativeTypeName("VkImageView")]
+    [NativeName("resolveImageView")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -55,6 +59,7 @@ public unsafe partial struct RenderingAttachmentInfo
     )]
     public ImageViewHandle ResolveImageView;
 
+    [NativeName("resolveImageLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -62,6 +67,7 @@ public unsafe partial struct RenderingAttachmentInfo
     )]
     public ImageLayout ResolveImageLayout;
 
+    [NativeName("loadOp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -69,6 +75,7 @@ public unsafe partial struct RenderingAttachmentInfo
     )]
     public AttachmentLoadOp LoadOp;
 
+    [NativeName("storeOp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -76,6 +83,7 @@ public unsafe partial struct RenderingAttachmentInfo
     )]
     public AttachmentStoreOp StoreOp;
 
+    [NativeName("clearValue")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],

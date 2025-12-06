@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceVulkan13Features")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVulkan13Features
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,6 +29,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Features
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -43,47 +46,47 @@ public unsafe partial struct PhysicalDeviceVulkan13Features
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("robustImageAccess")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint RobustImageAccess;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("inlineUniformBlock")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint InlineUniformBlock;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("descriptorBindingInlineUniformBlockUpdateAfterBind")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint DescriptorBindingInlineUniformBlockUpdateAfterBind;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("pipelineCreationCacheControl")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint PipelineCreationCacheControl;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("privateData")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint PrivateData;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderDemoteToHelperInvocation")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint ShaderDemoteToHelperInvocation;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderTerminateInvocation")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint ShaderTerminateInvocation;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("subgroupSizeControl")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint SubgroupSizeControl;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("computeFullSubgroups")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint ComputeFullSubgroups;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("synchronization2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint Synchronization2;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("textureCompressionASTC_HDR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -92,21 +95,21 @@ public unsafe partial struct PhysicalDeviceVulkan13Features
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    public uint TextureCompressionASTCHDR;
+    public uint TextureCompressionAstcHdr;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderZeroInitializeWorkgroupMemory")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint ShaderZeroInitializeWorkgroupMemory;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("dynamicRendering")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint DynamicRendering;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderIntegerDotProduct")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint ShaderIntegerDotProduct;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("maintenance4")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint Maintenance4;
 }

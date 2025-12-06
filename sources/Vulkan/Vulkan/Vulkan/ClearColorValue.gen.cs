@@ -8,12 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkClearColorValue")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public partial struct ClearColorValue
 {
+    [NativeName("float32")]
     [FieldOffset(0)]
-    [NativeTypeName("float[4]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,8 +38,8 @@ public partial struct ClearColorValue
     )]
     public ClearColorValueFloat32 Float32;
 
+    [NativeName("int32")]
     [FieldOffset(0)]
-    [NativeTypeName("int32_t[4]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,8 +63,8 @@ public partial struct ClearColorValue
     )]
     public ClearColorValueInt32 Int32;
 
+    [NativeName("uint32")]
     [FieldOffset(0)]
-    [NativeTypeName("uint32_t[4]")]
     [SupportedApiProfile(
         "vulkan",
         [

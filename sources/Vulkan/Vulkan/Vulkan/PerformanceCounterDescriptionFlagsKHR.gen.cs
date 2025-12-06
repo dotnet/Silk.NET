@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkPerformanceCounterDescriptionFlagBitsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum PerformanceCounterDescriptionFlagsKHR : uint
 {
     None = 0x0,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_DESCRIPTION_PERFORMANCE_IMPACTING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -23,8 +24,9 @@ public enum PerformanceCounterDescriptionFlagsKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    PerformanceImpactingBitKHR = 0x1,
+    PerformanceImpactingBit = 0x1,
 
+    [NativeName("VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -33,5 +35,5 @@ public enum PerformanceCounterDescriptionFlagsKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    ConcurrentlyImpactedBitKHR = 0x2,
+    ConcurrentlyImpactedBit = 0x2,
 }

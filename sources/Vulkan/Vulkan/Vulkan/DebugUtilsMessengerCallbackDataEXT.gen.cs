@@ -8,53 +8,55 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDebugUtilsMessengerCallbackDataEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DebugUtilsMessengerCallbackDataEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public void* PNext;
 
-    [NativeTypeName("VkDebugUtilsMessengerCallbackDataFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public uint Flags;
 
-    [NativeTypeName("const char *")]
+    [NativeName("pMessageIdName")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public sbyte* PMessageIdName;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("messageIdNumber")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public int MessageIdNumber;
 
-    [NativeTypeName("const char *")]
+    [NativeName("pMessage")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public sbyte* PMessage;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queueLabelCount")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public uint QueueLabelCount;
 
-    [NativeTypeName("const VkDebugUtilsLabelEXT *")]
+    [NativeName("pQueueLabels")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public DebugUtilsLabelEXT* PQueueLabels;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("cmdBufLabelCount")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public uint CmdBufLabelCount;
 
-    [NativeTypeName("const VkDebugUtilsLabelEXT *")]
+    [NativeName("pCmdBufLabels")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public DebugUtilsLabelEXT* PCmdBufLabels;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("objectCount")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public uint ObjectCount;
 
-    [NativeTypeName("const VkDebugUtilsObjectNameInfoEXT *")]
+    [NativeName("pObjects")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public DebugUtilsObjectNameInfoEXT* PObjects;
 }

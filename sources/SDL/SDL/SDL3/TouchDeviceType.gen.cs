@@ -7,10 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_TouchDeviceType")]
 public enum TouchDeviceType
 {
+    [NativeName("SDL_TOUCH_DEVICE_INVALID")]
     Invalid = -1,
-    Direct,
-    IndirectAbsolute,
-    IndirectRelative,
+
+    [NativeName("SDL_TOUCH_DEVICE_DIRECT")]
+    Direct = 0,
+
+    [NativeName("SDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE")]
+    IndirectAbsolute = 1,
+
+    [NativeName("SDL_TOUCH_DEVICE_INDIRECT_RELATIVE")]
+    IndirectRelative = 2,
 }

@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("CullParameterEXT")]
 public enum CullParameterEXT : uint
 {
-    EyePosition = unchecked((uint)0x81AB),
-    ObjectPosition = unchecked((uint)0x81AC),
+    [NativeName("GL_CULL_VERTEX_EYE_POSITION_EXT")]
+    EyePosition = 33195,
+
+    [NativeName("GL_CULL_VERTEX_OBJECT_POSITION_EXT")]
+    ObjectPosition = 33196,
 }

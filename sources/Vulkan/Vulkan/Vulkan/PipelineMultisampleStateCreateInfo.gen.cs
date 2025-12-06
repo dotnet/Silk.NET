@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineMultisampleStateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineMultisampleStateCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +31,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +50,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineMultisampleStateCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,6 +69,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
     )]
     public uint Flags;
 
+    [NativeName("rasterizationSamples")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -85,7 +88,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
     )]
     public SampleCountFlags RasterizationSamples;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("sampleShadingEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -104,6 +107,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
     )]
     public uint SampleShadingEnable;
 
+    [NativeName("minSampleShading")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -122,7 +126,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
     )]
     public float MinSampleShading;
 
-    [NativeTypeName("const VkSampleMask *")]
+    [NativeName("pSampleMask")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -141,7 +145,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
     )]
     public uint* PSampleMask;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("alphaToCoverageEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -160,7 +164,7 @@ public unsafe partial struct PipelineMultisampleStateCreateInfo
     )]
     public uint AlphaToCoverageEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("alphaToOneEnable")]
     [SupportedApiProfile(
         "vulkan",
         [
