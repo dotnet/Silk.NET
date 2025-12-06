@@ -1305,7 +1305,7 @@ public class PrettifyNames(
                 ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
 
                 // If it's not a constant then we only prettify.
-                var hasSetter = node.AccessorList?.Accessors.Any(a => a.IsKind(SyntaxKind.GetAccessorDeclaration) || a.IsKind(SyntaxKind.InitAccessorDeclaration)) ?? false;
+                var hasSetter = node.AccessorList?.Accessors.Any(a => a.IsKind(SyntaxKind.SetAccessorDeclaration) || a.IsKind(SyntaxKind.InitAccessorDeclaration)) ?? false;
                 if (hasSetter)
                 {
                     if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
