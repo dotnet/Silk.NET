@@ -376,16 +376,10 @@ public partial class MixKhronosData(
         }
 
         // Rewrite phase 3
+        var rewriter3 = new RewriterPhase3(jobData, currentConfig);
         foreach (var docId in proj.DocumentIds)
         {
             var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
-            var syntaxTree = await doc.GetSyntaxTreeAsync(ct);
-            if (syntaxTree == null)
-            {
-                continue;
-            }
-
-            var rewriter3 = new RewriterPhase3(jobData, currentConfig);
             proj = doc.WithSyntaxRoot(
                 rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
                 ?? throw new InvalidOperationException("Visit returned null.")
