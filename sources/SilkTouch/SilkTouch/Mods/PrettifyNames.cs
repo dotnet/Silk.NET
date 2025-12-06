@@ -846,13 +846,13 @@ public class PrettifyNames(
         {
             // Negative priority first
             // These are our required affixes
-            if (int.Sign(a.Priority) != 1 || int.Sign(b.Priority) != 1)
+            if (int.Sign(a.DiscriminatorPriority) != 1 || int.Sign(b.DiscriminatorPriority) != 1)
             {
-                return a.Priority.CompareTo(b.Priority);
+                return a.DiscriminatorPriority.CompareTo(b.DiscriminatorPriority);
             }
 
             // Then sort the remaining by descending priority
-            return -a.Priority.CompareTo(b.Priority);
+            return -a.DiscriminatorPriority.CompareTo(b.DiscriminatorPriority);
         });
 
         // This is guaranteed to be non-null when this method returns if there is at least one affix
@@ -862,14 +862,14 @@ public class PrettifyNames(
         for (var affixI = 0; affixI < affixes.Length; affixI++)
         {
             var affix = affixes[affixI];
-            if (currentPriority == -1 && affix.Priority < 0)
+            if (currentPriority == -1 && affix.DiscriminatorPriority < 0)
             {
                 continue;
             }
 
-            if (currentPriority == -1 || affix.Priority < currentPriority)
+            if (currentPriority == -1 || affix.DiscriminatorPriority < currentPriority)
             {
-                currentPriority = affix.Priority;
+                currentPriority = affix.DiscriminatorPriority;
                 CreateName(primary, affixes.AsSpan()[..affixI], ref newPrimary, secondary);
                 if (secondary == null)
                 {
@@ -961,7 +961,7 @@ public class PrettifyNames(
     /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
     private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
 
-    private record struct NameAffix(bool IsPrefix, string Affix, int Order, int Priority, int DeclarationOrder);
+    private record struct NameAffix(bool IsPrefix, string Affix, int Order, int DiscriminatorPriority, int DeclarationOrder);
 
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
@@ -1053,11 +1053,11 @@ public class PrettifyNames(
                         var type = (attribute.ArgumentList.Arguments[0].Expression as LiteralExpressionSyntax)?.Token.Value as string;
                         var affix = (attribute.ArgumentList.Arguments[1].Expression as LiteralExpressionSyntax)?.Token.Value as string;
                         var order = (attribute.ArgumentList.Arguments[2].Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
-                        var priority = (attribute.ArgumentList.Arguments[3].Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
+                        var discriminatorPriority = (attribute.ArgumentList.Arguments[3].Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
 
                         if (affix != null)
                         {
-                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, order, priority, declarationOrder)];
+                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, order, discriminatorPriority, declarationOrder)];
                             declarationOrder++;
                         }
                     }

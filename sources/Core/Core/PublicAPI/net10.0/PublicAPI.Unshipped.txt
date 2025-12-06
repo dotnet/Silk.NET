@@ -155,9 +155,9 @@ Silk.NET.Core.MaybeBool<T>.Value.get -> T
 Silk.NET.Core.MaybeBool<T>.Value.init -> void
 Silk.NET.Core.NameAffixAttribute
 Silk.NET.Core.NameAffixAttribute.Affix.get -> string!
-Silk.NET.Core.NameAffixAttribute.NameAffixAttribute(string! type, string! affix, int order, int priority) -> void
+Silk.NET.Core.NameAffixAttribute.DiscriminatorPriority.get -> int
+Silk.NET.Core.NameAffixAttribute.NameAffixAttribute(string! type, string! affix, int order, int discriminatorPriority) -> void
 Silk.NET.Core.NameAffixAttribute.Order.get -> int
-Silk.NET.Core.NameAffixAttribute.Priority.get -> int
 Silk.NET.Core.NameAffixAttribute.Type.get -> string!
 Silk.NET.Core.NativeFunctionAttribute
 Silk.NET.Core.NativeFunctionAttribute.EntryPoint -> string?

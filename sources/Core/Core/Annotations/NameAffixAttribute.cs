@@ -23,12 +23,12 @@ public sealed class NameAffixAttribute : Attribute
     /// <summary>
     /// Creates a new NameAffix attribute.
     /// </summary>
-    public NameAffixAttribute(string type, string affix, int order, int priority)
+    public NameAffixAttribute(string type, string affix, int order, int discriminatorPriority)
     {
         Type = type;
         Affix = affix;
         Order = order;
-        Priority = priority;
+        DiscriminatorPriority = discriminatorPriority;
     }
 
     /// <summary>
@@ -62,5 +62,5 @@ public sealed class NameAffixAttribute : Attribute
     /// <para/>
     /// Affixes with the same priority are applied together as a group.
     /// </summary>
-    public int Priority { get; }
+    public int DiscriminatorPriority { get; }
 }
