@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAccelerationStructureGeometryMotionTrianglesDataNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureGeometryMotionTrianglesDataNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -20,7 +18,7 @@ public unsafe partial struct AccelerationStructureGeometryMotionTrianglesDataNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -28,7 +26,6 @@ public unsafe partial struct AccelerationStructureGeometryMotionTrianglesDataNV
     )]
     public void* PNext;
 
-    [NativeName("vertexData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],

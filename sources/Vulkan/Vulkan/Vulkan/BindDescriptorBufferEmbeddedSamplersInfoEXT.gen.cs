@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBindDescriptorBufferEmbeddedSamplersInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -21,7 +19,7 @@ public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -30,7 +28,7 @@ public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("stageFlags")]
+    [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -39,7 +37,7 @@ public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
     )]
     public ShaderStageFlags StageFlags;
 
-    [NativeName("layout")]
+    [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -48,7 +46,7 @@ public unsafe partial struct BindDescriptorBufferEmbeddedSamplersInfoEXT
     )]
     public PipelineLayoutHandle Layout;
 
-    [NativeName("set")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],

@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("SyncBehaviorFlags")]
+[Transformed]
 public enum SyncBehaviorFlags : uint
 {
-    [NativeName("GL_NONE")]
-    None = 0,
+    None = unchecked((uint)0),
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -20,7 +18,7 @@ public unsafe partial struct PhysicalDeviceQueueFamilyDataGraphProcessingEngineI
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -28,7 +26,7 @@ public unsafe partial struct PhysicalDeviceQueueFamilyDataGraphProcessingEngineI
     )]
     public void* PNext;
 
-    [NativeName("queueFamilyIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -36,7 +34,6 @@ public unsafe partial struct PhysicalDeviceQueueFamilyDataGraphProcessingEngineI
     )]
     public uint QueueFamilyIndex;
 
-    [NativeName("engineType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

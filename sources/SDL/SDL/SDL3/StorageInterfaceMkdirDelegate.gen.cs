@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_StorageInterface_mkdir")]
+[Transformed]
 public unsafe delegate byte StorageInterfaceMkdirDelegate(void* arg0, sbyte* arg1);

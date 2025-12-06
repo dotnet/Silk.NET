@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceOpacityMicromapPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceOpacityMicromapPropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapPropertiesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeName("maxOpacity2StateSubdivisionLevel")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapPropertiesEXT
     )]
     public uint MaxOpacity2StateSubdivisionLevel;
 
-    [NativeName("maxOpacity4StateSubdivisionLevel")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

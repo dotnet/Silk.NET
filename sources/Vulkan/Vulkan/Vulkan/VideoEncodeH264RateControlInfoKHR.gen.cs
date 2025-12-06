@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH264RateControlInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH264RateControlInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -20,7 +18,7 @@ public unsafe partial struct VideoEncodeH264RateControlInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -28,7 +26,7 @@ public unsafe partial struct VideoEncodeH264RateControlInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkVideoEncodeH264RateControlFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -36,7 +34,7 @@ public unsafe partial struct VideoEncodeH264RateControlInfoKHR
     )]
     public VideoEncodeH264RateControlFlagsKHR Flags;
 
-    [NativeName("gopFrameCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -44,7 +42,7 @@ public unsafe partial struct VideoEncodeH264RateControlInfoKHR
     )]
     public uint GopFrameCount;
 
-    [NativeName("idrPeriod")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -52,7 +50,7 @@ public unsafe partial struct VideoEncodeH264RateControlInfoKHR
     )]
     public uint IdrPeriod;
 
-    [NativeName("consecutiveBFrameCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -60,7 +58,7 @@ public unsafe partial struct VideoEncodeH264RateControlInfoKHR
     )]
     public uint ConsecutiveBFrameCount;
 
-    [NativeName("temporalLayerCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],

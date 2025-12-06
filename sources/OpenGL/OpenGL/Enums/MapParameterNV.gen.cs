@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("MapParameterNV")]
+[Transformed]
 public enum MapParameterNV : uint
 {
-    [NativeName("GL_MAP_TESSELLATION_NV")]
-    MapTessellation = 34498,
+    MapTessellation = unchecked((uint)0x86C2),
 }

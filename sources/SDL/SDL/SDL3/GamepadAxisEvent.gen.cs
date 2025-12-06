@@ -7,36 +7,34 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GamepadAxisEvent")]
 public partial struct GamepadAxisEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("which")]
+    [NativeTypeName("SDL_JoystickID")]
     public uint Which;
 
-    [NativeName("axis")]
+    [NativeTypeName("Uint8")]
     public byte Axis;
 
-    [NativeName("padding1")]
+    [NativeTypeName("Uint8")]
     public byte Padding1;
 
-    [NativeName("padding2")]
+    [NativeTypeName("Uint8")]
     public byte Padding2;
 
-    [NativeName("padding3")]
+    [NativeTypeName("Uint8")]
     public byte Padding3;
 
-    [NativeName("value")]
+    [NativeTypeName("Sint16")]
     public short Value;
 
-    [NativeName("padding4")]
+    [NativeTypeName("Uint16")]
     public ushort Padding4;
 }

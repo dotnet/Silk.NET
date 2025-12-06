@@ -7,24 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ShadingRateQCOM")]
+[Transformed]
 public enum ShadingRateQCOM : uint
 {
-    [NativeName("GL_SHADING_RATE_1X1_PIXELS_QCOM")]
-    Rate1X1Pixels = 38566,
-
-    [NativeName("GL_SHADING_RATE_1X2_PIXELS_QCOM")]
-    Rate1X2Pixels = 38567,
-
-    [NativeName("GL_SHADING_RATE_2X1_PIXELS_QCOM")]
-    Rate2X1Pixels = 38568,
-
-    [NativeName("GL_SHADING_RATE_2X2_PIXELS_QCOM")]
-    Rate2X2Pixels = 38569,
-
-    [NativeName("GL_SHADING_RATE_4X2_PIXELS_QCOM")]
-    Rate4X2Pixels = 38572,
-
-    [NativeName("GL_SHADING_RATE_4X4_PIXELS_QCOM")]
-    Rate4X4Pixels = 38574,
+    Rate1X1Pixels = unchecked((uint)0x96A6),
+    Rate1X2Pixels = unchecked((uint)0x96A7),
+    Rate2X1Pixels = unchecked((uint)0x96A8),
+    Rate2X2Pixels = unchecked((uint)0x96A9),
+    Rate4X2Pixels = unchecked((uint)0x96AC),
+    Rate4X4Pixels = unchecked((uint)0x96AE),
 }

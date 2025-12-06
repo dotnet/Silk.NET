@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_ClipboardDataCallback")]
 public unsafe delegate void* ClipboardDataCallbackDelegate(void* arg0, sbyte* arg1, nuint* arg2);

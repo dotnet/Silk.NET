@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDataGraphPipelineSessionCreateFlagsARM")]
+[Transformed]
 [Flags]
 public enum DataGraphPipelineSessionCreateFlagsARM : ulong
 {
     None = 0x0,
-
-    [NativeName("VK_DATA_GRAPH_PIPELINE_SESSION_CREATE_PROTECTED_BIT_ARM")]
-    ProtectedBit = 0x1,
+    ProtectedBitARM = 0x1,
 }

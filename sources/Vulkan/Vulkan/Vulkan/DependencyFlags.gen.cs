@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDependencyFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum DependencyFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_DEPENDENCY_BY_REGION_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -44,7 +43,6 @@ public enum DependencyFlags : uint
     )]
     ByRegionBit = 0x1,
 
-    [NativeName("VK_DEPENDENCY_DEVICE_GROUP_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +67,6 @@ public enum DependencyFlags : uint
     )]
     DeviceGroupBit = 0x4,
 
-    [NativeName("VK_DEPENDENCY_VIEW_LOCAL_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +83,6 @@ public enum DependencyFlags : uint
     )]
     ViewLocalBit = 0x2,
 
-    [NativeName("VK_DEPENDENCY_FEEDBACK_LOOP_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_attachment_feedback_loop_layout"],
@@ -97,11 +93,9 @@ public enum DependencyFlags : uint
     )]
     FeedbackLoopBitEXT = 0x8,
 
-    [NativeName("VK_DEPENDENCY_QUEUE_FAMILY_OWNERSHIP_TRANSFER_USE_ALL_STAGES_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     QueueFamilyOwnershipTransferUseAllStagesBitKHR = 0x20,
 
-    [NativeName("VK_DEPENDENCY_ASYMMETRIC_EVENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance9"],
@@ -112,7 +106,6 @@ public enum DependencyFlags : uint
     )]
     AsymmetricEventBitKHR = 0x40,
 
-    [NativeName("VK_DEPENDENCY_VIEW_LOCAL_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_multiview"],
@@ -123,7 +116,6 @@ public enum DependencyFlags : uint
     )]
     ViewLocalBitKHR = ViewLocalBit,
 
-    [NativeName("VK_DEPENDENCY_DEVICE_GROUP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_device_group"],

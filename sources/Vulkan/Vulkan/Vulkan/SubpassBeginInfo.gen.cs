@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubpassBeginInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SubpassBeginInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +25,7 @@ public unsafe partial struct SubpassBeginInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +40,6 @@ public unsafe partial struct SubpassBeginInfo
     )]
     public void* PNext;
 
-    [NativeName("contents")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,39 +7,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceTensorFeaturesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTensorFeaturesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
-    [NativeName("tensorNonPacked")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint TensorNonPacked;
 
-    [NativeName("shaderTensorAccess")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint ShaderTensorAccess;
 
-    [NativeName("shaderStorageTensorArrayDynamicIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint ShaderStorageTensorArrayDynamicIndexing;
 
-    [NativeName("shaderStorageTensorArrayNonUniformIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint ShaderStorageTensorArrayNonUniformIndexing;
 
-    [NativeName("descriptorBindingStorageTensorUpdateAfterBind")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint DescriptorBindingStorageTensorUpdateAfterBind;
 
-    [NativeName("tensors")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint Tensors;
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPrivateDataSlotCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PrivateDataSlotCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +27,7 @@ public unsafe partial struct PrivateDataSlotCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,7 +44,7 @@ public unsafe partial struct PrivateDataSlotCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPrivateDataSlotCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

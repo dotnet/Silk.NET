@@ -7,24 +7,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_DisplayEvent")]
 public partial struct DisplayEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("displayID")]
-    public uint DisplayId;
+    [NativeTypeName("SDL_DisplayID")]
+    public uint DisplayID;
 
-    [NativeName("data1")]
+    [NativeTypeName("Sint32")]
     public int Data1;
 
-    [NativeName("data2")]
+    [NativeTypeName("Sint32")]
     public int Data2;
 }

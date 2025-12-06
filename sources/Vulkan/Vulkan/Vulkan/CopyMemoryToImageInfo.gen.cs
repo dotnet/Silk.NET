@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCopyMemoryToImageInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyMemoryToImageInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,7 +23,7 @@ public unsafe partial struct CopyMemoryToImageInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,7 +36,7 @@ public unsafe partial struct CopyMemoryToImageInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkHostImageCopyFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +49,7 @@ public unsafe partial struct CopyMemoryToImageInfo
     )]
     public HostImageCopyFlags Flags;
 
-    [NativeName("dstImage")]
+    [NativeTypeName("VkImage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -64,7 +62,6 @@ public unsafe partial struct CopyMemoryToImageInfo
     )]
     public ImageHandle DstImage;
 
-    [NativeName("dstImageLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -77,7 +74,7 @@ public unsafe partial struct CopyMemoryToImageInfo
     )]
     public ImageLayout DstImageLayout;
 
-    [NativeName("regionCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -90,7 +87,7 @@ public unsafe partial struct CopyMemoryToImageInfo
     )]
     public uint RegionCount;
 
-    [NativeName("pRegions")]
+    [NativeTypeName("const VkMemoryToImageCopy *")]
     [SupportedApiProfile(
         "vulkan",
         [

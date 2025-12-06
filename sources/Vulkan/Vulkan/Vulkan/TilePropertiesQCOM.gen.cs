@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkTilePropertiesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TilePropertiesQCOM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_properties"],
@@ -23,7 +21,6 @@ public unsafe partial struct TilePropertiesQCOM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_properties"],
@@ -34,7 +31,6 @@ public unsafe partial struct TilePropertiesQCOM
     )]
     public void* PNext;
 
-    [NativeName("tileSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_properties"],
@@ -45,7 +41,6 @@ public unsafe partial struct TilePropertiesQCOM
     )]
     public Extent3D TileSize;
 
-    [NativeName("apronSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_properties"],
@@ -56,7 +51,6 @@ public unsafe partial struct TilePropertiesQCOM
     )]
     public Extent2D ApronSize;
 
-    [NativeName("origin")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_properties"],

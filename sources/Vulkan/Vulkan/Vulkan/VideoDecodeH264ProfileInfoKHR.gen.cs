@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoDecodeH264ProfileInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeH264ProfileInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
@@ -20,7 +18,7 @@ public unsafe partial struct VideoDecodeH264ProfileInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
@@ -28,7 +26,6 @@ public unsafe partial struct VideoDecodeH264ProfileInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("stdProfileIdc")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],
@@ -36,7 +33,6 @@ public unsafe partial struct VideoDecodeH264ProfileInfoKHR
     )]
     public StdVideoH264ProfileIdc StdProfileIdc;
 
-    [NativeName("pictureLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h264"],

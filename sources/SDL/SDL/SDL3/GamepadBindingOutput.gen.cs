@@ -8,15 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("_output_e__Union")]
 [StructLayout(LayoutKind.Explicit)]
 public partial struct GamepadBindingOutput
 {
-    [NativeName("button")]
     [FieldOffset(0)]
     public GamepadButton Button;
 
-    [NativeName("axis")]
     [FieldOffset(0)]
+    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L289_C9")]
     public GamepadBindingOutputAxis Axis;
 }

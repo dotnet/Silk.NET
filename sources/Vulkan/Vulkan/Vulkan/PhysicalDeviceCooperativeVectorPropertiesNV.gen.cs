@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceCooperativeVectorPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
     )]
     public void* PNext;
 
-    [NativeName("cooperativeVectorSupportedStages")]
+    [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
     )]
     public ShaderStageFlags CooperativeVectorSupportedStages;
 
-    [NativeName("cooperativeVectorTrainingFloat16Accumulation")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -56,7 +53,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
     )]
     public uint CooperativeVectorTrainingFloat16Accumulation;
 
-    [NativeName("cooperativeVectorTrainingFloat32Accumulation")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -67,7 +64,7 @@ public unsafe partial struct PhysicalDeviceCooperativeVectorPropertiesNV
     )]
     public uint CooperativeVectorTrainingFloat32Accumulation;
 
-    [NativeName("maxCooperativeVectorComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],

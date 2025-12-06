@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineShaderStageRequiredSubgroupSizeCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineShaderStageRequiredSubgroupSizeCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +25,7 @@ public unsafe partial struct PipelineShaderStageRequiredSubgroupSizeCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +40,7 @@ public unsafe partial struct PipelineShaderStageRequiredSubgroupSizeCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("requiredSubgroupSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

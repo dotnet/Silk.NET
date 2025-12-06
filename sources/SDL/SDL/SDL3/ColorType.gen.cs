@@ -8,15 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_ColorType")]
-public enum ColorType
+[NativeTypeName("unsigned int")]
+public enum ColorType : uint
 {
-    [NativeName("SDL_COLOR_TYPE_UNKNOWN")]
     Unknown = 0,
-
-    [NativeName("SDL_COLOR_TYPE_RGB")]
     Rgb = 1,
-
-    [NativeName("SDL_COLOR_TYPE_YCBCR")]
     Ycbcr = 2,
 }

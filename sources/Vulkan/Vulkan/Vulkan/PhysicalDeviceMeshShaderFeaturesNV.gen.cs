@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceMeshShaderFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMeshShaderFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_mesh_shader"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_mesh_shader"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesNV
     )]
     public void* PNext;
 
-    [NativeName("taskShader")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -41,7 +38,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesNV
     )]
     public uint TaskShader;
 
-    [NativeName("meshShader")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_mesh_shader"],

@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkQueueFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum QueueFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_QUEUE_GRAPHICS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -44,7 +43,6 @@ public enum QueueFlags : uint
     )]
     GraphicsBit = 0x1,
 
-    [NativeName("VK_QUEUE_COMPUTE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -73,7 +71,6 @@ public enum QueueFlags : uint
     )]
     ComputeBit = 0x2,
 
-    [NativeName("VK_QUEUE_TRANSFER_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -102,7 +99,6 @@ public enum QueueFlags : uint
     )]
     TransferBit = 0x4,
 
-    [NativeName("VK_QUEUE_SPARSE_BINDING_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -131,7 +127,6 @@ public enum QueueFlags : uint
     )]
     SparseBindingBit = 0x8,
 
-    [NativeName("VK_QUEUE_PROTECTED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,7 +151,6 @@ public enum QueueFlags : uint
     )]
     ProtectedBit = 0x10,
 
-    [NativeName("VK_QUEUE_VIDEO_DECODE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -167,7 +161,6 @@ public enum QueueFlags : uint
     )]
     VideoDecodeBitKHR = 0x20,
 
-    [NativeName("VK_QUEUE_VIDEO_ENCODE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -178,7 +171,6 @@ public enum QueueFlags : uint
     )]
     VideoEncodeBitKHR = 0x40,
 
-    [NativeName("VK_QUEUE_OPTICAL_FLOW_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -190,7 +182,6 @@ public enum QueueFlags : uint
     )]
     OpticalFlowBitNV = 0x100,
 
-    [NativeName("VK_QUEUE_DATA_GRAPH_BIT_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

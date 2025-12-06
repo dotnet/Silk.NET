@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageViewCaptureDescriptorDataInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageViewCaptureDescriptorDataInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -25,7 +23,7 @@ public unsafe partial struct ImageViewCaptureDescriptorDataInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -38,7 +36,7 @@ public unsafe partial struct ImageViewCaptureDescriptorDataInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("imageView")]
+    [NativeTypeName("VkImageView")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],

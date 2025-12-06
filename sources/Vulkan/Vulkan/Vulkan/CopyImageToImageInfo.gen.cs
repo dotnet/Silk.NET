@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCopyImageToImageInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyImageToImageInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -24,7 +22,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,7 +35,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkHostImageCopyFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +48,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public HostImageCopyFlags Flags;
 
-    [NativeName("srcImage")]
+    [NativeTypeName("VkImage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,7 +61,6 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public ImageHandle SrcImage;
 
-    [NativeName("srcImageLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -76,7 +73,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public ImageLayout SrcImageLayout;
 
-    [NativeName("dstImage")]
+    [NativeTypeName("VkImage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -89,7 +86,6 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public ImageHandle DstImage;
 
-    [NativeName("dstImageLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -102,7 +98,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public ImageLayout DstImageLayout;
 
-    [NativeName("regionCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -115,7 +111,7 @@ public unsafe partial struct CopyImageToImageInfo
     )]
     public uint RegionCount;
 
-    [NativeName("pRegions")]
+    [NativeTypeName("const VkImageCopy2 *")]
     [SupportedApiProfile(
         "vulkan",
         [

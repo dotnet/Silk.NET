@@ -8,12 +8,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_int32_e__FixedBuffer")]
 [InlineArray(4)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    [
+        "VK_COMPUTE_VERSION_1_0",
+        "VK_COMPUTE_VERSION_1_1",
+        "VK_COMPUTE_VERSION_1_2",
+        "VK_COMPUTE_VERSION_1_3",
+        "VK_COMPUTE_VERSION_1_4",
+        "VK_GRAPHICS_VERSION_1_0",
+        "VK_GRAPHICS_VERSION_1_1",
+        "VK_GRAPHICS_VERSION_1_2",
+        "VK_GRAPHICS_VERSION_1_3",
+        "VK_GRAPHICS_VERSION_1_4",
+        "VK_VERSION_1_0",
+        "VK_VERSION_1_1",
+        "VK_VERSION_1_2",
+        "VK_VERSION_1_3",
+        "VK_VERSION_1_4",
+    ],
+    MinVersion = "1.0"
+)]
 public partial struct ClearColorValueInt32
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public int E0;
 }

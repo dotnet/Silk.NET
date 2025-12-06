@@ -10,30 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ContextString")]
+[Transformed]
 public enum ContextString : uint
 {
-    [NativeName("ALC_DEFAULT_DEVICE_SPECIFIER")]
-    DefaultDeviceSpecifier = 4100,
-
-    [NativeName("ALC_DEVICE_SPECIFIER")]
-    DeviceSpecifier = 4101,
-
-    [NativeName("ALC_EXTENSIONS")]
-    Extensions = 4102,
-
-    [NativeName("ALC_CAPTURE_DEVICE_SPECIFIER")]
-    CaptureDeviceSpecifier = 784,
-
-    [NativeName("ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER")]
-    CaptureDefaultDeviceSpecifier = 785,
-
-    [NativeName("ALC_DEFAULT_ALL_DEVICES_SPECIFIER")]
-    DefaultAllDevicesSpecifier = 4114,
-
-    [NativeName("ALC_ALL_DEVICES_SPECIFIER")]
-    AllDevicesSpecifier = 4115,
-
-    [NativeName("ALC_HRTF_SPECIFIER_SOFT")]
-    HrtfSpecifierSOFT = 6549,
+    DefaultDeviceSpecifier = unchecked((uint)0x1004),
+    DeviceSpecifier = unchecked((uint)0x1005),
+    Extensions = unchecked((uint)0x1006),
+    CaptureDeviceSpecifier = unchecked((uint)0x310),
+    CaptureDefaultDeviceSpecifier = unchecked((uint)0x311),
+    DefaultAllDevicesSpecifier = unchecked((uint)0x1012),
+    AllDevicesSpecifier = unchecked((uint)0x1013),
+    HrtfSpecifierSOFT = unchecked((uint)0x1995),
 }

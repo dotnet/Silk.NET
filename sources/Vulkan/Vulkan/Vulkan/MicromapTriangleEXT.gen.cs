@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMicromapTriangleEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct MicromapTriangleEXT
 {
-    [NativeName("dataOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -22,7 +21,7 @@ public partial struct MicromapTriangleEXT
     )]
     public uint DataOffset;
 
-    [NativeName("subdivisionLevel")]
+    [NativeTypeName("uint16_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -33,7 +32,7 @@ public partial struct MicromapTriangleEXT
     )]
     public ushort SubdivisionLevel;
 
-    [NativeName("format")]
+    [NativeTypeName("uint16_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

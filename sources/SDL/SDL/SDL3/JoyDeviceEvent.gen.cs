@@ -7,18 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_JoyDeviceEvent")]
 public partial struct JoyDeviceEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("which")]
+    [NativeTypeName("SDL_JoystickID")]
     public uint Which;
 }

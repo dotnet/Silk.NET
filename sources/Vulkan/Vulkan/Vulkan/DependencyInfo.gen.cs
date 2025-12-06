@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDependencyInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DependencyInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +27,7 @@ public unsafe partial struct DependencyInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,7 +44,7 @@ public unsafe partial struct DependencyInfo
     )]
     public void* PNext;
 
-    [NativeName("dependencyFlags")]
+    [NativeTypeName("VkDependencyFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,7 +61,7 @@ public unsafe partial struct DependencyInfo
     )]
     public DependencyFlags DependencyFlags;
 
-    [NativeName("memoryBarrierCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -80,7 +78,7 @@ public unsafe partial struct DependencyInfo
     )]
     public uint MemoryBarrierCount;
 
-    [NativeName("pMemoryBarriers")]
+    [NativeTypeName("const VkMemoryBarrier2 *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +95,7 @@ public unsafe partial struct DependencyInfo
     )]
     public MemoryBarrier2* PMemoryBarriers;
 
-    [NativeName("bufferMemoryBarrierCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -114,7 +112,7 @@ public unsafe partial struct DependencyInfo
     )]
     public uint BufferMemoryBarrierCount;
 
-    [NativeName("pBufferMemoryBarriers")]
+    [NativeTypeName("const VkBufferMemoryBarrier2 *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -131,7 +129,7 @@ public unsafe partial struct DependencyInfo
     )]
     public BufferMemoryBarrier2* PBufferMemoryBarriers;
 
-    [NativeName("imageMemoryBarrierCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -148,7 +146,7 @@ public unsafe partial struct DependencyInfo
     )]
     public uint ImageMemoryBarrierCount;
 
-    [NativeName("pImageMemoryBarriers")]
+    [NativeTypeName("const VkImageMemoryBarrier2 *")]
     [SupportedApiProfile(
         "vulkan",
         [

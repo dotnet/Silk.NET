@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("FenceConditionNV")]
+[Transformed]
 public enum FenceConditionNV : uint
 {
-    [NativeName("GL_ALL_COMPLETED_NV")]
-    AllCompleted = 34034,
+    AllCompleted = unchecked((uint)0x84F2),
 }

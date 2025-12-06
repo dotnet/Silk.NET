@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkQueueFamilyCheckpointProperties2NV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct QueueFamilyCheckpointProperties2NV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -26,7 +24,6 @@ public unsafe partial struct QueueFamilyCheckpointProperties2NV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +37,7 @@ public unsafe partial struct QueueFamilyCheckpointProperties2NV
     )]
     public void* PNext;
 
-    [NativeName("checkpointExecutionStageMask")]
+    [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [

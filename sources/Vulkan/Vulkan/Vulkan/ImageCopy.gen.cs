@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageCopy")]
 [SupportedApiProfile("vulkan")]
 public partial struct ImageCopy
 {
-    [NativeName("srcSubresource")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +38,6 @@ public partial struct ImageCopy
     )]
     public ImageSubresourceLayers SrcSubresource;
 
-    [NativeName("srcOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +66,6 @@ public partial struct ImageCopy
     )]
     public Offset3D SrcOffset;
 
-    [NativeName("dstSubresource")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +94,6 @@ public partial struct ImageCopy
     )]
     public ImageSubresourceLayers DstSubresource;
 
-    [NativeName("dstOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -127,7 +122,6 @@ public partial struct ImageCopy
     )]
     public Offset3D DstOffset;
 
-    [NativeName("extent")]
     [SupportedApiProfile(
         "vulkan",
         [

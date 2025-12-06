@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRayTracingShaderGroupCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RayTracingShaderGroupCreateInfoNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -22,7 +20,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -33,7 +31,6 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -44,7 +41,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoNV
     )]
     public RayTracingShaderGroupTypeKHR Type;
 
-    [NativeName("generalShader")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -55,7 +52,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoNV
     )]
     public uint GeneralShader;
 
-    [NativeName("closestHitShader")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -66,7 +63,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoNV
     )]
     public uint ClosestHitShader;
 
-    [NativeName("anyHitShader")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -77,7 +74,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoNV
     )]
     public uint AnyHitShader;
 
-    [NativeName("intersectionShader")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

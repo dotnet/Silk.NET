@@ -10,51 +10,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ContextAttribute")]
+[Transformed]
 public enum ContextAttribute : uint
 {
-    [NativeName("ALC_FREQUENCY")]
-    Frequency = 4103,
-
-    [NativeName("ALC_REFRESH")]
-    Refresh = 4104,
-
-    [NativeName("ALC_SYNC")]
-    Sync = 4105,
-
-    [NativeName("ALC_MONO_SOURCES")]
-    MonoSources = 4112,
-
-    [NativeName("ALC_STEREO_SOURCES")]
-    StereoSources = 4113,
-
-    [NativeName("ALC_FORMAT_CHANNELS_SOFT")]
-    FormatChannelsSOFT = 6544,
-
-    [NativeName("ALC_FORMAT_TYPE_SOFT")]
-    FormatTypeSOFT = 6545,
-
-    [NativeName("ALC_DEFAULT_FILTER_ORDER")]
-    DefaultFilterOrder = 4352,
-
-    [NativeName("ALC_HRTF_SOFT")]
-    HrtfSOFT = 6546,
-
-    [NativeName("ALC_HRTF_ID_SOFT")]
-    HrtfIdSOFT = 6550,
-
-    [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
-    OutputLimiterSOFT = 6554,
-
-    [NativeName("ALC_AMBISONIC_LAYOUT_SOFT")]
-    AmbisonicLayoutSOFT = 6551,
-
-    [NativeName("ALC_AMBISONIC_SCALING_SOFT")]
-    AmbisonicScalingSOFT = 6552,
-
-    [NativeName("ALC_AMBISONIC_ORDER_SOFT")]
-    AmbisonicOrderSOFT = 6553,
-
-    [NativeName("ALC_OUTPUT_MODE_SOFT")]
-    OutputModeSOFT = 6572,
+    Frequency = unchecked((uint)0x1007),
+    Refresh = unchecked((uint)0x1008),
+    Sync = unchecked((uint)0x1009),
+    MonoSources = unchecked((uint)0x1010),
+    StereoSources = unchecked((uint)0x1011),
+    FormatChannelsSOFT = unchecked((uint)0x1990),
+    FormatTypeSOFT = unchecked((uint)0x1991),
+    DefaultFilterOrder = unchecked((uint)0x1100),
+    HrtfSOFT = unchecked((uint)0x1992),
+    HrtfIdSOFT = unchecked((uint)0x1996),
+    OutputLimiterSOFT = unchecked((uint)0x199A),
+    AmbisonicLayoutSOFT = unchecked((uint)0x1997),
+    AmbisonicScalingSOFT = unchecked((uint)0x1998),
+    AmbisonicOrderSOFT = unchecked((uint)0x1999),
+    OutputModeSOFT = unchecked((uint)0x19AC),
 }

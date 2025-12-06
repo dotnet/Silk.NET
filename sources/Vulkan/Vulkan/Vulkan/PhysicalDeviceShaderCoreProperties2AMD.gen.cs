@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceShaderCoreProperties2AMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties2"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties2"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD
     )]
     public void* PNext;
 
-    [NativeName("shaderCoreFeatures")]
+    [NativeTypeName("VkShaderCorePropertiesFlagsAMD")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties2"],
@@ -36,7 +33,7 @@ public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD
     )]
     public ShaderCorePropertiesFlagsAMD ShaderCoreFeatures;
 
-    [NativeName("activeComputeUnitCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties2"],

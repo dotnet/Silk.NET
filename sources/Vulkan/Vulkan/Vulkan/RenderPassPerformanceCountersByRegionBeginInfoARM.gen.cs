@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderPassPerformanceCountersByRegionBeginInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -23,7 +21,6 @@ public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -34,7 +31,7 @@ public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
     )]
     public void* PNext;
 
-    [NativeName("counterAddressCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -45,7 +42,7 @@ public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
     )]
     public uint CounterAddressCount;
 
-    [NativeName("pCounterAddresses")]
+    [NativeTypeName("const VkDeviceAddress *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -56,7 +53,7 @@ public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
     )]
     public ulong* PCounterAddresses;
 
-    [NativeName("serializeRegions")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -67,7 +64,7 @@ public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
     )]
     public uint SerializeRegions;
 
-    [NativeName("counterIndexCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -78,7 +75,7 @@ public unsafe partial struct RenderPassPerformanceCountersByRegionBeginInfoARM
     )]
     public uint CounterIndexCount;
 
-    [NativeName("pCounterIndices")]
+    [NativeTypeName("uint32_t *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],

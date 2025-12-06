@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_MessageBoxColorScheme")]
 public partial struct MessageBoxColorScheme
 {
-    [NativeName("colors")]
+    [NativeTypeName("SDL_MessageBoxColor[5]")]
     public MessageBoxColorSchemeColors Colors;
 }

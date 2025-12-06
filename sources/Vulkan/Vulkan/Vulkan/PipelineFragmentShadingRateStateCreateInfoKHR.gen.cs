@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineFragmentShadingRateStateCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -24,7 +22,7 @@ public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -36,7 +34,6 @@ public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("fragmentSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -48,7 +45,7 @@ public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR
     )]
     public Extent2D FragmentSize;
 
-    [NativeName("combinerOps")]
+    [NativeTypeName("VkFragmentShadingRateCombinerOpKHR[2]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -58,5 +55,5 @@ public unsafe partial struct PipelineFragmentShadingRateStateCreateInfoKHR
             "VK_VERSION_1_2",
         ]
     )]
-    public PipelineFragmentShadingRateStateCreateInfoKhrCombinerOps CombinerOps;
+    public PipelineFragmentShadingRateStateCreateInfoKHRCombinerOps CombinerOps;
 }

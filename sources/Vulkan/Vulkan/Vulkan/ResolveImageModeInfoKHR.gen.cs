@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkResolveImageModeInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ResolveImageModeInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -22,7 +20,7 @@ public unsafe partial struct ResolveImageModeInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -33,7 +31,7 @@ public unsafe partial struct ResolveImageModeInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkResolveImageFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -44,7 +42,6 @@ public unsafe partial struct ResolveImageModeInfoKHR
     )]
     public ResolveImageFlagsKHR Flags;
 
-    [NativeName("resolveMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -55,7 +52,6 @@ public unsafe partial struct ResolveImageModeInfoKHR
     )]
     public ResolveModeFlags ResolveMode;
 
-    [NativeName("stencilResolveMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],

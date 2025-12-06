@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceMultiviewProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMultiviewProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +27,6 @@ public unsafe partial struct PhysicalDeviceMultiviewProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,7 +43,7 @@ public unsafe partial struct PhysicalDeviceMultiviewProperties
     )]
     public void* PNext;
 
-    [NativeName("maxMultiviewViewCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,7 +60,7 @@ public unsafe partial struct PhysicalDeviceMultiviewProperties
     )]
     public uint MaxMultiviewViewCount;
 
-    [NativeName("maxMultiviewInstanceIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

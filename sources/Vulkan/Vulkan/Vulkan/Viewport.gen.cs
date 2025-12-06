@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkViewport")]
 [SupportedApiProfile("vulkan")]
 public partial struct Viewport
 {
-    [NativeName("x")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +27,6 @@ public partial struct Viewport
     )]
     public float X;
 
-    [NativeName("y")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +45,6 @@ public partial struct Viewport
     )]
     public float Y;
 
-    [NativeName("width")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,7 +63,6 @@ public partial struct Viewport
     )]
     public float Width;
 
-    [NativeName("height")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +81,6 @@ public partial struct Viewport
     )]
     public float Height;
 
-    [NativeName("minDepth")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -105,7 +99,6 @@ public partial struct Viewport
     )]
     public float MinDepth;
 
-    [NativeName("maxDepth")]
     [SupportedApiProfile(
         "vulkan",
         [

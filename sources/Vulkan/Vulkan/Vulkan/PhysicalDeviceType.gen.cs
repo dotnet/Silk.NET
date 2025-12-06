@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceType")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum PhysicalDeviceType : uint
 {
-    [NativeName("VK_PHYSICAL_DEVICE_TYPE_OTHER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +39,6 @@ public enum PhysicalDeviceType : uint
     )]
     Other = 0,
 
-    [NativeName("VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +67,6 @@ public enum PhysicalDeviceType : uint
     )]
     IntegratedGpu = 1,
 
-    [NativeName("VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +95,6 @@ public enum PhysicalDeviceType : uint
     )]
     DiscreteGpu = 2,
 
-    [NativeName("VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -127,7 +123,6 @@ public enum PhysicalDeviceType : uint
     )]
     VirtualGpu = 3,
 
-    [NativeName("VK_PHYSICAL_DEVICE_TYPE_CPU")]
     [SupportedApiProfile(
         "vulkan",
         [

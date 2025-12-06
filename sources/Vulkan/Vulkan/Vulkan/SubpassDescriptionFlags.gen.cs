@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubpassDescriptionFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum SubpassDescriptionFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_PER_VIEW_ATTRIBUTES_BIT_NVX")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NVX_multiview_per_view_attributes"],
@@ -26,7 +25,6 @@ public enum SubpassDescriptionFlags : uint
     )]
     PerViewAttributesBitNVX = 0x1,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_PER_VIEW_POSITION_X_ONLY_BIT_NVX")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NVX_multiview_per_view_attributes"],
@@ -37,15 +35,12 @@ public enum SubpassDescriptionFlags : uint
     )]
     PerViewPositionXOnlyBitNVX = 0x2,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
     FragmentRegionBitQCOM = 0x4,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_SHADER_RESOLVE_BIT_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_shader_resolve"])]
     ShaderResolveBitQCOM = 0x8,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_TILE_SHADING_APRON_BIT_QCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -56,7 +51,6 @@ public enum SubpassDescriptionFlags : uint
     )]
     TileShadingApronBitQCOM = 0x100,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],
@@ -67,7 +61,6 @@ public enum SubpassDescriptionFlags : uint
     )]
     RasterizationOrderAttachmentColorAccessBitEXT = 0x10,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],
@@ -78,7 +71,6 @@ public enum SubpassDescriptionFlags : uint
     )]
     RasterizationOrderAttachmentDepthAccessBitEXT = 0x20,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],
@@ -89,7 +81,6 @@ public enum SubpassDescriptionFlags : uint
     )]
     RasterizationOrderAttachmentStencilAccessBitEXT = 0x40,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_ENABLE_LEGACY_DITHERING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_legacy_dithering"],
@@ -100,7 +91,6 @@ public enum SubpassDescriptionFlags : uint
     )]
     EnableLegacyDitheringBitEXT = 0x80,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_rasterization_order_attachment_access"],
@@ -111,7 +101,6 @@ public enum SubpassDescriptionFlags : uint
     )]
     RasterizationOrderAttachmentColorAccessBitARM = RasterizationOrderAttachmentColorAccessBitEXT,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_rasterization_order_attachment_access"],
@@ -122,7 +111,6 @@ public enum SubpassDescriptionFlags : uint
     )]
     RasterizationOrderAttachmentDepthAccessBitARM = RasterizationOrderAttachmentDepthAccessBitEXT,
 
-    [NativeName("VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_STENCIL_ACCESS_BIT_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_rasterization_order_attachment_access"],

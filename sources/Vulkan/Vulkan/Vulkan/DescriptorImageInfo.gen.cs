@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorImageInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorImageInfo
 {
-    [NativeName("sampler")]
+    [NativeTypeName("VkSampler")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +34,7 @@ public unsafe partial struct DescriptorImageInfo
     )]
     public SamplerHandle Sampler;
 
-    [NativeName("imageView")]
+    [NativeTypeName("VkImageView")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -59,7 +58,6 @@ public unsafe partial struct DescriptorImageInfo
     )]
     public ImageViewHandle ImageView;
 
-    [NativeName("imageLayout")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderCoreBuiltinsPropertiesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_shader_core_builtins"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceShaderCoreBuiltinsPropertiesARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_shader_core_builtins"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceShaderCoreBuiltinsPropertiesARM
     )]
     public void* PNext;
 
-    [NativeName("shaderCoreMask")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_shader_core_builtins"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceShaderCoreBuiltinsPropertiesARM
     )]
     public ulong ShaderCoreMask;
 
-    [NativeName("shaderCoreCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_shader_core_builtins"],
@@ -56,7 +53,7 @@ public unsafe partial struct PhysicalDeviceShaderCoreBuiltinsPropertiesARM
     )]
     public uint ShaderCoreCount;
 
-    [NativeName("shaderWarpsPerCore")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_shader_core_builtins"],

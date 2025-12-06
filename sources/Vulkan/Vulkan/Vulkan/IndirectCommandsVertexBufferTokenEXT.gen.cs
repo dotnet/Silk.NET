@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndirectCommandsVertexBufferTokenEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct IndirectCommandsVertexBufferTokenEXT
 {
-    [NativeName("vertexBindingUnit")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_Joystick")]
 public readonly unsafe partial struct JoystickHandle
 {
     public readonly void* Handle;
-
-    public JoystickHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(JoystickHandle other) => Handle == other.Handle;
 

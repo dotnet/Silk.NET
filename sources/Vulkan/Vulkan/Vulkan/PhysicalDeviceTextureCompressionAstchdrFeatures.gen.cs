@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceTextureCompressionASTCHDRFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTextureCompressionAstchdrFeatures
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +27,6 @@ public unsafe partial struct PhysicalDeviceTextureCompressionAstchdrFeatures
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,7 +43,7 @@ public unsafe partial struct PhysicalDeviceTextureCompressionAstchdrFeatures
     )]
     public void* PNext;
 
-    [NativeName("textureCompressionASTC_HDR")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_texture_compression_astc_hdr"],
@@ -55,5 +52,5 @@ public unsafe partial struct PhysicalDeviceTextureCompressionAstchdrFeatures
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    public uint TextureCompressionAstcHdr;
+    public uint TextureCompressionASTCHDR;
 }

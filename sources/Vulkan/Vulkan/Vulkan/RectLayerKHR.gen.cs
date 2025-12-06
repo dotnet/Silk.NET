@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRectLayerKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct RectLayerKHR
 {
-    [NativeName("offset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_incremental_present"],
@@ -20,7 +18,6 @@ public partial struct RectLayerKHR
     )]
     public Offset2D Offset;
 
-    [NativeName("extent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_incremental_present"],
@@ -28,7 +25,7 @@ public partial struct RectLayerKHR
     )]
     public Extent2D Extent;
 
-    [NativeName("layer")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_incremental_present"],

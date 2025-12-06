@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceMemoryBudgetPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_budget"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_budget"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeName("heapBudget")]
+    [NativeTypeName("VkDeviceSize[16]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_budget"],
@@ -43,9 +40,9 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
             "VK_EXT_memory_budget+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceMemoryBudgetPropertiesExtHeapBudget HeapBudget;
+    public PhysicalDeviceMemoryBudgetPropertiesEXTHeapBudget HeapBudget;
 
-    [NativeName("heapUsage")]
+    [NativeTypeName("VkDeviceSize[16]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_budget"],
@@ -54,5 +51,5 @@ public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
             "VK_EXT_memory_budget+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceMemoryBudgetPropertiesExtHeapUsage HeapUsage;
+    public PhysicalDeviceMemoryBudgetPropertiesEXTHeapUsage HeapUsage;
 }

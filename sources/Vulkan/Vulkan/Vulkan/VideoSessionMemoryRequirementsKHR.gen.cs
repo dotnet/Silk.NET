@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoSessionMemoryRequirementsKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoSessionMemoryRequirementsKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -20,7 +18,6 @@ public unsafe partial struct VideoSessionMemoryRequirementsKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -28,7 +25,7 @@ public unsafe partial struct VideoSessionMemoryRequirementsKHR
     )]
     public void* PNext;
 
-    [NativeName("memoryBindIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -36,7 +33,6 @@ public unsafe partial struct VideoSessionMemoryRequirementsKHR
     )]
     public uint MemoryBindIndex;
 
-    [NativeName("memoryRequirements")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

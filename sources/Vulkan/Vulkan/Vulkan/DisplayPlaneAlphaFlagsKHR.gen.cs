@@ -8,26 +8,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDisplayPlaneAlphaFlagBitsKHR")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum DisplayPlaneAlphaFlagsKHR : uint
 {
     None = 0x0,
 
-    [NativeName("VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    OpaqueBit = 0x1,
+    OpaqueBitKHR = 0x1,
 
-    [NativeName("VK_DISPLAY_PLANE_ALPHA_GLOBAL_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    GlobalBit = 0x2,
+    GlobalBitKHR = 0x2,
 
-    [NativeName("VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    PerPixelBit = 0x4,
+    PerPixelBitKHR = 0x4,
 
-    [NativeName("VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_PREMULTIPLIED_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    PerPixelPremultipliedBit = 0x8,
+    PerPixelPremultipliedBitKHR = 0x8,
 }

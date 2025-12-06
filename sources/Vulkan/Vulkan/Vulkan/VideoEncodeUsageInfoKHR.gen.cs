@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeUsageInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeUsageInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -22,7 +20,7 @@ public unsafe partial struct VideoEncodeUsageInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -33,7 +31,7 @@ public unsafe partial struct VideoEncodeUsageInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("videoUsageHints")]
+    [NativeTypeName("VkVideoEncodeUsageFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -44,7 +42,7 @@ public unsafe partial struct VideoEncodeUsageInfoKHR
     )]
     public VideoEncodeUsageFlagsKHR VideoUsageHints;
 
-    [NativeName("videoContentHints")]
+    [NativeTypeName("VkVideoEncodeContentFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -55,7 +53,6 @@ public unsafe partial struct VideoEncodeUsageInfoKHR
     )]
     public VideoEncodeContentFlagsKHR VideoContentHints;
 
-    [NativeName("tuningMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],

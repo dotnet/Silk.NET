@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeatures
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +25,6 @@ public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeatures
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +39,7 @@ public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeatures
     )]
     public void* PNext;
 
-    [NativeName("separateDepthStencilLayouts")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],

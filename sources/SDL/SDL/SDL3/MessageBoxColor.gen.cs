@@ -7,15 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_MessageBoxColor")]
 public partial struct MessageBoxColor
 {
-    [NativeName("r")]
+    [NativeTypeName("Uint8")]
     public byte R;
 
-    [NativeName("g")]
+    [NativeTypeName("Uint8")]
     public byte G;
 
-    [NativeName("b")]
+    [NativeTypeName("Uint8")]
     public byte B;
 }

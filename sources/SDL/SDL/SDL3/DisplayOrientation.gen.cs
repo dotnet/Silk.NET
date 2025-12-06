@@ -7,21 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_DisplayOrientation")]
-public enum DisplayOrientation
+[NativeTypeName("unsigned int")]
+public enum DisplayOrientation : uint
 {
-    [NativeName("SDL_ORIENTATION_UNKNOWN")]
-    Unknown = 0,
-
-    [NativeName("SDL_ORIENTATION_LANDSCAPE")]
-    Landscape = 1,
-
-    [NativeName("SDL_ORIENTATION_LANDSCAPE_FLIPPED")]
-    LandscapeFlipped = 2,
-
-    [NativeName("SDL_ORIENTATION_PORTRAIT")]
-    Portrait = 3,
-
-    [NativeName("SDL_ORIENTATION_PORTRAIT_FLIPPED")]
-    PortraitFlipped = 4,
+    Unknown,
+    Landscape,
+    LandscapeFlipped,
+    Portrait,
+    PortraitFlipped,
 }

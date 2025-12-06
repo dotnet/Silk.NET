@@ -7,21 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("FogCoordSrc")]
+[Transformed]
 public enum FogCoordSrc : uint
 {
-    [NativeName("GL_FOG_COORDINATE")]
-    FogCoordinate = 33873,
-
-    [NativeName("GL_FRAGMENT_DEPTH")]
-    FragmentDepth = 33874,
-
-    [NativeName("GL_FOG_COORD")]
-    FogCoord = 33873,
-
-    [NativeName("GL_FOG_COORDINATE_EXT")]
-    FogCoordinateEXT = 33873,
-
-    [NativeName("GL_FRAGMENT_DEPTH_EXT")]
-    FragmentDepthEXT = 33874,
+    FogCoordinate = unchecked((uint)0x8451),
+    FragmentDepth = unchecked((uint)0x8452),
+    FogCoord = unchecked((uint)0x8451),
+    FogCoordinateEXT = unchecked((uint)0x8451),
+    FragmentDepthEXT = unchecked((uint)0x8452),
 }

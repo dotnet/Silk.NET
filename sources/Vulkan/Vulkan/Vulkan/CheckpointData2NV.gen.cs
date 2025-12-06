@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCheckpointData2NV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CheckpointData2NV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -24,7 +22,6 @@ public unsafe partial struct CheckpointData2NV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,7 +35,7 @@ public unsafe partial struct CheckpointData2NV
     )]
     public void* PNext;
 
-    [NativeName("stage")]
+    [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -52,7 +49,6 @@ public unsafe partial struct CheckpointData2NV
     )]
     public PipelineStageFlags2 Stage;
 
-    [NativeName("pCheckpointMarker")]
     [SupportedApiProfile(
         "vulkan",
         [

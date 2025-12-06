@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImportMemoryHostPointerInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImportMemoryHostPointerInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_external_memory_host"],
@@ -23,7 +21,7 @@ public unsafe partial struct ImportMemoryHostPointerInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_external_memory_host"],
@@ -34,7 +32,6 @@ public unsafe partial struct ImportMemoryHostPointerInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("handleType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_external_memory_host"],
@@ -45,7 +42,6 @@ public unsafe partial struct ImportMemoryHostPointerInfoEXT
     )]
     public ExternalMemoryHandleTypeFlags HandleType;
 
-    [NativeName("pHostPointer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_external_memory_host"],

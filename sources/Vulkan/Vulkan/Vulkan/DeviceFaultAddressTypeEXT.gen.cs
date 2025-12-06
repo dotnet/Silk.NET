@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceFaultAddressTypeEXT")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum DeviceFaultAddressTypeEXT : uint
 {
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_NONE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -20,9 +19,8 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    None = 0,
+    NoneEXT = 0,
 
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_READ_INVALID_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -31,9 +29,8 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    ReadInvalid = 1,
+    ReadInvalidEXT = 1,
 
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_WRITE_INVALID_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -42,9 +39,8 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    WriteInvalid = 2,
+    WriteInvalidEXT = 2,
 
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_EXECUTE_INVALID_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -53,9 +49,8 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    ExecuteInvalid = 3,
+    ExecuteInvalidEXT = 3,
 
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_UNKNOWN_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -64,9 +59,8 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    InstructionPointerUnknown = 4,
+    InstructionPointerUnknownEXT = 4,
 
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_INVALID_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -75,9 +69,8 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    InstructionPointerInvalid = 5,
+    InstructionPointerInvalidEXT = 5,
 
-    [NativeName("VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_FAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -86,5 +79,5 @@ public enum DeviceFaultAddressTypeEXT : uint
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    InstructionPointerFault = 6,
+    InstructionPointerFaultEXT = 6,
 }

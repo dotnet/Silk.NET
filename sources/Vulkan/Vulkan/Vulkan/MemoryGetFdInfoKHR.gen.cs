@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryGetFdInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryGetFdInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_fd"],
@@ -22,7 +20,7 @@ public unsafe partial struct MemoryGetFdInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_fd"],
@@ -33,7 +31,7 @@ public unsafe partial struct MemoryGetFdInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("memory")]
+    [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_fd"],
@@ -44,7 +42,6 @@ public unsafe partial struct MemoryGetFdInfoKHR
     )]
     public DeviceMemoryHandle Memory;
 
-    [NativeName("handleType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_fd"],

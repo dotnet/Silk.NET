@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_MainThreadCallback")]
 public unsafe delegate void MainThreadCallbackDelegate(void* arg0);

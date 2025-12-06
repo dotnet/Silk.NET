@@ -7,21 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("TextureCoordName")]
+[Transformed]
 public enum TextureCoordName : uint
 {
-    [NativeName("GL_TEXTURE_GEN_STR_OES")]
-    TextureGenStrOES = 36192,
-
-    [NativeName("GL_S")]
-    S = 8192,
-
-    [NativeName("GL_T")]
-    T = 8193,
-
-    [NativeName("GL_R")]
-    R = 8194,
-
-    [NativeName("GL_Q")]
-    Q = 8195,
+    S = unchecked((uint)0x2000),
+    T = unchecked((uint)0x2001),
+    R = unchecked((uint)0x2002),
+    Q = unchecked((uint)0x2003),
+    TextureGenStrOES = unchecked((uint)0x8D60),
 }

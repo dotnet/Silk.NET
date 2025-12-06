@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkColorBlendEquationEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct ColorBlendEquationEXT
 {
-    [NativeName("srcColorBlendFactor")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -22,7 +20,6 @@ public partial struct ColorBlendEquationEXT
     )]
     public BlendFactor SrcColorBlendFactor;
 
-    [NativeName("dstColorBlendFactor")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -33,7 +30,6 @@ public partial struct ColorBlendEquationEXT
     )]
     public BlendFactor DstColorBlendFactor;
 
-    [NativeName("colorBlendOp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -44,7 +40,6 @@ public partial struct ColorBlendEquationEXT
     )]
     public BlendOp ColorBlendOp;
 
-    [NativeName("srcAlphaBlendFactor")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -55,7 +50,6 @@ public partial struct ColorBlendEquationEXT
     )]
     public BlendFactor SrcAlphaBlendFactor;
 
-    [NativeName("dstAlphaBlendFactor")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -66,7 +60,6 @@ public partial struct ColorBlendEquationEXT
     )]
     public BlendFactor DstAlphaBlendFactor;
 
-    [NativeName("alphaBlendOp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],

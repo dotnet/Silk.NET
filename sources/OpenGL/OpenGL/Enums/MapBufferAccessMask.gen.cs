@@ -7,57 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("MapBufferAccessMask")]
-[Flags]
+[Transformed]
 public enum MapBufferAccessMask : uint
 {
-    None = 0x0,
-
-    [NativeName("GL_MAP_READ_BIT_EXT")]
-    ReadBitEXT = 0x1,
-
-    [NativeName("GL_MAP_WRITE_BIT_EXT")]
-    WriteBitEXT = 0x2,
-
-    [NativeName("GL_MAP_INVALIDATE_RANGE_BIT_EXT")]
-    InvalidateRangeBitEXT = 0x4,
-
-    [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT_EXT")]
-    InvalidateBufferBitEXT = 0x8,
-
-    [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT_EXT")]
-    FlushExplicitBitEXT = 0x10,
-
-    [NativeName("GL_MAP_UNSYNCHRONIZED_BIT_EXT")]
-    UnsynchronizedBitEXT = 0x20,
-
-    [NativeName("GL_MAP_READ_BIT")]
-    ReadBit = 0x1,
-
-    [NativeName("GL_MAP_WRITE_BIT")]
-    WriteBit = 0x2,
-
-    [NativeName("GL_MAP_INVALIDATE_RANGE_BIT")]
-    InvalidateRangeBit = 0x4,
-
-    [NativeName("GL_MAP_INVALIDATE_BUFFER_BIT")]
-    InvalidateBufferBit = 0x8,
-
-    [NativeName("GL_MAP_FLUSH_EXPLICIT_BIT")]
-    FlushExplicitBit = 0x10,
-
-    [NativeName("GL_MAP_UNSYNCHRONIZED_BIT")]
-    UnsynchronizedBit = 0x20,
-
-    [NativeName("GL_MAP_PERSISTENT_BIT")]
-    PersistentBit = 0x40,
-
-    [NativeName("GL_MAP_COHERENT_BIT")]
-    CoherentBit = 0x80,
-
-    [NativeName("GL_MAP_PERSISTENT_BIT_EXT")]
-    PersistentBitEXT = 0x40,
-
-    [NativeName("GL_MAP_COHERENT_BIT_EXT")]
-    CoherentBitEXT = 0x80,
+    ReadBit = unchecked((uint)0x0001),
+    WriteBit = unchecked((uint)0x0002),
+    InvalidateRangeBit = unchecked((uint)0x0004),
+    InvalidateBufferBit = unchecked((uint)0x0008),
+    FlushExplicitBit = unchecked((uint)0x0010),
+    UnsynchronizedBit = unchecked((uint)0x0020),
+    PersistentBit = unchecked((uint)0x0040),
+    CoherentBit = unchecked((uint)0x0080),
+    PersistentBitEXT = unchecked((uint)0x0040),
+    CoherentBitEXT = unchecked((uint)0x0080),
+    ReadBitEXT = unchecked((uint)0x0001),
+    WriteBitEXT = unchecked((uint)0x0002),
+    InvalidateRangeBitEXT = unchecked((uint)0x0004),
+    InvalidateBufferBitEXT = unchecked((uint)0x0008),
+    FlushExplicitBitEXT = unchecked((uint)0x0010),
+    UnsynchronizedBitEXT = unchecked((uint)0x0020),
 }

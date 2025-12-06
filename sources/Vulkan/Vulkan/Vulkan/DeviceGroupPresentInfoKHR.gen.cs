@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceGroupPresentInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceGroupPresentInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -21,7 +19,7 @@ public unsafe partial struct DeviceGroupPresentInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -30,7 +28,7 @@ public unsafe partial struct DeviceGroupPresentInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("swapchainCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -39,7 +37,7 @@ public unsafe partial struct DeviceGroupPresentInfoKHR
     )]
     public uint SwapchainCount;
 
-    [NativeName("pDeviceMasks")]
+    [NativeTypeName("const uint32_t *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -48,7 +46,6 @@ public unsafe partial struct DeviceGroupPresentInfoKHR
     )]
     public uint* PDeviceMasks;
 
-    [NativeName("mode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],

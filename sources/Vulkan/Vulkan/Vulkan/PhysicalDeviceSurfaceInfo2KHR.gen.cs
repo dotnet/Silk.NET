@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceSurfaceInfo2KHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSurfaceInfo2KHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_get_surface_capabilities2"],
@@ -19,7 +17,7 @@ public unsafe partial struct PhysicalDeviceSurfaceInfo2KHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_get_surface_capabilities2"],
@@ -27,11 +25,11 @@ public unsafe partial struct PhysicalDeviceSurfaceInfo2KHR
     )]
     public void* PNext;
 
-    [NativeName("surface")]
+    [NativeTypeName("VkSurfaceKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_get_surface_capabilities2"],
         ImpliesSets = ["VK_KHR_surface"]
     )]
-    public SurfaceHandleKHR Surface;
+    public SurfaceKHRHandle Surface;
 }

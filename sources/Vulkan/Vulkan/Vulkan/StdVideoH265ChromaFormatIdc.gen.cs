@@ -6,23 +6,19 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoH265ChromaFormatIdc")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH265ChromaFormatIdc : uint
 {
-    [NativeName("STD_VIDEO_H265_CHROMA_FORMAT_IDC_MONOCHROME")]
     [SupportedApiProfile("vulkan")]
     IdcMonochrome = 0,
 
-    [NativeName("STD_VIDEO_H265_CHROMA_FORMAT_IDC_420")]
     [SupportedApiProfile("vulkan")]
     Idc420 = 1,
 
-    [NativeName("STD_VIDEO_H265_CHROMA_FORMAT_IDC_422")]
     [SupportedApiProfile("vulkan")]
     Idc422 = 2,
 
-    [NativeName("STD_VIDEO_H265_CHROMA_FORMAT_IDC_444")]
     [SupportedApiProfile("vulkan")]
     Idc444 = 3,
 }

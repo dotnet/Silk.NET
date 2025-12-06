@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ArrayObjectUsageATI")]
+[Transformed]
 public enum ArrayObjectUsageATI : uint
 {
-    [NativeName("GL_STATIC_ATI")]
-    Static = 34656,
-
-    [NativeName("GL_DYNAMIC_ATI")]
-    Dynamic = 34657,
+    Static = unchecked((uint)0x8760),
+    Dynamic = unchecked((uint)0x8761),
 }

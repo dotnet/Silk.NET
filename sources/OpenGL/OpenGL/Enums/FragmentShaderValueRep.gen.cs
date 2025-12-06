@@ -7,21 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("FragmentShaderValueRepATI")]
+[Transformed]
 public enum FragmentShaderValueRep : uint
 {
-    [NativeName("GL_ALPHA")]
-    Alpha = 6406,
-
-    [NativeName("GL_NONE")]
-    None = 0,
-
-    [NativeName("GL_RED")]
-    Red = 6403,
-
-    [NativeName("GL_GREEN")]
-    Green = 6404,
-
-    [NativeName("GL_BLUE")]
-    Blue = 6405,
+    None = unchecked((uint)0),
+    Red = unchecked((uint)0x1903),
+    Green = unchecked((uint)0x1904),
+    Blue = unchecked((uint)0x1905),
+    Alpha = unchecked((uint)0x1906),
 }

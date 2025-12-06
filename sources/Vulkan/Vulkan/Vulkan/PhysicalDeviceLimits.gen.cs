@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceLimits")]
 [SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceLimits
 {
-    [NativeName("maxImageDimension1D")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxImageDimension1D;
 
-    [NativeName("maxImageDimension2D")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +69,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxImageDimension2D;
 
-    [NativeName("maxImageDimension3D")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +98,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxImageDimension3D;
 
-    [NativeName("maxImageDimensionCube")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +127,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxImageDimensionCube;
 
-    [NativeName("maxImageArrayLayers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -157,7 +156,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxImageArrayLayers;
 
-    [NativeName("maxTexelBufferElements")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -186,7 +185,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTexelBufferElements;
 
-    [NativeName("maxUniformBufferRange")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -215,7 +214,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxUniformBufferRange;
 
-    [NativeName("maxStorageBufferRange")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -244,7 +243,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxStorageBufferRange;
 
-    [NativeName("maxPushConstantsSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -273,7 +272,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxPushConstantsSize;
 
-    [NativeName("maxMemoryAllocationCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -302,7 +301,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxMemoryAllocationCount;
 
-    [NativeName("maxSamplerAllocationCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -331,7 +330,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxSamplerAllocationCount;
 
-    [NativeName("bufferImageGranularity")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -360,7 +359,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public ulong BufferImageGranularity;
 
-    [NativeName("sparseAddressSpaceSize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -389,7 +388,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public ulong SparseAddressSpaceSize;
 
-    [NativeName("maxBoundDescriptorSets")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -418,7 +417,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxBoundDescriptorSets;
 
-    [NativeName("maxPerStageDescriptorSamplers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -447,7 +446,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxPerStageDescriptorSamplers;
 
-    [NativeName("maxPerStageDescriptorUniformBuffers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -476,7 +475,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxPerStageDescriptorUniformBuffers;
 
-    [NativeName("maxPerStageDescriptorStorageBuffers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -505,7 +504,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxPerStageDescriptorStorageBuffers;
 
-    [NativeName("maxPerStageDescriptorSampledImages")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -534,7 +533,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxPerStageDescriptorSampledImages;
 
-    [NativeName("maxPerStageDescriptorStorageImages")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -563,7 +562,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxPerStageDescriptorStorageImages;
 
-    [NativeName("maxPerStageDescriptorInputAttachments")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -592,7 +591,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxPerStageDescriptorInputAttachments;
 
-    [NativeName("maxPerStageResources")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -621,7 +620,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxPerStageResources;
 
-    [NativeName("maxDescriptorSetSamplers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -650,7 +649,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxDescriptorSetSamplers;
 
-    [NativeName("maxDescriptorSetUniformBuffers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -679,7 +678,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxDescriptorSetUniformBuffers;
 
-    [NativeName("maxDescriptorSetUniformBuffersDynamic")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -708,7 +707,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxDescriptorSetUniformBuffersDynamic;
 
-    [NativeName("maxDescriptorSetStorageBuffers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -737,7 +736,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxDescriptorSetStorageBuffers;
 
-    [NativeName("maxDescriptorSetStorageBuffersDynamic")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -766,7 +765,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxDescriptorSetStorageBuffersDynamic;
 
-    [NativeName("maxDescriptorSetSampledImages")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -795,7 +794,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxDescriptorSetSampledImages;
 
-    [NativeName("maxDescriptorSetStorageImages")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -824,7 +823,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxDescriptorSetStorageImages;
 
-    [NativeName("maxDescriptorSetInputAttachments")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -853,7 +852,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxDescriptorSetInputAttachments;
 
-    [NativeName("maxVertexInputAttributes")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -882,7 +881,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxVertexInputAttributes;
 
-    [NativeName("maxVertexInputBindings")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -911,7 +910,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxVertexInputBindings;
 
-    [NativeName("maxVertexInputAttributeOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -940,7 +939,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxVertexInputAttributeOffset;
 
-    [NativeName("maxVertexInputBindingStride")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -969,7 +968,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxVertexInputBindingStride;
 
-    [NativeName("maxVertexOutputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -998,7 +997,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxVertexOutputComponents;
 
-    [NativeName("maxTessellationGenerationLevel")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1027,7 +1026,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTessellationGenerationLevel;
 
-    [NativeName("maxTessellationPatchSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1056,7 +1055,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTessellationPatchSize;
 
-    [NativeName("maxTessellationControlPerVertexInputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1085,7 +1084,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTessellationControlPerVertexInputComponents;
 
-    [NativeName("maxTessellationControlPerVertexOutputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1114,7 +1113,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTessellationControlPerVertexOutputComponents;
 
-    [NativeName("maxTessellationControlPerPatchOutputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1143,7 +1142,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTessellationControlPerPatchOutputComponents;
 
-    [NativeName("maxTessellationControlTotalOutputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1172,7 +1171,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTessellationControlTotalOutputComponents;
 
-    [NativeName("maxTessellationEvaluationInputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1201,7 +1200,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTessellationEvaluationInputComponents;
 
-    [NativeName("maxTessellationEvaluationOutputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1230,7 +1229,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTessellationEvaluationOutputComponents;
 
-    [NativeName("maxGeometryShaderInvocations")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1259,7 +1258,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxGeometryShaderInvocations;
 
-    [NativeName("maxGeometryInputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1288,7 +1287,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxGeometryInputComponents;
 
-    [NativeName("maxGeometryOutputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1317,7 +1316,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxGeometryOutputComponents;
 
-    [NativeName("maxGeometryOutputVertices")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1346,7 +1345,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxGeometryOutputVertices;
 
-    [NativeName("maxGeometryTotalOutputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1375,7 +1374,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxGeometryTotalOutputComponents;
 
-    [NativeName("maxFragmentInputComponents")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1404,7 +1403,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxFragmentInputComponents;
 
-    [NativeName("maxFragmentOutputAttachments")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1433,7 +1432,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxFragmentOutputAttachments;
 
-    [NativeName("maxFragmentDualSrcAttachments")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1462,7 +1461,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxFragmentDualSrcAttachments;
 
-    [NativeName("maxFragmentCombinedOutputResources")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1491,7 +1490,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxFragmentCombinedOutputResources;
 
-    [NativeName("maxComputeSharedMemorySize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1520,7 +1519,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxComputeSharedMemorySize;
 
-    [NativeName("maxComputeWorkGroupCount")]
+    [NativeTypeName("uint32_t[3]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1549,7 +1548,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public PhysicalDeviceLimitsMaxComputeWorkGroupCount MaxComputeWorkGroupCount;
 
-    [NativeName("maxComputeWorkGroupInvocations")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1578,7 +1577,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxComputeWorkGroupInvocations;
 
-    [NativeName("maxComputeWorkGroupSize")]
+    [NativeTypeName("uint32_t[3]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1607,7 +1606,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public PhysicalDeviceLimitsMaxComputeWorkGroupSize MaxComputeWorkGroupSize;
 
-    [NativeName("subPixelPrecisionBits")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1636,7 +1635,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint SubPixelPrecisionBits;
 
-    [NativeName("subTexelPrecisionBits")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1665,7 +1664,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint SubTexelPrecisionBits;
 
-    [NativeName("mipmapPrecisionBits")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1694,7 +1693,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MipmapPrecisionBits;
 
-    [NativeName("maxDrawIndexedIndexValue")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1723,7 +1722,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxDrawIndexedIndexValue;
 
-    [NativeName("maxDrawIndirectCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1752,7 +1751,6 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxDrawIndirectCount;
 
-    [NativeName("maxSamplerLodBias")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1781,7 +1779,6 @@ public partial struct PhysicalDeviceLimits
     )]
     public float MaxSamplerLodBias;
 
-    [NativeName("maxSamplerAnisotropy")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1810,7 +1807,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public float MaxSamplerAnisotropy;
 
-    [NativeName("maxViewports")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1839,7 +1836,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxViewports;
 
-    [NativeName("maxViewportDimensions")]
+    [NativeTypeName("uint32_t[2]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1868,7 +1865,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public PhysicalDeviceLimitsMaxViewportDimensions MaxViewportDimensions;
 
-    [NativeName("viewportBoundsRange")]
+    [NativeTypeName("float[2]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1897,7 +1894,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public PhysicalDeviceLimitsViewportBoundsRange ViewportBoundsRange;
 
-    [NativeName("viewportSubPixelBits")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1926,7 +1923,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint ViewportSubPixelBits;
 
-    [NativeName("minMemoryMapAlignment")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1955,7 +1952,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public nuint MinMemoryMapAlignment;
 
-    [NativeName("minTexelBufferOffsetAlignment")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -1984,7 +1981,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public ulong MinTexelBufferOffsetAlignment;
 
-    [NativeName("minUniformBufferOffsetAlignment")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2013,7 +2010,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public ulong MinUniformBufferOffsetAlignment;
 
-    [NativeName("minStorageBufferOffsetAlignment")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2042,7 +2039,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public ulong MinStorageBufferOffsetAlignment;
 
-    [NativeName("minTexelOffset")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2071,7 +2068,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public int MinTexelOffset;
 
-    [NativeName("maxTexelOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2100,7 +2097,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTexelOffset;
 
-    [NativeName("minTexelGatherOffset")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2129,7 +2126,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public int MinTexelGatherOffset;
 
-    [NativeName("maxTexelGatherOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2158,7 +2155,6 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxTexelGatherOffset;
 
-    [NativeName("minInterpolationOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2187,7 +2183,6 @@ public partial struct PhysicalDeviceLimits
     )]
     public float MinInterpolationOffset;
 
-    [NativeName("maxInterpolationOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2216,7 +2211,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public float MaxInterpolationOffset;
 
-    [NativeName("subPixelInterpolationOffsetBits")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2245,7 +2240,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint SubPixelInterpolationOffsetBits;
 
-    [NativeName("maxFramebufferWidth")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2274,7 +2269,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxFramebufferWidth;
 
-    [NativeName("maxFramebufferHeight")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2303,7 +2298,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxFramebufferHeight;
 
-    [NativeName("maxFramebufferLayers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2332,7 +2327,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxFramebufferLayers;
 
-    [NativeName("framebufferColorSampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2361,7 +2356,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public SampleCountFlags FramebufferColorSampleCounts;
 
-    [NativeName("framebufferDepthSampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2390,7 +2385,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public SampleCountFlags FramebufferDepthSampleCounts;
 
-    [NativeName("framebufferStencilSampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2419,7 +2414,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public SampleCountFlags FramebufferStencilSampleCounts;
 
-    [NativeName("framebufferNoAttachmentsSampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2448,7 +2443,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public SampleCountFlags FramebufferNoAttachmentsSampleCounts;
 
-    [NativeName("maxColorAttachments")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2477,7 +2472,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxColorAttachments;
 
-    [NativeName("sampledImageColorSampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2506,7 +2501,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public SampleCountFlags SampledImageColorSampleCounts;
 
-    [NativeName("sampledImageIntegerSampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2535,7 +2530,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public SampleCountFlags SampledImageIntegerSampleCounts;
 
-    [NativeName("sampledImageDepthSampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2564,7 +2559,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public SampleCountFlags SampledImageDepthSampleCounts;
 
-    [NativeName("sampledImageStencilSampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2593,7 +2588,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public SampleCountFlags SampledImageStencilSampleCounts;
 
-    [NativeName("storageImageSampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2622,7 +2617,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public SampleCountFlags StorageImageSampleCounts;
 
-    [NativeName("maxSampleMaskWords")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2651,7 +2646,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxSampleMaskWords;
 
-    [NativeName("timestampComputeAndGraphics")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2680,7 +2675,6 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint TimestampComputeAndGraphics;
 
-    [NativeName("timestampPeriod")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2709,7 +2703,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public float TimestampPeriod;
 
-    [NativeName("maxClipDistances")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2738,7 +2732,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxClipDistances;
 
-    [NativeName("maxCullDistances")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2767,7 +2761,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxCullDistances;
 
-    [NativeName("maxCombinedClipAndCullDistances")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2796,7 +2790,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint MaxCombinedClipAndCullDistances;
 
-    [NativeName("discreteQueuePriorities")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2825,7 +2819,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint DiscreteQueuePriorities;
 
-    [NativeName("pointSizeRange")]
+    [NativeTypeName("float[2]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2854,7 +2848,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public PhysicalDeviceLimitsPointSizeRange PointSizeRange;
 
-    [NativeName("lineWidthRange")]
+    [NativeTypeName("float[2]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2883,7 +2877,6 @@ public partial struct PhysicalDeviceLimits
     )]
     public PhysicalDeviceLimitsLineWidthRange LineWidthRange;
 
-    [NativeName("pointSizeGranularity")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2912,7 +2905,6 @@ public partial struct PhysicalDeviceLimits
     )]
     public float PointSizeGranularity;
 
-    [NativeName("lineWidthGranularity")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2941,7 +2933,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public float LineWidthGranularity;
 
-    [NativeName("strictLines")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2970,7 +2962,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint StrictLines;
 
-    [NativeName("standardSampleLocations")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -2999,7 +2991,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public uint StandardSampleLocations;
 
-    [NativeName("optimalBufferCopyOffsetAlignment")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3028,7 +3020,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public ulong OptimalBufferCopyOffsetAlignment;
 
-    [NativeName("optimalBufferCopyRowPitchAlignment")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -3057,7 +3049,7 @@ public partial struct PhysicalDeviceLimits
     )]
     public ulong OptimalBufferCopyRowPitchAlignment;
 
-    [NativeName("nonCoherentAtomSize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [

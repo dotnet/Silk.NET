@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDefaultVertexAttributeValueKHR")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum DefaultVertexAttributeValueKHR : uint
 {
-    [NativeName("VK_DEFAULT_VERTEX_ATTRIBUTE_VALUE_ZERO_ZERO_ZERO_ZERO_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance9"],
@@ -20,9 +19,8 @@ public enum DefaultVertexAttributeValueKHR : uint
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    ZeroZeroZeroZero = 0,
+    ZeroZeroZeroZeroKHR = 0,
 
-    [NativeName("VK_DEFAULT_VERTEX_ATTRIBUTE_VALUE_ZERO_ZERO_ZERO_ONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance9"],
@@ -31,5 +29,5 @@ public enum DefaultVertexAttributeValueKHR : uint
             "VK_KHR_maintenance9+VK_VERSION_1_1",
         ]
     )]
-    ZeroZeroZeroOne = 1,
+    ZeroZeroZeroOneKHR = 1,
 }

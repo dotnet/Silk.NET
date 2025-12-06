@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceSparseProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceSparseProperties
 {
-    [NativeName("residencyStandard2DBlockShape")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,7 @@ public partial struct PhysicalDeviceSparseProperties
     )]
     public uint ResidencyStandard2DBlockShape;
 
-    [NativeName("residencyStandard2DMultisampleBlockShape")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +69,7 @@ public partial struct PhysicalDeviceSparseProperties
     )]
     public uint ResidencyStandard2DMultisampleBlockShape;
 
-    [NativeName("residencyStandard3DBlockShape")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +98,7 @@ public partial struct PhysicalDeviceSparseProperties
     )]
     public uint ResidencyStandard3DBlockShape;
 
-    [NativeName("residencyAlignedMipSize")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +127,7 @@ public partial struct PhysicalDeviceSparseProperties
     )]
     public uint ResidencyAlignedMipSize;
 
-    [NativeName("residencyNonResidentStrict")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [

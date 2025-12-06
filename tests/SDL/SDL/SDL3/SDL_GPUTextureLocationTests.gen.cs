@@ -8,37 +8,37 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuTextureLocation"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GPUTextureLocation"/> struct.</summary>
 public static unsafe partial class SDL_GPUTextureLocationTests
 {
-    /// <summary>Validates that the <see cref = "GpuTextureLocation"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GPUTextureLocation"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
-        Assert.That(Marshal.SizeOf<GpuTextureLocation>(), Is.EqualTo(sizeof(GpuTextureLocation)));
+        Assert.That(Marshal.SizeOf<GPUTextureLocation>(), Is.EqualTo(sizeof(GPUTextureLocation)));
     }
 
-    /// <summary>Validates that the <see cref = "GpuTextureLocation"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GPUTextureLocation"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuTextureLocation).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GPUTextureLocation).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuTextureLocation"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GPUTextureLocation"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GpuTextureLocation), Is.EqualTo(32));
+            Assert.That(sizeof(GPUTextureLocation), Is.EqualTo(32));
         }
         else
         {
-            Assert.That(sizeof(GpuTextureLocation), Is.EqualTo(24));
+            Assert.That(sizeof(GPUTextureLocation), Is.EqualTo(24));
         }
     }
 }

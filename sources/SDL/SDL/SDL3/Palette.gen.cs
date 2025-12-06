@@ -7,18 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_Palette")]
 public unsafe partial struct Palette
 {
-    [NativeName("ncolors")]
     public int Ncolors;
-
-    [NativeName("colors")]
     public Color* Colors;
 
-    [NativeName("version")]
+    [NativeTypeName("Uint32")]
     public uint Version;
-
-    [NativeName("refcount")]
     public int Refcount;
 }

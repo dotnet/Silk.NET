@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBindSparseInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindSparseInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public void* PNext;
 
-    [NativeName("waitSemaphoreCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +97,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public uint WaitSemaphoreCount;
 
-    [NativeName("pWaitSemaphores")]
+    [NativeTypeName("const VkSemaphore *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +126,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public SemaphoreHandle* PWaitSemaphores;
 
-    [NativeName("bufferBindCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -157,7 +155,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public uint BufferBindCount;
 
-    [NativeName("pBufferBinds")]
+    [NativeTypeName("const VkSparseBufferMemoryBindInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -186,7 +184,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public SparseBufferMemoryBindInfo* PBufferBinds;
 
-    [NativeName("imageOpaqueBindCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -215,7 +213,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public uint ImageOpaqueBindCount;
 
-    [NativeName("pImageOpaqueBinds")]
+    [NativeTypeName("const VkSparseImageOpaqueMemoryBindInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -244,7 +242,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public SparseImageOpaqueMemoryBindInfo* PImageOpaqueBinds;
 
-    [NativeName("imageBindCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -273,7 +271,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public uint ImageBindCount;
 
-    [NativeName("pImageBinds")]
+    [NativeTypeName("const VkSparseImageMemoryBindInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -302,7 +300,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public SparseImageMemoryBindInfo* PImageBinds;
 
-    [NativeName("signalSemaphoreCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -331,7 +329,7 @@ public unsafe partial struct BindSparseInfo
     )]
     public uint SignalSemaphoreCount;
 
-    [NativeName("pSignalSemaphores")]
+    [NativeTypeName("const VkSemaphore *")]
     [SupportedApiProfile(
         "vulkan",
         [

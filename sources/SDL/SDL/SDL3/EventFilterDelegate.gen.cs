@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_EventFilter")]
 public unsafe delegate byte EventFilterDelegate(void* arg0, Event* arg1);

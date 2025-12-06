@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceFaultVendorInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct DeviceFaultVendorInfoEXT
 {
-    [NativeName("description")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -21,9 +20,9 @@ public partial struct DeviceFaultVendorInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultVendorInfoExtDescription Description;
+    public DeviceFaultVendorInfoEXTDescription Description;
 
-    [NativeName("vendorFaultCode")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -34,7 +33,7 @@ public partial struct DeviceFaultVendorInfoEXT
     )]
     public ulong VendorFaultCode;
 
-    [NativeName("vendorFaultData")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],

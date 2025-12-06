@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDataGraphPipelineBuiltinModelCreateInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineBuiltinModelCreateInfoQCOM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_data_graph_model"],
@@ -19,7 +17,7 @@ public unsafe partial struct DataGraphPipelineBuiltinModelCreateInfoQCOM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_data_graph_model"],
@@ -27,7 +25,7 @@ public unsafe partial struct DataGraphPipelineBuiltinModelCreateInfoQCOM
     )]
     public void* PNext;
 
-    [NativeName("pOperation")]
+    [NativeTypeName("const VkPhysicalDeviceDataGraphOperationSupportARM *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_data_graph_model"],

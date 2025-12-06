@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCopyBufferInfo2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyBufferInfo2
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -28,7 +26,7 @@ public unsafe partial struct CopyBufferInfo2
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -45,7 +43,7 @@ public unsafe partial struct CopyBufferInfo2
     )]
     public void* PNext;
 
-    [NativeName("srcBuffer")]
+    [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +60,7 @@ public unsafe partial struct CopyBufferInfo2
     )]
     public BufferHandle SrcBuffer;
 
-    [NativeName("dstBuffer")]
+    [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -79,7 +77,7 @@ public unsafe partial struct CopyBufferInfo2
     )]
     public BufferHandle DstBuffer;
 
-    [NativeName("regionCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,7 +94,7 @@ public unsafe partial struct CopyBufferInfo2
     )]
     public uint RegionCount;
 
-    [NativeName("pRegions")]
+    [NativeTypeName("const VkBufferCopy2 *")]
     [SupportedApiProfile(
         "vulkan",
         [

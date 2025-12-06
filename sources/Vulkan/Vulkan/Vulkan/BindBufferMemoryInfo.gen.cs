@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBindBufferMemoryInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindBufferMemoryInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,7 +35,7 @@ public unsafe partial struct BindBufferMemoryInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +60,7 @@ public unsafe partial struct BindBufferMemoryInfo
     )]
     public void* PNext;
 
-    [NativeName("buffer")]
+    [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +85,7 @@ public unsafe partial struct BindBufferMemoryInfo
     )]
     public BufferHandle Buffer;
 
-    [NativeName("memory")]
+    [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -112,7 +110,7 @@ public unsafe partial struct BindBufferMemoryInfo
     )]
     public DeviceMemoryHandle Memory;
 
-    [NativeName("memoryOffset")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [

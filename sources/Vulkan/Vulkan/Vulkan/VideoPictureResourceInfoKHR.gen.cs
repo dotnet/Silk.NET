@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoPictureResourceInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoPictureResourceInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -20,7 +18,7 @@ public unsafe partial struct VideoPictureResourceInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -28,7 +26,6 @@ public unsafe partial struct VideoPictureResourceInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("codedOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -36,7 +33,6 @@ public unsafe partial struct VideoPictureResourceInfoKHR
     )]
     public Offset2D CodedOffset;
 
-    [NativeName("codedExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -44,7 +40,7 @@ public unsafe partial struct VideoPictureResourceInfoKHR
     )]
     public Extent2D CodedExtent;
 
-    [NativeName("baseArrayLayer")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -52,7 +48,7 @@ public unsafe partial struct VideoPictureResourceInfoKHR
     )]
     public uint BaseArrayLayer;
 
-    [NativeName("imageViewBinding")]
+    [NativeTypeName("VkImageView")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

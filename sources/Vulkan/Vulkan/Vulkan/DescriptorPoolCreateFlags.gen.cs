@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorPoolCreateFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum DescriptorPoolCreateFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +38,6 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     FreeDescriptorSetBit = 0x1,
 
-    [NativeName("VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +55,6 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     UpdateAfterBindBit = 0x2,
 
-    [NativeName("VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mutable_descriptor_type"],
@@ -68,7 +65,6 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     HostOnlyBitEXT = 0x4,
 
-    [NativeName("VK_DESCRIPTOR_POOL_CREATE_ALLOW_OVERALLOCATION_SETS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_descriptor_pool_overallocation"],
@@ -76,7 +72,6 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     AllowOverallocationSetsBitNV = 0x8,
 
-    [NativeName("VK_DESCRIPTOR_POOL_CREATE_ALLOW_OVERALLOCATION_POOLS_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_descriptor_pool_overallocation"],
@@ -84,7 +79,6 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     AllowOverallocationPoolsBitNV = 0x10,
 
-    [NativeName("VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_indexing"],
@@ -95,11 +89,10 @@ public enum DescriptorPoolCreateFlags : uint
     )]
     UpdateAfterBindBitEXT = UpdateAfterBindBit,
 
-    [NativeName("VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_mutable_descriptor_type"],
         ImpliesSets = ["VK_KHR_maintenance3"]
     )]
-    HostOnlyBitVALVE = HostOnlyBitEXT,
+    HostOnlyBitValve = HostOnlyBitEXT,
 }

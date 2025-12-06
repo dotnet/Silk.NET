@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("VertexAttribLType")]
+[Transformed]
 public enum VertexAttribLType : uint
 {
-    [NativeName("GL_DOUBLE")]
-    Double = 5130,
+    Double = unchecked((uint)0x140A),
 }

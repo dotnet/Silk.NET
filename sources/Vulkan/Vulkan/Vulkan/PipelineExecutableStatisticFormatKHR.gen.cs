@@ -6,11 +6,10 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineExecutableStatisticFormatKHR")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum PipelineExecutableStatisticFormatKHR : uint
 {
-    [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_BOOL32_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -19,9 +18,8 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Bool32 = 0,
+    Bool32KHR = 0,
 
-    [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_INT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -30,9 +28,8 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Int64 = 1,
+    Int64KHR = 1,
 
-    [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_UINT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -41,9 +38,8 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Uint64 = 2,
+    Uint64KHR = 2,
 
-    [NativeName("VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_FLOAT64_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -52,5 +48,5 @@ public enum PipelineExecutableStatisticFormatKHR : uint
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    Float64 = 3,
+    Float64KHR = 3,
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceOpacityMicromapFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceOpacityMicromapFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("micromap")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapFeaturesEXT
     )]
     public uint Micromap;
 
-    [NativeName("micromapCaptureReplay")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -56,7 +53,7 @@ public unsafe partial struct PhysicalDeviceOpacityMicromapFeaturesEXT
     )]
     public uint MicromapCaptureReplay;
 
-    [NativeName("micromapHostCommands")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

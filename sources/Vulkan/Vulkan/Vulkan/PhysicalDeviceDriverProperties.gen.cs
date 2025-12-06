@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDriverProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDriverProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -32,7 +30,6 @@ public unsafe partial struct PhysicalDeviceDriverProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -53,7 +50,6 @@ public unsafe partial struct PhysicalDeviceDriverProperties
     )]
     public void* PNext;
 
-    [NativeName("driverID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -72,9 +68,9 @@ public unsafe partial struct PhysicalDeviceDriverProperties
         ],
         MinVersion = "1.2"
     )]
-    public DriverId DriverId;
+    public DriverId DriverID;
 
-    [NativeName("driverName")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -95,7 +91,7 @@ public unsafe partial struct PhysicalDeviceDriverProperties
     )]
     public PhysicalDeviceDriverPropertiesDriverName DriverName;
 
-    [NativeName("driverInfo")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -116,7 +112,6 @@ public unsafe partial struct PhysicalDeviceDriverProperties
     )]
     public PhysicalDeviceDriverPropertiesDriverInfo DriverInfo;
 
-    [NativeName("conformanceVersion")]
     [SupportedApiProfile(
         "vulkan",
         [

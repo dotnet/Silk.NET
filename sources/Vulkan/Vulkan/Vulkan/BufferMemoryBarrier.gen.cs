@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBufferMemoryBarrier")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BufferMemoryBarrier
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct BufferMemoryBarrier
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,7 @@ public unsafe partial struct BufferMemoryBarrier
     )]
     public void* PNext;
 
-    [NativeName("srcAccessMask")]
+    [NativeTypeName("VkAccessFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +97,7 @@ public unsafe partial struct BufferMemoryBarrier
     )]
     public AccessFlags SrcAccessMask;
 
-    [NativeName("dstAccessMask")]
+    [NativeTypeName("VkAccessFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +126,7 @@ public unsafe partial struct BufferMemoryBarrier
     )]
     public AccessFlags DstAccessMask;
 
-    [NativeName("srcQueueFamilyIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -157,7 +155,7 @@ public unsafe partial struct BufferMemoryBarrier
     )]
     public uint SrcQueueFamilyIndex;
 
-    [NativeName("dstQueueFamilyIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -186,7 +184,7 @@ public unsafe partial struct BufferMemoryBarrier
     )]
     public uint DstQueueFamilyIndex;
 
-    [NativeName("buffer")]
+    [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -215,7 +213,7 @@ public unsafe partial struct BufferMemoryBarrier
     )]
     public BufferHandle Buffer;
 
-    [NativeName("offset")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -244,7 +242,7 @@ public unsafe partial struct BufferMemoryBarrier
     )]
     public ulong Offset;
 
-    [NativeName("size")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [

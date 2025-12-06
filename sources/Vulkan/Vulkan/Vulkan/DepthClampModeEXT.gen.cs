@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDepthClampModeEXT")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum DepthClampModeEXT : uint
 {
-    [NativeName("VK_DEPTH_CLAMP_MODE_VIEWPORT_RANGE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clamp_control"],
@@ -21,9 +20,8 @@ public enum DepthClampModeEXT : uint
             "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
         ]
     )]
-    ViewportRange = 0,
+    ViewportRangeEXT = 0,
 
-    [NativeName("VK_DEPTH_CLAMP_MODE_USER_DEFINED_RANGE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clamp_control"],
@@ -32,5 +30,5 @@ public enum DepthClampModeEXT : uint
             "VK_EXT_depth_clamp_control+VK_VERSION_1_1",
         ]
     )]
-    UserDefinedRange = 1,
+    UserDefinedRangeEXT = 1,
 }

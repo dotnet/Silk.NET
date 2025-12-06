@@ -7,48 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("SamplePatternSGIS")]
+[Transformed]
 public enum SamplePatternSGIS : uint
 {
-    [NativeName("GL_1PASS_EXT")]
-    X1PassEXT = 32929,
-
-    [NativeName("GL_2PASS_0_EXT")]
-    X2Pass0EXT = 32930,
-
-    [NativeName("GL_2PASS_1_EXT")]
-    X2Pass1EXT = 32931,
-
-    [NativeName("GL_4PASS_0_EXT")]
-    X4Pass0EXT = 32932,
-
-    [NativeName("GL_4PASS_1_EXT")]
-    X4Pass1EXT = 32933,
-
-    [NativeName("GL_4PASS_2_EXT")]
-    X4Pass2EXT = 32934,
-
-    [NativeName("GL_4PASS_3_EXT")]
-    X4Pass3EXT = 32935,
-
-    [NativeName("GL_1PASS_SGIS")]
-    X1Pass = 32929,
-
-    [NativeName("GL_2PASS_0_SGIS")]
-    X2Pass0 = 32930,
-
-    [NativeName("GL_2PASS_1_SGIS")]
-    X2Pass1 = 32931,
-
-    [NativeName("GL_4PASS_0_SGIS")]
-    X4Pass0 = 32932,
-
-    [NativeName("GL_4PASS_1_SGIS")]
-    X4Pass1 = 32933,
-
-    [NativeName("GL_4PASS_2_SGIS")]
-    X4Pass2 = 32934,
-
-    [NativeName("GL_4PASS_3_SGIS")]
-    X4Pass3 = 32935,
+    X1PassEXT = unchecked((uint)0x80A1),
+    X2Pass0EXT = unchecked((uint)0x80A2),
+    X2Pass1EXT = unchecked((uint)0x80A3),
+    X4Pass0EXT = unchecked((uint)0x80A4),
+    X4Pass1EXT = unchecked((uint)0x80A5),
+    X4Pass2EXT = unchecked((uint)0x80A6),
+    X4Pass3EXT = unchecked((uint)0x80A7),
+    X1PassSGIS = unchecked((uint)0x80A1),
+    X2Pass0Sgis = unchecked((uint)0x80A2),
+    X2Pass1Sgis = unchecked((uint)0x80A3),
+    X4Pass0Sgis = unchecked((uint)0x80A4),
+    X4Pass1Sgis = unchecked((uint)0x80A5),
+    X4Pass2Sgis = unchecked((uint)0x80A6),
+    X4Pass3Sgis = unchecked((uint)0x80A7),
 }

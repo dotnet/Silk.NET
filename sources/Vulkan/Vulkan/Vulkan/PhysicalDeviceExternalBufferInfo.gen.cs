@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceExternalBufferInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExternalBufferInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,7 +35,7 @@ public unsafe partial struct PhysicalDeviceExternalBufferInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +60,7 @@ public unsafe partial struct PhysicalDeviceExternalBufferInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkBufferCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +85,7 @@ public unsafe partial struct PhysicalDeviceExternalBufferInfo
     )]
     public BufferCreateFlags Flags;
 
-    [NativeName("usage")]
+    [NativeTypeName("VkBufferUsageFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -112,7 +110,6 @@ public unsafe partial struct PhysicalDeviceExternalBufferInfo
     )]
     public BufferUsageFlags Usage;
 
-    [NativeName("handleType")]
     [SupportedApiProfile(
         "vulkan",
         [

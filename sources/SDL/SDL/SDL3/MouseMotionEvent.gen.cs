@@ -7,36 +7,26 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_MouseMotionEvent")]
 public partial struct MouseMotionEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("windowID")]
-    public uint WindowId;
+    [NativeTypeName("SDL_WindowID")]
+    public uint WindowID;
 
-    [NativeName("which")]
+    [NativeTypeName("SDL_MouseID")]
     public uint Which;
 
-    [NativeName("state")]
+    [NativeTypeName("SDL_MouseButtonFlags")]
     public uint State;
-
-    [NativeName("x")]
     public float X;
-
-    [NativeName("y")]
     public float Y;
-
-    [NativeName("xrel")]
     public float Xrel;
-
-    [NativeName("yrel")]
     public float Yrel;
 }

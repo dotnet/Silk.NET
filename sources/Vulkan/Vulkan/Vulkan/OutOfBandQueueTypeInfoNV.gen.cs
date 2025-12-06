@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkOutOfBandQueueTypeInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct OutOfBandQueueTypeInfoNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -25,7 +23,7 @@ public unsafe partial struct OutOfBandQueueTypeInfoNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -38,7 +36,6 @@ public unsafe partial struct OutOfBandQueueTypeInfoNV
     )]
     public void* PNext;
 
-    [NativeName("queueType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],

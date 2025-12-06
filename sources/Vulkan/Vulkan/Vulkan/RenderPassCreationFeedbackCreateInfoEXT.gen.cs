@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderPassCreationFeedbackCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassCreationFeedbackCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -22,7 +20,7 @@ public unsafe partial struct RenderPassCreationFeedbackCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -33,7 +31,6 @@ public unsafe partial struct RenderPassCreationFeedbackCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("pRenderPassFeedback")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],

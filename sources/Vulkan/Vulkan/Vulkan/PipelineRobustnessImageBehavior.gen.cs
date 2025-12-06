@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineRobustnessImageBehavior")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum PipelineRobustnessImageBehavior : uint
 {
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -20,7 +19,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     DeviceDefault = 0,
 
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -28,7 +26,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     Disabled = 1,
 
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -36,7 +33,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     RobustImageAccess = 2,
 
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -44,7 +40,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     RobustImageAccess2 = 3,
 
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DEVICE_DEFAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_robustness"],
@@ -55,7 +50,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     DeviceDefaultEXT = DeviceDefault,
 
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_DISABLED_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_robustness"],
@@ -66,7 +60,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     DisabledEXT = Disabled,
 
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_robustness"],
@@ -77,7 +70,6 @@ public enum PipelineRobustnessImageBehavior : uint
     )]
     RobustImageAccessEXT = RobustImageAccess,
 
-    [NativeName("VK_PIPELINE_ROBUSTNESS_IMAGE_BEHAVIOR_ROBUST_IMAGE_ACCESS_2_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_robustness"],

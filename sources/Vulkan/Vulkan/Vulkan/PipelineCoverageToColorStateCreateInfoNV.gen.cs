@@ -8,27 +8,25 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineCoverageToColorStateCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineCoverageToColorStateCreateInfoNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineCoverageToColorStateCreateFlagsNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
     public uint Flags;
 
-    [NativeName("coverageToColorEnable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
     public uint CoverageToColorEnable;
 
-    [NativeName("coverageToColorLocation")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NV_fragment_coverage_to_color"])]
     public uint CoverageToColorLocation;
 }

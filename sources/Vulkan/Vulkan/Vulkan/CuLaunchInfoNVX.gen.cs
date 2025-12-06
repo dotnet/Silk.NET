@@ -8,63 +8,61 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCuLaunchInfoNVX")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CuLaunchInfoNVX
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public void* PNext;
 
-    [NativeName("function")]
+    [NativeTypeName("VkCuFunctionNVX")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
-    public CuFunctionHandleNVX Function;
+    public CuFunctionNVXHandle Function;
 
-    [NativeName("gridDimX")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint GridDimX;
 
-    [NativeName("gridDimY")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint GridDimY;
 
-    [NativeName("gridDimZ")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint GridDimZ;
 
-    [NativeName("blockDimX")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint BlockDimX;
 
-    [NativeName("blockDimY")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint BlockDimY;
 
-    [NativeName("blockDimZ")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint BlockDimZ;
 
-    [NativeName("sharedMemBytes")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public uint SharedMemBytes;
 
-    [NativeName("paramCount")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public nuint ParamCount;
 
-    [NativeName("pParams")]
+    [NativeTypeName("const void *const *")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public void** PParams;
 
-    [NativeName("extraCount")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public nuint ExtraCount;
 
-    [NativeName("pExtras")]
+    [NativeTypeName("const void *const *")]
     [SupportedApiProfile("vulkan", ["VK_NVX_binary_import"])]
     public void** PExtras;
 }

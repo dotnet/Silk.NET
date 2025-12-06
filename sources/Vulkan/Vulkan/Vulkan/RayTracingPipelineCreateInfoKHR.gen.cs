@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRayTracingPipelineCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RayTracingPipelineCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -23,7 +21,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -34,7 +32,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -45,7 +43,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public PipelineCreateFlags Flags;
 
-    [NativeName("stageCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -56,7 +54,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public uint StageCount;
 
-    [NativeName("pStages")]
+    [NativeTypeName("const VkPipelineShaderStageCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -67,7 +65,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public PipelineShaderStageCreateInfo* PStages;
 
-    [NativeName("groupCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -78,7 +76,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public uint GroupCount;
 
-    [NativeName("pGroups")]
+    [NativeTypeName("const VkRayTracingShaderGroupCreateInfoKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -89,7 +87,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public RayTracingShaderGroupCreateInfoKHR* PGroups;
 
-    [NativeName("maxPipelineRayRecursionDepth")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -100,7 +98,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public uint MaxPipelineRayRecursionDepth;
 
-    [NativeName("pLibraryInfo")]
+    [NativeTypeName("const VkPipelineLibraryCreateInfoKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -111,7 +109,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public PipelineLibraryCreateInfoKHR* PLibraryInfo;
 
-    [NativeName("pLibraryInterface")]
+    [NativeTypeName("const VkRayTracingPipelineInterfaceCreateInfoKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -122,7 +120,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public RayTracingPipelineInterfaceCreateInfoKHR* PLibraryInterface;
 
-    [NativeName("pDynamicState")]
+    [NativeTypeName("const VkPipelineDynamicStateCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -133,7 +131,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public PipelineDynamicStateCreateInfo* PDynamicState;
 
-    [NativeName("layout")]
+    [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -144,7 +142,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public PipelineLayoutHandle Layout;
 
-    [NativeName("basePipelineHandle")]
+    [NativeTypeName("VkPipeline")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -155,7 +153,7 @@ public unsafe partial struct RayTracingPipelineCreateInfoKHR
     )]
     public PipelineHandle BasePipelineHandle;
 
-    [NativeName("basePipelineIndex")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],

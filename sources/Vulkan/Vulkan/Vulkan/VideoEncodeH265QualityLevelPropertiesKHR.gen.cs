@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH265QualityLevelPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -19,7 +17,6 @@ public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -27,7 +24,7 @@ public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("preferredRateControlFlags")]
+    [NativeTypeName("VkVideoEncodeH265RateControlFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -35,7 +32,7 @@ public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
     )]
     public VideoEncodeH265RateControlFlagsKHR PreferredRateControlFlags;
 
-    [NativeName("preferredGopFrameCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -43,7 +40,7 @@ public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
     )]
     public uint PreferredGopFrameCount;
 
-    [NativeName("preferredIdrPeriod")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -51,7 +48,7 @@ public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
     )]
     public uint PreferredIdrPeriod;
 
-    [NativeName("preferredConsecutiveBFrameCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -59,7 +56,7 @@ public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
     )]
     public uint PreferredConsecutiveBFrameCount;
 
-    [NativeName("preferredSubLayerCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -67,7 +64,6 @@ public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
     )]
     public uint PreferredSubLayerCount;
 
-    [NativeName("preferredConstantQp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -75,7 +71,7 @@ public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
     )]
     public VideoEncodeH265QpKHR PreferredConstantQp;
 
-    [NativeName("preferredMaxL0ReferenceCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -83,7 +79,7 @@ public unsafe partial struct VideoEncodeH265QualityLevelPropertiesKHR
     )]
     public uint PreferredMaxL0ReferenceCount;
 
-    [NativeName("preferredMaxL1ReferenceCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],

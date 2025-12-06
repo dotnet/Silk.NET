@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAttachmentSampleLocationsEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct AttachmentSampleLocationsEXT
 {
-    [NativeName("attachmentIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -23,7 +22,6 @@ public partial struct AttachmentSampleLocationsEXT
     )]
     public uint AttachmentIndex;
 
-    [NativeName("sampleLocationsInfo")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],

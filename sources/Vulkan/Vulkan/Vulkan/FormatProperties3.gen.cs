@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFormatProperties3")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FormatProperties3
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +27,6 @@ public unsafe partial struct FormatProperties3
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,7 +43,7 @@ public unsafe partial struct FormatProperties3
     )]
     public void* PNext;
 
-    [NativeName("linearTilingFeatures")]
+    [NativeTypeName("VkFormatFeatureFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,7 +60,7 @@ public unsafe partial struct FormatProperties3
     )]
     public FormatFeatureFlags2 LinearTilingFeatures;
 
-    [NativeName("optimalTilingFeatures")]
+    [NativeTypeName("VkFormatFeatureFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -80,7 +77,7 @@ public unsafe partial struct FormatProperties3
     )]
     public FormatFeatureFlags2 OptimalTilingFeatures;
 
-    [NativeName("bufferFeatures")]
+    [NativeTypeName("VkFormatFeatureFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [

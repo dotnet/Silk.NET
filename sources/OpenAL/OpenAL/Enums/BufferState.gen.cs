@@ -10,15 +10,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("BufferState")]
+[Transformed]
 public enum BufferState : uint
 {
-    [NativeName("AL_UNUSED")]
-    Unused = 8208,
-
-    [NativeName("AL_PENDING")]
-    Pending = 8209,
-
-    [NativeName("AL_PROCESSED")]
-    Processed = 8210,
+    Unused = unchecked((uint)0x2010),
+    Pending = unchecked((uint)0x2011),
+    Processed = unchecked((uint)0x2012),
 }

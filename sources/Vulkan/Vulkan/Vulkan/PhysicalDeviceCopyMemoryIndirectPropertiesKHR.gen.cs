@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceCopyMemoryIndirectPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCopyMemoryIndirectPropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceCopyMemoryIndirectPropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceCopyMemoryIndirectPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("supportedQueues")]
+    [NativeTypeName("VkQueueFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],

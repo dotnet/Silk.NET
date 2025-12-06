@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceRenderPassStripedPropertiesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRenderPassStripedPropertiesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],
@@ -24,7 +22,6 @@ public unsafe partial struct PhysicalDeviceRenderPassStripedPropertiesARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],
@@ -36,7 +33,6 @@ public unsafe partial struct PhysicalDeviceRenderPassStripedPropertiesARM
     )]
     public void* PNext;
 
-    [NativeName("renderPassStripeGranularity")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],
@@ -48,7 +44,7 @@ public unsafe partial struct PhysicalDeviceRenderPassStripedPropertiesARM
     )]
     public Extent2D RenderPassStripeGranularity;
 
-    [NativeName("maxRenderPassStripes")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],

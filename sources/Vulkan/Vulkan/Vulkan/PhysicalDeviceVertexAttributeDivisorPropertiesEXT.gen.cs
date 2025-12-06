@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVertexAttributeDivisorPropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_attribute_divisor"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceVertexAttributeDivisorPropertiesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_attribute_divisor"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceVertexAttributeDivisorPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeName("maxVertexAttribDivisor")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_attribute_divisor"],

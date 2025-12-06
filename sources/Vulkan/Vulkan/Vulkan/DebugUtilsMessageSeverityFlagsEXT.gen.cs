@@ -8,26 +8,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDebugUtilsMessageSeverityFlagBitsEXT")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum DebugUtilsMessageSeverityFlagsEXT : uint
 {
     None = 0x0,
 
-    [NativeName("VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    VerboseBit = 0x1,
+    VerboseBitEXT = 0x1,
 
-    [NativeName("VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    InfoBit = 0x10,
+    InfoBitEXT = 0x10,
 
-    [NativeName("VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    WarningBit = 0x100,
+    WarningBitEXT = 0x100,
 
-    [NativeName("VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    ErrorBit = 0x1000,
+    ErrorBitEXT = 0x1000,
 }

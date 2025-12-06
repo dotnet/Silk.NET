@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoFormatQuantizationMapPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoFormatQuantizationMapPropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_quantization_map"],
@@ -22,7 +20,6 @@ public unsafe partial struct VideoFormatQuantizationMapPropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_quantization_map"],
@@ -33,7 +30,6 @@ public unsafe partial struct VideoFormatQuantizationMapPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("quantizationMapTexelSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_quantization_map"],

@@ -6,5 +6,5 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[NativeName("SDL_VirtualJoystickDesc_SendEffect")]
+[Transformed]
 public unsafe delegate byte VirtualJoystickDescSendEffectDelegate(void* arg0, void* arg1, int arg2);

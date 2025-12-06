@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineColorWriteCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineColorWriteCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_color_write_enable"],
@@ -22,7 +20,7 @@ public unsafe partial struct PipelineColorWriteCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_color_write_enable"],
@@ -33,7 +31,7 @@ public unsafe partial struct PipelineColorWriteCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("attachmentCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_color_write_enable"],
@@ -44,7 +42,7 @@ public unsafe partial struct PipelineColorWriteCreateInfoEXT
     )]
     public uint AttachmentCount;
 
-    [NativeName("pColorWriteEnables")]
+    [NativeTypeName("const VkBool32 *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_color_write_enable"],

@@ -7,22 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoSessionCreateFlagBitsKHR")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum VideoSessionCreateFlagsKHR : uint
 {
     None = 0x0,
 
-    [NativeName("VK_VIDEO_SESSION_CREATE_PROTECTED_CONTENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    ProtectedContentBit = 0x1,
+    ProtectedContentBitKHR = 0x1,
 
-    [NativeName("VK_VIDEO_SESSION_CREATE_ALLOW_ENCODE_PARAMETER_OPTIMIZATIONS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -31,17 +29,15 @@ public enum VideoSessionCreateFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    AllowEncodeParameterOptimizationsBit = 0x2,
+    AllowEncodeParameterOptimizationsBitKHR = 0x2,
 
-    [NativeName("VK_VIDEO_SESSION_CREATE_INLINE_QUERIES_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
         ImpliesSets = ["VK_KHR_video_queue"]
     )]
-    InlineQueriesBit = 0x4,
+    InlineQueriesBitKHR = 0x4,
 
-    [NativeName("VK_VIDEO_SESSION_CREATE_ALLOW_ENCODE_QUANTIZATION_DELTA_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_quantization_map"],
@@ -50,9 +46,8 @@ public enum VideoSessionCreateFlagsKHR : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    AllowEncodeQuantizationDeltaMapBit = 0x8,
+    AllowEncodeQuantizationDeltaMapBitKHR = 0x8,
 
-    [NativeName("VK_VIDEO_SESSION_CREATE_ALLOW_ENCODE_EMPHASIS_MAP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_quantization_map"],
@@ -61,14 +56,13 @@ public enum VideoSessionCreateFlagsKHR : uint
             "VK_KHR_video_encode_queue+VK_VERSION_1_3",
         ]
     )]
-    AllowEncodeEmphasisMapBit = 0x10,
+    AllowEncodeEmphasisMapBitKHR = 0x10,
 
-    [NativeName("VK_VIDEO_SESSION_CREATE_INLINE_SESSION_PARAMETERS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue", "VK_KHR_video_maintenance2"],
         ImpliesSets = ["VK_KHR_video_queue"],
         RequireAll = true
     )]
-    InlineSessionParametersBit = 0x20,
+    InlineSessionParametersBitKHR = 0x20,
 }

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkHostImageLayoutTransitionInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct HostImageLayoutTransitionInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -24,7 +22,7 @@ public unsafe partial struct HostImageLayoutTransitionInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,7 +35,7 @@ public unsafe partial struct HostImageLayoutTransitionInfo
     )]
     public void* PNext;
 
-    [NativeName("image")]
+    [NativeTypeName("VkImage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +48,6 @@ public unsafe partial struct HostImageLayoutTransitionInfo
     )]
     public ImageHandle Image;
 
-    [NativeName("oldLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,7 +60,6 @@ public unsafe partial struct HostImageLayoutTransitionInfo
     )]
     public ImageLayout OldLayout;
 
-    [NativeName("newLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -76,7 +72,6 @@ public unsafe partial struct HostImageLayoutTransitionInfo
     )]
     public ImageLayout NewLayout;
 
-    [NativeName("subresourceRange")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("_axis_e__Struct")]
 public partial struct GamepadBindingOutputAxis
 {
-    [NativeName("axis")]
     public GamepadAxis Axis;
-
-    [NativeName("axis_min")]
     public int AxisMin;
-
-    [NativeName("axis_max")]
     public int AxisMax;
 }

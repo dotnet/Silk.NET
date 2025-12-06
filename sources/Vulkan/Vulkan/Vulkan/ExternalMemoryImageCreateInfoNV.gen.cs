@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExternalMemoryImageCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ExternalMemoryImageCreateInfoNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory"],
@@ -20,7 +18,7 @@ public unsafe partial struct ExternalMemoryImageCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory"],
@@ -28,7 +26,7 @@ public unsafe partial struct ExternalMemoryImageCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeName("handleTypes")]
+    [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory"],

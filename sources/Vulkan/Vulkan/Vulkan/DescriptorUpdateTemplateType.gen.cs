@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorUpdateTemplateType")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum DescriptorUpdateTemplateType : uint
 {
-    [NativeName("VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +32,6 @@ public enum DescriptorUpdateTemplateType : uint
     )]
     DescriptorSet = 0,
 
-    [NativeName("VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_PUSH_DESCRIPTORS")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -41,7 +39,6 @@ public enum DescriptorUpdateTemplateType : uint
     )]
     PushDescriptors = 1,
 
-    [NativeName("VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_PUSH_DESCRIPTORS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -55,7 +52,6 @@ public enum DescriptorUpdateTemplateType : uint
     )]
     PushDescriptorsKHR = PushDescriptors,
 
-    [NativeName("VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_descriptor_update_template"])]
     DescriptorSetKHR = DescriptorSet,
 }

@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ProgramFormat")]
+[Transformed]
 public enum ProgramFormat : uint
 {
-    [NativeName("GL_PROGRAM_FORMAT_ASCII_ARB")]
-    ProgramFormatAsciiARB = 34933,
+    ProgramFormatAsciiARB = unchecked((uint)0x8875),
 }

@@ -7,18 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("FragmentShaderDestMaskATI")]
+[Transformed]
 public enum FragmentShaderDestMask : uint
 {
-    [NativeName("GL_NONE")]
-    None = 0,
-
-    [NativeName("GL_RED_BIT_ATI")]
-    RedBitATI = 1,
-
-    [NativeName("GL_GREEN_BIT_ATI")]
-    GreenBitATI = 2,
-
-    [NativeName("GL_BLUE_BIT_ATI")]
-    BlueBitATI = 4,
+    None = unchecked((uint)0),
+    RedBitATI = unchecked((uint)0x00000001),
+    GreenBitATI = unchecked((uint)0x00000002),
+    BlueBitATI = unchecked((uint)0x00000004),
 }

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_AppEvent_func")]
 public readonly unsafe struct AppEventFunc : IDisposable
 {
     private readonly void* Pointer;

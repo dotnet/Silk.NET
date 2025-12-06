@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSampleLocationsInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SampleLocationsInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -23,7 +21,7 @@ public unsafe partial struct SampleLocationsInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -34,7 +32,6 @@ public unsafe partial struct SampleLocationsInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("sampleLocationsPerPixel")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -45,7 +42,6 @@ public unsafe partial struct SampleLocationsInfoEXT
     )]
     public SampleCountFlags SampleLocationsPerPixel;
 
-    [NativeName("sampleLocationGridSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -56,7 +52,7 @@ public unsafe partial struct SampleLocationsInfoEXT
     )]
     public Extent2D SampleLocationGridSize;
 
-    [NativeName("sampleLocationsCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -67,7 +63,7 @@ public unsafe partial struct SampleLocationsInfoEXT
     )]
     public uint SampleLocationsCount;
 
-    [NativeName("pSampleLocations")]
+    [NativeTypeName("const VkSampleLocationEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryMapPlacedInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryMapPlacedInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_map_memory_placed"],
@@ -23,7 +21,7 @@ public unsafe partial struct MemoryMapPlacedInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_map_memory_placed"],
@@ -34,7 +32,6 @@ public unsafe partial struct MemoryMapPlacedInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("pPlacedAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_map_memory_placed"],

@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorBindingFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum DescriptorBindingFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +32,6 @@ public enum DescriptorBindingFlags : uint
     )]
     UpdateAfterBindBit = 0x1,
 
-    [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +49,6 @@ public enum DescriptorBindingFlags : uint
     )]
     UpdateUnusedWhilePendingBit = 0x2,
 
-    [NativeName("VK_DESCRIPTOR_BINDING_PARTIALLY_BOUND_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +66,6 @@ public enum DescriptorBindingFlags : uint
     )]
     PartiallyBoundBit = 0x4,
 
-    [NativeName("VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +83,6 @@ public enum DescriptorBindingFlags : uint
     )]
     VariableDescriptorCountBit = 0x8,
 
-    [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_indexing"],
@@ -98,7 +93,6 @@ public enum DescriptorBindingFlags : uint
     )]
     UpdateAfterBindBitEXT = UpdateAfterBindBit,
 
-    [NativeName("VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_indexing"],
@@ -109,7 +103,6 @@ public enum DescriptorBindingFlags : uint
     )]
     UpdateUnusedWhilePendingBitEXT = UpdateUnusedWhilePendingBit,
 
-    [NativeName("VK_DESCRIPTOR_BINDING_PARTIALLY_BOUND_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_indexing"],
@@ -120,7 +113,6 @@ public enum DescriptorBindingFlags : uint
     )]
     PartiallyBoundBitEXT = PartiallyBoundBit,
 
-    [NativeName("VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_indexing"],

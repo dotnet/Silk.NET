@@ -8,12 +8,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_driverInfo_e__FixedBuffer")]
 [InlineArray(256)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    [
+        "VK_BASE_VERSION_1_2",
+        "VK_BASE_VERSION_1_3",
+        "VK_BASE_VERSION_1_4",
+        "VK_COMPUTE_VERSION_1_2",
+        "VK_COMPUTE_VERSION_1_3",
+        "VK_COMPUTE_VERSION_1_4",
+        "VK_GRAPHICS_VERSION_1_2",
+        "VK_GRAPHICS_VERSION_1_3",
+        "VK_GRAPHICS_VERSION_1_4",
+        "VK_VERSION_1_2",
+        "VK_VERSION_1_3",
+        "VK_VERSION_1_4",
+    ],
+    MinVersion = "1.2"
+)]
 public partial struct PhysicalDeviceVulkan12PropertiesDriverInfo
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

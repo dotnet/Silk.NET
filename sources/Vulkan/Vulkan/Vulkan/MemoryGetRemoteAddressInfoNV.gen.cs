@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryGetRemoteAddressInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryGetRemoteAddressInfoNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory_rdma"],
@@ -22,7 +20,7 @@ public unsafe partial struct MemoryGetRemoteAddressInfoNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory_rdma"],
@@ -33,7 +31,7 @@ public unsafe partial struct MemoryGetRemoteAddressInfoNV
     )]
     public void* PNext;
 
-    [NativeName("memory")]
+    [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory_rdma"],
@@ -44,7 +42,6 @@ public unsafe partial struct MemoryGetRemoteAddressInfoNV
     )]
     public DeviceMemoryHandle Memory;
 
-    [NativeName("handleType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory_rdma"],

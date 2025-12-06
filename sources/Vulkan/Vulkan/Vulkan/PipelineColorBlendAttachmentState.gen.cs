@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineColorBlendAttachmentState")]
 [SupportedApiProfile("vulkan")]
 public partial struct PipelineColorBlendAttachmentState
 {
-    [NativeName("blendEnable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,7 +30,6 @@ public partial struct PipelineColorBlendAttachmentState
     )]
     public uint BlendEnable;
 
-    [NativeName("srcColorBlendFactor")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +48,6 @@ public partial struct PipelineColorBlendAttachmentState
     )]
     public BlendFactor SrcColorBlendFactor;
 
-    [NativeName("dstColorBlendFactor")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +66,6 @@ public partial struct PipelineColorBlendAttachmentState
     )]
     public BlendFactor DstColorBlendFactor;
 
-    [NativeName("colorBlendOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -88,7 +84,6 @@ public partial struct PipelineColorBlendAttachmentState
     )]
     public BlendOp ColorBlendOp;
 
-    [NativeName("srcAlphaBlendFactor")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -107,7 +102,6 @@ public partial struct PipelineColorBlendAttachmentState
     )]
     public BlendFactor SrcAlphaBlendFactor;
 
-    [NativeName("dstAlphaBlendFactor")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +120,6 @@ public partial struct PipelineColorBlendAttachmentState
     )]
     public BlendFactor DstAlphaBlendFactor;
 
-    [NativeName("alphaBlendOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -145,7 +138,7 @@ public partial struct PipelineColorBlendAttachmentState
     )]
     public BlendOp AlphaBlendOp;
 
-    [NativeName("colorWriteMask")]
+    [NativeTypeName("VkColorComponentFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

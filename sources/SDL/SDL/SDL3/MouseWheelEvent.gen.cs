@@ -7,36 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_MouseWheelEvent")]
 public partial struct MouseWheelEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("windowID")]
-    public uint WindowId;
+    [NativeTypeName("SDL_WindowID")]
+    public uint WindowID;
 
-    [NativeName("which")]
+    [NativeTypeName("SDL_MouseID")]
     public uint Which;
-
-    [NativeName("x")]
     public float X;
-
-    [NativeName("y")]
     public float Y;
-
-    [NativeName("direction")]
     public MouseWheelDirection Direction;
-
-    [NativeName("mouse_x")]
     public float MouseX;
-
-    [NativeName("mouse_y")]
     public float MouseY;
 }

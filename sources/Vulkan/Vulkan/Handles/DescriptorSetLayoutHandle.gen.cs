@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorSetLayout")]
 public readonly unsafe partial struct DescriptorSetLayoutHandle
 {
     public readonly void* Handle;
-
-    public DescriptorSetLayoutHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(DescriptorSetLayoutHandle other) => Handle == other.Handle;
 

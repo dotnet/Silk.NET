@@ -7,21 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("DebugSeverity")]
+[Transformed]
 public enum DebugSeverity : uint
 {
-    [NativeName("GL_DONT_CARE")]
-    DontCare = 4352,
-
-    [NativeName("GL_DEBUG_SEVERITY_HIGH")]
-    DebugSeverityHigh = 37190,
-
-    [NativeName("GL_DEBUG_SEVERITY_MEDIUM")]
-    DebugSeverityMedium = 37191,
-
-    [NativeName("GL_DEBUG_SEVERITY_LOW")]
-    DebugSeverityLow = 37192,
-
-    [NativeName("GL_DEBUG_SEVERITY_NOTIFICATION")]
-    DebugSeverityNotification = 33387,
+    DontCare = unchecked((uint)0x1100),
+    DebugSeverityHigh = unchecked((uint)0x9146),
+    DebugSeverityMedium = unchecked((uint)0x9147),
+    DebugSeverityLow = unchecked((uint)0x9148),
+    DebugSeverityNotification = unchecked((uint)0x826B),
 }

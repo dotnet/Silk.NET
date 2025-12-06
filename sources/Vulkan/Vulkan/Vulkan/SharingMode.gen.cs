@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSharingMode")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum SharingMode : uint
 {
-    [NativeName("VK_SHARING_MODE_EXCLUSIVE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,6 @@ public enum SharingMode : uint
     )]
     Exclusive = 0,
 
-    [NativeName("VK_SHARING_MODE_CONCURRENT")]
     [SupportedApiProfile(
         "vulkan",
         [

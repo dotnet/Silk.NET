@@ -4,36 +4,26 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_PenAxisEvent")]
 public partial struct PenAxisEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("windowID")]
-    public uint WindowId;
+    [NativeTypeName("SDL_WindowID")]
+    public uint WindowID;
 
-    [NativeName("which")]
+    [NativeTypeName("SDL_PenID")]
     public uint Which;
 
-    [NativeName("pen_state")]
+    [NativeTypeName("SDL_PenInputFlags")]
     public uint PenState;
-
-    [NativeName("x")]
     public float X;
-
-    [NativeName("y")]
     public float Y;
-
-    [NativeName("axis")]
     public PenAxis Axis;
-
-    [NativeName("value")]
     public float Value;
 }

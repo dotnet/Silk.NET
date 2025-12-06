@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExternalMemoryFeatureFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum ExternalMemoryFeatureFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +39,6 @@ public enum ExternalMemoryFeatureFlags : uint
     )]
     DedicatedOnlyBit = 0x1,
 
-    [NativeName("VK_EXTERNAL_MEMORY_FEATURE_EXPORTABLE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -65,7 +63,6 @@ public enum ExternalMemoryFeatureFlags : uint
     )]
     ExportableBit = 0x2,
 
-    [NativeName("VK_EXTERNAL_MEMORY_FEATURE_IMPORTABLE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -90,7 +87,6 @@ public enum ExternalMemoryFeatureFlags : uint
     )]
     ImportableBit = 0x4,
 
-    [NativeName("VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_capabilities"],
@@ -101,7 +97,6 @@ public enum ExternalMemoryFeatureFlags : uint
     )]
     DedicatedOnlyBitKHR = DedicatedOnlyBit,
 
-    [NativeName("VK_EXTERNAL_MEMORY_FEATURE_EXPORTABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_capabilities"],
@@ -112,7 +107,6 @@ public enum ExternalMemoryFeatureFlags : uint
     )]
     ExportableBitKHR = ExportableBit,
 
-    [NativeName("VK_EXTERNAL_MEMORY_FEATURE_IMPORTABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_capabilities"],

@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineBinaryKeysAndDataKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineBinaryKeysAndDataKHR
 {
-    [NativeName("binaryCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -22,7 +21,7 @@ public unsafe partial struct PipelineBinaryKeysAndDataKHR
     )]
     public uint BinaryCount;
 
-    [NativeName("pPipelineBinaryKeys")]
+    [NativeTypeName("const VkPipelineBinaryKeyKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -33,7 +32,7 @@ public unsafe partial struct PipelineBinaryKeysAndDataKHR
     )]
     public PipelineBinaryKeyKHR* PPipelineBinaryKeys;
 
-    [NativeName("pPipelineBinaryData")]
+    [NativeTypeName("const VkPipelineBinaryDataKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],

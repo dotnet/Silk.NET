@@ -7,18 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GamepadBinding")]
 public partial struct GamepadBinding
 {
-    [NativeName("input_type")]
     public GamepadBindingType InputType;
 
-    [NativeName("input")]
+    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L265_C5")]
     public GamepadBindingInput Input;
-
-    [NativeName("output_type")]
     public GamepadBindingType OutputType;
 
-    [NativeName("output")]
+    [NativeTypeName("__AnonymousRecord_SDL_gamepad_L285_C5")]
     public GamepadBindingOutput Output;
 }

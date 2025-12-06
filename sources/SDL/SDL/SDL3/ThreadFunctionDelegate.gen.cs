@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_ThreadFunction")]
 public unsafe delegate int ThreadFunctionDelegate(void* arg0);

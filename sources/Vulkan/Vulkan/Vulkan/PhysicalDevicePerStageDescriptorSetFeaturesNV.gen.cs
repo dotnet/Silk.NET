@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDevicePerStageDescriptorSetFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePerStageDescriptorSetFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_per_stage_descriptor_set"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDevicePerStageDescriptorSetFeaturesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_per_stage_descriptor_set"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDevicePerStageDescriptorSetFeaturesNV
     )]
     public void* PNext;
 
-    [NativeName("perStageDescriptorSet")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_per_stage_descriptor_set"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDevicePerStageDescriptorSetFeaturesNV
     )]
     public uint PerStageDescriptorSet;
 
-    [NativeName("dynamicPipelineLayout")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_per_stage_descriptor_set"],

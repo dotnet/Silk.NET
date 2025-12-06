@@ -8,16 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineColorBlendStateCreateFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum PipelineColorBlendStateCreateFlags : uint
 {
     None = 0x0,
 
-    [NativeName(
-        "VK_PIPELINE_COLOR_BLEND_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_BIT_EXT"
-    )]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],
@@ -28,9 +25,6 @@ public enum PipelineColorBlendStateCreateFlags : uint
     )]
     RasterizationOrderAttachmentAccessBitEXT = 0x1,
 
-    [NativeName(
-        "VK_PIPELINE_COLOR_BLEND_STATE_CREATE_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_BIT_ARM"
-    )]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_rasterization_order_attachment_access"],

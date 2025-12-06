@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDepthClampControlFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDepthClampControlFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clamp_control"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceDepthClampControlFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clamp_control"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceDepthClampControlFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("depthClampControl")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clamp_control"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSetDescriptorBufferOffsetsInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -21,7 +19,7 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -30,7 +28,7 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("stageFlags")]
+    [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -39,7 +37,7 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
     )]
     public ShaderStageFlags StageFlags;
 
-    [NativeName("layout")]
+    [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -48,7 +46,7 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
     )]
     public PipelineLayoutHandle Layout;
 
-    [NativeName("firstSet")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -57,7 +55,7 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
     )]
     public uint FirstSet;
 
-    [NativeName("setCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -66,7 +64,7 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
     )]
     public uint SetCount;
 
-    [NativeName("pBufferIndices")]
+    [NativeTypeName("const uint32_t *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],
@@ -75,7 +73,7 @@ public unsafe partial struct SetDescriptorBufferOffsetsInfoEXT
     )]
     public uint* PBufferIndices;
 
-    [NativeName("pOffsets")]
+    [NativeTypeName("const VkDeviceSize *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer", "VK_KHR_maintenance6"],

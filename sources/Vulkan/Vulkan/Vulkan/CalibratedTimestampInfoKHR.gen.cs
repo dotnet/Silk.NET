@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCalibratedTimestampInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CalibratedTimestampInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_calibrated_timestamps"],
@@ -23,7 +21,7 @@ public unsafe partial struct CalibratedTimestampInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_calibrated_timestamps"],
@@ -34,7 +32,6 @@ public unsafe partial struct CalibratedTimestampInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("timeDomain")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_calibrated_timestamps"],

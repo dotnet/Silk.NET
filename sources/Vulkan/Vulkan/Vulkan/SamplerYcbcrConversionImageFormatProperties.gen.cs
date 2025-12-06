@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSamplerYcbcrConversionImageFormatProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerYcbcrConversionImageFormatProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +31,6 @@ public unsafe partial struct SamplerYcbcrConversionImageFormatProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,7 +51,7 @@ public unsafe partial struct SamplerYcbcrConversionImageFormatProperties
     )]
     public void* PNext;
 
-    [NativeName("combinedImageSamplerDescriptorCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

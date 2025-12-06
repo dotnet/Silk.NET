@@ -7,14 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSampleCountFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum SampleCountFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_SAMPLE_COUNT_1_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -43,7 +42,6 @@ public enum SampleCountFlags : uint
     )]
     Count1Bit = 0x1,
 
-    [NativeName("VK_SAMPLE_COUNT_2_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -72,7 +70,6 @@ public enum SampleCountFlags : uint
     )]
     Count2Bit = 0x2,
 
-    [NativeName("VK_SAMPLE_COUNT_4_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -101,7 +98,6 @@ public enum SampleCountFlags : uint
     )]
     Count4Bit = 0x4,
 
-    [NativeName("VK_SAMPLE_COUNT_8_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -130,7 +126,6 @@ public enum SampleCountFlags : uint
     )]
     Count8Bit = 0x8,
 
-    [NativeName("VK_SAMPLE_COUNT_16_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -159,7 +154,6 @@ public enum SampleCountFlags : uint
     )]
     Count16Bit = 0x10,
 
-    [NativeName("VK_SAMPLE_COUNT_32_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -188,7 +182,6 @@ public enum SampleCountFlags : uint
     )]
     Count32Bit = 0x20,
 
-    [NativeName("VK_SAMPLE_COUNT_64_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [

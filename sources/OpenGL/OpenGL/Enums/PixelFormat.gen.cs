@@ -7,108 +7,41 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("PixelFormat")]
+[Transformed]
 public enum PixelFormat : uint
 {
-    [NativeName("GL_UNSIGNED_SHORT")]
-    UnsignedShort = 5123,
-
-    [NativeName("GL_ALPHA")]
-    Alpha = 6406,
-
-    [NativeName("GL_RGB")]
-    Rgb = 6407,
-
-    [NativeName("GL_RGBA")]
-    Rgba = 6408,
-
-    [NativeName("GL_LUMINANCE")]
-    Luminance = 6409,
-
-    [NativeName("GL_LUMINANCE_ALPHA")]
-    LuminanceAlpha = 6410,
-
-    [NativeName("GL_UNSIGNED_INT")]
-    UnsignedInt = 5125,
-
-    [NativeName("GL_BGRA_EXT")]
-    BgraEXT = 32993,
-
-    [NativeName("GL_BGRA_IMG")]
-    BgraIMG = 32993,
-
-    [NativeName("GL_STENCIL_INDEX")]
-    StencilIndex = 6401,
-
-    [NativeName("GL_DEPTH_COMPONENT")]
-    DepthComponent = 6402,
-
-    [NativeName("GL_RED")]
-    Red = 6403,
-
-    [NativeName("GL_GREEN")]
-    Green = 6404,
-
-    [NativeName("GL_BLUE")]
-    Blue = 6405,
-
-    [NativeName("GL_COLOR_INDEX")]
-    ColorIndex = 6400,
-
-    [NativeName("GL_BGR")]
-    Bgr = 32992,
-
-    [NativeName("GL_BGRA")]
-    Bgra = 32993,
-
-    [NativeName("GL_RED_INTEGER")]
-    RedInteger = 36244,
-
-    [NativeName("GL_GREEN_INTEGER")]
-    GreenInteger = 36245,
-
-    [NativeName("GL_BLUE_INTEGER")]
-    BlueInteger = 36246,
-
-    [NativeName("GL_RGB_INTEGER")]
-    RgbInteger = 36248,
-
-    [NativeName("GL_RGBA_INTEGER")]
-    RgbaInteger = 36249,
-
-    [NativeName("GL_BGR_INTEGER")]
-    BgrInteger = 36250,
-
-    [NativeName("GL_BGRA_INTEGER")]
-    BgraInteger = 36251,
-
-    [NativeName("GL_DEPTH_STENCIL")]
-    DepthStencil = 34041,
-
-    [NativeName("GL_RG")]
-    Rg = 33319,
-
-    [NativeName("GL_RG_INTEGER")]
-    RgInteger = 33320,
-
-    [NativeName("GL_ABGR_EXT")]
-    AbgrEXT = 32768,
-
-    [NativeName("GL_BGR_EXT")]
-    BgrEXT = 32992,
-
-    [NativeName("GL_CMYK_EXT")]
-    CmykEXT = 32780,
-
-    [NativeName("GL_CMYKA_EXT")]
-    CmykaEXT = 32781,
-
-    [NativeName("GL_YCRCB_422_SGIX")]
-    Ycrcb422SGIX = 33211,
-
-    [NativeName("GL_YCRCB_444_SGIX")]
-    Ycrcb444SGIX = 33212,
-
-    [NativeName("GL_RED_EXT")]
-    RedEXT = 6403,
+    UnsignedShort = unchecked((uint)0x1403),
+    UnsignedInt = unchecked((uint)0x1405),
+    StencilIndex = unchecked((uint)0x1901),
+    DepthComponent = unchecked((uint)0x1902),
+    Red = unchecked((uint)0x1903),
+    Green = unchecked((uint)0x1904),
+    Blue = unchecked((uint)0x1905),
+    Alpha = unchecked((uint)0x1906),
+    Rgb = unchecked((uint)0x1907),
+    Rgba = unchecked((uint)0x1908),
+    ColorIndex = unchecked((uint)0x1900),
+    Luminance = unchecked((uint)0x1909),
+    LuminanceAlpha = unchecked((uint)0x190A),
+    Bgr = unchecked((uint)0x80E0),
+    Bgra = unchecked((uint)0x80E1),
+    RedInteger = unchecked((uint)0x8D94),
+    GreenInteger = unchecked((uint)0x8D95),
+    BlueInteger = unchecked((uint)0x8D96),
+    RgbInteger = unchecked((uint)0x8D98),
+    RgbaInteger = unchecked((uint)0x8D99),
+    BgrInteger = unchecked((uint)0x8D9A),
+    BgraInteger = unchecked((uint)0x8D9B),
+    DepthStencil = unchecked((uint)0x84F9),
+    Rg = unchecked((uint)0x8227),
+    RgInteger = unchecked((uint)0x8228),
+    AbgrEXT = unchecked((uint)0x8000),
+    BgrEXT = unchecked((uint)0x80E0),
+    BgraEXT = unchecked((uint)0x80E1),
+    CmykEXT = unchecked((uint)0x800C),
+    CmykaEXT = unchecked((uint)0x800D),
+    Ycrcb422Sgix = unchecked((uint)0x81BB),
+    Ycrcb444Sgix = unchecked((uint)0x81BC),
+    RedEXT = unchecked((uint)0x1903),
+    BgraIMG = unchecked((uint)0x80E1),
 }

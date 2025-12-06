@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSetPresentConfigNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SetPresentConfigNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_present_metering"],
@@ -23,7 +21,7 @@ public unsafe partial struct SetPresentConfigNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_present_metering"],
@@ -34,7 +32,7 @@ public unsafe partial struct SetPresentConfigNV
     )]
     public void* PNext;
 
-    [NativeName("numFramesPerBatch")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_present_metering"],
@@ -45,7 +43,7 @@ public unsafe partial struct SetPresentConfigNV
     )]
     public uint NumFramesPerBatch;
 
-    [NativeName("presentConfigFeedback")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_present_metering"],

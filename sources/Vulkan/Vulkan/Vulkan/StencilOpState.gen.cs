@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkStencilOpState")]
 [SupportedApiProfile("vulkan")]
 public partial struct StencilOpState
 {
-    [NativeName("failOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +28,6 @@ public partial struct StencilOpState
     )]
     public StencilOp FailOp;
 
-    [NativeName("passOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -49,7 +46,6 @@ public partial struct StencilOpState
     )]
     public StencilOp PassOp;
 
-    [NativeName("depthFailOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +64,6 @@ public partial struct StencilOpState
     )]
     public StencilOp DepthFailOp;
 
-    [NativeName("compareOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +82,7 @@ public partial struct StencilOpState
     )]
     public CompareOp CompareOp;
 
-    [NativeName("compareMask")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -106,7 +101,7 @@ public partial struct StencilOpState
     )]
     public uint CompareMask;
 
-    [NativeName("writeMask")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -125,7 +120,7 @@ public partial struct StencilOpState
     )]
     public uint WriteMask;
 
-    [NativeName("reference")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,40 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuTransferBufferLocation"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GPUTransferBufferLocation"/> struct.</summary>
 public static unsafe partial class SDL_GPUTransferBufferLocationTests
 {
-    /// <summary>Validates that the <see cref = "GpuTransferBufferLocation"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GPUTransferBufferLocation"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GpuTransferBufferLocation>(),
-            Is.EqualTo(sizeof(GpuTransferBufferLocation))
+            Marshal.SizeOf<GPUTransferBufferLocation>(),
+            Is.EqualTo(sizeof(GPUTransferBufferLocation))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GpuTransferBufferLocation"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GPUTransferBufferLocation"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuTransferBufferLocation).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GPUTransferBufferLocation).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuTransferBufferLocation"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GPUTransferBufferLocation"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GpuTransferBufferLocation), Is.EqualTo(16));
+            Assert.That(sizeof(GPUTransferBufferLocation), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(GpuTransferBufferLocation), Is.EqualTo(8));
+            Assert.That(sizeof(GPUTransferBufferLocation), Is.EqualTo(8));
         }
     }
 }

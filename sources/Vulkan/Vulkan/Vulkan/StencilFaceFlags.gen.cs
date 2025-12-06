@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkStencilFaceFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum StencilFaceFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_STENCIL_FACE_FRONT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +33,6 @@ public enum StencilFaceFlags : uint
     )]
     FrontBit = 0x1,
 
-    [NativeName("VK_STENCIL_FACE_BACK_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -53,7 +51,6 @@ public enum StencilFaceFlags : uint
     )]
     BackBit = 0x2,
 
-    [NativeName("VK_STENCIL_FACE_FRONT_AND_BACK")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ClipControlOrigin")]
+[Transformed]
 public enum ClipControlOrigin : uint
 {
-    [NativeName("GL_LOWER_LEFT")]
-    LowerLeft = 36001,
-
-    [NativeName("GL_UPPER_LEFT")]
-    UpperLeft = 36002,
+    LowerLeft = unchecked((uint)0x8CA1),
+    UpperLeft = unchecked((uint)0x8CA2),
 }

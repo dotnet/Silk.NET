@@ -8,10 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("_colors_e__FixedBuffer")]
 [InlineArray(5)]
 public partial struct MessageBoxColorSchemeColors
 {
-    [NativeName("e0")]
     public MessageBoxColor E0;
 }

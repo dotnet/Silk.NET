@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubpassSampleLocationsEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct SubpassSampleLocationsEXT
 {
-    [NativeName("subpassIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -22,7 +21,6 @@ public partial struct SubpassSampleLocationsEXT
     )]
     public uint SubpassIndex;
 
-    [NativeName("sampleLocationsInfo")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],

@@ -7,36 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ListNameType")]
+[Transformed]
 public enum ListNameType : uint
 {
-    [NativeName("GL_BYTE")]
-    Byte = 5120,
-
-    [NativeName("GL_UNSIGNED_BYTE")]
-    UnsignedByte = 5121,
-
-    [NativeName("GL_SHORT")]
-    Short = 5122,
-
-    [NativeName("GL_UNSIGNED_SHORT")]
-    UnsignedShort = 5123,
-
-    [NativeName("GL_FLOAT")]
-    Float = 5126,
-
-    [NativeName("GL_UNSIGNED_INT")]
-    UnsignedInt = 5125,
-
-    [NativeName("GL_INT")]
-    Int = 5124,
-
-    [NativeName("GL_2_BYTES")]
-    X2Bytes = 5127,
-
-    [NativeName("GL_3_BYTES")]
-    X3Bytes = 5128,
-
-    [NativeName("GL_4_BYTES")]
-    X4Bytes = 5129,
+    Byte = unchecked((uint)0x1400),
+    UnsignedByte = unchecked((uint)0x1401),
+    Short = unchecked((uint)0x1402),
+    UnsignedShort = unchecked((uint)0x1403),
+    Int = unchecked((uint)0x1404),
+    UnsignedInt = unchecked((uint)0x1405),
+    Float = unchecked((uint)0x1406),
+    X2Bytes = unchecked((uint)0x1407),
+    X3Bytes = unchecked((uint)0x1408),
+    X4Bytes = unchecked((uint)0x1409),
 }

@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPresentRegionKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PresentRegionKHR
 {
-    [NativeName("rectangleCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_incremental_present"],
@@ -19,7 +18,7 @@ public unsafe partial struct PresentRegionKHR
     )]
     public uint RectangleCount;
 
-    [NativeName("pRectangles")]
+    [NativeTypeName("const VkRectLayerKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_incremental_present"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPresentId2KHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PresentId2KHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_present_id2"],
@@ -20,7 +18,7 @@ public unsafe partial struct PresentId2KHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_present_id2"],
@@ -28,7 +26,7 @@ public unsafe partial struct PresentId2KHR
     )]
     public void* PNext;
 
-    [NativeName("swapchainCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_present_id2"],
@@ -36,7 +34,7 @@ public unsafe partial struct PresentId2KHR
     )]
     public uint SwapchainCount;
 
-    [NativeName("pPresentIds")]
+    [NativeTypeName("const uint64_t *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_present_id2"],

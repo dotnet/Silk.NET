@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubresourceLayout")]
 [SupportedApiProfile("vulkan")]
 public partial struct SubresourceLayout
 {
-    [NativeName("offset")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,7 @@ public partial struct SubresourceLayout
     )]
     public ulong Offset;
 
-    [NativeName("size")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +69,7 @@ public partial struct SubresourceLayout
     )]
     public ulong Size;
 
-    [NativeName("rowPitch")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +98,7 @@ public partial struct SubresourceLayout
     )]
     public ulong RowPitch;
 
-    [NativeName("arrayPitch")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +127,7 @@ public partial struct SubresourceLayout
     )]
     public ulong ArrayPitch;
 
-    [NativeName("depthPitch")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [

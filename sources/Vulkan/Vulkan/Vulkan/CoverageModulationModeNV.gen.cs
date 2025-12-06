@@ -8,23 +8,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCoverageModulationModeNV")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum CoverageModulationModeNV : uint
 {
-    [NativeName("VK_COVERAGE_MODULATION_MODE_NONE_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    None = 0,
+    NoneNV = 0,
 
-    [NativeName("VK_COVERAGE_MODULATION_MODE_RGB_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    Rgb = 1,
+    RgbNV = 1,
 
-    [NativeName("VK_COVERAGE_MODULATION_MODE_ALPHA_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    Alpha = 2,
+    AlphaNV = 2,
 
-    [NativeName("VK_COVERAGE_MODULATION_MODE_RGBA_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_framebuffer_mixed_samples"])]
-    Rgba = 3,
+    RgbaNV = 3,
 }

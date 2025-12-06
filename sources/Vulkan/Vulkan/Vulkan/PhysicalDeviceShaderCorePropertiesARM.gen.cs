@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceShaderCorePropertiesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderCorePropertiesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_shader_core_properties"],
@@ -19,7 +17,6 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_shader_core_properties"],
@@ -27,7 +24,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesARM
     )]
     public void* PNext;
 
-    [NativeName("pixelRate")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_shader_core_properties"],
@@ -35,7 +32,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesARM
     )]
     public uint PixelRate;
 
-    [NativeName("texelRate")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_shader_core_properties"],
@@ -43,7 +40,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesARM
     )]
     public uint TexelRate;
 
-    [NativeName("fmaRate")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_shader_core_properties"],

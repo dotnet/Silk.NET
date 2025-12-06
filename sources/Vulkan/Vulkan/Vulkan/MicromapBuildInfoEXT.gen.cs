@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMicromapBuildInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MicromapBuildInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -22,7 +20,7 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -33,7 +31,6 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -44,7 +41,7 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public MicromapTypeEXT Type;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkBuildMicromapFlagsEXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -55,7 +52,6 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public BuildMicromapFlagsEXT Flags;
 
-    [NativeName("mode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -66,7 +62,7 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public BuildMicromapModeEXT Mode;
 
-    [NativeName("dstMicromap")]
+    [NativeTypeName("VkMicromapEXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -75,9 +71,9 @@ public unsafe partial struct MicromapBuildInfoEXT
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    public MicromapHandleEXT DstMicromap;
+    public MicromapEXTHandle DstMicromap;
 
-    [NativeName("usageCountsCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -88,7 +84,7 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public uint UsageCountsCount;
 
-    [NativeName("pUsageCounts")]
+    [NativeTypeName("const VkMicromapUsageEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -99,7 +95,7 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public MicromapUsageEXT* PUsageCounts;
 
-    [NativeName("ppUsageCounts")]
+    [NativeTypeName("const VkMicromapUsageEXT *const *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -110,7 +106,6 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public MicromapUsageEXT** PpUsageCounts;
 
-    [NativeName("data")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -121,7 +116,6 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public DeviceOrHostAddressConstKHR Data;
 
-    [NativeName("scratchData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -132,7 +126,6 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public DeviceOrHostAddressKHR ScratchData;
 
-    [NativeName("triangleArray")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -143,7 +136,7 @@ public unsafe partial struct MicromapBuildInfoEXT
     )]
     public DeviceOrHostAddressConstKHR TriangleArray;
 
-    [NativeName("triangleArrayStride")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

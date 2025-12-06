@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSamplerYcbcrConversionInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerYcbcrConversionInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -32,7 +30,7 @@ public unsafe partial struct SamplerYcbcrConversionInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -53,7 +51,7 @@ public unsafe partial struct SamplerYcbcrConversionInfo
     )]
     public void* PNext;
 
-    [NativeName("conversion")]
+    [NativeTypeName("VkSamplerYcbcrConversion")]
     [SupportedApiProfile(
         "vulkan",
         [

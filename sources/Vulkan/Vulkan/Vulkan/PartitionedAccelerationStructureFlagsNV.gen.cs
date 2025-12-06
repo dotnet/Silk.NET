@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPartitionedAccelerationStructureFlagsNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PartitionedAccelerationStructureFlagsNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -20,7 +18,6 @@ public unsafe partial struct PartitionedAccelerationStructureFlagsNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -28,7 +25,7 @@ public unsafe partial struct PartitionedAccelerationStructureFlagsNV
     )]
     public void* PNext;
 
-    [NativeName("enablePartitionTranslation")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_calloc_func")]
 public readonly unsafe struct CallocFunc : IDisposable
 {
     private readonly void* Pointer;

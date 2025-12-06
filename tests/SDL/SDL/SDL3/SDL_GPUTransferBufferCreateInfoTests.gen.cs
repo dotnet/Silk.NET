@@ -7,33 +7,33 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GpuTransferBufferCreateInfo"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GPUTransferBufferCreateInfo"/> struct.</summary>
 public static unsafe partial class SDL_GPUTransferBufferCreateInfoTests
 {
-    /// <summary>Validates that the <see cref = "GpuTransferBufferCreateInfo"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GPUTransferBufferCreateInfo"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GpuTransferBufferCreateInfo>(),
-            Is.EqualTo(sizeof(GpuTransferBufferCreateInfo))
+            Marshal.SizeOf<GPUTransferBufferCreateInfo>(),
+            Is.EqualTo(sizeof(GPUTransferBufferCreateInfo))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GpuTransferBufferCreateInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GPUTransferBufferCreateInfo"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GpuTransferBufferCreateInfo).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GPUTransferBufferCreateInfo).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GpuTransferBufferCreateInfo"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GPUTransferBufferCreateInfo"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
-        Assert.That(sizeof(GpuTransferBufferCreateInfo), Is.EqualTo(12));
+        Assert.That(sizeof(GPUTransferBufferCreateInfo), Is.EqualTo(12));
     }
 }

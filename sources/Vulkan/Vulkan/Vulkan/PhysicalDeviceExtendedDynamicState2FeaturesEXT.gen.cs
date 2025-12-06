@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceExtendedDynamicState2FeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state2"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state2"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("extendedDynamicState2")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state2"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
     )]
     public uint ExtendedDynamicState2;
 
-    [NativeName("extendedDynamicState2LogicOp")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state2"],
@@ -56,7 +53,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState2FeaturesEXT
     )]
     public uint ExtendedDynamicState2LogicOp;
 
-    [NativeName("extendedDynamicState2PatchControlPoints")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state2"],

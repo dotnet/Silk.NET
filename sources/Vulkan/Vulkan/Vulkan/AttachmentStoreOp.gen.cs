@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAttachmentStoreOp")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum AttachmentStoreOp : uint
 {
-    [NativeName("VK_ATTACHMENT_STORE_OP_STORE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,7 +30,6 @@ public enum AttachmentStoreOp : uint
     )]
     Store = 0,
 
-    [NativeName("VK_ATTACHMENT_STORE_OP_DONT_CARE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +48,6 @@ public enum AttachmentStoreOp : uint
     )]
     DontCare = 1,
 
-    [NativeName("VK_ATTACHMENT_STORE_OP_NONE")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -58,7 +55,6 @@ public enum AttachmentStoreOp : uint
     )]
     None = 1000301000,
 
-    [NativeName("VK_ATTACHMENT_STORE_OP_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_dynamic_rendering"],
@@ -70,11 +66,9 @@ public enum AttachmentStoreOp : uint
     )]
     NoneKHR = None,
 
-    [NativeName("VK_ATTACHMENT_STORE_OP_NONE_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_store_ops"])]
     NoneQCOM = None,
 
-    [NativeName("VK_ATTACHMENT_STORE_OP_NONE_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_load_store_op_none"])]
     NoneEXT = None,
 }

@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_column_width_minus1_e__FixedBuffer")]
 [InlineArray(19)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265PictureParameterSetColumnWidthMinus1
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public ushort E0;
 }

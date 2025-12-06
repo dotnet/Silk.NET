@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkClearAttachment")]
 [SupportedApiProfile("vulkan")]
 public partial struct ClearAttachment
 {
-    [NativeName("aspectMask")]
+    [NativeTypeName("VkImageAspectFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +29,7 @@ public partial struct ClearAttachment
     )]
     public ImageAspectFlags AspectMask;
 
-    [NativeName("colorAttachment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -49,7 +48,6 @@ public partial struct ClearAttachment
     )]
     public uint ColorAttachment;
 
-    [NativeName("clearValue")]
     [SupportedApiProfile(
         "vulkan",
         [

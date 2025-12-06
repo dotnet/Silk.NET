@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentShaderBarycentricPropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shader_barycentric"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceFragmentShaderBarycentricPropertiesKH
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shader_barycentric"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceFragmentShaderBarycentricPropertiesKH
     )]
     public void* PNext;
 
-    [NativeName("triStripVertexOrderIndependentOfProvokingVertex")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shader_barycentric"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceShaderCorePropertiesAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public void* PNext;
 
-    [NativeName("shaderEngineCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint ShaderEngineCount;
 
-    [NativeName("shaderArraysPerEngineCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -56,7 +53,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint ShaderArraysPerEngineCount;
 
-    [NativeName("computeUnitsPerShaderArray")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -67,7 +64,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint ComputeUnitsPerShaderArray;
 
-    [NativeName("simdPerComputeUnit")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -78,7 +75,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint SimdPerComputeUnit;
 
-    [NativeName("wavefrontsPerSimd")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -89,7 +86,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint WavefrontsPerSimd;
 
-    [NativeName("wavefrontSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -100,7 +97,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint WavefrontSize;
 
-    [NativeName("sgprsPerSimd")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -111,7 +108,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint SgprsPerSimd;
 
-    [NativeName("minSgprAllocation")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -122,7 +119,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint MinSgprAllocation;
 
-    [NativeName("maxSgprAllocation")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -133,7 +130,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint MaxSgprAllocation;
 
-    [NativeName("sgprAllocationGranularity")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -144,7 +141,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint SgprAllocationGranularity;
 
-    [NativeName("vgprsPerSimd")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -155,7 +152,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint VgprsPerSimd;
 
-    [NativeName("minVgprAllocation")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -166,7 +163,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint MinVgprAllocation;
 
-    [NativeName("maxVgprAllocation")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],
@@ -177,7 +174,7 @@ public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     )]
     public uint MaxVgprAllocation;
 
-    [NativeName("vgprAllocationGranularity")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_shader_core_properties"],

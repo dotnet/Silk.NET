@@ -8,35 +8,32 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkTensorCreateInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TensorCreateInfoARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkTensorCreateFlagsARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorCreateFlagsARM Flags;
 
-    [NativeName("pDescription")]
+    [NativeTypeName("const VkTensorDescriptionARM *")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorDescriptionARM* PDescription;
 
-    [NativeName("sharingMode")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public SharingMode SharingMode;
 
-    [NativeName("queueFamilyIndexCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint QueueFamilyIndexCount;
 
-    [NativeName("pQueueFamilyIndices")]
+    [NativeTypeName("const uint32_t *")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint* PQueueFamilyIndices;
 }

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageBlit")]
 [SupportedApiProfile("vulkan")]
 public partial struct ImageBlit
 {
-    [NativeName("srcSubresource")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +28,7 @@ public partial struct ImageBlit
     )]
     public ImageSubresourceLayers SrcSubresource;
 
-    [NativeName("srcOffsets")]
+    [NativeTypeName("VkOffset3D[2]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -49,7 +47,6 @@ public partial struct ImageBlit
     )]
     public ImageBlitSrcOffsets SrcOffsets;
 
-    [NativeName("dstSubresource")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +65,7 @@ public partial struct ImageBlit
     )]
     public ImageSubresourceLayers DstSubresource;
 
-    [NativeName("dstOffsets")]
+    [NativeTypeName("VkOffset3D[2]")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoReferenceSlotInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoReferenceSlotInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -19,7 +17,7 @@ public unsafe partial struct VideoReferenceSlotInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -27,7 +25,7 @@ public unsafe partial struct VideoReferenceSlotInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("slotIndex")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -35,7 +33,7 @@ public unsafe partial struct VideoReferenceSlotInfoKHR
     )]
     public int SlotIndex;
 
-    [NativeName("pPictureResource")]
+    [NativeTypeName("const VkVideoPictureResourceInfoKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("MeshMode1")]
+[Transformed]
 public enum MeshMode1 : uint
 {
-    [NativeName("GL_POINT")]
-    Point = 6912,
-
-    [NativeName("GL_LINE")]
-    Line = 6913,
+    Point = unchecked((uint)0x1B00),
+    Line = unchecked((uint)0x1B01),
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDevicePageableDeviceLocalMemoryFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pageable_device_local_memory"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pageable_device_local_memory"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDevicePageableDeviceLocalMemoryFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("pageableDeviceLocalMemory")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pageable_device_local_memory"],

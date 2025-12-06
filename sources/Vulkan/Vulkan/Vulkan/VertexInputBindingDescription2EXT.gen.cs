@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVertexInputBindingDescription2EXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VertexInputBindingDescription2EXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -22,7 +20,6 @@ public unsafe partial struct VertexInputBindingDescription2EXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -33,7 +30,7 @@ public unsafe partial struct VertexInputBindingDescription2EXT
     )]
     public void* PNext;
 
-    [NativeName("binding")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -44,7 +41,7 @@ public unsafe partial struct VertexInputBindingDescription2EXT
     )]
     public uint Binding;
 
-    [NativeName("stride")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -55,7 +52,6 @@ public unsafe partial struct VertexInputBindingDescription2EXT
     )]
     public uint Stride;
 
-    [NativeName("inputRate")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -66,7 +62,7 @@ public unsafe partial struct VertexInputBindingDescription2EXT
     )]
     public VertexInputRate InputRate;
 
-    [NativeName("divisor")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],

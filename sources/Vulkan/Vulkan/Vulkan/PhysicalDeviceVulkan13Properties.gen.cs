@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceVulkan13Properties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVulkan13Properties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +27,6 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,7 +43,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public void* PNext;
 
-    [NativeName("minSubgroupSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,7 +60,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint MinSubgroupSize;
 
-    [NativeName("maxSubgroupSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -80,7 +77,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint MaxSubgroupSize;
 
-    [NativeName("maxComputeWorkgroupSubgroups")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +94,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint MaxComputeWorkgroupSubgroups;
 
-    [NativeName("requiredSubgroupSizeStages")]
+    [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -114,7 +111,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public ShaderStageFlags RequiredSubgroupSizeStages;
 
-    [NativeName("maxInlineUniformBlockSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -131,7 +128,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint MaxInlineUniformBlockSize;
 
-    [NativeName("maxPerStageDescriptorInlineUniformBlocks")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -148,7 +145,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint MaxPerStageDescriptorInlineUniformBlocks;
 
-    [NativeName("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -165,7 +162,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint MaxPerStageDescriptorUpdateAfterBindInlineUniformBlocks;
 
-    [NativeName("maxDescriptorSetInlineUniformBlocks")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -182,7 +179,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint MaxDescriptorSetInlineUniformBlocks;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindInlineUniformBlocks")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -199,7 +196,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint MaxDescriptorSetUpdateAfterBindInlineUniformBlocks;
 
-    [NativeName("maxInlineUniformTotalSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -216,7 +213,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint MaxInlineUniformTotalSize;
 
-    [NativeName("integerDotProduct8BitUnsignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -233,7 +230,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct8BitUnsignedAccelerated;
 
-    [NativeName("integerDotProduct8BitSignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -250,7 +247,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct8BitSignedAccelerated;
 
-    [NativeName("integerDotProduct8BitMixedSignednessAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -267,7 +264,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct8BitMixedSignednessAccelerated;
 
-    [NativeName("integerDotProduct4x8BitPackedUnsignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -284,7 +281,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct4X8BitPackedUnsignedAccelerated;
 
-    [NativeName("integerDotProduct4x8BitPackedSignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -301,7 +298,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct4X8BitPackedSignedAccelerated;
 
-    [NativeName("integerDotProduct4x8BitPackedMixedSignednessAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -318,7 +315,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct4X8BitPackedMixedSignednessAccelerated;
 
-    [NativeName("integerDotProduct16BitUnsignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -335,7 +332,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct16BitUnsignedAccelerated;
 
-    [NativeName("integerDotProduct16BitSignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -352,7 +349,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct16BitSignedAccelerated;
 
-    [NativeName("integerDotProduct16BitMixedSignednessAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -369,7 +366,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct16BitMixedSignednessAccelerated;
 
-    [NativeName("integerDotProduct32BitUnsignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -386,7 +383,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct32BitUnsignedAccelerated;
 
-    [NativeName("integerDotProduct32BitSignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -403,7 +400,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct32BitSignedAccelerated;
 
-    [NativeName("integerDotProduct32BitMixedSignednessAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -420,7 +417,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct32BitMixedSignednessAccelerated;
 
-    [NativeName("integerDotProduct64BitUnsignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -437,7 +434,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct64BitUnsignedAccelerated;
 
-    [NativeName("integerDotProduct64BitSignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -454,7 +451,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct64BitSignedAccelerated;
 
-    [NativeName("integerDotProduct64BitMixedSignednessAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -471,7 +468,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProduct64BitMixedSignednessAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating8BitUnsignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -488,7 +485,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating8BitUnsignedAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating8BitSignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -505,7 +502,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating8BitSignedAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -522,7 +519,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating4x8BitPackedUnsignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -539,7 +536,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating4X8BitPackedUnsignedAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating4x8BitPackedSignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -556,7 +553,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating4X8BitPackedSignedAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating4x8BitPackedMixedSignednessAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -573,7 +570,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating4X8BitPackedMixedSignednessAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating16BitUnsignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -590,7 +587,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating16BitUnsignedAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating16BitSignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -607,7 +604,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating16BitSignedAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -624,7 +621,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating32BitUnsignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -641,7 +638,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating32BitUnsignedAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating32BitSignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -658,7 +655,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating32BitSignedAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -675,7 +672,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating64BitUnsignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -692,7 +689,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating64BitUnsignedAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating64BitSignedAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -709,7 +706,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating64BitSignedAccelerated;
 
-    [NativeName("integerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -726,7 +723,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint IntegerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated;
 
-    [NativeName("storageTexelBufferOffsetAlignmentBytes")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -743,7 +740,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public ulong StorageTexelBufferOffsetAlignmentBytes;
 
-    [NativeName("storageTexelBufferOffsetSingleTexelAlignment")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -760,7 +757,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint StorageTexelBufferOffsetSingleTexelAlignment;
 
-    [NativeName("uniformTexelBufferOffsetAlignmentBytes")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -777,7 +774,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public ulong UniformTexelBufferOffsetAlignmentBytes;
 
-    [NativeName("uniformTexelBufferOffsetSingleTexelAlignment")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -794,7 +791,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
     )]
     public uint UniformTexelBufferOffsetSingleTexelAlignment;
 
-    [NativeName("maxBufferSize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [

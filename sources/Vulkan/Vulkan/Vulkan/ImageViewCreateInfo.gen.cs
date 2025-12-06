@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageViewCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageViewCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct ImageViewCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,7 @@ public unsafe partial struct ImageViewCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkImageViewCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +97,7 @@ public unsafe partial struct ImageViewCreateInfo
     )]
     public ImageViewCreateFlags Flags;
 
-    [NativeName("image")]
+    [NativeTypeName("VkImage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +126,6 @@ public unsafe partial struct ImageViewCreateInfo
     )]
     public ImageHandle Image;
 
-    [NativeName("viewType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -157,7 +154,6 @@ public unsafe partial struct ImageViewCreateInfo
     )]
     public ImageViewType ViewType;
 
-    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -186,7 +182,6 @@ public unsafe partial struct ImageViewCreateInfo
     )]
     public Format Format;
 
-    [NativeName("components")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -215,7 +210,6 @@ public unsafe partial struct ImageViewCreateInfo
     )]
     public ComponentMapping Components;
 
-    [NativeName("subresourceRange")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageViewCreateFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum ImageViewCreateFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DYNAMIC_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],
@@ -26,7 +25,6 @@ public enum ImageViewCreateFlags : uint
     )]
     FragmentDensityMapDynamicBitEXT = 0x1,
 
-    [NativeName("VK_IMAGE_VIEW_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -39,7 +37,6 @@ public enum ImageViewCreateFlags : uint
     )]
     DescriptorBufferCaptureReplayBitEXT = 0x4,
 
-    [NativeName("VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DEFERRED_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map2"],

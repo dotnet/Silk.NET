@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceImageProcessingPropertiesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageProcessingPropertiesQCOM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceImageProcessingPropertiesQCOM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceImageProcessingPropertiesQCOM
     )]
     public void* PNext;
 
-    [NativeName("maxWeightFilterPhases")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -45,7 +42,6 @@ public unsafe partial struct PhysicalDeviceImageProcessingPropertiesQCOM
     )]
     public uint MaxWeightFilterPhases;
 
-    [NativeName("maxWeightFilterDimension")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -56,7 +52,6 @@ public unsafe partial struct PhysicalDeviceImageProcessingPropertiesQCOM
     )]
     public Extent2D MaxWeightFilterDimension;
 
-    [NativeName("maxBlockMatchRegion")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -67,7 +62,6 @@ public unsafe partial struct PhysicalDeviceImageProcessingPropertiesQCOM
     )]
     public Extent2D MaxBlockMatchRegion;
 
-    [NativeName("maxBoxFilterBlockSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],

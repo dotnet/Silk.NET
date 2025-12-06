@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageType")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum ImageType : uint
 {
-    [NativeName("VK_IMAGE_TYPE_1D")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,6 @@ public enum ImageType : uint
     )]
     Type1D = 0,
 
-    [NativeName("VK_IMAGE_TYPE_2D")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,6 @@ public enum ImageType : uint
     )]
     Type2D = 1,
 
-    [NativeName("VK_IMAGE_TYPE_3D")]
     [SupportedApiProfile(
         "vulkan",
         [

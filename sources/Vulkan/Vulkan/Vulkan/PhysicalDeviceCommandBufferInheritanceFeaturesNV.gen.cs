@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceCommandBufferInheritanceFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCommandBufferInheritanceFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_command_buffer_inheritance"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceCommandBufferInheritanceFeaturesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_command_buffer_inheritance"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceCommandBufferInheritanceFeaturesNV
     )]
     public void* PNext;
 
-    [NativeName("commandBufferInheritance")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_command_buffer_inheritance"],

@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorUpdateTemplateEntry")]
 [SupportedApiProfile("vulkan")]
 public partial struct DescriptorUpdateTemplateEntry
 {
-    [NativeName("dstBinding")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +32,7 @@ public partial struct DescriptorUpdateTemplateEntry
     )]
     public uint DstBinding;
 
-    [NativeName("dstArrayElement")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,7 +53,7 @@ public partial struct DescriptorUpdateTemplateEntry
     )]
     public uint DstArrayElement;
 
-    [NativeName("descriptorCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -75,7 +74,6 @@ public partial struct DescriptorUpdateTemplateEntry
     )]
     public uint DescriptorCount;
 
-    [NativeName("descriptorType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,7 +94,7 @@ public partial struct DescriptorUpdateTemplateEntry
     )]
     public DescriptorType DescriptorType;
 
-    [NativeName("offset")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -117,7 +115,7 @@ public partial struct DescriptorUpdateTemplateEntry
     )]
     public nuint Offset;
 
-    [NativeName("stride")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         [

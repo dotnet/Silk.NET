@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceImageProcessing2PropertiesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageProcessing2PropertiesQCOM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],
@@ -19,7 +17,6 @@ public unsafe partial struct PhysicalDeviceImageProcessing2PropertiesQCOM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],
@@ -27,7 +24,6 @@ public unsafe partial struct PhysicalDeviceImageProcessing2PropertiesQCOM
     )]
     public void* PNext;
 
-    [NativeName("maxBlockMatchWindow")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],

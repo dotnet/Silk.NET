@@ -8,47 +8,44 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceMaintenance7PropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMaintenance7PropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public void* PNext;
 
-    [NativeName("robustFragmentShadingRateAttachmentAccess")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint RobustFragmentShadingRateAttachmentAccess;
 
-    [NativeName("separateDepthStencilAttachmentAccess")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint SeparateDepthStencilAttachmentAccess;
 
-    [NativeName("maxDescriptorSetTotalUniformBuffersDynamic")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint MaxDescriptorSetTotalUniformBuffersDynamic;
 
-    [NativeName("maxDescriptorSetTotalStorageBuffersDynamic")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint MaxDescriptorSetTotalStorageBuffersDynamic;
 
-    [NativeName("maxDescriptorSetTotalBuffersDynamic")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint MaxDescriptorSetTotalBuffersDynamic;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindTotalUniformBuffersDynamic")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint MaxDescriptorSetUpdateAfterBindTotalUniformBuffersDynamic;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindTotalStorageBuffersDynamic")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint MaxDescriptorSetUpdateAfterBindTotalStorageBuffersDynamic;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindTotalBuffersDynamic")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint MaxDescriptorSetUpdateAfterBindTotalBuffersDynamic;
 }

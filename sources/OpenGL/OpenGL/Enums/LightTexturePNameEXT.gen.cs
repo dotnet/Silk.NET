@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("LightTexturePNameEXT")]
+[Transformed]
 public enum LightTexturePNameEXT : uint
 {
-    [NativeName("GL_ATTENUATION_EXT")]
-    Attenuation = 33613,
-
-    [NativeName("GL_SHADOW_ATTENUATION_EXT")]
-    ShadowAttenuation = 33614,
+    Attenuation = unchecked((uint)0x834D),
+    ShadowAttenuation = unchecked((uint)0x834E),
 }

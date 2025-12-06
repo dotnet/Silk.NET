@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkQueryPipelineStatisticFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum QueryPipelineStatisticFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_INPUT_ASSEMBLY_VERTICES_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +38,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     InputAssemblyVerticesBit = 0x1,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_INPUT_ASSEMBLY_PRIMITIVES_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,7 +61,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     InputAssemblyPrimitivesBit = 0x2,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_VERTEX_SHADER_INVOCATIONS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +84,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     VertexShaderInvocationsBit = 0x4,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_GEOMETRY_SHADER_INVOCATIONS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -111,7 +107,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     GeometryShaderInvocationsBit = 0x8,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_GEOMETRY_SHADER_PRIMITIVES_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -135,7 +130,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     GeometryShaderPrimitivesBit = 0x10,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_CLIPPING_INVOCATIONS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -159,7 +153,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     ClippingInvocationsBit = 0x20,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_CLIPPING_PRIMITIVES_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -183,7 +176,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     ClippingPrimitivesBit = 0x40,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_FRAGMENT_SHADER_INVOCATIONS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -207,7 +199,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     FragmentShaderInvocationsBit = 0x80,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_TESSELLATION_CONTROL_SHADER_PATCHES_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -231,7 +222,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     TessellationControlShaderPatchesBit = 0x100,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_TESSELLATION_EVALUATION_SHADER_INVOCATIONS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -255,7 +245,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     TessellationEvaluationShaderInvocationsBit = 0x200,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_COMPUTE_SHADER_INVOCATIONS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -279,7 +268,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     ComputeShaderInvocationsBit = 0x400,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_TASK_SHADER_INVOCATIONS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -287,7 +275,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     TaskShaderInvocationsBitEXT = 0x800,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_MESH_SHADER_INVOCATIONS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -295,7 +282,6 @@ public enum QueryPipelineStatisticFlags : uint
     )]
     MeshShaderInvocationsBitEXT = 0x1000,
 
-    [NativeName("VK_QUERY_PIPELINE_STATISTIC_CLUSTER_CULLING_SHADER_INVOCATIONS_BIT_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_cluster_culling_shader"],
@@ -304,5 +290,5 @@ public enum QueryPipelineStatisticFlags : uint
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    ClusterCullingShaderInvocationsBitHUAWEI = 0x2000,
+    ClusterCullingShaderInvocationsBitHuawei = 0x2000,
 }

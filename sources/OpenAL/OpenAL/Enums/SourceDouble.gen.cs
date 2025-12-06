@@ -10,9 +10,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("SourceDouble")]
+[Transformed]
 public enum SourceDouble : uint
 {
-    [NativeName("AL_SEC_OFFSET_CLOCK_SOFT")]
-    SecOffsetClockSOFT = 4611,
+    SecOffsetClockSOFT = unchecked((uint)0x1203),
 }

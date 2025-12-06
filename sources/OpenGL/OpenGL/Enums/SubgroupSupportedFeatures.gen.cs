@@ -7,36 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("SubgroupSupportedFeatures")]
-[Flags]
+[Transformed]
 public enum SubgroupSupportedFeatures : uint
 {
-    None = 0x0,
-
-    [NativeName("GL_SUBGROUP_FEATURE_BASIC_BIT_KHR")]
-    BasicBitKHR = 0x1,
-
-    [NativeName("GL_SUBGROUP_FEATURE_VOTE_BIT_KHR")]
-    VoteBitKHR = 0x2,
-
-    [NativeName("GL_SUBGROUP_FEATURE_ARITHMETIC_BIT_KHR")]
-    ArithmeticBitKHR = 0x4,
-
-    [NativeName("GL_SUBGROUP_FEATURE_BALLOT_BIT_KHR")]
-    BallotBitKHR = 0x8,
-
-    [NativeName("GL_SUBGROUP_FEATURE_SHUFFLE_BIT_KHR")]
-    ShuffleBitKHR = 0x10,
-
-    [NativeName("GL_SUBGROUP_FEATURE_SHUFFLE_RELATIVE_BIT_KHR")]
-    ShuffleRelativeBitKHR = 0x20,
-
-    [NativeName("GL_SUBGROUP_FEATURE_CLUSTERED_BIT_KHR")]
-    ClusteredBitKHR = 0x40,
-
-    [NativeName("GL_SUBGROUP_FEATURE_QUAD_BIT_KHR")]
-    QuadBitKHR = 0x80,
-
-    [NativeName("GL_SUBGROUP_FEATURE_PARTITIONED_BIT_NV")]
-    PartitionedBitNV = 0x100,
+    BasicBitKHR = unchecked((uint)0x00000001),
+    VoteBitKHR = unchecked((uint)0x00000002),
+    ArithmeticBitKHR = unchecked((uint)0x00000004),
+    BallotBitKHR = unchecked((uint)0x00000008),
+    ShuffleBitKHR = unchecked((uint)0x00000010),
+    ShuffleRelativeBitKHR = unchecked((uint)0x00000020),
+    ClusteredBitKHR = unchecked((uint)0x00000040),
+    QuadBitKHR = unchecked((uint)0x00000080),
+    PartitionedBitNV = unchecked((uint)0x00000100),
 }

@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_StorageInterface_enumerate")]
+[Transformed]
 public unsafe delegate byte StorageInterfaceEnumerateDelegate(
     void* arg0,
     sbyte* arg1,

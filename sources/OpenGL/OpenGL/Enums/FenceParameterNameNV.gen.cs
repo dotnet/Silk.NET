@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("FenceParameterNameNV")]
+[Transformed]
 public enum FenceParameterNameNV : uint
 {
-    [NativeName("GL_FENCE_STATUS_NV")]
-    Status = 34035,
-
-    [NativeName("GL_FENCE_CONDITION_NV")]
-    Condition = 34036,
+    Status = unchecked((uint)0x84F3),
+    Condition = unchecked((uint)0x84F4),
 }

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndirectCommandsLayoutTokenEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectCommandsLayoutTokenEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -23,7 +21,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -35,7 +33,6 @@ public unsafe partial struct IndirectCommandsLayoutTokenEXT
     )]
     public void* PNext;
 
-    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -47,7 +44,6 @@ public unsafe partial struct IndirectCommandsLayoutTokenEXT
     )]
     public IndirectCommandsTokenTypeEXT Type;
 
-    [NativeName("data")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -59,7 +55,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenEXT
     )]
     public IndirectCommandsTokenDataEXT Data;
 
-    [NativeName("offset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

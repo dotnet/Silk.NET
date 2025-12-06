@@ -7,18 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ClientAttribMask")]
-[Flags]
+[Transformed]
 public enum ClientAttribMask : uint
 {
-    None = 0x0,
-
-    [NativeName("GL_CLIENT_PIXEL_STORE_BIT")]
-    PixelStoreBit = 0x1,
-
-    [NativeName("GL_CLIENT_VERTEX_ARRAY_BIT")]
-    VertexArrayBit = 0x2,
-
-    [NativeName("GL_CLIENT_ALL_ATTRIB_BITS")]
-    AllAttribBits = 0xFFFFFFFF,
+    PixelStoreBit = unchecked((uint)0x00000001),
+    VertexArrayBit = unchecked((uint)0x00000002),
+    AllAttribBits = unchecked((uint)0xFFFFFFFF),
 }

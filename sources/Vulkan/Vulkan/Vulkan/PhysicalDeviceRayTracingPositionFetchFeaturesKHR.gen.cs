@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceRayTracingPositionFetchFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRayTracingPositionFetchFeaturesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_position_fetch"],
@@ -19,7 +17,6 @@ public unsafe partial struct PhysicalDeviceRayTracingPositionFetchFeaturesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_position_fetch"],
@@ -27,7 +24,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPositionFetchFeaturesKHR
     )]
     public void* PNext;
 
-    [NativeName("rayTracingPositionFetch")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_position_fetch"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDiscardRectanglePropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDiscardRectanglePropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceDiscardRectanglePropertiesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceDiscardRectanglePropertiesEXT
     )]
     public void* PNext;
 
-    [NativeName("maxDiscardRectangles")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],

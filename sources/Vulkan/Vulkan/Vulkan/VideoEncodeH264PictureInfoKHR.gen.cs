@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH264PictureInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH264PictureInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -20,7 +18,7 @@ public unsafe partial struct VideoEncodeH264PictureInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -28,7 +26,7 @@ public unsafe partial struct VideoEncodeH264PictureInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("naluSliceEntryCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -36,7 +34,7 @@ public unsafe partial struct VideoEncodeH264PictureInfoKHR
     )]
     public uint NaluSliceEntryCount;
 
-    [NativeName("pNaluSliceEntries")]
+    [NativeTypeName("const VkVideoEncodeH264NaluSliceInfoKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -44,7 +42,7 @@ public unsafe partial struct VideoEncodeH264PictureInfoKHR
     )]
     public VideoEncodeH264NaluSliceInfoKHR* PNaluSliceEntries;
 
-    [NativeName("pStdPictureInfo")]
+    [NativeTypeName("const StdVideoEncodeH264PictureInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -52,7 +50,7 @@ public unsafe partial struct VideoEncodeH264PictureInfoKHR
     )]
     public StdVideoEncodeH264PictureInfo* PStdPictureInfo;
 
-    [NativeName("generatePrefixNalu")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],

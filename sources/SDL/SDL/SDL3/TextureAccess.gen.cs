@@ -8,15 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_TextureAccess")]
-public enum TextureAccess
+[NativeTypeName("unsigned int")]
+public enum TextureAccess : uint
 {
-    [NativeName("SDL_TEXTUREACCESS_STATIC")]
-    Static = 0,
-
-    [NativeName("SDL_TEXTUREACCESS_STREAMING")]
-    Streaming = 1,
-
-    [NativeName("SDL_TEXTUREACCESS_TARGET")]
-    Target = 2,
+    Static,
+    Streaming,
+    Target,
 }

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelinePropertiesIdentifierEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelinePropertiesIdentifierEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_properties"],
@@ -22,7 +20,6 @@ public unsafe partial struct PipelinePropertiesIdentifierEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_properties"],
@@ -33,7 +30,7 @@ public unsafe partial struct PipelinePropertiesIdentifierEXT
     )]
     public void* PNext;
 
-    [NativeName("pipelineIdentifier")]
+    [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_pipeline_properties"],
@@ -42,5 +39,5 @@ public unsafe partial struct PipelinePropertiesIdentifierEXT
             "VK_EXT_pipeline_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelinePropertiesIdentifierExtPipelineIdentifier PipelineIdentifier;
+    public PipelinePropertiesIdentifierEXTPipelineIdentifier PipelineIdentifier;
 }

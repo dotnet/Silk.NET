@@ -7,18 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderPassCreateFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum RenderPassCreateFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_RENDER_PASS_CREATE_TRANSFORM_BIT_QCOM")]
     [SupportedApiProfile("vulkan", ["VK_QCOM_render_pass_transform"])]
     TransformBitQCOM = 0x2,
 
-    [NativeName("VK_RENDER_PASS_CREATE_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_fragment_density_map_layered"],
@@ -27,5 +25,5 @@ public enum RenderPassCreateFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
-    PerLayerFragmentDensityBitVALVE = 0x4,
+    PerLayerFragmentDensityBitValve = 0x4,
 }

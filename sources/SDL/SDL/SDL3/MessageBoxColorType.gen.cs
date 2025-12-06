@@ -7,24 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_MessageBoxColorType")]
-public enum MessageBoxColorType
+[NativeTypeName("unsigned int")]
+public enum MessageBoxColorType : uint
 {
-    [NativeName("SDL_MESSAGEBOX_COLOR_BACKGROUND")]
-    Background = 0,
-
-    [NativeName("SDL_MESSAGEBOX_COLOR_TEXT")]
-    Text = 1,
-
-    [NativeName("SDL_MESSAGEBOX_COLOR_BUTTON_BORDER")]
-    ButtonBorder = 2,
-
-    [NativeName("SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND")]
-    ButtonBackground = 3,
-
-    [NativeName("SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED")]
-    ButtonSelected = 4,
-
-    [NativeName("SDL_MESSAGEBOX_COLOR_COUNT")]
-    Count = 5,
+    Background,
+    Text,
+    ButtonBorder,
+    ButtonBackground,
+    ButtonSelected,
+    Count,
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineCacheCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineCacheCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +34,7 @@ public unsafe partial struct PipelineCacheCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +58,7 @@ public unsafe partial struct PipelineCacheCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineCacheCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +82,7 @@ public unsafe partial struct PipelineCacheCreateInfo
     )]
     public PipelineCacheCreateFlags Flags;
 
-    [NativeName("initialDataSize")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -108,7 +106,7 @@ public unsafe partial struct PipelineCacheCreateInfo
     )]
     public nuint InitialDataSize;
 
-    [NativeName("pInitialData")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [

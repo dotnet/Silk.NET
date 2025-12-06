@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceLinearColorAttachmentFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLinearColorAttachmentFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_linear_color_attachment"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceLinearColorAttachmentFeaturesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_linear_color_attachment"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceLinearColorAttachmentFeaturesNV
     )]
     public void* PNext;
 
-    [NativeName("linearColorAttachment")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_linear_color_attachment"],

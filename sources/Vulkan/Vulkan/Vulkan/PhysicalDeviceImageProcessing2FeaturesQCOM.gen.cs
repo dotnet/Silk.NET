@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceImageProcessing2FeaturesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageProcessing2FeaturesQCOM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceImageProcessing2FeaturesQCOM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDeviceImageProcessing2FeaturesQCOM
     )]
     public void* PNext;
 
-    [NativeName("textureBlockMatch2")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],

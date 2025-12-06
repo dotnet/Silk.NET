@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_FlashOperation")]
-public enum FlashOperation
+[NativeTypeName("unsigned int")]
+public enum FlashOperation : uint
 {
-    [NativeName("SDL_FLASH_CANCEL")]
-    Cancel = 0,
-
-    [NativeName("SDL_FLASH_BRIEFLY")]
-    Briefly = 1,
-
-    [NativeName("SDL_FLASH_UNTIL_FOCUSED")]
-    UntilFocused = 2,
+    Cancel,
+    Briefly,
+    UntilFocused,
 }

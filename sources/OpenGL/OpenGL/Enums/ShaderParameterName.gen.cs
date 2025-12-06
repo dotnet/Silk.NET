@@ -7,21 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ShaderParameterName")]
+[Transformed]
 public enum ShaderParameterName : uint
 {
-    [NativeName("GL_SHADER_TYPE")]
-    ShaderType = 35663,
-
-    [NativeName("GL_DELETE_STATUS")]
-    DeleteStatus = 35712,
-
-    [NativeName("GL_COMPILE_STATUS")]
-    CompileStatus = 35713,
-
-    [NativeName("GL_INFO_LOG_LENGTH")]
-    InfoLogLength = 35716,
-
-    [NativeName("GL_SHADER_SOURCE_LENGTH")]
-    ShaderSourceLength = 35720,
+    ShaderType = unchecked((uint)0x8B4F),
+    DeleteStatus = unchecked((uint)0x8B80),
+    CompileStatus = unchecked((uint)0x8B81),
+    InfoLogLength = unchecked((uint)0x8B84),
+    ShaderSourceLength = unchecked((uint)0x8B88),
 }

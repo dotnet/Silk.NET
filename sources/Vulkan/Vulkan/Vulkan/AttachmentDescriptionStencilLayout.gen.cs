@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAttachmentDescriptionStencilLayout")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AttachmentDescriptionStencilLayout
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +25,6 @@ public unsafe partial struct AttachmentDescriptionStencilLayout
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +39,6 @@ public unsafe partial struct AttachmentDescriptionStencilLayout
     )]
     public void* PNext;
 
-    [NativeName("stencilInitialLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +53,6 @@ public unsafe partial struct AttachmentDescriptionStencilLayout
     )]
     public ImageLayout StencilInitialLayout;
 
-    [NativeName("stencilFinalLayout")]
     [SupportedApiProfile(
         "vulkan",
         [

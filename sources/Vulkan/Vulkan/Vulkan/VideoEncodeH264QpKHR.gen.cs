@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH264QpKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct VideoEncodeH264QpKHR
 {
-    [NativeName("qpI")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -20,7 +19,7 @@ public partial struct VideoEncodeH264QpKHR
     )]
     public int QpI;
 
-    [NativeName("qpP")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -28,7 +27,7 @@ public partial struct VideoEncodeH264QpKHR
     )]
     public int QpP;
 
-    [NativeName("qpB")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],

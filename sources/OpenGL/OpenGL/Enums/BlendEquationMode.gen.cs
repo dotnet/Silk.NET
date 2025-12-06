@@ -7,42 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("BlendEquationModeEXT")]
+[Transformed]
 public enum BlendEquationMode : uint
 {
-    [NativeName("GL_MIN_EXT")]
-    MinEXT = 32775,
-
-    [NativeName("GL_MAX_EXT")]
-    MaxEXT = 32776,
-
-    [NativeName("GL_FUNC_ADD")]
-    FuncAdd = 32774,
-
-    [NativeName("GL_FUNC_REVERSE_SUBTRACT")]
-    FuncReverseSubtract = 32779,
-
-    [NativeName("GL_FUNC_SUBTRACT")]
-    FuncSubtract = 32778,
-
-    [NativeName("GL_MIN")]
-    Min = 32775,
-
-    [NativeName("GL_MAX")]
-    Max = 32776,
-
-    [NativeName("GL_FUNC_ADD_EXT")]
-    FuncAddEXT = 32774,
-
-    [NativeName("GL_FUNC_SUBTRACT_EXT")]
-    FuncSubtractEXT = 32778,
-
-    [NativeName("GL_FUNC_REVERSE_SUBTRACT_EXT")]
-    FuncReverseSubtractEXT = 32779,
-
-    [NativeName("GL_ALPHA_MIN_SGIX")]
-    AlphaMinSGIX = 33568,
-
-    [NativeName("GL_ALPHA_MAX_SGIX")]
-    AlphaMaxSGIX = 33569,
+    FuncAdd = unchecked((uint)0x8006),
+    FuncReverseSubtract = unchecked((uint)0x800B),
+    FuncSubtract = unchecked((uint)0x800A),
+    Min = unchecked((uint)0x8007),
+    Max = unchecked((uint)0x8008),
+    MinEXT = unchecked((uint)0x8007),
+    MaxEXT = unchecked((uint)0x8008),
+    FuncAddEXT = unchecked((uint)0x8006),
+    FuncSubtractEXT = unchecked((uint)0x800A),
+    FuncReverseSubtractEXT = unchecked((uint)0x800B),
+    AlphaMinSGIX = unchecked((uint)0x8320),
+    AlphaMaxSGIX = unchecked((uint)0x8321),
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPerformanceCounterDescriptionARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceCounterDescriptionARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -23,7 +21,6 @@ public unsafe partial struct PerformanceCounterDescriptionARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -34,7 +31,7 @@ public unsafe partial struct PerformanceCounterDescriptionARM
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPerformanceCounterDescriptionFlagsARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -45,7 +42,7 @@ public unsafe partial struct PerformanceCounterDescriptionARM
     )]
     public uint Flags;
 
-    [NativeName("name")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -54,5 +51,5 @@ public unsafe partial struct PerformanceCounterDescriptionARM
             "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionArmName Name;
+    public PerformanceCounterDescriptionARMName Name;
 }

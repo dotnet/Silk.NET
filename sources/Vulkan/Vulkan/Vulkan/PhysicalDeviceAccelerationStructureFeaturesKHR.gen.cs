@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceAccelerationStructureFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
     )]
     public void* PNext;
 
-    [NativeName("accelerationStructure")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
     )]
     public uint AccelerationStructure;
 
-    [NativeName("accelerationStructureCaptureReplay")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -55,7 +52,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
     )]
     public uint AccelerationStructureCaptureReplay;
 
-    [NativeName("accelerationStructureIndirectBuild")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -66,7 +63,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
     )]
     public uint AccelerationStructureIndirectBuild;
 
-    [NativeName("accelerationStructureHostCommands")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -77,7 +74,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
     )]
     public uint AccelerationStructureHostCommands;
 
-    [NativeName("descriptorBindingAccelerationStructureUpdateAfterBind")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

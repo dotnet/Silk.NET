@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineCoverageReductionStateCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineCoverageReductionStateCreateInfoNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -23,7 +21,7 @@ public unsafe partial struct PipelineCoverageReductionStateCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -34,7 +32,7 @@ public unsafe partial struct PipelineCoverageReductionStateCreateInfoNV
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineCoverageReductionStateCreateFlagsNV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -45,7 +43,6 @@ public unsafe partial struct PipelineCoverageReductionStateCreateInfoNV
     )]
     public uint Flags;
 
-    [NativeName("coverageReductionMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],

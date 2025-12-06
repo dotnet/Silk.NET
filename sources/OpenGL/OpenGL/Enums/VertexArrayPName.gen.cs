@@ -7,33 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("VertexArrayPName")]
+[Transformed]
 public enum VertexArrayPName : uint
 {
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_ENABLED")]
-    ArrayEnabled = 34338,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_SIZE")]
-    ArraySize = 34339,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_STRIDE")]
-    ArrayStride = 34340,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_TYPE")]
-    ArrayType = 34341,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_NORMALIZED")]
-    ArrayNormalized = 34922,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_INTEGER")]
-    ArrayInteger = 35069,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_DIVISOR")]
-    ArrayDivisor = 35070,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_LONG")]
-    ArrayLong = 34638,
-
-    [NativeName("GL_VERTEX_ATTRIB_RELATIVE_OFFSET")]
-    RelativeOffset = 33493,
+    ArrayEnabled = unchecked((uint)0x8622),
+    ArraySize = unchecked((uint)0x8623),
+    ArrayStride = unchecked((uint)0x8624),
+    ArrayType = unchecked((uint)0x8625),
+    ArrayNormalized = unchecked((uint)0x886A),
+    ArrayInteger = unchecked((uint)0x88FD),
+    ArrayDivisor = unchecked((uint)0x88FE),
+    ArrayLong = unchecked((uint)0x874E),
+    RelativeOffset = unchecked((uint)0x82D5),
 }

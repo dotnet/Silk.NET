@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoFormatPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoFormatPropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -19,7 +17,6 @@ public unsafe partial struct VideoFormatPropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -27,7 +24,6 @@ public unsafe partial struct VideoFormatPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -35,7 +31,6 @@ public unsafe partial struct VideoFormatPropertiesKHR
     )]
     public Format Format;
 
-    [NativeName("componentMapping")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -43,7 +38,7 @@ public unsafe partial struct VideoFormatPropertiesKHR
     )]
     public ComponentMapping ComponentMapping;
 
-    [NativeName("imageCreateFlags")]
+    [NativeTypeName("VkImageCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -51,7 +46,6 @@ public unsafe partial struct VideoFormatPropertiesKHR
     )]
     public ImageCreateFlags ImageCreateFlags;
 
-    [NativeName("imageType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -59,7 +53,6 @@ public unsafe partial struct VideoFormatPropertiesKHR
     )]
     public ImageType ImageType;
 
-    [NativeName("imageTiling")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -67,7 +60,7 @@ public unsafe partial struct VideoFormatPropertiesKHR
     )]
     public ImageTiling ImageTiling;
 
-    [NativeName("imageUsageFlags")]
+    [NativeTypeName("VkImageUsageFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

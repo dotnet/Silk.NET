@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBorderColor")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum BorderColor : uint
 {
-    [NativeName("VK_BORDER_COLOR_FLOAT_TRANSPARENT_BLACK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +35,6 @@ public enum BorderColor : uint
     )]
     FloatTransparentBlack = 0,
 
-    [NativeName("VK_BORDER_COLOR_INT_TRANSPARENT_BLACK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +58,6 @@ public enum BorderColor : uint
     )]
     IntTransparentBlack = 1,
 
-    [NativeName("VK_BORDER_COLOR_FLOAT_OPAQUE_BLACK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +81,6 @@ public enum BorderColor : uint
     )]
     FloatOpaqueBlack = 2,
 
-    [NativeName("VK_BORDER_COLOR_INT_OPAQUE_BLACK")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -108,7 +104,6 @@ public enum BorderColor : uint
     )]
     IntOpaqueBlack = 3,
 
-    [NativeName("VK_BORDER_COLOR_FLOAT_OPAQUE_WHITE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -132,7 +127,6 @@ public enum BorderColor : uint
     )]
     FloatOpaqueWhite = 4,
 
-    [NativeName("VK_BORDER_COLOR_INT_OPAQUE_WHITE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,7 +150,6 @@ public enum BorderColor : uint
     )]
     IntOpaqueWhite = 5,
 
-    [NativeName("VK_BORDER_COLOR_FLOAT_CUSTOM_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_custom_border_color"],
@@ -167,7 +160,6 @@ public enum BorderColor : uint
     )]
     FloatCustomEXT = 1000287003,
 
-    [NativeName("VK_BORDER_COLOR_INT_CUSTOM_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_custom_border_color"],

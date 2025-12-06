@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkQueueGlobalPriority")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum QueueGlobalPriority : uint
 {
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_LOW")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,7 +24,6 @@ public enum QueueGlobalPriority : uint
     )]
     Low = 128,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_MEDIUM")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,7 +36,6 @@ public enum QueueGlobalPriority : uint
     )]
     Medium = 256,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_HIGH")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +48,6 @@ public enum QueueGlobalPriority : uint
     )]
     High = 512,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_REALTIME")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -64,23 +60,18 @@ public enum QueueGlobalPriority : uint
     )]
     Realtime = 1024,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_LOW_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
     LowEXT = Low,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
     MediumEXT = Medium,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_HIGH_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
     HighEXT = High,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_REALTIME_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_global_priority"])]
     RealtimeEXT = Realtime,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_LOW_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_global_priority"],
@@ -91,7 +82,6 @@ public enum QueueGlobalPriority : uint
     )]
     LowKHR = Low,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_global_priority"],
@@ -102,7 +92,6 @@ public enum QueueGlobalPriority : uint
     )]
     MediumKHR = Medium,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_HIGH_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_global_priority"],
@@ -113,7 +102,6 @@ public enum QueueGlobalPriority : uint
     )]
     HighKHR = High,
 
-    [NativeName("VK_QUEUE_GLOBAL_PRIORITY_REALTIME_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_global_priority"],

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceNestedCommandBufferPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceNestedCommandBufferPropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_nested_command_buffer"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferPropertiesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_nested_command_buffer"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceNestedCommandBufferPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeName("maxCommandBufferNestingLevel")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_nested_command_buffer"],

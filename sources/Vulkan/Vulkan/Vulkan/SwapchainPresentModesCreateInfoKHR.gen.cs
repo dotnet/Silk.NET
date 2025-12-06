@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSwapchainPresentModesCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SwapchainPresentModesCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -24,7 +22,7 @@ public unsafe partial struct SwapchainPresentModesCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -36,7 +34,7 @@ public unsafe partial struct SwapchainPresentModesCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("presentModeCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -48,7 +46,7 @@ public unsafe partial struct SwapchainPresentModesCreateInfoKHR
     )]
     public uint PresentModeCount;
 
-    [NativeName("pPresentModes")]
+    [NativeTypeName("const VkPresentModeKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],

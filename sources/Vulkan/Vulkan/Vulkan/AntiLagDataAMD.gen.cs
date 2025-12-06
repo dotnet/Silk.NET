@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAntiLagDataAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AntiLagDataAMD
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_anti_lag"],
@@ -23,7 +21,7 @@ public unsafe partial struct AntiLagDataAMD
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_anti_lag"],
@@ -34,7 +32,6 @@ public unsafe partial struct AntiLagDataAMD
     )]
     public void* PNext;
 
-    [NativeName("mode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_anti_lag"],
@@ -45,7 +42,7 @@ public unsafe partial struct AntiLagDataAMD
     )]
     public AntiLagModeAMD Mode;
 
-    [NativeName("maxFPS")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_anti_lag"],
@@ -54,9 +51,9 @@ public unsafe partial struct AntiLagDataAMD
             "VK_AMD_anti_lag+VK_VERSION_1_1",
         ]
     )]
-    public uint MaxFps;
+    public uint MaxFPS;
 
-    [NativeName("pPresentationInfo")]
+    [NativeTypeName("const VkAntiLagPresentationInfoAMD *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_anti_lag"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDepthBiasRepresentationInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DepthBiasRepresentationInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],
@@ -23,7 +21,7 @@ public unsafe partial struct DepthBiasRepresentationInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],
@@ -34,7 +32,6 @@ public unsafe partial struct DepthBiasRepresentationInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("depthBiasRepresentation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],
@@ -45,7 +42,7 @@ public unsafe partial struct DepthBiasRepresentationInfoEXT
     )]
     public DepthBiasRepresentationEXT DepthBiasRepresentation;
 
-    [NativeName("depthBiasExact")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_bias_control"],

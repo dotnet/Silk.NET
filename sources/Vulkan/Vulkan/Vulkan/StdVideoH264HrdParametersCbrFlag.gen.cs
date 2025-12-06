@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_cbr_flag_e__FixedBuffer")]
 [InlineArray(32)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264HrdParametersCbrFlag
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

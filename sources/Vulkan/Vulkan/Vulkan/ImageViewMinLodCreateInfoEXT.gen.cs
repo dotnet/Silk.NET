@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageViewMinLodCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageViewMinLodCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_view_min_lod"],
@@ -23,7 +21,7 @@ public unsafe partial struct ImageViewMinLodCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_view_min_lod"],
@@ -34,7 +32,6 @@ public unsafe partial struct ImageViewMinLodCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("minLod")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_view_min_lod"],

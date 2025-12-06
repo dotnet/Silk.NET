@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_TimeFormat")]
-public enum TimeFormat
+[NativeTypeName("unsigned int")]
+public enum TimeFormat : uint
 {
-    [NativeName("SDL_TIME_FORMAT_24HR")]
     Format24Hr = 0,
-
-    [NativeName("SDL_TIME_FORMAT_12HR")]
     Format12Hr = 1,
 }

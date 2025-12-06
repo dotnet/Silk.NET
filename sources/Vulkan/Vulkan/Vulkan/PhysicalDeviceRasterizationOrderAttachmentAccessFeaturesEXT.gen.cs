@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFea
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFea
     )]
     public void* PNext;
 
-    [NativeName("rasterizationOrderColorAttachmentAccess")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFea
     )]
     public uint RasterizationOrderColorAttachmentAccess;
 
-    [NativeName("rasterizationOrderDepthAttachmentAccess")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],
@@ -56,7 +53,7 @@ public unsafe partial struct PhysicalDeviceRasterizationOrderAttachmentAccessFea
     )]
     public uint RasterizationOrderDepthAttachmentAccess;
 
-    [NativeName("rasterizationOrderStencilAttachmentAccess")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rasterization_order_attachment_access"],

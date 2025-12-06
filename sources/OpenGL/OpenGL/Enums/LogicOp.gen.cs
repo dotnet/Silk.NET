@@ -7,54 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("LogicOp")]
+[Transformed]
 public enum LogicOp : uint
 {
-    [NativeName("GL_CLEAR")]
-    Clear = 5376,
-
-    [NativeName("GL_AND")]
-    And = 5377,
-
-    [NativeName("GL_AND_REVERSE")]
-    AndReverse = 5378,
-
-    [NativeName("GL_COPY")]
-    Copy = 5379,
-
-    [NativeName("GL_AND_INVERTED")]
-    AndInverted = 5380,
-
-    [NativeName("GL_NOOP")]
-    Noop = 5381,
-
-    [NativeName("GL_XOR")]
-    Xor = 5382,
-
-    [NativeName("GL_OR")]
-    Or = 5383,
-
-    [NativeName("GL_NOR")]
-    Nor = 5384,
-
-    [NativeName("GL_EQUIV")]
-    Equiv = 5385,
-
-    [NativeName("GL_INVERT")]
-    Invert = 5386,
-
-    [NativeName("GL_OR_REVERSE")]
-    OrReverse = 5387,
-
-    [NativeName("GL_COPY_INVERTED")]
-    CopyInverted = 5388,
-
-    [NativeName("GL_OR_INVERTED")]
-    OrInverted = 5389,
-
-    [NativeName("GL_NAND")]
-    Nand = 5390,
-
-    [NativeName("GL_SET")]
-    Set = 5391,
+    Clear = unchecked((uint)0x1500),
+    And = unchecked((uint)0x1501),
+    AndReverse = unchecked((uint)0x1502),
+    Copy = unchecked((uint)0x1503),
+    AndInverted = unchecked((uint)0x1504),
+    Noop = unchecked((uint)0x1505),
+    Xor = unchecked((uint)0x1506),
+    Or = unchecked((uint)0x1507),
+    Nor = unchecked((uint)0x1508),
+    Equiv = unchecked((uint)0x1509),
+    Invert = unchecked((uint)0x150A),
+    OrReverse = unchecked((uint)0x150B),
+    CopyInverted = unchecked((uint)0x150C),
+    OrInverted = unchecked((uint)0x150D),
+    Nand = unchecked((uint)0x150E),
+    Set = unchecked((uint)0x150F),
 }

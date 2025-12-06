@@ -7,18 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GamepadBindingType")]
-public enum GamepadBindingType
+[NativeTypeName("unsigned int")]
+public enum GamepadBindingType : uint
 {
-    [NativeName("SDL_GAMEPAD_BINDTYPE_NONE")]
     None = 0,
-
-    [NativeName("SDL_GAMEPAD_BINDTYPE_BUTTON")]
-    Button = 1,
-
-    [NativeName("SDL_GAMEPAD_BINDTYPE_AXIS")]
-    Axis = 2,
-
-    [NativeName("SDL_GAMEPAD_BINDTYPE_HAT")]
-    Hat = 3,
+    Button,
+    Axis,
+    Hat,
 }

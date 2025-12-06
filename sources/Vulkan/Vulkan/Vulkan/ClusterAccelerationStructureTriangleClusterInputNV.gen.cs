@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkClusterAccelerationStructureTriangleClusterInputNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -20,7 +18,6 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -28,7 +25,6 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
     )]
     public void* PNext;
 
-    [NativeName("vertexFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -36,7 +32,7 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
     )]
     public Format VertexFormat;
 
-    [NativeName("maxGeometryIndexValue")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -44,7 +40,7 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
     )]
     public uint MaxGeometryIndexValue;
 
-    [NativeName("maxClusterUniqueGeometryCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -52,7 +48,7 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
     )]
     public uint MaxClusterUniqueGeometryCount;
 
-    [NativeName("maxClusterTriangleCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -60,7 +56,7 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
     )]
     public uint MaxClusterTriangleCount;
 
-    [NativeName("maxClusterVertexCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -68,7 +64,7 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
     )]
     public uint MaxClusterVertexCount;
 
-    [NativeName("maxTotalTriangleCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -76,7 +72,7 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
     )]
     public uint MaxTotalTriangleCount;
 
-    [NativeName("maxTotalVertexCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -84,7 +80,7 @@ public unsafe partial struct ClusterAccelerationStructureTriangleClusterInputNV
     )]
     public uint MaxTotalVertexCount;
 
-    [NativeName("minPositionTruncateBitCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

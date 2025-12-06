@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceRayTracingPipelinePropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -21,7 +19,6 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -32,7 +29,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("shaderGroupHandleSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -43,7 +40,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
     )]
     public uint ShaderGroupHandleSize;
 
-    [NativeName("maxRayRecursionDepth")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -54,7 +51,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
     )]
     public uint MaxRayRecursionDepth;
 
-    [NativeName("maxShaderGroupStride")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -65,7 +62,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
     )]
     public uint MaxShaderGroupStride;
 
-    [NativeName("shaderGroupBaseAlignment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -76,7 +73,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
     )]
     public uint ShaderGroupBaseAlignment;
 
-    [NativeName("shaderGroupHandleCaptureReplaySize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -87,7 +84,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
     )]
     public uint ShaderGroupHandleCaptureReplaySize;
 
-    [NativeName("maxRayDispatchInvocationCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -98,7 +95,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
     )]
     public uint MaxRayDispatchInvocationCount;
 
-    [NativeName("shaderGroupHandleAlignment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -109,7 +106,7 @@ public unsafe partial struct PhysicalDeviceRayTracingPipelinePropertiesKHR
     )]
     public uint ShaderGroupHandleAlignment;
 
-    [NativeName("maxRayHitAttributeSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],

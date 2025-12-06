@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceShaderClockFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_clock"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_clock"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
     )]
     public void* PNext;
 
-    [NativeName("shaderSubgroupClock")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_clock"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
     )]
     public uint ShaderSubgroupClock;
 
-    [NativeName("shaderDeviceClock")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_clock"],

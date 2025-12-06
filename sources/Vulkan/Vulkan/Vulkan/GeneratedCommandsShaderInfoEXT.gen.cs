@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGeneratedCommandsShaderInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeneratedCommandsShaderInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -24,7 +22,6 @@ public unsafe partial struct GeneratedCommandsShaderInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -36,7 +33,7 @@ public unsafe partial struct GeneratedCommandsShaderInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("shaderCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -48,7 +45,7 @@ public unsafe partial struct GeneratedCommandsShaderInfoEXT
     )]
     public uint ShaderCount;
 
-    [NativeName("pShaders")]
+    [NativeTypeName("const VkShaderEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -58,5 +55,5 @@ public unsafe partial struct GeneratedCommandsShaderInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ShaderHandleEXT* PShaders;
+    public ShaderEXTHandle* PShaders;
 }

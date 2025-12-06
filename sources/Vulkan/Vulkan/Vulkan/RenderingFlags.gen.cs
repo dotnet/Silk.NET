@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderingFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum RenderingFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -23,7 +22,6 @@ public enum RenderingFlags : uint
     )]
     ContentsSecondaryCommandBuffersBit = 0x1,
 
-    [NativeName("VK_RENDERING_SUSPENDING_BIT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -31,7 +29,6 @@ public enum RenderingFlags : uint
     )]
     SuspendingBit = 0x2,
 
-    [NativeName("VK_RENDERING_RESUMING_BIT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -39,7 +36,6 @@ public enum RenderingFlags : uint
     )]
     ResumingBit = 0x4,
 
-    [NativeName("VK_RENDERING_ENABLE_LEGACY_DITHERING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -55,11 +51,9 @@ public enum RenderingFlags : uint
     )]
     EnableLegacyDitheringBitEXT = 0x8,
 
-    [NativeName("VK_RENDERING_CONTENTS_INLINE_BIT_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     ContentsInlineBitKHR = 0x10,
 
-    [NativeName("VK_RENDERING_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_fragment_density_map_layered"],
@@ -68,9 +62,8 @@ public enum RenderingFlags : uint
             "VK_EXT_fragment_density_map+VK_VERSION_1_4",
         ]
     )]
-    PerLayerFragmentDensityBitVALVE = 0x20,
+    PerLayerFragmentDensityBitValve = 0x20,
 
-    [NativeName("VK_RENDERING_LOCAL_READ_CONCURRENT_ACCESS_CONTROL_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +79,6 @@ public enum RenderingFlags : uint
     )]
     LocalReadConcurrentAccessControlBitKHR = 0x100,
 
-    [NativeName("VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_dynamic_rendering"],
@@ -98,7 +90,6 @@ public enum RenderingFlags : uint
     )]
     ContentsSecondaryCommandBuffersBitKHR = ContentsSecondaryCommandBuffersBit,
 
-    [NativeName("VK_RENDERING_SUSPENDING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_dynamic_rendering"],
@@ -110,7 +101,6 @@ public enum RenderingFlags : uint
     )]
     SuspendingBitKHR = SuspendingBit,
 
-    [NativeName("VK_RENDERING_RESUMING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_dynamic_rendering"],
@@ -122,7 +112,6 @@ public enum RenderingFlags : uint
     )]
     ResumingBitKHR = ResumingBit,
 
-    [NativeName("VK_RENDERING_CONTENTS_INLINE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_nested_command_buffer"],

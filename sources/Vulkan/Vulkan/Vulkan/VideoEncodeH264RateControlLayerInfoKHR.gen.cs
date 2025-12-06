@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH264RateControlLayerInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -20,7 +18,7 @@ public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -28,7 +26,7 @@ public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("useMinQp")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -36,7 +34,6 @@ public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
     )]
     public uint UseMinQp;
 
-    [NativeName("minQp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -44,7 +41,7 @@ public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
     )]
     public VideoEncodeH264QpKHR MinQp;
 
-    [NativeName("useMaxQp")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -52,7 +49,6 @@ public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
     )]
     public uint UseMaxQp;
 
-    [NativeName("maxQp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -60,7 +56,7 @@ public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
     )]
     public VideoEncodeH264QpKHR MaxQp;
 
-    [NativeName("useMaxFrameSize")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -68,7 +64,6 @@ public unsafe partial struct VideoEncodeH264RateControlLayerInfoKHR
     )]
     public uint UseMaxFrameSize;
 
-    [NativeName("maxFrameSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],

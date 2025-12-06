@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_ThreadFunction")]
 public readonly unsafe struct ThreadFunction : IDisposable
 {
     private readonly void* Pointer;

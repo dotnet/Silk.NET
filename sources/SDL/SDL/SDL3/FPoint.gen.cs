@@ -7,12 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_FPoint")]
 public partial struct FPoint
 {
-    [NativeName("x")]
     public float X;
-
-    [NativeName("y")]
     public float Y;
 }

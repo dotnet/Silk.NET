@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDrawIndirectCountIndirectCommandEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct DrawIndirectCountIndirectCommandEXT
 {
-    [NativeName("bufferAddress")]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -24,7 +23,7 @@ public partial struct DrawIndirectCountIndirectCommandEXT
     )]
     public ulong BufferAddress;
 
-    [NativeName("stride")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -36,7 +35,7 @@ public partial struct DrawIndirectCountIndirectCommandEXT
     )]
     public uint Stride;
 
-    [NativeName("commandCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageMemoryBarrier2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageMemoryBarrier2
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +27,7 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,7 +44,7 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public void* PNext;
 
-    [NativeName("srcStageMask")]
+    [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,7 +61,7 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public PipelineStageFlags2 SrcStageMask;
 
-    [NativeName("srcAccessMask")]
+    [NativeTypeName("VkAccessFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -80,7 +78,7 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public AccessFlags2 SrcAccessMask;
 
-    [NativeName("dstStageMask")]
+    [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +95,7 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public PipelineStageFlags2 DstStageMask;
 
-    [NativeName("dstAccessMask")]
+    [NativeTypeName("VkAccessFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -114,7 +112,6 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public AccessFlags2 DstAccessMask;
 
-    [NativeName("oldLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -131,7 +128,6 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public ImageLayout OldLayout;
 
-    [NativeName("newLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -148,7 +144,7 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public ImageLayout NewLayout;
 
-    [NativeName("srcQueueFamilyIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -165,7 +161,7 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public uint SrcQueueFamilyIndex;
 
-    [NativeName("dstQueueFamilyIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -182,7 +178,7 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public uint DstQueueFamilyIndex;
 
-    [NativeName("image")]
+    [NativeTypeName("VkImage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -199,7 +195,6 @@ public unsafe partial struct ImageMemoryBarrier2
     )]
     public ImageHandle Image;
 
-    [NativeName("subresourceRange")]
     [SupportedApiProfile(
         "vulkan",
         [

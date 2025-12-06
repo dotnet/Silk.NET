@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceRawAccessChainsFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRawAccessChainsFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_raw_access_chains"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceRawAccessChainsFeaturesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_raw_access_chains"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceRawAccessChainsFeaturesNV
     )]
     public void* PNext;
 
-    [NativeName("shaderRawAccessChains")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_raw_access_chains"],

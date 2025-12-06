@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMultisampledRenderToSingleSampledInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MultisampledRenderToSingleSampledInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multisampled_render_to_single_sampled"],
@@ -19,7 +17,7 @@ public unsafe partial struct MultisampledRenderToSingleSampledInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multisampled_render_to_single_sampled"],
@@ -27,7 +25,7 @@ public unsafe partial struct MultisampledRenderToSingleSampledInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("multisampledRenderToSingleSampledEnable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multisampled_render_to_single_sampled"],
@@ -35,7 +33,6 @@ public unsafe partial struct MultisampledRenderToSingleSampledInfoEXT
     )]
     public uint MultisampledRenderToSingleSampledEnable;
 
-    [NativeName("rasterizationSamples")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multisampled_render_to_single_sampled"],

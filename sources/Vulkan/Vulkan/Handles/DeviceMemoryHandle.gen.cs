@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceMemory")]
 public readonly unsafe partial struct DeviceMemoryHandle
 {
     public readonly void* Handle;
-
-    public DeviceMemoryHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(DeviceMemoryHandle other) => Handle == other.Handle;
 

@@ -7,51 +7,40 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_hid_device_info")]
 public unsafe partial struct HidDeviceInfo
 {
-    [NativeName("path")]
+    [NativeTypeName("char *")]
     public sbyte* Path;
 
-    [NativeName("vendor_id")]
+    [NativeTypeName("unsigned short")]
     public ushort VendorId;
 
-    [NativeName("product_id")]
+    [NativeTypeName("unsigned short")]
     public ushort ProductId;
 
-    [NativeName("serial_number")]
-    public ushort* SerialNumber;
+    [NativeTypeName("wchar_t *")]
+    public uint* SerialNumber;
 
-    [NativeName("release_number")]
+    [NativeTypeName("unsigned short")]
     public ushort ReleaseNumber;
 
-    [NativeName("manufacturer_string")]
-    public ushort* ManufacturerString;
+    [NativeTypeName("wchar_t *")]
+    public uint* ManufacturerString;
 
-    [NativeName("product_string")]
-    public ushort* ProductString;
+    [NativeTypeName("wchar_t *")]
+    public uint* ProductString;
 
-    [NativeName("usage_page")]
+    [NativeTypeName("unsigned short")]
     public ushort UsagePage;
 
-    [NativeName("usage")]
+    [NativeTypeName("unsigned short")]
     public ushort Usage;
-
-    [NativeName("interface_number")]
     public int InterfaceNumber;
-
-    [NativeName("interface_class")]
     public int InterfaceClass;
-
-    [NativeName("interface_subclass")]
     public int InterfaceSubclass;
-
-    [NativeName("interface_protocol")]
     public int InterfaceProtocol;
-
-    [NativeName("bus_type")]
     public HidBusType BusType;
 
-    [NativeName("next")]
+    [NativeTypeName("struct SDL_hid_device_info *")]
     public HidDeviceInfo* Next;
 }

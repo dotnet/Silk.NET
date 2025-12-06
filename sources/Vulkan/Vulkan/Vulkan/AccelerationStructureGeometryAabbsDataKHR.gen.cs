@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAccelerationStructureGeometryAabbsDataKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureGeometryAabbsDataKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -22,7 +20,7 @@ public unsafe partial struct AccelerationStructureGeometryAabbsDataKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -33,7 +31,6 @@ public unsafe partial struct AccelerationStructureGeometryAabbsDataKHR
     )]
     public void* PNext;
 
-    [NativeName("data")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -44,7 +41,7 @@ public unsafe partial struct AccelerationStructureGeometryAabbsDataKHR
     )]
     public DeviceOrHostAddressConstKHR Data;
 
-    [NativeName("stride")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

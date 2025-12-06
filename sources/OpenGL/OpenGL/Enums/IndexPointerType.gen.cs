@@ -7,18 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("IndexPointerType")]
+[Transformed]
 public enum IndexPointerType : uint
 {
-    [NativeName("GL_SHORT")]
-    Short = 5122,
-
-    [NativeName("GL_FLOAT")]
-    Float = 5126,
-
-    [NativeName("GL_INT")]
-    Int = 5124,
-
-    [NativeName("GL_DOUBLE")]
-    Double = 5130,
+    Short = unchecked((uint)0x1402),
+    Int = unchecked((uint)0x1404),
+    Float = unchecked((uint)0x1406),
+    Double = unchecked((uint)0x140A),
 }

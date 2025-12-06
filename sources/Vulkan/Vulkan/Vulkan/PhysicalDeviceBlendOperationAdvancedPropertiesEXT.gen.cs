@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeName("advancedBlendMaxColorAttachments")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
     )]
     public uint AdvancedBlendMaxColorAttachments;
 
-    [NativeName("advancedBlendIndependentBlend")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -55,7 +52,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
     )]
     public uint AdvancedBlendIndependentBlend;
 
-    [NativeName("advancedBlendNonPremultipliedSrcColor")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -66,7 +63,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
     )]
     public uint AdvancedBlendNonPremultipliedSrcColor;
 
-    [NativeName("advancedBlendNonPremultipliedDstColor")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -77,7 +74,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
     )]
     public uint AdvancedBlendNonPremultipliedDstColor;
 
-    [NativeName("advancedBlendCorrelatedOverlap")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -88,7 +85,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
     )]
     public uint AdvancedBlendCorrelatedOverlap;
 
-    [NativeName("advancedBlendAllOperations")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],

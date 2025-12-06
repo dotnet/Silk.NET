@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoDecodeInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -23,7 +21,7 @@ public unsafe partial struct VideoDecodeInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -34,7 +32,7 @@ public unsafe partial struct VideoDecodeInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkVideoDecodeFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -45,7 +43,7 @@ public unsafe partial struct VideoDecodeInfoKHR
     )]
     public uint Flags;
 
-    [NativeName("srcBuffer")]
+    [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -56,7 +54,7 @@ public unsafe partial struct VideoDecodeInfoKHR
     )]
     public BufferHandle SrcBuffer;
 
-    [NativeName("srcBufferOffset")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -67,7 +65,7 @@ public unsafe partial struct VideoDecodeInfoKHR
     )]
     public ulong SrcBufferOffset;
 
-    [NativeName("srcBufferRange")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -78,7 +76,6 @@ public unsafe partial struct VideoDecodeInfoKHR
     )]
     public ulong SrcBufferRange;
 
-    [NativeName("dstPictureResource")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -89,7 +86,7 @@ public unsafe partial struct VideoDecodeInfoKHR
     )]
     public VideoPictureResourceInfoKHR DstPictureResource;
 
-    [NativeName("pSetupReferenceSlot")]
+    [NativeTypeName("const VkVideoReferenceSlotInfoKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -100,7 +97,7 @@ public unsafe partial struct VideoDecodeInfoKHR
     )]
     public VideoReferenceSlotInfoKHR* PSetupReferenceSlot;
 
-    [NativeName("referenceSlotCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],
@@ -111,7 +108,7 @@ public unsafe partial struct VideoDecodeInfoKHR
     )]
     public uint ReferenceSlotCount;
 
-    [NativeName("pReferenceSlots")]
+    [NativeTypeName("const VkVideoReferenceSlotInfoKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_queue"],

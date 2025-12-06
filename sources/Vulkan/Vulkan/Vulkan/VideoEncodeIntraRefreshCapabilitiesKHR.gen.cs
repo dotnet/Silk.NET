@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeIntraRefreshCapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
@@ -19,7 +17,6 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
@@ -27,7 +24,7 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
     )]
     public void* PNext;
 
-    [NativeName("intraRefreshModes")]
+    [NativeTypeName("VkVideoEncodeIntraRefreshModeFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
@@ -35,7 +32,7 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
     )]
     public VideoEncodeIntraRefreshModeFlagsKHR IntraRefreshModes;
 
-    [NativeName("maxIntraRefreshCycleDuration")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
@@ -43,7 +40,7 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
     )]
     public uint MaxIntraRefreshCycleDuration;
 
-    [NativeName("maxIntraRefreshActiveReferencePictures")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
@@ -51,7 +48,7 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
     )]
     public uint MaxIntraRefreshActiveReferencePictures;
 
-    [NativeName("partitionIndependentIntraRefreshRegions")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
@@ -59,7 +56,7 @@ public unsafe partial struct VideoEncodeIntraRefreshCapabilitiesKHR
     )]
     public uint PartitionIndependentIntraRefreshRegions;
 
-    [NativeName("nonRectangularIntraRefreshRegions")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],

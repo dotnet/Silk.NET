@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkInternalAllocationType")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum InternalAllocationType : uint
 {
-    [NativeName("VK_INTERNAL_ALLOCATION_TYPE_EXECUTABLE")]
     [SupportedApiProfile(
         "vulkan",
         [

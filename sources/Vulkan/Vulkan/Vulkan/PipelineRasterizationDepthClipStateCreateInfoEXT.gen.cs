@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineRasterizationDepthClipStateCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRasterizationDepthClipStateCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clip_enable"],
@@ -23,7 +21,7 @@ public unsafe partial struct PipelineRasterizationDepthClipStateCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clip_enable"],
@@ -34,7 +32,7 @@ public unsafe partial struct PipelineRasterizationDepthClipStateCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineRasterizationDepthClipStateCreateFlagsEXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clip_enable"],
@@ -45,7 +43,7 @@ public unsafe partial struct PipelineRasterizationDepthClipStateCreateInfoEXT
     )]
     public uint Flags;
 
-    [NativeName("depthClipEnable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clip_enable"],

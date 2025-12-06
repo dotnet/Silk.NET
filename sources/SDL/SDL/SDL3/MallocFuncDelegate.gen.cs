@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_malloc_func")]
 public unsafe delegate void* MallocFuncDelegate(nuint arg0);

@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_MouseWheelDirection")]
-public enum MouseWheelDirection
+[NativeTypeName("unsigned int")]
+public enum MouseWheelDirection : uint
 {
-    [NativeName("SDL_MOUSEWHEEL_NORMAL")]
-    Normal = 0,
-
-    [NativeName("SDL_MOUSEWHEEL_FLIPPED")]
-    Flipped = 1,
+    Normal,
+    Flipped,
 }

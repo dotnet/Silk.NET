@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryHeap")]
 [SupportedApiProfile("vulkan")]
 public partial struct MemoryHeap
 {
-    [NativeName("size")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,7 @@ public partial struct MemoryHeap
     )]
     public ulong Size;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkMemoryHeapFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

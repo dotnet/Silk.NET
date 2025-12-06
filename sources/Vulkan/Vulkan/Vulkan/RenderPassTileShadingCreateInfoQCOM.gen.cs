@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderPassTileShadingCreateInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -22,7 +20,7 @@ public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -33,7 +31,7 @@ public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkTileShadingRenderPassFlagsQCOM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -44,7 +42,6 @@ public unsafe partial struct RenderPassTileShadingCreateInfoQCOM
     )]
     public TileShadingRenderPassFlagsQCOM Flags;
 
-    [NativeName("tileApronSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],

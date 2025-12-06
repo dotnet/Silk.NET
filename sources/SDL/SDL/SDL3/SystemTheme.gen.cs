@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_SystemTheme")]
-public enum SystemTheme
+[NativeTypeName("unsigned int")]
+public enum SystemTheme : uint
 {
-    [NativeName("SDL_SYSTEM_THEME_UNKNOWN")]
-    Unknown = 0,
-
-    [NativeName("SDL_SYSTEM_THEME_LIGHT")]
-    Light = 1,
-
-    [NativeName("SDL_SYSTEM_THEME_DARK")]
-    Dark = 2,
+    Unknown,
+    Light,
+    Dark,
 }

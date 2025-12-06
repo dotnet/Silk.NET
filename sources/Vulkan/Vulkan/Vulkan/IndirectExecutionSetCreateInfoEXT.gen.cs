@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndirectExecutionSetCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectExecutionSetCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -23,7 +21,7 @@ public unsafe partial struct IndirectExecutionSetCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -35,7 +33,6 @@ public unsafe partial struct IndirectExecutionSetCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -47,7 +44,6 @@ public unsafe partial struct IndirectExecutionSetCreateInfoEXT
     )]
     public IndirectExecutionSetInfoTypeEXT Type;
 
-    [NativeName("info")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

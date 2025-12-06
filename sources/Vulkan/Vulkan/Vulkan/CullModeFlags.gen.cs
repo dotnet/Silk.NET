@@ -8,12 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCullModeFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum CullModeFlags : uint
 {
-    [NativeName("VK_CULL_MODE_NONE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -32,7 +31,6 @@ public enum CullModeFlags : uint
     )]
     None = 0x0,
 
-    [NativeName("VK_CULL_MODE_FRONT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +49,6 @@ public enum CullModeFlags : uint
     )]
     FrontBit = 0x1,
 
-    [NativeName("VK_CULL_MODE_BACK_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +67,6 @@ public enum CullModeFlags : uint
     )]
     BackBit = 0x2,
 
-    [NativeName("VK_CULL_MODE_FRONT_AND_BACK")]
     [SupportedApiProfile(
         "vulkan",
         [

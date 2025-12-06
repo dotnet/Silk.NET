@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDevicePipelineCreationCacheControlFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineCreationCacheControlFeatures
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -26,7 +24,6 @@ public unsafe partial struct PhysicalDevicePipelineCreationCacheControlFeatures
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +38,7 @@ public unsafe partial struct PhysicalDevicePipelineCreationCacheControlFeatures
     )]
     public void* PNext;
 
-    [NativeName("pipelineCreationCacheControl")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint PipelineCreationCacheControl;
 }

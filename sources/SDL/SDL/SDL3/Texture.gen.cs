@@ -7,18 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_Texture")]
 public partial struct Texture
 {
-    [NativeName("format")]
     public PixelFormat Format;
-
-    [NativeName("w")]
     public int W;
-
-    [NativeName("h")]
     public int H;
-
-    [NativeName("refcount")]
     public int Refcount;
 }

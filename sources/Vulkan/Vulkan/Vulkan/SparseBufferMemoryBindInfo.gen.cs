@@ -6,11 +6,10 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSparseBufferMemoryBindInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SparseBufferMemoryBindInfo
 {
-    [NativeName("buffer")]
+    [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +38,7 @@ public unsafe partial struct SparseBufferMemoryBindInfo
     )]
     public BufferHandle Buffer;
 
-    [NativeName("bindCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +67,7 @@ public unsafe partial struct SparseBufferMemoryBindInfo
     )]
     public uint BindCount;
 
-    [NativeName("pBinds")]
+    [NativeTypeName("const VkSparseMemoryBind *")]
     [SupportedApiProfile(
         "vulkan",
         [

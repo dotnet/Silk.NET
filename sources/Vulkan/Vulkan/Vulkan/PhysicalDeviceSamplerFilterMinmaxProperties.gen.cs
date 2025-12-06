@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceSamplerFilterMinmaxProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +28,6 @@ public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +45,7 @@ public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
     )]
     public void* PNext;
 
-    [NativeName("filterMinmaxSingleComponentFormats")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -66,7 +63,7 @@ public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
     )]
     public uint FilterMinmaxSingleComponentFormats;
 
-    [NativeName("filterMinmaxImageComponentMapping")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [

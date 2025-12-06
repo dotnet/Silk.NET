@@ -8,15 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_EventAction")]
-public enum EventAction
+[NativeTypeName("unsigned int")]
+public enum EventAction : uint
 {
-    [NativeName("SDL_ADDEVENT")]
-    Addevent = 0,
-
-    [NativeName("SDL_PEEKEVENT")]
-    Peekevent = 1,
-
-    [NativeName("SDL_GETEVENT")]
-    Getevent = 2,
+    Addevent,
+    Peekevent,
+    Getevent,
 }

@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("PixelDataRangeTargetNV")]
+[Transformed]
 public enum PixelDataRangeTargetNV : uint
 {
-    [NativeName("GL_WRITE_PIXEL_DATA_RANGE_NV")]
-    WritePixelDataRange = 34936,
-
-    [NativeName("GL_READ_PIXEL_DATA_RANGE_NV")]
-    ReadPixelDataRange = 34937,
+    WritePixelDataRange = unchecked((uint)0x8878),
+    ReadPixelDataRange = unchecked((uint)0x8879),
 }

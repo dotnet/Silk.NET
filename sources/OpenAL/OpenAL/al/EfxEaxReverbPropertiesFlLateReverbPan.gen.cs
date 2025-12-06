@@ -10,10 +10,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("_flLateReverbPan_e__FixedBuffer")]
 [InlineArray(3)]
 public partial struct EfxEaxReverbPropertiesFlLateReverbPan
 {
-    [NativeName("e0")]
     public float E0;
 }

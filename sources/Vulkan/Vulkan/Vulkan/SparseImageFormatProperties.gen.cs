@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSparseImageFormatProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct SparseImageFormatProperties
 {
-    [NativeName("aspectMask")]
+    [NativeTypeName("VkImageAspectFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,6 @@ public partial struct SparseImageFormatProperties
     )]
     public ImageAspectFlags AspectMask;
 
-    [NativeName("imageGranularity")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,7 @@ public partial struct SparseImageFormatProperties
     )]
     public Extent3D ImageGranularity;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkSparseImageFormatFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

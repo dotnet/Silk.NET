@@ -10,30 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("FilterPName")]
+[Transformed]
 public enum FilterPName : uint
 {
-    [NativeName("AL_LOWPASS_GAIN")]
-    LowpassGain = 1,
-
-    [NativeName("AL_LOWPASS_GAINHF")]
-    LowpassGainhf = 2,
-
-    [NativeName("AL_HIGHPASS_GAIN")]
-    HighpassGain = 1,
-
-    [NativeName("AL_HIGHPASS_GAINLF")]
-    HighpassGainlf = 2,
-
-    [NativeName("AL_BANDPASS_GAIN")]
-    BandpassGain = 1,
-
-    [NativeName("AL_BANDPASS_GAINLF")]
-    BandpassGainlf = 2,
-
-    [NativeName("AL_BANDPASS_GAINHF")]
-    BandpassGainhf = 3,
-
-    [NativeName("AL_FILTER_TYPE")]
-    FilterType = 32769,
+    LowpassGain = unchecked((uint)0x0001),
+    LowpassGainhf = unchecked((uint)0x0002),
+    HighpassGain = unchecked((uint)0x0001),
+    HighpassGainlf = unchecked((uint)0x0002),
+    BandpassGain = unchecked((uint)0x0001),
+    BandpassGainlf = unchecked((uint)0x0002),
+    BandpassGainhf = unchecked((uint)0x0003),
+    FilterType = unchecked((uint)0x8001),
 }

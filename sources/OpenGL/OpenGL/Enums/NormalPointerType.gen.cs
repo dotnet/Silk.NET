@@ -7,21 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("NormalPointerType")]
+[Transformed]
 public enum NormalPointerType : uint
 {
-    [NativeName("GL_BYTE")]
-    Byte = 5120,
-
-    [NativeName("GL_SHORT")]
-    Short = 5122,
-
-    [NativeName("GL_FLOAT")]
-    Float = 5126,
-
-    [NativeName("GL_INT")]
-    Int = 5124,
-
-    [NativeName("GL_DOUBLE")]
-    Double = 5130,
+    Byte = unchecked((uint)0x1400),
+    Short = unchecked((uint)0x1402),
+    Int = unchecked((uint)0x1404),
+    Float = unchecked((uint)0x1406),
+    Double = unchecked((uint)0x140A),
 }

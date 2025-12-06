@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_attachment_feedback_loop_dynamic_state"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopDynamicStateFea
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_attachment_feedback_loop_dynamic_state"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceAttachmentFeedbackLoopDynamicStateFea
     )]
     public void* PNext;
 
-    [NativeName("attachmentFeedbackLoopDynamicState")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_attachment_feedback_loop_dynamic_state"],

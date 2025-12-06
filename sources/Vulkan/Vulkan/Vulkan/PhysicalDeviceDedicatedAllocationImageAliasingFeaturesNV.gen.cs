@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_dedicated_allocation_image_aliasing"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeatu
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_dedicated_allocation_image_aliasing"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeatu
     )]
     public void* PNext;
 
-    [NativeName("dedicatedAllocationImageAliasing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_dedicated_allocation_image_aliasing"],

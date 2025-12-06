@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
     )]
     public void* PNext;
 
-    [NativeName("deviceGeneratedCompute")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -36,7 +33,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
     )]
     public uint DeviceGeneratedCompute;
 
-    [NativeName("deviceGeneratedComputePipelines")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsComputeFeature
     )]
     public uint DeviceGeneratedComputePipelines;
 
-    [NativeName("deviceGeneratedComputeCaptureReplay")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],

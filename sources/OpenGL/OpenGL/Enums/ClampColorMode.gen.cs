@@ -7,18 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ClampColorModeARB")]
+[Transformed]
 public enum ClampColorMode : uint
 {
-    [NativeName("GL_FALSE")]
-    False = 0,
-
-    [NativeName("GL_TRUE")]
-    True = 1,
-
-    [NativeName("GL_FIXED_ONLY")]
-    FixedOnly = 35101,
-
-    [NativeName("GL_FIXED_ONLY_ARB")]
-    FixedOnlyARB = 35101,
+    False = unchecked((uint)0),
+    True = unchecked((uint)1),
+    FixedOnly = unchecked((uint)0x891D),
+    FixedOnlyARB = unchecked((uint)0x891D),
 }

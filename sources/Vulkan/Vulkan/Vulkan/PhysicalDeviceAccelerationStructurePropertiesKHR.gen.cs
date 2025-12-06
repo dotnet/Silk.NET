@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceAccelerationStructurePropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("maxGeometryCount")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
     )]
     public ulong MaxGeometryCount;
 
-    [NativeName("maxInstanceCount")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -55,7 +52,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
     )]
     public ulong MaxInstanceCount;
 
-    [NativeName("maxPrimitiveCount")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -66,7 +63,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
     )]
     public ulong MaxPrimitiveCount;
 
-    [NativeName("maxPerStageDescriptorAccelerationStructures")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -77,7 +74,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
     )]
     public uint MaxPerStageDescriptorAccelerationStructures;
 
-    [NativeName("maxPerStageDescriptorUpdateAfterBindAccelerationStructures")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -88,7 +85,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
     )]
     public uint MaxPerStageDescriptorUpdateAfterBindAccelerationStructures;
 
-    [NativeName("maxDescriptorSetAccelerationStructures")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -99,7 +96,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
     )]
     public uint MaxDescriptorSetAccelerationStructures;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindAccelerationStructures")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -110,7 +107,7 @@ public unsafe partial struct PhysicalDeviceAccelerationStructurePropertiesKHR
     )]
     public uint MaxDescriptorSetUpdateAfterBindAccelerationStructures;
 
-    [NativeName("minAccelerationStructureScratchOffsetAlignment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

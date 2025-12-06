@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_DisplayModeData")]
 public readonly unsafe partial struct DisplayModeDataHandle
 {
     public readonly void* Handle;
-
-    public DisplayModeDataHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(DisplayModeDataHandle other) => Handle == other.Handle;
 

@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("MapAttribParameterNV")]
+[Transformed]
 public enum MapAttribParameterNV : uint
 {
-    [NativeName("GL_MAP_ATTRIB_U_ORDER_NV")]
-    UOrder = 34499,
-
-    [NativeName("GL_MAP_ATTRIB_V_ORDER_NV")]
-    VOrder = 34500,
+    UOrder = unchecked((uint)0x86C3),
+    VOrder = unchecked((uint)0x86C4),
 }

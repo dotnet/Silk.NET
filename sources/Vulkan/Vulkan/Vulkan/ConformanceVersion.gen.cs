@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkConformanceVersion")]
 [SupportedApiProfile("vulkan")]
 public partial struct ConformanceVersion
 {
-    [NativeName("major")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -32,7 +31,7 @@ public partial struct ConformanceVersion
     )]
     public byte Major;
 
-    [NativeName("minor")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -53,7 +52,7 @@ public partial struct ConformanceVersion
     )]
     public byte Minor;
 
-    [NativeName("subminor")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -74,7 +73,7 @@ public partial struct ConformanceVersion
     )]
     public byte Subminor;
 
-    [NativeName("patch")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile(
         "vulkan",
         [

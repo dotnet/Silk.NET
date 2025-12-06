@@ -8,12 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkResolveModeFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum ResolveModeFlags : uint
 {
-    [NativeName("VK_RESOLVE_MODE_NONE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -28,7 +27,6 @@ public enum ResolveModeFlags : uint
     )]
     None = 0x0,
 
-    [NativeName("VK_RESOLVE_MODE_SAMPLE_ZERO_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -43,7 +41,6 @@ public enum ResolveModeFlags : uint
     )]
     SampleZeroBit = 0x1,
 
-    [NativeName("VK_RESOLVE_MODE_AVERAGE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,7 +55,6 @@ public enum ResolveModeFlags : uint
     )]
     AverageBit = 0x2,
 
-    [NativeName("VK_RESOLVE_MODE_MIN_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -73,7 +69,6 @@ public enum ResolveModeFlags : uint
     )]
     MinBit = 0x4,
 
-    [NativeName("VK_RESOLVE_MODE_MAX_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -88,7 +83,6 @@ public enum ResolveModeFlags : uint
     )]
     MaxBit = 0x8,
 
-    [NativeName("VK_RESOLVE_MODE_EXTERNAL_FORMAT_DOWNSAMPLE_BIT_ANDROID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,9 +91,8 @@ public enum ResolveModeFlags : uint
         ],
         ImpliesSets = ["VK_ANDROID_external_memory_android_hardware_buffer"]
     )]
-    ExternalFormatDownsampleBitANDROID = 0x10,
+    ExternalFormatDownsampleBitAndroid = 0x10,
 
-    [NativeName("VK_RESOLVE_MODE_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_depth_stencil_resolve"],
@@ -110,7 +103,6 @@ public enum ResolveModeFlags : uint
     )]
     NoneKHR = None,
 
-    [NativeName("VK_RESOLVE_MODE_SAMPLE_ZERO_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_depth_stencil_resolve"],
@@ -121,7 +113,6 @@ public enum ResolveModeFlags : uint
     )]
     SampleZeroBitKHR = SampleZeroBit,
 
-    [NativeName("VK_RESOLVE_MODE_AVERAGE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_depth_stencil_resolve"],
@@ -132,7 +123,6 @@ public enum ResolveModeFlags : uint
     )]
     AverageBitKHR = AverageBit,
 
-    [NativeName("VK_RESOLVE_MODE_MIN_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_depth_stencil_resolve"],
@@ -143,7 +133,6 @@ public enum ResolveModeFlags : uint
     )]
     MinBitKHR = MinBit,
 
-    [NativeName("VK_RESOLVE_MODE_MAX_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_depth_stencil_resolve"],

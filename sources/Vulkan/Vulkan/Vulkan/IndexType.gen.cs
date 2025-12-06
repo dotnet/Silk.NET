@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndexType")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum IndexType : uint
 {
-    [NativeName("VK_INDEX_TYPE_UINT16")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,6 @@ public enum IndexType : uint
     )]
     Uint16 = 0,
 
-    [NativeName("VK_INDEX_TYPE_UINT32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,6 @@ public enum IndexType : uint
     )]
     Uint32 = 1,
 
-    [NativeName("VK_INDEX_TYPE_UINT8")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -83,7 +80,6 @@ public enum IndexType : uint
     )]
     Uint8 = 1000265000,
 
-    [NativeName("VK_INDEX_TYPE_NONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -94,7 +90,6 @@ public enum IndexType : uint
     )]
     NoneKHR = 1000165000,
 
-    [NativeName("VK_INDEX_TYPE_NONE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -105,7 +100,6 @@ public enum IndexType : uint
     )]
     NoneNV = NoneKHR,
 
-    [NativeName("VK_INDEX_TYPE_UINT8_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_index_type_uint8"],
@@ -116,7 +110,6 @@ public enum IndexType : uint
     )]
     Uint8EXT = Uint8,
 
-    [NativeName("VK_INDEX_TYPE_UINT8_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_index_type_uint8"],

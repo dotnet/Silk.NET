@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("TextureNormalModeEXT")]
+[Transformed]
 public enum TextureNormalModeEXT : uint
 {
-    [NativeName("GL_PERTURB_EXT")]
-    Perturb = 34222,
+    Perturb = unchecked((uint)0x85AE),
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDataGraphPipelinePropertyQueryResultARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelinePropertyQueryResultARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -20,7 +18,7 @@ public unsafe partial struct DataGraphPipelinePropertyQueryResultARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -28,7 +26,6 @@ public unsafe partial struct DataGraphPipelinePropertyQueryResultARM
     )]
     public void* PNext;
 
-    [NativeName("property")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -36,7 +33,7 @@ public unsafe partial struct DataGraphPipelinePropertyQueryResultARM
     )]
     public DataGraphPipelinePropertyARM Property;
 
-    [NativeName("isText")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -44,7 +41,7 @@ public unsafe partial struct DataGraphPipelinePropertyQueryResultARM
     )]
     public uint IsText;
 
-    [NativeName("dataSize")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -52,7 +49,6 @@ public unsafe partial struct DataGraphPipelinePropertyQueryResultARM
     )]
     public nuint DataSize;
 
-    [NativeName("pData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

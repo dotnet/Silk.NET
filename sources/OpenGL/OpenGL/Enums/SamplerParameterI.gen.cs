@@ -7,30 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("SamplerParameterI")]
+[Transformed]
 public enum SamplerParameterI : uint
 {
-    [NativeName("GL_TEXTURE_MAG_FILTER")]
-    MagFilter = 10240,
-
-    [NativeName("GL_TEXTURE_MIN_FILTER")]
-    MinFilter = 10241,
-
-    [NativeName("GL_TEXTURE_WRAP_S")]
-    WrapS = 10242,
-
-    [NativeName("GL_TEXTURE_WRAP_T")]
-    WrapT = 10243,
-
-    [NativeName("GL_TEXTURE_WRAP_R")]
-    WrapR = 32882,
-
-    [NativeName("GL_TEXTURE_COMPARE_MODE")]
-    CompareMode = 34892,
-
-    [NativeName("GL_TEXTURE_COMPARE_FUNC")]
-    CompareFunc = 34893,
-
-    [NativeName("GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
-    UnnormalizedCoordinatesARM = 36714,
+    MagFilter = unchecked((uint)0x2800),
+    MinFilter = unchecked((uint)0x2801),
+    WrapS = unchecked((uint)0x2802),
+    WrapT = unchecked((uint)0x2803),
+    WrapR = unchecked((uint)0x8072),
+    CompareMode = unchecked((uint)0x884C),
+    CompareFunc = unchecked((uint)0x884D),
+    UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
 }

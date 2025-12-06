@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
@@ -19,7 +17,7 @@ public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsi
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
@@ -28,7 +26,7 @@ public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsi
     )]
     public void* PNext;
 
-    [NativeName("dimension")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
@@ -37,7 +35,7 @@ public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsi
     )]
     public uint Dimension;
 
-    [NativeName("zeroCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],
@@ -46,7 +44,7 @@ public unsafe partial struct DataGraphPipelineConstantTensorSemiStructuredSparsi
     )]
     public uint ZeroCount;
 
-    [NativeName("groupSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph", "VK_ARM_tensors"],

@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkOffset3D")]
 [SupportedApiProfile("vulkan")]
 public partial struct Offset3D
 {
-    [NativeName("x")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,7 @@ public partial struct Offset3D
     )]
     public int X;
 
-    [NativeName("y")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +69,7 @@ public partial struct Offset3D
     )]
     public int Y;
 
-    [NativeName("z")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

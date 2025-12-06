@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSurfacePresentScalingCapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -23,7 +21,6 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -34,7 +31,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     )]
     public void* PNext;
 
-    [NativeName("supportedPresentScaling")]
+    [NativeTypeName("VkPresentScalingFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -45,7 +42,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     )]
     public PresentScalingFlagsKHR SupportedPresentScaling;
 
-    [NativeName("supportedPresentGravityX")]
+    [NativeTypeName("VkPresentGravityFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -56,7 +53,7 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     )]
     public PresentGravityFlagsKHR SupportedPresentGravityX;
 
-    [NativeName("supportedPresentGravityY")]
+    [NativeTypeName("VkPresentGravityFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -67,7 +64,6 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     )]
     public PresentGravityFlagsKHR SupportedPresentGravityY;
 
-    [NativeName("minScaledImageExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -78,7 +74,6 @@ public unsafe partial struct SurfacePresentScalingCapabilitiesKHR
     )]
     public Extent2D MinScaledImageExtent;
 
-    [NativeName("maxScaledImageExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],

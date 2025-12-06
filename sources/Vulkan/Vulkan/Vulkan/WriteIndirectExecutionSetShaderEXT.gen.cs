@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkWriteIndirectExecutionSetShaderEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteIndirectExecutionSetShaderEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands", "VK_EXT_shader_object"],
@@ -24,7 +22,7 @@ public unsafe partial struct WriteIndirectExecutionSetShaderEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands", "VK_EXT_shader_object"],
@@ -37,7 +35,7 @@ public unsafe partial struct WriteIndirectExecutionSetShaderEXT
     )]
     public void* PNext;
 
-    [NativeName("index")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands", "VK_EXT_shader_object"],
@@ -50,7 +48,7 @@ public unsafe partial struct WriteIndirectExecutionSetShaderEXT
     )]
     public uint Index;
 
-    [NativeName("shader")]
+    [NativeTypeName("VkShaderEXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands", "VK_EXT_shader_object"],
@@ -61,5 +59,5 @@ public unsafe partial struct WriteIndirectExecutionSetShaderEXT
         ],
         RequireAll = true
     )]
-    public ShaderHandleEXT Shader;
+    public ShaderEXTHandle Shader;
 }

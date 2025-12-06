@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSemaphoreSubmitInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SemaphoreSubmitInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -28,7 +26,7 @@ public unsafe partial struct SemaphoreSubmitInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -45,7 +43,7 @@ public unsafe partial struct SemaphoreSubmitInfo
     )]
     public void* PNext;
 
-    [NativeName("semaphore")]
+    [NativeTypeName("VkSemaphore")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +60,7 @@ public unsafe partial struct SemaphoreSubmitInfo
     )]
     public SemaphoreHandle Semaphore;
 
-    [NativeName("value")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -79,7 +77,7 @@ public unsafe partial struct SemaphoreSubmitInfo
     )]
     public ulong Value;
 
-    [NativeName("stageMask")]
+    [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,7 +94,7 @@ public unsafe partial struct SemaphoreSubmitInfo
     )]
     public PipelineStageFlags2 StageMask;
 
-    [NativeName("deviceIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

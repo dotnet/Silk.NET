@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSamplerCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +34,7 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +58,7 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkSamplerCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +82,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public SamplerCreateFlags Flags;
 
-    [NativeName("magFilter")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -108,7 +105,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public Filter MagFilter;
 
-    [NativeName("minFilter")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -132,7 +128,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public Filter MinFilter;
 
-    [NativeName("mipmapMode")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,7 +151,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public SamplerMipmapMode MipmapMode;
 
-    [NativeName("addressModeU")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -180,7 +174,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public SamplerAddressMode AddressModeU;
 
-    [NativeName("addressModeV")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -204,7 +197,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public SamplerAddressMode AddressModeV;
 
-    [NativeName("addressModeW")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -228,7 +220,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public SamplerAddressMode AddressModeW;
 
-    [NativeName("mipLodBias")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -252,7 +243,7 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public float MipLodBias;
 
-    [NativeName("anisotropyEnable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -276,7 +267,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public uint AnisotropyEnable;
 
-    [NativeName("maxAnisotropy")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -300,7 +290,7 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public float MaxAnisotropy;
 
-    [NativeName("compareEnable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -324,7 +314,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public uint CompareEnable;
 
-    [NativeName("compareOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -348,7 +337,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public CompareOp CompareOp;
 
-    [NativeName("minLod")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_view_min_lod"],
@@ -359,7 +347,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public float MinLod;
 
-    [NativeName("maxLod")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -383,7 +370,6 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public float MaxLod;
 
-    [NativeName("borderColor")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -407,7 +393,7 @@ public unsafe partial struct SamplerCreateInfo
     )]
     public BorderColor BorderColor;
 
-    [NativeName("unnormalizedCoordinates")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("SpriteParameterNameSGIX")]
+[Transformed]
 public enum SpriteParameterNameSGIX : uint
 {
-    [NativeName("GL_SPRITE_MODE_SGIX")]
-    SpriteMode = 33097,
+    SpriteMode = unchecked((uint)0x8149),
 }

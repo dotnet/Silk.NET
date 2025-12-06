@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceAntiLagFeaturesAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceAntiLagFeaturesAMD
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_anti_lag"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceAntiLagFeaturesAMD
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_anti_lag"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceAntiLagFeaturesAMD
     )]
     public void* PNext;
 
-    [NativeName("antiLag")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_anti_lag"],

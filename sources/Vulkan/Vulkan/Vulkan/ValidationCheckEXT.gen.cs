@@ -7,15 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkValidationCheckEXT")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum ValidationCheckEXT : uint
 {
-    [NativeName("VK_VALIDATION_CHECK_ALL_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
-    All = 0,
+    AllEXT = 0,
 
-    [NativeName("VK_VALIDATION_CHECK_SHADERS_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_validation_flags"])]
-    Shaders = 1,
+    ShadersEXT = 1,
 }

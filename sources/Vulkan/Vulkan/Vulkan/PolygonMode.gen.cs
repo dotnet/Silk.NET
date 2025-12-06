@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPolygonMode")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum PolygonMode : uint
 {
-    [NativeName("VK_POLYGON_MODE_FILL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,7 +30,6 @@ public enum PolygonMode : uint
     )]
     Fill = 0,
 
-    [NativeName("VK_POLYGON_MODE_LINE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +48,6 @@ public enum PolygonMode : uint
     )]
     Line = 1,
 
-    [NativeName("VK_POLYGON_MODE_POINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +66,6 @@ public enum PolygonMode : uint
     )]
     Point = 2,
 
-    [NativeName("VK_POLYGON_MODE_FILL_RECTANGLE_NV")]
     [SupportedApiProfile("vulkan", ["VK_NV_fill_rectangle"])]
     FillRectangleNV = 1000153000,
 }

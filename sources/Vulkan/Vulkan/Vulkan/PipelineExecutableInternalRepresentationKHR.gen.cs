@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineExecutableInternalRepresentationKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineExecutableInternalRepresentationKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -22,7 +20,6 @@ public unsafe partial struct PipelineExecutableInternalRepresentationKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -33,7 +30,7 @@ public unsafe partial struct PipelineExecutableInternalRepresentationKHR
     )]
     public void* PNext;
 
-    [NativeName("name")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -42,9 +39,9 @@ public unsafe partial struct PipelineExecutableInternalRepresentationKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutableInternalRepresentationKhrName Name;
+    public PipelineExecutableInternalRepresentationKHRName Name;
 
-    [NativeName("description")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -53,9 +50,9 @@ public unsafe partial struct PipelineExecutableInternalRepresentationKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutableInternalRepresentationKhrDescription Description;
+    public PipelineExecutableInternalRepresentationKHRDescription Description;
 
-    [NativeName("isText")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -66,7 +63,7 @@ public unsafe partial struct PipelineExecutableInternalRepresentationKHR
     )]
     public uint IsText;
 
-    [NativeName("dataSize")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -77,7 +74,6 @@ public unsafe partial struct PipelineExecutableInternalRepresentationKHR
     )]
     public nuint DataSize;
 
-    [NativeName("pData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],

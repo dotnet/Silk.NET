@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDepthStencilResolveProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +25,6 @@ public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +39,7 @@ public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
     )]
     public void* PNext;
 
-    [NativeName("supportedDepthResolveModes")]
+    [NativeTypeName("VkResolveModeFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +54,7 @@ public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
     )]
     public ResolveModeFlags SupportedDepthResolveModes;
 
-    [NativeName("supportedStencilResolveModes")]
+    [NativeTypeName("VkResolveModeFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -72,7 +69,7 @@ public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
     )]
     public ResolveModeFlags SupportedStencilResolveModes;
 
-    [NativeName("independentResolveNone")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +84,7 @@ public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
     )]
     public uint IndependentResolveNone;
 
-    [NativeName("independentResolve")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [

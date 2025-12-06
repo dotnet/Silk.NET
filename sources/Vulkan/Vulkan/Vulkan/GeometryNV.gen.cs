@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGeometryNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeometryNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -23,7 +21,7 @@ public unsafe partial struct GeometryNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -34,7 +32,6 @@ public unsafe partial struct GeometryNV
     )]
     public void* PNext;
 
-    [NativeName("geometryType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -45,7 +42,6 @@ public unsafe partial struct GeometryNV
     )]
     public GeometryTypeKHR GeometryType;
 
-    [NativeName("geometry")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -56,7 +52,7 @@ public unsafe partial struct GeometryNV
     )]
     public GeometryDataNV Geometry;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkGeometryFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

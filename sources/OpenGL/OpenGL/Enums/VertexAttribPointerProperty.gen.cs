@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("VertexAttribPointerPropertyARB")]
+[Transformed]
 public enum VertexAttribPointerProperty : uint
 {
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_POINTER")]
-    Pointer = 34373,
-
-    [NativeName("GL_VERTEX_ATTRIB_ARRAY_POINTER_ARB")]
-    PointerARB = 34373,
+    Pointer = unchecked((uint)0x8645),
+    PointerARB = unchecked((uint)0x8645),
 }

@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCoverageReductionModeNV")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum CoverageReductionModeNV : uint
 {
-    [NativeName("VK_COVERAGE_REDUCTION_MODE_MERGE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -21,9 +20,8 @@ public enum CoverageReductionModeNV : uint
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    Merge = 0,
+    MergeNV = 0,
 
-    [NativeName("VK_COVERAGE_REDUCTION_MODE_TRUNCATE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -32,5 +30,5 @@ public enum CoverageReductionModeNV : uint
             "VK_NV_framebuffer_mixed_samples+VK_VERSION_1_1",
         ]
     )]
-    Truncate = 1,
+    TruncateNV = 1,
 }

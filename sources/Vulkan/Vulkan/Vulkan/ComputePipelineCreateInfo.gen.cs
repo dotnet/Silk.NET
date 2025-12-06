@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkComputePipelineCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ComputePipelineCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +34,7 @@ public unsafe partial struct ComputePipelineCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +58,7 @@ public unsafe partial struct ComputePipelineCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +82,6 @@ public unsafe partial struct ComputePipelineCreateInfo
     )]
     public PipelineCreateFlags Flags;
 
-    [NativeName("stage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -108,7 +105,7 @@ public unsafe partial struct ComputePipelineCreateInfo
     )]
     public PipelineShaderStageCreateInfo Stage;
 
-    [NativeName("layout")]
+    [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -132,7 +129,7 @@ public unsafe partial struct ComputePipelineCreateInfo
     )]
     public PipelineLayoutHandle Layout;
 
-    [NativeName("basePipelineHandle")]
+    [NativeTypeName("VkPipeline")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,7 +153,7 @@ public unsafe partial struct ComputePipelineCreateInfo
     )]
     public PipelineHandle BasePipelineHandle;
 
-    [NativeName("basePipelineIndex")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

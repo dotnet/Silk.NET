@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceOpticalFlowPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -24,7 +22,6 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -36,7 +33,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public void* PNext;
 
-    [NativeName("supportedOutputGridSizes")]
+    [NativeTypeName("VkOpticalFlowGridSizeFlagsNV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -48,7 +45,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public OpticalFlowGridSizeFlagsNV SupportedOutputGridSizes;
 
-    [NativeName("supportedHintGridSizes")]
+    [NativeTypeName("VkOpticalFlowGridSizeFlagsNV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -60,7 +57,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public OpticalFlowGridSizeFlagsNV SupportedHintGridSizes;
 
-    [NativeName("hintSupported")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -72,7 +69,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public uint HintSupported;
 
-    [NativeName("costSupported")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -84,7 +81,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public uint CostSupported;
 
-    [NativeName("bidirectionalFlowSupported")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -96,7 +93,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public uint BidirectionalFlowSupported;
 
-    [NativeName("globalFlowSupported")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -108,7 +105,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public uint GlobalFlowSupported;
 
-    [NativeName("minWidth")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -120,7 +117,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public uint MinWidth;
 
-    [NativeName("minHeight")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -132,7 +129,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public uint MinHeight;
 
-    [NativeName("maxWidth")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -144,7 +141,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public uint MaxWidth;
 
-    [NativeName("maxHeight")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -156,7 +153,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowPropertiesNV
     )]
     public uint MaxHeight;
 
-    [NativeName("maxNumRegionsOfInterest")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],

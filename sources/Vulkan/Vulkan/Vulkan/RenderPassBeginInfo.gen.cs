@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderPassBeginInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassBeginInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,7 +29,7 @@ public unsafe partial struct RenderPassBeginInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +48,7 @@ public unsafe partial struct RenderPassBeginInfo
     )]
     public void* PNext;
 
-    [NativeName("renderPass")]
+    [NativeTypeName("VkRenderPass")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +67,7 @@ public unsafe partial struct RenderPassBeginInfo
     )]
     public RenderPassHandle RenderPass;
 
-    [NativeName("framebuffer")]
+    [NativeTypeName("VkFramebuffer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -88,7 +86,6 @@ public unsafe partial struct RenderPassBeginInfo
     )]
     public FramebufferHandle Framebuffer;
 
-    [NativeName("renderArea")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -107,7 +104,7 @@ public unsafe partial struct RenderPassBeginInfo
     )]
     public Rect2D RenderArea;
 
-    [NativeName("clearValueCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +123,7 @@ public unsafe partial struct RenderPassBeginInfo
     )]
     public uint ClearValueCount;
 
-    [NativeName("pClearValues")]
+    [NativeTypeName("const VkClearValue *")]
     [SupportedApiProfile(
         "vulkan",
         [

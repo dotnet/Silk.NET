@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageViewType")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum ImageViewType : uint
 {
-    [NativeName("VK_IMAGE_VIEW_TYPE_1D")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,6 @@ public enum ImageViewType : uint
     )]
     Type1D = 0,
 
-    [NativeName("VK_IMAGE_VIEW_TYPE_2D")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,6 @@ public enum ImageViewType : uint
     )]
     Type2D = 1,
 
-    [NativeName("VK_IMAGE_VIEW_TYPE_3D")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +96,6 @@ public enum ImageViewType : uint
     )]
     Type3D = 2,
 
-    [NativeName("VK_IMAGE_VIEW_TYPE_CUBE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +124,6 @@ public enum ImageViewType : uint
     )]
     TypeCube = 3,
 
-    [NativeName("VK_IMAGE_VIEW_TYPE_1D_ARRAY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -157,7 +152,6 @@ public enum ImageViewType : uint
     )]
     Type1DArray = 4,
 
-    [NativeName("VK_IMAGE_VIEW_TYPE_2D_ARRAY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -186,7 +180,6 @@ public enum ImageViewType : uint
     )]
     Type2DArray = 5,
 
-    [NativeName("VK_IMAGE_VIEW_TYPE_CUBE_ARRAY")]
     [SupportedApiProfile(
         "vulkan",
         [

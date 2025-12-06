@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH265NaluSliceSegmentInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH265NaluSliceSegmentInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -20,7 +18,7 @@ public unsafe partial struct VideoEncodeH265NaluSliceSegmentInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -28,7 +26,7 @@ public unsafe partial struct VideoEncodeH265NaluSliceSegmentInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("constantQp")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -36,7 +34,7 @@ public unsafe partial struct VideoEncodeH265NaluSliceSegmentInfoKHR
     )]
     public int ConstantQp;
 
-    [NativeName("pStdSliceSegmentHeader")]
+    [NativeTypeName("const StdVideoEncodeH265SliceSegmentHeader *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],

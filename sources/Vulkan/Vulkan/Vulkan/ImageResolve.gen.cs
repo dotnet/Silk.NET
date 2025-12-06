@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageResolve")]
 [SupportedApiProfile("vulkan")]
 public partial struct ImageResolve
 {
-    [NativeName("srcSubresource")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +27,6 @@ public partial struct ImageResolve
     )]
     public ImageSubresourceLayers SrcSubresource;
 
-    [NativeName("srcOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +45,6 @@ public partial struct ImageResolve
     )]
     public Offset3D SrcOffset;
 
-    [NativeName("dstSubresource")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,7 +63,6 @@ public partial struct ImageResolve
     )]
     public ImageSubresourceLayers DstSubresource;
 
-    [NativeName("dstOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +81,6 @@ public partial struct ImageResolve
     )]
     public Offset3D DstOffset;
 
-    [NativeName("extent")]
     [SupportedApiProfile(
         "vulkan",
         [

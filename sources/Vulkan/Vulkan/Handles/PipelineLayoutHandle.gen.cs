@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineLayout")]
 public readonly unsafe partial struct PipelineLayoutHandle
 {
     public readonly void* Handle;
-
-    public PipelineLayoutHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(PipelineLayoutHandle other) => Handle == other.Handle;
 

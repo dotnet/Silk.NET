@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCooperativeMatrixFlexibleDimensionsPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -20,7 +18,6 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -28,7 +25,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public void* PNext;
 
-    [NativeName("MGranularity")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -36,7 +33,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public uint MGranularity;
 
-    [NativeName("NGranularity")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -44,7 +41,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public uint NGranularity;
 
-    [NativeName("KGranularity")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -52,7 +49,6 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public uint KGranularity;
 
-    [NativeName("AType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -60,7 +56,6 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public ComponentTypeKHR AType;
 
-    [NativeName("BType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -68,7 +63,6 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public ComponentTypeKHR BType;
 
-    [NativeName("CType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -76,7 +70,6 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public ComponentTypeKHR CType;
 
-    [NativeName("ResultType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -84,7 +77,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public ComponentTypeKHR ResultType;
 
-    [NativeName("saturatingAccumulation")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -92,7 +85,6 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public uint SaturatingAccumulation;
 
-    [NativeName("scope")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -100,7 +92,7 @@ public unsafe partial struct CooperativeMatrixFlexibleDimensionsPropertiesNV
     )]
     public ScopeKHR Scope;
 
-    [NativeName("workgroupInvocations")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],

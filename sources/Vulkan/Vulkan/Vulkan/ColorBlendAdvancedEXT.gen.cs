@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkColorBlendAdvancedEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct ColorBlendAdvancedEXT
 {
-    [NativeName("advancedBlendOp")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -22,7 +20,7 @@ public partial struct ColorBlendAdvancedEXT
     )]
     public BlendOp AdvancedBlendOp;
 
-    [NativeName("srcPremultiplied")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -33,7 +31,7 @@ public partial struct ColorBlendAdvancedEXT
     )]
     public uint SrcPremultiplied;
 
-    [NativeName("dstPremultiplied")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -44,7 +42,6 @@ public partial struct ColorBlendAdvancedEXT
     )]
     public uint DstPremultiplied;
 
-    [NativeName("blendOverlap")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -55,7 +52,7 @@ public partial struct ColorBlendAdvancedEXT
     )]
     public BlendOverlapEXT BlendOverlap;
 
-    [NativeName("clampResults")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineTessellationStateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineTessellationStateCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +28,7 @@ public unsafe partial struct PipelineTessellationStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -49,7 +47,7 @@ public unsafe partial struct PipelineTessellationStateCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineTessellationStateCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +66,7 @@ public unsafe partial struct PipelineTessellationStateCreateInfo
     )]
     public uint Flags;
 
-    [NativeName("patchControlPoints")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkQueryType")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum QueryType : uint
 {
-    [NativeName("VK_QUERY_TYPE_OCCLUSION")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,6 @@ public enum QueryType : uint
     )]
     Occlusion = 0,
 
-    [NativeName("VK_QUERY_TYPE_PIPELINE_STATISTICS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,6 @@ public enum QueryType : uint
     )]
     PipelineStatistics = 1,
 
-    [NativeName("VK_QUERY_TYPE_TIMESTAMP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +96,6 @@ public enum QueryType : uint
     )]
     Timestamp = 2,
 
-    [NativeName("VK_QUERY_TYPE_RESULT_STATUS_ONLY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -107,7 +103,6 @@ public enum QueryType : uint
     )]
     ResultStatusOnlyKHR = 1000023000,
 
-    [NativeName("VK_QUERY_TYPE_TRANSFORM_FEEDBACK_STREAM_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -118,7 +113,6 @@ public enum QueryType : uint
     )]
     TransformFeedbackStreamEXT = 1000028004,
 
-    [NativeName("VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -129,7 +123,6 @@ public enum QueryType : uint
     )]
     PerformanceQueryKHR = 1000116000,
 
-    [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_COMPACTED_SIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -140,7 +133,6 @@ public enum QueryType : uint
     )]
     AccelerationStructureCompactedSizeKHR = 1000150000,
 
-    [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_SIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -151,7 +143,6 @@ public enum QueryType : uint
     )]
     AccelerationStructureSerializationSizeKHR = 1000150001,
 
-    [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_COMPACTED_SIZE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -162,11 +153,9 @@ public enum QueryType : uint
     )]
     AccelerationStructureCompactedSizeNV = 1000165000,
 
-    [NativeName("VK_QUERY_TYPE_PERFORMANCE_QUERY_INTEL")]
     [SupportedApiProfile("vulkan", ["VK_INTEL_performance_query"])]
-    PerformanceQueryINTEL = 1000210000,
+    PerformanceQueryIntel = 1000210000,
 
-    [NativeName("VK_QUERY_TYPE_VIDEO_ENCODE_FEEDBACK_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -177,7 +166,6 @@ public enum QueryType : uint
     )]
     VideoEncodeFeedbackKHR = 1000299000,
 
-    [NativeName("VK_QUERY_TYPE_MESH_PRIMITIVES_GENERATED_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -185,7 +173,6 @@ public enum QueryType : uint
     )]
     MeshPrimitivesGeneratedEXT = 1000328000,
 
-    [NativeName("VK_QUERY_TYPE_PRIMITIVES_GENERATED_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_primitives_generated_query"],
@@ -193,7 +180,6 @@ public enum QueryType : uint
     )]
     PrimitivesGeneratedEXT = 1000382000,
 
-    [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_BOTTOM_LEVEL_POINTERS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1"],
@@ -201,7 +187,6 @@ public enum QueryType : uint
     )]
     AccelerationStructureSerializationBottomLevelPointersKHR = 1000386000,
 
-    [NativeName("VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_maintenance1"],
@@ -209,7 +194,6 @@ public enum QueryType : uint
     )]
     AccelerationStructureSizeKHR = 1000386001,
 
-    [NativeName("VK_QUERY_TYPE_MICROMAP_SERIALIZATION_SIZE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -220,7 +204,6 @@ public enum QueryType : uint
     )]
     MicromapSerializationSizeEXT = 1000396000,
 
-    [NativeName("VK_QUERY_TYPE_MICROMAP_COMPACTED_SIZE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

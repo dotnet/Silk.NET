@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceFormatPackFeaturesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFormatPackFeaturesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceFormatPackFeaturesARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceFormatPackFeaturesARM
     )]
     public void* PNext;
 
-    [NativeName("formatPack")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_format_pack"],

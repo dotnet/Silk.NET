@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceFaultCountsEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceFaultCountsEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -21,7 +19,6 @@ public unsafe partial struct DeviceFaultCountsEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -32,7 +29,7 @@ public unsafe partial struct DeviceFaultCountsEXT
     )]
     public void* PNext;
 
-    [NativeName("addressInfoCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -43,7 +40,7 @@ public unsafe partial struct DeviceFaultCountsEXT
     )]
     public uint AddressInfoCount;
 
-    [NativeName("vendorInfoCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -54,7 +51,7 @@ public unsafe partial struct DeviceFaultCountsEXT
     )]
     public uint VendorInfoCount;
 
-    [NativeName("vendorBinarySize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndirectExecutionSetShaderInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectExecutionSetShaderInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -24,7 +22,7 @@ public unsafe partial struct IndirectExecutionSetShaderInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -36,7 +34,7 @@ public unsafe partial struct IndirectExecutionSetShaderInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("shaderCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -48,7 +46,7 @@ public unsafe partial struct IndirectExecutionSetShaderInfoEXT
     )]
     public uint ShaderCount;
 
-    [NativeName("pInitialShaders")]
+    [NativeTypeName("const VkShaderEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -58,9 +56,9 @@ public unsafe partial struct IndirectExecutionSetShaderInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ShaderHandleEXT* PInitialShaders;
+    public ShaderEXTHandle* PInitialShaders;
 
-    [NativeName("pSetLayoutInfos")]
+    [NativeTypeName("const VkIndirectExecutionSetShaderLayoutInfoEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -72,7 +70,7 @@ public unsafe partial struct IndirectExecutionSetShaderInfoEXT
     )]
     public IndirectExecutionSetShaderLayoutInfoEXT* PSetLayoutInfos;
 
-    [NativeName("maxShaderCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -84,7 +82,7 @@ public unsafe partial struct IndirectExecutionSetShaderInfoEXT
     )]
     public uint MaxShaderCount;
 
-    [NativeName("pushConstantRangeCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -96,7 +94,7 @@ public unsafe partial struct IndirectExecutionSetShaderInfoEXT
     )]
     public uint PushConstantRangeCount;
 
-    [NativeName("pPushConstantRanges")]
+    [NativeTypeName("const VkPushConstantRange *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

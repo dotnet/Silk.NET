@@ -8,13 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorDataEXT")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorDataEXT
 {
-    [NativeName("pSampler")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkSampler *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -27,8 +26,8 @@ public unsafe partial struct DescriptorDataEXT
     )]
     public SamplerHandle* PSampler;
 
-    [NativeName("pCombinedImageSampler")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkDescriptorImageInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -41,8 +40,8 @@ public unsafe partial struct DescriptorDataEXT
     )]
     public DescriptorImageInfo* PCombinedImageSampler;
 
-    [NativeName("pInputAttachmentImage")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkDescriptorImageInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -55,8 +54,8 @@ public unsafe partial struct DescriptorDataEXT
     )]
     public DescriptorImageInfo* PInputAttachmentImage;
 
-    [NativeName("pSampledImage")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkDescriptorImageInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -69,8 +68,8 @@ public unsafe partial struct DescriptorDataEXT
     )]
     public DescriptorImageInfo* PSampledImage;
 
-    [NativeName("pStorageImage")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkDescriptorImageInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -83,8 +82,8 @@ public unsafe partial struct DescriptorDataEXT
     )]
     public DescriptorImageInfo* PStorageImage;
 
-    [NativeName("pUniformTexelBuffer")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkDescriptorAddressInfoEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -97,8 +96,8 @@ public unsafe partial struct DescriptorDataEXT
     )]
     public DescriptorAddressInfoEXT* PUniformTexelBuffer;
 
-    [NativeName("pStorageTexelBuffer")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkDescriptorAddressInfoEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -111,8 +110,8 @@ public unsafe partial struct DescriptorDataEXT
     )]
     public DescriptorAddressInfoEXT* PStorageTexelBuffer;
 
-    [NativeName("pUniformBuffer")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkDescriptorAddressInfoEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -125,8 +124,8 @@ public unsafe partial struct DescriptorDataEXT
     )]
     public DescriptorAddressInfoEXT* PUniformBuffer;
 
-    [NativeName("pStorageBuffer")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkDescriptorAddressInfoEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -139,8 +138,8 @@ public unsafe partial struct DescriptorDataEXT
     )]
     public DescriptorAddressInfoEXT* PStorageBuffer;
 
-    [NativeName("accelerationStructure")]
     [FieldOffset(0)]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

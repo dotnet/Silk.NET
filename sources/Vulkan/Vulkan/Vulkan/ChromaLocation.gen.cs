@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkChromaLocation")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum ChromaLocation : uint
 {
-    [NativeName("VK_CHROMA_LOCATION_COSITED_EVEN")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -32,7 +31,6 @@ public enum ChromaLocation : uint
     )]
     CositedEven = 0,
 
-    [NativeName("VK_CHROMA_LOCATION_MIDPOINT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -53,7 +51,6 @@ public enum ChromaLocation : uint
     )]
     Midpoint = 1,
 
-    [NativeName("VK_CHROMA_LOCATION_COSITED_EVEN_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -64,7 +61,6 @@ public enum ChromaLocation : uint
     )]
     CositedEvenKHR = CositedEven,
 
-    [NativeName("VK_CHROMA_LOCATION_MIDPOINT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],

@@ -7,13 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceOrHostAddressConstKHR")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceOrHostAddressConstKHR
 {
-    [NativeName("deviceAddress")]
     [FieldOffset(0)]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -24,8 +23,8 @@ public unsafe partial struct DeviceOrHostAddressConstKHR
     )]
     public ulong DeviceAddress;
 
-    [NativeName("hostAddress")]
     [FieldOffset(0)]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

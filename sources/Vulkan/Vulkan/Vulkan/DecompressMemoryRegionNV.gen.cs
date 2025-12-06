@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDecompressMemoryRegionNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct DecompressMemoryRegionNV
 {
-    [NativeName("srcAddress")]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_memory_decompression"],
@@ -24,7 +23,7 @@ public partial struct DecompressMemoryRegionNV
     )]
     public ulong SrcAddress;
 
-    [NativeName("dstAddress")]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_memory_decompression"],
@@ -36,7 +35,7 @@ public partial struct DecompressMemoryRegionNV
     )]
     public ulong DstAddress;
 
-    [NativeName("compressedSize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_memory_decompression"],
@@ -48,7 +47,7 @@ public partial struct DecompressMemoryRegionNV
     )]
     public ulong CompressedSize;
 
-    [NativeName("decompressedSize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_memory_decompression"],
@@ -60,7 +59,7 @@ public partial struct DecompressMemoryRegionNV
     )]
     public ulong DecompressedSize;
 
-    [NativeName("decompressionMethod")]
+    [NativeTypeName("VkMemoryDecompressionMethodFlagsNV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_memory_decompression"],

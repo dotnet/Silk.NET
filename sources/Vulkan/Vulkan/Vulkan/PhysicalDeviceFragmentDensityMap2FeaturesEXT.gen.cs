@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceFragmentDensityMap2FeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map2"],
@@ -19,7 +17,6 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map2"],
@@ -27,7 +24,7 @@ public unsafe partial struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("fragmentDensityMapDeferred")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map2"],

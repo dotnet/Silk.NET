@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_AtomicU32")]
 public partial struct AtomicU32
 {
-    [NativeName("value")]
+    [NativeTypeName("Uint32")]
     public uint Value;
 }
