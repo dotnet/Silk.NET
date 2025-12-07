@@ -41,7 +41,7 @@ public static unsafe partial class SDL_TextEditingCandidatesEventTests
         }
         else
         {
-            Assert.That(sizeof(TextEditingCandidatesEvent), Is.EqualTo(32));
+            Assert.That(sizeof(TextEditingCandidatesEvent), Is.EqualTo(40));
         }
     }
 }

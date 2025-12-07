@@ -12,10 +12,10 @@ namespace Silk.NET.SDL;
 public readonly unsafe struct StorageInterfaceReadFile : IDisposable
 {
     private readonly void* Pointer;
-    public delegate* unmanaged<void*, sbyte*, void*, nuint, byte> Handle =>
-        (delegate* unmanaged<void*, sbyte*, void*, nuint, byte>)Pointer;
+    public delegate* unmanaged<void*, sbyte*, void*, ulong, byte> Handle =>
+        (delegate* unmanaged<void*, sbyte*, void*, ulong, byte>)Pointer;
 
-    public StorageInterfaceReadFile(delegate* unmanaged<void*, sbyte*, void*, nuint, byte> ptr) =>
+    public StorageInterfaceReadFile(delegate* unmanaged<void*, sbyte*, void*, ulong, byte> ptr) =>
         Pointer = ptr;
 
     public StorageInterfaceReadFile(StorageInterfaceReadFileDelegate proc) =>
@@ -24,10 +24,10 @@ public readonly unsafe struct StorageInterfaceReadFile : IDisposable
     public void Dispose() => SilkMarshal.Free(Pointer);
 
     public static implicit operator StorageInterfaceReadFile(
-        delegate* unmanaged<void*, sbyte*, void*, nuint, byte> pfn
+        delegate* unmanaged<void*, sbyte*, void*, ulong, byte> pfn
     ) => new(pfn);
 
-    public static implicit operator delegate* unmanaged<void*, sbyte*, void*, nuint, byte>(
+    public static implicit operator delegate* unmanaged<void*, sbyte*, void*, ulong, byte>(
         StorageInterfaceReadFile pfn
-    ) => (delegate* unmanaged<void*, sbyte*, void*, nuint, byte>)pfn.Pointer;
+    ) => (delegate* unmanaged<void*, sbyte*, void*, ulong, byte>)pfn.Pointer;
 }

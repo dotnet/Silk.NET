@@ -13,5 +13,5 @@ public unsafe delegate byte StorageInterfaceWriteFileDelegate(
     void* arg0,
     sbyte* arg1,
     void* arg2,
-    nuint arg3
+    ulong arg3
 );

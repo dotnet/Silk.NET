@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_TextureAccess")]
-public enum TextureAccess : uint
+public enum TextureAccess
 {
     [NativeName("SDL_TEXTUREACCESS_STATIC")]
     Static = 0,

@@ -176,7 +176,7 @@ public unsafe partial interface IALContext
             DeviceHandle device,
             int pname,
             int size,
-            nint* values
+            long* values
         );
 
         [NativeName("alcGetInteger64vSOFT")]
@@ -189,7 +189,7 @@ public unsafe partial interface IALContext
             DeviceHandle device,
             int pname,
             int size,
-            Ref<nint> values
+            Ref<long> values
         );
 
         [NativeName("alcGetInteger64vSOFT")]
@@ -198,7 +198,7 @@ public unsafe partial interface IALContext
             SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
         ]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-        static abstract nint GetInteger64SOFT(DeviceHandle device, int pname);
+        static abstract long GetInteger64SOFT(DeviceHandle device, int pname);
 
         [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
@@ -544,7 +544,7 @@ public unsafe partial interface IALContext
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-    void GetInteger64SOFT(DeviceHandle device, int pname, int size, nint* values);
+    void GetInteger64SOFT(DeviceHandle device, int pname, int size, long* values);
 
     [NativeName("alcGetInteger64vSOFT")]
     [
@@ -552,7 +552,7 @@ public unsafe partial interface IALContext
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-    void GetInteger64SOFT(DeviceHandle device, int pname, int size, Ref<nint> values);
+    void GetInteger64SOFT(DeviceHandle device, int pname, int size, Ref<long> values);
 
     [NativeName("alcGetInteger64vSOFT")]
     [
@@ -560,7 +560,7 @@ public unsafe partial interface IALContext
         SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
     ]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-    nint GetInteger64SOFT(DeviceHandle device, int pname);
+    long GetInteger64SOFT(DeviceHandle device, int pname);
 
     [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]

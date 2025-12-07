@@ -3,11 +3,12 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_hid_bus_type")]
-public enum HidBusType : uint
+public enum HidBusType
 {
     [NativeName("SDL_HID_API_BUS_UNKNOWN")]
     Unknown = 0,
