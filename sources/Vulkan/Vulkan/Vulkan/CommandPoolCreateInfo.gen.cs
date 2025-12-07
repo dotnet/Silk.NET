@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCommandPoolCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CommandPoolCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct CommandPoolCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,7 @@ public unsafe partial struct CommandPoolCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkCommandPoolCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +97,7 @@ public unsafe partial struct CommandPoolCreateInfo
     )]
     public CommandPoolCreateFlags Flags;
 
-    [NativeName("queueFamilyIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

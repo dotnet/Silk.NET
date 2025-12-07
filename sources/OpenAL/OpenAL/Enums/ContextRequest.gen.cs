@@ -10,15 +10,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ContextRequestSOFT")]
+[Transformed]
 public enum ContextRequest : uint
 {
-    [NativeName("ALC_FALSE")]
-    False = 0,
-
-    [NativeName("ALC_TRUE")]
-    True = 1,
-
-    [NativeName("ALC_DONT_CARE_SOFT")]
-    DontCareSOFT = 2,
+    False = unchecked((uint)0),
+    True = unchecked((uint)1),
+    DontCareSOFT = unchecked((uint)0x0002),
 }

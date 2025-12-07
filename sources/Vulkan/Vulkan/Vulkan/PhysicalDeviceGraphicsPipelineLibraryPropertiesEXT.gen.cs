@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_graphics_pipeline_library"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_graphics_pipeline_library"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeName("graphicsPipelineLibraryFastLinking")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_graphics_pipeline_library"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
     )]
     public uint GraphicsPipelineLibraryFastLinking;
 
-    [NativeName("graphicsPipelineLibraryIndependentInterpolationDecoration")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_graphics_pipeline_library"],

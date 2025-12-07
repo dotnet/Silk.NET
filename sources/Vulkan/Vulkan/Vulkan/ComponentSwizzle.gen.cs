@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkComponentSwizzle")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum ComponentSwizzle : uint
 {
-    [NativeName("VK_COMPONENT_SWIZZLE_IDENTITY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,6 @@ public enum ComponentSwizzle : uint
     )]
     Identity = 0,
 
-    [NativeName("VK_COMPONENT_SWIZZLE_ZERO")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,6 @@ public enum ComponentSwizzle : uint
     )]
     Zero = 1,
 
-    [NativeName("VK_COMPONENT_SWIZZLE_ONE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +96,6 @@ public enum ComponentSwizzle : uint
     )]
     One = 2,
 
-    [NativeName("VK_COMPONENT_SWIZZLE_R")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +124,6 @@ public enum ComponentSwizzle : uint
     )]
     R = 3,
 
-    [NativeName("VK_COMPONENT_SWIZZLE_G")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -157,7 +152,6 @@ public enum ComponentSwizzle : uint
     )]
     G = 4,
 
-    [NativeName("VK_COMPONENT_SWIZZLE_B")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -186,7 +180,6 @@ public enum ComponentSwizzle : uint
     )]
     B = 5,
 
-    [NativeName("VK_COMPONENT_SWIZZLE_A")]
     [SupportedApiProfile(
         "vulkan",
         [

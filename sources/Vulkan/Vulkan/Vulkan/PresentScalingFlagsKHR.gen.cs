@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPresentScalingFlagBitsKHR")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum PresentScalingFlagsKHR : uint
 {
     None = 0x0,
 
-    [NativeName("VK_PRESENT_SCALING_ONE_TO_ONE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -24,9 +23,8 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    OneToOneBit = 0x1,
+    OneToOneBitKHR = 0x1,
 
-    [NativeName("VK_PRESENT_SCALING_ASPECT_RATIO_STRETCH_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -35,9 +33,8 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    AspectRatioStretchBit = 0x2,
+    AspectRatioStretchBitKHR = 0x2,
 
-    [NativeName("VK_PRESENT_SCALING_STRETCH_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -46,9 +43,8 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    StretchBit = 0x4,
+    StretchBitKHR = 0x4,
 
-    [NativeName("VK_PRESENT_SCALING_ONE_TO_ONE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -57,9 +53,8 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    OneToOneBitEXT = OneToOneBit,
+    OneToOneBitEXT = OneToOneBitKHR,
 
-    [NativeName("VK_PRESENT_SCALING_ASPECT_RATIO_STRETCH_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -68,9 +63,8 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    AspectRatioStretchBitEXT = AspectRatioStretchBit,
+    AspectRatioStretchBitEXT = AspectRatioStretchBitKHR,
 
-    [NativeName("VK_PRESENT_SCALING_STRETCH_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -79,5 +73,5 @@ public enum PresentScalingFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    StretchBitEXT = StretchBit,
+    StretchBitEXT = StretchBitKHR,
 }

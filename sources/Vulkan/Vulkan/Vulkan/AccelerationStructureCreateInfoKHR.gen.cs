@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAccelerationStructureCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -23,7 +21,7 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -34,7 +32,7 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("createFlags")]
+    [NativeTypeName("VkAccelerationStructureCreateFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -45,7 +43,7 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
     )]
     public AccelerationStructureCreateFlagsKHR CreateFlags;
 
-    [NativeName("buffer")]
+    [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -56,7 +54,7 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
     )]
     public BufferHandle Buffer;
 
-    [NativeName("offset")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -67,7 +65,7 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
     )]
     public ulong Offset;
 
-    [NativeName("size")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -78,7 +76,6 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
     )]
     public ulong Size;
 
-    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -89,7 +86,7 @@ public unsafe partial struct AccelerationStructureCreateInfoKHR
     )]
     public AccelerationStructureTypeKHR Type;
 
-    [NativeName("deviceAddress")]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

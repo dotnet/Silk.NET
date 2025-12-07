@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceAddressBindingReportFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceAddressBindingReportFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceAddressBindingReportFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceAddressBindingReportFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("reportAddressBinding")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],

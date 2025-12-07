@@ -8,35 +8,32 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDisplayPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayPropertiesKHR
 {
-    [NativeName("display")]
+    [NativeTypeName("VkDisplayKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public DisplayHandleKHR Display;
+    public DisplayKHRHandle Display;
 
-    [NativeName("displayName")]
+    [NativeTypeName("const char *")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public sbyte* DisplayName;
 
-    [NativeName("physicalDimensions")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Extent2D PhysicalDimensions;
 
-    [NativeName("physicalResolution")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Extent2D PhysicalResolution;
 
-    [NativeName("supportedTransforms")]
+    [NativeTypeName("VkSurfaceTransformFlagsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public SurfaceTransformFlagsKHR SupportedTransforms;
 
-    [NativeName("planeReorderPossible")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public uint PlaneReorderPossible;
 
-    [NativeName("persistentContent")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public uint PersistentContent;
 }

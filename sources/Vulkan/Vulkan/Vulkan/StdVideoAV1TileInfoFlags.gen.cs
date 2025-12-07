@@ -8,17 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoAV1TileInfoFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1TileInfoFlags
 {
-    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeName("uniform_tile_spacing_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint UniformTileSpacingFlag
+    public uint uniform_tile_spacing_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -26,9 +24,9 @@ public partial struct StdVideoAV1TileInfoFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 31")]
     [SupportedApiProfile("vulkan")]
-    public uint Reserved
+    public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x7FFFFFFFu; }

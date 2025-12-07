@@ -8,12 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_shaderBinaryUUID_e__FixedBuffer")]
 [InlineArray(16)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_EXT_shader_object"],
+    ImpliesSets = [
+        "VK_KHR_dynamic_rendering+VK_KHR_get_physical_device_properties2",
+        "VK_KHR_dynamic_rendering+VK_VERSION_1_1",
+        "VK_VERSION_1_3",
+    ]
+)]
 public partial struct PhysicalDeviceShaderObjectPropertiesEXTShaderBinaryUUID
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

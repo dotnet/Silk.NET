@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceFloatControlsProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFloatControlsProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +28,6 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +45,6 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public void* PNext;
 
-    [NativeName("denormBehaviorIndependence")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -66,7 +62,6 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public ShaderFloatControlsIndependence DenormBehaviorIndependence;
 
-    [NativeName("roundingModeIndependence")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +79,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public ShaderFloatControlsIndependence RoundingModeIndependence;
 
-    [NativeName("shaderSignedZeroInfNanPreserveFloat16")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -102,7 +97,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderSignedZeroInfNanPreserveFloat16;
 
-    [NativeName("shaderSignedZeroInfNanPreserveFloat32")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -120,7 +115,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderSignedZeroInfNanPreserveFloat32;
 
-    [NativeName("shaderSignedZeroInfNanPreserveFloat64")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -138,7 +133,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderSignedZeroInfNanPreserveFloat64;
 
-    [NativeName("shaderDenormPreserveFloat16")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,7 +151,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderDenormPreserveFloat16;
 
-    [NativeName("shaderDenormPreserveFloat32")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -174,7 +169,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderDenormPreserveFloat32;
 
-    [NativeName("shaderDenormPreserveFloat64")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -192,7 +187,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderDenormPreserveFloat64;
 
-    [NativeName("shaderDenormFlushToZeroFloat16")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -210,7 +205,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderDenormFlushToZeroFloat16;
 
-    [NativeName("shaderDenormFlushToZeroFloat32")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -228,7 +223,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderDenormFlushToZeroFloat32;
 
-    [NativeName("shaderDenormFlushToZeroFloat64")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -246,7 +241,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderDenormFlushToZeroFloat64;
 
-    [NativeName("shaderRoundingModeRTEFloat16")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -264,7 +259,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderRoundingModeRTEFloat16;
 
-    [NativeName("shaderRoundingModeRTEFloat32")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -282,7 +277,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderRoundingModeRTEFloat32;
 
-    [NativeName("shaderRoundingModeRTEFloat64")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -300,7 +295,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderRoundingModeRTEFloat64;
 
-    [NativeName("shaderRoundingModeRTZFloat16")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -318,7 +313,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderRoundingModeRTZFloat16;
 
-    [NativeName("shaderRoundingModeRTZFloat32")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -336,7 +331,7 @@ public unsafe partial struct PhysicalDeviceFloatControlsProperties
     )]
     public uint ShaderRoundingModeRTZFloat32;
 
-    [NativeName("shaderRoundingModeRTZFloat64")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [

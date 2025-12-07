@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_HintPriority")]
-public enum HintPriority
+[NativeTypeName("unsigned int")]
+public enum HintPriority : uint
 {
-    [NativeName("SDL_HINT_DEFAULT")]
-    Default = 0,
-
-    [NativeName("SDL_HINT_NORMAL")]
-    Normal = 1,
-
-    [NativeName("SDL_HINT_OVERRIDE")]
-    Override = 2,
+    Default,
+    Normal,
+    Override,
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageCompressionControlEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageCompressionControlEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_compression_control"],
@@ -23,7 +21,7 @@ public unsafe partial struct ImageCompressionControlEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_compression_control"],
@@ -34,7 +32,7 @@ public unsafe partial struct ImageCompressionControlEXT
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkImageCompressionFlagsEXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_compression_control"],
@@ -45,7 +43,7 @@ public unsafe partial struct ImageCompressionControlEXT
     )]
     public ImageCompressionFlagsEXT Flags;
 
-    [NativeName("compressionControlPlaneCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_compression_control"],
@@ -56,7 +54,7 @@ public unsafe partial struct ImageCompressionControlEXT
     )]
     public uint CompressionControlPlaneCount;
 
-    [NativeName("pFixedRateFlags")]
+    [NativeTypeName("VkImageCompressionFixedRateFlagsEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_compression_control"],

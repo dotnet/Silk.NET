@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceASTCDecodeFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceASTCDecodeFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_astc_decode_mode"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceASTCDecodeFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_astc_decode_mode"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceASTCDecodeFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("decodeModeSharedExponent")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_astc_decode_mode"],

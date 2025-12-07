@@ -6,17 +6,15 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoEncodeH265SliceSegmentHeaderFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
 {
-    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeName("first_slice_segment_in_pic_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint FirstSliceSegmentInPicFlag
+    public uint first_slice_segment_in_pic_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -24,9 +22,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeName("dependent_slice_segment_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint DependentSliceSegmentFlag
+    public uint dependent_slice_segment_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -34,9 +32,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeName("slice_sao_luma_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SliceSaoLumaFlag
+    public uint slice_sao_luma_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -44,9 +42,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeName("slice_sao_chroma_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SliceSaoChromaFlag
+    public uint slice_sao_chroma_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -54,9 +52,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeName("num_ref_idx_active_override_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint NumRefIdxActiveOverrideFlag
+    public uint num_ref_idx_active_override_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0x1u; }
@@ -64,9 +62,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4); }
     }
 
-    [NativeName("mvd_l1_zero_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint MvdL1ZeroFlag
+    public uint mvd_l1_zero_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 5) & 0x1u; }
@@ -74,9 +72,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5); }
     }
 
-    [NativeName("cabac_init_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint CabacInitFlag
+    public uint cabac_init_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 6) & 0x1u; }
@@ -84,9 +82,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6); }
     }
 
-    [NativeName("cu_chroma_qp_offset_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint CuChromaQpOffsetEnabledFlag
+    public uint cu_chroma_qp_offset_enabled_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 7) & 0x1u; }
@@ -94,9 +92,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7); }
     }
 
-    [NativeName("deblocking_filter_override_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint DeblockingFilterOverrideFlag
+    public uint deblocking_filter_override_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 8) & 0x1u; }
@@ -104,9 +102,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8); }
     }
 
-    [NativeName("slice_deblocking_filter_disabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SliceDeblockingFilterDisabledFlag
+    public uint slice_deblocking_filter_disabled_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 9) & 0x1u; }
@@ -114,9 +112,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 9)) | ((value & 0x1u) << 9); }
     }
 
-    [NativeName("collocated_from_l0_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint CollocatedFromL0Flag
+    public uint collocated_from_l0_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 10) & 0x1u; }
@@ -124,9 +122,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 10)) | ((value & 0x1u) << 10); }
     }
 
-    [NativeName("slice_loop_filter_across_slices_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SliceLoopFilterAcrossSlicesEnabledFlag
+    public uint slice_loop_filter_across_slices_enabled_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 11) & 0x1u; }
@@ -134,9 +132,9 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
         set { Bitfield = (Bitfield & ~(0x1u << 11)) | ((value & 0x1u) << 11); }
     }
 
-    [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 20")]
     [SupportedApiProfile("vulkan")]
-    public uint Reserved
+    public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 12) & 0xFFFFFu; }

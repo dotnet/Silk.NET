@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_ClipboardCleanupCallback")]
 public unsafe delegate void ClipboardCleanupCallbackDelegate(void* arg0);

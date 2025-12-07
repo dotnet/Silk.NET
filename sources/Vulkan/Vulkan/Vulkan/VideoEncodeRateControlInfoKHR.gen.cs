@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeRateControlInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeRateControlInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -23,7 +21,7 @@ public unsafe partial struct VideoEncodeRateControlInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -34,7 +32,7 @@ public unsafe partial struct VideoEncodeRateControlInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkVideoEncodeRateControlFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -45,7 +43,6 @@ public unsafe partial struct VideoEncodeRateControlInfoKHR
     )]
     public uint Flags;
 
-    [NativeName("rateControlMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -56,7 +53,7 @@ public unsafe partial struct VideoEncodeRateControlInfoKHR
     )]
     public VideoEncodeRateControlModeFlagsKHR RateControlMode;
 
-    [NativeName("layerCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -67,7 +64,7 @@ public unsafe partial struct VideoEncodeRateControlInfoKHR
     )]
     public uint LayerCount;
 
-    [NativeName("pLayers")]
+    [NativeTypeName("const VkVideoEncodeRateControlLayerInfoKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -78,7 +75,7 @@ public unsafe partial struct VideoEncodeRateControlInfoKHR
     )]
     public VideoEncodeRateControlLayerInfoKHR* PLayers;
 
-    [NativeName("virtualBufferSizeInMs")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -89,7 +86,7 @@ public unsafe partial struct VideoEncodeRateControlInfoKHR
     )]
     public uint VirtualBufferSizeInMs;
 
-    [NativeName("initialVirtualBufferSizeInMs")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],

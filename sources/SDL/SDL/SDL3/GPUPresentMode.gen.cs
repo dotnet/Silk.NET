@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUPresentMode")]
-public enum GPUPresentMode
+[NativeTypeName("unsigned int")]
+public enum GPUPresentMode : uint
 {
-    [NativeName("SDL_GPU_PRESENTMODE_VSYNC")]
-    Vsync = 0,
-
-    [NativeName("SDL_GPU_PRESENTMODE_IMMEDIATE")]
-    Immediate = 1,
-
-    [NativeName("SDL_GPU_PRESENTMODE_MAILBOX")]
-    Mailbox = 2,
+    Vsync,
+    Immediate,
+    Mailbox,
 }

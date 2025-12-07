@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndirectExecutionSetShaderLayoutInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectExecutionSetShaderLayoutInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -23,7 +21,7 @@ public unsafe partial struct IndirectExecutionSetShaderLayoutInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -35,7 +33,7 @@ public unsafe partial struct IndirectExecutionSetShaderLayoutInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("setLayoutCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -47,7 +45,7 @@ public unsafe partial struct IndirectExecutionSetShaderLayoutInfoEXT
     )]
     public uint SetLayoutCount;
 
-    [NativeName("pSetLayouts")]
+    [NativeTypeName("const VkDescriptorSetLayout *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

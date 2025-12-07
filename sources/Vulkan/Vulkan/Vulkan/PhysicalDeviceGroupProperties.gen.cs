@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceGroupProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceGroupProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +34,6 @@ public unsafe partial struct PhysicalDeviceGroupProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -61,7 +58,7 @@ public unsafe partial struct PhysicalDeviceGroupProperties
     )]
     public void* PNext;
 
-    [NativeName("physicalDeviceCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +83,7 @@ public unsafe partial struct PhysicalDeviceGroupProperties
     )]
     public uint PhysicalDeviceCount;
 
-    [NativeName("physicalDevices")]
+    [NativeTypeName("VkPhysicalDevice[32]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -111,7 +108,7 @@ public unsafe partial struct PhysicalDeviceGroupProperties
     )]
     public PhysicalDeviceGroupPropertiesPhysicalDevices PhysicalDevices;
 
-    [NativeName("subsetAllocation")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeCapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeCapabilitiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -22,7 +20,6 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -33,7 +30,7 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkVideoEncodeCapabilityFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -44,7 +41,7 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
     )]
     public VideoEncodeCapabilityFlagsKHR Flags;
 
-    [NativeName("rateControlModes")]
+    [NativeTypeName("VkVideoEncodeRateControlModeFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -55,7 +52,7 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
     )]
     public VideoEncodeRateControlModeFlagsKHR RateControlModes;
 
-    [NativeName("maxRateControlLayers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -66,7 +63,7 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
     )]
     public uint MaxRateControlLayers;
 
-    [NativeName("maxBitrate")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -77,7 +74,7 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
     )]
     public ulong MaxBitrate;
 
-    [NativeName("maxQualityLevels")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -88,7 +85,6 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
     )]
     public uint MaxQualityLevels;
 
-    [NativeName("encodeInputPictureGranularity")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -99,7 +95,7 @@ public unsafe partial struct VideoEncodeCapabilitiesKHR
     )]
     public Extent2D EncodeInputPictureGranularity;
 
-    [NativeName("supportedEncodeFeedbackFlags")]
+    [NativeTypeName("VkVideoEncodeFeedbackFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],

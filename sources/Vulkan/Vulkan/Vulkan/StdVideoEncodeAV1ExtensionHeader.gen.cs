@@ -8,15 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoEncodeAV1ExtensionHeader")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeAV1ExtensionHeader
 {
-    [NativeName("temporal_id")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte TemporalId;
 
-    [NativeName("spatial_id")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte SpatialId;
 }

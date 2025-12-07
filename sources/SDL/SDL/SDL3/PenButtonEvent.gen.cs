@@ -7,36 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_PenButtonEvent")]
 public partial struct PenButtonEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("windowID")]
+    [NativeTypeName("SDL_WindowID")]
     public uint WindowID;
 
-    [NativeName("which")]
+    [NativeTypeName("SDL_PenID")]
     public uint Which;
 
-    [NativeName("pen_state")]
+    [NativeTypeName("SDL_PenInputFlags")]
     public uint PenState;
-
-    [NativeName("x")]
     public float X;
-
-    [NativeName("y")]
     public float Y;
 
-    [NativeName("button")]
+    [NativeTypeName("Uint8")]
     public byte Button;
 
-    [NativeName("down")]
+    [NativeTypeName("bool")]
     public byte Down;
 }

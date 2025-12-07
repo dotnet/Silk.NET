@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkClusterAccelerationStructureClustersBottomLevelInputNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ClusterAccelerationStructureClustersBottomLevelInputNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -20,7 +18,6 @@ public unsafe partial struct ClusterAccelerationStructureClustersBottomLevelInpu
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -28,7 +25,7 @@ public unsafe partial struct ClusterAccelerationStructureClustersBottomLevelInpu
     )]
     public void* PNext;
 
-    [NativeName("maxTotalClusterCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -36,7 +33,7 @@ public unsafe partial struct ClusterAccelerationStructureClustersBottomLevelInpu
     )]
     public uint MaxTotalClusterCount;
 
-    [NativeName("maxClusterCountPerAccelerationStructure")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

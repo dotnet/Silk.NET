@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExternalMemoryAcquireUnmodifiedEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ExternalMemoryAcquireUnmodifiedEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_external_memory_acquire_unmodified"],
@@ -22,7 +20,7 @@ public unsafe partial struct ExternalMemoryAcquireUnmodifiedEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_external_memory_acquire_unmodified"],
@@ -33,7 +31,7 @@ public unsafe partial struct ExternalMemoryAcquireUnmodifiedEXT
     )]
     public void* PNext;
 
-    [NativeName("acquireUnmodifiedMemory")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_external_memory_acquire_unmodified"],

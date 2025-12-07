@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPURenderPass")]
 public readonly unsafe partial struct GPURenderPassHandle
 {
     public readonly void* Handle;
-
-    public GPURenderPassHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(GPURenderPassHandle other) => Handle == other.Handle;
 

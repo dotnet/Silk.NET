@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCommandBufferAllocateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CommandBufferAllocateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +38,7 @@ public unsafe partial struct CommandBufferAllocateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +67,7 @@ public unsafe partial struct CommandBufferAllocateInfo
     )]
     public void* PNext;
 
-    [NativeName("commandPool")]
+    [NativeTypeName("VkCommandPool")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +96,6 @@ public unsafe partial struct CommandBufferAllocateInfo
     )]
     public CommandPoolHandle CommandPool;
 
-    [NativeName("level")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -127,7 +124,7 @@ public unsafe partial struct CommandBufferAllocateInfo
     )]
     public CommandBufferLevel Level;
 
-    [NativeName("commandBufferCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

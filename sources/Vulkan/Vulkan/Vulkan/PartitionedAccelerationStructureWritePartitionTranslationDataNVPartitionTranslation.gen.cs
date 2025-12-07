@@ -8,12 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_partitionTranslation_e__FixedBuffer")]
 [InlineArray(3)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_NV_partitioned_acceleration_structure"],
+    ImpliesSets = ["VK_KHR_acceleration_structure"]
+)]
 public partial struct PartitionedAccelerationStructureWritePartitionTranslationDataNVPartitionTranslation
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public float E0;
 }

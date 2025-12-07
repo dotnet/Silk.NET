@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeAV1SessionParametersCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeAV1SessionParametersCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -20,7 +18,7 @@ public unsafe partial struct VideoEncodeAV1SessionParametersCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -28,7 +26,7 @@ public unsafe partial struct VideoEncodeAV1SessionParametersCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("pStdSequenceHeader")]
+    [NativeTypeName("const StdVideoAV1SequenceHeader *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -36,7 +34,7 @@ public unsafe partial struct VideoEncodeAV1SessionParametersCreateInfoKHR
     )]
     public StdVideoAV1SequenceHeader* PStdSequenceHeader;
 
-    [NativeName("pStdDecoderModelInfo")]
+    [NativeTypeName("const StdVideoEncodeAV1DecoderModelInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -44,7 +42,7 @@ public unsafe partial struct VideoEncodeAV1SessionParametersCreateInfoKHR
     )]
     public StdVideoEncodeAV1DecoderModelInfo* PStdDecoderModelInfo;
 
-    [NativeName("stdOperatingPointCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -52,7 +50,7 @@ public unsafe partial struct VideoEncodeAV1SessionParametersCreateInfoKHR
     )]
     public uint StdOperatingPointCount;
 
-    [NativeName("pStdOperatingPoints")]
+    [NativeTypeName("const StdVideoEncodeAV1OperatingPointInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

@@ -7,18 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUVertexBufferDescription")]
 public partial struct GPUVertexBufferDescription
 {
-    [NativeName("slot")]
+    [NativeTypeName("Uint32")]
     public uint Slot;
 
-    [NativeName("pitch")]
+    [NativeTypeName("Uint32")]
     public uint Pitch;
-
-    [NativeName("input_rate")]
     public GPUVertexInputRate InputRate;
 
-    [NativeName("instance_step_rate")]
+    [NativeTypeName("Uint32")]
     public uint InstanceStepRate;
 }

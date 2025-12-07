@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceOpticalFlowFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceOpticalFlowFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -24,7 +22,6 @@ public unsafe partial struct PhysicalDeviceOpticalFlowFeaturesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -36,7 +33,7 @@ public unsafe partial struct PhysicalDeviceOpticalFlowFeaturesNV
     )]
     public void* PNext;
 
-    [NativeName("opticalFlow")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],

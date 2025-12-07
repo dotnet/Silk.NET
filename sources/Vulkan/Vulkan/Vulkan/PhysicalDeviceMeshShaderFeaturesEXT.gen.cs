@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceMeshShaderFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -18,7 +16,6 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -26,7 +23,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("taskShader")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
     )]
     public uint TaskShader;
 
-    [NativeName("meshShader")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_mesh_shader"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
     )]
     public uint MeshShader;
 
-    [NativeName("multiviewMeshShader")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -53,7 +50,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
     )]
     public uint MultiviewMeshShader;
 
-    [NativeName("primitiveFragmentShadingRateMeshShader")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],
@@ -61,7 +58,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderFeaturesEXT
     )]
     public uint PrimitiveFragmentShadingRateMeshShader;
 
-    [NativeName("meshShaderQueries")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mesh_shader"],

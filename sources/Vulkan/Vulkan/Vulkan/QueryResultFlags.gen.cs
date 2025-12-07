@@ -7,14 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkQueryResultFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum QueryResultFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_QUERY_RESULT_64_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -43,7 +42,6 @@ public enum QueryResultFlags : uint
     )]
     Result64Bit = 0x1,
 
-    [NativeName("VK_QUERY_RESULT_WAIT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -72,7 +70,6 @@ public enum QueryResultFlags : uint
     )]
     ResultWaitBit = 0x2,
 
-    [NativeName("VK_QUERY_RESULT_WITH_AVAILABILITY_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -101,7 +98,6 @@ public enum QueryResultFlags : uint
     )]
     ResultWithAvailabilityBit = 0x4,
 
-    [NativeName("VK_QUERY_RESULT_PARTIAL_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -130,7 +126,6 @@ public enum QueryResultFlags : uint
     )]
     ResultPartialBit = 0x8,
 
-    [NativeName("VK_QUERY_RESULT_WITH_STATUS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

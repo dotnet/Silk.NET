@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryFdPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryFdPropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_fd"],
@@ -23,7 +21,6 @@ public unsafe partial struct MemoryFdPropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_fd"],
@@ -34,7 +31,7 @@ public unsafe partial struct MemoryFdPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("memoryTypeBits")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_memory_fd"],

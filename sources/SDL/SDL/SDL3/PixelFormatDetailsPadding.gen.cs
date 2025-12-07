@@ -8,10 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("_padding_e__FixedBuffer")]
 [InlineArray(2)]
 public partial struct PixelFormatDetailsPadding
 {
-    [NativeName("e0")]
     public byte E0;
 }

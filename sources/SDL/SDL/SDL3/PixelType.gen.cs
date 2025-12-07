@@ -7,45 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_PixelType")]
-public enum PixelType
+[NativeTypeName("unsigned int")]
+public enum PixelType : uint
 {
-    [NativeName("SDL_PIXELTYPE_UNKNOWN")]
-    Unknown = 0,
-
-    [NativeName("SDL_PIXELTYPE_INDEX1")]
-    Index1 = 1,
-
-    [NativeName("SDL_PIXELTYPE_INDEX4")]
-    Index4 = 2,
-
-    [NativeName("SDL_PIXELTYPE_INDEX8")]
-    Index8 = 3,
-
-    [NativeName("SDL_PIXELTYPE_PACKED8")]
-    Packed8 = 4,
-
-    [NativeName("SDL_PIXELTYPE_PACKED16")]
-    Packed16 = 5,
-
-    [NativeName("SDL_PIXELTYPE_PACKED32")]
-    Packed32 = 6,
-
-    [NativeName("SDL_PIXELTYPE_ARRAYU8")]
-    Arrayu8 = 7,
-
-    [NativeName("SDL_PIXELTYPE_ARRAYU16")]
-    Arrayu16 = 8,
-
-    [NativeName("SDL_PIXELTYPE_ARRAYU32")]
-    Arrayu32 = 9,
-
-    [NativeName("SDL_PIXELTYPE_ARRAYF16")]
-    Arrayf16 = 10,
-
-    [NativeName("SDL_PIXELTYPE_ARRAYF32")]
-    Arrayf32 = 11,
-
-    [NativeName("SDL_PIXELTYPE_INDEX2")]
-    Index2 = 12,
+    Unknown,
+    Index1,
+    Index4,
+    Index8,
+    Packed8,
+    Packed16,
+    Packed32,
+    Arrayu8,
+    Arrayu16,
+    Arrayu32,
+    Arrayf16,
+    Arrayf32,
+    Index2,
 }

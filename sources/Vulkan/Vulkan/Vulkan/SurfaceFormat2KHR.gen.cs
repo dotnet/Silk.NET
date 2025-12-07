@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSurfaceFormat2KHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SurfaceFormat2KHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_get_surface_capabilities2"],
@@ -19,7 +17,6 @@ public unsafe partial struct SurfaceFormat2KHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_get_surface_capabilities2"],
@@ -27,7 +24,6 @@ public unsafe partial struct SurfaceFormat2KHR
     )]
     public void* PNext;
 
-    [NativeName("surfaceFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_get_surface_capabilities2"],

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceShaderFmaFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderFmaFeaturesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_fma"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceShaderFmaFeaturesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_fma"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceShaderFmaFeaturesKHR
     )]
     public void* PNext;
 
-    [NativeName("shaderFmaFloat16")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_fma"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceShaderFmaFeaturesKHR
     )]
     public uint ShaderFmaFloat16;
 
-    [NativeName("shaderFmaFloat32")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_fma"],
@@ -55,7 +52,7 @@ public unsafe partial struct PhysicalDeviceShaderFmaFeaturesKHR
     )]
     public uint ShaderFmaFloat32;
 
-    [NativeName("shaderFmaFloat64")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_fma"],

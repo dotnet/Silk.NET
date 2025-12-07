@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineExecutablePropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineExecutablePropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -23,7 +21,6 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -34,7 +31,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("stages")]
+    [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -45,7 +42,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
     )]
     public ShaderStageFlags Stages;
 
-    [NativeName("name")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -56,7 +53,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
     )]
     public PipelineExecutablePropertiesKHRName Name;
 
-    [NativeName("description")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -67,7 +64,7 @@ public unsafe partial struct PipelineExecutablePropertiesKHR
     )]
     public PipelineExecutablePropertiesKHRDescription Description;
 
-    [NativeName("subgroupSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],

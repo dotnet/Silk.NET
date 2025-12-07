@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSharedPresentSurfaceCapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shared_presentable_image"],
@@ -23,7 +21,6 @@ public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shared_presentable_image"],
@@ -34,7 +31,7 @@ public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR
     )]
     public void* PNext;
 
-    [NativeName("sharedPresentSupportedUsageFlags")]
+    [NativeTypeName("VkImageUsageFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shared_presentable_image"],

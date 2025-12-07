@@ -7,27 +7,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_UserEvent")]
 public unsafe partial struct UserEvent
 {
-    [NativeName("type")]
+    [NativeTypeName("Uint32")]
     public uint Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("windowID")]
+    [NativeTypeName("SDL_WindowID")]
     public uint WindowID;
 
-    [NativeName("code")]
+    [NativeTypeName("Sint32")]
     public int Code;
-
-    [NativeName("data1")]
     public void* Data1;
-
-    [NativeName("data2")]
     public void* Data2;
 }

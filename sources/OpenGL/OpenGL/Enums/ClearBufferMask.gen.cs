@@ -7,24 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ClearBufferMask")]
-[Flags]
+[Transformed]
 public enum ClearBufferMask : uint
 {
-    None = 0x0,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT")]
-    DepthBufferBit = 0x100,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT")]
-    StencilBufferBit = 0x400,
-
-    [NativeName("GL_COLOR_BUFFER_BIT")]
-    ColorBufferBit = 0x4000,
-
-    [NativeName("GL_ACCUM_BUFFER_BIT")]
-    AccumBufferBit = 0x200,
-
-    [NativeName("GL_COVERAGE_BUFFER_BIT_NV")]
-    CoverageBufferBitNV = 0x8000,
+    DepthBufferBit = unchecked((uint)0x00000100),
+    StencilBufferBit = unchecked((uint)0x00000400),
+    ColorBufferBit = unchecked((uint)0x00004000),
+    AccumBufferBit = unchecked((uint)0x00000200),
+    CoverageBufferBitNV = unchecked((uint)0x00008000),
 }

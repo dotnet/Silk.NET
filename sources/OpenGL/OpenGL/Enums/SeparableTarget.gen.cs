@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("SeparableTarget")]
+[Transformed]
 public enum SeparableTarget : uint
 {
-    [NativeName("GL_SEPARABLE_2D")]
-    Separable2D = 32786,
+    Separable2D = unchecked((uint)0x8012),
 }

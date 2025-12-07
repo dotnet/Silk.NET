@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_cdef_y_pri_strength_e__FixedBuffer")]
 [InlineArray(8)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1CDEFCdefYPriStrength
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

@@ -8,19 +8,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoH264WeightedBipredIdc")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH264WeightedBipredIdc : uint
 {
-    [NativeName("STD_VIDEO_H264_WEIGHTED_BIPRED_IDC_DEFAULT")]
     [SupportedApiProfile("vulkan")]
     Default = 0,
 
-    [NativeName("STD_VIDEO_H264_WEIGHTED_BIPRED_IDC_EXPLICIT")]
     [SupportedApiProfile("vulkan")]
     Explicit = 1,
 
-    [NativeName("STD_VIDEO_H264_WEIGHTED_BIPRED_IDC_IMPLICIT")]
     [SupportedApiProfile("vulkan")]
     Implicit = 2,
 }

@@ -10,18 +10,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("PointerPName")]
+[Transformed]
 public enum PointerPName : uint
 {
-    [NativeName("AL_EVENT_CALLBACK_FUNCTION_SOFT")]
-    EventCallbackFunctionSOFT = 6562,
-
-    [NativeName("AL_EVENT_CALLBACK_USER_PARAM_SOFT")]
-    EventCallbackUserParamSOFT = 6563,
-
-    [NativeName("AL_DEBUG_CALLBACK_FUNCTION_EXT")]
-    DebugCallbackFunctionEXT = 6579,
-
-    [NativeName("AL_DEBUG_CALLBACK_USER_PARAM_EXT")]
-    DebugCallbackUserParamEXT = 6580,
+    EventCallbackFunctionSOFT = unchecked((uint)0x19A2),
+    EventCallbackUserParamSOFT = unchecked((uint)0x19A3),
+    DebugCallbackFunctionEXT = unchecked((uint)0x19B3),
+    DebugCallbackUserParamEXT = unchecked((uint)0x19B4),
 }

@@ -7,33 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_LogPriority")]
-public enum LogPriority
+[NativeTypeName("unsigned int")]
+public enum LogPriority : uint
 {
-    [NativeName("SDL_LOG_PRIORITY_INVALID")]
-    Invalid = 0,
-
-    [NativeName("SDL_LOG_PRIORITY_TRACE")]
-    Trace = 1,
-
-    [NativeName("SDL_LOG_PRIORITY_VERBOSE")]
-    Verbose = 2,
-
-    [NativeName("SDL_LOG_PRIORITY_DEBUG")]
-    Debug = 3,
-
-    [NativeName("SDL_LOG_PRIORITY_INFO")]
-    Info = 4,
-
-    [NativeName("SDL_LOG_PRIORITY_WARN")]
-    Warn = 5,
-
-    [NativeName("SDL_LOG_PRIORITY_ERROR")]
-    Error = 6,
-
-    [NativeName("SDL_LOG_PRIORITY_CRITICAL")]
-    Critical = 7,
-
-    [NativeName("SDL_LOG_PRIORITY_COUNT")]
-    Count = 8,
+    Invalid,
+    Trace,
+    Verbose,
+    Debug,
+    Info,
+    Warn,
+    Error,
+    Critical,
+    Count,
 }

@@ -8,39 +8,35 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeAV1PredictionModeKHR")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum VideoEncodeAV1PredictionModeKHR : uint
 {
-    [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_INTRA_ONLY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    IntraOnly = 0,
+    IntraOnlyKHR = 0,
 
-    [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_SINGLE_REFERENCE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    SingleReference = 1,
+    SingleReferenceKHR = 1,
 
-    [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_UNIDIRECTIONAL_COMPOUND_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    UnidirectionalCompound = 2,
+    UnidirectionalCompoundKHR = 2,
 
-    [NativeName("VK_VIDEO_ENCODE_AV1_PREDICTION_MODE_BIDIRECTIONAL_COMPOUND_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    BidirectionalCompound = 3,
+    BidirectionalCompoundKHR = 3,
 }

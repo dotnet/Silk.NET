@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH265FrameSizeKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct VideoEncodeH265FrameSizeKHR
 {
-    [NativeName("frameISize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -20,7 +19,7 @@ public partial struct VideoEncodeH265FrameSizeKHR
     )]
     public uint FrameISize;
 
-    [NativeName("framePSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -28,7 +27,7 @@ public partial struct VideoEncodeH265FrameSizeKHR
     )]
     public uint FramePSize;
 
-    [NativeName("frameBSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],

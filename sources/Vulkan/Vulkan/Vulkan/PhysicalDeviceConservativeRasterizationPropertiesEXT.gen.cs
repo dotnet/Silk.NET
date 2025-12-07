@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceConservativeRasterizationPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -33,7 +30,6 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
     )]
     public void* PNext;
 
-    [NativeName("primitiveOverestimationSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -44,7 +40,6 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
     )]
     public float PrimitiveOverestimationSize;
 
-    [NativeName("maxExtraPrimitiveOverestimationSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -55,7 +50,6 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
     )]
     public float MaxExtraPrimitiveOverestimationSize;
 
-    [NativeName("extraPrimitiveOverestimationSizeGranularity")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -66,7 +60,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
     )]
     public float ExtraPrimitiveOverestimationSizeGranularity;
 
-    [NativeName("primitiveUnderestimation")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -77,7 +71,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
     )]
     public uint PrimitiveUnderestimation;
 
-    [NativeName("conservativePointAndLineRasterization")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -88,7 +82,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
     )]
     public uint ConservativePointAndLineRasterization;
 
-    [NativeName("degenerateTrianglesRasterized")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -99,7 +93,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
     )]
     public uint DegenerateTrianglesRasterized;
 
-    [NativeName("degenerateLinesRasterized")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -110,7 +104,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
     )]
     public uint DegenerateLinesRasterized;
 
-    [NativeName("fullyCoveredFragmentShaderInputVariable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],
@@ -121,7 +115,7 @@ public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEX
     )]
     public uint FullyCoveredFragmentShaderInputVariable;
 
-    [NativeName("conservativeRasterizationPostDepthCoverage")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conservative_rasterization"],

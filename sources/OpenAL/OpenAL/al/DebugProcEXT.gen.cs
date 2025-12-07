@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ALDEBUGPROCEXT")]
 public readonly unsafe struct DebugProcEXT : IDisposable
 {
     private readonly void* Pointer;

@@ -7,48 +7,47 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUComputePipelineCreateInfo")]
 public unsafe partial struct GPUComputePipelineCreateInfo
 {
-    [NativeName("code_size")]
+    [NativeTypeName("size_t")]
     public nuint CodeSize;
 
-    [NativeName("code")]
+    [NativeTypeName("const Uint8 *")]
     public byte* Code;
 
-    [NativeName("entrypoint")]
+    [NativeTypeName("const char *")]
     public sbyte* Entrypoint;
 
-    [NativeName("format")]
+    [NativeTypeName("SDL_GPUShaderFormat")]
     public uint Format;
 
-    [NativeName("num_samplers")]
+    [NativeTypeName("Uint32")]
     public uint NumSamplers;
 
-    [NativeName("num_readonly_storage_textures")]
+    [NativeTypeName("Uint32")]
     public uint NumReadonlyStorageTextures;
 
-    [NativeName("num_readonly_storage_buffers")]
+    [NativeTypeName("Uint32")]
     public uint NumReadonlyStorageBuffers;
 
-    [NativeName("num_readwrite_storage_textures")]
+    [NativeTypeName("Uint32")]
     public uint NumReadwriteStorageTextures;
 
-    [NativeName("num_readwrite_storage_buffers")]
+    [NativeTypeName("Uint32")]
     public uint NumReadwriteStorageBuffers;
 
-    [NativeName("num_uniform_buffers")]
+    [NativeTypeName("Uint32")]
     public uint NumUniformBuffers;
 
-    [NativeName("threadcount_x")]
+    [NativeTypeName("Uint32")]
     public uint ThreadcountX;
 
-    [NativeName("threadcount_y")]
+    [NativeTypeName("Uint32")]
     public uint ThreadcountY;
 
-    [NativeName("threadcount_z")]
+    [NativeTypeName("Uint32")]
     public uint ThreadcountZ;
 
-    [NativeName("props")]
+    [NativeTypeName("SDL_PropertiesID")]
     public uint Props;
 }

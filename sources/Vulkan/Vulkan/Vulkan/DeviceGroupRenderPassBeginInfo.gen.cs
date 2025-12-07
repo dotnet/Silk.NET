@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceGroupRenderPassBeginInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceGroupRenderPassBeginInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -28,7 +26,7 @@ public unsafe partial struct DeviceGroupRenderPassBeginInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -45,7 +43,7 @@ public unsafe partial struct DeviceGroupRenderPassBeginInfo
     )]
     public void* PNext;
 
-    [NativeName("deviceMask")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +60,7 @@ public unsafe partial struct DeviceGroupRenderPassBeginInfo
     )]
     public uint DeviceMask;
 
-    [NativeName("deviceRenderAreaCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -79,7 +77,7 @@ public unsafe partial struct DeviceGroupRenderPassBeginInfo
     )]
     public uint DeviceRenderAreaCount;
 
-    [NativeName("pDeviceRenderAreas")]
+    [NativeTypeName("const VkRect2D *")]
     [SupportedApiProfile(
         "vulkan",
         [

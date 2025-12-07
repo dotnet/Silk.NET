@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCompareOp")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum CompareOp : uint
 {
-    [NativeName("VK_COMPARE_OP_NEVER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +29,6 @@ public enum CompareOp : uint
     )]
     Never = 0,
 
-    [NativeName("VK_COMPARE_OP_LESS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -49,7 +47,6 @@ public enum CompareOp : uint
     )]
     Less = 1,
 
-    [NativeName("VK_COMPARE_OP_EQUAL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +65,6 @@ public enum CompareOp : uint
     )]
     Equal = 2,
 
-    [NativeName("VK_COMPARE_OP_LESS_OR_EQUAL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +83,6 @@ public enum CompareOp : uint
     )]
     LessOrEqual = 3,
 
-    [NativeName("VK_COMPARE_OP_GREATER")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -106,7 +101,6 @@ public enum CompareOp : uint
     )]
     Greater = 4,
 
-    [NativeName("VK_COMPARE_OP_NOT_EQUAL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -125,7 +119,6 @@ public enum CompareOp : uint
     )]
     NotEqual = 5,
 
-    [NativeName("VK_COMPARE_OP_GREATER_OR_EQUAL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -144,7 +137,6 @@ public enum CompareOp : uint
     )]
     GreaterOrEqual = 6,
 
-    [NativeName("VK_COMPARE_OP_ALWAYS")]
     [SupportedApiProfile(
         "vulkan",
         [

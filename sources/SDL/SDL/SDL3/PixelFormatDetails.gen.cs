@@ -7,54 +7,52 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_PixelFormatDetails")]
 public partial struct PixelFormatDetails
 {
-    [NativeName("format")]
     public PixelFormat Format;
 
-    [NativeName("bits_per_pixel")]
+    [NativeTypeName("Uint8")]
     public byte BitsPerPixel;
 
-    [NativeName("bytes_per_pixel")]
+    [NativeTypeName("Uint8")]
     public byte BytesPerPixel;
 
-    [NativeName("padding")]
+    [NativeTypeName("Uint8[2]")]
     public PixelFormatDetailsPadding Padding;
 
-    [NativeName("Rmask")]
+    [NativeTypeName("Uint32")]
     public uint Rmask;
 
-    [NativeName("Gmask")]
+    [NativeTypeName("Uint32")]
     public uint Gmask;
 
-    [NativeName("Bmask")]
+    [NativeTypeName("Uint32")]
     public uint Bmask;
 
-    [NativeName("Amask")]
+    [NativeTypeName("Uint32")]
     public uint Amask;
 
-    [NativeName("Rbits")]
+    [NativeTypeName("Uint8")]
     public byte Rbits;
 
-    [NativeName("Gbits")]
+    [NativeTypeName("Uint8")]
     public byte Gbits;
 
-    [NativeName("Bbits")]
+    [NativeTypeName("Uint8")]
     public byte Bbits;
 
-    [NativeName("Abits")]
+    [NativeTypeName("Uint8")]
     public byte Abits;
 
-    [NativeName("Rshift")]
+    [NativeTypeName("Uint8")]
     public byte Rshift;
 
-    [NativeName("Gshift")]
+    [NativeTypeName("Uint8")]
     public byte Gshift;
 
-    [NativeName("Bshift")]
+    [NativeTypeName("Uint8")]
     public byte Bshift;
 
-    [NativeName("Ashift")]
+    [NativeTypeName("Uint8")]
     public byte Ashift;
 }

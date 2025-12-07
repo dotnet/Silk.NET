@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceInheritedViewportScissorFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceInheritedViewportScissorFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_inherited_viewport_scissor"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceInheritedViewportScissorFeaturesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_inherited_viewport_scissor"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceInheritedViewportScissorFeaturesNV
     )]
     public void* PNext;
 
-    [NativeName("inheritedViewportScissor2D")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_inherited_viewport_scissor"],

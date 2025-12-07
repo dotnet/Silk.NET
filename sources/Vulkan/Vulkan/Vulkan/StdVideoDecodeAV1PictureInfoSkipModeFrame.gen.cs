@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_SkipModeFrame_e__FixedBuffer")]
 [InlineArray(2)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeAV1PictureInfoSkipModeFrame
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

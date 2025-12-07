@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSemaphoreCreateFlagBits")]
+[Transformed]
 [Flags]
 public enum SemaphoreCreateFlags : uint
 {

@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineBinaryDataKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineBinaryDataKHR
 {
-    [NativeName("dataSize")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -23,7 +22,6 @@ public unsafe partial struct PipelineBinaryDataKHR
     )]
     public nuint DataSize;
 
-    [NativeName("pData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],

@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("LightEnvModeSGIX")]
+[Transformed]
 public enum LightEnvMode : uint
 {
-    [NativeName("GL_REPLACE")]
-    Replace = 7681,
-
-    [NativeName("GL_ADD")]
-    Add = 260,
-
-    [NativeName("GL_MODULATE")]
-    Modulate = 8448,
+    Replace = unchecked((uint)0x1E01),
+    Add = unchecked((uint)0x0104),
+    Modulate = unchecked((uint)0x2100),
 }

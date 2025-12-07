@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkStridedDeviceAddressNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct StridedDeviceAddressNV
 {
-    [NativeName("startAddress")]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -20,7 +19,7 @@ public partial struct StridedDeviceAddressNV
     )]
     public ulong StartAddress;
 
-    [NativeName("strideInBytes")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

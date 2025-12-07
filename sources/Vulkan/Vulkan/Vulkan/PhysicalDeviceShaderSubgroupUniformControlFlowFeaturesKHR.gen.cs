@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_subgroup_uniform_control_flow"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceShaderSubgroupUniformControlFlowFeatu
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_subgroup_uniform_control_flow"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDeviceShaderSubgroupUniformControlFlowFeatu
     )]
     public void* PNext;
 
-    [NativeName("shaderSubgroupUniformControlFlow")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_subgroup_uniform_control_flow"],

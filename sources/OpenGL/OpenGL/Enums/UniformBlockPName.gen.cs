@@ -7,39 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("UniformBlockPName")]
+[Transformed]
 public enum UniformBlockPName : uint
 {
-    [NativeName("GL_UNIFORM_BLOCK_BINDING")]
-    Binding = 35391,
-
-    [NativeName("GL_UNIFORM_BLOCK_DATA_SIZE")]
-    DataSize = 35392,
-
-    [NativeName("GL_UNIFORM_BLOCK_NAME_LENGTH")]
-    NameLength = 35393,
-
-    [NativeName("GL_UNIFORM_BLOCK_ACTIVE_UNIFORMS")]
-    ActiveUniforms = 35394,
-
-    [NativeName("GL_UNIFORM_BLOCK_ACTIVE_UNIFORM_INDICES")]
-    ActiveUniformIndices = 35395,
-
-    [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_VERTEX_SHADER")]
-    ReferencedByVertexShader = 35396,
-
-    [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_GEOMETRY_SHADER")]
-    ReferencedByGeometryShader = 35397,
-
-    [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_FRAGMENT_SHADER")]
-    ReferencedByFragmentShader = 35398,
-
-    [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER")]
-    ReferencedByTessControlShader = 34032,
-
-    [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_EVALUATION_SHADER")]
-    ReferencedByTessEvaluationShader = 34033,
-
-    [NativeName("GL_UNIFORM_BLOCK_REFERENCED_BY_COMPUTE_SHADER")]
-    ReferencedByComputeShader = 37100,
+    Binding = unchecked((uint)0x8A3F),
+    DataSize = unchecked((uint)0x8A40),
+    NameLength = unchecked((uint)0x8A41),
+    ActiveUniforms = unchecked((uint)0x8A42),
+    ActiveUniformIndices = unchecked((uint)0x8A43),
+    ReferencedByVertexShader = unchecked((uint)0x8A44),
+    ReferencedByGeometryShader = unchecked((uint)0x8A45),
+    ReferencedByFragmentShader = unchecked((uint)0x8A46),
+    ReferencedByTessControlShader = unchecked((uint)0x84F0),
+    ReferencedByTessEvaluationShader = unchecked((uint)0x84F1),
+    ReferencedByComputeShader = unchecked((uint)0x90EC),
 }

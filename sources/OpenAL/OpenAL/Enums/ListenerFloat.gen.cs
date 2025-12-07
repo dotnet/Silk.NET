@@ -10,15 +10,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ListenerFloat")]
+[Transformed]
 public enum ListenerFloat : uint
 {
-    [NativeName("AL_ORIENTATION")]
-    Orientation = 4111,
-
-    [NativeName("AL_CONE_OUTER_GAIN")]
-    ConeOuterGain = 4130,
-
-    [NativeName("AL_METERS_PER_UNIT")]
-    MetersPerUnit = 131076,
+    Orientation = unchecked((uint)0x100F),
+    ConeOuterGain = unchecked((uint)0x1022),
+    MetersPerUnit = unchecked((uint)0x20004),
 }

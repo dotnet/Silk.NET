@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorSetVariableDescriptorCountLayoutSupport")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorSetVariableDescriptorCountLayoutSupport
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +28,6 @@ public unsafe partial struct DescriptorSetVariableDescriptorCountLayoutSupport
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +45,7 @@ public unsafe partial struct DescriptorSetVariableDescriptorCountLayoutSupport
     )]
     public void* PNext;
 
-    [NativeName("maxVariableDescriptorCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeSessionIntraRefreshCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeSessionIntraRefreshCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
@@ -19,7 +17,7 @@ public unsafe partial struct VideoEncodeSessionIntraRefreshCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],
@@ -27,7 +25,6 @@ public unsafe partial struct VideoEncodeSessionIntraRefreshCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("intraRefreshMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_intra_refresh"],

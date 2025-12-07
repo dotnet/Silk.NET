@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_Gamepad")]
 public readonly unsafe partial struct GamepadHandle
 {
     public readonly void* Handle;
-
-    public GamepadHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(GamepadHandle other) => Handle == other.Handle;
 

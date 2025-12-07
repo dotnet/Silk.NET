@@ -8,43 +8,37 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoAV1ColorConfig")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1ColorConfig
 {
-    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1ColorConfigFlags Flags;
 
-    [NativeName("BitDepth")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte BitDepth;
 
-    [NativeName("subsampling_x")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte SubsamplingX;
 
-    [NativeName("subsampling_y")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte SubsamplingY;
 
-    [NativeName("reserved1")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved1;
 
-    [NativeName("color_primaries")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1ColorPrimaries ColorPrimaries;
 
-    [NativeName("transfer_characteristics")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1TransferCharacteristics TransferCharacteristics;
 
-    [NativeName("matrix_coefficients")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1MatrixCoefficients MatrixCoefficients;
 
-    [NativeName("chroma_sample_position")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1ChromaSamplePosition ChromaSamplePosition;
 }

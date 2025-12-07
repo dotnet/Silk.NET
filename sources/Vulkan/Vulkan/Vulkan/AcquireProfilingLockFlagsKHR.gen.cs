@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAcquireProfilingLockFlagBitsKHR")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum AcquireProfilingLockFlagsKHR : uint
 {
     None = 0x0,

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineColorBlendAdvancedStateCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -22,7 +20,7 @@ public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -33,7 +31,7 @@ public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("srcPremultiplied")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -44,7 +42,7 @@ public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
     )]
     public uint SrcPremultiplied;
 
-    [NativeName("dstPremultiplied")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -55,7 +53,6 @@ public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
     )]
     public uint DstPremultiplied;
 
-    [NativeName("blendOverlap")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],

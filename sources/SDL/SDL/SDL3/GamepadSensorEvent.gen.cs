@@ -7,27 +7,25 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GamepadSensorEvent")]
 public partial struct GamepadSensorEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("which")]
+    [NativeTypeName("SDL_JoystickID")]
     public uint Which;
 
-    [NativeName("sensor")]
+    [NativeTypeName("Sint32")]
     public int Sensor;
 
-    [NativeName("data")]
+    [NativeTypeName("float[3]")]
     public GamepadSensorEventData Data;
 
-    [NativeName("sensor_timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong SensorTimestamp;
 }

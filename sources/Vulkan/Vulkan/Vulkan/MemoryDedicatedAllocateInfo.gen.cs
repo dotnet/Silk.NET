@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryDedicatedAllocateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryDedicatedAllocateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +34,7 @@ public unsafe partial struct MemoryDedicatedAllocateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -61,7 +59,7 @@ public unsafe partial struct MemoryDedicatedAllocateInfo
     )]
     public void* PNext;
 
-    [NativeName("image")]
+    [NativeTypeName("VkImage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +84,7 @@ public unsafe partial struct MemoryDedicatedAllocateInfo
     )]
     public ImageHandle Image;
 
-    [NativeName("buffer")]
+    [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
         "vulkan",
         [

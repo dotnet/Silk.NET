@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSparseMemoryBind")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SparseMemoryBind
 {
-    [NativeName("resourceOffset")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,7 @@ public unsafe partial struct SparseMemoryBind
     )]
     public ulong ResourceOffset;
 
-    [NativeName("size")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +69,7 @@ public unsafe partial struct SparseMemoryBind
     )]
     public ulong Size;
 
-    [NativeName("memory")]
+    [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +98,7 @@ public unsafe partial struct SparseMemoryBind
     )]
     public DeviceMemoryHandle Memory;
 
-    [NativeName("memoryOffset")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +127,7 @@ public unsafe partial struct SparseMemoryBind
     )]
     public ulong MemoryOffset;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkSparseMemoryBindFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

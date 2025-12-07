@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPrimitiveTopology")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum PrimitiveTopology : uint
 {
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_POINT_LIST")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +29,6 @@ public enum PrimitiveTopology : uint
     )]
     PointList = 0,
 
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_LINE_LIST")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -49,7 +47,6 @@ public enum PrimitiveTopology : uint
     )]
     LineList = 1,
 
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_LINE_STRIP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +65,6 @@ public enum PrimitiveTopology : uint
     )]
     LineStrip = 2,
 
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +83,6 @@ public enum PrimitiveTopology : uint
     )]
     TriangleList = 3,
 
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -106,7 +101,6 @@ public enum PrimitiveTopology : uint
     )]
     TriangleStrip = 4,
 
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_TRIANGLE_FAN")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -125,7 +119,6 @@ public enum PrimitiveTopology : uint
     )]
     TriangleFan = 5,
 
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_LINE_LIST_WITH_ADJACENCY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -144,7 +137,6 @@ public enum PrimitiveTopology : uint
     )]
     LineListWithAdjacency = 6,
 
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_LINE_STRIP_WITH_ADJACENCY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -163,7 +155,6 @@ public enum PrimitiveTopology : uint
     )]
     LineStripWithAdjacency = 7,
 
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST_WITH_ADJACENCY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -182,7 +173,6 @@ public enum PrimitiveTopology : uint
     )]
     TriangleListWithAdjacency = 8,
 
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_TRIANGLE_STRIP_WITH_ADJACENCY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -201,7 +191,6 @@ public enum PrimitiveTopology : uint
     )]
     TriangleStripWithAdjacency = 9,
 
-    [NativeName("VK_PRIMITIVE_TOPOLOGY_PATCH_LIST")]
     [SupportedApiProfile(
         "vulkan",
         [

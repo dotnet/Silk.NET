@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExportMetalObjectTypeFlagsEXT")]
+[Transformed]
 [Flags]
 public enum ExportMetalObjectTypeFlagsEXT : uint
 {

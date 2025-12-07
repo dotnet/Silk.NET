@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceClusterAccelerationStructureFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceClusterAccelerationStructureFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructureFeaturesN
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDeviceClusterAccelerationStructureFeaturesN
     )]
     public void* PNext;
 
-    [NativeName("clusterAccelerationStructure")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

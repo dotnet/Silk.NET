@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndirectExecutionSetInfoTypeEXT")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum IndirectExecutionSetInfoTypeEXT : uint
 {
-    [NativeName("VK_INDIRECT_EXECUTION_SET_INFO_TYPE_PIPELINES_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -22,9 +21,8 @@ public enum IndirectExecutionSetInfoTypeEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Pipelines = 0,
+    PipelinesEXT = 0,
 
-    [NativeName("VK_INDIRECT_EXECUTION_SET_INFO_TYPE_SHADER_OBJECTS_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -34,5 +32,5 @@ public enum IndirectExecutionSetInfoTypeEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    ShaderObjects = 1,
+    ShaderObjectsEXT = 1,
 }

@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceSchedulingControlsFeaturesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceSchedulingControlsFeaturesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_scheduling_controls"],
@@ -18,7 +16,6 @@ public unsafe partial struct PhysicalDeviceSchedulingControlsFeaturesARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_scheduling_controls"],
@@ -26,7 +23,7 @@ public unsafe partial struct PhysicalDeviceSchedulingControlsFeaturesARM
     )]
     public void* PNext;
 
-    [NativeName("schedulingControls")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_scheduling_controls"],

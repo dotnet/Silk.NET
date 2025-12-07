@@ -10,15 +10,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("SystemEventTypeSOFT")]
+[Transformed]
 public enum SystemEventTypeSOFT : uint
 {
-    [NativeName("ALC_EVENT_TYPE_DEFAULT_DEVICE_CHANGED_SOFT")]
-    DefaultDeviceChanged = 6614,
-
-    [NativeName("ALC_EVENT_TYPE_DEVICE_ADDED_SOFT")]
-    DeviceAdded = 6615,
-
-    [NativeName("ALC_EVENT_TYPE_DEVICE_REMOVED_SOFT")]
-    DeviceRemoved = 6616,
+    DefaultDeviceChanged = unchecked((uint)0x19D6),
+    DeviceAdded = unchecked((uint)0x19D7),
+    DeviceRemoved = unchecked((uint)0x19D8),
 }

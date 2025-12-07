@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineLayoutCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineLayoutCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +34,7 @@ public unsafe partial struct PipelineLayoutCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +58,7 @@ public unsafe partial struct PipelineLayoutCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineLayoutCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +82,7 @@ public unsafe partial struct PipelineLayoutCreateInfo
     )]
     public PipelineLayoutCreateFlags Flags;
 
-    [NativeName("setLayoutCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -108,7 +106,7 @@ public unsafe partial struct PipelineLayoutCreateInfo
     )]
     public uint SetLayoutCount;
 
-    [NativeName("pSetLayouts")]
+    [NativeTypeName("const VkDescriptorSetLayout *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -132,7 +130,7 @@ public unsafe partial struct PipelineLayoutCreateInfo
     )]
     public DescriptorSetLayoutHandle* PSetLayouts;
 
-    [NativeName("pushConstantRangeCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,7 +154,7 @@ public unsafe partial struct PipelineLayoutCreateInfo
     )]
     public uint PushConstantRangeCount;
 
-    [NativeName("pPushConstantRanges")]
+    [NativeTypeName("const VkPushConstantRange *")]
     [SupportedApiProfile(
         "vulkan",
         [

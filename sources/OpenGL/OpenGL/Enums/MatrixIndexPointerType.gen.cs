@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("MatrixIndexPointerTypeARB")]
+[Transformed]
 public enum MatrixIndexPointerType : uint
 {
-    [NativeName("GL_UNSIGNED_BYTE")]
-    UnsignedByte = 5121,
-
-    [NativeName("GL_UNSIGNED_SHORT")]
-    UnsignedShort = 5123,
-
-    [NativeName("GL_UNSIGNED_INT")]
-    UnsignedInt = 5125,
+    UnsignedByte = unchecked((uint)0x1401),
+    UnsignedShort = unchecked((uint)0x1403),
+    UnsignedInt = unchecked((uint)0x1405),
 }

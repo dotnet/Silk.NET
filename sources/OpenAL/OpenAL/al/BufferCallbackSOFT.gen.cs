@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ALBUFFERCALLBACKTYPESOFT")]
 public readonly unsafe struct BufferCallbackSOFT : IDisposable
 {
     private readonly void* Pointer;

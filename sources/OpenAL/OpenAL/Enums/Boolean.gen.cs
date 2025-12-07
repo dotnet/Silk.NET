@@ -10,12 +10,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("Boolean")]
+[Transformed]
 public enum Boolean : uint
 {
-    [NativeName("AL_FALSE")]
-    False = 0,
-
-    [NativeName("AL_TRUE")]
-    True = 1,
+    False = unchecked((uint)0),
+    True = unchecked((uint)1),
 }

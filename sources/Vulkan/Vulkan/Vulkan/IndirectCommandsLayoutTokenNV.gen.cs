@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndirectCommandsLayoutTokenNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectCommandsLayoutTokenNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -20,7 +18,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -28,7 +26,6 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public void* PNext;
 
-    [NativeName("tokenType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -36,7 +33,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public IndirectCommandsTokenTypeNV TokenType;
 
-    [NativeName("stream")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -44,7 +41,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public uint Stream;
 
-    [NativeName("offset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -52,7 +49,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public uint Offset;
 
-    [NativeName("vertexBindingUnit")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -60,7 +57,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public uint VertexBindingUnit;
 
-    [NativeName("vertexDynamicStride")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -68,7 +65,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public uint VertexDynamicStride;
 
-    [NativeName("pushconstantPipelineLayout")]
+    [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -76,7 +73,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public PipelineLayoutHandle PushconstantPipelineLayout;
 
-    [NativeName("pushconstantShaderStageFlags")]
+    [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -84,7 +81,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public ShaderStageFlags PushconstantShaderStageFlags;
 
-    [NativeName("pushconstantOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -92,7 +89,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public uint PushconstantOffset;
 
-    [NativeName("pushconstantSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -100,7 +97,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public uint PushconstantSize;
 
-    [NativeName("indirectStateFlags")]
+    [NativeTypeName("VkIndirectStateFlagsNV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -108,7 +105,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public IndirectStateFlagsNV IndirectStateFlags;
 
-    [NativeName("indexTypeCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -116,7 +113,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public uint IndexTypeCount;
 
-    [NativeName("pIndexTypes")]
+    [NativeTypeName("const VkIndexType *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -124,7 +121,7 @@ public unsafe partial struct IndirectCommandsLayoutTokenNV
     )]
     public IndexType* PIndexTypes;
 
-    [NativeName("pIndexTypeValues")]
+    [NativeTypeName("const uint32_t *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

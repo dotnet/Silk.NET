@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImagePlaneMemoryRequirementsInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImagePlaneMemoryRequirementsInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,7 +35,7 @@ public unsafe partial struct ImagePlaneMemoryRequirementsInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +60,6 @@ public unsafe partial struct ImagePlaneMemoryRequirementsInfo
     )]
     public void* PNext;
 
-    [NativeName("planeAspect")]
     [SupportedApiProfile(
         "vulkan",
         [

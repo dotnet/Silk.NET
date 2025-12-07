@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkComponentMapping")]
 [SupportedApiProfile("vulkan")]
 public partial struct ComponentMapping
 {
-    [NativeName("r")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,6 @@ public partial struct ComponentMapping
     )]
     public ComponentSwizzle R;
 
-    [NativeName("g")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +67,6 @@ public partial struct ComponentMapping
     )]
     public ComponentSwizzle G;
 
-    [NativeName("b")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +95,6 @@ public partial struct ComponentMapping
     )]
     public ComponentSwizzle B;
 
-    [NativeName("a")]
     [SupportedApiProfile(
         "vulkan",
         [

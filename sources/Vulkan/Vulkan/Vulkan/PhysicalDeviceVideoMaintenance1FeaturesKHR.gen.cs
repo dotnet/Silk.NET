@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceVideoMaintenance1FeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVideoMaintenance1FeaturesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
@@ -19,7 +17,6 @@ public unsafe partial struct PhysicalDeviceVideoMaintenance1FeaturesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
@@ -27,7 +24,7 @@ public unsafe partial struct PhysicalDeviceVideoMaintenance1FeaturesKHR
     )]
     public void* PNext;
 
-    [NativeName("videoMaintenance1")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],

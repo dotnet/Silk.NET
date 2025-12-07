@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_unified_image_layouts"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_unified_image_layouts"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
     )]
     public void* PNext;
 
-    [NativeName("unifiedImageLayouts")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_unified_image_layouts"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceUnifiedImageLayoutsFeaturesKHR
     )]
     public uint UnifiedImageLayouts;
 
-    [NativeName("unifiedImageLayoutsVideo")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_unified_image_layouts"],

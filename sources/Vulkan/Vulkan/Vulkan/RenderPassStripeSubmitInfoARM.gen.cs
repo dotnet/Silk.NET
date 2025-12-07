@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderPassStripeSubmitInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassStripeSubmitInfoARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],
@@ -23,7 +21,7 @@ public unsafe partial struct RenderPassStripeSubmitInfoARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],
@@ -35,7 +33,7 @@ public unsafe partial struct RenderPassStripeSubmitInfoARM
     )]
     public void* PNext;
 
-    [NativeName("stripeSemaphoreInfoCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],
@@ -47,7 +45,7 @@ public unsafe partial struct RenderPassStripeSubmitInfoARM
     )]
     public uint StripeSemaphoreInfoCount;
 
-    [NativeName("pStripeSemaphoreInfos")]
+    [NativeTypeName("const VkSemaphoreSubmitInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],

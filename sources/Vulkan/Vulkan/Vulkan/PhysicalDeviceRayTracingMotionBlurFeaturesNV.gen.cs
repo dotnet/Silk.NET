@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceRayTracingMotionBlurFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRayTracingMotionBlurFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceRayTracingMotionBlurFeaturesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDeviceRayTracingMotionBlurFeaturesNV
     )]
     public void* PNext;
 
-    [NativeName("rayTracingMotionBlur")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -36,7 +33,7 @@ public unsafe partial struct PhysicalDeviceRayTracingMotionBlurFeaturesNV
     )]
     public uint RayTracingMotionBlur;
 
-    [NativeName("rayTracingMotionBlurPipelineTraceRaysIndirect")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],

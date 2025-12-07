@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVertexInputRate")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum VertexInputRate : uint
 {
-    [NativeName("VK_VERTEX_INPUT_RATE_VERTEX")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,7 +30,6 @@ public enum VertexInputRate : uint
     )]
     Vertex = 0,
 
-    [NativeName("VK_VERTEX_INPUT_RATE_INSTANCE")]
     [SupportedApiProfile(
         "vulkan",
         [

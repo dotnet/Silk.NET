@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceToolProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceToolProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -28,7 +26,6 @@ public unsafe partial struct PhysicalDeviceToolProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceToolProperties
     )]
     public void* PNext;
 
-    [NativeName("name")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +59,7 @@ public unsafe partial struct PhysicalDeviceToolProperties
     )]
     public PhysicalDeviceToolPropertiesName Name;
 
-    [NativeName("version")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -79,7 +76,7 @@ public unsafe partial struct PhysicalDeviceToolProperties
     )]
     public PhysicalDeviceToolPropertiesVersion Version;
 
-    [NativeName("purposes")]
+    [NativeTypeName("VkToolPurposeFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,7 +93,7 @@ public unsafe partial struct PhysicalDeviceToolProperties
     )]
     public ToolPurposeFlags Purposes;
 
-    [NativeName("description")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -113,7 +110,7 @@ public unsafe partial struct PhysicalDeviceToolProperties
     )]
     public PhysicalDeviceToolPropertiesDescription Description;
 
-    [NativeName("layer")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         [

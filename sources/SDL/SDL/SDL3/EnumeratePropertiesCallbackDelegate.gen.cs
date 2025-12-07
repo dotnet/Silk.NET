@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_EnumeratePropertiesCallback")]
 public unsafe delegate void EnumeratePropertiesCallbackDelegate(void* arg0, uint arg1, sbyte* arg2);

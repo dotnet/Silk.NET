@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkTimelineSemaphoreSubmitInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TimelineSemaphoreSubmitInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +31,7 @@ public unsafe partial struct TimelineSemaphoreSubmitInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,7 +52,7 @@ public unsafe partial struct TimelineSemaphoreSubmitInfo
     )]
     public void* PNext;
 
-    [NativeName("waitSemaphoreValueCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -75,7 +73,7 @@ public unsafe partial struct TimelineSemaphoreSubmitInfo
     )]
     public uint WaitSemaphoreValueCount;
 
-    [NativeName("pWaitSemaphoreValues")]
+    [NativeTypeName("const uint64_t *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,7 +94,7 @@ public unsafe partial struct TimelineSemaphoreSubmitInfo
     )]
     public ulong* PWaitSemaphoreValues;
 
-    [NativeName("signalSemaphoreValueCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -117,7 +115,7 @@ public unsafe partial struct TimelineSemaphoreSubmitInfo
     )]
     public uint SignalSemaphoreValueCount;
 
-    [NativeName("pSignalSemaphoreValues")]
+    [NativeTypeName("const uint64_t *")]
     [SupportedApiProfile(
         "vulkan",
         [

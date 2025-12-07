@@ -7,21 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_AssertState")]
-public enum AssertState
+[NativeTypeName("unsigned int")]
+public enum AssertState : uint
 {
-    [NativeName("SDL_ASSERTION_RETRY")]
-    Retry = 0,
-
-    [NativeName("SDL_ASSERTION_BREAK")]
-    Break = 1,
-
-    [NativeName("SDL_ASSERTION_ABORT")]
-    Abort = 2,
-
-    [NativeName("SDL_ASSERTION_IGNORE")]
-    Ignore = 3,
-
-    [NativeName("SDL_ASSERTION_ALWAYS_IGNORE")]
-    AlwaysIgnore = 4,
+    Retry,
+    Break,
+    Abort,
+    Ignore,
+    AlwaysIgnore,
 }

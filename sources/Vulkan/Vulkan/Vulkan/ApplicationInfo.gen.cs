@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkApplicationInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ApplicationInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct ApplicationInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,7 @@ public unsafe partial struct ApplicationInfo
     )]
     public void* PNext;
 
-    [NativeName("pApplicationName")]
+    [NativeTypeName("const char *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +97,7 @@ public unsafe partial struct ApplicationInfo
     )]
     public sbyte* PApplicationName;
 
-    [NativeName("applicationVersion")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +126,7 @@ public unsafe partial struct ApplicationInfo
     )]
     public uint ApplicationVersion;
 
-    [NativeName("pEngineName")]
+    [NativeTypeName("const char *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -157,7 +155,7 @@ public unsafe partial struct ApplicationInfo
     )]
     public sbyte* PEngineName;
 
-    [NativeName("engineVersion")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -186,7 +184,7 @@ public unsafe partial struct ApplicationInfo
     )]
     public uint EngineVersion;
 
-    [NativeName("apiVersion")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

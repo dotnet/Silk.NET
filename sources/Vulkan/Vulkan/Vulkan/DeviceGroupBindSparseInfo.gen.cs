@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceGroupBindSparseInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceGroupBindSparseInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,7 +35,7 @@ public unsafe partial struct DeviceGroupBindSparseInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +60,7 @@ public unsafe partial struct DeviceGroupBindSparseInfo
     )]
     public void* PNext;
 
-    [NativeName("resourceDeviceIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +85,7 @@ public unsafe partial struct DeviceGroupBindSparseInfo
     )]
     public uint ResourceDeviceIndex;
 
-    [NativeName("memoryDeviceIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

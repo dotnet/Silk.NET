@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDataGraphPipelineDispatchFlagBitsARM")]
+[Transformed]
 [Flags]
 public enum DataGraphPipelineDispatchFlagsARM : ulong
 {

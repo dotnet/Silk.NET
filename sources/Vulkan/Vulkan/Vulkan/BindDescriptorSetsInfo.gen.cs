@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBindDescriptorSetsInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindDescriptorSetsInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -20,7 +18,7 @@ public unsafe partial struct BindDescriptorSetsInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -28,7 +26,7 @@ public unsafe partial struct BindDescriptorSetsInfo
     )]
     public void* PNext;
 
-    [NativeName("stageFlags")]
+    [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -36,7 +34,7 @@ public unsafe partial struct BindDescriptorSetsInfo
     )]
     public ShaderStageFlags StageFlags;
 
-    [NativeName("layout")]
+    [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -44,7 +42,7 @@ public unsafe partial struct BindDescriptorSetsInfo
     )]
     public PipelineLayoutHandle Layout;
 
-    [NativeName("firstSet")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -52,7 +50,7 @@ public unsafe partial struct BindDescriptorSetsInfo
     )]
     public uint FirstSet;
 
-    [NativeName("descriptorSetCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -60,7 +58,7 @@ public unsafe partial struct BindDescriptorSetsInfo
     )]
     public uint DescriptorSetCount;
 
-    [NativeName("pDescriptorSets")]
+    [NativeTypeName("const VkDescriptorSet *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -68,7 +66,7 @@ public unsafe partial struct BindDescriptorSetsInfo
     )]
     public DescriptorSetHandle* PDescriptorSets;
 
-    [NativeName("dynamicOffsetCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -76,7 +74,7 @@ public unsafe partial struct BindDescriptorSetsInfo
     )]
     public uint DynamicOffsetCount;
 
-    [NativeName("pDynamicOffsets")]
+    [NativeTypeName("const uint32_t *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],

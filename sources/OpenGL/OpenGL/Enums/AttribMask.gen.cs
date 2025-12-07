@@ -7,84 +7,32 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("AttribMask")]
-[Flags]
+[Transformed]
 public enum AttribMask : uint
 {
-    None = 0x0,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT")]
-    DepthBufferBit = 0x100,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT")]
-    StencilBufferBit = 0x400,
-
-    [NativeName("GL_COLOR_BUFFER_BIT")]
-    ColorBufferBit = 0x4000,
-
-    [NativeName("GL_CURRENT_BIT")]
-    CurrentBit = 0x1,
-
-    [NativeName("GL_POINT_BIT")]
-    PointBit = 0x2,
-
-    [NativeName("GL_LINE_BIT")]
-    LineBit = 0x4,
-
-    [NativeName("GL_POLYGON_BIT")]
-    PolygonBit = 0x8,
-
-    [NativeName("GL_POLYGON_STIPPLE_BIT")]
-    PolygonStippleBit = 0x10,
-
-    [NativeName("GL_PIXEL_MODE_BIT")]
-    PixelModeBit = 0x20,
-
-    [NativeName("GL_LIGHTING_BIT")]
-    LightingBit = 0x40,
-
-    [NativeName("GL_FOG_BIT")]
-    FogBit = 0x80,
-
-    [NativeName("GL_ACCUM_BUFFER_BIT")]
-    AccumBufferBit = 0x200,
-
-    [NativeName("GL_VIEWPORT_BIT")]
-    ViewportBit = 0x800,
-
-    [NativeName("GL_TRANSFORM_BIT")]
-    TransformBit = 0x1000,
-
-    [NativeName("GL_ENABLE_BIT")]
-    EnableBit = 0x2000,
-
-    [NativeName("GL_HINT_BIT")]
-    HintBit = 0x8000,
-
-    [NativeName("GL_EVAL_BIT")]
-    EvalBit = 0x10000,
-
-    [NativeName("GL_LIST_BIT")]
-    ListBit = 0x20000,
-
-    [NativeName("GL_TEXTURE_BIT")]
-    TextureBit = 0x40000,
-
-    [NativeName("GL_SCISSOR_BIT")]
-    ScissorBit = 0x80000,
-
-    [NativeName("GL_ALL_ATTRIB_BITS")]
-    AllAttribBits = 0xFFFFFFFF,
-
-    [NativeName("GL_MULTISAMPLE_BIT")]
-    MultisampleBit = 0x20000000,
-
-    [NativeName("GL_MULTISAMPLE_BIT_ARB")]
-    MultisampleBitARB = 0x20000000,
-
-    [NativeName("GL_MULTISAMPLE_BIT_3DFX")]
-    MultisampleBit3DFX = 0x20000000,
-
-    [NativeName("GL_MULTISAMPLE_BIT_EXT")]
-    MultisampleBitEXT = 0x20000000,
+    DepthBufferBit = unchecked((uint)0x00000100),
+    StencilBufferBit = unchecked((uint)0x00000400),
+    ColorBufferBit = unchecked((uint)0x00004000),
+    CurrentBit = unchecked((uint)0x00000001),
+    PointBit = unchecked((uint)0x00000002),
+    LineBit = unchecked((uint)0x00000004),
+    PolygonBit = unchecked((uint)0x00000008),
+    PolygonStippleBit = unchecked((uint)0x00000010),
+    PixelModeBit = unchecked((uint)0x00000020),
+    LightingBit = unchecked((uint)0x00000040),
+    FogBit = unchecked((uint)0x00000080),
+    AccumBufferBit = unchecked((uint)0x00000200),
+    ViewportBit = unchecked((uint)0x00000800),
+    TransformBit = unchecked((uint)0x00001000),
+    EnableBit = unchecked((uint)0x00002000),
+    HintBit = unchecked((uint)0x00008000),
+    EvalBit = unchecked((uint)0x00010000),
+    ListBit = unchecked((uint)0x00020000),
+    TextureBit = unchecked((uint)0x00040000),
+    ScissorBit = unchecked((uint)0x00080000),
+    AllAttribBits = unchecked((uint)0xFFFFFFFF),
+    MultisampleBit = unchecked((uint)0x20000000),
+    MultisampleBitARB = unchecked((uint)0x20000000),
+    MultisampleBit3DFX = unchecked((uint)0x20000000),
+    MultisampleBitEXT = unchecked((uint)0x20000000),
 }

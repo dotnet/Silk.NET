@@ -8,17 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoEncodeAV1ReferenceInfoFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeAV1ReferenceInfoFlags
 {
-    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeName("disable_frame_end_update_cdf")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint DisableFrameEndUpdateCdf
+    public uint disable_frame_end_update_cdf
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -26,9 +24,9 @@ public partial struct StdVideoEncodeAV1ReferenceInfoFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeName("segmentation_enabled")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SegmentationEnabled
+    public uint segmentation_enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -36,9 +34,9 @@ public partial struct StdVideoEncodeAV1ReferenceInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 30")]
     [SupportedApiProfile("vulkan")]
-    public uint Reserved
+    public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x3FFFFFFFu; }

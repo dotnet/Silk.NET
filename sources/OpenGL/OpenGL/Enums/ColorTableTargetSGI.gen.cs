@@ -7,48 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ColorTableTargetSGI")]
+[Transformed]
 public enum ColorTableTargetSGI : uint
 {
-    [NativeName("GL_COLOR_TABLE")]
-    ColorTable = 32976,
-
-    [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE")]
-    PostConvolutionColorTable = 32977,
-
-    [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE")]
-    PostColorMatrixColorTable = 32978,
-
-    [NativeName("GL_PROXY_COLOR_TABLE")]
-    ProxyColorTable = 32979,
-
-    [NativeName("GL_PROXY_POST_CONVOLUTION_COLOR_TABLE")]
-    ProxyPostConvolutionColorTable = 32980,
-
-    [NativeName("GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE")]
-    ProxyPostColorMatrixColorTable = 32981,
-
-    [NativeName("GL_COLOR_TABLE_SGI")]
-    ColorTableSGI = 32976,
-
-    [NativeName("GL_POST_CONVOLUTION_COLOR_TABLE_SGI")]
-    PostConvolutionColorTableSGI = 32977,
-
-    [NativeName("GL_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
-    PostColorMatrixColorTableSGI = 32978,
-
-    [NativeName("GL_PROXY_COLOR_TABLE_SGI")]
-    ProxyColorTableSGI = 32979,
-
-    [NativeName("GL_PROXY_POST_CONVOLUTION_COLOR_TABLE_SGI")]
-    ProxyPostConvolutionColorTableSGI = 32980,
-
-    [NativeName("GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE_SGI")]
-    ProxyPostColorMatrixColorTableSGI = 32981,
-
-    [NativeName("GL_TEXTURE_COLOR_TABLE_SGI")]
-    TextureColorTableSGI = 32956,
-
-    [NativeName("GL_PROXY_TEXTURE_COLOR_TABLE_SGI")]
-    ProxyTextureColorTableSGI = 32957,
+    ColorTable = unchecked((uint)0x80D0),
+    PostConvolutionColorTable = unchecked((uint)0x80D1),
+    PostColorMatrixColorTable = unchecked((uint)0x80D2),
+    ProxyColorTable = unchecked((uint)0x80D3),
+    ProxyPostConvolutionColorTable = unchecked((uint)0x80D4),
+    ProxyPostColorMatrixColorTable = unchecked((uint)0x80D5),
+    ColorTableSGI = unchecked((uint)0x80D0),
+    PostConvolutionColorTableSGI = unchecked((uint)0x80D1),
+    PostColorMatrixColorTableSGI = unchecked((uint)0x80D2),
+    ProxyColorTableSGI = unchecked((uint)0x80D3),
+    ProxyPostConvolutionColorTableSGI = unchecked((uint)0x80D4),
+    ProxyPostColorMatrixColorTableSGI = unchecked((uint)0x80D5),
+    TextureColorTableSGI = unchecked((uint)0x80BC),
+    ProxyTextureColorTableSGI = unchecked((uint)0x80BD),
 }

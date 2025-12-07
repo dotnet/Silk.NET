@@ -7,14 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBufferCreateFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum BufferCreateFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_BUFFER_CREATE_SPARSE_BINDING_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -43,7 +42,6 @@ public enum BufferCreateFlags : uint
     )]
     SparseBindingBit = 0x1,
 
-    [NativeName("VK_BUFFER_CREATE_SPARSE_RESIDENCY_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -72,7 +70,6 @@ public enum BufferCreateFlags : uint
     )]
     SparseResidencyBit = 0x2,
 
-    [NativeName("VK_BUFFER_CREATE_SPARSE_ALIASED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -101,7 +98,6 @@ public enum BufferCreateFlags : uint
     )]
     SparseAliasedBit = 0x4,
 
-    [NativeName("VK_BUFFER_CREATE_PROTECTED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +122,6 @@ public enum BufferCreateFlags : uint
     )]
     ProtectedBit = 0x8,
 
-    [NativeName("VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -147,7 +142,6 @@ public enum BufferCreateFlags : uint
     )]
     DeviceAddressCaptureReplayBit = 0x10,
 
-    [NativeName("VK_BUFFER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -160,7 +154,6 @@ public enum BufferCreateFlags : uint
     )]
     DescriptorBufferCaptureReplayBitEXT = 0x20,
 
-    [NativeName("VK_BUFFER_CREATE_VIDEO_PROFILE_INDEPENDENT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
@@ -168,7 +161,6 @@ public enum BufferCreateFlags : uint
     )]
     VideoProfileIndependentBitKHR = 0x40,
 
-    [NativeName("VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_buffer_device_address"],
@@ -179,7 +171,6 @@ public enum BufferCreateFlags : uint
     )]
     DeviceAddressCaptureReplayBitEXT = DeviceAddressCaptureReplayBit,
 
-    [NativeName("VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_buffer_device_address"],

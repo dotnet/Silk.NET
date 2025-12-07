@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFenceImportFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum FenceImportFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_FENCE_IMPORT_TEMPORARY_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +39,6 @@ public enum FenceImportFlags : uint
     )]
     TemporaryBit = 0x1,
 
-    [NativeName("VK_FENCE_IMPORT_TEMPORARY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_fence"],

@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineCacheHeaderVersionOne")]
 [SupportedApiProfile("vulkan")]
 public partial struct PipelineCacheHeaderVersionOne
 {
-    [NativeName("headerSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +35,6 @@ public partial struct PipelineCacheHeaderVersionOne
     )]
     public uint HeaderSize;
 
-    [NativeName("headerVersion")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +58,7 @@ public partial struct PipelineCacheHeaderVersionOne
     )]
     public PipelineCacheHeaderVersion HeaderVersion;
 
-    [NativeName("vendorID")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +82,7 @@ public partial struct PipelineCacheHeaderVersionOne
     )]
     public uint VendorID;
 
-    [NativeName("deviceID")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -108,7 +106,7 @@ public partial struct PipelineCacheHeaderVersionOne
     )]
     public uint DeviceID;
 
-    [NativeName("pipelineCacheUUID")]
+    [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
         "vulkan",
         [

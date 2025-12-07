@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkLatencyTimingsFrameReportNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct LatencyTimingsFrameReportNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -25,7 +23,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -38,7 +36,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public void* PNext;
 
-    [NativeName("presentID")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -51,7 +49,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong PresentID;
 
-    [NativeName("inputSampleTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -64,7 +62,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong InputSampleTimeUs;
 
-    [NativeName("simStartTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -77,7 +75,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong SimStartTimeUs;
 
-    [NativeName("simEndTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -90,7 +88,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong SimEndTimeUs;
 
-    [NativeName("renderSubmitStartTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -103,7 +101,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong RenderSubmitStartTimeUs;
 
-    [NativeName("renderSubmitEndTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -116,7 +114,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong RenderSubmitEndTimeUs;
 
-    [NativeName("presentStartTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -129,7 +127,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong PresentStartTimeUs;
 
-    [NativeName("presentEndTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -142,7 +140,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong PresentEndTimeUs;
 
-    [NativeName("driverStartTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -155,7 +153,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong DriverStartTimeUs;
 
-    [NativeName("driverEndTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -168,7 +166,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong DriverEndTimeUs;
 
-    [NativeName("osRenderQueueStartTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -181,7 +179,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong OsRenderQueueStartTimeUs;
 
-    [NativeName("osRenderQueueEndTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -194,7 +192,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong OsRenderQueueEndTimeUs;
 
-    [NativeName("gpuRenderStartTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -207,7 +205,7 @@ public unsafe partial struct LatencyTimingsFrameReportNV
     )]
     public ulong GpuRenderStartTimeUs;
 
-    [NativeName("gpuRenderEndTimeUs")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],

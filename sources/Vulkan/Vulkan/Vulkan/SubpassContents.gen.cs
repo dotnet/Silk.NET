@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubpassContents")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum SubpassContents : uint
 {
-    [NativeName("VK_SUBPASS_CONTENTS_INLINE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,7 +30,6 @@ public enum SubpassContents : uint
     )]
     Inline = 0,
 
-    [NativeName("VK_SUBPASS_CONTENTS_SECONDARY_COMMAND_BUFFERS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,11 +48,9 @@ public enum SubpassContents : uint
     )]
     SecondaryCommandBuffers = 1,
 
-    [NativeName("VK_SUBPASS_CONTENTS_INLINE_AND_SECONDARY_COMMAND_BUFFERS_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
     InlineAndSecondaryCommandBuffersKHR = 1000451000,
 
-    [NativeName("VK_SUBPASS_CONTENTS_INLINE_AND_SECONDARY_COMMAND_BUFFERS_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_nested_command_buffer"],

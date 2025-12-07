@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ArrayObjectPNameATI")]
+[Transformed]
 public enum ArrayObjectPNameATI : uint
 {
-    [NativeName("GL_OBJECT_BUFFER_SIZE_ATI")]
-    Size = 34660,
-
-    [NativeName("GL_OBJECT_BUFFER_USAGE_ATI")]
-    Usage = 34661,
+    Size = unchecked((uint)0x8764),
+    Usage = unchecked((uint)0x8765),
 }

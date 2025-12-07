@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_gm_params_e__FixedBuffer")]
 [InlineArray(8 * 6)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1GlobalMotionGmParams
 {
-    [NativeName("e0_0")]
     [SupportedApiProfile("vulkan")]
     public int E0X0;
 }

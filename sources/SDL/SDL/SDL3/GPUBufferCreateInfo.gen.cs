@@ -7,15 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUBufferCreateInfo")]
 public partial struct GPUBufferCreateInfo
 {
-    [NativeName("usage")]
+    [NativeTypeName("SDL_GPUBufferUsageFlags")]
     public uint Usage;
 
-    [NativeName("size")]
+    [NativeTypeName("Uint32")]
     public uint Size;
 
-    [NativeName("props")]
+    [NativeTypeName("SDL_PropertiesID")]
     public uint Props;
 }

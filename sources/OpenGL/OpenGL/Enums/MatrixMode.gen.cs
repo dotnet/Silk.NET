@@ -7,18 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("MatrixMode")]
+[Transformed]
 public enum MatrixMode : uint
 {
-    [NativeName("GL_TEXTURE")]
-    Texture = 5890,
-
-    [NativeName("GL_MODELVIEW")]
-    Modelview = 5888,
-
-    [NativeName("GL_PROJECTION")]
-    Projection = 5889,
-
-    [NativeName("GL_MODELVIEW0_EXT")]
-    Modelview0EXT = 5888,
+    Texture = unchecked((uint)0x1702),
+    Modelview = unchecked((uint)0x1700),
+    Projection = unchecked((uint)0x1701),
+    Modelview0EXT = unchecked((uint)0x1700),
 }

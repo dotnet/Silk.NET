@@ -8,12 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_maxTaskWorkGroupSize_e__FixedBuffer")]
 [InlineArray(3)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_NV_mesh_shader"],
+    ImpliesSets = [
+        "VK_NV_mesh_shader+VK_KHR_get_physical_device_properties2",
+        "VK_NV_mesh_shader+VK_VERSION_1_1",
+    ]
+)]
 public partial struct PhysicalDeviceMeshShaderPropertiesNVMaxTaskWorkGroupSize
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public uint E0;
 }

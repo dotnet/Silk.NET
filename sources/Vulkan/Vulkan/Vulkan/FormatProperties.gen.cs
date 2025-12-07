@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFormatProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct FormatProperties
 {
-    [NativeName("linearTilingFeatures")]
+    [NativeTypeName("VkFormatFeatureFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,7 @@ public partial struct FormatProperties
     )]
     public FormatFeatureFlags LinearTilingFeatures;
 
-    [NativeName("optimalTilingFeatures")]
+    [NativeTypeName("VkFormatFeatureFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +69,7 @@ public partial struct FormatProperties
     )]
     public FormatFeatureFlags OptimalTilingFeatures;
 
-    [NativeName("bufferFeatures")]
+    [NativeTypeName("VkFormatFeatureFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

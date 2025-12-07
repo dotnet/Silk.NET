@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDepthClipEnableFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDepthClipEnableFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clip_enable"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceDepthClipEnableFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clip_enable"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceDepthClipEnableFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("depthClipEnable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_depth_clip_enable"],

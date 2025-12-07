@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRayTracingShaderGroupCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RayTracingShaderGroupCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -23,7 +21,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -34,7 +32,6 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -45,7 +42,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoKHR
     )]
     public RayTracingShaderGroupTypeKHR Type;
 
-    [NativeName("generalShader")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -56,7 +53,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoKHR
     )]
     public uint GeneralShader;
 
-    [NativeName("closestHitShader")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -67,7 +64,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoKHR
     )]
     public uint ClosestHitShader;
 
-    [NativeName("anyHitShader")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -78,7 +75,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoKHR
     )]
     public uint AnyHitShader;
 
-    [NativeName("intersectionShader")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -89,7 +86,7 @@ public unsafe partial struct RayTracingShaderGroupCreateInfoKHR
     )]
     public uint IntersectionShader;
 
-    [NativeName("pShaderGroupCaptureReplayHandle")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],

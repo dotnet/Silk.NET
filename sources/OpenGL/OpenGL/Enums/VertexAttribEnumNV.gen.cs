@@ -7,9 +7,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("VertexAttribEnumNV")]
+[Transformed]
 public enum VertexAttribEnumNV : uint
 {
-    [NativeName("GL_PROGRAM_PARAMETER_NV")]
-    ProgramParameter = 34372,
+    ProgramParameter = unchecked((uint)0x8644),
 }

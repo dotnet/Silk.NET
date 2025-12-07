@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_RWLock")]
 public readonly unsafe partial struct RWLockHandle
 {
     public readonly void* Handle;
-
-    public RWLockHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(RWLockHandle other) => Handle == other.Handle;
 

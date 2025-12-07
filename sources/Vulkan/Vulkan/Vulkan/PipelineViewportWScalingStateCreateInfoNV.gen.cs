@@ -8,27 +8,25 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineViewportWScalingStateCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineViewportWScalingStateCreateInfoNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     public void* PNext;
 
-    [NativeName("viewportWScalingEnable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     public uint ViewportWScalingEnable;
 
-    [NativeName("viewportCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     public uint ViewportCount;
 
-    [NativeName("pViewportWScalings")]
+    [NativeTypeName("const VkViewportWScalingNV *")]
     [SupportedApiProfile("vulkan", ["VK_NV_clip_space_w_scaling"])]
     public ViewportWScalingNV* PViewportWScalings;
 }

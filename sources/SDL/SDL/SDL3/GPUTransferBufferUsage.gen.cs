@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUTransferBufferUsage")]
-public enum GPUTransferBufferUsage
+[NativeTypeName("unsigned int")]
+public enum GPUTransferBufferUsage : uint
 {
-    [NativeName("SDL_GPU_TRANSFERBUFFERUSAGE_UPLOAD")]
-    Upload = 0,
-
-    [NativeName("SDL_GPU_TRANSFERBUFFERUSAGE_DOWNLOAD")]
-    Download = 1,
+    Upload,
+    Download,
 }

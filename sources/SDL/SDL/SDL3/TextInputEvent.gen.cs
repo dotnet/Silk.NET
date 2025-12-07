@@ -4,21 +4,19 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_TextInputEvent")]
 public unsafe partial struct TextInputEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("windowID")]
+    [NativeTypeName("SDL_WindowID")]
     public uint WindowID;
 
-    [NativeName("text")]
+    [NativeTypeName("const char *")]
     public sbyte* Text;
 }

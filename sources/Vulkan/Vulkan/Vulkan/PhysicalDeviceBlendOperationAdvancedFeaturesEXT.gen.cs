@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceBlendOperationAdvancedFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceBlendOperationAdvancedFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("advancedBlendCoherentOperations")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_blend_operation_advanced"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeAV1RateControlLayerInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeAV1RateControlLayerInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -20,7 +18,7 @@ public unsafe partial struct VideoEncodeAV1RateControlLayerInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -28,7 +26,7 @@ public unsafe partial struct VideoEncodeAV1RateControlLayerInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("useMinQIndex")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -36,7 +34,6 @@ public unsafe partial struct VideoEncodeAV1RateControlLayerInfoKHR
     )]
     public uint UseMinQIndex;
 
-    [NativeName("minQIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -44,7 +41,7 @@ public unsafe partial struct VideoEncodeAV1RateControlLayerInfoKHR
     )]
     public VideoEncodeAV1QIndexKHR MinQIndex;
 
-    [NativeName("useMaxQIndex")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -52,7 +49,6 @@ public unsafe partial struct VideoEncodeAV1RateControlLayerInfoKHR
     )]
     public uint UseMaxQIndex;
 
-    [NativeName("maxQIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -60,7 +56,7 @@ public unsafe partial struct VideoEncodeAV1RateControlLayerInfoKHR
     )]
     public VideoEncodeAV1QIndexKHR MaxQIndex;
 
-    [NativeName("useMaxFrameSize")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -68,7 +64,6 @@ public unsafe partial struct VideoEncodeAV1RateControlLayerInfoKHR
     )]
     public uint UseMaxFrameSize;
 
-    [NativeName("maxFrameSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

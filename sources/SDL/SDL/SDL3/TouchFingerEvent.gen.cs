@@ -7,39 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_TouchFingerEvent")]
 public partial struct TouchFingerEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("touchID")]
+    [NativeTypeName("SDL_TouchID")]
     public ulong TouchID;
 
-    [NativeName("fingerID")]
+    [NativeTypeName("SDL_FingerID")]
     public ulong FingerID;
-
-    [NativeName("x")]
     public float X;
-
-    [NativeName("y")]
     public float Y;
-
-    [NativeName("dx")]
     public float Dx;
-
-    [NativeName("dy")]
     public float Dy;
-
-    [NativeName("pressure")]
     public float Pressure;
 
-    [NativeName("windowID")]
+    [NativeTypeName("SDL_WindowID")]
     public uint WindowID;
 }

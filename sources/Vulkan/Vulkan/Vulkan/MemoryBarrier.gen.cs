@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryBarrier")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryBarrier
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct MemoryBarrier
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,7 @@ public unsafe partial struct MemoryBarrier
     )]
     public void* PNext;
 
-    [NativeName("srcAccessMask")]
+    [NativeTypeName("VkAccessFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +97,7 @@ public unsafe partial struct MemoryBarrier
     )]
     public AccessFlags SrcAccessMask;
 
-    [NativeName("dstAccessMask")]
+    [NativeTypeName("VkAccessFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRGBA10X6FormatsFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rgba10x6_formats"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceRGBA10X6FormatsFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rgba10x6_formats"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceRGBA10X6FormatsFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("formatRgba10x6WithoutYCbCrSampler")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_rgba10x6_formats"],

@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ParameterRangeEXT")]
+[Transformed]
 public enum ParameterRangeEXT : uint
 {
-    [NativeName("GL_NORMALIZED_RANGE_EXT")]
-    NormalizedRange = 34784,
-
-    [NativeName("GL_FULL_RANGE_EXT")]
-    FullRange = 34785,
+    NormalizedRange = unchecked((uint)0x87E0),
+    FullRange = unchecked((uint)0x87E1),
 }

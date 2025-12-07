@@ -7,9 +7,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("TraceMaskMESA")]
-[Flags]
-public enum TraceMaskMESA : uint
-{
-    None = 0x0,
-}
+[Transformed]
+public enum TraceMaskMESA : uint { }

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineVertexInputStateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineVertexInputStateCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +28,7 @@ public unsafe partial struct PipelineVertexInputStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -49,7 +47,7 @@ public unsafe partial struct PipelineVertexInputStateCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineVertexInputStateCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +66,7 @@ public unsafe partial struct PipelineVertexInputStateCreateInfo
     )]
     public uint Flags;
 
-    [NativeName("vertexBindingDescriptionCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +85,7 @@ public unsafe partial struct PipelineVertexInputStateCreateInfo
     )]
     public uint VertexBindingDescriptionCount;
 
-    [NativeName("pVertexBindingDescriptions")]
+    [NativeTypeName("const VkVertexInputBindingDescription *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -106,7 +104,7 @@ public unsafe partial struct PipelineVertexInputStateCreateInfo
     )]
     public VertexInputBindingDescription* PVertexBindingDescriptions;
 
-    [NativeName("vertexAttributeDescriptionCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -125,7 +123,7 @@ public unsafe partial struct PipelineVertexInputStateCreateInfo
     )]
     public uint VertexAttributeDescriptionCount;
 
-    [NativeName("pVertexAttributeDescriptions")]
+    [NativeTypeName("const VkVertexInputAttributeDescription *")]
     [SupportedApiProfile(
         "vulkan",
         [

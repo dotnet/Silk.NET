@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDrmPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_physical_device_drm"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_physical_device_drm"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeName("hasPrimary")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_physical_device_drm"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
     )]
     public uint HasPrimary;
 
-    [NativeName("hasRender")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_physical_device_drm"],
@@ -56,7 +53,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
     )]
     public uint HasRender;
 
-    [NativeName("primaryMajor")]
+    [NativeTypeName("int64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_physical_device_drm"],
@@ -67,7 +64,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
     )]
     public long PrimaryMajor;
 
-    [NativeName("primaryMinor")]
+    [NativeTypeName("int64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_physical_device_drm"],
@@ -78,7 +75,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
     )]
     public long PrimaryMinor;
 
-    [NativeName("renderMajor")]
+    [NativeTypeName("int64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_physical_device_drm"],
@@ -89,7 +86,7 @@ public unsafe partial struct PhysicalDeviceDrmPropertiesEXT
     )]
     public long RenderMajor;
 
-    [NativeName("renderMinor")]
+    [NativeTypeName("int64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_physical_device_drm"],

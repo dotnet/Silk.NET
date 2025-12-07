@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDescriptorPoolOverallocationFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorPoolOverallocationFeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_descriptor_pool_overallocation"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceDescriptorPoolOverallocationFeaturesN
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_descriptor_pool_overallocation"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDeviceDescriptorPoolOverallocationFeaturesN
     )]
     public void* PNext;
 
-    [NativeName("descriptorPoolOverallocation")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_descriptor_pool_overallocation"],

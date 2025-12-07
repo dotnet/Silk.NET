@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceProperties
 {
-    [NativeName("apiVersion")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +39,7 @@ public partial struct PhysicalDeviceProperties
     )]
     public uint ApiVersion;
 
-    [NativeName("driverVersion")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +68,7 @@ public partial struct PhysicalDeviceProperties
     )]
     public uint DriverVersion;
 
-    [NativeName("vendorID")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +97,7 @@ public partial struct PhysicalDeviceProperties
     )]
     public uint VendorID;
 
-    [NativeName("deviceID")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -127,7 +126,6 @@ public partial struct PhysicalDeviceProperties
     )]
     public uint DeviceID;
 
-    [NativeName("deviceType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,7 +154,7 @@ public partial struct PhysicalDeviceProperties
     )]
     public PhysicalDeviceType DeviceType;
 
-    [NativeName("deviceName")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -185,7 +183,7 @@ public partial struct PhysicalDeviceProperties
     )]
     public PhysicalDevicePropertiesDeviceName DeviceName;
 
-    [NativeName("pipelineCacheUUID")]
+    [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -214,7 +212,6 @@ public partial struct PhysicalDeviceProperties
     )]
     public PhysicalDevicePropertiesPipelineCacheUUID PipelineCacheUUID;
 
-    [NativeName("limits")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -243,7 +240,6 @@ public partial struct PhysicalDeviceProperties
     )]
     public PhysicalDeviceLimits Limits;
 
-    [NativeName("sparseProperties")]
     [SupportedApiProfile(
         "vulkan",
         [

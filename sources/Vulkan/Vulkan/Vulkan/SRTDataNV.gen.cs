@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSRTDataNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct SRTDataNV
 {
-    [NativeName("sx")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -20,7 +18,6 @@ public partial struct SRTDataNV
     )]
     public float Sx;
 
-    [NativeName("a")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -28,7 +25,6 @@ public partial struct SRTDataNV
     )]
     public float A;
 
-    [NativeName("b")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -36,7 +32,6 @@ public partial struct SRTDataNV
     )]
     public float B;
 
-    [NativeName("pvx")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -44,7 +39,6 @@ public partial struct SRTDataNV
     )]
     public float Pvx;
 
-    [NativeName("sy")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -52,7 +46,6 @@ public partial struct SRTDataNV
     )]
     public float Sy;
 
-    [NativeName("c")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -60,7 +53,6 @@ public partial struct SRTDataNV
     )]
     public float C;
 
-    [NativeName("pvy")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -68,7 +60,6 @@ public partial struct SRTDataNV
     )]
     public float Pvy;
 
-    [NativeName("sz")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -76,7 +67,6 @@ public partial struct SRTDataNV
     )]
     public float Sz;
 
-    [NativeName("pvz")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -84,7 +74,6 @@ public partial struct SRTDataNV
     )]
     public float Pvz;
 
-    [NativeName("qx")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -92,7 +81,6 @@ public partial struct SRTDataNV
     )]
     public float Qx;
 
-    [NativeName("qy")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -100,7 +88,6 @@ public partial struct SRTDataNV
     )]
     public float Qy;
 
-    [NativeName("qz")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -108,7 +95,6 @@ public partial struct SRTDataNV
     )]
     public float Qz;
 
-    [NativeName("qw")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -116,7 +102,6 @@ public partial struct SRTDataNV
     )]
     public float Qw;
 
-    [NativeName("tx")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -124,7 +109,6 @@ public partial struct SRTDataNV
     )]
     public float Tx;
 
-    [NativeName("ty")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -132,7 +116,6 @@ public partial struct SRTDataNV
     )]
     public float Ty;
 
-    [NativeName("tz")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],

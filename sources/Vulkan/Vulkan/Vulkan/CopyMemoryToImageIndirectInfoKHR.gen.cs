@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCopyMemoryToImageIndirectInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -23,7 +21,7 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -34,7 +32,7 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("srcCopyFlags")]
+    [NativeTypeName("VkAddressCopyFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -45,7 +43,7 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
     )]
     public AddressCopyFlagsKHR SrcCopyFlags;
 
-    [NativeName("copyCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -56,7 +54,6 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
     )]
     public uint CopyCount;
 
-    [NativeName("copyAddressRange")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -67,7 +64,7 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
     )]
     public StridedDeviceAddressRangeKHR CopyAddressRange;
 
-    [NativeName("dstImage")]
+    [NativeTypeName("VkImage")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -78,7 +75,6 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
     )]
     public ImageHandle DstImage;
 
-    [NativeName("dstImageLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -89,7 +85,7 @@ public unsafe partial struct CopyMemoryToImageIndirectInfoKHR
     )]
     public ImageLayout DstImageLayout;
 
-    [NativeName("pImageSubresources")]
+    [NativeTypeName("const VkImageSubresourceLayers *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderPassCreateInfo2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassCreateInfo2
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +25,7 @@ public unsafe partial struct RenderPassCreateInfo2
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +40,7 @@ public unsafe partial struct RenderPassCreateInfo2
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkRenderPassCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +55,7 @@ public unsafe partial struct RenderPassCreateInfo2
     )]
     public RenderPassCreateFlags Flags;
 
-    [NativeName("attachmentCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -72,7 +70,7 @@ public unsafe partial struct RenderPassCreateInfo2
     )]
     public uint AttachmentCount;
 
-    [NativeName("pAttachments")]
+    [NativeTypeName("const VkAttachmentDescription2 *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +85,7 @@ public unsafe partial struct RenderPassCreateInfo2
     )]
     public AttachmentDescription2* PAttachments;
 
-    [NativeName("subpassCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -102,7 +100,7 @@ public unsafe partial struct RenderPassCreateInfo2
     )]
     public uint SubpassCount;
 
-    [NativeName("pSubpasses")]
+    [NativeTypeName("const VkSubpassDescription2 *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -117,7 +115,7 @@ public unsafe partial struct RenderPassCreateInfo2
     )]
     public SubpassDescription2* PSubpasses;
 
-    [NativeName("dependencyCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -132,7 +130,7 @@ public unsafe partial struct RenderPassCreateInfo2
     )]
     public uint DependencyCount;
 
-    [NativeName("pDependencies")]
+    [NativeTypeName("const VkSubpassDependency2 *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -147,7 +145,7 @@ public unsafe partial struct RenderPassCreateInfo2
     )]
     public SubpassDependency2* PDependencies;
 
-    [NativeName("correlatedViewMaskCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -162,7 +160,7 @@ public unsafe partial struct RenderPassCreateInfo2
     )]
     public uint CorrelatedViewMaskCount;
 
-    [NativeName("pCorrelatedViewMasks")]
+    [NativeTypeName("const uint32_t *")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderPassAttachmentBeginInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassAttachmentBeginInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +25,7 @@ public unsafe partial struct RenderPassAttachmentBeginInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +40,7 @@ public unsafe partial struct RenderPassAttachmentBeginInfo
     )]
     public void* PNext;
 
-    [NativeName("attachmentCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +55,7 @@ public unsafe partial struct RenderPassAttachmentBeginInfo
     )]
     public uint AttachmentCount;
 
-    [NativeName("pAttachments")]
+    [NativeTypeName("const VkImageView *")]
     [SupportedApiProfile(
         "vulkan",
         [

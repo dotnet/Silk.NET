@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkInputAttachmentAspectReference")]
 [SupportedApiProfile("vulkan")]
 public partial struct InputAttachmentAspectReference
 {
-    [NativeName("subpass")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +28,7 @@ public partial struct InputAttachmentAspectReference
     )]
     public uint Subpass;
 
-    [NativeName("inputAttachmentIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,7 +45,7 @@ public partial struct InputAttachmentAspectReference
     )]
     public uint InputAttachmentIndex;
 
-    [NativeName("aspectMask")]
+    [NativeTypeName("VkImageAspectFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("RenderingMode")]
+[Transformed]
 public enum RenderingMode : uint
 {
-    [NativeName("GL_RENDER")]
-    Render = 7168,
-
-    [NativeName("GL_FEEDBACK")]
-    Feedback = 7169,
-
-    [NativeName("GL_SELECT")]
-    Select = 7170,
+    Render = unchecked((uint)0x1C00),
+    Feedback = unchecked((uint)0x1C01),
+    Select = unchecked((uint)0x1C02),
 }

@@ -7,12 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAccelerationStructureMotionInstanceDataNV")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public partial struct AccelerationStructureMotionInstanceDataNV
 {
-    [NativeName("staticInstance")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",
@@ -21,7 +19,6 @@ public partial struct AccelerationStructureMotionInstanceDataNV
     )]
     public AccelerationStructureInstanceKHR StaticInstance;
 
-    [NativeName("matrixMotionInstance")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",
@@ -30,7 +27,6 @@ public partial struct AccelerationStructureMotionInstanceDataNV
     )]
     public AccelerationStructureMatrixMotionInstanceNV MatrixMotionInstance;
 
-    [NativeName("srtMotionInstance")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",

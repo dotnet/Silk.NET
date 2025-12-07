@@ -10,96 +10,37 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ContextPName")]
+[Transformed]
 public enum ContextPName : uint
 {
-    [NativeName("ALC_FREQUENCY")]
-    Frequency = 4103,
-
-    [NativeName("ALC_REFRESH")]
-    Refresh = 4104,
-
-    [NativeName("ALC_SYNC")]
-    Sync = 4105,
-
-    [NativeName("ALC_MAJOR_VERSION")]
-    MajorVersion = 4096,
-
-    [NativeName("ALC_MINOR_VERSION")]
-    MinorVersion = 4097,
-
-    [NativeName("ALC_ATTRIBUTES_SIZE")]
-    AttributesSize = 4098,
-
-    [NativeName("ALC_ALL_ATTRIBUTES")]
-    AllAttributes = 4099,
-
-    [NativeName("ALC_DEFAULT_DEVICE_SPECIFIER")]
-    DefaultDeviceSpecifier = 4100,
-
-    [NativeName("ALC_DEVICE_SPECIFIER")]
-    DeviceSpecifier = 4101,
-
-    [NativeName("ALC_EXTENSIONS")]
-    Extensions = 4102,
-
-    [NativeName("ALC_MONO_SOURCES")]
-    MonoSources = 4112,
-
-    [NativeName("ALC_STEREO_SOURCES")]
-    StereoSources = 4113,
-
-    [NativeName("ALC_CAPTURE_DEVICE_SPECIFIER")]
-    CaptureDeviceSpecifier = 784,
-
-    [NativeName("ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER")]
-    CaptureDefaultDeviceSpecifier = 785,
-
-    [NativeName("ALC_CAPTURE_SAMPLES")]
-    CaptureSamples = 786,
-
-    [NativeName("ALC_DEFAULT_ALL_DEVICES_SPECIFIER")]
-    DefaultAllDevicesSpecifier = 4114,
-
-    [NativeName("ALC_ALL_DEVICES_SPECIFIER")]
-    AllDevicesSpecifier = 4115,
-
-    [NativeName("ALC_CONNECTED")]
-    Connected = 787,
-
-    [NativeName("ALC_DEFAULT_FILTER_ORDER")]
-    DefaultFilterOrder = 4352,
-
-    [NativeName("ALC_HRTF_SOFT")]
-    HrtfSOFT = 6546,
-
-    [NativeName("ALC_HRTF_STATUS_SOFT")]
-    HrtfStatusSOFT = 6547,
-
-    [NativeName("ALC_NUM_HRTF_SPECIFIERS_SOFT")]
-    NumHrtfSpecifiersSOFT = 6548,
-
-    [NativeName("ALC_HRTF_SPECIFIER_SOFT")]
-    HrtfSpecifierSOFT = 6549,
-
-    [NativeName("ALC_OUTPUT_LIMITER_SOFT")]
-    OutputLimiterSOFT = 6554,
-
-    [NativeName("ALC_DEVICE_CLOCK_SOFT")]
-    DeviceClockSOFT = 5632,
-
-    [NativeName("ALC_DEVICE_LATENCY_SOFT")]
-    DeviceLatencySOFT = 5633,
-
-    [NativeName("ALC_DEVICE_CLOCK_LATENCY_SOFT")]
-    DeviceClockLatencySOFT = 5634,
-
-    [NativeName("ALC_MAX_AMBISONIC_ORDER_SOFT")]
-    MaxAmbisonicOrderSOFT = 6555,
-
-    [NativeName("ALC_OUTPUT_MODE_SOFT")]
-    OutputModeSOFT = 6572,
-
-    [NativeName("ALC_CONTEXT_FLAGS_EXT")]
-    ContextFlagsEXT = 6607,
+    Frequency = unchecked((uint)0x1007),
+    Refresh = unchecked((uint)0x1008),
+    Sync = unchecked((uint)0x1009),
+    MajorVersion = unchecked((uint)0x1000),
+    MinorVersion = unchecked((uint)0x1001),
+    AttributesSize = unchecked((uint)0x1002),
+    AllAttributes = unchecked((uint)0x1003),
+    DefaultDeviceSpecifier = unchecked((uint)0x1004),
+    DeviceSpecifier = unchecked((uint)0x1005),
+    Extensions = unchecked((uint)0x1006),
+    MonoSources = unchecked((uint)0x1010),
+    StereoSources = unchecked((uint)0x1011),
+    CaptureDeviceSpecifier = unchecked((uint)0x310),
+    CaptureDefaultDeviceSpecifier = unchecked((uint)0x311),
+    CaptureSamples = unchecked((uint)0x312),
+    DefaultAllDevicesSpecifier = unchecked((uint)0x1012),
+    AllDevicesSpecifier = unchecked((uint)0x1013),
+    Connected = unchecked((uint)0x313),
+    DefaultFilterOrder = unchecked((uint)0x1100),
+    HrtfSOFT = unchecked((uint)0x1992),
+    HrtfStatusSOFT = unchecked((uint)0x1993),
+    NumHrtfSpecifiersSOFT = unchecked((uint)0x1994),
+    HrtfSpecifierSOFT = unchecked((uint)0x1995),
+    OutputLimiterSOFT = unchecked((uint)0x199A),
+    DeviceClockSOFT = unchecked((uint)0x1600),
+    DeviceLatencySOFT = unchecked((uint)0x1601),
+    DeviceClockLatencySOFT = unchecked((uint)0x1602),
+    MaxAmbisonicOrderSOFT = unchecked((uint)0x199B),
+    OutputModeSOFT = unchecked((uint)0x19AC),
+    ContextFlagsEXT = unchecked((uint)0x19CF),
 }

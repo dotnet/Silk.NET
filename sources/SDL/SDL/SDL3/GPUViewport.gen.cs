@@ -7,24 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUViewport")]
 public partial struct GPUViewport
 {
-    [NativeName("x")]
     public float X;
-
-    [NativeName("y")]
     public float Y;
-
-    [NativeName("w")]
     public float W;
-
-    [NativeName("h")]
     public float H;
-
-    [NativeName("min_depth")]
     public float MinDepth;
-
-    [NativeName("max_depth")]
     public float MaxDepth;
 }

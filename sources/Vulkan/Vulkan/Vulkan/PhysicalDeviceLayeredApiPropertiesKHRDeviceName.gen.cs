@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_deviceName_e__FixedBuffer")]
 [InlineArray(256)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
 public partial struct PhysicalDeviceLayeredApiPropertiesKHRDeviceName
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

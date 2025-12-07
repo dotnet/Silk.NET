@@ -8,30 +8,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_DropEvent")]
 public unsafe partial struct DropEvent
 {
-    [NativeName("type")]
     public EventType Type;
 
-    [NativeName("reserved")]
+    [NativeTypeName("Uint32")]
     public uint Reserved;
 
-    [NativeName("timestamp")]
+    [NativeTypeName("Uint64")]
     public ulong Timestamp;
 
-    [NativeName("windowID")]
+    [NativeTypeName("SDL_WindowID")]
     public uint WindowID;
-
-    [NativeName("x")]
     public float X;
-
-    [NativeName("y")]
     public float Y;
 
-    [NativeName("source")]
+    [NativeTypeName("const char *")]
     public sbyte* Source;
 
-    [NativeName("data")]
+    [NativeTypeName("const char *")]
     public sbyte* Data;
 }

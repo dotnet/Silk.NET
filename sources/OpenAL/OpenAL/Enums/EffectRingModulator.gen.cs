@@ -10,15 +10,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("EffectRingModulator")]
+[Transformed]
 public enum EffectRingModulator : uint
 {
-    [NativeName("AL_RING_MODULATOR_FREQUENCY")]
-    Frequency = 1,
-
-    [NativeName("AL_RING_MODULATOR_HIGHPASS_CUTOFF")]
-    HighpassCutoff = 2,
-
-    [NativeName("AL_RING_MODULATOR_WAVEFORM")]
-    Waveform = 3,
+    Frequency = unchecked((uint)0x0001),
+    HighpassCutoff = unchecked((uint)0x0002),
+    Waveform = unchecked((uint)0x0003),
 }

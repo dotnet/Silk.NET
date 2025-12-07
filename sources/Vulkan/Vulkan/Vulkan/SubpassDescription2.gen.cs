@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubpassDescription2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SubpassDescription2
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -26,7 +24,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkSubpassDescriptionFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -56,7 +54,6 @@ public unsafe partial struct SubpassDescription2
     )]
     public SubpassDescriptionFlags Flags;
 
-    [NativeName("pipelineBindPoint")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -71,7 +68,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public PipelineBindPoint PipelineBindPoint;
 
-    [NativeName("viewMask")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +83,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public uint ViewMask;
 
-    [NativeName("inputAttachmentCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -101,7 +98,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public uint InputAttachmentCount;
 
-    [NativeName("pInputAttachments")]
+    [NativeTypeName("const VkAttachmentReference2 *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -116,7 +113,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public AttachmentReference2* PInputAttachments;
 
-    [NativeName("colorAttachmentCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -131,7 +128,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public uint ColorAttachmentCount;
 
-    [NativeName("pColorAttachments")]
+    [NativeTypeName("const VkAttachmentReference2 *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -146,7 +143,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public AttachmentReference2* PColorAttachments;
 
-    [NativeName("pResolveAttachments")]
+    [NativeTypeName("const VkAttachmentReference2 *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -161,7 +158,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public AttachmentReference2* PResolveAttachments;
 
-    [NativeName("pDepthStencilAttachment")]
+    [NativeTypeName("const VkAttachmentReference2 *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -176,7 +173,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public AttachmentReference2* PDepthStencilAttachment;
 
-    [NativeName("preserveAttachmentCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -191,7 +188,7 @@ public unsafe partial struct SubpassDescription2
     )]
     public uint PreserveAttachmentCount;
 
-    [NativeName("pPreserveAttachments")]
+    [NativeTypeName("const uint32_t *")]
     [SupportedApiProfile(
         "vulkan",
         [

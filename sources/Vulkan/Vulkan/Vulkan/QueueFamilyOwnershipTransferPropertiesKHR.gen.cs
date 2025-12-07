@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkQueueFamilyOwnershipTransferPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct QueueFamilyOwnershipTransferPropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance9"],
@@ -23,7 +21,6 @@ public unsafe partial struct QueueFamilyOwnershipTransferPropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance9"],
@@ -34,7 +31,7 @@ public unsafe partial struct QueueFamilyOwnershipTransferPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("optimalImageTransferToQueueFamilies")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance9"],

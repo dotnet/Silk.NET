@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSurfacePresentModeKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SurfacePresentModeKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -22,7 +20,6 @@ public unsafe partial struct SurfacePresentModeKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -33,7 +30,6 @@ public unsafe partial struct SurfacePresentModeKHR
     )]
     public void* PNext;
 
-    [NativeName("presentMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],

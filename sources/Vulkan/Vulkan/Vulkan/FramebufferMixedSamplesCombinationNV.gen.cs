@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFramebufferMixedSamplesCombinationNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FramebufferMixedSamplesCombinationNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -22,7 +20,6 @@ public unsafe partial struct FramebufferMixedSamplesCombinationNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -33,7 +30,6 @@ public unsafe partial struct FramebufferMixedSamplesCombinationNV
     )]
     public void* PNext;
 
-    [NativeName("coverageReductionMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -44,7 +40,6 @@ public unsafe partial struct FramebufferMixedSamplesCombinationNV
     )]
     public CoverageReductionModeNV CoverageReductionMode;
 
-    [NativeName("rasterizationSamples")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -55,7 +50,7 @@ public unsafe partial struct FramebufferMixedSamplesCombinationNV
     )]
     public SampleCountFlags RasterizationSamples;
 
-    [NativeName("depthStencilSamples")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],
@@ -66,7 +61,7 @@ public unsafe partial struct FramebufferMixedSamplesCombinationNV
     )]
     public SampleCountFlags DepthStencilSamples;
 
-    [NativeName("colorSamples")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_coverage_reduction_mode"],

@@ -7,12 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkClusterAccelerationStructureOpInputNV")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ClusterAccelerationStructureOpInputNV
 {
-    [NativeName("pClustersBottomLevel")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",
@@ -21,7 +19,6 @@ public unsafe partial struct ClusterAccelerationStructureOpInputNV
     )]
     public ClusterAccelerationStructureClustersBottomLevelInputNV* PClustersBottomLevel;
 
-    [NativeName("pTriangleClusters")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",
@@ -30,7 +27,6 @@ public unsafe partial struct ClusterAccelerationStructureOpInputNV
     )]
     public ClusterAccelerationStructureTriangleClusterInputNV* PTriangleClusters;
 
-    [NativeName("pMoveObjects")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",

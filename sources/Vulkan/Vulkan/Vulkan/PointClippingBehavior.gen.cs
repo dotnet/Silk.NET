@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPointClippingBehavior")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum PointClippingBehavior : uint
 {
-    [NativeName("VK_POINT_CLIPPING_BEHAVIOR_ALL_CLIP_PLANES")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +28,6 @@ public enum PointClippingBehavior : uint
     )]
     AllClipPlanes = 0,
 
-    [NativeName("VK_POINT_CLIPPING_BEHAVIOR_USER_CLIP_PLANES_ONLY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,11 +44,9 @@ public enum PointClippingBehavior : uint
     )]
     UserClipPlanesOnly = 1,
 
-    [NativeName("VK_POINT_CLIPPING_BEHAVIOR_ALL_CLIP_PLANES_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     AllClipPlanesKHR = AllClipPlanes,
 
-    [NativeName("VK_POINT_CLIPPING_BEHAVIOR_USER_CLIP_PLANES_ONLY_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance2"])]
     UserClipPlanesOnlyKHR = UserClipPlanesOnly,
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDataGraphPipelineCreateInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineCreateInfoARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -20,7 +18,7 @@ public unsafe partial struct DataGraphPipelineCreateInfoARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -28,7 +26,7 @@ public unsafe partial struct DataGraphPipelineCreateInfoARM
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineCreateFlags2KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -36,7 +34,7 @@ public unsafe partial struct DataGraphPipelineCreateInfoARM
     )]
     public ulong Flags;
 
-    [NativeName("layout")]
+    [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -44,7 +42,7 @@ public unsafe partial struct DataGraphPipelineCreateInfoARM
     )]
     public PipelineLayoutHandle Layout;
 
-    [NativeName("resourceInfoCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -52,7 +50,7 @@ public unsafe partial struct DataGraphPipelineCreateInfoARM
     )]
     public uint ResourceInfoCount;
 
-    [NativeName("pResourceInfos")]
+    [NativeTypeName("const VkDataGraphPipelineResourceInfoARM *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

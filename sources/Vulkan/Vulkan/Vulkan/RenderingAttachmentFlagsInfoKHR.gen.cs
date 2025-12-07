@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderingAttachmentFlagsInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderingAttachmentFlagsInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -22,7 +20,7 @@ public unsafe partial struct RenderingAttachmentFlagsInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -33,7 +31,7 @@ public unsafe partial struct RenderingAttachmentFlagsInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkRenderingAttachmentFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGetLatencyMarkerInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GetLatencyMarkerInfoNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -25,7 +23,7 @@ public unsafe partial struct GetLatencyMarkerInfoNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -38,7 +36,7 @@ public unsafe partial struct GetLatencyMarkerInfoNV
     )]
     public void* PNext;
 
-    [NativeName("timingCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -51,7 +49,6 @@ public unsafe partial struct GetLatencyMarkerInfoNV
     )]
     public uint TimingCount;
 
-    [NativeName("pTimings")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],

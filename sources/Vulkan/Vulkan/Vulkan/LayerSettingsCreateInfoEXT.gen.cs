@@ -8,23 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkLayerSettingsCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct LayerSettingsCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     public void* PNext;
 
-    [NativeName("settingCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     public uint SettingCount;
 
-    [NativeName("pSettings")]
+    [NativeTypeName("const VkLayerSettingEXT *")]
     [SupportedApiProfile("vulkan", ["VK_EXT_layer_settings"])]
     public LayerSettingEXT* PSettings;
 }

@@ -8,39 +8,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUColorTargetBlendState")]
 public partial struct GPUColorTargetBlendState
 {
-    [NativeName("src_color_blendfactor")]
     public GPUBlendFactor SrcColorBlendfactor;
-
-    [NativeName("dst_color_blendfactor")]
     public GPUBlendFactor DstColorBlendfactor;
-
-    [NativeName("color_blend_op")]
     public GPUBlendOp ColorBlendOp;
-
-    [NativeName("src_alpha_blendfactor")]
     public GPUBlendFactor SrcAlphaBlendfactor;
-
-    [NativeName("dst_alpha_blendfactor")]
     public GPUBlendFactor DstAlphaBlendfactor;
-
-    [NativeName("alpha_blend_op")]
     public GPUBlendOp AlphaBlendOp;
 
-    [NativeName("color_write_mask")]
+    [NativeTypeName("SDL_GPUColorComponentFlags")]
     public byte ColorWriteMask;
 
-    [NativeName("enable_blend")]
+    [NativeTypeName("bool")]
     public byte EnableBlend;
 
-    [NativeName("enable_color_write_mask")]
+    [NativeTypeName("bool")]
     public byte EnableColorWriteMask;
 
-    [NativeName("padding1")]
+    [NativeTypeName("Uint8")]
     public byte Padding1;
 
-    [NativeName("padding2")]
+    [NativeTypeName("Uint8")]
     public byte Padding2;
 }

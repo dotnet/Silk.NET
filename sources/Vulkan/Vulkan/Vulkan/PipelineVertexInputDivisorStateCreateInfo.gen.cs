@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineVertexInputDivisorStateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineVertexInputDivisorStateCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -19,7 +17,7 @@ public unsafe partial struct PipelineVertexInputDivisorStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -27,7 +25,7 @@ public unsafe partial struct PipelineVertexInputDivisorStateCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("vertexBindingDivisorCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -35,7 +33,7 @@ public unsafe partial struct PipelineVertexInputDivisorStateCreateInfo
     )]
     public uint VertexBindingDivisorCount;
 
-    [NativeName("pVertexBindingDivisors")]
+    [NativeTypeName("const VkVertexInputBindingDivisorDescription *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],

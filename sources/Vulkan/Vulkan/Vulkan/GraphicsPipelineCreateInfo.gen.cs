@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGraphicsPipelineCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GraphicsPipelineCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,7 +29,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +48,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +67,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineCreateFlags Flags;
 
-    [NativeName("stageCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -88,7 +86,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public uint StageCount;
 
-    [NativeName("pStages")]
+    [NativeTypeName("const VkPipelineShaderStageCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -107,7 +105,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineShaderStageCreateInfo* PStages;
 
-    [NativeName("pVertexInputState")]
+    [NativeTypeName("const VkPipelineVertexInputStateCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +124,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineVertexInputStateCreateInfo* PVertexInputState;
 
-    [NativeName("pInputAssemblyState")]
+    [NativeTypeName("const VkPipelineInputAssemblyStateCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -145,7 +143,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineInputAssemblyStateCreateInfo* PInputAssemblyState;
 
-    [NativeName("pTessellationState")]
+    [NativeTypeName("const VkPipelineTessellationStateCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -164,7 +162,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineTessellationStateCreateInfo* PTessellationState;
 
-    [NativeName("pViewportState")]
+    [NativeTypeName("const VkPipelineViewportStateCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -183,7 +181,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineViewportStateCreateInfo* PViewportState;
 
-    [NativeName("pRasterizationState")]
+    [NativeTypeName("const VkPipelineRasterizationStateCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -202,7 +200,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineRasterizationStateCreateInfo* PRasterizationState;
 
-    [NativeName("pMultisampleState")]
+    [NativeTypeName("const VkPipelineMultisampleStateCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -221,7 +219,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineMultisampleStateCreateInfo* PMultisampleState;
 
-    [NativeName("pDepthStencilState")]
+    [NativeTypeName("const VkPipelineDepthStencilStateCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -240,7 +238,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineDepthStencilStateCreateInfo* PDepthStencilState;
 
-    [NativeName("pColorBlendState")]
+    [NativeTypeName("const VkPipelineColorBlendStateCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -259,7 +257,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineColorBlendStateCreateInfo* PColorBlendState;
 
-    [NativeName("pDynamicState")]
+    [NativeTypeName("const VkPipelineDynamicStateCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -278,7 +276,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineDynamicStateCreateInfo* PDynamicState;
 
-    [NativeName("layout")]
+    [NativeTypeName("VkPipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -297,7 +295,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineLayoutHandle Layout;
 
-    [NativeName("renderPass")]
+    [NativeTypeName("VkRenderPass")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -316,7 +314,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public RenderPassHandle RenderPass;
 
-    [NativeName("subpass")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -335,7 +333,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public uint Subpass;
 
-    [NativeName("basePipelineHandle")]
+    [NativeTypeName("VkPipeline")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -354,7 +352,7 @@ public unsafe partial struct GraphicsPipelineCreateInfo
     )]
     public PipelineHandle BasePipelineHandle;
 
-    [NativeName("basePipelineIndex")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

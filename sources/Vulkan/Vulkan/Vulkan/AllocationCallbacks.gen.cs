@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAllocationCallbacks")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AllocationCallbacks
 {
-    [NativeName("pUserData")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct AllocationCallbacks
     )]
     public void* PUserData;
 
-    [NativeName("pfnAllocation")]
+    [NativeTypeName("PFN_vkAllocationFunction")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,9 +66,9 @@ public unsafe partial struct AllocationCallbacks
         ],
         MinVersion = "1.0"
     )]
-    public AllocationFunction PfnAllocation;
+    public PFNVkAllocationFunction PfnAllocation;
 
-    [NativeName("pfnReallocation")]
+    [NativeTypeName("PFN_vkReallocationFunction")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,9 +95,9 @@ public unsafe partial struct AllocationCallbacks
         ],
         MinVersion = "1.0"
     )]
-    public ReallocationFunction PfnReallocation;
+    public PFNVkReallocationFunction PfnReallocation;
 
-    [NativeName("pfnFree")]
+    [NativeTypeName("PFN_vkFreeFunction")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,9 +124,9 @@ public unsafe partial struct AllocationCallbacks
         ],
         MinVersion = "1.0"
     )]
-    public FreeFunction PfnFree;
+    public PFNVkFreeFunction PfnFree;
 
-    [NativeName("pfnInternalAllocation")]
+    [NativeTypeName("PFN_vkInternalAllocationNotification")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -155,9 +153,9 @@ public unsafe partial struct AllocationCallbacks
         ],
         MinVersion = "1.0"
     )]
-    public InternalAllocationNotification PfnInternalAllocation;
+    public PFNVkInternalAllocationNotification PfnInternalAllocation;
 
-    [NativeName("pfnInternalFree")]
+    [NativeTypeName("PFN_vkInternalFreeNotification")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -184,5 +182,5 @@ public unsafe partial struct AllocationCallbacks
         ],
         MinVersion = "1.0"
     )]
-    public InternalFreeNotification PfnInternalFree;
+    public PFNVkInternalFreeNotification PfnInternalFree;
 }

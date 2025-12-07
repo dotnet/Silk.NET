@@ -8,10 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("_data_e__FixedBuffer")]
 [InlineArray(16)]
 public partial struct GuidData
 {
-    [NativeName("e0")]
     public byte E0;
 }

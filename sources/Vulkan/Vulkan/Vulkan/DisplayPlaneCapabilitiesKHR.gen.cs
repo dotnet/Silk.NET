@@ -8,43 +8,34 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDisplayPlaneCapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct DisplayPlaneCapabilitiesKHR
 {
-    [NativeName("supportedAlpha")]
+    [NativeTypeName("VkDisplayPlaneAlphaFlagsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public DisplayPlaneAlphaFlagsKHR SupportedAlpha;
 
-    [NativeName("minSrcPosition")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Offset2D MinSrcPosition;
 
-    [NativeName("maxSrcPosition")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Offset2D MaxSrcPosition;
 
-    [NativeName("minSrcExtent")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Extent2D MinSrcExtent;
 
-    [NativeName("maxSrcExtent")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Extent2D MaxSrcExtent;
 
-    [NativeName("minDstPosition")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Offset2D MinDstPosition;
 
-    [NativeName("maxDstPosition")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Offset2D MaxDstPosition;
 
-    [NativeName("minDstExtent")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Extent2D MinDstExtent;
 
-    [NativeName("maxDstExtent")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Extent2D MaxDstExtent;
 }

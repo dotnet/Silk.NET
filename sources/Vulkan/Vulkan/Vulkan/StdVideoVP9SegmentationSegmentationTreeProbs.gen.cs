@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_segmentation_tree_probs_e__FixedBuffer")]
 [InlineArray(7)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoVP9SegmentationSegmentationTreeProbs
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

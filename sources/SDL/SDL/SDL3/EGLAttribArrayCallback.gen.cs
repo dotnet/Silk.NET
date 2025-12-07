@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_EGLAttribArrayCallback")]
 public readonly unsafe struct EGLAttribArrayCallback : IDisposable
 {
     private readonly void* Pointer;

@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryType")]
 [SupportedApiProfile("vulkan")]
 public partial struct MemoryType
 {
-    [NativeName("propertyFlags")]
+    [NativeTypeName("VkMemoryPropertyFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +40,7 @@ public partial struct MemoryType
     )]
     public MemoryPropertyFlags PropertyFlags;
 
-    [NativeName("heapIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

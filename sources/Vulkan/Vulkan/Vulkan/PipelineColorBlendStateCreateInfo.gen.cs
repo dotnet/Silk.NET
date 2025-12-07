@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineColorBlendStateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineColorBlendStateCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,7 +29,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +48,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkPipelineColorBlendStateCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +67,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public PipelineColorBlendStateCreateFlags Flags;
 
-    [NativeName("logicOpEnable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -88,7 +86,6 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public uint LogicOpEnable;
 
-    [NativeName("logicOp")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -103,7 +100,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public LogicOp LogicOp;
 
-    [NativeName("attachmentCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -122,7 +119,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public uint AttachmentCount;
 
-    [NativeName("pAttachments")]
+    [NativeTypeName("const VkPipelineColorBlendAttachmentState *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -141,7 +138,7 @@ public unsafe partial struct PipelineColorBlendStateCreateInfo
     )]
     public PipelineColorBlendAttachmentState* PAttachments;
 
-    [NativeName("blendConstants")]
+    [NativeTypeName("float[4]")]
     [SupportedApiProfile(
         "vulkan",
         [

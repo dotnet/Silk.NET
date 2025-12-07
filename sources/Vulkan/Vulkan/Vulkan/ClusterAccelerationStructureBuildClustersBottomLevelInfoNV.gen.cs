@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct ClusterAccelerationStructureBuildClustersBottomLevelInfoNV
 {
-    [NativeName("clusterReferencesCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -20,7 +19,7 @@ public partial struct ClusterAccelerationStructureBuildClustersBottomLevelInfoNV
     )]
     public uint ClusterReferencesCount;
 
-    [NativeName("clusterReferencesStride")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -28,7 +27,7 @@ public partial struct ClusterAccelerationStructureBuildClustersBottomLevelInfoNV
     )]
     public uint ClusterReferencesStride;
 
-    [NativeName("clusterReferences")]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

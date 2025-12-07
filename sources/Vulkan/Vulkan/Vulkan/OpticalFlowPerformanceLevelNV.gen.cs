@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkOpticalFlowPerformanceLevelNV")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum OpticalFlowPerformanceLevelNV : uint
 {
-    [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_UNKNOWN_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -22,9 +21,8 @@ public enum OpticalFlowPerformanceLevelNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Unknown = 0,
+    UnknownNV = 0,
 
-    [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_SLOW_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -34,9 +32,8 @@ public enum OpticalFlowPerformanceLevelNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Slow = 1,
+    SlowNV = 1,
 
-    [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_MEDIUM_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -46,9 +43,8 @@ public enum OpticalFlowPerformanceLevelNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Medium = 2,
+    MediumNV = 2,
 
-    [NativeName("VK_OPTICAL_FLOW_PERFORMANCE_LEVEL_FAST_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -58,5 +54,5 @@ public enum OpticalFlowPerformanceLevelNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Fast = 3,
+    FastNV = 3,
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAttachmentReference2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AttachmentReference2
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +25,7 @@ public unsafe partial struct AttachmentReference2
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +40,7 @@ public unsafe partial struct AttachmentReference2
     )]
     public void* PNext;
 
-    [NativeName("attachment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +55,6 @@ public unsafe partial struct AttachmentReference2
     )]
     public uint Attachment;
 
-    [NativeName("layout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -72,7 +69,7 @@ public unsafe partial struct AttachmentReference2
     )]
     public ImageLayout Layout;
 
-    [NativeName("aspectMask")]
+    [NativeTypeName("VkImageAspectFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

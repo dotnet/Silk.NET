@@ -7,27 +7,25 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoDecodeAV1ReferenceInfo")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeAV1ReferenceInfo
 {
-    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeAV1ReferenceInfoFlags Flags;
 
-    [NativeName("frame_type")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte FrameType;
 
-    [NativeName("RefFrameSignBias")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte RefFrameSignBias;
 
-    [NativeName("OrderHint")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte OrderHint;
 
-    [NativeName("SavedOrderHints")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeAV1ReferenceInfoSavedOrderHints SavedOrderHints;
 }

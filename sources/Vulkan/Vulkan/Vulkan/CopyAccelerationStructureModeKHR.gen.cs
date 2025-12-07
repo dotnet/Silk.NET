@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCopyAccelerationStructureModeKHR")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum CopyAccelerationStructureModeKHR : uint
 {
-    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -21,9 +20,8 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    Clone = 0,
+    CloneKHR = 0,
 
-    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -32,9 +30,8 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    Compact = 1,
+    CompactKHR = 1,
 
-    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_SERIALIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -43,9 +40,8 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    Serialize = 2,
+    SerializeKHR = 2,
 
-    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_DESERIALIZE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -54,9 +50,8 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    Deserialize = 3,
+    DeserializeKHR = 3,
 
-    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -65,9 +60,8 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    CloneNV = Clone,
+    CloneNV = CloneKHR,
 
-    [NativeName("VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -76,5 +70,5 @@ public enum CopyAccelerationStructureModeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    CompactNV = Compact,
+    CompactNV = CompactKHR,
 }

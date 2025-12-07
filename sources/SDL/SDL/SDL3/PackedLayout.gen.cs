@@ -8,33 +8,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_PackedLayout")]
-public enum PackedLayout
+[NativeTypeName("unsigned int")]
+public enum PackedLayout : uint
 {
-    [NativeName("SDL_PACKEDLAYOUT_NONE")]
-    PackedlayoutNone = 0,
-
-    [NativeName("SDL_PACKEDLAYOUT_332")]
-    Packedlayout332 = 1,
-
-    [NativeName("SDL_PACKEDLAYOUT_4444")]
-    Packedlayout4444 = 2,
-
-    [NativeName("SDL_PACKEDLAYOUT_1555")]
-    Packedlayout1555 = 3,
-
-    [NativeName("SDL_PACKEDLAYOUT_5551")]
-    Packedlayout5551 = 4,
-
-    [NativeName("SDL_PACKEDLAYOUT_565")]
-    Packedlayout565 = 5,
-
-    [NativeName("SDL_PACKEDLAYOUT_8888")]
-    Packedlayout8888 = 6,
-
-    [NativeName("SDL_PACKEDLAYOUT_2101010")]
-    Packedlayout2101010 = 7,
-
-    [NativeName("SDL_PACKEDLAYOUT_1010102")]
-    Packedlayout1010102 = 8,
+    PackedlayoutNone,
+    Packedlayout332,
+    Packedlayout4444,
+    Packedlayout1555,
+    Packedlayout5551,
+    Packedlayout565,
+    Packedlayout8888,
+    Packedlayout2101010,
+    Packedlayout1010102,
 }

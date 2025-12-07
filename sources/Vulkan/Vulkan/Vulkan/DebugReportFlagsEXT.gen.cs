@@ -8,30 +8,25 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDebugReportFlagBitsEXT")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum DebugReportFlagsEXT : uint
 {
     None = 0x0,
 
-    [NativeName("VK_DEBUG_REPORT_INFORMATION_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    InformationBit = 0x1,
+    InformationBitEXT = 0x1,
 
-    [NativeName("VK_DEBUG_REPORT_WARNING_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    WarningBit = 0x2,
+    WarningBitEXT = 0x2,
 
-    [NativeName("VK_DEBUG_REPORT_PERFORMANCE_WARNING_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    PerformanceWarningBit = 0x4,
+    PerformanceWarningBitEXT = 0x4,
 
-    [NativeName("VK_DEBUG_REPORT_ERROR_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    ErrorBit = 0x8,
+    ErrorBitEXT = 0x8,
 
-    [NativeName("VK_DEBUG_REPORT_DEBUG_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_report"])]
-    DebugBit = 0x10,
+    DebugBitEXT = 0x10,
 }

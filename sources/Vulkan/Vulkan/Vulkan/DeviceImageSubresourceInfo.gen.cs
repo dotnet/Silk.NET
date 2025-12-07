@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceImageSubresourceInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceImageSubresourceInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,7 +23,7 @@ public unsafe partial struct DeviceImageSubresourceInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,7 +36,7 @@ public unsafe partial struct DeviceImageSubresourceInfo
     )]
     public void* PNext;
 
-    [NativeName("pCreateInfo")]
+    [NativeTypeName("const VkImageCreateInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +49,7 @@ public unsafe partial struct DeviceImageSubresourceInfo
     )]
     public ImageCreateInfo* PCreateInfo;
 
-    [NativeName("pSubresource")]
+    [NativeTypeName("const VkImageSubresource2 *")]
     [SupportedApiProfile(
         "vulkan",
         [

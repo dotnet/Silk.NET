@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_EGLIntArrayCallback")]
 public unsafe delegate int* EGLIntArrayCallbackDelegate(void* arg0, void* arg1, void* arg2);

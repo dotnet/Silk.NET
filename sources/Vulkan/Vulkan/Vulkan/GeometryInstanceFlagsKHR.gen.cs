@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGeometryInstanceFlagBitsKHR")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum GeometryInstanceFlagsKHR : uint
 {
     None = 0x0,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FACING_CULL_DISABLE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -24,9 +23,8 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TriangleFacingCullDisableBit = 0x1,
+    TriangleFacingCullDisableBitKHR = 0x1,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FLIP_FACING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -35,9 +33,8 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TriangleFlipFacingBit = 0x2,
+    TriangleFlipFacingBitKHR = 0x2,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -46,9 +43,8 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    ForceOpaqueBit = 0x4,
+    ForceOpaqueBitKHR = 0x4,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -57,9 +53,8 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    ForceNoOpaqueBit = 0x8,
+    ForceNoOpaqueBitKHR = 0x8,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPACITY_MICROMAP_2_STATE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -70,7 +65,6 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     ForceOpacityMicromap2StateBitEXT = 0x10,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -81,7 +75,6 @@ public enum GeometryInstanceFlagsKHR : uint
     )]
     DisableOpacityMicromapsBitEXT = 0x20,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -90,9 +83,8 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
         ]
     )]
-    TriangleFrontCounterclockwiseBit = TriangleFlipFacingBit,
+    TriangleFrontCounterclockwiseBitKHR = TriangleFlipFacingBitKHR,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_CULL_DISABLE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -101,9 +93,8 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TriangleCullDisableBitNV = TriangleFacingCullDisableBit,
+    TriangleCullDisableBitNV = TriangleFacingCullDisableBitKHR,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -112,9 +103,8 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TriangleFrontCounterclockwiseBitNV = TriangleFrontCounterclockwiseBit,
+    TriangleFrontCounterclockwiseBitNV = TriangleFrontCounterclockwiseBitKHR,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -123,9 +113,8 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ForceOpaqueBitNV = ForceOpaqueBit,
+    ForceOpaqueBitNV = ForceOpaqueBitKHR,
 
-    [NativeName("VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -134,5 +123,5 @@ public enum GeometryInstanceFlagsKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ForceNoOpaqueBitNV = ForceNoOpaqueBit,
+    ForceNoOpaqueBitNV = ForceNoOpaqueBitKHR,
 }

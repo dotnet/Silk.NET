@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceAddressBindingFlagBitsEXT")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum DeviceAddressBindingFlagsEXT : uint
 {
     None = 0x0,
 
-    [NativeName("VK_DEVICE_ADDRESS_BINDING_INTERNAL_OBJECT_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],
@@ -24,5 +23,5 @@ public enum DeviceAddressBindingFlagsEXT : uint
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    InternalObjectBit = 0x1,
+    InternalObjectBitEXT = 0x1,
 }

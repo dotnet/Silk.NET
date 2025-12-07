@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMultiviewPerViewAttributesInfoNVX")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MultiviewPerViewAttributesInfoNVX
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -24,7 +22,7 @@ public unsafe partial struct MultiviewPerViewAttributesInfoNVX
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,7 +36,7 @@ public unsafe partial struct MultiviewPerViewAttributesInfoNVX
     )]
     public void* PNext;
 
-    [NativeName("perViewAttributes")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -52,7 +50,7 @@ public unsafe partial struct MultiviewPerViewAttributesInfoNVX
     )]
     public uint PerViewAttributes;
 
-    [NativeName("perViewAttributesPositionXOnly")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [

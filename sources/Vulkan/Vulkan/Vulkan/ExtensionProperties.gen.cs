@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExtensionProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct ExtensionProperties
 {
-    [NativeName("extensionName")]
+    [NativeTypeName("char[256]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +39,7 @@ public partial struct ExtensionProperties
     )]
     public ExtensionPropertiesExtensionName ExtensionName;
 
-    [NativeName("specVersion")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

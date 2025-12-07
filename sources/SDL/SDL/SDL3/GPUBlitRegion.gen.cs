@@ -7,27 +7,25 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUBlitRegion")]
 public unsafe partial struct GPUBlitRegion
 {
-    [NativeName("texture")]
     public GPUTextureHandle Texture;
 
-    [NativeName("mip_level")]
+    [NativeTypeName("Uint32")]
     public uint MipLevel;
 
-    [NativeName("layer_or_depth_plane")]
+    [NativeTypeName("Uint32")]
     public uint LayerOrDepthPlane;
 
-    [NativeName("x")]
+    [NativeTypeName("Uint32")]
     public uint X;
 
-    [NativeName("y")]
+    [NativeTypeName("Uint32")]
     public uint Y;
 
-    [NativeName("w")]
+    [NativeTypeName("Uint32")]
     public uint W;
 
-    [NativeName("h")]
+    [NativeTypeName("Uint32")]
     public uint H;
 }

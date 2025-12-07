@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineCreationFeedbackCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineCreationFeedbackCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -26,7 +24,7 @@ public unsafe partial struct PipelineCreationFeedbackCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,6 @@ public unsafe partial struct PipelineCreationFeedbackCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("pPipelineCreationFeedback")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -56,7 +53,7 @@ public unsafe partial struct PipelineCreationFeedbackCreateInfo
     )]
     public PipelineCreationFeedback* PPipelineCreationFeedback;
 
-    [NativeName("pipelineStageCreationFeedbackCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -71,7 +68,6 @@ public unsafe partial struct PipelineCreationFeedbackCreateInfo
     )]
     public uint PipelineStageCreationFeedbackCount;
 
-    [NativeName("pPipelineStageCreationFeedbacks")]
     [SupportedApiProfile(
         "vulkan",
         [

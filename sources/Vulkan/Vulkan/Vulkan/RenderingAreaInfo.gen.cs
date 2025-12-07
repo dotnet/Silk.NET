@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderingAreaInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderingAreaInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -19,7 +17,7 @@ public unsafe partial struct RenderingAreaInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -27,7 +25,7 @@ public unsafe partial struct RenderingAreaInfo
     )]
     public void* PNext;
 
-    [NativeName("viewMask")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -35,7 +33,7 @@ public unsafe partial struct RenderingAreaInfo
     )]
     public uint ViewMask;
 
-    [NativeName("colorAttachmentCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -43,7 +41,7 @@ public unsafe partial struct RenderingAreaInfo
     )]
     public uint ColorAttachmentCount;
 
-    [NativeName("pColorAttachmentFormats")]
+    [NativeTypeName("const VkFormat *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -51,7 +49,6 @@ public unsafe partial struct RenderingAreaInfo
     )]
     public Format* PColorAttachmentFormats;
 
-    [NativeName("depthAttachmentFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -59,7 +56,6 @@ public unsafe partial struct RenderingAreaInfo
     )]
     public Format DepthAttachmentFormat;
 
-    [NativeName("stencilAttachmentFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],

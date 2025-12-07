@@ -7,18 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_FColor")]
 public partial struct FColor
 {
-    [NativeName("r")]
     public float R;
-
-    [NativeName("g")]
     public float G;
-
-    [NativeName("b")]
     public float B;
-
-    [NativeName("a")]
     public float A;
 }

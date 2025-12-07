@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ALEVENTPROCSOFT")]
 public readonly unsafe struct EventProcSOFT : IDisposable
 {
     private readonly void* Pointer;

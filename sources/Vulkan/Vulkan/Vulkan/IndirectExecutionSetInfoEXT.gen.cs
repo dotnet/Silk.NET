@@ -7,13 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndirectExecutionSetInfoEXT")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct IndirectExecutionSetInfoEXT
 {
-    [NativeName("pPipelineInfo")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkIndirectExecutionSetPipelineInfoEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -25,8 +24,8 @@ public unsafe partial struct IndirectExecutionSetInfoEXT
     )]
     public IndirectExecutionSetPipelineInfoEXT* PPipelineInfo;
 
-    [NativeName("pShaderInfo")]
     [FieldOffset(0)]
+    [NativeTypeName("const VkIndirectExecutionSetShaderInfoEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

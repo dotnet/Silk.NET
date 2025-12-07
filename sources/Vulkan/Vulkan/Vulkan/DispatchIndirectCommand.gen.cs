@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDispatchIndirectCommand")]
 [SupportedApiProfile("vulkan")]
 public partial struct DispatchIndirectCommand
 {
-    [NativeName("x")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +34,7 @@ public partial struct DispatchIndirectCommand
     )]
     public uint X;
 
-    [NativeName("y")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -59,7 +58,7 @@ public partial struct DispatchIndirectCommand
     )]
     public uint Y;
 
-    [NativeName("z")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

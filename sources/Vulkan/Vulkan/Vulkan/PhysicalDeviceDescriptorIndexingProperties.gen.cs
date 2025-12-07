@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDescriptorIndexingProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +28,6 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +45,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public void* PNext;
 
-    [NativeName("maxUpdateAfterBindDescriptorsInAllPools")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -66,7 +63,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxUpdateAfterBindDescriptorsInAllPools;
 
-    [NativeName("shaderUniformBufferArrayNonUniformIndexingNative")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -84,7 +81,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint ShaderUniformBufferArrayNonUniformIndexingNative;
 
-    [NativeName("shaderSampledImageArrayNonUniformIndexingNative")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -102,7 +99,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint ShaderSampledImageArrayNonUniformIndexingNative;
 
-    [NativeName("shaderStorageBufferArrayNonUniformIndexingNative")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -120,7 +117,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint ShaderStorageBufferArrayNonUniformIndexingNative;
 
-    [NativeName("shaderStorageImageArrayNonUniformIndexingNative")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -138,7 +135,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint ShaderStorageImageArrayNonUniformIndexingNative;
 
-    [NativeName("shaderInputAttachmentArrayNonUniformIndexingNative")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,7 +153,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint ShaderInputAttachmentArrayNonUniformIndexingNative;
 
-    [NativeName("robustBufferAccessUpdateAfterBind")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -174,7 +171,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint RobustBufferAccessUpdateAfterBind;
 
-    [NativeName("quadDivergentImplicitLod")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -192,7 +189,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint QuadDivergentImplicitLod;
 
-    [NativeName("maxPerStageDescriptorUpdateAfterBindSamplers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -210,7 +207,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxPerStageDescriptorUpdateAfterBindSamplers;
 
-    [NativeName("maxPerStageDescriptorUpdateAfterBindUniformBuffers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -228,7 +225,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxPerStageDescriptorUpdateAfterBindUniformBuffers;
 
-    [NativeName("maxPerStageDescriptorUpdateAfterBindStorageBuffers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -246,7 +243,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxPerStageDescriptorUpdateAfterBindStorageBuffers;
 
-    [NativeName("maxPerStageDescriptorUpdateAfterBindSampledImages")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -264,7 +261,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxPerStageDescriptorUpdateAfterBindSampledImages;
 
-    [NativeName("maxPerStageDescriptorUpdateAfterBindStorageImages")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -282,7 +279,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxPerStageDescriptorUpdateAfterBindStorageImages;
 
-    [NativeName("maxPerStageDescriptorUpdateAfterBindInputAttachments")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -300,7 +297,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxPerStageDescriptorUpdateAfterBindInputAttachments;
 
-    [NativeName("maxPerStageUpdateAfterBindResources")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -318,7 +315,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxPerStageUpdateAfterBindResources;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindSamplers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -336,7 +333,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxDescriptorSetUpdateAfterBindSamplers;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindUniformBuffers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -354,7 +351,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxDescriptorSetUpdateAfterBindUniformBuffers;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -372,7 +369,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxDescriptorSetUpdateAfterBindUniformBuffersDynamic;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindStorageBuffers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -390,7 +387,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxDescriptorSetUpdateAfterBindStorageBuffers;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -408,7 +405,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxDescriptorSetUpdateAfterBindStorageBuffersDynamic;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindSampledImages")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -426,7 +423,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxDescriptorSetUpdateAfterBindSampledImages;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindStorageImages")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -444,7 +441,7 @@ public unsafe partial struct PhysicalDeviceDescriptorIndexingProperties
     )]
     public uint MaxDescriptorSetUpdateAfterBindStorageImages;
 
-    [NativeName("maxDescriptorSetUpdateAfterBindInputAttachments")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_toolchainVersion_e__FixedBuffer")]
 [InlineArray(3)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile("vulkan", ["VK_QCOM_data_graph_model"], ImpliesSets = ["VK_ARM_data_graph"])]
 public partial struct PipelineCacheHeaderVersionDataGraphQCOMToolchainVersion
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public uint E0;
 }

@@ -7,14 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineLayoutCreateFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum PipelineLayoutCreateFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_PIPELINE_LAYOUT_CREATE_INDEPENDENT_SETS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_graphics_pipeline_library"],

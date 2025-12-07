@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkShadingRatePaletteNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ShadingRatePaletteNV
 {
-    [NativeName("shadingRatePaletteEntryCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -22,7 +21,7 @@ public unsafe partial struct ShadingRatePaletteNV
     )]
     public uint ShadingRatePaletteEntryCount;
 
-    [NativeName("pShadingRatePaletteEntries")]
+    [NativeTypeName("const VkShadingRatePaletteEntryNV *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],

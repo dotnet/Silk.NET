@@ -7,15 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUTransferBufferCreateInfo")]
 public partial struct GPUTransferBufferCreateInfo
 {
-    [NativeName("usage")]
     public GPUTransferBufferUsage Usage;
 
-    [NativeName("size")]
+    [NativeTypeName("Uint32")]
     public uint Size;
 
-    [NativeName("props")]
+    [NativeTypeName("SDL_PropertiesID")]
     public uint Props;
 }

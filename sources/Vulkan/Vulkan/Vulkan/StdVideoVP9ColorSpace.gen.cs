@@ -6,39 +6,31 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoVP9ColorSpace")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoVP9ColorSpace : uint
 {
-    [NativeName("STD_VIDEO_VP9_COLOR_SPACE_UNKNOWN")]
     [SupportedApiProfile("vulkan")]
     Unknown = 0,
 
-    [NativeName("STD_VIDEO_VP9_COLOR_SPACE_BT_601")]
     [SupportedApiProfile("vulkan")]
     Bt601 = 1,
 
-    [NativeName("STD_VIDEO_VP9_COLOR_SPACE_BT_709")]
     [SupportedApiProfile("vulkan")]
     Bt709 = 2,
 
-    [NativeName("STD_VIDEO_VP9_COLOR_SPACE_SMPTE_170")]
     [SupportedApiProfile("vulkan")]
     Smpte170 = 3,
 
-    [NativeName("STD_VIDEO_VP9_COLOR_SPACE_SMPTE_240")]
     [SupportedApiProfile("vulkan")]
     Smpte240 = 4,
 
-    [NativeName("STD_VIDEO_VP9_COLOR_SPACE_BT_2020")]
     [SupportedApiProfile("vulkan")]
     Bt2020 = 5,
 
-    [NativeName("STD_VIDEO_VP9_COLOR_SPACE_RESERVED")]
     [SupportedApiProfile("vulkan")]
     Reserved = 6,
 
-    [NativeName("STD_VIDEO_VP9_COLOR_SPACE_RGB")]
     [SupportedApiProfile("vulkan")]
     Rgb = 7,
 }

@@ -8,15 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoDecodeH265PictureInfoFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeH265PictureInfoFlags
 {
-    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeName("IrapPicFlag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IrapPicFlag
     {
@@ -26,7 +24,7 @@ public partial struct StdVideoDecodeH265PictureInfoFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeName("IdrPicFlag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IdrPicFlag
     {
@@ -36,7 +34,7 @@ public partial struct StdVideoDecodeH265PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeName("IsReference")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IsReference
     {
@@ -46,9 +44,9 @@ public partial struct StdVideoDecodeH265PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeName("short_term_ref_pic_set_sps_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint ShortTermRefPicSetSpsFlag
+    public uint short_term_ref_pic_set_sps_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }

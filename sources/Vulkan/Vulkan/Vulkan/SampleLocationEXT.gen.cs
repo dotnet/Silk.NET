@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSampleLocationEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct SampleLocationEXT
 {
-    [NativeName("x")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -23,7 +21,6 @@ public partial struct SampleLocationEXT
     )]
     public float X;
 
-    [NativeName("y")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],

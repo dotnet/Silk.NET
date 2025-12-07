@@ -7,21 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUStorageBufferReadWriteBinding")]
 public unsafe partial struct GPUStorageBufferReadWriteBinding
 {
-    [NativeName("buffer")]
     public GPUBufferHandle Buffer;
 
-    [NativeName("cycle")]
+    [NativeTypeName("bool")]
     public byte Cycle;
 
-    [NativeName("padding1")]
+    [NativeTypeName("Uint8")]
     public byte Padding1;
 
-    [NativeName("padding2")]
+    [NativeTypeName("Uint8")]
     public byte Padding2;
 
-    [NativeName("padding3")]
+    [NativeTypeName("Uint8")]
     public byte Padding3;
 }

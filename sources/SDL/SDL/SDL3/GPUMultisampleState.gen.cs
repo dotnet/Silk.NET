@@ -7,24 +7,22 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUMultisampleState")]
 public partial struct GPUMultisampleState
 {
-    [NativeName("sample_count")]
     public GPUSampleCount SampleCount;
 
-    [NativeName("sample_mask")]
+    [NativeTypeName("Uint32")]
     public uint SampleMask;
 
-    [NativeName("enable_mask")]
+    [NativeTypeName("bool")]
     public byte EnableMask;
 
-    [NativeName("padding1")]
+    [NativeTypeName("Uint8")]
     public byte Padding1;
 
-    [NativeName("padding2")]
+    [NativeTypeName("Uint8")]
     public byte Padding2;
 
-    [NativeName("padding3")]
+    [NativeTypeName("Uint8")]
     public byte Padding3;
 }

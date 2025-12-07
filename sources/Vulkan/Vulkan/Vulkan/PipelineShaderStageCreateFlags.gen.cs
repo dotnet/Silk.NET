@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineShaderStageCreateFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum PipelineShaderStageCreateFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +29,6 @@ public enum PipelineShaderStageCreateFlags : uint
     )]
     AllowVaryingSubgroupSizeBit = 0x1,
 
-    [NativeName("VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -45,7 +43,6 @@ public enum PipelineShaderStageCreateFlags : uint
     )]
     RequireFullSubgroupsBit = 0x2,
 
-    [NativeName("VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subgroup_size_control"],
@@ -53,7 +50,6 @@ public enum PipelineShaderStageCreateFlags : uint
     )]
     AllowVaryingSubgroupSizeBitEXT = AllowVaryingSubgroupSizeBit,
 
-    [NativeName("VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subgroup_size_control"],

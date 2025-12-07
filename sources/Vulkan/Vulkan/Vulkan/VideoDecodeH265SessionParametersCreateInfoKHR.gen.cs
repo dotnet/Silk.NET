@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoDecodeH265SessionParametersCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeH265SessionParametersCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],
@@ -20,7 +18,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],
@@ -28,7 +26,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("maxStdVPSCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],
@@ -36,7 +34,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersCreateInfoKHR
     )]
     public uint MaxStdVPSCount;
 
-    [NativeName("maxStdSPSCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],
@@ -44,7 +42,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersCreateInfoKHR
     )]
     public uint MaxStdSPSCount;
 
-    [NativeName("maxStdPPSCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],
@@ -52,7 +50,7 @@ public unsafe partial struct VideoDecodeH265SessionParametersCreateInfoKHR
     )]
     public uint MaxStdPPSCount;
 
-    [NativeName("pParametersAddInfo")]
+    [NativeTypeName("const VkVideoDecodeH265SessionParametersAddInfoKHR *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_h265"],

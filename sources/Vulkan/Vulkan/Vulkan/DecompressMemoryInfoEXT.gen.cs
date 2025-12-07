@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDecompressMemoryInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DecompressMemoryInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],
@@ -20,7 +18,7 @@ public unsafe partial struct DecompressMemoryInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],
@@ -28,7 +26,7 @@ public unsafe partial struct DecompressMemoryInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("decompressionMethod")]
+    [NativeTypeName("VkMemoryDecompressionMethodFlagsEXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],
@@ -36,7 +34,7 @@ public unsafe partial struct DecompressMemoryInfoEXT
     )]
     public MemoryDecompressionMethodFlagsEXT DecompressionMethod;
 
-    [NativeName("regionCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],
@@ -44,7 +42,7 @@ public unsafe partial struct DecompressMemoryInfoEXT
     )]
     public uint RegionCount;
 
-    [NativeName("pRegions")]
+    [NativeTypeName("const VkDecompressMemoryRegionEXT *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_memory_decompression"],

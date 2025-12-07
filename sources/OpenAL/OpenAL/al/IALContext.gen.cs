@@ -14,725 +14,878 @@ public unsafe partial interface IALContext
 {
     public partial interface Static
     {
-        [NativeName("alcCaptureCloseDevice")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
         static abstract MaybeBool<sbyte> CaptureCloseDevice(DeviceHandle device);
 
-        [NativeName("alcCaptureCloseDevice")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
         static abstract sbyte CaptureCloseDeviceRaw(DeviceHandle device);
 
-        [NativeName("alcCaptureOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
         static abstract DeviceHandle CaptureOpenDevice(
-            sbyte* devicename,
-            uint frequency,
-            int format,
-            int buffersize
+            [NativeTypeName("const ALCchar *")] sbyte* devicename,
+            [NativeTypeName("ALCuint")] uint frequency,
+            [NativeTypeName("ALCenum")] int format,
+            [NativeTypeName("ALCsizei")] int buffersize
         );
 
-        [NativeName("alcCaptureOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
         static abstract DeviceHandle CaptureOpenDevice(
-            Ref<sbyte> devicename,
-            uint frequency,
-            Constant<int, ALEnum, Format> format,
-            int buffersize
+            [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename,
+            [NativeTypeName("ALCuint")] uint frequency,
+            [NativeTypeName("ALCenum")] Constant<int, ALEnum, Format> format,
+            [NativeTypeName("ALCsizei")] int buffersize
         );
 
-        [NativeName("alcCaptureSamples")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
-        static abstract void CaptureSamples(DeviceHandle device, void* buffer, int samples);
+        static abstract void CaptureSamples(
+            DeviceHandle device,
+            [NativeTypeName("ALCvoid *")] void* buffer,
+            [NativeTypeName("ALCsizei")] int samples
+        );
 
-        [NativeName("alcCaptureSamples")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
-        static abstract void CaptureSamples(DeviceHandle device, Ref buffer, int samples);
+        static abstract void CaptureSamples(
+            DeviceHandle device,
+            [NativeTypeName("ALCvoid *")] Ref buffer,
+            [NativeTypeName("ALCsizei")] int samples
+        );
 
-        [NativeName("alcCaptureStart")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureStart")]
         static abstract void CaptureStart(DeviceHandle device);
 
-        [NativeName("alcCaptureStop")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
         [NativeFunction("openal", EntryPoint = "alcCaptureStop")]
         static abstract void CaptureStop(DeviceHandle device);
 
-        [NativeName("alcCloseDevice")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
         static abstract MaybeBool<sbyte> CloseDevice(DeviceHandle device);
 
-        [NativeName("alcCloseDevice")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
         static abstract sbyte CloseDeviceRaw(DeviceHandle device);
 
-        [NativeName("alcCreateContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcCreateContext")]
-        static abstract ContextHandle CreateContext(DeviceHandle device, int* attrlist);
+        static abstract ContextHandle CreateContext(
+            DeviceHandle device,
+            [NativeTypeName("const ALCint *")] int* attrlist
+        );
 
-        [NativeName("alcCreateContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcCreateContext")]
-        static abstract ContextHandle CreateContext(DeviceHandle device, Ref<int> attrlist);
+        static abstract ContextHandle CreateContext(
+            DeviceHandle device,
+            [NativeTypeName("const ALCint *")] Ref<int> attrlist
+        );
 
-        [NativeName("alcDestroyContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcDestroyContext")]
         static abstract void DestroyContext(ContextHandle context);
 
-        [NativeName("alcDevicePauseSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         [NativeFunction("openal", EntryPoint = "alcDevicePauseSOFT")]
         static abstract void DevicePauseSOFT(DeviceHandle device);
 
-        [NativeName("alcDeviceResumeSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
         [NativeFunction("openal", EntryPoint = "alcDeviceResumeSOFT")]
         static abstract void DeviceResumeSOFT(DeviceHandle device);
 
-        [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
-        static abstract void EventCallbackSOFT(ContextEventProcSOFT callback, void* userParam);
+        static abstract void EventCallbackSOFT(
+            [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSOFT callback,
+            void* userParam
+        );
 
-        [NativeName("alcEventCallbackSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
-        static abstract void EventCallbackSOFT(ContextEventProcSOFT callback, Ref userParam);
+        static abstract void EventCallbackSOFT(
+            [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSOFT callback,
+            Ref userParam
+        );
 
-        [NativeName("alcEventControlSOFT")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
-        static abstract sbyte EventControlSOFT(int count, int* events, sbyte enable);
+        static abstract sbyte EventControlSOFT(
+            [NativeTypeName("ALCsizei")] int count,
+            [NativeTypeName("const ALCenum *")] int* events,
+            [NativeTypeName("ALCboolean")] sbyte enable
+        );
 
-        [NativeName("alcEventControlSOFT")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
         static abstract MaybeBool<sbyte> EventControlSOFT(
-            int count,
-            Ref<int> events,
-            MaybeBool<sbyte> enable
+            [NativeTypeName("ALCsizei")] int count,
+            [NativeTypeName("const ALCenum *")] Ref<int> events,
+            [NativeTypeName("ALCboolean")] MaybeBool<sbyte> enable
         );
 
-        [NativeName("alcEventIsSupportedSOFT")]
+        [return: NativeTypeName("ALCenum")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
-        static abstract int EventIsSupportedSOFT(int eventType, int deviceType);
+        static abstract int EventIsSupportedSOFT(
+            [NativeTypeName("ALCenum")] int eventType,
+            [NativeTypeName("ALCenum")] int deviceType
+        );
 
-        [NativeName("alcEventIsSupportedSOFT")]
+        [return: NativeTypeName("ALCenum")]
         [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
         static abstract Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
-            Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
-            Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
         );
 
-        [NativeName("alcGetContextsDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetContextsDevice")]
         static abstract DeviceHandle GetContextsDevice(ContextHandle context);
 
-        [NativeName("alcGetCurrentContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetCurrentContext")]
         static abstract ContextHandle GetCurrentContext();
 
-        [NativeName("alcGetEnumValue")]
+        [return: NativeTypeName("ALCenum")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
-        static abstract int GetEnumValue(DeviceHandle device, sbyte* enumname);
+        static abstract int GetEnumValue(
+            DeviceHandle device,
+            [NativeTypeName("const ALCchar *")] sbyte* enumname
+        );
 
-        [NativeName("alcGetEnumValue")]
+        [return: NativeTypeName("ALCenum")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
-        static abstract int GetEnumValue(DeviceHandle device, Ref<sbyte> enumname);
+        static abstract int GetEnumValue(
+            DeviceHandle device,
+            [NativeTypeName("const ALCchar *")] Ref<sbyte> enumname
+        );
 
-        [NativeName("alcGetError")]
+        [return: NativeTypeName("ALCenum")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetError")]
         static abstract Constant<int, ALCEnum, ContextErrorCode> GetError(DeviceHandle device);
 
-        [NativeName("alcGetError")]
+        [return: NativeTypeName("ALCenum")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetError")]
         static abstract int GetErrorRaw(DeviceHandle device);
 
-        [NativeName("alcGetInteger64vSOFT")]
-        [
-            SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
-            SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
-        ]
+        [SupportedApiProfile("al", ["ALC_SOFT_device_clock"])]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
         static abstract void GetInteger64SOFT(
             DeviceHandle device,
-            int pname,
-            int size,
-            long* values
+            [NativeTypeName("ALCenum")] int pname,
+            [NativeTypeName("ALsizei")] int size,
+            [NativeTypeName("ALCint64SOFT *")] long* values
         );
 
-        [NativeName("alcGetInteger64vSOFT")]
-        [
-            SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
-            SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
-        ]
+        [SupportedApiProfile("al", ["ALC_SOFT_device_clock"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
         static abstract void GetInteger64SOFT(
             DeviceHandle device,
-            int pname,
-            int size,
-            Ref<long> values
+            [NativeTypeName("ALCenum")] int pname,
+            [NativeTypeName("ALsizei")] int size,
+            [NativeTypeName("ALCint64SOFT *")] Ref<long> values
         );
 
-        [NativeName("alcGetInteger64vSOFT")]
-        [
-            SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
-            SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
-        ]
+        [SupportedApiProfile("al", ["ALC_SOFT_device_clock"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-        static abstract long GetInteger64SOFT(DeviceHandle device, int pname);
+        static abstract long GetInteger64SOFT(
+            DeviceHandle device,
+            [NativeTypeName("ALCenum")] int pname
+        );
 
-        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        static abstract void GetInteger(DeviceHandle device, int param1, int size, int* values);
+        static abstract void GetInteger(
+            DeviceHandle device,
+            [NativeTypeName("ALCenum")] int param1,
+            [NativeTypeName("ALCsizei")] int size,
+            [NativeTypeName("ALCint *")] int* values
+        );
 
-        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        static abstract void GetInteger(DeviceHandle device, int param1, int size, Ref<int> values);
+        static abstract void GetInteger(
+            DeviceHandle device,
+            [NativeTypeName("ALCenum")] int param1,
+            [NativeTypeName("ALCsizei")] int size,
+            [NativeTypeName("ALCint *")] Ref<int> values
+        );
 
-        [NativeName("alcGetIntegerv")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-        static abstract int GetInteger(DeviceHandle device, int param1);
+        static abstract int GetInteger(DeviceHandle device, [NativeTypeName("ALCenum")] int param1);
 
-        [NativeName("alcGetProcAddress")]
+        [return: NativeTypeName("ALCvoid *")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
-        static abstract void* GetProcAddress(DeviceHandle device, sbyte* funcname);
+        static abstract void* GetProcAddress(
+            DeviceHandle device,
+            [NativeTypeName("const ALCchar *")] sbyte* funcname
+        );
 
-        [NativeName("alcGetProcAddress")]
+        [return: NativeTypeName("ALCvoid *")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
-        static abstract Ptr GetProcAddress(DeviceHandle device, Ref<sbyte> funcname);
+        static abstract Ptr GetProcAddress(
+            DeviceHandle device,
+            [NativeTypeName("const ALCchar *")] Ref<sbyte> funcname
+        );
 
-        [NativeName("alcGetProcAddress2")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-        ]
+        [return: NativeTypeName("ALCvoid *")]
+        [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
-        static abstract void* GetProcAddress2(DeviceHandle device, sbyte* funcName);
+        static abstract void* GetProcAddress2(
+            DeviceHandle device,
+            [NativeTypeName("const ALCchar *")] sbyte* funcName
+        );
 
-        [NativeName("alcGetProcAddress2")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-        ]
+        [return: NativeTypeName("ALCvoid *")]
+        [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
-        static abstract Ptr GetProcAddress2(DeviceHandle device, Ref<sbyte> funcName);
+        static abstract Ptr GetProcAddress2(
+            DeviceHandle device,
+            [NativeTypeName("const ALCchar *")] Ref<sbyte> funcName
+        );
 
-        [NativeName("alcGetString")]
+        [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
-        static abstract sbyte* GetString(DeviceHandle device, int param1);
+        static abstract sbyte* GetString(
+            DeviceHandle device,
+            [NativeTypeName("ALCenum")] int param1
+        );
 
-        [NativeName("alcGetString")]
+        [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetString")]
         static abstract Ptr<sbyte> GetString(
             DeviceHandle device,
-            Constant<int, ALCEnum, ContextString> param1
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> param1
         );
 
-        [NativeName("alcGetStringiSOFT")]
+        [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
-        static abstract sbyte* GetStringSOFT(DeviceHandle device, int paramName, int index);
+        static abstract sbyte* GetStringSOFT(
+            DeviceHandle device,
+            [NativeTypeName("ALCenum")] int paramName,
+            [NativeTypeName("ALCsizei")] int index
+        );
 
-        [NativeName("alcGetStringiSOFT")]
+        [return: NativeTypeName("const ALCchar *")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
         static abstract Ptr<sbyte> GetStringSOFT(
             DeviceHandle device,
-            Constant<int, ALCEnum, ContextString> paramName,
-            int index
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> paramName,
+            [NativeTypeName("ALCsizei")] int index
         );
 
-        [NativeName("alcGetThreadContext")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
         [NativeFunction("openal", EntryPoint = "alcGetThreadContext")]
         static abstract ContextHandle GetThreadContext();
 
-        [NativeName("alcIsExtensionPresent")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
-        static abstract sbyte IsExtensionPresent(DeviceHandle device, sbyte* extname);
+        static abstract sbyte IsExtensionPresent(
+            DeviceHandle device,
+            [NativeTypeName("const ALCchar *")] sbyte* extname
+        );
 
-        [NativeName("alcIsExtensionPresent")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
         static abstract MaybeBool<sbyte> IsExtensionPresent(
             DeviceHandle device,
-            Ref<sbyte> extname
+            [NativeTypeName("const ALCchar *")] Ref<sbyte> extname
         );
 
-        [NativeName("alcIsRenderFormatSupportedSOFT")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
         static abstract sbyte IsRenderFormatSupportedSOFT(
             DeviceHandle device,
-            int freq,
-            int channels,
-            int type
+            [NativeTypeName("ALCsizei")] int freq,
+            [NativeTypeName("ALCenum")] int channels,
+            [NativeTypeName("ALCenum")] int type
         );
 
-        [NativeName("alcIsRenderFormatSupportedSOFT")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
         static abstract MaybeBool<sbyte> IsRenderFormatSupportedSOFT(
             DeviceHandle device,
-            int freq,
-            Constant<int, ALCEnum, RenderFormatChannelSOFT> channels,
-            Constant<int, ALCEnum, RenderFormatTypeSOFT> type
+            [NativeTypeName("ALCsizei")] int freq,
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, RenderFormatChannelSOFT> channels,
+            [NativeTypeName("ALCenum")] Constant<int, ALCEnum, RenderFormatTypeSOFT> type
         );
 
-        [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
-        static abstract DeviceHandle LoopbackOpenDeviceSOFT(sbyte* deviceName);
+        static abstract DeviceHandle LoopbackOpenDeviceSOFT(
+            [NativeTypeName("const ALCchar *")] sbyte* deviceName
+        );
 
-        [NativeName("alcLoopbackOpenDeviceSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
-        static abstract DeviceHandle LoopbackOpenDeviceSOFT(Ref<sbyte> deviceName);
+        static abstract DeviceHandle LoopbackOpenDeviceSOFT(
+            [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName
+        );
 
-        [NativeName("alcMakeContextCurrent")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
         static abstract MaybeBool<sbyte> MakeContextCurrent(ContextHandle context);
 
-        [NativeName("alcMakeContextCurrent")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
         static abstract sbyte MakeContextCurrentRaw(ContextHandle context);
 
-        [NativeName("alcOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
-        static abstract DeviceHandle OpenDevice(sbyte* devicename);
+        static abstract DeviceHandle OpenDevice(
+            [NativeTypeName("const ALCchar *")] sbyte* devicename
+        );
 
-        [NativeName("alcOpenDevice")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
-        static abstract DeviceHandle OpenDevice(Ref<sbyte> devicename);
+        static abstract DeviceHandle OpenDevice(
+            [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename
+        );
 
-        [NativeName("alcProcessContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcProcessContext")]
         static abstract void ProcessContext(ContextHandle context);
 
-        [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
-        static abstract void RenderSamplesSOFT(DeviceHandle device, void* buffer, int samples);
+        static abstract void RenderSamplesSOFT(
+            DeviceHandle device,
+            [NativeTypeName("ALCvoid *")] void* buffer,
+            [NativeTypeName("ALCsizei")] int samples
+        );
 
-        [NativeName("alcRenderSamplesSOFT")]
         [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
-        static abstract void RenderSamplesSOFT(DeviceHandle device, Ref buffer, int samples);
+        static abstract void RenderSamplesSOFT(
+            DeviceHandle device,
+            [NativeTypeName("ALCvoid *")] Ref buffer,
+            [NativeTypeName("ALCsizei")] int samples
+        );
 
-        [NativeName("alcReopenDeviceSOFT")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
         static abstract sbyte ReopenDeviceSOFT(
             DeviceHandle device,
-            sbyte* deviceName,
-            int* attribs
+            [NativeTypeName("const ALCchar *")] sbyte* deviceName,
+            [NativeTypeName("const ALCint *")] int* attribs
         );
 
-        [NativeName("alcReopenDeviceSOFT")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
         static abstract MaybeBool<sbyte> ReopenDeviceSOFT(
             DeviceHandle device,
-            Ref<sbyte> deviceName,
-            Ref<int> attribs
+            [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName,
+            [NativeTypeName("const ALCint *")] Ref<int> attribs
         );
 
-        [NativeName("alcResetDeviceSOFT")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
-        static abstract sbyte ResetDeviceSOFT(DeviceHandle device, int* attribs);
+        static abstract sbyte ResetDeviceSOFT(
+            DeviceHandle device,
+            [NativeTypeName("const ALCint *")] int* attribs
+        );
 
-        [NativeName("alcResetDeviceSOFT")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
-        static abstract MaybeBool<sbyte> ResetDeviceSOFT(DeviceHandle device, Ref<int> attribs);
+        static abstract MaybeBool<sbyte> ResetDeviceSOFT(
+            DeviceHandle device,
+            [NativeTypeName("const ALCint *")] Ref<int> attribs
+        );
 
-        [NativeName("alcSetThreadContext")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
+        [Transformed]
         [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
         static abstract MaybeBool<sbyte> SetThreadContext(ContextHandle context);
 
-        [NativeName("alcSetThreadContext")]
+        [return: NativeTypeName("ALCboolean")]
         [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
         [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
         static abstract sbyte SetThreadContextRaw(ContextHandle context);
 
-        [NativeName("alcSuspendContext")]
         [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alcSuspendContext")]
         static abstract void SuspendContext(ContextHandle context);
     }
 
-    [NativeName("alcCaptureCloseDevice")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
     MaybeBool<sbyte> CaptureCloseDevice(DeviceHandle device);
 
-    [NativeName("alcCaptureCloseDevice")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureCloseDevice")]
     sbyte CaptureCloseDeviceRaw(DeviceHandle device);
 
-    [NativeName("alcCaptureOpenDevice")]
-    [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
-    [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
-    DeviceHandle CaptureOpenDevice(sbyte* devicename, uint frequency, int format, int buffersize);
-
-    [NativeName("alcCaptureOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
     DeviceHandle CaptureOpenDevice(
-        Ref<sbyte> devicename,
-        uint frequency,
-        Constant<int, ALEnum, Format> format,
-        int buffersize
+        [NativeTypeName("const ALCchar *")] sbyte* devicename,
+        [NativeTypeName("ALCuint")] uint frequency,
+        [NativeTypeName("ALCenum")] int format,
+        [NativeTypeName("ALCsizei")] int buffersize
     );
 
-    [NativeName("alcCaptureSamples")]
+    [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alcCaptureOpenDevice")]
+    DeviceHandle CaptureOpenDevice(
+        [NativeTypeName("const ALCchar *")] Ref<sbyte> devicename,
+        [NativeTypeName("ALCuint")] uint frequency,
+        [NativeTypeName("ALCenum")] Constant<int, ALEnum, Format> format,
+        [NativeTypeName("ALCsizei")] int buffersize
+    );
+
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
-    void CaptureSamples(DeviceHandle device, void* buffer, int samples);
+    void CaptureSamples(
+        DeviceHandle device,
+        [NativeTypeName("ALCvoid *")] void* buffer,
+        [NativeTypeName("ALCsizei")] int samples
+    );
 
-    [NativeName("alcCaptureSamples")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCaptureSamples")]
-    void CaptureSamples(DeviceHandle device, Ref buffer, int samples);
+    void CaptureSamples(
+        DeviceHandle device,
+        [NativeTypeName("ALCvoid *")] Ref buffer,
+        [NativeTypeName("ALCsizei")] int samples
+    );
 
-    [NativeName("alcCaptureStart")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureStart")]
     void CaptureStart(DeviceHandle device);
 
-    [NativeName("alcCaptureStop")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]
     [NativeFunction("openal", EntryPoint = "alcCaptureStop")]
     void CaptureStop(DeviceHandle device);
 
-    [NativeName("alcCloseDevice")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
     MaybeBool<sbyte> CloseDevice(DeviceHandle device);
 
-    [NativeName("alcCloseDevice")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcCloseDevice")]
     sbyte CloseDeviceRaw(DeviceHandle device);
 
-    [NativeName("alcCreateContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcCreateContext")]
-    ContextHandle CreateContext(DeviceHandle device, int* attrlist);
+    ContextHandle CreateContext(
+        DeviceHandle device,
+        [NativeTypeName("const ALCint *")] int* attrlist
+    );
 
-    [NativeName("alcCreateContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcCreateContext")]
-    ContextHandle CreateContext(DeviceHandle device, Ref<int> attrlist);
+    ContextHandle CreateContext(
+        DeviceHandle device,
+        [NativeTypeName("const ALCint *")] Ref<int> attrlist
+    );
 
-    [NativeName("alcDestroyContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcDestroyContext")]
     void DestroyContext(ContextHandle context);
 
-    [NativeName("alcDevicePauseSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
     [NativeFunction("openal", EntryPoint = "alcDevicePauseSOFT")]
     void DevicePauseSOFT(DeviceHandle device);
 
-    [NativeName("alcDeviceResumeSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_pause_device"])]
     [NativeFunction("openal", EntryPoint = "alcDeviceResumeSOFT")]
     void DeviceResumeSOFT(DeviceHandle device);
 
-    [NativeName("alcEventCallbackSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
     [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
-    void EventCallbackSOFT(ContextEventProcSOFT callback, void* userParam);
-
-    [NativeName("alcEventCallbackSOFT")]
-    [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
-    void EventCallbackSOFT(ContextEventProcSOFT callback, Ref userParam);
-
-    [NativeName("alcEventControlSOFT")]
-    [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
-    sbyte EventControlSOFT(int count, int* events, sbyte enable);
-
-    [NativeName("alcEventControlSOFT")]
-    [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
-    MaybeBool<sbyte> EventControlSOFT(int count, Ref<int> events, MaybeBool<sbyte> enable);
-
-    [NativeName("alcEventIsSupportedSOFT")]
-    [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
-    int EventIsSupportedSOFT(int eventType, int deviceType);
-
-    [NativeName("alcEventIsSupportedSOFT")]
-    [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
-    [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
-    Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
-        Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
-        Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
+    void EventCallbackSOFT(
+        [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSOFT callback,
+        void* userParam
     );
 
-    [NativeName("alcGetContextsDevice")]
+    [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alcEventCallbackSOFT")]
+    void EventCallbackSOFT(
+        [NativeTypeName("ALCEVENTPROCTYPESOFT")] ContextEventProcSOFT callback,
+        Ref userParam
+    );
+
+    [return: NativeTypeName("ALCboolean")]
+    [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
+    [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
+    sbyte EventControlSOFT(
+        [NativeTypeName("ALCsizei")] int count,
+        [NativeTypeName("const ALCenum *")] int* events,
+        [NativeTypeName("ALCboolean")] sbyte enable
+    );
+
+    [return: NativeTypeName("ALCboolean")]
+    [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alcEventControlSOFT")]
+    MaybeBool<sbyte> EventControlSOFT(
+        [NativeTypeName("ALCsizei")] int count,
+        [NativeTypeName("const ALCenum *")] Ref<int> events,
+        [NativeTypeName("ALCboolean")] MaybeBool<sbyte> enable
+    );
+
+    [return: NativeTypeName("ALCenum")]
+    [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
+    [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
+    int EventIsSupportedSOFT(
+        [NativeTypeName("ALCenum")] int eventType,
+        [NativeTypeName("ALCenum")] int deviceType
+    );
+
+    [return: NativeTypeName("ALCenum")]
+    [SupportedApiProfile("alc", ["ALC_SOFT_system_events"])]
+    [Transformed]
+    [NativeFunction("openal", EntryPoint = "alcEventIsSupportedSOFT")]
+    Constant<int, ALCEnum, EventSupportSOFT> EventIsSupportedSOFT(
+        [NativeTypeName("ALCenum")] Constant<int, ALCEnum, SystemEventTypeSOFT> eventType,
+        [NativeTypeName("ALCenum")] Constant<int, ALCEnum, DeviceTypeSOFT> deviceType
+    );
+
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetContextsDevice")]
     DeviceHandle GetContextsDevice(ContextHandle context);
 
-    [NativeName("alcGetCurrentContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetCurrentContext")]
     ContextHandle GetCurrentContext();
 
-    [NativeName("alcGetEnumValue")]
+    [return: NativeTypeName("ALCenum")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
-    int GetEnumValue(DeviceHandle device, sbyte* enumname);
+    int GetEnumValue(DeviceHandle device, [NativeTypeName("const ALCchar *")] sbyte* enumname);
 
-    [NativeName("alcGetEnumValue")]
+    [return: NativeTypeName("ALCenum")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetEnumValue")]
-    int GetEnumValue(DeviceHandle device, Ref<sbyte> enumname);
+    int GetEnumValue(DeviceHandle device, [NativeTypeName("const ALCchar *")] Ref<sbyte> enumname);
 
-    [NativeName("alcGetError")]
+    [return: NativeTypeName("ALCenum")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
     Constant<int, ALCEnum, ContextErrorCode> GetError(DeviceHandle device);
 
-    [NativeName("alcGetError")]
+    [return: NativeTypeName("ALCenum")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetError")]
     int GetErrorRaw(DeviceHandle device);
 
-    [NativeName("alcGetInteger64vSOFT")]
-    [
-        SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
-        SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
-    ]
+    [SupportedApiProfile("al", ["ALC_SOFT_device_clock"])]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-    void GetInteger64SOFT(DeviceHandle device, int pname, int size, long* values);
+    void GetInteger64SOFT(
+        DeviceHandle device,
+        [NativeTypeName("ALCenum")] int pname,
+        [NativeTypeName("ALsizei")] int size,
+        [NativeTypeName("ALCint64SOFT *")] long* values
+    );
 
-    [NativeName("alcGetInteger64vSOFT")]
-    [
-        SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
-        SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
-    ]
+    [SupportedApiProfile("al", ["ALC_SOFT_device_clock"])]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-    void GetInteger64SOFT(DeviceHandle device, int pname, int size, Ref<long> values);
+    void GetInteger64SOFT(
+        DeviceHandle device,
+        [NativeTypeName("ALCenum")] int pname,
+        [NativeTypeName("ALsizei")] int size,
+        [NativeTypeName("ALCint64SOFT *")] Ref<long> values
+    );
 
-    [NativeName("alcGetInteger64vSOFT")]
-    [
-        SupportedApiProfile("al", ["ALC_SOFT_device_clock"]),
-        SupportedApiProfile("alc", ["ALC_SOFT_device_clock"])
-    ]
+    [SupportedApiProfile("al", ["ALC_SOFT_device_clock"])]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetInteger64vSOFT")]
-    long GetInteger64SOFT(DeviceHandle device, int pname);
+    long GetInteger64SOFT(DeviceHandle device, [NativeTypeName("ALCenum")] int pname);
 
-    [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-    void GetInteger(DeviceHandle device, int param1, int size, int* values);
+    void GetInteger(
+        DeviceHandle device,
+        [NativeTypeName("ALCenum")] int param1,
+        [NativeTypeName("ALCsizei")] int size,
+        [NativeTypeName("ALCint *")] int* values
+    );
 
-    [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-    void GetInteger(DeviceHandle device, int param1, int size, Ref<int> values);
+    void GetInteger(
+        DeviceHandle device,
+        [NativeTypeName("ALCenum")] int param1,
+        [NativeTypeName("ALCsizei")] int size,
+        [NativeTypeName("ALCint *")] Ref<int> values
+    );
 
-    [NativeName("alcGetIntegerv")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetIntegerv")]
-    int GetInteger(DeviceHandle device, int param1);
+    int GetInteger(DeviceHandle device, [NativeTypeName("ALCenum")] int param1);
 
-    [NativeName("alcGetProcAddress")]
+    [return: NativeTypeName("ALCvoid *")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
-    void* GetProcAddress(DeviceHandle device, sbyte* funcname);
+    void* GetProcAddress(DeviceHandle device, [NativeTypeName("const ALCchar *")] sbyte* funcname);
 
-    [NativeName("alcGetProcAddress")]
+    [return: NativeTypeName("ALCvoid *")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress")]
-    Ptr GetProcAddress(DeviceHandle device, Ref<sbyte> funcname);
+    Ptr GetProcAddress(
+        DeviceHandle device,
+        [NativeTypeName("const ALCchar *")] Ref<sbyte> funcname
+    );
 
-    [NativeName("alcGetProcAddress2")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-    ]
+    [return: NativeTypeName("ALCvoid *")]
+    [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
-    void* GetProcAddress2(DeviceHandle device, sbyte* funcName);
+    void* GetProcAddress2(DeviceHandle device, [NativeTypeName("const ALCchar *")] sbyte* funcName);
 
-    [NativeName("alcGetProcAddress2")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-    ]
+    [return: NativeTypeName("ALCvoid *")]
+    [SupportedApiProfile("al", ["AL_EXT_direct_context"])]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetProcAddress2")]
-    Ptr GetProcAddress2(DeviceHandle device, Ref<sbyte> funcName);
+    Ptr GetProcAddress2(
+        DeviceHandle device,
+        [NativeTypeName("const ALCchar *")] Ref<sbyte> funcName
+    );
 
-    [NativeName("alcGetString")]
+    [return: NativeTypeName("const ALCchar *")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcGetString")]
-    sbyte* GetString(DeviceHandle device, int param1);
+    sbyte* GetString(DeviceHandle device, [NativeTypeName("ALCenum")] int param1);
 
-    [NativeName("alcGetString")]
+    [return: NativeTypeName("const ALCchar *")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetString")]
-    Ptr<sbyte> GetString(DeviceHandle device, Constant<int, ALCEnum, ContextString> param1);
+    Ptr<sbyte> GetString(
+        DeviceHandle device,
+        [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> param1
+    );
 
-    [NativeName("alcGetStringiSOFT")]
+    [return: NativeTypeName("const ALCchar *")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
-    sbyte* GetStringSOFT(DeviceHandle device, int paramName, int index);
+    sbyte* GetStringSOFT(
+        DeviceHandle device,
+        [NativeTypeName("ALCenum")] int paramName,
+        [NativeTypeName("ALCsizei")] int index
+    );
 
-    [NativeName("alcGetStringiSOFT")]
+    [return: NativeTypeName("const ALCchar *")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcGetStringiSOFT")]
     Ptr<sbyte> GetStringSOFT(
         DeviceHandle device,
-        Constant<int, ALCEnum, ContextString> paramName,
-        int index
+        [NativeTypeName("ALCenum")] Constant<int, ALCEnum, ContextString> paramName,
+        [NativeTypeName("ALCsizei")] int index
     );
 
-    [NativeName("alcGetThreadContext")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
     [NativeFunction("openal", EntryPoint = "alcGetThreadContext")]
     ContextHandle GetThreadContext();
 
-    [NativeName("alcIsExtensionPresent")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
-    sbyte IsExtensionPresent(DeviceHandle device, sbyte* extname);
+    sbyte IsExtensionPresent(
+        DeviceHandle device,
+        [NativeTypeName("const ALCchar *")] sbyte* extname
+    );
 
-    [NativeName("alcIsExtensionPresent")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcIsExtensionPresent")]
-    MaybeBool<sbyte> IsExtensionPresent(DeviceHandle device, Ref<sbyte> extname);
+    MaybeBool<sbyte> IsExtensionPresent(
+        DeviceHandle device,
+        [NativeTypeName("const ALCchar *")] Ref<sbyte> extname
+    );
 
-    [NativeName("alcIsRenderFormatSupportedSOFT")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
-    sbyte IsRenderFormatSupportedSOFT(DeviceHandle device, int freq, int channels, int type);
+    sbyte IsRenderFormatSupportedSOFT(
+        DeviceHandle device,
+        [NativeTypeName("ALCsizei")] int freq,
+        [NativeTypeName("ALCenum")] int channels,
+        [NativeTypeName("ALCenum")] int type
+    );
 
-    [NativeName("alcIsRenderFormatSupportedSOFT")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcIsRenderFormatSupportedSOFT")]
     MaybeBool<sbyte> IsRenderFormatSupportedSOFT(
         DeviceHandle device,
-        int freq,
-        Constant<int, ALCEnum, RenderFormatChannelSOFT> channels,
-        Constant<int, ALCEnum, RenderFormatTypeSOFT> type
+        [NativeTypeName("ALCsizei")] int freq,
+        [NativeTypeName("ALCenum")] Constant<int, ALCEnum, RenderFormatChannelSOFT> channels,
+        [NativeTypeName("ALCenum")] Constant<int, ALCEnum, RenderFormatTypeSOFT> type
     );
 
-    [NativeName("alcLoopbackOpenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
-    DeviceHandle LoopbackOpenDeviceSOFT(sbyte* deviceName);
+    DeviceHandle LoopbackOpenDeviceSOFT([NativeTypeName("const ALCchar *")] sbyte* deviceName);
 
-    [NativeName("alcLoopbackOpenDeviceSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcLoopbackOpenDeviceSOFT")]
-    DeviceHandle LoopbackOpenDeviceSOFT(Ref<sbyte> deviceName);
+    DeviceHandle LoopbackOpenDeviceSOFT([NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName);
 
-    [NativeName("alcMakeContextCurrent")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
     MaybeBool<sbyte> MakeContextCurrent(ContextHandle context);
 
-    [NativeName("alcMakeContextCurrent")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcMakeContextCurrent")]
     sbyte MakeContextCurrentRaw(ContextHandle context);
 
-    [NativeName("alcOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
-    DeviceHandle OpenDevice(sbyte* devicename);
+    DeviceHandle OpenDevice([NativeTypeName("const ALCchar *")] sbyte* devicename);
 
-    [NativeName("alcOpenDevice")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcOpenDevice")]
-    DeviceHandle OpenDevice(Ref<sbyte> devicename);
+    DeviceHandle OpenDevice([NativeTypeName("const ALCchar *")] Ref<sbyte> devicename);
 
-    [NativeName("alcProcessContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcProcessContext")]
     void ProcessContext(ContextHandle context);
 
-    [NativeName("alcRenderSamplesSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
     [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
-    void RenderSamplesSOFT(DeviceHandle device, void* buffer, int samples);
+    void RenderSamplesSOFT(
+        DeviceHandle device,
+        [NativeTypeName("ALCvoid *")] void* buffer,
+        [NativeTypeName("ALCsizei")] int samples
+    );
 
-    [NativeName("alcRenderSamplesSOFT")]
     [SupportedApiProfile("alc", ["ALC_SOFT_loopback"])]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcRenderSamplesSOFT")]
-    void RenderSamplesSOFT(DeviceHandle device, Ref buffer, int samples);
+    void RenderSamplesSOFT(
+        DeviceHandle device,
+        [NativeTypeName("ALCvoid *")] Ref buffer,
+        [NativeTypeName("ALCsizei")] int samples
+    );
 
-    [NativeName("alcReopenDeviceSOFT")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
-    sbyte ReopenDeviceSOFT(DeviceHandle device, sbyte* deviceName, int* attribs);
+    sbyte ReopenDeviceSOFT(
+        DeviceHandle device,
+        [NativeTypeName("const ALCchar *")] sbyte* deviceName,
+        [NativeTypeName("const ALCint *")] int* attribs
+    );
 
-    [NativeName("alcReopenDeviceSOFT")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_SOFT_reopen_device"])]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcReopenDeviceSOFT")]
-    MaybeBool<sbyte> ReopenDeviceSOFT(DeviceHandle device, Ref<sbyte> deviceName, Ref<int> attribs);
+    MaybeBool<sbyte> ReopenDeviceSOFT(
+        DeviceHandle device,
+        [NativeTypeName("const ALCchar *")] Ref<sbyte> deviceName,
+        [NativeTypeName("const ALCint *")] Ref<int> attribs
+    );
 
-    [NativeName("alcResetDeviceSOFT")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
-    sbyte ResetDeviceSOFT(DeviceHandle device, int* attribs);
+    sbyte ResetDeviceSOFT(DeviceHandle device, [NativeTypeName("const ALCint *")] int* attribs);
 
-    [NativeName("alcResetDeviceSOFT")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_SOFT_HRTF"])]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcResetDeviceSOFT")]
-    MaybeBool<sbyte> ResetDeviceSOFT(DeviceHandle device, Ref<int> attribs);
+    MaybeBool<sbyte> ResetDeviceSOFT(
+        DeviceHandle device,
+        [NativeTypeName("const ALCint *")] Ref<int> attribs
+    );
 
-    [NativeName("alcSetThreadContext")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
+    [Transformed]
     [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
     MaybeBool<sbyte> SetThreadContext(ContextHandle context);
 
-    [NativeName("alcSetThreadContext")]
+    [return: NativeTypeName("ALCboolean")]
     [SupportedApiProfile("alc", ["ALC_EXT_thread_local_context"])]
     [NativeFunction("openal", EntryPoint = "alcSetThreadContext")]
     sbyte SetThreadContextRaw(ContextHandle context);
 
-    [NativeName("alcSuspendContext")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alcSuspendContext")]
     void SuspendContext(ContextHandle context);

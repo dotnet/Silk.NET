@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("PolygonMode")]
+[Transformed]
 public enum PolygonMode : uint
 {
-    [NativeName("GL_POINT")]
-    Point = 6912,
-
-    [NativeName("GL_LINE")]
-    Line = 6913,
-
-    [NativeName("GL_FILL")]
-    Fill = 6914,
+    Point = unchecked((uint)0x1B00),
+    Line = unchecked((uint)0x1B01),
+    Fill = unchecked((uint)0x1B02),
 }

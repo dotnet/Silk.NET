@@ -6,15 +6,14 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDisplayEventTypeEXT")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum DisplayEventTypeEXT : uint
 {
-    [NativeName("VK_DISPLAY_EVENT_TYPE_FIRST_PIXEL_OUT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_control"],
         ImpliesSets = ["VK_EXT_display_surface_counter", "VK_KHR_swapchain"]
     )]
-    FirstPixelOut = 0,
+    FirstPixelOutEXT = 0,
 }

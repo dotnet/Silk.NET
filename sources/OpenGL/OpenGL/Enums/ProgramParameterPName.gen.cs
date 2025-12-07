@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ProgramParameterPName")]
+[Transformed]
 public enum ProgramParameterPName : uint
 {
-    [NativeName("GL_PROGRAM_BINARY_RETRIEVABLE_HINT")]
-    BinaryRetrievableHint = 33367,
-
-    [NativeName("GL_PROGRAM_SEPARABLE")]
-    Separable = 33368,
+    BinaryRetrievableHint = unchecked((uint)0x8257),
+    Separable = unchecked((uint)0x8258),
 }

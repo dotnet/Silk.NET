@@ -8,31 +8,28 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoVP9ColorConfig")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoVP9ColorConfig
 {
-    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVP9ColorConfigFlags Flags;
 
-    [NativeName("BitDepth")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte BitDepth;
 
-    [NativeName("subsampling_x")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte SubsamplingX;
 
-    [NativeName("subsampling_y")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte SubsamplingY;
 
-    [NativeName("reserved1")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved1;
 
-    [NativeName("color_space")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVP9ColorSpace ColorSpace;
 }

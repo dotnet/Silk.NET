@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("VertexProvokingMode")]
+[Transformed]
 public enum VertexProvokingMode : uint
 {
-    [NativeName("GL_FIRST_VERTEX_CONVENTION")]
-    FirstVertexConvention = 36429,
-
-    [NativeName("GL_LAST_VERTEX_CONVENTION")]
-    LastVertexConvention = 36430,
+    FirstVertexConvention = unchecked((uint)0x8E4D),
+    LastVertexConvention = unchecked((uint)0x8E4E),
 }

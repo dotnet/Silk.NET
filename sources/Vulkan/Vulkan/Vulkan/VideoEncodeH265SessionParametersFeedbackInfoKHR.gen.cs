@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH265SessionParametersFeedbackInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH265SessionParametersFeedbackInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -19,7 +17,6 @@ public unsafe partial struct VideoEncodeH265SessionParametersFeedbackInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -27,7 +24,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersFeedbackInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("hasStdVPSOverrides")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -35,7 +32,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersFeedbackInfoKHR
     )]
     public uint HasStdVPSOverrides;
 
-    [NativeName("hasStdSPSOverrides")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -43,7 +40,7 @@ public unsafe partial struct VideoEncodeH265SessionParametersFeedbackInfoKHR
     )]
     public uint HasStdSPSOverrides;
 
-    [NativeName("hasStdPPSOverrides")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],

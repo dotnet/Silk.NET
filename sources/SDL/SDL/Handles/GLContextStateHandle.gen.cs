@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GLContextState")]
 public readonly unsafe partial struct GLContextStateHandle
 {
     public readonly void* Handle;
-
-    public GLContextStateHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(GLContextStateHandle other) => Handle == other.Handle;
 

@@ -8,34 +8,31 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkClusterAccelerationStructureGeometryFlagBitsNV")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum ClusterAccelerationStructureGeometryFlagsNV : uint
 {
     None = 0x0,
 
-    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_GEOMETRY_CULL_DISABLE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    CullDisableBit = 0x1,
+    CullDisableBitNV = 0x1,
 
-    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_GEOMETRY_NO_DUPLICATE_ANYHIT_INVOCATION_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    NoDuplicateAnyhitInvocationBit = 0x2,
+    NoDuplicateAnyhitInvocationBitNV = 0x2,
 
-    [NativeName("VK_CLUSTER_ACCELERATION_STRUCTURE_GEOMETRY_OPAQUE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    OpaqueBit = 0x4,
+    OpaqueBitNV = 0x4,
 }

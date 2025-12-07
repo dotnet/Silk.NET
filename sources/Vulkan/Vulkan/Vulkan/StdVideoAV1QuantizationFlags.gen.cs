@@ -8,17 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoAV1QuantizationFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1QuantizationFlags
 {
-    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeName("using_qmatrix")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint UsingQmatrix
+    public uint using_qmatrix
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -26,9 +24,9 @@ public partial struct StdVideoAV1QuantizationFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeName("diff_uv_delta")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint DiffUvDelta
+    public uint diff_uv_delta
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -36,9 +34,9 @@ public partial struct StdVideoAV1QuantizationFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 30")]
     [SupportedApiProfile("vulkan")]
-    public uint Reserved
+    public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x3FFFFFFFu; }

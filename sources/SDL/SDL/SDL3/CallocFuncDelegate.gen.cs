@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_calloc_func")]
 public unsafe delegate void* CallocFuncDelegate(nuint arg0, nuint arg1);

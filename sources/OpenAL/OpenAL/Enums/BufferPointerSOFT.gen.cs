@@ -10,12 +10,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("BufferPointerSOFT")]
+[Transformed]
 public enum BufferPointerSOFT : uint
 {
-    [NativeName("AL_BUFFER_CALLBACK_FUNCTION_SOFT")]
-    Function = 6560,
-
-    [NativeName("AL_BUFFER_CALLBACK_USER_PARAM_SOFT")]
-    UserParam = 6561,
+    Function = unchecked((uint)0x19A0),
+    UserParam = unchecked((uint)0x19A1),
 }

@@ -8,24 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_PropertyType")]
-public enum PropertyType
+[NativeTypeName("unsigned int")]
+public enum PropertyType : uint
 {
-    [NativeName("SDL_PROPERTY_TYPE_INVALID")]
-    Invalid = 0,
-
-    [NativeName("SDL_PROPERTY_TYPE_POINTER")]
-    Pointer = 1,
-
-    [NativeName("SDL_PROPERTY_TYPE_STRING")]
-    String = 2,
-
-    [NativeName("SDL_PROPERTY_TYPE_NUMBER")]
-    Number = 3,
-
-    [NativeName("SDL_PROPERTY_TYPE_FLOAT")]
-    Float = 4,
-
-    [NativeName("SDL_PROPERTY_TYPE_BOOLEAN")]
-    Boolean = 5,
+    Invalid,
+    Pointer,
+    String,
+    Number,
+    Float,
+    Boolean,
 }

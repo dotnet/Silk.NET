@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSamplerYcbcrModelConversion")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum SamplerYcbcrModelConversion : uint
 {
-    [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_RGB_IDENTITY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +32,6 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     RgbIdentity = 0,
 
-    [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_IDENTITY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,7 +52,6 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     YcbcrIdentity = 1,
 
-    [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_709")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -75,7 +72,6 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     Ycbcr709 = 2,
 
-    [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_601")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,7 +92,6 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     Ycbcr601 = 3,
 
-    [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_2020")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -117,7 +112,6 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     Ycbcr2020 = 4,
 
-    [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_RGB_IDENTITY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -128,7 +122,6 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     RgbIdentityKHR = RgbIdentity,
 
-    [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_IDENTITY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -139,7 +132,6 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     YcbcrIdentityKHR = YcbcrIdentity,
 
-    [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_709_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -150,7 +142,6 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     Ycbcr709KHR = Ycbcr709,
 
-    [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_601_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -161,7 +152,6 @@ public enum SamplerYcbcrModelConversion : uint
     )]
     Ycbcr601KHR = Ycbcr601,
 
-    [NativeName("VK_SAMPLER_YCBCR_MODEL_CONVERSION_YCBCR_2020_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],

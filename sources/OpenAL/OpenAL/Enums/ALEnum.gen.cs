@@ -10,2211 +10,742 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ALEnum")]
+[Transformed]
 public enum ALEnum : uint
 {
-    [NativeName("AL_NONE")]
-    None = 0,
-
-    [NativeName("AL_FALSE")]
-    False = 0,
-
-    [NativeName("AL_TRUE")]
-    True = 1,
-
-    [NativeName("AL_SOURCE_RELATIVE")]
-    SourceRelative = 514,
-
-    [NativeName("AL_CONE_INNER_ANGLE")]
-    ConeInnerAngle = 4097,
-
-    [NativeName("AL_CONE_OUTER_ANGLE")]
-    ConeOuterAngle = 4098,
-
-    [NativeName("AL_PITCH")]
-    Pitch = 4099,
-
-    [NativeName("AL_POSITION")]
-    Position = 4100,
-
-    [NativeName("AL_DIRECTION")]
-    Direction = 4101,
-
-    [NativeName("AL_VELOCITY")]
-    Velocity = 4102,
-
-    [NativeName("AL_LOOPING")]
-    Looping = 4103,
-
-    [NativeName("AL_BUFFER")]
-    Buffer = 4105,
-
-    [NativeName("AL_GAIN")]
-    Gain = 4106,
-
-    [NativeName("AL_MIN_GAIN")]
-    MinGain = 4109,
-
-    [NativeName("AL_MAX_GAIN")]
-    MaxGain = 4110,
-
-    [NativeName("AL_ORIENTATION")]
-    Orientation = 4111,
-
-    [NativeName("AL_SOURCE_STATE")]
-    SourceState = 4112,
-
-    [NativeName("AL_INITIAL")]
-    Initial = 4113,
-
-    [NativeName("AL_PLAYING")]
-    Playing = 4114,
-
-    [NativeName("AL_PAUSED")]
-    Paused = 4115,
-
-    [NativeName("AL_STOPPED")]
-    Stopped = 4116,
-
-    [NativeName("AL_BUFFERS_QUEUED")]
-    BuffersQueued = 4117,
-
-    [NativeName("AL_BUFFERS_PROCESSED")]
-    BuffersProcessed = 4118,
-
-    [NativeName("AL_REFERENCE_DISTANCE")]
-    ReferenceDistance = 4128,
-
-    [NativeName("AL_ROLLOFF_FACTOR")]
-    RolloffFactor = 4129,
-
-    [NativeName("AL_CONE_OUTER_GAIN")]
-    ConeOuterGain = 4130,
-
-    [NativeName("AL_MAX_DISTANCE")]
-    MaxDistance = 4131,
-
-    [NativeName("AL_FORMAT_MONO8")]
-    FormatMono8 = 4352,
-
-    [NativeName("AL_FORMAT_MONO16")]
-    FormatMono16 = 4353,
-
-    [NativeName("AL_FORMAT_STEREO8")]
-    FormatStereo8 = 4354,
-
-    [NativeName("AL_FORMAT_STEREO16")]
-    FormatStereo16 = 4355,
-
-    [NativeName("AL_FREQUENCY")]
-    Frequency = 8193,
-
-    [NativeName("AL_SIZE")]
-    Size = 8196,
-
-    [NativeName("AL_UNUSED")]
-    Unused = 8208,
-
-    [NativeName("AL_PENDING")]
-    Pending = 8209,
-
-    [NativeName("AL_PROCESSED")]
-    Processed = 8210,
-
-    [NativeName("AL_NO_ERROR")]
-    NoError = 0,
-
-    [NativeName("AL_INVALID_NAME")]
-    InvalidName = 40961,
-
-    [NativeName("AL_INVALID_ENUM")]
-    InvalidEnum = 40962,
-
-    [NativeName("AL_INVALID_VALUE")]
-    InvalidValue = 40963,
-
-    [NativeName("AL_INVALID_OPERATION")]
-    InvalidOperation = 40964,
-
-    [NativeName("AL_OUT_OF_MEMORY")]
-    OutOfMemory = 40965,
-
-    [NativeName("AL_VENDOR")]
-    Vendor = 45057,
-
-    [NativeName("AL_VERSION")]
-    Version = 45058,
-
-    [NativeName("AL_RENDERER")]
-    Renderer = 45059,
-
-    [NativeName("AL_EXTENSIONS")]
-    Extensions = 45060,
-
-    [NativeName("AL_DOPPLER_FACTOR")]
-    DopplerFactor = 49152,
-
-    [NativeName("AL_DOPPLER_VELOCITY")]
-    DopplerVelocity = 49153,
-
-    [NativeName("AL_DISTANCE_MODEL")]
-    DistanceModel = 53248,
-
-    [NativeName("AL_INVALID")]
-    Invalid = 4294967295,
-
-    [NativeName("AL_ILLEGAL_ENUM")]
-    IllegalEnum = 40962,
-
-    [NativeName("AL_ILLEGAL_COMMAND")]
-    IllegalCommand = 40964,
-
-    [NativeName("AL_INVERSE_DISTANCE")]
-    InverseDistance = 53249,
-
-    [NativeName("AL_INVERSE_DISTANCE_CLAMPED")]
-    InverseDistanceClamped = 53250,
-
-    [NativeName("AL_SEC_OFFSET")]
-    SecOffset = 4132,
-
-    [NativeName("AL_SAMPLE_OFFSET")]
-    SampleOffset = 4133,
-
-    [NativeName("AL_BYTE_OFFSET")]
-    ByteOffset = 4134,
-
-    [NativeName("AL_SOURCE_TYPE")]
-    SourceType = 4135,
-
-    [NativeName("AL_STATIC")]
-    Static = 4136,
-
-    [NativeName("AL_STREAMING")]
-    Streaming = 4137,
-
-    [NativeName("AL_UNDETERMINED")]
-    Undetermined = 4144,
-
-    [NativeName("AL_BITS")]
-    Bits = 8194,
-
-    [NativeName("AL_CHANNELS")]
-    Channels = 8195,
-
-    [NativeName("AL_SPEED_OF_SOUND")]
-    SpeedOfSound = 49155,
-
-    [NativeName("AL_LINEAR_DISTANCE")]
-    LinearDistance = 53251,
-
-    [NativeName("AL_LINEAR_DISTANCE_CLAMPED")]
-    LinearDistanceClamped = 53252,
-
-    [NativeName("AL_EXPONENT_DISTANCE")]
-    ExponentDistance = 53253,
-
-    [NativeName("AL_EXPONENT_DISTANCE_CLAMPED")]
-    ExponentDistanceClamped = 53254,
-
-    [NativeName("AL_FORMAT_IMA_ADPCM_MONO16_EXT")]
-    FormatImaAdpcmMono16EXT = 65536,
-
-    [NativeName("AL_FORMAT_IMA_ADPCM_STEREO16_EXT")]
-    FormatImaAdpcmStereo16EXT = 65537,
-
-    [NativeName("AL_FORMAT_WAVE_EXT")]
-    FormatWaveEXT = 65538,
-
-    [NativeName("AL_FORMAT_VORBIS_EXT")]
-    FormatVorbisEXT = 65539,
-
-    [NativeName("AL_FORMAT_QUAD8_LOKI")]
-    FormatQuad8LOKI = 65540,
-
-    [NativeName("AL_FORMAT_QUAD16_LOKI")]
-    FormatQuad16LOKI = 65541,
-
-    [NativeName("AL_FORMAT_MONO_FLOAT32")]
-    FormatMonoFloat32 = 65552,
-
-    [NativeName("AL_FORMAT_STEREO_FLOAT32")]
-    FormatStereoFloat32 = 65553,
-
-    [NativeName("AL_FORMAT_MONO_DOUBLE_EXT")]
-    FormatMonoDoubleEXT = 65554,
-
-    [NativeName("AL_FORMAT_STEREO_DOUBLE_EXT")]
-    FormatStereoDoubleEXT = 65555,
-
-    [NativeName("AL_FORMAT_MONO_MULAW_EXT")]
-    FormatMonoMulawEXT = 65556,
-
-    [NativeName("AL_FORMAT_STEREO_MULAW_EXT")]
-    FormatStereoMulawEXT = 65557,
-
-    [NativeName("AL_FORMAT_MONO_ALAW_EXT")]
-    FormatMonoAlawEXT = 65558,
-
-    [NativeName("AL_FORMAT_STEREO_ALAW_EXT")]
-    FormatStereoAlawEXT = 65559,
-
-    [NativeName("AL_FORMAT_QUAD8")]
-    FormatQuad8 = 4612,
-
-    [NativeName("AL_FORMAT_QUAD16")]
-    FormatQuad16 = 4613,
-
-    [NativeName("AL_FORMAT_QUAD32")]
-    FormatQuad32 = 4614,
-
-    [NativeName("AL_FORMAT_REAR8")]
-    FormatRear8 = 4615,
-
-    [NativeName("AL_FORMAT_REAR16")]
-    FormatRear16 = 4616,
-
-    [NativeName("AL_FORMAT_REAR32")]
-    FormatRear32 = 4617,
-
-    [NativeName("AL_FORMAT_51CHN8")]
-    Format51Chn8 = 4618,
-
-    [NativeName("AL_FORMAT_51CHN16")]
-    Format51Chn16 = 4619,
-
-    [NativeName("AL_FORMAT_51CHN32")]
-    Format51Chn32 = 4620,
-
-    [NativeName("AL_FORMAT_61CHN8")]
-    Format61Chn8 = 4621,
-
-    [NativeName("AL_FORMAT_61CHN16")]
-    Format61Chn16 = 4622,
-
-    [NativeName("AL_FORMAT_61CHN32")]
-    Format61Chn32 = 4623,
-
-    [NativeName("AL_FORMAT_71CHN8")]
-    Format71Chn8 = 4624,
-
-    [NativeName("AL_FORMAT_71CHN16")]
-    Format71Chn16 = 4625,
-
-    [NativeName("AL_FORMAT_71CHN32")]
-    Format71Chn32 = 4626,
-
-    [NativeName("AL_FORMAT_MONO_MULAW")]
-    FormatMonoMulaw = 65556,
-
-    [NativeName("AL_FORMAT_STEREO_MULAW")]
-    FormatStereoMulaw = 65557,
-
-    [NativeName("AL_FORMAT_QUAD_MULAW")]
-    FormatQuadMulaw = 65569,
-
-    [NativeName("AL_FORMAT_REAR_MULAW")]
-    FormatRearMulaw = 65570,
-
-    [NativeName("AL_FORMAT_51CHN_MULAW")]
-    Format51ChnMulaw = 65571,
-
-    [NativeName("AL_FORMAT_61CHN_MULAW")]
-    Format61ChnMulaw = 65572,
-
-    [NativeName("AL_FORMAT_71CHN_MULAW")]
-    Format71ChnMulaw = 65573,
-
-    [NativeName("AL_FORMAT_MONO_IMA4")]
-    FormatMonoIma4 = 4864,
-
-    [NativeName("AL_FORMAT_STEREO_IMA4")]
-    FormatStereoIma4 = 4865,
-
-    [NativeName("AL_METERS_PER_UNIT")]
-    MetersPerUnit = 131076,
-
-    [NativeName("AL_DIRECT_FILTER")]
-    DirectFilter = 131077,
-
-    [NativeName("AL_AUXILIARY_SEND_FILTER")]
-    AuxiliarySendFilter = 131078,
-
-    [NativeName("AL_AIR_ABSORPTION_FACTOR")]
-    AirAbsorptionFactor = 131079,
-
-    [NativeName("AL_ROOM_ROLLOFF_FACTOR")]
-    RoomRolloffFactor = 131080,
-
-    [NativeName("AL_CONE_OUTER_GAINHF")]
-    ConeOuterGainhf = 131081,
-
-    [NativeName("AL_DIRECT_FILTER_GAINHF_AUTO")]
-    DirectFilterGainhfAuto = 131082,
-
-    [NativeName("AL_AUXILIARY_SEND_FILTER_GAIN_AUTO")]
-    AuxiliarySendFilterGainAuto = 131083,
-
-    [NativeName("AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO")]
-    AuxiliarySendFilterGainhfAuto = 131084,
-
-    [NativeName("AL_REVERB_DENSITY")]
-    ReverbDensity = 1,
-
-    [NativeName("AL_REVERB_DIFFUSION")]
-    ReverbDiffusion = 2,
-
-    [NativeName("AL_REVERB_GAIN")]
-    ReverbGain = 3,
-
-    [NativeName("AL_REVERB_GAINHF")]
-    ReverbGainhf = 4,
-
-    [NativeName("AL_REVERB_DECAY_TIME")]
-    ReverbDecayTime = 5,
-
-    [NativeName("AL_REVERB_DECAY_HFRATIO")]
-    ReverbDecayHfratio = 6,
-
-    [NativeName("AL_REVERB_REFLECTIONS_GAIN")]
-    ReverbReflectionsGain = 7,
-
-    [NativeName("AL_REVERB_REFLECTIONS_DELAY")]
-    ReverbReflectionsDelay = 8,
-
-    [NativeName("AL_REVERB_LATE_REVERB_GAIN")]
-    ReverbLateReverbGain = 9,
-
-    [NativeName("AL_REVERB_LATE_REVERB_DELAY")]
-    ReverbLateReverbDelay = 10,
-
-    [NativeName("AL_REVERB_AIR_ABSORPTION_GAINHF")]
-    ReverbAirAbsorptionGainhf = 11,
-
-    [NativeName("AL_REVERB_ROOM_ROLLOFF_FACTOR")]
-    ReverbRoomRolloffFactor = 12,
-
-    [NativeName("AL_REVERB_DECAY_HFLIMIT")]
-    ReverbDecayHflimit = 13,
-
-    [NativeName("AL_EAXREVERB_DENSITY")]
-    EaxreverbDensity = 1,
-
-    [NativeName("AL_EAXREVERB_DIFFUSION")]
-    EaxreverbDiffusion = 2,
-
-    [NativeName("AL_EAXREVERB_GAIN")]
-    EaxreverbGain = 3,
-
-    [NativeName("AL_EAXREVERB_GAINHF")]
-    EaxreverbGainhf = 4,
-
-    [NativeName("AL_EAXREVERB_GAINLF")]
-    EaxreverbGainlf = 5,
-
-    [NativeName("AL_EAXREVERB_DECAY_TIME")]
-    EaxreverbDecayTime = 6,
-
-    [NativeName("AL_EAXREVERB_DECAY_HFRATIO")]
-    EaxreverbDecayHfratio = 7,
-
-    [NativeName("AL_EAXREVERB_DECAY_LFRATIO")]
-    EaxreverbDecayLfratio = 8,
-
-    [NativeName("AL_EAXREVERB_REFLECTIONS_GAIN")]
-    EaxreverbReflectionsGain = 9,
-
-    [NativeName("AL_EAXREVERB_REFLECTIONS_DELAY")]
-    EaxreverbReflectionsDelay = 10,
-
-    [NativeName("AL_EAXREVERB_REFLECTIONS_PAN")]
-    EaxreverbReflectionsPan = 11,
-
-    [NativeName("AL_EAXREVERB_LATE_REVERB_GAIN")]
-    EaxreverbLateReverbGain = 12,
-
-    [NativeName("AL_EAXREVERB_LATE_REVERB_DELAY")]
-    EaxreverbLateReverbDelay = 13,
-
-    [NativeName("AL_EAXREVERB_LATE_REVERB_PAN")]
-    EaxreverbLateReverbPan = 14,
-
-    [NativeName("AL_EAXREVERB_ECHO_TIME")]
-    EaxreverbEchoTime = 15,
-
-    [NativeName("AL_EAXREVERB_ECHO_DEPTH")]
-    EaxreverbEchoDepth = 16,
-
-    [NativeName("AL_EAXREVERB_MODULATION_TIME")]
-    EaxreverbModulationTime = 17,
-
-    [NativeName("AL_EAXREVERB_MODULATION_DEPTH")]
-    EaxreverbModulationDepth = 18,
-
-    [NativeName("AL_EAXREVERB_AIR_ABSORPTION_GAINHF")]
-    EaxreverbAirAbsorptionGainhf = 19,
-
-    [NativeName("AL_EAXREVERB_HFREFERENCE")]
-    EaxreverbHfreference = 20,
-
-    [NativeName("AL_EAXREVERB_LFREFERENCE")]
-    EaxreverbLfreference = 21,
-
-    [NativeName("AL_EAXREVERB_ROOM_ROLLOFF_FACTOR")]
-    EaxreverbRoomRolloffFactor = 22,
-
-    [NativeName("AL_EAXREVERB_DECAY_HFLIMIT")]
-    EaxreverbDecayHflimit = 23,
-
-    [NativeName("AL_CHORUS_WAVEFORM")]
-    ChorusWaveform = 1,
-
-    [NativeName("AL_CHORUS_PHASE")]
-    ChorusPhase = 2,
-
-    [NativeName("AL_CHORUS_RATE")]
-    ChorusRate = 3,
-
-    [NativeName("AL_CHORUS_DEPTH")]
-    ChorusDepth = 4,
-
-    [NativeName("AL_CHORUS_FEEDBACK")]
-    ChorusFeedback = 5,
-
-    [NativeName("AL_CHORUS_DELAY")]
-    ChorusDelay = 6,
-
-    [NativeName("AL_DISTORTION_EDGE")]
-    DistortionEdge = 1,
-
-    [NativeName("AL_DISTORTION_GAIN")]
-    DistortionGain = 2,
-
-    [NativeName("AL_DISTORTION_LOWPASS_CUTOFF")]
-    DistortionLowpassCutoff = 3,
-
-    [NativeName("AL_DISTORTION_EQCENTER")]
-    DistortionEqcenter = 4,
-
-    [NativeName("AL_DISTORTION_EQBANDWIDTH")]
-    DistortionEqbandwidth = 5,
-
-    [NativeName("AL_ECHO_DELAY")]
-    EchoDelay = 1,
-
-    [NativeName("AL_ECHO_LRDELAY")]
-    EchoLrdelay = 2,
-
-    [NativeName("AL_ECHO_DAMPING")]
-    EchoDamping = 3,
-
-    [NativeName("AL_ECHO_FEEDBACK")]
-    EchoFeedback = 4,
-
-    [NativeName("AL_ECHO_SPREAD")]
-    EchoSpread = 5,
-
-    [NativeName("AL_FLANGER_WAVEFORM")]
-    FlangerWaveform = 1,
-
-    [NativeName("AL_FLANGER_PHASE")]
-    FlangerPhase = 2,
-
-    [NativeName("AL_FLANGER_RATE")]
-    FlangerRate = 3,
-
-    [NativeName("AL_FLANGER_DEPTH")]
-    FlangerDepth = 4,
-
-    [NativeName("AL_FLANGER_FEEDBACK")]
-    FlangerFeedback = 5,
-
-    [NativeName("AL_FLANGER_DELAY")]
-    FlangerDelay = 6,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_FREQUENCY")]
-    FrequencyShifterFrequency = 1,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_LEFT_DIRECTION")]
-    FrequencyShifterLeftDirection = 2,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_RIGHT_DIRECTION")]
-    FrequencyShifterRightDirection = 3,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEMEA")]
-    VocalMorpherPhonemea = 1,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEMEA_COARSE_TUNING")]
-    VocalMorpherPhonemeaCoarseTuning = 2,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEMEB")]
-    VocalMorpherPhonemeb = 3,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEMEB_COARSE_TUNING")]
-    VocalMorpherPhonemebCoarseTuning = 4,
-
-    [NativeName("AL_VOCAL_MORPHER_WAVEFORM")]
-    VocalMorpherWaveform = 5,
-
-    [NativeName("AL_VOCAL_MORPHER_RATE")]
-    VocalMorpherRate = 6,
-
-    [NativeName("AL_PITCH_SHIFTER_COARSE_TUNE")]
-    PitchShifterCoarseTune = 1,
-
-    [NativeName("AL_PITCH_SHIFTER_FINE_TUNE")]
-    PitchShifterFineTune = 2,
-
-    [NativeName("AL_RING_MODULATOR_FREQUENCY")]
-    RingModulatorFrequency = 1,
-
-    [NativeName("AL_RING_MODULATOR_HIGHPASS_CUTOFF")]
-    RingModulatorHighpassCutoff = 2,
-
-    [NativeName("AL_RING_MODULATOR_WAVEFORM")]
-    RingModulatorWaveform = 3,
-
-    [NativeName("AL_AUTOWAH_ATTACK_TIME")]
-    AutowahAttackTime = 1,
-
-    [NativeName("AL_AUTOWAH_RELEASE_TIME")]
-    AutowahReleaseTime = 2,
-
-    [NativeName("AL_AUTOWAH_RESONANCE")]
-    AutowahResonance = 3,
-
-    [NativeName("AL_AUTOWAH_PEAK_GAIN")]
-    AutowahPeakGain = 4,
-
-    [NativeName("AL_COMPRESSOR_ONOFF")]
-    CompressorOnoff = 1,
-
-    [NativeName("AL_EQUALIZER_LOW_GAIN")]
-    EqualizerLowGain = 1,
-
-    [NativeName("AL_EQUALIZER_LOW_CUTOFF")]
-    EqualizerLowCutoff = 2,
-
-    [NativeName("AL_EQUALIZER_MID1_GAIN")]
-    EqualizerMid1Gain = 3,
-
-    [NativeName("AL_EQUALIZER_MID1_CENTER")]
-    EqualizerMid1Center = 4,
-
-    [NativeName("AL_EQUALIZER_MID1_WIDTH")]
-    EqualizerMid1Width = 5,
-
-    [NativeName("AL_EQUALIZER_MID2_GAIN")]
-    EqualizerMid2Gain = 6,
-
-    [NativeName("AL_EQUALIZER_MID2_CENTER")]
-    EqualizerMid2Center = 7,
-
-    [NativeName("AL_EQUALIZER_MID2_WIDTH")]
-    EqualizerMid2Width = 8,
-
-    [NativeName("AL_EQUALIZER_HIGH_GAIN")]
-    EqualizerHighGain = 9,
-
-    [NativeName("AL_EQUALIZER_HIGH_CUTOFF")]
-    EqualizerHighCutoff = 10,
-
-    [NativeName("AL_EFFECT_FIRST_PARAMETER")]
-    EffectFirstParameter = 0,
-
-    [NativeName("AL_EFFECT_LAST_PARAMETER")]
-    EffectLastParameter = 32768,
-
-    [NativeName("AL_EFFECT_TYPE")]
-    EffectType = 32769,
-
-    [NativeName("AL_EFFECT_NULL")]
-    EffectNull = 0,
-
-    [NativeName("AL_EFFECT_REVERB")]
-    EffectReverb = 1,
-
-    [NativeName("AL_EFFECT_CHORUS")]
-    EffectChorus = 2,
-
-    [NativeName("AL_EFFECT_DISTORTION")]
-    EffectDistortion = 3,
-
-    [NativeName("AL_EFFECT_ECHO")]
-    EffectEcho = 4,
-
-    [NativeName("AL_EFFECT_FLANGER")]
-    EffectFlanger = 5,
-
-    [NativeName("AL_EFFECT_FREQUENCY_SHIFTER")]
-    EffectFrequencyShifter = 6,
-
-    [NativeName("AL_EFFECT_VOCAL_MORPHER")]
-    EffectVocalMorpher = 7,
-
-    [NativeName("AL_EFFECT_PITCH_SHIFTER")]
-    EffectPitchShifter = 8,
-
-    [NativeName("AL_EFFECT_RING_MODULATOR")]
-    EffectRingModulator = 9,
-
-    [NativeName("AL_EFFECT_AUTOWAH")]
-    EffectAutowah = 10,
-
-    [NativeName("AL_EFFECT_COMPRESSOR")]
-    EffectCompressor = 11,
-
-    [NativeName("AL_EFFECT_EQUALIZER")]
-    EffectEqualizer = 12,
-
-    [NativeName("AL_EFFECT_EAXREVERB")]
-    EffectEaxreverb = 32768,
-
-    [NativeName("AL_EFFECTSLOT_EFFECT")]
-    EffectslotEffect = 1,
-
-    [NativeName("AL_EFFECTSLOT_GAIN")]
-    EffectslotGain = 2,
-
-    [NativeName("AL_EFFECTSLOT_AUXILIARY_SEND_AUTO")]
-    EffectslotAuxiliarySendAuto = 3,
-
-    [NativeName("AL_EFFECTSLOT_NULL")]
-    EffectslotNull = 0,
-
-    [NativeName("AL_LOWPASS_GAIN")]
-    LowpassGain = 1,
-
-    [NativeName("AL_LOWPASS_GAINHF")]
-    LowpassGainhf = 2,
-
-    [NativeName("AL_HIGHPASS_GAIN")]
-    HighpassGain = 1,
-
-    [NativeName("AL_HIGHPASS_GAINLF")]
-    HighpassGainlf = 2,
-
-    [NativeName("AL_BANDPASS_GAIN")]
-    BandpassGain = 1,
-
-    [NativeName("AL_BANDPASS_GAINLF")]
-    BandpassGainlf = 2,
-
-    [NativeName("AL_BANDPASS_GAINHF")]
-    BandpassGainhf = 3,
-
-    [NativeName("AL_FILTER_FIRST_PARAMETER")]
-    FilterFirstParameter = 0,
-
-    [NativeName("AL_FILTER_LAST_PARAMETER")]
-    FilterLastParameter = 32768,
-
-    [NativeName("AL_FILTER_TYPE")]
-    FilterType = 32769,
-
-    [NativeName("AL_FILTER_NULL")]
-    FilterNull = 0,
-
-    [NativeName("AL_FILTER_LOWPASS")]
-    FilterLowpass = 1,
-
-    [NativeName("AL_FILTER_HIGHPASS")]
-    FilterHighpass = 2,
-
-    [NativeName("AL_FILTER_BANDPASS")]
-    FilterBandpass = 3,
-
-    [NativeName("AL_LOWPASS_MIN_GAIN")]
-    LowpassMinGain = 0,
-
-    [NativeName("AL_LOWPASS_MAX_GAIN")]
-    LowpassMaxGain = 1,
-
-    [NativeName("AL_LOWPASS_DEFAULT_GAIN")]
-    LowpassDefaultGain = 1,
-
-    [NativeName("AL_LOWPASS_MIN_GAINHF")]
-    LowpassMinGainhf = 0,
-
-    [NativeName("AL_LOWPASS_MAX_GAINHF")]
-    LowpassMaxGainhf = 1,
-
-    [NativeName("AL_LOWPASS_DEFAULT_GAINHF")]
-    LowpassDefaultGainhf = 1,
-
-    [NativeName("AL_HIGHPASS_MIN_GAIN")]
-    HighpassMinGain = 0,
-
-    [NativeName("AL_HIGHPASS_MAX_GAIN")]
-    HighpassMaxGain = 1,
-
-    [NativeName("AL_HIGHPASS_DEFAULT_GAIN")]
-    HighpassDefaultGain = 1,
-
-    [NativeName("AL_HIGHPASS_MIN_GAINLF")]
-    HighpassMinGainlf = 0,
-
-    [NativeName("AL_HIGHPASS_MAX_GAINLF")]
-    HighpassMaxGainlf = 1,
-
-    [NativeName("AL_HIGHPASS_DEFAULT_GAINLF")]
-    HighpassDefaultGainlf = 1,
-
-    [NativeName("AL_BANDPASS_MIN_GAIN")]
-    BandpassMinGain = 0,
-
-    [NativeName("AL_BANDPASS_MAX_GAIN")]
-    BandpassMaxGain = 1,
-
-    [NativeName("AL_BANDPASS_DEFAULT_GAIN")]
-    BandpassDefaultGain = 1,
-
-    [NativeName("AL_BANDPASS_MIN_GAINHF")]
-    BandpassMinGainhf = 0,
-
-    [NativeName("AL_BANDPASS_MAX_GAINHF")]
-    BandpassMaxGainhf = 1,
-
-    [NativeName("AL_BANDPASS_DEFAULT_GAINHF")]
-    BandpassDefaultGainhf = 1,
-
-    [NativeName("AL_BANDPASS_MIN_GAINLF")]
-    BandpassMinGainlf = 0,
-
-    [NativeName("AL_BANDPASS_MAX_GAINLF")]
-    BandpassMaxGainlf = 1,
-
-    [NativeName("AL_BANDPASS_DEFAULT_GAINLF")]
-    BandpassDefaultGainlf = 1,
-
-    [NativeName("AL_REVERB_MIN_DENSITY")]
-    ReverbMinDensity = 0,
-
-    [NativeName("AL_REVERB_MAX_DENSITY")]
-    ReverbMaxDensity = 1,
-
-    [NativeName("AL_REVERB_DEFAULT_DENSITY")]
-    ReverbDefaultDensity = 1,
-
-    [NativeName("AL_REVERB_MIN_DIFFUSION")]
-    ReverbMinDiffusion = 0,
-
-    [NativeName("AL_REVERB_MAX_DIFFUSION")]
-    ReverbMaxDiffusion = 1,
-
-    [NativeName("AL_REVERB_DEFAULT_DIFFUSION")]
-    ReverbDefaultDiffusion = 1,
-
-    [NativeName("AL_REVERB_MIN_GAIN")]
-    ReverbMinGain = 0,
-
-    [NativeName("AL_REVERB_MAX_GAIN")]
-    ReverbMaxGain = 1,
-
-    [NativeName("AL_REVERB_DEFAULT_GAIN")]
-    ReverbDefaultGain = 0,
-
-    [NativeName("AL_REVERB_MIN_GAINHF")]
-    ReverbMinGainhf = 0,
-
-    [NativeName("AL_REVERB_MAX_GAINHF")]
-    ReverbMaxGainhf = 1,
-
-    [NativeName("AL_REVERB_DEFAULT_GAINHF")]
-    ReverbDefaultGainhf = 0,
-
-    [NativeName("AL_REVERB_MIN_DECAY_TIME")]
-    ReverbMinDecayTime = 0,
-
-    [NativeName("AL_REVERB_MAX_DECAY_TIME")]
-    ReverbMaxDecayTime = 20,
-
-    [NativeName("AL_REVERB_DEFAULT_DECAY_TIME")]
-    ReverbDefaultDecayTime = 1,
-
-    [NativeName("AL_REVERB_MIN_DECAY_HFRATIO")]
-    ReverbMinDecayHfratio = 0,
-
-    [NativeName("AL_REVERB_MAX_DECAY_HFRATIO")]
-    ReverbMaxDecayHfratio = 2,
-
-    [NativeName("AL_REVERB_DEFAULT_DECAY_HFRATIO")]
-    ReverbDefaultDecayHfratio = 0,
-
-    [NativeName("AL_REVERB_MIN_REFLECTIONS_GAIN")]
-    ReverbMinReflectionsGain = 0,
-
-    [NativeName("AL_REVERB_MAX_REFLECTIONS_GAIN")]
-    ReverbMaxReflectionsGain = 3,
-
-    [NativeName("AL_REVERB_DEFAULT_REFLECTIONS_GAIN")]
-    ReverbDefaultReflectionsGain = 0,
-
-    [NativeName("AL_REVERB_MIN_REFLECTIONS_DELAY")]
-    ReverbMinReflectionsDelay = 0,
-
-    [NativeName("AL_REVERB_MAX_REFLECTIONS_DELAY")]
-    ReverbMaxReflectionsDelay = 0,
-
-    [NativeName("AL_REVERB_DEFAULT_REFLECTIONS_DELAY")]
-    ReverbDefaultReflectionsDelay = 0,
-
-    [NativeName("AL_REVERB_MIN_LATE_REVERB_GAIN")]
-    ReverbMinLateReverbGain = 0,
-
-    [NativeName("AL_REVERB_MAX_LATE_REVERB_GAIN")]
-    ReverbMaxLateReverbGain = 10,
-
-    [NativeName("AL_REVERB_DEFAULT_LATE_REVERB_GAIN")]
-    ReverbDefaultLateReverbGain = 1,
-
-    [NativeName("AL_REVERB_MIN_LATE_REVERB_DELAY")]
-    ReverbMinLateReverbDelay = 0,
-
-    [NativeName("AL_REVERB_MAX_LATE_REVERB_DELAY")]
-    ReverbMaxLateReverbDelay = 0,
-
-    [NativeName("AL_REVERB_DEFAULT_LATE_REVERB_DELAY")]
-    ReverbDefaultLateReverbDelay = 0,
-
-    [NativeName("AL_REVERB_MIN_AIR_ABSORPTION_GAINHF")]
-    ReverbMinAirAbsorptionGainhf = 0,
-
-    [NativeName("AL_REVERB_MAX_AIR_ABSORPTION_GAINHF")]
-    ReverbMaxAirAbsorptionGainhf = 1,
-
-    [NativeName("AL_REVERB_DEFAULT_AIR_ABSORPTION_GAINHF")]
-    ReverbDefaultAirAbsorptionGainhf = 0,
-
-    [NativeName("AL_REVERB_MIN_ROOM_ROLLOFF_FACTOR")]
-    ReverbMinRoomRolloffFactor = 0,
-
-    [NativeName("AL_REVERB_MAX_ROOM_ROLLOFF_FACTOR")]
-    ReverbMaxRoomRolloffFactor = 10,
-
-    [NativeName("AL_REVERB_DEFAULT_ROOM_ROLLOFF_FACTOR")]
-    ReverbDefaultRoomRolloffFactor = 0,
-
-    [NativeName("AL_REVERB_MIN_DECAY_HFLIMIT")]
-    ReverbMinDecayHflimit = 0,
-
-    [NativeName("AL_REVERB_MAX_DECAY_HFLIMIT")]
-    ReverbMaxDecayHflimit = 1,
-
-    [NativeName("AL_REVERB_DEFAULT_DECAY_HFLIMIT")]
-    ReverbDefaultDecayHflimit = 1,
-
-    [NativeName("AL_EAXREVERB_MIN_DENSITY")]
-    EaxreverbMinDensity = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_DENSITY")]
-    EaxreverbMaxDensity = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DENSITY")]
-    EaxreverbDefaultDensity = 1,
-
-    [NativeName("AL_EAXREVERB_MIN_DIFFUSION")]
-    EaxreverbMinDiffusion = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_DIFFUSION")]
-    EaxreverbMaxDiffusion = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DIFFUSION")]
-    EaxreverbDefaultDiffusion = 1,
-
-    [NativeName("AL_EAXREVERB_MIN_GAIN")]
-    EaxreverbMinGain = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_GAIN")]
-    EaxreverbMaxGain = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_GAIN")]
-    EaxreverbDefaultGain = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_GAINHF")]
-    EaxreverbMinGainhf = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_GAINHF")]
-    EaxreverbMaxGainhf = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_GAINHF")]
-    EaxreverbDefaultGainhf = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_GAINLF")]
-    EaxreverbMinGainlf = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_GAINLF")]
-    EaxreverbMaxGainlf = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_GAINLF")]
-    EaxreverbDefaultGainlf = 1,
-
-    [NativeName("AL_EAXREVERB_MIN_DECAY_TIME")]
-    EaxreverbMinDecayTime = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_DECAY_TIME")]
-    EaxreverbMaxDecayTime = 20,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DECAY_TIME")]
-    EaxreverbDefaultDecayTime = 1,
-
-    [NativeName("AL_EAXREVERB_MIN_DECAY_HFRATIO")]
-    EaxreverbMinDecayHfratio = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_DECAY_HFRATIO")]
-    EaxreverbMaxDecayHfratio = 2,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DECAY_HFRATIO")]
-    EaxreverbDefaultDecayHfratio = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_DECAY_LFRATIO")]
-    EaxreverbMinDecayLfratio = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_DECAY_LFRATIO")]
-    EaxreverbMaxDecayLfratio = 2,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DECAY_LFRATIO")]
-    EaxreverbDefaultDecayLfratio = 1,
-
-    [NativeName("AL_EAXREVERB_MIN_REFLECTIONS_GAIN")]
-    EaxreverbMinReflectionsGain = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_REFLECTIONS_GAIN")]
-    EaxreverbMaxReflectionsGain = 3,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_REFLECTIONS_GAIN")]
-    EaxreverbDefaultReflectionsGain = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_REFLECTIONS_DELAY")]
-    EaxreverbMinReflectionsDelay = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_REFLECTIONS_DELAY")]
-    EaxreverbMaxReflectionsDelay = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_REFLECTIONS_DELAY")]
-    EaxreverbDefaultReflectionsDelay = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_REFLECTIONS_PAN_XYZ")]
-    EaxreverbDefaultReflectionsPanXyz = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_LATE_REVERB_GAIN")]
-    EaxreverbMinLateReverbGain = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_LATE_REVERB_GAIN")]
-    EaxreverbMaxLateReverbGain = 10,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_LATE_REVERB_GAIN")]
-    EaxreverbDefaultLateReverbGain = 1,
-
-    [NativeName("AL_EAXREVERB_MIN_LATE_REVERB_DELAY")]
-    EaxreverbMinLateReverbDelay = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_LATE_REVERB_DELAY")]
-    EaxreverbMaxLateReverbDelay = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_LATE_REVERB_DELAY")]
-    EaxreverbDefaultLateReverbDelay = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_LATE_REVERB_PAN_XYZ")]
-    EaxreverbDefaultLateReverbPanXyz = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_ECHO_TIME")]
-    EaxreverbMinEchoTime = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_ECHO_TIME")]
-    EaxreverbMaxEchoTime = 0,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_ECHO_TIME")]
-    EaxreverbDefaultEchoTime = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_ECHO_DEPTH")]
-    EaxreverbMinEchoDepth = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_ECHO_DEPTH")]
-    EaxreverbMaxEchoDepth = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_ECHO_DEPTH")]
-    EaxreverbDefaultEchoDepth = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_MODULATION_TIME")]
-    EaxreverbMinModulationTime = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_MODULATION_TIME")]
-    EaxreverbMaxModulationTime = 4,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_MODULATION_TIME")]
-    EaxreverbDefaultModulationTime = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_MODULATION_DEPTH")]
-    EaxreverbMinModulationDepth = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_MODULATION_DEPTH")]
-    EaxreverbMaxModulationDepth = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_MODULATION_DEPTH")]
-    EaxreverbDefaultModulationDepth = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_AIR_ABSORPTION_GAINHF")]
-    EaxreverbMinAirAbsorptionGainhf = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_AIR_ABSORPTION_GAINHF")]
-    EaxreverbMaxAirAbsorptionGainhf = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_AIR_ABSORPTION_GAINHF")]
-    EaxreverbDefaultAirAbsorptionGainhf = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_HFREFERENCE")]
-    EaxreverbMinHfreference = 1000,
-
-    [NativeName("AL_EAXREVERB_MAX_HFREFERENCE")]
-    EaxreverbMaxHfreference = 20000,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_HFREFERENCE")]
-    EaxreverbDefaultHfreference = 5000,
-
-    [NativeName("AL_EAXREVERB_MIN_LFREFERENCE")]
-    EaxreverbMinLfreference = 20,
-
-    [NativeName("AL_EAXREVERB_MAX_LFREFERENCE")]
-    EaxreverbMaxLfreference = 1000,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_LFREFERENCE")]
-    EaxreverbDefaultLfreference = 250,
-
-    [NativeName("AL_EAXREVERB_MIN_ROOM_ROLLOFF_FACTOR")]
-    EaxreverbMinRoomRolloffFactor = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_ROOM_ROLLOFF_FACTOR")]
-    EaxreverbMaxRoomRolloffFactor = 10,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_ROOM_ROLLOFF_FACTOR")]
-    EaxreverbDefaultRoomRolloffFactor = 0,
-
-    [NativeName("AL_EAXREVERB_MIN_DECAY_HFLIMIT")]
-    EaxreverbMinDecayHflimit = 0,
-
-    [NativeName("AL_EAXREVERB_MAX_DECAY_HFLIMIT")]
-    EaxreverbMaxDecayHflimit = 1,
-
-    [NativeName("AL_EAXREVERB_DEFAULT_DECAY_HFLIMIT")]
-    EaxreverbDefaultDecayHflimit = 1,
-
-    [NativeName("AL_CHORUS_WAVEFORM_SINUSOID")]
-    ChorusWaveformSinusoid = 0,
-
-    [NativeName("AL_CHORUS_WAVEFORM_TRIANGLE")]
-    ChorusWaveformTriangle = 1,
-
-    [NativeName("AL_CHORUS_MIN_WAVEFORM")]
-    ChorusMinWaveform = 0,
-
-    [NativeName("AL_CHORUS_MAX_WAVEFORM")]
-    ChorusMaxWaveform = 1,
-
-    [NativeName("AL_CHORUS_DEFAULT_WAVEFORM")]
-    ChorusDefaultWaveform = 1,
-
-    [NativeName("AL_CHORUS_MIN_PHASE")]
-    ChorusMinPhase = 4294967116,
-
-    [NativeName("AL_CHORUS_MAX_PHASE")]
-    ChorusMaxPhase = 180,
-
-    [NativeName("AL_CHORUS_DEFAULT_PHASE")]
-    ChorusDefaultPhase = 90,
-
-    [NativeName("AL_CHORUS_MIN_RATE")]
-    ChorusMinRate = 0,
-
-    [NativeName("AL_CHORUS_MAX_RATE")]
-    ChorusMaxRate = 10,
-
-    [NativeName("AL_CHORUS_DEFAULT_RATE")]
-    ChorusDefaultRate = 1,
-
-    [NativeName("AL_CHORUS_MIN_DEPTH")]
-    ChorusMinDepth = 0,
-
-    [NativeName("AL_CHORUS_MAX_DEPTH")]
-    ChorusMaxDepth = 1,
-
-    [NativeName("AL_CHORUS_DEFAULT_DEPTH")]
-    ChorusDefaultDepth = 0,
-
-    [NativeName("AL_CHORUS_MIN_FEEDBACK")]
-    ChorusMinFeedback = 0,
-
-    [NativeName("AL_CHORUS_MAX_FEEDBACK")]
-    ChorusMaxFeedback = 1,
-
-    [NativeName("AL_CHORUS_DEFAULT_FEEDBACK")]
-    ChorusDefaultFeedback = 0,
-
-    [NativeName("AL_CHORUS_MIN_DELAY")]
-    ChorusMinDelay = 0,
-
-    [NativeName("AL_CHORUS_MAX_DELAY")]
-    ChorusMaxDelay = 0,
-
-    [NativeName("AL_CHORUS_DEFAULT_DELAY")]
-    ChorusDefaultDelay = 0,
-
-    [NativeName("AL_DISTORTION_MIN_EDGE")]
-    DistortionMinEdge = 0,
-
-    [NativeName("AL_DISTORTION_MAX_EDGE")]
-    DistortionMaxEdge = 1,
-
-    [NativeName("AL_DISTORTION_DEFAULT_EDGE")]
-    DistortionDefaultEdge = 0,
-
-    [NativeName("AL_DISTORTION_MIN_GAIN")]
-    DistortionMinGain = 0,
-
-    [NativeName("AL_DISTORTION_MAX_GAIN")]
-    DistortionMaxGain = 1,
-
-    [NativeName("AL_DISTORTION_DEFAULT_GAIN")]
-    DistortionDefaultGain = 0,
-
-    [NativeName("AL_DISTORTION_MIN_LOWPASS_CUTOFF")]
-    DistortionMinLowpassCutoff = 80,
-
-    [NativeName("AL_DISTORTION_MAX_LOWPASS_CUTOFF")]
-    DistortionMaxLowpassCutoff = 24000,
-
-    [NativeName("AL_DISTORTION_DEFAULT_LOWPASS_CUTOFF")]
-    DistortionDefaultLowpassCutoff = 8000,
-
-    [NativeName("AL_DISTORTION_MIN_EQCENTER")]
-    DistortionMinEqcenter = 80,
-
-    [NativeName("AL_DISTORTION_MAX_EQCENTER")]
-    DistortionMaxEqcenter = 24000,
-
-    [NativeName("AL_DISTORTION_DEFAULT_EQCENTER")]
-    DistortionDefaultEqcenter = 3600,
-
-    [NativeName("AL_DISTORTION_MIN_EQBANDWIDTH")]
-    DistortionMinEqbandwidth = 80,
-
-    [NativeName("AL_DISTORTION_MAX_EQBANDWIDTH")]
-    DistortionMaxEqbandwidth = 24000,
-
-    [NativeName("AL_DISTORTION_DEFAULT_EQBANDWIDTH")]
-    DistortionDefaultEqbandwidth = 3600,
-
-    [NativeName("AL_ECHO_MIN_DELAY")]
-    EchoMinDelay = 0,
-
-    [NativeName("AL_ECHO_MAX_DELAY")]
-    EchoMaxDelay = 0,
-
-    [NativeName("AL_ECHO_DEFAULT_DELAY")]
-    EchoDefaultDelay = 0,
-
-    [NativeName("AL_ECHO_MIN_LRDELAY")]
-    EchoMinLrdelay = 0,
-
-    [NativeName("AL_ECHO_MAX_LRDELAY")]
-    EchoMaxLrdelay = 0,
-
-    [NativeName("AL_ECHO_DEFAULT_LRDELAY")]
-    EchoDefaultLrdelay = 0,
-
-    [NativeName("AL_ECHO_MIN_DAMPING")]
-    EchoMinDamping = 0,
-
-    [NativeName("AL_ECHO_MAX_DAMPING")]
-    EchoMaxDamping = 0,
-
-    [NativeName("AL_ECHO_DEFAULT_DAMPING")]
-    EchoDefaultDamping = 0,
-
-    [NativeName("AL_ECHO_MIN_FEEDBACK")]
-    EchoMinFeedback = 0,
-
-    [NativeName("AL_ECHO_MAX_FEEDBACK")]
-    EchoMaxFeedback = 1,
-
-    [NativeName("AL_ECHO_DEFAULT_FEEDBACK")]
-    EchoDefaultFeedback = 0,
-
-    [NativeName("AL_ECHO_MIN_SPREAD")]
-    EchoMinSpread = 0,
-
-    [NativeName("AL_ECHO_MAX_SPREAD")]
-    EchoMaxSpread = 1,
-
-    [NativeName("AL_ECHO_DEFAULT_SPREAD")]
-    EchoDefaultSpread = 0,
-
-    [NativeName("AL_FLANGER_WAVEFORM_SINUSOID")]
-    FlangerWaveformSinusoid = 0,
-
-    [NativeName("AL_FLANGER_WAVEFORM_TRIANGLE")]
-    FlangerWaveformTriangle = 1,
-
-    [NativeName("AL_FLANGER_MIN_WAVEFORM")]
-    FlangerMinWaveform = 0,
-
-    [NativeName("AL_FLANGER_MAX_WAVEFORM")]
-    FlangerMaxWaveform = 1,
-
-    [NativeName("AL_FLANGER_DEFAULT_WAVEFORM")]
-    FlangerDefaultWaveform = 1,
-
-    [NativeName("AL_FLANGER_MIN_PHASE")]
-    FlangerMinPhase = 4294967116,
-
-    [NativeName("AL_FLANGER_MAX_PHASE")]
-    FlangerMaxPhase = 180,
-
-    [NativeName("AL_FLANGER_DEFAULT_PHASE")]
-    FlangerDefaultPhase = 0,
-
-    [NativeName("AL_FLANGER_MIN_RATE")]
-    FlangerMinRate = 0,
-
-    [NativeName("AL_FLANGER_MAX_RATE")]
-    FlangerMaxRate = 10,
-
-    [NativeName("AL_FLANGER_DEFAULT_RATE")]
-    FlangerDefaultRate = 0,
-
-    [NativeName("AL_FLANGER_MIN_DEPTH")]
-    FlangerMinDepth = 0,
-
-    [NativeName("AL_FLANGER_MAX_DEPTH")]
-    FlangerMaxDepth = 1,
-
-    [NativeName("AL_FLANGER_DEFAULT_DEPTH")]
-    FlangerDefaultDepth = 1,
-
-    [NativeName("AL_FLANGER_MIN_FEEDBACK")]
-    FlangerMinFeedback = 0,
-
-    [NativeName("AL_FLANGER_MAX_FEEDBACK")]
-    FlangerMaxFeedback = 1,
-
-    [NativeName("AL_FLANGER_DEFAULT_FEEDBACK")]
-    FlangerDefaultFeedback = 0,
-
-    [NativeName("AL_FLANGER_MIN_DELAY")]
-    FlangerMinDelay = 0,
-
-    [NativeName("AL_FLANGER_MAX_DELAY")]
-    FlangerMaxDelay = 0,
-
-    [NativeName("AL_FLANGER_DEFAULT_DELAY")]
-    FlangerDefaultDelay = 0,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_MIN_FREQUENCY")]
-    FrequencyShifterMinFrequency = 0,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_MAX_FREQUENCY")]
-    FrequencyShifterMaxFrequency = 24000,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_DEFAULT_FREQUENCY")]
-    FrequencyShifterDefaultFrequency = 0,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_MIN_LEFT_DIRECTION")]
-    FrequencyShifterMinLeftDirection = 0,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_MAX_LEFT_DIRECTION")]
-    FrequencyShifterMaxLeftDirection = 2,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_DEFAULT_LEFT_DIRECTION")]
-    FrequencyShifterDefaultLeftDirection = 0,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_DIRECTION_DOWN")]
-    FrequencyShifterDirectionDown = 0,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_DIRECTION_UP")]
-    FrequencyShifterDirectionUp = 1,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_DIRECTION_OFF")]
-    FrequencyShifterDirectionOff = 2,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_MIN_RIGHT_DIRECTION")]
-    FrequencyShifterMinRightDirection = 0,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_MAX_RIGHT_DIRECTION")]
-    FrequencyShifterMaxRightDirection = 2,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_DEFAULT_RIGHT_DIRECTION")]
-    FrequencyShifterDefaultRightDirection = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_MIN_PHONEMEA")]
-    VocalMorpherMinPhonemea = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_MAX_PHONEMEA")]
-    VocalMorpherMaxPhonemea = 29,
-
-    [NativeName("AL_VOCAL_MORPHER_DEFAULT_PHONEMEA")]
-    VocalMorpherDefaultPhonemea = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_MIN_PHONEMEA_COARSE_TUNING")]
-    VocalMorpherMinPhonemeaCoarseTuning = 4294967272,
-
-    [NativeName("AL_VOCAL_MORPHER_MAX_PHONEMEA_COARSE_TUNING")]
-    VocalMorpherMaxPhonemeaCoarseTuning = 24,
-
-    [NativeName("AL_VOCAL_MORPHER_DEFAULT_PHONEMEA_COARSE_TUNING")]
-    VocalMorpherDefaultPhonemeaCoarseTuning = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_MIN_PHONEMEB")]
-    VocalMorpherMinPhonemeb = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_MAX_PHONEMEB")]
-    VocalMorpherMaxPhonemeb = 29,
-
-    [NativeName("AL_VOCAL_MORPHER_DEFAULT_PHONEMEB")]
-    VocalMorpherDefaultPhonemeb = 10,
-
-    [NativeName("AL_VOCAL_MORPHER_MIN_PHONEMEB_COARSE_TUNING")]
-    VocalMorpherMinPhonemebCoarseTuning = 4294967272,
-
-    [NativeName("AL_VOCAL_MORPHER_MAX_PHONEMEB_COARSE_TUNING")]
-    VocalMorpherMaxPhonemebCoarseTuning = 24,
-
-    [NativeName("AL_VOCAL_MORPHER_DEFAULT_PHONEMEB_COARSE_TUNING")]
-    VocalMorpherDefaultPhonemebCoarseTuning = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_A")]
-    VocalMorpherPhonemeA = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_E")]
-    VocalMorpherPhonemeE = 1,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_I")]
-    VocalMorpherPhonemeI = 2,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_O")]
-    VocalMorpherPhonemeO = 3,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_U")]
-    VocalMorpherPhonemeU = 4,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_AA")]
-    VocalMorpherPhonemeAa = 5,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_AE")]
-    VocalMorpherPhonemeAe = 6,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_AH")]
-    VocalMorpherPhonemeAh = 7,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_AO")]
-    VocalMorpherPhonemeAo = 8,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_EH")]
-    VocalMorpherPhonemeEh = 9,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_ER")]
-    VocalMorpherPhonemeEr = 10,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_IH")]
-    VocalMorpherPhonemeIh = 11,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_IY")]
-    VocalMorpherPhonemeIy = 12,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_UH")]
-    VocalMorpherPhonemeUh = 13,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_UW")]
-    VocalMorpherPhonemeUw = 14,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_B")]
-    VocalMorpherPhonemeB = 15,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_D")]
-    VocalMorpherPhonemeD = 16,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_F")]
-    VocalMorpherPhonemeF = 17,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_G")]
-    VocalMorpherPhonemeG = 18,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_J")]
-    VocalMorpherPhonemeJ = 19,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_K")]
-    VocalMorpherPhonemeK = 20,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_L")]
-    VocalMorpherPhonemeL = 21,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_M")]
-    VocalMorpherPhonemeM = 22,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_N")]
-    VocalMorpherPhonemeN = 23,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_P")]
-    VocalMorpherPhonemeP = 24,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_R")]
-    VocalMorpherPhonemeR = 25,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_S")]
-    VocalMorpherPhonemeS = 26,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_T")]
-    VocalMorpherPhonemeT = 27,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_V")]
-    VocalMorpherPhonemeV = 28,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEME_Z")]
-    VocalMorpherPhonemeZ = 29,
-
-    [NativeName("AL_VOCAL_MORPHER_WAVEFORM_SINUSOID")]
-    VocalMorpherWaveformSinusoid = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_WAVEFORM_TRIANGLE")]
-    VocalMorpherWaveformTriangle = 1,
-
-    [NativeName("AL_VOCAL_MORPHER_WAVEFORM_SAWTOOTH")]
-    VocalMorpherWaveformSawtooth = 2,
-
-    [NativeName("AL_VOCAL_MORPHER_MIN_WAVEFORM")]
-    VocalMorpherMinWaveform = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_MAX_WAVEFORM")]
-    VocalMorpherMaxWaveform = 2,
-
-    [NativeName("AL_VOCAL_MORPHER_DEFAULT_WAVEFORM")]
-    VocalMorpherDefaultWaveform = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_MIN_RATE")]
-    VocalMorpherMinRate = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_MAX_RATE")]
-    VocalMorpherMaxRate = 10,
-
-    [NativeName("AL_VOCAL_MORPHER_DEFAULT_RATE")]
-    VocalMorpherDefaultRate = 1,
-
-    [NativeName("AL_PITCH_SHIFTER_MIN_COARSE_TUNE")]
-    PitchShifterMinCoarseTune = 4294967284,
-
-    [NativeName("AL_PITCH_SHIFTER_MAX_COARSE_TUNE")]
-    PitchShifterMaxCoarseTune = 12,
-
-    [NativeName("AL_PITCH_SHIFTER_DEFAULT_COARSE_TUNE")]
-    PitchShifterDefaultCoarseTune = 12,
-
-    [NativeName("AL_PITCH_SHIFTER_MIN_FINE_TUNE")]
-    PitchShifterMinFineTune = 4294967246,
-
-    [NativeName("AL_PITCH_SHIFTER_MAX_FINE_TUNE")]
-    PitchShifterMaxFineTune = 50,
-
-    [NativeName("AL_PITCH_SHIFTER_DEFAULT_FINE_TUNE")]
-    PitchShifterDefaultFineTune = 0,
-
-    [NativeName("AL_RING_MODULATOR_MIN_FREQUENCY")]
-    RingModulatorMinFrequency = 0,
-
-    [NativeName("AL_RING_MODULATOR_MAX_FREQUENCY")]
-    RingModulatorMaxFrequency = 8000,
-
-    [NativeName("AL_RING_MODULATOR_DEFAULT_FREQUENCY")]
-    RingModulatorDefaultFrequency = 440,
-
-    [NativeName("AL_RING_MODULATOR_MIN_HIGHPASS_CUTOFF")]
-    RingModulatorMinHighpassCutoff = 0,
-
-    [NativeName("AL_RING_MODULATOR_MAX_HIGHPASS_CUTOFF")]
-    RingModulatorMaxHighpassCutoff = 24000,
-
-    [NativeName("AL_RING_MODULATOR_DEFAULT_HIGHPASS_CUTOFF")]
-    RingModulatorDefaultHighpassCutoff = 800,
-
-    [NativeName("AL_RING_MODULATOR_SINUSOID")]
-    RingModulatorSinusoid = 0,
-
-    [NativeName("AL_RING_MODULATOR_SAWTOOTH")]
-    RingModulatorSawtooth = 1,
-
-    [NativeName("AL_RING_MODULATOR_SQUARE")]
-    RingModulatorSquare = 2,
-
-    [NativeName("AL_RING_MODULATOR_MIN_WAVEFORM")]
-    RingModulatorMinWaveform = 0,
-
-    [NativeName("AL_RING_MODULATOR_MAX_WAVEFORM")]
-    RingModulatorMaxWaveform = 2,
-
-    [NativeName("AL_RING_MODULATOR_DEFAULT_WAVEFORM")]
-    RingModulatorDefaultWaveform = 0,
-
-    [NativeName("AL_AUTOWAH_MIN_ATTACK_TIME")]
-    AutowahMinAttackTime = 0,
-
-    [NativeName("AL_AUTOWAH_MAX_ATTACK_TIME")]
-    AutowahMaxAttackTime = 1,
-
-    [NativeName("AL_AUTOWAH_DEFAULT_ATTACK_TIME")]
-    AutowahDefaultAttackTime = 0,
-
-    [NativeName("AL_AUTOWAH_MIN_RELEASE_TIME")]
-    AutowahMinReleaseTime = 0,
-
-    [NativeName("AL_AUTOWAH_MAX_RELEASE_TIME")]
-    AutowahMaxReleaseTime = 1,
-
-    [NativeName("AL_AUTOWAH_DEFAULT_RELEASE_TIME")]
-    AutowahDefaultReleaseTime = 0,
-
-    [NativeName("AL_AUTOWAH_MIN_RESONANCE")]
-    AutowahMinResonance = 2,
-
-    [NativeName("AL_AUTOWAH_MAX_RESONANCE")]
-    AutowahMaxResonance = 1000,
-
-    [NativeName("AL_AUTOWAH_DEFAULT_RESONANCE")]
-    AutowahDefaultResonance = 1000,
-
-    [NativeName("AL_AUTOWAH_MIN_PEAK_GAIN")]
-    AutowahMinPeakGain = 0,
-
-    [NativeName("AL_AUTOWAH_MAX_PEAK_GAIN")]
-    AutowahMaxPeakGain = 31621,
-
-    [NativeName("AL_AUTOWAH_DEFAULT_PEAK_GAIN")]
-    AutowahDefaultPeakGain = 11,
-
-    [NativeName("AL_COMPRESSOR_MIN_ONOFF")]
-    CompressorMinOnoff = 0,
-
-    [NativeName("AL_COMPRESSOR_MAX_ONOFF")]
-    CompressorMaxOnoff = 1,
-
-    [NativeName("AL_COMPRESSOR_DEFAULT_ONOFF")]
-    CompressorDefaultOnoff = 1,
-
-    [NativeName("AL_EQUALIZER_MIN_LOW_GAIN")]
-    EqualizerMinLowGain = 0,
-
-    [NativeName("AL_EQUALIZER_MAX_LOW_GAIN")]
-    EqualizerMaxLowGain = 7,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_LOW_GAIN")]
-    EqualizerDefaultLowGain = 1,
-
-    [NativeName("AL_EQUALIZER_MIN_LOW_CUTOFF")]
-    EqualizerMinLowCutoff = 50,
-
-    [NativeName("AL_EQUALIZER_MAX_LOW_CUTOFF")]
-    EqualizerMaxLowCutoff = 800,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_LOW_CUTOFF")]
-    EqualizerDefaultLowCutoff = 200,
-
-    [NativeName("AL_EQUALIZER_MIN_MID1_GAIN")]
-    EqualizerMinMid1Gain = 0,
-
-    [NativeName("AL_EQUALIZER_MAX_MID1_GAIN")]
-    EqualizerMaxMid1Gain = 7,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID1_GAIN")]
-    EqualizerDefaultMid1Gain = 1,
-
-    [NativeName("AL_EQUALIZER_MIN_MID1_CENTER")]
-    EqualizerMinMid1Center = 200,
-
-    [NativeName("AL_EQUALIZER_MAX_MID1_CENTER")]
-    EqualizerMaxMid1Center = 3000,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID1_CENTER")]
-    EqualizerDefaultMid1Center = 500,
-
-    [NativeName("AL_EQUALIZER_MIN_MID1_WIDTH")]
-    EqualizerMinMid1Width = 0,
-
-    [NativeName("AL_EQUALIZER_MAX_MID1_WIDTH")]
-    EqualizerMaxMid1Width = 1,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID1_WIDTH")]
-    EqualizerDefaultMid1Width = 1,
-
-    [NativeName("AL_EQUALIZER_MIN_MID2_GAIN")]
-    EqualizerMinMid2Gain = 0,
-
-    [NativeName("AL_EQUALIZER_MAX_MID2_GAIN")]
-    EqualizerMaxMid2Gain = 7,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID2_GAIN")]
-    EqualizerDefaultMid2Gain = 1,
-
-    [NativeName("AL_EQUALIZER_MIN_MID2_CENTER")]
-    EqualizerMinMid2Center = 1000,
-
-    [NativeName("AL_EQUALIZER_MAX_MID2_CENTER")]
-    EqualizerMaxMid2Center = 8000,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID2_CENTER")]
-    EqualizerDefaultMid2Center = 3000,
-
-    [NativeName("AL_EQUALIZER_MIN_MID2_WIDTH")]
-    EqualizerMinMid2Width = 0,
-
-    [NativeName("AL_EQUALIZER_MAX_MID2_WIDTH")]
-    EqualizerMaxMid2Width = 1,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_MID2_WIDTH")]
-    EqualizerDefaultMid2Width = 1,
-
-    [NativeName("AL_EQUALIZER_MIN_HIGH_GAIN")]
-    EqualizerMinHighGain = 0,
-
-    [NativeName("AL_EQUALIZER_MAX_HIGH_GAIN")]
-    EqualizerMaxHighGain = 7,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_HIGH_GAIN")]
-    EqualizerDefaultHighGain = 1,
-
-    [NativeName("AL_EQUALIZER_MIN_HIGH_CUTOFF")]
-    EqualizerMinHighCutoff = 4000,
-
-    [NativeName("AL_EQUALIZER_MAX_HIGH_CUTOFF")]
-    EqualizerMaxHighCutoff = 16000,
-
-    [NativeName("AL_EQUALIZER_DEFAULT_HIGH_CUTOFF")]
-    EqualizerDefaultHighCutoff = 6000,
-
-    [NativeName("AL_MIN_AIR_ABSORPTION_FACTOR")]
-    MinAirAbsorptionFactor = 0,
-
-    [NativeName("AL_MAX_AIR_ABSORPTION_FACTOR")]
-    MaxAirAbsorptionFactor = 10,
-
-    [NativeName("AL_DEFAULT_AIR_ABSORPTION_FACTOR")]
-    DefaultAirAbsorptionFactor = 0,
-
-    [NativeName("AL_MIN_ROOM_ROLLOFF_FACTOR")]
-    MinRoomRolloffFactor = 0,
-
-    [NativeName("AL_MAX_ROOM_ROLLOFF_FACTOR")]
-    MaxRoomRolloffFactor = 10,
-
-    [NativeName("AL_DEFAULT_ROOM_ROLLOFF_FACTOR")]
-    DefaultRoomRolloffFactor = 0,
-
-    [NativeName("AL_MIN_CONE_OUTER_GAINHF")]
-    MinConeOuterGainhf = 0,
-
-    [NativeName("AL_MAX_CONE_OUTER_GAINHF")]
-    MaxConeOuterGainhf = 1,
-
-    [NativeName("AL_DEFAULT_CONE_OUTER_GAINHF")]
-    DefaultConeOuterGainhf = 1,
-
-    [NativeName("AL_MIN_DIRECT_FILTER_GAINHF_AUTO")]
-    MinDirectFilterGainhfAuto = 0,
-
-    [NativeName("AL_MAX_DIRECT_FILTER_GAINHF_AUTO")]
-    MaxDirectFilterGainhfAuto = 1,
-
-    [NativeName("AL_DEFAULT_DIRECT_FILTER_GAINHF_AUTO")]
-    DefaultDirectFilterGainhfAuto = 1,
-
-    [NativeName("AL_MIN_AUXILIARY_SEND_FILTER_GAIN_AUTO")]
-    MinAuxiliarySendFilterGainAuto = 0,
-
-    [NativeName("AL_MAX_AUXILIARY_SEND_FILTER_GAIN_AUTO")]
-    MaxAuxiliarySendFilterGainAuto = 1,
-
-    [NativeName("AL_DEFAULT_AUXILIARY_SEND_FILTER_GAIN_AUTO")]
-    DefaultAuxiliarySendFilterGainAuto = 1,
-
-    [NativeName("AL_MIN_AUXILIARY_SEND_FILTER_GAINHF_AUTO")]
-    MinAuxiliarySendFilterGainhfAuto = 0,
-
-    [NativeName("AL_MAX_AUXILIARY_SEND_FILTER_GAINHF_AUTO")]
-    MaxAuxiliarySendFilterGainhfAuto = 1,
-
-    [NativeName("AL_DEFAULT_AUXILIARY_SEND_FILTER_GAINHF_AUTO")]
-    DefaultAuxiliarySendFilterGainhfAuto = 1,
-
-    [NativeName("AL_MIN_METERS_PER_UNIT")]
-    MinMetersPerUnit = 0,
-
-    [NativeName("AL_MAX_METERS_PER_UNIT")]
-    MaxMetersPerUnit = 0,
-
-    [NativeName("AL_DEFAULT_METERS_PER_UNIT")]
-    DefaultMetersPerUnit = 1,
-
-    [NativeName("AL_SOURCE_DISTANCE_MODEL")]
-    SourceDistanceModel = 512,
-
-    [NativeName("AL_BYTE_RW_OFFSETS_SOFT")]
-    ByteRwOffsetsSOFT = 4145,
-
-    [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
-    SampleRwOffsetsSOFT = 4146,
-
-    [NativeName("AL_LOOP_POINTS_SOFT")]
-    LoopPointsSOFT = 8213,
-
-    [NativeName("AL_FOLDBACK_EVENT_BLOCK")]
-    FoldbackEventBlock = 16658,
-
-    [NativeName("AL_FOLDBACK_EVENT_START")]
-    FoldbackEventStart = 16657,
-
-    [NativeName("AL_FOLDBACK_EVENT_STOP")]
-    FoldbackEventStop = 16659,
-
-    [NativeName("AL_FOLDBACK_MODE_MONO")]
-    FoldbackModeMono = 16641,
-
-    [NativeName("AL_FOLDBACK_MODE_STEREO")]
-    FoldbackModeStereo = 16642,
-
-    [NativeName("AL_DEDICATED_GAIN")]
-    DedicatedGain = 1,
-
-    [NativeName("AL_EFFECT_DEDICATED_DIALOGUE")]
-    EffectDedicatedDialogue = 36865,
-
-    [NativeName("AL_EFFECT_DEDICATED_LOW_FREQUENCY_EFFECT")]
-    EffectDedicatedLowFrequencyEffect = 36864,
-
-    [NativeName("AL_MONO_SOFT")]
-    MonoSOFT = 5376,
-
-    [NativeName("AL_STEREO_SOFT")]
-    StereoSOFT = 5377,
-
-    [NativeName("AL_REAR_SOFT")]
-    RearSOFT = 5378,
-
-    [NativeName("AL_QUAD_SOFT")]
-    QuadSOFT = 5379,
-
-    [NativeName("AL_5POINT1_SOFT")]
-    X5Point1SOFT = 5380,
-
-    [NativeName("AL_6POINT1_SOFT")]
-    X6Point1SOFT = 5381,
-
-    [NativeName("AL_7POINT1_SOFT")]
-    X7Point1SOFT = 5382,
-
-    [NativeName("AL_BYTE_SOFT")]
-    ByteSOFT = 5120,
-
-    [NativeName("AL_UNSIGNED_BYTE_SOFT")]
-    UnsignedByteSOFT = 5121,
-
-    [NativeName("AL_SHORT_SOFT")]
-    ShortSOFT = 5122,
-
-    [NativeName("AL_UNSIGNED_SHORT_SOFT")]
-    UnsignedShortSOFT = 5123,
-
-    [NativeName("AL_INT_SOFT")]
-    IntSOFT = 5124,
-
-    [NativeName("AL_UNSIGNED_INT_SOFT")]
-    UnsignedIntSOFT = 5125,
-
-    [NativeName("AL_FLOAT_SOFT")]
-    FloatSOFT = 5126,
-
-    [NativeName("AL_DOUBLE_SOFT")]
-    DoubleSOFT = 5127,
-
-    [NativeName("AL_BYTE3_SOFT")]
-    Byte3SOFT = 5128,
-
-    [NativeName("AL_UNSIGNED_BYTE3_SOFT")]
-    UnsignedByte3SOFT = 5129,
-
-    [NativeName("AL_MONO8_SOFT")]
-    Mono8SOFT = 4352,
-
-    [NativeName("AL_MONO16_SOFT")]
-    Mono16SOFT = 4353,
-
-    [NativeName("AL_MONO32F_SOFT")]
-    Mono32FSOFT = 65552,
-
-    [NativeName("AL_STEREO8_SOFT")]
-    Stereo8SOFT = 4354,
-
-    [NativeName("AL_STEREO16_SOFT")]
-    Stereo16SOFT = 4355,
-
-    [NativeName("AL_STEREO32F_SOFT")]
-    Stereo32FSOFT = 65553,
-
-    [NativeName("AL_QUAD8_SOFT")]
-    Quad8SOFT = 4612,
-
-    [NativeName("AL_QUAD16_SOFT")]
-    Quad16SOFT = 4613,
-
-    [NativeName("AL_QUAD32F_SOFT")]
-    Quad32FSOFT = 4614,
-
-    [NativeName("AL_REAR8_SOFT")]
-    Rear8SOFT = 4615,
-
-    [NativeName("AL_REAR16_SOFT")]
-    Rear16SOFT = 4616,
-
-    [NativeName("AL_REAR32F_SOFT")]
-    Rear32FSOFT = 4617,
-
-    [NativeName("AL_5POINT1_8_SOFT")]
-    X5Point1X8SOFT = 4618,
-
-    [NativeName("AL_5POINT1_16_SOFT")]
-    X5Point1X16SOFT = 4619,
-
-    [NativeName("AL_5POINT1_32F_SOFT")]
-    X5Point1X32FSOFT = 4620,
-
-    [NativeName("AL_6POINT1_8_SOFT")]
-    X6Point1X8SOFT = 4621,
-
-    [NativeName("AL_6POINT1_16_SOFT")]
-    X6Point1X16SOFT = 4622,
-
-    [NativeName("AL_6POINT1_32F_SOFT")]
-    X6Point1X32FSOFT = 4623,
-
-    [NativeName("AL_7POINT1_8_SOFT")]
-    X7Point1X8SOFT = 4624,
-
-    [NativeName("AL_7POINT1_16_SOFT")]
-    X7Point1X16SOFT = 4625,
-
-    [NativeName("AL_7POINT1_32F_SOFT")]
-    X7Point1X32FSOFT = 4626,
-
-    [NativeName("AL_INTERNAL_FORMAT_SOFT")]
-    InternalFormatSOFT = 8200,
-
-    [NativeName("AL_BYTE_LENGTH_SOFT")]
-    ByteLengthSOFT = 8201,
-
-    [NativeName("AL_SAMPLE_LENGTH_SOFT")]
-    SampleLengthSOFT = 8202,
-
-    [NativeName("AL_SEC_LENGTH_SOFT")]
-    SecLengthSOFT = 8203,
-
-    [NativeName("AL_DIRECT_CHANNELS_SOFT")]
-    DirectChannelsSOFT = 4147,
-
-    [NativeName("AL_STEREO_ANGLES")]
-    StereoAngles = 4144,
-
-    [NativeName("AL_SOURCE_RADIUS")]
-    SourceRadius = 4145,
-
-    [NativeName("AL_SAMPLE_OFFSET_LATENCY_SOFT")]
-    SampleOffsetLatencySOFT = 4608,
-
-    [NativeName("AL_SEC_OFFSET_LATENCY_SOFT")]
-    SecOffsetLatencySOFT = 4609,
-
-    [NativeName("AL_DEFERRED_UPDATES_SOFT")]
-    DeferredUpdatesSOFT = 49154,
-
-    [NativeName("AL_UNPACK_BLOCK_ALIGNMENT_SOFT")]
-    UnpackBlockAlignmentSOFT = 8204,
-
-    [NativeName("AL_PACK_BLOCK_ALIGNMENT_SOFT")]
-    PackBlockAlignmentSOFT = 8205,
-
-    [NativeName("AL_FORMAT_MONO_MSADPCM_SOFT")]
-    FormatMonoMsadpcmSOFT = 4866,
-
-    [NativeName("AL_FORMAT_STEREO_MSADPCM_SOFT")]
-    FormatStereoMsadpcmSOFT = 4867,
-
-    [NativeName("AL_FORMAT_BFORMAT2D_8")]
-    FormatBformat2D8 = 131105,
-
-    [NativeName("AL_FORMAT_BFORMAT2D_16")]
-    FormatBformat2D16 = 131106,
-
-    [NativeName("AL_FORMAT_BFORMAT2D_FLOAT32")]
-    FormatBformat2DFloat32 = 131107,
-
-    [NativeName("AL_FORMAT_BFORMAT3D_8")]
-    FormatBformat3D8 = 131121,
-
-    [NativeName("AL_FORMAT_BFORMAT3D_16")]
-    FormatBformat3D16 = 131122,
-
-    [NativeName("AL_FORMAT_BFORMAT3D_FLOAT32")]
-    FormatBformat3DFloat32 = 131123,
-
-    [NativeName("AL_FORMAT_BFORMAT2D_MULAW")]
-    FormatBformat2DMulaw = 65585,
-
-    [NativeName("AL_FORMAT_BFORMAT3D_MULAW")]
-    FormatBformat3DMulaw = 65586,
-
-    [NativeName("AL_GAIN_LIMIT_SOFT")]
-    GainLimitSOFT = 8206,
-
-    [NativeName("AL_NUM_RESAMPLERS_SOFT")]
-    NumResamplersSOFT = 4624,
-
-    [NativeName("AL_DEFAULT_RESAMPLER_SOFT")]
-    DefaultResamplerSOFT = 4625,
-
-    [NativeName("AL_SOURCE_RESAMPLER_SOFT")]
-    SourceResamplerSOFT = 4626,
-
-    [NativeName("AL_RESAMPLER_NAME_SOFT")]
-    ResamplerNameSOFT = 4627,
-
-    [NativeName("AL_SOURCE_SPATIALIZE_SOFT")]
-    SourceSpatializeSOFT = 4628,
-
-    [NativeName("AL_AUTO_SOFT")]
-    AutoSOFT = 2,
-
-    [NativeName("AL_SAMPLE_OFFSET_CLOCK_SOFT")]
-    SampleOffsetClockSOFT = 4610,
-
-    [NativeName("AL_SEC_OFFSET_CLOCK_SOFT")]
-    SecOffsetClockSOFT = 4611,
-
-    [NativeName("AL_DROP_UNMATCHED_SOFT")]
-    DropUnmatchedSOFT = 1,
-
-    [NativeName("AL_REMIX_UNMATCHED_SOFT")]
-    RemixUnmatchedSOFT = 2,
-
-    [NativeName("AL_AMBISONIC_LAYOUT_SOFT")]
-    AmbisonicLayoutSOFT = 6551,
-
-    [NativeName("AL_AMBISONIC_SCALING_SOFT")]
-    AmbisonicScalingSOFT = 6552,
-
-    [NativeName("AL_FUMA_SOFT")]
-    FumaSOFT = 0,
-
-    [NativeName("AL_ACN_SOFT")]
-    AcnSOFT = 1,
-
-    [NativeName("AL_SN3D_SOFT")]
-    Sn3DSOFT = 1,
-
-    [NativeName("AL_N3D_SOFT")]
-    N3DSOFT = 2,
-
-    [NativeName("AL_EFFECTSLOT_TARGET_SOFT")]
-    EffectslotTargetSOFT = 6556,
-
-    [NativeName("AL_EVENT_CALLBACK_FUNCTION_SOFT")]
-    EventCallbackFunctionSOFT = 6562,
-
-    [NativeName("AL_EVENT_CALLBACK_USER_PARAM_SOFT")]
-    EventCallbackUserParamSOFT = 6563,
-
-    [NativeName("AL_EVENT_TYPE_BUFFER_COMPLETED_SOFT")]
-    EventTypeBufferCompletedSOFT = 6564,
-
-    [NativeName("AL_EVENT_TYPE_SOURCE_STATE_CHANGED_SOFT")]
-    EventTypeSourceStateChangedSOFT = 6565,
-
-    [NativeName("AL_EVENT_TYPE_DISCONNECTED_SOFT")]
-    EventTypeDisconnectedSOFT = 6566,
-
-    [NativeName("AL_BUFFER_CALLBACK_FUNCTION_SOFT")]
-    BufferCallbackFunctionSOFT = 6560,
-
-    [NativeName("AL_BUFFER_CALLBACK_USER_PARAM_SOFT")]
-    BufferCallbackUserParamSOFT = 6561,
-
-    [NativeName("AL_FORMAT_UHJ2CHN8_SOFT")]
-    FormatUhj2Chn8SOFT = 6562,
-
-    [NativeName("AL_FORMAT_UHJ2CHN16_SOFT")]
-    FormatUhj2Chn16SOFT = 6563,
-
-    [NativeName("AL_FORMAT_UHJ2CHN_FLOAT32_SOFT")]
-    FormatUhj2ChnFloat32SOFT = 6564,
-
-    [NativeName("AL_FORMAT_UHJ3CHN8_SOFT")]
-    FormatUhj3Chn8SOFT = 6565,
-
-    [NativeName("AL_FORMAT_UHJ3CHN16_SOFT")]
-    FormatUhj3Chn16SOFT = 6566,
-
-    [NativeName("AL_FORMAT_UHJ3CHN_FLOAT32_SOFT")]
-    FormatUhj3ChnFloat32SOFT = 6567,
-
-    [NativeName("AL_FORMAT_UHJ4CHN8_SOFT")]
-    FormatUhj4Chn8SOFT = 6568,
-
-    [NativeName("AL_FORMAT_UHJ4CHN16_SOFT")]
-    FormatUhj4Chn16SOFT = 6569,
-
-    [NativeName("AL_FORMAT_UHJ4CHN_FLOAT32_SOFT")]
-    FormatUhj4ChnFloat32SOFT = 6570,
-
-    [NativeName("AL_STEREO_MODE_SOFT")]
-    StereoModeSOFT = 6576,
-
-    [NativeName("AL_NORMAL_SOFT")]
-    NormalSOFT = 0,
-
-    [NativeName("AL_SUPER_STEREO_SOFT")]
-    SuperStereoSOFT = 1,
-
-    [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
-    SuperStereoWidthSOFT = 6577,
-
-    [NativeName("AL_FORMAT_UHJ2CHN_MULAW_SOFT")]
-    FormatUhj2ChnMulawSOFT = 6579,
-
-    [NativeName("AL_FORMAT_UHJ2CHN_ALAW_SOFT")]
-    FormatUhj2ChnAlawSOFT = 6580,
-
-    [NativeName("AL_FORMAT_UHJ2CHN_IMA4_SOFT")]
-    FormatUhj2ChnIma4SOFT = 6581,
-
-    [NativeName("AL_FORMAT_UHJ2CHN_MSADPCM_SOFT")]
-    FormatUhj2ChnMsadpcmSOFT = 6582,
-
-    [NativeName("AL_FORMAT_UHJ3CHN_MULAW_SOFT")]
-    FormatUhj3ChnMulawSOFT = 6583,
-
-    [NativeName("AL_FORMAT_UHJ3CHN_ALAW_SOFT")]
-    FormatUhj3ChnAlawSOFT = 6584,
-
-    [NativeName("AL_FORMAT_UHJ4CHN_MULAW_SOFT")]
-    FormatUhj4ChnMulawSOFT = 6585,
-
-    [NativeName("AL_FORMAT_UHJ4CHN_ALAW_SOFT")]
-    FormatUhj4ChnAlawSOFT = 6586,
-
-    [NativeName("AL_DONT_CARE_EXT")]
-    DontCareEXT = 2,
-
-    [NativeName("AL_DEBUG_OUTPUT_EXT")]
-    DebugOutputEXT = 6578,
-
-    [NativeName("AL_DEBUG_CALLBACK_FUNCTION_EXT")]
-    DebugCallbackFunctionEXT = 6579,
-
-    [NativeName("AL_DEBUG_CALLBACK_USER_PARAM_EXT")]
-    DebugCallbackUserParamEXT = 6580,
-
-    [NativeName("AL_DEBUG_SOURCE_API_EXT")]
-    DebugSourceApiEXT = 6581,
-
-    [NativeName("AL_DEBUG_SOURCE_AUDIO_SYSTEM_EXT")]
-    DebugSourceAudioSystemEXT = 6582,
-
-    [NativeName("AL_DEBUG_SOURCE_THIRD_PARTY_EXT")]
-    DebugSourceThirdPartyEXT = 6583,
-
-    [NativeName("AL_DEBUG_SOURCE_APPLICATION_EXT")]
-    DebugSourceApplicationEXT = 6584,
-
-    [NativeName("AL_DEBUG_SOURCE_OTHER_EXT")]
-    DebugSourceOtherEXT = 6585,
-
-    [NativeName("AL_DEBUG_TYPE_ERROR_EXT")]
-    DebugTypeErrorEXT = 6586,
-
-    [NativeName("AL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_EXT")]
-    DebugTypeDeprecatedBehaviorEXT = 6587,
-
-    [NativeName("AL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_EXT")]
-    DebugTypeUndefinedBehaviorEXT = 6588,
-
-    [NativeName("AL_DEBUG_TYPE_PORTABILITY_EXT")]
-    DebugTypePortabilityEXT = 6589,
-
-    [NativeName("AL_DEBUG_TYPE_PERFORMANCE_EXT")]
-    DebugTypePerformanceEXT = 6590,
-
-    [NativeName("AL_DEBUG_TYPE_MARKER_EXT")]
-    DebugTypeMarkerEXT = 6591,
-
-    [NativeName("AL_DEBUG_TYPE_PUSH_GROUP_EXT")]
-    DebugTypePushGroupEXT = 6592,
-
-    [NativeName("AL_DEBUG_TYPE_POP_GROUP_EXT")]
-    DebugTypePopGroupEXT = 6593,
-
-    [NativeName("AL_DEBUG_TYPE_OTHER_EXT")]
-    DebugTypeOtherEXT = 6594,
-
-    [NativeName("AL_DEBUG_SEVERITY_HIGH_EXT")]
-    DebugSeverityHighEXT = 6595,
-
-    [NativeName("AL_DEBUG_SEVERITY_MEDIUM_EXT")]
-    DebugSeverityMediumEXT = 6596,
-
-    [NativeName("AL_DEBUG_SEVERITY_LOW_EXT")]
-    DebugSeverityLowEXT = 6597,
-
-    [NativeName("AL_DEBUG_SEVERITY_NOTIFICATION_EXT")]
-    DebugSeverityNotificationEXT = 6598,
-
-    [NativeName("AL_DEBUG_LOGGED_MESSAGES_EXT")]
-    DebugLoggedMessagesEXT = 6599,
-
-    [NativeName("AL_DEBUG_NEXT_LOGGED_MESSAGE_LENGTH_EXT")]
-    DebugNextLoggedMessageLengthEXT = 6600,
-
-    [NativeName("AL_MAX_DEBUG_MESSAGE_LENGTH_EXT")]
-    MaxDebugMessageLengthEXT = 6601,
-
-    [NativeName("AL_MAX_DEBUG_LOGGED_MESSAGES_EXT")]
-    MaxDebugLoggedMessagesEXT = 6602,
-
-    [NativeName("AL_MAX_DEBUG_GROUP_STACK_DEPTH_EXT")]
-    MaxDebugGroupStackDepthEXT = 6603,
-
-    [NativeName("AL_MAX_LABEL_LENGTH_EXT")]
-    MaxLabelLengthEXT = 6604,
-
-    [NativeName("AL_STACK_OVERFLOW_EXT")]
-    StackOverflowEXT = 6605,
-
-    [NativeName("AL_STACK_UNDERFLOW_EXT")]
-    StackUnderflowEXT = 6606,
-
-    [NativeName("AL_CONTEXT_FLAGS_EXT")]
-    ContextFlagsEXT = 6607,
-
-    [NativeName("AL_BUFFER_EXT")]
-    BufferEXT = 4105,
-
-    [NativeName("AL_SOURCE_EXT")]
-    SourceEXT = 6608,
-
-    [NativeName("AL_FILTER_EXT")]
-    FilterEXT = 6609,
-
-    [NativeName("AL_EFFECT_EXT")]
-    EffectEXT = 6610,
-
-    [NativeName("AL_AUXILIARY_EFFECT_SLOT_EXT")]
-    AuxiliaryEffectSlotEXT = 6611,
-
-    [NativeName("AL_UNPACK_AMBISONIC_ORDER_SOFT")]
-    UnpackAmbisonicOrderSOFT = 6557,
-
-    [NativeName("ALC_DEFAULT_FILTER_ORDER")]
-    CDefaultFilterOrder = 4352,
+    None = unchecked((uint)0),
+    False = unchecked((uint)0),
+    True = unchecked((uint)1),
+    SourceRelative = unchecked((uint)0x202),
+    ConeInnerAngle = unchecked((uint)0x1001),
+    ConeOuterAngle = unchecked((uint)0x1002),
+    Pitch = unchecked((uint)0x1003),
+    Position = unchecked((uint)0x1004),
+    Direction = unchecked((uint)0x1005),
+    Velocity = unchecked((uint)0x1006),
+    Looping = unchecked((uint)0x1007),
+    Buffer = unchecked((uint)0x1009),
+    Gain = unchecked((uint)0x100A),
+    MinGain = unchecked((uint)0x100D),
+    MaxGain = unchecked((uint)0x100E),
+    Orientation = unchecked((uint)0x100F),
+    SourceState = unchecked((uint)0x1010),
+    Initial = unchecked((uint)0x1011),
+    Playing = unchecked((uint)0x1012),
+    Paused = unchecked((uint)0x1013),
+    Stopped = unchecked((uint)0x1014),
+    BuffersQueued = unchecked((uint)0x1015),
+    BuffersProcessed = unchecked((uint)0x1016),
+    ReferenceDistance = unchecked((uint)0x1020),
+    RolloffFactor = unchecked((uint)0x1021),
+    ConeOuterGain = unchecked((uint)0x1022),
+    MaxDistance = unchecked((uint)0x1023),
+    FormatMono8 = unchecked((uint)0x1100),
+    FormatMono16 = unchecked((uint)0x1101),
+    FormatStereo8 = unchecked((uint)0x1102),
+    FormatStereo16 = unchecked((uint)0x1103),
+    Frequency = unchecked((uint)0x2001),
+    Size = unchecked((uint)0x2004),
+    Unused = unchecked((uint)0x2010),
+    Pending = unchecked((uint)0x2011),
+    Processed = unchecked((uint)0x2012),
+    NoError = unchecked((uint)0),
+    InvalidName = unchecked((uint)0xA001),
+    InvalidEnum = unchecked((uint)0xA002),
+    InvalidValue = unchecked((uint)0xA003),
+    InvalidOperation = unchecked((uint)0xA004),
+    OutOfMemory = unchecked((uint)0xA005),
+    Vendor = unchecked((uint)0xB001),
+    Version = unchecked((uint)0xB002),
+    Renderer = unchecked((uint)0xB003),
+    Extensions = unchecked((uint)0xB004),
+    DopplerFactor = unchecked((uint)0xC000),
+    DopplerVelocity = unchecked((uint)0xC001),
+    DistanceModel = unchecked((uint)0xD000),
+    Invalid = unchecked((uint)-1),
+    IllegalEnum = unchecked((uint)0xA002),
+    IllegalCommand = unchecked((uint)0xA004),
+    InverseDistance = unchecked((uint)0xD001),
+    InverseDistanceClamped = unchecked((uint)0xD002),
+    SecOffset = unchecked((uint)0x1024),
+    SampleOffset = unchecked((uint)0x1025),
+    ByteOffset = unchecked((uint)0x1026),
+    SourceType = unchecked((uint)0x1027),
+    Static = unchecked((uint)0x1028),
+    Streaming = unchecked((uint)0x1029),
+    Undetermined = unchecked((uint)0x1030),
+    Bits = unchecked((uint)0x2002),
+    Channels = unchecked((uint)0x2003),
+    SpeedOfSound = unchecked((uint)0xC003),
+    LinearDistance = unchecked((uint)0xD003),
+    LinearDistanceClamped = unchecked((uint)0xD004),
+    ExponentDistance = unchecked((uint)0xD005),
+    ExponentDistanceClamped = unchecked((uint)0xD006),
+    FormatImaAdpcmMono16EXT = unchecked((uint)0x10000),
+    FormatImaAdpcmStereo16EXT = unchecked((uint)0x10001),
+    FormatWaveEXT = unchecked((uint)0x10002),
+    FormatVorbisEXT = unchecked((uint)0x10003),
+    FormatQuad8LOKI = unchecked((uint)0x10004),
+    FormatQuad16LOKI = unchecked((uint)0x10005),
+    FormatMonoFloat32 = unchecked((uint)0x10010),
+    FormatStereoFloat32 = unchecked((uint)0x10011),
+    FormatMonoDoubleEXT = unchecked((uint)0x10012),
+    FormatStereoDoubleEXT = unchecked((uint)0x10013),
+    FormatMonoMulawEXT = unchecked((uint)0x10014),
+    FormatStereoMulawEXT = unchecked((uint)0x10015),
+    FormatMonoAlawEXT = unchecked((uint)0x10016),
+    FormatStereoAlawEXT = unchecked((uint)0x10017),
+    FormatQuad8 = unchecked((uint)0x1204),
+    FormatQuad16 = unchecked((uint)0x1205),
+    FormatQuad32 = unchecked((uint)0x1206),
+    FormatRear8 = unchecked((uint)0x1207),
+    FormatRear16 = unchecked((uint)0x1208),
+    FormatRear32 = unchecked((uint)0x1209),
+    Format51Chn8 = unchecked((uint)0x120A),
+    Format51Chn16 = unchecked((uint)0x120B),
+    Format51Chn32 = unchecked((uint)0x120C),
+    Format61Chn8 = unchecked((uint)0x120D),
+    Format61Chn16 = unchecked((uint)0x120E),
+    Format61Chn32 = unchecked((uint)0x120F),
+    Format71Chn8 = unchecked((uint)0x1210),
+    Format71Chn16 = unchecked((uint)0x1211),
+    Format71Chn32 = unchecked((uint)0x1212),
+    FormatMonoMulaw = unchecked((uint)0x10014),
+    FormatStereoMulaw = unchecked((uint)0x10015),
+    FormatQuadMulaw = unchecked((uint)0x10021),
+    FormatRearMulaw = unchecked((uint)0x10022),
+    Format51ChnMulaw = unchecked((uint)0x10023),
+    Format61ChnMulaw = unchecked((uint)0x10024),
+    Format71ChnMulaw = unchecked((uint)0x10025),
+    FormatMonoIma4 = unchecked((uint)0x1300),
+    FormatStereoIma4 = unchecked((uint)0x1301),
+    MetersPerUnit = unchecked((uint)0x20004),
+    DirectFilter = unchecked((uint)0x20005),
+    AuxiliarySendFilter = unchecked((uint)0x20006),
+    AirAbsorptionFactor = unchecked((uint)0x20007),
+    RoomRolloffFactor = unchecked((uint)0x20008),
+    ConeOuterGainhf = unchecked((uint)0x20009),
+    DirectFilterGainhfAuto = unchecked((uint)0x2000A),
+    AuxiliarySendFilterGainAuto = unchecked((uint)0x2000B),
+    AuxiliarySendFilterGainhfAuto = unchecked((uint)0x2000C),
+    ReverbDensity = unchecked((uint)0x0001),
+    ReverbDiffusion = unchecked((uint)0x0002),
+    ReverbGain = unchecked((uint)0x0003),
+    ReverbGainhf = unchecked((uint)0x0004),
+    ReverbDecayTime = unchecked((uint)0x0005),
+    ReverbDecayHfratio = unchecked((uint)0x0006),
+    ReverbReflectionsGain = unchecked((uint)0x0007),
+    ReverbReflectionsDelay = unchecked((uint)0x0008),
+    ReverbLateReverbGain = unchecked((uint)0x0009),
+    ReverbLateReverbDelay = unchecked((uint)0x000A),
+    ReverbAirAbsorptionGainhf = unchecked((uint)0x000B),
+    ReverbRoomRolloffFactor = unchecked((uint)0x000C),
+    ReverbDecayHflimit = unchecked((uint)0x000D),
+    EaxreverbDensity = unchecked((uint)0x0001),
+    EaxreverbDiffusion = unchecked((uint)0x0002),
+    EaxreverbGain = unchecked((uint)0x0003),
+    EaxreverbGainhf = unchecked((uint)0x0004),
+    EaxreverbGainlf = unchecked((uint)0x0005),
+    EaxreverbDecayTime = unchecked((uint)0x0006),
+    EaxreverbDecayHfratio = unchecked((uint)0x0007),
+    EaxreverbDecayLfratio = unchecked((uint)0x0008),
+    EaxreverbReflectionsGain = unchecked((uint)0x0009),
+    EaxreverbReflectionsDelay = unchecked((uint)0x000A),
+    EaxreverbReflectionsPan = unchecked((uint)0x000B),
+    EaxreverbLateReverbGain = unchecked((uint)0x000C),
+    EaxreverbLateReverbDelay = unchecked((uint)0x000D),
+    EaxreverbLateReverbPan = unchecked((uint)0x000E),
+    EaxreverbEchoTime = unchecked((uint)0x000F),
+    EaxreverbEchoDepth = unchecked((uint)0x0010),
+    EaxreverbModulationTime = unchecked((uint)0x0011),
+    EaxreverbModulationDepth = unchecked((uint)0x0012),
+    EaxreverbAirAbsorptionGainhf = unchecked((uint)0x0013),
+    EaxreverbHfreference = unchecked((uint)0x0014),
+    EaxreverbLfreference = unchecked((uint)0x0015),
+    EaxreverbRoomRolloffFactor = unchecked((uint)0x0016),
+    EaxreverbDecayHflimit = unchecked((uint)0x0017),
+    ChorusWaveform = unchecked((uint)0x0001),
+    ChorusPhase = unchecked((uint)0x0002),
+    ChorusRate = unchecked((uint)0x0003),
+    ChorusDepth = unchecked((uint)0x0004),
+    ChorusFeedback = unchecked((uint)0x0005),
+    ChorusDelay = unchecked((uint)0x0006),
+    DistortionEdge = unchecked((uint)0x0001),
+    DistortionGain = unchecked((uint)0x0002),
+    DistortionLowpassCutoff = unchecked((uint)0x0003),
+    DistortionEqcenter = unchecked((uint)0x0004),
+    DistortionEqbandwidth = unchecked((uint)0x0005),
+    EchoDelay = unchecked((uint)0x0001),
+    EchoLrdelay = unchecked((uint)0x0002),
+    EchoDamping = unchecked((uint)0x0003),
+    EchoFeedback = unchecked((uint)0x0004),
+    EchoSpread = unchecked((uint)0x0005),
+    FlangerWaveform = unchecked((uint)0x0001),
+    FlangerPhase = unchecked((uint)0x0002),
+    FlangerRate = unchecked((uint)0x0003),
+    FlangerDepth = unchecked((uint)0x0004),
+    FlangerFeedback = unchecked((uint)0x0005),
+    FlangerDelay = unchecked((uint)0x0006),
+    FrequencyShifterFrequency = unchecked((uint)0x0001),
+    FrequencyShifterLeftDirection = unchecked((uint)0x0002),
+    FrequencyShifterRightDirection = unchecked((uint)0x0003),
+    VocalMorpherPhonemea = unchecked((uint)0x0001),
+    VocalMorpherPhonemeaCoarseTuning = unchecked((uint)0x0002),
+    VocalMorpherPhonemeb = unchecked((uint)0x0003),
+    VocalMorpherPhonemebCoarseTuning = unchecked((uint)0x0004),
+    VocalMorpherWaveform = unchecked((uint)0x0005),
+    VocalMorpherRate = unchecked((uint)0x0006),
+    PitchShifterCoarseTune = unchecked((uint)0x0001),
+    PitchShifterFineTune = unchecked((uint)0x0002),
+    RingModulatorFrequency = unchecked((uint)0x0001),
+    RingModulatorHighpassCutoff = unchecked((uint)0x0002),
+    RingModulatorWaveform = unchecked((uint)0x0003),
+    AutowahAttackTime = unchecked((uint)0x0001),
+    AutowahReleaseTime = unchecked((uint)0x0002),
+    AutowahResonance = unchecked((uint)0x0003),
+    AutowahPeakGain = unchecked((uint)0x0004),
+    CompressorOnoff = unchecked((uint)0x0001),
+    EqualizerLowGain = unchecked((uint)0x0001),
+    EqualizerLowCutoff = unchecked((uint)0x0002),
+    EqualizerMid1Gain = unchecked((uint)0x0003),
+    EqualizerMid1Center = unchecked((uint)0x0004),
+    EqualizerMid1Width = unchecked((uint)0x0005),
+    EqualizerMid2Gain = unchecked((uint)0x0006),
+    EqualizerMid2Center = unchecked((uint)0x0007),
+    EqualizerMid2Width = unchecked((uint)0x0008),
+    EqualizerHighGain = unchecked((uint)0x0009),
+    EqualizerHighCutoff = unchecked((uint)0x000A),
+    EffectFirstParameter = unchecked((uint)0x0000),
+    EffectLastParameter = unchecked((uint)0x8000),
+    EffectType = unchecked((uint)0x8001),
+    EffectNull = unchecked((uint)0x0000),
+    EffectReverb = unchecked((uint)0x0001),
+    EffectChorus = unchecked((uint)0x0002),
+    EffectDistortion = unchecked((uint)0x0003),
+    EffectEcho = unchecked((uint)0x0004),
+    EffectFlanger = unchecked((uint)0x0005),
+    EffectFrequencyShifter = unchecked((uint)0x0006),
+    EffectVocalMorpher = unchecked((uint)0x0007),
+    EffectPitchShifter = unchecked((uint)0x0008),
+    EffectRingModulator = unchecked((uint)0x0009),
+    EffectAutowah = unchecked((uint)0x000A),
+    EffectCompressor = unchecked((uint)0x000B),
+    EffectEqualizer = unchecked((uint)0x000C),
+    EffectEaxreverb = unchecked((uint)0x8000),
+    EffectslotEffect = unchecked((uint)0x0001),
+    EffectslotGain = unchecked((uint)0x0002),
+    EffectslotAuxiliarySendAuto = unchecked((uint)0x0003),
+    EffectslotNull = unchecked((uint)0x0000),
+    LowpassGain = unchecked((uint)0x0001),
+    LowpassGainhf = unchecked((uint)0x0002),
+    HighpassGain = unchecked((uint)0x0001),
+    HighpassGainlf = unchecked((uint)0x0002),
+    BandpassGain = unchecked((uint)0x0001),
+    BandpassGainlf = unchecked((uint)0x0002),
+    BandpassGainhf = unchecked((uint)0x0003),
+    FilterFirstParameter = unchecked((uint)0x0000),
+    FilterLastParameter = unchecked((uint)0x8000),
+    FilterType = unchecked((uint)0x8001),
+    FilterNull = unchecked((uint)0x0000),
+    FilterLowpass = unchecked((uint)0x0001),
+    FilterHighpass = unchecked((uint)0x0002),
+    FilterBandpass = unchecked((uint)0x0003),
+    LowpassMinGain = unchecked((uint)0.0f),
+    LowpassMaxGain = unchecked((uint)1.0f),
+    LowpassDefaultGain = unchecked((uint)1.0f),
+    LowpassMinGainhf = unchecked((uint)0.0f),
+    LowpassMaxGainhf = unchecked((uint)1.0f),
+    LowpassDefaultGainhf = unchecked((uint)1.0f),
+    HighpassMinGain = unchecked((uint)0.0f),
+    HighpassMaxGain = unchecked((uint)1.0f),
+    HighpassDefaultGain = unchecked((uint)1.0f),
+    HighpassMinGainlf = unchecked((uint)0.0f),
+    HighpassMaxGainlf = unchecked((uint)1.0f),
+    HighpassDefaultGainlf = unchecked((uint)1.0f),
+    BandpassMinGain = unchecked((uint)0.0f),
+    BandpassMaxGain = unchecked((uint)1.0f),
+    BandpassDefaultGain = unchecked((uint)1.0f),
+    BandpassMinGainhf = unchecked((uint)0.0f),
+    BandpassMaxGainhf = unchecked((uint)1.0f),
+    BandpassDefaultGainhf = unchecked((uint)1.0f),
+    BandpassMinGainlf = unchecked((uint)0.0f),
+    BandpassMaxGainlf = unchecked((uint)1.0f),
+    BandpassDefaultGainlf = unchecked((uint)1.0f),
+    ReverbMinDensity = unchecked((uint)0.0f),
+    ReverbMaxDensity = unchecked((uint)1.0f),
+    ReverbDefaultDensity = unchecked((uint)1.0f),
+    ReverbMinDiffusion = unchecked((uint)0.0f),
+    ReverbMaxDiffusion = unchecked((uint)1.0f),
+    ReverbDefaultDiffusion = unchecked((uint)1.0f),
+    ReverbMinGain = unchecked((uint)0.0f),
+    ReverbMaxGain = unchecked((uint)1.0f),
+    ReverbDefaultGain = unchecked((uint)0.32f),
+    ReverbMinGainhf = unchecked((uint)0.0f),
+    ReverbMaxGainhf = unchecked((uint)1.0f),
+    ReverbDefaultGainhf = unchecked((uint)0.89f),
+    ReverbMinDecayTime = unchecked((uint)0.1f),
+    ReverbMaxDecayTime = unchecked((uint)20.0f),
+    ReverbDefaultDecayTime = unchecked((uint)1.49f),
+    ReverbMinDecayHfratio = unchecked((uint)0.1f),
+    ReverbMaxDecayHfratio = unchecked((uint)2.0f),
+    ReverbDefaultDecayHfratio = unchecked((uint)0.83f),
+    ReverbMinReflectionsGain = unchecked((uint)0.0f),
+    ReverbMaxReflectionsGain = unchecked((uint)3.16f),
+    ReverbDefaultReflectionsGain = unchecked((uint)0.05f),
+    ReverbMinReflectionsDelay = unchecked((uint)0.0f),
+    ReverbMaxReflectionsDelay = unchecked((uint)0.3f),
+    ReverbDefaultReflectionsDelay = unchecked((uint)0.007f),
+    ReverbMinLateReverbGain = unchecked((uint)0.0f),
+    ReverbMaxLateReverbGain = unchecked((uint)10.0f),
+    ReverbDefaultLateReverbGain = unchecked((uint)1.26f),
+    ReverbMinLateReverbDelay = unchecked((uint)0.0f),
+    ReverbMaxLateReverbDelay = unchecked((uint)0.1f),
+    ReverbDefaultLateReverbDelay = unchecked((uint)0.011f),
+    ReverbMinAirAbsorptionGainhf = unchecked((uint)0.892f),
+    ReverbMaxAirAbsorptionGainhf = unchecked((uint)1.0f),
+    ReverbDefaultAirAbsorptionGainhf = unchecked((uint)0.994f),
+    ReverbMinRoomRolloffFactor = unchecked((uint)0.0f),
+    ReverbMaxRoomRolloffFactor = unchecked((uint)10.0f),
+    ReverbDefaultRoomRolloffFactor = unchecked((uint)0.0f),
+    ReverbMinDecayHflimit = unchecked((uint)0),
+    ReverbMaxDecayHflimit = unchecked((uint)1),
+    ReverbDefaultDecayHflimit = unchecked((uint)1),
+    EaxreverbMinDensity = unchecked((uint)0.0f),
+    EaxreverbMaxDensity = unchecked((uint)1.0f),
+    EaxreverbDefaultDensity = unchecked((uint)1.0f),
+    EaxreverbMinDiffusion = unchecked((uint)0.0f),
+    EaxreverbMaxDiffusion = unchecked((uint)1.0f),
+    EaxreverbDefaultDiffusion = unchecked((uint)1.0f),
+    EaxreverbMinGain = unchecked((uint)0.0f),
+    EaxreverbMaxGain = unchecked((uint)1.0f),
+    EaxreverbDefaultGain = unchecked((uint)0.32f),
+    EaxreverbMinGainhf = unchecked((uint)0.0f),
+    EaxreverbMaxGainhf = unchecked((uint)1.0f),
+    EaxreverbDefaultGainhf = unchecked((uint)0.89f),
+    EaxreverbMinGainlf = unchecked((uint)0.0f),
+    EaxreverbMaxGainlf = unchecked((uint)1.0f),
+    EaxreverbDefaultGainlf = unchecked((uint)1.0f),
+    EaxreverbMinDecayTime = unchecked((uint)0.1f),
+    EaxreverbMaxDecayTime = unchecked((uint)20.0f),
+    EaxreverbDefaultDecayTime = unchecked((uint)1.49f),
+    EaxreverbMinDecayHfratio = unchecked((uint)0.1f),
+    EaxreverbMaxDecayHfratio = unchecked((uint)2.0f),
+    EaxreverbDefaultDecayHfratio = unchecked((uint)0.83f),
+    EaxreverbMinDecayLfratio = unchecked((uint)0.1f),
+    EaxreverbMaxDecayLfratio = unchecked((uint)2.0f),
+    EaxreverbDefaultDecayLfratio = unchecked((uint)1.0f),
+    EaxreverbMinReflectionsGain = unchecked((uint)0.0f),
+    EaxreverbMaxReflectionsGain = unchecked((uint)3.16f),
+    EaxreverbDefaultReflectionsGain = unchecked((uint)0.05f),
+    EaxreverbMinReflectionsDelay = unchecked((uint)0.0f),
+    EaxreverbMaxReflectionsDelay = unchecked((uint)0.3f),
+    EaxreverbDefaultReflectionsDelay = unchecked((uint)0.007f),
+    EaxreverbDefaultReflectionsPanXyz = unchecked((uint)0.0f),
+    EaxreverbMinLateReverbGain = unchecked((uint)0.0f),
+    EaxreverbMaxLateReverbGain = unchecked((uint)10.0f),
+    EaxreverbDefaultLateReverbGain = unchecked((uint)1.26f),
+    EaxreverbMinLateReverbDelay = unchecked((uint)0.0f),
+    EaxreverbMaxLateReverbDelay = unchecked((uint)0.1f),
+    EaxreverbDefaultLateReverbDelay = unchecked((uint)0.011f),
+    EaxreverbDefaultLateReverbPanXyz = unchecked((uint)0.0f),
+    EaxreverbMinEchoTime = unchecked((uint)0.075f),
+    EaxreverbMaxEchoTime = unchecked((uint)0.25f),
+    EaxreverbDefaultEchoTime = unchecked((uint)0.25f),
+    EaxreverbMinEchoDepth = unchecked((uint)0.0f),
+    EaxreverbMaxEchoDepth = unchecked((uint)1.0f),
+    EaxreverbDefaultEchoDepth = unchecked((uint)0.0f),
+    EaxreverbMinModulationTime = unchecked((uint)0.04f),
+    EaxreverbMaxModulationTime = unchecked((uint)4.0f),
+    EaxreverbDefaultModulationTime = unchecked((uint)0.25f),
+    EaxreverbMinModulationDepth = unchecked((uint)0.0f),
+    EaxreverbMaxModulationDepth = unchecked((uint)1.0f),
+    EaxreverbDefaultModulationDepth = unchecked((uint)0.0f),
+    EaxreverbMinAirAbsorptionGainhf = unchecked((uint)0.892f),
+    EaxreverbMaxAirAbsorptionGainhf = unchecked((uint)1.0f),
+    EaxreverbDefaultAirAbsorptionGainhf = unchecked((uint)0.994f),
+    EaxreverbMinHfreference = unchecked((uint)1000.0f),
+    EaxreverbMaxHfreference = unchecked((uint)20000.0f),
+    EaxreverbDefaultHfreference = unchecked((uint)5000.0f),
+    EaxreverbMinLfreference = unchecked((uint)20.0f),
+    EaxreverbMaxLfreference = unchecked((uint)1000.0f),
+    EaxreverbDefaultLfreference = unchecked((uint)250.0f),
+    EaxreverbMinRoomRolloffFactor = unchecked((uint)0.0f),
+    EaxreverbMaxRoomRolloffFactor = unchecked((uint)10.0f),
+    EaxreverbDefaultRoomRolloffFactor = unchecked((uint)0.0f),
+    EaxreverbMinDecayHflimit = unchecked((uint)0),
+    EaxreverbMaxDecayHflimit = unchecked((uint)1),
+    EaxreverbDefaultDecayHflimit = unchecked((uint)1),
+    ChorusWaveformSinusoid = unchecked((uint)0),
+    ChorusWaveformTriangle = unchecked((uint)1),
+    ChorusMinWaveform = unchecked((uint)0),
+    ChorusMaxWaveform = unchecked((uint)1),
+    ChorusDefaultWaveform = unchecked((uint)1),
+    ChorusMinPhase = unchecked((uint)-180),
+    ChorusMaxPhase = unchecked((uint)180),
+    ChorusDefaultPhase = unchecked((uint)90),
+    ChorusMinRate = unchecked((uint)0.0f),
+    ChorusMaxRate = unchecked((uint)10.0f),
+    ChorusDefaultRate = unchecked((uint)1.1f),
+    ChorusMinDepth = unchecked((uint)0.0f),
+    ChorusMaxDepth = unchecked((uint)1.0f),
+    ChorusDefaultDepth = unchecked((uint)0.1f),
+    ChorusMinFeedback = unchecked((uint)-1.0f),
+    ChorusMaxFeedback = unchecked((uint)1.0f),
+    ChorusDefaultFeedback = unchecked((uint)0.25f),
+    ChorusMinDelay = unchecked((uint)0.0f),
+    ChorusMaxDelay = unchecked((uint)0.016f),
+    ChorusDefaultDelay = unchecked((uint)0.016f),
+    DistortionMinEdge = unchecked((uint)0.0f),
+    DistortionMaxEdge = unchecked((uint)1.0f),
+    DistortionDefaultEdge = unchecked((uint)0.2f),
+    DistortionMinGain = unchecked((uint)0.01f),
+    DistortionMaxGain = unchecked((uint)1.0f),
+    DistortionDefaultGain = unchecked((uint)0.05f),
+    DistortionMinLowpassCutoff = unchecked((uint)80.0f),
+    DistortionMaxLowpassCutoff = unchecked((uint)24000.0f),
+    DistortionDefaultLowpassCutoff = unchecked((uint)8000.0f),
+    DistortionMinEqcenter = unchecked((uint)80.0f),
+    DistortionMaxEqcenter = unchecked((uint)24000.0f),
+    DistortionDefaultEqcenter = unchecked((uint)3600.0f),
+    DistortionMinEqbandwidth = unchecked((uint)80.0f),
+    DistortionMaxEqbandwidth = unchecked((uint)24000.0f),
+    DistortionDefaultEqbandwidth = unchecked((uint)3600.0f),
+    EchoMinDelay = unchecked((uint)0.0f),
+    EchoMaxDelay = unchecked((uint)0.207f),
+    EchoDefaultDelay = unchecked((uint)0.1f),
+    EchoMinLrdelay = unchecked((uint)0.0f),
+    EchoMaxLrdelay = unchecked((uint)0.404f),
+    EchoDefaultLrdelay = unchecked((uint)0.1f),
+    EchoMinDamping = unchecked((uint)0.0f),
+    EchoMaxDamping = unchecked((uint)0.99f),
+    EchoDefaultDamping = unchecked((uint)0.5f),
+    EchoMinFeedback = unchecked((uint)0.0f),
+    EchoMaxFeedback = unchecked((uint)1.0f),
+    EchoDefaultFeedback = unchecked((uint)0.5f),
+    EchoMinSpread = unchecked((uint)-1.0f),
+    EchoMaxSpread = unchecked((uint)1.0f),
+    EchoDefaultSpread = unchecked((uint)-1.0f),
+    FlangerWaveformSinusoid = unchecked((uint)0),
+    FlangerWaveformTriangle = unchecked((uint)1),
+    FlangerMinWaveform = unchecked((uint)0),
+    FlangerMaxWaveform = unchecked((uint)1),
+    FlangerDefaultWaveform = unchecked((uint)1),
+    FlangerMinPhase = unchecked((uint)-180),
+    FlangerMaxPhase = unchecked((uint)180),
+    FlangerDefaultPhase = unchecked((uint)0),
+    FlangerMinRate = unchecked((uint)0.0f),
+    FlangerMaxRate = unchecked((uint)10.0f),
+    FlangerDefaultRate = unchecked((uint)0.27f),
+    FlangerMinDepth = unchecked((uint)0.0f),
+    FlangerMaxDepth = unchecked((uint)1.0f),
+    FlangerDefaultDepth = unchecked((uint)1.0f),
+    FlangerMinFeedback = unchecked((uint)-1.0f),
+    FlangerMaxFeedback = unchecked((uint)1.0f),
+    FlangerDefaultFeedback = unchecked((uint)-0.5f),
+    FlangerMinDelay = unchecked((uint)0.0f),
+    FlangerMaxDelay = unchecked((uint)0.004f),
+    FlangerDefaultDelay = unchecked((uint)0.002f),
+    FrequencyShifterMinFrequency = unchecked((uint)0.0f),
+    FrequencyShifterMaxFrequency = unchecked((uint)24000.0f),
+    FrequencyShifterDefaultFrequency = unchecked((uint)0.0f),
+    FrequencyShifterMinLeftDirection = unchecked((uint)0),
+    FrequencyShifterMaxLeftDirection = unchecked((uint)2),
+    FrequencyShifterDefaultLeftDirection = unchecked((uint)0),
+    FrequencyShifterDirectionDown = unchecked((uint)0),
+    FrequencyShifterDirectionUp = unchecked((uint)1),
+    FrequencyShifterDirectionOff = unchecked((uint)2),
+    FrequencyShifterMinRightDirection = unchecked((uint)0),
+    FrequencyShifterMaxRightDirection = unchecked((uint)2),
+    FrequencyShifterDefaultRightDirection = unchecked((uint)0),
+    VocalMorpherMinPhonemea = unchecked((uint)0),
+    VocalMorpherMaxPhonemea = unchecked((uint)29),
+    VocalMorpherDefaultPhonemea = unchecked((uint)0),
+    VocalMorpherMinPhonemeaCoarseTuning = unchecked((uint)-24),
+    VocalMorpherMaxPhonemeaCoarseTuning = unchecked((uint)24),
+    VocalMorpherDefaultPhonemeaCoarseTuning = unchecked((uint)0),
+    VocalMorpherMinPhonemeb = unchecked((uint)0),
+    VocalMorpherMaxPhonemeb = unchecked((uint)29),
+    VocalMorpherDefaultPhonemeb = unchecked((uint)10),
+    VocalMorpherMinPhonemebCoarseTuning = unchecked((uint)-24),
+    VocalMorpherMaxPhonemebCoarseTuning = unchecked((uint)24),
+    VocalMorpherDefaultPhonemebCoarseTuning = unchecked((uint)0),
+    VocalMorpherPhonemeA = unchecked((uint)0),
+    VocalMorpherPhonemeE = unchecked((uint)1),
+    VocalMorpherPhonemeI = unchecked((uint)2),
+    VocalMorpherPhonemeO = unchecked((uint)3),
+    VocalMorpherPhonemeU = unchecked((uint)4),
+    VocalMorpherPhonemeAa = unchecked((uint)5),
+    VocalMorpherPhonemeAe = unchecked((uint)6),
+    VocalMorpherPhonemeAh = unchecked((uint)7),
+    VocalMorpherPhonemeAo = unchecked((uint)8),
+    VocalMorpherPhonemeEh = unchecked((uint)9),
+    VocalMorpherPhonemeEr = unchecked((uint)10),
+    VocalMorpherPhonemeIh = unchecked((uint)11),
+    VocalMorpherPhonemeIy = unchecked((uint)12),
+    VocalMorpherPhonemeUh = unchecked((uint)13),
+    VocalMorpherPhonemeUw = unchecked((uint)14),
+    VocalMorpherPhonemeB = unchecked((uint)15),
+    VocalMorpherPhonemeD = unchecked((uint)16),
+    VocalMorpherPhonemeF = unchecked((uint)17),
+    VocalMorpherPhonemeG = unchecked((uint)18),
+    VocalMorpherPhonemeJ = unchecked((uint)19),
+    VocalMorpherPhonemeK = unchecked((uint)20),
+    VocalMorpherPhonemeL = unchecked((uint)21),
+    VocalMorpherPhonemeM = unchecked((uint)22),
+    VocalMorpherPhonemeN = unchecked((uint)23),
+    VocalMorpherPhonemeP = unchecked((uint)24),
+    VocalMorpherPhonemeR = unchecked((uint)25),
+    VocalMorpherPhonemeS = unchecked((uint)26),
+    VocalMorpherPhonemeT = unchecked((uint)27),
+    VocalMorpherPhonemeV = unchecked((uint)28),
+    VocalMorpherPhonemeZ = unchecked((uint)29),
+    VocalMorpherWaveformSinusoid = unchecked((uint)0),
+    VocalMorpherWaveformTriangle = unchecked((uint)1),
+    VocalMorpherWaveformSawtooth = unchecked((uint)2),
+    VocalMorpherMinWaveform = unchecked((uint)0),
+    VocalMorpherMaxWaveform = unchecked((uint)2),
+    VocalMorpherDefaultWaveform = unchecked((uint)0),
+    VocalMorpherMinRate = unchecked((uint)0.0f),
+    VocalMorpherMaxRate = unchecked((uint)10.0f),
+    VocalMorpherDefaultRate = unchecked((uint)1.41f),
+    PitchShifterMinCoarseTune = unchecked((uint)-12),
+    PitchShifterMaxCoarseTune = unchecked((uint)12),
+    PitchShifterDefaultCoarseTune = unchecked((uint)12),
+    PitchShifterMinFineTune = unchecked((uint)-50),
+    PitchShifterMaxFineTune = unchecked((uint)50),
+    PitchShifterDefaultFineTune = unchecked((uint)0),
+    RingModulatorMinFrequency = unchecked((uint)0.0f),
+    RingModulatorMaxFrequency = unchecked((uint)8000.0f),
+    RingModulatorDefaultFrequency = unchecked((uint)440.0f),
+    RingModulatorMinHighpassCutoff = unchecked((uint)0.0f),
+    RingModulatorMaxHighpassCutoff = unchecked((uint)24000.0f),
+    RingModulatorDefaultHighpassCutoff = unchecked((uint)800.0f),
+    RingModulatorSinusoid = unchecked((uint)0),
+    RingModulatorSawtooth = unchecked((uint)1),
+    RingModulatorSquare = unchecked((uint)2),
+    RingModulatorMinWaveform = unchecked((uint)0),
+    RingModulatorMaxWaveform = unchecked((uint)2),
+    RingModulatorDefaultWaveform = unchecked((uint)0),
+    AutowahMinAttackTime = unchecked((uint)0.0001f),
+    AutowahMaxAttackTime = unchecked((uint)1.0f),
+    AutowahDefaultAttackTime = unchecked((uint)0.06f),
+    AutowahMinReleaseTime = unchecked((uint)0.0001f),
+    AutowahMaxReleaseTime = unchecked((uint)1.0f),
+    AutowahDefaultReleaseTime = unchecked((uint)0.06f),
+    AutowahMinResonance = unchecked((uint)2.0f),
+    AutowahMaxResonance = unchecked((uint)1000.0f),
+    AutowahDefaultResonance = unchecked((uint)1000.0f),
+    AutowahMinPeakGain = unchecked((uint)0.00003f),
+    AutowahMaxPeakGain = unchecked((uint)31621.0f),
+    AutowahDefaultPeakGain = unchecked((uint)11.22f),
+    CompressorMinOnoff = unchecked((uint)0),
+    CompressorMaxOnoff = unchecked((uint)1),
+    CompressorDefaultOnoff = unchecked((uint)1),
+    EqualizerMinLowGain = unchecked((uint)0.126f),
+    EqualizerMaxLowGain = unchecked((uint)7.943f),
+    EqualizerDefaultLowGain = unchecked((uint)1.0f),
+    EqualizerMinLowCutoff = unchecked((uint)50.0f),
+    EqualizerMaxLowCutoff = unchecked((uint)800.0f),
+    EqualizerDefaultLowCutoff = unchecked((uint)200.0f),
+    EqualizerMinMid1Gain = unchecked((uint)0.126f),
+    EqualizerMaxMid1Gain = unchecked((uint)7.943f),
+    EqualizerDefaultMid1Gain = unchecked((uint)1.0f),
+    EqualizerMinMid1Center = unchecked((uint)200.0f),
+    EqualizerMaxMid1Center = unchecked((uint)3000.0f),
+    EqualizerDefaultMid1Center = unchecked((uint)500.0f),
+    EqualizerMinMid1Width = unchecked((uint)0.01f),
+    EqualizerMaxMid1Width = unchecked((uint)1.0f),
+    EqualizerDefaultMid1Width = unchecked((uint)1.0f),
+    EqualizerMinMid2Gain = unchecked((uint)0.126f),
+    EqualizerMaxMid2Gain = unchecked((uint)7.943f),
+    EqualizerDefaultMid2Gain = unchecked((uint)1.0f),
+    EqualizerMinMid2Center = unchecked((uint)1000.0f),
+    EqualizerMaxMid2Center = unchecked((uint)8000.0f),
+    EqualizerDefaultMid2Center = unchecked((uint)3000.0f),
+    EqualizerMinMid2Width = unchecked((uint)0.01f),
+    EqualizerMaxMid2Width = unchecked((uint)1.0f),
+    EqualizerDefaultMid2Width = unchecked((uint)1.0f),
+    EqualizerMinHighGain = unchecked((uint)0.126f),
+    EqualizerMaxHighGain = unchecked((uint)7.943f),
+    EqualizerDefaultHighGain = unchecked((uint)1.0f),
+    EqualizerMinHighCutoff = unchecked((uint)4000.0f),
+    EqualizerMaxHighCutoff = unchecked((uint)16000.0f),
+    EqualizerDefaultHighCutoff = unchecked((uint)6000.0f),
+    MinAirAbsorptionFactor = unchecked((uint)0.0f),
+    MaxAirAbsorptionFactor = unchecked((uint)10.0f),
+    DefaultAirAbsorptionFactor = unchecked((uint)0.0f),
+    MinRoomRolloffFactor = unchecked((uint)0.0f),
+    MaxRoomRolloffFactor = unchecked((uint)10.0f),
+    DefaultRoomRolloffFactor = unchecked((uint)0.0f),
+    MinConeOuterGainhf = unchecked((uint)0.0f),
+    MaxConeOuterGainhf = unchecked((uint)1.0f),
+    DefaultConeOuterGainhf = unchecked((uint)1.0f),
+    MinDirectFilterGainhfAuto = unchecked((uint)0),
+    MaxDirectFilterGainhfAuto = unchecked((uint)1),
+    DefaultDirectFilterGainhfAuto = unchecked((uint)1),
+    MinAuxiliarySendFilterGainAuto = unchecked((uint)0),
+    MaxAuxiliarySendFilterGainAuto = unchecked((uint)1),
+    DefaultAuxiliarySendFilterGainAuto = unchecked((uint)1),
+    MinAuxiliarySendFilterGainhfAuto = unchecked((uint)0),
+    MaxAuxiliarySendFilterGainhfAuto = unchecked((uint)1),
+    DefaultAuxiliarySendFilterGainhfAuto = unchecked((uint)1),
+    MinMetersPerUnit = unchecked((uint)1.17549435e-38F),
+    MaxMetersPerUnit = unchecked((uint)3.40282347e+38F),
+    DefaultMetersPerUnit = unchecked((uint)1.0f),
+    SourceDistanceModel = unchecked((uint)0x200),
+    ByteRwOffsetsSOFT = unchecked((uint)0x1031),
+    SampleRwOffsetsSOFT = unchecked((uint)0x1032),
+    LoopPointsSOFT = unchecked((uint)0x2015),
+    FoldbackEventBlock = unchecked((uint)0x4112),
+    FoldbackEventStart = unchecked((uint)0x4111),
+    FoldbackEventStop = unchecked((uint)0x4113),
+    FoldbackModeMono = unchecked((uint)0x4101),
+    FoldbackModeStereo = unchecked((uint)0x4102),
+    DedicatedGain = unchecked((uint)0x0001),
+    EffectDedicatedDialogue = unchecked((uint)0x9001),
+    EffectDedicatedLowFrequencyEffect = unchecked((uint)0x9000),
+    MonoSOFT = unchecked((uint)0x1500),
+    StereoSOFT = unchecked((uint)0x1501),
+    RearSOFT = unchecked((uint)0x1502),
+    QuadSOFT = unchecked((uint)0x1503),
+    X5Point1Soft = unchecked((uint)0x1504),
+    X6Point1Soft = unchecked((uint)0x1505),
+    X7Point1Soft = unchecked((uint)0x1506),
+    ByteSOFT = unchecked((uint)0x1400),
+    UnsignedByteSOFT = unchecked((uint)0x1401),
+    ShortSOFT = unchecked((uint)0x1402),
+    UnsignedShortSOFT = unchecked((uint)0x1403),
+    IntSOFT = unchecked((uint)0x1404),
+    UnsignedIntSOFT = unchecked((uint)0x1405),
+    FloatSOFT = unchecked((uint)0x1406),
+    DoubleSOFT = unchecked((uint)0x1407),
+    Byte3Soft = unchecked((uint)0x1408),
+    UnsignedByte3SOFT = unchecked((uint)0x1409),
+    Mono8Soft = unchecked((uint)0x1100),
+    Mono16Soft = unchecked((uint)0x1101),
+    Mono32FSOFT = unchecked((uint)0x10010),
+    Stereo8Soft = unchecked((uint)0x1102),
+    Stereo16Soft = unchecked((uint)0x1103),
+    Stereo32FSOFT = unchecked((uint)0x10011),
+    Quad8Soft = unchecked((uint)0x1204),
+    Quad16Soft = unchecked((uint)0x1205),
+    Quad32FSOFT = unchecked((uint)0x1206),
+    Rear8Soft = unchecked((uint)0x1207),
+    Rear16Soft = unchecked((uint)0x1208),
+    Rear32FSOFT = unchecked((uint)0x1209),
+    X5Point1X8Soft = unchecked((uint)0x120A),
+    X5Point1X16Soft = unchecked((uint)0x120B),
+    X5Point1X32FSOFT = unchecked((uint)0x120C),
+    X6Point1X8Soft = unchecked((uint)0x120D),
+    X6Point1X16Soft = unchecked((uint)0x120E),
+    X6Point1X32FSOFT = unchecked((uint)0x120F),
+    X7Point1X8Soft = unchecked((uint)0x1210),
+    X7Point1X16Soft = unchecked((uint)0x1211),
+    X7Point1X32FSOFT = unchecked((uint)0x1212),
+    InternalFormatSOFT = unchecked((uint)0x2008),
+    ByteLengthSOFT = unchecked((uint)0x2009),
+    SampleLengthSOFT = unchecked((uint)0x200A),
+    SecLengthSOFT = unchecked((uint)0x200B),
+    DirectChannelsSOFT = unchecked((uint)0x1033),
+    StereoAngles = unchecked((uint)0x1030),
+    SourceRadius = unchecked((uint)0x1031),
+    SampleOffsetLatencySOFT = unchecked((uint)0x1200),
+    SecOffsetLatencySOFT = unchecked((uint)0x1201),
+    DeferredUpdatesSOFT = unchecked((uint)0xC002),
+    UnpackBlockAlignmentSOFT = unchecked((uint)0x200C),
+    PackBlockAlignmentSOFT = unchecked((uint)0x200D),
+    FormatMonoMsadpcmSOFT = unchecked((uint)0x1302),
+    FormatStereoMsadpcmSOFT = unchecked((uint)0x1303),
+    FormatBformat2D8 = unchecked((uint)0x20021),
+    FormatBformat2D16 = unchecked((uint)0x20022),
+    FormatBformat2DFloat32 = unchecked((uint)0x20023),
+    FormatBformat3D8 = unchecked((uint)0x20031),
+    FormatBformat3D16 = unchecked((uint)0x20032),
+    FormatBformat3DFloat32 = unchecked((uint)0x20033),
+    FormatBformat2DMulaw = unchecked((uint)0x10031),
+    FormatBformat3DMulaw = unchecked((uint)0x10032),
+    GainLimitSOFT = unchecked((uint)0x200E),
+    NumResamplersSOFT = unchecked((uint)0x1210),
+    DefaultResamplerSOFT = unchecked((uint)0x1211),
+    SourceResamplerSOFT = unchecked((uint)0x1212),
+    ResamplerNameSOFT = unchecked((uint)0x1213),
+    SourceSpatializeSOFT = unchecked((uint)0x1214),
+    AutoSOFT = unchecked((uint)0x0002),
+    SampleOffsetClockSOFT = unchecked((uint)0x1202),
+    SecOffsetClockSOFT = unchecked((uint)0x1203),
+    DropUnmatchedSOFT = unchecked((uint)0x0001),
+    RemixUnmatchedSOFT = unchecked((uint)0x0002),
+    AmbisonicLayoutSOFT = unchecked((uint)0x1997),
+    AmbisonicScalingSOFT = unchecked((uint)0x1998),
+    FumaSOFT = unchecked((uint)0x0000),
+    AcnSOFT = unchecked((uint)0x0001),
+    Sn3DSOFT = unchecked((uint)0x0001),
+    N3DSoft = unchecked((uint)0x0002),
+    EffectslotTargetSOFT = unchecked((uint)0x199C),
+    EventCallbackFunctionSOFT = unchecked((uint)0x19A2),
+    EventCallbackUserParamSOFT = unchecked((uint)0x19A3),
+    EventTypeBufferCompletedSOFT = unchecked((uint)0x19A4),
+    EventTypeSourceStateChangedSOFT = unchecked((uint)0x19A5),
+    EventTypeDisconnectedSOFT = unchecked((uint)0x19A6),
+    BufferCallbackFunctionSOFT = unchecked((uint)0x19A0),
+    BufferCallbackUserParamSOFT = unchecked((uint)0x19A1),
+    FormatUhj2Chn8SOFT = unchecked((uint)0x19A2),
+    FormatUhj2Chn16SOFT = unchecked((uint)0x19A3),
+    FormatUhj2ChnFloat32SOFT = unchecked((uint)0x19A4),
+    FormatUhj3Chn8SOFT = unchecked((uint)0x19A5),
+    FormatUhj3Chn16SOFT = unchecked((uint)0x19A6),
+    FormatUhj3ChnFloat32SOFT = unchecked((uint)0x19A7),
+    FormatUhj4Chn8SOFT = unchecked((uint)0x19A8),
+    FormatUhj4Chn16SOFT = unchecked((uint)0x19A9),
+    FormatUhj4ChnFloat32SOFT = unchecked((uint)0x19AA),
+    StereoModeSOFT = unchecked((uint)0x19B0),
+    NormalSOFT = unchecked((uint)0x0000),
+    SuperStereoSOFT = unchecked((uint)0x0001),
+    SuperStereoWidthSOFT = unchecked((uint)0x19B1),
+    FormatUhj2ChnMulawSOFT = unchecked((uint)0x19B3),
+    FormatUhj2ChnAlawSOFT = unchecked((uint)0x19B4),
+    FormatUhj2ChnIma4SOFT = unchecked((uint)0x19B5),
+    FormatUhj2ChnMsadpcmSOFT = unchecked((uint)0x19B6),
+    FormatUhj3ChnMulawSOFT = unchecked((uint)0x19B7),
+    FormatUhj3ChnAlawSOFT = unchecked((uint)0x19B8),
+    FormatUhj4ChnMulawSOFT = unchecked((uint)0x19B9),
+    FormatUhj4ChnAlawSOFT = unchecked((uint)0x19BA),
+    DontCareEXT = unchecked((uint)0x0002),
+    DebugOutputEXT = unchecked((uint)0x19B2),
+    DebugCallbackFunctionEXT = unchecked((uint)0x19B3),
+    DebugCallbackUserParamEXT = unchecked((uint)0x19B4),
+    DebugSourceApiEXT = unchecked((uint)0x19B5),
+    DebugSourceAudioSystemEXT = unchecked((uint)0x19B6),
+    DebugSourceThirdPartyEXT = unchecked((uint)0x19B7),
+    DebugSourceApplicationEXT = unchecked((uint)0x19B8),
+    DebugSourceOtherEXT = unchecked((uint)0x19B9),
+    DebugTypeErrorEXT = unchecked((uint)0x19BA),
+    DebugTypeDeprecatedBehaviorEXT = unchecked((uint)0x19BB),
+    DebugTypeUndefinedBehaviorEXT = unchecked((uint)0x19BC),
+    DebugTypePortabilityEXT = unchecked((uint)0x19BD),
+    DebugTypePerformanceEXT = unchecked((uint)0x19BE),
+    DebugTypeMarkerEXT = unchecked((uint)0x19BF),
+    DebugTypePushGroupEXT = unchecked((uint)0x19C0),
+    DebugTypePopGroupEXT = unchecked((uint)0x19C1),
+    DebugTypeOtherEXT = unchecked((uint)0x19C2),
+    DebugSeverityHighEXT = unchecked((uint)0x19C3),
+    DebugSeverityMediumEXT = unchecked((uint)0x19C4),
+    DebugSeverityLowEXT = unchecked((uint)0x19C5),
+    DebugSeverityNotificationEXT = unchecked((uint)0x19C6),
+    DebugLoggedMessagesEXT = unchecked((uint)0x19C7),
+    DebugNextLoggedMessageLengthEXT = unchecked((uint)0x19C8),
+    MaxDebugMessageLengthEXT = unchecked((uint)0x19C9),
+    MaxDebugLoggedMessagesEXT = unchecked((uint)0x19CA),
+    MaxDebugGroupStackDepthEXT = unchecked((uint)0x19CB),
+    MaxLabelLengthEXT = unchecked((uint)0x19CC),
+    StackOverflowEXT = unchecked((uint)0x19CD),
+    StackUnderflowEXT = unchecked((uint)0x19CE),
+    ContextFlagsEXT = unchecked((uint)0x19CF),
+    BufferEXT = unchecked((uint)0x1009),
+    SourceEXT = unchecked((uint)0x19D0),
+    FilterEXT = unchecked((uint)0x19D1),
+    EffectEXT = unchecked((uint)0x19D2),
+    AuxiliaryEffectSlotEXT = unchecked((uint)0x19D3),
+    UnpackAmbisonicOrderSOFT = unchecked((uint)0x199D),
+    CDefaultFilterOrder = unchecked((uint)0x1100),
 }

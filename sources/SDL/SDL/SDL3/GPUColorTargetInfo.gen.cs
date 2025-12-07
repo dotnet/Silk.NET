@@ -7,45 +7,35 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUColorTargetInfo")]
 public unsafe partial struct GPUColorTargetInfo
 {
-    [NativeName("texture")]
     public GPUTextureHandle Texture;
 
-    [NativeName("mip_level")]
+    [NativeTypeName("Uint32")]
     public uint MipLevel;
 
-    [NativeName("layer_or_depth_plane")]
+    [NativeTypeName("Uint32")]
     public uint LayerOrDepthPlane;
-
-    [NativeName("clear_color")]
     public FColor ClearColor;
-
-    [NativeName("load_op")]
     public GPULoadOp LoadOp;
-
-    [NativeName("store_op")]
     public GPUStoreOp StoreOp;
-
-    [NativeName("resolve_texture")]
     public GPUTextureHandle ResolveTexture;
 
-    [NativeName("resolve_mip_level")]
+    [NativeTypeName("Uint32")]
     public uint ResolveMipLevel;
 
-    [NativeName("resolve_layer")]
+    [NativeTypeName("Uint32")]
     public uint ResolveLayer;
 
-    [NativeName("cycle")]
+    [NativeTypeName("bool")]
     public byte Cycle;
 
-    [NativeName("cycle_resolve_texture")]
+    [NativeTypeName("bool")]
     public byte CycleResolveTexture;
 
-    [NativeName("padding1")]
+    [NativeTypeName("Uint8")]
     public byte Padding1;
 
-    [NativeName("padding2")]
+    [NativeTypeName("Uint8")]
     public byte Padding2;
 }

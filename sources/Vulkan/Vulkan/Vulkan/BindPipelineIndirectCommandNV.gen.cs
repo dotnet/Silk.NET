@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBindPipelineIndirectCommandNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct BindPipelineIndirectCommandNV
 {
-    [NativeName("pipelineAddress")]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],

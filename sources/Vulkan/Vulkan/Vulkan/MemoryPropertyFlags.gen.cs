@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkMemoryPropertyFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum MemoryPropertyFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -44,7 +43,6 @@ public enum MemoryPropertyFlags : uint
     )]
     DeviceLocalBit = 0x1,
 
-    [NativeName("VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -73,7 +71,6 @@ public enum MemoryPropertyFlags : uint
     )]
     HostVisibleBit = 0x2,
 
-    [NativeName("VK_MEMORY_PROPERTY_HOST_COHERENT_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -102,7 +99,6 @@ public enum MemoryPropertyFlags : uint
     )]
     HostCoherentBit = 0x4,
 
-    [NativeName("VK_MEMORY_PROPERTY_HOST_CACHED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -131,7 +127,6 @@ public enum MemoryPropertyFlags : uint
     )]
     HostCachedBit = 0x8,
 
-    [NativeName("VK_MEMORY_PROPERTY_LAZILY_ALLOCATED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -160,7 +155,6 @@ public enum MemoryPropertyFlags : uint
     )]
     LazilyAllocatedBit = 0x10,
 
-    [NativeName("VK_MEMORY_PROPERTY_PROTECTED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -185,7 +179,6 @@ public enum MemoryPropertyFlags : uint
     )]
     ProtectedBit = 0x20,
 
-    [NativeName("VK_MEMORY_PROPERTY_DEVICE_COHERENT_BIT_AMD")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_device_coherent_memory"],
@@ -196,7 +189,6 @@ public enum MemoryPropertyFlags : uint
     )]
     DeviceCoherentBitAMD = 0x40,
 
-    [NativeName("VK_MEMORY_PROPERTY_DEVICE_UNCACHED_BIT_AMD")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_device_coherent_memory"],
@@ -207,7 +199,6 @@ public enum MemoryPropertyFlags : uint
     )]
     DeviceUncachedBitAMD = 0x80,
 
-    [NativeName("VK_MEMORY_PROPERTY_RDMA_CAPABLE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory_rdma"],

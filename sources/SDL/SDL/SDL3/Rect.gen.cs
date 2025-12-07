@@ -7,18 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_Rect")]
 public partial struct Rect
 {
-    [NativeName("x")]
     public int X;
-
-    [NativeName("y")]
     public int Y;
-
-    [NativeName("w")]
     public int W;
-
-    [NativeName("h")]
     public int H;
 }

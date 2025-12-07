@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkClusterAccelerationStructureMoveObjectsInputNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ClusterAccelerationStructureMoveObjectsInputNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -20,7 +18,6 @@ public unsafe partial struct ClusterAccelerationStructureMoveObjectsInputNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -28,7 +25,6 @@ public unsafe partial struct ClusterAccelerationStructureMoveObjectsInputNV
     )]
     public void* PNext;
 
-    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -36,7 +32,7 @@ public unsafe partial struct ClusterAccelerationStructureMoveObjectsInputNV
     )]
     public ClusterAccelerationStructureTypeNV Type;
 
-    [NativeName("noMoveOverlap")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -44,7 +40,7 @@ public unsafe partial struct ClusterAccelerationStructureMoveObjectsInputNV
     )]
     public uint NoMoveOverlap;
 
-    [NativeName("maxMovedBytes")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],

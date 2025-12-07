@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGeneratedCommandsMemoryRequirementsInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -24,7 +22,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -36,7 +34,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("indirectExecutionSet")]
+    [NativeTypeName("VkIndirectExecutionSetEXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -46,9 +44,9 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public IndirectExecutionSetHandleEXT IndirectExecutionSet;
+    public IndirectExecutionSetEXTHandle IndirectExecutionSet;
 
-    [NativeName("indirectCommandsLayout")]
+    [NativeTypeName("VkIndirectCommandsLayoutEXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -58,9 +56,9 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public IndirectCommandsLayoutHandleEXT IndirectCommandsLayout;
+    public IndirectCommandsLayoutEXTHandle IndirectCommandsLayout;
 
-    [NativeName("maxSequenceCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -72,7 +70,7 @@ public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoEXT
     )]
     public uint MaxSequenceCount;
 
-    [NativeName("maxDrawCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

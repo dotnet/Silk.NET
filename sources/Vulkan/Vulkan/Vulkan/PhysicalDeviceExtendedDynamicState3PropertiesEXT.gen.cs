@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceExtendedDynamicState3PropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExtendedDynamicState3PropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3PropertiesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3PropertiesEXT
     )]
     public void* PNext;
 
-    [NativeName("dynamicPrimitiveTopologyUnrestricted")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],

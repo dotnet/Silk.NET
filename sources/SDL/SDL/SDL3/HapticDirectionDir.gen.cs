@@ -8,10 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("_dir_e__FixedBuffer")]
 [InlineArray(3)]
 public partial struct HapticDirectionDir
 {
-    [NativeName("e0")]
     public int E0;
 }

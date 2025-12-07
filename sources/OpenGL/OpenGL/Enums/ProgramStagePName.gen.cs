@@ -7,21 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ProgramStagePName")]
+[Transformed]
 public enum ProgramStagePName : uint
 {
-    [NativeName("GL_ACTIVE_SUBROUTINES")]
-    Subroutines = 36325,
-
-    [NativeName("GL_ACTIVE_SUBROUTINE_UNIFORMS")]
-    SubroutineUniforms = 36326,
-
-    [NativeName("GL_ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS")]
-    SubroutineUniformLocations = 36423,
-
-    [NativeName("GL_ACTIVE_SUBROUTINE_MAX_LENGTH")]
-    SubroutineMaxLength = 36424,
-
-    [NativeName("GL_ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH")]
-    SubroutineUniformMaxLength = 36425,
+    Subroutines = unchecked((uint)0x8DE5),
+    SubroutineUniforms = unchecked((uint)0x8DE6),
+    SubroutineUniformLocations = unchecked((uint)0x8E47),
+    SubroutineMaxLength = unchecked((uint)0x8E48),
+    SubroutineUniformMaxLength = unchecked((uint)0x8E49),
 }

@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkClearValue")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public partial struct ClearValue
 {
-    [NativeName("color")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",
@@ -33,7 +31,6 @@ public partial struct ClearValue
     )]
     public ClearColorValue Color;
 
-    [NativeName("depthStencil")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",

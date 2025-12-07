@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("PatchParameterName")]
+[Transformed]
 public enum PatchParameterName : uint
 {
-    [NativeName("GL_PATCH_VERTICES")]
-    Vertices = 36466,
-
-    [NativeName("GL_PATCH_DEFAULT_INNER_LEVEL")]
-    DefaultInnerLevel = 36467,
-
-    [NativeName("GL_PATCH_DEFAULT_OUTER_LEVEL")]
-    DefaultOuterLevel = 36468,
+    Vertices = unchecked((uint)0x8E72),
+    DefaultInnerLevel = unchecked((uint)0x8E73),
+    DefaultOuterLevel = unchecked((uint)0x8E74),
 }

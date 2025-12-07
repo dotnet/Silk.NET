@@ -10,12 +10,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("FlangerWaveform")]
+[Transformed]
 public enum FlangerWaveform : uint
 {
-    [NativeName("AL_FLANGER_WAVEFORM_SINUSOID")]
-    Sinusoid = 0,
-
-    [NativeName("AL_FLANGER_WAVEFORM_TRIANGLE")]
-    Triangle = 1,
+    Sinusoid = unchecked((uint)0),
+    Triangle = unchecked((uint)1),
 }

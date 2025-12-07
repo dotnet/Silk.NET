@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceFaultVendorBinaryHeaderVersionOneEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
 {
-    [NativeName("headerSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -22,7 +21,6 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
     )]
     public uint HeaderSize;
 
-    [NativeName("headerVersion")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -33,7 +31,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
     )]
     public DeviceFaultVendorBinaryHeaderVersionEXT HeaderVersion;
 
-    [NativeName("vendorID")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -44,7 +42,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
     )]
     public uint VendorID;
 
-    [NativeName("deviceID")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -55,7 +53,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
     )]
     public uint DeviceID;
 
-    [NativeName("driverVersion")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -66,7 +64,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
     )]
     public uint DriverVersion;
 
-    [NativeName("pipelineCacheUUID")]
+    [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -77,7 +75,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
     )]
     public DeviceFaultVendorBinaryHeaderVersionOneEXTPipelineCacheUUID PipelineCacheUUID;
 
-    [NativeName("applicationNameOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -88,7 +86,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
     )]
     public uint ApplicationNameOffset;
 
-    [NativeName("applicationVersion")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -99,7 +97,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
     )]
     public uint ApplicationVersion;
 
-    [NativeName("engineNameOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -110,7 +108,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
     )]
     public uint EngineNameOffset;
 
-    [NativeName("engineVersion")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -121,7 +119,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
     )]
     public uint EngineVersion;
 
-    [NativeName("apiVersion")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],

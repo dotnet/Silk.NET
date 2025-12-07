@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_primitive_topology_list_restart"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesE
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_primitive_topology_list_restart"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesE
     )]
     public void* PNext;
 
-    [NativeName("primitiveTopologyListRestart")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_primitive_topology_list_restart"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesE
     )]
     public uint PrimitiveTopologyListRestart;
 
-    [NativeName("primitiveTopologyPatchListRestart")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_primitive_topology_list_restart"],

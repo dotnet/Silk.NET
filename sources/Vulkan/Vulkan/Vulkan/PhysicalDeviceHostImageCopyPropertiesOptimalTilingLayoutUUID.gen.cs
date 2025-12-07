@@ -8,12 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_optimalTilingLayoutUUID_e__FixedBuffer")]
 [InlineArray(16)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_BASE_VERSION_1_4", "VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
+    MinVersion = "1.4"
+)]
 public partial struct PhysicalDeviceHostImageCopyPropertiesOptimalTilingLayoutUUID
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

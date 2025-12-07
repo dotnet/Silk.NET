@@ -7,48 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("BufferStorageTarget")]
+[Transformed]
 public enum BufferStorageTarget : uint
 {
-    [NativeName("GL_ARRAY_BUFFER")]
-    ArrayBuffer = 34962,
-
-    [NativeName("GL_ELEMENT_ARRAY_BUFFER")]
-    ElementArrayBuffer = 34963,
-
-    [NativeName("GL_PIXEL_PACK_BUFFER")]
-    PixelPackBuffer = 35051,
-
-    [NativeName("GL_PIXEL_UNPACK_BUFFER")]
-    PixelUnpackBuffer = 35052,
-
-    [NativeName("GL_TRANSFORM_FEEDBACK_BUFFER")]
-    TransformFeedbackBuffer = 35982,
-
-    [NativeName("GL_TEXTURE_BUFFER")]
-    TextureBuffer = 35882,
-
-    [NativeName("GL_COPY_READ_BUFFER")]
-    CopyReadBuffer = 36662,
-
-    [NativeName("GL_COPY_WRITE_BUFFER")]
-    CopyWriteBuffer = 36663,
-
-    [NativeName("GL_UNIFORM_BUFFER")]
-    UniformBuffer = 35345,
-
-    [NativeName("GL_DRAW_INDIRECT_BUFFER")]
-    DrawIndirectBuffer = 36671,
-
-    [NativeName("GL_ATOMIC_COUNTER_BUFFER")]
-    AtomicCounterBuffer = 37568,
-
-    [NativeName("GL_DISPATCH_INDIRECT_BUFFER")]
-    DispatchIndirectBuffer = 37102,
-
-    [NativeName("GL_SHADER_STORAGE_BUFFER")]
-    ShaderStorageBuffer = 37074,
-
-    [NativeName("GL_QUERY_BUFFER")]
-    QueryBuffer = 37266,
+    ArrayBuffer = unchecked((uint)0x8892),
+    ElementArrayBuffer = unchecked((uint)0x8893),
+    PixelPackBuffer = unchecked((uint)0x88EB),
+    PixelUnpackBuffer = unchecked((uint)0x88EC),
+    TransformFeedbackBuffer = unchecked((uint)0x8C8E),
+    TextureBuffer = unchecked((uint)0x8C2A),
+    CopyReadBuffer = unchecked((uint)0x8F36),
+    CopyWriteBuffer = unchecked((uint)0x8F37),
+    UniformBuffer = unchecked((uint)0x8A11),
+    DrawIndirectBuffer = unchecked((uint)0x8F3F),
+    AtomicCounterBuffer = unchecked((uint)0x92C0),
+    DispatchIndirectBuffer = unchecked((uint)0x90EE),
+    ShaderStorageBuffer = unchecked((uint)0x90D2),
+    QueryBuffer = unchecked((uint)0x9192),
 }

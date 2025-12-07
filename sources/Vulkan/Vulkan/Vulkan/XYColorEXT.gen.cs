@@ -8,15 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkXYColorEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct XYColorEXT
 {
-    [NativeName("x")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     public float X;
 
-    [NativeName("y")]
     [SupportedApiProfile("vulkan", ["VK_EXT_hdr_metadata"], ImpliesSets = ["VK_KHR_swapchain"])]
     public float Y;
 }

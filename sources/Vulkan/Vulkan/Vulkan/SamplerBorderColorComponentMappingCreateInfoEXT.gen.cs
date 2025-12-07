@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSamplerBorderColorComponentMappingCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerBorderColorComponentMappingCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_border_color_swizzle"],
@@ -19,7 +17,7 @@ public unsafe partial struct SamplerBorderColorComponentMappingCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_border_color_swizzle"],
@@ -27,7 +25,6 @@ public unsafe partial struct SamplerBorderColorComponentMappingCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("components")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_border_color_swizzle"],
@@ -35,7 +32,7 @@ public unsafe partial struct SamplerBorderColorComponentMappingCreateInfoEXT
     )]
     public ComponentMapping Components;
 
-    [NativeName("srgb")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_border_color_swizzle"],

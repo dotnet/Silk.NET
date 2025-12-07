@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceVulkan11Properties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVulkan11Properties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +31,6 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,7 +51,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public void* PNext;
 
-    [NativeName("deviceUUID")]
+    [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -75,7 +72,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public PhysicalDeviceVulkan11PropertiesDeviceUUID DeviceUUID;
 
-    [NativeName("driverUUID")]
+    [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -96,7 +93,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public PhysicalDeviceVulkan11PropertiesDriverUUID DriverUUID;
 
-    [NativeName("deviceLUID")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -117,7 +114,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public PhysicalDeviceVulkan11PropertiesDeviceLUID DeviceLUID;
 
-    [NativeName("deviceNodeMask")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -138,7 +135,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public uint DeviceNodeMask;
 
-    [NativeName("deviceLUIDValid")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -159,7 +156,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public uint DeviceLUIDValid;
 
-    [NativeName("subgroupSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -180,7 +177,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public uint SubgroupSize;
 
-    [NativeName("subgroupSupportedStages")]
+    [NativeTypeName("VkShaderStageFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -201,7 +198,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public ShaderStageFlags SubgroupSupportedStages;
 
-    [NativeName("subgroupSupportedOperations")]
+    [NativeTypeName("VkSubgroupFeatureFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -222,7 +219,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public SubgroupFeatureFlags SubgroupSupportedOperations;
 
-    [NativeName("subgroupQuadOperationsInAllStages")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -243,7 +240,6 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public uint SubgroupQuadOperationsInAllStages;
 
-    [NativeName("pointClippingBehavior")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -264,7 +260,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public PointClippingBehavior PointClippingBehavior;
 
-    [NativeName("maxMultiviewViewCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -285,7 +281,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public uint MaxMultiviewViewCount;
 
-    [NativeName("maxMultiviewInstanceIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -306,7 +302,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public uint MaxMultiviewInstanceIndex;
 
-    [NativeName("protectedNoFault")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -327,7 +323,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public uint ProtectedNoFault;
 
-    [NativeName("maxPerSetDescriptors")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -348,7 +344,7 @@ public unsafe partial struct PhysicalDeviceVulkan11Properties
     )]
     public uint MaxPerSetDescriptors;
 
-    [NativeName("maxMemoryAllocationSize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [

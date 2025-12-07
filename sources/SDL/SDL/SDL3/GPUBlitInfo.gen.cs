@@ -7,36 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUBlitInfo")]
 public partial struct GPUBlitInfo
 {
-    [NativeName("source")]
     public GPUBlitRegion Source;
-
-    [NativeName("destination")]
     public GPUBlitRegion Destination;
-
-    [NativeName("load_op")]
     public GPULoadOp LoadOp;
-
-    [NativeName("clear_color")]
     public FColor ClearColor;
-
-    [NativeName("flip_mode")]
     public FlipMode FlipMode;
-
-    [NativeName("filter")]
     public GPUFilter Filter;
 
-    [NativeName("cycle")]
+    [NativeTypeName("bool")]
     public byte Cycle;
 
-    [NativeName("padding1")]
+    [NativeTypeName("Uint8")]
     public byte Padding1;
 
-    [NativeName("padding2")]
+    [NativeTypeName("Uint8")]
     public byte Padding2;
 
-    [NativeName("padding3")]
+    [NativeTypeName("Uint8")]
     public byte Padding3;
 }

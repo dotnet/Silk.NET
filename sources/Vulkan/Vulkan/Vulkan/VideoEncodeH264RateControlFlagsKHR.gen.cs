@@ -8,50 +8,45 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH264RateControlFlagBitsKHR")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum VideoEncodeH264RateControlFlagsKHR : uint
 {
     None = 0x0,
 
-    [NativeName("VK_VIDEO_ENCODE_H264_RATE_CONTROL_ATTEMPT_HRD_COMPLIANCE_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    AttemptHrdComplianceBit = 0x1,
+    AttemptHrdComplianceBitKHR = 0x1,
 
-    [NativeName("VK_VIDEO_ENCODE_H264_RATE_CONTROL_REGULAR_GOP_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    RegularGopBit = 0x2,
+    RegularGopBitKHR = 0x2,
 
-    [NativeName("VK_VIDEO_ENCODE_H264_RATE_CONTROL_REFERENCE_PATTERN_FLAT_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ReferencePatternFlatBit = 0x4,
+    ReferencePatternFlatBitKHR = 0x4,
 
-    [NativeName("VK_VIDEO_ENCODE_H264_RATE_CONTROL_REFERENCE_PATTERN_DYADIC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    ReferencePatternDyadicBit = 0x8,
+    ReferencePatternDyadicBitKHR = 0x8,
 
-    [NativeName("VK_VIDEO_ENCODE_H264_RATE_CONTROL_TEMPORAL_LAYER_PATTERN_DYADIC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    TemporalLayerPatternDyadicBit = 0x10,
+    TemporalLayerPatternDyadicBitKHR = 0x10,
 }

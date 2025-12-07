@@ -8,27 +8,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceShaderTileImagePropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderTileImagePropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
-    [NativeName("shaderTileImageCoherentReadAccelerated")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint ShaderTileImageCoherentReadAccelerated;
 
-    [NativeName("shaderTileImageReadSampleFromPixelRateInvocation")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint ShaderTileImageReadSampleFromPixelRateInvocation;
 
-    [NativeName("shaderTileImageReadFromHelperInvocation")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_shader_tile_image"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint ShaderTileImageReadFromHelperInvocation;
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     )]
     public void* PNext;
 
-    [NativeName("maxGraphicsShaderGroupCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -36,7 +33,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     )]
     public uint MaxGraphicsShaderGroupCount;
 
-    [NativeName("maxIndirectSequenceCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     )]
     public uint MaxIndirectSequenceCount;
 
-    [NativeName("maxIndirectCommandsTokenCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -52,7 +49,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     )]
     public uint MaxIndirectCommandsTokenCount;
 
-    [NativeName("maxIndirectCommandsStreamCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -60,7 +57,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     )]
     public uint MaxIndirectCommandsStreamCount;
 
-    [NativeName("maxIndirectCommandsTokenOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -68,7 +65,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     )]
     public uint MaxIndirectCommandsTokenOffset;
 
-    [NativeName("maxIndirectCommandsStreamStride")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -76,7 +73,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     )]
     public uint MaxIndirectCommandsStreamStride;
 
-    [NativeName("minSequencesCountBufferOffsetAlignment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -84,7 +81,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     )]
     public uint MinSequencesCountBufferOffsetAlignment;
 
-    [NativeName("minSequencesIndexBufferOffsetAlignment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -92,7 +89,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     )]
     public uint MinSequencesIndexBufferOffsetAlignment;
 
-    [NativeName("minIndirectCommandsBufferOffsetAlignment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

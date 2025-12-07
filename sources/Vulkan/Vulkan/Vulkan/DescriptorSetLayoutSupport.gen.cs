@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorSetLayoutSupport")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorSetLayoutSupport
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +31,6 @@ public unsafe partial struct DescriptorSetLayoutSupport
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,7 +51,7 @@ public unsafe partial struct DescriptorSetLayoutSupport
     )]
     public void* PNext;
 
-    [NativeName("supported")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [

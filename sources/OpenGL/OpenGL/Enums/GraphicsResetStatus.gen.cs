@@ -7,18 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("GraphicsResetStatus")]
+[Transformed]
 public enum GraphicsResetStatus : uint
 {
-    [NativeName("GL_NO_ERROR")]
-    NoError = 0,
-
-    [NativeName("GL_GUILTY_CONTEXT_RESET")]
-    GuiltyContextReset = 33363,
-
-    [NativeName("GL_INNOCENT_CONTEXT_RESET")]
-    InnocentContextReset = 33364,
-
-    [NativeName("GL_UNKNOWN_CONTEXT_RESET")]
-    UnknownContextReset = 33365,
+    NoError = unchecked((uint)0),
+    GuiltyContextReset = unchecked((uint)0x8253),
+    InnocentContextReset = unchecked((uint)0x8254),
+    UnknownContextReset = unchecked((uint)0x8255),
 }

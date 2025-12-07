@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAccelerationStructureGeometryDataKHR")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public partial struct AccelerationStructureGeometryDataKHR
 {
-    [NativeName("triangles")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",
@@ -25,7 +23,6 @@ public partial struct AccelerationStructureGeometryDataKHR
     )]
     public AccelerationStructureGeometryTrianglesDataKHR Triangles;
 
-    [NativeName("aabbs")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",
@@ -37,7 +34,6 @@ public partial struct AccelerationStructureGeometryDataKHR
     )]
     public AccelerationStructureGeometryAabbsDataKHR Aabbs;
 
-    [NativeName("instances")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",

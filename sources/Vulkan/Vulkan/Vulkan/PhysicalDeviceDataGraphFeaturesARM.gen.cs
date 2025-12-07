@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDataGraphFeaturesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
     )]
     public void* PNext;
 
-    [NativeName("dataGraph")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -36,7 +33,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
     )]
     public uint DataGraph;
 
-    [NativeName("dataGraphUpdateAfterBind")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
     )]
     public uint DataGraphUpdateAfterBind;
 
-    [NativeName("dataGraphSpecializationConstants")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -52,7 +49,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
     )]
     public uint DataGraphSpecializationConstants;
 
-    [NativeName("dataGraphDescriptorBuffer")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -60,7 +57,7 @@ public unsafe partial struct PhysicalDeviceDataGraphFeaturesARM
     )]
     public uint DataGraphDescriptorBuffer;
 
-    [NativeName("dataGraphShaderModule")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceMemoryProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceMemoryProperties
 {
-    [NativeName("memoryTypeCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +39,7 @@ public partial struct PhysicalDeviceMemoryProperties
     )]
     public uint MemoryTypeCount;
 
-    [NativeName("memoryTypes")]
+    [NativeTypeName("VkMemoryType[32]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +68,7 @@ public partial struct PhysicalDeviceMemoryProperties
     )]
     public PhysicalDeviceMemoryPropertiesMemoryTypes MemoryTypes;
 
-    [NativeName("memoryHeapCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +97,7 @@ public partial struct PhysicalDeviceMemoryProperties
     )]
     public uint MemoryHeapCount;
 
-    [NativeName("memoryHeaps")]
+    [NativeTypeName("VkMemoryHeap[16]")]
     [SupportedApiProfile(
         "vulkan",
         [

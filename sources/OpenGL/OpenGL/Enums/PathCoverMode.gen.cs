@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("PathCoverMode")]
+[Transformed]
 public enum PathCoverMode : uint
 {
-    [NativeName("GL_PATH_FILL_COVER_MODE_NV")]
-    PathFillCoverModeNV = 36994,
-
-    [NativeName("GL_CONVEX_HULL_NV")]
-    ConvexHullNV = 37003,
-
-    [NativeName("GL_BOUNDING_BOX_NV")]
-    BoundingBoxNV = 37005,
+    PathFillCoverModeNV = unchecked((uint)0x9082),
+    ConvexHullNV = unchecked((uint)0x908B),
+    BoundingBoxNV = unchecked((uint)0x908D),
 }

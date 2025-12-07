@@ -7,19 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoH264DisableDeblockingFilterIdc")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH264DisableDeblockingFilterIdc : uint
 {
-    [NativeName("STD_VIDEO_H264_DISABLE_DEBLOCKING_FILTER_IDC_DISABLED")]
     [SupportedApiProfile("vulkan")]
     Disabled = 0,
 
-    [NativeName("STD_VIDEO_H264_DISABLE_DEBLOCKING_FILTER_IDC_ENABLED")]
     [SupportedApiProfile("vulkan")]
     Enabled = 1,
 
-    [NativeName("STD_VIDEO_H264_DISABLE_DEBLOCKING_FILTER_IDC_PARTIAL")]
     [SupportedApiProfile("vulkan")]
     Partial = 2,
 }

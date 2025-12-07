@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCoarseSampleOrderTypeNV")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum CoarseSampleOrderTypeNV : uint
 {
-    [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_DEFAULT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -21,9 +20,8 @@ public enum CoarseSampleOrderTypeNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Default = 0,
+    DefaultNV = 0,
 
-    [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_CUSTOM_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -32,9 +30,8 @@ public enum CoarseSampleOrderTypeNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    Custom = 1,
+    CustomNV = 1,
 
-    [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_PIXEL_MAJOR_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -43,9 +40,8 @@ public enum CoarseSampleOrderTypeNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    PixelMajor = 2,
+    PixelMajorNV = 2,
 
-    [NativeName("VK_COARSE_SAMPLE_ORDER_TYPE_SAMPLE_MAJOR_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_shading_rate_image"],
@@ -54,5 +50,5 @@ public enum CoarseSampleOrderTypeNV : uint
             "VK_NV_shading_rate_image+VK_VERSION_1_1",
         ]
     )]
-    SampleMajor = 3,
+    SampleMajorNV = 3,
 }

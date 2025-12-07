@@ -8,27 +8,26 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoH265SubLayerHrdParameters")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265SubLayerHrdParameters
 {
-    [NativeName("bit_rate_value_minus1")]
+    [NativeTypeName("uint32_t[32]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265SubLayerHrdParametersBitRateValueMinus1 BitRateValueMinus1;
 
-    [NativeName("cpb_size_value_minus1")]
+    [NativeTypeName("uint32_t[32]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265SubLayerHrdParametersCpbSizeValueMinus1 CpbSizeValueMinus1;
 
-    [NativeName("cpb_size_du_value_minus1")]
+    [NativeTypeName("uint32_t[32]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265SubLayerHrdParametersCpbSizeDuValueMinus1 CpbSizeDuValueMinus1;
 
-    [NativeName("bit_rate_du_value_minus1")]
+    [NativeTypeName("uint32_t[32]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265SubLayerHrdParametersBitRateDuValueMinus1 BitRateDuValueMinus1;
 
-    [NativeName("cbr_flag")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan")]
     public uint CbrFlag;
 }

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDevicePipelineBinaryPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("pipelineBinaryInternalCache")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
     )]
     public uint PipelineBinaryInternalCache;
 
-    [NativeName("pipelineBinaryInternalCacheControl")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -55,7 +52,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
     )]
     public uint PipelineBinaryInternalCacheControl;
 
-    [NativeName("pipelineBinaryPrefersInternalCache")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -66,7 +63,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
     )]
     public uint PipelineBinaryPrefersInternalCache;
 
-    [NativeName("pipelineBinaryPrecompiledInternalCache")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],
@@ -77,7 +74,7 @@ public unsafe partial struct PhysicalDevicePipelineBinaryPropertiesKHR
     )]
     public uint PipelineBinaryPrecompiledInternalCache;
 
-    [NativeName("pipelineBinaryCompressedData")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_binary"],

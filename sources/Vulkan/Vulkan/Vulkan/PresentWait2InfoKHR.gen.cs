@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPresentWait2InfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PresentWait2InfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_present_wait2"],
@@ -25,7 +23,7 @@ public unsafe partial struct PresentWait2InfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_present_wait2"],
@@ -38,7 +36,7 @@ public unsafe partial struct PresentWait2InfoKHR
     )]
     public void* PNext;
 
-    [NativeName("presentId")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_present_id"],
@@ -49,7 +47,7 @@ public unsafe partial struct PresentWait2InfoKHR
     )]
     public ulong PresentId;
 
-    [NativeName("timeout")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_present_wait2"],

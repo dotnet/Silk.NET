@@ -7,19 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExternalComputeQueueDataParamsNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ExternalComputeQueueDataParamsNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     public void* PNext;
 
-    [NativeName("deviceIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_compute_queue"])]
     public uint DeviceIndex;
 }

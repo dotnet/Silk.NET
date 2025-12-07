@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDescriptorBufferFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -25,7 +23,6 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -38,7 +35,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("descriptorBuffer")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -51,7 +48,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
     )]
     public uint DescriptorBuffer;
 
-    [NativeName("descriptorBufferCaptureReplay")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -64,7 +61,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
     )]
     public uint DescriptorBufferCaptureReplay;
 
-    [NativeName("descriptorBufferImageLayoutIgnored")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -77,7 +74,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferFeaturesEXT
     )]
     public uint DescriptorBufferImageLayoutIgnored;
 
-    [NativeName("descriptorBufferPushDescriptors")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],

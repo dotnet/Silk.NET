@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_shader_interlock"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_shader_interlock"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("fragmentShaderSampleInterlock")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_shader_interlock"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
     )]
     public uint FragmentShaderSampleInterlock;
 
-    [NativeName("fragmentShaderPixelInterlock")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_shader_interlock"],
@@ -56,7 +53,7 @@ public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
     )]
     public uint FragmentShaderPixelInterlock;
 
-    [NativeName("fragmentShaderShadingRateInterlock")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_shader_interlock"],

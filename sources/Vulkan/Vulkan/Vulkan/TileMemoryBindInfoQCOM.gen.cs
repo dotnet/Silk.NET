@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkTileMemoryBindInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TileMemoryBindInfoQCOM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_memory_heap"],
@@ -21,7 +19,7 @@ public unsafe partial struct TileMemoryBindInfoQCOM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_memory_heap"],
@@ -32,7 +30,7 @@ public unsafe partial struct TileMemoryBindInfoQCOM
     )]
     public void* PNext;
 
-    [NativeName("memory")]
+    [NativeTypeName("VkDeviceMemory")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_memory_heap"],

@@ -7,18 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUStencilOpState")]
 public partial struct GPUStencilOpState
 {
-    [NativeName("fail_op")]
     public GPUStencilOp FailOp;
-
-    [NativeName("pass_op")]
     public GPUStencilOp PassOp;
-
-    [NativeName("depth_fail_op")]
     public GPUStencilOp DepthFailOp;
-
-    [NativeName("compare_op")]
     public GPUCompareOp CompareOp;
 }

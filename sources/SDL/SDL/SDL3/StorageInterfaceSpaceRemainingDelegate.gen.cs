@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_StorageInterface_space_remaining")]
+[Transformed]
 public unsafe delegate ulong StorageInterfaceSpaceRemainingDelegate(void* arg0);

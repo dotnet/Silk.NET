@@ -8,23 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoAV1TimingInfo")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1TimingInfo
 {
-    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1TimingInfoFlags Flags;
 
-    [NativeName("num_units_in_display_tick")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan")]
     public uint NumUnitsInDisplayTick;
 
-    [NativeName("time_scale")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan")]
     public uint TimeScale;
 
-    [NativeName("num_ticks_per_picture_minus_1")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan")]
     public uint NumTicksPerPictureMinus1;
 }

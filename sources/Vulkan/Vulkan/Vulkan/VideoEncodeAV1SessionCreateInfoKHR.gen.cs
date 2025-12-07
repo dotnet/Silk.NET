@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeAV1SessionCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeAV1SessionCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -20,7 +18,7 @@ public unsafe partial struct VideoEncodeAV1SessionCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -28,7 +26,7 @@ public unsafe partial struct VideoEncodeAV1SessionCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("useMaxLevel")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -36,7 +34,6 @@ public unsafe partial struct VideoEncodeAV1SessionCreateInfoKHR
     )]
     public uint UseMaxLevel;
 
-    [NativeName("maxLevel")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

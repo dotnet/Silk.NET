@@ -8,12 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_description_e__FixedBuffer")]
 [InlineArray(256)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_EXT_device_fault"],
+    ImpliesSets = [
+        "VK_EXT_device_fault+VK_KHR_get_physical_device_properties2",
+        "VK_EXT_device_fault+VK_VERSION_1_1",
+    ]
+)]
 public partial struct DeviceFaultVendorInfoEXTDescription
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

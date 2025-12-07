@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_delta_chroma_offset_l1_e__FixedBuffer")]
 [InlineArray(15 * 2)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265WeightTableDeltaChromaOffsetL1
 {
-    [NativeName("e0_0")]
     [SupportedApiProfile("vulkan")]
     public sbyte E0X0;
 }

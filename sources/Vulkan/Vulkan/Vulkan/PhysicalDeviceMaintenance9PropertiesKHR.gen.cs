@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceMaintenance9PropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMaintenance9PropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance9"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceMaintenance9PropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance9"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceMaintenance9PropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("image2DViewOf3DSparse")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance9"],
@@ -44,7 +41,6 @@ public unsafe partial struct PhysicalDeviceMaintenance9PropertiesKHR
     )]
     public uint Image2DViewOf3DSparse;
 
-    [NativeName("defaultVertexAttributeValue")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance9"],

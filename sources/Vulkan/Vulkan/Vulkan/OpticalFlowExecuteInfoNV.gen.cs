@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkOpticalFlowExecuteInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct OpticalFlowExecuteInfoNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -23,7 +21,6 @@ public unsafe partial struct OpticalFlowExecuteInfoNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -35,7 +32,7 @@ public unsafe partial struct OpticalFlowExecuteInfoNV
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkOpticalFlowExecuteFlagsNV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -47,7 +44,7 @@ public unsafe partial struct OpticalFlowExecuteInfoNV
     )]
     public OpticalFlowExecuteFlagsNV Flags;
 
-    [NativeName("regionCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -59,7 +56,7 @@ public unsafe partial struct OpticalFlowExecuteInfoNV
     )]
     public uint RegionCount;
 
-    [NativeName("pRegions")]
+    [NativeTypeName("const VkRect2D *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],

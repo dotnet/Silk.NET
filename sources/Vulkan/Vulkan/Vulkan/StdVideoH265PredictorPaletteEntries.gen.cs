@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoH265PredictorPaletteEntries")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265PredictorPaletteEntries
 {
-    [NativeName("PredictorPaletteEntries")]
+    [NativeTypeName("uint16_t[3][128]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265PredictorPaletteEntriesPredictorPaletteEntries PredictorPaletteEntries;
 }

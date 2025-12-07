@@ -8,17 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoDecodeVP9PictureInfoFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeVP9PictureInfoFlags
 {
-    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeName("error_resilient_mode")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint ErrorResilientMode
+    public uint error_resilient_mode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -26,9 +24,9 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeName("intra_only")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint IntraOnly
+    public uint intra_only
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -36,9 +34,9 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeName("allow_high_precision_mv")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint AllowHighPrecisionMv
+    public uint allow_high_precision_mv
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -46,9 +44,9 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeName("refresh_frame_context")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint RefreshFrameContext
+    public uint refresh_frame_context
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -56,9 +54,9 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeName("frame_parallel_decoding_mode")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint FrameParallelDecodingMode
+    public uint frame_parallel_decoding_mode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0x1u; }
@@ -66,9 +64,9 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4); }
     }
 
-    [NativeName("segmentation_enabled")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SegmentationEnabled
+    public uint segmentation_enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 5) & 0x1u; }
@@ -76,9 +74,9 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5); }
     }
 
-    [NativeName("show_frame")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint ShowFrame
+    public uint show_frame
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 6) & 0x1u; }
@@ -86,7 +84,7 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6); }
     }
 
-    [NativeName("UsePrevFrameMvs")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UsePrevFrameMvs
     {
@@ -96,9 +94,9 @@ public partial struct StdVideoDecodeVP9PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7); }
     }
 
-    [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 24")]
     [SupportedApiProfile("vulkan")]
-    public uint Reserved
+    public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 8) & 0xFFFFFFu; }

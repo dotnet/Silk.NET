@@ -10,21 +10,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("EffectDistortion")]
+[Transformed]
 public enum EffectDistortion : uint
 {
-    [NativeName("AL_DISTORTION_EDGE")]
-    Edge = 1,
-
-    [NativeName("AL_DISTORTION_GAIN")]
-    Gain = 2,
-
-    [NativeName("AL_DISTORTION_LOWPASS_CUTOFF")]
-    LowpassCutoff = 3,
-
-    [NativeName("AL_DISTORTION_EQCENTER")]
-    Eqcenter = 4,
-
-    [NativeName("AL_DISTORTION_EQBANDWIDTH")]
-    Eqbandwidth = 5,
+    Edge = unchecked((uint)0x0001),
+    Gain = unchecked((uint)0x0002),
+    LowpassCutoff = unchecked((uint)0x0003),
+    Eqcenter = unchecked((uint)0x0004),
+    Eqbandwidth = unchecked((uint)0x0005),
 }

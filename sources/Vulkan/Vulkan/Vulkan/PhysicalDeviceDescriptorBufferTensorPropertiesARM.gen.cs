@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDescriptorBufferTensorPropertiesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorBufferTensorPropertiesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferTensorPropertiesARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
@@ -29,7 +26,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferTensorPropertiesARM
     )]
     public void* PNext;
 
-    [NativeName("tensorCaptureReplayDescriptorDataSize")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
@@ -38,7 +35,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferTensorPropertiesARM
     )]
     public nuint TensorCaptureReplayDescriptorDataSize;
 
-    [NativeName("tensorViewCaptureReplayDescriptorDataSize")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
@@ -47,7 +44,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferTensorPropertiesARM
     )]
     public nuint TensorViewCaptureReplayDescriptorDataSize;
 
-    [NativeName("tensorDescriptorSize")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],

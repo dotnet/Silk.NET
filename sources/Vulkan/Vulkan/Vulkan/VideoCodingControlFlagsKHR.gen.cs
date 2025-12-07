@@ -7,22 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoCodingControlFlagBitsKHR")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum VideoCodingControlFlagsKHR : uint
 {
     None = 0x0,
 
-    [NativeName("VK_VIDEO_CODING_CONTROL_RESET_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
         ImpliesSets = ["VK_VERSION_1_1+VK_KHR_synchronization2", "VK_VERSION_1_3"]
     )]
-    ResetBit = 0x1,
+    ResetBitKHR = 0x1,
 
-    [NativeName("VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -31,9 +29,8 @@ public enum VideoCodingControlFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    EncodeRateControlBit = 0x2,
+    EncodeRateControlBitKHR = 0x2,
 
-    [NativeName("VK_VIDEO_CODING_CONTROL_ENCODE_QUALITY_LEVEL_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -42,5 +39,5 @@ public enum VideoCodingControlFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    EncodeQualityLevelBit = 0x4,
+    EncodeQualityLevelBitKHR = 0x4,
 }

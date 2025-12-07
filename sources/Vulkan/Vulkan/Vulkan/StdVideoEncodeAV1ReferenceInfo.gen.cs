@@ -8,31 +8,28 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoEncodeAV1ReferenceInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct StdVideoEncodeAV1ReferenceInfo
 {
-    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeAV1ReferenceInfoFlags Flags;
 
-    [NativeName("RefFrameId")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan")]
     public uint RefFrameId;
 
-    [NativeName("frame_type")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FrameType FrameType;
 
-    [NativeName("OrderHint")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte OrderHint;
 
-    [NativeName("reserved1")]
+    [NativeTypeName("uint8_t[3]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeAV1ReferenceInfoReserved1 Reserved1;
 
-    [NativeName("pExtensionHeader")]
+    [NativeTypeName("const StdVideoEncodeAV1ExtensionHeader *")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeAV1ExtensionHeader* PExtensionHeader;
 }

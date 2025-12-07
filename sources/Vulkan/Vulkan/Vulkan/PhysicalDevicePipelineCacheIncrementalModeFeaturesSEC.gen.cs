@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePipelineCacheIncrementalModeFeaturesSEC
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_SEC_pipeline_cache_incremental_mode"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDevicePipelineCacheIncrementalModeFeaturesS
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_SEC_pipeline_cache_incremental_mode"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDevicePipelineCacheIncrementalModeFeaturesS
     )]
     public void* PNext;
 
-    [NativeName("pipelineCacheIncrementalMode")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_SEC_pipeline_cache_incremental_mode"],

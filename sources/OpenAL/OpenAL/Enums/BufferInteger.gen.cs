@@ -10,45 +10,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("BufferInteger")]
+[Transformed]
 public enum BufferInteger : uint
 {
-    [NativeName("AL_FREQUENCY")]
-    Frequency = 8193,
-
-    [NativeName("AL_SIZE")]
-    Size = 8196,
-
-    [NativeName("AL_BITS")]
-    Bits = 8194,
-
-    [NativeName("AL_CHANNELS")]
-    Channels = 8195,
-
-    [NativeName("AL_LOOP_POINTS_SOFT")]
-    LoopPointsSOFT = 8213,
-
-    [NativeName("AL_INTERNAL_FORMAT_SOFT")]
-    InternalFormatSOFT = 8200,
-
-    [NativeName("AL_BYTE_LENGTH_SOFT")]
-    ByteLengthSOFT = 8201,
-
-    [NativeName("AL_SAMPLE_LENGTH_SOFT")]
-    SampleLengthSOFT = 8202,
-
-    [NativeName("AL_UNPACK_BLOCK_ALIGNMENT_SOFT")]
-    UnpackBlockAlignmentSOFT = 8204,
-
-    [NativeName("AL_PACK_BLOCK_ALIGNMENT_SOFT")]
-    PackBlockAlignmentSOFT = 8205,
-
-    [NativeName("AL_AMBISONIC_LAYOUT_SOFT")]
-    AmbisonicLayoutSOFT = 6551,
-
-    [NativeName("AL_AMBISONIC_SCALING_SOFT")]
-    AmbisonicScalingSOFT = 6552,
-
-    [NativeName("AL_UNPACK_AMBISONIC_ORDER_SOFT")]
-    UnpackAmbisonicOrderSOFT = 6557,
+    Frequency = unchecked((uint)0x2001),
+    Size = unchecked((uint)0x2004),
+    Bits = unchecked((uint)0x2002),
+    Channels = unchecked((uint)0x2003),
+    LoopPointsSOFT = unchecked((uint)0x2015),
+    InternalFormatSOFT = unchecked((uint)0x2008),
+    ByteLengthSOFT = unchecked((uint)0x2009),
+    SampleLengthSOFT = unchecked((uint)0x200A),
+    UnpackBlockAlignmentSOFT = unchecked((uint)0x200C),
+    PackBlockAlignmentSOFT = unchecked((uint)0x200D),
+    AmbisonicLayoutSOFT = unchecked((uint)0x1997),
+    AmbisonicScalingSOFT = unchecked((uint)0x1998),
+    UnpackAmbisonicOrderSOFT = unchecked((uint)0x199D),
 }

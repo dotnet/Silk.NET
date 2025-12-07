@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_bit_rate_value_minus1_e__FixedBuffer")]
 [InlineArray(32)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264HrdParametersBitRateValueMinus1
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public uint E0;
 }

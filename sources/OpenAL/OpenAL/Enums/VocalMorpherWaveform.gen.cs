@@ -10,15 +10,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("VocalMorpherWaveform")]
+[Transformed]
 public enum VocalMorpherWaveform : uint
 {
-    [NativeName("AL_VOCAL_MORPHER_WAVEFORM_SINUSOID")]
-    Sinusoid = 0,
-
-    [NativeName("AL_VOCAL_MORPHER_WAVEFORM_TRIANGLE")]
-    Triangle = 1,
-
-    [NativeName("AL_VOCAL_MORPHER_WAVEFORM_SAWTOOTH")]
-    Sawtooth = 2,
+    Sinusoid = unchecked((uint)0),
+    Triangle = unchecked((uint)1),
+    Sawtooth = unchecked((uint)2),
 }

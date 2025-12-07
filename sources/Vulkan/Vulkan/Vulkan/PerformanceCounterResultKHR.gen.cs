@@ -8,13 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPerformanceCounterResultKHR")]
 [StructLayout(LayoutKind.Explicit)]
 [SupportedApiProfile("vulkan")]
 public partial struct PerformanceCounterResultKHR
 {
-    [NativeName("int32")]
     [FieldOffset(0)]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -25,8 +24,8 @@ public partial struct PerformanceCounterResultKHR
     )]
     public int Int32;
 
-    [NativeName("int64")]
     [FieldOffset(0)]
+    [NativeTypeName("int64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -37,8 +36,8 @@ public partial struct PerformanceCounterResultKHR
     )]
     public long Int64;
 
-    [NativeName("uint32")]
     [FieldOffset(0)]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -49,8 +48,8 @@ public partial struct PerformanceCounterResultKHR
     )]
     public uint Uint32;
 
-    [NativeName("uint64")]
     [FieldOffset(0)]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -61,7 +60,6 @@ public partial struct PerformanceCounterResultKHR
     )]
     public ulong Uint64;
 
-    [NativeName("float32")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",
@@ -73,7 +71,6 @@ public partial struct PerformanceCounterResultKHR
     )]
     public float Float32;
 
-    [NativeName("float64")]
     [FieldOffset(0)]
     [SupportedApiProfile(
         "vulkan",

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSubresourceHostMemcpySize")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SubresourceHostMemcpySize
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,7 +23,6 @@ public unsafe partial struct SubresourceHostMemcpySize
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,7 +35,7 @@ public unsafe partial struct SubresourceHostMemcpySize
     )]
     public void* PNext;
 
-    [NativeName("size")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [

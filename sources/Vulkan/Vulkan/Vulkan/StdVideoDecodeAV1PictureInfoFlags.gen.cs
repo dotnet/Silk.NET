@@ -7,17 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoDecodeAV1PictureInfoFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeAV1PictureInfoFlags
 {
-    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeName("error_resilient_mode")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint ErrorResilientMode
+    public uint error_resilient_mode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -25,9 +23,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeName("disable_cdf_update")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint DisableCdfUpdate
+    public uint disable_cdf_update
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -35,9 +33,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeName("use_superres")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint UseSuperres
+    public uint use_superres
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -45,9 +43,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeName("render_and_frame_size_different")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint RenderAndFrameSizeDifferent
+    public uint render_and_frame_size_different
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -55,9 +53,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeName("allow_screen_content_tools")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint AllowScreenContentTools
+    public uint allow_screen_content_tools
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0x1u; }
@@ -65,9 +63,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4); }
     }
 
-    [NativeName("is_filter_switchable")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint IsFilterSwitchable
+    public uint is_filter_switchable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 5) & 0x1u; }
@@ -75,9 +73,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5); }
     }
 
-    [NativeName("force_integer_mv")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint ForceIntegerMv
+    public uint force_integer_mv
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 6) & 0x1u; }
@@ -85,9 +83,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6); }
     }
 
-    [NativeName("frame_size_override_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint FrameSizeOverrideFlag
+    public uint frame_size_override_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 7) & 0x1u; }
@@ -95,9 +93,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 7)) | ((value & 0x1u) << 7); }
     }
 
-    [NativeName("buffer_removal_time_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint BufferRemovalTimePresentFlag
+    public uint buffer_removal_time_present_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 8) & 0x1u; }
@@ -105,9 +103,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 8)) | ((value & 0x1u) << 8); }
     }
 
-    [NativeName("allow_intrabc")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint AllowIntrabc
+    public uint allow_intrabc
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 9) & 0x1u; }
@@ -115,9 +113,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 9)) | ((value & 0x1u) << 9); }
     }
 
-    [NativeName("frame_refs_short_signaling")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint FrameRefsShortSignaling
+    public uint frame_refs_short_signaling
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 10) & 0x1u; }
@@ -125,9 +123,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 10)) | ((value & 0x1u) << 10); }
     }
 
-    [NativeName("allow_high_precision_mv")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint AllowHighPrecisionMv
+    public uint allow_high_precision_mv
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 11) & 0x1u; }
@@ -135,9 +133,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 11)) | ((value & 0x1u) << 11); }
     }
 
-    [NativeName("is_motion_mode_switchable")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint IsMotionModeSwitchable
+    public uint is_motion_mode_switchable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 12) & 0x1u; }
@@ -145,9 +143,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 12)) | ((value & 0x1u) << 12); }
     }
 
-    [NativeName("use_ref_frame_mvs")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint UseRefFrameMvs
+    public uint use_ref_frame_mvs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 13) & 0x1u; }
@@ -155,9 +153,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 13)) | ((value & 0x1u) << 13); }
     }
 
-    [NativeName("disable_frame_end_update_cdf")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint DisableFrameEndUpdateCdf
+    public uint disable_frame_end_update_cdf
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 14) & 0x1u; }
@@ -165,9 +163,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 14)) | ((value & 0x1u) << 14); }
     }
 
-    [NativeName("allow_warped_motion")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint AllowWarpedMotion
+    public uint allow_warped_motion
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 15) & 0x1u; }
@@ -175,9 +173,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 15)) | ((value & 0x1u) << 15); }
     }
 
-    [NativeName("reduced_tx_set")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint ReducedTxSet
+    public uint reduced_tx_set
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 16) & 0x1u; }
@@ -185,9 +183,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 16)) | ((value & 0x1u) << 16); }
     }
 
-    [NativeName("reference_select")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint ReferenceSelect
+    public uint reference_select
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 17) & 0x1u; }
@@ -195,9 +193,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 17)) | ((value & 0x1u) << 17); }
     }
 
-    [NativeName("skip_mode_present")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SkipModePresent
+    public uint skip_mode_present
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 18) & 0x1u; }
@@ -205,9 +203,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 18)) | ((value & 0x1u) << 18); }
     }
 
-    [NativeName("delta_q_present")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint DeltaQPresent
+    public uint delta_q_present
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 19) & 0x1u; }
@@ -215,9 +213,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 19)) | ((value & 0x1u) << 19); }
     }
 
-    [NativeName("delta_lf_present")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint DeltaLfPresent
+    public uint delta_lf_present
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 20) & 0x1u; }
@@ -225,9 +223,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 20)) | ((value & 0x1u) << 20); }
     }
 
-    [NativeName("delta_lf_multi")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint DeltaLfMulti
+    public uint delta_lf_multi
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 21) & 0x1u; }
@@ -235,9 +233,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 21)) | ((value & 0x1u) << 21); }
     }
 
-    [NativeName("segmentation_enabled")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SegmentationEnabled
+    public uint segmentation_enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 22) & 0x1u; }
@@ -245,9 +243,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 22)) | ((value & 0x1u) << 22); }
     }
 
-    [NativeName("segmentation_update_map")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SegmentationUpdateMap
+    public uint segmentation_update_map
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 23) & 0x1u; }
@@ -255,9 +253,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 23)) | ((value & 0x1u) << 23); }
     }
 
-    [NativeName("segmentation_temporal_update")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SegmentationTemporalUpdate
+    public uint segmentation_temporal_update
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 24) & 0x1u; }
@@ -265,9 +263,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 24)) | ((value & 0x1u) << 24); }
     }
 
-    [NativeName("segmentation_update_data")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint SegmentationUpdateData
+    public uint segmentation_update_data
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 25) & 0x1u; }
@@ -275,7 +273,7 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 25)) | ((value & 0x1u) << 25); }
     }
 
-    [NativeName("UsesLr")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UsesLr
     {
@@ -285,9 +283,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 26)) | ((value & 0x1u) << 26); }
     }
 
-    [NativeName("usesChromaLr")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint UsesChromaLr
+    public uint usesChromaLr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 27) & 0x1u; }
@@ -295,9 +293,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 27)) | ((value & 0x1u) << 27); }
     }
 
-    [NativeName("apply_grain")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint ApplyGrain
+    public uint apply_grain
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 28) & 0x1u; }
@@ -305,9 +303,9 @@ public partial struct StdVideoDecodeAV1PictureInfoFlags
         set { Bitfield = (Bitfield & ~(0x1u << 28)) | ((value & 0x1u) << 28); }
     }
 
-    [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 3")]
     [SupportedApiProfile("vulkan")]
-    public uint Reserved
+    public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 29) & 0x7u; }

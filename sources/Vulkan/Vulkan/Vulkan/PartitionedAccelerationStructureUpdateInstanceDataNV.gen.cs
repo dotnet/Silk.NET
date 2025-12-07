@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPartitionedAccelerationStructureUpdateInstanceDataNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct PartitionedAccelerationStructureUpdateInstanceDataNV
 {
-    [NativeName("instanceIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -20,7 +19,7 @@ public partial struct PartitionedAccelerationStructureUpdateInstanceDataNV
     )]
     public uint InstanceIndex;
 
-    [NativeName("instanceContributionToHitGroupIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -28,7 +27,7 @@ public partial struct PartitionedAccelerationStructureUpdateInstanceDataNV
     )]
     public uint InstanceContributionToHitGroupIndex;
 
-    [NativeName("accelerationStructure")]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

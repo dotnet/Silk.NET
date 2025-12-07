@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRenderPassFragmentDensityMapCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],
@@ -23,7 +21,7 @@ public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],
@@ -34,7 +32,6 @@ public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("fragmentDensityMapAttachment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map"],

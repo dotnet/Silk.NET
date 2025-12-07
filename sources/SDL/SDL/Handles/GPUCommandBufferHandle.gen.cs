@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUCommandBuffer")]
 public readonly unsafe partial struct GPUCommandBufferHandle
 {
     public readonly void* Handle;
-
-    public GPUCommandBufferHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(GPUCommandBufferHandle other) => Handle == other.Handle;
 

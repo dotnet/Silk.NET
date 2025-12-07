@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineSampleLocationsStateCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -23,7 +21,7 @@ public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -34,7 +32,7 @@ public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("sampleLocationsEnable")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -45,7 +43,6 @@ public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT
     )]
     public uint SampleLocationsEnable;
 
-    [NativeName("sampleLocationsInfo")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],

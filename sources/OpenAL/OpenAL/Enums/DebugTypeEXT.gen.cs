@@ -10,36 +10,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("DebugTypeEXT")]
+[Transformed]
 public enum DebugTypeEXT : uint
 {
-    [NativeName("AL_DONT_CARE_EXT")]
-    DontCare = 2,
-
-    [NativeName("AL_DEBUG_TYPE_ERROR_EXT")]
-    DebugTypeError = 6586,
-
-    [NativeName("AL_DEBUG_TYPE_DEPRECATED_BEHAVIOR_EXT")]
-    DebugTypeDeprecatedBehavior = 6587,
-
-    [NativeName("AL_DEBUG_TYPE_UNDEFINED_BEHAVIOR_EXT")]
-    DebugTypeUndefinedBehavior = 6588,
-
-    [NativeName("AL_DEBUG_TYPE_PORTABILITY_EXT")]
-    DebugTypePortability = 6589,
-
-    [NativeName("AL_DEBUG_TYPE_PERFORMANCE_EXT")]
-    DebugTypePerformance = 6590,
-
-    [NativeName("AL_DEBUG_TYPE_MARKER_EXT")]
-    DebugTypeMarker = 6591,
-
-    [NativeName("AL_DEBUG_TYPE_PUSH_GROUP_EXT")]
-    DebugTypePushGroup = 6592,
-
-    [NativeName("AL_DEBUG_TYPE_POP_GROUP_EXT")]
-    DebugTypePopGroup = 6593,
-
-    [NativeName("AL_DEBUG_TYPE_OTHER_EXT")]
-    DebugTypeOther = 6594,
+    DontCare = unchecked((uint)0x0002),
+    DebugTypeError = unchecked((uint)0x19BA),
+    DebugTypeDeprecatedBehavior = unchecked((uint)0x19BB),
+    DebugTypeUndefinedBehavior = unchecked((uint)0x19BC),
+    DebugTypePortability = unchecked((uint)0x19BD),
+    DebugTypePerformance = unchecked((uint)0x19BE),
+    DebugTypeMarker = unchecked((uint)0x19BF),
+    DebugTypePushGroup = unchecked((uint)0x19C0),
+    DebugTypePopGroup = unchecked((uint)0x19C1),
+    DebugTypeOther = unchecked((uint)0x19C2),
 }

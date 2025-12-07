@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_HitTest")]
 public unsafe delegate HitTestResult HitTestDelegate(WindowHandle arg0, Point* arg1, void* arg2);

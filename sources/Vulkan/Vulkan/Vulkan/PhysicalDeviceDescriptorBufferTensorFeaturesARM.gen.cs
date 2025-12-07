@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceDescriptorBufferTensorFeaturesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorBufferTensorFeaturesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferTensorFeaturesARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
@@ -29,7 +26,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferTensorFeaturesARM
     )]
     public void* PNext;
 
-    [NativeName("descriptorBufferTensorDescriptors")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorGetTensorInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorGetTensorInfoARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
@@ -21,7 +19,7 @@ public unsafe partial struct DescriptorGetTensorInfoARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
@@ -30,12 +28,12 @@ public unsafe partial struct DescriptorGetTensorInfoARM
     )]
     public void* PNext;
 
-    [NativeName("tensorView")]
+    [NativeTypeName("VkTensorViewARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_tensors", "VK_EXT_descriptor_buffer"],
         ImpliesSets = ["VK_VERSION_1_3"],
         RequireAll = true
     )]
-    public TensorViewHandleARM TensorView;
+    public TensorViewARMHandle TensorView;
 }

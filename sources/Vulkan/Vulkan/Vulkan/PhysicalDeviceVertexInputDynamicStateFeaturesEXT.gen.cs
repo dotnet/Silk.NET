@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceVertexInputDynamicStateFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVertexInputDynamicStateFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceVertexInputDynamicStateFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceVertexInputDynamicStateFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("vertexInputDynamicState")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_vertex_input_dynamic_state"],

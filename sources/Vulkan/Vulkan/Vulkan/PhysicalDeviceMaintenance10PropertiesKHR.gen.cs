@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceMaintenance10PropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMaintenance10PropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDeviceMaintenance10PropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDeviceMaintenance10PropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("rgba4OpaqueBlackSwizzled")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceMaintenance10PropertiesKHR
     )]
     public uint Rgba4OpaqueBlackSwizzled;
 
-    [NativeName("resolveSrgbFormatAppliesTransferFunction")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -55,7 +52,7 @@ public unsafe partial struct PhysicalDeviceMaintenance10PropertiesKHR
     )]
     public uint ResolveSrgbFormatAppliesTransferFunction;
 
-    [NativeName("resolveSrgbFormatSupportsTransferFunctionControl")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],

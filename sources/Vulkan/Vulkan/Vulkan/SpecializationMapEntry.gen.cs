@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSpecializationMapEntry")]
 [SupportedApiProfile("vulkan")]
 public partial struct SpecializationMapEntry
 {
-    [NativeName("constantID")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +35,7 @@ public partial struct SpecializationMapEntry
     )]
     public uint ConstantID;
 
-    [NativeName("offset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +59,7 @@ public partial struct SpecializationMapEntry
     )]
     public uint Offset;
 
-    [NativeName("size")]
+    [NativeTypeName("size_t")]
     [SupportedApiProfile(
         "vulkan",
         [

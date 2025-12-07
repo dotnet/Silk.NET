@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPresentGravityFlagBitsKHR")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum PresentGravityFlagsKHR : uint
 {
     None = 0x0,
 
-    [NativeName("VK_PRESENT_GRAVITY_MIN_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -24,9 +23,8 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    MinBit = 0x1,
+    MinBitKHR = 0x1,
 
-    [NativeName("VK_PRESENT_GRAVITY_MAX_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -35,9 +33,8 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    MaxBit = 0x2,
+    MaxBitKHR = 0x2,
 
-    [NativeName("VK_PRESENT_GRAVITY_CENTERED_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -46,9 +43,8 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    CenteredBit = 0x4,
+    CenteredBitKHR = 0x4,
 
-    [NativeName("VK_PRESENT_GRAVITY_MIN_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -57,9 +53,8 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    MinBitEXT = MinBit,
+    MinBitEXT = MinBitKHR,
 
-    [NativeName("VK_PRESENT_GRAVITY_MAX_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -68,9 +63,8 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    MaxBitEXT = MaxBit,
+    MaxBitEXT = MaxBitKHR,
 
-    [NativeName("VK_PRESENT_GRAVITY_CENTERED_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_maintenance1"],
@@ -79,5 +73,5 @@ public enum PresentGravityFlagsKHR : uint
             "VK_KHR_surface_maintenance1+VK_KHR_surface",
         ]
     )]
-    CenteredBitEXT = CenteredBit,
+    CenteredBitEXT = CenteredBitKHR,
 }

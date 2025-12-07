@@ -7,36 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("QueryTarget")]
+[Transformed]
 public enum QueryTarget : uint
 {
-    [NativeName("GL_SAMPLES_PASSED")]
-    SamplesPassed = 35092,
-
-    [NativeName("GL_PRIMITIVES_GENERATED")]
-    PrimitivesGenerated = 35975,
-
-    [NativeName("GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN")]
-    TransformFeedbackPrimitivesWritten = 35976,
-
-    [NativeName("GL_ANY_SAMPLES_PASSED")]
-    AnySamplesPassed = 35887,
-
-    [NativeName("GL_TIME_ELAPSED")]
-    TimeElapsed = 35007,
-
-    [NativeName("GL_ANY_SAMPLES_PASSED_CONSERVATIVE")]
-    AnySamplesPassedConservative = 36202,
-
-    [NativeName("GL_VERTICES_SUBMITTED")]
-    VerticesSubmitted = 33518,
-
-    [NativeName("GL_PRIMITIVES_SUBMITTED")]
-    PrimitivesSubmitted = 33519,
-
-    [NativeName("GL_VERTEX_SHADER_INVOCATIONS")]
-    VertexShaderInvocations = 33520,
-
-    [NativeName("GL_TRANSFORM_FEEDBACK_OVERFLOW")]
-    TransformFeedbackOverflow = 33516,
+    SamplesPassed = unchecked((uint)0x8914),
+    PrimitivesGenerated = unchecked((uint)0x8C87),
+    TransformFeedbackPrimitivesWritten = unchecked((uint)0x8C88),
+    AnySamplesPassed = unchecked((uint)0x8C2F),
+    TimeElapsed = unchecked((uint)0x88BF),
+    AnySamplesPassedConservative = unchecked((uint)0x8D6A),
+    VerticesSubmitted = unchecked((uint)0x82EE),
+    PrimitivesSubmitted = unchecked((uint)0x82EF),
+    VertexShaderInvocations = unchecked((uint)0x82F0),
+    TransformFeedbackOverflow = unchecked((uint)0x82EC),
 }

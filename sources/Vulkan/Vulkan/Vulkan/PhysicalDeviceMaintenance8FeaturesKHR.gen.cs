@@ -7,19 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceMaintenance8FeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMaintenance8FeaturesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     public void* PNext;
 
-    [NativeName("maintenance8")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     public uint Maintenance8;
 }

@@ -8,10 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("_deadband_e__FixedBuffer")]
 [InlineArray(3)]
 public partial struct HapticConditionDeadband
 {
-    [NativeName("e0")]
     public ushort E0;
 }

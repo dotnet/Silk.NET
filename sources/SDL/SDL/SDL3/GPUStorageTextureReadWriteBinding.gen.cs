@@ -7,27 +7,25 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUStorageTextureReadWriteBinding")]
 public unsafe partial struct GPUStorageTextureReadWriteBinding
 {
-    [NativeName("texture")]
     public GPUTextureHandle Texture;
 
-    [NativeName("mip_level")]
+    [NativeTypeName("Uint32")]
     public uint MipLevel;
 
-    [NativeName("layer")]
+    [NativeTypeName("Uint32")]
     public uint Layer;
 
-    [NativeName("cycle")]
+    [NativeTypeName("bool")]
     public byte Cycle;
 
-    [NativeName("padding1")]
+    [NativeTypeName("Uint8")]
     public byte Padding1;
 
-    [NativeName("padding2")]
+    [NativeTypeName("Uint8")]
     public byte Padding2;
 
-    [NativeName("padding3")]
+    [NativeTypeName("Uint8")]
     public byte Padding3;
 }

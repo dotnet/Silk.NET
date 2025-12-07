@@ -4,11 +4,9 @@
 // Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkWriteDescriptorSetInlineUniformBlock")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteDescriptorSetInlineUniformBlock
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -23,7 +21,7 @@ public unsafe partial struct WriteDescriptorSetInlineUniformBlock
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,7 +36,7 @@ public unsafe partial struct WriteDescriptorSetInlineUniformBlock
     )]
     public void* PNext;
 
-    [NativeName("dataSize")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -53,7 +51,7 @@ public unsafe partial struct WriteDescriptorSetInlineUniformBlock
     )]
     public uint DataSize;
 
-    [NativeName("pData")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [

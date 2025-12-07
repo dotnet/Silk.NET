@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceVulkan12Features")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVulkan12Features
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -32,7 +30,6 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -53,7 +50,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public void* PNext;
 
-    [NativeName("samplerMirrorClampToEdge")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -61,7 +58,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint SamplerMirrorClampToEdge;
 
-    [NativeName("drawIndirectCount")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -69,7 +66,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DrawIndirectCount;
 
-    [NativeName("storageBuffer8BitAccess")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -77,7 +74,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint StorageBuffer8BitAccess;
 
-    [NativeName("uniformAndStorageBuffer8BitAccess")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +95,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint UniformAndStorageBuffer8BitAccess;
 
-    [NativeName("storagePushConstant8")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -119,7 +116,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint StoragePushConstant8;
 
-    [NativeName("shaderBufferInt64Atomics")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_atomic_int64"],
@@ -130,7 +127,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderBufferInt64Atomics;
 
-    [NativeName("shaderSharedInt64Atomics")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -151,7 +148,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderSharedInt64Atomics;
 
-    [NativeName("shaderFloat16")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -172,11 +169,11 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderFloat16;
 
-    [NativeName("shaderInt8")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint ShaderInt8;
 
-    [NativeName("descriptorIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -184,7 +181,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DescriptorIndexing;
 
-    [NativeName("shaderInputAttachmentArrayDynamicIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -205,7 +202,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderInputAttachmentArrayDynamicIndexing;
 
-    [NativeName("shaderUniformTexelBufferArrayDynamicIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -213,7 +210,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderUniformTexelBufferArrayDynamicIndexing;
 
-    [NativeName("shaderStorageTexelBufferArrayDynamicIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -221,7 +218,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderStorageTexelBufferArrayDynamicIndexing;
 
-    [NativeName("shaderUniformBufferArrayNonUniformIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -242,7 +239,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderUniformBufferArrayNonUniformIndexing;
 
-    [NativeName("shaderSampledImageArrayNonUniformIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -250,7 +247,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderSampledImageArrayNonUniformIndexing;
 
-    [NativeName("shaderStorageBufferArrayNonUniformIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -258,7 +255,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderStorageBufferArrayNonUniformIndexing;
 
-    [NativeName("shaderStorageImageArrayNonUniformIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -279,7 +276,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderStorageImageArrayNonUniformIndexing;
 
-    [NativeName("shaderInputAttachmentArrayNonUniformIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -300,7 +297,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderInputAttachmentArrayNonUniformIndexing;
 
-    [NativeName("shaderUniformTexelBufferArrayNonUniformIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -308,7 +305,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderUniformTexelBufferArrayNonUniformIndexing;
 
-    [NativeName("shaderStorageTexelBufferArrayNonUniformIndexing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -329,7 +326,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderStorageTexelBufferArrayNonUniformIndexing;
 
-    [NativeName("descriptorBindingUniformBufferUpdateAfterBind")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -350,7 +347,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DescriptorBindingUniformBufferUpdateAfterBind;
 
-    [NativeName("descriptorBindingSampledImageUpdateAfterBind")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -358,7 +355,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DescriptorBindingSampledImageUpdateAfterBind;
 
-    [NativeName("descriptorBindingStorageImageUpdateAfterBind")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -366,7 +363,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DescriptorBindingStorageImageUpdateAfterBind;
 
-    [NativeName("descriptorBindingStorageBufferUpdateAfterBind")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -374,7 +371,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DescriptorBindingStorageBufferUpdateAfterBind;
 
-    [NativeName("descriptorBindingUniformTexelBufferUpdateAfterBind")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -382,7 +379,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DescriptorBindingUniformTexelBufferUpdateAfterBind;
 
-    [NativeName("descriptorBindingStorageTexelBufferUpdateAfterBind")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -390,7 +387,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DescriptorBindingStorageTexelBufferUpdateAfterBind;
 
-    [NativeName("descriptorBindingUpdateUnusedWhilePending")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -398,7 +395,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DescriptorBindingUpdateUnusedWhilePending;
 
-    [NativeName("descriptorBindingPartiallyBound")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -406,7 +403,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DescriptorBindingPartiallyBound;
 
-    [NativeName("descriptorBindingVariableDescriptorCount")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -427,7 +424,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint DescriptorBindingVariableDescriptorCount;
 
-    [NativeName("runtimeDescriptorArray")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -435,7 +432,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint RuntimeDescriptorArray;
 
-    [NativeName("samplerFilterMinmax")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -443,11 +440,11 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint SamplerFilterMinmax;
 
-    [NativeName("scalarBlockLayout")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint ScalarBlockLayout;
 
-    [NativeName("imagelessFramebuffer")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -455,7 +452,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ImagelessFramebuffer;
 
-    [NativeName("uniformBufferStandardLayout")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -463,7 +460,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint UniformBufferStandardLayout;
 
-    [NativeName("shaderSubgroupExtendedTypes")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -471,7 +468,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderSubgroupExtendedTypes;
 
-    [NativeName("separateDepthStencilLayouts")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -479,7 +476,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint SeparateDepthStencilLayouts;
 
-    [NativeName("hostQueryReset")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -487,7 +484,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint HostQueryReset;
 
-    [NativeName("timelineSemaphore")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -495,11 +492,11 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint TimelineSemaphore;
 
-    [NativeName("bufferDeviceAddress")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint BufferDeviceAddress;
 
-    [NativeName("bufferDeviceAddressCaptureReplay")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -520,7 +517,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint BufferDeviceAddressCaptureReplay;
 
-    [NativeName("bufferDeviceAddressMultiDevice")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -541,15 +538,15 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint BufferDeviceAddressMultiDevice;
 
-    [NativeName("vulkanMemoryModel")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint VulkanMemoryModel;
 
-    [NativeName("vulkanMemoryModelDeviceScope")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint VulkanMemoryModelDeviceScope;
 
-    [NativeName("vulkanMemoryModelAvailabilityVisibilityChains")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -570,7 +567,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint VulkanMemoryModelAvailabilityVisibilityChains;
 
-    [NativeName("shaderOutputViewportIndex")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -578,7 +575,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderOutputViewportIndex;
 
-    [NativeName("shaderOutputLayer")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -586,7 +583,7 @@ public unsafe partial struct PhysicalDeviceVulkan12Features
     )]
     public uint ShaderOutputLayer;
 
-    [NativeName("subgroupBroadcastDynamicId")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],

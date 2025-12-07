@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExportFenceCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ExportFenceCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +34,7 @@ public unsafe partial struct ExportFenceCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -61,7 +59,7 @@ public unsafe partial struct ExportFenceCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("handleTypes")]
+    [NativeTypeName("VkExternalFenceHandleTypeFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

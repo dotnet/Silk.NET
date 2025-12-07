@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH264CapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH264CapabilitiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -20,7 +18,6 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -28,7 +25,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkVideoEncodeH264CapabilityFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -36,7 +33,6 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public VideoEncodeH264CapabilityFlagsKHR Flags;
 
-    [NativeName("maxLevelIdc")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -44,7 +40,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public StdVideoH264LevelIdc MaxLevelIdc;
 
-    [NativeName("maxSliceCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -52,7 +48,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public uint MaxSliceCount;
 
-    [NativeName("maxPPictureL0ReferenceCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -60,7 +56,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public uint MaxPPictureL0ReferenceCount;
 
-    [NativeName("maxBPictureL0ReferenceCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -68,7 +64,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public uint MaxBPictureL0ReferenceCount;
 
-    [NativeName("maxL1ReferenceCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -76,7 +72,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public uint MaxL1ReferenceCount;
 
-    [NativeName("maxTemporalLayerCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -84,7 +80,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public uint MaxTemporalLayerCount;
 
-    [NativeName("expectDyadicTemporalLayerPattern")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -92,7 +88,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public uint ExpectDyadicTemporalLayerPattern;
 
-    [NativeName("minQp")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -100,7 +96,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public int MinQp;
 
-    [NativeName("maxQp")]
+    [NativeTypeName("int32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -108,7 +104,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public int MaxQp;
 
-    [NativeName("prefersGopRemainingFrames")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -116,7 +112,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public uint PrefersGopRemainingFrames;
 
-    [NativeName("requiresGopRemainingFrames")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -124,7 +120,7 @@ public unsafe partial struct VideoEncodeH264CapabilitiesKHR
     )]
     public uint RequiresGopRemainingFrames;
 
-    [NativeName("stdSyntaxFlags")]
+    [NativeTypeName("VkVideoEncodeH264StdFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],

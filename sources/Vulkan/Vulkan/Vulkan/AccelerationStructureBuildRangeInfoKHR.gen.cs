@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAccelerationStructureBuildRangeInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct AccelerationStructureBuildRangeInfoKHR
 {
-    [NativeName("primitiveCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -23,7 +22,7 @@ public partial struct AccelerationStructureBuildRangeInfoKHR
     )]
     public uint PrimitiveCount;
 
-    [NativeName("primitiveOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -34,7 +33,7 @@ public partial struct AccelerationStructureBuildRangeInfoKHR
     )]
     public uint PrimitiveOffset;
 
-    [NativeName("firstVertex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -45,7 +44,7 @@ public partial struct AccelerationStructureBuildRangeInfoKHR
     )]
     public uint FirstVertex;
 
-    [NativeName("transformOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

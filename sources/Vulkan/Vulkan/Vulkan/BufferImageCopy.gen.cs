@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBufferImageCopy")]
 [SupportedApiProfile("vulkan")]
 public partial struct BufferImageCopy
 {
-    [NativeName("bufferOffset")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,7 +39,7 @@ public partial struct BufferImageCopy
     )]
     public ulong BufferOffset;
 
-    [NativeName("bufferRowLength")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +68,7 @@ public partial struct BufferImageCopy
     )]
     public uint BufferRowLength;
 
-    [NativeName("bufferImageHeight")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +97,6 @@ public partial struct BufferImageCopy
     )]
     public uint BufferImageHeight;
 
-    [NativeName("imageSubresource")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -127,7 +125,6 @@ public partial struct BufferImageCopy
     )]
     public ImageSubresourceLayers ImageSubresource;
 
-    [NativeName("imageOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,7 +153,6 @@ public partial struct BufferImageCopy
     )]
     public Offset3D ImageOffset;
 
-    [NativeName("imageExtent")]
     [SupportedApiProfile(
         "vulkan",
         [

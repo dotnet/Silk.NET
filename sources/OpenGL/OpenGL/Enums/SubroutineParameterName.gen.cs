@@ -7,18 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("SubroutineParameterName")]
+[Transformed]
 public enum SubroutineParameterName : uint
 {
-    [NativeName("GL_UNIFORM_SIZE")]
-    UniformSize = 35384,
-
-    [NativeName("GL_UNIFORM_NAME_LENGTH")]
-    UniformNameLength = 35385,
-
-    [NativeName("GL_NUM_COMPATIBLE_SUBROUTINES")]
-    NumCompatibleSubroutines = 36426,
-
-    [NativeName("GL_COMPATIBLE_SUBROUTINES")]
-    CompatibleSubroutines = 36427,
+    UniformSize = unchecked((uint)0x8A38),
+    UniformNameLength = unchecked((uint)0x8A39),
+    NumCompatibleSubroutines = unchecked((uint)0x8E4A),
+    CompatibleSubroutines = unchecked((uint)0x8E4B),
 }

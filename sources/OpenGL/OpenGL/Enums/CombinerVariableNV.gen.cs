@@ -7,27 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("CombinerVariableNV")]
+[Transformed]
 public enum CombinerVariableNV : uint
 {
-    [NativeName("GL_VARIABLE_A_NV")]
-    A = 34083,
-
-    [NativeName("GL_VARIABLE_B_NV")]
-    B = 34084,
-
-    [NativeName("GL_VARIABLE_C_NV")]
-    C = 34085,
-
-    [NativeName("GL_VARIABLE_D_NV")]
-    D = 34086,
-
-    [NativeName("GL_VARIABLE_E_NV")]
-    E = 34087,
-
-    [NativeName("GL_VARIABLE_F_NV")]
-    F = 34088,
-
-    [NativeName("GL_VARIABLE_G_NV")]
-    G = 34089,
+    A = unchecked((uint)0x8523),
+    B = unchecked((uint)0x8524),
+    C = unchecked((uint)0x8525),
+    D = unchecked((uint)0x8526),
+    E = unchecked((uint)0x8527),
+    F = unchecked((uint)0x8528),
+    G = unchecked((uint)0x8529),
 }

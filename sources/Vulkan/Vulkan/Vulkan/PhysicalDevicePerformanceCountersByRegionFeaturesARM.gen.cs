@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDevicePerformanceCountersByRegionFeaturesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePerformanceCountersByRegionFeaturesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionFeaturesAR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionFeaturesAR
     )]
     public void* PNext;
 
-    [NativeName("performanceCountersByRegion")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],

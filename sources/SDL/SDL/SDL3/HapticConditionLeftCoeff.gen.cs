@@ -8,10 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("_left_coeff_e__FixedBuffer")]
 [InlineArray(3)]
 public partial struct HapticConditionLeftCoeff
 {
-    [NativeName("e0")]
     public short E0;
 }

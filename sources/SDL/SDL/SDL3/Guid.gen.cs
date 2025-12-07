@@ -8,9 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GUID")]
 public partial struct Guid
 {
-    [NativeName("data")]
+    [NativeTypeName("Uint8[16]")]
     public GuidData Data;
 }

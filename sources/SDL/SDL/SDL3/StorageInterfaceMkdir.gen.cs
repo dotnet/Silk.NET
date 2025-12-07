@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_StorageInterface_mkdir")]
+[Transformed]
 public readonly unsafe struct StorageInterfaceMkdir : IDisposable
 {
     private readonly void* Pointer;

@@ -7,21 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUIndexedIndirectDrawCommand")]
 public partial struct GPUIndexedIndirectDrawCommand
 {
-    [NativeName("num_indices")]
+    [NativeTypeName("Uint32")]
     public uint NumIndices;
 
-    [NativeName("num_instances")]
+    [NativeTypeName("Uint32")]
     public uint NumInstances;
 
-    [NativeName("first_index")]
+    [NativeTypeName("Uint32")]
     public uint FirstIndex;
 
-    [NativeName("vertex_offset")]
+    [NativeTypeName("Sint32")]
     public int VertexOffset;
 
-    [NativeName("first_instance")]
+    [NativeTypeName("Uint32")]
     public uint FirstInstance;
 }

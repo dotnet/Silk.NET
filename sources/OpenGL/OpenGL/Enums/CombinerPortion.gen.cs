@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("CombinerPortionNV")]
+[Transformed]
 public enum CombinerPortion : uint
 {
-    [NativeName("GL_ALPHA")]
-    Alpha = 6406,
-
-    [NativeName("GL_RGB")]
-    Rgb = 6407,
+    Alpha = unchecked((uint)0x1906),
+    Rgb = unchecked((uint)0x1907),
 }

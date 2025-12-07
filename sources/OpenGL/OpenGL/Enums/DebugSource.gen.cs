@@ -7,27 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("DebugSource")]
+[Transformed]
 public enum DebugSource : uint
 {
-    [NativeName("GL_DONT_CARE")]
-    DontCare = 4352,
-
-    [NativeName("GL_DEBUG_SOURCE_API")]
-    DebugSourceApi = 33350,
-
-    [NativeName("GL_DEBUG_SOURCE_WINDOW_SYSTEM")]
-    DebugSourceWindowSystem = 33351,
-
-    [NativeName("GL_DEBUG_SOURCE_SHADER_COMPILER")]
-    DebugSourceShaderCompiler = 33352,
-
-    [NativeName("GL_DEBUG_SOURCE_THIRD_PARTY")]
-    DebugSourceThirdParty = 33353,
-
-    [NativeName("GL_DEBUG_SOURCE_APPLICATION")]
-    DebugSourceApplication = 33354,
-
-    [NativeName("GL_DEBUG_SOURCE_OTHER")]
-    DebugSourceOther = 33355,
+    DontCare = unchecked((uint)0x1100),
+    DebugSourceApi = unchecked((uint)0x8246),
+    DebugSourceWindowSystem = unchecked((uint)0x8247),
+    DebugSourceShaderCompiler = unchecked((uint)0x8248),
+    DebugSourceThirdParty = unchecked((uint)0x8249),
+    DebugSourceApplication = unchecked((uint)0x824A),
+    DebugSourceOther = unchecked((uint)0x824B),
 }

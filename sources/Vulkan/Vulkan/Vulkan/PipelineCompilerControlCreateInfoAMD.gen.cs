@@ -7,19 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineCompilerControlCreateInfoAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineCompilerControlCreateInfoAMD
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_AMD_pipeline_compiler_control"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile("vulkan", ["VK_AMD_pipeline_compiler_control"])]
     public void* PNext;
 
-    [NativeName("compilerControlFlags")]
+    [NativeTypeName("VkPipelineCompilerControlFlagsAMD")]
     [SupportedApiProfile("vulkan", ["VK_AMD_pipeline_compiler_control"])]
     public PipelineCompilerControlFlagsAMD CompilerControlFlags;
 }

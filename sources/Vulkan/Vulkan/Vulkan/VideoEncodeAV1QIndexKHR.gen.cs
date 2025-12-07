@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeAV1QIndexKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct VideoEncodeAV1QIndexKHR
 {
-    [NativeName("intraQIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -20,7 +19,7 @@ public partial struct VideoEncodeAV1QIndexKHR
     )]
     public uint IntraQIndex;
 
-    [NativeName("predictiveQIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -28,7 +27,7 @@ public partial struct VideoEncodeAV1QIndexKHR
     )]
     public uint PredictiveQIndex;
 
-    [NativeName("bipredictiveQIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

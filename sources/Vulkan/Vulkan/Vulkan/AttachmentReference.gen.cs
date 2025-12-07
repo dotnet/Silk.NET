@@ -6,11 +6,10 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAttachmentReference")]
 [SupportedApiProfile("vulkan")]
 public partial struct AttachmentReference
 {
-    [NativeName("attachment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +28,6 @@ public partial struct AttachmentReference
     )]
     public uint Attachment;
 
-    [NativeName("layout")]
     [SupportedApiProfile(
         "vulkan",
         [

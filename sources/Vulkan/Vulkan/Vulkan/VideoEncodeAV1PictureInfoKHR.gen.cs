@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeAV1PictureInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeAV1PictureInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -19,7 +17,7 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -27,7 +25,6 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("predictionMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -35,7 +32,6 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
     )]
     public VideoEncodeAV1PredictionModeKHR PredictionMode;
 
-    [NativeName("rateControlGroup")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -43,7 +39,7 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
     )]
     public VideoEncodeAV1RateControlGroupKHR RateControlGroup;
 
-    [NativeName("constantQIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -51,7 +47,7 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
     )]
     public uint ConstantQIndex;
 
-    [NativeName("pStdPictureInfo")]
+    [NativeTypeName("const StdVideoEncodeAV1PictureInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -59,7 +55,7 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
     )]
     public StdVideoEncodeAV1PictureInfo* PStdPictureInfo;
 
-    [NativeName("referenceNameSlotIndices")]
+    [NativeTypeName("int32_t[7]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -67,7 +63,7 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
     )]
     public VideoEncodeAV1PictureInfoKHRReferenceNameSlotIndices ReferenceNameSlotIndices;
 
-    [NativeName("primaryReferenceCdfOnly")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -75,7 +71,7 @@ public unsafe partial struct VideoEncodeAV1PictureInfoKHR
     )]
     public uint PrimaryReferenceCdfOnly;
 
-    [NativeName("generateObuExtensionHeader")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

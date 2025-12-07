@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_IOStreamInterface_close")]
+[Transformed]
 public readonly unsafe struct IOStreamInterfaceClose : IDisposable
 {
     private readonly void* Pointer;

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoEncodeH264GopRemainingFrameInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH264GopRemainingFrameInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -19,7 +17,7 @@ public unsafe partial struct VideoEncodeH264GopRemainingFrameInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -27,7 +25,7 @@ public unsafe partial struct VideoEncodeH264GopRemainingFrameInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("useGopRemainingFrames")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -35,7 +33,7 @@ public unsafe partial struct VideoEncodeH264GopRemainingFrameInfoKHR
     )]
     public uint UseGopRemainingFrames;
 
-    [NativeName("gopRemainingI")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -43,7 +41,7 @@ public unsafe partial struct VideoEncodeH264GopRemainingFrameInfoKHR
     )]
     public uint GopRemainingI;
 
-    [NativeName("gopRemainingP")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],
@@ -51,7 +49,7 @@ public unsafe partial struct VideoEncodeH264GopRemainingFrameInfoKHR
     )]
     public uint GopRemainingP;
 
-    [NativeName("gopRemainingB")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h264"],

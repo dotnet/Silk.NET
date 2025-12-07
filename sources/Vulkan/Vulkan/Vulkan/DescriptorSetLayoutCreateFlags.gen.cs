@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDescriptorSetLayoutCreateFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum DescriptorSetLayoutCreateFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_UPDATE_AFTER_BIND_POOL_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +32,6 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     UpdateAfterBindPoolBit = 0x2,
 
-    [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -41,7 +39,6 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     PushDescriptorBit = 0x1,
 
-    [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_DESCRIPTOR_BUFFER_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -54,7 +51,6 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     DescriptorBufferBitEXT = 0x10,
 
-    [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_EMBEDDED_IMMUTABLE_SAMPLERS_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -67,7 +63,6 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     EmbeddedImmutableSamplersBitEXT = 0x20,
 
-    [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_INDIRECT_BINDABLE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands_compute"],
@@ -75,7 +70,6 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     IndirectBindableBitNV = 0x80,
 
-    [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_HOST_ONLY_POOL_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mutable_descriptor_type"],
@@ -86,7 +80,6 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     HostOnlyPoolBitEXT = 0x4,
 
-    [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_PER_STAGE_BIT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_per_stage_descriptor_set"],
@@ -97,7 +90,6 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     PerStageBitNV = 0x40,
 
-    [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_push_descriptor"],
@@ -108,7 +100,6 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     PushDescriptorBitKHR = PushDescriptorBit,
 
-    [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_UPDATE_AFTER_BIND_POOL_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_indexing"],
@@ -119,11 +110,10 @@ public enum DescriptorSetLayoutCreateFlags : uint
     )]
     UpdateAfterBindPoolBitEXT = UpdateAfterBindPoolBit,
 
-    [NativeName("VK_DESCRIPTOR_SET_LAYOUT_CREATE_HOST_ONLY_POOL_BIT_VALVE")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VALVE_mutable_descriptor_type"],
         ImpliesSets = ["VK_KHR_maintenance3"]
     )]
-    HostOnlyPoolBitVALVE = HostOnlyPoolBitEXT,
+    HostOnlyPoolBitValve = HostOnlyPoolBitEXT,
 }

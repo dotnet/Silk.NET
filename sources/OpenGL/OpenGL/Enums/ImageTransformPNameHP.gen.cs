@@ -7,36 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ImageTransformPNameHP")]
+[Transformed]
 public enum ImageTransformPNameHP : uint
 {
-    [NativeName("GL_IMAGE_SCALE_X_HP")]
-    ScaleX = 33109,
-
-    [NativeName("GL_IMAGE_SCALE_Y_HP")]
-    ScaleY = 33110,
-
-    [NativeName("GL_IMAGE_TRANSLATE_X_HP")]
-    TranslateX = 33111,
-
-    [NativeName("GL_IMAGE_TRANSLATE_Y_HP")]
-    TranslateY = 33112,
-
-    [NativeName("GL_IMAGE_ROTATE_ANGLE_HP")]
-    RotateAngle = 33113,
-
-    [NativeName("GL_IMAGE_ROTATE_ORIGIN_X_HP")]
-    RotateOriginX = 33114,
-
-    [NativeName("GL_IMAGE_ROTATE_ORIGIN_Y_HP")]
-    RotateOriginY = 33115,
-
-    [NativeName("GL_IMAGE_MAG_FILTER_HP")]
-    MagFilter = 33116,
-
-    [NativeName("GL_IMAGE_MIN_FILTER_HP")]
-    MinFilter = 33117,
-
-    [NativeName("GL_IMAGE_CUBIC_WEIGHT_HP")]
-    CubicWeight = 33118,
+    ScaleX = unchecked((uint)0x8155),
+    ScaleY = unchecked((uint)0x8156),
+    TranslateX = unchecked((uint)0x8157),
+    TranslateY = unchecked((uint)0x8158),
+    RotateAngle = unchecked((uint)0x8159),
+    RotateOriginX = unchecked((uint)0x815A),
+    RotateOriginY = unchecked((uint)0x815B),
+    MagFilter = unchecked((uint)0x815C),
+    MinFilter = unchecked((uint)0x815D),
+    CubicWeight = unchecked((uint)0x815E),
 }

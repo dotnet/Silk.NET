@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDeviceGroupPresentCapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -21,7 +19,6 @@ public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -30,7 +27,7 @@ public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
     )]
     public void* PNext;
 
-    [NativeName("presentMask")]
+    [NativeTypeName("uint32_t[32]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],
@@ -39,7 +36,7 @@ public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
     )]
     public DeviceGroupPresentCapabilitiesKHRPresentMask PresentMask;
 
-    [NativeName("modes")]
+    [NativeTypeName("VkDeviceGroupPresentModeFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain", "VK_VERSION_1_1"],

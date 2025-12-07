@@ -7,81 +7,32 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("PrimitiveType")]
+[Transformed]
 public enum PrimitiveType : uint
 {
-    [NativeName("GL_POINTS")]
-    Points = 0,
-
-    [NativeName("GL_LINES")]
-    Lines = 1,
-
-    [NativeName("GL_LINE_LOOP")]
-    LineLoop = 2,
-
-    [NativeName("GL_LINE_STRIP")]
-    LineStrip = 3,
-
-    [NativeName("GL_TRIANGLES")]
-    Triangles = 4,
-
-    [NativeName("GL_TRIANGLE_STRIP")]
-    TriangleStrip = 5,
-
-    [NativeName("GL_TRIANGLE_FAN")]
-    TriangleFan = 6,
-
-    [NativeName("GL_QUADS")]
-    Quads = 7,
-
-    [NativeName("GL_QUAD_STRIP")]
-    QuadStrip = 8,
-
-    [NativeName("GL_POLYGON")]
-    Polygon = 9,
-
-    [NativeName("GL_LINES_ADJACENCY")]
-    LinesAdjacency = 10,
-
-    [NativeName("GL_LINE_STRIP_ADJACENCY")]
-    LineStripAdjacency = 11,
-
-    [NativeName("GL_TRIANGLES_ADJACENCY")]
-    TrianglesAdjacency = 12,
-
-    [NativeName("GL_TRIANGLE_STRIP_ADJACENCY")]
-    TriangleStripAdjacency = 13,
-
-    [NativeName("GL_PATCHES")]
-    Patches = 14,
-
-    [NativeName("GL_LINES_ADJACENCY_ARB")]
-    LinesAdjacencyARB = 10,
-
-    [NativeName("GL_LINE_STRIP_ADJACENCY_ARB")]
-    LineStripAdjacencyARB = 11,
-
-    [NativeName("GL_TRIANGLES_ADJACENCY_ARB")]
-    TrianglesAdjacencyARB = 12,
-
-    [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_ARB")]
-    TriangleStripAdjacencyARB = 13,
-
-    [NativeName("GL_LINES_ADJACENCY_EXT")]
-    LinesAdjacencyEXT = 10,
-
-    [NativeName("GL_LINE_STRIP_ADJACENCY_EXT")]
-    LineStripAdjacencyEXT = 11,
-
-    [NativeName("GL_TRIANGLES_ADJACENCY_EXT")]
-    TrianglesAdjacencyEXT = 12,
-
-    [NativeName("GL_TRIANGLE_STRIP_ADJACENCY_EXT")]
-    TriangleStripAdjacencyEXT = 13,
-
-    [NativeName("GL_PATCHES_EXT")]
-    PatchesEXT = 14,
-
-    [NativeName("GL_QUADS_EXT")]
-    QuadsEXT = 7,
+    Points = unchecked((uint)0x0000),
+    Lines = unchecked((uint)0x0001),
+    LineLoop = unchecked((uint)0x0002),
+    LineStrip = unchecked((uint)0x0003),
+    Triangles = unchecked((uint)0x0004),
+    TriangleStrip = unchecked((uint)0x0005),
+    TriangleFan = unchecked((uint)0x0006),
+    Quads = unchecked((uint)0x0007),
+    QuadStrip = unchecked((uint)0x0008),
+    Polygon = unchecked((uint)0x0009),
+    LinesAdjacency = unchecked((uint)0x000A),
+    LineStripAdjacency = unchecked((uint)0x000B),
+    TrianglesAdjacency = unchecked((uint)0x000C),
+    TriangleStripAdjacency = unchecked((uint)0x000D),
+    Patches = unchecked((uint)0x000E),
+    LinesAdjacencyARB = unchecked((uint)0x000A),
+    LineStripAdjacencyARB = unchecked((uint)0x000B),
+    TrianglesAdjacencyARB = unchecked((uint)0x000C),
+    TriangleStripAdjacencyARB = unchecked((uint)0x000D),
+    LinesAdjacencyEXT = unchecked((uint)0x000A),
+    LineStripAdjacencyEXT = unchecked((uint)0x000B),
+    TrianglesAdjacencyEXT = unchecked((uint)0x000C),
+    TriangleStripAdjacencyEXT = unchecked((uint)0x000D),
+    PatchesEXT = unchecked((uint)0x000E),
+    QuadsEXT = unchecked((uint)0x0007),
 }

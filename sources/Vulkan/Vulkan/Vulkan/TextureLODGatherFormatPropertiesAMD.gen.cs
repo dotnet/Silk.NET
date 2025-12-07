@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkTextureLODGatherFormatPropertiesAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TextureLODGatherFormatPropertiesAMD
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_texture_gather_bias_lod"],
@@ -23,7 +21,6 @@ public unsafe partial struct TextureLODGatherFormatPropertiesAMD
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_texture_gather_bias_lod"],
@@ -34,7 +31,7 @@ public unsafe partial struct TextureLODGatherFormatPropertiesAMD
     )]
     public void* PNext;
 
-    [NativeName("supportsTextureGatherLODBiasAMD")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_AMD_texture_gather_bias_lod"],

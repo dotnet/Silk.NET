@@ -8,35 +8,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoAV1LoopFilter")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1LoopFilter
 {
-    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1LoopFilterFlags Flags;
 
-    [NativeName("loop_filter_level")]
+    [NativeTypeName("uint8_t[4]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1LoopFilterLoopFilterLevel LoopFilterLevel;
 
-    [NativeName("loop_filter_sharpness")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte LoopFilterSharpness;
 
-    [NativeName("update_ref_delta")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte UpdateRefDelta;
 
-    [NativeName("loop_filter_ref_deltas")]
+    [NativeTypeName("int8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1LoopFilterLoopFilterRefDeltas LoopFilterRefDeltas;
 
-    [NativeName("update_mode_delta")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte UpdateModeDelta;
 
-    [NativeName("loop_filter_mode_deltas")]
+    [NativeTypeName("int8_t[2]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1LoopFilterLoopFilterModeDeltas LoopFilterModeDeltas;
 }

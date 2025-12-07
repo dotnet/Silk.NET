@@ -8,23 +8,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExternalImageFormatPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct ExternalImageFormatPropertiesNV
 {
-    [NativeName("imageFormatProperties")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     public ImageFormatProperties ImageFormatProperties;
 
-    [NativeName("externalMemoryFeatures")]
+    [NativeTypeName("VkExternalMemoryFeatureFlagsNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     public ExternalMemoryFeatureFlagsNV ExternalMemoryFeatures;
 
-    [NativeName("exportFromImportedHandleTypes")]
+    [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     public ExternalMemoryHandleTypeFlagsNV ExportFromImportedHandleTypes;
 
-    [NativeName("compatibleHandleTypes")]
+    [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
     [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
     public ExternalMemoryHandleTypeFlagsNV CompatibleHandleTypes;
 }

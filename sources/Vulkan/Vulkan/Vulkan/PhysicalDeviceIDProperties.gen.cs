@@ -6,11 +6,9 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceIDProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceIDProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +33,6 @@ public unsafe partial struct PhysicalDeviceIDProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +57,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
     )]
     public void* PNext;
 
-    [NativeName("deviceUUID")]
+    [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -85,7 +82,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
     )]
     public PhysicalDeviceIDPropertiesDeviceUUID DeviceUUID;
 
-    [NativeName("driverUUID")]
+    [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -110,7 +107,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
     )]
     public PhysicalDeviceIDPropertiesDriverUUID DriverUUID;
 
-    [NativeName("deviceLUID")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -135,7 +132,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
     )]
     public PhysicalDeviceIDPropertiesDeviceLUID DeviceLUID;
 
-    [NativeName("deviceNodeMask")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -160,7 +157,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
     )]
     public uint DeviceNodeMask;
 
-    [NativeName("deviceLUIDValid")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [

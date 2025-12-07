@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_DialogFileCallback")]
 public unsafe delegate void DialogFileCallbackDelegate(void* arg0, sbyte** arg1, int arg2);

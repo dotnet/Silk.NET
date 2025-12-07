@@ -7,36 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("FragmentLightParameterSGIX")]
+[Transformed]
 public enum FragmentLightParameter : uint
 {
-    [NativeName("GL_AMBIENT")]
-    Ambient = 4608,
-
-    [NativeName("GL_DIFFUSE")]
-    Diffuse = 4609,
-
-    [NativeName("GL_SPECULAR")]
-    Specular = 4610,
-
-    [NativeName("GL_POSITION")]
-    Position = 4611,
-
-    [NativeName("GL_SPOT_DIRECTION")]
-    SpotDirection = 4612,
-
-    [NativeName("GL_SPOT_EXPONENT")]
-    SpotExponent = 4613,
-
-    [NativeName("GL_SPOT_CUTOFF")]
-    SpotCutoff = 4614,
-
-    [NativeName("GL_CONSTANT_ATTENUATION")]
-    ConstantAttenuation = 4615,
-
-    [NativeName("GL_LINEAR_ATTENUATION")]
-    LinearAttenuation = 4616,
-
-    [NativeName("GL_QUADRATIC_ATTENUATION")]
-    QuadraticAttenuation = 4617,
+    Ambient = unchecked((uint)0x1200),
+    Diffuse = unchecked((uint)0x1201),
+    Specular = unchecked((uint)0x1202),
+    Position = unchecked((uint)0x1203),
+    SpotDirection = unchecked((uint)0x1204),
+    SpotExponent = unchecked((uint)0x1205),
+    SpotCutoff = unchecked((uint)0x1206),
+    ConstantAttenuation = unchecked((uint)0x1207),
+    LinearAttenuation = unchecked((uint)0x1208),
+    QuadraticAttenuation = unchecked((uint)0x1209),
 }

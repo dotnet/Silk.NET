@@ -7,17 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoH265ShortTermRefPicSetFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265ShortTermRefPicSetFlags
 {
-    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeName("inter_ref_pic_set_prediction_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint InterRefPicSetPredictionFlag
+    public uint inter_ref_pic_set_prediction_flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -25,9 +23,9 @@ public partial struct StdVideoH265ShortTermRefPicSetFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeName("delta_rps_sign")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
-    public uint DeltaRpsSign
+    public uint delta_rps_sign
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }

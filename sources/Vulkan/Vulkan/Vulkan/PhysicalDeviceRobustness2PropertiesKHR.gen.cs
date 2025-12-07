@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceRobustness2PropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceRobustness2PropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_robustness2"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceRobustness2PropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_robustness2"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceRobustness2PropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("robustStorageBufferAccessSizeAlignment")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_robustness2"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceRobustness2PropertiesKHR
     )]
     public ulong RobustStorageBufferAccessSizeAlignment;
 
-    [NativeName("robustUniformBufferAccessSizeAlignment")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_robustness2"],

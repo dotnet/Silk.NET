@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceFragmentShadingRatePropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -35,7 +32,6 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public void* PNext;
 
-    [NativeName("minFragmentShadingRateAttachmentTexelSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -47,7 +43,6 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public Extent2D MinFragmentShadingRateAttachmentTexelSize;
 
-    [NativeName("maxFragmentShadingRateAttachmentTexelSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -59,7 +54,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public Extent2D MaxFragmentShadingRateAttachmentTexelSize;
 
-    [NativeName("maxFragmentShadingRateAttachmentTexelSizeAspectRatio")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -71,7 +66,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint MaxFragmentShadingRateAttachmentTexelSizeAspectRatio;
 
-    [NativeName("primitiveFragmentShadingRateWithMultipleViewports")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -83,7 +78,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint PrimitiveFragmentShadingRateWithMultipleViewports;
 
-    [NativeName("layeredShadingRateAttachments")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -95,7 +90,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint LayeredShadingRateAttachments;
 
-    [NativeName("fragmentShadingRateNonTrivialCombinerOps")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -107,7 +102,6 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint FragmentShadingRateNonTrivialCombinerOps;
 
-    [NativeName("maxFragmentSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -119,7 +113,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public Extent2D MaxFragmentSize;
 
-    [NativeName("maxFragmentSizeAspectRatio")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -131,7 +125,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint MaxFragmentSizeAspectRatio;
 
-    [NativeName("maxFragmentShadingRateCoverageSamples")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -143,7 +137,6 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint MaxFragmentShadingRateCoverageSamples;
 
-    [NativeName("maxFragmentShadingRateRasterizationSamples")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -155,7 +148,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public SampleCountFlags MaxFragmentShadingRateRasterizationSamples;
 
-    [NativeName("fragmentShadingRateWithShaderDepthStencilWrites")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -167,7 +160,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint FragmentShadingRateWithShaderDepthStencilWrites;
 
-    [NativeName("fragmentShadingRateWithSampleMask")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -179,7 +172,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint FragmentShadingRateWithSampleMask;
 
-    [NativeName("fragmentShadingRateWithShaderSampleMask")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -191,7 +184,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint FragmentShadingRateWithShaderSampleMask;
 
-    [NativeName("fragmentShadingRateWithConservativeRasterization")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -203,7 +196,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint FragmentShadingRateWithConservativeRasterization;
 
-    [NativeName("fragmentShadingRateWithFragmentShaderInterlock")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -215,7 +208,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint FragmentShadingRateWithFragmentShaderInterlock;
 
-    [NativeName("fragmentShadingRateWithCustomSampleLocations")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -227,7 +220,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRatePropertiesKHR
     )]
     public uint FragmentShadingRateWithCustomSampleLocations;
 
-    [NativeName("fragmentShadingRateStrictMultiplyCombiner")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],

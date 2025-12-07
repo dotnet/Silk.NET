@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBufferUsageFlags2CreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BufferUsageFlags2CreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -24,7 +22,7 @@ public unsafe partial struct BufferUsageFlags2CreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,7 +35,7 @@ public unsafe partial struct BufferUsageFlags2CreateInfo
     )]
     public void* PNext;
 
-    [NativeName("usage")]
+    [NativeTypeName("VkBufferUsageFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkCopyCommandTransformInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyCommandTransformInfoQCOM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_rotated_copy_commands"],
@@ -23,7 +21,7 @@ public unsafe partial struct CopyCommandTransformInfoQCOM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_rotated_copy_commands"],
@@ -34,7 +32,6 @@ public unsafe partial struct CopyCommandTransformInfoQCOM
     )]
     public void* PNext;
 
-    [NativeName("transform")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_rotated_copy_commands"],

@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFence")]
 public readonly unsafe partial struct FenceHandle
 {
     public readonly void* Handle;
-
-    public FenceHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(FenceHandle other) => Handle == other.Handle;
 

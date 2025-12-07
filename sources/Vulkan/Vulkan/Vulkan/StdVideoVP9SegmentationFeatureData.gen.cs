@@ -8,12 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_FeatureData_e__FixedBuffer")]
 [InlineArray(8 * 4)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoVP9SegmentationFeatureData
 {
-    [NativeName("e0_0")]
     [SupportedApiProfile("vulkan")]
     public short E0X0;
 }

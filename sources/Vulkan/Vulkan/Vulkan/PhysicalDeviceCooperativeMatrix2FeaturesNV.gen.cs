@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceCooperativeMatrix2FeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -20,7 +18,6 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -28,7 +25,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
     )]
     public void* PNext;
 
-    [NativeName("cooperativeMatrixWorkgroupScope")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -36,7 +33,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
     )]
     public uint CooperativeMatrixWorkgroupScope;
 
-    [NativeName("cooperativeMatrixFlexibleDimensions")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -44,7 +41,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
     )]
     public uint CooperativeMatrixFlexibleDimensions;
 
-    [NativeName("cooperativeMatrixReductions")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -52,7 +49,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
     )]
     public uint CooperativeMatrixReductions;
 
-    [NativeName("cooperativeMatrixConversions")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -60,7 +57,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
     )]
     public uint CooperativeMatrixConversions;
 
-    [NativeName("cooperativeMatrixPerElementOperations")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -68,7 +65,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
     )]
     public uint CooperativeMatrixPerElementOperations;
 
-    [NativeName("cooperativeMatrixTensorAddressing")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],
@@ -76,7 +73,7 @@ public unsafe partial struct PhysicalDeviceCooperativeMatrix2FeaturesNV
     )]
     public uint CooperativeMatrixTensorAddressing;
 
-    [NativeName("cooperativeMatrixBlockLoads")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_matrix2"],

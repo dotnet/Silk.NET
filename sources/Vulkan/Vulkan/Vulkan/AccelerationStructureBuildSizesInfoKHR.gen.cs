@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkAccelerationStructureBuildSizesInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -23,7 +21,7 @@ public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -34,7 +32,7 @@ public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("accelerationStructureSize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -45,7 +43,7 @@ public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
     )]
     public ulong AccelerationStructureSize;
 
-    [NativeName("updateScratchSize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -56,7 +54,7 @@ public unsafe partial struct AccelerationStructureBuildSizesInfoKHR
     )]
     public ulong UpdateScratchSize;
 
-    [NativeName("buildScratchSize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

@@ -8,79 +8,74 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoDecodeVP9PictureInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct StdVideoDecodeVP9PictureInfo
 {
-    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeVP9PictureInfoFlags Flags;
 
-    [NativeName("profile")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVP9Profile Profile;
 
-    [NativeName("frame_type")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVP9FrameType FrameType;
 
-    [NativeName("frame_context_idx")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte FrameContextIdx;
 
-    [NativeName("reset_frame_context")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte ResetFrameContext;
 
-    [NativeName("refresh_frame_flags")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte RefreshFrameFlags;
 
-    [NativeName("ref_frame_sign_bias_mask")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte RefFrameSignBiasMask;
 
-    [NativeName("interpolation_filter")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVP9InterpolationFilter InterpolationFilter;
 
-    [NativeName("base_q_idx")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte BaseQIdx;
 
-    [NativeName("delta_q_y_dc")]
+    [NativeTypeName("int8_t")]
     [SupportedApiProfile("vulkan")]
     public sbyte DeltaQYDc;
 
-    [NativeName("delta_q_uv_dc")]
+    [NativeTypeName("int8_t")]
     [SupportedApiProfile("vulkan")]
     public sbyte DeltaQUvDc;
 
-    [NativeName("delta_q_uv_ac")]
+    [NativeTypeName("int8_t")]
     [SupportedApiProfile("vulkan")]
     public sbyte DeltaQUvAc;
 
-    [NativeName("tile_cols_log2")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte TileColsLog2;
 
-    [NativeName("tile_rows_log2")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte TileRowsLog2;
 
-    [NativeName("reserved1")]
+    [NativeTypeName("uint16_t[3]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeVP9PictureInfoReserved1 Reserved1;
 
-    [NativeName("pColorConfig")]
+    [NativeTypeName("const StdVideoVP9ColorConfig *")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVP9ColorConfig* PColorConfig;
 
-    [NativeName("pLoopFilter")]
+    [NativeTypeName("const StdVideoVP9LoopFilter *")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVP9LoopFilter* PLoopFilter;
 
-    [NativeName("pSegmentation")]
+    [NativeTypeName("const StdVideoVP9Segmentation *")]
     [SupportedApiProfile("vulkan")]
     public StdVideoVP9Segmentation* PSegmentation;
 }

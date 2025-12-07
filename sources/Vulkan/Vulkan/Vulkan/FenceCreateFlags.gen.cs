@@ -7,14 +7,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFenceCreateFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum FenceCreateFlags : uint
 {
     None = 0x0,
 
-    [NativeName("VK_FENCE_CREATE_SIGNALED_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDevicePerformanceCountersByRegionPropertiesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePerformanceCountersByRegionPropertiesARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -22,7 +20,6 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -33,7 +30,7 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionProperties
     )]
     public void* PNext;
 
-    [NativeName("maxPerRegionPerformanceCounters")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -44,7 +41,6 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionProperties
     )]
     public uint MaxPerRegionPerformanceCounters;
 
-    [NativeName("performanceCounterRegionSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -55,7 +51,7 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionProperties
     )]
     public Extent2D PerformanceCounterRegionSize;
 
-    [NativeName("rowStrideAlignment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -66,7 +62,7 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionProperties
     )]
     public uint RowStrideAlignment;
 
-    [NativeName("regionAlignment")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],
@@ -77,7 +73,7 @@ public unsafe partial struct PhysicalDevicePerformanceCountersByRegionProperties
     )]
     public uint RegionAlignment;
 
-    [NativeName("identityTransformOrder")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_performance_counters_by_region"],

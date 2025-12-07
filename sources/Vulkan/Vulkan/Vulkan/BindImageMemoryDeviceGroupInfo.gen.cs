@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBindImageMemoryDeviceGroupInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BindImageMemoryDeviceGroupInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,7 +35,7 @@ public unsafe partial struct BindImageMemoryDeviceGroupInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +60,7 @@ public unsafe partial struct BindImageMemoryDeviceGroupInfo
     )]
     public void* PNext;
 
-    [NativeName("deviceIndexCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +85,7 @@ public unsafe partial struct BindImageMemoryDeviceGroupInfo
     )]
     public uint DeviceIndexCount;
 
-    [NativeName("pDeviceIndices")]
+    [NativeTypeName("const uint32_t *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -112,7 +110,7 @@ public unsafe partial struct BindImageMemoryDeviceGroupInfo
     )]
     public uint* PDeviceIndices;
 
-    [NativeName("splitInstanceBindRegionCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -137,7 +135,7 @@ public unsafe partial struct BindImageMemoryDeviceGroupInfo
     )]
     public uint SplitInstanceBindRegionCount;
 
-    [NativeName("pSplitInstanceBindRegions")]
+    [NativeTypeName("const VkRect2D *")]
     [SupportedApiProfile(
         "vulkan",
         [

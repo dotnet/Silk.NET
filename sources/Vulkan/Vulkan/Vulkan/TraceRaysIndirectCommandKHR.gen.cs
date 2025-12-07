@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkTraceRaysIndirectCommandKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct TraceRaysIndirectCommandKHR
 {
-    [NativeName("width")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -23,7 +22,7 @@ public partial struct TraceRaysIndirectCommandKHR
     )]
     public uint Width;
 
-    [NativeName("height")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -34,7 +33,7 @@ public partial struct TraceRaysIndirectCommandKHR
     )]
     public uint Height;
 
-    [NativeName("depth")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],

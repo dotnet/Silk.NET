@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageFormatProperties")]
 [SupportedApiProfile("vulkan")]
 public partial struct ImageFormatProperties
 {
-    [NativeName("maxExtent")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public partial struct ImageFormatProperties
     )]
     public Extent3D MaxExtent;
 
-    [NativeName("maxMipLevels")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,7 @@ public partial struct ImageFormatProperties
     )]
     public uint MaxMipLevels;
 
-    [NativeName("maxArrayLayers")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +97,7 @@ public partial struct ImageFormatProperties
     )]
     public uint MaxArrayLayers;
 
-    [NativeName("sampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +126,7 @@ public partial struct ImageFormatProperties
     )]
     public SampleCountFlags SampleCounts;
 
-    [NativeName("maxResourceSize")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("VertexShaderWriteMaskEXT")]
+[Transformed]
 public enum VertexShaderWriteMask : uint
 {
-    [NativeName("GL_FALSE")]
-    False = 0,
-
-    [NativeName("GL_TRUE")]
-    True = 1,
+    False = unchecked((uint)0),
+    True = unchecked((uint)1),
 }

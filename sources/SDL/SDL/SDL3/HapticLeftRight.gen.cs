@@ -7,18 +7,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_HapticLeftRight")]
 public partial struct HapticLeftRight
 {
-    [NativeName("type")]
+    [NativeTypeName("Uint16")]
     public ushort Type;
 
-    [NativeName("length")]
+    [NativeTypeName("Uint32")]
     public uint Length;
 
-    [NativeName("large_magnitude")]
+    [NativeTypeName("Uint16")]
     public ushort LargeMagnitude;
 
-    [NativeName("small_magnitude")]
+    [NativeTypeName("Uint16")]
     public ushort SmallMagnitude;
 }

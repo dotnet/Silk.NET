@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_workgroup_memory_explicit_layout"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeatures
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_workgroup_memory_explicit_layout"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeatures
     )]
     public void* PNext;
 
-    [NativeName("workgroupMemoryExplicitLayout")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_workgroup_memory_explicit_layout"],
@@ -45,7 +42,7 @@ public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeatures
     )]
     public uint WorkgroupMemoryExplicitLayout;
 
-    [NativeName("workgroupMemoryExplicitLayoutScalarBlockLayout")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_workgroup_memory_explicit_layout"],
@@ -56,7 +53,7 @@ public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeatures
     )]
     public uint WorkgroupMemoryExplicitLayoutScalarBlockLayout;
 
-    [NativeName("workgroupMemoryExplicitLayout8BitAccess")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_workgroup_memory_explicit_layout"],
@@ -67,7 +64,7 @@ public unsafe partial struct PhysicalDeviceWorkgroupMemoryExplicitLayoutFeatures
     )]
     public uint WorkgroupMemoryExplicitLayout8BitAccess;
 
-    [NativeName("workgroupMemoryExplicitLayout16BitAccess")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_workgroup_memory_explicit_layout"],

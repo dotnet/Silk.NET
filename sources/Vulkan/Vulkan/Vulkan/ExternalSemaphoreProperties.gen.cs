@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkExternalSemaphoreProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ExternalSemaphoreProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -37,7 +35,6 @@ public unsafe partial struct ExternalSemaphoreProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,7 +59,7 @@ public unsafe partial struct ExternalSemaphoreProperties
     )]
     public void* PNext;
 
-    [NativeName("exportFromImportedHandleTypes")]
+    [NativeTypeName("VkExternalSemaphoreHandleTypeFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +84,7 @@ public unsafe partial struct ExternalSemaphoreProperties
     )]
     public ExternalSemaphoreHandleTypeFlags ExportFromImportedHandleTypes;
 
-    [NativeName("compatibleHandleTypes")]
+    [NativeTypeName("VkExternalSemaphoreHandleTypeFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -112,7 +109,7 @@ public unsafe partial struct ExternalSemaphoreProperties
     )]
     public ExternalSemaphoreHandleTypeFlags CompatibleHandleTypes;
 
-    [NativeName("externalSemaphoreFeatures")]
+    [NativeTypeName("VkExternalSemaphoreFeatureFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkTimeDomainKHR")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum TimeDomainKHR : uint
 {
-    [NativeName("VK_TIME_DOMAIN_DEVICE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_calibrated_timestamps"],
@@ -21,9 +20,8 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    Device = 0,
+    DeviceKHR = 0,
 
-    [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_calibrated_timestamps"],
@@ -32,9 +30,8 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonic = 1,
+    ClockMonotonicKHR = 1,
 
-    [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_calibrated_timestamps"],
@@ -43,9 +40,8 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicRaw = 2,
+    ClockMonotonicRawKHR = 2,
 
-    [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_calibrated_timestamps"],
@@ -54,9 +50,8 @@ public enum TimeDomainKHR : uint
             "VK_KHR_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    QueryPerformanceCounter = 3,
+    QueryPerformanceCounterKHR = 3,
 
-    [NativeName("VK_TIME_DOMAIN_DEVICE_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_calibrated_timestamps"],
@@ -65,9 +60,8 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    DeviceEXT = Device,
+    DeviceEXT = DeviceKHR,
 
-    [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_calibrated_timestamps"],
@@ -76,9 +70,8 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicEXT = ClockMonotonic,
+    ClockMonotonicEXT = ClockMonotonicKHR,
 
-    [NativeName("VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_calibrated_timestamps"],
@@ -87,9 +80,8 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    ClockMonotonicRawEXT = ClockMonotonicRaw,
+    ClockMonotonicRawEXT = ClockMonotonicRawKHR,
 
-    [NativeName("VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_calibrated_timestamps"],
@@ -98,5 +90,5 @@ public enum TimeDomainKHR : uint
             "VK_EXT_calibrated_timestamps+VK_VERSION_1_1",
         ]
     )]
-    QueryPerformanceCounterEXT = QueryPerformanceCounter,
+    QueryPerformanceCounterEXT = QueryPerformanceCounterKHR,
 }

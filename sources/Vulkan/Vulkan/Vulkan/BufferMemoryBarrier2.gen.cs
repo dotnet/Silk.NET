@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBufferMemoryBarrier2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BufferMemoryBarrier2
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +27,7 @@ public unsafe partial struct BufferMemoryBarrier2
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,7 +44,7 @@ public unsafe partial struct BufferMemoryBarrier2
     )]
     public void* PNext;
 
-    [NativeName("srcStageMask")]
+    [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -63,7 +61,7 @@ public unsafe partial struct BufferMemoryBarrier2
     )]
     public PipelineStageFlags2 SrcStageMask;
 
-    [NativeName("srcAccessMask")]
+    [NativeTypeName("VkAccessFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -80,7 +78,7 @@ public unsafe partial struct BufferMemoryBarrier2
     )]
     public AccessFlags2 SrcAccessMask;
 
-    [NativeName("dstStageMask")]
+    [NativeTypeName("VkPipelineStageFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +95,7 @@ public unsafe partial struct BufferMemoryBarrier2
     )]
     public PipelineStageFlags2 DstStageMask;
 
-    [NativeName("dstAccessMask")]
+    [NativeTypeName("VkAccessFlags2")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -114,7 +112,7 @@ public unsafe partial struct BufferMemoryBarrier2
     )]
     public AccessFlags2 DstAccessMask;
 
-    [NativeName("srcQueueFamilyIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -131,7 +129,7 @@ public unsafe partial struct BufferMemoryBarrier2
     )]
     public uint SrcQueueFamilyIndex;
 
-    [NativeName("dstQueueFamilyIndex")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -148,7 +146,7 @@ public unsafe partial struct BufferMemoryBarrier2
     )]
     public uint DstQueueFamilyIndex;
 
-    [NativeName("buffer")]
+    [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -165,7 +163,7 @@ public unsafe partial struct BufferMemoryBarrier2
     )]
     public BufferHandle Buffer;
 
-    [NativeName("offset")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -182,7 +180,7 @@ public unsafe partial struct BufferMemoryBarrier2
     )]
     public ulong Offset;
 
-    [NativeName("size")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         [

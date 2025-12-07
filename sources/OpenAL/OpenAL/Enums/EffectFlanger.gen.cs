@@ -10,24 +10,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("EffectFlanger")]
+[Transformed]
 public enum EffectFlanger : uint
 {
-    [NativeName("AL_FLANGER_WAVEFORM")]
-    Waveform = 1,
-
-    [NativeName("AL_FLANGER_PHASE")]
-    Phase = 2,
-
-    [NativeName("AL_FLANGER_RATE")]
-    Rate = 3,
-
-    [NativeName("AL_FLANGER_DEPTH")]
-    Depth = 4,
-
-    [NativeName("AL_FLANGER_FEEDBACK")]
-    Feedback = 5,
-
-    [NativeName("AL_FLANGER_DELAY")]
-    Delay = 6,
+    Waveform = unchecked((uint)0x0001),
+    Phase = unchecked((uint)0x0002),
+    Rate = unchecked((uint)0x0003),
+    Depth = unchecked((uint)0x0004),
+    Feedback = unchecked((uint)0x0005),
+    Delay = unchecked((uint)0x0006),
 }

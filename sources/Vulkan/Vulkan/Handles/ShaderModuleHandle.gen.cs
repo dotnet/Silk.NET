@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkShaderModule")]
 public readonly unsafe partial struct ShaderModuleHandle
 {
     public readonly void* Handle;
-
-    public ShaderModuleHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(ShaderModuleHandle other) => Handle == other.Handle;
 

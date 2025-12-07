@@ -4,39 +4,33 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUDepthStencilState")]
 public partial struct GPUDepthStencilState
 {
-    [NativeName("compare_op")]
     public GPUCompareOp CompareOp;
-
-    [NativeName("back_stencil_state")]
     public GPUStencilOpState BackStencilState;
-
-    [NativeName("front_stencil_state")]
     public GPUStencilOpState FrontStencilState;
 
-    [NativeName("compare_mask")]
+    [NativeTypeName("Uint8")]
     public byte CompareMask;
 
-    [NativeName("write_mask")]
+    [NativeTypeName("Uint8")]
     public byte WriteMask;
 
-    [NativeName("enable_depth_test")]
+    [NativeTypeName("bool")]
     public byte EnableDepthTest;
 
-    [NativeName("enable_depth_write")]
+    [NativeTypeName("bool")]
     public byte EnableDepthWrite;
 
-    [NativeName("enable_stencil_test")]
+    [NativeTypeName("bool")]
     public byte EnableStencilTest;
 
-    [NativeName("padding1")]
+    [NativeTypeName("Uint8")]
     public byte Padding1;
 
-    [NativeName("padding2")]
+    [NativeTypeName("Uint8")]
     public byte Padding2;
 
-    [NativeName("padding3")]
+    [NativeTypeName("Uint8")]
     public byte Padding3;
 }

@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_NSTimerCallback")]
 public readonly unsafe struct NSTimerCallback : IDisposable
 {
     private readonly void* Pointer;

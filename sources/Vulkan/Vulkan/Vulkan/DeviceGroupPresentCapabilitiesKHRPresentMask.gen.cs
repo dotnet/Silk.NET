@@ -8,12 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_presentMask_e__FixedBuffer")]
 [InlineArray(32)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_KHR_swapchain", "VK_VERSION_1_1"],
+    ImpliesSets = ["VK_KHR_surface"],
+    RequireAll = true
+)]
 public partial struct DeviceGroupPresentCapabilitiesKHRPresentMask
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public uint E0;
 }

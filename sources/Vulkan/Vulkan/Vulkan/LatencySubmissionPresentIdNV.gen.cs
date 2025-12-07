@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkLatencySubmissionPresentIdNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct LatencySubmissionPresentIdNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -24,7 +22,7 @@ public unsafe partial struct LatencySubmissionPresentIdNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],
@@ -37,7 +35,7 @@ public unsafe partial struct LatencySubmissionPresentIdNV
     )]
     public void* PNext;
 
-    [NativeName("presentID")]
+    [NativeTypeName("uint64_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_low_latency2"],

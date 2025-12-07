@@ -7,12 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ConvolutionBorderModeEXT")]
+[Transformed]
 public enum ConvolutionBorderMode : uint
 {
-    [NativeName("GL_REDUCE")]
-    Reduce = 32790,
-
-    [NativeName("GL_REDUCE_EXT")]
-    ReduceEXT = 32790,
+    Reduce = unchecked((uint)0x8016),
+    ReduceEXT = unchecked((uint)0x8016),
 }

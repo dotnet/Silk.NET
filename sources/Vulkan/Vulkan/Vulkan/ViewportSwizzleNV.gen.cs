@@ -8,23 +8,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkViewportSwizzleNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct ViewportSwizzleNV
 {
-    [NativeName("x")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     public ViewportCoordinateSwizzleNV X;
 
-    [NativeName("y")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     public ViewportCoordinateSwizzleNV Y;
 
-    [NativeName("z")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     public ViewportCoordinateSwizzleNV Z;
 
-    [NativeName("w")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     public ViewportCoordinateSwizzleNV W;
 }

@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVendorId")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum VendorId : uint
 {
-    [NativeName("VK_VENDOR_ID_KHRONOS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,9 +38,8 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Khronos = 65536,
+    VendorIdKhronos = 65536,
 
-    [NativeName("VK_VENDOR_ID_VIV")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,9 +66,8 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Viv = 65537,
+    VendorIdVIV = 65537,
 
-    [NativeName("VK_VENDOR_ID_VSI")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,9 +94,8 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Vsi = 65538,
+    VendorIdVSI = 65538,
 
-    [NativeName("VK_VENDOR_ID_KAZAN")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,9 +122,8 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Kazan = 65539,
+    VendorIdKazan = 65539,
 
-    [NativeName("VK_VENDOR_ID_CODEPLAY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -155,9 +150,8 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Codeplay = 65540,
+    VendorIdCodeplay = 65540,
 
-    [NativeName("VK_VENDOR_ID_MESA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -184,9 +178,8 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Mesa = 65541,
+    VendorIdMESA = 65541,
 
-    [NativeName("VK_VENDOR_ID_POCL")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -213,9 +206,8 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Pocl = 65542,
+    VendorIdPocl = 65542,
 
-    [NativeName("VK_VENDOR_ID_MOBILEYE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -242,5 +234,5 @@ public enum VendorId : uint
         ],
         MinVersion = "1.0"
     )]
-    Mobileye = 65543,
+    VendorIdMobileye = 65543,
 }

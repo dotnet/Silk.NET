@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDataGraphPipelineInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineInfoARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -20,7 +18,7 @@ public unsafe partial struct DataGraphPipelineInfoARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -28,7 +26,7 @@ public unsafe partial struct DataGraphPipelineInfoARM
     )]
     public void* PNext;
 
-    [NativeName("dataGraphPipeline")]
+    [NativeTypeName("VkPipeline")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

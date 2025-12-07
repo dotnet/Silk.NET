@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkGeometryAABBNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeometryAABBNV
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -23,7 +21,7 @@ public unsafe partial struct GeometryAABBNV
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -34,7 +32,7 @@ public unsafe partial struct GeometryAABBNV
     )]
     public void* PNext;
 
-    [NativeName("aabbData")]
+    [NativeTypeName("VkBuffer")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -45,7 +43,7 @@ public unsafe partial struct GeometryAABBNV
     )]
     public BufferHandle AabbData;
 
-    [NativeName("numAABBs")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -56,7 +54,7 @@ public unsafe partial struct GeometryAABBNV
     )]
     public uint NumAABBs;
 
-    [NativeName("stride")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -67,7 +65,7 @@ public unsafe partial struct GeometryAABBNV
     )]
     public uint Stride;
 
-    [NativeName("offset")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

@@ -7,21 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("FragmentOp3ATI")]
+[Transformed]
 public enum FragmentOp3ATI : uint
 {
-    [NativeName("GL_MAD_ATI")]
-    Mad = 35176,
-
-    [NativeName("GL_LERP_ATI")]
-    Lerp = 35177,
-
-    [NativeName("GL_CND_ATI")]
-    Cnd = 35178,
-
-    [NativeName("GL_CND0_ATI")]
-    Cnd0 = 35179,
-
-    [NativeName("GL_DOT2_ADD_ATI")]
-    Dot2Add = 35180,
+    Mad = unchecked((uint)0x8968),
+    Lerp = unchecked((uint)0x8969),
+    Cnd = unchecked((uint)0x896A),
+    Cnd0 = unchecked((uint)0x896B),
+    Dot2Add = unchecked((uint)0x896C),
 }

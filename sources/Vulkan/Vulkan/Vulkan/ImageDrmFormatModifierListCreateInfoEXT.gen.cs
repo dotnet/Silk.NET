@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageDrmFormatModifierListCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageDrmFormatModifierListCreateInfoEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -24,7 +22,7 @@ public unsafe partial struct ImageDrmFormatModifierListCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -36,7 +34,7 @@ public unsafe partial struct ImageDrmFormatModifierListCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeName("drmFormatModifierCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -48,7 +46,7 @@ public unsafe partial struct ImageDrmFormatModifierListCreateInfoEXT
     )]
     public uint DrmFormatModifierCount;
 
-    [NativeName("pDrmFormatModifiers")]
+    [NativeTypeName("const uint64_t *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDataGraphPipelineShaderModuleCreateInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DataGraphPipelineShaderModuleCreateInfoARM
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -20,7 +18,7 @@ public unsafe partial struct DataGraphPipelineShaderModuleCreateInfoARM
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -28,7 +26,7 @@ public unsafe partial struct DataGraphPipelineShaderModuleCreateInfoARM
     )]
     public void* PNext;
 
-    [NativeName("module")]
+    [NativeTypeName("VkShaderModule")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -36,7 +34,7 @@ public unsafe partial struct DataGraphPipelineShaderModuleCreateInfoARM
     )]
     public ShaderModuleHandle Module;
 
-    [NativeName("pName")]
+    [NativeTypeName("const char *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -44,7 +42,7 @@ public unsafe partial struct DataGraphPipelineShaderModuleCreateInfoARM
     )]
     public sbyte* PName;
 
-    [NativeName("pSpecializationInfo")]
+    [NativeTypeName("const VkSpecializationInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -52,7 +50,7 @@ public unsafe partial struct DataGraphPipelineShaderModuleCreateInfoARM
     )]
     public SpecializationInfo* PSpecializationInfo;
 
-    [NativeName("constantCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -60,7 +58,7 @@ public unsafe partial struct DataGraphPipelineShaderModuleCreateInfoARM
     )]
     public uint ConstantCount;
 
-    [NativeName("pConstants")]
+    [NativeTypeName("const VkDataGraphPipelineConstantARM *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

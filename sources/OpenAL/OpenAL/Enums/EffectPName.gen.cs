@@ -10,273 +10,96 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("EffectPName")]
+[Transformed]
 public enum EffectPName : uint
 {
-    [NativeName("AL_REVERB_DENSITY")]
-    ReverbDensity = 1,
-
-    [NativeName("AL_REVERB_DIFFUSION")]
-    ReverbDiffusion = 2,
-
-    [NativeName("AL_REVERB_GAIN")]
-    ReverbGain = 3,
-
-    [NativeName("AL_REVERB_GAINHF")]
-    ReverbGainhf = 4,
-
-    [NativeName("AL_REVERB_DECAY_TIME")]
-    ReverbDecayTime = 5,
-
-    [NativeName("AL_REVERB_DECAY_HFRATIO")]
-    ReverbDecayHfratio = 6,
-
-    [NativeName("AL_REVERB_REFLECTIONS_GAIN")]
-    ReverbReflectionsGain = 7,
-
-    [NativeName("AL_REVERB_REFLECTIONS_DELAY")]
-    ReverbReflectionsDelay = 8,
-
-    [NativeName("AL_REVERB_LATE_REVERB_GAIN")]
-    ReverbLateReverbGain = 9,
-
-    [NativeName("AL_REVERB_LATE_REVERB_DELAY")]
-    ReverbLateReverbDelay = 10,
-
-    [NativeName("AL_REVERB_AIR_ABSORPTION_GAINHF")]
-    ReverbAirAbsorptionGainhf = 11,
-
-    [NativeName("AL_REVERB_ROOM_ROLLOFF_FACTOR")]
-    ReverbRoomRolloffFactor = 12,
-
-    [NativeName("AL_REVERB_DECAY_HFLIMIT")]
-    ReverbDecayHflimit = 13,
-
-    [NativeName("AL_EAXREVERB_DENSITY")]
-    EaxreverbDensity = 1,
-
-    [NativeName("AL_EAXREVERB_DIFFUSION")]
-    EaxreverbDiffusion = 2,
-
-    [NativeName("AL_EAXREVERB_GAIN")]
-    EaxreverbGain = 3,
-
-    [NativeName("AL_EAXREVERB_GAINHF")]
-    EaxreverbGainhf = 4,
-
-    [NativeName("AL_EAXREVERB_GAINLF")]
-    EaxreverbGainlf = 5,
-
-    [NativeName("AL_EAXREVERB_DECAY_TIME")]
-    EaxreverbDecayTime = 6,
-
-    [NativeName("AL_EAXREVERB_DECAY_HFRATIO")]
-    EaxreverbDecayHfratio = 7,
-
-    [NativeName("AL_EAXREVERB_DECAY_LFRATIO")]
-    EaxreverbDecayLfratio = 8,
-
-    [NativeName("AL_EAXREVERB_REFLECTIONS_GAIN")]
-    EaxreverbReflectionsGain = 9,
-
-    [NativeName("AL_EAXREVERB_REFLECTIONS_DELAY")]
-    EaxreverbReflectionsDelay = 10,
-
-    [NativeName("AL_EAXREVERB_REFLECTIONS_PAN")]
-    EaxreverbReflectionsPan = 11,
-
-    [NativeName("AL_EAXREVERB_LATE_REVERB_GAIN")]
-    EaxreverbLateReverbGain = 12,
-
-    [NativeName("AL_EAXREVERB_LATE_REVERB_DELAY")]
-    EaxreverbLateReverbDelay = 13,
-
-    [NativeName("AL_EAXREVERB_LATE_REVERB_PAN")]
-    EaxreverbLateReverbPan = 14,
-
-    [NativeName("AL_EAXREVERB_ECHO_TIME")]
-    EaxreverbEchoTime = 15,
-
-    [NativeName("AL_EAXREVERB_ECHO_DEPTH")]
-    EaxreverbEchoDepth = 16,
-
-    [NativeName("AL_EAXREVERB_MODULATION_TIME")]
-    EaxreverbModulationTime = 17,
-
-    [NativeName("AL_EAXREVERB_MODULATION_DEPTH")]
-    EaxreverbModulationDepth = 18,
-
-    [NativeName("AL_EAXREVERB_AIR_ABSORPTION_GAINHF")]
-    EaxreverbAirAbsorptionGainhf = 19,
-
-    [NativeName("AL_EAXREVERB_HFREFERENCE")]
-    EaxreverbHfreference = 20,
-
-    [NativeName("AL_EAXREVERB_LFREFERENCE")]
-    EaxreverbLfreference = 21,
-
-    [NativeName("AL_EAXREVERB_ROOM_ROLLOFF_FACTOR")]
-    EaxreverbRoomRolloffFactor = 22,
-
-    [NativeName("AL_EAXREVERB_DECAY_HFLIMIT")]
-    EaxreverbDecayHflimit = 23,
-
-    [NativeName("AL_CHORUS_WAVEFORM")]
-    ChorusWaveform = 1,
-
-    [NativeName("AL_CHORUS_PHASE")]
-    ChorusPhase = 2,
-
-    [NativeName("AL_CHORUS_RATE")]
-    ChorusRate = 3,
-
-    [NativeName("AL_CHORUS_DEPTH")]
-    ChorusDepth = 4,
-
-    [NativeName("AL_CHORUS_FEEDBACK")]
-    ChorusFeedback = 5,
-
-    [NativeName("AL_CHORUS_DELAY")]
-    ChorusDelay = 6,
-
-    [NativeName("AL_DISTORTION_EDGE")]
-    DistortionEdge = 1,
-
-    [NativeName("AL_DISTORTION_GAIN")]
-    DistortionGain = 2,
-
-    [NativeName("AL_DISTORTION_LOWPASS_CUTOFF")]
-    DistortionLowpassCutoff = 3,
-
-    [NativeName("AL_DISTORTION_EQCENTER")]
-    DistortionEqcenter = 4,
-
-    [NativeName("AL_DISTORTION_EQBANDWIDTH")]
-    DistortionEqbandwidth = 5,
-
-    [NativeName("AL_ECHO_DELAY")]
-    EchoDelay = 1,
-
-    [NativeName("AL_ECHO_LRDELAY")]
-    EchoLrdelay = 2,
-
-    [NativeName("AL_ECHO_DAMPING")]
-    EchoDamping = 3,
-
-    [NativeName("AL_ECHO_FEEDBACK")]
-    EchoFeedback = 4,
-
-    [NativeName("AL_ECHO_SPREAD")]
-    EchoSpread = 5,
-
-    [NativeName("AL_FLANGER_WAVEFORM")]
-    FlangerWaveform = 1,
-
-    [NativeName("AL_FLANGER_PHASE")]
-    FlangerPhase = 2,
-
-    [NativeName("AL_FLANGER_RATE")]
-    FlangerRate = 3,
-
-    [NativeName("AL_FLANGER_DEPTH")]
-    FlangerDepth = 4,
-
-    [NativeName("AL_FLANGER_FEEDBACK")]
-    FlangerFeedback = 5,
-
-    [NativeName("AL_FLANGER_DELAY")]
-    FlangerDelay = 6,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_FREQUENCY")]
-    FrequencyShifterFrequency = 1,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_LEFT_DIRECTION")]
-    FrequencyShifterLeftDirection = 2,
-
-    [NativeName("AL_FREQUENCY_SHIFTER_RIGHT_DIRECTION")]
-    FrequencyShifterRightDirection = 3,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEMEA")]
-    VocalMorpherPhonemea = 1,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEMEA_COARSE_TUNING")]
-    VocalMorpherPhonemeaCoarseTuning = 2,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEMEB")]
-    VocalMorpherPhonemeb = 3,
-
-    [NativeName("AL_VOCAL_MORPHER_PHONEMEB_COARSE_TUNING")]
-    VocalMorpherPhonemebCoarseTuning = 4,
-
-    [NativeName("AL_VOCAL_MORPHER_WAVEFORM")]
-    VocalMorpherWaveform = 5,
-
-    [NativeName("AL_VOCAL_MORPHER_RATE")]
-    VocalMorpherRate = 6,
-
-    [NativeName("AL_PITCH_SHIFTER_COARSE_TUNE")]
-    PitchShifterCoarseTune = 1,
-
-    [NativeName("AL_PITCH_SHIFTER_FINE_TUNE")]
-    PitchShifterFineTune = 2,
-
-    [NativeName("AL_RING_MODULATOR_FREQUENCY")]
-    RingModulatorFrequency = 1,
-
-    [NativeName("AL_RING_MODULATOR_HIGHPASS_CUTOFF")]
-    RingModulatorHighpassCutoff = 2,
-
-    [NativeName("AL_RING_MODULATOR_WAVEFORM")]
-    RingModulatorWaveform = 3,
-
-    [NativeName("AL_AUTOWAH_ATTACK_TIME")]
-    AutowahAttackTime = 1,
-
-    [NativeName("AL_AUTOWAH_RELEASE_TIME")]
-    AutowahReleaseTime = 2,
-
-    [NativeName("AL_AUTOWAH_RESONANCE")]
-    AutowahResonance = 3,
-
-    [NativeName("AL_AUTOWAH_PEAK_GAIN")]
-    AutowahPeakGain = 4,
-
-    [NativeName("AL_COMPRESSOR_ONOFF")]
-    CompressorOnoff = 1,
-
-    [NativeName("AL_EQUALIZER_LOW_GAIN")]
-    EqualizerLowGain = 1,
-
-    [NativeName("AL_EQUALIZER_LOW_CUTOFF")]
-    EqualizerLowCutoff = 2,
-
-    [NativeName("AL_EQUALIZER_MID1_GAIN")]
-    EqualizerMid1Gain = 3,
-
-    [NativeName("AL_EQUALIZER_MID1_CENTER")]
-    EqualizerMid1Center = 4,
-
-    [NativeName("AL_EQUALIZER_MID1_WIDTH")]
-    EqualizerMid1Width = 5,
-
-    [NativeName("AL_EQUALIZER_MID2_GAIN")]
-    EqualizerMid2Gain = 6,
-
-    [NativeName("AL_EQUALIZER_MID2_CENTER")]
-    EqualizerMid2Center = 7,
-
-    [NativeName("AL_EQUALIZER_MID2_WIDTH")]
-    EqualizerMid2Width = 8,
-
-    [NativeName("AL_EQUALIZER_HIGH_GAIN")]
-    EqualizerHighGain = 9,
-
-    [NativeName("AL_EQUALIZER_HIGH_CUTOFF")]
-    EqualizerHighCutoff = 10,
-
-    [NativeName("AL_EFFECT_TYPE")]
-    EffectType = 32769,
-
-    [NativeName("AL_DEDICATED_GAIN")]
-    DedicatedGain = 1,
+    ReverbDensity = unchecked((uint)0x0001),
+    ReverbDiffusion = unchecked((uint)0x0002),
+    ReverbGain = unchecked((uint)0x0003),
+    ReverbGainhf = unchecked((uint)0x0004),
+    ReverbDecayTime = unchecked((uint)0x0005),
+    ReverbDecayHfratio = unchecked((uint)0x0006),
+    ReverbReflectionsGain = unchecked((uint)0x0007),
+    ReverbReflectionsDelay = unchecked((uint)0x0008),
+    ReverbLateReverbGain = unchecked((uint)0x0009),
+    ReverbLateReverbDelay = unchecked((uint)0x000A),
+    ReverbAirAbsorptionGainhf = unchecked((uint)0x000B),
+    ReverbRoomRolloffFactor = unchecked((uint)0x000C),
+    ReverbDecayHflimit = unchecked((uint)0x000D),
+    EaxreverbDensity = unchecked((uint)0x0001),
+    EaxreverbDiffusion = unchecked((uint)0x0002),
+    EaxreverbGain = unchecked((uint)0x0003),
+    EaxreverbGainhf = unchecked((uint)0x0004),
+    EaxreverbGainlf = unchecked((uint)0x0005),
+    EaxreverbDecayTime = unchecked((uint)0x0006),
+    EaxreverbDecayHfratio = unchecked((uint)0x0007),
+    EaxreverbDecayLfratio = unchecked((uint)0x0008),
+    EaxreverbReflectionsGain = unchecked((uint)0x0009),
+    EaxreverbReflectionsDelay = unchecked((uint)0x000A),
+    EaxreverbReflectionsPan = unchecked((uint)0x000B),
+    EaxreverbLateReverbGain = unchecked((uint)0x000C),
+    EaxreverbLateReverbDelay = unchecked((uint)0x000D),
+    EaxreverbLateReverbPan = unchecked((uint)0x000E),
+    EaxreverbEchoTime = unchecked((uint)0x000F),
+    EaxreverbEchoDepth = unchecked((uint)0x0010),
+    EaxreverbModulationTime = unchecked((uint)0x0011),
+    EaxreverbModulationDepth = unchecked((uint)0x0012),
+    EaxreverbAirAbsorptionGainhf = unchecked((uint)0x0013),
+    EaxreverbHfreference = unchecked((uint)0x0014),
+    EaxreverbLfreference = unchecked((uint)0x0015),
+    EaxreverbRoomRolloffFactor = unchecked((uint)0x0016),
+    EaxreverbDecayHflimit = unchecked((uint)0x0017),
+    ChorusWaveform = unchecked((uint)0x0001),
+    ChorusPhase = unchecked((uint)0x0002),
+    ChorusRate = unchecked((uint)0x0003),
+    ChorusDepth = unchecked((uint)0x0004),
+    ChorusFeedback = unchecked((uint)0x0005),
+    ChorusDelay = unchecked((uint)0x0006),
+    DistortionEdge = unchecked((uint)0x0001),
+    DistortionGain = unchecked((uint)0x0002),
+    DistortionLowpassCutoff = unchecked((uint)0x0003),
+    DistortionEqcenter = unchecked((uint)0x0004),
+    DistortionEqbandwidth = unchecked((uint)0x0005),
+    EchoDelay = unchecked((uint)0x0001),
+    EchoLrdelay = unchecked((uint)0x0002),
+    EchoDamping = unchecked((uint)0x0003),
+    EchoFeedback = unchecked((uint)0x0004),
+    EchoSpread = unchecked((uint)0x0005),
+    FlangerWaveform = unchecked((uint)0x0001),
+    FlangerPhase = unchecked((uint)0x0002),
+    FlangerRate = unchecked((uint)0x0003),
+    FlangerDepth = unchecked((uint)0x0004),
+    FlangerFeedback = unchecked((uint)0x0005),
+    FlangerDelay = unchecked((uint)0x0006),
+    FrequencyShifterFrequency = unchecked((uint)0x0001),
+    FrequencyShifterLeftDirection = unchecked((uint)0x0002),
+    FrequencyShifterRightDirection = unchecked((uint)0x0003),
+    VocalMorpherPhonemea = unchecked((uint)0x0001),
+    VocalMorpherPhonemeaCoarseTuning = unchecked((uint)0x0002),
+    VocalMorpherPhonemeb = unchecked((uint)0x0003),
+    VocalMorpherPhonemebCoarseTuning = unchecked((uint)0x0004),
+    VocalMorpherWaveform = unchecked((uint)0x0005),
+    VocalMorpherRate = unchecked((uint)0x0006),
+    PitchShifterCoarseTune = unchecked((uint)0x0001),
+    PitchShifterFineTune = unchecked((uint)0x0002),
+    RingModulatorFrequency = unchecked((uint)0x0001),
+    RingModulatorHighpassCutoff = unchecked((uint)0x0002),
+    RingModulatorWaveform = unchecked((uint)0x0003),
+    AutowahAttackTime = unchecked((uint)0x0001),
+    AutowahReleaseTime = unchecked((uint)0x0002),
+    AutowahResonance = unchecked((uint)0x0003),
+    AutowahPeakGain = unchecked((uint)0x0004),
+    CompressorOnoff = unchecked((uint)0x0001),
+    EqualizerLowGain = unchecked((uint)0x0001),
+    EqualizerLowCutoff = unchecked((uint)0x0002),
+    EqualizerMid1Gain = unchecked((uint)0x0003),
+    EqualizerMid1Center = unchecked((uint)0x0004),
+    EqualizerMid1Width = unchecked((uint)0x0005),
+    EqualizerMid2Gain = unchecked((uint)0x0006),
+    EqualizerMid2Center = unchecked((uint)0x0007),
+    EqualizerMid2Width = unchecked((uint)0x0008),
+    EqualizerHighGain = unchecked((uint)0x0009),
+    EqualizerHighCutoff = unchecked((uint)0x000A),
+    EffectType = unchecked((uint)0x8001),
+    DedicatedGain = unchecked((uint)0x0001),
 }

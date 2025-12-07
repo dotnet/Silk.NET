@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFramebufferAttachmentsCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FramebufferAttachmentsCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -26,7 +24,7 @@ public unsafe partial struct FramebufferAttachmentsCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct FramebufferAttachmentsCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("attachmentImageInfoCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -56,7 +54,7 @@ public unsafe partial struct FramebufferAttachmentsCreateInfo
     )]
     public uint AttachmentImageInfoCount;
 
-    [NativeName("pAttachmentImageInfos")]
+    [NativeTypeName("const VkFramebufferAttachmentImageInfo *")]
     [SupportedApiProfile(
         "vulkan",
         [

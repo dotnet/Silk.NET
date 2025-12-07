@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkLineRasterizationMode")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum LineRasterizationMode : uint
 {
-    [NativeName("VK_LINE_RASTERIZATION_MODE_DEFAULT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -20,7 +19,6 @@ public enum LineRasterizationMode : uint
     )]
     Default = 0,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -28,7 +26,6 @@ public enum LineRasterizationMode : uint
     )]
     Rectangular = 1,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -36,7 +33,6 @@ public enum LineRasterizationMode : uint
     )]
     Bresenham = 2,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -44,7 +40,6 @@ public enum LineRasterizationMode : uint
     )]
     RectangularSmooth = 3,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_DEFAULT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_line_rasterization"],
@@ -55,7 +50,6 @@ public enum LineRasterizationMode : uint
     )]
     DefaultEXT = Default,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_line_rasterization"],
@@ -66,7 +60,6 @@ public enum LineRasterizationMode : uint
     )]
     RectangularEXT = Rectangular,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_line_rasterization"],
@@ -77,7 +70,6 @@ public enum LineRasterizationMode : uint
     )]
     BresenhamEXT = Bresenham,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_line_rasterization"],
@@ -88,7 +80,6 @@ public enum LineRasterizationMode : uint
     )]
     RectangularSmoothEXT = RectangularSmooth,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_DEFAULT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_line_rasterization"],
@@ -99,7 +90,6 @@ public enum LineRasterizationMode : uint
     )]
     DefaultKHR = Default,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_line_rasterization"],
@@ -110,7 +100,6 @@ public enum LineRasterizationMode : uint
     )]
     RectangularKHR = Rectangular,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_BRESENHAM_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_line_rasterization"],
@@ -121,7 +110,6 @@ public enum LineRasterizationMode : uint
     )]
     BresenhamKHR = Bresenham,
 
-    [NativeName("VK_LINE_RASTERIZATION_MODE_RECTANGULAR_SMOOTH_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_line_rasterization"],

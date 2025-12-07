@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImportSemaphoreFdInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImportSemaphoreFdInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore_fd"],
@@ -22,7 +20,7 @@ public unsafe partial struct ImportSemaphoreFdInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore_fd"],
@@ -33,7 +31,7 @@ public unsafe partial struct ImportSemaphoreFdInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("semaphore")]
+    [NativeTypeName("VkSemaphore")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore_fd"],
@@ -44,7 +42,7 @@ public unsafe partial struct ImportSemaphoreFdInfoKHR
     )]
     public SemaphoreHandle Semaphore;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkSemaphoreImportFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore_fd"],
@@ -55,7 +53,6 @@ public unsafe partial struct ImportSemaphoreFdInfoKHR
     )]
     public SemaphoreImportFlags Flags;
 
-    [NativeName("handleType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore_fd"],
@@ -66,7 +63,6 @@ public unsafe partial struct ImportSemaphoreFdInfoKHR
     )]
     public ExternalSemaphoreHandleTypeFlags HandleType;
 
-    [NativeName("fd")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_external_semaphore_fd"],

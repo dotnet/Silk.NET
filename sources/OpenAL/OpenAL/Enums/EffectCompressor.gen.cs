@@ -10,9 +10,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("EffectCompressor")]
+[Transformed]
 public enum EffectCompressor : uint
 {
-    [NativeName("AL_COMPRESSOR_ONOFF")]
-    CompressorOnoff = 1,
+    CompressorOnoff = unchecked((uint)0x0001),
 }

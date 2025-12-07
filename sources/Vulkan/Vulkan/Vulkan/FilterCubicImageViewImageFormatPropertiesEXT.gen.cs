@@ -8,23 +8,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkFilterCubicImageViewImageFormatPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct FilterCubicImageViewImageFormatPropertiesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     public void* PNext;
 
-    [NativeName("filterCubic")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     public uint FilterCubic;
 
-    [NativeName("filterCubicMinmax")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile("vulkan", ["VK_EXT_filter_cubic"])]
     public uint FilterCubicMinmax;
 }

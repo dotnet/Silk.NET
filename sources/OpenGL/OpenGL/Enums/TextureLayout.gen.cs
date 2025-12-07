@@ -7,33 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("TextureLayout")]
+[Transformed]
 public enum TextureLayout : uint
 {
-    [NativeName("GL_LAYOUT_GENERAL_EXT")]
-    GeneralEXT = 38285,
-
-    [NativeName("GL_LAYOUT_COLOR_ATTACHMENT_EXT")]
-    ColorAttachmentEXT = 38286,
-
-    [NativeName("GL_LAYOUT_DEPTH_STENCIL_ATTACHMENT_EXT")]
-    DepthStencilAttachmentEXT = 38287,
-
-    [NativeName("GL_LAYOUT_DEPTH_STENCIL_READ_ONLY_EXT")]
-    DepthStencilReadOnlyEXT = 38288,
-
-    [NativeName("GL_LAYOUT_SHADER_READ_ONLY_EXT")]
-    ShaderReadOnlyEXT = 38289,
-
-    [NativeName("GL_LAYOUT_TRANSFER_SRC_EXT")]
-    TransferSrcEXT = 38290,
-
-    [NativeName("GL_LAYOUT_TRANSFER_DST_EXT")]
-    TransferDstEXT = 38291,
-
-    [NativeName("GL_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_EXT")]
-    DepthReadOnlyStencilAttachmentEXT = 38192,
-
-    [NativeName("GL_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_EXT")]
-    DepthAttachmentStencilReadOnlyEXT = 38193,
+    GeneralEXT = unchecked((uint)0x958D),
+    ColorAttachmentEXT = unchecked((uint)0x958E),
+    DepthStencilAttachmentEXT = unchecked((uint)0x958F),
+    DepthStencilReadOnlyEXT = unchecked((uint)0x9590),
+    ShaderReadOnlyEXT = unchecked((uint)0x9591),
+    TransferSrcEXT = unchecked((uint)0x9592),
+    TransferDstEXT = unchecked((uint)0x9593),
+    DepthReadOnlyStencilAttachmentEXT = unchecked((uint)0x9530),
+    DepthAttachmentStencilReadOnlyEXT = unchecked((uint)0x9531),
 }

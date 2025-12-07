@@ -8,12 +8,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_deviceUUID_e__FixedBuffer")]
 [InlineArray(16)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    [
+        "VK_BASE_VERSION_1_2",
+        "VK_BASE_VERSION_1_3",
+        "VK_BASE_VERSION_1_4",
+        "VK_COMPUTE_VERSION_1_2",
+        "VK_COMPUTE_VERSION_1_3",
+        "VK_COMPUTE_VERSION_1_4",
+        "VK_GRAPHICS_VERSION_1_2",
+        "VK_GRAPHICS_VERSION_1_3",
+        "VK_GRAPHICS_VERSION_1_4",
+        "VK_VERSION_1_2",
+        "VK_VERSION_1_3",
+        "VK_VERSION_1_4",
+    ],
+    MinVersion = "1.2"
+)]
 public partial struct PhysicalDeviceVulkan11PropertiesDeviceUUID
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

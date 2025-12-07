@@ -8,15 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoAV1GlobalMotion")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1GlobalMotion
 {
-    [NativeName("GmType")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1GlobalMotionGmType GmType;
 
-    [NativeName("gm_params")]
+    [NativeTypeName("int32_t[8][6]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1GlobalMotionGmParams GmParams;
 }

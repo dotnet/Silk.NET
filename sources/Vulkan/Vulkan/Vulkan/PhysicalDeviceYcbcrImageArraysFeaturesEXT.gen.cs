@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceYcbcrImageArraysFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceYcbcrImageArraysFeaturesEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_ycbcr_image_arrays"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceYcbcrImageArraysFeaturesEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_ycbcr_image_arrays"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceYcbcrImageArraysFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeName("ycbcrImageArrays")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_ycbcr_image_arrays"],

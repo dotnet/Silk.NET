@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkQueryPoolCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct QueryPoolCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct QueryPoolCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,7 +68,7 @@ public unsafe partial struct QueryPoolCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkQueryPoolCreateFlags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -99,7 +97,6 @@ public unsafe partial struct QueryPoolCreateInfo
     )]
     public QueryPoolCreateFlags Flags;
 
-    [NativeName("queryType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -128,7 +125,7 @@ public unsafe partial struct QueryPoolCreateInfo
     )]
     public QueryType QueryType;
 
-    [NativeName("queryCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -157,7 +154,7 @@ public unsafe partial struct QueryPoolCreateInfo
     )]
     public uint QueryCount;
 
-    [NativeName("pipelineStatistics")]
+    [NativeTypeName("VkQueryPipelineStatisticFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

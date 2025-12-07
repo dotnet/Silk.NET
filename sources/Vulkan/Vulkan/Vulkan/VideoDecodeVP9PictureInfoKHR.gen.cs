@@ -7,11 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkVideoDecodeVP9PictureInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoDecodeVP9PictureInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_vp9"],
@@ -19,7 +17,7 @@ public unsafe partial struct VideoDecodeVP9PictureInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_vp9"],
@@ -27,7 +25,7 @@ public unsafe partial struct VideoDecodeVP9PictureInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("pStdPictureInfo")]
+    [NativeTypeName("const StdVideoDecodeVP9PictureInfo *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_vp9"],
@@ -35,7 +33,7 @@ public unsafe partial struct VideoDecodeVP9PictureInfoKHR
     )]
     public StdVideoDecodeVP9PictureInfo* PStdPictureInfo;
 
-    [NativeName("referenceNameSlotIndices")]
+    [NativeTypeName("int32_t[3]")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_vp9"],
@@ -43,7 +41,7 @@ public unsafe partial struct VideoDecodeVP9PictureInfoKHR
     )]
     public VideoDecodeVP9PictureInfoKHRReferenceNameSlotIndices ReferenceNameSlotIndices;
 
-    [NativeName("uncompressedHeaderOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_vp9"],
@@ -51,7 +49,7 @@ public unsafe partial struct VideoDecodeVP9PictureInfoKHR
     )]
     public uint UncompressedHeaderOffset;
 
-    [NativeName("compressedHeaderOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_vp9"],
@@ -59,7 +57,7 @@ public unsafe partial struct VideoDecodeVP9PictureInfoKHR
     )]
     public uint CompressedHeaderOffset;
 
-    [NativeName("tilesOffset")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_decode_vp9"],

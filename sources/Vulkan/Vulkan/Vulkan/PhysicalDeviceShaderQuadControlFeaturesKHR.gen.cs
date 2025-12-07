@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceShaderQuadControlFeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderQuadControlFeaturesKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_quad_control"],
@@ -23,7 +21,6 @@ public unsafe partial struct PhysicalDeviceShaderQuadControlFeaturesKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_quad_control"],
@@ -34,7 +31,7 @@ public unsafe partial struct PhysicalDeviceShaderQuadControlFeaturesKHR
     )]
     public void* PNext;
 
-    [NativeName("shaderQuadControl")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_quad_control"],

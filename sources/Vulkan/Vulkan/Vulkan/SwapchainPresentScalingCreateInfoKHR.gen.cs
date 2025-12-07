@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSwapchainPresentScalingCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SwapchainPresentScalingCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -24,7 +22,7 @@ public unsafe partial struct SwapchainPresentScalingCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -36,7 +34,7 @@ public unsafe partial struct SwapchainPresentScalingCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeName("scalingBehavior")]
+    [NativeTypeName("VkPresentScalingFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -48,7 +46,7 @@ public unsafe partial struct SwapchainPresentScalingCreateInfoKHR
     )]
     public PresentScalingFlagsKHR ScalingBehavior;
 
-    [NativeName("presentGravityX")]
+    [NativeTypeName("VkPresentGravityFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -60,7 +58,7 @@ public unsafe partial struct SwapchainPresentScalingCreateInfoKHR
     )]
     public PresentGravityFlagsKHR PresentGravityX;
 
-    [NativeName("presentGravityY")]
+    [NativeTypeName("VkPresentGravityFlagsKHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],

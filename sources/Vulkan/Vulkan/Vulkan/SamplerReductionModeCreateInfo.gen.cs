@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkSamplerReductionModeCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerReductionModeCreateInfo
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +28,7 @@ public unsafe partial struct SamplerReductionModeCreateInfo
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +46,6 @@ public unsafe partial struct SamplerReductionModeCreateInfo
     )]
     public void* PNext;
 
-    [NativeName("reductionMode")]
     [SupportedApiProfile(
         "vulkan",
         [

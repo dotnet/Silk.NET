@@ -7,15 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("BufferAccessARB")]
+[Transformed]
 public enum BufferAccess : uint
 {
-    [NativeName("GL_READ_ONLY")]
-    ReadOnly = 35000,
-
-    [NativeName("GL_WRITE_ONLY")]
-    WriteOnly = 35001,
-
-    [NativeName("GL_READ_WRITE")]
-    ReadWrite = 35002,
+    ReadOnly = unchecked((uint)0x88B8),
+    WriteOnly = unchecked((uint)0x88B9),
+    ReadWrite = unchecked((uint)0x88BA),
 }

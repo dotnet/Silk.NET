@@ -4,15 +4,10 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPULoadOp")]
-public enum GPULoadOp
+[NativeTypeName("unsigned int")]
+public enum GPULoadOp : uint
 {
-    [NativeName("SDL_GPU_LOADOP_LOAD")]
-    Load = 0,
-
-    [NativeName("SDL_GPU_LOADOP_CLEAR")]
-    Clear = 1,
-
-    [NativeName("SDL_GPU_LOADOP_DONT_CARE")]
-    DontCare = 2,
+    Load,
+    Clear,
+    DontCare,
 }

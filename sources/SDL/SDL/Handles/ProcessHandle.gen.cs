@@ -8,15 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_Process")]
 public readonly unsafe partial struct ProcessHandle
 {
     public readonly void* Handle;
-
-    public ProcessHandle(void* handle)
-    {
-        Handle = handle;
-    }
 
     public bool Equals(ProcessHandle other) => Handle == other.Handle;
 

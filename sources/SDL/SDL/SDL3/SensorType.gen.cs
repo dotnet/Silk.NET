@@ -7,30 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_SensorType")]
 public enum SensorType
 {
-    [NativeName("SDL_SENSOR_INVALID")]
     Invalid = -1,
-
-    [NativeName("SDL_SENSOR_UNKNOWN")]
-    Unknown = 0,
-
-    [NativeName("SDL_SENSOR_ACCEL")]
-    Accel = 1,
-
-    [NativeName("SDL_SENSOR_GYRO")]
-    Gyro = 2,
-
-    [NativeName("SDL_SENSOR_ACCEL_L")]
-    AccelL = 3,
-
-    [NativeName("SDL_SENSOR_GYRO_L")]
-    GyroL = 4,
-
-    [NativeName("SDL_SENSOR_ACCEL_R")]
-    AccelR = 5,
-
-    [NativeName("SDL_SENSOR_GYRO_R")]
-    GyroR = 6,
+    Unknown,
+    Accel,
+    Gyro,
+    AccelL,
+    GyroL,
+    AccelR,
+    GyroR,
 }

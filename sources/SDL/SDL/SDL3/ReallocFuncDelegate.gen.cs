@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_realloc_func")]
 public unsafe delegate void* ReallocFuncDelegate(void* arg0, nuint arg1);

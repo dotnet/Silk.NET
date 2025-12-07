@@ -10,63 +10,26 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("SourceFloat")]
+[Transformed]
 public enum SourceFloat : uint
 {
-    [NativeName("AL_CONE_INNER_ANGLE")]
-    ConeInnerAngle = 4097,
-
-    [NativeName("AL_CONE_OUTER_ANGLE")]
-    ConeOuterAngle = 4098,
-
-    [NativeName("AL_PITCH")]
-    Pitch = 4099,
-
-    [NativeName("AL_GAIN")]
-    Gain = 4106,
-
-    [NativeName("AL_MIN_GAIN")]
-    MinGain = 4109,
-
-    [NativeName("AL_MAX_GAIN")]
-    MaxGain = 4110,
-
-    [NativeName("AL_REFERENCE_DISTANCE")]
-    ReferenceDistance = 4128,
-
-    [NativeName("AL_ROLLOFF_FACTOR")]
-    RolloffFactor = 4129,
-
-    [NativeName("AL_MAX_DISTANCE")]
-    MaxDistance = 4131,
-
-    [NativeName("AL_SEC_OFFSET")]
-    SecOffset = 4132,
-
-    [NativeName("AL_SAMPLE_OFFSET")]
-    SampleOffset = 4133,
-
-    [NativeName("AL_BYTE_OFFSET")]
-    ByteOffset = 4134,
-
-    [NativeName("AL_CONE_OUTER_GAINHF")]
-    ConeOuterGainhf = 131081,
-
-    [NativeName("AL_BYTE_RW_OFFSETS_SOFT")]
-    ByteRwOffsetsSOFT = 4145,
-
-    [NativeName("AL_SAMPLE_RW_OFFSETS_SOFT")]
-    SampleRwOffsetsSOFT = 4146,
-
-    [NativeName("AL_STEREO_ANGLES")]
-    StereoAngles = 4144,
-
-    [NativeName("AL_SOURCE_RADIUS")]
-    SourceRadius = 4145,
-
-    [NativeName("AL_SEC_OFFSET_LATENCY_SOFT")]
-    SecOffsetLatencySOFT = 4609,
-
-    [NativeName("AL_SUPER_STEREO_WIDTH_SOFT")]
-    SuperStereoWidthSOFT = 6577,
+    ConeInnerAngle = unchecked((uint)0x1001),
+    ConeOuterAngle = unchecked((uint)0x1002),
+    Pitch = unchecked((uint)0x1003),
+    Gain = unchecked((uint)0x100A),
+    MinGain = unchecked((uint)0x100D),
+    MaxGain = unchecked((uint)0x100E),
+    ReferenceDistance = unchecked((uint)0x1020),
+    RolloffFactor = unchecked((uint)0x1021),
+    MaxDistance = unchecked((uint)0x1023),
+    SecOffset = unchecked((uint)0x1024),
+    SampleOffset = unchecked((uint)0x1025),
+    ByteOffset = unchecked((uint)0x1026),
+    ConeOuterGainhf = unchecked((uint)0x20009),
+    ByteRwOffsetsSOFT = unchecked((uint)0x1031),
+    SampleRwOffsetsSOFT = unchecked((uint)0x1032),
+    StereoAngles = unchecked((uint)0x1030),
+    SourceRadius = unchecked((uint)0x1031),
+    SecOffsetLatencySOFT = unchecked((uint)0x1201),
+    SuperStereoWidthSOFT = unchecked((uint)0x19B1),
 }

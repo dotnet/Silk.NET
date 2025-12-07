@@ -8,12 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("_name_e__FixedBuffer")]
 [InlineArray(256)]
-[SupportedApiProfile("vulkan")]
+[SupportedApiProfile(
+    "vulkan",
+    ["VK_KHR_performance_query"],
+    ImpliesSets = [
+        "VK_KHR_performance_query+VK_KHR_get_physical_device_properties2",
+        "VK_KHR_performance_query+VK_VERSION_1_1",
+    ]
+)]
 public partial struct PerformanceCounterDescriptionKHRName
 {
-    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

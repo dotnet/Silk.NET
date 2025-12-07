@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkRayTracingShaderGroupTypeKHR")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum RayTracingShaderGroupTypeKHR : uint
 {
-    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -20,9 +19,8 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    General = 0,
+    GeneralKHR = 0,
 
-    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -31,9 +29,8 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    TrianglesHitGroup = 1,
+    TrianglesHitGroupKHR = 1,
 
-    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -42,9 +39,8 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_2",
         ]
     )]
-    ProceduralHitGroup = 2,
+    ProceduralHitGroupKHR = 2,
 
-    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_GENERAL_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -53,9 +49,8 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    GeneralNV = General,
+    GeneralNV = GeneralKHR,
 
-    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -64,9 +59,8 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    TrianglesHitGroupNV = TrianglesHitGroup,
+    TrianglesHitGroupNV = TrianglesHitGroupKHR,
 
-    [NativeName("VK_RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -75,5 +69,5 @@ public enum RayTracingShaderGroupTypeKHR : uint
             "VK_VERSION_1_1",
         ]
     )]
-    ProceduralHitGroupNV = ProceduralHitGroup,
+    ProceduralHitGroupNV = ProceduralHitGroupKHR,
 }

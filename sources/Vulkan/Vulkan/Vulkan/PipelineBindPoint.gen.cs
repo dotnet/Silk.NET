@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPipelineBindPoint")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum PipelineBindPoint : uint
 {
-    [NativeName("VK_PIPELINE_BIND_POINT_GRAPHICS")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -36,7 +35,6 @@ public enum PipelineBindPoint : uint
     )]
     Graphics = 0,
 
-    [NativeName("VK_PIPELINE_BIND_POINT_COMPUTE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +58,6 @@ public enum PipelineBindPoint : uint
     )]
     Compute = 1,
 
-    [NativeName("VK_PIPELINE_BIND_POINT_RAY_TRACING_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -71,7 +68,6 @@ public enum PipelineBindPoint : uint
     )]
     RayTracingKHR = 1000165000,
 
-    [NativeName("VK_PIPELINE_BIND_POINT_SUBPASS_SHADING_HUAWEI")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_HUAWEI_subpass_shading"],
@@ -81,9 +77,8 @@ public enum PipelineBindPoint : uint
             "VK_VERSION_1_3",
         ]
     )]
-    SubpassShadingHUAWEI = 1000369003,
+    SubpassShadingHuawei = 1000369003,
 
-    [NativeName("VK_PIPELINE_BIND_POINT_DATA_GRAPH_ARM")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -91,7 +86,6 @@ public enum PipelineBindPoint : uint
     )]
     DataGraphARM = 1000507000,
 
-    [NativeName("VK_PIPELINE_BIND_POINT_RAY_TRACING_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBaseInStructure")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BaseInStructure
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -41,7 +39,7 @@ public unsafe partial struct BaseInStructure
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const struct VkBaseInStructure *")]
     [SupportedApiProfile(
         "vulkan",
         [

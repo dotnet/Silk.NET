@@ -7,23 +7,20 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkDisplayModeCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplayModeCreateInfoKHR
 {
-    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public void* PNext;
 
-    [NativeName("flags")]
+    [NativeTypeName("VkDisplayModeCreateFlagsKHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public uint Flags;
 
-    [NativeName("parameters")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public DisplayModeParametersKHR Parameters;
 }

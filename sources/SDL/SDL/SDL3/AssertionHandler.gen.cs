@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_AssertionHandler")]
 public readonly unsafe struct AssertionHandler : IDisposable
 {
     private readonly void* Pointer;

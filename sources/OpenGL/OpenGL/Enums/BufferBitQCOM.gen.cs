@@ -7,105 +7,39 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("BufferBitQCOM")]
-[Flags]
+[Transformed]
 public enum BufferBitQCOM : uint
 {
-    None = 0x0,
-
-    [NativeName("GL_COLOR_BUFFER_BIT0_QCOM")]
-    ColorBufferBit0 = 0x1,
-
-    [NativeName("GL_COLOR_BUFFER_BIT1_QCOM")]
-    ColorBufferBit1 = 0x2,
-
-    [NativeName("GL_COLOR_BUFFER_BIT2_QCOM")]
-    ColorBufferBit2 = 0x4,
-
-    [NativeName("GL_COLOR_BUFFER_BIT3_QCOM")]
-    ColorBufferBit3 = 0x8,
-
-    [NativeName("GL_COLOR_BUFFER_BIT4_QCOM")]
-    ColorBufferBit4 = 0x10,
-
-    [NativeName("GL_COLOR_BUFFER_BIT5_QCOM")]
-    ColorBufferBit5 = 0x20,
-
-    [NativeName("GL_COLOR_BUFFER_BIT6_QCOM")]
-    ColorBufferBit6 = 0x40,
-
-    [NativeName("GL_COLOR_BUFFER_BIT7_QCOM")]
-    ColorBufferBit7 = 0x80,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT0_QCOM")]
-    DepthBufferBit0 = 0x100,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT1_QCOM")]
-    DepthBufferBit1 = 0x200,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT2_QCOM")]
-    DepthBufferBit2 = 0x400,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT3_QCOM")]
-    DepthBufferBit3 = 0x800,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT4_QCOM")]
-    DepthBufferBit4 = 0x1000,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT5_QCOM")]
-    DepthBufferBit5 = 0x2000,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT6_QCOM")]
-    DepthBufferBit6 = 0x4000,
-
-    [NativeName("GL_DEPTH_BUFFER_BIT7_QCOM")]
-    DepthBufferBit7 = 0x8000,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT0_QCOM")]
-    StencilBufferBit0 = 0x10000,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT1_QCOM")]
-    StencilBufferBit1 = 0x20000,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT2_QCOM")]
-    StencilBufferBit2 = 0x40000,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT3_QCOM")]
-    StencilBufferBit3 = 0x80000,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT4_QCOM")]
-    StencilBufferBit4 = 0x100000,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT5_QCOM")]
-    StencilBufferBit5 = 0x200000,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT6_QCOM")]
-    StencilBufferBit6 = 0x400000,
-
-    [NativeName("GL_STENCIL_BUFFER_BIT7_QCOM")]
-    StencilBufferBit7 = 0x800000,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT0_QCOM")]
-    MultisampleBufferBit0 = 0x1000000,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT1_QCOM")]
-    MultisampleBufferBit1 = 0x2000000,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT2_QCOM")]
-    MultisampleBufferBit2 = 0x4000000,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT3_QCOM")]
-    MultisampleBufferBit3 = 0x8000000,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT4_QCOM")]
-    MultisampleBufferBit4 = 0x10000000,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT5_QCOM")]
-    MultisampleBufferBit5 = 0x20000000,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT6_QCOM")]
-    MultisampleBufferBit6 = 0x40000000,
-
-    [NativeName("GL_MULTISAMPLE_BUFFER_BIT7_QCOM")]
-    MultisampleBufferBit7 = 0x80000000,
+    ColorBufferBit0 = unchecked((uint)0x00000001),
+    ColorBufferBit1 = unchecked((uint)0x00000002),
+    ColorBufferBit2 = unchecked((uint)0x00000004),
+    ColorBufferBit3 = unchecked((uint)0x00000008),
+    ColorBufferBit4 = unchecked((uint)0x00000010),
+    ColorBufferBit5 = unchecked((uint)0x00000020),
+    ColorBufferBit6 = unchecked((uint)0x00000040),
+    ColorBufferBit7 = unchecked((uint)0x00000080),
+    DepthBufferBit0 = unchecked((uint)0x00000100),
+    DepthBufferBit1 = unchecked((uint)0x00000200),
+    DepthBufferBit2 = unchecked((uint)0x00000400),
+    DepthBufferBit3 = unchecked((uint)0x00000800),
+    DepthBufferBit4 = unchecked((uint)0x00001000),
+    DepthBufferBit5 = unchecked((uint)0x00002000),
+    DepthBufferBit6 = unchecked((uint)0x00004000),
+    DepthBufferBit7 = unchecked((uint)0x00008000),
+    StencilBufferBit0 = unchecked((uint)0x00010000),
+    StencilBufferBit1 = unchecked((uint)0x00020000),
+    StencilBufferBit2 = unchecked((uint)0x00040000),
+    StencilBufferBit3 = unchecked((uint)0x00080000),
+    StencilBufferBit4 = unchecked((uint)0x00100000),
+    StencilBufferBit5 = unchecked((uint)0x00200000),
+    StencilBufferBit6 = unchecked((uint)0x00400000),
+    StencilBufferBit7 = unchecked((uint)0x00800000),
+    MultisampleBufferBit0 = unchecked((uint)0x01000000),
+    MultisampleBufferBit1 = unchecked((uint)0x02000000),
+    MultisampleBufferBit2 = unchecked((uint)0x04000000),
+    MultisampleBufferBit3 = unchecked((uint)0x08000000),
+    MultisampleBufferBit4 = unchecked((uint)0x10000000),
+    MultisampleBufferBit5 = unchecked((uint)0x20000000),
+    MultisampleBufferBit6 = unchecked((uint)0x40000000),
+    MultisampleBufferBit7 = unchecked((uint)0x80000000),
 }

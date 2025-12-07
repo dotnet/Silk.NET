@@ -8,99 +8,38 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUVertexElementFormat")]
-public enum GPUVertexElementFormat
+[NativeTypeName("unsigned int")]
+public enum GPUVertexElementFormat : uint
 {
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_INVALID")]
-    Invalid = 0,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_INT")]
-    Int = 1,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_INT2")]
-    Int2 = 2,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_INT3")]
-    Int3 = 3,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_INT4")]
-    Int4 = 4,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_UINT")]
-    Uint = 5,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_UINT2")]
-    Uint2 = 6,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_UINT3")]
-    Uint3 = 7,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_UINT4")]
-    Uint4 = 8,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_FLOAT")]
-    Float = 9,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_FLOAT2")]
-    Float2 = 10,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_FLOAT3")]
-    Float3 = 11,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_FLOAT4")]
-    Float4 = 12,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_BYTE2")]
-    Byte2 = 13,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_BYTE4")]
-    Byte4 = 14,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_UBYTE2")]
-    Ubyte2 = 15,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_UBYTE4")]
-    Ubyte4 = 16,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_BYTE2_NORM")]
-    Byte2Norm = 17,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_BYTE4_NORM")]
-    Byte4Norm = 18,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_UBYTE2_NORM")]
-    Ubyte2Norm = 19,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_UBYTE4_NORM")]
-    Ubyte4Norm = 20,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_SHORT2")]
-    Short2 = 21,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_SHORT4")]
-    Short4 = 22,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_USHORT2")]
-    Ushort2 = 23,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_USHORT4")]
-    Ushort4 = 24,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_SHORT2_NORM")]
-    Short2Norm = 25,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_SHORT4_NORM")]
-    Short4Norm = 26,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_USHORT2_NORM")]
-    Ushort2Norm = 27,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_USHORT4_NORM")]
-    Ushort4Norm = 28,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_HALF2")]
-    Half2 = 29,
-
-    [NativeName("SDL_GPU_VERTEXELEMENTFORMAT_HALF4")]
-    Half4 = 30,
+    Invalid,
+    Int,
+    Int2,
+    Int3,
+    Int4,
+    Uint,
+    Uint2,
+    Uint3,
+    Uint4,
+    Float,
+    Float2,
+    Float3,
+    Float4,
+    Byte2,
+    Byte4,
+    Ubyte2,
+    Ubyte4,
+    Byte2Norm,
+    Byte4Norm,
+    Ubyte2Norm,
+    Ubyte4Norm,
+    Short2,
+    Short4,
+    Ushort2,
+    Ushort4,
+    Short2Norm,
+    Short4Norm,
+    Ushort2Norm,
+    Ushort4Norm,
+    Half2,
+    Half4,
 }

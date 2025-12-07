@@ -8,12 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageAspectFlagBits")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum ImageAspectFlags : uint
 {
-    [NativeName("VK_IMAGE_ASPECT_COLOR_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -42,7 +41,6 @@ public enum ImageAspectFlags : uint
     )]
     ColorBit = 0x1,
 
-    [NativeName("VK_IMAGE_ASPECT_DEPTH_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -71,7 +69,6 @@ public enum ImageAspectFlags : uint
     )]
     DepthBit = 0x2,
 
-    [NativeName("VK_IMAGE_ASPECT_STENCIL_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -100,7 +97,6 @@ public enum ImageAspectFlags : uint
     )]
     StencilBit = 0x4,
 
-    [NativeName("VK_IMAGE_ASPECT_METADATA_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -129,7 +125,6 @@ public enum ImageAspectFlags : uint
     )]
     MetadataBit = 0x8,
 
-    [NativeName("VK_IMAGE_ASPECT_PLANE_0_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -154,7 +149,6 @@ public enum ImageAspectFlags : uint
     )]
     Plane0Bit = 0x10,
 
-    [NativeName("VK_IMAGE_ASPECT_PLANE_1_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -179,7 +173,6 @@ public enum ImageAspectFlags : uint
     )]
     Plane1Bit = 0x20,
 
-    [NativeName("VK_IMAGE_ASPECT_PLANE_2_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -204,7 +197,6 @@ public enum ImageAspectFlags : uint
     )]
     Plane2Bit = 0x40,
 
-    [NativeName("VK_IMAGE_ASPECT_NONE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -221,7 +213,6 @@ public enum ImageAspectFlags : uint
     )]
     None = 0x0,
 
-    [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_0_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -233,7 +224,6 @@ public enum ImageAspectFlags : uint
     )]
     MemoryPlane0BitEXT = 0x80,
 
-    [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_1_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -245,7 +235,6 @@ public enum ImageAspectFlags : uint
     )]
     MemoryPlane1BitEXT = 0x100,
 
-    [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_2_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -257,7 +246,6 @@ public enum ImageAspectFlags : uint
     )]
     MemoryPlane2BitEXT = 0x200,
 
-    [NativeName("VK_IMAGE_ASPECT_MEMORY_PLANE_3_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -269,7 +257,6 @@ public enum ImageAspectFlags : uint
     )]
     MemoryPlane3BitEXT = 0x400,
 
-    [NativeName("VK_IMAGE_ASPECT_PLANE_0_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -280,7 +267,6 @@ public enum ImageAspectFlags : uint
     )]
     Plane0BitKHR = Plane0Bit,
 
-    [NativeName("VK_IMAGE_ASPECT_PLANE_1_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -291,7 +277,6 @@ public enum ImageAspectFlags : uint
     )]
     Plane1BitKHR = Plane1Bit,
 
-    [NativeName("VK_IMAGE_ASPECT_PLANE_2_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_sampler_ycbcr_conversion"],
@@ -302,7 +287,6 @@ public enum ImageAspectFlags : uint
     )]
     Plane2BitKHR = Plane2Bit,
 
-    [NativeName("VK_IMAGE_ASPECT_NONE_KHR")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance4"], ImpliesSets = ["VK_VERSION_1_1"])]
     NoneKHR = None,
 }

@@ -7,30 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("ShaderType")]
+[Transformed]
 public enum ShaderType : uint
 {
-    [NativeName("GL_FRAGMENT_SHADER")]
-    FragmentShader = 35632,
-
-    [NativeName("GL_VERTEX_SHADER")]
-    VertexShader = 35633,
-
-    [NativeName("GL_GEOMETRY_SHADER")]
-    GeometryShader = 36313,
-
-    [NativeName("GL_TESS_EVALUATION_SHADER")]
-    TessEvaluationShader = 36487,
-
-    [NativeName("GL_TESS_CONTROL_SHADER")]
-    TessControlShader = 36488,
-
-    [NativeName("GL_COMPUTE_SHADER")]
-    ComputeShader = 37305,
-
-    [NativeName("GL_FRAGMENT_SHADER_ARB")]
-    FragmentShaderARB = 35632,
-
-    [NativeName("GL_VERTEX_SHADER_ARB")]
-    VertexShaderARB = 35633,
+    FragmentShader = unchecked((uint)0x8B30),
+    VertexShader = unchecked((uint)0x8B31),
+    GeometryShader = unchecked((uint)0x8DD9),
+    TessEvaluationShader = unchecked((uint)0x8E87),
+    TessControlShader = unchecked((uint)0x8E88),
+    ComputeShader = unchecked((uint)0x91B9),
+    FragmentShaderARB = unchecked((uint)0x8B30),
+    VertexShaderARB = unchecked((uint)0x8B31),
 }

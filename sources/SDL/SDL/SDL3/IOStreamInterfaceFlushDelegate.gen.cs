@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_IOStreamInterface_flush")]
+[Transformed]
 public unsafe delegate byte IOStreamInterfaceFlushDelegate(void* arg0, IOStatus* arg1);

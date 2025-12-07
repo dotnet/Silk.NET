@@ -7,27 +7,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUGraphicsPipelineTargetInfo")]
 public unsafe partial struct GPUGraphicsPipelineTargetInfo
 {
-    [NativeName("color_target_descriptions")]
+    [NativeTypeName("const SDL_GPUColorTargetDescription *")]
     public GPUColorTargetDescription* ColorTargetDescriptions;
 
-    [NativeName("num_color_targets")]
+    [NativeTypeName("Uint32")]
     public uint NumColorTargets;
-
-    [NativeName("depth_stencil_format")]
     public GPUTextureFormat DepthStencilFormat;
 
-    [NativeName("has_depth_stencil_target")]
+    [NativeTypeName("bool")]
     public byte HasDepthStencilTarget;
 
-    [NativeName("padding1")]
+    [NativeTypeName("Uint8")]
     public byte Padding1;
 
-    [NativeName("padding2")]
+    [NativeTypeName("Uint8")]
     public byte Padding2;
 
-    [NativeName("padding3")]
+    [NativeTypeName("Uint8")]
     public byte Padding3;
 }

@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkImageViewASTCDecodeModeEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageViewASTCDecodeModeEXT
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_astc_decode_mode"],
@@ -23,7 +21,7 @@ public unsafe partial struct ImageViewASTCDecodeModeEXT
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
+    [NativeTypeName("const void *")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_astc_decode_mode"],
@@ -34,7 +32,6 @@ public unsafe partial struct ImageViewASTCDecodeModeEXT
     )]
     public void* PNext;
 
-    [NativeName("decodeMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_astc_decode_mode"],

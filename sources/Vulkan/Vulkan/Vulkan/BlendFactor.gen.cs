@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkBlendFactor")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum BlendFactor : uint
 {
-    [NativeName("VK_BLEND_FACTOR_ZERO")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,7 +30,6 @@ public enum BlendFactor : uint
     )]
     Zero = 0,
 
-    [NativeName("VK_BLEND_FACTOR_ONE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +48,6 @@ public enum BlendFactor : uint
     )]
     One = 1,
 
-    [NativeName("VK_BLEND_FACTOR_SRC_COLOR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -69,7 +66,6 @@ public enum BlendFactor : uint
     )]
     SrcColor = 2,
 
-    [NativeName("VK_BLEND_FACTOR_ONE_MINUS_SRC_COLOR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -88,7 +84,6 @@ public enum BlendFactor : uint
     )]
     OneMinusSrcColor = 3,
 
-    [NativeName("VK_BLEND_FACTOR_DST_COLOR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -107,7 +102,6 @@ public enum BlendFactor : uint
     )]
     DstColor = 4,
 
-    [NativeName("VK_BLEND_FACTOR_ONE_MINUS_DST_COLOR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +120,6 @@ public enum BlendFactor : uint
     )]
     OneMinusDstColor = 5,
 
-    [NativeName("VK_BLEND_FACTOR_SRC_ALPHA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -145,7 +138,6 @@ public enum BlendFactor : uint
     )]
     SrcAlpha = 6,
 
-    [NativeName("VK_BLEND_FACTOR_ONE_MINUS_SRC_ALPHA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -164,7 +156,6 @@ public enum BlendFactor : uint
     )]
     OneMinusSrcAlpha = 7,
 
-    [NativeName("VK_BLEND_FACTOR_DST_ALPHA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -183,7 +174,6 @@ public enum BlendFactor : uint
     )]
     DstAlpha = 8,
 
-    [NativeName("VK_BLEND_FACTOR_ONE_MINUS_DST_ALPHA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -202,7 +192,6 @@ public enum BlendFactor : uint
     )]
     OneMinusDstAlpha = 9,
 
-    [NativeName("VK_BLEND_FACTOR_CONSTANT_COLOR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -221,7 +210,6 @@ public enum BlendFactor : uint
     )]
     ConstantColor = 10,
 
-    [NativeName("VK_BLEND_FACTOR_ONE_MINUS_CONSTANT_COLOR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -240,7 +228,6 @@ public enum BlendFactor : uint
     )]
     OneMinusConstantColor = 11,
 
-    [NativeName("VK_BLEND_FACTOR_CONSTANT_ALPHA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -259,7 +246,6 @@ public enum BlendFactor : uint
     )]
     ConstantAlpha = 12,
 
-    [NativeName("VK_BLEND_FACTOR_ONE_MINUS_CONSTANT_ALPHA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -278,7 +264,6 @@ public enum BlendFactor : uint
     )]
     OneMinusConstantAlpha = 13,
 
-    [NativeName("VK_BLEND_FACTOR_SRC_ALPHA_SATURATE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -297,7 +282,6 @@ public enum BlendFactor : uint
     )]
     SrcAlphaSaturate = 14,
 
-    [NativeName("VK_BLEND_FACTOR_SRC1_COLOR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -316,7 +300,6 @@ public enum BlendFactor : uint
     )]
     Src1Color = 15,
 
-    [NativeName("VK_BLEND_FACTOR_ONE_MINUS_SRC1_COLOR")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -335,7 +318,6 @@ public enum BlendFactor : uint
     )]
     OneMinusSrc1Color = 16,
 
-    [NativeName("VK_BLEND_FACTOR_SRC1_ALPHA")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -354,7 +336,6 @@ public enum BlendFactor : uint
     )]
     Src1Alpha = 17,
 
-    [NativeName("VK_BLEND_FACTOR_ONE_MINUS_SRC1_ALPHA")]
     [SupportedApiProfile(
         "vulkan",
         [

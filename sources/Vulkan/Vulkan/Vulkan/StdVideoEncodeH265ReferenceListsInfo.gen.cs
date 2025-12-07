@@ -7,35 +7,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("StdVideoEncodeH265ReferenceListsInfo")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265ReferenceListsInfo
 {
-    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265ReferenceListsInfoFlags Flags;
 
-    [NativeName("num_ref_idx_l0_active_minus1")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte NumRefIdxL0ActiveMinus1;
 
-    [NativeName("num_ref_idx_l1_active_minus1")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte NumRefIdxL1ActiveMinus1;
 
-    [NativeName("RefPicList0")]
+    [NativeTypeName("uint8_t[15]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265ReferenceListsInfoRefPicList0 RefPicList0;
 
-    [NativeName("RefPicList1")]
+    [NativeTypeName("uint8_t[15]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265ReferenceListsInfoRefPicList1 RefPicList1;
 
-    [NativeName("list_entry_l0")]
+    [NativeTypeName("uint8_t[15]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265ReferenceListsInfoListEntryL0 ListEntryL0;
 
-    [NativeName("list_entry_l1")]
+    [NativeTypeName("uint8_t[15]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265ReferenceListsInfoListEntryL1 ListEntryL1;
 }

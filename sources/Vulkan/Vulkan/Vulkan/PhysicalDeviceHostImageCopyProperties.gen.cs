@@ -8,11 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPhysicalDeviceHostImageCopyProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceHostImageCopyProperties
 {
-    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,7 +23,6 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public StructureType SType;
 
-    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,7 +35,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public void* PNext;
 
-    [NativeName("copySrcLayoutCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +48,6 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public uint CopySrcLayoutCount;
 
-    [NativeName("pCopySrcLayouts")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -64,7 +60,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public ImageLayout* PCopySrcLayouts;
 
-    [NativeName("copyDstLayoutCount")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -77,7 +73,6 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public uint CopyDstLayoutCount;
 
-    [NativeName("pCopyDstLayouts")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -90,7 +85,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public ImageLayout* PCopyDstLayouts;
 
-    [NativeName("optimalTilingLayoutUUID")]
+    [NativeTypeName("uint8_t[16]")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -103,7 +98,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public PhysicalDeviceHostImageCopyPropertiesOptimalTilingLayoutUUID OptimalTilingLayoutUUID;
 
-    [NativeName("identicalMemoryTypeRequirements")]
+    [NativeTypeName("VkBool32")]
     [SupportedApiProfile(
         "vulkan",
         [

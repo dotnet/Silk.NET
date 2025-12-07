@@ -8,14 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkIndirectCommandsInputModeFlagBitsEXT")]
-[Flags]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
+[Flags]
 public enum IndirectCommandsInputModeFlagsEXT : uint
 {
     None = 0x0,
 
-    [NativeName("VK_INDIRECT_COMMANDS_INPUT_MODE_VULKAN_INDEX_BUFFER_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -25,9 +24,8 @@ public enum IndirectCommandsInputModeFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    VulkanIndexBuffer = 0x1,
+    VulkanIndexBufferEXT = 0x1,
 
-    [NativeName("VK_INDIRECT_COMMANDS_INPUT_MODE_DXGI_INDEX_BUFFER_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -37,5 +35,5 @@ public enum IndirectCommandsInputModeFlagsEXT : uint
             "VK_VERSION_1_3",
         ]
     )]
-    DxgiIndexBuffer = 0x2,
+    DxgiIndexBufferEXT = 0x2,
 }

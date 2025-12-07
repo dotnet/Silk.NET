@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_AssertionHandler")]
 public unsafe delegate AssertState AssertionHandlerDelegate(AssertData* arg0, void* arg1);

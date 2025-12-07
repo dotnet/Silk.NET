@@ -7,11 +7,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkPerformanceCounterScopeKHR")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum PerformanceCounterScopeKHR : uint
 {
-    [NativeName("VK_PERFORMANCE_COUNTER_SCOPE_COMMAND_BUFFER_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -20,9 +19,8 @@ public enum PerformanceCounterScopeKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    CommandBuffer = 0,
+    CommandBufferKHR = 0,
 
-    [NativeName("VK_PERFORMANCE_COUNTER_SCOPE_RENDER_PASS_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -31,9 +29,8 @@ public enum PerformanceCounterScopeKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    RenderPass = 1,
+    RenderPassKHR = 1,
 
-    [NativeName("VK_PERFORMANCE_COUNTER_SCOPE_COMMAND_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -42,5 +39,5 @@ public enum PerformanceCounterScopeKHR : uint
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    Command = 2,
+    CommandKHR = 2,
 }

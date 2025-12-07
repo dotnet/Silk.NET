@@ -8,5 +8,4 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_AppIterate_func")]
 public unsafe delegate AppResult AppIterateFuncDelegate(void* arg0);

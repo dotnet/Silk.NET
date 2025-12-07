@@ -8,11 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkStridedDeviceAddressRangeKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct StridedDeviceAddressRangeKHR
 {
-    [NativeName("address")]
+    [NativeTypeName("VkDeviceAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -23,7 +22,7 @@ public partial struct StridedDeviceAddressRangeKHR
     )]
     public ulong Address;
 
-    [NativeName("size")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -34,7 +33,7 @@ public partial struct StridedDeviceAddressRangeKHR
     )]
     public ulong Size;
 
-    [NativeName("stride")]
+    [NativeTypeName("VkDeviceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],

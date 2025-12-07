@@ -8,12 +8,8 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUTextureSamplerBinding")]
 public unsafe partial struct GPUTextureSamplerBinding
 {
-    [NativeName("texture")]
     public GPUTextureHandle Texture;
-
-    [NativeName("sampler")]
     public GPUSamplerHandle Sampler;
 }

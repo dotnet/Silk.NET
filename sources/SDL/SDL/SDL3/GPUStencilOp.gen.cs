@@ -7,33 +7,16 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeName("SDL_GPUStencilOp")]
-public enum GPUStencilOp
+[NativeTypeName("unsigned int")]
+public enum GPUStencilOp : uint
 {
-    [NativeName("SDL_GPU_STENCILOP_INVALID")]
-    Invalid = 0,
-
-    [NativeName("SDL_GPU_STENCILOP_KEEP")]
-    Keep = 1,
-
-    [NativeName("SDL_GPU_STENCILOP_ZERO")]
-    Zero = 2,
-
-    [NativeName("SDL_GPU_STENCILOP_REPLACE")]
-    Replace = 3,
-
-    [NativeName("SDL_GPU_STENCILOP_INCREMENT_AND_CLAMP")]
-    IncrementAndClamp = 4,
-
-    [NativeName("SDL_GPU_STENCILOP_DECREMENT_AND_CLAMP")]
-    DecrementAndClamp = 5,
-
-    [NativeName("SDL_GPU_STENCILOP_INVERT")]
-    Invert = 6,
-
-    [NativeName("SDL_GPU_STENCILOP_INCREMENT_AND_WRAP")]
-    IncrementAndWrap = 7,
-
-    [NativeName("SDL_GPU_STENCILOP_DECREMENT_AND_WRAP")]
-    DecrementAndWrap = 8,
+    Invalid,
+    Keep,
+    Zero,
+    Replace,
+    IncrementAndClamp,
+    DecrementAndClamp,
+    Invert,
+    IncrementAndWrap,
+    DecrementAndWrap,
 }
