@@ -1499,19 +1499,21 @@ public partial class MixKhronosData(
     /// while the lookbehind asserts that the ending match will not overreach into the end of a word.
     /// </summary>
     // NOTE: LET THIS BE A LESSON! Do NOT add x (fixed) here, these will frequently conflict with integer overloads.
-    [GeneratedRegex("(?<!xe)((?<!Rewin)[dhf]v?|u?[isb](64)?v?|v|i_v|fi|hi)$")]
+    [GeneratedRegex("(?<!xe)([fdh]v?|u?[isb](64)?v?|v|i_v|fi|hi)$")]
     private static partial Regex EndingsToTrim();
 
     /// <summary>
     /// This regex acts like a whitelist for endings that could have been matched in some way by the main
     /// expression, but should be exempt from trimming altogether.
     /// </summary>
+    // Rewindv is to prevent Rewindv from being trimmed as Rewin
+    // TODO: Consider replacing this with something that prevents a list of words from being trimmed into instead of not being trimmed at all
     [GeneratedRegex(
         "(sh|ib|[tdrey]s|(?<![A-Z])[eE]n[vd]|bled|Attrib|Access|Boolean|Coord|Depth|Feedbacks|Finish|Flag|"
             + "Groups|IDs|Indexed|Instanced|Pixels|Queries|Status|Tess|Through|Uniforms|Varyings|Weight|Width|Bias|Id|"
             + "Fixed|Pass|Address|Configs|Thread|Subpass|Deferred|Extended|Affix|Annex|Box|Aux|Ex|Index|Vertex|Path|"
             + "Arch|Arith|Afresh|Both|High|Math|Mesh|Sinh|Bench|Brush|Bunch|Crash|Flush|Depth|Latch|Morph|Pinch|"
-            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Rewind|Supported)$"
+            + "Pitch|Stretch|Smooth|Matrix|Radix|Sound|Supported|Rewind|Rewindv)$"
     )]
     private static partial Regex EndingsNotToTrim();
 
