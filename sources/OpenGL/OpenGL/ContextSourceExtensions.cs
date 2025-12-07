@@ -9,7 +9,7 @@ public static class ContextSourceExtensions
 {
     private static ConditionalWeakTable<IGLContext, IGL> _cwt = new();
 
-    public static IGL CreateOpenGl(this IGLContextSource src)
+    public static IGL CreateOpenGL(this IGLContextSource src)
     {
         if (src.GLContext is not { } ctx)
         {
@@ -22,10 +22,10 @@ public static class ContextSourceExtensions
         return GL.Create(ctx);
     }
 
-    public static IGL CreateOpenGl(this IGLContext ctx) => GL.Create(ctx);
+    public static IGL CreateOpenGL(this IGLContext ctx) => GL.Create(ctx);
 
     public static void MakeCurrent(this IGLContextSource src) => src.GLContext?.MakeCurrent();
 
     public static void MakeCurrent(this IGLContext ctx) =>
-        GL.ThisThread.MakeCurrent(_cwt.GetValue(ctx, c => c.CreateOpenGl()));
+        GL.ThisThread.MakeCurrent(_cwt.GetValue(ctx, c => c.CreateOpenGL()));
 }
