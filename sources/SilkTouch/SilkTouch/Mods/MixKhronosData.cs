@@ -203,15 +203,29 @@ public partial class MixKhronosData(
         /// if the enum type contains members that don't match the exclusive vendor.
         /// </summary>
         /// <remarks>
-        /// For context, OpenGL has a problem where an enum group starts out as ARB but never gets promoted, and then contains other vendor enums or even core enums.
-        /// For example, BufferUsageARB contains StreamDraw, which is a core enum. Enabling this option will cause BufferUsageARB to be trimmed as BufferUsage.
+        /// For context, OpenGL has a problem where an enum group starts out as ARB but never gets promoted,
+        /// and then contains other vendor enums or even core enums. OpenAL is similar. Vulkan does not have this problem.
         /// </remarks>
+        /// <example>
+        /// <c>BufferUsageARB</c> in OpenGL is an ARB suffixed enum that contains <c>GL_STREAM_DRAW</c> which is a core enum.
+        /// In this case, ARB is the exclusive vendor suffix, but it is contradicted by the existence of a non-suffixed enum member.
+        /// This implies that <c>BufferUsageARB</c> was incorrectly promoted and that we should remove its vendor suffix.
+        /// Enabling this option will trim <c>BufferUsageARB</c> as <c>BufferUsage</c>.
+        /// </example>
         public bool TrimEnumTypeNonExclusiveVendors { get; init; } = false;
 
         /// <summary>
         /// Whether enum members should have their vendor suffixes trimmed
         /// if they share a vendor suffix with the containing type.
         /// </summary>
+        /// <example>
+        /// <c>VkPresentModeKHR</c> in Vulkan is a KHR suffixed enum that contains <c>VK_PRESENT_MODE_IMMEDIATE_KHR</c>.
+        /// The KHR suffix is useful in native code because it is not always immediately clear which enum group the enum member belongs to.
+        /// However, in C#, enum members are always part of an enum type, and as such, we can assume that if an enum member belongs
+        /// to a KHR enum type, then the non-suffixed enum member is also a KHR enum member.
+        /// <para/>
+        /// Enabling this option will trim <c>VK_PRESENT_MODE_IMMEDIATE_KHR</c> as <c>VK_PRESENT_MODE_IMMEDIATE</c>.
+        /// </example>
         public bool TrimEnumMemberImpliedVendors { get; init; } = false;
     }
 
@@ -1919,14 +1933,16 @@ public partial class MixKhronosData(
         public override SyntaxNode VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
             node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false));
 
+        // Special case for enums since this code needs information about
+        // the enum type name and its member names at the same time
+        // in order to properly trim the type name and member name
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            // Special case for enums since this code needs information about the enum type and its members at the same time.
-
             var typeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
             var groupInfo = job.Groups.GetValueOrDefault(typeName);
 
             var typeVendor = job.Vendors.FirstOrDefault(typeName.EndsWith);
+            var hasTypeSuffix = typeVendor != null;
             var vendorFromTypeNameOrder = config.VendorSuffixOrder;
 
             // Figure out the enum's exclusive vendor
@@ -1938,8 +1954,32 @@ public partial class MixKhronosData(
                 exclusiveVendor = null;
             }
 
+            // See config option for more info and examples on what this does
+            if (config.TrimEnumTypeNonExclusiveVendors && typeVendor != null)
+            {
+                var shouldTrimType = typeVendor != exclusiveVendor;
+
+                // Check if there are other versions of the enum (this includes the core variant and other vendor variants)
+                var isSafeToTrimType = job.Groups.Count(x => x.Key.StartsWith(typeName[..^typeVendor.Length])) <= 1;
+
+                if (shouldTrimType && isSafeToTrimType)
+                {
+                    // Remove the exclusive vendor since it isn't actually exclusive
+                    vendorFromTypeNameOrder = -1;
+
+                    // Type suffix has been removed
+                    hasTypeSuffix = false;
+                }
+            }
+
+            if (typeVendor != null)
+            {
+                // Mark the type vendor suffix as identified
+                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(typeVendor, vendorFromTypeNameOrder));
+            }
+
             // Check if the enum contains unsuffixed members
-            var containsUnsuffixed = node.Members.Any(member =>
+            var containsUnsuffixedMembers = node.Members.Any(member =>
             {
                 var memberName = member.AttributeLists.GetNativeNameOrDefault(member.Identifier);
                 if (job.Vendors.FirstOrDefault(memberName.EndsWith) == null)
@@ -1950,36 +1990,21 @@ public partial class MixKhronosData(
                 return false;
             });
 
-            var isSafeToTrimMembers = !containsUnsuffixed;
-
-            if (config.TrimEnumTypeNonExclusiveVendors && typeVendor != null)
-            {
-                var shouldTrimType = typeVendor != exclusiveVendor;
-
-                // Check if there are other versions of the enum (this includes the core variant and other vendor variants)
-                var isSafeToTrimType = job.Groups.Count(x => x.Key.StartsWith(typeName[..^typeVendor.Length])) <= 1;
-
-                if (shouldTrimType)
-                {
-                    if (isSafeToTrimType)
-                    {
-                        // Remove the exclusive vendor from the enum name since it is wrong and it is safe to do so
-                        vendorFromTypeNameOrder = -1;
-
-                        // Type suffix has been removed
-                        isSafeToTrimMembers = false;
-                    }
-                }
-            }
-
-            if (typeVendor != null)
-            {
-                // Mark the type vendor suffix as identified
-                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(typeVendor, vendorFromTypeNameOrder));
-            }
+            // We should not trim member suffixes if the enum type already contains unsuffixed members
+            // We also should not trim member suffixes if the type suffix was removed
+            //
+            // For example (direct conflict with existing):
+            // ConvolutionBorderMode in OpenGL contains GL_REDUCE and GL_REDUCE_EXT.
+            // Trimming EXT from GL_REDUCE_EXT will conflict with GL_REDUCE.
+            //
+            // Another example (possible confusion between core and non-core):
+            // ContextRequest in OpenAL contains ALC_FALSE and ALC_DONT_CARE_SOFT. One is core and one is non-core.
+            // If we trim SOFT from ALC_DONT_CARE_SOFT, it is not immediately obvious that the enum members have different promotion statuses.
+            var canTrimImpliedVendors = hasTypeSuffix && !containsUnsuffixedMembers;
 
             // Trim the enum members if needed
-            if (config.TrimEnumMemberImpliedVendors && typeVendor != null && isSafeToTrimMembers)
+            // See config option for more info and examples on what this does
+            if (config.TrimEnumMemberImpliedVendors && typeVendor != null && canTrimImpliedVendors)
             {
                 node = node.WithMembers([
                     ..node.Members.Select(member => {
