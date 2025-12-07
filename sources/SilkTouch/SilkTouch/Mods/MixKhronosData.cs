@@ -1960,7 +1960,12 @@ public partial class MixKhronosData(
                 var shouldTrimType = typeVendor != exclusiveVendor;
 
                 // Check if there are other versions of the enum (this includes the core variant and other vendor variants)
-                var isSafeToTrimType = job.Groups.Count(x => x.Key.StartsWith(typeName[..^typeVendor.Length])) <= 1;
+                //
+                // For example, SamplePatternEXT and SamplePatternSGIS are both enum types.
+                // Trimming both would cause conflicts.
+                // Trimming one but not the other would imply one is core and the other is not.
+                var hasMultipleVersions = job.Groups.Count(x => x.Key.StartsWith(typeName[..^typeVendor.Length])) > 1;
+                var isSafeToTrimType = !hasMultipleVersions;
 
                 if (shouldTrimType && isSafeToTrimType)
                 {
