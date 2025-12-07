@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkPeerMemoryFeatureFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum PeerMemoryFeatureFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_PEER_MEMORY_FEATURE_COPY_SRC_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -38,6 +39,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     CopySrcBit = 0x1,
 
+    [NativeName("VK_PEER_MEMORY_FEATURE_COPY_DST_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -62,6 +64,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     CopyDstBit = 0x2,
 
+    [NativeName("VK_PEER_MEMORY_FEATURE_GENERIC_SRC_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,6 +89,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     GenericSrcBit = 0x4,
 
+    [NativeName("VK_PEER_MEMORY_FEATURE_GENERIC_DST_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -110,6 +114,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     GenericDstBit = 0x8,
 
+    [NativeName("VK_PEER_MEMORY_FEATURE_COPY_SRC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_device_group"],
@@ -117,6 +122,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     CopySrcBitKHR = CopySrcBit,
 
+    [NativeName("VK_PEER_MEMORY_FEATURE_COPY_DST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_device_group"],
@@ -124,6 +130,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     CopyDstBitKHR = CopyDstBit,
 
+    [NativeName("VK_PEER_MEMORY_FEATURE_GENERIC_SRC_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_device_group"],
@@ -131,6 +138,7 @@ public enum PeerMemoryFeatureFlags : uint
     )]
     GenericSrcBitKHR = GenericSrcBit,
 
+    [NativeName("VK_PEER_MEMORY_FEATURE_GENERIC_DST_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_device_group"],

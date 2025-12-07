@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_loop_filter_ref_deltas_e__FixedBuffer")]
 [InlineArray(4)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoVP9LoopFilterLoopFilterRefDeltas
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_cpb_size_du_value_minus1_e__FixedBuffer")]
 [InlineArray(32)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265SubLayerHrdParametersCpbSizeDuValueMinus1
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public uint E0;
 }

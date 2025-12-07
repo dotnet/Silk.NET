@@ -7,8 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_VirtualJoystickSensorDesc")]
 public partial struct VirtualJoystickSensorDesc
 {
+    [NativeName("type")]
     public SensorType Type;
+
+    [NativeName("rate")]
     public float Rate;
 }

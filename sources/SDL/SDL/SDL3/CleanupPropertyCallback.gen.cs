@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_CleanupPropertyCallback")]
 public readonly unsafe struct CleanupPropertyCallback : IDisposable
 {
     private readonly void* Pointer;

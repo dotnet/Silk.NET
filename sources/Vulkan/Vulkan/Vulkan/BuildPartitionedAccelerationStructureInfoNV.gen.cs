@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBuildPartitionedAccelerationStructureInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -18,6 +20,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -25,6 +28,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
     )]
     public void* PNext;
 
+    [NativeName("input")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -32,7 +36,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
     )]
     public PartitionedAccelerationStructureInstancesInputNV Input;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("srcAccelerationStructureData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -40,7 +44,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
     )]
     public ulong SrcAccelerationStructureData;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("dstAccelerationStructureData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -48,7 +52,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
     )]
     public ulong DstAccelerationStructureData;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("scratchData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -56,7 +60,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
     )]
     public ulong ScratchData;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("srcInfos")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -64,7 +68,7 @@ public unsafe partial struct BuildPartitionedAccelerationStructureInfoNV
     )]
     public ulong SrcInfos;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("srcInfosCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],

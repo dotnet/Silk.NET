@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceEventInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceEventInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_control"],
@@ -18,7 +20,7 @@ public unsafe partial struct DeviceEventInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_control"],
@@ -26,6 +28,7 @@ public unsafe partial struct DeviceEventInfoEXT
     )]
     public void* PNext;
 
+    [NativeName("deviceEvent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_display_control"],

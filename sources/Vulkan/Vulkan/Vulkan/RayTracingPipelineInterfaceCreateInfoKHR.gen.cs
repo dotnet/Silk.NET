@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRayTracingPipelineInterfaceCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RayTracingPipelineInterfaceCreateInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -21,7 +23,7 @@ public unsafe partial struct RayTracingPipelineInterfaceCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -32,7 +34,7 @@ public unsafe partial struct RayTracingPipelineInterfaceCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxPipelineRayPayloadSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],
@@ -43,7 +45,7 @@ public unsafe partial struct RayTracingPipelineInterfaceCreateInfoKHR
     )]
     public uint MaxPipelineRayPayloadSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxPipelineRayHitAttributeSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_ray_tracing_pipeline"],

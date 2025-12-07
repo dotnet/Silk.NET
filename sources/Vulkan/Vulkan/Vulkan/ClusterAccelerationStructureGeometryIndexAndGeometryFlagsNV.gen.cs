@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
@@ -17,13 +19,13 @@ public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsN
     )]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 24")]
+    [NativeName("geometryIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint geometryIndex
+    public uint GeometryIndex
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0xFFFFFFu; }
@@ -31,13 +33,13 @@ public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsN
         set { Bitfield = (Bitfield & ~0xFFFFFFu) | (value & 0xFFFFFFu); }
     }
 
-    [NativeTypeName("uint32_t : 5")]
+    [NativeName("reserved")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 24) & 0x1Fu; }
@@ -45,13 +47,13 @@ public partial struct ClusterAccelerationStructureGeometryIndexAndGeometryFlagsN
         set { Bitfield = (Bitfield & ~(0x1Fu << 24)) | ((value & 0x1Fu) << 24); }
     }
 
-    [NativeTypeName("uint32_t : 3")]
+    [NativeName("geometryFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cluster_acceleration_structure"],
         ImpliesSets = ["VK_KHR_acceleration_structure"]
     )]
-    public uint geometryFlags
+    public uint GeometryFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 29) & 0x7u; }

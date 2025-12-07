@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCopyMemoryIndirectInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CopyMemoryIndirectInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -20,7 +22,7 @@ public unsafe partial struct CopyMemoryIndirectInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -31,7 +33,7 @@ public unsafe partial struct CopyMemoryIndirectInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkAddressCopyFlagsKHR")]
+    [NativeName("srcCopyFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -42,7 +44,7 @@ public unsafe partial struct CopyMemoryIndirectInfoKHR
     )]
     public AddressCopyFlagsKHR SrcCopyFlags;
 
-    [NativeTypeName("VkAddressCopyFlagsKHR")]
+    [NativeName("dstCopyFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -53,7 +55,7 @@ public unsafe partial struct CopyMemoryIndirectInfoKHR
     )]
     public AddressCopyFlagsKHR DstCopyFlags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("copyCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],
@@ -64,6 +66,7 @@ public unsafe partial struct CopyMemoryIndirectInfoKHR
     )]
     public uint CopyCount;
 
+    [NativeName("copyAddressRange")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_copy_memory_indirect"],

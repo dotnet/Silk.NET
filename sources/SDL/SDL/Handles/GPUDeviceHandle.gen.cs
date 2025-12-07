@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUDevice")]
 public readonly unsafe partial struct GPUDeviceHandle
 {
     public readonly void* Handle;
+
+    public GPUDeviceHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(GPUDeviceHandle other) => Handle == other.Handle;
 

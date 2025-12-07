@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_RefPicList1_e__FixedBuffer")]
 [InlineArray(32)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH264ReferenceListsInfoRefPicList1
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

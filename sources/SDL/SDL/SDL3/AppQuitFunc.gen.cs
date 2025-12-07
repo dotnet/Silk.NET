@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AppQuit_func")]
 public readonly unsafe struct AppQuitFunc : IDisposable
 {
     private readonly void* Pointer;

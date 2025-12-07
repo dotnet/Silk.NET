@@ -4,27 +4,33 @@
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUTextureCreateInfo")]
 public partial struct GPUTextureCreateInfo
 {
+    [NativeName("type")]
     public GPUTextureType Type;
+
+    [NativeName("format")]
     public GPUTextureFormat Format;
 
-    [NativeTypeName("SDL_GPUTextureUsageFlags")]
+    [NativeName("usage")]
     public uint Usage;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("width")]
     public uint Width;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("height")]
     public uint Height;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("layer_count_or_depth")]
     public uint LayerCountOrDepth;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("num_levels")]
     public uint NumLevels;
+
+    [NativeName("sample_count")]
     public GPUSampleCount SampleCount;
 
-    [NativeTypeName("SDL_PropertiesID")]
+    [NativeName("props")]
     public uint Props;
 }

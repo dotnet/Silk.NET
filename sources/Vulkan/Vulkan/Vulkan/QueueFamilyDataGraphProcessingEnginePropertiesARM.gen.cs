@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkQueueFamilyDataGraphProcessingEnginePropertiesARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct QueueFamilyDataGraphProcessingEnginePropertiesARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -18,7 +20,7 @@ public unsafe partial struct QueueFamilyDataGraphProcessingEnginePropertiesARM
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -26,7 +28,7 @@ public unsafe partial struct QueueFamilyDataGraphProcessingEnginePropertiesARM
     )]
     public void* PNext;
 
-    [NativeTypeName("VkExternalSemaphoreHandleTypeFlags")]
+    [NativeName("foreignSemaphoreHandleTypes")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -34,7 +36,7 @@ public unsafe partial struct QueueFamilyDataGraphProcessingEnginePropertiesARM
     )]
     public ExternalSemaphoreHandleTypeFlags ForeignSemaphoreHandleTypes;
 
-    [NativeTypeName("VkExternalMemoryHandleTypeFlags")]
+    [NativeName("foreignMemoryHandleTypes")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

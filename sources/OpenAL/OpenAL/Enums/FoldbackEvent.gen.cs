@@ -10,10 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("FoldbackEvent")]
 public enum FoldbackEvent : uint
 {
-    Block = unchecked((uint)0x4112),
-    Start = unchecked((uint)0x4111),
-    Stop = unchecked((uint)0x4113),
+    [NativeName("AL_FOLDBACK_EVENT_BLOCK")]
+    Block = 16658,
+
+    [NativeName("AL_FOLDBACK_EVENT_START")]
+    Start = 16657,
+
+    [NativeName("AL_FOLDBACK_EVENT_STOP")]
+    Stop = 16659,
 }

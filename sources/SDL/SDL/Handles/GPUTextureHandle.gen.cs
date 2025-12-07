@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUTexture")]
 public readonly unsafe partial struct GPUTextureHandle
 {
     public readonly void* Handle;
+
+    public GPUTextureHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(GPUTextureHandle other) => Handle == other.Handle;
 

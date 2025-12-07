@@ -7,79 +7,222 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum PixelFormat : uint
+[NativeName("SDL_PixelFormat")]
+public enum PixelFormat
 {
+    [NativeName("SDL_PIXELFORMAT_UNKNOWN")]
     Unknown = 0,
-    Index1Lsb = 0x11100100U,
-    Index1Msb = 0x11200100U,
-    Index2Lsb = 0x1c100200U,
-    Index2Msb = 0x1c200200U,
-    Index4Lsb = 0x12100400U,
-    Index4Msb = 0x12200400U,
-    Index8 = 0x13000801U,
-    Rgb332 = 0x14110801U,
-    Xrgb4444 = 0x15120c02U,
-    Xbgr4444 = 0x15520c02U,
-    Xrgb1555 = 0x15130f02U,
-    Xbgr1555 = 0x15530f02U,
-    Argb4444 = 0x15321002U,
-    Rgba4444 = 0x15421002U,
-    Abgr4444 = 0x15721002U,
-    Bgra4444 = 0x15821002U,
-    Argb1555 = 0x15331002U,
-    Rgba5551 = 0x15441002U,
-    Abgr1555 = 0x15731002U,
-    Bgra5551 = 0x15841002U,
-    Rgb565 = 0x15151002U,
-    Bgr565 = 0x15551002U,
-    Rgb24 = 0x17101803U,
-    Bgr24 = 0x17401803U,
-    Xrgb8888 = 0x16161804U,
-    Rgbx8888 = 0x16261804U,
-    Xbgr8888 = 0x16561804U,
-    Bgrx8888 = 0x16661804U,
-    Argb8888 = 0x16362004U,
-    Rgba8888 = 0x16462004U,
-    Abgr8888 = 0x16762004U,
-    Bgra8888 = 0x16862004U,
-    Xrgb2101010 = 0x16172004U,
-    Xbgr2101010 = 0x16572004U,
-    Argb2101010 = 0x16372004U,
-    Abgr2101010 = 0x16772004U,
-    Rgb48 = 0x18103006U,
-    Bgr48 = 0x18403006U,
-    Rgba64 = 0x18204008U,
-    Argb64 = 0x18304008U,
-    Bgra64 = 0x18504008U,
-    Abgr64 = 0x18604008U,
-    Rgb48Float = 0x1a103006U,
-    Bgr48Float = 0x1a403006U,
-    Rgba64Float = 0x1a204008U,
-    Argb64Float = 0x1a304008U,
-    Bgra64Float = 0x1a504008U,
-    Abgr64Float = 0x1a604008U,
-    Rgb96Float = 0x1b10600cU,
-    Bgr96Float = 0x1b40600cU,
-    Rgba128Float = 0x1b208010U,
-    Argb128Float = 0x1b308010U,
-    Bgra128Float = 0x1b508010U,
-    Abgr128Float = 0x1b608010U,
-    Yv12 = 0x32315659U,
-    Iyuv = 0x56555949U,
-    Yuy2 = 0x32595559U,
-    Uyvy = 0x59565955U,
-    Yvyu = 0x55595659U,
-    Nv12 = 0x3231564eU,
-    Nv21 = 0x3132564eU,
-    P010 = 0x30313050U,
-    ExternalOes = 0x2053454fU,
+
+    [NativeName("SDL_PIXELFORMAT_INDEX1LSB")]
+    Index1Lsb = 286261504,
+
+    [NativeName("SDL_PIXELFORMAT_INDEX1MSB")]
+    Index1Msb = 287310080,
+
+    [NativeName("SDL_PIXELFORMAT_INDEX2LSB")]
+    Index2Lsb = 470811136,
+
+    [NativeName("SDL_PIXELFORMAT_INDEX2MSB")]
+    Index2Msb = 471859712,
+
+    [NativeName("SDL_PIXELFORMAT_INDEX4LSB")]
+    Index4Lsb = 303039488,
+
+    [NativeName("SDL_PIXELFORMAT_INDEX4MSB")]
+    Index4Msb = 304088064,
+
+    [NativeName("SDL_PIXELFORMAT_INDEX8")]
+    Index8 = 318769153,
+
+    [NativeName("SDL_PIXELFORMAT_RGB332")]
+    Rgb332 = 336660481,
+
+    [NativeName("SDL_PIXELFORMAT_XRGB4444")]
+    Xrgb4444 = 353504258,
+
+    [NativeName("SDL_PIXELFORMAT_XBGR4444")]
+    Xbgr4444 = 357698562,
+
+    [NativeName("SDL_PIXELFORMAT_XRGB1555")]
+    Xrgb1555 = 353570562,
+
+    [NativeName("SDL_PIXELFORMAT_XBGR1555")]
+    Xbgr1555 = 357764866,
+
+    [NativeName("SDL_PIXELFORMAT_ARGB4444")]
+    Argb4444 = 355602434,
+
+    [NativeName("SDL_PIXELFORMAT_RGBA4444")]
+    Rgba4444 = 356651010,
+
+    [NativeName("SDL_PIXELFORMAT_ABGR4444")]
+    Abgr4444 = 359796738,
+
+    [NativeName("SDL_PIXELFORMAT_BGRA4444")]
+    Bgra4444 = 360845314,
+
+    [NativeName("SDL_PIXELFORMAT_ARGB1555")]
+    Argb1555 = 355667970,
+
+    [NativeName("SDL_PIXELFORMAT_RGBA5551")]
+    Rgba5551 = 356782082,
+
+    [NativeName("SDL_PIXELFORMAT_ABGR1555")]
+    Abgr1555 = 359862274,
+
+    [NativeName("SDL_PIXELFORMAT_BGRA5551")]
+    Bgra5551 = 360976386,
+
+    [NativeName("SDL_PIXELFORMAT_RGB565")]
+    Rgb565 = 353701890,
+
+    [NativeName("SDL_PIXELFORMAT_BGR565")]
+    Bgr565 = 357896194,
+
+    [NativeName("SDL_PIXELFORMAT_RGB24")]
+    Rgb24 = 386930691,
+
+    [NativeName("SDL_PIXELFORMAT_BGR24")]
+    Bgr24 = 390076419,
+
+    [NativeName("SDL_PIXELFORMAT_XRGB8888")]
+    Xrgb8888 = 370546692,
+
+    [NativeName("SDL_PIXELFORMAT_RGBX8888")]
+    Rgbx8888 = 371595268,
+
+    [NativeName("SDL_PIXELFORMAT_XBGR8888")]
+    Xbgr8888 = 374740996,
+
+    [NativeName("SDL_PIXELFORMAT_BGRX8888")]
+    Bgrx8888 = 375789572,
+
+    [NativeName("SDL_PIXELFORMAT_ARGB8888")]
+    Argb8888 = 372645892,
+
+    [NativeName("SDL_PIXELFORMAT_RGBA8888")]
+    Rgba8888 = 373694468,
+
+    [NativeName("SDL_PIXELFORMAT_ABGR8888")]
+    Abgr8888 = 376840196,
+
+    [NativeName("SDL_PIXELFORMAT_BGRA8888")]
+    Bgra8888 = 377888772,
+
+    [NativeName("SDL_PIXELFORMAT_XRGB2101010")]
+    Xrgb2101010 = 370614276,
+
+    [NativeName("SDL_PIXELFORMAT_XBGR2101010")]
+    Xbgr2101010 = 374808580,
+
+    [NativeName("SDL_PIXELFORMAT_ARGB2101010")]
+    Argb2101010 = 372711428,
+
+    [NativeName("SDL_PIXELFORMAT_ABGR2101010")]
+    Abgr2101010 = 376905732,
+
+    [NativeName("SDL_PIXELFORMAT_RGB48")]
+    Rgb48 = 403714054,
+
+    [NativeName("SDL_PIXELFORMAT_BGR48")]
+    Bgr48 = 406859782,
+
+    [NativeName("SDL_PIXELFORMAT_RGBA64")]
+    Rgba64 = 404766728,
+
+    [NativeName("SDL_PIXELFORMAT_ARGB64")]
+    Argb64 = 405815304,
+
+    [NativeName("SDL_PIXELFORMAT_BGRA64")]
+    Bgra64 = 407912456,
+
+    [NativeName("SDL_PIXELFORMAT_ABGR64")]
+    Abgr64 = 408961032,
+
+    [NativeName("SDL_PIXELFORMAT_RGB48_FLOAT")]
+    Rgb48Float = 437268486,
+
+    [NativeName("SDL_PIXELFORMAT_BGR48_FLOAT")]
+    Bgr48Float = 440414214,
+
+    [NativeName("SDL_PIXELFORMAT_RGBA64_FLOAT")]
+    Rgba64Float = 438321160,
+
+    [NativeName("SDL_PIXELFORMAT_ARGB64_FLOAT")]
+    Argb64Float = 439369736,
+
+    [NativeName("SDL_PIXELFORMAT_BGRA64_FLOAT")]
+    Bgra64Float = 441466888,
+
+    [NativeName("SDL_PIXELFORMAT_ABGR64_FLOAT")]
+    Abgr64Float = 442515464,
+
+    [NativeName("SDL_PIXELFORMAT_RGB96_FLOAT")]
+    Rgb96Float = 454057996,
+
+    [NativeName("SDL_PIXELFORMAT_BGR96_FLOAT")]
+    Bgr96Float = 457203724,
+
+    [NativeName("SDL_PIXELFORMAT_RGBA128_FLOAT")]
+    Rgba128Float = 455114768,
+
+    [NativeName("SDL_PIXELFORMAT_ARGB128_FLOAT")]
+    Argb128Float = 456163344,
+
+    [NativeName("SDL_PIXELFORMAT_BGRA128_FLOAT")]
+    Bgra128Float = 458260496,
+
+    [NativeName("SDL_PIXELFORMAT_ABGR128_FLOAT")]
+    Abgr128Float = 459309072,
+
+    [NativeName("SDL_PIXELFORMAT_YV12")]
+    Yv12 = 842094169,
+
+    [NativeName("SDL_PIXELFORMAT_IYUV")]
+    Iyuv = 1448433993,
+
+    [NativeName("SDL_PIXELFORMAT_YUY2")]
+    Yuy2 = 844715353,
+
+    [NativeName("SDL_PIXELFORMAT_UYVY")]
+    Uyvy = 1498831189,
+
+    [NativeName("SDL_PIXELFORMAT_YVYU")]
+    Yvyu = 1431918169,
+
+    [NativeName("SDL_PIXELFORMAT_NV12")]
+    Nv12 = 842094158,
+
+    [NativeName("SDL_PIXELFORMAT_NV21")]
+    Nv21 = 825382478,
+
+    [NativeName("SDL_PIXELFORMAT_P010")]
+    P010 = 808530000,
+
+    [NativeName("SDL_PIXELFORMAT_EXTERNAL_OES")]
+    ExternalOes = 542328143,
+
+    [NativeName("SDL_PIXELFORMAT_RGBA32")]
     Rgba32 = Abgr8888,
+
+    [NativeName("SDL_PIXELFORMAT_ARGB32")]
     Argb32 = Bgra8888,
+
+    [NativeName("SDL_PIXELFORMAT_BGRA32")]
     Bgra32 = Argb8888,
+
+    [NativeName("SDL_PIXELFORMAT_ABGR32")]
     Abgr32 = Rgba8888,
+
+    [NativeName("SDL_PIXELFORMAT_RGBX32")]
     Rgbx32 = Xbgr8888,
+
+    [NativeName("SDL_PIXELFORMAT_XRGB32")]
     Xrgb32 = Bgrx8888,
+
+    [NativeName("SDL_PIXELFORMAT_BGRX32")]
     Bgrx32 = Xrgb8888,
+
+    [NativeName("SDL_PIXELFORMAT_XBGR32")]
     Xbgr32 = Rgbx8888,
 }

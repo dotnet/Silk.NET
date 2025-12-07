@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDevice8BitStorageFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevice8BitStorageFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -28,6 +30,7 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -45,7 +48,7 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("storageBuffer8BitAccess")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
     )]
     public uint StorageBuffer8BitAccess;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("uniformAndStorageBuffer8BitAccess")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -71,7 +74,7 @@ public unsafe partial struct PhysicalDevice8BitStorageFeatures
     )]
     public uint UniformAndStorageBuffer8BitAccess;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("storagePushConstant8")]
     [SupportedApiProfile(
         "vulkan",
         [

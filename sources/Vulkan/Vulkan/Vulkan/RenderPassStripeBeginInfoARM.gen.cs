@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRenderPassStripeBeginInfoARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassStripeBeginInfoARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],
@@ -21,7 +23,7 @@ public unsafe partial struct RenderPassStripeBeginInfoARM
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],
@@ -33,7 +35,7 @@ public unsafe partial struct RenderPassStripeBeginInfoARM
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("stripeInfoCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],
@@ -45,7 +47,7 @@ public unsafe partial struct RenderPassStripeBeginInfoARM
     )]
     public uint StripeInfoCount;
 
-    [NativeTypeName("const VkRenderPassStripeInfoARM *")]
+    [NativeName("pStripeInfos")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_render_pass_striped"],

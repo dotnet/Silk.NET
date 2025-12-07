@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_EnumerateDirectoryCallback")]
 public unsafe delegate EnumerationResult EnumerateDirectoryCallbackDelegate(
     void* arg0,
     sbyte* arg1,

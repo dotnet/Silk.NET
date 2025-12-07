@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDisplaySurfaceStereoCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplaySurfaceStereoCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_display_stereo"],
@@ -17,7 +19,7 @@ public unsafe partial struct DisplaySurfaceStereoCreateInfoNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_display_stereo"],
@@ -25,6 +27,7 @@ public unsafe partial struct DisplaySurfaceStereoCreateInfoNV
     )]
     public void* PNext;
 
+    [NativeName("stereoType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_display_stereo"],

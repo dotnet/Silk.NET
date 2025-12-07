@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceBufferDeviceAddressFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_buffer_device_address"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_buffer_device_address"],
@@ -31,11 +34,11 @@ public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("bufferDeviceAddress")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint BufferDeviceAddress;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("bufferDeviceAddressCaptureReplay")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_buffer_device_address"],
@@ -46,7 +49,7 @@ public unsafe partial struct PhysicalDeviceBufferDeviceAddressFeaturesEXT
     )]
     public uint BufferDeviceAddressCaptureReplay;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("bufferDeviceAddressMultiDevice")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_buffer_device_address"],

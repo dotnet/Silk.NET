@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkEventCreateFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum EventCreateFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_EVENT_CREATE_DEVICE_ONLY_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,6 +30,7 @@ public enum EventCreateFlags : uint
     )]
     DeviceOnlyBit = 0x1,
 
+    [NativeName("VK_EVENT_CREATE_DEVICE_ONLY_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_synchronization2"],

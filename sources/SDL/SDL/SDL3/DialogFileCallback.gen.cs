@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_DialogFileCallback")]
 public readonly unsafe struct DialogFileCallback : IDisposable
 {
     private readonly void* Pointer;

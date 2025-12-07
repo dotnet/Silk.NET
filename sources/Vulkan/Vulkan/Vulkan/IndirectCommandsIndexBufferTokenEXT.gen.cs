@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkIndirectCommandsIndexBufferTokenEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct IndirectCommandsIndexBufferTokenEXT
 {
+    [NativeName("mode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

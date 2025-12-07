@@ -6,9 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPushConstantsInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PushConstantsInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -16,7 +18,7 @@ public unsafe partial struct PushConstantsInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -24,7 +26,7 @@ public unsafe partial struct PushConstantsInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineLayout")]
+    [NativeName("layout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -32,7 +34,7 @@ public unsafe partial struct PushConstantsInfo
     )]
     public PipelineLayoutHandle Layout;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("stageFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -40,7 +42,7 @@ public unsafe partial struct PushConstantsInfo
     )]
     public ShaderStageFlags StageFlags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("offset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -48,7 +50,7 @@ public unsafe partial struct PushConstantsInfo
     )]
     public uint Offset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -56,7 +58,7 @@ public unsafe partial struct PushConstantsInfo
     )]
     public uint Size;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pValues")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],

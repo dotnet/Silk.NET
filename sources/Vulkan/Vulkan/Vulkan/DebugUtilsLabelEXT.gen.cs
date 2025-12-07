@@ -8,21 +8,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDebugUtilsLabelEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DebugUtilsLabelEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public void* PNext;
 
-    [NativeTypeName("const char *")]
+    [NativeName("pLabelName")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public sbyte* PLabelName;
 
-    [NativeTypeName("float[4]")]
+    [NativeName("color")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
     public DebugUtilsLabelEXTColor Color;
 }

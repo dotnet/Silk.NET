@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoProfileInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoProfileInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -18,7 +20,7 @@ public unsafe partial struct VideoProfileInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -26,6 +28,7 @@ public unsafe partial struct VideoProfileInfoKHR
     )]
     public void* PNext;
 
+    [NativeName("videoCodecOperation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -33,7 +36,7 @@ public unsafe partial struct VideoProfileInfoKHR
     )]
     public VideoCodecOperationFlagsKHR VideoCodecOperation;
 
-    [NativeTypeName("VkVideoChromaSubsamplingFlagsKHR")]
+    [NativeName("chromaSubsampling")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -41,7 +44,7 @@ public unsafe partial struct VideoProfileInfoKHR
     )]
     public VideoChromaSubsamplingFlagsKHR ChromaSubsampling;
 
-    [NativeTypeName("VkVideoComponentBitDepthFlagsKHR")]
+    [NativeName("lumaBitDepth")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -49,7 +52,7 @@ public unsafe partial struct VideoProfileInfoKHR
     )]
     public VideoComponentBitDepthFlagsKHR LumaBitDepth;
 
-    [NativeTypeName("VkVideoComponentBitDepthFlagsKHR")]
+    [NativeName("chromaBitDepth")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

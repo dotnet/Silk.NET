@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_MainThreadCallback")]
 public readonly unsafe struct MainThreadCallback : IDisposable
 {
     private readonly void* Pointer;

@@ -7,14 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoAV1LoopRestoration")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1LoopRestoration
 {
-    [NativeTypeName("StdVideoAV1FrameRestorationType[3]")]
+    [NativeName("FrameRestorationType")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1LoopRestorationFrameRestorationType FrameRestorationType;
 
-    [NativeTypeName("uint16_t[3]")]
+    [NativeName("LoopRestorationSize")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1LoopRestorationLoopRestorationSize LoopRestorationSize;
 }

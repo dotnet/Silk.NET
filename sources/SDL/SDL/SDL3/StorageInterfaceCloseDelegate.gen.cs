@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[Transformed]
+[NativeName("SDL_StorageInterface_close")]
 public unsafe delegate byte StorageInterfaceCloseDelegate(void* arg0);

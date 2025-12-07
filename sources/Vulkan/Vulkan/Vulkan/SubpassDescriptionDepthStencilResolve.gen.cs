@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSubpassDescriptionDepthStencilResolve")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SubpassDescriptionDepthStencilResolve
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -25,7 +27,7 @@ public unsafe partial struct SubpassDescriptionDepthStencilResolve
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -40,6 +42,7 @@ public unsafe partial struct SubpassDescriptionDepthStencilResolve
     )]
     public void* PNext;
 
+    [NativeName("depthResolveMode")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -54,6 +57,7 @@ public unsafe partial struct SubpassDescriptionDepthStencilResolve
     )]
     public ResolveModeFlags DepthResolveMode;
 
+    [NativeName("stencilResolveMode")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +72,7 @@ public unsafe partial struct SubpassDescriptionDepthStencilResolve
     )]
     public ResolveModeFlags StencilResolveMode;
 
-    [NativeTypeName("const VkAttachmentReference2 *")]
+    [NativeName("pDepthStencilResolveAttachment")]
     [SupportedApiProfile(
         "vulkan",
         [

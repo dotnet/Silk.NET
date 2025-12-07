@@ -6,9 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSamplerYcbcrConversionCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerYcbcrConversionCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +31,7 @@ public unsafe partial struct SamplerYcbcrConversionCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,6 +52,7 @@ public unsafe partial struct SamplerYcbcrConversionCreateInfo
     )]
     public void* PNext;
 
+    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -70,6 +73,7 @@ public unsafe partial struct SamplerYcbcrConversionCreateInfo
     )]
     public Format Format;
 
+    [NativeName("ycbcrModel")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -90,6 +94,7 @@ public unsafe partial struct SamplerYcbcrConversionCreateInfo
     )]
     public SamplerYcbcrModelConversion YcbcrModel;
 
+    [NativeName("ycbcrRange")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -110,6 +115,7 @@ public unsafe partial struct SamplerYcbcrConversionCreateInfo
     )]
     public SamplerYcbcrRange YcbcrRange;
 
+    [NativeName("components")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -130,6 +136,7 @@ public unsafe partial struct SamplerYcbcrConversionCreateInfo
     )]
     public ComponentMapping Components;
 
+    [NativeName("xChromaOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -150,6 +157,7 @@ public unsafe partial struct SamplerYcbcrConversionCreateInfo
     )]
     public ChromaLocation XChromaOffset;
 
+    [NativeName("yChromaOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -170,6 +178,7 @@ public unsafe partial struct SamplerYcbcrConversionCreateInfo
     )]
     public ChromaLocation YChromaOffset;
 
+    [NativeName("chromaFilter")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -190,7 +199,7 @@ public unsafe partial struct SamplerYcbcrConversionCreateInfo
     )]
     public Filter ChromaFilter;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("forceExplicitReconstruction")]
     [SupportedApiProfile(
         "vulkan",
         [

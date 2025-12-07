@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRenderPassSubpassFeedbackInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct RenderPassSubpassFeedbackInfoEXT
 {
+    [NativeName("subpassMergeStatus")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -20,7 +22,7 @@ public partial struct RenderPassSubpassFeedbackInfoEXT
     )]
     public SubpassMergeStatusEXT SubpassMergeStatus;
 
-    [NativeTypeName("char[256]")]
+    [NativeName("description")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],
@@ -31,7 +33,7 @@ public partial struct RenderPassSubpassFeedbackInfoEXT
     )]
     public RenderPassSubpassFeedbackInfoEXTDescription Description;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("postMergeIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_subpass_merge_feedback"],

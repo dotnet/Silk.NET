@@ -7,15 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ConditionalRenderMode")]
 public enum ConditionalRenderMode : uint
 {
-    Wait = unchecked((uint)0x8E13),
-    NoWait = unchecked((uint)0x8E14),
-    ByRegionWait = unchecked((uint)0x8E15),
-    ByRegionNoWait = unchecked((uint)0x8E16),
-    WaitInverted = unchecked((uint)0x8E17),
-    NoWaitInverted = unchecked((uint)0x8E18),
-    ByRegionWaitInverted = unchecked((uint)0x8E19),
-    ByRegionNoWaitInverted = unchecked((uint)0x8E1A),
+    [NativeName("GL_QUERY_WAIT")]
+    Wait = 36371,
+
+    [NativeName("GL_QUERY_NO_WAIT")]
+    NoWait = 36372,
+
+    [NativeName("GL_QUERY_BY_REGION_WAIT")]
+    ByRegionWait = 36373,
+
+    [NativeName("GL_QUERY_BY_REGION_NO_WAIT")]
+    ByRegionNoWait = 36374,
+
+    [NativeName("GL_QUERY_WAIT_INVERTED")]
+    WaitInverted = 36375,
+
+    [NativeName("GL_QUERY_NO_WAIT_INVERTED")]
+    NoWaitInverted = 36376,
+
+    [NativeName("GL_QUERY_BY_REGION_WAIT_INVERTED")]
+    ByRegionWaitInverted = 36377,
+
+    [NativeName("GL_QUERY_BY_REGION_NO_WAIT_INVERTED")]
+    ByRegionNoWaitInverted = 36378,
 }

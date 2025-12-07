@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceExternalMemoryRDMAFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExternalMemoryRDMAFeaturesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory_rdma"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceExternalMemoryRDMAFeaturesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory_rdma"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceExternalMemoryRDMAFeaturesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("externalMemoryRDMA")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_external_memory_rdma"],

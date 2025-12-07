@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[Transformed]
+[NativeName("VkWaylandSurfaceCreateFlagBitsKHR")]
 [Flags]
 public enum WaylandSurfaceCreateFlagsKHR : uint
 {

@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum GPUFillMode : uint
+[NativeName("SDL_GPUFillMode")]
+public enum GPUFillMode
 {
-    Fill,
-    Line,
+    [NativeName("SDL_GPU_FILLMODE_FILL")]
+    Fill = 0,
+
+    [NativeName("SDL_GPU_FILLMODE_LINE")]
+    Line = 1,
 }

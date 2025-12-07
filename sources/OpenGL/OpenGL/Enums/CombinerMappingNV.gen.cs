@@ -7,15 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("CombinerMappingNV")]
 public enum CombinerMappingNV : uint
 {
-    UnsignedIdentity = unchecked((uint)0x8536),
-    UnsignedInvert = unchecked((uint)0x8537),
-    ExpandNormal = unchecked((uint)0x8538),
-    ExpandNegate = unchecked((uint)0x8539),
-    HalfBiasNormal = unchecked((uint)0x853A),
-    HalfBiasNegate = unchecked((uint)0x853B),
-    SignedIdentity = unchecked((uint)0x853C),
-    SignedNegate = unchecked((uint)0x853D),
+    [NativeName("GL_UNSIGNED_IDENTITY_NV")]
+    UnsignedIdentity = 34102,
+
+    [NativeName("GL_UNSIGNED_INVERT_NV")]
+    UnsignedInvert = 34103,
+
+    [NativeName("GL_EXPAND_NORMAL_NV")]
+    ExpandNormal = 34104,
+
+    [NativeName("GL_EXPAND_NEGATE_NV")]
+    ExpandNegate = 34105,
+
+    [NativeName("GL_HALF_BIAS_NORMAL_NV")]
+    HalfBiasNormal = 34106,
+
+    [NativeName("GL_HALF_BIAS_NEGATE_NV")]
+    HalfBiasNegate = 34107,
+
+    [NativeName("GL_SIGNED_IDENTITY_NV")]
+    SignedIdentity = 34108,
+
+    [NativeName("GL_SIGNED_NEGATE_NV")]
+    SignedNegate = 34109,
 }

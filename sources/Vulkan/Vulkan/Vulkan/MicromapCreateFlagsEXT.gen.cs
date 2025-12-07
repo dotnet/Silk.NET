@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkMicromapCreateFlagBitsEXT")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum MicromapCreateFlagsEXT : uint
 {
     None = 0x0,
 
+    [NativeName("VK_MICROMAP_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -22,5 +23,5 @@ public enum MicromapCreateFlagsEXT : uint
             "VK_KHR_acceleration_structure+VK_VERSION_1_3",
         ]
     )]
-    DeviceAddressCaptureReplayBitEXT = 0x1,
+    DeviceAddressCaptureReplayBit = 0x1,
 }

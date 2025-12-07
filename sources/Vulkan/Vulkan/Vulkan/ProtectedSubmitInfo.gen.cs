@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkProtectedSubmitInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ProtectedSubmitInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +37,7 @@ public unsafe partial struct ProtectedSubmitInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +62,7 @@ public unsafe partial struct ProtectedSubmitInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("protectedSubmit")]
     [SupportedApiProfile(
         "vulkan",
         [

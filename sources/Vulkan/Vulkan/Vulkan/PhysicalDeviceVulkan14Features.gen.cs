@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceVulkan14Features")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVulkan14Features
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -23,6 +25,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,27 +38,27 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("globalPriorityQuery")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint GlobalPriorityQuery;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderSubgroupRotate")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint ShaderSubgroupRotate;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderSubgroupRotateClustered")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint ShaderSubgroupRotateClustered;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderFloatControls2")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint ShaderFloatControls2;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderExpectAssume")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint ShaderExpectAssume;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("rectangularLines")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,11 +71,11 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
     )]
     public uint RectangularLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("bresenhamLines")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint BresenhamLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("smoothLines")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -85,7 +88,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
     )]
     public uint SmoothLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("stippledRectangularLines")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +101,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
     )]
     public uint StippledRectangularLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("stippledBresenhamLines")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -111,7 +114,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
     )]
     public uint StippledBresenhamLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("stippledSmoothLines")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -124,11 +127,11 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
     )]
     public uint StippledSmoothLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("vertexAttributeInstanceRateDivisor")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint VertexAttributeInstanceRateDivisor;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("vertexAttributeInstanceRateZeroDivisor")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -141,31 +144,31 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
     )]
     public uint VertexAttributeInstanceRateZeroDivisor;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("indexTypeUint8")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint IndexTypeUint8;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("dynamicRenderingLocalRead")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint DynamicRenderingLocalRead;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("maintenance5")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint Maintenance5;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("maintenance6")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint Maintenance6;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("pipelineProtectedAccess")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint PipelineProtectedAccess;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("pipelineRobustness")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint PipelineRobustness;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("hostImageCopy")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_host_image_copy"],
@@ -177,7 +180,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Features
     )]
     public uint HostImageCopy;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("pushDescriptor")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint PushDescriptor;
 }

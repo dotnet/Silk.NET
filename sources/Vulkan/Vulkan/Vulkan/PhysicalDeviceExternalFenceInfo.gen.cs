@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceExternalFenceInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExternalFenceInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +36,7 @@ public unsafe partial struct PhysicalDeviceExternalFenceInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -59,6 +61,7 @@ public unsafe partial struct PhysicalDeviceExternalFenceInfo
     )]
     public void* PNext;
 
+    [NativeName("handleType")]
     [SupportedApiProfile(
         "vulkan",
         [

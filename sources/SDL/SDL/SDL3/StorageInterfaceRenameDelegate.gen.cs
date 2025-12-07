@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[Transformed]
+[NativeName("SDL_StorageInterface_rename")]
 public unsafe delegate byte StorageInterfaceRenameDelegate(void* arg0, sbyte* arg1, sbyte* arg2);

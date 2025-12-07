@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDescriptorPoolSize")]
 [SupportedApiProfile("vulkan")]
 public partial struct DescriptorPoolSize
 {
+    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +36,7 @@ public partial struct DescriptorPoolSize
     )]
     public DescriptorType Type;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("descriptorCount")]
     [SupportedApiProfile(
         "vulkan",
         [

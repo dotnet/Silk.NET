@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVertexInputBindingDescription")]
 [SupportedApiProfile("vulkan")]
 public partial struct VertexInputBindingDescription
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("binding")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +30,7 @@ public partial struct VertexInputBindingDescription
     )]
     public uint Binding;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("stride")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,6 +49,7 @@ public partial struct VertexInputBindingDescription
     )]
     public uint Stride;
 
+    [NativeName("inputRate")]
     [SupportedApiProfile(
         "vulkan",
         [

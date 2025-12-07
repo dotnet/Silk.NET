@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_alignment_test")]
 public unsafe partial struct AlignmentTest
 {
-    [NativeTypeName("Uint8")]
+    [NativeName("a")]
     public byte A;
+
+    [NativeName("b")]
     public void* B;
 }

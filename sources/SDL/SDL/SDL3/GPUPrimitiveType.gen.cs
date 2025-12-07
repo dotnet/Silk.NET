@@ -7,12 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum GPUPrimitiveType : uint
+[NativeName("SDL_GPUPrimitiveType")]
+public enum GPUPrimitiveType
 {
-    Trianglelist,
-    Trianglestrip,
-    Linelist,
-    Linestrip,
-    Pointlist,
+    [NativeName("SDL_GPU_PRIMITIVETYPE_TRIANGLELIST")]
+    Trianglelist = 0,
+
+    [NativeName("SDL_GPU_PRIMITIVETYPE_TRIANGLESTRIP")]
+    Trianglestrip = 1,
+
+    [NativeName("SDL_GPU_PRIMITIVETYPE_LINELIST")]
+    Linelist = 2,
+
+    [NativeName("SDL_GPU_PRIMITIVETYPE_LINESTRIP")]
+    Linestrip = 3,
+
+    [NativeName("SDL_GPU_PRIMITIVETYPE_POINTLIST")]
+    Pointlist = 4,
 }

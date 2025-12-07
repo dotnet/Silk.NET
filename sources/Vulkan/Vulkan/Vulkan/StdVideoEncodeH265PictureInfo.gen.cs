@@ -8,52 +8,55 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoEncodeH265PictureInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct StdVideoEncodeH265PictureInfo
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265PictureInfoFlags Flags;
 
+    [NativeName("pic_type")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265PictureType PicType;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("sps_video_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte SpsVideoParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("pps_seq_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte PpsSeqParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("pps_pic_parameter_set_id")]
     [SupportedApiProfile("vulkan")]
     public byte PpsPicParameterSetId;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("short_term_ref_pic_set_idx")]
     [SupportedApiProfile("vulkan")]
     public byte ShortTermRefPicSetIdx;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("PicOrderCntVal")]
     [SupportedApiProfile("vulkan")]
     public int PicOrderCntVal;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("TemporalId")]
     [SupportedApiProfile("vulkan")]
     public byte TemporalId;
 
-    [NativeTypeName("uint8_t[7]")]
+    [NativeName("reserved1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265PictureInfoReserved1 Reserved1;
 
-    [NativeTypeName("const StdVideoEncodeH265ReferenceListsInfo *")]
+    [NativeName("pRefLists")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265ReferenceListsInfo* PRefLists;
 
-    [NativeTypeName("const StdVideoH265ShortTermRefPicSet *")]
+    [NativeName("pShortTermRefPicSet")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ShortTermRefPicSet* PShortTermRefPicSet;
 
-    [NativeTypeName("const StdVideoEncodeH265LongTermRefPics *")]
+    [NativeName("pLongTermRefPics")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265LongTermRefPics* PLongTermRefPics;
 }

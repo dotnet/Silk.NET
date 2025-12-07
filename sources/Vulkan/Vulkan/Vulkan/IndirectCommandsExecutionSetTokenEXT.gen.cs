@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkIndirectCommandsExecutionSetTokenEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct IndirectCommandsExecutionSetTokenEXT
 {
+    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -22,7 +24,7 @@ public partial struct IndirectCommandsExecutionSetTokenEXT
     )]
     public IndirectExecutionSetInfoTypeEXT Type;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("shaderStages")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

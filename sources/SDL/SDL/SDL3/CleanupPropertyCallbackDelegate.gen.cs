@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_CleanupPropertyCallback")]
 public unsafe delegate void CleanupPropertyCallbackDelegate(void* arg0, void* arg1);

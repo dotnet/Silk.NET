@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMemoryUnmapInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryUnmapInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -22,7 +24,7 @@ public unsafe partial struct MemoryUnmapInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +37,7 @@ public unsafe partial struct MemoryUnmapInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkMemoryUnmapFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +50,7 @@ public unsafe partial struct MemoryUnmapInfo
     )]
     public MemoryUnmapFlags Flags;
 
-    [NativeTypeName("VkDeviceMemory")]
+    [NativeName("memory")]
     [SupportedApiProfile(
         "vulkan",
         [

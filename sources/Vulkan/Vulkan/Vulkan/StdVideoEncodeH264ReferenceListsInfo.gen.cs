@@ -8,53 +8,55 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoEncodeH264ReferenceListsInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct StdVideoEncodeH264ReferenceListsInfo
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH264ReferenceListsInfoFlags Flags;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_ref_idx_l0_active_minus1")]
     [SupportedApiProfile("vulkan")]
     public byte NumRefIdxL0ActiveMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_ref_idx_l1_active_minus1")]
     [SupportedApiProfile("vulkan")]
     public byte NumRefIdxL1ActiveMinus1;
 
-    [NativeTypeName("uint8_t[32]")]
+    [NativeName("RefPicList0")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH264ReferenceListsInfoRefPicList0 RefPicList0;
 
-    [NativeTypeName("uint8_t[32]")]
+    [NativeName("RefPicList1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH264ReferenceListsInfoRefPicList1 RefPicList1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("refList0ModOpCount")]
     [SupportedApiProfile("vulkan")]
     public byte RefList0ModOpCount;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("refList1ModOpCount")]
     [SupportedApiProfile("vulkan")]
     public byte RefList1ModOpCount;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("refPicMarkingOpCount")]
     [SupportedApiProfile("vulkan")]
     public byte RefPicMarkingOpCount;
 
-    [NativeTypeName("uint8_t[7]")]
+    [NativeName("reserved1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH264ReferenceListsInfoReserved1 Reserved1;
 
-    [NativeTypeName("const StdVideoEncodeH264RefListModEntry *")]
+    [NativeName("pRefList0ModOperations")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH264RefListModEntry* PRefList0ModOperations;
 
-    [NativeTypeName("const StdVideoEncodeH264RefListModEntry *")]
+    [NativeName("pRefList1ModOperations")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH264RefListModEntry* PRefList1ModOperations;
 
-    [NativeTypeName("const StdVideoEncodeH264RefPicMarkingEntry *")]
+    [NativeName("pRefPicMarkingOperations")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH264RefPicMarkingEntry* PRefPicMarkingOperations;
 }

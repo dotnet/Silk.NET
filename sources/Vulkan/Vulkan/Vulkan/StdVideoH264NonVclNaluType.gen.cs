@@ -8,28 +8,35 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("StdVideoH264NonVclNaluType")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH264NonVclNaluType : uint
 {
+    [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_SPS")]
     [SupportedApiProfile("vulkan")]
     Sps = 0,
 
+    [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_PPS")]
     [SupportedApiProfile("vulkan")]
     Pps = 1,
 
+    [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_AUD")]
     [SupportedApiProfile("vulkan")]
     Aud = 2,
 
+    [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_PREFIX")]
     [SupportedApiProfile("vulkan")]
     Prefix = 3,
 
+    [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_END_OF_SEQUENCE")]
     [SupportedApiProfile("vulkan")]
     EndOfSequence = 4,
 
+    [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_END_OF_STREAM")]
     [SupportedApiProfile("vulkan")]
     EndOfStream = 5,
 
+    [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_PRECODED")]
     [SupportedApiProfile("vulkan")]
     Precoded = 6,
 }

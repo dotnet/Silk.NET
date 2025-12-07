@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkOpticalFlowSessionCreatePrivateDataInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct OpticalFlowSessionCreatePrivateDataInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -21,6 +23,7 @@ public unsafe partial struct OpticalFlowSessionCreatePrivateDataInfoNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -32,7 +35,7 @@ public unsafe partial struct OpticalFlowSessionCreatePrivateDataInfoNV
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("id")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -44,7 +47,7 @@ public unsafe partial struct OpticalFlowSessionCreatePrivateDataInfoNV
     )]
     public uint Id;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -56,7 +59,7 @@ public unsafe partial struct OpticalFlowSessionCreatePrivateDataInfoNV
     )]
     public uint Size;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pPrivateData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],

@@ -4,9 +4,11 @@
 // Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRenderPassFragmentDensityMapOffsetEndInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderPassFragmentDensityMapOffsetEndInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map_offset"],
@@ -23,7 +25,7 @@ public unsafe partial struct RenderPassFragmentDensityMapOffsetEndInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map_offset"],
@@ -40,7 +42,7 @@ public unsafe partial struct RenderPassFragmentDensityMapOffsetEndInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("fragmentDensityOffsetCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map_offset"],
@@ -57,7 +59,7 @@ public unsafe partial struct RenderPassFragmentDensityMapOffsetEndInfoEXT
     )]
     public uint FragmentDensityOffsetCount;
 
-    [NativeTypeName("const VkOffset2D *")]
+    [NativeName("pFragmentDensityOffsets")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_fragment_density_map_offset"],

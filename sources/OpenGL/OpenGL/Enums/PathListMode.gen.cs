@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("PathListMode")]
 public enum PathListMode : uint
 {
-    AccumAdjacentPairsNV = unchecked((uint)0x90AD),
-    AdjacentPairsNV = unchecked((uint)0x90AE),
-    FirstToRestNV = unchecked((uint)0x90AF),
+    [NativeName("GL_ACCUM_ADJACENT_PAIRS_NV")]
+    AccumAdjacentPairsNV = 37037,
+
+    [NativeName("GL_ADJACENT_PAIRS_NV")]
+    AdjacentPairsNV = 37038,
+
+    [NativeName("GL_FIRST_TO_REST_NV")]
+    FirstToRestNV = 37039,
 }

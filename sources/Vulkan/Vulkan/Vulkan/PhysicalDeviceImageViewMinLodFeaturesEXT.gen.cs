@@ -6,9 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceImageViewMinLodFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageViewMinLodFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_view_min_lod"],
@@ -19,6 +21,7 @@ public unsafe partial struct PhysicalDeviceImageViewMinLodFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_view_min_lod"],
@@ -29,7 +32,7 @@ public unsafe partial struct PhysicalDeviceImageViewMinLodFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("minLod")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_view_min_lod"],

@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("PathColor")]
 public enum PathColor : uint
 {
-    PrimaryColor = unchecked((uint)0x8577),
-    PrimaryColorNV = unchecked((uint)0x852C),
-    SecondaryColorNV = unchecked((uint)0x852D),
+    [NativeName("GL_PRIMARY_COLOR")]
+    PrimaryColor = 34167,
+
+    [NativeName("GL_PRIMARY_COLOR_NV")]
+    PrimaryColorNV = 34092,
+
+    [NativeName("GL_SECONDARY_COLOR_NV")]
+    SecondaryColorNV = 34093,
 }

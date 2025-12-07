@@ -7,34 +7,35 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoEncodeH265LongTermRefPics")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265LongTermRefPics
 {
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_long_term_sps")]
     [SupportedApiProfile("vulkan")]
     public byte NumLongTermSps;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_long_term_pics")]
     [SupportedApiProfile("vulkan")]
     public byte NumLongTermPics;
 
-    [NativeTypeName("uint8_t[32]")]
+    [NativeName("lt_idx_sps")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265LongTermRefPicsLtIdxSps LtIdxSps;
 
-    [NativeTypeName("uint8_t[16]")]
+    [NativeName("poc_lsb_lt")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265LongTermRefPicsPocLsbLt PocLsbLt;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("used_by_curr_pic_lt_flag")]
     [SupportedApiProfile("vulkan")]
     public ushort UsedByCurrPicLtFlag;
 
-    [NativeTypeName("uint8_t[48]")]
+    [NativeName("delta_poc_msb_present_flag")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265LongTermRefPicsDeltaPocMsbPresentFlag DeltaPocMsbPresentFlag;
 
-    [NativeTypeName("uint8_t[48]")]
+    [NativeName("delta_poc_msb_cycle_lt")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeH265LongTermRefPicsDeltaPocMsbCycleLt DeltaPocMsbCycleLt;
 }

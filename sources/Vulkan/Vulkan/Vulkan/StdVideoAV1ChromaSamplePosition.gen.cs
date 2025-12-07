@@ -8,19 +8,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("StdVideoAV1ChromaSamplePosition")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoAV1ChromaSamplePosition : uint
 {
+    [NativeName("STD_VIDEO_AV1_CHROMA_SAMPLE_POSITION_UNKNOWN")]
     [SupportedApiProfile("vulkan")]
     Unknown = 0,
 
+    [NativeName("STD_VIDEO_AV1_CHROMA_SAMPLE_POSITION_VERTICAL")]
     [SupportedApiProfile("vulkan")]
     Vertical = 1,
 
+    [NativeName("STD_VIDEO_AV1_CHROMA_SAMPLE_POSITION_COLOCATED")]
     [SupportedApiProfile("vulkan")]
     Colocated = 2,
 
+    [NativeName("STD_VIDEO_AV1_CHROMA_SAMPLE_POSITION_RESERVED")]
     [SupportedApiProfile("vulkan")]
     Reserved = 3,
 }

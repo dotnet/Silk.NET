@@ -7,15 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FeedBackToken")]
 public enum FeedBackToken : uint
 {
-    PassThroughToken = unchecked((uint)0x0700),
-    PointToken = unchecked((uint)0x0701),
-    LineToken = unchecked((uint)0x0702),
-    PolygonToken = unchecked((uint)0x0703),
-    BitmapToken = unchecked((uint)0x0704),
-    DrawPixelToken = unchecked((uint)0x0705),
-    CopyPixelToken = unchecked((uint)0x0706),
-    LineResetToken = unchecked((uint)0x0707),
+    [NativeName("GL_PASS_THROUGH_TOKEN")]
+    PassThroughToken = 1792,
+
+    [NativeName("GL_POINT_TOKEN")]
+    PointToken = 1793,
+
+    [NativeName("GL_LINE_TOKEN")]
+    LineToken = 1794,
+
+    [NativeName("GL_POLYGON_TOKEN")]
+    PolygonToken = 1795,
+
+    [NativeName("GL_BITMAP_TOKEN")]
+    BitmapToken = 1796,
+
+    [NativeName("GL_DRAW_PIXEL_TOKEN")]
+    DrawPixelToken = 1797,
+
+    [NativeName("GL_COPY_PIXEL_TOKEN")]
+    CopyPixelToken = 1798,
+
+    [NativeName("GL_LINE_RESET_TOKEN")]
+    LineResetToken = 1799,
 }

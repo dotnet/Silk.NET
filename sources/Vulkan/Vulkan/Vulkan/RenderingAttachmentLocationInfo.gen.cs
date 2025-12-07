@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkRenderingAttachmentLocationInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct RenderingAttachmentLocationInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -17,7 +19,7 @@ public unsafe partial struct RenderingAttachmentLocationInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -25,7 +27,7 @@ public unsafe partial struct RenderingAttachmentLocationInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("colorAttachmentCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -33,7 +35,7 @@ public unsafe partial struct RenderingAttachmentLocationInfo
     )]
     public uint ColorAttachmentCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pColorAttachmentLocations")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],

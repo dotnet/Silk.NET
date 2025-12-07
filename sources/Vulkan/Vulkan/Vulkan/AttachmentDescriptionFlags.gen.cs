@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkAttachmentDescriptionFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum AttachmentDescriptionFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,6 +34,7 @@ public enum AttachmentDescriptionFlags : uint
     )]
     MayAliasBit = 0x1,
 
+    [NativeName("VK_ATTACHMENT_DESCRIPTION_RESOLVE_SKIP_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],
@@ -43,6 +45,7 @@ public enum AttachmentDescriptionFlags : uint
     )]
     ResolveSkipTransferFunctionBitKHR = 0x2,
 
+    [NativeName("VK_ATTACHMENT_DESCRIPTION_RESOLVE_ENABLE_TRANSFER_FUNCTION_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_maintenance10"],

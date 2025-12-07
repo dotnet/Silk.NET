@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum ThreadPriority : uint
+[NativeName("SDL_ThreadPriority")]
+public enum ThreadPriority
 {
-    Low,
-    Normal,
-    High,
-    TimeCritical,
+    [NativeName("SDL_THREAD_PRIORITY_LOW")]
+    Low = 0,
+
+    [NativeName("SDL_THREAD_PRIORITY_NORMAL")]
+    Normal = 1,
+
+    [NativeName("SDL_THREAD_PRIORITY_HIGH")]
+    High = 2,
+
+    [NativeName("SDL_THREAD_PRIORITY_TIME_CRITICAL")]
+    TimeCritical = 3,
 }

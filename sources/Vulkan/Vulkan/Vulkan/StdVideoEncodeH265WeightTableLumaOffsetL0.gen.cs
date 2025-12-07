@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_luma_offset_l0_e__FixedBuffer")]
 [InlineArray(15)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265WeightTableLumaOffsetL0
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public sbyte E0;
 }

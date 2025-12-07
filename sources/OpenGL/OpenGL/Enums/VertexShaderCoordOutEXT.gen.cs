@@ -7,18 +7,39 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("VertexShaderCoordOutEXT")]
 public enum VertexShaderCoordOutEXT : uint
 {
-    X = unchecked((uint)0x87D5),
-    Y = unchecked((uint)0x87D6),
-    Z = unchecked((uint)0x87D7),
-    W = unchecked((uint)0x87D8),
-    NegativeX = unchecked((uint)0x87D9),
-    NegativeY = unchecked((uint)0x87DA),
-    NegativeZ = unchecked((uint)0x87DB),
-    NegativeW = unchecked((uint)0x87DC),
-    Zero = unchecked((uint)0x87DD),
-    One = unchecked((uint)0x87DE),
-    NegativeOne = unchecked((uint)0x87DF),
+    [NativeName("GL_X_EXT")]
+    X = 34773,
+
+    [NativeName("GL_Y_EXT")]
+    Y = 34774,
+
+    [NativeName("GL_Z_EXT")]
+    Z = 34775,
+
+    [NativeName("GL_W_EXT")]
+    W = 34776,
+
+    [NativeName("GL_NEGATIVE_X_EXT")]
+    NegativeX = 34777,
+
+    [NativeName("GL_NEGATIVE_Y_EXT")]
+    NegativeY = 34778,
+
+    [NativeName("GL_NEGATIVE_Z_EXT")]
+    NegativeZ = 34779,
+
+    [NativeName("GL_NEGATIVE_W_EXT")]
+    NegativeW = 34780,
+
+    [NativeName("GL_ZERO_EXT")]
+    Zero = 34781,
+
+    [NativeName("GL_ONE_EXT")]
+    One = 34782,
+
+    [NativeName("GL_NEGATIVE_ONE_EXT")]
+    NegativeOne = 34783,
 }

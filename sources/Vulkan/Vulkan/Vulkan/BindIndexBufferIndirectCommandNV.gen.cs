@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBindIndexBufferIndirectCommandNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct BindIndexBufferIndirectCommandNV
 {
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("bufferAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -19,7 +20,7 @@ public partial struct BindIndexBufferIndirectCommandNV
     )]
     public ulong BufferAddress;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -27,6 +28,7 @@ public partial struct BindIndexBufferIndirectCommandNV
     )]
     public uint Size;
 
+    [NativeName("indexType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],

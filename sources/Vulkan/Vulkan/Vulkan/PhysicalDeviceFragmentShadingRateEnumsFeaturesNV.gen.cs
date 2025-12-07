@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_fragment_shading_rate_enums"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_fragment_shading_rate_enums"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("fragmentShadingRateEnums")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_fragment_shading_rate_enums"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV
     )]
     public uint FragmentShadingRateEnums;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("supersampleFragmentShadingRates")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_fragment_shading_rate_enums"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsFeaturesNV
     )]
     public uint SupersampleFragmentShadingRates;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("noInvocationFragmentShadingRates")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_fragment_shading_rate_enums"],

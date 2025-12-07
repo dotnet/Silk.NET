@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[Transformed]
+[NativeName("SDL_StorageInterface_remove")]
 public unsafe delegate byte StorageInterfaceRemoveDelegate(void* arg0, sbyte* arg1);

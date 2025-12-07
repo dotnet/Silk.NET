@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum GPUSampleCount : uint
+[NativeName("SDL_GPUSampleCount")]
+public enum GPUSampleCount
 {
-    Samplecount1,
-    Samplecount2,
-    Samplecount4,
-    Samplecount8,
+    [NativeName("SDL_GPU_SAMPLECOUNT_1")]
+    Samplecount1 = 0,
+
+    [NativeName("SDL_GPU_SAMPLECOUNT_2")]
+    Samplecount2 = 1,
+
+    [NativeName("SDL_GPU_SAMPLECOUNT_4")]
+    Samplecount4 = 2,
+
+    [NativeName("SDL_GPU_SAMPLECOUNT_8")]
+    Samplecount8 = 3,
 }

@@ -6,15 +6,17 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoVP9ColorConfigFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoVP9ColorConfigFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("color_range")]
     [SupportedApiProfile("vulkan")]
-    public uint color_range
+    public uint ColorRange
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -22,9 +24,9 @@ public partial struct StdVideoVP9ColorConfigFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 31")]
+    [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x7FFFFFFFu; }
