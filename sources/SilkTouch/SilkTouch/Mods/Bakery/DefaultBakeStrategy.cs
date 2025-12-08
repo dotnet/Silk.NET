@@ -80,7 +80,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                             ty.BaseList.Types.Concat(
                                     ((BaseTypeDeclarationSyntax)existing.Value.Syntax)
                                         .BaseList
-                                        ?.Types ?? Enumerable.Empty<BaseTypeSyntax>()
+                                        ?.Types ?? []
                                 )
                                 .DistinctBy(x => x.ToString())
                         )
@@ -197,9 +197,7 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                     node.AttributeLists.Select(x =>
                             x.WithAttributes(
                                 SeparatedList(
-                                    x.Attributes.Where(y =>
-                                        y.IsAttribute("Silk.NET.Core.SupportedApiAttribute")
-                                    )
+                                    x.Attributes.Where(y => y.IsAttribute("Silk.NET.Core.SupportedApiAttribute"))
                                 )
                             )
                         )

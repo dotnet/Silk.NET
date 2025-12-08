@@ -118,9 +118,7 @@ public interface IInputResolver
     async Task<ClangScraper.Configuration> Resolve(ClangScraper.Configuration config)
     {
         await ResolveInPlace(config.ClangSharpResponseFiles);
-        foreach (
-            var (k, v) in config.ManualOverrides ?? Enumerable.Empty<KeyValuePair<string, string>>()
-        )
+        foreach (var (k, v) in config.ManualOverrides ?? [])
         {
             config.ManualOverrides![k] = await ResolvePath(v);
         }

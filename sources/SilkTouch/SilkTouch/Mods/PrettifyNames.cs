@@ -1,10 +1,8 @@
-﻿using System.Collections.Concurrent;
-using System.Diagnostics;
+﻿using System.Diagnostics;
+using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.FindSymbols;
-using Microsoft.CodeAnalysis.Rename;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
@@ -33,12 +31,12 @@ public class PrettifyNames(
         /// <summary>
         /// Corrections to the automatic prefix determination.
         /// </summary>
-        public Dictionary<string, string>? PrefixOverrides { get; init; }
+        public Dictionary<string, string> PrefixOverrides { get; init; } = [];
 
         /// <summary>
         /// Manually renamed native names.
         /// </summary>
-        public Dictionary<string, string>? NameOverrides { get; init; }
+        public Dictionary<string, string> NameOverrides { get; init; } = [];
 
         /// <summary>
         /// The base trimmer version. If null, trimming is disabled.
@@ -79,33 +77,45 @@ public class PrettifyNames(
             visitor.Visit(await doc.GetSyntaxRootAsync(ct));
         }
 
-        Dictionary<
-            string,
-            (
-                string NewName,
-                Dictionary<string, string>? NonFunctions,
-                Dictionary<string, string>? Functions,
-                bool IsEnum
-            )
-        > types = new();
-        var translator = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3);
+        // The dictionary containing mappings from the original type names to the new names of the type and its members
+        var newNames = new Dictionary<string, RenamedType>();
 
-        // If we have a trimmer baseline set, that means the user wants to trim the names as well as prettify them.
-        if (cfg.TrimmerBaseline is not null)
+        var nameTransformer = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3); // TODO: Change to 2 in next PR to match framework design guidelines
+
+        // Trim the trimmable names if the trimmer baseline is set
+        // Otherwise, we just prettify the trimmable names
+        if (cfg.TrimmerBaseline is null)
         {
+            // Only prettify the trimmable names
+            foreach (var (name, (nonFunctions, functions)) in visitor.TrimmableTypes)
+            {
+                newNames[name] = new RenamedType(
+                    ApplyPrettifyOnlyPipeline(null, name, cfg.NameOverrides, visitor.AffixTypes, nameTransformer),
+                    nonFunctions.ToDictionary(x => x, x => ApplyPrettifyOnlyPipeline(name, x, cfg.NameOverrides, visitor.AffixTypes, nameTransformer)),
+                    functions.ToDictionary(x => x.Name, x => ApplyPrettifyOnlyPipeline(name, x.Name, cfg.NameOverrides, visitor.AffixTypes, nameTransformer))
+                );
+            }
+        }
+        else
+        {
+            // Trim and prettify the trimmable names
+
             // Get all the trimmers that are above this baseline. We also sort by the version. Why? Because someone
             // couldn't be bothered to introduce a weight property. It is also unclear what effect this has on 2.17/2.18
             // but to be honest those trimmers aren't used and are only included for posterity and understanding of the
             // old logic.
             var trimmers = trimmerProviders
                 .SelectMany(x => x.Get(ctx.JobKey))
-                .OrderBy(x => x.Version)
+                .Append(new NameAffixerEarlyTrimmer(visitor.AffixTypes))
+                .Append(new NameAffixerLateTrimmer(visitor.AffixTypes))
+                .Append(new PrettifyNamesTrimmer(nameTransformer))
+                .OrderBy(x => x.Order)
                 .ToArray();
 
             // Create a type name dictionary to trim the type names.
-            var typeNames = visitor.Types.ToDictionary(
+            var typeNames = visitor.TrimmableTypes.ToDictionary(
                 x => x.Key,
-                x => (x.Key, (List<string>?)null)
+                x => new CandidateNames(x.Key, [])
             );
 
             // If we don't have a prefix hint and don't have more than one type, we can't determine a prefix so don't
@@ -125,126 +135,101 @@ public class PrettifyNames(
                 );
             }
 
-            // Now rename everything within that type.
+            // Now rename everything within each type.
             foreach (var (typeName, (newTypeName, _)) in typeNames)
             {
-                var (_, (consts, functions, isEnum)) = visitor.Types.First(x => x.Key == typeName);
+                var (_, (consts, functions)) = visitor.TrimmableTypes.First(x => x.Key == typeName);
 
                 // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
                 // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
-                var constNames = consts?.ToDictionary(
+                var constNames = consts.ToDictionary(
                     x => x,
-                    x => (Primary: x, (List<string>?)null)
+                    x => new CandidateNames(x, [])
                 );
 
-                // Trim the constants if we have any.
-                if (constNames is not null)
-                {
-                    Trim(
-                        new NameTrimmerContext
-                        {
-                            Container = typeName,
-                            Names = constNames,
-                            Configuration = cfg,
-                            JobKey = ctx.JobKey,
-                            NonDeterminant = visitor.NonDeterminant,
-                        },
-                        trimmers
-                    );
-                }
-                else
-                {
-                    constNames = new Dictionary<string, (string Primary, List<string>?)>();
-                }
+                // Trim the constants.
+                Trim(
+                    new NameTrimmerContext
+                    {
+                        Container = typeName,
+                        Names = constNames,
+                        Configuration = cfg,
+                        JobKey = ctx.JobKey,
+                        NonDeterminant = visitor.NonDeterminant,
+                    },
+                    trimmers
+                );
 
                 // Rename the functions. More often that not functions have different nomenclature to constants, so we
                 // treat them separately.
                 var functionNames = functions
-                    ?.DistinctBy(x => x.Name)
-                    .ToDictionary(x => x.Name, x => (Primary: x.Name, (List<string>?)null));
+                    .DistinctBy(x => x.Name)
+                    .ToDictionary(x => x.Name, x => new CandidateNames(x.Name, []));
 
                 // Collect the syntax as this is used for conflict resolution in the Trim function.
-                var functionSyntax =
-                    functions is null || functionNames is null
-                        ? null
-                        : functionNames.Keys.ToDictionary(
-                            x => x,
-                            x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
-                        );
+                var functionSyntax = functionNames.Keys.ToDictionary(
+                    x => x,
+                    x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
+                );
 
-                // Now trim if we have any functions.
-                if (functionNames is not null)
-                {
-                    Trim(
-                        new NameTrimmerContext
-                        {
-                            Container = typeName,
-                            Names = functionNames,
-                            Configuration = cfg,
-                            JobKey = ctx.JobKey,
-                            NonDeterminant = visitor.NonDeterminant,
-                        },
-                        trimmers,
-                        functionSyntax
-                    );
-                }
-
-                // Add back anything else that isn't a trimming candidate (but should still have a pretty name)
-                var prettifiedOnly = visitor.PrettifyOnlyTypes.TryGetValue(typeName, out var val)
-                    ? val.Select(x => new KeyValuePair<string, (string Primary, List<string>?)>(
-                        x,
-                        (x, null)
-                    ))
-                    : [];
+                // Trim the functions.
+                Trim(
+                    new NameTrimmerContext
+                    {
+                        Container = typeName,
+                        Names = functionNames,
+                        Configuration = cfg,
+                        JobKey = ctx.JobKey,
+                        NonDeterminant = visitor.NonDeterminant,
+                    },
+                    trimmers,
+                    functionSyntax
+                );
 
                 // Add it to the rewriter's list of names to... rewrite...
-                types[typeName] = (
-                    newTypeName.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names
-                    // TODO deprecate secondaries if they're within the baseline?
-                    constNames
-                        .Concat(prettifiedOnly)
-                        .ToDictionary(x => x.Key, x => x.Value.Primary.Prettify(translator)),
-                    functionNames?.ToDictionary(
-                        x => x.Key,
-                        x => x.Value.Primary.Prettify(translator)
-                    ),
-                    isEnum
+                newNames[typeName] = new RenamedType(
+                    newTypeName,
+                    constNames.ToDictionary(x => x.Key, x => x.Value.Primary),
+                    functionNames.ToDictionary(x => x.Key, x => x.Value.Primary)
                 );
             }
         }
-        else // (there's no trimming baseline)
+
+        // Prettify the prettify only names
+        foreach (var (typeName, memberNames) in visitor.PrettifyOnlyTypes)
         {
-            // Prettify only if the user has not indicated they want to trim.
-            foreach (var (name, (nonFunctions, functions, isEnum)) in visitor.Types)
+            if (!newNames.TryGetValue(typeName, out var renamedType))
             {
-                types[name] = (
-                    name.Prettify(translator, allowAllCaps: true), // <-- lenient about caps for type names (e.g. GL)
-                    nonFunctions?.ToDictionary(x => x, x => x.Prettify(translator)),
-                    functions?.ToDictionary(x => x.Name, x => x.Name.Prettify(translator)),
-                    isEnum
-                );
+                renamedType = new RenamedType(ApplyPrettifyOnlyPipeline(null, typeName, cfg.NameOverrides, visitor.AffixTypes, nameTransformer), [], []);
             }
+
+            foreach (var memberName in memberNames)
+            {
+                renamedType.NonFunctions[memberName] = ApplyPrettifyOnlyPipeline(typeName, memberName, cfg.NameOverrides, visitor.AffixTypes, nameTransformer);
+            }
+
+            newNames[typeName] = renamedType;
         }
 
         if (logger.IsEnabled(LogLevel.Debug))
         {
-            foreach (var (name, (newName, nonFunctions, functions, _)) in types)
+            foreach (var (name, (newName, nonFunctions, functions)) in newNames)
             {
                 logger.LogDebug("{} = {}", name, newName);
-                foreach (var (old, @new) in nonFunctions ?? new())
+                foreach (var (old, @new) in nonFunctions)
                 {
                     logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
                 }
 
-                foreach (var (old, @new) in functions ?? new())
+                foreach (var (old, @new) in functions)
                 {
                     logger.LogDebug("{}.{} = {}.{}", name, old, newName, @new);
                 }
             }
         }
 
-        // Before we rename, we should ensure name dependent things are correct e.g. DllImport explicitly specify their
-        // EntryPoint
+        // Before we rename, we should ensure name dependent things are correct
+        // e.g. DllImport explicitly specify their EntryPoint
         logger.LogDebug("Fixing up attributes for {} to make them safe for rename...", ctx.JobKey);
         var rewriter = new RenameSafeAttributeListsRewriter();
         var proj = ctx.SourceProject;
@@ -263,21 +248,22 @@ public class PrettifyNames(
             }
         }
 
+        // Find symbols and rename their references
         var sw = Stopwatch.StartNew();
         logger.LogDebug("Discovering references to symbols to rename for {}...", ctx.JobKey);
         ctx.SourceProject = proj;
+
         var comp =
             await proj.GetCompilationAsync(ct)
-            ?? throw new InvalidOperationException(
-                "Failed to obtain compilation for source project!"
-            );
+            ?? throw new InvalidOperationException("Failed to obtain compilation for source project!");
+
         await NameUtils.RenameAllAsync(
             ctx,
-            types.SelectMany(x =>
+            newNames.SelectMany(x =>
             {
                 var nonFunctionConflicts = x
-                    .Value.NonFunctions?.Values.Where(y =>
-                        x.Value.Functions?.ContainsValue(y) ?? false
+                    .Value.NonFunctions.Values.Where(y =>
+                        x.Value.Functions.ContainsValue(y)
                     )
                     .ToHashSet();
                 return comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
@@ -286,15 +272,15 @@ public class PrettifyNames(
                         [
                             .. Enumerable.SelectMany(
                                 [
-                                    .. x.Value.NonFunctions?.Select(z =>
-                                        nonFunctionConflicts?.Contains(z.Value) ?? false
+                                    .. x.Value.NonFunctions.Select(z =>
+                                        nonFunctionConflicts.Contains(z.Value)
                                             ? new KeyValuePair<string, string>(
                                                 z.Key,
                                                 $"{z.Value}Value"
                                             )
                                             : z
-                                    ) ?? [],
-                                    .. x.Value.Functions ?? [],
+                                    ),
+                                    .. x.Value.Functions,
                                 ],
                                 z =>
                                 {
@@ -314,6 +300,7 @@ public class PrettifyNames(
             logger,
             ct
         );
+
         logger.LogDebug(
             "Reference renaming took {} seconds for {}.",
             sw.Elapsed.TotalSeconds,
@@ -326,8 +313,8 @@ public class PrettifyNames(
         {
             var doc = proj.GetDocument(docId);
             if (
-                doc is not { FilePath: not null, Name: not null }
-                || types
+                doc is not { FilePath: not null }
+                || newNames
                     .OrderByDescending(x => x.Key.Length)
                     .FirstOrDefault(x => doc.FilePath.Contains(x.Key) || doc.Name.Contains(x.Key))
                     is not { Key: { } oldName, Value.NewName: { } newName }
@@ -336,26 +323,100 @@ public class PrettifyNames(
                 continue;
             }
 
-            proj = doc.ReplaceNameAndPath(oldName, newName).Project;
+            var originalName = doc.Name;
+            doc = doc.ReplaceNameAndPath(oldName, newName);
+
+            var found = false;
+            if (doc.FilePath is not null)
+            {
+                foreach (var checkDocId in proj.DocumentIds)
+                {
+                    if (checkDocId == docId)
+                    {
+                        continue;
+                    }
+
+                    var checkDoc = proj.GetDocument(checkDocId);
+                    if (checkDoc?.FilePath is null)
+                    {
+                        continue;
+                    }
+
+                    if (checkDoc.FilePath == doc.FilePath)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+            }
+
+            if (found)
+            {
+                logger.LogError($"{originalName} -> {doc.Name} failed to rename file as a file already exists at {doc.FilePath}");
+            }
+            else
+            {
+                proj = doc.Project;
+            }
         }
 
         ctx.SourceProject = proj;
     }
 
-    private static readonly SymbolRenameOptions _typeRenameOptions =
-        new(
-            RenameOverloads: false,
-            RenameInStrings: false,
-            RenameInComments: false,
-            RenameFile: true
-        );
-    private static readonly SymbolRenameOptions _memberRenameOptions =
-        new(
-            RenameOverloads: true,
-            RenameInStrings: false,
-            RenameInComments: false,
-            RenameFile: false
-        );
+    /// <summary>
+    /// Applies the prettify only pipeline.
+    /// This currently consists of checking for name overrides first.
+    /// Then if no override is found, then the name's affixes are removed,
+    /// the name is prettified, and the name's affixes are added back.
+    /// </summary>
+    private string ApplyPrettifyOnlyPipeline(
+        string? container,
+        string name,
+        Dictionary<string, string> nameOverrides,
+        Dictionary<string, TypeAffixData> affixTypes,
+        ICulturedStringTransformer nameTransformer)
+    {
+        // Check for overrides
+        foreach (var (nativeName, overriddenName) in nameOverrides)
+        {
+            if (nativeName.Contains('.'))
+            {
+                // We're processing a type dictionary, so don't add a member thing.
+                if (container is null)
+                {
+                    continue;
+                }
+
+                // Check whether the override is for this type.
+                var span = nativeName.AsSpan();
+                var containerSpan = span[..span.IndexOf('.')];
+                if (!containerSpan.Equals("*", StringComparison.Ordinal) && !containerSpan.Equals(container, StringComparison.Ordinal))
+                {
+                    continue;
+                }
+
+                var nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
+                if (nameToAdd == name)
+                {
+                    return overriddenName;
+                }
+            }
+            else if (nativeName == name)
+            {
+                return overriddenName;
+            }
+        }
+
+        // Be lenient about caps for type names (e.g. GL)
+        var allowAllCaps = container == null;
+
+        var result = name;
+        result = RemoveAffixes(result, container, name, affixTypes, null);
+        result = result.Prettify(nameTransformer, allowAllCaps);
+        result = ApplyAffixes(result, container, name, affixTypes, null);
+
+        return result;
+    }
 
     private void Trim(
         NameTrimmerContext context,
@@ -365,11 +426,8 @@ public class PrettifyNames(
     {
         // Ensure the trimmers don't see names that have been manually overridden, as we don't want them to influence
         // automatic prefix determination for example
-        var namesToTrim = context.Names!;
-        foreach (
-            var (nativeName, overriddenName) in context.Configuration.NameOverrides
-                ?? Enumerable.Empty<KeyValuePair<string, string>>()
-        )
+        var namesToTrim = context.Names;
+        foreach (var (nativeName, overriddenName) in context.Configuration.NameOverrides)
         {
             var nameToAdd = nativeName;
             if (nativeName.Contains('.'))
@@ -381,11 +439,9 @@ public class PrettifyNames(
                 }
 
                 // Check whether the override is for this type.
-                var span = context.Container.AsSpan();
-                if (
-                    span[..span.IndexOf('.')] is "*"
-                    || span[..span.IndexOf('.')] == context.Container
-                )
+                var span = nativeName.AsSpan();
+                var containerSpan = span[..span.IndexOf('.')];
+                if (containerSpan.Equals("*", StringComparison.Ordinal) || containerSpan.Equals(context.Container, StringComparison.Ordinal))
                 {
                     nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
                 }
@@ -412,9 +468,9 @@ public class PrettifyNames(
             namesToTrim.Remove(nameToAdd);
 
             // Apply the name override to the dictionary we actually use.
-            context.Names![nameToAdd] = (
+            context.Names[nameToAdd] = new CandidateNames(
                 overriddenName,
-                [.. v.Secondary ?? Enumerable.Empty<string>(), nameToAdd]
+                [.. v.Secondary, nameToAdd]
             );
         }
 
@@ -424,28 +480,25 @@ public class PrettifyNames(
             trimmer.Trim(context with { Names = namesToTrim });
         }
 
-        // Apply changes.
+        // Apply changes
         if (namesToTrim != context.Names)
         {
             foreach (var (evalName, result) in namesToTrim)
             {
-                context.Names![evalName] = result;
+                context.Names[evalName] = result;
             }
         }
 
         // Prefer shorter names
-        foreach (var (trimmingName, (primary, secondary)) in context.Names!)
+        foreach (var (_, (_, secondary)) in context.Names)
         {
-            context.Names![trimmingName] = (
-                primary,
-                secondary?.OrderByDescending(x => x.Length).ToList()
-            );
+            secondary.Sort((a, b) => -a.Length.CompareTo(b.Length));
         }
 
         // Create a map from primaries to trimming names, to account for multiple overloads with the same primary and
         // same trimming name (i.e. it is a generated/transformed overload) but differing discriminators.
         var primaries = new Dictionary<string, HashSet<string>>();
-        foreach (var (trimmingName, (primary, _)) in context.Names!)
+        foreach (var (trimmingName, (primary, _)) in context.Names)
         {
             var trimmingNamesForPrimary = primaries.TryGetValue(primary, out var tnfp)
                 ? tnfp
@@ -460,11 +513,7 @@ public class PrettifyNames(
         // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
         // renamed. We keep track of the first trimming name so that we can add it to conflictingTrimmingNames when we
         // do discover a conflict (along with the trimming name of the actual conflict).
-        var methDiscrims =
-            new Dictionary<
-                string,
-                (string? FirstTrimmingName, List<MethodDeclarationSyntax> Methods)
-            >();
+        var methDiscrims = new Dictionary<string, (string? FirstTrimmingName, List<MethodDeclarationSyntax> Methods)>();
         var conflictingTrimmingNames = new HashSet<string>();
         while (namesToEval.GetEnumerator() is var e && e.MoveNext() && e.Current is var primary)
         {
@@ -488,7 +537,7 @@ public class PrettifyNames(
             foreach (var trimmingNameToEval in trimmingNamesForOldPrimary)
             {
                 // Do we even have a secondary to fall back on if there is a conflict?
-                if ((context.Names![trimmingNameToEval].Secondary?.Count ?? 0) == 0)
+                if (context.Names[trimmingNameToEval].Secondary.Count == 0)
                 {
                     noSecondaryTrimmingName ??= trimmingNameToEval;
                     nNoSecondaries++;
@@ -603,16 +652,11 @@ public class PrettifyNames(
                     {
                         // Update the output name.
                         var firstSecondary =
-                            context.Names![first].Secondary
-                            ?? throw new InvalidOperationException(
-                                "More than one trimming name without secondary names."
-                            );
+                            context.Names[first].Secondary
+                            ?? throw new InvalidOperationException("More than one trimming name without secondary names.");
                         var firstNextPrimary = firstSecondary[^1];
                         firstSecondary.RemoveAt(firstSecondary.Count - 1);
-                        context.Names![first] = (
-                            firstNextPrimary,
-                            firstSecondary.Count == 0 ? null : firstSecondary
-                        );
+                        context.Names[first] = new CandidateNames(firstNextPrimary, firstSecondary);
 
                         // Update our primary to trimming name map
                         var trimmingNamesForFirst = primaries.TryGetValue(
@@ -648,16 +692,11 @@ public class PrettifyNames(
 
                 // Conflict resolution! Update the output name.
                 var secondary =
-                    context.Names![conflictingTrimmingName].Secondary
-                    ?? throw new InvalidOperationException(
-                        "More than one trimming name without secondary names."
-                    );
+                    context.Names[conflictingTrimmingName].Secondary
+                    ?? throw new InvalidOperationException("More than one trimming name without secondary names.");
                 var nextPrimary = secondary[^1];
                 secondary.RemoveAt(secondary.Count - 1);
-                context.Names![conflictingTrimmingName] = (
-                    nextPrimary,
-                    secondary.Count == 0 ? null : secondary
-                );
+                context.Names[conflictingTrimmingName] = new CandidateNames(nextPrimary, secondary);
 
                 // Update our primary to trimming name map
                 var trimmingNamesForNewPrimary = primaries.TryGetValue(nextPrimary, out var tnfp)
@@ -686,259 +725,218 @@ public class PrettifyNames(
         }
     }
 
-    private class Visitor : CSharpSyntaxWalker
+    /// <summary>
+    /// Gets affix data for the specified container and original name of the identifier.
+    /// </summary>
+    /// <param name="container">The container name. Either null or the containing type.</param>
+    /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
+    /// <param name="affixTypes">The affix data retrieved by the <see cref="Visitor"/>.</param>
+    /// <returns>The name affixes for the specified identifier.</returns>
+    private static NameAffix[] GetAffixes(string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes)
     {
-        public Dictionary<
-            string,
-            (
-                List<string>? NonFunctions,
-                List<(string Name, MethodDeclarationSyntax Syntax)>? Functions,
-                bool IsEnum
-            )
-        > Types = new();
-
-        public Dictionary<string, List<string>> PrettifyOnlyTypes = new();
-        public HashSet<string> NonDeterminant { get; } = [];
-        private (
-            ClassDeclarationSyntax Class,
-            List<string> NonFunctions,
-            List<(string Name, MethodDeclarationSyntax Syntax)> Functions
-        )? _classInProgress;
-        private (EnumDeclarationSyntax Enum, List<string> EnumMembers)? _enumInProgress;
-        private FieldDeclarationSyntax? _visitingField = null;
-        private bool _prettifyOnly;
-
-        public override void VisitClassDeclaration(ClassDeclarationSyntax node)
+        TypeAffixData typeAffixData;
+        if (container == null)
         {
-            if (
-                _classInProgress is not null // nesting is ignored for now
-                || _enumInProgress is not null // class nested in an enum, wtf?
-                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any() // again... nesting is ignored.
-            )
+            if (!affixTypes.TryGetValue(originalName, out typeAffixData))
             {
-                return;
+                return [];
             }
 
-            if (
-                node.AttributeLists.Any(x =>
-                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
-                )
-            )
-            {
-                NonDeterminant.Add(node.Identifier.ToString());
-            }
-
-            _classInProgress = (
-                node,
-                new List<string>(),
-                new List<(string, MethodDeclarationSyntax)>()
-            );
-
-            // Recurse into the members.
-            base.VisitClassDeclaration(node);
-            var id = node.Identifier.ToString();
-
-            // Tolerate partial classes.
-            if (!Types.TryGetValue(id, out var inner))
-            {
-                inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>(), false);
-                Types.Add(id, inner);
-            }
-
-            // Merge with the other partials.
-            (inner.NonFunctions ??= new List<string>()).AddRange(
-                _classInProgress.Value.NonFunctions
-            );
-            (inner.Functions ??= new List<(string, MethodDeclarationSyntax)>()).AddRange(
-                _classInProgress.Value.Functions
-            );
-            _classInProgress = null;
+            return typeAffixData.TypeAffixes;
         }
 
-        public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
+        if (affixTypes.TryGetValue(container, out typeAffixData))
         {
-            // Can't have a field within a field or an enum. This is basically a "wtf" check.
-            if (_visitingField is not null || _enumInProgress is not null)
+            if (typeAffixData.MemberAffixes?.TryGetValue(originalName, out var affixes) ?? false)
             {
-                return;
+                return affixes;
             }
-
-            // If it's not a constant then we only prettify.
-            if (
-                !node.Modifiers.Any(SyntaxKind.ConstKeyword)
-                && !node.Modifiers.Any(SyntaxKind.StaticKeyword)
-            )
-            {
-                _prettifyOnly = true;
-            }
-
-            _visitingField = node;
-            base.VisitFieldDeclaration(node);
-            _prettifyOnly = false;
-            _visitingField = null;
         }
 
-        public override void VisitVariableDeclarator(VariableDeclaratorSyntax node)
+        return [];
+    }
+
+    /// <summary>
+    /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list if provided.
+    /// </summary>
+    /// <remarks>
+    /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="NameAffixerEarlyTrimmer"/>.
+    /// </remarks>
+    /// <param name="primary">The current primary name.</param>
+    /// <param name="container">The container name. Either null or the containing type.</param>
+    /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
+    /// <param name="affixTypes">The affix data retrieved by the <see cref="Visitor"/>.</param>
+    /// <param name="secondary">The list of secondary names. This should be null if used by <see cref="ApplyPrettifyOnlyPipeline"/>.</param>
+    /// <returns>The new primary name.</returns>
+    private static string RemoveAffixes(string primary, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes, List<string>? secondary)
+    {
+        var affixes = GetAffixes(container, originalName, affixTypes);
+        if (affixes.Length == 0)
         {
-            if (node.Parent?.Parent != _visitingField)
+            return primary;
+        }
+
+        var originalPrimary = primary;
+
+        // Sort affixes so that the outer affixes are first
+        affixes.Sort(static (a, b) =>
+        {
+            // Sort by ascending order
+            // Higher order means the affix is closer to the inside of the name
+            if (a.Order != b.Order)
             {
-                return;
+                return a.Order.CompareTo(b.Order);
             }
 
-            if (
-                _prettifyOnly
-                && node.Parent?.Parent?.Parent is BaseTypeDeclarationSyntax type
-                && type.Parent?.FirstAncestorOrSelf<BaseTypeDeclarationSyntax>() is null
-            )
+            // Then by descending declaration order
+            // Lower declaration order means the affix is closer to the inside of the name
+            return -a.DeclarationOrder.CompareTo(b.DeclarationOrder);
+        });
+
+        var prefixes = affixes.Where(x => x.IsPrefix).ToList();
+        var suffixes = affixes.Where(x => !x.IsPrefix).ToList();
+
+        RemoveSide(true, prefixes);
+        RemoveSide(false, suffixes);
+
+        if (originalPrimary != primary)
+        {
+            secondary?.Add(originalPrimary);
+        }
+
+        return primary;
+
+        void RemoveSide(bool isPrefix, List<NameAffix> nameAffixes)
+        {
+            while (nameAffixes.Count > 0)
             {
-                var tiden = type.Identifier.ToString();
-                if (!PrettifyOnlyTypes.TryGetValue(tiden, out var inner))
+                var removedAffix = false;
+                for (var i = 0; i < nameAffixes.Count; i++)
                 {
-                    inner = new List<string>();
-                    PrettifyOnlyTypes.Add(tiden, inner);
+                    var affix = nameAffixes[i];
+                    if (isPrefix ? primary.StartsWith(affix.Affix) : primary.EndsWith(affix.Affix))
+                    {
+                        primary = isPrefix ? primary[affix.Affix.Length..] : primary[..^affix.Affix.Length];
+
+                        nameAffixes.RemoveAt(i);
+                        removedAffix = true;
+                        break;
+                    }
                 }
 
-                var iden = node.Identifier.ToString();
-                inner.Add(iden);
-            }
-            else if (_classInProgress is not null && !_prettifyOnly)
-            {
-                _classInProgress.Value.NonFunctions.Add(node.Identifier.ToString());
-            }
-        }
-
-        public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
-        {
-            if (node.Parent == _classInProgress?.Class)
-            {
-                _classInProgress!.Value.Functions.Add((node.Identifier.ToString(), node));
-            }
-        }
-
-        public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
-        {
-            if (node.Parent == _classInProgress?.Class)
-            {
-                _classInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
-            }
-        }
-
-        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
-        {
-            if (
-                _classInProgress is not null
-                || _enumInProgress is not null
-                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
-            )
-            {
-                if (node.Parent == _classInProgress?.Class)
+                if (!removedAffix)
                 {
-                    _classInProgress!.Value.NonFunctions.Add(node.Identifier.ToString());
+                    break;
                 }
-
-                return;
             }
-
-            if (
-                node.AttributeLists.Any(x =>
-                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
-                )
-            )
-            {
-                NonDeterminant.Add(node.Identifier.ToString());
-            }
-
-            Types.Add(node.Identifier.ToString(), (null, null, false));
-        }
-
-        public override void VisitStructDeclaration(StructDeclarationSyntax node)
-        {
-            if (
-                _classInProgress is not null
-                || _enumInProgress is not null
-                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
-            )
-            {
-                return;
-            }
-
-            if (
-                node.AttributeLists.Any(x =>
-                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
-                )
-            )
-            {
-                NonDeterminant.Add(node.Identifier.ToString());
-            }
-
-            Types[node.Identifier.ToString()] = (null, null, false);
-            base.VisitStructDeclaration(node);
-        }
-
-        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
-        {
-            if (node.Parent == _enumInProgress?.Enum)
-            {
-                _enumInProgress!.Value.EnumMembers.Add(node.Identifier.ToString());
-            }
-        }
-
-        public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
-        {
-            if (
-                _classInProgress is not null
-                || _enumInProgress is not null
-                || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
-            )
-            {
-                return;
-            }
-
-            if (
-                node.AttributeLists.Any(x =>
-                    x.Attributes.Any(y => y.IsAttribute("Silk.NET.Core.Transformed"))
-                )
-            )
-            {
-                NonDeterminant.Add(node.Identifier.ToString());
-            }
-
-            _enumInProgress = (node, new List<string>());
-            base.VisitEnumDeclaration(node);
-            var id = _enumInProgress.Value.Enum.Identifier.ToString();
-            if (!Types.TryGetValue(id, out var inner))
-            {
-                inner = (new List<string>(), new List<(string, MethodDeclarationSyntax)>(), true);
-                Types.Add(id, inner);
-            }
-
-            (inner.NonFunctions ??= new List<string>()).AddRange(_enumInProgress.Value.EnumMembers);
-            _enumInProgress = null;
         }
     }
 
-    private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
+    /// <summary>
+    /// Applies affixes to the specified primary name and adds fallbacks to the secondary list if provided.
+    /// </summary>
+    /// <remarks>
+    /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="NameAffixerLateTrimmer"/>.
+    /// </remarks>
+    /// <param name="primary">The current primary name.</param>
+    /// <param name="container">The container name. Either null or the containing type.</param>
+    /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
+    /// <param name="affixTypes">The affix data retrieved by the <see cref="Visitor"/>.</param>
+    /// <param name="secondary">The list of secondary names. This should be null if used by <see cref="ApplyPrettifyOnlyPipeline"/>.</param>
+    /// <returns>The new primary name.</returns>
+    private static string ApplyAffixes(string primary, string? container, string originalName, Dictionary<string, TypeAffixData> affixTypes, List<string>? secondary)
     {
-        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            (
-                (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!
-            ).WithRenameSafeAttributeLists();
-    }
-
-    private Location? IdentifierLocation(SyntaxNode? node) =>
-        node switch
+        var affixes = GetAffixes(container, originalName, affixTypes);
+        if (affixes.Length == 0)
         {
-            BaseTypeDeclarationSyntax bt => bt.Identifier.GetLocation(),
-            DelegateDeclarationSyntax d => d.Identifier.GetLocation(),
-            EnumMemberDeclarationSyntax em => em.Identifier.GetLocation(),
-            EventDeclarationSyntax e => e.Identifier.GetLocation(),
-            MethodDeclarationSyntax m => m.Identifier.GetLocation(),
-            PropertyDeclarationSyntax p => p.Identifier.GetLocation(),
-            VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
-            ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
-            DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
-            _ => null,
-        };
+            return primary;
+        }
+
+        // Sort affixes by priority
+        // Negative priority is first, followed by highest non-negative priority
+        // This groups the required affixes at the start and each group of fallback affixes together
+        affixes.Sort(static (a, b) =>
+        {
+            // Negative priority first
+            // These are our required affixes
+            if (int.Sign(a.DiscriminatorPriority) != 1 || int.Sign(b.DiscriminatorPriority) != 1)
+            {
+                return a.DiscriminatorPriority.CompareTo(b.DiscriminatorPriority);
+            }
+
+            // Then sort the remaining by descending priority
+            return -a.DiscriminatorPriority.CompareTo(b.DiscriminatorPriority);
+        });
+
+        // This is guaranteed to be non-null when this method returns if there is at least one affix
+        string? newPrimary = null;
+
+        var currentPriority = -1;
+        for (var affixI = 0; affixI < affixes.Length; affixI++)
+        {
+            var affix = affixes[affixI];
+            if (currentPriority == -1 && affix.DiscriminatorPriority < 0)
+            {
+                continue;
+            }
+
+            if (currentPriority == -1 || affix.DiscriminatorPriority < currentPriority)
+            {
+                currentPriority = affix.DiscriminatorPriority;
+                CreateName(primary, affixes.AsSpan()[..affixI], ref newPrimary, secondary);
+                if (secondary == null)
+                {
+                    return newPrimary!;
+                }
+            }
+        }
+
+        CreateName(primary, affixes, ref newPrimary, secondary);
+
+        return newPrimary!;
+
+        static void CreateName(string name, Span<NameAffix> currentAffixes, ref string? newPrimary, List<string>? secondary)
+        {
+            // Sort affixes so that the inner affixes are first
+            currentAffixes.Sort(static (a, b) =>
+            {
+                // Sort by descending order
+                // Higher order means the affix is closer to the inside of the name
+                if (a.Order != b.Order)
+                {
+                    return -a.Order.CompareTo(b.Order);
+                }
+
+                // Then by ascending declaration order
+                // Lower declaration order means the affix is closer to the inside of the name
+                return a.DeclarationOrder.CompareTo(b.DeclarationOrder);
+            });
+
+            foreach (var affix in currentAffixes)
+            {
+                if (affix.Order >= 0)
+                {
+                    if (affix.IsPrefix)
+                    {
+                        name = affix.Affix + name;
+                    }
+                    else
+                    {
+                        name += affix.Affix;
+                    }
+                }
+            }
+
+            if (newPrimary == null)
+            {
+                newPrimary = name;
+            }
+            else
+            {
+                secondary?.Add(name);
+            }
+        }
+    }
 
     /// <inheritdoc />
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)
@@ -949,7 +947,16 @@ public class PrettifyNames(
             {
                 logger.LogWarning(
                     "{} (for {}) should use exclude-using-statics-for-enums as PrettifyNames does not resolve "
-                        + "conflicts with members of other types.",
+                    + "conflicts with members of other types.",
+                    responseFile.FilePath,
+                    key
+                );
+            }
+            if (!responseFile.GeneratorConfiguration.DontUseUsingStaticsForGuidMember)
+            {
+                logger.LogWarning(
+                    "{} (for {}) should use exclude-using-statics-for-guid-members as PrettifyNames does not resolve "
+                    + "conflicts with members of other types.",
                     responseFile.FilePath,
                     key
                 );
@@ -957,5 +964,470 @@ public class PrettifyNames(
         }
 
         return Task.FromResult(rsps);
+    }
+
+    /// <summary>
+    /// Contains the new name of a type and mappings between original names and new names of its members.
+    /// </summary>
+    /// <param name="NewName">The new name of the type.</param>
+    /// <param name="NonFunctions">The mappings from original names to new names of the type's non-function members.</param>
+    /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
+    private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
+
+    private record struct NameAffix(bool IsPrefix, string Affix, int Order, int DiscriminatorPriority, int DeclarationOrder);
+
+    private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
+    private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
+    private record struct TypeAffixData(NameAffix[] TypeAffixes, Dictionary<string, NameAffix[]>? MemberAffixes);
+
+    private class Visitor : CSharpSyntaxWalker
+    {
+        /// <summary>
+        /// A mapping from type names to their member names (along with some additional info).
+        /// These names are first trimmed, then prettified.
+        /// </summary>
+        public Dictionary<string, TypeData> TrimmableTypes { get; } = new();
+
+        /// <summary>
+        /// A mapping from type names to their member names.
+        /// These names do not participate in trimming and are only prettified.
+        /// </summary>
+        public Dictionary<string, List<string>> PrettifyOnlyTypes { get; } = new();
+
+        /// <summary>
+        /// A mapping from type names to the type's affix data, which contains mappings from member names to each member's affix data.
+        /// This is used at the start of trimming to remove declared affixes and at the end to restore declared affixes.
+        /// Declared affixes are defined by the [NamePrefix] and [NameSuffix] attributes and don't contribute towards the usual trimming processes.
+        /// </summary>
+        public Dictionary<string, TypeAffixData> AffixTypes { get; } = new();
+
+        /// <summary>
+        /// A set of type names marked with the [Transformed] attribute.
+        /// </summary>
+        /// <remarks>
+        /// These are not used for prefix determination since they can contain identifiers that
+        /// are not part of the original source code.
+        /// </remarks>
+        public HashSet<string> NonDeterminant { get; } = new();
+
+        /// <summary>
+        /// Tracks the type that we currently are visiting.
+        /// </summary>
+        private TypeInProgress? _typeInProgress;
+
+        /// <summary>
+        /// Tracks the enum that we currently are visiting.
+        /// </summary>
+        private EnumInProgress? _enumInProgress;
+
+        /// <summary>
+        /// While this is called a "type" in progress, this represents either a class or a struct.
+        /// </summary>
+        /// <param name="Type">The class or struct's declaration syntax node.</param>
+        /// <param name="NonFunctions">The names of the non-function members directly contained by the type.</param>
+        /// <param name="Functions">The names of the function members directly contained by the type.</param>
+        private record struct TypeInProgress(TypeDeclarationSyntax Type, List<string> NonFunctions, List<FunctionData> Functions);
+
+        /// <summary>
+        /// Represents an enum.
+        /// </summary>
+        /// <param name="Enum">The enum's declaration syntax node.</param>
+        /// <param name="EnumMembers">The names of the members directly contained by the enum.</param>
+        private record struct EnumInProgress(EnumDeclarationSyntax Enum, List<string> EnumMembers);
+
+        /// <summary>
+        /// Returns whether we are currently inside of a type.
+        /// </summary>
+        /// <remarks>
+        /// Note that we currently do not handle nested types.
+        /// If we encounter a type while we are already in a type, we ignore that type.
+        /// If we encounter a non-type (i.e., a type member), we add the member to the type we are already in.
+        /// </remarks>
+        private bool IsCurrentlyInType(SyntaxNode node) =>
+            _typeInProgress is not null
+            || _enumInProgress is not null
+            || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
+
+        private bool TryGetAffixData(SyntaxList<AttributeListSyntax> attributeLists, out NameAffix[] affixes)
+        {
+            affixes = [];
+            var declarationOrder = 0;
+            foreach (var list in attributeLists)
+            {
+                foreach (var attribute in list.Attributes)
+                {
+                    if (!attribute.IsAttribute("Silk.NET.Core.NameAffix"))
+                    {
+                        continue;
+                    }
+
+                    if (attribute.ArgumentList != null)
+                    {
+                        var type = (attribute.ArgumentList.Arguments[0].Expression as LiteralExpressionSyntax)?.Token.Value as string;
+                        var affix = (attribute.ArgumentList.Arguments[1].Expression as LiteralExpressionSyntax)?.Token.Value as string;
+                        var order = (attribute.ArgumentList.Arguments[2].Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
+                        var discriminatorPriority = (attribute.ArgumentList.Arguments[3].Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
+
+                        if (affix != null)
+                        {
+                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, order, discriminatorPriority, declarationOrder)];
+                            declarationOrder++;
+                        }
+                    }
+                }
+            }
+
+            return affixes.Length != 0;
+        }
+
+        private void ReportTypeAffixData(string typeIdentifier, SyntaxList<AttributeListSyntax> attributeLists)
+        {
+            if (!TryGetAffixData(attributeLists, out var affixes))
+            {
+                return;
+            }
+
+            if (!AffixTypes.TryGetValue(typeIdentifier, out var typeAffixData))
+            {
+                typeAffixData = new TypeAffixData([], null);
+            }
+
+            AffixTypes[typeIdentifier] = typeAffixData with
+            {
+                TypeAffixes = [..typeAffixData.TypeAffixes, ..affixes],
+            };
+        }
+
+        private void ReportMemberAffixData(string typeIdentifier, string memberIdentifier, SyntaxList<AttributeListSyntax> attributeLists)
+        {
+            if (!TryGetAffixData(attributeLists, out var affixData))
+            {
+                return;
+            }
+
+            if (!AffixTypes.TryGetValue(typeIdentifier, out var typeAffixData))
+            {
+                typeAffixData = new TypeAffixData([], null);
+            }
+
+            // Note that TryAdd will lead to affixes for later members being silently dropped.
+            // This is to handle methods which have the same name and affixes. It is fine to drop the affixes in this case.
+            (typeAffixData.MemberAffixes ??= []).TryAdd(memberIdentifier, affixData);
+            AffixTypes[typeIdentifier] = typeAffixData;
+        }
+
+        // ----- Types -----
+
+        public override void VisitClassDeclaration(ClassDeclarationSyntax node)
+        {
+            if (IsCurrentlyInType(node))
+            {
+                return;
+            }
+
+            var identifier = node.Identifier.ToString();
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
+            {
+                NonDeterminant.Add(identifier);
+            }
+
+            ReportTypeAffixData(identifier, node.AttributeLists);
+
+            // Recurse into members.
+            _typeInProgress = new TypeInProgress(node, [], []);
+            base.VisitClassDeclaration(node);
+
+            // Merge with existing data in case of partials
+            if (!TrimmableTypes.TryGetValue(identifier, out var typeData))
+            {
+                typeData = new TypeData([], []);
+                TrimmableTypes.Add(identifier, typeData);
+            }
+
+            typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions.Contains(nonFunction)));
+            typeData.Functions.AddRange(_typeInProgress.Value.Functions);
+
+            _typeInProgress = null;
+        }
+
+        public override void VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            if (IsCurrentlyInType(node))
+            {
+                return;
+            }
+
+            var identifier = node.Identifier.ToString();
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
+            {
+                NonDeterminant.Add(identifier);
+            }
+
+            ReportTypeAffixData(identifier, node.AttributeLists);
+
+            // Recurse into members
+            _typeInProgress = new TypeInProgress(node, [], []);
+            base.VisitStructDeclaration(node);
+
+            // Merge with existing data in case of partials
+            if (!TrimmableTypes.TryGetValue(identifier, out var typeData))
+            {
+                typeData = new TypeData([], []);
+                TrimmableTypes.Add(identifier, typeData);
+            }
+
+            typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions.Contains(nonFunction)));
+            typeData.Functions.AddRange(_typeInProgress.Value.Functions);
+
+            _typeInProgress = null;
+        }
+
+        public override void VisitEnumDeclaration(EnumDeclarationSyntax node)
+        {
+            if (IsCurrentlyInType(node))
+            {
+                return;
+            }
+
+            var identifier = node.Identifier.ToString();
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
+            {
+                NonDeterminant.Add(identifier);
+            }
+
+            ReportTypeAffixData(identifier, node.AttributeLists);
+
+            // Recurse into members
+            _enumInProgress = new EnumInProgress(node, []);
+            base.VisitEnumDeclaration(node);
+
+            // Merge with existing data in case of partials
+            if (!TrimmableTypes.TryGetValue(identifier, out var typeData))
+            {
+                typeData = new TypeData([], []);
+                TrimmableTypes.Add(identifier, typeData);
+            }
+
+            typeData.NonFunctions.AddRange(_enumInProgress.Value.EnumMembers);
+            _enumInProgress = null;
+        }
+
+        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node)
+        {
+            var identifier = node.Identifier.ToString();
+            if (IsCurrentlyInType(node))
+            {
+                if (node.Parent == _typeInProgress?.Type)
+                {
+                    _typeInProgress!.Value.NonFunctions.Add(identifier);
+                }
+
+                return;
+            }
+
+            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
+            {
+                NonDeterminant.Add(identifier);
+            }
+
+            ReportTypeAffixData(identifier, node.AttributeLists);
+            TrimmableTypes.Add(identifier, new TypeData([], []));
+        }
+
+        // ----- Members -----
+
+        public override void VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
+        {
+            if (node.Parent == _enumInProgress?.Enum)
+            {
+                var typeIdentifier = _enumInProgress!.Value.Enum.Identifier.ToString();
+                var memberIdentifier = node.Identifier.ToString();
+                ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+
+                _enumInProgress!.Value.EnumMembers.Add(memberIdentifier);
+            }
+        }
+
+        public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
+        {
+            // If it's not a constant then we only prettify
+            // C constants are globally scoped and typically prefixed, so we trim in addition to prettifying
+            var prettifyOnly = !node.Modifiers.Any(SyntaxKind.ConstKeyword) && !node.Modifiers.Any(SyntaxKind.StaticKeyword);
+
+            if (node.Parent == _typeInProgress?.Type)
+            {
+                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
+                foreach (var variable in node.Declaration.Variables)
+                {
+                    var memberIdentifier = variable.Identifier.ToString();
+                    ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+
+                    if (prettifyOnly)
+                    {
+                        if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
+                        {
+                            typeData = [];
+                            PrettifyOnlyTypes.Add(typeIdentifier, typeData);
+                        }
+
+                        typeData.Add(memberIdentifier);
+                    }
+                    else
+                    {
+                        _typeInProgress.Value.NonFunctions.Add(memberIdentifier);
+                    }
+                }
+            }
+        }
+
+        public override void VisitMethodDeclaration(MethodDeclarationSyntax node)
+        {
+            if (node.Parent == _typeInProgress?.Type)
+            {
+                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
+                var memberIdentifier = node.Identifier.ToString();
+
+                if (_typeInProgress!.Value.Type.IsKind(SyntaxKind.StructDeclaration))
+                {
+                    // Prettify only
+                    // Struct methods are introduced by the generator so they are not prefixed
+                    if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
+                    {
+                        typeData = [];
+                        PrettifyOnlyTypes.Add(typeIdentifier, typeData);
+                    }
+
+                    typeData.Add(memberIdentifier);
+                }
+                else
+                {
+                    // Trim + Prettify
+                    ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+
+                    _typeInProgress!.Value.Functions.Add(new FunctionData(memberIdentifier, node));
+                }
+            }
+        }
+
+        public override void VisitPropertyDeclaration(PropertyDeclarationSyntax node)
+        {
+            if (node.Parent == _typeInProgress?.Type)
+            {
+                var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
+                var memberIdentifier = node.Identifier.ToString();
+                ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+
+                // If it's not a constant then we only prettify.
+                var hasSetter = node.AccessorList?.Accessors.Any(a => a.IsKind(SyntaxKind.SetAccessorDeclaration) || a.IsKind(SyntaxKind.InitAccessorDeclaration)) ?? false;
+                if (hasSetter)
+                {
+                    if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
+                    {
+                        typeData = [];
+                        PrettifyOnlyTypes.Add(typeIdentifier, typeData);
+                    }
+
+                    typeData.Add(memberIdentifier);
+                }
+                else
+                {
+                    _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
+                }
+            }
+        }
+    }
+
+    private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
+            ((MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!)
+                .WithRenameSafeAttributeLists();
+    }
+
+    private class NameAffixerEarlyTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
+    {
+        /// <inheritdoc/>
+        public Version Version => new(0, 0, 0);
+
+        /// <inheritdoc/>
+        public int Order => (int)TrimmerOrder.NameAffixerEarlyTrimmer;
+
+        public void Trim(NameTrimmerContext context)
+        {
+            if (context.Container == null)
+            {
+                foreach (var (original, (primary, secondary)) in context.Names)
+                {
+                    var secondaries = secondary;
+                    var newPrimary = RemoveAffixes(primary, null, original, affixTypes, secondaries);
+                    context.Names[original] = new CandidateNames(newPrimary, secondaries);
+                }
+
+                return;
+            }
+
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                var secondaries = secondary;
+                var newPrimary = RemoveAffixes(primary, context.Container, original, affixTypes, secondaries);
+                context.Names[original] = new CandidateNames(newPrimary, secondaries);
+            }
+        }
+    }
+
+    private class NameAffixerLateTrimmer(Dictionary<string, TypeAffixData> affixTypes) : INameTrimmer
+    {
+        /// <inheritdoc/>
+        public Version Version => new(0, 0, 0);
+
+        /// <inheritdoc/>
+        public int Order => (int)TrimmerOrder.NameAffixerLateTrimmer;
+
+        public void Trim(NameTrimmerContext context)
+        {
+            if (context.Container == null)
+            {
+                foreach (var (original, (primary, secondary)) in context.Names)
+                {
+                    var secondaries = secondary;
+                    var newPrimary = ApplyAffixes(primary, null, original, affixTypes, secondaries);
+                    context.Names[original] = new CandidateNames(newPrimary, secondaries);
+                }
+
+                return;
+            }
+
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                var secondaries = secondary;
+                var newPrimary = ApplyAffixes(primary, context.Container, original, affixTypes, secondaries);
+                context.Names[original] = new CandidateNames(newPrimary, secondaries);
+            }
+        }
+    }
+
+    private class PrettifyNamesTrimmer(ICulturedStringTransformer nameTransformer) : INameTrimmer
+    {
+        /// <inheritdoc/>
+        public Version Version => new(0, 0, 0);
+
+        /// <inheritdoc/>
+        public int Order => (int)TrimmerOrder.PrettifyNamesTrimmer;
+
+        public void Trim(NameTrimmerContext context)
+        {
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                // Be lenient about caps for type names (e.g. GL)
+                var allowAllCaps = context.Container == null;
+
+                for (var i = 0; i < secondary.Count; i++)
+                {
+                    secondary[i] = secondary[i].Prettify(nameTransformer, allowAllCaps);
+                }
+
+                context.Names[original] = new CandidateNames(primary.Prettify(nameTransformer, allowAllCaps), secondary);
+            }
+        }
     }
 }

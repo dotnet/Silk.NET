@@ -44,7 +44,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
     }
 
     /// <summary>
-    /// TransformEnums mod configuration.
+    /// <see cref="TransformEnums"/> mod configuration.
     /// </summary>
     public record Configuration
     {
@@ -177,8 +177,8 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
             return;
         }
 
-        var referenceDetector = new MemberReferenceDetector();
-        var rewriter = new Rewriter(config, removeMemberFilters, compilation, referenceDetector);
+        var memberRewriteDecider = new MemberRewriteDecider();
+        var rewriter = new Rewriter(config, removeMemberFilters, compilation, memberRewriteDecider);
         foreach (var docId in proj.DocumentIds)
         {
             var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
@@ -191,7 +191,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         ctx.SourceProject = proj;
     }
 
-    private class Rewriter(Configuration config, List<EnumMemberFilter> removeMemberFilters, Compilation compilation, MemberReferenceDetector referenceDetector) : CSharpSyntaxRewriter
+    private class Rewriter(Configuration config, List<EnumMemberFilter> removeMemberFilters, Compilation compilation, MemberRewriteDecider memberRewriteDecider) : CSharpSyntaxRewriter
     {
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
@@ -219,9 +219,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                     .ToList();
             }
 
-            var isFlagsEnum = node.AttributeLists.SelectMany(list => list.Attributes)
-                .Any(attribute => attribute.IsAttribute("System.Flags"));
-
+            var isFlagsEnum = node.AttributeLists.ContainsAttribute("System.Flags");
             if (isFlagsEnum && config.AddNoneMemberToFlags)
             {
                 // Add None member if it doesn't exist yet
@@ -254,36 +252,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                 }
             }
 
-            if (config.RewriteMemberValues)
-            {
-                members = members
-                    .Select(m =>
-                    {
-                        if (m.Parent == null)
-                        {
-                            return m;
-                        }
-
-                        // Enum member contains a reference
-                        // We want to preserve these
-                        referenceDetector.Visit(m.EqualsValue);
-                        if (referenceDetector.ContainsReference)
-                        {
-                            return m;
-                        }
-
-                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
-                        if (fieldSymbol == null)
-                        {
-                            return m;
-                        }
-
-                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
-                        return m.WithEqualsValue(CreateEqualsValueClause(value, isFlagsEnum));
-                    })
-                    .ToList();
-            }
-
+            // This code uses the semantic model for members so it has to run before the members are rewritten below
             switch (config.CoerceBackingTypes)
             {
                 case EnumBackingTypePreference.PreferSigned:
@@ -324,6 +293,28 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
 
                 case EnumBackingTypePreference.PreferUnsigned:
                 {
+                    var hasNegativeValues = members.Any(m => {
+                        if (m.Parent == null)
+                        {
+                            return false;
+                        }
+
+                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
+                        if (fieldSymbol == null)
+                        {
+                            return false;
+                        }
+
+                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
+                        return value < 0;
+                    });
+
+                    if (hasNegativeValues)
+                    {
+                        // Enum has negative values, we can't use an unsigned backing type
+                        break;
+                    }
+
                     var baseList = originalNode.BaseList;
                     var baseTypes = (baseList?.Types ?? [])
                         .Select<BaseTypeSyntax, BaseTypeSyntax?>(t =>
@@ -359,6 +350,42 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                 }
             }
 
+            if (config.RewriteMemberValues)
+            {
+                members = members
+                    .Select(m =>
+                    {
+                        if (m.Parent == null)
+                        {
+                            return m;
+                        }
+
+                        if (m.EqualsValue != null)
+                        {
+                            memberRewriteDecider.Visit(m.EqualsValue);
+                            if (!memberRewriteDecider.ShouldRewrite)
+                            {
+                                return m;
+                            }
+                        }
+
+                        var fieldSymbol = semanticModel.GetDeclaredSymbol(m);
+                        if (fieldSymbol == null)
+                        {
+                            return m;
+                        }
+
+                        if (fieldSymbol.ConstantValue == null)
+                        {
+                            return m;
+                        }
+
+                        var value = Convert.ToInt64(fieldSymbol.ConstantValue);
+                        return m.WithEqualsValue(CreateEqualsValueClause(value, isFlagsEnum));
+                    })
+                    .ToList();
+            }
+
             node = node.WithMembers([..members]);
 
             return base.VisitEnumDeclaration(node);
@@ -373,20 +400,38 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         }
     }
 
-    private class MemberReferenceDetector : CSharpSyntaxWalker
+    private class MemberRewriteDecider : CSharpSyntaxWalker
     {
-        public bool ContainsReference { get; private set; }
+        /// <summary>
+        /// Whether the enum member's value should be rewritten to be simpler.
+        /// We default to rewriting the member value, but do not if the enum member contains important information.
+        /// <para/>
+        /// Currently, there is only 1 case.
+        /// <para/>
+        /// Case 1: References to enum members or constants. Eg: <c>NoneKHR = None</c> in Vulkan.
+        /// We approximate this by checking for identifiers in the <see cref="EqualsValueClauseSyntax"/>.
+        /// </summary>
+        public bool ShouldRewrite { get; private set; }
 
         public override void VisitEqualsValueClause(EqualsValueClauseSyntax node)
         {
-            ContainsReference = false;
+            ShouldRewrite = true;
             base.VisitEqualsValueClause(node);
         }
 
         public override void VisitIdentifierName(IdentifierNameSyntax node)
         {
             base.VisitIdentifierName(node);
-            ContainsReference = true;
+            ShouldRewrite = false;
+        }
+
+        public override void VisitCastExpression(CastExpressionSyntax node)
+        {
+            // Ignore cast expressions
+            // These contain identifiers, but these identifiers are references to types.
+            //
+            // Eg: DepthBufferBit = unchecked((uint)0x00000100)
+            // uint is an identifier, but we want to rewrite this anyway
         }
     }
 }

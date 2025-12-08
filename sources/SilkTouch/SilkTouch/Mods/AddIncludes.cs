@@ -63,27 +63,18 @@ public class AddIncludes(
         {
             var rsp = rsps[i];
             var cmdLineArgs = rsp.ClangCommandLineArgs.ToList();
-            cmdLineArgs.InsertRange(
-                0,
-                cfg.PriorityIncludes?.Select(x => $"--include-directory={x}")
-                    ?? Enumerable.Empty<string>()
-            );
-            cmdLineArgs.AddRange(
-                cfg.AdditionalIncludes?.Select(x => $"--include-directory={x}")
-                    ?? Enumerable.Empty<string>()
-            );
+
+            cmdLineArgs.InsertRange(0, cfg.PriorityIncludes?.Select(x => $"--include-directory={x}") ?? []);
+            cmdLineArgs.AddRange(cfg.AdditionalIncludes?.Select(x => $"--include-directory={x}") ?? []);
+
             if (!cfg.SuppressStdIncludes)
             {
                 cmdLineArgs.AddRange(stdResolver.GetStandardIncludes());
             }
 
             var matcher = new Matcher();
-            matcher.AddIncludePatterns(
-                cfg.RemoveMatchingIncludes?.Where(x => x[0] != '!') ?? Enumerable.Empty<string>()
-            );
-            matcher.AddExcludePatterns(
-                cfg.RemoveMatchingIncludes?.Where(x => x[0] == '!') ?? Enumerable.Empty<string>()
-            );
+            matcher.AddIncludePatterns(cfg.RemoveMatchingIncludes?.Where(x => x[0] != '!') ?? []);
+            matcher.AddExcludePatterns(cfg.RemoveMatchingIncludes?.Where(x => x[0] == '!') ?? []);
             for (var j = 0; j < cmdLineArgs.Count; j++)
             {
                 string? path = null;

@@ -309,18 +309,14 @@ public class MixKhronosDataTests
             {
                 ["OpenGL"] = new MixKhronosData.JobData
                 {
-                    Configuration = new MixKhronosData.Configuration
-                    {
-                        UseExtensionVendorTrimmings = MixKhronosData
-                            .ExtensionVendorTrimmingMode
-                            .None,
-                    },
+                    Configuration = new MixKhronosData.Configuration(),
                     Vendors = ["NV"],
                     Groups =
                     {
                         {
                             "OcclusionQueryParameterNameNV",
                             new MixKhronosData.EnumGroup(
+                                "OcclusionQueryParameterNameNV",
                                 "OcclusionQueryParameterNameNV",
                                 "uint",
                                 [],
@@ -333,10 +329,10 @@ public class MixKhronosDataTests
                 },
             },
         };
-        var names = new Dictionary<string, (string, List<string>?)>
+        var names = new Dictionary<string, CandidateNames>
         {
-            { "GL_PIXEL_COUNT_NV", ("GL_PIXEL_COUNT_NV", []) },
-            { "GL_PIXEL_COUNT_AVAILABLE_NV", ("GL_PIXEL_COUNT_AVAILABLE_NV", []) },
+            { "GL_PIXEL_COUNT_NV", new CandidateNames("GL_PIXEL_COUNT_NV", []) },
+            { "GL_PIXEL_COUNT_AVAILABLE_NV", new CandidateNames("GL_PIXEL_COUNT_AVAILABLE_NV", []) },
         };
         var ctx = new NameTrimmerContext
         {
@@ -347,8 +343,8 @@ public class MixKhronosDataTests
         };
         baseTrimmer.Trim(ctx);
         uut.Trim(ctx);
-        Assert.That(names["GL_PIXEL_COUNT_NV"].Item1, Is.EqualTo("PixelCount"));
-        Assert.That(names["GL_PIXEL_COUNT_AVAILABLE_NV"].Item1, Is.EqualTo("PixelCountAvailable"));
+        Assert.That(names["GL_PIXEL_COUNT_NV"].Primary, Is.EqualTo("PixelCount"));
+        Assert.That(names["GL_PIXEL_COUNT_AVAILABLE_NV"].Primary, Is.EqualTo("PixelCountAvailable"));
     }
 
     [Test]
@@ -361,18 +357,14 @@ public class MixKhronosDataTests
             {
                 ["OpenAL"] = new MixKhronosData.JobData
                 {
-                    Configuration = new MixKhronosData.Configuration
-                    {
-                        UseExtensionVendorTrimmings = MixKhronosData
-                            .ExtensionVendorTrimmingMode
-                            .None,
-                    },
+                    Configuration = new MixKhronosData.Configuration(),
                     Vendors = ["SOFT"],
                     Groups =
                     {
                         {
                             "VocalMorpherPhoneme",
                             new MixKhronosData.EnumGroup(
+                                "VocalMorpherPhoneme",
                                 "VocalMorpherPhoneme",
                                 "uint",
                                 [],
@@ -385,11 +377,11 @@ public class MixKhronosDataTests
                 },
             },
         };
-        var names = new Dictionary<string, (string, List<string>?)>
+        var names = new Dictionary<string, CandidateNames>
         {
-            { "AL_VOCAL_MORPHER_PHONEME_A", ("AL_VOCAL_MORPHER_PHONEME_A", null) },
-            { "AL_VOCAL_MORPHER_PHONEME_E", ("AL_VOCAL_MORPHER_PHONEME_E", null) },
-            { "AL_VOCAL_MORPHER_PHONEME_I", ("AL_VOCAL_MORPHER_PHONEME_I", null) },
+            { "AL_VOCAL_MORPHER_PHONEME_A", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_A", []) },
+            { "AL_VOCAL_MORPHER_PHONEME_E", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_E", []) },
+            { "AL_VOCAL_MORPHER_PHONEME_I", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_I", []) },
         };
         var ctx = new NameTrimmerContext
         {
@@ -400,8 +392,8 @@ public class MixKhronosDataTests
         };
         baseTrimmer.Trim(ctx);
         uut.Trim(ctx);
-        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_A"].Item1, Is.EqualTo("A"));
-        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_E"].Item1, Is.EqualTo("E"));
-        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_I"].Item1, Is.EqualTo("I"));
+        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_A"].Primary, Is.EqualTo("A"));
+        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_E"].Primary, Is.EqualTo("E"));
+        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_I"].Primary, Is.EqualTo("I"));
     }
 }

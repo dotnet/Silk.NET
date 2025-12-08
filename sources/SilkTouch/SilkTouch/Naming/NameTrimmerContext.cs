@@ -26,10 +26,7 @@ public readonly struct NameTrimmerContext
     /// names or other names that are otherwise less preferred to the primary name are listed in the optional secondary
     /// list (in order of preference).
     /// </summary>
-    public required Dictionary<
-        string,
-        (string Primary, List<string>? Secondary)
-    >? Names { get; init; }
+    public required Dictionary<string, CandidateNames> Names { get; init; }
 
     /// <summary>
     /// Gets the current configuration for the <see cref="PrettifyNames"/> mod.
@@ -37,8 +34,8 @@ public readonly struct NameTrimmerContext
     public PrettifyNames.Configuration Configuration { get; init; }
 
     /// <summary>
-    /// Gets a set of original API names (i.e. key sto <see cref="Names"/>) that have been marked with
-    /// the <c>Transformed</c> attribute.
+    /// Gets a set of original API names (i.e. the key stored in <see cref="Names"/>) that have been marked with
+    /// the <c>[Transformed]</c> attribute.
     /// </summary>
     public HashSet<string> NonDeterminant { get; init; }
 }

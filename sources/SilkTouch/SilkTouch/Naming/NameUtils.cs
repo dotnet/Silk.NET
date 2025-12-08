@@ -41,31 +41,33 @@ public static partial class NameUtils
     /// Prettifies the given string.
     /// </summary>
     /// <param name="str">The string to prettify.</param>
-    /// <param name="transformer">
+    /// <param name="nameTransformer">
     /// The transformer that mutates a humanised string before being converted back to pascal case.
     /// </param>
     /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
     /// <returns>The pretty string.</returns>
-    public static string Prettify(
-        this string str,
-        ICulturedStringTransformer transformer,
-        bool allowAllCaps = false
-    )
+    public static string Prettify(this string str, ICulturedStringTransformer nameTransformer, bool allowAllCaps = false)
     {
+        if (str.Length == 0)
+        {
+            throw new InvalidOperationException("Cannot prettify an empty string");
+        }
+
         var ret = string.Join(
             null,
             str.LenientUnderscore()
                 .Humanize()
-                .Transform(transformer)
+                .Transform(nameTransformer)
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
 
         if (ret.Length == 0)
         {
-            throw new InvalidOperationException($"Failed to prettify string: {str}");
+            throw new InvalidOperationException($"Prettification for '{str}' led to an empty string");
         }
 
+        // Disallow all capitals
         var retSpan = ret.AsSpan();
         if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
         {
@@ -73,6 +75,7 @@ public static partial class NameUtils
             retSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
             ret = $"{ret[0]}{caps}";
         }
+
         return !char.IsLetter(ret[0]) ? $"X{ret}" : ret;
     }
 
@@ -126,7 +129,7 @@ public static partial class NameUtils
     /// Finds a common prefix in a set of names with respect to the word boundaries
     /// </summary>
     /// <param name="names">Set of names, snake_case</param>
-    /// <param name="allowFullMatch">Allows result to be a a full match with one of the names</param>
+    /// <param name="allowFullMatch">Allows result to be a full match with one of the names</param>
     /// <param name="maxLen">Match length limit</param>
     /// <param name="naive">
     /// Just match the start of the strings, don't bother checking for obvious name separation gaps.
@@ -256,6 +259,7 @@ public static partial class NameUtils
                 {
                     continue;
                 }
+
                 if (
                     word.Length > longAcronymThreshold
                     || !AllCapitals(word)

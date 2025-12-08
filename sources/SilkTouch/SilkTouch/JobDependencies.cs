@@ -28,6 +28,6 @@ internal class JobDependencies(Dictionary<string, Type> loadedMods, IServiceProv
                             : null
                     )
                     .OfType<T>()
-                : Enumerable.Empty<T>();
+                : [];
     }
 }

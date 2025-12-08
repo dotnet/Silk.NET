@@ -95,10 +95,7 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
                             .WithLeadingTrivia(
                                 usingsToAdd
                                     .Select(y => y.Value.GetLeadingTrivia())
-                                    .Concat(
-                                        comp?.Members.Select(y => y.GetLeadingTrivia())
-                                            ?? Enumerable.Empty<SyntaxTriviaList>()
-                                    )
+                                    .Concat(comp?.Members.Select(y => y.GetLeadingTrivia()) ?? [])
                                     .OrderByDescending(y =>
                                         y.Count(z =>
                                             z.Kind()
