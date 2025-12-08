@@ -1957,6 +1957,7 @@ public partial class MixKhronosData(
             // See config option for more info and examples on what this does
             if (config.TrimEnumTypeNonExclusiveVendors && typeVendor != null)
             {
+                // Trim if the type vendor suffix does not match the identified exclusive vendor suffix
                 var shouldTrimType = typeVendor != exclusiveVendor;
 
                 // Check if there are other versions of the enum (this includes the core variant and other vendor variants)

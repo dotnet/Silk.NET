@@ -50,6 +50,10 @@ public sealed class NameAffixAttribute : Attribute
     /// Affixes with the same order have ties broken using the order they are declared on the identifier.
     /// First declared are applied first.
     /// </summary>
+    /// <remarks>
+    /// SilkTouch mods setting this property should use either -1, 0, or a value specified through the mod's configuration.
+    /// This is to reduce the hardcoding of values and to make the mods more applicable to different sets of bindings.
+    /// </remarks>
     public int Order { get; }
 
     /// <summary>
@@ -62,5 +66,9 @@ public sealed class NameAffixAttribute : Attribute
     /// <para/>
     /// Affixes with the same priority are applied together as a group.
     /// </summary>
+    /// <remarks>
+    /// SilkTouch mods setting this property should use either -1, 0, or a value specified through the mod's configuration.
+    /// This is to reduce the hardcoding of values and to make the mods more applicable to different sets of bindings.
+    /// </remarks>
     public int DiscriminatorPriority { get; }
 }
