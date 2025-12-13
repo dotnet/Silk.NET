@@ -1056,7 +1056,7 @@
         {
             "profileName": "Core",
             "sources": [
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3dcommon.h",
+                "build/include/silk.net.core.d3dcommon.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/winrt/inspectable.h"
             ],
             "mode": "Clang",
@@ -1080,12 +1080,16 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
+                    "-I$nuget/Microsoft.Direct3D.D3D12/*/build/native/include",
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
-                "traverse": [],
+                "traverse": [
+                    "$nuget/Microsoft.Direct3D.D3D12/*/build/native/include/$windowsSdkVersion/um/d3dcommon.h",
+                    "$nuget/Microsoft.Direct3D.D3D12/*/build/native/include/$windowsSdkVersion/um/d3dshadercacheregistration.h"
+                ],
                 "classes": {
-                    "d3dcommon.h": "[Core]D3DCommon",
+                    "silk.net.core.d3dcommon.h": "[Core]D3DCommon",
                     "inspectable.h": "[Core]WinRT"
                 }
             },
@@ -1107,8 +1111,7 @@
             },
             "bakery": {
                 "profileNames": [
-                    "d3dcommon",
-                    "silk.net.core.native.dcommon",
+                    "silk.net.core.d3dcommon",
                     "inspectable"
                 ]
             },
@@ -1487,7 +1490,7 @@
                 "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_5.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_6.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/dxgidebug.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgiformat.h",
+                "$nuget/Microsoft.Direct3D.D3D12/*/build/native/include/dxgiformat.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/winrt/windows.graphics.directx.h"
             ],
             "mode": "Clang",
@@ -2156,10 +2159,7 @@
         {
             "profileName": "D3D12",
             "sources": [
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d12.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d12shader.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d12video.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d12sdklayers.h"
+                "build/include/silk.net.direct3d12.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -2180,15 +2180,17 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
+                    "-I$nuget/Microsoft.Direct3D.D3D12/*/build/native/include",
+                    "-I$windowsSdkIncludes",
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
-                "traverse": [],
+                "traverse": [
+                    "$nuget/Microsoft.Direct3D.D3D12/*/build/native/include/d3d12*.h",
+                    "!$nuget/Microsoft.Direct3D.D3D12/*/build/native/include/d3d12compatibility.h"
+                ],
                 "classes": {
-                    "d3d12.h": "[Core]D3D12",
-                    "d3d12shader.h": "[Core]D3D12",
-                    "d3d12video.h": "[Core]D3D12",
-                    "d3d12sdklayers.h": "[Core]D3D12"
+                    "silk.net.direct3d12.h": "[Core]D3D12"
                 },
                 "comRefs": [
                     "Silk.NET.DXGI.IDXGIAdapter",
@@ -2206,10 +2208,7 @@
             },
             "bakery": {
                 "profileNames": [
-                    "d3d12",
-                    "d3d12shader",
-                    "d3d12video",
-                    "d3d12sdklayers"
+                    "silk.net.core.direct3d12"
                 ]
             },
             "output": {
