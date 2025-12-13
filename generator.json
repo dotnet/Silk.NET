@@ -78,42 +78,114 @@
                 ]
             },
             "glIntAsPtr": {
-                "EdgeFlagPointer": ["pointer"],
-                "EdgeFlagPointerEXT": ["pointer"],
-                "EdgeFlagPointerListIBM": ["pointer"],
-                "VertexPointer": ["pointer"],
-                "VertexPointerEXT": ["pointer"],
-                "VertexPointerListIBM": ["pointer"],
-                "VertexPointervINTEL": ["pointer"],
-                "ColorPointer": ["pointer"],
-                "ColorPointerEXT": ["pointer"],
-                "ColorPointerListIBM": ["pointer"],
-                "ColorPointervINTEL": ["pointer"],
-                "IndexPointer": ["pointer"],
-                "IndexPointerEXT": ["pointer"],
-                "IndexPointerListIBM": ["pointer"],
-                "NormalPointer": ["pointer"],
-                "NormalPointerEXT": ["pointer"],
-                "NormalPointerListIBM": ["pointer"],
-                "NormalPointervINTEL": ["pointer"],
-                "TexCoordPointer": ["pointer"],
-                "TexCoordPointerEXT": ["pointer"],
-                "TexCoordPointerListIBM": ["pointer"],
-                "TexCoordPointervINTEL": ["pointer"],
-                "MultiTexCoordPointerEXT": ["pointer"],
-                "FogCoordPointer": ["pointer"],
-                "FogCoordPointerEXT": ["pointer"],
-                "FogCoordPointerListIBM": ["pointer"],
-                "SecondaryColorPointer": ["pointer"],
-                "SecondaryColorPointerEXT": ["pointer"],
-                "SecondaryColorPointerListIBM": ["pointer"],
-                "VertexAttribPointer": ["pointer"],
-                "VertexAttribPointerARB": ["pointer"],
-                "VertexAttribPointerNV": ["pointer"],
-                "VertexAttribIPointer": ["pointer"],
-                "VertexAttribIPointerEXT": ["pointer"],
-                "TangentPointerEXT": ["pointer"],
-                "BinormalPointerEXT": ["pointer"]
+                "EdgeFlagPointer": [
+                    "pointer"
+                ],
+                "EdgeFlagPointerEXT": [
+                    "pointer"
+                ],
+                "EdgeFlagPointerListIBM": [
+                    "pointer"
+                ],
+                "VertexPointer": [
+                    "pointer"
+                ],
+                "VertexPointerEXT": [
+                    "pointer"
+                ],
+                "VertexPointerListIBM": [
+                    "pointer"
+                ],
+                "VertexPointervINTEL": [
+                    "pointer"
+                ],
+                "ColorPointer": [
+                    "pointer"
+                ],
+                "ColorPointerEXT": [
+                    "pointer"
+                ],
+                "ColorPointerListIBM": [
+                    "pointer"
+                ],
+                "ColorPointervINTEL": [
+                    "pointer"
+                ],
+                "IndexPointer": [
+                    "pointer"
+                ],
+                "IndexPointerEXT": [
+                    "pointer"
+                ],
+                "IndexPointerListIBM": [
+                    "pointer"
+                ],
+                "NormalPointer": [
+                    "pointer"
+                ],
+                "NormalPointerEXT": [
+                    "pointer"
+                ],
+                "NormalPointerListIBM": [
+                    "pointer"
+                ],
+                "NormalPointervINTEL": [
+                    "pointer"
+                ],
+                "TexCoordPointer": [
+                    "pointer"
+                ],
+                "TexCoordPointerEXT": [
+                    "pointer"
+                ],
+                "TexCoordPointerListIBM": [
+                    "pointer"
+                ],
+                "TexCoordPointervINTEL": [
+                    "pointer"
+                ],
+                "MultiTexCoordPointerEXT": [
+                    "pointer"
+                ],
+                "FogCoordPointer": [
+                    "pointer"
+                ],
+                "FogCoordPointerEXT": [
+                    "pointer"
+                ],
+                "FogCoordPointerListIBM": [
+                    "pointer"
+                ],
+                "SecondaryColorPointer": [
+                    "pointer"
+                ],
+                "SecondaryColorPointerEXT": [
+                    "pointer"
+                ],
+                "SecondaryColorPointerListIBM": [
+                    "pointer"
+                ],
+                "VertexAttribPointer": [
+                    "pointer"
+                ],
+                "VertexAttribPointerARB": [
+                    "pointer"
+                ],
+                "VertexAttribPointerNV": [
+                    "pointer"
+                ],
+                "VertexAttribIPointer": [
+                    "pointer"
+                ],
+                "VertexAttribIPointerEXT": [
+                    "pointer"
+                ],
+                "TangentPointerEXT": [
+                    "pointer"
+                ],
+                "BinormalPointerEXT": [
+                    "pointer"
+                ]
             },
             "extensionsNamespace": "Silk.NET.OpenGL.Extensions",
             "typeMaps": [
@@ -163,42 +235,114 @@
             ],
             "namespace": "Silk.NET.OpenGL.Legacy",
             "glIntAsPtr": {
-                "EdgeFlagPointer": ["pointer"],
-                "EdgeFlagPointerEXT": ["pointer"],
-                "EdgeFlagPointerListIBM": ["pointer"],
-                "VertexPointer": ["pointer"],
-                "VertexPointerEXT": ["pointer"],
-                "VertexPointerListIBM": ["pointer"],
-                "VertexPointervINTEL": ["pointer"],
-                "ColorPointer": ["pointer"],
-                "ColorPointerEXT": ["pointer"],
-                "ColorPointerListIBM": ["pointer"],
-                "ColorPointervINTEL": ["pointer"],
-                "IndexPointer": ["pointer"],
-                "IndexPointerEXT": ["pointer"],
-                "IndexPointerListIBM": ["pointer"],
-                "NormalPointer": ["pointer"],
-                "NormalPointerEXT": ["pointer"],
-                "NormalPointerListIBM": ["pointer"],
-                "NormalPointervINTEL": ["pointer"],
-                "TexCoordPointer": ["pointer"],
-                "TexCoordPointerEXT": ["pointer"],
-                "TexCoordPointerListIBM": ["pointer"],
-                "TexCoordPointervINTEL": ["pointer"],
-                "MultiTexCoordPointerEXT": ["pointer"],
-                "FogCoordPointer": ["pointer"],
-                "FogCoordPointerEXT": ["pointer"],
-                "FogCoordPointerListIBM": ["pointer"],
-                "SecondaryColorPointer": ["pointer"],
-                "SecondaryColorPointerEXT": ["pointer"],
-                "SecondaryColorPointerListIBM": ["pointer"],
-                "VertexAttribPointer": ["pointer"],
-                "VertexAttribPointerARB": ["pointer"],
-                "VertexAttribPointerNV": ["pointer"],
-                "VertexAttribIPointer": ["pointer"],
-                "VertexAttribIPointerEXT": ["pointer"],
-                "TangentPointerEXT": ["pointer"],
-                "BinormalPointerEXT": ["pointer"]
+                "EdgeFlagPointer": [
+                    "pointer"
+                ],
+                "EdgeFlagPointerEXT": [
+                    "pointer"
+                ],
+                "EdgeFlagPointerListIBM": [
+                    "pointer"
+                ],
+                "VertexPointer": [
+                    "pointer"
+                ],
+                "VertexPointerEXT": [
+                    "pointer"
+                ],
+                "VertexPointerListIBM": [
+                    "pointer"
+                ],
+                "VertexPointervINTEL": [
+                    "pointer"
+                ],
+                "ColorPointer": [
+                    "pointer"
+                ],
+                "ColorPointerEXT": [
+                    "pointer"
+                ],
+                "ColorPointerListIBM": [
+                    "pointer"
+                ],
+                "ColorPointervINTEL": [
+                    "pointer"
+                ],
+                "IndexPointer": [
+                    "pointer"
+                ],
+                "IndexPointerEXT": [
+                    "pointer"
+                ],
+                "IndexPointerListIBM": [
+                    "pointer"
+                ],
+                "NormalPointer": [
+                    "pointer"
+                ],
+                "NormalPointerEXT": [
+                    "pointer"
+                ],
+                "NormalPointerListIBM": [
+                    "pointer"
+                ],
+                "NormalPointervINTEL": [
+                    "pointer"
+                ],
+                "TexCoordPointer": [
+                    "pointer"
+                ],
+                "TexCoordPointerEXT": [
+                    "pointer"
+                ],
+                "TexCoordPointerListIBM": [
+                    "pointer"
+                ],
+                "TexCoordPointervINTEL": [
+                    "pointer"
+                ],
+                "MultiTexCoordPointerEXT": [
+                    "pointer"
+                ],
+                "FogCoordPointer": [
+                    "pointer"
+                ],
+                "FogCoordPointerEXT": [
+                    "pointer"
+                ],
+                "FogCoordPointerListIBM": [
+                    "pointer"
+                ],
+                "SecondaryColorPointer": [
+                    "pointer"
+                ],
+                "SecondaryColorPointerEXT": [
+                    "pointer"
+                ],
+                "SecondaryColorPointerListIBM": [
+                    "pointer"
+                ],
+                "VertexAttribPointer": [
+                    "pointer"
+                ],
+                "VertexAttribPointerARB": [
+                    "pointer"
+                ],
+                "VertexAttribPointerNV": [
+                    "pointer"
+                ],
+                "VertexAttribIPointer": [
+                    "pointer"
+                ],
+                "VertexAttribIPointerEXT": [
+                    "pointer"
+                ],
+                "TangentPointerEXT": [
+                    "pointer"
+                ],
+                "BinormalPointerEXT": [
+                    "pointer"
+                ]
             },
             "extensionsNamespace": "Silk.NET.OpenGL.Legacy.Extensions",
             "overloadExclusions": {
@@ -289,42 +433,114 @@
             ],
             "namespace": "Silk.NET.OpenGLES",
             "glIntAsPtr": {
-                "EdgeFlagPointer": ["pointer"],
-                "EdgeFlagPointerEXT": ["pointer"],
-                "EdgeFlagPointerListIBM": ["pointer"],
-                "VertexPointer": ["pointer"],
-                "VertexPointerEXT": ["pointer"],
-                "VertexPointerListIBM": ["pointer"],
-                "VertexPointervINTEL": ["pointer"],
-                "ColorPointer": ["pointer"],
-                "ColorPointerEXT": ["pointer"],
-                "ColorPointerListIBM": ["pointer"],
-                "ColorPointervINTEL": ["pointer"],
-                "IndexPointer": ["pointer"],
-                "IndexPointerEXT": ["pointer"],
-                "IndexPointerListIBM": ["pointer"],
-                "NormalPointer": ["pointer"],
-                "NormalPointerEXT": ["pointer"],
-                "NormalPointerListIBM": ["pointer"],
-                "NormalPointervINTEL": ["pointer"],
-                "TexCoordPointer": ["pointer"],
-                "TexCoordPointerEXT": ["pointer"],
-                "TexCoordPointerListIBM": ["pointer"],
-                "TexCoordPointervINTEL": ["pointer"],
-                "MultiTexCoordPointerEXT": ["pointer"],
-                "FogCoordPointer": ["pointer"],
-                "FogCoordPointerEXT": ["pointer"],
-                "FogCoordPointerListIBM": ["pointer"],
-                "SecondaryColorPointer": ["pointer"],
-                "SecondaryColorPointerEXT": ["pointer"],
-                "SecondaryColorPointerListIBM": ["pointer"],
-                "VertexAttribPointer": ["pointer"],
-                "VertexAttribPointerARB": ["pointer"],
-                "VertexAttribPointerNV": ["pointer"],
-                "VertexAttribIPointer": ["pointer"],
-                "VertexAttribIPointerEXT": ["pointer"],
-                "TangentPointerEXT": ["pointer"],
-                "BinormalPointerEXT": ["pointer"]
+                "EdgeFlagPointer": [
+                    "pointer"
+                ],
+                "EdgeFlagPointerEXT": [
+                    "pointer"
+                ],
+                "EdgeFlagPointerListIBM": [
+                    "pointer"
+                ],
+                "VertexPointer": [
+                    "pointer"
+                ],
+                "VertexPointerEXT": [
+                    "pointer"
+                ],
+                "VertexPointerListIBM": [
+                    "pointer"
+                ],
+                "VertexPointervINTEL": [
+                    "pointer"
+                ],
+                "ColorPointer": [
+                    "pointer"
+                ],
+                "ColorPointerEXT": [
+                    "pointer"
+                ],
+                "ColorPointerListIBM": [
+                    "pointer"
+                ],
+                "ColorPointervINTEL": [
+                    "pointer"
+                ],
+                "IndexPointer": [
+                    "pointer"
+                ],
+                "IndexPointerEXT": [
+                    "pointer"
+                ],
+                "IndexPointerListIBM": [
+                    "pointer"
+                ],
+                "NormalPointer": [
+                    "pointer"
+                ],
+                "NormalPointerEXT": [
+                    "pointer"
+                ],
+                "NormalPointerListIBM": [
+                    "pointer"
+                ],
+                "NormalPointervINTEL": [
+                    "pointer"
+                ],
+                "TexCoordPointer": [
+                    "pointer"
+                ],
+                "TexCoordPointerEXT": [
+                    "pointer"
+                ],
+                "TexCoordPointerListIBM": [
+                    "pointer"
+                ],
+                "TexCoordPointervINTEL": [
+                    "pointer"
+                ],
+                "MultiTexCoordPointerEXT": [
+                    "pointer"
+                ],
+                "FogCoordPointer": [
+                    "pointer"
+                ],
+                "FogCoordPointerEXT": [
+                    "pointer"
+                ],
+                "FogCoordPointerListIBM": [
+                    "pointer"
+                ],
+                "SecondaryColorPointer": [
+                    "pointer"
+                ],
+                "SecondaryColorPointerEXT": [
+                    "pointer"
+                ],
+                "SecondaryColorPointerListIBM": [
+                    "pointer"
+                ],
+                "VertexAttribPointer": [
+                    "pointer"
+                ],
+                "VertexAttribPointerARB": [
+                    "pointer"
+                ],
+                "VertexAttribPointerNV": [
+                    "pointer"
+                ],
+                "VertexAttribIPointer": [
+                    "pointer"
+                ],
+                "VertexAttribIPointerEXT": [
+                    "pointer"
+                ],
+                "TangentPointerEXT": [
+                    "pointer"
+                ],
+                "BinormalPointerEXT": [
+                    "pointer"
+                ]
             },
             "extensionsNamespace": "Silk.NET.OpenGLES.Extensions",
             "overloadExclusions": {
@@ -556,6 +772,28 @@
                     "_screen_buffer": "void"
                 },
                 {
+                    "StdVideoAV1CDEF": "Video.StdVideoAV1CDEF",
+                    "StdVideoAV1ColorConfig": "Video.StdVideoAV1ColorConfig",
+                    "StdVideoAV1ColorConfigFlags": "Video.StdVideoAV1ColorConfigFlags",
+                    "StdVideoAV1FilmGrain": "Video.StdVideoAV1FilmGrain",
+                    "StdVideoAV1FilmGrainFlags": "Video.StdVideoAV1FilmGrainFlags",
+                    "StdVideoAV1GlobalMotion": "Video.StdVideoAV1GlobalMotion",
+                    "StdVideoAV1LoopFilter": "Video.StdVideoAV1LoopFilter",
+                    "StdVideoAV1LoopFilterFlags": "Video.StdVideoAV1LoopFilterFlags",
+                    "StdVideoAV1LoopRestoration": "Video.StdVideoAV1LoopRestoration",
+                    "StdVideoAV1Quantization": "Video.StdVideoAV1Quantization",
+                    "StdVideoAV1QuantizationFlags": "Video.StdVideoAV1QuantizationFlags",
+                    "StdVideoAV1Segmentation": "Video.StdVideoAV1Segmentation",
+                    "StdVideoAV1SequenceHeader": "Video.StdVideoAV1SequenceHeader",
+                    "StdVideoAV1SequenceHeaderFlags": "Video.StdVideoAV1SequenceHeaderFlags",
+                    "StdVideoAV1TileInfo": "Video.StdVideoAV1TileInfo",
+                    "StdVideoAV1TileInfoFlags": "Video.StdVideoAV1TileInfoFlags",
+                    "StdVideoAV1TimingInfo": "Video.StdVideoAV1TimingInfo",
+                    "StdVideoAV1TimingInfoFlags": "Video.StdVideoAV1TimingInfoFlags",
+                    "StdVideoDecodeAV1PictureInfo": "Video.StdVideoDecodeAV1PictureInfo",
+                    "StdVideoDecodeAV1PictureInfoFlags": "Video.StdVideoDecodeAV1PictureInfoFlags",
+                    "StdVideoDecodeAV1ReferenceInfo": "Video.StdVideoDecodeAV1ReferenceInfo",
+                    "StdVideoDecodeAV1ReferenceInfoFlags": "Video.StdVideoDecodeAV1ReferenceInfoFlags",
                     "StdVideoDecodeH264PictureInfo": "Video.StdVideoDecodeH264PictureInfo",
                     "StdVideoDecodeH264PictureInfoFlags": "Video.StdVideoDecodeH264PictureInfoFlags",
                     "StdVideoDecodeH264ReferenceInfo": "Video.StdVideoDecodeH264ReferenceInfo",
@@ -566,16 +804,17 @@
                     "StdVideoDecodeH265ReferenceInfoFlags": "Video.StdVideoDecodeH265ReferenceInfoFlags",
                     "StdVideoEncodeH264PictureInfo": "Video.StdVideoEncodeH264PictureInfo",
                     "StdVideoEncodeH264PictureInfoFlags": "Video.StdVideoEncodeH264PictureInfoFlags",
+                    "StdVideoEncodeH264RefListModEntry": "Video.StdVideoEncodeH264RefListModEntry",
+                    "StdVideoEncodeH264RefPicMarkingEntry": "Video.StdVideoEncodeH264RefPicMarkingEntry",
                     "StdVideoEncodeH264ReferenceInfo": "Video.StdVideoEncodeH264ReferenceInfo",
                     "StdVideoEncodeH264ReferenceInfoFlags": "Video.StdVideoEncodeH264ReferenceInfoFlags",
                     "StdVideoEncodeH264ReferenceListsInfo": "Video.StdVideoEncodeH264ReferenceListsInfo",
                     "StdVideoEncodeH264ReferenceListsInfoFlags": "Video.StdVideoEncodeH264ReferenceListsInfoFlags",
-                    "StdVideoEncodeH264RefListModEntry": "Video.StdVideoEncodeH264RefListModEntry",
-                    "StdVideoEncodeH264RefPicMarkingEntry": "Video.StdVideoEncodeH264RefPicMarkingEntry",
                     "StdVideoEncodeH264SliceHeader": "Video.StdVideoEncodeH264SliceHeader",
                     "StdVideoEncodeH264SliceHeaderFlags": "Video.StdVideoEncodeH264SliceHeaderFlags",
                     "StdVideoEncodeH264WeightTable": "Video.StdVideoEncodeH264WeightTable",
                     "StdVideoEncodeH264WeightTableFlags": "Video.StdVideoEncodeH264WeightTableFlags",
+                    "StdVideoEncodeH265LongTermRefPics": "Video.StdVideoEncodeH265LongTermRefPics",
                     "StdVideoEncodeH265PictureInfo": "Video.StdVideoEncodeH265PictureInfo",
                     "StdVideoEncodeH265PictureInfoFlags": "Video.StdVideoEncodeH265PictureInfoFlags",
                     "StdVideoEncodeH265ReferenceInfo": "Video.StdVideoEncodeH265ReferenceInfo",
@@ -584,7 +823,6 @@
                     "StdVideoEncodeH265ReferenceListsInfoFlags": "Video.StdVideoEncodeH265ReferenceListsInfoFlags",
                     "StdVideoEncodeH265SliceSegmentHeader": "Video.StdVideoEncodeH265SliceSegmentHeader",
                     "StdVideoEncodeH265SliceSegmentHeaderFlags": "Video.StdVideoEncodeH265SliceSegmentHeaderFlags",
-                    "StdVideoEncodeH265SliceSegmentLongTermRefPics": "Video.StdVideoEncodeH265SliceSegmentLongTermRefPics",
                     "StdVideoEncodeH265WeightTable": "Video.StdVideoEncodeH265WeightTable",
                     "StdVideoEncodeH265WeightTableFlags": "Video.StdVideoEncodeH265WeightTableFlags",
                     "StdVideoH264HrdParameters": "Video.StdVideoH264HrdParameters",
@@ -614,6 +852,17 @@
                     "StdVideoH265SubLayerHrdParameters": "Video.StdVideoH265SubLayerHrdParameters",
                     "StdVideoH265VideoParameterSet": "Video.StdVideoH265VideoParameterSet",
                     "StdVideoH265VpsFlags": "Video.StdVideoH265VpsFlags",
+                    "StdVideoAV1ChromaSamplePosition": "Video.StdVideoAV1ChromaSamplePosition",
+                    "StdVideoAV1ColorPrimaries": "Video.StdVideoAV1ColorPrimaries",
+                    "StdVideoAV1FrameRestorationType": "Video.StdVideoAV1FrameRestorationType",
+                    "StdVideoAV1FrameType": "Video.StdVideoAV1FrameType",
+                    "StdVideoAV1InterpolationFilter": "Video.StdVideoAV1InterpolationFilter",
+                    "StdVideoAV1Level": "Video.StdVideoAV1Level",
+                    "StdVideoAV1MatrixCoefficients": "Video.StdVideoAV1MatrixCoefficients",
+                    "StdVideoAV1Profile": "Video.StdVideoAV1Profile",
+                    "StdVideoAV1ReferenceName": "Video.StdVideoAV1ReferenceName",
+                    "StdVideoAV1TransferCharacteristics": "Video.StdVideoAV1TransferCharacteristics",
+                    "StdVideoAV1TxMode": "Video.StdVideoAV1TxMode",
                     "StdVideoDecodeH264FieldOrderCount": "Video.StdVideoDecodeH264FieldOrderCount",
                     "StdVideoH264AspectRatioIdc": "Video.StdVideoH264AspectRatioIdc",
                     "StdVideoH264CabacInitIdc": "Video.StdVideoH264CabacInitIdc",
@@ -633,12 +882,7 @@
                     "StdVideoH265LevelIdc": "Video.StdVideoH265LevelIdc",
                     "StdVideoH265PictureType": "Video.StdVideoH265PictureType",
                     "StdVideoH265ProfileIdc": "Video.StdVideoH265ProfileIdc",
-                    "StdVideoH265SliceType": "Video.StdVideoH265SliceType",
-                    "StdVideoAV1Level": "Video.StdVideoAV1Level",
-                    "StdVideoAV1SequenceHeader": "Video.StdVideoAV1SequenceHeader",
-                    "StdVideoDecodeAV1PictureInfo": "Video.StdVideoDecodeAV1PictureInfo",
-                    "StdVideoAV1Profile": "Video.StdVideoAV1Profile",
-                    "StdVideoDecodeAV1ReferenceInfo": "Video.StdVideoDecodeAV1ReferenceInfo"
+                    "StdVideoH265SliceType": "Video.StdVideoH265SliceType"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
