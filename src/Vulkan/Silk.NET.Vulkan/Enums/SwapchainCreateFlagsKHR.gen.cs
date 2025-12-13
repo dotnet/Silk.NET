@@ -24,6 +24,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MutableFormatBitKhr\"")]
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_MUTABLE_FORMAT_BIT_KHR")]
         SwapchainCreateMutableFormatBitKhr = 4,
+        [Obsolete("Deprecated in favour of \"PresentTimingBitExt\"")]
+        [NativeName("Name", "VK_SWAPCHAIN_CREATE_PRESENT_TIMING_BIT_EXT")]
+        SwapchainCreatePresentTimingBitExt = 512,
         [Obsolete("Deprecated in favour of \"DeferredMemoryAllocationBitExt\"")]
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_DEFERRED_MEMORY_ALLOCATION_BIT_EXT")]
         SwapchainCreateDeferredMemoryAllocationBitExt = 8,
@@ -42,6 +45,8 @@ namespace Silk.NET.Vulkan
         ProtectedBitKhr = 2,
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_MUTABLE_FORMAT_BIT_KHR")]
         MutableFormatBitKhr = 4,
+        [NativeName("Name", "VK_SWAPCHAIN_CREATE_PRESENT_TIMING_BIT_EXT")]
+        PresentTimingBitExt = 512,
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_DEFERRED_MEMORY_ALLOCATION_BIT_EXT")]
         DeferredMemoryAllocationBitExt = 8,
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_PRESENT_ID_2_BIT_KHR")]

@@ -54,6 +54,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"RdmaAddressBitNV\"")]
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_RDMA_ADDRESS_BIT_NV")]
         ExternalMemoryHandleTypeRdmaAddressBitNV = 4096,
+        [Obsolete("Deprecated in favour of \"OHNativeBufferBitOhos\"")]
+        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_OH_NATIVE_BUFFER_BIT_OHOS")]
+        ExternalMemoryHandleTypeOHNativeBufferBitOhos = 32768,
         [Obsolete("Deprecated in favour of \"ScreenBufferBitQnx\"")]
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCREEN_BUFFER_BIT_QNX")]
         ExternalMemoryHandleTypeScreenBufferBitQnx = 16384,
@@ -95,6 +98,8 @@ namespace Silk.NET.Vulkan
         ZirconVmoBitFuchsia = 2048,
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_RDMA_ADDRESS_BIT_NV")]
         RdmaAddressBitNV = 4096,
+        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_OH_NATIVE_BUFFER_BIT_OHOS")]
+        OHNativeBufferBitOhos = 32768,
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_SCREEN_BUFFER_BIT_QNX")]
         ScreenBufferBitQnx = 16384,
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_MTLBUFFER_BIT_EXT")]

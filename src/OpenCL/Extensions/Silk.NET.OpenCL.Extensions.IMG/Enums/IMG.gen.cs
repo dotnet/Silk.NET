@@ -10,6 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.IMG
 {
     [Obsolete("The \"ungrouped\" enums (CLEnum, KHR, etc...) are deprecated in favour of the \"grouped\" enums (ErrorCodes, DeviceType, etc...). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ")]
+    [Flags]
     [NativeName("Name", "CLenum")]
     public enum IMG : int
     {
@@ -21,6 +22,34 @@ namespace Silk.NET.OpenCL.Extensions.IMG
         EnhancedEventExecutionStatus = 0x2,
         [NativeName("Name", "CL_CONTEXT_ENHANCED_EVENT_EXECUTION_STATUS_IMG")]
         ContextEnhancedEventExecutionStatusImg = 0x2,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_SCHEDULING_ALGORITHM_LINEAR_ORDER_IMG")]
+        SchedulingAlgorithmLinearOrder = 0x1,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_SCHEDULING_ALGORITHM_LINEAR_ORDER_IMG")]
+        DeviceWorkGroupSchedulingAlgorithmLinearOrderImg = 0x1,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_SCHEDULING_ALGORITHM_MORTON_ORDER_IMG")]
+        SchedulingAlgorithmMortonOrder = 0x2,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_SCHEDULING_ALGORITHM_MORTON_ORDER_IMG")]
+        DeviceWorkGroupSchedulingAlgorithmMortonOrderImg = 0x2,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_SCHEDULING_ALGORITHM_TWOD_MORTON_ORDER_IMG")]
+        SchedulingAlgorithmTwodMortonOrder = 0x4,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_SCHEDULING_ALGORITHM_TWOD_MORTON_ORDER_IMG")]
+        DeviceWorkGroupSchedulingAlgorithmTwodMortonOrderImg = 0x4,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_SCHEDULING_ALGORITHM_THREED_MORTON_ORDER_IMG")]
+        SchedulingAlgorithmThreedMortonOrder = 0x8,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_SCHEDULING_ALGORITHM_THREED_MORTON_ORDER_IMG")]
+        DeviceWorkGroupSchedulingAlgorithmThreedMortonOrderImg = 0x8,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_ARBITRATION_ALGORITHM_TASK_DEMAND_IMG")]
+        ArbitrationAlgorithmTaskDemand = 0x100,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_ARBITRATION_ALGORITHM_TASK_DEMAND_IMG")]
+        DeviceWorkGroupArbitrationAlgorithmTaskDemandImg = 0x100,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_ARBITRATION_ALGORITHM_ROUND_ROBIN_IMG")]
+        ArbitrationAlgorithmRoundRobin = 0x200,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_ARBITRATION_ALGORITHM_ROUND_ROBIN_IMG")]
+        DeviceWorkGroupArbitrationAlgorithmRoundRobinImg = 0x200,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_EXECUTE_COUNT_IMG")]
+        ExecuteCount = 0x400,
+        [NativeName("Name", "CL_DEVICE_WORK_GROUP_EXECUTE_COUNT_IMG")]
+        DeviceWorkGroupExecuteCountImg = 0x400,
         [NativeName("Name", "CL_MEM_ALLOC_RELAX_REQUIREMENTS_IMG")]
         RelaxRequirements = 0x1,
         [NativeName("Name", "CL_MEM_ALLOC_RELAX_REQUIREMENTS_IMG")]
@@ -89,6 +118,10 @@ namespace Silk.NET.OpenCL.Extensions.IMG
         SafetyMemSizeImg = 0x40DC,
         [NativeName("Name", "CL_DEVICE_SAFETY_MEM_SIZE_IMG")]
         DeviceSafetyMemSizeImg = 0x40DC,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_IMG")]
+        SchedulingControlsCapabilitiesImg = 0x4222,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_IMG")]
+        DeviceSchedulingControlsCapabilitiesImg = 0x4222,
         [NativeName("Name", "CL_GRALLOC_RESOURCE_NOT_ACQUIRED_IMG")]
         GrallocResourceNotAcquiredImg = 0x40D4,
         [NativeName("Name", "CL_INVALID_GRALLOC_OBJECT_IMG")]
@@ -121,6 +154,12 @@ namespace Silk.NET.OpenCL.Extensions.IMG
         AllocFlagsImg = 0x40D7,
         [NativeName("Name", "CL_MEM_ALLOC_FLAGS_IMG")]
         MemAllocFlagsImg = 0x40D7,
+        [NativeName("Name", "CL_COMMAND_QUEUE_SCHEDULING_WORK_GROUP_SCHEDULING_ALGORITHM_IMG")]
+        CommandQueueSchedulingWorkGroupSchedulingAlgorithmImg = 0x4223,
+        [NativeName("Name", "CL_COMMAND_QUEUE_SCHEDULING_WORK_GROUP_ARBITRATION_ALGORITHM_IMG")]
+        CommandQueueSchedulingWorkGroupArbitrationAlgorithmImg = 0x4224,
+        [NativeName("Name", "CL_COMMAND_QUEUE_SCHEDULING_WORK_GROUP_EXECUTE_COUNT_IMG")]
+        CommandQueueSchedulingWorkGroupExecuteCountImg = 0x422B,
         [NativeName("Name", "CL_SVM_ALLOC_EXTERNAL_MEMORY_DMA_BUF_VIRTUAL_ADDRESS_IMG")]
         ExternalMemoryDmaBufVirtualAddressImg = 0x4220,
         [NativeName("Name", "CL_SVM_ALLOC_EXTERNAL_MEMORY_DMA_BUF_VIRTUAL_ADDRESS_IMG")]

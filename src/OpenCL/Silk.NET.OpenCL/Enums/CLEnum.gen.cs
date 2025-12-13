@@ -1520,6 +1520,10 @@ namespace Silk.NET.OpenCL
         SvmTypeCapabilitiesKhr = 0x1077,
         [NativeName("Name", "CL_DEVICE_SVM_TYPE_CAPABILITIES_KHR")]
         DeviceSvmTypeCapabilitiesKhr = 0x1077,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_IMG")]
+        SchedulingControlsCapabilitiesImg = 0x4222,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_IMG")]
+        DeviceSchedulingControlsCapabilitiesImg = 0x4222,
         [NativeName("Name", "CL_LOCAL")]
         Local = 0x1,
         [NativeName("Name", "CL_GLOBAL")]
@@ -2459,37 +2463,27 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
         ProgramILKhr = 0x1169,
         [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
-        PriorityKhr = 0x1096,
-        [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
         QueuePriorityKhr = 0x1096,
-        [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
-        ThrottleKhr = 0x1097,
         [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
         QueueThrottleKhr = 0x1097,
         [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
-        KernelBatchingArm = 0x41E7,
-        [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
         QueueKernelBatchingArm = 0x41E7,
-        [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
-        DeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
         QueueDeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
-        ComputeUnitLimitArm = 0x41F3,
-        [NativeName("Name", "CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
         QueueComputeUnitLimitArm = 0x41F3,
-        [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
-        FamilyIntel = 0x418C,
         [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
         QueueFamilyIntel = 0x418C,
         [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
-        IndexIntel = 0x418D,
-        [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
         QueueIndexIntel = 0x418D,
         [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
-        JobSlotArm = 0x41E1,
-        [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
         QueueJobSlotArm = 0x41E1,
+        [NativeName("Name", "CL_COMMAND_QUEUE_SCHEDULING_WORK_GROUP_SCHEDULING_ALGORITHM_IMG")]
+        CommandQueueSchedulingWorkGroupSchedulingAlgorithmImg = 0x4223,
+        [NativeName("Name", "CL_COMMAND_QUEUE_SCHEDULING_WORK_GROUP_ARBITRATION_ALGORITHM_IMG")]
+        CommandQueueSchedulingWorkGroupArbitrationAlgorithmImg = 0x4224,
+        [NativeName("Name", "CL_COMMAND_QUEUE_SCHEDULING_WORK_GROUP_EXECUTE_COUNT_IMG")]
+        CommandQueueSchedulingWorkGroupExecuteCountImg = 0x422B,
         [NativeName("Name", "CL_SAMPLER_NORMALIZED_COORDS")]
         NormalizedCoords = 0x1152,
         [NativeName("Name", "CL_SAMPLER_ADDRESSING_MODE")]

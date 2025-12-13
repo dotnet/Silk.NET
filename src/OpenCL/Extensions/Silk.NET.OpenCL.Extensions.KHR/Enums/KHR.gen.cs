@@ -822,11 +822,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
         ProgramILKhr = 0x1169,
         [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
-        PriorityKhr = 0x1096,
-        [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
         QueuePriorityKhr = 0x1096,
-        [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
-        ThrottleKhr = 0x1097,
         [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
         QueueThrottleKhr = 0x1097,
         [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]

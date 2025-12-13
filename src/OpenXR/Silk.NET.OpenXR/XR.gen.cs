@@ -50,6 +50,9 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "XR_EXTENSION_ENUM_STRIDE")]
         public const uint ExtensionEnumStride = unchecked((uint) 1000);
         [NativeName("Type", "")]
+        [NativeName("Name", "XR_FACE_EXPRESSION_COUNT_BD")]
+        public const uint FaceExpressionCountBD = unchecked((uint) 52);
+        [NativeName("Type", "")]
         [NativeName("Name", "XR_FACIAL_EXPRESSION_EYE_COUNT_HTC")]
         public const uint FacialExpressionEyeCountHtc = unchecked((uint) 14);
         [NativeName("Type", "")]
@@ -67,6 +70,9 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "")]
         [NativeName("Name", "XR_HAND_JOINT_COUNT_EXT")]
         public const uint HandJointCountExt = unchecked((uint) 26);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_LIP_EXPRESSION_COUNT_BD")]
+        public const uint LipExpressionCountBD = unchecked((uint) 20);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_LOADER_INFO_STRUCT_VERSION")]
         public const uint LoaderInfoStructVersion = unchecked((uint) 1);

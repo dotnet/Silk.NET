@@ -36,6 +36,15 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"PerLayerFragmentDensityBitValve\"")]
         [NativeName("Name", "VK_RENDERING_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
         RenderingPerLayerFragmentDensityBitValve = 32,
+        [Obsolete("Deprecated in favour of \"FragmentRegionBitExt\"")]
+        [NativeName("Name", "VK_RENDERING_FRAGMENT_REGION_BIT_EXT")]
+        RenderingFragmentRegionBitExt = 64,
+        [Obsolete("Deprecated in favour of \"CustomResolveBitExt\"")]
+        [NativeName("Name", "VK_RENDERING_CUSTOM_RESOLVE_BIT_EXT")]
+        RenderingCustomResolveBitExt = 128,
+        [Obsolete("Deprecated in favour of \"LocalReadConcurrentAccessControlBitKhr\"")]
+        [NativeName("Name", "VK_RENDERING_LOCAL_READ_CONCURRENT_ACCESS_CONTROL_BIT_KHR")]
+        RenderingLocalReadConcurrentAccessControlBitKhr = 256,
         [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT")]
         ContentsSecondaryCommandBuffersBit = 1,
         [NativeName("Name", "VK_RENDERING_SUSPENDING_BIT")]
@@ -50,5 +59,11 @@ namespace Silk.NET.Vulkan
         ContentsInlineBitKhr = 16,
         [NativeName("Name", "VK_RENDERING_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
         PerLayerFragmentDensityBitValve = 32,
+        [NativeName("Name", "VK_RENDERING_FRAGMENT_REGION_BIT_EXT")]
+        FragmentRegionBitExt = 64,
+        [NativeName("Name", "VK_RENDERING_CUSTOM_RESOLVE_BIT_EXT")]
+        CustomResolveBitExt = 128,
+        [NativeName("Name", "VK_RENDERING_LOCAL_READ_CONCURRENT_ACCESS_CONTROL_BIT_KHR")]
+        LocalReadConcurrentAccessControlBitKhr = 256,
     }
 }

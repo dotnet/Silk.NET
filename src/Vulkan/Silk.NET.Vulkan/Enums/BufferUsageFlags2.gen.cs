@@ -105,6 +105,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"TileMemoryBitQCom\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_2_TILE_MEMORY_BIT_QCOM")]
         BufferUsage2TileMemoryBitQCom = 134217728,
+        [Obsolete("Deprecated in favour of \"MemoryDecompressionBitExt\"")]
+        [NativeName("Name", "VK_BUFFER_USAGE_2_MEMORY_DECOMPRESSION_BIT_EXT")]
+        BufferUsage2MemoryDecompressionBitExt = 4294967296,
         [Obsolete("Deprecated in favour of \"PreprocessBufferBitExt\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_2_PREPROCESS_BUFFER_BIT_EXT")]
         BufferUsage2PreprocessBufferBitExt = 2147483648,
@@ -171,6 +174,8 @@ namespace Silk.NET.Vulkan
         DataGraphForeignDescriptorBitArm = 536870912,
         [NativeName("Name", "VK_BUFFER_USAGE_2_TILE_MEMORY_BIT_QCOM")]
         TileMemoryBitQCom = 134217728,
+        [NativeName("Name", "VK_BUFFER_USAGE_2_MEMORY_DECOMPRESSION_BIT_EXT")]
+        MemoryDecompressionBitExt = 4294967296,
         [NativeName("Name", "VK_BUFFER_USAGE_2_PREPROCESS_BUFFER_BIT_EXT")]
         PreprocessBufferBitExt = 2147483648,
         [NativeName("Name", "VK_BUFFER_USAGE_2_SHADER_DEVICE_ADDRESS_BIT")]

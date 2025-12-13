@@ -16,7 +16,7 @@ permissions:
   packages: write
 jobs:
   Build:
-    runs-on: macos-13-xlarge
+    runs-on: macos-latest-xlarge
     steps:
     - uses: actions/checkout@v3.5.2
       with:
@@ -47,10 +47,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 7.0.102
-    - name: Setup .NET 9.0
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 9.0.305
     - name: Install Workloads
       run: dotnet workload install android ios maccatalyst
     - name: Test

@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public static class ExtFragmentDensityMapOffsetOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdEndRendering2(this ExtFragmentDensityMapOffset thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingEndInfoEXT> pRenderingEndInfo)
+        public static unsafe void CmdEndRendering2(this ExtFragmentDensityMapOffset thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingEndInfoKHR> pRenderingEndInfo)
         {
             // SpanOverloader
             thisApi.CmdEndRendering2(commandBuffer, in pRenderingEndInfo.GetPinnableReference());

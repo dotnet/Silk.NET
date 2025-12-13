@@ -51,6 +51,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"EnableLegacyDitheringBitExt\"")]
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_ENABLE_LEGACY_DITHERING_BIT_EXT")]
         SubpassDescriptionEnableLegacyDitheringBitExt = 128,
+        [Obsolete("Deprecated in favour of \"FragmentRegionBitExt\"")]
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_EXT")]
+        SubpassDescriptionFragmentRegionBitExt = 4,
+        [Obsolete("Deprecated in favour of \"CustomResolveBitExt\"")]
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_CUSTOM_RESOLVE_BIT_EXT")]
+        SubpassDescriptionCustomResolveBitExt = 8,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_PER_VIEW_ATTRIBUTES_BIT_NVX")]
         PerViewAttributesBitNvx = 1,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_PER_VIEW_POSITION_X_ONLY_BIT_NVX")]
@@ -75,5 +81,9 @@ namespace Silk.NET.Vulkan
         RasterizationOrderAttachmentStencilAccessBitExt = 64,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_ENABLE_LEGACY_DITHERING_BIT_EXT")]
         EnableLegacyDitheringBitExt = 128,
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_EXT")]
+        FragmentRegionBitExt = 4,
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_CUSTOM_RESOLVE_BIT_EXT")]
+        CustomResolveBitExt = 8,
     }
 }

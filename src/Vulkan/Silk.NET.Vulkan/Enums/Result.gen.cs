@@ -88,6 +88,8 @@ namespace Silk.NET.Vulkan
         ErrorNotPermittedExt = unchecked((int) -1000174001),
         [NativeName("Name", "VK_ERROR_NOT_PERMITTED_KHR")]
         ErrorNotPermittedKhr = unchecked((int) -1000174001),
+        [NativeName("Name", "VK_ERROR_PRESENT_TIMING_QUEUE_FULL_EXT")]
+        ErrorPresentTimingQueueFullExt = unchecked((int) -1000208000),
         [NativeName("Name", "VK_ERROR_INVALID_DEVICE_ADDRESS_EXT")]
         ErrorInvalidDeviceAddressExt = unchecked((int) -1000257000),
         [NativeName("Name", "VK_ERROR_FULL_SCREEN_EXCLUSIVE_MODE_LOST_EXT")]
@@ -124,10 +126,10 @@ namespace Silk.NET.Vulkan
         ErrorOutOfPoolMemory = unchecked((int) -1000069000),
         [NativeName("Name", "VK_ERROR_INVALID_EXTERNAL_HANDLE")]
         ErrorInvalidExternalHandle = unchecked((int) -1000072003),
-        [NativeName("Name", "VK_ERROR_FRAGMENTATION")]
-        ErrorFragmentation = unchecked((int) -1000161000),
         [NativeName("Name", "VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS")]
         ErrorInvalidOpaqueCaptureAddress = unchecked((int) -1000257000),
+        [NativeName("Name", "VK_ERROR_FRAGMENTATION")]
+        ErrorFragmentation = unchecked((int) -1000161000),
         [NativeName("Name", "VK_PIPELINE_COMPILE_REQUIRED")]
         PipelineCompileRequired = 1000297000,
         [NativeName("Name", "VK_ERROR_NOT_PERMITTED")]

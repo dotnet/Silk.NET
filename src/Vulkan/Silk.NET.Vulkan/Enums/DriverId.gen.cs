@@ -93,6 +93,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"VulkanSCEmulationOnVulkan\"")]
         [NativeName("Name", "VK_DRIVER_ID_VULKAN_SC_EMULATION_ON_VULKAN")]
         DriverIDVulkanSCEmulationOnVulkan = 27,
+        [Obsolete("Deprecated in favour of \"MesaKosmickrisp\"")]
+        [NativeName("Name", "VK_DRIVER_ID_MESA_KOSMICKRISP")]
+        DriverIDMesaKosmickrisp = 28,
         [NativeName("Name", "VK_DRIVER_ID_AMD_PROPRIETARY")]
         AmdProprietary = 1,
         [NativeName("Name", "VK_DRIVER_ID_AMD_OPEN_SOURCE")]
@@ -147,5 +150,7 @@ namespace Silk.NET.Vulkan
         MesaHoneykrisp = 26,
         [NativeName("Name", "VK_DRIVER_ID_VULKAN_SC_EMULATION_ON_VULKAN")]
         VulkanSCEmulationOnVulkan = 27,
+        [NativeName("Name", "VK_DRIVER_ID_MESA_KOSMICKRISP")]
+        MesaKosmickrisp = 28,
     }
 }

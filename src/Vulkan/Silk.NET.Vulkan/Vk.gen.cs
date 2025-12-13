@@ -26,6 +26,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_COMPRESSED_TRIANGLE_FORMAT_DGF1_BYTE_STRIDE_AMDX")]
         public const uint CompressedTriangleFormatDgf1ByteStrideAmdx = unchecked((uint) 128);
         [NativeName("Type", "")]
+        [NativeName("Name", "VK_COMPUTE_OCCUPANCY_PRIORITY_HIGH_NV")]
+        public const float ComputeOccupancyPriorityHighNV = unchecked((float) 0.75f);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_COMPUTE_OCCUPANCY_PRIORITY_LOW_NV")]
+        public const float ComputeOccupancyPriorityLowNV = unchecked((float) 0.25f);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_COMPUTE_OCCUPANCY_PRIORITY_NORMAL_NV")]
+        public const float ComputeOccupancyPriorityNormalNV = unchecked((float) 0.50f);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_DATA_GRAPH_MODEL_TOOLCHAIN_VERSION_LENGTH_QCOM")]
+        public const uint DataGraphModelToolchainVersionLengthQCom = unchecked((uint) 3);
+        [NativeName("Type", "")]
         [NativeName("Name", "VK_FALSE")]
         public const uint False = unchecked((uint) 0);
         [NativeName("Type", "")]
@@ -125,10 +137,6 @@ namespace Silk.NET.Vulkan
         public partial void CmdBindDescriptorSets2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BindDescriptorSetsInfo pBindDescriptorSetsInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindIndexBuffer2", Convention = CallingConvention.Winapi)]
-        public partial void CmdBindIndexBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] IndexType indexType);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPushConstants2", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPushConstants2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PushConstantsInfo* pPushConstantsInfo);
 
@@ -169,6 +177,10 @@ namespace Silk.NET.Vulkan
         public partial void CmdPushDescriptorSetWithTemplate2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PushDescriptorSetWithTemplateInfo pPushDescriptorSetWithTemplateInfo);
 
         /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindIndexBuffer2", Convention = CallingConvention.Winapi)]
+        public partial void CmdBindIndexBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] IndexType indexType);
+
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetLineStipple", Convention = CallingConvention.Winapi)]
         public partial void CmdSetLineStipple([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint lineStippleFactor, [Count(Count = 0)] ushort lineStipplePattern);
 
@@ -187,6 +199,22 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetRenderingInputAttachmentIndices", Convention = CallingConvention.Winapi)]
         public partial void CmdSetRenderingInputAttachmentIndices([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingInputAttachmentIndexInfo pInputAttachmentIndexInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingAreaInfo pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
+        public partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingAreaInfo pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCopyImageToImage", Convention = CallingConvention.Winapi)]
@@ -247,22 +275,6 @@ namespace Silk.NET.Vulkan
         [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2", Convention = CallingConvention.Winapi)]
         public partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresource2 pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2 pLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingAreaInfo pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRenderingAreaGranularity", Convention = CallingConvention.Winapi)]
-        public partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingAreaInfo pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMapMemory2", Convention = CallingConvention.Winapi)]
@@ -509,52 +521,8 @@ namespace Silk.NET.Vulkan
         public partial void CmdBlitImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BlitImageInfo2 pBlitImageInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBuffer2", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyBufferInfo2* pCopyBufferInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBuffer2", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyBufferInfo2 pCopyBufferInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyBufferToImageInfo2* pCopyBufferToImageInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyBufferToImageInfo2 pCopyBufferToImageInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImage2", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyImageInfo2* pCopyImageInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImage2", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyImageInfo2 pCopyImageInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyImageToBufferInfo2* pCopyImageToBufferInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2", Convention = CallingConvention.Winapi)]
-        public partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyImageToBufferInfo2 pCopyImageToBufferInfo);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdEndRendering", Convention = CallingConvention.Winapi)]
         public partial void CmdEndRendering([Count(Count = 0)] CommandBuffer commandBuffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPipelineBarrier2", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdPipelineBarrier2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPipelineBarrier2", Convention = CallingConvention.Winapi)]
-        public partial void CmdPipelineBarrier2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdResetEvent2", Convention = CallingConvention.Winapi)]
-        public partial void CmdResetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0)] PipelineStageFlags2 stageMask);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdResolveImage2", Convention = CallingConvention.Winapi)]
@@ -587,14 +555,6 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDepthWriteEnable", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDepthWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthWriteEnable);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetEvent2", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetEvent2", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetFrontFace", Convention = CallingConvention.Winapi)]
@@ -637,20 +597,44 @@ namespace Silk.NET.Vulkan
         public partial void CmdSetViewportWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Viewport pViewports);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfos);
+        [NativeApi(EntryPoint = "vkCmdCopyBuffer2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyBufferInfo2* pCopyBufferInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfos);
+        [NativeApi(EntryPoint = "vkCmdCopyBuffer2", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyBufferInfo2 pCopyBufferInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfos);
+        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyBufferToImageInfo2* pCopyBufferToImageInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
-        public partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfos);
+        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyBufferToImageInfo2 pCopyBufferToImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyImage2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyImageInfo2* pCopyImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyImage2", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyImageInfo2 pCopyImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CopyImageToBufferInfo2* pCopyImageToBufferInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyImageToBufferInfo2 pCopyImageToBufferInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdPipelineBarrier2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier2", Convention = CallingConvention.Winapi)]
+        public partial void CmdPipelineBarrier2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteTimestamp2", Convention = CallingConvention.Winapi)]
@@ -807,6 +791,34 @@ namespace Silk.NET.Vulkan
         public partial Result SetPrivateData([Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlot privateDataSlot, [Count(Count = 0)] ulong data);
 
         /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdResetEvent2", Convention = CallingConvention.Winapi)]
+        public partial void CmdResetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0)] PipelineStageFlags2 stageMask);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetEvent2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdSetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetEvent2", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfos);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfos);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfos);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
+        public partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DependencyInfo pDependencyInfos);
+
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkBindBufferMemory2", Convention = CallingConvention.Winapi)]
         public unsafe partial Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BindBufferMemoryInfo* pBindInfos);
 
@@ -823,92 +835,8 @@ namespace Silk.NET.Vulkan
         public partial Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BindImageMemoryInfo pBindInfos);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDispatchBase", Convention = CallingConvention.Winapi)]
-        public partial void CmdDispatchBase([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint baseGroupX, [Count(Count = 0)] uint baseGroupY, [Count(Count = 0)] uint baseGroupZ, [Count(Count = 0)] uint groupCountX, [Count(Count = 0)] uint groupCountY, [Count(Count = 0)] uint groupCountZ);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDeviceMask", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDeviceMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint deviceMask);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
-        public partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
-        public partial void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
-        public partial void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkEnumerateInstanceVersion", Convention = CallingConvention.Winapi)]
@@ -951,24 +879,6 @@ namespace Silk.NET.Vulkan
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2", Convention = CallingConvention.Winapi)]
         public partial void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryRequirementsInfo2 pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
-        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayoutSupport pSupport);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
-        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
-        public partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayoutSupport pSupport);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures", Convention = CallingConvention.Winapi)]
@@ -1215,6 +1125,108 @@ namespace Silk.NET.Vulkan
         public partial void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags);
 
         /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdDispatchBase", Convention = CallingConvention.Winapi)]
+        public partial void CmdDispatchBase([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint baseGroupX, [Count(Count = 0)] uint baseGroupY, [Count(Count = 0)] uint baseGroupZ, [Count(Count = 0)] uint groupCountX, [Count(Count = 0)] uint groupCountY, [Count(Count = 0)] uint groupCountZ);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
+        public partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
+        public partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate", Convention = CallingConvention.Winapi)]
+        public partial void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion", Convention = CallingConvention.Winapi)]
+        public partial void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
+        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayoutSupport pSupport);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
+        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport", Convention = CallingConvention.Winapi)]
+        public partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayoutSupport pSupport);
+
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate", Convention = CallingConvention.Winapi)]
         public unsafe partial void UpdateDescriptorSetWithTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] void* pData);
 
@@ -1237,22 +1249,6 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAllocateCommandBuffers", Convention = CallingConvention.Winapi)]
         public partial Result AllocateCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CommandBufferAllocateInfo pAllocateInfo, [Count(Computed = "pAllocateInfo->commandBufferCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CommandBuffer pCommandBuffers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSet* pDescriptorSets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSet pDescriptorSets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetAllocateInfo pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSet* pDescriptorSets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
-        public partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetAllocateInfo pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSet pDescriptorSets);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAllocateMemory", Convention = CallingConvention.Winapi)]
@@ -1307,110 +1303,6 @@ namespace Silk.NET.Vulkan
         public partial void CmdBeginQuery([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint query, [Count(Count = 0)] QueryControlFlags flags);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderPass", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBeginRenderPass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0)] SubpassContents contents);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderPass", Convention = CallingConvention.Winapi)]
-        public partial void CmdBeginRenderPass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassBeginInfo pRenderPassBegin, [Count(Count = 0)] SubpassContents contents);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDynamicOffsets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pDynamicOffsets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSet pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDynamicOffsets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
-        public partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSet pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pDynamicOffsets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindIndexBuffer", Convention = CallingConvention.Winapi)]
-        public partial void CmdBindIndexBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] IndexType indexType);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindPipeline", Convention = CallingConvention.Winapi)]
-        public partial void CmdBindPipeline([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] Pipeline pipeline);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong pOffsets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
-        public partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong pOffsets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBlitImage", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdBlitImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBlit* pRegions, [Count(Count = 0)] Filter filter);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBlitImage", Convention = CallingConvention.Winapi)]
-        public partial void CmdBlitImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBlit pRegions, [Count(Count = 0)] Filter filter);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearAttachment* pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearRect* pRects);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearAttachment* pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearRect pRects);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearAttachment pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearRect* pRects);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
-        public partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearAttachment pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearRect pRects);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearColorValue* pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearColorValue* pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresourceRange pRanges);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearColorValue pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
-        public partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearColorValue pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresourceRange pRanges);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresourceRange pRanges);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearDepthStencilValue pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
-        public partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearDepthStencilValue pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresourceRange pRanges);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdCopyBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer srcBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferCopy* pRegions);
 
@@ -1447,36 +1339,8 @@ namespace Silk.NET.Vulkan
         public partial void CmdCopyQueryPoolResults([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDispatch", Convention = CallingConvention.Winapi)]
-        public partial void CmdDispatch([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint groupCountX, [Count(Count = 0)] uint groupCountY, [Count(Count = 0)] uint groupCountZ);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDispatchIndirect", Convention = CallingConvention.Winapi)]
-        public partial void CmdDispatchIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDraw", Convention = CallingConvention.Winapi)]
-        public partial void CmdDraw([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexCount, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstVertex, [Count(Count = 0)] uint firstInstance);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndexed", Convention = CallingConvention.Winapi)]
-        public partial void CmdDrawIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint indexCount, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstIndex, [Count(Count = 0)] int vertexOffset, [Count(Count = 0)] uint firstInstance);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndexedIndirect", Convention = CallingConvention.Winapi)]
-        public partial void CmdDrawIndexedIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] uint drawCount, [Count(Count = 0)] uint stride);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndirect", Convention = CallingConvention.Winapi)]
-        public partial void CmdDrawIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] uint drawCount, [Count(Count = 0)] uint stride);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdEndQuery", Convention = CallingConvention.Winapi)]
         public partial void CmdEndQuery([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint query);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndRenderPass", Convention = CallingConvention.Winapi)]
-        public partial void CmdEndRenderPass([Count(Count = 0)] CommandBuffer commandBuffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdExecuteCommands", Convention = CallingConvention.Winapi)]
@@ -1489,10 +1353,6 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdFillBuffer", Convention = CallingConvention.Winapi)]
         public partial void CmdFillBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong size, [Count(Count = 0)] uint data);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdNextSubpass", Convention = CallingConvention.Winapi)]
-        public partial void CmdNextSubpass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] SubpassContents contents);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdPipelineBarrier", Convention = CallingConvention.Winapi)]
@@ -1527,80 +1387,8 @@ namespace Silk.NET.Vulkan
         public partial void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPushConstants", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdPushConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] void* pValues);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPushConstants", Convention = CallingConvention.Winapi)]
-        public partial void CmdPushConstants<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] ref T0 pValues) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdResetEvent", Convention = CallingConvention.Winapi)]
-        public partial void CmdResetEvent([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0)] PipelineStageFlags stageMask);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdResetQueryPool", Convention = CallingConvention.Winapi)]
         public partial void CmdResetQueryPool([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdResolveImage", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageResolve* pRegions);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdResolveImage", Convention = CallingConvention.Winapi)]
-        public partial void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageResolve pRegions);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetBlendConstants", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetBlendConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* blendConstants);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetBlendConstants", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetBlendConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float blendConstants);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDepthBias", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetDepthBias([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] float depthBiasConstantFactor, [Count(Count = 0)] float depthBiasClamp, [Count(Count = 0)] float depthBiasSlopeFactor);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDepthBounds", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetDepthBounds([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] float minDepthBounds, [Count(Count = 0)] float maxDepthBounds);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetEvent", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetEvent([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0)] PipelineStageFlags stageMask);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetLineWidth", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetLineWidth([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] float lineWidth);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetScissor", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect2D* pScissors);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetScissor", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Rect2D pScissors);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetStencilCompareMask", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetStencilCompareMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] uint compareMask);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetStencilReference", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetStencilReference([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] uint reference);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetStencilWriteMask", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetStencilWriteMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] uint writeMask);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetViewport", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetViewport([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Viewport* pViewports);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetViewport", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetViewport([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Viewport pViewports);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdUpdateBuffer", Convention = CallingConvention.Winapi)]
@@ -1609,70 +1397,6 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdUpdateBuffer", Convention = CallingConvention.Winapi)]
         public partial void CmdUpdateBuffer<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong dataSize, [Count(Parameter = "dataSize")] ref T0 pData) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
-        public partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteTimestamp", Convention = CallingConvention.Winapi)]
@@ -1711,38 +1435,6 @@ namespace Silk.NET.Vulkan
         public partial Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Buffer pBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out BufferView pView);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out BufferView pView);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out BufferView pView);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
-        public partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out BufferView pView);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCommandPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CommandPool* pCommandPool);
 
@@ -1775,174 +1467,6 @@ namespace Silk.NET.Vulkan
         public partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CommandPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CommandPool pCommandPool);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateComputePipelines", Convention = CallingConvention.Winapi)]
-        public partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorPool pDescriptorPool);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorPool pDescriptorPool);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorPool pDescriptorPool);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
-        public partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorPool pDescriptorPool);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
-        public partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
-
-        /// <summary>To be documented.</summary>
-        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Device* pDevice);
-
-        /// <summary>To be documented.</summary>
-        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Device pDevice);
-
-        /// <summary>To be documented.</summary>
-        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Device* pDevice);
-
-        /// <summary>To be documented.</summary>
-        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Device pDevice);
-
-        /// <summary>To be documented.</summary>
-        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Device* pDevice);
-
-        /// <summary>To be documented.</summary>
-        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Device pDevice);
-
-        /// <summary>To be documented.</summary>
-        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Device* pDevice);
-
-        /// <summary>To be documented.</summary>
-        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
-        [NativeApi(EntryPoint = "vkCreateDevice", Convention = CallingConvention.Winapi)]
-        public partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Device pDevice);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Event pEvent);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Event pEvent);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Event pEvent);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
-        public partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Event pEvent);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateFence", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FenceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Fence* pFence);
 
@@ -1973,70 +1497,6 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateFence", Convention = CallingConvention.Winapi)]
         public partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FenceCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Fence pFence);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Framebuffer pFramebuffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Framebuffer pFramebuffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Framebuffer pFramebuffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
-        public partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Framebuffer pFramebuffer);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateGraphicsPipelines", Convention = CallingConvention.Winapi)]
-        public partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GraphicsPipelineCreateInfo pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateImage", Convention = CallingConvention.Winapi)]
@@ -2143,70 +1603,6 @@ namespace Silk.NET.Vulkan
         public partial Result CreateInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InstanceCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Instance pInstance);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineCache* pPipelineCache);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineCache pPipelineCache);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineCache* pPipelineCache);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineCache pPipelineCache);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineCacheCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineCache* pPipelineCache);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineCacheCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineCache pPipelineCache);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineCacheCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineCache* pPipelineCache);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineCache", Convention = CallingConvention.Winapi)]
-        public partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineCacheCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineCache pPipelineCache);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineLayout pPipelineLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineLayout pPipelineLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineLayout pPipelineLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
-        public partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineLayout pPipelineLayout);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateQueryPool", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] QueryPool* pQueryPool);
 
@@ -2237,70 +1633,6 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateQueryPool", Convention = CallingConvention.Winapi)]
         public partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QueryPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out QueryPool pQueryPool);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out RenderPass pRenderPass);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out RenderPass pRenderPass);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out RenderPass pRenderPass);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
-        public partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out RenderPass pRenderPass);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Sampler pSampler);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Sampler pSampler);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Sampler pSampler);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Sampler pSampler);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSemaphore", Convention = CallingConvention.Winapi)]
@@ -2335,52 +1667,12 @@ namespace Silk.NET.Vulkan
         public partial Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SemaphoreCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Semaphore pSemaphore);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModule pShaderModule);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModule pShaderModule);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModule pShaderModule);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
-        public partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModule pShaderModule);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyBuffer", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyBuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyBuffer", Convention = CallingConvention.Winapi)]
         public partial void DestroyBuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyBufferView", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyBufferView([Count(Count = 0)] Device device, [Count(Count = 0)] BufferView bufferView, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyBufferView", Convention = CallingConvention.Winapi)]
-        public partial void DestroyBufferView([Count(Count = 0)] Device device, [Count(Count = 0)] BufferView bufferView, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyCommandPool", Convention = CallingConvention.Winapi)]
@@ -2391,22 +1683,6 @@ namespace Silk.NET.Vulkan
         public partial void DestroyCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorPool", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorPool", Convention = CallingConvention.Winapi)]
-        public partial void DestroyDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorSetLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSetLayout descriptorSetLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorSetLayout", Convention = CallingConvention.Winapi)]
-        public partial void DestroyDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSetLayout descriptorSetLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyDevice", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyDevice([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
@@ -2415,28 +1691,12 @@ namespace Silk.NET.Vulkan
         public partial void DestroyDevice([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyEvent", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyEvent", Convention = CallingConvention.Winapi)]
-        public partial void DestroyEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyFence", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyFence([Count(Count = 0)] Device device, [Count(Count = 0)] Fence fence, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyFence", Convention = CallingConvention.Winapi)]
         public partial void DestroyFence([Count(Count = 0)] Device device, [Count(Count = 0)] Fence fence, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyFramebuffer", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Framebuffer framebuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyFramebuffer", Convention = CallingConvention.Winapi)]
-        public partial void DestroyFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Framebuffer framebuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyImage", Convention = CallingConvention.Winapi)]
@@ -2463,30 +1723,6 @@ namespace Silk.NET.Vulkan
         public partial void DestroyInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipeline", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipeline", Convention = CallingConvention.Winapi)]
-        public partial void DestroyPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipelineCache", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyPipelineCache([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipelineCache", Convention = CallingConvention.Winapi)]
-        public partial void DestroyPipelineCache([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipelineLayout", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyPipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineLayout pipelineLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyPipelineLayout", Convention = CallingConvention.Winapi)]
-        public partial void DestroyPipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineLayout pipelineLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyQueryPool", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
@@ -2495,36 +1731,12 @@ namespace Silk.NET.Vulkan
         public partial void DestroyQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyRenderPass", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyRenderPass([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyRenderPass", Convention = CallingConvention.Winapi)]
-        public partial void DestroyRenderPass([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySampler", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroySampler([Count(Count = 0)] Device device, [Count(Count = 0)] Sampler sampler, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroySampler", Convention = CallingConvention.Winapi)]
-        public partial void DestroySampler([Count(Count = 0)] Device device, [Count(Count = 0)] Sampler sampler, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroySemaphore", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroySemaphore([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroySemaphore", Convention = CallingConvention.Winapi)]
         public partial void DestroySemaphore([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyShaderModule", Convention = CallingConvention.Winapi)]
-        public unsafe partial void DestroyShaderModule([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyShaderModule", Convention = CallingConvention.Winapi)]
-        public partial void DestroyShaderModule([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDeviceWaitIdle", Convention = CallingConvention.Winapi)]
@@ -2581,22 +1793,6 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ref ExtensionProperties pProperties);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateDeviceLayerProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] LayerProperties* pProperties);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateDeviceLayerProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] ref LayerProperties pProperties);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateDeviceLayerProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] LayerProperties* pProperties);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties", Convention = CallingConvention.Winapi)]
-        public partial Result EnumerateDeviceLayerProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount")] ref LayerProperties pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
@@ -2695,14 +1891,6 @@ namespace Silk.NET.Vulkan
         public partial void FreeCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint commandBufferCount, [Count(Parameter = "commandBufferCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CommandBuffer pCommandBuffers);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkFreeDescriptorSets", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result FreeDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSet* pDescriptorSets);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkFreeDescriptorSets", Convention = CallingConvention.Winapi)]
-        public partial Result FreeDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSet pDescriptorSets);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkFreeMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial void FreeMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
 
@@ -2745,10 +1933,6 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceQueue", Convention = CallingConvention.Winapi)]
         public partial void GetDeviceQueue([Count(Count = 0)] Device device, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint queueIndex, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Queue pQueue);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetEventStatus", Convention = CallingConvention.Winapi)]
-        public partial Result GetEventStatus([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetFenceStatus", Convention = CallingConvention.Winapi)]
@@ -2879,36 +2063,12 @@ namespace Silk.NET.Vulkan
         public partial void GetPhysicalDeviceSparseImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] SampleCountFlags samples, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SparseImageFormatProperties pProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] void* pData);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
-        public partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetQueryPoolResults", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetQueryPoolResults([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetQueryPoolResults", Convention = CallingConvention.Winapi)]
         public partial Result GetQueryPoolResults<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRenderAreaGranularity", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetRenderAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRenderAreaGranularity", Convention = CallingConvention.Winapi)]
-        public partial void GetRenderAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkInvalidateMappedMemoryRanges", Convention = CallingConvention.Winapi)]
@@ -2925,14 +2085,6 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMapMemory", Convention = CallingConvention.Winapi)]
         public unsafe partial Result MapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] MemoryMapFlags flags, [Count(Count = 0)] ref void* ppData);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkMergePipelineCaches", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result MergePipelineCaches([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCache* pSrcCaches);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkMergePipelineCaches", Convention = CallingConvention.Winapi)]
-        public partial Result MergePipelineCaches([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineCache pSrcCaches);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueueBindSparse", Convention = CallingConvention.Winapi)]
@@ -2963,14 +2115,6 @@ namespace Silk.NET.Vulkan
         public partial Result ResetCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] CommandPoolResetFlags flags);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkResetDescriptorPool", Convention = CallingConvention.Winapi)]
-        public partial Result ResetDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint flags);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkResetEvent", Convention = CallingConvention.Winapi)]
-        public partial Result ResetEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkResetFences", Convention = CallingConvention.Winapi)]
         public unsafe partial Result ResetFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Fence* pFences);
 
@@ -2979,12 +2123,500 @@ namespace Silk.NET.Vulkan
         public partial Result ResetFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Fence pFences);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetEvent", Convention = CallingConvention.Winapi)]
-        public partial Result SetEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event);
-
-        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUnmapMemory", Convention = CallingConvention.Winapi)]
         public partial void UnmapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkWaitForFences", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result WaitForFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Fence* pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkWaitForFences", Convention = CallingConvention.Winapi)]
+        public partial Result WaitForFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Fence pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSet* pDescriptorSets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSet pDescriptorSets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetAllocateInfo pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSet* pDescriptorSets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkAllocateDescriptorSets", Convention = CallingConvention.Winapi)]
+        public partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetAllocateInfo pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSet pDescriptorSets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDynamicOffsets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pDynamicOffsets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSet pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDynamicOffsets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindDescriptorSets", Convention = CallingConvention.Winapi)]
+        public partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSet pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pDynamicOffsets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindPipeline", Convention = CallingConvention.Winapi)]
+        public partial void CmdBindPipeline([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] Pipeline pipeline);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearColorValue* pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearColorValue* pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresourceRange pRanges);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearColorValue pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearColorImage", Convention = CallingConvention.Winapi)]
+        public partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearColorValue pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresourceRange pRanges);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdDispatch", Convention = CallingConvention.Winapi)]
+        public partial void CmdDispatch([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint groupCountX, [Count(Count = 0)] uint groupCountY, [Count(Count = 0)] uint groupCountZ);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdDispatchIndirect", Convention = CallingConvention.Winapi)]
+        public partial void CmdDispatchIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushConstants", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdPushConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] void* pValues);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPushConstants", Convention = CallingConvention.Winapi)]
+        public partial void CmdPushConstants<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] ref T0 pValues) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdResetEvent", Convention = CallingConvention.Winapi)]
+        public partial void CmdResetEvent([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0)] PipelineStageFlags stageMask);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetEvent", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetEvent([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0)] PipelineStageFlags stageMask);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents", Convention = CallingConvention.Winapi)]
+        public partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Event pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryBarrier pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferMemoryBarrier pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageMemoryBarrier pImageMemoryBarriers);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out BufferView pView);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out BufferView pView);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out BufferView pView);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateBufferView", Convention = CallingConvention.Winapi)]
+        public partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out BufferView pView);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorPool pDescriptorPool);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorPool pDescriptorPool);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorPool pDescriptorPool);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorPool", Convention = CallingConvention.Winapi)]
+        public partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorPoolCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorPool pDescriptorPool);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout", Convention = CallingConvention.Winapi)]
+        public partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Event pEvent);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Event pEvent);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Event pEvent);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateEvent", Convention = CallingConvention.Winapi)]
+        public partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EventCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Event pEvent);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineLayout pPipelineLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineLayout pPipelineLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineLayout pPipelineLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePipelineLayout", Convention = CallingConvention.Winapi)]
+        public partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PipelineLayout pPipelineLayout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Sampler pSampler);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Sampler pSampler);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Sampler pSampler);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateSampler", Convention = CallingConvention.Winapi)]
+        public partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SamplerCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Sampler pSampler);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModule pShaderModule);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModule pShaderModule);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModule pShaderModule);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateShaderModule", Convention = CallingConvention.Winapi)]
+        public partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShaderModuleCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ShaderModule pShaderModule);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyBufferView", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyBufferView([Count(Count = 0)] Device device, [Count(Count = 0)] BufferView bufferView, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyBufferView", Convention = CallingConvention.Winapi)]
+        public partial void DestroyBufferView([Count(Count = 0)] Device device, [Count(Count = 0)] BufferView bufferView, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyDescriptorPool", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyDescriptorPool", Convention = CallingConvention.Winapi)]
+        public partial void DestroyDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyDescriptorSetLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSetLayout descriptorSetLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyDescriptorSetLayout", Convention = CallingConvention.Winapi)]
+        public partial void DestroyDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSetLayout descriptorSetLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyEvent", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyEvent", Convention = CallingConvention.Winapi)]
+        public partial void DestroyEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyPipeline", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyPipeline", Convention = CallingConvention.Winapi)]
+        public partial void DestroyPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyPipelineCache", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyPipelineCache([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyPipelineCache", Convention = CallingConvention.Winapi)]
+        public partial void DestroyPipelineCache([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyPipelineLayout", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyPipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineLayout pipelineLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyPipelineLayout", Convention = CallingConvention.Winapi)]
+        public partial void DestroyPipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineLayout pipelineLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroySampler", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroySampler([Count(Count = 0)] Device device, [Count(Count = 0)] Sampler sampler, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroySampler", Convention = CallingConvention.Winapi)]
+        public partial void DestroySampler([Count(Count = 0)] Device device, [Count(Count = 0)] Sampler sampler, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyShaderModule", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyShaderModule([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyShaderModule", Convention = CallingConvention.Winapi)]
+        public partial void DestroyShaderModule([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkFreeDescriptorSets", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result FreeDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSet* pDescriptorSets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkFreeDescriptorSets", Convention = CallingConvention.Winapi)]
+        public partial Result FreeDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSet pDescriptorSets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetEventStatus", Convention = CallingConvention.Winapi)]
+        public partial Result GetEventStatus([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] void* pData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPipelineCacheData", Convention = CallingConvention.Winapi)]
+        public partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkMergePipelineCaches", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result MergePipelineCaches([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCache* pSrcCaches);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkMergePipelineCaches", Convention = CallingConvention.Winapi)]
+        public partial Result MergePipelineCaches([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineCache pSrcCaches);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkResetDescriptorPool", Convention = CallingConvention.Winapi)]
+        public partial Result ResetDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint flags);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkResetEvent", Convention = CallingConvention.Winapi)]
+        public partial Result ResetEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkSetEvent", Convention = CallingConvention.Winapi)]
+        public partial Result SetEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUpdateDescriptorSets", Convention = CallingConvention.Winapi)]
@@ -3003,12 +2635,240 @@ namespace Silk.NET.Vulkan
         public partial void UpdateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WriteDescriptorSet pDescriptorWrites, [Count(Count = 0)] uint descriptorCopyCount, [Count(Parameter = "descriptorCopyCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CopyDescriptorSet pDescriptorCopies);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWaitForFences", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result WaitForFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Fence* pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout);
+        [NativeApi(EntryPoint = "vkCmdBeginRenderPass", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBeginRenderPass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0)] SubpassContents contents);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWaitForFences", Convention = CallingConvention.Winapi)]
-        public partial Result WaitForFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Fence pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout);
+        [NativeApi(EntryPoint = "vkCmdBeginRenderPass", Convention = CallingConvention.Winapi)]
+        public partial void CmdBeginRenderPass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassBeginInfo pRenderPassBegin, [Count(Count = 0)] SubpassContents contents);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindIndexBuffer", Convention = CallingConvention.Winapi)]
+        public partial void CmdBindIndexBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] IndexType indexType);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong pOffsets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers", Convention = CallingConvention.Winapi)]
+        public partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong pOffsets);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBlitImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBlitImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBlit* pRegions, [Count(Count = 0)] Filter filter);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBlitImage", Convention = CallingConvention.Winapi)]
+        public partial void CmdBlitImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBlit pRegions, [Count(Count = 0)] Filter filter);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearAttachment* pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearRect* pRects);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearAttachment* pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearRect pRects);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearAttachment pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearRect* pRects);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearAttachments", Convention = CallingConvention.Winapi)]
+        public partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearAttachment pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearRect pRects);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresourceRange pRanges);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearDepthStencilValue pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage", Convention = CallingConvention.Winapi)]
+        public partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearDepthStencilValue pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresourceRange pRanges);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdDraw", Convention = CallingConvention.Winapi)]
+        public partial void CmdDraw([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint vertexCount, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstVertex, [Count(Count = 0)] uint firstInstance);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdDrawIndexed", Convention = CallingConvention.Winapi)]
+        public partial void CmdDrawIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint indexCount, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstIndex, [Count(Count = 0)] int vertexOffset, [Count(Count = 0)] uint firstInstance);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdDrawIndexedIndirect", Convention = CallingConvention.Winapi)]
+        public partial void CmdDrawIndexedIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] uint drawCount, [Count(Count = 0)] uint stride);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdDrawIndirect", Convention = CallingConvention.Winapi)]
+        public partial void CmdDrawIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] uint drawCount, [Count(Count = 0)] uint stride);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdEndRenderPass", Convention = CallingConvention.Winapi)]
+        public partial void CmdEndRenderPass([Count(Count = 0)] CommandBuffer commandBuffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdNextSubpass", Convention = CallingConvention.Winapi)]
+        public partial void CmdNextSubpass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] SubpassContents contents);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdResolveImage", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageResolve* pRegions);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdResolveImage", Convention = CallingConvention.Winapi)]
+        public partial void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageResolve pRegions);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetBlendConstants", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdSetBlendConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* blendConstants);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetBlendConstants", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetBlendConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float blendConstants);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDepthBias", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetDepthBias([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] float depthBiasConstantFactor, [Count(Count = 0)] float depthBiasClamp, [Count(Count = 0)] float depthBiasSlopeFactor);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDepthBounds", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetDepthBounds([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] float minDepthBounds, [Count(Count = 0)] float maxDepthBounds);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetLineWidth", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetLineWidth([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] float lineWidth);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetScissor", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdSetScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Rect2D* pScissors);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetScissor", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Rect2D pScissors);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetStencilCompareMask", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetStencilCompareMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] uint compareMask);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetStencilReference", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetStencilReference([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] uint reference);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetStencilWriteMask", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetStencilWriteMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] uint writeMask);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetViewport", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdSetViewport([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Viewport* pViewports);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetViewport", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetViewport([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Viewport pViewports);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Framebuffer pFramebuffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Framebuffer pFramebuffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Framebuffer pFramebuffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateFramebuffer", Convention = CallingConvention.Winapi)]
+        public partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FramebufferCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Framebuffer pFramebuffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out RenderPass pRenderPass);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out RenderPass pRenderPass);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out RenderPass pRenderPass);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreateRenderPass", Convention = CallingConvention.Winapi)]
+        public partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderPassCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out RenderPass pRenderPass);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyFramebuffer", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Framebuffer framebuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyFramebuffer", Convention = CallingConvention.Winapi)]
+        public partial void DestroyFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Framebuffer framebuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyRenderPass", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyRenderPass([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyRenderPass", Convention = CallingConvention.Winapi)]
+        public partial void DestroyRenderPass([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRenderAreaGranularity", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetRenderAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetRenderAreaGranularity", Convention = CallingConvention.Winapi)]
+        public partial void GetRenderAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
 
         /// <summary>To be documented.</summary>
         public unsafe void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Parameter = "descriptorWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WriteDescriptorSet> pDescriptorWrites)
@@ -3144,6 +3004,13 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        public unsafe Result QueueSubmit2([Count(Count = 0)] Queue queue, [Count(Parameter = "submitCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubmitInfo2> pSubmits, [Count(Count = 0)] Fence fence)
+        {
+            // ImplicitCountSpanOverloader
+            return QueueSubmit2(queue, (uint) pSubmits.Length, in pSubmits.GetPinnableReference(), fence);
+        }
+
+        /// <summary>To be documented.</summary>
         public unsafe void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfos)
         {
             // ImplicitCountSpanOverloader
@@ -3162,13 +3029,6 @@ namespace Silk.NET.Vulkan
         {
             // ImplicitCountSpanOverloader
             CmdWaitEvents2(commandBuffer, (uint) pDependencyInfos.Length, in pEvents.GetPinnableReference(), in pDependencyInfos.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result QueueSubmit2([Count(Count = 0)] Queue queue, [Count(Parameter = "submitCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubmitInfo2> pSubmits, [Count(Count = 0)] Fence fence)
-        {
-            // ImplicitCountSpanOverloader
-            return QueueSubmit2(queue, (uint) pSubmits.Length, in pSubmits.GetPinnableReference(), fence);
         }
 
         /// <summary>To be documented.</summary>
@@ -3210,104 +3070,6 @@ namespace Silk.NET.Vulkan
             PhysicalDeviceProperties2 ret = default;
             GetPhysicalDeviceProperties2(physicalDevice, &ret);
             return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDynamicOffsets)
-        {
-            // ImplicitCountSpanOverloader
-            CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, pDescriptorSets, (uint) pDynamicOffsets.Length, in pDynamicOffsets.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDynamicOffsets)
-        {
-            // ImplicitCountSpanOverloader
-            CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, (uint) pDescriptorSets.Length, in pDescriptorSets.GetPinnableReference(), dynamicOffsetCount, pDynamicOffsets);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDynamicOffsets)
-        {
-            // ImplicitCountSpanOverloader
-            CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, (uint) pDescriptorSets.Length, in pDescriptorSets.GetPinnableReference(), (uint) pDynamicOffsets.Length, in pDynamicOffsets.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pOffsets)
-        {
-            // ImplicitCountSpanOverloader
-            CmdBindVertexBuffers(commandBuffer, firstBinding, (uint) pOffsets.Length, pBuffers, in pOffsets.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets)
-        {
-            // ImplicitCountSpanOverloader
-            CmdBindVertexBuffers(commandBuffer, firstBinding, (uint) pBuffers.Length, in pBuffers.GetPinnableReference(), pOffsets);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pOffsets)
-        {
-            // ImplicitCountSpanOverloader
-            CmdBindVertexBuffers(commandBuffer, firstBinding, (uint) pOffsets.Length, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdBlitImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageBlit> pRegions, [Count(Count = 0)] Filter filter)
-        {
-            // ImplicitCountSpanOverloader
-            CmdBlitImage(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, (uint) pRegions.Length, in pRegions.GetPinnableReference(), filter);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearAttachment* pAttachments, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearRect> pRects)
-        {
-            // ImplicitCountSpanOverloader
-            CmdClearAttachments(commandBuffer, attachmentCount, pAttachments, (uint) pRects.Length, in pRects.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearAttachment> pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearRect* pRects)
-        {
-            // ImplicitCountSpanOverloader
-            CmdClearAttachments(commandBuffer, (uint) pAttachments.Length, in pAttachments.GetPinnableReference(), rectCount, pRects);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearAttachment> pAttachments, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearRect> pRects)
-        {
-            // ImplicitCountSpanOverloader
-            CmdClearAttachments(commandBuffer, (uint) pAttachments.Length, in pAttachments.GetPinnableReference(), (uint) pRects.Length, in pRects.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearColorValue* pColor, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
-        {
-            // ImplicitCountSpanOverloader
-            CmdClearColorImage(commandBuffer, image, imageLayout, pColor, (uint) pRanges.Length, in pRanges.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearColorValue pColor, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
-        {
-            // ImplicitCountSpanOverloader
-            CmdClearColorImage(commandBuffer, image, imageLayout, in pColor, (uint) pRanges.Length, in pRanges.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
-        {
-            // ImplicitCountSpanOverloader
-            CmdClearDepthStencilImage(commandBuffer, image, imageLayout, pDepthStencil, (uint) pRanges.Length, in pRanges.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearDepthStencilValue pDepthStencil, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
-        {
-            // ImplicitCountSpanOverloader
-            CmdClearDepthStencilImage(commandBuffer, image, imageLayout, in pDepthStencil, (uint) pRanges.Length, in pRanges.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -3395,38 +3157,135 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe void CmdPushConstants<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Parameter = "size")] Span<T0> pValues) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            CmdPushConstants(commandBuffer, layout, stageFlags, offset, (uint) ((pValues.Length) * Unsafe.SizeOf<T0>()), ref pValues.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageResolve> pRegions)
-        {
-            // ImplicitCountSpanOverloader
-            CmdResolveImage(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, (uint) pRegions.Length, in pRegions.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdSetScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Parameter = "scissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect2D> pScissors)
-        {
-            // ImplicitCountSpanOverloader
-            CmdSetScissor(commandBuffer, firstScissor, (uint) pScissors.Length, in pScissors.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdSetViewport([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Viewport> pViewports)
-        {
-            // ImplicitCountSpanOverloader
-            CmdSetViewport(commandBuffer, firstViewport, (uint) pViewports.Length, in pViewports.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public unsafe void CmdUpdateBuffer<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // ImplicitCountSpanOverloader
             CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, (ulong) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result FlushMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Parameter = "memoryRangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MappedMemoryRange> pMemoryRanges)
+        {
+            // ImplicitCountSpanOverloader
+            return FlushMappedMemoryRanges(device, (uint) pMemoryRanges.Length, in pMemoryRanges.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void FreeCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Parameter = "commandBufferCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandBuffer> pCommandBuffers)
+        {
+            // ImplicitCountSpanOverloader
+            FreeCommandBuffers(device, commandPool, (uint) pCommandBuffers.Length, in pCommandBuffers.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe PhysicalDeviceFeatures GetPhysicalDeviceFeature([Count(Count = 0)] PhysicalDevice physicalDevice)
+        {
+            // ReturnTypeOverloader
+            PhysicalDeviceFeatures ret = default;
+            GetPhysicalDeviceFeatures(physicalDevice, &ret);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe PhysicalDeviceMemoryProperties GetPhysicalDeviceMemoryProperty([Count(Count = 0)] PhysicalDevice physicalDevice)
+        {
+            // ReturnTypeOverloader
+            PhysicalDeviceMemoryProperties ret = default;
+            GetPhysicalDeviceMemoryProperties(physicalDevice, &ret);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe PhysicalDeviceProperties GetPhysicalDeviceProperty([Count(Count = 0)] PhysicalDevice physicalDevice)
+        {
+            // ReturnTypeOverloader
+            PhysicalDeviceProperties ret = default;
+            GetPhysicalDeviceProperties(physicalDevice, &ret);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetQueryPoolResults<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            return GetQueryPoolResults(device, queryPool, firstQuery, queryCount, (nuint) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride, flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result InvalidateMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Parameter = "memoryRangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MappedMemoryRange> pMemoryRanges)
+        {
+            // ImplicitCountSpanOverloader
+            return InvalidateMappedMemoryRanges(device, (uint) pMemoryRanges.Length, in pMemoryRanges.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result QueueBindSparse([Count(Count = 0)] Queue queue, [Count(Parameter = "bindInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BindSparseInfo> pBindInfo, [Count(Count = 0)] Fence fence)
+        {
+            // ImplicitCountSpanOverloader
+            return QueueBindSparse(queue, (uint) pBindInfo.Length, in pBindInfo.GetPinnableReference(), fence);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result QueueSubmit([Count(Count = 0)] Queue queue, [Count(Parameter = "submitCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubmitInfo> pSubmits, [Count(Count = 0)] Fence fence)
+        {
+            // ImplicitCountSpanOverloader
+            return QueueSubmit(queue, (uint) pSubmits.Length, in pSubmits.GetPinnableReference(), fence);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result ResetFences([Count(Count = 0)] Device device, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Fence> pFences)
+        {
+            // ImplicitCountSpanOverloader
+            return ResetFences(device, (uint) pFences.Length, in pFences.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result WaitForFences([Count(Count = 0)] Device device, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Fence> pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout)
+        {
+            // ImplicitCountSpanOverloader
+            return WaitForFences(device, (uint) pFences.Length, in pFences.GetPinnableReference(), waitAll, timeout);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDynamicOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, pDescriptorSets, (uint) pDynamicOffsets.Length, in pDynamicOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDynamicOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, (uint) pDescriptorSets.Length, in pDescriptorSets.GetPinnableReference(), dynamicOffsetCount, pDynamicOffsets);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDynamicOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, (uint) pDescriptorSets.Length, in pDescriptorSets.GetPinnableReference(), (uint) pDynamicOffsets.Length, in pDynamicOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearColorValue* pColor, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
+        {
+            // ImplicitCountSpanOverloader
+            CmdClearColorImage(commandBuffer, image, imageLayout, pColor, (uint) pRanges.Length, in pRanges.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearColorValue pColor, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
+        {
+            // ImplicitCountSpanOverloader
+            CmdClearColorImage(commandBuffer, image, imageLayout, in pColor, (uint) pRanges.Length, in pRanges.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdPushConstants<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Parameter = "size")] Span<T0> pValues) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            CmdPushConstants(commandBuffer, layout, stageFlags, offset, (uint) ((pValues.Length) * Unsafe.SizeOf<T0>()), ref pValues.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -3535,104 +3394,6 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateComputePipelines(device, pipelineCache, (uint) pPipelines.Length, pCreateInfos, pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateComputePipelines(device, pipelineCache, (uint) pPipelines.Length, pCreateInfos, in pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateComputePipelines(device, pipelineCache, (uint) pCreateInfos.Length, in pCreateInfos.GetPinnableReference(), pAllocator, pPipelines);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateComputePipelines(device, pipelineCache, (uint) pPipelines.Length, in pCreateInfos.GetPinnableReference(), pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateComputePipelines(device, pipelineCache, (uint) pCreateInfos.Length, in pCreateInfos.GetPinnableReference(), in pAllocator, pPipelines);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateComputePipelines(device, pipelineCache, (uint) pPipelines.Length, in pCreateInfos.GetPinnableReference(), in pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateGraphicsPipelines(device, pipelineCache, (uint) pPipelines.Length, pCreateInfos, pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateGraphicsPipelines(device, pipelineCache, (uint) pPipelines.Length, pCreateInfos, in pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateGraphicsPipelines(device, pipelineCache, (uint) pCreateInfos.Length, in pCreateInfos.GetPinnableReference(), pAllocator, pPipelines);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateGraphicsPipelines(device, pipelineCache, (uint) pPipelines.Length, in pCreateInfos.GetPinnableReference(), pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateGraphicsPipelines(device, pipelineCache, (uint) pCreateInfos.Length, in pCreateInfos.GetPinnableReference(), in pAllocator, pPipelines);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // ImplicitCountSpanOverloader
-            return CreateGraphicsPipelines(device, pipelineCache, (uint) pPipelines.Length, in pCreateInfos.GetPinnableReference(), in pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result FlushMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Parameter = "memoryRangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MappedMemoryRange> pMemoryRanges)
-        {
-            // ImplicitCountSpanOverloader
-            return FlushMappedMemoryRanges(device, (uint) pMemoryRanges.Length, in pMemoryRanges.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void FreeCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Parameter = "commandBufferCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CommandBuffer> pCommandBuffers)
-        {
-            // ImplicitCountSpanOverloader
-            FreeCommandBuffers(device, commandPool, (uint) pCommandBuffers.Length, in pCommandBuffers.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public unsafe Result FreeDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets)
         {
             // ImplicitCountSpanOverloader
@@ -3640,72 +3401,10 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe PhysicalDeviceFeatures GetPhysicalDeviceFeature([Count(Count = 0)] PhysicalDevice physicalDevice)
-        {
-            // ReturnTypeOverloader
-            PhysicalDeviceFeatures ret = default;
-            GetPhysicalDeviceFeatures(physicalDevice, &ret);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe PhysicalDeviceMemoryProperties GetPhysicalDeviceMemoryProperty([Count(Count = 0)] PhysicalDevice physicalDevice)
-        {
-            // ReturnTypeOverloader
-            PhysicalDeviceMemoryProperties ret = default;
-            GetPhysicalDeviceMemoryProperties(physicalDevice, &ret);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe PhysicalDeviceProperties GetPhysicalDeviceProperty([Count(Count = 0)] PhysicalDevice physicalDevice)
-        {
-            // ReturnTypeOverloader
-            PhysicalDeviceProperties ret = default;
-            GetPhysicalDeviceProperties(physicalDevice, &ret);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result GetQueryPoolResults<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged
-        {
-            // ImplicitCountSpanOverloader
-            return GetQueryPoolResults(device, queryPool, firstQuery, queryCount, (nuint) ((pData.Length) * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride, flags);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result InvalidateMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Parameter = "memoryRangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MappedMemoryRange> pMemoryRanges)
-        {
-            // ImplicitCountSpanOverloader
-            return InvalidateMappedMemoryRanges(device, (uint) pMemoryRanges.Length, in pMemoryRanges.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public unsafe Result MergePipelineCaches([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Parameter = "srcCacheCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCache> pSrcCaches)
         {
             // ImplicitCountSpanOverloader
             return MergePipelineCaches(device, dstCache, (uint) pSrcCaches.Length, in pSrcCaches.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result QueueBindSparse([Count(Count = 0)] Queue queue, [Count(Parameter = "bindInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BindSparseInfo> pBindInfo, [Count(Count = 0)] Fence fence)
-        {
-            // ImplicitCountSpanOverloader
-            return QueueBindSparse(queue, (uint) pBindInfo.Length, in pBindInfo.GetPinnableReference(), fence);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result QueueSubmit([Count(Count = 0)] Queue queue, [Count(Parameter = "submitCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubmitInfo> pSubmits, [Count(Count = 0)] Fence fence)
-        {
-            // ImplicitCountSpanOverloader
-            return QueueSubmit(queue, (uint) pSubmits.Length, in pSubmits.GetPinnableReference(), fence);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Result ResetFences([Count(Count = 0)] Device device, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Fence> pFences)
-        {
-            // ImplicitCountSpanOverloader
-            return ResetFences(device, (uint) pFences.Length, in pFences.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -3730,10 +3429,103 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result WaitForFences([Count(Count = 0)] Device device, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Fence> pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout)
+        public unsafe void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pOffsets)
         {
             // ImplicitCountSpanOverloader
-            return WaitForFences(device, (uint) pFences.Length, in pFences.GetPinnableReference(), waitAll, timeout);
+            CmdBindVertexBuffers(commandBuffer, firstBinding, (uint) pOffsets.Length, pBuffers, in pOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers(commandBuffer, firstBinding, (uint) pBuffers.Length, in pBuffers.GetPinnableReference(), pOffsets);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers(commandBuffer, firstBinding, (uint) pOffsets.Length, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBlitImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageBlit> pRegions, [Count(Count = 0)] Filter filter)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBlitImage(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, (uint) pRegions.Length, in pRegions.GetPinnableReference(), filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearAttachment* pAttachments, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearRect> pRects)
+        {
+            // ImplicitCountSpanOverloader
+            CmdClearAttachments(commandBuffer, attachmentCount, pAttachments, (uint) pRects.Length, in pRects.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearAttachment> pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearRect* pRects)
+        {
+            // ImplicitCountSpanOverloader
+            CmdClearAttachments(commandBuffer, (uint) pAttachments.Length, in pAttachments.GetPinnableReference(), rectCount, pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearAttachment> pAttachments, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearRect> pRects)
+        {
+            // ImplicitCountSpanOverloader
+            CmdClearAttachments(commandBuffer, (uint) pAttachments.Length, in pAttachments.GetPinnableReference(), (uint) pRects.Length, in pRects.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
+        {
+            // ImplicitCountSpanOverloader
+            CmdClearDepthStencilImage(commandBuffer, image, imageLayout, pDepthStencil, (uint) pRanges.Length, in pRanges.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ClearDepthStencilValue pDepthStencil, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
+        {
+            // ImplicitCountSpanOverloader
+            CmdClearDepthStencilImage(commandBuffer, image, imageLayout, in pDepthStencil, (uint) pRanges.Length, in pRanges.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageResolve> pRegions)
+        {
+            // ImplicitCountSpanOverloader
+            CmdResolveImage(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, (uint) pRegions.Length, in pRegions.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdSetScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Parameter = "scissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect2D> pScissors)
+        {
+            // ImplicitCountSpanOverloader
+            CmdSetScissor(commandBuffer, firstScissor, (uint) pScissors.Length, in pScissors.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdSetViewport([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Viewport> pViewports)
+        {
+            // ImplicitCountSpanOverloader
+            CmdSetViewport(commandBuffer, firstViewport, (uint) pViewports.Length, in pViewports.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Extent2D GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetRenderingAreaGranularity(device, pRenderingAreaInfo, out Extent2D silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Extent2D GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingAreaInfo pRenderingAreaInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetRenderingAreaGranularity(device, in pRenderingAreaInfo, out Extent2D silkRet);
+            return silkRet;
         }
 
         /// <summary>To be documented.</summary>
@@ -3769,22 +3561,6 @@ namespace Silk.NET.Vulkan
         {
             // NonKhrReturnTypeOverloader
             GetImageSubresourceLayout2(device, image, in pSubresource, out SubresourceLayout2 silkRet);
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Extent2D GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo)
-        {
-            // NonKhrReturnTypeOverloader
-            GetRenderingAreaGranularity(device, pRenderingAreaInfo, out Extent2D silkRet);
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe Extent2D GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingAreaInfo pRenderingAreaInfo)
-        {
-            // NonKhrReturnTypeOverloader
-            GetRenderingAreaGranularity(device, in pRenderingAreaInfo, out Extent2D silkRet);
             return silkRet;
         }
 
@@ -3883,24 +3659,6 @@ namespace Silk.NET.Vulkan
         {
             // NonKhrReturnTypeOverloader
             GetBufferMemoryRequirements2(device, in pInfo, out MemoryRequirements2 silkRet);
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
-        public unsafe DescriptorSetLayoutSupport GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo)
-        {
-            // NonKhrReturnTypeOverloader
-            GetDescriptorSetLayoutSupport(device, pCreateInfo, out DescriptorSetLayoutSupport silkRet);
-            return silkRet;
-        }
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
-        public unsafe DescriptorSetLayoutSupport GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo)
-        {
-            // NonKhrReturnTypeOverloader
-            GetDescriptorSetLayoutSupport(device, in pCreateInfo, out DescriptorSetLayoutSupport silkRet);
             return silkRet;
         }
 
@@ -4096,6 +3854,24 @@ namespace Silk.NET.Vulkan
         {
             // NonKhrReturnTypeOverloader
             GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, in pFormatInfo, ref pPropertyCount, out SparseImageFormatProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
+        public unsafe DescriptorSetLayoutSupport GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDescriptorSetLayoutSupport(device, pCreateInfo, out DescriptorSetLayoutSupport silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
+        public unsafe DescriptorSetLayoutSupport GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DescriptorSetLayoutCreateInfo pCreateInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDescriptorSetLayoutSupport(device, in pCreateInfo, out DescriptorSetLayoutSupport silkRet);
             return silkRet;
         }
 

@@ -169,6 +169,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DataGraphWriteBitArm\"")]
         [NativeName("Name", "VK_ACCESS_2_DATA_GRAPH_WRITE_BIT_ARM")]
         Access2DataGraphWriteBitArm = 281474976710656,
+        [Obsolete("Deprecated in favour of \"MemoryDecompressionReadBitExt\"")]
+        [NativeName("Name", "VK_ACCESS_2_MEMORY_DECOMPRESSION_READ_BIT_EXT")]
+        Access2MemoryDecompressionReadBitExt = 36028797018963968,
+        [Obsolete("Deprecated in favour of \"MemoryDecompressionWriteBitExt\"")]
+        [NativeName("Name", "VK_ACCESS_2_MEMORY_DECOMPRESSION_WRITE_BIT_EXT")]
+        Access2MemoryDecompressionWriteBitExt = 72057594037927936,
         [NativeName("Name", "VK_ACCESS_2_NONE")]
         None = 0,
         [NativeName("Name", "VK_ACCESS_2_INDIRECT_COMMAND_READ_BIT")]
@@ -273,5 +279,9 @@ namespace Silk.NET.Vulkan
         DataGraphReadBitArm = 140737488355328,
         [NativeName("Name", "VK_ACCESS_2_DATA_GRAPH_WRITE_BIT_ARM")]
         DataGraphWriteBitArm = 281474976710656,
+        [NativeName("Name", "VK_ACCESS_2_MEMORY_DECOMPRESSION_READ_BIT_EXT")]
+        MemoryDecompressionReadBitExt = 36028797018963968,
+        [NativeName("Name", "VK_ACCESS_2_MEMORY_DECOMPRESSION_WRITE_BIT_EXT")]
+        MemoryDecompressionWriteBitExt = 72057594037927936,
     }
 }

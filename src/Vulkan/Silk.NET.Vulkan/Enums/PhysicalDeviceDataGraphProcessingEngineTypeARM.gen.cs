@@ -15,7 +15,17 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DefaultArm\"")]
         [NativeName("Name", "VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_DEFAULT_ARM")]
         PhysicalDeviceDataGraphProcessingEngineTypeDefaultArm = 0,
+        [Obsolete("Deprecated in favour of \"NeuralQCom\"")]
+        [NativeName("Name", "VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_NEURAL_QCOM")]
+        PhysicalDeviceDataGraphProcessingEngineTypeNeuralQCom = 1000629000,
+        [Obsolete("Deprecated in favour of \"ComputeQCom\"")]
+        [NativeName("Name", "VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_COMPUTE_QCOM")]
+        PhysicalDeviceDataGraphProcessingEngineTypeComputeQCom = 1000629001,
         [NativeName("Name", "VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_DEFAULT_ARM")]
         DefaultArm = 0,
+        [NativeName("Name", "VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_NEURAL_QCOM")]
+        NeuralQCom = 1000629000,
+        [NativeName("Name", "VK_PHYSICAL_DEVICE_DATA_GRAPH_PROCESSING_ENGINE_TYPE_COMPUTE_QCOM")]
+        ComputeQCom = 1000629001,
     }
 }

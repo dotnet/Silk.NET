@@ -117,15 +117,15 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateProtectedAccessOnlyBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_PROTECTED_ACCESS_ONLY_BIT_EXT")]
         PipelineCreateProtectedAccessOnlyBitExt = 1073741824,
-        [Obsolete("Deprecated in favour of \"CreateViewIndexFromDeviceIndexBit\"")]
-        [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
-        PipelineCreateViewIndexFromDeviceIndexBit = 8,
         [Obsolete("Deprecated in favour of \"CreateDispatchBaseBit\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_BIT")]
         PipelineCreateDispatchBaseBit = 16,
         [Obsolete("Deprecated in favour of \"CreateDispatchBase\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE")]
         PipelineCreateDispatchBase = 16,
+        [Obsolete("Deprecated in favour of \"CreateViewIndexFromDeviceIndexBit\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
+        PipelineCreateViewIndexFromDeviceIndexBit = 8,
         [Obsolete("Deprecated in favour of \"CreateFailOnPipelineCompileRequiredBit\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_FAIL_ON_PIPELINE_COMPILE_REQUIRED_BIT")]
         PipelineCreateFailOnPipelineCompileRequiredBit = 256,
@@ -206,12 +206,12 @@ namespace Silk.NET.Vulkan
         CreateNoProtectedAccessBitExt = 134217728,
         [NativeName("Name", "VK_PIPELINE_CREATE_PROTECTED_ACCESS_ONLY_BIT_EXT")]
         CreateProtectedAccessOnlyBitExt = 1073741824,
-        [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
-        CreateViewIndexFromDeviceIndexBit = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_BIT")]
         CreateDispatchBaseBit = 16,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE")]
         CreateDispatchBase = 16,
+        [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
+        CreateViewIndexFromDeviceIndexBit = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_FAIL_ON_PIPELINE_COMPILE_REQUIRED_BIT")]
         CreateFailOnPipelineCompileRequiredBit = 256,
         [NativeName("Name", "VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT")]

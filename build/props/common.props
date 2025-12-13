@@ -9,7 +9,7 @@
     <!-- Core properties -->
     <PropertyGroup>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <LangVersion>preview</LangVersion>
+        <LangVersion>10</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
             Silk.NET Mobile Update

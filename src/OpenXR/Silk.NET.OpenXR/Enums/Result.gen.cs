@@ -294,6 +294,8 @@ namespace Silk.NET.OpenXR
         ErrorAnchorNotTrackingAndroid = unchecked((int) -1000457002),
         [NativeName("Name", "XR_ERROR_PERSISTED_DATA_NOT_READY_ANDROID")]
         ErrorPersistedDataNotReadyAndroid = unchecked((int) -1000457003),
+        [NativeName("Name", "XR_ERROR_SERVICE_NOT_READY_ANDROID")]
+        ErrorServiceNotReadyAndroid = unchecked((int) -1000458000),
         [NativeName("Name", "XR_ERROR_FUTURE_PENDING_EXT")]
         ErrorFuturePendingExt = unchecked((int) -1000469001),
         [NativeName("Name", "XR_ERROR_FUTURE_INVALID_EXT")]

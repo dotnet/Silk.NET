@@ -169,6 +169,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DataGraphBitArm\"")]
         [NativeName("Name", "VK_PIPELINE_STAGE_2_DATA_GRAPH_BIT_ARM")]
         PipelineStage2DataGraphBitArm = 4398046511104,
+        [Obsolete("Deprecated in favour of \"CopyIndirectBitKhr\"")]
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_COPY_INDIRECT_BIT_KHR")]
+        PipelineStage2CopyIndirectBitKhr = 70368744177664,
+        [Obsolete("Deprecated in favour of \"MemoryDecompressionBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_MEMORY_DECOMPRESSION_BIT_EXT")]
+        PipelineStage2MemoryDecompressionBitExt = 35184372088832,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_NONE")]
         None = 0,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_TOP_OF_PIPE_BIT")]
@@ -273,5 +279,9 @@ namespace Silk.NET.Vulkan
         ConvertCooperativeVectorMatrixBitNV = 17592186044416,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_DATA_GRAPH_BIT_ARM")]
         DataGraphBitArm = 4398046511104,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_COPY_INDIRECT_BIT_KHR")]
+        CopyIndirectBitKhr = 70368744177664,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_MEMORY_DECOMPRESSION_BIT_EXT")]
+        MemoryDecompressionBitExt = 35184372088832,
     }
 }

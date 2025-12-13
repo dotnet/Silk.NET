@@ -107,10 +107,6 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 7.0.102
-    - name: Setup .NET 9.0
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 9.0.305
       - name: Build WGPU
         run: ${{ matrix.env.nuke_invoke }} Wgpu
         env:

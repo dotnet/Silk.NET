@@ -452,5 +452,7 @@ namespace Silk.NET.OpenCL
         SpirvCapabilitiesKhr = 0x12BB,
         [NativeName("Name", "CL_DEVICE_SVM_TYPE_CAPABILITIES_KHR")]
         SvmTypeCapabilitiesKhr = 0x1077,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_IMG")]
+        SchedulingControlsCapabilitiesImg = 0x4222,
     }
 }

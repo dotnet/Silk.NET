@@ -128,10 +128,10 @@ namespace Silk.NET.Vulkan
         IndirectCommandsLayoutExt = 1000572000,
         [NativeName("Name", "VK_OBJECT_TYPE_INDIRECT_EXECUTION_SET_EXT")]
         IndirectExecutionSetExt = 1000572001,
-        [NativeName("Name", "VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION")]
-        SamplerYcbcrConversion = 1000156000,
         [NativeName("Name", "VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE")]
         DescriptorUpdateTemplate = 1000085000,
+        [NativeName("Name", "VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION")]
+        SamplerYcbcrConversion = 1000156000,
         [NativeName("Name", "VK_OBJECT_TYPE_PRIVATE_DATA_SLOT")]
         PrivateDataSlot = 1000295000,
         [NativeName("Name", "VK_OBJECT_TYPE_SEMAPHORE_SCI_SYNC_POOL_NV")]

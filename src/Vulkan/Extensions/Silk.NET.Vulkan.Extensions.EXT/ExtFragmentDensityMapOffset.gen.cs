@@ -22,11 +22,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_fragment_density_map_offset";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdEndRendering2EXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdEndRendering2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingEndInfoEXT* pRenderingEndInfo);
+        public unsafe partial void CmdEndRendering2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingEndInfoKHR* pRenderingEndInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdEndRendering2EXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdEndRendering2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingEndInfoEXT pRenderingEndInfo);
+        public partial void CmdEndRendering2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingEndInfoKHR pRenderingEndInfo);
 
         public ExtFragmentDensityMapOffset(INativeContext ctx)
             : base(ctx)

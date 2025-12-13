@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassFragmentDensityMapOffsetEndInfoEXT")]
     [NativeName("Aliases", "VkSubpassFragmentDensityMapOffsetEndInfoQCOM")]
-    public unsafe partial struct RenderPassFragmentDensityMapOffsetEndInfoEXT : IExtendsChain<SubpassEndInfo>, IExtendsChain<SubpassEndInfoKHR>, IExtendsChain<RenderingEndInfoEXT>
+    public unsafe partial struct RenderPassFragmentDensityMapOffsetEndInfoEXT : IExtendsChain<SubpassEndInfo>, IExtendsChain<SubpassEndInfoKHR>, IExtendsChain<RenderingEndInfoKHR>, IExtendsChain<RenderingEndInfoEXT>
     {
         public RenderPassFragmentDensityMapOffsetEndInfoEXT
         (

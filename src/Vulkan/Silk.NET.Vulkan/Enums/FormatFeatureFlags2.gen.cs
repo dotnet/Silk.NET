@@ -156,12 +156,27 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"TensorDataGraphBitArm\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_TENSOR_DATA_GRAPH_BIT_ARM")]
         FormatFeature2TensorDataGraphBitArm = 281474976710656,
+        [Obsolete("Deprecated in favour of \"CopyImageIndirectDstBitKhr\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_COPY_IMAGE_INDIRECT_DST_BIT_KHR")]
+        FormatFeature2CopyImageIndirectDstBitKhr = 576460752303423488,
         [Obsolete("Deprecated in favour of \"VideoEncodeQuantizationDeltaMapBitKhr\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_QUANTIZATION_DELTA_MAP_BIT_KHR")]
         FormatFeature2VideoEncodeQuantizationDeltaMapBitKhr = 562949953421312,
         [Obsolete("Deprecated in favour of \"VideoEncodeEmphasisMapBitKhr\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_EMPHASIS_MAP_BIT_KHR")]
         FormatFeature2VideoEncodeEmphasisMapBitKhr = 1125899906842624,
+        [Obsolete("Deprecated in favour of \"DepthCopyOnComputeQueueBitKhr\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_DEPTH_COPY_ON_COMPUTE_QUEUE_BIT_KHR")]
+        FormatFeature2DepthCopyOnComputeQueueBitKhr = 4503599627370496,
+        [Obsolete("Deprecated in favour of \"DepthCopyOnTransferQueueBitKhr\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_DEPTH_COPY_ON_TRANSFER_QUEUE_BIT_KHR")]
+        FormatFeature2DepthCopyOnTransferQueueBitKhr = 9007199254740992,
+        [Obsolete("Deprecated in favour of \"StencilCopyOnComputeQueueBitKhr\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_STENCIL_COPY_ON_COMPUTE_QUEUE_BIT_KHR")]
+        FormatFeature2StencilCopyOnComputeQueueBitKhr = 18014398509481984,
+        [Obsolete("Deprecated in favour of \"StencilCopyOnTransferQueueBitKhr\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_STENCIL_COPY_ON_TRANSFER_QUEUE_BIT_KHR")]
+        FormatFeature2StencilCopyOnTransferQueueBitKhr = 36028797018963968,
         [Obsolete("Deprecated in favour of \"SampledImageFilterCubicBit\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_SAMPLED_IMAGE_FILTER_CUBIC_BIT")]
         FormatFeature2SampledImageFilterCubicBit = 8192,
@@ -262,10 +277,20 @@ namespace Silk.NET.Vulkan
         OpticalFlowCostBitNV = 4398046511104,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_TENSOR_DATA_GRAPH_BIT_ARM")]
         TensorDataGraphBitArm = 281474976710656,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_COPY_IMAGE_INDIRECT_DST_BIT_KHR")]
+        CopyImageIndirectDstBitKhr = 576460752303423488,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_QUANTIZATION_DELTA_MAP_BIT_KHR")]
         VideoEncodeQuantizationDeltaMapBitKhr = 562949953421312,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_VIDEO_ENCODE_EMPHASIS_MAP_BIT_KHR")]
         VideoEncodeEmphasisMapBitKhr = 1125899906842624,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_DEPTH_COPY_ON_COMPUTE_QUEUE_BIT_KHR")]
+        DepthCopyOnComputeQueueBitKhr = 4503599627370496,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_DEPTH_COPY_ON_TRANSFER_QUEUE_BIT_KHR")]
+        DepthCopyOnTransferQueueBitKhr = 9007199254740992,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_STENCIL_COPY_ON_COMPUTE_QUEUE_BIT_KHR")]
+        StencilCopyOnComputeQueueBitKhr = 18014398509481984,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_STENCIL_COPY_ON_TRANSFER_QUEUE_BIT_KHR")]
+        StencilCopyOnTransferQueueBitKhr = 36028797018963968,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_SAMPLED_IMAGE_FILTER_CUBIC_BIT")]
         SampledImageFilterCubicBit = 8192,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_HOST_IMAGE_TRANSFER_BIT")]

@@ -1119,6 +1119,9 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SystemEnvironmentDepthPropertiesMeta\"")]
         [NativeName("Name", "XR_TYPE_SYSTEM_ENVIRONMENT_DEPTH_PROPERTIES_META")]
         TypeSystemEnvironmentDepthPropertiesMeta = 1000291007,
+        [Obsolete("Deprecated in favour of \"EnvironmentDepthImageTimestampMeta\"")]
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_IMAGE_TIMESTAMP_META")]
+        TypeEnvironmentDepthImageTimestampMeta = 1000291008,
         [Obsolete("Deprecated in favour of \"RenderModelCreateInfoExt\"")]
         [NativeName("Name", "XR_TYPE_RENDER_MODEL_CREATE_INFO_EXT")]
         TypeRenderModelCreateInfoExt = 1000300000,
@@ -1227,6 +1230,21 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SystemBodyTrackingPropertiesBD\"")]
         [NativeName("Name", "XR_TYPE_SYSTEM_BODY_TRACKING_PROPERTIES_BD")]
         TypeSystemBodyTrackingPropertiesBD = 1000385004,
+        [Obsolete("Deprecated in favour of \"SystemFacialSimulationPropertiesBD\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_FACIAL_SIMULATION_PROPERTIES_BD")]
+        TypeSystemFacialSimulationPropertiesBD = 1000386001,
+        [Obsolete("Deprecated in favour of \"FaceTrackerCreateInfoBD\"")]
+        [NativeName("Name", "XR_TYPE_FACE_TRACKER_CREATE_INFO_BD")]
+        TypeFaceTrackerCreateInfoBD = 1000386002,
+        [Obsolete("Deprecated in favour of \"FacialSimulationDataGetInfoBD\"")]
+        [NativeName("Name", "XR_TYPE_FACIAL_SIMULATION_DATA_GET_INFO_BD")]
+        TypeFacialSimulationDataGetInfoBD = 1000386003,
+        [Obsolete("Deprecated in favour of \"FacialSimulationDataBD\"")]
+        [NativeName("Name", "XR_TYPE_FACIAL_SIMULATION_DATA_BD")]
+        TypeFacialSimulationDataBD = 1000386004,
+        [Obsolete("Deprecated in favour of \"LipExpressionDataBD\"")]
+        [NativeName("Name", "XR_TYPE_LIP_EXPRESSION_DATA_BD")]
+        TypeLipExpressionDataBD = 1000386005,
         [Obsolete("Deprecated in favour of \"SystemSpatialSensingPropertiesBD\"")]
         [NativeName("Name", "XR_TYPE_SYSTEM_SPATIAL_SENSING_PROPERTIES_BD")]
         TypeSystemSpatialSensingPropertiesBD = 1000389000,
@@ -1395,6 +1413,18 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"SystemDeviceAnchorPersistencePropertiesAndroid\"")]
         [NativeName("Name", "XR_TYPE_SYSTEM_DEVICE_ANCHOR_PERSISTENCE_PROPERTIES_ANDROID")]
         TypeSystemDeviceAnchorPersistencePropertiesAndroid = 1000457004,
+        [Obsolete("Deprecated in favour of \"FaceTrackerCreateInfoAndroid\"")]
+        [NativeName("Name", "XR_TYPE_FACE_TRACKER_CREATE_INFO_ANDROID")]
+        TypeFaceTrackerCreateInfoAndroid = 1000458000,
+        [Obsolete("Deprecated in favour of \"FaceStateGetInfoAndroid\"")]
+        [NativeName("Name", "XR_TYPE_FACE_STATE_GET_INFO_ANDROID")]
+        TypeFaceStateGetInfoAndroid = 1000458001,
+        [Obsolete("Deprecated in favour of \"FaceStateAndroid\"")]
+        [NativeName("Name", "XR_TYPE_FACE_STATE_ANDROID")]
+        TypeFaceStateAndroid = 1000458002,
+        [Obsolete("Deprecated in favour of \"SystemFaceTrackingPropertiesAndroid\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_FACE_TRACKING_PROPERTIES_ANDROID")]
+        TypeSystemFaceTrackingPropertiesAndroid = 1000458003,
         [Obsolete("Deprecated in favour of \"PassthroughCameraStateGetInfoAndroid\"")]
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_CAMERA_STATE_GET_INFO_ANDROID")]
         TypePassthroughCameraStateGetInfoAndroid = 1000460000,
@@ -2436,6 +2466,8 @@ namespace Silk.NET.OpenXR
         EnvironmentDepthHandRemovalSetInfoMeta = 1000291006,
         [NativeName("Name", "XR_TYPE_SYSTEM_ENVIRONMENT_DEPTH_PROPERTIES_META")]
         SystemEnvironmentDepthPropertiesMeta = 1000291007,
+        [NativeName("Name", "XR_TYPE_ENVIRONMENT_DEPTH_IMAGE_TIMESTAMP_META")]
+        EnvironmentDepthImageTimestampMeta = 1000291008,
         [NativeName("Name", "XR_TYPE_RENDER_MODEL_CREATE_INFO_EXT")]
         RenderModelCreateInfoExt = 1000300000,
         [NativeName("Name", "XR_TYPE_RENDER_MODEL_PROPERTIES_GET_INFO_EXT")]
@@ -2508,6 +2540,16 @@ namespace Silk.NET.OpenXR
         BodyJointLocationsBD = 1000385003,
         [NativeName("Name", "XR_TYPE_SYSTEM_BODY_TRACKING_PROPERTIES_BD")]
         SystemBodyTrackingPropertiesBD = 1000385004,
+        [NativeName("Name", "XR_TYPE_SYSTEM_FACIAL_SIMULATION_PROPERTIES_BD")]
+        SystemFacialSimulationPropertiesBD = 1000386001,
+        [NativeName("Name", "XR_TYPE_FACE_TRACKER_CREATE_INFO_BD")]
+        FaceTrackerCreateInfoBD = 1000386002,
+        [NativeName("Name", "XR_TYPE_FACIAL_SIMULATION_DATA_GET_INFO_BD")]
+        FacialSimulationDataGetInfoBD = 1000386003,
+        [NativeName("Name", "XR_TYPE_FACIAL_SIMULATION_DATA_BD")]
+        FacialSimulationDataBD = 1000386004,
+        [NativeName("Name", "XR_TYPE_LIP_EXPRESSION_DATA_BD")]
+        LipExpressionDataBD = 1000386005,
         [NativeName("Name", "XR_TYPE_SYSTEM_SPATIAL_SENSING_PROPERTIES_BD")]
         SystemSpatialSensingPropertiesBD = 1000389000,
         [NativeName("Name", "XR_TYPE_SPATIAL_ENTITY_COMPONENT_GET_INFO_BD")]
@@ -2620,6 +2662,14 @@ namespace Silk.NET.OpenXR
         DeviceAnchorPersistenceCreateInfoAndroid = 1000457003,
         [NativeName("Name", "XR_TYPE_SYSTEM_DEVICE_ANCHOR_PERSISTENCE_PROPERTIES_ANDROID")]
         SystemDeviceAnchorPersistencePropertiesAndroid = 1000457004,
+        [NativeName("Name", "XR_TYPE_FACE_TRACKER_CREATE_INFO_ANDROID")]
+        FaceTrackerCreateInfoAndroid = 1000458000,
+        [NativeName("Name", "XR_TYPE_FACE_STATE_GET_INFO_ANDROID")]
+        FaceStateGetInfoAndroid = 1000458001,
+        [NativeName("Name", "XR_TYPE_FACE_STATE_ANDROID")]
+        FaceStateAndroid = 1000458002,
+        [NativeName("Name", "XR_TYPE_SYSTEM_FACE_TRACKING_PROPERTIES_ANDROID")]
+        SystemFaceTrackingPropertiesAndroid = 1000458003,
         [NativeName("Name", "XR_TYPE_PASSTHROUGH_CAMERA_STATE_GET_INFO_ANDROID")]
         PassthroughCameraStateGetInfoAndroid = 1000460000,
         [NativeName("Name", "XR_TYPE_SYSTEM_PASSTHROUGH_CAMERA_STATE_PROPERTIES_ANDROID")]

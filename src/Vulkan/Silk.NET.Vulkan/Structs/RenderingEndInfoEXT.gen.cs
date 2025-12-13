@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingEndInfoEXT")]
+    [NativeName("AliasOf", "VkRenderingEndInfoKHR")]
     public unsafe partial struct RenderingEndInfoEXT : IChainStart
     {
         public RenderingEndInfoEXT
         (
-            StructureType? sType = StructureType.RenderingEndInfoExt,
+            StructureType? sType = StructureType.RenderingEndInfoKhr,
             void* pNext = null
         ) : this()
         {
@@ -50,7 +51,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.RenderingEndInfoExt;
+            return SType = StructureType.RenderingEndInfoKhr;
         }
 
         /// <inheritdoc />
@@ -68,7 +69,7 @@ namespace Silk.NET.Vulkan
         public static unsafe ref RenderingEndInfoEXT Chain(
             out RenderingEndInfoEXT capture)
         {
-            capture = new RenderingEndInfoEXT(StructureType.RenderingEndInfoExt);
+            capture = new RenderingEndInfoEXT(StructureType.RenderingEndInfoKhr);
             return ref capture;
         }
     }
