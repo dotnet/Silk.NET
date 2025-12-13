@@ -45,7 +45,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputVoices(this ComPtr<IXAudio2SubmixVoice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList)
+    public static int SetOutputVoices(this ComPtr<IXAudio2SubmixVoice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -66,7 +66,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetEffectChain(this ComPtr<IXAudio2SubmixVoice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+    public static int SetEffectChain(this ComPtr<IXAudio2SubmixVoice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -122,7 +122,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetEffectParameters<T0>(this ComPtr<IXAudio2SubmixVoice> thisVtbl, uint EffectIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
+    public static int SetEffectParameters<T0>(this ComPtr<IXAudio2SubmixVoice> thisVtbl, uint EffectIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -164,7 +164,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFilterParameters(this ComPtr<IXAudio2SubmixVoice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FilterParameters pParameters, uint OperationSet)
+    public static int SetFilterParameters(this ComPtr<IXAudio2SubmixVoice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FilterParameters pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2SubmixVoice> thisVtbl, IXAudio2Voice* pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FilterParameters pParameters, uint OperationSet)
+    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2SubmixVoice> thisVtbl, IXAudio2Voice* pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FilterParameters pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputFilterParameters(this ComPtr<IXAudio2SubmixVoice> thisVtbl, ref IXAudio2Voice pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FilterParameters pParameters, uint OperationSet)
+    public static int SetOutputFilterParameters(this ComPtr<IXAudio2SubmixVoice> thisVtbl, ref IXAudio2Voice pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FilterParameters pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -316,7 +316,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetChannelVolumes(this ComPtr<IXAudio2SubmixVoice> thisVtbl, uint Channels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pVolumes, uint OperationSet)
+    public static int SetChannelVolumes(this ComPtr<IXAudio2SubmixVoice> thisVtbl, uint Channels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pVolumes, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -354,7 +354,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2SubmixVoice> thisVtbl, IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pLevelMatrix, uint OperationSet)
+    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2SubmixVoice> thisVtbl, IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pLevelMatrix, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -378,7 +378,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputMatrix(this ComPtr<IXAudio2SubmixVoice> thisVtbl, ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pLevelMatrix, uint OperationSet)
+    public static int SetOutputMatrix(this ComPtr<IXAudio2SubmixVoice> thisVtbl, ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pLevelMatrix, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -520,7 +520,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputFilterParameters<TI0>(this ComPtr<IXAudio2SubmixVoice> thisVtbl, ComPtr<TI0> pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FilterParameters pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+    public static int SetOutputFilterParameters<TI0>(this ComPtr<IXAudio2SubmixVoice> thisVtbl, ComPtr<TI0> pDestinationVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FilterParameters pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -624,7 +624,7 @@ public unsafe static class XAudio2SubmixVoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputMatrix<TI0>(this ComPtr<IXAudio2SubmixVoice> thisVtbl, ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+    public static int SetOutputMatrix<TI0>(this ComPtr<IXAudio2SubmixVoice> thisVtbl, ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

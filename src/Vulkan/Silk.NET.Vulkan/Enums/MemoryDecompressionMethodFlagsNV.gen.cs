@@ -15,10 +15,15 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Gdeflate10BitNV\"")]
+        [Obsolete("Deprecated in favour of \"Ext\"")]
+        [NativeName("Name", "VK_MEMORY_DECOMPRESSION_METHOD_GDEFLATE_1_0_BIT_EXT")]
+        MemoryDecompressionMethodGdeflate10BitExt = 1,
+        [Obsolete("Deprecated in favour of \"NV\"")]
         [NativeName("Name", "VK_MEMORY_DECOMPRESSION_METHOD_GDEFLATE_1_0_BIT_NV")]
         MemoryDecompressionMethodGdeflate10BitNV = 1,
+        [NativeName("Name", "VK_MEMORY_DECOMPRESSION_METHOD_GDEFLATE_1_0_BIT_EXT")]
+        Ext = 1,
         [NativeName("Name", "VK_MEMORY_DECOMPRESSION_METHOD_GDEFLATE_1_0_BIT_NV")]
-        Gdeflate10BitNV = 1,
+        NV = 1,
     }
 }

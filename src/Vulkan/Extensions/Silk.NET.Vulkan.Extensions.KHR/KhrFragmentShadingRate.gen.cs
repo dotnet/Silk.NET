@@ -26,15 +26,15 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent2D* pFragmentSize, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FragmentShadingRateCombinerOpKHR combinerOps);
+        public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] Extent2D* pFragmentSize, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FragmentShadingRateCombinerOpKHR combinerOps);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent2D pFragmentSize, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps);
+        public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent2D pFragmentSize, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateKHR", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Extent2D pFragmentSize, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FragmentShadingRateCombinerOpKHR combinerOps);
+        public partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Extent2D pFragmentSize, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FragmentShadingRateCombinerOpKHR combinerOps);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR", Convention = CallingConvention.Winapi)]

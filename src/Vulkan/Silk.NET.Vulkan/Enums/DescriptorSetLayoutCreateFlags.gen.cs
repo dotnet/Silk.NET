@@ -42,6 +42,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"UpdateAfterBindPoolBit\"")]
         [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_UPDATE_AFTER_BIND_POOL_BIT")]
         DescriptorSetLayoutCreateUpdateAfterBindPoolBit = 2,
+        [Obsolete("Deprecated in favour of \"PushDescriptorBit\"")]
+        [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT")]
+        DescriptorSetLayoutCreatePushDescriptorBit = 1,
         [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR")]
         PushDescriptorBitKhr = 1,
         [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_UPDATE_AFTER_BIND_POOL_BIT_EXT")]
@@ -60,5 +63,7 @@ namespace Silk.NET.Vulkan
         PerStageBitNV = 64,
         [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_UPDATE_AFTER_BIND_POOL_BIT")]
         UpdateAfterBindPoolBit = 2,
+        [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT")]
+        PushDescriptorBit = 1,
     }
 }

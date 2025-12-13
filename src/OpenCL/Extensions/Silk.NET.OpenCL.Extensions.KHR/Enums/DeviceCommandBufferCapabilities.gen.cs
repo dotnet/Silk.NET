@@ -21,8 +21,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DeviceSideEnqueue = 0x2,
         [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_SIMULTANEOUS_USE_KHR")]
         SimultaneousUse = 0x4,
-        [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_OUT_OF_ORDER_KHR")]
-        OutOfOrder = 0x8,
         [NativeName("Name", "CL_COMMAND_BUFFER_CAPABILITY_MULTIPLE_QUEUE_KHR")]
         MultipleQueue = 0x10,
     }

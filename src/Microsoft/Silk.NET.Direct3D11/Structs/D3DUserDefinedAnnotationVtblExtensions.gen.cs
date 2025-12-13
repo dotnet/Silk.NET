@@ -94,7 +94,7 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char Name)
+    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char Name)
+    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char Name)
     {
         var @this = thisVtbl.Handle;
         fixed (char* NamePtr = &Name)

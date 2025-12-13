@@ -153,6 +153,18 @@ namespace Silk.NET.OpenCL
         UnsignedIntRaw12Ext = 0x10E4,
         [NativeName("Name", "CL_UNORM_INT_2_101010_EXT")]
         UnormInt2101010Ext = 0x10E5,
+        [NativeName("Name", "CL_UNSIGNED_INT10X6_EXT")]
+        UnsignedInt10X6Ext = 0x10E6,
+        [NativeName("Name", "CL_UNSIGNED_INT12X4_EXT")]
+        UnsignedInt12X4Ext = 0x10E7,
+        [NativeName("Name", "CL_UNSIGNED_INT14X2_EXT")]
+        UnsignedInt14X2Ext = 0x10E8,
+        [NativeName("Name", "CL_UNORM_INT10X6_EXT")]
+        UnormInt10X6Ext = 0x10E1,
+        [NativeName("Name", "CL_UNORM_INT12X4_EXT")]
+        UnormInt12X4Ext = 0x10E9,
+        [NativeName("Name", "CL_UNORM_INT14X2_EXT")]
+        UnormInt14X2Ext = 0x10EA,
         [NativeName("Name", "CL_COMPLETE")]
         Complete = 0x0,
         [NativeName("Name", "CL_RUNNING")]
@@ -509,6 +521,10 @@ namespace Silk.NET.OpenCL
         DxvaDeviceIntel = 0x4073,
         [NativeName("Name", "CL_CONTEXT_DXVA_DEVICE_INTEL")]
         ContextDxvaDeviceIntel = 0x4073,
+        [NativeName("Name", "CL_CONTEXT_PERF_HINT_QCOM")]
+        PerfHintQCom = 0x40C2,
+        [NativeName("Name", "CL_CONTEXT_PERF_HINT_QCOM")]
+        ContextPerfHintQCom = 0x40C2,
         [NativeName("Name", "CL_CONTEXT_PLATFORM")]
         Platform = 0x1084,
         [NativeName("Name", "CL_CONTEXT_PLATFORM")]
@@ -533,6 +549,10 @@ namespace Silk.NET.OpenCL
         ShowDiagnosticsIntel = 0x4106,
         [NativeName("Name", "CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
         ContextShowDiagnosticsIntel = 0x4106,
+        [NativeName("Name", "CL_CONTEXT_SAFETY_PROPERTIES_IMG")]
+        SafetyPropertiesImg = 0x40D9,
+        [NativeName("Name", "CL_CONTEXT_SAFETY_PROPERTIES_IMG")]
+        ContextSafetyPropertiesImg = 0x40D9,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_NUMA")]
         Numa = 0x1,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_NUMA")]
@@ -1356,6 +1376,18 @@ namespace Silk.NET.OpenCL
         MemoryCapabilitiesImg = 0x40D8,
         [NativeName("Name", "CL_DEVICE_MEMORY_CAPABILITIES_IMG")]
         DeviceMemoryCapabilitiesImg = 0x40D8,
+        [NativeName("Name", "CL_DEVICE_WORKGROUP_PROTECTION_SVM_CAPABILITIES_IMG")]
+        WorkgroupProtectionSvmCapabilitiesImg = 0x40DA,
+        [NativeName("Name", "CL_DEVICE_WORKGROUP_PROTECTION_SVM_CAPABILITIES_IMG")]
+        DeviceWorkgroupProtectionSvmCapabilitiesImg = 0x40DA,
+        [NativeName("Name", "CL_DEVICE_WORKGROUP_PROTECTION_DEVICE_ENQUEUE_CAPABILITIES_IMG")]
+        WorkgroupProtectionDeviceEnqueueCapabilitiesImg = 0x40DB,
+        [NativeName("Name", "CL_DEVICE_WORKGROUP_PROTECTION_DEVICE_ENQUEUE_CAPABILITIES_IMG")]
+        DeviceWorkgroupProtectionDeviceEnqueueCapabilitiesImg = 0x40DB,
+        [NativeName("Name", "CL_DEVICE_SAFETY_MEM_SIZE_IMG")]
+        SafetyMemSizeImg = 0x40DC,
+        [NativeName("Name", "CL_DEVICE_SAFETY_MEM_SIZE_IMG")]
+        DeviceSafetyMemSizeImg = 0x40DC,
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_CAPABILITIES_ARM")]
         ControlledTerminationCapabilitiesArm = 0x41EE,
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_CAPABILITIES_ARM")]
@@ -1432,6 +1464,10 @@ namespace Silk.NET.OpenCL
         CommandBufferCapabilitiesKhr = 0x12A9,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
         DeviceCommandBufferCapabilitiesKhr = 0x12A9,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SUPPORTED_QUEUE_PROPERTIES_KHR")]
+        CommandBufferSupportedQueuePropertiesKhr = 0x129A,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SUPPORTED_QUEUE_PROPERTIES_KHR")]
+        DeviceCommandBufferSupportedQueuePropertiesKhr = 0x129A,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
         CommandBufferRequiredQueuePropertiesKhr = 0x12AA,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
@@ -1468,6 +1504,26 @@ namespace Silk.NET.OpenCL
         KernelClockCapabilitiesKhr = 0x1076,
         [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
         DeviceKernelClockCapabilitiesKhr = 0x1076,
+        [NativeName("Name", "CL_DEVICE_SPIRV_EXTENDED_INSTRUCTION_SETS_KHR")]
+        SpirvExtendedInstructionSetsKhr = 0x12B9,
+        [NativeName("Name", "CL_DEVICE_SPIRV_EXTENDED_INSTRUCTION_SETS_KHR")]
+        DeviceSpirvExtendedInstructionSetsKhr = 0x12B9,
+        [NativeName("Name", "CL_DEVICE_SPIRV_EXTENSIONS_KHR")]
+        SpirvExtensionsKhr = 0x12BA,
+        [NativeName("Name", "CL_DEVICE_SPIRV_EXTENSIONS_KHR")]
+        DeviceSpirvExtensionsKhr = 0x12BA,
+        [NativeName("Name", "CL_DEVICE_SPIRV_CAPABILITIES_KHR")]
+        SpirvCapabilitiesKhr = 0x12BB,
+        [NativeName("Name", "CL_DEVICE_SPIRV_CAPABILITIES_KHR")]
+        DeviceSpirvCapabilitiesKhr = 0x12BB,
+        [NativeName("Name", "CL_DEVICE_SVM_TYPE_CAPABILITIES_KHR")]
+        SvmTypeCapabilitiesKhr = 0x1077,
+        [NativeName("Name", "CL_DEVICE_SVM_TYPE_CAPABILITIES_KHR")]
+        DeviceSvmTypeCapabilitiesKhr = 0x1077,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_IMG")]
+        SchedulingControlsCapabilitiesImg = 0x4222,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_IMG")]
+        DeviceSchedulingControlsCapabilitiesImg = 0x4222,
         [NativeName("Name", "CL_LOCAL")]
         Local = 0x1,
         [NativeName("Name", "CL_GLOBAL")]
@@ -1720,6 +1776,16 @@ namespace Silk.NET.OpenCL
         DX9ResourceNotAcquiredIntel = unchecked((int) 0xFFFFFFFFFFFFFC0B),
         [NativeName("Name", "CL_INVALID_GL_SHAREGROUP_REFERENCE_KHR")]
         InvalidGLSharegroupReferenceKhr = unchecked((int) 0xFFFFFFFFFFFFFC18),
+        [NativeName("Name", "CL_ECC_RECOVERED_IMG")]
+        EccRecoveredImg = 0x40DD,
+        [NativeName("Name", "CL_PAGE_FAULT_IMG")]
+        PageFaultImg = unchecked((int) 0xFFFFFFFFFFFFFB99),
+        [NativeName("Name", "CL_SAFETY_FAULT_IMG")]
+        SafetyFaultImg = unchecked((int) 0xFFFFFFFFFFFFFB98),
+        [NativeName("Name", "CL_GENERAL_FAULT_IMG")]
+        GeneralFaultImg = unchecked((int) 0xFFFFFFFFFFFFFB97),
+        [NativeName("Name", "CL_ECC_UNRECOVERED_IMG")]
+        EccUnrecoveredImg = unchecked((int) 0xFFFFFFFFFFFFFB96),
         [NativeName("Name", "CL_COMMAND_TERMINATED_ITSELF_WITH_FAILURE_ARM")]
         CommandTerminatedItselfWithFailureArm = unchecked((int) 0xFFFFFFFFFFFFFBAC),
         [NativeName("Name", "CL_INVALID_SEMAPHORE_KHR")]
@@ -2038,6 +2104,14 @@ namespace Silk.NET.OpenCL
         ComputeUnitMaxQueuedBatchesArm = 0x41F1,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_COMPUTE_UNIT_MAX_QUEUED_BATCHES_ARM")]
         KernelExecInfoComputeUnitMaxQueuedBatchesArm = 0x41F1,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_DEVICE_PTRS_EXT")]
+        DevicePtrsExt = 0x5002,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_DEVICE_PTRS_EXT")]
+        KernelExecInfoDevicePtrsExt = 0x5002,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_SVM_INDIRECT_ACCESS_KHR")]
+        SvmIndirectAccessKhr = 0x11BB,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_SVM_INDIRECT_ACCESS_KHR")]
+        KernelExecInfoSvmIndirectAccessKhr = 0x11BB,
         [NativeName("Name", "CL_KERNEL_FUNCTION_NAME")]
         FunctionName = 0x1190,
         [NativeName("Name", "CL_KERNEL_NUM_ARGS")]
@@ -2168,6 +2242,10 @@ namespace Silk.NET.OpenCL
         ProtectedAllocArm = unchecked((int) 0x1000000000),
         [NativeName("Name", "CL_MEM_PROTECTED_ALLOC_ARM")]
         MemProtectedAllocArm = unchecked((int) 0x1000000000),
+        [NativeName("Name", "CL_MEM_IMMUTABLE_EXT")]
+        ImmutableExt = 0x40,
+        [NativeName("Name", "CL_MEM_IMMUTABLE_EXT")]
+        MemImmutableExt = 0x40,
         [NativeName("Name", "CL_MEM_FLAGS")]
         Flags = 0x1101,
         [NativeName("Name", "CL_MEM_HOST_PTR")]
@@ -2220,6 +2298,10 @@ namespace Silk.NET.OpenCL
         DX9SharedHandleIntel = 0x4074,
         [NativeName("Name", "CL_MEM_DX9_SHARED_HANDLE_INTEL")]
         MemDX9SharedHandleIntel = 0x4074,
+        [NativeName("Name", "CL_MEM_DEVICE_ADDRESS_EXT")]
+        DeviceAddressExt = 0x5001,
+        [NativeName("Name", "CL_MEM_DEVICE_ADDRESS_EXT")]
+        MemDeviceAddressExt = 0x5001,
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST")]
         Host = 0x1,
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST")]
@@ -2258,6 +2340,10 @@ namespace Silk.NET.OpenCL
         DeviceHandleListKhr = 0x2051,
         [NativeName("Name", "CL_MEM_DEVICE_HANDLE_LIST_KHR")]
         MemDeviceHandleListKhr = 0x2051,
+        [NativeName("Name", "CL_MEM_DEVICE_PRIVATE_ADDRESS_EXT")]
+        DevicePrivateAddressExt = 0x5000,
+        [NativeName("Name", "CL_MEM_DEVICE_PRIVATE_ADDRESS_EXT")]
+        MemDevicePrivateAddressExt = 0x5000,
         [NativeName("Name", "CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
         LocallyUncachedResourceIntel = 0x4218,
         [NativeName("Name", "CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
@@ -2300,6 +2386,8 @@ namespace Silk.NET.OpenCL
         PlatformExternalMemoryImportHandleTypesKhr = 0x2044,
         [NativeName("Name", "CL_PLATFORM_COMMAND_BUFFER_CAPABILITIES_KHR")]
         PlatformCommandBufferCapabilitiesKhr = 0x908,
+        [NativeName("Name", "CL_PLATFORM_SVM_TYPE_CAPABILITIES_KHR")]
+        PlatformSvmTypeCapabilitiesKhr = 0x909,
         [NativeName("Name", "CL_PROFILING_COMMAND_SUBMIT")]
         Submit = 0x1281,
         [NativeName("Name", "CL_PROFILING_COMMAND_START")]
@@ -2375,37 +2463,27 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_PROGRAM_IL_KHR")]
         ProgramILKhr = 0x1169,
         [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
-        PriorityKhr = 0x1096,
-        [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
         QueuePriorityKhr = 0x1096,
-        [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
-        ThrottleKhr = 0x1097,
         [NativeName("Name", "CL_QUEUE_THROTTLE_KHR")]
         QueueThrottleKhr = 0x1097,
         [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
-        KernelBatchingArm = 0x41E7,
-        [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
         QueueKernelBatchingArm = 0x41E7,
-        [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
-        DeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
         QueueDeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
-        ComputeUnitLimitArm = 0x41F3,
-        [NativeName("Name", "CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
         QueueComputeUnitLimitArm = 0x41F3,
-        [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
-        FamilyIntel = 0x418C,
         [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
         QueueFamilyIntel = 0x418C,
         [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
-        IndexIntel = 0x418D,
-        [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
         QueueIndexIntel = 0x418D,
         [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
-        JobSlotArm = 0x41E1,
-        [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
         QueueJobSlotArm = 0x41E1,
+        [NativeName("Name", "CL_COMMAND_QUEUE_SCHEDULING_WORK_GROUP_SCHEDULING_ALGORITHM_IMG")]
+        CommandQueueSchedulingWorkGroupSchedulingAlgorithmImg = 0x4223,
+        [NativeName("Name", "CL_COMMAND_QUEUE_SCHEDULING_WORK_GROUP_ARBITRATION_ALGORITHM_IMG")]
+        CommandQueueSchedulingWorkGroupArbitrationAlgorithmImg = 0x4224,
+        [NativeName("Name", "CL_COMMAND_QUEUE_SCHEDULING_WORK_GROUP_EXECUTE_COUNT_IMG")]
+        CommandQueueSchedulingWorkGroupExecuteCountImg = 0x422B,
         [NativeName("Name", "CL_SAMPLER_NORMALIZED_COORDS")]
         NormalizedCoords = 0x1152,
         [NativeName("Name", "CL_SAMPLER_ADDRESSING_MODE")]

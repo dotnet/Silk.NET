@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrAllocateWorldMeshBufferML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AllocateWorldMeshBufferML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshBufferSizeML size, [Count(Count = 0)] WorldMeshBufferML* buffer);
+        public unsafe partial Result AllocateWorldMeshBufferML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshBufferSizeML size, [Count(Count = 0)] WorldMeshBufferML* buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrAllocateWorldMeshBufferML", Convention = CallingConvention.Winapi)]
-        public partial Result AllocateWorldMeshBufferML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshBufferSizeML size, [Count(Count = 0)] ref WorldMeshBufferML buffer);
+        public partial Result AllocateWorldMeshBufferML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshBufferSizeML size, [Count(Count = 0)] ref WorldMeshBufferML buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateWorldMeshDetectorML", Convention = CallingConvention.Winapi)]
@@ -46,11 +46,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateWorldMeshDetectorML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateWorldMeshDetectorML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshDetectorCreateInfoML createInfo, [Count(Count = 0)] WorldMeshDetectorML* detector);
+        public unsafe partial Result CreateWorldMeshDetectorML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshDetectorCreateInfoML createInfo, [Count(Count = 0)] WorldMeshDetectorML* detector);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateWorldMeshDetectorML", Convention = CallingConvention.Winapi)]
-        public partial Result CreateWorldMeshDetectorML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshDetectorCreateInfoML createInfo, [Count(Count = 0)] ref WorldMeshDetectorML detector);
+        public partial Result CreateWorldMeshDetectorML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshDetectorCreateInfoML createInfo, [Count(Count = 0)] ref WorldMeshDetectorML detector);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyWorldMeshDetectorML", Convention = CallingConvention.Winapi)]
@@ -62,7 +62,7 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrFreeWorldMeshBufferML", Convention = CallingConvention.Winapi)]
-        public partial Result FreeWorldMeshBufferML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshBufferML buffer);
+        public partial Result FreeWorldMeshBufferML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshBufferML buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetWorldMeshBufferRecommendSizeML", Convention = CallingConvention.Winapi)]
@@ -74,11 +74,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetWorldMeshBufferRecommendSizeML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetWorldMeshBufferRecommendSizeML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshBufferRecommendedSizeInfoML sizeInfo, [Count(Count = 0)] WorldMeshBufferSizeML* size);
+        public unsafe partial Result GetWorldMeshBufferRecommendSizeML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshBufferRecommendedSizeInfoML sizeInfo, [Count(Count = 0)] WorldMeshBufferSizeML* size);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetWorldMeshBufferRecommendSizeML", Convention = CallingConvention.Winapi)]
-        public partial Result GetWorldMeshBufferRecommendSizeML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshBufferRecommendedSizeInfoML sizeInfo, [Count(Count = 0)] ref WorldMeshBufferSizeML size);
+        public partial Result GetWorldMeshBufferRecommendSizeML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshBufferRecommendedSizeInfoML sizeInfo, [Count(Count = 0)] ref WorldMeshBufferSizeML size);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshAsyncML", Convention = CallingConvention.Winapi)]
@@ -98,19 +98,19 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshAsyncML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result RequestWorldMeshAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshGetInfoML getInfo, [Count(Count = 0)] WorldMeshBufferML* buffer, [Count(Count = 0)] FutureEXT* future);
+        public unsafe partial Result RequestWorldMeshAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshGetInfoML getInfo, [Count(Count = 0)] WorldMeshBufferML* buffer, [Count(Count = 0)] FutureEXT* future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshAsyncML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result RequestWorldMeshAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshGetInfoML getInfo, [Count(Count = 0)] WorldMeshBufferML* buffer, [Count(Count = 0)] ref FutureEXT future);
+        public unsafe partial Result RequestWorldMeshAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshGetInfoML getInfo, [Count(Count = 0)] WorldMeshBufferML* buffer, [Count(Count = 0)] ref FutureEXT future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshAsyncML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result RequestWorldMeshAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshGetInfoML getInfo, [Count(Count = 0)] ref WorldMeshBufferML buffer, [Count(Count = 0)] FutureEXT* future);
+        public unsafe partial Result RequestWorldMeshAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshGetInfoML getInfo, [Count(Count = 0)] ref WorldMeshBufferML buffer, [Count(Count = 0)] FutureEXT* future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshAsyncML", Convention = CallingConvention.Winapi)]
-        public partial Result RequestWorldMeshAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshGetInfoML getInfo, [Count(Count = 0)] ref WorldMeshBufferML buffer, [Count(Count = 0)] ref FutureEXT future);
+        public partial Result RequestWorldMeshAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshGetInfoML getInfo, [Count(Count = 0)] ref WorldMeshBufferML buffer, [Count(Count = 0)] ref FutureEXT future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshCompleteML", Convention = CallingConvention.Winapi)]
@@ -122,11 +122,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshCompleteML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result RequestWorldMeshCompleteML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshRequestCompletionInfoML completionInfo, [Count(Count = 0)] FutureEXT future, [Count(Count = 0)] WorldMeshRequestCompletionML* completion);
+        public unsafe partial Result RequestWorldMeshCompleteML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshRequestCompletionInfoML completionInfo, [Count(Count = 0)] FutureEXT future, [Count(Count = 0)] WorldMeshRequestCompletionML* completion);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshCompleteML", Convention = CallingConvention.Winapi)]
-        public partial Result RequestWorldMeshCompleteML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshRequestCompletionInfoML completionInfo, [Count(Count = 0)] FutureEXT future, [Count(Count = 0)] ref WorldMeshRequestCompletionML completion);
+        public partial Result RequestWorldMeshCompleteML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshRequestCompletionInfoML completionInfo, [Count(Count = 0)] FutureEXT future, [Count(Count = 0)] ref WorldMeshRequestCompletionML completion);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshStateAsyncML", Convention = CallingConvention.Winapi)]
@@ -138,11 +138,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshStateAsyncML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result RequestWorldMeshStateAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshStateRequestInfoML stateRequest, [Count(Count = 0)] FutureEXT* future);
+        public unsafe partial Result RequestWorldMeshStateAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshStateRequestInfoML stateRequest, [Count(Count = 0)] FutureEXT* future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshStateAsyncML", Convention = CallingConvention.Winapi)]
-        public partial Result RequestWorldMeshStateAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WorldMeshStateRequestInfoML stateRequest, [Count(Count = 0)] ref FutureEXT future);
+        public partial Result RequestWorldMeshStateAsyncML([Count(Count = 0)] WorldMeshDetectorML detector, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WorldMeshStateRequestInfoML stateRequest, [Count(Count = 0)] ref FutureEXT future);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestWorldMeshStateCompleteML", Convention = CallingConvention.Winapi)]

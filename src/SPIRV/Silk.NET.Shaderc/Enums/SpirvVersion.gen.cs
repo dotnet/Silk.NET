@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Shaderc
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_env_L53_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_env_L54_C9")]
     [NativeName("Name", "shaderc_spirv_version")]
     public enum SpirvVersion : int
     {

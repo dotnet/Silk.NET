@@ -31,12 +31,12 @@ namespace Silk.NET.Vulkan.Extensions.ANDROID
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetAndroidHardwareBufferProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in nint buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AndroidHardwareBufferPropertiesANDROID* pProperties);
+        public unsafe partial Result GetAndroidHardwareBufferProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly nint buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] AndroidHardwareBufferPropertiesANDROID* pProperties);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.AndroidHardwareBufferPropertiesAndroid);")]
         [NativeApi(EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID", Convention = CallingConvention.Winapi)]
-        public partial Result GetAndroidHardwareBufferProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in nint buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AndroidHardwareBufferPropertiesANDROID pProperties);
+        public partial Result GetAndroidHardwareBufferProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly nint buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out AndroidHardwareBufferPropertiesANDROID pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryAndroidHardwareBufferANDROID", Convention = CallingConvention.Winapi)]
@@ -48,11 +48,11 @@ namespace Silk.NET.Vulkan.Extensions.ANDROID
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryAndroidHardwareBufferANDROID", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetMemoryAndroidHardwareBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryGetAndroidHardwareBufferInfoANDROID pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint** pBuffer);
+        public unsafe partial Result GetMemoryAndroidHardwareBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryGetAndroidHardwareBufferInfoANDROID pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint** pBuffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryAndroidHardwareBufferANDROID", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetMemoryAndroidHardwareBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryGetAndroidHardwareBufferInfoANDROID pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint* pBuffer);
+        public unsafe partial Result GetMemoryAndroidHardwareBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryGetAndroidHardwareBufferInfoANDROID pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint* pBuffer);
 
         public AndroidExternalMemoryAndroidHardwareBuffer(INativeContext ctx)
             : base(ctx)

@@ -132,7 +132,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Create(Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, IPropertyStorage** ppprstg)
+        public readonly unsafe int Create(Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, IPropertyStorage** ppprstg)
         {
             var @this = (IPropertySetStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Create(Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, ref IPropertyStorage* ppprstg)
+        public readonly unsafe int Create(Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, ref IPropertyStorage* ppprstg)
         {
             var @this = (IPropertySetStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -186,7 +186,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Create(ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, IPropertyStorage** ppprstg)
+        public readonly unsafe int Create(ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, IPropertyStorage** ppprstg)
         {
             var @this = (IPropertySetStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Create(ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, ref IPropertyStorage* ppprstg)
+        public readonly unsafe int Create(ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, ref IPropertyStorage* ppprstg)
         {
             var @this = (IPropertySetStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -326,7 +326,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Create<TI0>(Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, ref ComPtr<TI0> ppprstg) where TI0 : unmanaged, IComVtbl<IPropertyStorage>, IComVtbl<TI0>
+        public readonly unsafe int Create<TI0>(Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, ref ComPtr<TI0> ppprstg) where TI0 : unmanaged, IComVtbl<IPropertyStorage>, IComVtbl<TI0>
         {
             var @this = (IPropertySetStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -342,7 +342,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Create<TI0>(ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, ref ComPtr<TI0> ppprstg) where TI0 : unmanaged, IComVtbl<IPropertyStorage>, IComVtbl<TI0>
+        public readonly int Create<TI0>(ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, ref ComPtr<TI0> ppprstg) where TI0 : unmanaged, IComVtbl<IPropertyStorage>, IComVtbl<TI0>
         {
             var @this = (IPropertySetStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

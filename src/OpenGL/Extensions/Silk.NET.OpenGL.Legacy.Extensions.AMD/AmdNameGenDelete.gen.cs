@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         public unsafe partial void DeleteNames([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* names);
 
         [NativeApi(EntryPoint = "glDeleteNamesAMD", Convention = CallingConvention.Winapi)]
-        public partial void DeleteNames([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint names);
+        public partial void DeleteNames([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint names);
 
         [NativeApi(EntryPoint = "glGenNamesAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void GenNames([Flow(Silk.NET.Core.Native.FlowDirection.In)] AMD identifier, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* names);

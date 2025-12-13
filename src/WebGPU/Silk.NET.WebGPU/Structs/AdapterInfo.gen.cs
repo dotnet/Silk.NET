@@ -21,52 +21,129 @@ namespace Silk.NET.WebGPU
     {
         public AdapterInfo
         (
-            byte* vendor = null,
-            byte* architecture = null,
-            byte* device = null,
-            byte* description = null
+            ChainedStruct* nextInChain = null,
+            StringView? vendor = null,
+            StringView? architecture = null,
+            StringView? device = null,
+            StringView? description = null,
+            BackendType? backendType = null,
+            AdapterType? adapterType = null,
+            uint? vendorID = null,
+            uint? deviceID = null,
+            uint? subgroupMinSize = null,
+            uint? subgroupMaxSize = null
         ) : this()
         {
+            if (nextInChain is not null)
+            {
+                NextInChain = nextInChain;
+            }
+
             if (vendor is not null)
             {
-                Vendor = vendor;
+                Vendor = vendor.Value;
             }
 
             if (architecture is not null)
             {
-                Architecture = architecture;
+                Architecture = architecture.Value;
             }
 
             if (device is not null)
             {
-                Device = device;
+                Device = device.Value;
             }
 
             if (description is not null)
             {
-                Description = description;
+                Description = description.Value;
+            }
+
+            if (backendType is not null)
+            {
+                BackendType = backendType.Value;
+            }
+
+            if (adapterType is not null)
+            {
+                AdapterType = adapterType.Value;
+            }
+
+            if (vendorID is not null)
+            {
+                VendorID = vendorID.Value;
+            }
+
+            if (deviceID is not null)
+            {
+                DeviceID = deviceID.Value;
+            }
+
+            if (subgroupMinSize is not null)
+            {
+                SubgroupMinSize = subgroupMinSize.Value;
+            }
+
+            if (subgroupMaxSize is not null)
+            {
+                SubgroupMaxSize = subgroupMaxSize.Value;
             }
         }
 
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Name", "nextInChain")]
+        public ChainedStruct* NextInChain;
+
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "vendor")]
-        public byte* Vendor;
+        public StringView Vendor;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "architecture")]
-        public byte* Architecture;
+        public StringView Architecture;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "device")]
-        public byte* Device;
+        public StringView Device;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "description")]
-        public byte* Description;
+        public StringView Description;
+
+        [NativeName("Type", "WGPUBackendType")]
+        [NativeName("Type.Name", "WGPUBackendType")]
+        [NativeName("Name", "backendType")]
+        public BackendType BackendType;
+
+        [NativeName("Type", "WGPUAdapterType")]
+        [NativeName("Type.Name", "WGPUAdapterType")]
+        [NativeName("Name", "adapterType")]
+        public AdapterType AdapterType;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vendorID")]
+        public uint VendorID;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "deviceID")]
+        public uint DeviceID;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "subgroupMinSize")]
+        public uint SubgroupMinSize;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "subgroupMaxSize")]
+        public uint SubgroupMaxSize;
     }
 }

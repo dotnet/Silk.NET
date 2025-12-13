@@ -159,7 +159,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Read([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, Variant* pVar, IErrorLog* pErrorLog)
+        public readonly unsafe int Read([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, Variant* pVar, IErrorLog* pErrorLog)
         {
             var @this = (IPropertyBag*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -171,7 +171,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Read([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, Variant* pVar, ref IErrorLog pErrorLog)
+        public readonly unsafe int Read([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, Variant* pVar, ref IErrorLog pErrorLog)
         {
             var @this = (IPropertyBag*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -186,7 +186,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Read([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref Variant pVar, IErrorLog* pErrorLog)
+        public readonly unsafe int Read([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ref Variant pVar, IErrorLog* pErrorLog)
         {
             var @this = (IPropertyBag*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Read([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref Variant pVar, ref IErrorLog pErrorLog)
+        public readonly int Read([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ref Variant pVar, ref IErrorLog pErrorLog)
         {
             var @this = (IPropertyBag*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -296,7 +296,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, Variant* pVar)
+        public readonly unsafe int Write([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, Variant* pVar)
         {
             var @this = (IPropertyBag*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -308,7 +308,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Write([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref Variant pVar)
+        public readonly int Write([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ref Variant pVar)
         {
             var @this = (IPropertyBag*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -373,7 +373,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Read<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, Variant* pVar, ComPtr<TI0> pErrorLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
+        public readonly unsafe int Read<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, Variant* pVar, ComPtr<TI0> pErrorLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
         {
             var @this = (IPropertyBag*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -381,7 +381,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Read<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszPropName, ref Variant pVar, ComPtr<TI0> pErrorLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
+        public readonly int Read<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszPropName, ref Variant pVar, ComPtr<TI0> pErrorLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
         {
             var @this = (IPropertyBag*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

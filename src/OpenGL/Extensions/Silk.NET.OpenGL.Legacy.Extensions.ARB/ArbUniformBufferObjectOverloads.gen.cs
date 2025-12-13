@@ -148,7 +148,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetUniformIndices(program, uniformCount, uniformNames, out uniformIndices.GetPinnableReference());
         }
 
-        public static unsafe void GetUniformIndices(this ArbUniformBufferObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* uniformNames, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> uniformIndices)
+        public static unsafe void GetUniformIndices(this ArbUniformBufferObject thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* uniformNames, [Count(Computed = "uniformCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<uint> uniformIndices)
         {
             // SpanOverloader
             thisApi.GetUniformIndices(program, uniformCount, in uniformNames, out uniformIndices.GetPinnableReference());

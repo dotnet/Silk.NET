@@ -50,7 +50,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -58,7 +58,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ref ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -66,7 +66,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -74,7 +74,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ref ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -146,7 +146,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ppImmediateContext, pChosenFeatureLevel);
@@ -154,7 +154,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -162,7 +162,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ref ppImmediateContext, pChosenFeatureLevel);
@@ -170,7 +170,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ref ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -178,7 +178,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ppImmediateContext, pChosenFeatureLevel);
@@ -186,7 +186,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -194,7 +194,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ref ppImmediateContext, pChosenFeatureLevel);
@@ -202,7 +202,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(pDevice, Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ref ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -274,7 +274,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ppImmediateContext, pChosenFeatureLevel);
@@ -282,7 +282,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -290,7 +290,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ref ppImmediateContext, pChosenFeatureLevel);
@@ -298,7 +298,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ref ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -306,7 +306,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ppImmediateContext, pChosenFeatureLevel);
@@ -314,7 +314,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -322,7 +322,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ref ppImmediateContext, pChosenFeatureLevel);
@@ -330,7 +330,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, pFeatureLevels, FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ref ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -402,7 +402,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ppImmediateContext, pChosenFeatureLevel);
@@ -410,7 +410,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -418,7 +418,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ref ppImmediateContext, pChosenFeatureLevel);
@@ -426,7 +426,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ID3D11Device** ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ppDevice, ref ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -434,7 +434,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ppImmediateContext, pChosenFeatureLevel);
@@ -442,7 +442,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ID3D11DeviceContext** ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());
@@ -450,7 +450,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Silk.NET.Core.Native.D3DFeatureLevel* pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ref ppImmediateContext, pChosenFeatureLevel);
@@ -458,7 +458,7 @@ namespace Silk.NET.Direct3D11.Extensions.D3D11On12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 146, Column 16 in d3d11on12.h")]
-        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
+        public static unsafe int On12CreateDevice(this D3D11On12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pDevice, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> pFeatureLevels, uint FeatureLevels, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppCommandQueues, uint NumQueues, uint NodeMask, ref ID3D11Device* ppDevice, ref ID3D11DeviceContext* ppImmediateContext, Span<Silk.NET.Core.Native.D3DFeatureLevel> pChosenFeatureLevel)
         {
             // SpanOverloader
             return thisApi.On12CreateDevice(ref pDevice.GetPinnableReference(), Flags, in pFeatureLevels.GetPinnableReference(), FeatureLevels, in ppCommandQueues, NumQueues, NodeMask, ref ppDevice, ref ppImmediateContext, ref pChosenFeatureLevel.GetPinnableReference());

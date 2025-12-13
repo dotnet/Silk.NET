@@ -12,22 +12,24 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUStencilOperation")]
     public enum StencilOperation : int
     {
+        [NativeName("Name", "WGPUStencilOperation_Undefined")]
+        Undefined = 0x0,
         [NativeName("Name", "WGPUStencilOperation_Keep")]
-        Keep = 0x0,
+        Keep = 0x1,
         [NativeName("Name", "WGPUStencilOperation_Zero")]
-        Zero = 0x1,
+        Zero = 0x2,
         [NativeName("Name", "WGPUStencilOperation_Replace")]
-        Replace = 0x2,
+        Replace = 0x3,
         [NativeName("Name", "WGPUStencilOperation_Invert")]
-        Invert = 0x3,
+        Invert = 0x4,
         [NativeName("Name", "WGPUStencilOperation_IncrementClamp")]
-        IncrementClamp = 0x4,
+        IncrementClamp = 0x5,
         [NativeName("Name", "WGPUStencilOperation_DecrementClamp")]
-        DecrementClamp = 0x5,
+        DecrementClamp = 0x6,
         [NativeName("Name", "WGPUStencilOperation_IncrementWrap")]
-        IncrementWrap = 0x6,
+        IncrementWrap = 0x7,
         [NativeName("Name", "WGPUStencilOperation_DecrementWrap")]
-        DecrementWrap = 0x7,
+        DecrementWrap = 0x8,
         [NativeName("Name", "WGPUStencilOperation_Force32")]
         Force32 = 0x7FFFFFFF,
     }

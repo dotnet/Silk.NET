@@ -45,6 +45,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MultipleSliceSegmentsPerTileBitKhr\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_SLICE_SEGMENTS_PER_TILE_BIT_KHR")]
         VideoEncodeH265CapabilityMultipleSliceSegmentsPerTileBitKhr = 512,
+        [Obsolete("Deprecated in favour of \"BPictureIntraRefreshBitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
+        VideoEncodeH265CapabilityBPictureIntraRefreshBitKhr = 2048,
+        [Obsolete("Deprecated in favour of \"CUQPDiffWraparoundBitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_CU_QP_DIFF_WRAPAROUND_BIT_KHR")]
+        VideoEncodeH265CapabilityCUQPDiffWraparoundBitKhr = 1024,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_HRD_COMPLIANCE_BIT_KHR")]
         HrdComplianceBitKhr = 1,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_PREDICTION_WEIGHT_TABLE_GENERATED_BIT_KHR")]
@@ -65,5 +71,9 @@ namespace Silk.NET.Vulkan
         MultipleTilesPerSliceSegmentBitKhr = 256,
         [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_MULTIPLE_SLICE_SEGMENTS_PER_TILE_BIT_KHR")]
         MultipleSliceSegmentsPerTileBitKhr = 512,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_B_PICTURE_INTRA_REFRESH_BIT_KHR")]
+        BPictureIntraRefreshBitKhr = 2048,
+        [NativeName("Name", "VK_VIDEO_ENCODE_H265_CAPABILITY_CU_QP_DIFF_WRAPAROUND_BIT_KHR")]
+        CUQPDiffWraparoundBitKhr = 1024,
     }
 }

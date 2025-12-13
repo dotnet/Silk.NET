@@ -153,7 +153,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Load([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszFileName, uint dwMode)
+        public readonly int Load([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszFileName, uint dwMode)
         {
             var @this = (IPersistFile*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -185,7 +185,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Save([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszFileName, Silk.NET.Core.Bool32 fRemember)
+        public readonly int Save([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszFileName, Silk.NET.Core.Bool32 fRemember)
         {
             var @this = (IPersistFile*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -217,7 +217,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SaveCompleted([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pszFileName)
+        public readonly int SaveCompleted([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pszFileName)
         {
             var @this = (IPersistFile*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

@@ -15,45 +15,50 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"LinkStageBitExt\"")]
+        [Obsolete("Deprecated in favour of \"CreateLinkStageBitExt\"")]
         [NativeName("Name", "VK_SHADER_CREATE_LINK_STAGE_BIT_EXT")]
         ShaderCreateLinkStageBitExt = 1,
-        [Obsolete("Deprecated in favour of \"AllowVaryingSubgroupSizeBitExt\"")]
+        [Obsolete("Deprecated in favour of \"CreateAllowVaryingSubgroupSizeBitExt\"")]
         [NativeName("Name", "VK_SHADER_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
         ShaderCreateAllowVaryingSubgroupSizeBitExt = 2,
-        [Obsolete("Deprecated in favour of \"RequireFullSubgroupsBitExt\"")]
+        [Obsolete("Deprecated in favour of \"CreateRequireFullSubgroupsBitExt\"")]
         [NativeName("Name", "VK_SHADER_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
         ShaderCreateRequireFullSubgroupsBitExt = 4,
-        [Obsolete("Deprecated in favour of \"NoTaskShaderBitExt\"")]
+        [Obsolete("Deprecated in favour of \"CreateNoTaskShaderBitExt\"")]
         [NativeName("Name", "VK_SHADER_CREATE_NO_TASK_SHADER_BIT_EXT")]
         ShaderCreateNoTaskShaderBitExt = 8,
-        [Obsolete("Deprecated in favour of \"DispatchBaseBitExt\"")]
+        [Obsolete("Deprecated in favour of \"CreateDispatchBaseBitExt\"")]
         [NativeName("Name", "VK_SHADER_CREATE_DISPATCH_BASE_BIT_EXT")]
         ShaderCreateDispatchBaseBitExt = 16,
-        [Obsolete("Deprecated in favour of \"FragmentShadingRateAttachmentBitExt\"")]
+        [Obsolete("Deprecated in favour of \"CreateFragmentShadingRateAttachmentBitExt\"")]
         [NativeName("Name", "VK_SHADER_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_EXT")]
         ShaderCreateFragmentShadingRateAttachmentBitExt = 32,
-        [Obsolete("Deprecated in favour of \"FragmentDensityMapAttachmentBitExt\"")]
+        [Obsolete("Deprecated in favour of \"CreateFragmentDensityMapAttachmentBitExt\"")]
         [NativeName("Name", "VK_SHADER_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
         ShaderCreateFragmentDensityMapAttachmentBitExt = 64,
-        [Obsolete("Deprecated in favour of \"IndirectBindableBitExt\"")]
+        [Obsolete("Deprecated in favour of \"CreateIndirectBindableBitExt\"")]
         [NativeName("Name", "VK_SHADER_CREATE_INDIRECT_BINDABLE_BIT_EXT")]
         ShaderCreateIndirectBindableBitExt = 128,
+        [Obsolete("Deprecated in favour of \"Create64BitIndexingBitExt\"")]
+        [NativeName("Name", "VK_SHADER_CREATE_64_BIT_INDEXING_BIT_EXT")]
+        ShaderCreate64BitIndexingBitExt = 32768,
         [NativeName("Name", "VK_SHADER_CREATE_LINK_STAGE_BIT_EXT")]
-        LinkStageBitExt = 1,
+        CreateLinkStageBitExt = 1,
         [NativeName("Name", "VK_SHADER_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
-        AllowVaryingSubgroupSizeBitExt = 2,
+        CreateAllowVaryingSubgroupSizeBitExt = 2,
         [NativeName("Name", "VK_SHADER_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
-        RequireFullSubgroupsBitExt = 4,
+        CreateRequireFullSubgroupsBitExt = 4,
         [NativeName("Name", "VK_SHADER_CREATE_NO_TASK_SHADER_BIT_EXT")]
-        NoTaskShaderBitExt = 8,
+        CreateNoTaskShaderBitExt = 8,
         [NativeName("Name", "VK_SHADER_CREATE_DISPATCH_BASE_BIT_EXT")]
-        DispatchBaseBitExt = 16,
+        CreateDispatchBaseBitExt = 16,
         [NativeName("Name", "VK_SHADER_CREATE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_EXT")]
-        FragmentShadingRateAttachmentBitExt = 32,
+        CreateFragmentShadingRateAttachmentBitExt = 32,
         [NativeName("Name", "VK_SHADER_CREATE_FRAGMENT_DENSITY_MAP_ATTACHMENT_BIT_EXT")]
-        FragmentDensityMapAttachmentBitExt = 64,
+        CreateFragmentDensityMapAttachmentBitExt = 64,
         [NativeName("Name", "VK_SHADER_CREATE_INDIRECT_BINDABLE_BIT_EXT")]
-        IndirectBindableBitExt = 128,
+        CreateIndirectBindableBitExt = 128,
+        [NativeName("Name", "VK_SHADER_CREATE_64_BIT_INDEXING_BIT_EXT")]
+        Create64BitIndexingBitExt = 32768,
     }
 }

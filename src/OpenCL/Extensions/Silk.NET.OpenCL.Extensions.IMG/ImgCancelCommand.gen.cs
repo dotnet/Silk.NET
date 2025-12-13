@@ -24,7 +24,7 @@ namespace Silk.NET.OpenCL.Extensions.IMG
         public unsafe partial int CancelCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint* event_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint num_events_in_list);
 
         [NativeApi(EntryPoint = "clCancelCommandsIMG", Convention = CallingConvention.Winapi)]
-        public partial int CancelCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in nint event_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint num_events_in_list);
+        public partial int CancelCommands([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly nint event_list, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint num_events_in_list);
 
         public ImgCancelCommand(INativeContext ctx)
             : base(ctx)

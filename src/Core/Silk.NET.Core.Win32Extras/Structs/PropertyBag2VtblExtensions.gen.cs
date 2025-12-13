@@ -490,7 +490,7 @@ public unsafe static class PropertyBag2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadObject(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, Silk.NET.Core.Native.IUnknown* pUnkObject, IErrorLog* pErrLog)
+    public static unsafe int LoadObject(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, Silk.NET.Core.Native.IUnknown* pUnkObject, IErrorLog* pErrLog)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -502,7 +502,7 @@ public unsafe static class PropertyBag2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadObject(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, Silk.NET.Core.Native.IUnknown* pUnkObject, ref IErrorLog pErrLog)
+    public static unsafe int LoadObject(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, Silk.NET.Core.Native.IUnknown* pUnkObject, ref IErrorLog pErrLog)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -517,7 +517,7 @@ public unsafe static class PropertyBag2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadObject(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, IErrorLog* pErrLog)
+    public static unsafe int LoadObject(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, IErrorLog* pErrLog)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -532,7 +532,7 @@ public unsafe static class PropertyBag2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadObject(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, ref IErrorLog pErrLog)
+    public static int LoadObject(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, ref IErrorLog pErrLog)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -927,7 +927,7 @@ public unsafe static class PropertyBag2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadObject<TI0, TI1>(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, ComPtr<TI0> pUnkObject, ComPtr<TI1> pErrLog) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI1>
+    public static int LoadObject<TI0, TI1>(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, ComPtr<TI0> pUnkObject, ComPtr<TI1> pErrLog) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -943,7 +943,7 @@ public unsafe static class PropertyBag2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadObject<TI0>(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, ComPtr<TI0> pUnkObject, ref IErrorLog pErrLog) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int LoadObject<TI0>(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, ComPtr<TI0> pUnkObject, ref IErrorLog pErrLog) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -959,7 +959,7 @@ public unsafe static class PropertyBag2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadObject<TI0>(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, ComPtr<TI0> pErrLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
+    public static int LoadObject<TI0>(this ComPtr<IPropertyBag2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pstrName, uint dwHint, ref Silk.NET.Core.Native.IUnknown pUnkObject, ComPtr<TI0> pErrLog) where TI0 : unmanaged, IComVtbl<IErrorLog>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

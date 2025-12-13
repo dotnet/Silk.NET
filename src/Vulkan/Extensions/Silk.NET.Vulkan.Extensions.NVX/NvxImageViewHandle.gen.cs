@@ -35,7 +35,15 @@ namespace Silk.NET.Vulkan.Extensions.NVX
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewHandleNVX", Convention = CallingConvention.Winapi)]
-        public partial uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageViewHandleInfoNVX pInfo);
+        public partial uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageViewHandleInfoNVX pInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetImageViewHandle64NVX", Convention = CallingConvention.Winapi)]
+        public unsafe partial ulong GetImageViewHandle64([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageViewHandleInfoNVX* pInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetImageViewHandle64NVX", Convention = CallingConvention.Winapi)]
+        public partial ulong GetImageViewHandle64([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageViewHandleInfoNVX pInfo);
 
         public NvxImageViewHandle(INativeContext ctx)
             : base(ctx)

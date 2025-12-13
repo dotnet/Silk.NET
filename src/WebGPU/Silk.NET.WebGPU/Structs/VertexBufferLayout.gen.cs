@@ -21,20 +21,26 @@ namespace Silk.NET.WebGPU
     {
         public VertexBufferLayout
         (
-            ulong? arrayStride = null,
+            ChainedStruct* nextInChain = null,
             VertexStepMode? stepMode = null,
+            ulong? arrayStride = null,
             nuint? attributeCount = null,
             VertexAttribute* attributes = null
         ) : this()
         {
-            if (arrayStride is not null)
+            if (nextInChain is not null)
             {
-                ArrayStride = arrayStride.Value;
+                NextInChain = nextInChain;
             }
 
             if (stepMode is not null)
             {
                 StepMode = stepMode.Value;
+            }
+
+            if (arrayStride is not null)
+            {
+                ArrayStride = arrayStride.Value;
             }
 
             if (attributeCount is not null)
@@ -49,15 +55,20 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "arrayStride")]
-        public ulong ArrayStride;
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Name", "nextInChain")]
+        public ChainedStruct* NextInChain;
 
         [NativeName("Type", "WGPUVertexStepMode")]
         [NativeName("Type.Name", "WGPUVertexStepMode")]
         [NativeName("Name", "stepMode")]
         public VertexStepMode StepMode;
+
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "arrayStride")]
+        public ulong ArrayStride;
 
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]

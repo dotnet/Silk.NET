@@ -206,7 +206,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Query<T0>(uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+        public readonly unsafe int Query<T0>(uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -218,7 +218,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Query<T0, T1>(uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
+        public readonly int Query<T0, T1>(uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -254,7 +254,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Configure<T0>(uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, AuthenticatedchannelConfigureOutput* pOutput) where T0 : unmanaged
+        public readonly unsafe int Configure<T0>(uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, AuthenticatedchannelConfigureOutput* pOutput) where T0 : unmanaged
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -266,7 +266,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Configure<T0>(uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, ref AuthenticatedchannelConfigureOutput pOutput) where T0 : unmanaged
+        public readonly int Configure<T0>(uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, ref AuthenticatedchannelConfigureOutput pOutput) where T0 : unmanaged
         {
             var @this = (IDirect3DAuthenticatedChannel9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
