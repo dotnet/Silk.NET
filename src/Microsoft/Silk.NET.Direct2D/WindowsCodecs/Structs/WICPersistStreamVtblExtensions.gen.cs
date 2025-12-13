@@ -187,7 +187,7 @@ public unsafe static class WICPersistStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadEx(this ComPtr<IWICPersistStream> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidPreferredVendor, uint dwPersistOptions)
+    public static unsafe int LoadEx(this ComPtr<IWICPersistStream> thisVtbl, Silk.NET.Core.Win32Extras.IStream* pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidPreferredVendor, uint dwPersistOptions)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -211,7 +211,7 @@ public unsafe static class WICPersistStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadEx(this ComPtr<IWICPersistStream> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidPreferredVendor, uint dwPersistOptions)
+    public static int LoadEx(this ComPtr<IWICPersistStream> thisVtbl, ref Silk.NET.Core.Win32Extras.IStream pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidPreferredVendor, uint dwPersistOptions)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -336,7 +336,7 @@ public unsafe static class WICPersistStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadEx<TI0>(this ComPtr<IWICPersistStream> thisVtbl, ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidPreferredVendor, uint dwPersistOptions) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static int LoadEx<TI0>(this ComPtr<IWICPersistStream> thisVtbl, ComPtr<TI0> pIStream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidPreferredVendor, uint dwPersistOptions) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

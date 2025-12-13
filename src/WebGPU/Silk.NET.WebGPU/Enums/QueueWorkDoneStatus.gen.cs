@@ -13,13 +13,11 @@ namespace Silk.NET.WebGPU
     public enum QueueWorkDoneStatus : int
     {
         [NativeName("Name", "WGPUQueueWorkDoneStatus_Success")]
-        Success = 0x0,
+        Success = 0x1,
+        [NativeName("Name", "WGPUQueueWorkDoneStatus_CallbackCancelled")]
+        CallbackCancelled = 0x2,
         [NativeName("Name", "WGPUQueueWorkDoneStatus_Error")]
-        Error = 0x1,
-        [NativeName("Name", "WGPUQueueWorkDoneStatus_Unknown")]
-        Unknown = 0x2,
-        [NativeName("Name", "WGPUQueueWorkDoneStatus_DeviceLost")]
-        DeviceLost = 0x3,
+        Error = 0x3,
         [NativeName("Name", "WGPUQueueWorkDoneStatus_Force32")]
         Force32 = 0x7FFFFFFF,
     }

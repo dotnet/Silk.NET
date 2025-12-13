@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindMemoryStatusKHR")]
+    [NativeName("AliasOf", "VkBindMemoryStatus")]
     public unsafe partial struct BindMemoryStatusKHR : IExtendsChain<BindBufferMemoryInfo>, IExtendsChain<BindBufferMemoryInfoKHR>, IExtendsChain<BindImageMemoryInfo>, IExtendsChain<BindImageMemoryInfoKHR>
     {
         public BindMemoryStatusKHR
         (
-            StructureType? sType = StructureType.BindMemoryStatusKhr,
+            StructureType? sType = StructureType.BindMemoryStatus,
             void* pNext = null,
             Result* pResult = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.BindMemoryStatusKhr;
+            return SType = StructureType.BindMemoryStatus;
         }
 
         /// <inheritdoc />

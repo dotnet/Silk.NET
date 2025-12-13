@@ -38,11 +38,11 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertWin32PerformanceCounterToTimeKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in long performanceCounter, [Count(Count = 0)] long* time);
+        public unsafe partial Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly long performanceCounter, [Count(Count = 0)] long* time);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertWin32PerformanceCounterToTimeKHR", Convention = CallingConvention.Winapi)]
-        public partial Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in long performanceCounter, [Count(Count = 0)] ref long time);
+        public partial Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly long performanceCounter, [Count(Count = 0)] ref long time);
 
         public KhrWin32ConvertPerformanceCounterTime(INativeContext ctx)
             : base(ctx)

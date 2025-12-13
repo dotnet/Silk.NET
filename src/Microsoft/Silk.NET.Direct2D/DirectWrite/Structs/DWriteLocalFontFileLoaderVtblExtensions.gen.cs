@@ -106,7 +106,7 @@ public unsafe static class DWriteLocalFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) where T0 : unmanaged
+    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DWriteLocalFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileStream* fontFileStream) where T0 : unmanaged
+    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileStream* fontFileStream) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -154,7 +154,7 @@ public unsafe static class DWriteLocalFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilePathLengthFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, uint* filePathLength) where T0 : unmanaged
+    public static unsafe int GetFilePathLengthFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, uint* filePathLength) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class DWriteLocalFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFilePathLengthFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref uint filePathLength) where T0 : unmanaged
+    public static int GetFilePathLengthFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref uint filePathLength) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -213,7 +213,7 @@ public unsafe static class DWriteLocalFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetFilePathFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, char* filePath, uint filePathSize) where T0 : unmanaged
+    public static unsafe int GetFilePathFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, char* filePath, uint filePathSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -225,7 +225,7 @@ public unsafe static class DWriteLocalFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFilePathFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref char filePath, uint filePathSize) where T0 : unmanaged
+    public static int GetFilePathFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref char filePath, uint filePathSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -240,7 +240,7 @@ public unsafe static class DWriteLocalFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetFilePathFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, uint filePathSize) where T0 : unmanaged
+    public static int GetFilePathFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filePath, uint filePathSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -275,7 +275,7 @@ public unsafe static class DWriteLocalFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetLastWriteTimeFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, Silk.NET.Core.Win32Extras.Filetime* lastWriteTime) where T0 : unmanaged
+    public static unsafe int GetLastWriteTimeFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, Silk.NET.Core.Win32Extras.Filetime* lastWriteTime) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -287,7 +287,7 @@ public unsafe static class DWriteLocalFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetLastWriteTimeFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref Silk.NET.Core.Win32Extras.Filetime lastWriteTime) where T0 : unmanaged
+    public static int GetLastWriteTimeFromKey<T0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref Silk.NET.Core.Win32Extras.Filetime lastWriteTime) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -343,7 +343,7 @@ public unsafe static class DWriteLocalFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStreamFromKey<T0, TI0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
+    public static int CreateStreamFromKey<T0, TI0>(this ComPtr<IDWriteLocalFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

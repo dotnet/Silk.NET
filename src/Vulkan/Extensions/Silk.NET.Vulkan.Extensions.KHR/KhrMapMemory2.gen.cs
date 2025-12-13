@@ -22,27 +22,27 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_map_memory2";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMapMemory2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryMapInfoKHR* pMemoryMapInfo, [Count(Count = 0)] void** ppData);
+        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryMapInfo* pMemoryMapInfo, [Count(Count = 0)] void** ppData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMapMemory2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryMapInfoKHR* pMemoryMapInfo, [Count(Count = 0)] ref void* ppData);
+        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryMapInfo* pMemoryMapInfo, [Count(Count = 0)] ref void* ppData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMapMemory2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryMapInfoKHR pMemoryMapInfo, [Count(Count = 0)] void** ppData);
+        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryMapInfo pMemoryMapInfo, [Count(Count = 0)] void** ppData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMapMemory2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryMapInfoKHR pMemoryMapInfo, [Count(Count = 0)] ref void* ppData);
+        public unsafe partial Result MapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryMapInfo pMemoryMapInfo, [Count(Count = 0)] ref void* ppData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUnmapMemory2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result UnmapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryUnmapInfoKHR* pMemoryUnmapInfo);
+        public unsafe partial Result UnmapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryUnmapInfo* pMemoryUnmapInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkUnmapMemory2KHR", Convention = CallingConvention.Winapi)]
-        public partial Result UnmapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryUnmapInfoKHR pMemoryUnmapInfo);
+        public partial Result UnmapMemory2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryUnmapInfo pMemoryUnmapInfo);
 
         public KhrMapMemory2(INativeContext ctx)
             : base(ctx)

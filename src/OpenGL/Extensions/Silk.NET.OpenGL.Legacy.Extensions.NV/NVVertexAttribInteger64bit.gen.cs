@@ -51,7 +51,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VertexAttribL1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] long* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL1i64vNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribL1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in long v);
+        public partial void VertexAttribL1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly long v);
 
         [NativeApi(EntryPoint = "glVertexAttribL1ui64NV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribL1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong x);
@@ -60,7 +60,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VertexAttribL1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL1ui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribL1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ulong v);
+        public partial void VertexAttribL1([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong v);
 
         [NativeApi(EntryPoint = "glVertexAttribL2i64NV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribL2([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long y);
@@ -69,7 +69,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VertexAttribL2([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] long* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL2i64vNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribL2([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in long v);
+        public partial void VertexAttribL2([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly long v);
 
         [NativeApi(EntryPoint = "glVertexAttribL2ui64NV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribL2([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong y);
@@ -78,7 +78,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VertexAttribL2([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL2ui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribL2([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ulong v);
+        public partial void VertexAttribL2([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 2), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong v);
 
         [NativeApi(EntryPoint = "glVertexAttribL3i64NV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribL3([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long z);
@@ -87,7 +87,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VertexAttribL3([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] long* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL3i64vNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribL3([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in long v);
+        public partial void VertexAttribL3([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly long v);
 
         [NativeApi(EntryPoint = "glVertexAttribL3ui64NV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribL3([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong z);
@@ -96,7 +96,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VertexAttribL3([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL3ui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribL3([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ulong v);
+        public partial void VertexAttribL3([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 3), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong v);
 
         [NativeApi(EntryPoint = "glVertexAttribL4i64NV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribL4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] long w);
@@ -105,7 +105,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VertexAttribL4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] long* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL4i64vNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribL4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in long v);
+        public partial void VertexAttribL4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly long v);
 
         [NativeApi(EntryPoint = "glVertexAttribL4ui64NV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribL4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong z, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong w);
@@ -114,7 +114,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VertexAttribL4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL4ui64vNV", Convention = CallingConvention.Winapi)]
-        public partial void VertexAttribL4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ulong v);
+        public partial void VertexAttribL4([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ulong v);
 
         [NativeApi(EntryPoint = "glVertexAttribLFormatNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribLFormat([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride);

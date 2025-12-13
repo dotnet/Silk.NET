@@ -30,11 +30,11 @@ namespace Silk.NET.Vulkan.Extensions.INTEL
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquirePerformanceConfigurationINTEL", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] PerformanceConfigurationINTEL* pConfiguration);
+        public unsafe partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] PerformanceConfigurationINTEL* pConfiguration);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquirePerformanceConfigurationINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] ref PerformanceConfigurationINTEL pConfiguration);
+        public partial Result AcquirePerformanceConfiguration([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PerformanceConfigurationAcquireInfoINTEL pAcquireInfo, [Count(Count = 0)] ref PerformanceConfigurationINTEL pConfiguration);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceMarkerINTEL", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.INTEL
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceMarkerINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result CmdSetPerformanceMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PerformanceMarkerInfoINTEL pMarkerInfo);
+        public partial Result CmdSetPerformanceMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PerformanceMarkerInfoINTEL pMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceOverrideINTEL", Convention = CallingConvention.Winapi)]
@@ -50,7 +50,7 @@ namespace Silk.NET.Vulkan.Extensions.INTEL
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceOverrideINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result CmdSetPerformanceOverride([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PerformanceOverrideInfoINTEL pOverrideInfo);
+        public partial Result CmdSetPerformanceOverride([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PerformanceOverrideInfoINTEL pOverrideInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL", Convention = CallingConvention.Winapi)]
@@ -58,7 +58,7 @@ namespace Silk.NET.Vulkan.Extensions.INTEL
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetPerformanceStreamMarkerINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result CmdSetPerformanceStreamMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PerformanceStreamMarkerInfoINTEL pMarkerInfo);
+        public partial Result CmdSetPerformanceStreamMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PerformanceStreamMarkerInfoINTEL pMarkerInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPerformanceParameterINTEL", Convention = CallingConvention.Winapi)]
@@ -74,7 +74,7 @@ namespace Silk.NET.Vulkan.Extensions.INTEL
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkInitializePerformanceApiINTEL", Convention = CallingConvention.Winapi)]
-        public partial Result InitializePerformanceAp([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InitializePerformanceApiInfoINTEL pInitializeInfo);
+        public partial Result InitializePerformanceAp([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InitializePerformanceApiInfoINTEL pInitializeInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueueSetPerformanceConfigurationINTEL", Convention = CallingConvention.Winapi)]

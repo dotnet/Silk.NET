@@ -49,12 +49,12 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DisplayPlaneInfo2KHR pDisplayPlaneInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DisplayPlaneCapabilities2KHR* pCapabilities);
+        public unsafe partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DisplayPlaneInfo2KHR pDisplayPlaneInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DisplayPlaneCapabilities2KHR* pCapabilities);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pCapabilities = new(StructureType.DisplayPlaneCapabilities2Khr);")]
         [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DisplayPlaneInfo2KHR pDisplayPlaneInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DisplayPlaneCapabilities2KHR pCapabilities);
+        public partial Result GetDisplayPlaneCapabilities2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DisplayPlaneInfo2KHR pDisplayPlaneInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DisplayPlaneCapabilities2KHR pCapabilities);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR", Convention = CallingConvention.Winapi)]

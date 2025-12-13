@@ -32,5 +32,11 @@ namespace Silk.NET.OpenGL.Legacy
         TransformFeedbackPrimitivesWritten = 0x8C88,
         [NativeName("Name", "GL_ANY_SAMPLES_PASSED_CONSERVATIVE")]
         AnySamplesPassedConservative = 0x8D6A,
+        [NativeName("Name", "GL_TASK_SHADER_INVOCATIONS_EXT")]
+        TaskShaderInvocationsExt = 0x9753,
+        [NativeName("Name", "GL_MESH_SHADER_INVOCATIONS_EXT")]
+        MeshShaderInvocationsExt = 0x9754,
+        [NativeName("Name", "GL_MESH_PRIMITIVES_GENERATED_EXT")]
+        MeshPrimitivesGeneratedExt = 0x9755,
     }
 }

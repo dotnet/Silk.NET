@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCreateFlags2CreateInfoKHR")]
+    [NativeName("AliasOf", "VkPipelineCreateFlags2CreateInfo")]
     public unsafe partial struct PipelineCreateFlags2CreateInfoKHR : IExtendsChain<ComputePipelineCreateInfo>, IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<RayTracingPipelineCreateInfoNV>, IExtendsChain<RayTracingPipelineCreateInfoKHR>
     {
         public PipelineCreateFlags2CreateInfoKHR
         (
-            StructureType? sType = StructureType.PipelineCreateFlags2CreateInfoKhr,
+            StructureType? sType = StructureType.PipelineCreateFlags2CreateInfo,
             void* pNext = null,
-            PipelineCreateFlags2KHR? flags = null
+            PipelineCreateFlags2? flags = null
         ) : this()
         {
             if (sType is not null)
@@ -53,15 +54,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineCreateFlags2KHR")]
-        [NativeName("Type.Name", "VkPipelineCreateFlags2KHR")]
+        [NativeName("Type", "VkPipelineCreateFlags2")]
+        [NativeName("Type.Name", "VkPipelineCreateFlags2")]
         [NativeName("Name", "flags")]
-        public PipelineCreateFlags2KHR Flags;
+        public PipelineCreateFlags2 Flags;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PipelineCreateFlags2CreateInfoKhr;
+            return SType = StructureType.PipelineCreateFlags2CreateInfo;
         }
 
         /// <inheritdoc />

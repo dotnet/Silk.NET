@@ -88,6 +88,8 @@ namespace Silk.NET.Vulkan
         ErrorNotPermittedExt = unchecked((int) -1000174001),
         [NativeName("Name", "VK_ERROR_NOT_PERMITTED_KHR")]
         ErrorNotPermittedKhr = unchecked((int) -1000174001),
+        [NativeName("Name", "VK_ERROR_PRESENT_TIMING_QUEUE_FULL_EXT")]
+        ErrorPresentTimingQueueFullExt = unchecked((int) -1000208000),
         [NativeName("Name", "VK_ERROR_INVALID_DEVICE_ADDRESS_EXT")]
         ErrorInvalidDeviceAddressExt = unchecked((int) -1000257000),
         [NativeName("Name", "VK_ERROR_FULL_SCREEN_EXCLUSIVE_MODE_LOST_EXT")]
@@ -118,18 +120,20 @@ namespace Silk.NET.Vulkan
         PipelineBinaryMissingKhr = 1000483000,
         [NativeName("Name", "VK_ERROR_NOT_ENOUGH_SPACE_KHR")]
         ErrorNotEnoughSpaceKhr = unchecked((int) -1000483000),
+        [NativeName("Name", "VK_ERROR_VALIDATION_FAILED")]
+        ErrorValidationFailed = unchecked((int) -1000011001),
         [NativeName("Name", "VK_ERROR_OUT_OF_POOL_MEMORY")]
         ErrorOutOfPoolMemory = unchecked((int) -1000069000),
         [NativeName("Name", "VK_ERROR_INVALID_EXTERNAL_HANDLE")]
         ErrorInvalidExternalHandle = unchecked((int) -1000072003),
-        [NativeName("Name", "VK_ERROR_FRAGMENTATION")]
-        ErrorFragmentation = unchecked((int) -1000161000),
         [NativeName("Name", "VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS")]
         ErrorInvalidOpaqueCaptureAddress = unchecked((int) -1000257000),
+        [NativeName("Name", "VK_ERROR_FRAGMENTATION")]
+        ErrorFragmentation = unchecked((int) -1000161000),
         [NativeName("Name", "VK_PIPELINE_COMPILE_REQUIRED")]
         PipelineCompileRequired = 1000297000,
-        [NativeName("Name", "VK_ERROR_VALIDATION_FAILED")]
-        ErrorValidationFailed = unchecked((int) -1000011001),
+        [NativeName("Name", "VK_ERROR_NOT_PERMITTED")]
+        ErrorNotPermitted = unchecked((int) -1000174001),
         [NativeName("Name", "VK_ERROR_INVALID_PIPELINE_CACHE_DATA")]
         ErrorInvalidPipelineCacheData = unchecked((int) -1000298000),
         [NativeName("Name", "VK_ERROR_NO_PIPELINE_MATCH")]

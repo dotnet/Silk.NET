@@ -17,14 +17,15 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceImageSubresourceInfoKHR")]
+    [NativeName("AliasOf", "VkDeviceImageSubresourceInfo")]
     public unsafe partial struct DeviceImageSubresourceInfoKHR : IChainable
     {
         public DeviceImageSubresourceInfoKHR
         (
-            StructureType? sType = StructureType.DeviceImageSubresourceInfoKhr,
+            StructureType? sType = StructureType.DeviceImageSubresourceInfo,
             void* pNext = null,
             ImageCreateInfo* pCreateInfo = null,
-            ImageSubresource2KHR* pSubresource = null
+            ImageSubresource2* pSubresource = null
         ) : this()
         {
             if (sType is not null)
@@ -64,15 +65,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pCreateInfo")]
         public ImageCreateInfo* PCreateInfo;
 /// <summary></summary>
-        [NativeName("Type", "VkImageSubresource2KHR*")]
-        [NativeName("Type.Name", "VkImageSubresource2KHR")]
+        [NativeName("Type", "VkImageSubresource2*")]
+        [NativeName("Type.Name", "VkImageSubresource2")]
         [NativeName("Name", "pSubresource")]
-        public ImageSubresource2KHR* PSubresource;
+        public ImageSubresource2* PSubresource;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.DeviceImageSubresourceInfoKhr;
+            return SType = StructureType.DeviceImageSubresourceInfo;
         }
 
         /// <inheritdoc />

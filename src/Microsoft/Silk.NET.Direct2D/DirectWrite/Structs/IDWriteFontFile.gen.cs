@@ -132,7 +132,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetReferenceKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fontFileReferenceKey, uint* fontFileReferenceKeySize)
+        public readonly unsafe int GetReferenceKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fontFileReferenceKey, uint* fontFileReferenceKeySize)
         {
             var @this = (IDWriteFontFile*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetReferenceKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fontFileReferenceKey, ref uint fontFileReferenceKeySize)
+        public readonly unsafe int GetReferenceKey([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fontFileReferenceKey, ref uint fontFileReferenceKeySize)
         {
             var @this = (IDWriteFontFile*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

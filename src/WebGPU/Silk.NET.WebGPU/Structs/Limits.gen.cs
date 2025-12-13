@@ -21,6 +21,7 @@ namespace Silk.NET.WebGPU
     {
         public Limits
         (
+            ChainedStruct* nextInChain = null,
             uint? maxTextureDimension1D = null,
             uint? maxTextureDimension2D = null,
             uint? maxTextureDimension3D = null,
@@ -43,7 +44,6 @@ namespace Silk.NET.WebGPU
             ulong? maxBufferSize = null,
             uint? maxVertexAttributes = null,
             uint? maxVertexBufferArrayStride = null,
-            uint? maxInterStageShaderComponents = null,
             uint? maxInterStageShaderVariables = null,
             uint? maxColorAttachments = null,
             uint? maxColorAttachmentBytesPerSample = null,
@@ -52,9 +52,15 @@ namespace Silk.NET.WebGPU
             uint? maxComputeWorkgroupSizeX = null,
             uint? maxComputeWorkgroupSizeY = null,
             uint? maxComputeWorkgroupSizeZ = null,
-            uint? maxComputeWorkgroupsPerDimension = null
+            uint? maxComputeWorkgroupsPerDimension = null,
+            uint? maxImmediateSize = null
         ) : this()
         {
+            if (nextInChain is not null)
+            {
+                NextInChain = nextInChain;
+            }
+
             if (maxTextureDimension1D is not null)
             {
                 MaxTextureDimension1D = maxTextureDimension1D.Value;
@@ -165,11 +171,6 @@ namespace Silk.NET.WebGPU
                 MaxVertexBufferArrayStride = maxVertexBufferArrayStride.Value;
             }
 
-            if (maxInterStageShaderComponents is not null)
-            {
-                MaxInterStageShaderComponents = maxInterStageShaderComponents.Value;
-            }
-
             if (maxInterStageShaderVariables is not null)
             {
                 MaxInterStageShaderVariables = maxInterStageShaderVariables.Value;
@@ -214,8 +215,18 @@ namespace Silk.NET.WebGPU
             {
                 MaxComputeWorkgroupsPerDimension = maxComputeWorkgroupsPerDimension.Value;
             }
+
+            if (maxImmediateSize is not null)
+            {
+                MaxImmediateSize = maxImmediateSize.Value;
+            }
         }
 
+
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Name", "nextInChain")]
+        public ChainedStruct* NextInChain;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -329,11 +340,6 @@ namespace Silk.NET.WebGPU
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxInterStageShaderComponents")]
-        public uint MaxInterStageShaderComponents;
-
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxInterStageShaderVariables")]
         public uint MaxInterStageShaderVariables;
 
@@ -376,5 +382,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxComputeWorkgroupsPerDimension")]
         public uint MaxComputeWorkgroupsPerDimension;
+
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxImmediateSize")]
+        public uint MaxImmediateSize;
     }
 }

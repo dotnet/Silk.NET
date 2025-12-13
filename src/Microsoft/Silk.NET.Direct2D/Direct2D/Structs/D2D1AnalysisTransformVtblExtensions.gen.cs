@@ -94,7 +94,7 @@ public unsafe static class D2D1AnalysisTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessAnalysisResults(this ComPtr<ID2D1AnalysisTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte analysisData, uint analysisDataCount)
+    public static int ProcessAnalysisResults(this ComPtr<ID2D1AnalysisTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte analysisData, uint analysisDataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

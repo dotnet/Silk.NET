@@ -46,27 +46,27 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerDecodedStringMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
+        public unsafe partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerDecodedStringMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
+        public unsafe partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerDecodedStringMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
+        public unsafe partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerDecodedStringMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
+        public unsafe partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerDecodedStringMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
+        public partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerDecodedStringMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
+        public partial Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerRawDataMSFT", Convention = CallingConvention.Winapi)]
@@ -94,27 +94,27 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerRawDataMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
+        public unsafe partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerRawDataMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
+        public unsafe partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerRawDataMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
+        public unsafe partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerRawDataMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
+        public unsafe partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerRawDataMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
+        public partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSceneMarkerRawDataMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
+        public partial Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         public unsafe Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* markerId, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
@@ -131,14 +131,14 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        public unsafe Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // ImplicitCountSpanOverloader
             return GetSceneMarkerDecodedStringMsft(scene, in markerId, (uint) buffer.Length, bufferCountOutput, ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        public unsafe Result GetSceneMarkerDecodedStringMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // ImplicitCountSpanOverloader
             return GetSceneMarkerDecodedStringMsft(scene, in markerId, (uint) buffer.Length, ref bufferCountOutput, ref buffer.GetPinnableReference());
@@ -159,14 +159,14 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        public unsafe Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // ImplicitCountSpanOverloader
             return GetSceneMarkerRawDataMsft(scene, in markerId, (uint) buffer.Length, bufferCountOutput, ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid markerId, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        public unsafe Result GetSceneMarkerRawDataMsft([Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid markerId, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // ImplicitCountSpanOverloader
             return GetSceneMarkerRawDataMsft(scene, in markerId, (uint) buffer.Length, ref bufferCountOutput, ref buffer.GetPinnableReference());

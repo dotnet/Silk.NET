@@ -48,6 +48,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"RotateClusteredBitKhr\"")]
         [NativeName("Name", "VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT_KHR")]
         SubgroupFeatureRotateClusteredBitKhr = 1024,
+        [Obsolete("Deprecated in favour of \"RotateBit\"")]
+        [NativeName("Name", "VK_SUBGROUP_FEATURE_ROTATE_BIT")]
+        SubgroupFeatureRotateBit = 512,
+        [Obsolete("Deprecated in favour of \"RotateClusteredBit\"")]
+        [NativeName("Name", "VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT")]
+        SubgroupFeatureRotateClusteredBit = 1024,
         [NativeName("Name", "VK_SUBGROUP_FEATURE_BASIC_BIT")]
         BasicBit = 1,
         [NativeName("Name", "VK_SUBGROUP_FEATURE_VOTE_BIT")]
@@ -70,5 +76,9 @@ namespace Silk.NET.Vulkan
         RotateBitKhr = 512,
         [NativeName("Name", "VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT_KHR")]
         RotateClusteredBitKhr = 1024,
+        [NativeName("Name", "VK_SUBGROUP_FEATURE_ROTATE_BIT")]
+        RotateBit = 512,
+        [NativeName("Name", "VK_SUBGROUP_FEATURE_ROTATE_CLUSTERED_BIT")]
+        RotateClusteredBit = 1024,
     }
 }

@@ -1414,5 +1414,55 @@ namespace Silk.NET.OpenGL.Legacy
         ShaderCoreTexelRateArm = 0x96F5,
         [NativeName("Name", "GL_SHADER_CORE_FMA_RATE_ARM")]
         ShaderCoreFmaRateArm = 0x96F6,
+        [NativeName("Name", "GL_MAX_TASK_WORK_GROUP_TOTAL_COUNT_EXT")]
+        MaxTaskWorkGroupTotalCountExt = 0x9740,
+        [NativeName("Name", "GL_MAX_MESH_WORK_GROUP_TOTAL_COUNT_EXT")]
+        MaxMeshWorkGroupTotalCountExt = 0x9741,
+        [NativeName("Name", "GL_MAX_TASK_PAYLOAD_SIZE_EXT")]
+        MaxTaskPayloadSizeExt = 0x9742,
+        [NativeName("Name", "GL_MAX_TASK_SHARED_MEMORY_SIZE_EXT")]
+        MaxTaskSharedMemorySizeExt = 0x9743,
+        [NativeName("Name", "GL_MAX_MESH_SHARED_MEMORY_SIZE_EXT")]
+        MaxMeshSharedMemorySizeExt = 0x9744,
+        [NativeName("Name", "GL_MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT")]
+        MaxTaskPayloadAndSharedMemorySizeExt = 0x9745,
+        [NativeName("Name", "GL_MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT")]
+        MaxMeshPayloadAndSharedMemorySizeExt = 0x9746,
+        [NativeName("Name", "GL_MAX_MESH_OUTPUT_MEMORY_SIZE_EXT")]
+        MaxMeshOutputMemorySizeExt = 0x9747,
+        [NativeName("Name", "GL_MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_EXT")]
+        MaxMeshPayloadAndOutputMemorySizeExt = 0x9748,
+        [NativeName("Name", "GL_MAX_MESH_OUTPUT_COMPONENTS_EXT")]
+        MaxMeshOutputComponentsExt = 0x9749,
+        [NativeName("Name", "GL_MAX_MESH_OUTPUT_LAYERS_EXT")]
+        MaxMeshOutputLayersExt = 0x974A,
+        [NativeName("Name", "GL_MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_EXT")]
+        MaxPreferredTaskWorkGroupInvocationsExt = 0x974B,
+        [NativeName("Name", "GL_MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_EXT")]
+        MaxPreferredMeshWorkGroupInvocationsExt = 0x974C,
+        [NativeName("Name", "GL_MESH_PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_EXT")]
+        MeshPrefersLocalInvocationVertexOutputExt = 0x974D,
+        [NativeName("Name", "GL_MESH_PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_EXT")]
+        MeshPrefersLocalInvocationPrimitiveOutputExt = 0x974E,
+        [NativeName("Name", "GL_MESH_PREFERS_COMPACT_VERTEX_OUTPUT_EXT")]
+        MeshPrefersCompactVertexOutputExt = 0x974F,
+        [NativeName("Name", "GL_MESH_PREFERS_COMPACT_PRIMITIVE_OUTPUT_EXT")]
+        MeshPrefersCompactPrimitiveOutputExt = 0x9750,
+        [NativeName("Name", "GL_MAX_TASK_WORK_GROUP_COUNT_EXT")]
+        MaxTaskWorkGroupCountExt = 0x9751,
+        [NativeName("Name", "GL_MAX_MESH_WORK_GROUP_COUNT_EXT")]
+        MaxMeshWorkGroupCountExt = 0x9752,
+        [NativeName("Name", "GL_MAX_MESH_OUTPUT_PRIMITIVES_EXT")]
+        MaxMeshOutputPrimitivesExt = 0x9756,
+        [NativeName("Name", "GL_MAX_MESH_WORK_GROUP_INVOCATIONS_EXT")]
+        MaxMeshWorkGroupInvocationsExt = 0x9757,
+        [NativeName("Name", "GL_MAX_MESH_WORK_GROUP_SIZE_EXT")]
+        MaxMeshWorkGroupSizeExt = 0x9758,
+        [NativeName("Name", "GL_MAX_TASK_WORK_GROUP_INVOCATIONS_EXT")]
+        MaxTaskWorkGroupInvocationsExt = 0x9759,
+        [NativeName("Name", "GL_MAX_TASK_WORK_GROUP_SIZE_EXT")]
+        MaxTaskWorkGroupSizeExt = 0x975A,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_PRIMITIVE_RATE_WITH_MULTI_VIEWPORT_SUPPORTED_EXT")]
+        FragmentShadingRatePrimitiveRateWithMultiViewportSupportedExt = 0x9780,
     }
 }

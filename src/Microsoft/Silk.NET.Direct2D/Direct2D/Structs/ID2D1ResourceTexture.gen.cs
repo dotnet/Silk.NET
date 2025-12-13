@@ -120,7 +120,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -143,7 +143,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -155,7 +155,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -170,7 +170,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -184,7 +184,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -196,7 +196,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -211,7 +211,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -225,7 +225,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -240,7 +240,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -258,7 +258,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -275,7 +275,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -287,7 +287,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -302,7 +302,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -316,7 +316,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -331,7 +331,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -349,7 +349,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -366,7 +366,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -381,7 +381,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -399,7 +399,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -416,7 +416,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
+        public readonly unsafe int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -434,7 +434,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount)
+        public readonly int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -455,7 +455,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+        public readonly int Update([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint minimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint maximimumExtents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, uint dimensions, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
         {
             var @this = (ID2D1ResourceTexture*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

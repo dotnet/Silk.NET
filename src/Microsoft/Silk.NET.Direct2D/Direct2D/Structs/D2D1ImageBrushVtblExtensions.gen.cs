@@ -116,7 +116,7 @@ public unsafe static class D2D1ImageBrushVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTransform(this ComPtr<ID2D1ImageBrush> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> transform)
+    public static void SetTransform(this ComPtr<ID2D1ImageBrush> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> transform)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
@@ -197,7 +197,7 @@ public unsafe static class D2D1ImageBrushVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetSourceRectangle(this ComPtr<ID2D1ImageBrush> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static void SetSourceRectangle(this ComPtr<ID2D1ImageBrush> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)

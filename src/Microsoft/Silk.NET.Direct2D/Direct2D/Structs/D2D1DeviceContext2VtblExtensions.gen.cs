@@ -123,7 +123,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -135,7 +135,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -150,7 +150,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -162,7 +162,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -177,7 +177,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -192,7 +192,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -231,7 +231,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -243,7 +243,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -279,7 +279,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -291,7 +291,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -333,7 +333,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -348,7 +348,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -393,7 +393,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -408,7 +408,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -459,7 +459,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -477,7 +477,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -519,7 +519,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -531,7 +531,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -546,7 +546,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -558,7 +558,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -573,7 +573,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -588,7 +588,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -633,7 +633,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -648,7 +648,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -666,7 +666,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -681,7 +681,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -699,7 +699,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -717,7 +717,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -759,7 +759,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -771,7 +771,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -786,7 +786,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -798,7 +798,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -813,7 +813,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -828,7 +828,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -867,7 +867,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
+    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -879,7 +879,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
+    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -942,7 +942,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -954,7 +954,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -969,7 +969,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -984,7 +984,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1002,7 +1002,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1014,7 +1014,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1029,7 +1029,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1044,7 +1044,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1062,7 +1062,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1077,7 +1077,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1095,7 +1095,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1113,7 +1113,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1182,7 +1182,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1194,7 +1194,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1209,7 +1209,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1224,7 +1224,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1242,7 +1242,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1254,7 +1254,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1269,7 +1269,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1284,7 +1284,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1302,7 +1302,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1317,7 +1317,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1335,7 +1335,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1353,7 +1353,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1395,7 +1395,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1407,7 +1407,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1422,7 +1422,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1434,7 +1434,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1449,7 +1449,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1464,7 +1464,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1482,7 +1482,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1494,7 +1494,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1509,7 +1509,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1524,7 +1524,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1542,7 +1542,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1557,7 +1557,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1575,7 +1575,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1593,7 +1593,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1635,7 +1635,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> size, ID2D1Layer** layer)
+    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> size, ID2D1Layer** layer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1647,7 +1647,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> size, ref ID2D1Layer* layer)
+    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> size, ref ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1763,7 +1763,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1773,7 +1773,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1786,7 +1786,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1799,7 +1799,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1832,7 +1832,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush)
+    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1842,7 +1842,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush)
+    public static void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1895,7 +1895,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -1905,7 +1905,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -1918,7 +1918,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -1931,7 +1931,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -1964,7 +1964,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRect, ID2D1Brush* brush)
+    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -1974,7 +1974,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRect, ref ID2D1Brush brush)
+    public static void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRect, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -2027,7 +2027,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2037,7 +2037,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2050,7 +2050,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2063,7 +2063,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2096,7 +2096,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ID2D1Brush* brush)
+    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2106,7 +2106,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ref ID2D1Brush brush)
+    public static void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2350,7 +2350,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
@@ -2360,7 +2360,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2370,7 +2370,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2393,7 +2393,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2406,7 +2406,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2419,7 +2419,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2445,7 +2445,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2458,7 +2458,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2471,7 +2471,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2500,7 +2500,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2516,7 +2516,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2532,7 +2532,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2558,7 +2558,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
@@ -2568,7 +2568,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2578,7 +2578,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2601,7 +2601,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2614,7 +2614,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2627,7 +2627,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2660,7 +2660,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
@@ -2670,7 +2670,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
@@ -2683,7 +2683,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2693,7 +2693,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2706,7 +2706,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2719,7 +2719,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2756,7 +2756,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2768,7 +2768,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2824,7 +2824,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTransform(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Matrix3X2<float> transform)
+    public static void SetTransform(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Matrix3X2<float> transform)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
@@ -2971,7 +2971,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LayerParameters layerParameters, ID2D1Layer* layer)
+    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LayerParameters layerParameters, ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         fixed (LayerParameters* layerParametersPtr = &layerParameters)
@@ -2981,7 +2981,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LayerParameters layerParameters, ref ID2D1Layer layer)
+    public static void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LayerParameters layerParameters, ref ID2D1Layer layer)
     {
         var @this = thisVtbl.Handle;
         fixed (LayerParameters* layerParametersPtr = &layerParameters)
@@ -3090,7 +3090,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void PushAxisAlignedClip(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> clipRect, AntialiasMode antialiasMode)
+    public static void PushAxisAlignedClip(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> clipRect, AntialiasMode antialiasMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* clipRectPtr = &clipRect)
@@ -3114,7 +3114,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void Clear(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue clearColor)
+    public static void Clear(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue clearColor)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.D3Dcolorvalue* clearColorPtr = &clearColor)
@@ -3277,7 +3277,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderTargetProperties renderTargetProperties)
+    public static Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderTargetProperties renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
         Silk.NET.Core.Bool32 ret = default;
@@ -3310,7 +3310,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte profile, uint profileSize, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte profile, uint profileSize, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3322,7 +3322,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte profile, uint profileSize, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3383,7 +3383,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filename, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filename, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3395,7 +3395,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filename, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filename, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3477,7 +3477,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3489,7 +3489,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3531,7 +3531,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3546,7 +3546,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3633,7 +3633,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3645,7 +3645,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3660,7 +3660,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3672,7 +3672,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3687,7 +3687,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3702,7 +3702,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3747,7 +3747,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3762,7 +3762,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3780,7 +3780,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3795,7 +3795,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3813,7 +3813,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3831,7 +3831,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4066,7 +4066,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetRenderingControls(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingControls renderingControls)
+    public static void SetRenderingControls(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingControls renderingControls)
     {
         var @this = thisVtbl.Handle;
         fixed (RenderingControls* renderingControlsPtr = &renderingControls)
@@ -4132,7 +4132,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
@@ -4142,7 +4142,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
@@ -4152,7 +4152,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
@@ -4175,7 +4175,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Image* imagePtr = &image)
@@ -4188,7 +4188,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Image* imagePtr = &image)
@@ -4201,7 +4201,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Image* imagePtr = &image)
@@ -4224,7 +4224,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1GdiMetafile* gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> targetOffset)
+    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1GdiMetafile* gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> targetOffset)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
@@ -4244,7 +4244,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1GdiMetafile gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> targetOffset)
+    public static void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1GdiMetafile gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> targetOffset)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1GdiMetafile* gdiMetafilePtr = &gdiMetafile)
@@ -4266,7 +4266,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> inputRectangle)
+    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> inputRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4290,7 +4290,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> inputRectangle)
+    public static int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> inputRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4422,7 +4422,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4434,7 +4434,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4449,7 +4449,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4461,7 +4461,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4476,7 +4476,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4491,7 +4491,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4536,7 +4536,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4551,7 +4551,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4569,7 +4569,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4584,7 +4584,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4602,7 +4602,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4620,7 +4620,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4858,7 +4858,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkPoint startPoint, ID2D1Ink** ink)
+    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkPoint startPoint, ID2D1Ink** ink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4870,7 +4870,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkPoint startPoint, ref ID2D1Ink* ink)
+    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkPoint startPoint, ref ID2D1Ink* ink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4906,7 +4906,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkStyleProperties inkStyleProperties, ID2D1InkStyle** inkStyle)
+    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkStyleProperties inkStyleProperties, ID2D1InkStyle** inkStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4918,7 +4918,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkStyleProperties inkStyleProperties, ref ID2D1InkStyle* inkStyle)
+    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkStyleProperties inkStyleProperties, ref ID2D1InkStyle* inkStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4954,7 +4954,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GradientMeshPatch patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
+    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GradientMeshPatch patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4966,7 +4966,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GradientMeshPatch patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
+    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GradientMeshPatch patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5023,7 +5023,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5035,7 +5035,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5050,7 +5050,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5062,7 +5062,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5077,7 +5077,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5092,7 +5092,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5135,7 +5135,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5149,7 +5149,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5166,7 +5166,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5178,7 +5178,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5193,7 +5193,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5208,7 +5208,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5226,7 +5226,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5241,7 +5241,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5259,7 +5259,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5277,7 +5277,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5298,7 +5298,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5312,7 +5312,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5329,7 +5329,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5346,7 +5346,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5592,7 +5592,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5604,7 +5604,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5646,7 +5646,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5661,7 +5661,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5728,7 +5728,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5752,7 +5752,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5776,7 +5776,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static int CreateBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 srcData, uint pitch, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5808,7 +5808,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5840,7 +5840,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5888,7 +5888,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5936,7 +5936,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5984,7 +5984,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6024,7 +6024,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+    public static unsafe int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6040,7 +6040,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6056,7 +6056,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+    public static unsafe int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6072,7 +6072,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6088,7 +6088,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+    public static int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6104,7 +6104,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6144,7 +6144,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6168,7 +6168,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6192,7 +6192,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+    public static int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapBrushProperties bitmapBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6224,7 +6224,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+    public static unsafe int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6248,7 +6248,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+    public static unsafe int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6272,7 +6272,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+    public static int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6304,7 +6304,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateGradientStopCollection<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static int CreateGradientStopCollection<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6368,7 +6368,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+    public static unsafe int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6384,7 +6384,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6400,7 +6400,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6424,7 +6424,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+    public static unsafe int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6440,7 +6440,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6456,7 +6456,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6480,7 +6480,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+    public static int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6496,7 +6496,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6512,7 +6512,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+    public static int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LinearGradientBrushProperties linearGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6576,7 +6576,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+    public static unsafe int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6592,7 +6592,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6608,7 +6608,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6632,7 +6632,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+    public static unsafe int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6648,7 +6648,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6664,7 +6664,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6688,7 +6688,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+    public static int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6704,7 +6704,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6720,7 +6720,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+    public static int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RadialGradientBrushProperties radialGradientBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6752,7 +6752,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6776,7 +6776,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6800,7 +6800,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6824,7 +6824,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6848,7 +6848,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6872,7 +6872,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6896,7 +6896,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6928,7 +6928,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> size, ref ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+    public static int CreateLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> size, ref ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7056,7 +7056,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static void DrawRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7072,7 +7072,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7088,7 +7088,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7128,7 +7128,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void FillRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7200,7 +7200,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRoundedRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static void DrawRoundedRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7216,7 +7216,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7232,7 +7232,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7272,7 +7272,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RoundedRect roundedRect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void FillRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RoundedRect roundedRect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7344,7 +7344,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawEllipse<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static void DrawEllipse<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7360,7 +7360,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7376,7 +7376,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7416,7 +7416,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Ellipse ellipse, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void FillEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Ellipse ellipse, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7720,7 +7720,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static unsafe void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7736,7 +7736,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static unsafe void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7752,7 +7752,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7784,7 +7784,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7800,7 +7800,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7816,7 +7816,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7848,7 +7848,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7864,7 +7864,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7880,7 +7880,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7936,7 +7936,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7952,7 +7952,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7968,7 +7968,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8032,7 +8032,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8056,7 +8056,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8080,7 +8080,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8120,7 +8120,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8232,7 +8232,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void PushLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LayerParameters layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+    public static void PushLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LayerParameters layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8392,7 +8392,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateColorContext<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static int CreateColorContext<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8432,7 +8432,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8480,7 +8480,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8528,7 +8528,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+    public static int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8601,7 +8601,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+    public static unsafe int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8617,7 +8617,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8633,7 +8633,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+    public static unsafe int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8649,7 +8649,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8665,7 +8665,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+    public static int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8681,7 +8681,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8721,7 +8721,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8745,7 +8745,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8769,7 +8769,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+    public static int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageBrushProperties imageBrushProperties, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8945,7 +8945,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8961,7 +8961,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8977,7 +8977,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9033,7 +9033,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawGdiMetafile<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
+    public static void DrawGdiMetafile<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> gdiMetafile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9073,7 +9073,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int InvalidateEffectInputRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> inputRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static int InvalidateEffectInputRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> effect, uint input, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> inputRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9209,7 +9209,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9225,7 +9225,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9241,7 +9241,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9257,7 +9257,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9273,7 +9273,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9289,7 +9289,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9569,7 +9569,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateInk<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkPoint startPoint, ref ComPtr<TI0> ink) where TI0 : unmanaged, IComVtbl<ID2D1Ink>, IComVtbl<TI0>
+    public static int CreateInk<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkPoint startPoint, ref ComPtr<TI0> ink) where TI0 : unmanaged, IComVtbl<ID2D1Ink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9601,7 +9601,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateInkStyle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkStyleProperties inkStyleProperties, ref ComPtr<TI0> inkStyle) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static int CreateInkStyle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkStyleProperties inkStyleProperties, ref ComPtr<TI0> inkStyle) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9633,7 +9633,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateGradientMesh<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GradientMeshPatch patches, uint patchesCount, ref ComPtr<TI0> gradientMesh) where TI0 : unmanaged, IComVtbl<ID2D1GradientMesh>, IComVtbl<TI0>
+    public static int CreateGradientMesh<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GradientMeshPatch patches, uint patchesCount, ref ComPtr<TI0> gradientMesh) where TI0 : unmanaged, IComVtbl<ID2D1GradientMesh>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9673,7 +9673,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9697,7 +9697,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9721,7 +9721,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9753,7 +9753,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9777,7 +9777,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9801,7 +9801,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9825,7 +9825,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9849,7 +9849,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9873,7 +9873,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9897,7 +9897,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint extents, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10121,7 +10121,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTransformedImageSource<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TransformedImageSourceProperties properties, ref ComPtr<TI1> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI1>
+    public static int CreateTransformedImageSource<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TransformedImageSourceProperties properties, ref ComPtr<TI1> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10137,7 +10137,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
+    public static unsafe int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10177,7 +10177,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TransformedImageSourceProperties properties, ref ComPtr<TI0> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI0>
+    public static int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TransformedImageSourceProperties properties, ref ComPtr<TI0> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
