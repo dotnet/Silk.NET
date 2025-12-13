@@ -1080,13 +1080,13 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-I$nuget/Microsoft.Direct3D.D3D12/*/build/native/include",
+                    "-I$nuget/Microsoft.Direct3D.D3D12/1.618.5/build/native/include",
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "$nuget/Microsoft.Direct3D.D3D12/*/build/native/include/$windowsSdkVersion/um/d3dcommon.h",
-                    "$nuget/Microsoft.Direct3D.D3D12/*/build/native/include/$windowsSdkVersion/um/d3dshadercacheregistration.h"
+                    "$nuget/Microsoft.Direct3D.D3D12/1.618.5/build/native/include/d3dcommon.h",
+                    "$nuget/Microsoft.Direct3D.D3D12/1.618.5/build/native/include/d3dshadercacheregistration.h"
                 ],
                 "classes": {
                     "silk.net.core.d3dcommon.h": "[Core]D3DCommon",
@@ -1490,7 +1490,7 @@
                 "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_5.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/shared/dxgi1_6.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/dxgidebug.h",
-                "$nuget/Microsoft.Direct3D.D3D12/*/build/native/include/dxgiformat.h",
+                "$nuget/Microsoft.Direct3D.D3D12/1.618.5/build/native/include/dxgiformat.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/winrt/windows.graphics.directx.h"
             ],
             "mode": "Clang",
@@ -2180,14 +2180,13 @@
                     "-Wno-ignored-pragma-intrinsic",
                     "-Wno-nonportable-include-path",
                     "-Wno-pragma-pack",
-                    "-I$nuget/Microsoft.Direct3D.D3D12/*/build/native/include",
-                    "-I$windowsSdkIncludes",
+                    "-I$nuget/Microsoft.Direct3D.D3D12/1.618.5/build/native/include",
                     "-I$windowsSdkIncludes",
                     "-Ibuild/include"
                 ],
                 "traverse": [
-                    "$nuget/Microsoft.Direct3D.D3D12/*/build/native/include/d3d12*.h",
-                    "!$nuget/Microsoft.Direct3D.D3D12/*/build/native/include/d3d12compatibility.h"
+                    "$nuget/Microsoft.Direct3D.D3D12/1.618.5/build/native/include/d3d12*.h",
+                    "!$nuget/Microsoft.Direct3D.D3D12/1.618.5/build/native/include/d3d12compatibility.h"
                 ],
                 "classes": {
                     "silk.net.direct3d12.h": "[Core]D3D12"

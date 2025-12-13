@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0;net6.0;net6.0-android</TargetFrameworks>
-        <TargetFrameworks Condition="!$([MSBuild]::IsOsPlatform('Linux'))">$(TargetFrameworks);net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0;net6.0;net8.0-android</TargetFrameworks>
+        <TargetFrameworks Condition="!$([MSBuild]::IsOsPlatform('Linux'))">$(TargetFrameworks);net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
         <LangVersion>8</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Nullable>enable</Nullable>
@@ -21,18 +21,18 @@
     </ItemGroup>
     
     <!-- iOS Specific Files -->
-    <ItemGroup Condition="'$(TargetFramework)' != 'net6.0-ios' and '$(TargetFramework)' != 'net6.0-maccatalyst'">
+    <ItemGroup Condition="'$(TargetFramework)' != 'net8.0-ios' and '$(TargetFramework)' != 'net8.0-maccatalyst'">
         <Compile Remove="iOS/SilkMobile.cs" />
     </ItemGroup>
 
     <!-- Android Specific Files -->
-    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
         <AndroidLibrary Update="Android\app-release.aar" Bind="true" Pack="false" />
         <TransformFile Include="Android/Metadata.xml" />
         <TransformFile Include="Android/EnumFields.xml" />
         <TransformFile Include="Android/EnumMethods.xml" />
     </ItemGroup>
-    <ItemGroup Condition="'$(TargetFramework)' != 'net6.0-android'">
+    <ItemGroup Condition="'$(TargetFramework)' != 'net8.0-android'">
         <Compile Remove="Android/SilkActivity.cs" />
     </ItemGroup>
     
@@ -51,7 +51,7 @@
             <Output TaskParameter="NuGetShortFolderName" PropertyName="_NuGetShortFolderName" />
         </GetNuGetShortFolderName>
         <!-- Android Specific Bundled Files -->
-        <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
+        <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
             <!-- https://github.com/xamarin/xamarin-android/issues/5957 
                  https://github.com/xamarin/xamarin-android/blob/main/Documentation/guides/OneDotNetEmbeddedResources.md -->
             <TfmSpecificPackageFile Include="Android/app-release.aar" Link="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar" Pack="true" PackagePath="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar" />
