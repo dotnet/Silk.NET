@@ -50,7 +50,7 @@ jobs:
           git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
           git config --local user.name "The Silk.NET Automaton"
       - name: Extra prerequisites
-        run: |ass
+        run: |
           echo running extras
           ${{ matrix.env.extras }}
       - name: Cache .tmp, ~/.nuget/packages
