@@ -158,7 +158,7 @@ public unsafe static class D2D1SvgPathDataVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSegmentData(this ComPtr<ID2D1SvgPathData> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float data, uint dataCount, uint startIndex)
+    public static int UpdateSegmentData(this ComPtr<ID2D1SvgPathData> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float data, uint dataCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -218,7 +218,7 @@ public unsafe static class D2D1SvgPathDataVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateCommands(this ComPtr<ID2D1SvgPathData> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SvgPathCommand commands, uint commandsCount, uint startIndex)
+    public static int UpdateCommands(this ComPtr<ID2D1SvgPathData> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SvgPathCommand commands, uint commandsCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

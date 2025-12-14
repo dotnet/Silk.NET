@@ -10,7 +10,6 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.SDL
 {
     [Flags]
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L256_C9")]
     [NativeName("Name", "SDL_GLprofile")]
     public enum GLprofile : int
     {

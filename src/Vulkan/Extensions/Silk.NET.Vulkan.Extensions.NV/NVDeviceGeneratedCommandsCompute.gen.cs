@@ -30,7 +30,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineIndirectDeviceAddressNV", Convention = CallingConvention.Winapi)]
-        public partial ulong GetPipelineIndirectDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PipelineIndirectDeviceAddressInfoNV pInfo);
+        public partial ulong GetPipelineIndirectDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PipelineIndirectDeviceAddressInfoNV pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineIndirectMemoryRequirementsNV", Convention = CallingConvention.Winapi)]
@@ -43,12 +43,12 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineIndirectMemoryRequirementsNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetPipelineIndirectMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+        public unsafe partial void GetPipelineIndirectMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         [NativeApi(EntryPoint = "vkGetPipelineIndirectMemoryRequirementsNV", Convention = CallingConvention.Winapi)]
-        public partial void GetPipelineIndirectMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
+        public partial void GetPipelineIndirectMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineCreateInfo pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
@@ -61,7 +61,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
-        public unsafe MemoryRequirements2 GetPipelineIndirectMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ComputePipelineCreateInfo pCreateInfo)
+        public unsafe MemoryRequirements2 GetPipelineIndirectMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ComputePipelineCreateInfo pCreateInfo)
         {
             // NonKhrReturnTypeOverloader
             GetPipelineIndirectMemoryRequirements(device, in pCreateInfo, out MemoryRequirements2 silkRet);

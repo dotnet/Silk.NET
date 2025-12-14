@@ -138,25 +138,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public unsafe partial uint NewObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI usage);
 
         [NativeApi(EntryPoint = "glNewObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial uint NewObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI usage) where T0 : unmanaged;
+        public partial uint NewObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glNewObjectBufferATI", Convention = CallingConvention.Winapi)]
         public unsafe partial uint NewObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectUsageATI usage);
 
         [NativeApi(EntryPoint = "glNewObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial uint NewObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged;
+        public partial uint NewObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void UpdateObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI preserve);
 
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial void UpdateObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI preserve) where T0 : unmanaged;
+        public partial void UpdateObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI preserve) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void UpdateObjectBuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PreserveModeATI preserve);
 
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI", Convention = CallingConvention.Winapi)]
-        public partial void UpdateObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged;
+        public partial void UpdateObjectBuffer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pointer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glVariantArrayObjectATI", Convention = CallingConvention.Winapi)]
         public partial void VariantArrayObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ATI type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset);

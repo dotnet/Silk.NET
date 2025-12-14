@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCuModuleCreateInfoNVX")]
-    public unsafe partial struct CuModuleCreateInfoNVX : IChainable
+    public unsafe partial struct CuModuleCreateInfoNVX : IChainStart
     {
         public CuModuleCreateInfoNVX
         (
@@ -80,6 +80,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref CuModuleCreateInfoNVX Chain(
+            out CuModuleCreateInfoNVX capture)
+        {
+            capture = new CuModuleCreateInfoNVX(StructureType.CUModuleCreateInfoNvx);
+            return ref capture;
         }
     }
 }

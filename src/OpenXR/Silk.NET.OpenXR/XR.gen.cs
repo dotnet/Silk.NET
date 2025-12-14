@@ -29,8 +29,14 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "XR_API_LAYER_NEXT_INFO_STRUCT_VERSION")]
         public const uint ApiLayerNextInfoStructVersion = unchecked((uint) 1);
         [NativeName("Type", "")]
+        [NativeName("Name", "XR_BODY_JOINT_COUNT_BD")]
+        public const uint BodyJointCountBD = unchecked((uint) 24);
+        [NativeName("Type", "")]
         [NativeName("Name", "XR_BODY_JOINT_COUNT_HTC")]
         public const uint BodyJointCountHtc = unchecked((uint) 26);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_BODY_JOINT_WITHOUT_ARM_COUNT_BD")]
+        public const uint BodyJointWithoutArmCountBD = unchecked((uint) 16);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_CURRENT_LOADER_API_LAYER_VERSION")]
         public const uint CurrentLoaderApiLayerVersion = unchecked((uint) 1);
@@ -43,6 +49,9 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "")]
         [NativeName("Name", "XR_EXTENSION_ENUM_STRIDE")]
         public const uint ExtensionEnumStride = unchecked((uint) 1000);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_FACE_EXPRESSION_COUNT_BD")]
+        public const uint FaceExpressionCountBD = unchecked((uint) 52);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_FACIAL_EXPRESSION_EYE_COUNT_HTC")]
         public const uint FacialExpressionEyeCountHtc = unchecked((uint) 14);
@@ -61,6 +70,9 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "")]
         [NativeName("Name", "XR_HAND_JOINT_COUNT_EXT")]
         public const uint HandJointCountExt = unchecked((uint) 26);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_LIP_EXPRESSION_COUNT_BD")]
+        public const uint LipExpressionCountBD = unchecked((uint) 20);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_LOADER_INFO_STRUCT_VERSION")]
         public const uint LoaderInfoStructVersion = unchecked((uint) 1);
@@ -131,8 +143,17 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "XR_NULL_RENDER_MODEL_KEY_FB")]
         public const uint NullRenderModelKeyFB = unchecked((uint) 0);
         [NativeName("Type", "")]
+        [NativeName("Name", "XR_NULL_SPATIAL_BUFFER_ID_EXT")]
+        public const uint NullSpatialBufferIDExt = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_NULL_SPATIAL_ENTITY_ID_EXT")]
+        public const uint NullSpatialEntityIDExt = unchecked((uint) 0);
+        [NativeName("Type", "")]
         [NativeName("Name", "XR_NULL_SYSTEM_ID")]
         public const uint NullSystemID = unchecked((uint) 0);
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_NULL_TRACKABLE_ANDROID")]
+        public const uint NullTrackableAndroid = unchecked((uint) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_RUNTIME_INFO_STRUCT_VERSION")]
         public const uint RuntimeInfoStructVersion = unchecked((uint) 1);
@@ -153,11 +174,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateSpaces", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpacesLocateInfo locateInfo, [Count(Count = 0)] SpaceLocations* spaceLocations);
+        public unsafe partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpacesLocateInfo locateInfo, [Count(Count = 0)] SpaceLocations* spaceLocations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateSpaces", Convention = CallingConvention.Winapi)]
-        public partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpacesLocateInfo locateInfo, [Count(Count = 0)] ref SpaceLocations spaceLocations);
+        public partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpacesLocateInfo locateInfo, [Count(Count = 0)] ref SpaceLocations spaceLocations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrAcquireSwapchainImage", Convention = CallingConvention.Winapi)]
@@ -169,11 +190,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrAcquireSwapchainImage", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AcquireSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainImageAcquireInfo acquireInfo, [Count(Count = 0)] uint* index);
+        public unsafe partial Result AcquireSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainImageAcquireInfo acquireInfo, [Count(Count = 0)] uint* index);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrAcquireSwapchainImage", Convention = CallingConvention.Winapi)]
-        public partial Result AcquireSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainImageAcquireInfo acquireInfo, [Count(Count = 0)] ref uint index);
+        public partial Result AcquireSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainImageAcquireInfo acquireInfo, [Count(Count = 0)] ref uint index);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrApplyHapticFeedback", Convention = CallingConvention.Winapi)]
@@ -181,15 +202,15 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrApplyHapticFeedback", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ApplyHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HapticBaseHeader hapticFeedback);
+        public unsafe partial Result ApplyHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HapticActionInfo* hapticActionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HapticBaseHeader hapticFeedback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrApplyHapticFeedback", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ApplyHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HapticActionInfo hapticActionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HapticBaseHeader* hapticFeedback);
+        public unsafe partial Result ApplyHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HapticActionInfo hapticActionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] HapticBaseHeader* hapticFeedback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrApplyHapticFeedback", Convention = CallingConvention.Winapi)]
-        public partial Result ApplyHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HapticActionInfo hapticActionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HapticBaseHeader hapticFeedback);
+        public partial Result ApplyHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HapticActionInfo hapticActionInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HapticBaseHeader hapticFeedback);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrAttachSessionActionSets", Convention = CallingConvention.Winapi)]
@@ -197,7 +218,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrAttachSessionActionSets", Convention = CallingConvention.Winapi)]
-        public partial Result AttachSessionActionSets([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SessionActionSetsAttachInfo attachInfo);
+        public partial Result AttachSessionActionSets([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SessionActionSetsAttachInfo attachInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrBeginFrame", Convention = CallingConvention.Winapi)]
@@ -205,7 +226,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrBeginFrame", Convention = CallingConvention.Winapi)]
-        public partial Result BeginFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FrameBeginInfo frameBeginInfo);
+        public partial Result BeginFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FrameBeginInfo frameBeginInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrBeginSession", Convention = CallingConvention.Winapi)]
@@ -213,7 +234,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrBeginSession", Convention = CallingConvention.Winapi)]
-        public partial Result BeginSession([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SessionBeginInfo beginInfo);
+        public partial Result BeginSession([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SessionBeginInfo beginInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateAction", Convention = CallingConvention.Winapi)]
@@ -225,11 +246,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateAction", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateAction([Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionCreateInfo createInfo, [Count(Count = 0)] Action* action);
+        public unsafe partial Result CreateAction([Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionCreateInfo createInfo, [Count(Count = 0)] Action* action);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateAction", Convention = CallingConvention.Winapi)]
-        public partial Result CreateAction([Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionCreateInfo createInfo, [Count(Count = 0)] ref Action action);
+        public partial Result CreateAction([Count(Count = 0)] ActionSet actionSet, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionCreateInfo createInfo, [Count(Count = 0)] ref Action action);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateActionSet", Convention = CallingConvention.Winapi)]
@@ -241,11 +262,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateActionSet", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateActionSet([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionSetCreateInfo createInfo, [Count(Count = 0)] ActionSet* actionSet);
+        public unsafe partial Result CreateActionSet([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionSetCreateInfo createInfo, [Count(Count = 0)] ActionSet* actionSet);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateActionSet", Convention = CallingConvention.Winapi)]
-        public partial Result CreateActionSet([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionSetCreateInfo createInfo, [Count(Count = 0)] ref ActionSet actionSet);
+        public partial Result CreateActionSet([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionSetCreateInfo createInfo, [Count(Count = 0)] ref ActionSet actionSet);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateActionSpace", Convention = CallingConvention.Winapi)]
@@ -257,11 +278,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateActionSpace", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateActionSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionSpaceCreateInfo createInfo, [Count(Count = 0)] Space* space);
+        public unsafe partial Result CreateActionSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionSpaceCreateInfo createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateActionSpace", Convention = CallingConvention.Winapi)]
-        public partial Result CreateActionSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionSpaceCreateInfo createInfo, [Count(Count = 0)] ref Space space);
+        public partial Result CreateActionSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionSpaceCreateInfo createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
@@ -276,12 +297,12 @@ namespace Silk.NET.OpenXR
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
         [NativeApi(EntryPoint = "xrCreateInstance", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceCreateInfo createInfo, [Count(Count = 0)] Instance* instance);
+        public unsafe partial Result CreateInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InstanceCreateInfo createInfo, [Count(Count = 0)] Instance* instance);
 
         /// <summary>To be documented.</summary>
         [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
         [NativeApi(EntryPoint = "xrCreateInstance", Convention = CallingConvention.Winapi)]
-        public partial Result CreateInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceCreateInfo createInfo, [Count(Count = 0)] ref Instance instance);
+        public partial Result CreateInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InstanceCreateInfo createInfo, [Count(Count = 0)] ref Instance instance);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateReferenceSpace", Convention = CallingConvention.Winapi)]
@@ -293,11 +314,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateReferenceSpace", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateReferenceSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReferenceSpaceCreateInfo createInfo, [Count(Count = 0)] Space* space);
+        public unsafe partial Result CreateReferenceSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ReferenceSpaceCreateInfo createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateReferenceSpace", Convention = CallingConvention.Winapi)]
-        public partial Result CreateReferenceSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ReferenceSpaceCreateInfo createInfo, [Count(Count = 0)] ref Space space);
+        public partial Result CreateReferenceSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ReferenceSpaceCreateInfo createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSession", Convention = CallingConvention.Winapi)]
@@ -309,11 +330,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSession", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSession([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SessionCreateInfo createInfo, [Count(Count = 0)] Session* session);
+        public unsafe partial Result CreateSession([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SessionCreateInfo createInfo, [Count(Count = 0)] Session* session);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSession", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSession([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SessionCreateInfo createInfo, [Count(Count = 0)] ref Session session);
+        public partial Result CreateSession([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SessionCreateInfo createInfo, [Count(Count = 0)] ref Session session);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSwapchain", Convention = CallingConvention.Winapi)]
@@ -325,11 +346,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSwapchain", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainCreateInfo createInfo, [Count(Count = 0)] Swapchain* swapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainCreateInfo createInfo, [Count(Count = 0)] Swapchain* swapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSwapchain", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSwapchain([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainCreateInfo createInfo, [Count(Count = 0)] ref Swapchain swapchain);
+        public partial Result CreateSwapchain([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainCreateInfo createInfo, [Count(Count = 0)] ref Swapchain swapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyAction", Convention = CallingConvention.Winapi)]
@@ -361,7 +382,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEndFrame", Convention = CallingConvention.Winapi)]
-        public partial Result EndFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FrameEndInfo frameEndInfo);
+        public partial Result EndFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FrameEndInfo frameEndInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEndSession", Convention = CallingConvention.Winapi)]
@@ -401,19 +422,19 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources);
+        public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ref ulong sources);
+        public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ref ulong sources);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] ref uint sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources);
+        public unsafe partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] ref uint sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateBoundSourcesForAction", Convention = CallingConvention.Winapi)]
-        public partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] ref uint sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ref ulong sources);
+        public partial Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] ref uint sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ref ulong sources);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateEnvironmentBlendModes", Convention = CallingConvention.Winapi)]
@@ -449,19 +470,19 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
+        public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
+        public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
+        public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
-        public partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
+        public partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties", Convention = CallingConvention.Winapi)]
@@ -569,11 +590,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStateBoolean", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetActionStateBoolean([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStateBoolean* state);
+        public unsafe partial Result GetActionStateBoolean([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStateBoolean* state);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStateBoolean", Convention = CallingConvention.Winapi)]
-        public partial Result GetActionStateBoolean([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStateBoolean state);
+        public partial Result GetActionStateBoolean([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStateBoolean state);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStateFloat", Convention = CallingConvention.Winapi)]
@@ -585,11 +606,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStateFloat", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetActionStateFloat([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStateFloat* state);
+        public unsafe partial Result GetActionStateFloat([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStateFloat* state);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStateFloat", Convention = CallingConvention.Winapi)]
-        public partial Result GetActionStateFloat([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStateFloat state);
+        public partial Result GetActionStateFloat([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStateFloat state);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStatePose", Convention = CallingConvention.Winapi)]
@@ -601,11 +622,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStatePose", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetActionStatePose([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStatePose* state);
+        public unsafe partial Result GetActionStatePose([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStatePose* state);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStatePose", Convention = CallingConvention.Winapi)]
-        public partial Result GetActionStatePose([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStatePose state);
+        public partial Result GetActionStatePose([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStatePose state);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStateVector2f", Convention = CallingConvention.Winapi)]
@@ -617,11 +638,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStateVector2f", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetActionStateVector2([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStateVector2f* state);
+        public unsafe partial Result GetActionStateVector2([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionStateGetInfo getInfo, [Count(Count = 0)] ActionStateVector2f* state);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetActionStateVector2f", Convention = CallingConvention.Winapi)]
-        public partial Result GetActionStateVector2([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStateVector2f state);
+        public partial Result GetActionStateVector2([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionStateGetInfo getInfo, [Count(Count = 0)] ref ActionStateVector2f state);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetCurrentInteractionProfile", Convention = CallingConvention.Winapi)]
@@ -657,27 +678,27 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
+        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
+        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
+        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
+        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
-        public partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
+        public partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] ref byte buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName", Convention = CallingConvention.Winapi)]
-        public partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
+        public partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
@@ -689,11 +710,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Count(Count = 0)] PfnVoidFunction* function);
+        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Count(Count = 0)] PfnVoidFunction* function);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
-        public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, [Count(Count = 0)] ref PfnVoidFunction function);
+        public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, [Count(Count = 0)] ref PfnVoidFunction function);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr", Convention = CallingConvention.Winapi)]
@@ -729,11 +750,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSystem", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSystem([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SystemGetInfo getInfo, [Count(Count = 0)] ulong* systemId);
+        public unsafe partial Result GetSystem([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SystemGetInfo getInfo, [Count(Count = 0)] ulong* systemId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSystem", Convention = CallingConvention.Winapi)]
-        public partial Result GetSystem([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SystemGetInfo getInfo, [Count(Count = 0)] ref ulong systemId);
+        public partial Result GetSystem([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SystemGetInfo getInfo, [Count(Count = 0)] ref ulong systemId);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSystemProperties", Convention = CallingConvention.Winapi)]
@@ -793,35 +814,35 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
+        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
+        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
+        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
+        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
+        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
+        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
+        public unsafe partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateViews", Convention = CallingConvention.Winapi)]
-        public partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
+        public partial Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] ref View views);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPathToString", Convention = CallingConvention.Winapi)]
@@ -861,7 +882,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrReleaseSwapchainImage", Convention = CallingConvention.Winapi)]
-        public partial Result ReleaseSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainImageReleaseInfo releaseInfo);
+        public partial Result ReleaseSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainImageReleaseInfo releaseInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestExitSession", Convention = CallingConvention.Winapi)]
@@ -885,7 +906,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStopHapticFeedback", Convention = CallingConvention.Winapi)]
-        public partial Result StopHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HapticActionInfo hapticActionInfo);
+        public partial Result StopHapticFeedback([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HapticActionInfo hapticActionInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStringToPath", Convention = CallingConvention.Winapi)]
@@ -897,11 +918,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStringToPath", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result StringToPath([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pathString, [Count(Count = 0)] ulong* path);
+        public unsafe partial Result StringToPath([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pathString, [Count(Count = 0)] ulong* path);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStringToPath", Convention = CallingConvention.Winapi)]
-        public partial Result StringToPath([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pathString, [Count(Count = 0)] ref ulong path);
+        public partial Result StringToPath([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pathString, [Count(Count = 0)] ref ulong path);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStringToPath", Convention = CallingConvention.Winapi)]
@@ -929,7 +950,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSuggestInteractionProfileBindings", Convention = CallingConvention.Winapi)]
-        public partial Result SuggestInteractionProfileBinding([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InteractionProfileSuggestedBinding suggestedBindings);
+        public partial Result SuggestInteractionProfileBinding([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InteractionProfileSuggestedBinding suggestedBindings);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSyncActions", Convention = CallingConvention.Winapi)]
@@ -937,7 +958,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSyncActions", Convention = CallingConvention.Winapi)]
-        public partial Result SyncAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ActionsSyncInfo syncInfo);
+        public partial Result SyncAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ActionsSyncInfo syncInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrWaitFrame", Convention = CallingConvention.Winapi)]
@@ -949,11 +970,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrWaitFrame", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result WaitFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FrameWaitInfo frameWaitInfo, [Count(Count = 0)] FrameState* frameState);
+        public unsafe partial Result WaitFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FrameWaitInfo frameWaitInfo, [Count(Count = 0)] FrameState* frameState);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrWaitFrame", Convention = CallingConvention.Winapi)]
-        public partial Result WaitFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FrameWaitInfo frameWaitInfo, [Count(Count = 0)] ref FrameState frameState);
+        public partial Result WaitFrame([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FrameWaitInfo frameWaitInfo, [Count(Count = 0)] ref FrameState frameState);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrWaitSwapchainImage", Convention = CallingConvention.Winapi)]
@@ -961,7 +982,7 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrWaitSwapchainImage", Convention = CallingConvention.Winapi)]
-        public partial Result WaitSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainImageWaitInfo waitInfo);
+        public partial Result WaitSwapchainImage([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainImageWaitInfo waitInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
@@ -973,27 +994,27 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ApiLayerCreateInfo layerInfo, [Count(Count = 0)] Instance* instance);
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ApiLayerCreateInfo layerInfo, [Count(Count = 0)] Instance* instance);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ApiLayerCreateInfo layerInfo, [Count(Count = 0)] ref Instance instance);
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] InstanceCreateInfo* info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ApiLayerCreateInfo layerInfo, [Count(Count = 0)] ref Instance instance);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] Instance* instance);
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] Instance* instance);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] ref Instance instance);
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ApiLayerCreateInfo* layerInfo, [Count(Count = 0)] ref Instance instance);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ApiLayerCreateInfo layerInfo, [Count(Count = 0)] Instance* instance);
+        public unsafe partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ApiLayerCreateInfo layerInfo, [Count(Count = 0)] Instance* instance);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateApiLayerInstance", Convention = CallingConvention.Winapi)]
-        public partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ApiLayerCreateInfo layerInfo, [Count(Count = 0)] ref Instance instance);
+        public partial Result CreateApiLayerInstance([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InstanceCreateInfo info, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ApiLayerCreateInfo layerInfo, [Count(Count = 0)] ref Instance instance);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
@@ -1005,11 +1026,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] NegotiateLoaderInfo* loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
@@ -1021,27 +1042,27 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
-        public partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
+        public partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly NegotiateLoaderInfo loaderInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
+        public unsafe partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly NegotiateLoaderInfo loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] NegotiateApiLayerRequest* apiLayerRequest);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderApiLayerInterface", Convention = CallingConvention.Winapi)]
-        public partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
+        public partial Result NegotiateLoaderApiLayerInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly NegotiateLoaderInfo loaderInfo, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] ref NegotiateApiLayerRequest apiLayerRequest);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderRuntimeInterface", Convention = CallingConvention.Winapi)]
@@ -1053,11 +1074,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderRuntimeInterface", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result NegotiateLoaderRuntimeInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0)] NegotiateRuntimeRequest* runtimeRequest);
+        public unsafe partial Result NegotiateLoaderRuntimeInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly NegotiateLoaderInfo loaderInfo, [Count(Count = 0)] NegotiateRuntimeRequest* runtimeRequest);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrNegotiateLoaderRuntimeInterface", Convention = CallingConvention.Winapi)]
-        public partial Result NegotiateLoaderRuntimeInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in NegotiateLoaderInfo loaderInfo, [Count(Count = 0)] ref NegotiateRuntimeRequest runtimeRequest);
+        public partial Result NegotiateLoaderRuntimeInterface([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly NegotiateLoaderInfo loaderInfo, [Count(Count = 0)] ref NegotiateRuntimeRequest runtimeRequest);
 
         /// <summary>To be documented.</summary>
         public unsafe Result EnumerateApiLayerProperties([Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ApiLayerProperties> properties)
@@ -1088,14 +1109,14 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
+        public unsafe Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
         {
             // ImplicitCountSpanOverloader
             return EnumerateBoundSourcesForAction(session, in enumerateInfo, (uint) sources.Length, sourceCountOutput, ref sources.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] ref uint sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
+        public unsafe Result EnumerateBoundSourcesForAction([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BoundSourcesForActionEnumerateInfo enumerateInfo, [Count(Count = 0)] ref uint sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
         {
             // ImplicitCountSpanOverloader
             return EnumerateBoundSourcesForAction(session, in enumerateInfo, (uint) sources.Length, ref sourceCountOutput, ref sources.GetPinnableReference());
@@ -1130,14 +1151,14 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public unsafe Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte layerName, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // ImplicitCountSpanOverloader
             return EnumerateInstanceExtensionProperties(in layerName, (uint) properties.Length, propertyCountOutput, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte layerName, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public unsafe Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte layerName, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // ImplicitCountSpanOverloader
             return EnumerateInstanceExtensionProperties(in layerName, (uint) properties.Length, ref propertyCountOutput, ref properties.GetPinnableReference());
@@ -1242,14 +1263,14 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        public unsafe Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // ImplicitCountSpanOverloader
             return GetInputSourceLocalizedName(session, in getInfo, (uint) buffer.Length, bufferCountOutput, ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        public unsafe Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // ImplicitCountSpanOverloader
             return GetInputSourceLocalizedName(session, in getInfo, (uint) buffer.Length, ref bufferCountOutput, ref buffer.GetPinnableReference());
@@ -1284,28 +1305,28 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public unsafe Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // ImplicitCountSpanOverloader
             return LocateView(session, in viewLocateInfo, viewState, (uint) views.Length, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public unsafe Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // ImplicitCountSpanOverloader
             return LocateView(session, in viewLocateInfo, viewState, (uint) views.Length, ref viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public unsafe Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // ImplicitCountSpanOverloader
             return LocateView(session, in viewLocateInfo, ref viewState, (uint) views.Length, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
+        public unsafe Result LocateView([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ViewLocateInfo viewLocateInfo, [Count(Count = 0)] ref ViewState viewState, [Count(Count = 0)] ref uint viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // ImplicitCountSpanOverloader
             return LocateView(session, in viewLocateInfo, ref viewState, (uint) views.Length, ref viewCountOutput, ref views.GetPinnableReference());

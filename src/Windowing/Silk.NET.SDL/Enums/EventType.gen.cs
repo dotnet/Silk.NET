@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_events_L55_C9")]
     [NativeName("Name", "SDL_EventType")]
     public enum EventType : int
     {

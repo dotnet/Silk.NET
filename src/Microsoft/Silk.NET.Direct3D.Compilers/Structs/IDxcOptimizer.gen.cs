@@ -201,7 +201,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -213,7 +213,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -228,7 +228,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -243,7 +243,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        public readonly unsafe int RunOptimizer(IDxcBlob* pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -321,7 +321,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, IDxcBlobEncoding** ppOutputText)
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -336,7 +336,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, IDxcBlob** pOutputModule, ref IDxcBlobEncoding* ppOutputText)
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -354,7 +354,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, IDxcBlobEncoding** ppOutputText)
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -372,7 +372,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
+        public readonly unsafe int RunOptimizer(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText)
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -490,7 +490,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer<TI0, TI1, TI2>(ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref ComPtr<TI2> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI2>
+        public readonly unsafe int RunOptimizer<TI0, TI1, TI2>(ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref ComPtr<TI2> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI2>
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -498,7 +498,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer<TI0, TI1>(ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1>
+        public readonly unsafe int RunOptimizer<TI0, TI1>(ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref ComPtr<TI1> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI1>
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -506,7 +506,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer<TI0, TI1>(ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        public readonly unsafe int RunOptimizer<TI0, TI1>(ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -514,7 +514,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer<TI0>(ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        public readonly unsafe int RunOptimizer<TI0>(ComPtr<TI0> pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -594,7 +594,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer<TI0, TI1>(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        public readonly unsafe int RunOptimizer<TI0, TI1>(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref ComPtr<TI1> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -602,7 +602,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer<TI0>(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        public readonly unsafe int RunOptimizer<TI0>(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref ComPtr<TI0> pOutputModule, ref IDxcBlobEncoding* ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -610,7 +610,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RunOptimizer<TI0>(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly unsafe int RunOptimizer<TI0>(ref IDxcBlob pBlob, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* ppOptions, uint optionCount, ref IDxcBlob* pOutputModule, ref ComPtr<TI0> ppOutputText) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcOptimizer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

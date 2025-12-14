@@ -1032,7 +1032,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MatchesMimeType([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzMimeType, int* pfMatches)
+        public readonly unsafe int MatchesMimeType([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzMimeType, int* pfMatches)
         {
             var @this = (IWICBitmapEncoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1044,7 +1044,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MatchesMimeType([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzMimeType, ref int pfMatches)
+        public readonly int MatchesMimeType([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzMimeType, ref int pfMatches)
         {
             var @this = (IWICBitmapEncoderInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

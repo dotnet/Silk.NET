@@ -101,7 +101,7 @@ public unsafe static class D2D1BoundsAdjustmentTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetOutputBounds(this ComPtr<ID2D1BoundsAdjustmentTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> outputBounds)
+    public static void SetOutputBounds(this ComPtr<ID2D1BoundsAdjustmentTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> outputBounds)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* outputBoundsPtr = &outputBounds)

@@ -32,5 +32,9 @@ namespace Silk.NET.OpenCL
         WarpCountLimitArm = 0x41E8,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_COMPUTE_UNIT_MAX_QUEUED_BATCHES_ARM")]
         ComputeUnitMaxQueuedBatchesArm = 0x41F1,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_DEVICE_PTRS_EXT")]
+        DevicePtrsExt = 0x5002,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_SVM_INDIRECT_ACCESS_KHR")]
+        SvmIndirectAccessKhr = 0x11BB,
     }
 }

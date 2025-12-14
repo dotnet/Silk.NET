@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         public unsafe partial void DeleteFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* fences);
 
         [NativeApi(EntryPoint = "glDeleteFencesNV", Convention = CallingConvention.Winapi)]
-        public partial void DeleteFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint fences);
+        public partial void DeleteFences([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint fences);
 
         [NativeApi(EntryPoint = "glFinishFenceNV", Convention = CallingConvention.Winapi)]
         public partial void FinishFence([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint fence);

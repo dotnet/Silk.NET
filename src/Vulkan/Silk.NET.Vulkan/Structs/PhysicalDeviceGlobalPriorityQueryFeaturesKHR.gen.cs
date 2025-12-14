@@ -17,12 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceGlobalPriorityQueryFeaturesKHR")]
-    [NativeName("Aliases", "VkPhysicalDeviceGlobalPriorityQueryFeaturesEXT")]
+    [NativeName("AliasOf", "VkPhysicalDeviceGlobalPriorityQueryFeatures")]
     public unsafe partial struct PhysicalDeviceGlobalPriorityQueryFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceGlobalPriorityQueryFeaturesKHR
         (
-            StructureType? sType = StructureType.PhysicalDeviceGlobalPriorityQueryFeaturesKhr,
+            StructureType? sType = StructureType.PhysicalDeviceGlobalPriorityQueryFeatures,
             void* pNext = null,
             Bool32? globalPriorityQuery = null
         ) : this()
@@ -62,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceGlobalPriorityQueryFeaturesKhr;
+            return SType = StructureType.PhysicalDeviceGlobalPriorityQueryFeatures;
         }
 
         /// <inheritdoc />

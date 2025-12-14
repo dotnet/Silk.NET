@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyImageToImageInfoEXT")]
+    [NativeName("AliasOf", "VkCopyImageToImageInfo")]
     public unsafe partial struct CopyImageToImageInfoEXT : IChainable
     {
         public CopyImageToImageInfoEXT
         (
-            StructureType? sType = StructureType.CopyImageToImageInfoExt,
+            StructureType? sType = StructureType.CopyImageToImageInfo,
             void* pNext = null,
-            HostImageCopyFlagsEXT? flags = null,
+            HostImageCopyFlags? flags = null,
             Image? srcImage = null,
             ImageLayout? srcImageLayout = null,
             Image? dstImage = null,
@@ -89,10 +90,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkHostImageCopyFlagsEXT")]
-        [NativeName("Type.Name", "VkHostImageCopyFlagsEXT")]
+        [NativeName("Type", "VkHostImageCopyFlags")]
+        [NativeName("Type.Name", "VkHostImageCopyFlags")]
         [NativeName("Name", "flags")]
-        public HostImageCopyFlagsEXT Flags;
+        public HostImageCopyFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkImage")]
         [NativeName("Type.Name", "VkImage")]
@@ -127,7 +128,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.CopyImageToImageInfoExt;
+            return SType = StructureType.CopyImageToImageInfo;
         }
 
         /// <inheritdoc />

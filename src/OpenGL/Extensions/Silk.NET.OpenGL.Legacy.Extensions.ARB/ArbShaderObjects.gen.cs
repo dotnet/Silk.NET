@@ -267,7 +267,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial int GetUniformLocation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint programObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetUniformLocationARB", Convention = CallingConvention.Winapi)]
-        public partial int GetUniformLocation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint programObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
+        public partial int GetUniformLocation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint programObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name);
 
         [NativeApi(EntryPoint = "glGetUniformLocationARB", Convention = CallingConvention.Winapi)]
         public partial int GetUniformLocation([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint programObj, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
@@ -279,13 +279,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* length);
 
         [NativeApi(EntryPoint = "glShaderSourceARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int length);
+        public unsafe partial void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int length);
 
         [NativeApi(EntryPoint = "glShaderSourceARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* length);
+        public unsafe partial void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* length);
 
         [NativeApi(EntryPoint = "glShaderSourceARB", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int length);
+        public unsafe partial void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int length);
 
         [NativeApi(EntryPoint = "glUniform1fARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform1([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float v0);
@@ -297,13 +297,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void Uniform1([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniform1fvARB", Convention = CallingConvention.Winapi)]
-        public partial void Uniform1([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float value);
+        public partial void Uniform1([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float value);
 
         [NativeApi(EntryPoint = "glUniform1ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform1([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glUniform1ivARB", Convention = CallingConvention.Winapi)]
-        public partial void Uniform1([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int value);
+        public partial void Uniform1([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*1"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int value);
 
         [NativeApi(EntryPoint = "glUniform2fARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float v0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float v1);
@@ -315,13 +315,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void Uniform2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniform2fvARB", Convention = CallingConvention.Winapi)]
-        public partial void Uniform2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float value);
+        public partial void Uniform2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float value);
 
         [NativeApi(EntryPoint = "glUniform2ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glUniform2ivARB", Convention = CallingConvention.Winapi)]
-        public partial void Uniform2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int value);
+        public partial void Uniform2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int value);
 
         [NativeApi(EntryPoint = "glUniform3fARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float v0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float v1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float v2);
@@ -333,13 +333,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void Uniform3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniform3fvARB", Convention = CallingConvention.Winapi)]
-        public partial void Uniform3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float value);
+        public partial void Uniform3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float value);
 
         [NativeApi(EntryPoint = "glUniform3ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glUniform3ivARB", Convention = CallingConvention.Winapi)]
-        public partial void Uniform3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int value);
+        public partial void Uniform3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*3"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int value);
 
         [NativeApi(EntryPoint = "glUniform4fARB", Convention = CallingConvention.Winapi)]
         public partial void Uniform4([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float v0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float v1, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float v2, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float v3);
@@ -351,31 +351,31 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void Uniform4([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniform4fvARB", Convention = CallingConvention.Winapi)]
-        public partial void Uniform4([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float value);
+        public partial void Uniform4([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float value);
 
         [NativeApi(EntryPoint = "glUniform4ivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Uniform4([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glUniform4ivARB", Convention = CallingConvention.Winapi)]
-        public partial void Uniform4([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int value);
+        public partial void Uniform4([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count", Expression = "*4"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*4"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2fvARB", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*4"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float value);
+        public partial void UniformMatrix2([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*4"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*9"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3fvARB", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*9"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float value);
+        public partial void UniformMatrix3([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*9"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4fvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void UniformMatrix4([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*16"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4fvARB", Convention = CallingConvention.Winapi)]
-        public partial void UniformMatrix4([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*16"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float value);
+        public partial void UniformMatrix4([Flow(Silk.NET.Core.Native.FlowDirection.In)] int location, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] bool transpose, [Count(Parameter = "count", Expression = "*16"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float value);
 
         [NativeApi(EntryPoint = "glUseProgramObjectARB", Convention = CallingConvention.Winapi)]
         public partial void UseProgramObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint programObj);
@@ -644,7 +644,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             SilkMarshal.Free((nint) @string);
         }
 
-        public unsafe void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] @stringSa, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int length)
+        public unsafe void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] @stringSa, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int length)
         {
             // StringArrayOverloader
             var @string = (byte**) SilkMarshal.StringArrayToPtr(@stringSa);
@@ -659,7 +659,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             ShaderSource(shaderObj, (uint) length.Length, @string, in length.GetPinnableReference());
         }
 
-        public unsafe void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> length)
+        public unsafe void ShaderSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint shaderObj, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* @string, [Count(Parameter = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<int> length)
         {
             // ImplicitCountSpanOverloader
             ShaderSource(shaderObj, (uint) length.Length, in @string, in length.GetPinnableReference());

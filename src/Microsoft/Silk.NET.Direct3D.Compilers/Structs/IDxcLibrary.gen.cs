@@ -228,7 +228,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -240,7 +240,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -255,7 +255,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -270,7 +270,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
+        public readonly unsafe int CreateBlobFromFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -365,7 +365,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingFromPinned<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingFromPinned<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -377,7 +377,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingFromPinned<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingFromPinned<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -413,7 +413,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -425,7 +425,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -488,7 +488,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -500,7 +500,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -515,7 +515,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -530,7 +530,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -770,7 +770,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobFromFile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, uint* codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly unsafe int CreateBlobFromFile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, uint* codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -778,7 +778,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBlobFromFile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFileName, ref uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly int CreateBlobFromFile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFileName, ref uint codePage, ref ComPtr<TI0> pBlobEncoding) where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -810,7 +810,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBlobWithEncodingFromPinned<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly int CreateBlobWithEncodingFromPinned<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -826,7 +826,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBlobWithEncodingOnHeapCopy<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly int CreateBlobWithEncodingOnHeapCopy<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -858,7 +858,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBlobWithEncodingOnMalloc<T0, TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref ComPtr<TI1> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
+        public readonly int CreateBlobWithEncodingOnMalloc<T0, TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref ComPtr<TI1> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI1>
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -866,7 +866,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
+        public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, ComPtr<TI0> pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IMalloc>, IComVtbl<TI0>
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -874,7 +874,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateBlobWithEncodingOnMalloc<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
+        public readonly int CreateBlobWithEncodingOnMalloc<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref ComPtr<TI0> pBlobEncoding) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDxcBlobEncoding>, IComVtbl<TI0>
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

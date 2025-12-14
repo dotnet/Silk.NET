@@ -12,12 +12,14 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUTextureAspect")]
     public enum TextureAspect : int
     {
+        [NativeName("Name", "WGPUTextureAspect_Undefined")]
+        Undefined = 0x0,
         [NativeName("Name", "WGPUTextureAspect_All")]
-        All = 0x0,
+        All = 0x1,
         [NativeName("Name", "WGPUTextureAspect_StencilOnly")]
-        StencilOnly = 0x1,
+        StencilOnly = 0x2,
         [NativeName("Name", "WGPUTextureAspect_DepthOnly")]
-        DepthOnly = 0x2,
+        DepthOnly = 0x3,
         [NativeName("Name", "WGPUTextureAspect_Force32")]
         Force32 = 0x7FFFFFFF,
     }

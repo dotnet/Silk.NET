@@ -167,7 +167,7 @@ public unsafe static class D2D1SvgPaintVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetColor(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.D3Dcolorvalue color)
+    public static int SetColor(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.D3Dcolorvalue color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -205,7 +205,7 @@ public unsafe static class D2D1SvgPaintVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetId(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char id)
+    public static int SetId(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char id)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

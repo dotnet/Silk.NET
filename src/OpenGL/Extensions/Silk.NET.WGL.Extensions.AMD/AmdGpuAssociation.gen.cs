@@ -30,7 +30,7 @@ namespace Silk.NET.WGL.Extensions.AMD
         public unsafe partial nint CreateAssociatedContextAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hShareContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int* attribList);
 
         [NativeApi(EntryPoint = "wglCreateAssociatedContextAttribsAMD", Convention = CallingConvention.Winapi)]
-        public partial nint CreateAssociatedContextAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hShareContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int attribList);
+        public partial nint CreateAssociatedContextAttrib([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hShareContext, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int attribList);
 
         [NativeApi(EntryPoint = "wglDeleteAssociatedContextAMD", Convention = CallingConvention.Winapi)]
         public partial Silk.NET.Core.Bool32 DeleteAssociatedContext([Flow(Silk.NET.Core.Native.FlowDirection.In)] nint hglrc);

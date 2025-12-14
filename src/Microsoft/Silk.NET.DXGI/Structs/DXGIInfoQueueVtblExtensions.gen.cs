@@ -492,7 +492,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pDescription)
+    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -524,7 +524,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pDescription)
+    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

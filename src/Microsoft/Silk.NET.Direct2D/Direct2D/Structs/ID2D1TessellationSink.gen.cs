@@ -118,7 +118,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddTriangles([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Triangle triangles, uint trianglesCount)
+        public readonly void AddTriangles([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Triangle triangles, uint trianglesCount)
         {
             var @this = (ID2D1TessellationSink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Triangle* trianglesPtr = &triangles)

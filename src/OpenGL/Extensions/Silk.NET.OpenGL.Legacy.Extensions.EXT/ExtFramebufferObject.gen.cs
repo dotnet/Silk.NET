@@ -42,25 +42,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void DeleteFramebuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* framebuffers);
 
         [NativeApi(EntryPoint = "glDeleteFramebuffersEXT", Convention = CallingConvention.Winapi)]
-        public partial void DeleteFramebuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint framebuffers);
+        public partial void DeleteFramebuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint framebuffers);
 
         [NativeApi(EntryPoint = "glDeleteFramebuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteFramebuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Framebuffer* framebuffers);
 
         [NativeApi(EntryPoint = "glDeleteFramebuffersEXT", Convention = CallingConvention.Winapi)]
-        public partial void DeleteFramebuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Framebuffer framebuffers);
+        public partial void DeleteFramebuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Framebuffer framebuffers);
 
         [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteRenderbuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* renderbuffers);
 
         [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT", Convention = CallingConvention.Winapi)]
-        public partial void DeleteRenderbuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint renderbuffers);
+        public partial void DeleteRenderbuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint renderbuffers);
 
         [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteRenderbuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Renderbuffer* renderbuffers);
 
         [NativeApi(EntryPoint = "glDeleteRenderbuffersEXT", Convention = CallingConvention.Winapi)]
-        public partial void DeleteRenderbuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Renderbuffer renderbuffers);
+        public partial void DeleteRenderbuffers([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Renderbuffer renderbuffers);
 
         [NativeApi(EntryPoint = "glFramebufferRenderbufferEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferRenderbuffer([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT attachment, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT renderbuffertarget, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint renderbuffer);

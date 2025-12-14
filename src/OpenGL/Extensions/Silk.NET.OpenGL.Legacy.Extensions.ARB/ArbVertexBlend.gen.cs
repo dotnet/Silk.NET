@@ -27,37 +27,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] sbyte* weights);
 
         [NativeApi(EntryPoint = "glWeightbvARB", Convention = CallingConvention.Winapi)]
-        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in sbyte weights);
+        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly sbyte weights);
 
         [NativeApi(EntryPoint = "glWeightsvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* weights);
 
         [NativeApi(EntryPoint = "glWeightsvARB", Convention = CallingConvention.Winapi)]
-        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short weights);
+        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short weights);
 
         [NativeApi(EntryPoint = "glWeightivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* weights);
 
         [NativeApi(EntryPoint = "glWeightivARB", Convention = CallingConvention.Winapi)]
-        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int weights);
+        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int weights);
 
         [NativeApi(EntryPoint = "glWeightfvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* weights);
 
         [NativeApi(EntryPoint = "glWeightfvARB", Convention = CallingConvention.Winapi)]
-        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float weights);
+        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float weights);
 
         [NativeApi(EntryPoint = "glWeightdvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* weights);
 
         [NativeApi(EntryPoint = "glWeightdvARB", Convention = CallingConvention.Winapi)]
-        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double weights);
+        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double weights);
 
         [NativeApi(EntryPoint = "glWeightubvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* weights);
 
         [NativeApi(EntryPoint = "glWeightubvARB", Convention = CallingConvention.Winapi)]
-        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte weights);
+        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte weights);
 
         [NativeApi(EntryPoint = "glWeightubvARB", Convention = CallingConvention.Winapi)]
         public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string weights);
@@ -66,13 +66,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* weights);
 
         [NativeApi(EntryPoint = "glWeightusvARB", Convention = CallingConvention.Winapi)]
-        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort weights);
+        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort weights);
 
         [NativeApi(EntryPoint = "glWeightuivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* weights);
 
         [NativeApi(EntryPoint = "glWeightuivARB", Convention = CallingConvention.Winapi)]
-        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint weights);
+        public partial void Weight([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint weights);
 
         [NativeApi(EntryPoint = "glWeightPointerARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void WeightPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ARB type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);

@@ -50,5 +50,7 @@ namespace Silk.NET.OpenCL
         DX9ResourceIntel = 0x4027,
         [NativeName("Name", "CL_MEM_DX9_SHARED_HANDLE_INTEL")]
         DX9SharedHandleIntel = 0x4074,
+        [NativeName("Name", "CL_MEM_DEVICE_ADDRESS_EXT")]
+        DeviceAddressExt = 0x5001,
     }
 }

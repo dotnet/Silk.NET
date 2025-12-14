@@ -30,11 +30,11 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SemaphoreGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pZirconHandle);
+        public unsafe partial Result GetSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SemaphoreGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pZirconHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSemaphoreZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
-        public partial Result GetSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SemaphoreGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pZirconHandle);
+        public partial Result GetSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SemaphoreGetZirconHandleInfoFUCHSIA pGetZirconHandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pZirconHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkImportSemaphoreZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkImportSemaphoreZirconHandleFUCHSIA", Convention = CallingConvention.Winapi)]
-        public partial Result ImportSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImportSemaphoreZirconHandleInfoFUCHSIA pImportSemaphoreZirconHandleInfo);
+        public partial Result ImportSemaphoreZirconHandleFuchsia([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImportSemaphoreZirconHandleInfoFUCHSIA pImportSemaphoreZirconHandleInfo);
 
         public FuchsiaExternalSemaphore(INativeContext ctx)
             : base(ctx)

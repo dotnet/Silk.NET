@@ -66,6 +66,9 @@ namespace Silk.NET.Assimp
         [Obsolete("Deprecated in favour of \"AmbientOcclusion\"")]
         [NativeName("Name", "aiTextureType_AMBIENT_OCCLUSION")]
         TextureTypeAmbientOcclusion = 0x11,
+        [Obsolete("Deprecated in favour of \"Unknown\"")]
+        [NativeName("Name", "aiTextureType_UNKNOWN")]
+        TextureTypeUnknown = 0x12,
         [Obsolete("Deprecated in favour of \"Sheen\"")]
         [NativeName("Name", "aiTextureType_SHEEN")]
         TextureTypeSheen = 0x13,
@@ -75,9 +78,24 @@ namespace Silk.NET.Assimp
         [Obsolete("Deprecated in favour of \"Transmission\"")]
         [NativeName("Name", "aiTextureType_TRANSMISSION")]
         TextureTypeTransmission = 0x15,
-        [Obsolete("Deprecated in favour of \"Unknown\"")]
-        [NativeName("Name", "aiTextureType_UNKNOWN")]
-        TextureTypeUnknown = 0x12,
+        [Obsolete("Deprecated in favour of \"MayaBase\"")]
+        [NativeName("Name", "aiTextureType_MAYA_BASE")]
+        TextureTypeMayaBase = 0x16,
+        [Obsolete("Deprecated in favour of \"MayaSpecular\"")]
+        [NativeName("Name", "aiTextureType_MAYA_SPECULAR")]
+        TextureTypeMayaSpecular = 0x17,
+        [Obsolete("Deprecated in favour of \"MayaSpecularColor\"")]
+        [NativeName("Name", "aiTextureType_MAYA_SPECULAR_COLOR")]
+        TextureTypeMayaSpecularColor = 0x18,
+        [Obsolete("Deprecated in favour of \"MayaSpecularRoughness\"")]
+        [NativeName("Name", "aiTextureType_MAYA_SPECULAR_ROUGHNESS")]
+        TextureTypeMayaSpecularRoughness = 0x19,
+        [Obsolete("Deprecated in favour of \"Anisotropy\"")]
+        [NativeName("Name", "aiTextureType_ANISOTROPY")]
+        TextureTypeAnisotropy = 0x1A,
+        [Obsolete("Deprecated in favour of \"GltfMetallicRoughness\"")]
+        [NativeName("Name", "aiTextureType_GLTF_METALLIC_ROUGHNESS")]
+        TextureTypeGltfMetallicRoughness = 0x1B,
         [NativeName("Name", "aiTextureType_NONE")]
         None = 0x0,
         [NativeName("Name", "aiTextureType_DIFFUSE")]
@@ -114,13 +132,25 @@ namespace Silk.NET.Assimp
         DiffuseRoughness = 0x10,
         [NativeName("Name", "aiTextureType_AMBIENT_OCCLUSION")]
         AmbientOcclusion = 0x11,
+        [NativeName("Name", "aiTextureType_UNKNOWN")]
+        Unknown = 0x12,
         [NativeName("Name", "aiTextureType_SHEEN")]
         Sheen = 0x13,
         [NativeName("Name", "aiTextureType_CLEARCOAT")]
         Clearcoat = 0x14,
         [NativeName("Name", "aiTextureType_TRANSMISSION")]
         Transmission = 0x15,
-        [NativeName("Name", "aiTextureType_UNKNOWN")]
-        Unknown = 0x12,
+        [NativeName("Name", "aiTextureType_MAYA_BASE")]
+        MayaBase = 0x16,
+        [NativeName("Name", "aiTextureType_MAYA_SPECULAR")]
+        MayaSpecular = 0x17,
+        [NativeName("Name", "aiTextureType_MAYA_SPECULAR_COLOR")]
+        MayaSpecularColor = 0x18,
+        [NativeName("Name", "aiTextureType_MAYA_SPECULAR_ROUGHNESS")]
+        MayaSpecularRoughness = 0x19,
+        [NativeName("Name", "aiTextureType_ANISOTROPY")]
+        Anisotropy = 0x1A,
+        [NativeName("Name", "aiTextureType_GLTF_METALLIC_ROUGHNESS")]
+        GltfMetallicRoughness = 0x1B,
     }
 }

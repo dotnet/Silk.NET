@@ -216,19 +216,11 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         [NativeName("Name", "CL_MEM_USES_SVM_POINTER_ARM")]
         MemUsesSvmPointerArm = 0x40B7,
         [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
-        KernelBatchingArm = 0x41E7,
-        [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
         QueueKernelBatchingArm = 0x41E7,
-        [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
-        DeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
         QueueDeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
-        ComputeUnitLimitArm = 0x41F3,
-        [NativeName("Name", "CL_QUEUE_COMPUTE_UNIT_LIMIT_ARM")]
         QueueComputeUnitLimitArm = 0x41F3,
-        [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
-        JobSlotArm = 0x41E1,
         [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
         QueueJobSlotArm = 0x41E1,
         [NativeName("Name", "CL_PRINTF_CALLBACK_ARM")]

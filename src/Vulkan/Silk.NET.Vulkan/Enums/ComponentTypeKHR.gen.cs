@@ -45,6 +45,27 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"Uint64Khr\"")]
         [NativeName("Name", "VK_COMPONENT_TYPE_UINT64_KHR")]
         ComponentTypeUint64Khr = 10,
+        [Obsolete("Deprecated in favour of \"Bfloat16Khr\"")]
+        [NativeName("Name", "VK_COMPONENT_TYPE_BFLOAT16_KHR")]
+        ComponentTypeBfloat16Khr = 1000141000,
+        [Obsolete("Deprecated in favour of \"Sint8PackedNV\"")]
+        [NativeName("Name", "VK_COMPONENT_TYPE_SINT8_PACKED_NV")]
+        ComponentTypeSint8PackedNV = 1000491000,
+        [Obsolete("Deprecated in favour of \"Uint8PackedNV\"")]
+        [NativeName("Name", "VK_COMPONENT_TYPE_UINT8_PACKED_NV")]
+        ComponentTypeUint8PackedNV = 1000491001,
+        [Obsolete("Deprecated in favour of \"FloatE4M3NV\"")]
+        [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT_E4M3_NV")]
+        ComponentTypeFloatE4M3NV = 1000491002,
+        [Obsolete("Deprecated in favour of \"FloatE5M2NV\"")]
+        [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT_E5M2_NV")]
+        ComponentTypeFloatE5M2NV = 1000491003,
+        [Obsolete("Deprecated in favour of \"Float8E4M3Ext\"")]
+        [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT8_E4M3_EXT")]
+        ComponentTypeFloat8E4M3Ext = 1000491002,
+        [Obsolete("Deprecated in favour of \"Float8E5M2Ext\"")]
+        [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT8_E5M2_EXT")]
+        ComponentTypeFloat8E5M2Ext = 1000491003,
         [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT16_KHR")]
         Float16Khr = 0,
         [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT32_KHR")]
@@ -67,5 +88,19 @@ namespace Silk.NET.Vulkan
         Uint32Khr = 9,
         [NativeName("Name", "VK_COMPONENT_TYPE_UINT64_KHR")]
         Uint64Khr = 10,
+        [NativeName("Name", "VK_COMPONENT_TYPE_BFLOAT16_KHR")]
+        Bfloat16Khr = 1000141000,
+        [NativeName("Name", "VK_COMPONENT_TYPE_SINT8_PACKED_NV")]
+        Sint8PackedNV = 1000491000,
+        [NativeName("Name", "VK_COMPONENT_TYPE_UINT8_PACKED_NV")]
+        Uint8PackedNV = 1000491001,
+        [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT_E4M3_NV")]
+        FloatE4M3NV = 1000491002,
+        [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT_E5M2_NV")]
+        FloatE5M2NV = 1000491003,
+        [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT8_E4M3_EXT")]
+        Float8E4M3Ext = 1000491002,
+        [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT8_E5M2_EXT")]
+        Float8E5M2Ext = 1000491003,
     }
 }

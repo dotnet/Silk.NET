@@ -341,7 +341,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RGNData pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RGNData pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -353,7 +353,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -365,7 +365,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RGNData pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RGNData pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -380,7 +380,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -392,7 +392,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RGNData pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RGNData pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -407,7 +407,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RGNData* pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -422,7 +422,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RGNData pDirtyRegion)
+    public static int Present(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RGNData pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -498,7 +498,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetGammaRamp(this ComPtr<IDirect3DDevice9> thisVtbl, uint iSwapChain, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Gammaramp pRamp)
+    public static void SetGammaRamp(this ComPtr<IDirect3DDevice9> thisVtbl, uint iSwapChain, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Gammaramp pRamp)
     {
         var @this = thisVtbl.Handle;
         fixed (Gammaramp* pRampPtr = &pRamp)
@@ -870,7 +870,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -894,7 +894,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -909,7 +909,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -921,7 +921,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -936,7 +936,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -951,7 +951,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -981,7 +981,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1011,7 +1011,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1029,7 +1029,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1044,7 +1044,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1062,7 +1062,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1080,7 +1080,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static int UpdateSurface(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1227,7 +1227,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1251,7 +1251,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1266,7 +1266,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1278,7 +1278,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1293,7 +1293,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1308,7 +1308,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1338,7 +1338,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1368,7 +1368,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1386,7 +1386,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1401,7 +1401,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1419,7 +1419,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1437,7 +1437,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static int StretchRect(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1467,7 +1467,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint color)
+    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9> thisVtbl, IDirect3DSurface9* pSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1491,7 +1491,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ColorFill(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint color)
+    public static int ColorFill(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1665,7 +1665,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Clear(this ComPtr<IDirect3DDevice9> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Rect pRects, uint Flags, uint Color, float Z, uint Stencil)
+    public static int Clear(this ComPtr<IDirect3DDevice9> thisVtbl, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Rect pRects, uint Flags, uint Color, float Z, uint Stencil)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1686,7 +1686,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTransform(this ComPtr<IDirect3DDevice9> thisVtbl, Transformstatetype State, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 pMatrix)
+    public static int SetTransform(this ComPtr<IDirect3DDevice9> thisVtbl, Transformstatetype State, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly System.Numerics.Matrix4x4 pMatrix)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1728,7 +1728,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MultiplyTransform(this ComPtr<IDirect3DDevice9> thisVtbl, Transformstatetype arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in System.Numerics.Matrix4x4 arg1)
+    public static int MultiplyTransform(this ComPtr<IDirect3DDevice9> thisVtbl, Transformstatetype arg0, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly System.Numerics.Matrix4x4 arg1)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1749,7 +1749,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetViewport(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Viewport9 pViewport)
+    public static int SetViewport(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Viewport9 pViewport)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1791,7 +1791,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMaterial(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Material9 pMaterial)
+    public static int SetMaterial(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Material9 pMaterial)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1833,7 +1833,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetLight(this ComPtr<IDirect3DDevice9> thisVtbl, uint Index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Light9 arg1)
+    public static int SetLight(this ComPtr<IDirect3DDevice9> thisVtbl, uint Index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Light9 arg1)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1905,7 +1905,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetClipPlane(this ComPtr<IDirect3DDevice9> thisVtbl, uint Index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pPlane)
+    public static int SetClipPlane(this ComPtr<IDirect3DDevice9> thisVtbl, uint Index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pPlane)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2028,7 +2028,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetClipStatus(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Clipstatus9 pClipStatus)
+    public static int SetClipStatus(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Clipstatus9 pClipStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2193,7 +2193,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPaletteEntries(this ComPtr<IDirect3DDevice9> thisVtbl, uint PaletteNumber, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector4D<byte> pEntries)
+    public static int SetPaletteEntries(this ComPtr<IDirect3DDevice9> thisVtbl, uint PaletteNumber, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector4D<byte> pEntries)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2265,7 +2265,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetScissorRect(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect)
+    public static int SetScissorRect(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2361,7 +2361,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    public static int DrawPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2382,7 +2382,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pIndexData, Format IndexDataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pIndexData, Format IndexDataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2394,7 +2394,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pIndexData, Format IndexDataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pIndexData, Format IndexDataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2406,7 +2406,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawIndexedPrimitiveUP<T0, T1>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pIndexData, Format IndexDataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T1 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where T1 : unmanaged
+    public static int DrawIndexedPrimitiveUP<T0, T1>(this ComPtr<IDirect3DDevice9> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pIndexData, Format IndexDataFormat, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T1 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2490,7 +2490,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Vertexelement9 pVertexElements, IDirect3DVertexDeclaration9** ppDecl)
+    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Vertexelement9 pVertexElements, IDirect3DVertexDeclaration9** ppDecl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2502,7 +2502,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Vertexelement9 pVertexElements, ref IDirect3DVertexDeclaration9* ppDecl)
+    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Vertexelement9 pVertexElements, ref IDirect3DVertexDeclaration9* ppDecl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2610,7 +2610,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFunction, IDirect3DVertexShader9** ppShader)
+    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFunction, IDirect3DVertexShader9** ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2622,7 +2622,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFunction, ref IDirect3DVertexShader9* ppShader)
+    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFunction, ref IDirect3DVertexShader9* ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2688,7 +2688,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantF(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pConstantData, uint Vector4fCount)
+    public static int SetVertexShaderConstantF(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pConstantData, uint Vector4fCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2730,7 +2730,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantI(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int pConstantData, uint Vector4iCount)
+    public static int SetVertexShaderConstantI(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int pConstantData, uint Vector4iCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2772,7 +2772,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantB(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int pConstantData, uint BoolCount)
+    public static int SetVertexShaderConstantB(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int pConstantData, uint BoolCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3027,7 +3027,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFunction, IDirect3DPixelShader9** ppShader)
+    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFunction, IDirect3DPixelShader9** ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3039,7 +3039,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFunction, ref IDirect3DPixelShader9* ppShader)
+    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFunction, ref IDirect3DPixelShader9* ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3105,7 +3105,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantF(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pConstantData, uint Vector4fCount)
+    public static int SetPixelShaderConstantF(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pConstantData, uint Vector4fCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3147,7 +3147,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantI(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int pConstantData, uint Vector4iCount)
+    public static int SetPixelShaderConstantI(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int pConstantData, uint Vector4iCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3189,7 +3189,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantB(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int pConstantData, uint BoolCount)
+    public static int SetPixelShaderConstantB(this ComPtr<IDirect3DDevice9> thisVtbl, uint StartRegister, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int pConstantData, uint BoolCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3231,7 +3231,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RectpatchInfo pRectPatchInfo)
+    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RectpatchInfo pRectPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3243,7 +3243,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RectpatchInfo* pRectPatchInfo)
+    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] RectpatchInfo* pRectPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3255,7 +3255,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawRectPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RectpatchInfo pRectPatchInfo)
+    public static int DrawRectPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RectpatchInfo pRectPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3279,7 +3279,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TripatchInfo pTriPatchInfo)
+    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TripatchInfo pTriPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3291,7 +3291,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TripatchInfo* pTriPatchInfo)
+    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] TripatchInfo* pTriPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3303,7 +3303,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawTriPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in TripatchInfo pTriPatchInfo)
+    public static int DrawTriPatch(this ComPtr<IDirect3DDevice9> thisVtbl, uint Handle, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float pNumSegs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly TripatchInfo pTriPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3685,7 +3685,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static unsafe int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3717,7 +3717,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3733,7 +3733,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static unsafe int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3749,7 +3749,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3765,7 +3765,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3781,7 +3781,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3813,7 +3813,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3845,7 +3845,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3861,7 +3861,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestinationSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4013,7 +4013,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static unsafe int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4045,7 +4045,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4061,7 +4061,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static unsafe int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4077,7 +4077,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4093,7 +4093,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4109,7 +4109,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4141,7 +4141,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4173,7 +4173,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4189,7 +4189,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int StretchRect<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4229,7 +4229,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ColorFill<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint color) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int ColorFill<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, ComPtr<TI0> pSurface, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint color) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4645,7 +4645,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVertexDeclaration<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Vertexelement9 pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
+    public static int CreateVertexDeclaration<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Vertexelement9 pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4709,7 +4709,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVertexShader<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
+    public static int CreateVertexShader<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4941,7 +4941,7 @@ public unsafe static class Direct3DDevice9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePixelShader<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
+    public static int CreatePixelShader<TI0>(this ComPtr<IDirect3DDevice9> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

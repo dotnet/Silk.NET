@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryToImageCopyEXT")]
+    [NativeName("AliasOf", "VkMemoryToImageCopy")]
     public unsafe partial struct MemoryToImageCopyEXT : IChainable
     {
         public MemoryToImageCopyEXT
         (
-            StructureType? sType = StructureType.MemoryToImageCopyExt,
+            StructureType? sType = StructureType.MemoryToImageCopy,
             void* pNext = null,
             void* pHostPointer = null,
             uint? memoryRowLength = null,
@@ -116,7 +117,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.MemoryToImageCopyExt;
+            return SType = StructureType.MemoryToImageCopy;
         }
 
         /// <inheritdoc />

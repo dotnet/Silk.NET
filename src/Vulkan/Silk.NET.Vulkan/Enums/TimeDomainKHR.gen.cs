@@ -24,6 +24,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"QueryPerformanceCounterKhr\"")]
         [NativeName("Name", "VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_KHR")]
         TimeDomainQueryPerformanceCounterKhr = 3,
+        [Obsolete("Deprecated in favour of \"PresentStageLocalExt\"")]
+        [NativeName("Name", "VK_TIME_DOMAIN_PRESENT_STAGE_LOCAL_EXT")]
+        TimeDomainPresentStageLocalExt = 1000208000,
+        [Obsolete("Deprecated in favour of \"SwapchainLocalExt\"")]
+        [NativeName("Name", "VK_TIME_DOMAIN_SWAPCHAIN_LOCAL_EXT")]
+        TimeDomainSwapchainLocalExt = 1000208001,
         [NativeName("Name", "VK_TIME_DOMAIN_DEVICE_KHR")]
         DeviceKhr = 0,
         [NativeName("Name", "VK_TIME_DOMAIN_CLOCK_MONOTONIC_KHR")]
@@ -32,5 +38,9 @@ namespace Silk.NET.Vulkan
         ClockMonotonicRawKhr = 2,
         [NativeName("Name", "VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_KHR")]
         QueryPerformanceCounterKhr = 3,
+        [NativeName("Name", "VK_TIME_DOMAIN_PRESENT_STAGE_LOCAL_EXT")]
+        PresentStageLocalExt = 1000208000,
+        [NativeName("Name", "VK_TIME_DOMAIN_SWAPCHAIN_LOCAL_EXT")]
+        SwapchainLocalExt = 1000208001,
     }
 }

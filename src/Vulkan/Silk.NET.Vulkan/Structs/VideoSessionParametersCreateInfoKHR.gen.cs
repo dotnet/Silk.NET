@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoSessionParametersCreateInfoKhr,
             void* pNext = null,
-            uint? flags = null,
+            VideoSessionParametersCreateFlagsKHR? flags = null,
             VideoSessionParametersKHR? videoSessionParametersTemplate = null,
             VideoSessionKHR? videoSession = null
         ) : this()
@@ -68,7 +68,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkVideoSessionParametersCreateFlagsKHR")]
         [NativeName("Type.Name", "VkVideoSessionParametersCreateFlagsKHR")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public VideoSessionParametersCreateFlagsKHR Flags;
 /// <summary></summary>
         [NativeName("Type", "VkVideoSessionParametersKHR")]
         [NativeName("Type.Name", "VkVideoSessionParametersKHR")]
