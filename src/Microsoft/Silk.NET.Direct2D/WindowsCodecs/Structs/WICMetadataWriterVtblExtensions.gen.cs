@@ -277,7 +277,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+    public static unsafe int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static unsafe int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+    public static unsafe int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -316,7 +316,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static unsafe int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -331,7 +331,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+    public static unsafe int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -346,7 +346,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static int GetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -394,7 +394,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -406,7 +406,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -418,7 +418,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -433,7 +433,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -445,7 +445,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -460,7 +460,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+    public static unsafe int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -475,7 +475,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static int SetValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -502,7 +502,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -514,7 +514,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -526,7 +526,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -541,7 +541,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -553,7 +553,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -568,7 +568,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+    public static unsafe int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -583,7 +583,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static int SetValueByIndex(this ComPtr<IWICMetadataWriter> thisVtbl, uint nIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -610,7 +610,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RemoveValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId)
+    public static unsafe int RemoveValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -622,7 +622,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RemoveValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId)
+    public static unsafe int RemoveValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Win32Extras.PropVariant* pvarId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -634,7 +634,7 @@ public unsafe static class WICMetadataWriterVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RemoveValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Win32Extras.PropVariant pvarId)
+    public static int RemoveValue(this ComPtr<IWICMetadataWriter> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarSchema, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Win32Extras.PropVariant pvarId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

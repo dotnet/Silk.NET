@@ -16,7 +16,6 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousRecord_SDL_messagebox_L94_C9")]
     [NativeName("Name", "SDL_MessageBoxData")]
     public unsafe partial struct MessageBoxData
     {

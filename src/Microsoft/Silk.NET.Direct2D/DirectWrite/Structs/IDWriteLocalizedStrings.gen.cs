@@ -168,7 +168,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindLocaleName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint* index, int* exists)
+        public readonly unsafe int FindLocaleName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint* index, int* exists)
         {
             var @this = (IDWriteLocalizedStrings*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -180,7 +180,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindLocaleName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint* index, ref int exists)
+        public readonly unsafe int FindLocaleName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint* index, ref int exists)
         {
             var @this = (IDWriteLocalizedStrings*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -195,7 +195,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindLocaleName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref uint index, int* exists)
+        public readonly unsafe int FindLocaleName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref uint index, int* exists)
         {
             var @this = (IDWriteLocalizedStrings*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -210,7 +210,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindLocaleName([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref uint index, ref int exists)
+        public readonly int FindLocaleName([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref uint index, ref int exists)
         {
             var @this = (IDWriteLocalizedStrings*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

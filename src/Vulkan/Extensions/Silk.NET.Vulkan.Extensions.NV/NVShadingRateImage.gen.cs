@@ -30,7 +30,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCoarseSampleOrderNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Parameter = "customSampleOrderCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CoarseSampleOrderCustomNV pCustomSampleOrders);
+        public partial void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Parameter = "customSampleOrderCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CoarseSampleOrderCustomNV pCustomSampleOrders);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportShadingRatePaletteNV", Convention = CallingConvention.Winapi)]
@@ -38,7 +38,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportShadingRatePaletteNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ShadingRatePaletteNV pShadingRatePalettes);
+        public partial void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ShadingRatePaletteNV pShadingRatePalettes);
 
         /// <summary>To be documented.</summary>
         public unsafe void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Parameter = "customSampleOrderCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CoarseSampleOrderCustomNV> pCustomSampleOrders)

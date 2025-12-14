@@ -1,0 +1,72 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
+
+using System;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using System.Text;
+using Silk.NET.Core;
+using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+
+#pragma warning disable 1591
+
+namespace Silk.NET.OpenXR
+{
+    [NativeName("Name", "XrSpatialEntityPersistInfoEXT")]
+    public unsafe partial struct SpatialEntityPersistInfoEXT
+    {
+        public SpatialEntityPersistInfoEXT
+        (
+            StructureType? type = StructureType.TypeSpatialEntityPersistInfoExt,
+            void* next = null,
+            SpatialContextEXT? spatialContext = null,
+            ulong? spatialEntityId = null
+        ) : this()
+        {
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (next is not null)
+            {
+                Next = next;
+            }
+
+            if (spatialContext is not null)
+            {
+                SpatialContext = spatialContext.Value;
+            }
+
+            if (spatialEntityId is not null)
+            {
+                SpatialEntityId = spatialEntityId.Value;
+            }
+        }
+
+/// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
+        public StructureType Type;
+/// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
+        public void* Next;
+/// <summary></summary>
+        [NativeName("Type", "XrSpatialContextEXT")]
+        [NativeName("Type.Name", "XrSpatialContextEXT")]
+        [NativeName("Name", "spatialContext")]
+        public SpatialContextEXT SpatialContext;
+/// <summary></summary>
+        [NativeName("Type", "XrSpatialEntityIdEXT")]
+        [NativeName("Type.Name", "XrSpatialEntityIdEXT")]
+        [NativeName("Name", "spatialEntityId")]
+        public ulong SpatialEntityId;
+    }
+}

@@ -133,7 +133,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, void** ppstgOpen)
+    public static unsafe int CreateStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, void** ppstgOpen)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, ref void* ppstgOpen)
+    public static unsafe int CreateStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, ref void* ppstgOpen)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, void** ppstgOpen)
+    public static unsafe int CreateStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, void** ppstgOpen)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, ref void* ppstgOpen)
+    public static unsafe int CreateStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, ref void* ppstgOpen)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -297,7 +297,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, void** ppstgOpen)
+    public static unsafe int OpenStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, void** ppstgOpen)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -309,7 +309,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, ref void* ppstgOpen)
+    public static unsafe int OpenStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, Guid* riid, ref void* ppstgOpen)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -324,7 +324,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, void** ppstgOpen)
+    public static unsafe int OpenStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, void** ppstgOpen)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -339,7 +339,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, ref void* ppstgOpen)
+    public static unsafe int OpenStorageEx(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, ref Guid riid, ref void* ppstgOpen)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -471,7 +471,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStorageEx<TI0>(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, out ComPtr<TI0> ppstgOpen) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateStorageEx<TI0>(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, out ComPtr<TI0> ppstgOpen) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -562,7 +562,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OpenStorageEx<TI0>(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, out ComPtr<TI0> ppstgOpen) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int OpenStorageEx<TI0>(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs, out ComPtr<TI0> ppstgOpen) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -638,7 +638,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateStorageEx<TI0>(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateStorageEx<TI0>(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -665,7 +665,7 @@ public unsafe static class OplockStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> OpenStorageEx<TI0>(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> OpenStorageEx<TI0>(this ComPtr<IOplockStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint stgfmt, uint grfAttrs) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

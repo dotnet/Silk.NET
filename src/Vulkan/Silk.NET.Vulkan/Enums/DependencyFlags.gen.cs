@@ -27,6 +27,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"FeedbackLoopBitExt\"")]
         [NativeName("Name", "VK_DEPENDENCY_FEEDBACK_LOOP_BIT_EXT")]
         DependencyFeedbackLoopBitExt = 8,
+        [Obsolete("Deprecated in favour of \"QueueFamilyOwnershipTransferUseAllStagesBitKhr\"")]
+        [NativeName("Name", "VK_DEPENDENCY_QUEUE_FAMILY_OWNERSHIP_TRANSFER_USE_ALL_STAGES_BIT_KHR")]
+        DependencyQueueFamilyOwnershipTransferUseAllStagesBitKhr = 32,
+        [Obsolete("Deprecated in favour of \"AsymmetricEventBitKhr\"")]
+        [NativeName("Name", "VK_DEPENDENCY_ASYMMETRIC_EVENT_BIT_KHR")]
+        DependencyAsymmetricEventBitKhr = 64,
         [Obsolete("Deprecated in favour of \"DeviceGroupBit\"")]
         [NativeName("Name", "VK_DEPENDENCY_DEVICE_GROUP_BIT")]
         DependencyDeviceGroupBit = 4,
@@ -41,6 +47,10 @@ namespace Silk.NET.Vulkan
         DeviceGroupBitKhr = 4,
         [NativeName("Name", "VK_DEPENDENCY_FEEDBACK_LOOP_BIT_EXT")]
         FeedbackLoopBitExt = 8,
+        [NativeName("Name", "VK_DEPENDENCY_QUEUE_FAMILY_OWNERSHIP_TRANSFER_USE_ALL_STAGES_BIT_KHR")]
+        QueueFamilyOwnershipTransferUseAllStagesBitKhr = 32,
+        [NativeName("Name", "VK_DEPENDENCY_ASYMMETRIC_EVENT_BIT_KHR")]
+        AsymmetricEventBitKhr = 64,
         [NativeName("Name", "VK_DEPENDENCY_DEVICE_GROUP_BIT")]
         DeviceGroupBit = 4,
         [NativeName("Name", "VK_DEPENDENCY_VIEW_LOCAL_BIT")]

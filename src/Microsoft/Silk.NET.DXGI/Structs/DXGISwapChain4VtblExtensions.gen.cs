@@ -94,7 +94,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -142,7 +142,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+    public static int SetPrivateDataInterface(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -550,7 +550,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ResizeTarget(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc pNewTargetParameters)
+    public static int ResizeTarget(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc pNewTargetParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -745,7 +745,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Present1(this ComPtr<IDXGISwapChain4> thisVtbl, uint SyncInterval, uint PresentFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PresentParameters pPresentParameters)
+    public static int Present1(this ComPtr<IDXGISwapChain4> thisVtbl, uint SyncInterval, uint PresentFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PresentParameters pPresentParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -796,7 +796,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBackgroundColor(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in D3Dcolorvalue pColor)
+    public static int SetBackgroundColor(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly D3Dcolorvalue pColor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -964,7 +964,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMatrixTransform(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Matrix3X2F pMatrix)
+    public static int SetMatrixTransform(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Matrix3X2F pMatrix)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1045,7 +1045,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppPresentQueue)
+    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1057,7 +1057,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown** ppPresentQueue)
+    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Core.Native.IUnknown** ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1069,7 +1069,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppPresentQueue)
+    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1574,7 +1574,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ResizeBuffers1<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppPresentQueue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int ResizeBuffers1<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref ComPtr<TI0> ppPresentQueue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1582,7 +1582,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown* ppPresentQueue)
+    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pCreationNodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown* ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

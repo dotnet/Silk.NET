@@ -46,12 +46,24 @@ namespace Silk.NET.SPIRV
         UnormInt24 = 0xF,
         [NativeName("Name", "SpvImageChannelDataTypeUnormInt101010_2")]
         UnormInt1010102 = 0x10,
+        [NativeName("Name", "SpvImageChannelDataTypeUnormInt10X6EXT")]
+        UnormInt10X6Ext = 0x11,
         [NativeName("Name", "SpvImageChannelDataTypeUnsignedIntRaw10EXT")]
         UnsignedIntRaw10Ext = 0x13,
         [NativeName("Name", "SpvImageChannelDataTypeUnsignedIntRaw12EXT")]
         UnsignedIntRaw12Ext = 0x14,
         [NativeName("Name", "SpvImageChannelDataTypeUnormInt2_101010EXT")]
         UnormInt2101010Ext = 0x15,
+        [NativeName("Name", "SpvImageChannelDataTypeUnsignedInt10X6EXT")]
+        UnsignedInt10X6Ext = 0x16,
+        [NativeName("Name", "SpvImageChannelDataTypeUnsignedInt12X4EXT")]
+        UnsignedInt12X4Ext = 0x17,
+        [NativeName("Name", "SpvImageChannelDataTypeUnsignedInt14X2EXT")]
+        UnsignedInt14X2Ext = 0x18,
+        [NativeName("Name", "SpvImageChannelDataTypeUnormInt12X4EXT")]
+        UnormInt12X4Ext = 0x19,
+        [NativeName("Name", "SpvImageChannelDataTypeUnormInt14X2EXT")]
+        UnormInt14X2Ext = 0x1A,
         [NativeName("Name", "SpvImageChannelDataTypeMax")]
         Max = 0x7FFFFFFF,
     }

@@ -34,6 +34,190 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         TransposeProgramMatrixExt = 0x8E2E,
         [NativeName("Name", "GL_PROGRAM_MATRIX_STACK_DEPTH_EXT")]
         ProgramMatrixStackDepthExt = 0x8E2F,
+        [NativeName("Name", "GL_SHADING_RATE_1X1_PIXELS_EXT")]
+        ShadingRate1X1PixelsExt = 0x96A6,
+        [NativeName("Name", "GL_SHADING_RATE_1X2_PIXELS_EXT")]
+        ShadingRate1X2PixelsExt = 0x96A7,
+        [NativeName("Name", "GL_SHADING_RATE_2X1_PIXELS_EXT")]
+        ShadingRate2X1PixelsExt = 0x96A8,
+        [NativeName("Name", "GL_SHADING_RATE_2X2_PIXELS_EXT")]
+        ShadingRate2X2PixelsExt = 0x96A9,
+        [NativeName("Name", "GL_SHADING_RATE_1X4_PIXELS_EXT")]
+        ShadingRate1X4PixelsExt = 0x96AA,
+        [NativeName("Name", "GL_SHADING_RATE_4X1_PIXELS_EXT")]
+        ShadingRate4X1PixelsExt = 0x96AB,
+        [NativeName("Name", "GL_SHADING_RATE_4X2_PIXELS_EXT")]
+        ShadingRate4X2PixelsExt = 0x96AC,
+        [NativeName("Name", "GL_SHADING_RATE_2X4_PIXELS_EXT")]
+        ShadingRate2X4PixelsExt = 0x96AD,
+        [NativeName("Name", "GL_SHADING_RATE_4X4_PIXELS_EXT")]
+        ShadingRate4X4PixelsExt = 0x96AE,
+        [NativeName("Name", "GL_SHADING_RATE_EXT")]
+        ShadingRateExt = 0x96D0,
+        [NativeName("Name", "GL_SHADING_RATE_ATTACHMENT_EXT")]
+        ShadingRateAttachmentExt = 0x96D1,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_COMBINER_OP_KEEP_EXT")]
+        FragmentShadingRateCombinerOpKeepExt = 0x96D2,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_EXT")]
+        FragmentShadingRateCombinerOpReplaceExt = 0x96D3,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_EXT")]
+        FragmentShadingRateCombinerOpMinExt = 0x96D4,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_EXT")]
+        FragmentShadingRateCombinerOpMaxExt = 0x96D5,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_EXT")]
+        FragmentShadingRateCombinerOpMulExt = 0x96D6,
+        [NativeName("Name", "GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+        MinFragmentShadingRateAttachmentTexelWidthExt = 0x96D7,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+        MaxFragmentShadingRateAttachmentTexelWidthExt = 0x96D8,
+        [NativeName("Name", "GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+        MinFragmentShadingRateAttachmentTexelHeightExt = 0x96D9,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+        MaxFragmentShadingRateAttachmentTexelHeightExt = 0x96DA,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT")]
+        MaxFragmentShadingRateAttachmentTexelAspectRatioExt = 0x96DB,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT")]
+        MaxFragmentShadingRateAttachmentLayersExt = 0x96DC,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT")]
+        FragmentShadingRateWithShaderDepthStencilWritesSupportedExt = 0x96DD,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT")]
+        FragmentShadingRateWithSampleMaskSupportedExt = 0x96DE,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT")]
+        FragmentShadingRateAttachmentWithDefaultFramebufferSupportedExt = 0x96DF,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT")]
+        FragmentShadingRateNonTrivialCombinersSupportedExt = 0x8F6F,
+        [NativeName("Name", "GL_MESH_SHADER_EXT")]
+        MeshShaderExt = 0x9559,
+        [NativeName("Name", "GL_TASK_SHADER_EXT")]
+        TaskShaderExt = 0x955A,
+        [NativeName("Name", "GL_MAX_MESH_UNIFORM_BLOCKS_EXT")]
+        MaxMeshUniformBlocksExt = 0x8E60,
+        [NativeName("Name", "GL_MAX_MESH_TEXTURE_IMAGE_UNITS_EXT")]
+        MaxMeshTextureImageUnitsExt = 0x8E61,
+        [NativeName("Name", "GL_MAX_MESH_IMAGE_UNIFORMS_EXT")]
+        MaxMeshImageUniformsExt = 0x8E62,
+        [NativeName("Name", "GL_MAX_MESH_UNIFORM_COMPONENTS_EXT")]
+        MaxMeshUniformComponentsExt = 0x8E63,
+        [NativeName("Name", "GL_MAX_MESH_ATOMIC_COUNTER_BUFFERS_EXT")]
+        MaxMeshAtomicCounterBuffersExt = 0x8E64,
+        [NativeName("Name", "GL_MAX_MESH_ATOMIC_COUNTERS_EXT")]
+        MaxMeshAtomicCountersExt = 0x8E65,
+        [NativeName("Name", "GL_MAX_MESH_SHADER_STORAGE_BLOCKS_EXT")]
+        MaxMeshShaderStorageBlocksExt = 0x8E66,
+        [NativeName("Name", "GL_MAX_COMBINED_MESH_UNIFORM_COMPONENTS_EXT")]
+        MaxCombinedMeshUniformComponentsExt = 0x8E67,
+        [NativeName("Name", "GL_MAX_TASK_UNIFORM_BLOCKS_EXT")]
+        MaxTaskUniformBlocksExt = 0x8E68,
+        [NativeName("Name", "GL_MAX_TASK_TEXTURE_IMAGE_UNITS_EXT")]
+        MaxTaskTextureImageUnitsExt = 0x8E69,
+        [NativeName("Name", "GL_MAX_TASK_IMAGE_UNIFORMS_EXT")]
+        MaxTaskImageUniformsExt = 0x8E6A,
+        [NativeName("Name", "GL_MAX_TASK_UNIFORM_COMPONENTS_EXT")]
+        MaxTaskUniformComponentsExt = 0x8E6B,
+        [NativeName("Name", "GL_MAX_TASK_ATOMIC_COUNTER_BUFFERS_EXT")]
+        MaxTaskAtomicCounterBuffersExt = 0x8E6C,
+        [NativeName("Name", "GL_MAX_TASK_ATOMIC_COUNTERS_EXT")]
+        MaxTaskAtomicCountersExt = 0x8E6D,
+        [NativeName("Name", "GL_MAX_TASK_SHADER_STORAGE_BLOCKS_EXT")]
+        MaxTaskShaderStorageBlocksExt = 0x8E6E,
+        [NativeName("Name", "GL_MAX_COMBINED_TASK_UNIFORM_COMPONENTS_EXT")]
+        MaxCombinedTaskUniformComponentsExt = 0x8E6F,
+        [NativeName("Name", "GL_MAX_TASK_WORK_GROUP_TOTAL_COUNT_EXT")]
+        MaxTaskWorkGroupTotalCountExt = 0x9740,
+        [NativeName("Name", "GL_MAX_MESH_WORK_GROUP_TOTAL_COUNT_EXT")]
+        MaxMeshWorkGroupTotalCountExt = 0x9741,
+        [NativeName("Name", "GL_MAX_MESH_WORK_GROUP_INVOCATIONS_EXT")]
+        MaxMeshWorkGroupInvocationsExt = 0x9757,
+        [NativeName("Name", "GL_MAX_TASK_WORK_GROUP_INVOCATIONS_EXT")]
+        MaxTaskWorkGroupInvocationsExt = 0x9759,
+        [NativeName("Name", "GL_MAX_TASK_PAYLOAD_SIZE_EXT")]
+        MaxTaskPayloadSizeExt = 0x9742,
+        [NativeName("Name", "GL_MAX_TASK_SHARED_MEMORY_SIZE_EXT")]
+        MaxTaskSharedMemorySizeExt = 0x9743,
+        [NativeName("Name", "GL_MAX_MESH_SHARED_MEMORY_SIZE_EXT")]
+        MaxMeshSharedMemorySizeExt = 0x9744,
+        [NativeName("Name", "GL_MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT")]
+        MaxTaskPayloadAndSharedMemorySizeExt = 0x9745,
+        [NativeName("Name", "GL_MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_EXT")]
+        MaxMeshPayloadAndSharedMemorySizeExt = 0x9746,
+        [NativeName("Name", "GL_MAX_MESH_OUTPUT_MEMORY_SIZE_EXT")]
+        MaxMeshOutputMemorySizeExt = 0x9747,
+        [NativeName("Name", "GL_MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_EXT")]
+        MaxMeshPayloadAndOutputMemorySizeExt = 0x9748,
+        [NativeName("Name", "GL_MAX_MESH_OUTPUT_VERTICES_EXT")]
+        MaxMeshOutputVerticesExt = 0x9538,
+        [NativeName("Name", "GL_MAX_MESH_OUTPUT_PRIMITIVES_EXT")]
+        MaxMeshOutputPrimitivesExt = 0x9756,
+        [NativeName("Name", "GL_MAX_MESH_OUTPUT_COMPONENTS_EXT")]
+        MaxMeshOutputComponentsExt = 0x9749,
+        [NativeName("Name", "GL_MAX_MESH_OUTPUT_LAYERS_EXT")]
+        MaxMeshOutputLayersExt = 0x974A,
+        [NativeName("Name", "GL_MAX_MESH_MULTIVIEW_VIEW_COUNT_EXT")]
+        MaxMeshMultiviewViewCountExt = 0x9557,
+        [NativeName("Name", "GL_MESH_OUTPUT_PER_VERTEX_GRANULARITY_EXT")]
+        MeshOutputPerVertexGranularityExt = 0x92DF,
+        [NativeName("Name", "GL_MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_EXT")]
+        MeshOutputPerPrimitiveGranularityExt = 0x9543,
+        [NativeName("Name", "GL_MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_EXT")]
+        MaxPreferredTaskWorkGroupInvocationsExt = 0x974B,
+        [NativeName("Name", "GL_MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_EXT")]
+        MaxPreferredMeshWorkGroupInvocationsExt = 0x974C,
+        [NativeName("Name", "GL_MESH_PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_EXT")]
+        MeshPrefersLocalInvocationVertexOutputExt = 0x974D,
+        [NativeName("Name", "GL_MESH_PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_EXT")]
+        MeshPrefersLocalInvocationPrimitiveOutputExt = 0x974E,
+        [NativeName("Name", "GL_MESH_PREFERS_COMPACT_VERTEX_OUTPUT_EXT")]
+        MeshPrefersCompactVertexOutputExt = 0x974F,
+        [NativeName("Name", "GL_MESH_PREFERS_COMPACT_PRIMITIVE_OUTPUT_EXT")]
+        MeshPrefersCompactPrimitiveOutputExt = 0x9750,
+        [NativeName("Name", "GL_MAX_TASK_WORK_GROUP_COUNT_EXT")]
+        MaxTaskWorkGroupCountExt = 0x9751,
+        [NativeName("Name", "GL_MAX_MESH_WORK_GROUP_COUNT_EXT")]
+        MaxMeshWorkGroupCountExt = 0x9752,
+        [NativeName("Name", "GL_MAX_MESH_WORK_GROUP_SIZE_EXT")]
+        MaxMeshWorkGroupSizeExt = 0x9758,
+        [NativeName("Name", "GL_MAX_TASK_WORK_GROUP_SIZE_EXT")]
+        MaxTaskWorkGroupSizeExt = 0x975A,
+        [NativeName("Name", "GL_MESH_WORK_GROUP_SIZE_EXT")]
+        MeshWorkGroupSizeExt = 0x953E,
+        [NativeName("Name", "GL_TASK_WORK_GROUP_SIZE_EXT")]
+        TaskWorkGroupSizeExt = 0x953F,
+        [NativeName("Name", "GL_MESH_VERTICES_OUT_EXT")]
+        MeshVerticesOutExt = 0x9579,
+        [NativeName("Name", "GL_MESH_PRIMITIVES_OUT_EXT")]
+        MeshPrimitivesOutExt = 0x957A,
+        [NativeName("Name", "GL_MESH_OUTPUT_TYPE_EXT")]
+        MeshOutputTypeExt = 0x957B,
+        [NativeName("Name", "GL_UNIFORM_BLOCK_REFERENCED_BY_MESH_SHADER_EXT")]
+        UniformBlockReferencedByMeshShaderExt = 0x959C,
+        [NativeName("Name", "GL_UNIFORM_BLOCK_REFERENCED_BY_TASK_SHADER_EXT")]
+        UniformBlockReferencedByTaskShaderExt = 0x959D,
+        [NativeName("Name", "GL_REFERENCED_BY_MESH_SHADER_EXT")]
+        ReferencedByMeshShaderExt = 0x95A0,
+        [NativeName("Name", "GL_REFERENCED_BY_TASK_SHADER_EXT")]
+        ReferencedByTaskShaderExt = 0x95A1,
+        [NativeName("Name", "GL_TASK_SHADER_INVOCATIONS_EXT")]
+        TaskShaderInvocationsExt = 0x9753,
+        [NativeName("Name", "GL_MESH_SHADER_INVOCATIONS_EXT")]
+        MeshShaderInvocationsExt = 0x9754,
+        [NativeName("Name", "GL_MESH_PRIMITIVES_GENERATED_EXT")]
+        MeshPrimitivesGeneratedExt = 0x9755,
+        [NativeName("Name", "GL_MESH_SHADER_BIT_EXT")]
+        MeshShaderBitExt = 0x40,
+        [NativeName("Name", "GL_TASK_SHADER_BIT_EXT")]
+        TaskShaderBitExt = 0x80,
+        [NativeName("Name", "GL_MESH_SUBROUTINE_EXT")]
+        MeshSubroutineExt = 0x957C,
+        [NativeName("Name", "GL_TASK_SUBROUTINE_EXT")]
+        TaskSubroutineExt = 0x957D,
+        [NativeName("Name", "GL_MESH_SUBROUTINE_UNIFORM_EXT")]
+        MeshSubroutineUniformExt = 0x957E,
+        [NativeName("Name", "GL_TASK_SUBROUTINE_UNIFORM_EXT")]
+        TaskSubroutineUniformExt = 0x957F,
+        [NativeName("Name", "GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_MESH_SHADER_EXT")]
+        AtomicCounterBufferReferencedByMeshShaderExt = 0x959E,
+        [NativeName("Name", "GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TASK_SHADER_EXT")]
+        AtomicCounterBufferReferencedByTaskShaderExt = 0x959F,
         [NativeName("Name", "GL_POLYGON_OFFSET_CLAMP_EXT")]
         PolygonOffsetClampExt = 0x8E1B,
         [NativeName("Name", "GL_RASTER_MULTISAMPLE_EXT")]
@@ -62,6 +246,26 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         TextureReductionModeExt = 0x9366,
         [NativeName("Name", "GL_WEIGHTED_AVERAGE_EXT")]
         WeightedAverageExt = 0x9367,
+        [NativeName("Name", "GL_SRGB_EXT")]
+        SrgbExt = 0x8C40,
+        [NativeName("Name", "GL_SRGB8_EXT")]
+        Srgb8Ext = 0x8C41,
+        [NativeName("Name", "GL_SRGB_ALPHA_EXT")]
+        SrgbAlphaExt = 0x8C42,
+        [NativeName("Name", "GL_SRGB8_ALPHA8_EXT")]
+        Srgb8Alpha8Ext = 0x8C43,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_EXT")]
+        CompressedSrgbExt = 0x8C48,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_EXT")]
+        CompressedSrgbAlphaExt = 0x8C49,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_S3TC_DXT1_EXT")]
+        CompressedSrgbS3TCDxt1Ext = 0x8C4C,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT")]
+        CompressedSrgbAlphaS3TCDxt1Ext = 0x8C4D,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT")]
+        CompressedSrgbAlphaS3TCDxt3Ext = 0x8C4E,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT")]
+        CompressedSrgbAlphaS3TCDxt5Ext = 0x8C4F,
         [NativeName("Name", "GL_TEXTURE_SRGB_DECODE_EXT")]
         TextureSrgbDecodeExt = 0x8A48,
         [NativeName("Name", "GL_DECODE_EXT")]

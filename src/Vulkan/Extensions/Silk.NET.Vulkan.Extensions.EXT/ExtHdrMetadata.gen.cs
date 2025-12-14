@@ -26,15 +26,15 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSetHdrMetadataEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainKHR* pSwapchains, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HdrMetadataEXT pMetadata);
+        public unsafe partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainKHR* pSwapchains, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HdrMetadataEXT pMetadata);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSetHdrMetadataEXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainKHR pSwapchains, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] HdrMetadataEXT* pMetadata);
+        public unsafe partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainKHR pSwapchains, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] HdrMetadataEXT* pMetadata);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSetHdrMetadataEXT", Convention = CallingConvention.Winapi)]
-        public partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainKHR pSwapchains, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HdrMetadataEXT pMetadata);
+        public partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainKHR pSwapchains, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HdrMetadataEXT pMetadata);
 
         /// <summary>To be documented.</summary>
         public unsafe void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainKHR* pSwapchains, [Count(Parameter = "swapchainCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HdrMetadataEXT> pMetadata)

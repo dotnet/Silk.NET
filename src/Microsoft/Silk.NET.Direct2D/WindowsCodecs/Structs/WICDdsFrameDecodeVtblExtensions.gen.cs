@@ -186,7 +186,7 @@ public unsafe static class WICDdsFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -198,7 +198,7 @@ public unsafe static class WICDdsFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -213,7 +213,7 @@ public unsafe static class WICDdsFrameDecodeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyBlocks(this ComPtr<IWICDdsFrameDecode> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcBoundsInBlocks, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

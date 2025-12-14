@@ -117,7 +117,7 @@ public unsafe static class D2D1BlendTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDescription(this ComPtr<ID2D1BlendTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BlendDescription description)
+    public static void SetDescription(this ComPtr<ID2D1BlendTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BlendDescription description)
     {
         var @this = thisVtbl.Handle;
         fixed (BlendDescription* descriptionPtr = &description)

@@ -23,6 +23,8 @@ namespace Silk.NET.SPIRV
         PureMask = 0x4,
         [NativeName("Name", "SpvFunctionControlConstMask")]
         ConstMask = 0x8,
+        [NativeName("Name", "SpvFunctionControlOptNoneEXTMask")]
+        OptNoneExtMask = 0x10000,
         [NativeName("Name", "SpvFunctionControlOptNoneINTELMask")]
         OptNoneIntelMask = 0x10000,
     }

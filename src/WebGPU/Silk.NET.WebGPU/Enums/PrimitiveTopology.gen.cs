@@ -12,16 +12,18 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUPrimitiveTopology")]
     public enum PrimitiveTopology : int
     {
+        [NativeName("Name", "WGPUPrimitiveTopology_Undefined")]
+        Undefined = 0x0,
         [NativeName("Name", "WGPUPrimitiveTopology_PointList")]
-        PointList = 0x0,
+        PointList = 0x1,
         [NativeName("Name", "WGPUPrimitiveTopology_LineList")]
-        LineList = 0x1,
+        LineList = 0x2,
         [NativeName("Name", "WGPUPrimitiveTopology_LineStrip")]
-        LineStrip = 0x2,
+        LineStrip = 0x3,
         [NativeName("Name", "WGPUPrimitiveTopology_TriangleList")]
-        TriangleList = 0x3,
+        TriangleList = 0x4,
         [NativeName("Name", "WGPUPrimitiveTopology_TriangleStrip")]
-        TriangleStrip = 0x4,
+        TriangleStrip = 0x5,
         [NativeName("Name", "WGPUPrimitiveTopology_Force32")]
         Force32 = 0x7FFFFFFF,
     }

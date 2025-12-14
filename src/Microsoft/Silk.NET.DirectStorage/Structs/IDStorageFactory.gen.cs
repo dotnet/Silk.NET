@@ -159,7 +159,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in QueueDesc desc, Guid* riid, void** ppv)
+        public readonly unsafe int CreateQueue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QueueDesc desc, Guid* riid, void** ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -171,7 +171,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in QueueDesc desc, Guid* riid, ref void* ppv)
+        public readonly unsafe int CreateQueue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QueueDesc desc, Guid* riid, ref void* ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -186,7 +186,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in QueueDesc desc, ref Guid riid, void** ppv)
+        public readonly unsafe int CreateQueue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QueueDesc desc, ref Guid riid, void** ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateQueue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in QueueDesc desc, ref Guid riid, ref void* ppv)
+        public readonly unsafe int CreateQueue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QueueDesc desc, ref Guid riid, ref void* ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -267,7 +267,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char path, Guid* riid, void** ppv)
+        public readonly unsafe int OpenFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char path, Guid* riid, void** ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -279,7 +279,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char path, Guid* riid, ref void* ppv)
+        public readonly unsafe int OpenFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char path, Guid* riid, ref void* ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -294,7 +294,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char path, ref Guid riid, void** ppv)
+        public readonly unsafe int OpenFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char path, ref Guid riid, void** ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -309,7 +309,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char path, ref Guid riid, ref void* ppv)
+        public readonly unsafe int OpenFile([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char path, ref Guid riid, ref void* ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -431,7 +431,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStatusArray(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, Guid* riid, void** ppv)
+        public readonly unsafe int CreateStatusArray(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, Guid* riid, void** ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -443,7 +443,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStatusArray(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, Guid* riid, ref void* ppv)
+        public readonly unsafe int CreateStatusArray(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, Guid* riid, ref void* ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -458,7 +458,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStatusArray(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, ref Guid riid, void** ppv)
+        public readonly unsafe int CreateStatusArray(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, ref Guid riid, void** ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -473,7 +473,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStatusArray(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, ref Guid riid, ref void* ppv)
+        public readonly unsafe int CreateStatusArray(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, ref Guid riid, ref void* ppv)
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -581,7 +581,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateQueue<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in QueueDesc desc, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int CreateQueue<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QueueDesc desc, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -599,7 +599,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int OpenFile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int OpenFile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char path, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -626,7 +626,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateStatusArray<TI0>(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int CreateStatusArray<TI0>(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -662,7 +662,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> CreateQueue<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in QueueDesc desc) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> CreateQueue<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QueueDesc desc) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -680,7 +680,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> OpenFile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char path) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> OpenFile<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char path) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -707,7 +707,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> CreateStatusArray<TI0>(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> CreateStatusArray<TI0>(uint capacity, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDStorageFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader

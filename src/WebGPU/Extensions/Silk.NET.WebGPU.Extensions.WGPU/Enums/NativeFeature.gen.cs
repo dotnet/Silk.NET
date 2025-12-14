@@ -42,24 +42,36 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         BufferBindingArray = 0x3000F,
         [NativeName("Name", "WGPUNativeFeature_UniformBufferAndStorageTextureArrayNonUniformIndexing")]
         UniformBufferAndStorageTextureArrayNonUniformIndexing = 0x30010,
+        [NativeName("Name", "WGPUNativeFeature_SpirvShaderPassthrough")]
+        SpirvShaderPassthrough = 0x30017,
         [NativeName("Name", "WGPUNativeFeature_VertexAttribute64bit")]
         VertexAttribute64bit = 0x30019,
-        [NativeName("Name", "WGPUNativeFeature_ShaderUnusedVertexOutput")]
-        ShaderUnusedVertexOutput = 0x3001A,
         [NativeName("Name", "WGPUNativeFeature_TextureFormatNv12")]
-        TextureFormatNv12 = 0x3001B,
+        TextureFormatNv12 = 0x3001A,
         [NativeName("Name", "WGPUNativeFeature_RayTracingAccelerationStructure")]
-        RayTracingAccelerationStructure = 0x3001C,
+        RayTracingAccelerationStructure = 0x3001B,
         [NativeName("Name", "WGPUNativeFeature_RayQuery")]
-        RayQuery = 0x3001D,
+        RayQuery = 0x3001C,
         [NativeName("Name", "WGPUNativeFeature_ShaderF64")]
-        ShaderF64 = 0x3001E,
+        ShaderF64 = 0x3001D,
         [NativeName("Name", "WGPUNativeFeature_ShaderI16")]
-        ShaderI16 = 0x3001F,
+        ShaderI16 = 0x3001E,
         [NativeName("Name", "WGPUNativeFeature_ShaderPrimitiveIndex")]
-        ShaderPrimitiveIndex = 0x30020,
+        ShaderPrimitiveIndex = 0x3001F,
         [NativeName("Name", "WGPUNativeFeature_ShaderEarlyDepthTest")]
-        ShaderEarlyDepthTest = 0x30021,
+        ShaderEarlyDepthTest = 0x30020,
+        [NativeName("Name", "WGPUNativeFeature_Subgroup")]
+        Subgroup = 0x30021,
+        [NativeName("Name", "WGPUNativeFeature_SubgroupVertex")]
+        SubgroupVertex = 0x30022,
+        [NativeName("Name", "WGPUNativeFeature_SubgroupBarrier")]
+        SubgroupBarrier = 0x30023,
+        [NativeName("Name", "WGPUNativeFeature_TimestampQueryInsideEncoders")]
+        TimestampQueryInsideEncoders = 0x30024,
+        [NativeName("Name", "WGPUNativeFeature_TimestampQueryInsidePasses")]
+        TimestampQueryInsidePasses = 0x30025,
+        [NativeName("Name", "WGPUNativeFeature_ShaderInt64")]
+        ShaderInt64 = 0x30026,
         [NativeName("Name", "WGPUNativeFeature_Force32")]
         Force32 = 0x7FFFFFFF,
     }

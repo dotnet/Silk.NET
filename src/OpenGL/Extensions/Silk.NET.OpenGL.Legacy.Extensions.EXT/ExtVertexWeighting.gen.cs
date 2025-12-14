@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void VertexWeight([Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* weight);
 
         [NativeApi(EntryPoint = "glVertexWeightfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void VertexWeight([Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float weight);
+        public partial void VertexWeight([Count(Count = 1), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float weight);
 
         [NativeApi(EntryPoint = "glVertexWeightPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VertexWeightPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] int size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pointer);

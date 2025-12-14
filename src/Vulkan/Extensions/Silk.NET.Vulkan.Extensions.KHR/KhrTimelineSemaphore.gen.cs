@@ -34,7 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkSignalSemaphoreKHR", Convention = CallingConvention.Winapi)]
-        public partial Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SemaphoreSignalInfo pSignalInfo);
+        public partial Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SemaphoreSignalInfo pSignalInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWaitSemaphoresKHR", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWaitSemaphoresKHR", Convention = CallingConvention.Winapi)]
-        public partial Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SemaphoreWaitInfo pWaitInfo, [Count(Count = 0)] ulong timeout);
+        public partial Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SemaphoreWaitInfo pWaitInfo, [Count(Count = 0)] ulong timeout);
 
         public KhrTimelineSemaphore(INativeContext ctx)
             : base(ctx)

@@ -506,6 +506,8 @@ namespace Silk.NET.Vulkan
         A4R4G4B4UnormPack16Ext = 1000340000,
         [NativeName("Name", "VK_FORMAT_A4B4G4R4_UNORM_PACK16_EXT")]
         A4B4G4R4UnormPack16Ext = 1000340001,
+        [NativeName("Name", "VK_FORMAT_R8_BOOL_ARM")]
+        R8BoolArm = 1000460000,
         [NativeName("Name", "VK_FORMAT_R16G16_SFIXED5_NV")]
         R16G16Sfixed5NV = 1000464000,
         [NativeName("Name", "VK_FORMAT_R16G16_S10_5_NV")]
@@ -514,6 +516,34 @@ namespace Silk.NET.Vulkan
         A1B5G5R5UnormPack16Khr = 1000470000,
         [NativeName("Name", "VK_FORMAT_A8_UNORM_KHR")]
         A8UnormKhr = 1000470001,
+        [NativeName("Name", "VK_FORMAT_R10X6_UINT_PACK16_ARM")]
+        R10X6UintPack16Arm = 1000609000,
+        [NativeName("Name", "VK_FORMAT_R10X6G10X6_UINT_2PACK16_ARM")]
+        R10X6G10X6Uint2Pack16Arm = 1000609001,
+        [NativeName("Name", "VK_FORMAT_R10X6G10X6B10X6A10X6_UINT_4PACK16_ARM")]
+        R10X6G10X6B10X6A10X6Uint4Pack16Arm = 1000609002,
+        [NativeName("Name", "VK_FORMAT_R12X4_UINT_PACK16_ARM")]
+        R12X4UintPack16Arm = 1000609003,
+        [NativeName("Name", "VK_FORMAT_R12X4G12X4_UINT_2PACK16_ARM")]
+        R12X4G12X4Uint2Pack16Arm = 1000609004,
+        [NativeName("Name", "VK_FORMAT_R12X4G12X4B12X4A12X4_UINT_4PACK16_ARM")]
+        R12X4G12X4B12X4A12X4Uint4Pack16Arm = 1000609005,
+        [NativeName("Name", "VK_FORMAT_R14X2_UINT_PACK16_ARM")]
+        R14X2UintPack16Arm = 1000609006,
+        [NativeName("Name", "VK_FORMAT_R14X2G14X2_UINT_2PACK16_ARM")]
+        R14X2G14X2Uint2Pack16Arm = 1000609007,
+        [NativeName("Name", "VK_FORMAT_R14X2G14X2B14X2A14X2_UINT_4PACK16_ARM")]
+        R14X2G14X2B14X2A14X2Uint4Pack16Arm = 1000609008,
+        [NativeName("Name", "VK_FORMAT_R14X2_UNORM_PACK16_ARM")]
+        R14X2UnormPack16Arm = 1000609009,
+        [NativeName("Name", "VK_FORMAT_R14X2G14X2_UNORM_2PACK16_ARM")]
+        R14X2G14X2Unorm2Pack16Arm = 1000609010,
+        [NativeName("Name", "VK_FORMAT_R14X2G14X2B14X2A14X2_UNORM_4PACK16_ARM")]
+        R14X2G14X2B14X2A14X2Unorm4Pack16Arm = 1000609011,
+        [NativeName("Name", "VK_FORMAT_G14X2_B14X2R14X2_2PLANE_420_UNORM_3PACK16_ARM")]
+        G14X2B14X2R14X22Plane420Unorm3Pack16Arm = 1000609012,
+        [NativeName("Name", "VK_FORMAT_G14X2_B14X2R14X2_2PLANE_422_UNORM_3PACK16_ARM")]
+        G14X2B14X2R14X22Plane422Unorm3Pack16Arm = 1000609013,
         [NativeName("Name", "VK_FORMAT_G8B8G8R8_422_UNORM")]
         G8B8G8R8422Unorm = 1000156000,
         [NativeName("Name", "VK_FORMAT_B8G8R8G8_422_UNORM")]
@@ -622,5 +652,9 @@ namespace Silk.NET.Vulkan
         Astc12x10SfloatBlock = 1000066012,
         [NativeName("Name", "VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK")]
         Astc12x12SfloatBlock = 1000066013,
+        [NativeName("Name", "VK_FORMAT_A1B5G5R5_UNORM_PACK16")]
+        A1B5G5R5UnormPack16 = 1000470000,
+        [NativeName("Name", "VK_FORMAT_A8_UNORM")]
+        A8Unorm = 1000470001,
     }
 }

@@ -284,7 +284,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+        public readonly unsafe int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -296,7 +296,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -311,7 +311,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+        public readonly int CopyPixels([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -346,7 +346,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcLock, uint flags, IWICBitmapLock** ppILock)
+        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcLock, uint flags, IWICBitmapLock** ppILock)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -358,7 +358,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcLock, uint flags, ref IWICBitmapLock* ppILock)
+        public readonly unsafe int Lock([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcLock, uint flags, ref IWICBitmapLock* ppILock)
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -428,7 +428,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Lock<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcLock, uint flags, ref ComPtr<TI0> ppILock) where TI0 : unmanaged, IComVtbl<IWICBitmapLock>, IComVtbl<TI0>
+        public readonly int Lock<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcLock, uint flags, ref ComPtr<TI0> ppILock) where TI0 : unmanaged, IComVtbl<IWICBitmapLock>, IComVtbl<TI0>
         {
             var @this = (IWICBitmap*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

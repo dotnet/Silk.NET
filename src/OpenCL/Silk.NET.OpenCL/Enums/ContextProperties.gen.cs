@@ -26,5 +26,7 @@ namespace Silk.NET.OpenCL
         PrintfBuffersizeArm = 0x40B1,
         [NativeName("Name", "CL_CONTEXT_SHOW_DIAGNOSTICS_INTEL")]
         ShowDiagnosticsIntel = 0x4106,
+        [NativeName("Name", "CL_CONTEXT_SAFETY_PROPERTIES_IMG")]
+        SafetyPropertiesImg = 0x40D9,
     }
 }

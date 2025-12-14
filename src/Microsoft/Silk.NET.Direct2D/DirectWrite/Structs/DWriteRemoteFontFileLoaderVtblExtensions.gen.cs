@@ -106,7 +106,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) where T0 : unmanaged
+    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteFontFileStream** fontFileStream) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileStream* fontFileStream) where T0 : unmanaged
+    public static unsafe int CreateStreamFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteFontFileStream* fontFileStream) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -154,7 +154,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRemoteStreamFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteRemoteFontFileStream** fontFileStream) where T0 : unmanaged
+    public static unsafe int CreateRemoteStreamFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, IDWriteRemoteFontFileStream** fontFileStream) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRemoteStreamFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteRemoteFontFileStream* fontFileStream) where T0 : unmanaged
+    public static unsafe int CreateRemoteStreamFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref IDWriteRemoteFontFileStream* fontFileStream) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetLocalityFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, Locality* locality) where T0 : unmanaged
+    public static unsafe int GetLocalityFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, Locality* locality) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetLocalityFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref Locality locality) where T0 : unmanaged
+    public static int GetLocalityFromKey<T0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref Locality locality) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -262,7 +262,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -302,7 +302,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -314,7 +314,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -329,7 +329,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -344,7 +344,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -362,7 +362,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -376,7 +376,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -418,7 +418,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -432,7 +432,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -505,7 +505,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -520,7 +520,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -569,7 +569,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -584,7 +584,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -602,7 +602,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -620,7 +620,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -641,7 +641,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -658,7 +658,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -709,7 +709,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, IDWriteFontFile** fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, IDWriteFontFile** fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -726,7 +726,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref IDWriteFontFile* fontFile)
+    public static unsafe int CreateFontFileReferenceFromUrl(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref IDWriteFontFile* fontFile)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -822,7 +822,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStreamFromKey<T0, TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
+    public static int CreateStreamFromKey<T0, TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -854,7 +854,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateRemoteStreamFromKey<T0, TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileStream>, IComVtbl<TI0>
+    public static int CreateRemoteStreamFromKey<T0, TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 fontFileReferenceKey, uint fontFileReferenceKeySize, ref ComPtr<TI0> fontFileStream) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteRemoteFontFileStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -918,7 +918,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl<TI0, TI1>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref ComPtr<TI1> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
+    public static unsafe int CreateFontFileReferenceFromUrl<TI0, TI1>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref ComPtr<TI1> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -934,7 +934,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref IDWriteFontFile* fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
+    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref IDWriteFontFile* fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -966,7 +966,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl<TI0, TI1>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, ref ComPtr<TI1> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
+    public static unsafe int CreateFontFileReferenceFromUrl<TI0, TI1>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, ref ComPtr<TI1> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -982,7 +982,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, ref IDWriteFontFile* fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
+    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, ref IDWriteFontFile* fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -998,7 +998,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFileReferenceFromUrl<TI0, TI1>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref ComPtr<TI1> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
+    public static int CreateFontFileReferenceFromUrl<TI0, TI1>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref ComPtr<TI1> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1014,7 +1014,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref IDWriteFontFile* fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
+    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref IDWriteFontFile* fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1030,7 +1030,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFileReferenceFromUrl<TI0, TI1>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, ref ComPtr<TI1> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
+    public static int CreateFontFileReferenceFromUrl<TI0, TI1>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, ref ComPtr<TI1> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1046,7 +1046,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, ref IDWriteFontFile* fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
+    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, ref IDWriteFontFile* fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1078,7 +1078,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFileReferenceFromUrl<TI0, TI1>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref ComPtr<TI1> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
+    public static int CreateFontFileReferenceFromUrl<TI0, TI1>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref ComPtr<TI1> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1094,7 +1094,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref IDWriteFontFile* fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
+    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref IDWriteFontFile* fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1150,7 +1150,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1198,7 +1198,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static unsafe int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* fontFileUrl, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1222,7 +1222,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1246,7 +1246,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string fontFileUrl, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1294,7 +1294,7 @@ public unsafe static class DWriteRemoteFontFileLoaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char fontFileUrl, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
+    public static int CreateFontFileReferenceFromUrl<TI0>(this ComPtr<IDWriteRemoteFontFileLoader> thisVtbl, ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string baseUrl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char fontFileUrl, ref ComPtr<TI0> fontFile) where TI0 : unmanaged, IComVtbl<IDWriteFontFile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
