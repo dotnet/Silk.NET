@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             VideoEncodeAV1PredictionModeKHR? predictionMode = null,
             VideoEncodeAV1RateControlGroupKHR? rateControlGroup = null,
             uint? constantQIndex = null,
-            StdVideoEncodeAV1PictureInfo* pStdPictureInfo = null,
+            Video.StdVideoEncodeAV1PictureInfo* pStdPictureInfo = null,
             Bool32? primaryReferenceCdfOnly = null,
             Bool32? generateObuExtensionHeader = null
         ) : this()
@@ -101,7 +101,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoEncodeAV1PictureInfo*")]
         [NativeName("Type.Name", "StdVideoEncodeAV1PictureInfo")]
         [NativeName("Name", "pStdPictureInfo")]
-        public StdVideoEncodeAV1PictureInfo* PStdPictureInfo;
+        public Video.StdVideoEncodeAV1PictureInfo* PStdPictureInfo;
         /// <summary></summary>
         [NativeName("Type", "int32_t")]
         [NativeName("Type.Name", "int32_t")]
