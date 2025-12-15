@@ -22,14 +22,12 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public InstanceExtras
         (
             ChainedStruct? chain = null,
-            ulong? backends = null,
-            ulong? flags = null,
+            Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend? backends = null,
+            uint? flags = null,
             Dx12Compiler? dx12ShaderCompiler = null,
             Gles3MinorVersion? gles3MinorVersion = null,
-            GLFenceBehaviour? glFenceBehaviour = null,
-            StringView? dxilPath = null,
-            StringView? dxcPath = null,
-            DxcMaxShaderModel? dxcMaxShaderModel = null
+            byte* dxilPath = null,
+            byte* dxcPath = null
         ) : this()
         {
             if (chain is not null)
@@ -57,24 +55,14 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Gles3MinorVersion = gles3MinorVersion.Value;
             }
 
-            if (glFenceBehaviour is not null)
-            {
-                GlFenceBehaviour = glFenceBehaviour.Value;
-            }
-
             if (dxilPath is not null)
             {
-                DxilPath = dxilPath.Value;
+                DxilPath = dxilPath;
             }
 
             if (dxcPath is not null)
             {
-                DxcPath = dxcPath.Value;
-            }
-
-            if (dxcMaxShaderModel is not null)
-            {
-                DxcMaxShaderModel = dxcMaxShaderModel.Value;
+                DxcPath = dxcPath;
             }
         }
 
@@ -84,15 +72,15 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "WGPUInstanceBackend")]
-        [NativeName("Type.Name", "WGPUInstanceBackend")]
+        [NativeName("Type", "WGPUInstanceBackendFlags")]
+        [NativeName("Type.Name", "WGPUInstanceBackendFlags")]
         [NativeName("Name", "backends")]
-        public ulong Backends;
+        public Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend Backends;
 
-        [NativeName("Type", "WGPUInstanceFlag")]
-        [NativeName("Type.Name", "WGPUInstanceFlag")]
+        [NativeName("Type", "WGPUInstanceFlags")]
+        [NativeName("Type.Name", "WGPUInstanceFlags")]
         [NativeName("Name", "flags")]
-        public ulong Flags;
+        public uint Flags;
 
         [NativeName("Type", "WGPUDx12Compiler")]
         [NativeName("Type.Name", "WGPUDx12Compiler")]
@@ -104,24 +92,14 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "gles3MinorVersion")]
         public Gles3MinorVersion Gles3MinorVersion;
 
-        [NativeName("Type", "WGPUGLFenceBehaviour")]
-        [NativeName("Type.Name", "WGPUGLFenceBehaviour")]
-        [NativeName("Name", "glFenceBehaviour")]
-        public GLFenceBehaviour GlFenceBehaviour;
-
-        [NativeName("Type", "WGPUStringView")]
-        [NativeName("Type.Name", "WGPUStringView")]
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
         [NativeName("Name", "dxilPath")]
-        public StringView DxilPath;
+        public byte* DxilPath;
 
-        [NativeName("Type", "WGPUStringView")]
-        [NativeName("Type.Name", "WGPUStringView")]
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
         [NativeName("Name", "dxcPath")]
-        public StringView DxcPath;
-
-        [NativeName("Type", "WGPUDxcMaxShaderModel")]
-        [NativeName("Type.Name", "WGPUDxcMaxShaderModel")]
-        [NativeName("Name", "dxcMaxShaderModel")]
-        public DxcMaxShaderModel DxcMaxShaderModel;
+        public byte* DxcPath;
     }
 }

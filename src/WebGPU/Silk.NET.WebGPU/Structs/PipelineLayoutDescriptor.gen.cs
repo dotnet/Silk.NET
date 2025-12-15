@@ -22,10 +22,9 @@ namespace Silk.NET.WebGPU
         public PipelineLayoutDescriptor
         (
             ChainedStruct* nextInChain = null,
-            StringView? label = null,
+            byte* label = null,
             nuint? bindGroupLayoutCount = null,
-            BindGroupLayout** bindGroupLayouts = null,
-            uint? immediateSize = null
+            BindGroupLayout** bindGroupLayouts = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -35,7 +34,7 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label.Value;
+                Label = label;
             }
 
             if (bindGroupLayoutCount is not null)
@@ -47,23 +46,18 @@ namespace Silk.NET.WebGPU
             {
                 BindGroupLayouts = bindGroupLayouts;
             }
-
-            if (immediateSize is not null)
-            {
-                ImmediateSize = immediateSize.Value;
-            }
         }
 
 
-        [NativeName("Type", "WGPUChainedStruct *")]
-        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Type", "const WGPUChainedStruct *")]
+        [NativeName("Type.Name", "const WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "WGPUStringView")]
-        [NativeName("Type.Name", "WGPUStringView")]
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
         [NativeName("Name", "label")]
-        public StringView Label;
+        public byte* Label;
 
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
@@ -74,10 +68,5 @@ namespace Silk.NET.WebGPU
         [NativeName("Type.Name", "const WGPUBindGroupLayout *")]
         [NativeName("Name", "bindGroupLayouts")]
         public BindGroupLayout** BindGroupLayouts;
-
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "immediateSize")]
-        public uint ImmediateSize;
     }
 }

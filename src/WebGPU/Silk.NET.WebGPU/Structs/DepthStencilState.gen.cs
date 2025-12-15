@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             TextureFormat? format = null,
-            OptionalBool? depthWriteEnabled = null,
+            Silk.NET.Core.Bool32? depthWriteEnabled = null,
             CompareFunction? depthCompare = null,
             StencilFaceState? stencilFront = null,
             StencilFaceState? stencilBack = null,
@@ -91,8 +91,8 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "WGPUChainedStruct *")]
-        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Type", "const WGPUChainedStruct *")]
+        [NativeName("Type.Name", "const WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
@@ -101,10 +101,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "format")]
         public TextureFormat Format;
 
-        [NativeName("Type", "WGPUOptionalBool")]
-        [NativeName("Type.Name", "WGPUOptionalBool")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "depthWriteEnabled")]
-        public OptionalBool DepthWriteEnabled;
+        public Silk.NET.Core.Bool32 DepthWriteEnabled;
 
         [NativeName("Type", "WGPUCompareFunction")]
         [NativeName("Type.Name", "WGPUCompareFunction")]

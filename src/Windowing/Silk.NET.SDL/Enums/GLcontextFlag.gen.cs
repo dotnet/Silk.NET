@@ -10,6 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.SDL
 {
     [Flags]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L263_C9")]
     [NativeName("Name", "SDL_GLcontextFlag")]
     public enum GLcontextFlag : int
     {

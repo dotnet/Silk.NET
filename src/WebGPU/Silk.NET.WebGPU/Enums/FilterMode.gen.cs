@@ -12,12 +12,10 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUFilterMode")]
     public enum FilterMode : int
     {
-        [NativeName("Name", "WGPUFilterMode_Undefined")]
-        Undefined = 0x0,
         [NativeName("Name", "WGPUFilterMode_Nearest")]
-        Nearest = 0x1,
+        Nearest = 0x0,
         [NativeName("Name", "WGPUFilterMode_Linear")]
-        Linear = 0x2,
+        Linear = 0x1,
         [NativeName("Name", "WGPUFilterMode_Force32")]
         Force32 = 0x7FFFFFFF,
     }

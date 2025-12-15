@@ -23,8 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             uint? binding = null,
-            ulong? visibility = null,
-            uint? bindingArraySize = null,
+            Silk.NET.WebGPU.ShaderStage? visibility = null,
             BufferBindingLayout? buffer = null,
             SamplerBindingLayout? sampler = null,
             TextureBindingLayout? texture = null,
@@ -44,11 +43,6 @@ namespace Silk.NET.WebGPU
             if (visibility is not null)
             {
                 Visibility = visibility.Value;
-            }
-
-            if (bindingArraySize is not null)
-            {
-                BindingArraySize = bindingArraySize.Value;
             }
 
             if (buffer is not null)
@@ -73,8 +67,8 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "WGPUChainedStruct *")]
-        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Type", "const WGPUChainedStruct *")]
+        [NativeName("Type.Name", "const WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
@@ -83,15 +77,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "binding")]
         public uint Binding;
 
-        [NativeName("Type", "WGPUShaderStage")]
-        [NativeName("Type.Name", "WGPUShaderStage")]
+        [NativeName("Type", "WGPUShaderStageFlags")]
+        [NativeName("Type.Name", "WGPUShaderStageFlags")]
         [NativeName("Name", "visibility")]
-        public ulong Visibility;
-
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "bindingArraySize")]
-        public uint BindingArraySize;
+        public Silk.NET.WebGPU.ShaderStage Visibility;
 
         [NativeName("Type", "WGPUBufferBindingLayout")]
         [NativeName("Type.Name", "WGPUBufferBindingLayout")]

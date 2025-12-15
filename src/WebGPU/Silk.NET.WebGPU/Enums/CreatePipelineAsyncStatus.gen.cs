@@ -13,13 +13,17 @@ namespace Silk.NET.WebGPU
     public enum CreatePipelineAsyncStatus : int
     {
         [NativeName("Name", "WGPUCreatePipelineAsyncStatus_Success")]
-        Success = 0x1,
-        [NativeName("Name", "WGPUCreatePipelineAsyncStatus_CallbackCancelled")]
-        CallbackCancelled = 0x2,
+        Success = 0x0,
         [NativeName("Name", "WGPUCreatePipelineAsyncStatus_ValidationError")]
-        ValidationError = 0x3,
+        ValidationError = 0x1,
         [NativeName("Name", "WGPUCreatePipelineAsyncStatus_InternalError")]
-        InternalError = 0x4,
+        InternalError = 0x2,
+        [NativeName("Name", "WGPUCreatePipelineAsyncStatus_DeviceLost")]
+        DeviceLost = 0x3,
+        [NativeName("Name", "WGPUCreatePipelineAsyncStatus_DeviceDestroyed")]
+        DeviceDestroyed = 0x4,
+        [NativeName("Name", "WGPUCreatePipelineAsyncStatus_Unknown")]
+        Unknown = 0x5,
         [NativeName("Name", "WGPUCreatePipelineAsyncStatus_Force32")]
         Force32 = 0x7FFFFFFF,
     }

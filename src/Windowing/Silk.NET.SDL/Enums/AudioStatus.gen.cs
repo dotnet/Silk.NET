@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_audio_L681_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_audio_L684_C9")]
     [NativeName("Name", "SDL_AudioStatus")]
     public enum AudioStatus : int
     {

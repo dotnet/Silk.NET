@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_mouse_L46_C9")]
     [NativeName("Name", "SDL_SystemCursor")]
     public enum SystemCursor : int
     {

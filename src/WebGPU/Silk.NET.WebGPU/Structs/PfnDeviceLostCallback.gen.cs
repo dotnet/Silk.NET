@@ -19,10 +19,10 @@ namespace Silk.NET.WebGPU
     public unsafe readonly struct PfnDeviceLostCallback : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<Device**, DeviceLostReason, StringView, void*, void*, void> Handle => (delegate* unmanaged[Cdecl]<Device**, DeviceLostReason, StringView, void*, void*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<DeviceLostReason, byte*, void*, void> Handle => (delegate* unmanaged[Cdecl]<DeviceLostReason, byte*, void*, void>) _handle;
         public PfnDeviceLostCallback
         (
-            delegate* unmanaged[Cdecl]<Device**, DeviceLostReason, StringView, void*, void*, void> ptr
+            delegate* unmanaged[Cdecl]<DeviceLostReason, byte*, void*, void> ptr
         ) => _handle = ptr;
 
         public PfnDeviceLostCallback
@@ -35,7 +35,7 @@ namespace Silk.NET.WebGPU
 
         public static implicit operator nint(PfnDeviceLostCallback pfn) => (nint) pfn.Handle;
         public static explicit operator PfnDeviceLostCallback(nint pfn)
-            => new PfnDeviceLostCallback((delegate* unmanaged[Cdecl]<Device**, DeviceLostReason, StringView, void*, void*, void>) pfn);
+            => new PfnDeviceLostCallback((delegate* unmanaged[Cdecl]<DeviceLostReason, byte*, void*, void>) pfn);
 
         public static implicit operator PfnDeviceLostCallback(DeviceLostCallback proc)
             => new PfnDeviceLostCallback(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.WebGPU
         public static explicit operator DeviceLostCallback(PfnDeviceLostCallback pfn)
             => SilkMarshal.PtrToDelegate<DeviceLostCallback>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<Device**, DeviceLostReason, StringView, void*, void*, void>(PfnDeviceLostCallback pfn) => pfn.Handle;
-        public static implicit operator PfnDeviceLostCallback(delegate* unmanaged[Cdecl]<Device**, DeviceLostReason, StringView, void*, void*, void> ptr) => new PfnDeviceLostCallback(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<DeviceLostReason, byte*, void*, void>(PfnDeviceLostCallback pfn) => pfn.Handle;
+        public static implicit operator PfnDeviceLostCallback(delegate* unmanaged[Cdecl]<DeviceLostReason, byte*, void*, void> ptr) => new PfnDeviceLostCallback(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void DeviceLostCallback(Device** arg0, DeviceLostReason arg1, StringView arg2, void* arg3, void* arg4);
+    public unsafe delegate void DeviceLostCallback(DeviceLostReason arg0, byte* arg1, void* arg2);
 }
 

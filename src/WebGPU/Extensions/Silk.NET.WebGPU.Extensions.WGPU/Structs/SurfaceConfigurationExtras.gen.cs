@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public SurfaceConfigurationExtras
         (
             ChainedStruct? chain = null,
-            uint? desiredMaximumFrameLatency = null
+            Silk.NET.Core.Bool32? desiredMaximumFrameLatency = null
         ) : this()
         {
             if (chain is not null)
@@ -42,9 +42,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
         [NativeName("Name", "desiredMaximumFrameLatency")]
-        public uint DesiredMaximumFrameLatency;
+        public Silk.NET.Core.Bool32 DesiredMaximumFrameLatency;
     }
 }

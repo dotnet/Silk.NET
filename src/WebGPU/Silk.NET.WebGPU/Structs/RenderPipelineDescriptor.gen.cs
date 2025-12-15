@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU
         public RenderPipelineDescriptor
         (
             ChainedStruct* nextInChain = null,
-            StringView? label = null,
+            byte* label = null,
             PipelineLayout* layout = null,
             VertexState? vertex = null,
             PrimitiveState? primitive = null,
@@ -38,7 +38,7 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label.Value;
+                Label = label;
             }
 
             if (layout is not null)
@@ -73,15 +73,15 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "WGPUChainedStruct *")]
-        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Type", "const WGPUChainedStruct *")]
+        [NativeName("Type.Name", "const WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "WGPUStringView")]
-        [NativeName("Type.Name", "WGPUStringView")]
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
         [NativeName("Name", "label")]
-        public StringView Label;
+        public byte* Label;
 
         [NativeName("Type", "WGPUPipelineLayout")]
         [NativeName("Type.Name", "WGPUPipelineLayout")]

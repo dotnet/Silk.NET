@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU
         public SurfaceDescriptor
         (
             ChainedStruct* nextInChain = null,
-            StringView? label = null
+            byte* label = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -32,19 +32,19 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label.Value;
+                Label = label;
             }
         }
 
 
-        [NativeName("Type", "WGPUChainedStruct *")]
-        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Type", "const WGPUChainedStruct *")]
+        [NativeName("Type.Name", "const WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "WGPUStringView")]
-        [NativeName("Type.Name", "WGPUStringView")]
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
         [NativeName("Name", "label")]
-        public StringView Label;
+        public byte* Label;
     }
 }

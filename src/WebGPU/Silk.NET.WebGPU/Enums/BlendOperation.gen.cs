@@ -12,18 +12,16 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUBlendOperation")]
     public enum BlendOperation : int
     {
-        [NativeName("Name", "WGPUBlendOperation_Undefined")]
-        Undefined = 0x0,
         [NativeName("Name", "WGPUBlendOperation_Add")]
-        Add = 0x1,
+        Add = 0x0,
         [NativeName("Name", "WGPUBlendOperation_Subtract")]
-        Subtract = 0x2,
+        Subtract = 0x1,
         [NativeName("Name", "WGPUBlendOperation_ReverseSubtract")]
-        ReverseSubtract = 0x3,
+        ReverseSubtract = 0x2,
         [NativeName("Name", "WGPUBlendOperation_Min")]
-        Min = 0x4,
+        Min = 0x3,
         [NativeName("Name", "WGPUBlendOperation_Max")]
-        Max = 0x5,
+        Max = 0x4,
         [NativeName("Name", "WGPUBlendOperation_Force32")]
         Force32 = 0x7FFFFFFF,
     }

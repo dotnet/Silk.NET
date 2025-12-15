@@ -10,6 +10,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.SDL
 {
     [Flags]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_render_L64_C9")]
     [NativeName("Name", "SDL_RendererFlags")]
     public enum RendererFlags : int
     {

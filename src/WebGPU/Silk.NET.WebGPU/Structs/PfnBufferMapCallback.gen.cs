@@ -19,10 +19,10 @@ namespace Silk.NET.WebGPU
     public unsafe readonly struct PfnBufferMapCallback : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<MapAsyncStatus, StringView, void*, void*, void> Handle => (delegate* unmanaged[Cdecl]<MapAsyncStatus, StringView, void*, void*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<BufferMapAsyncStatus, void*, void> Handle => (delegate* unmanaged[Cdecl]<BufferMapAsyncStatus, void*, void>) _handle;
         public PfnBufferMapCallback
         (
-            delegate* unmanaged[Cdecl]<MapAsyncStatus, StringView, void*, void*, void> ptr
+            delegate* unmanaged[Cdecl]<BufferMapAsyncStatus, void*, void> ptr
         ) => _handle = ptr;
 
         public PfnBufferMapCallback
@@ -35,7 +35,7 @@ namespace Silk.NET.WebGPU
 
         public static implicit operator nint(PfnBufferMapCallback pfn) => (nint) pfn.Handle;
         public static explicit operator PfnBufferMapCallback(nint pfn)
-            => new PfnBufferMapCallback((delegate* unmanaged[Cdecl]<MapAsyncStatus, StringView, void*, void*, void>) pfn);
+            => new PfnBufferMapCallback((delegate* unmanaged[Cdecl]<BufferMapAsyncStatus, void*, void>) pfn);
 
         public static implicit operator PfnBufferMapCallback(BufferMapCallback proc)
             => new PfnBufferMapCallback(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.WebGPU
         public static explicit operator BufferMapCallback(PfnBufferMapCallback pfn)
             => SilkMarshal.PtrToDelegate<BufferMapCallback>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<MapAsyncStatus, StringView, void*, void*, void>(PfnBufferMapCallback pfn) => pfn.Handle;
-        public static implicit operator PfnBufferMapCallback(delegate* unmanaged[Cdecl]<MapAsyncStatus, StringView, void*, void*, void> ptr) => new PfnBufferMapCallback(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<BufferMapAsyncStatus, void*, void>(PfnBufferMapCallback pfn) => pfn.Handle;
+        public static implicit operator PfnBufferMapCallback(delegate* unmanaged[Cdecl]<BufferMapAsyncStatus, void*, void> ptr) => new PfnBufferMapCallback(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void BufferMapCallback(MapAsyncStatus arg0, StringView arg1, void* arg2, void* arg3);
+    public unsafe delegate void BufferMapCallback(BufferMapAsyncStatus arg0, void* arg1);
 }
 

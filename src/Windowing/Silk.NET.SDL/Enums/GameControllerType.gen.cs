@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L61_C9")]
     [NativeName("Name", "SDL_GameControllerType")]
     public enum GameControllerType : int
     {

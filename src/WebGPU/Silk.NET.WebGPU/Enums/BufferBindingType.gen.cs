@@ -12,16 +12,14 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUBufferBindingType")]
     public enum BufferBindingType : int
     {
-        [NativeName("Name", "WGPUBufferBindingType_BindingNotUsed")]
-        BindingNotUsed = 0x0,
         [NativeName("Name", "WGPUBufferBindingType_Undefined")]
-        Undefined = 0x1,
+        Undefined = 0x0,
         [NativeName("Name", "WGPUBufferBindingType_Uniform")]
-        Uniform = 0x2,
+        Uniform = 0x1,
         [NativeName("Name", "WGPUBufferBindingType_Storage")]
-        Storage = 0x3,
+        Storage = 0x2,
         [NativeName("Name", "WGPUBufferBindingType_ReadOnlyStorage")]
-        ReadOnlyStorage = 0x4,
+        ReadOnlyStorage = 0x3,
         [NativeName("Name", "WGPUBufferBindingType_Force32")]
         Force32 = 0x7FFFFFFF,
     }

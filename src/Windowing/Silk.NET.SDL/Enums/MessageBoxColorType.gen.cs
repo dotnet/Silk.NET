@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_messagebox_L73_C9")]
     [NativeName("Name", "SDL_MessageBoxColorType")]
     public enum MessageBoxColorType : int
     {

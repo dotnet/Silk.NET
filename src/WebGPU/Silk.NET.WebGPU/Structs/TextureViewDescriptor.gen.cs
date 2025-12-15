@@ -22,15 +22,14 @@ namespace Silk.NET.WebGPU
         public TextureViewDescriptor
         (
             ChainedStruct* nextInChain = null,
-            StringView? label = null,
+            byte* label = null,
             TextureFormat? format = null,
             TextureViewDimension? dimension = null,
             uint? baseMipLevel = null,
             uint? mipLevelCount = null,
             uint? baseArrayLayer = null,
             uint? arrayLayerCount = null,
-            TextureAspect? aspect = null,
-            ulong? usage = null
+            TextureAspect? aspect = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -40,7 +39,7 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label.Value;
+                Label = label;
             }
 
             if (format is not null)
@@ -77,23 +76,18 @@ namespace Silk.NET.WebGPU
             {
                 Aspect = aspect.Value;
             }
-
-            if (usage is not null)
-            {
-                Usage = usage.Value;
-            }
         }
 
 
-        [NativeName("Type", "WGPUChainedStruct *")]
-        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Type", "const WGPUChainedStruct *")]
+        [NativeName("Type.Name", "const WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "WGPUStringView")]
-        [NativeName("Type.Name", "WGPUStringView")]
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
         [NativeName("Name", "label")]
-        public StringView Label;
+        public byte* Label;
 
         [NativeName("Type", "WGPUTextureFormat")]
         [NativeName("Type.Name", "WGPUTextureFormat")]
@@ -129,10 +123,5 @@ namespace Silk.NET.WebGPU
         [NativeName("Type.Name", "WGPUTextureAspect")]
         [NativeName("Name", "aspect")]
         public TextureAspect Aspect;
-
-        [NativeName("Type", "WGPUTextureUsage")]
-        [NativeName("Type.Name", "WGPUTextureUsage")]
-        [NativeName("Name", "usage")]
-        public ulong Usage;
     }
 }

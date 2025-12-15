@@ -12,12 +12,10 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUFrontFace")]
     public enum FrontFace : int
     {
-        [NativeName("Name", "WGPUFrontFace_Undefined")]
-        Undefined = 0x0,
         [NativeName("Name", "WGPUFrontFace_CCW")]
-        Ccw = 0x1,
+        Ccw = 0x0,
         [NativeName("Name", "WGPUFrontFace_CW")]
-        CW = 0x2,
+        CW = 0x1,
         [NativeName("Name", "WGPUFrontFace_Force32")]
         Force32 = 0x7FFFFFFF,
     }

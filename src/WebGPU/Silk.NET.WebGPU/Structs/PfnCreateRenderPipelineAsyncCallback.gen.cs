@@ -19,10 +19,10 @@ namespace Silk.NET.WebGPU
     public unsafe readonly struct PfnCreateRenderPipelineAsyncCallback : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, StringView, void*, void*, void> Handle => (delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, StringView, void*, void*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, byte*, void*, void> Handle => (delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, byte*, void*, void>) _handle;
         public PfnCreateRenderPipelineAsyncCallback
         (
-            delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, StringView, void*, void*, void> ptr
+            delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, byte*, void*, void> ptr
         ) => _handle = ptr;
 
         public PfnCreateRenderPipelineAsyncCallback
@@ -35,7 +35,7 @@ namespace Silk.NET.WebGPU
 
         public static implicit operator nint(PfnCreateRenderPipelineAsyncCallback pfn) => (nint) pfn.Handle;
         public static explicit operator PfnCreateRenderPipelineAsyncCallback(nint pfn)
-            => new PfnCreateRenderPipelineAsyncCallback((delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, StringView, void*, void*, void>) pfn);
+            => new PfnCreateRenderPipelineAsyncCallback((delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, byte*, void*, void>) pfn);
 
         public static implicit operator PfnCreateRenderPipelineAsyncCallback(CreateRenderPipelineAsyncCallback proc)
             => new PfnCreateRenderPipelineAsyncCallback(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.WebGPU
         public static explicit operator CreateRenderPipelineAsyncCallback(PfnCreateRenderPipelineAsyncCallback pfn)
             => SilkMarshal.PtrToDelegate<CreateRenderPipelineAsyncCallback>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, StringView, void*, void*, void>(PfnCreateRenderPipelineAsyncCallback pfn) => pfn.Handle;
-        public static implicit operator PfnCreateRenderPipelineAsyncCallback(delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, StringView, void*, void*, void> ptr) => new PfnCreateRenderPipelineAsyncCallback(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, byte*, void*, void>(PfnCreateRenderPipelineAsyncCallback pfn) => pfn.Handle;
+        public static implicit operator PfnCreateRenderPipelineAsyncCallback(delegate* unmanaged[Cdecl]<CreatePipelineAsyncStatus, RenderPipeline*, byte*, void*, void> ptr) => new PfnCreateRenderPipelineAsyncCallback(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void CreateRenderPipelineAsyncCallback(CreatePipelineAsyncStatus arg0, RenderPipeline* arg1, StringView arg2, void* arg3, void* arg4);
+    public unsafe delegate void CreateRenderPipelineAsyncCallback(CreatePipelineAsyncStatus arg0, RenderPipeline* arg1, byte* arg2, void* arg3);
 }
 
