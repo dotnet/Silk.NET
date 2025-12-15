@@ -162,5 +162,6 @@
     "cl_properties": "ulong",
     "IStream": "Silk.NET.Core.Win32Extras.IStream",
     "FILETIME": "Silk.NET.Core.Win32Extras.Filetime",
-    "SC_HANDLE__*": "Silk.NET.Core.Native.ScHandle"
+    "SC_HANDLE__*": "Silk.NET.Core.Native.ScHandle",
+    "AIBinder": "void"
 }

@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0;net6.0;net8.0-android</TargetFrameworks>
-        <TargetFrameworks Condition="!$([MSBuild]::IsOsPlatform('Linux'))">$(TargetFrameworks);net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0;net6.0;net7.0-android</TargetFrameworks>
+        <TargetFrameworks Condition="!$([MSBuild]::IsOsPlatform('Linux'))">$(TargetFrameworks);net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
         <SilkMetapackage>true</SilkMetapackage>
     </PropertyGroup>
 
@@ -10,12 +10,12 @@
         <ProjectReference Include="..\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
     </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' != 'net8.0-android' And '$(TargetFramework)' != 'net8.0-ios' And '$(TargetFramework)' != 'net8.0-maccatalyst' And '$(TargetFramework)' != 'net6.0'">
+    <ItemGroup Condition="'$(TargetFramework)' != 'net7.0-android' And '$(TargetFramework)' != 'net7.0-ios' And '$(TargetFramework)' != 'net7.0-maccatalyst' And '$(TargetFramework)' != 'net6.0'">
         <ProjectReference Include="..\Silk.NET.Windowing.Glfw\Silk.NET.Windowing.Glfw.csproj" />
         <ProjectReference Include="..\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj" />
     </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android' Or '$(TargetFramework)' == 'net8.0-ios' Or '$(TargetFramework)' == 'net8.0-maccatalyst'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android' Or '$(TargetFramework)' == 'net7.0-ios' Or '$(TargetFramework)' == 'net7.0-maccatalyst'">
         <ProjectReference Include="..\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj" />
     </ItemGroup>
     

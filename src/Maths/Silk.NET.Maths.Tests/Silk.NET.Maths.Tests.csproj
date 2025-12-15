@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFrameworks>net6.0</TargetFrameworks>
-        <LangVersion>9.0</LangVersion>
+        <LangVersion>preview</LangVersion>
         <IsPackable>false</IsPackable>
 
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

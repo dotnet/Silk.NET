@@ -3,7 +3,7 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFrameworks>net5.0;netcoreapp3.1;netframework4.8</TargetFrameworks>
-        <LangVersion>9.0</LangVersion>
+        <LangVersion>preview</LangVersion>
         <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net5.0'">$(DefineConstants);MATHF</DefineConstants>
     </PropertyGroup>
 

@@ -28,10 +28,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
         {
             Console.WriteLine("Loading raw Vulkan/OpenXR specification...");
             var spec = VulkanSpecification.LoadFromXmlStream(stream);
-            File.WriteAllText("build/cache/pre-unspecialised.json", JsonConvert.SerializeObject(spec, Formatting.Indented));
             Console.WriteLine("Specialising specification...");
             spec.Specialise();
-            File.WriteAllText("build/cache/pre-specialised.json", JsonConvert.SerializeObject(spec, Formatting.Indented));
             return spec;
         }
 

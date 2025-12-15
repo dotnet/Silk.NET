@@ -23,7 +23,7 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeAnchorSharingTokenAndroid,
             void* next = null,
-            AIBinder* token = null
+            void* token = null
         ) : this()
         {
             if (type is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "AIBinder*")]
         [NativeName("Type.Name", "AIBinder")]
         [NativeName("Name", "token")]
-        public AIBinder* Token;
+        public void* Token;
     }
 }

@@ -131,7 +131,7 @@ namespace Silk.NET.BuildTools.Bind
             csproj.WriteLine
                 ("    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>");
             csproj.WriteLine("    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>");
-            csproj.WriteLine("    <LangVersion>10</LangVersion>");
+            csproj.WriteLine("    <LangVersion>preview</LangVersion>");
             csproj.WriteLine("  </PropertyGroup>");
             csproj.WriteLine();
             csproj.WriteLine("  <ItemGroup>");
