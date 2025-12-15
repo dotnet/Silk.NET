@@ -19,10 +19,10 @@ namespace Silk.NET.WebGPU
     public unsafe readonly struct PfnQueueWorkDoneCallback : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, StringView, void*, void*, void> Handle => (delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, StringView, void*, void*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, void*, void> Handle => (delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, void*, void>) _handle;
         public PfnQueueWorkDoneCallback
         (
-            delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, StringView, void*, void*, void> ptr
+            delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, void*, void> ptr
         ) => _handle = ptr;
 
         public PfnQueueWorkDoneCallback
@@ -35,7 +35,7 @@ namespace Silk.NET.WebGPU
 
         public static implicit operator nint(PfnQueueWorkDoneCallback pfn) => (nint) pfn.Handle;
         public static explicit operator PfnQueueWorkDoneCallback(nint pfn)
-            => new PfnQueueWorkDoneCallback((delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, StringView, void*, void*, void>) pfn);
+            => new PfnQueueWorkDoneCallback((delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, void*, void>) pfn);
 
         public static implicit operator PfnQueueWorkDoneCallback(QueueWorkDoneCallback proc)
             => new PfnQueueWorkDoneCallback(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.WebGPU
         public static explicit operator QueueWorkDoneCallback(PfnQueueWorkDoneCallback pfn)
             => SilkMarshal.PtrToDelegate<QueueWorkDoneCallback>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, StringView, void*, void*, void>(PfnQueueWorkDoneCallback pfn) => pfn.Handle;
-        public static implicit operator PfnQueueWorkDoneCallback(delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, StringView, void*, void*, void> ptr) => new PfnQueueWorkDoneCallback(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, void*, void>(PfnQueueWorkDoneCallback pfn) => pfn.Handle;
+        public static implicit operator PfnQueueWorkDoneCallback(delegate* unmanaged[Cdecl]<QueueWorkDoneStatus, void*, void> ptr) => new PfnQueueWorkDoneCallback(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void QueueWorkDoneCallback(QueueWorkDoneStatus arg0, StringView arg1, void* arg2, void* arg3);
+    public unsafe delegate void QueueWorkDoneCallback(QueueWorkDoneStatus arg0, void* arg1);
 }
 

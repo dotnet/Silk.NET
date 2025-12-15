@@ -25,8 +25,7 @@ namespace Silk.NET.WebGPU
             PrimitiveTopology? topology = null,
             IndexFormat? stripIndexFormat = null,
             FrontFace? frontFace = null,
-            CullMode? cullMode = null,
-            Silk.NET.Core.Bool32? unclippedDepth = null
+            CullMode? cullMode = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -53,16 +52,11 @@ namespace Silk.NET.WebGPU
             {
                 CullMode = cullMode.Value;
             }
-
-            if (unclippedDepth is not null)
-            {
-                UnclippedDepth = unclippedDepth.Value;
-            }
         }
 
 
-        [NativeName("Type", "WGPUChainedStruct *")]
-        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Type", "const WGPUChainedStruct *")]
+        [NativeName("Type.Name", "const WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
@@ -85,10 +79,5 @@ namespace Silk.NET.WebGPU
         [NativeName("Type.Name", "WGPUCullMode")]
         [NativeName("Name", "cullMode")]
         public CullMode CullMode;
-
-        [NativeName("Type", "WGPUBool")]
-        [NativeName("Type.Name", "WGPUBool")]
-        [NativeName("Name", "unclippedDepth")]
-        public Silk.NET.Core.Bool32 UnclippedDepth;
     }
 }

@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public DeviceExtras
         (
             ChainedStruct? chain = null,
-            StringView? tracePath = null
+            byte* tracePath = null
         ) : this()
         {
             if (chain is not null)
@@ -32,7 +32,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
 
             if (tracePath is not null)
             {
-                TracePath = tracePath.Value;
+                TracePath = tracePath;
             }
         }
 
@@ -42,9 +42,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "WGPUStringView")]
-        [NativeName("Type.Name", "WGPUStringView")]
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
         [NativeName("Name", "tracePath")]
-        public StringView TracePath;
+        public byte* TracePath;
     }
 }

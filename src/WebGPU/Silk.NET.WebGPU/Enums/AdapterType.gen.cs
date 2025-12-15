@@ -13,13 +13,13 @@ namespace Silk.NET.WebGPU
     public enum AdapterType : int
     {
         [NativeName("Name", "WGPUAdapterType_DiscreteGPU")]
-        DiscreteGpu = 0x1,
+        DiscreteGpu = 0x0,
         [NativeName("Name", "WGPUAdapterType_IntegratedGPU")]
-        IntegratedGpu = 0x2,
+        IntegratedGpu = 0x1,
         [NativeName("Name", "WGPUAdapterType_CPU")]
-        Cpu = 0x3,
+        Cpu = 0x2,
         [NativeName("Name", "WGPUAdapterType_Unknown")]
-        Unknown = 0x4,
+        Unknown = 0x3,
         [NativeName("Name", "WGPUAdapterType_Force32")]
         Force32 = 0x7FFFFFFF,
     }

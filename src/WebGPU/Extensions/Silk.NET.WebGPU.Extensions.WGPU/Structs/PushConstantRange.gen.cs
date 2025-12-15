@@ -21,7 +21,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
     {
         public PushConstantRange
         (
-            ulong? stages = null,
+            Silk.NET.WebGPU.ShaderStage? stages = null,
             uint? start = null,
             uint? end = null
         ) : this()
@@ -43,10 +43,10 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         }
 
 
-        [NativeName("Type", "WGPUShaderStage")]
-        [NativeName("Type.Name", "WGPUShaderStage")]
+        [NativeName("Type", "WGPUShaderStageFlags")]
+        [NativeName("Type.Name", "WGPUShaderStageFlags")]
         [NativeName("Name", "stages")]
-        public ulong Stages;
+        public Silk.NET.WebGPU.ShaderStage Stages;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

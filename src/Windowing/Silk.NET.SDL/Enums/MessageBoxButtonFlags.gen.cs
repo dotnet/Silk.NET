@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_messagebox_L49_C9")]
     [NativeName("Name", "SDL_MessageBoxButtonFlags")]
     public enum MessageBoxButtonFlags : int
     {

@@ -12,16 +12,14 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUStorageTextureAccess")]
     public enum StorageTextureAccess : int
     {
-        [NativeName("Name", "WGPUStorageTextureAccess_BindingNotUsed")]
-        BindingNotUsed = 0x0,
         [NativeName("Name", "WGPUStorageTextureAccess_Undefined")]
-        Undefined = 0x1,
+        Undefined = 0x0,
         [NativeName("Name", "WGPUStorageTextureAccess_WriteOnly")]
-        WriteOnly = 0x2,
+        WriteOnly = 0x1,
         [NativeName("Name", "WGPUStorageTextureAccess_ReadOnly")]
-        ReadOnly = 0x3,
+        ReadOnly = 0x2,
         [NativeName("Name", "WGPUStorageTextureAccess_ReadWrite")]
-        ReadWrite = 0x4,
+        ReadWrite = 0x3,
         [NativeName("Name", "WGPUStorageTextureAccess_Force32")]
         Force32 = 0x7FFFFFFF,
     }

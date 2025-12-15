@@ -19,10 +19,10 @@ namespace Silk.NET.WebGPU
     public unsafe readonly struct PfnCompilationInfoCallback : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void*, void> Handle => (delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void> Handle => (delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void>) _handle;
         public PfnCompilationInfoCallback
         (
-            delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void*, void> ptr
+            delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void> ptr
         ) => _handle = ptr;
 
         public PfnCompilationInfoCallback
@@ -35,7 +35,7 @@ namespace Silk.NET.WebGPU
 
         public static implicit operator nint(PfnCompilationInfoCallback pfn) => (nint) pfn.Handle;
         public static explicit operator PfnCompilationInfoCallback(nint pfn)
-            => new PfnCompilationInfoCallback((delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void*, void>) pfn);
+            => new PfnCompilationInfoCallback((delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void>) pfn);
 
         public static implicit operator PfnCompilationInfoCallback(CompilationInfoCallback proc)
             => new PfnCompilationInfoCallback(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.WebGPU
         public static explicit operator CompilationInfoCallback(PfnCompilationInfoCallback pfn)
             => SilkMarshal.PtrToDelegate<CompilationInfoCallback>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void*, void>(PfnCompilationInfoCallback pfn) => pfn.Handle;
-        public static implicit operator PfnCompilationInfoCallback(delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void*, void> ptr) => new PfnCompilationInfoCallback(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void>(PfnCompilationInfoCallback pfn) => pfn.Handle;
+        public static implicit operator PfnCompilationInfoCallback(delegate* unmanaged[Cdecl]<CompilationInfoRequestStatus, CompilationInfo*, void*, void> ptr) => new PfnCompilationInfoCallback(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void CompilationInfoCallback(CompilationInfoRequestStatus arg0, CompilationInfo* arg1, void* arg2, void* arg3);
+    public unsafe delegate void CompilationInfoCallback(CompilationInfoRequestStatus arg0, CompilationInfo* arg1, void* arg2);
 }
 

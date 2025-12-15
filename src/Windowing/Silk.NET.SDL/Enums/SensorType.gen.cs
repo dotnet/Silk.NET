@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_sensor_L69_C9")]
     [NativeName("Name", "SDL_SensorType")]
     public enum SensorType : int
     {

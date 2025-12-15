@@ -22,8 +22,8 @@ namespace Silk.NET.WebGPU
         public TextureDescriptor
         (
             ChainedStruct* nextInChain = null,
-            StringView? label = null,
-            ulong? usage = null,
+            byte* label = null,
+            Silk.NET.WebGPU.TextureUsage? usage = null,
             TextureDimension? dimension = null,
             Extent3D? size = null,
             TextureFormat? format = null,
@@ -40,7 +40,7 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label.Value;
+                Label = label;
             }
 
             if (usage is not null)
@@ -85,20 +85,20 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "WGPUChainedStruct *")]
-        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Type", "const WGPUChainedStruct *")]
+        [NativeName("Type.Name", "const WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "WGPUStringView")]
-        [NativeName("Type.Name", "WGPUStringView")]
+        [NativeName("Type", "const char *")]
+        [NativeName("Type.Name", "const char *")]
         [NativeName("Name", "label")]
-        public StringView Label;
+        public byte* Label;
 
-        [NativeName("Type", "WGPUTextureUsage")]
-        [NativeName("Type.Name", "WGPUTextureUsage")]
+        [NativeName("Type", "WGPUTextureUsageFlags")]
+        [NativeName("Type.Name", "WGPUTextureUsageFlags")]
         [NativeName("Name", "usage")]
-        public ulong Usage;
+        public Silk.NET.WebGPU.TextureUsage Usage;
 
         [NativeName("Type", "WGPUTextureDimension")]
         [NativeName("Type.Name", "WGPUTextureDimension")]

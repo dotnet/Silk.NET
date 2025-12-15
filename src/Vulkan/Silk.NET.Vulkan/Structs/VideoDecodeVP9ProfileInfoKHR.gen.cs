@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeVP9ProfileInfoKhr,
             void* pNext = null,
-            StdVideoVP9Profile? stdProfile = null
+            Video.StdVideoVP9Profile? stdProfile = null
         ) : this()
         {
             if (sType is not null)
@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoVP9Profile")]
         [NativeName("Type.Name", "StdVideoVP9Profile")]
         [NativeName("Name", "stdProfile")]
-        public StdVideoVP9Profile StdProfile;
+        public Video.StdVideoVP9Profile StdProfile;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -24,6 +24,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
             nuint? numAllocated = null,
             nuint? numKeptFromUser = null,
             nuint? numReleasedFromUser = null,
+            nuint? numError = null,
             nuint? elementSize = null
         ) : this()
         {
@@ -40,6 +41,11 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
             if (numReleasedFromUser is not null)
             {
                 NumReleasedFromUser = numReleasedFromUser.Value;
+            }
+
+            if (numError is not null)
+            {
+                NumError = numError.Value;
             }
 
             if (elementSize is not null)
@@ -63,6 +69,11 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "numReleasedFromUser")]
         public nuint NumReleasedFromUser;
+
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "numError")]
+        public nuint NumError;
 
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]

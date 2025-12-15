@@ -13,13 +13,13 @@ namespace Silk.NET.WebGPU
     public enum RequestAdapterStatus : int
     {
         [NativeName("Name", "WGPURequestAdapterStatus_Success")]
-        Success = 0x1,
-        [NativeName("Name", "WGPURequestAdapterStatus_CallbackCancelled")]
-        CallbackCancelled = 0x2,
+        Success = 0x0,
         [NativeName("Name", "WGPURequestAdapterStatus_Unavailable")]
-        Unavailable = 0x3,
+        Unavailable = 0x1,
         [NativeName("Name", "WGPURequestAdapterStatus_Error")]
-        Error = 0x4,
+        Error = 0x2,
+        [NativeName("Name", "WGPURequestAdapterStatus_Unknown")]
+        Unknown = 0x3,
         [NativeName("Name", "WGPURequestAdapterStatus_Force32")]
         Force32 = 0x7FFFFFFF,
     }

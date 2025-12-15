@@ -12,12 +12,10 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUMipmapFilterMode")]
     public enum MipmapFilterMode : int
     {
-        [NativeName("Name", "WGPUMipmapFilterMode_Undefined")]
-        Undefined = 0x0,
         [NativeName("Name", "WGPUMipmapFilterMode_Nearest")]
-        Nearest = 0x1,
+        Nearest = 0x0,
         [NativeName("Name", "WGPUMipmapFilterMode_Linear")]
-        Linear = 0x2,
+        Linear = 0x1,
         [NativeName("Name", "WGPUMipmapFilterMode_Force32")]
         Force32 = 0x7FFFFFFF,
     }

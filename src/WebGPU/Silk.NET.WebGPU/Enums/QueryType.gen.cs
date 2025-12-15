@@ -13,9 +13,9 @@ namespace Silk.NET.WebGPU
     public enum QueryType : int
     {
         [NativeName("Name", "WGPUQueryType_Occlusion")]
-        Occlusion = 0x1,
+        Occlusion = 0x0,
         [NativeName("Name", "WGPUQueryType_Timestamp")]
-        Timestamp = 0x2,
+        Timestamp = 0x1,
         [NativeName("Name", "WGPUQueryType_Force32")]
         Force32 = 0x7FFFFFFF,
     }

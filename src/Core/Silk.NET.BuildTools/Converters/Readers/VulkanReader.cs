@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
@@ -27,8 +28,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
         {
             Console.WriteLine("Loading raw Vulkan/OpenXR specification...");
             var spec = VulkanSpecification.LoadFromXmlStream(stream);
+            File.WriteAllText("build/cache/pre-unspecialised.json", JsonConvert.SerializeObject(spec, Formatting.Indented));
             Console.WriteLine("Specialising specification...");
             spec.Specialise();
+            File.WriteAllText("build/cache/pre-specialised.json", JsonConvert.SerializeObject(spec, Formatting.Indented));
             return spec;
         }
 
@@ -136,94 +139,97 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var chainExtensions = new List<(Struct, IReadOnlyList<string>)>();
             foreach (var s in spec.Structures)
             {
-                // Build aliases dictionary
-                if (!string.IsNullOrWhiteSpace(s.Alias))
+                foreach (var api in s.Api ?? [null])
                 {
-                    if (!aliases.TryGetValue((s.Api, s.Alias), out var aList))
+                    // Build aliases dictionary
+                    if (!string.IsNullOrWhiteSpace(s.Alias))
                     {
-                        aList = new();
-                        aliases[(s.Api, s.Alias)] = aList;
+                        if (!aliases.TryGetValue((api, s.Alias), out var aList))
+                        {
+                            aList = new();
+                            aliases[(api, s.Alias)] = aList;
+                        }
+
+                        aList.Add(s.Name);
+                        continue;
                     }
 
-                    aList.Add(s.Name);
-                    continue;
-                }
-
-                var @struct = new Struct
-                {
-                    Fields = s.Members.Select
-                        (
-                            x => new Field
-                            {
-                                Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
-                                    ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
-                                    : new Count(x.ElementCountSymbolic, false),
-                                Name = Naming.Translate(TrimName(x.Name, task), prefix),
-                                Doc = $"/// <summary>{x.Comment}</summary>",
-                                NativeName = x.Name,
-                                NativeType = x.Type.ToString(),
-                                Type = ConvertType(x.Type),
-                                DefaultAssignment =
-                                    (x.Type.Name == "VkStructureType" || x.Type.Name == "XrStructureType")
-                                    && !string.IsNullOrWhiteSpace(x.LegalValues)
-                                        ? "StructureType." + TryTrim
-                                        (
-                                            Naming.Translate
-                                            (
-                                                TrimName(x.LegalValues.Split(',').FirstOrDefault(), task),
-                                                task.FunctionPrefix
-                                            ),
-                                            Naming.TranslateLite(TrimName("VkStructureType", task), task.FunctionPrefix)
-                                        )
-                                        : null,
-                                NumBits = x.NumBits
-                            }.WithFixedFieldFixup09072020()
-                        )
-                        .ToList(),
-                    Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
-                    NativeName = s.Name,
-                    ProfileName = s.Api
-                };
-
-                // Find the STYpe field (and it's position, which is required for IChainable
-                var (sTypeField, sTypeFieldIndex) = @struct.Fields.Select((f, i) => (Field: f, Index: i))
-                    .FirstOrDefault(f => f.Field.Name == "SType" && f.Field.Type.Name == "VkStructureType");
-                if (sTypeField is not null)
-                {
-                    @struct.Attributes.Add
-                    (
-                        new()
-                        {
-                            Name = "BuildToolsIntrinsic",
-                            Arguments = new() {"$VKSTRUCTUREDTYPE", sTypeField.DefaultAssignment ?? string.Empty}
-                        }
-                    );
-
-                    // Ensure SType was in position 0, and we have a pointer called PNext in position 1.
-                    Field pNextField;
-                    if (sTypeFieldIndex == 0 &&
-                        @struct.Fields.Count > 1 &&
-                        (pNextField = @struct.Fields[1]).Name == "PNext" &&
-                        pNextField.Type.IsPointer)
+                    var @struct = new Struct
                     {
-                        // The type is at least chainable.
+                        Fields = s.Members.Select
+                            (x => new Field
+                                {
+                                    Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
+                                        ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
+                                        : new Count(x.ElementCountSymbolic, false),
+                                    Name = Naming.Translate(TrimName(x.Name, task), prefix),
+                                    Doc = $"/// <summary>{x.Comment}</summary>",
+                                    NativeName = x.Name,
+                                    NativeType = x.Type.ToString(),
+                                    Type = ConvertType(x.Type),
+                                    DefaultAssignment =
+                                        (x.Type.Name == "VkStructureType" || x.Type.Name == "XrStructureType")
+                                        && !string.IsNullOrWhiteSpace(x.LegalValues)
+                                            ? "StructureType." + TryTrim
+                                            (
+                                                Naming.Translate
+                                                (
+                                                    TrimName(x.LegalValues.Split(',').FirstOrDefault(), task),
+                                                    task.FunctionPrefix
+                                                ),
+                                                Naming.TranslateLite
+                                                    (TrimName("VkStructureType", task), task.FunctionPrefix)
+                                            )
+                                            : null,
+                                    NumBits = x.NumBits
+                                }.WithFixedFieldFixup09072020()
+                            )
+                            .ToList(),
+                        Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
+                        NativeName = s.Name,
+                        ProfileName = api
+                    };
+
+                    // Find the STYpe field (and it's position, which is required for IChainable
+                    var (sTypeField, sTypeFieldIndex) = @struct.Fields.Select((f, i) => (Field: f, Index: i))
+                        .FirstOrDefault(f => f.Field.Name == "SType" && f.Field.Type.Name == "VkStructureType");
+                    if (sTypeField is not null)
+                    {
                         @struct.Attributes.Add
                         (
                             new()
                             {
                                 Name = "BuildToolsIntrinsic",
-                                Arguments = new() {"$VKCHAINABLE"}
+                                Arguments = new() { "$VKSTRUCTUREDTYPE", sTypeField.DefaultAssignment ?? string.Empty }
                             }
                         );
 
-                        if (s.Extends.Any())
+                        // Ensure SType was in position 0, and we have a pointer called PNext in position 1.
+                        Field pNextField;
+                        if (sTypeFieldIndex == 0 &&
+                            @struct.Fields.Count > 1 &&
+                            (pNextField = @struct.Fields[1]).Name == "PNext" &&
+                            pNextField.Type.IsPointer)
                         {
-                            chainExtensions.Add((@struct, s.Extends));
+                            // The type is at least chainable.
+                            @struct.Attributes.Add
+                            (
+                                new()
+                                {
+                                    Name = "BuildToolsIntrinsic",
+                                    Arguments = new() { "$VKCHAINABLE" }
+                                }
+                            );
+
+                            if (s.Extends.Any())
+                            {
+                                chainExtensions.Add((@struct, s.Extends));
+                            }
                         }
                     }
-                }
 
-                ret.Add((s.Api, s.Name), @struct);
+                    ret.Add((api, s.Name), @struct);
+                }
             }
 
             foreach (var ((api, k), v) in aliases)
@@ -357,36 +363,46 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             foreach (var h in spec.Handles)
             {
-                ret.Add
-                (
-                    (h.Api, h.Name), new Struct
-                    {
-                        Fields = new List<Field>
+                foreach (var api in h.Api ?? [null])
+                {
+                    ret.Add
+                    (
+                        (api, h.Name), new Struct
                         {
-                            new Field {Name = "Handle", Type = new Type {Name = h.CanBeDispatched ? "nint" : "ulong"}}
-                        },
-                        Name = Naming.TranslateLite(TrimName(h.Name, task), prefix),
-                        NativeName = h.Name,
-                        Functions = handleFuns
-                    }
-                );
+                            Fields = new List<Field>
+                            {
+                                new Field
+                                {
+                                    Name = "Handle", Type = new Type { Name = h.CanBeDispatched ? "nint" : "ulong" }
+                                }
+                            },
+                            Name = Naming.TranslateLite(TrimName(h.Name, task), prefix),
+                            NativeName = h.Name,
+                            Functions = handleFuns
+                        }
+                    );
+                }
             }
 
             foreach (var u in spec.Unions)
             {
-                ret.Add
-                (
-                    (u.Api, u.Name), new Struct
-                    {
-                        Attributes = new List<Attribute>
+                foreach (var api in u.Api ?? [null])
+                {
+                    ret.Add
+                    (
+                        (api, u.Name), new Struct
                         {
-                            new Attribute {Name = "StructLayout", Arguments = new List<string> {"LayoutKind.Explicit"}}
-                        },
-                        Fields = GetFields(u, task).ToList(),
-                        Name = Naming.TranslateLite(TrimName(u.Name, task), prefix),
-                        NativeName = u.Name
-                    }
-                );
+                            Attributes = new List<Attribute>
+                            {
+                                new Attribute
+                                    { Name = "StructLayout", Arguments = new List<string> { "LayoutKind.Explicit" } }
+                            },
+                            Fields = GetFields(u, task).ToList(),
+                            Name = Naming.TranslateLite(TrimName(u.Name, task), prefix),
+                            NativeName = u.Name
+                        }
+                    );
+                }
             }
 
             return ret;
@@ -537,30 +553,35 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var ret = new Dictionary<(string?, string), Function>();
             foreach (var function in spec.Commands)
             {
-                ret.Add
-                (
-                    (function.Api, function.Name), new Function
-                    {
-                        Name = Naming.Translate
-                            (NameTrimmer.Trim(TrimName(function.Name, task), task.FunctionPrefix), task.FunctionPrefix),
-                        Parameters = function.Parameters.Select
+                foreach (string api in function.Api?.Split(',') ?? [null])
+                {
+                    ret.Add
+                    (
+                        (api, function.Name), new Function
+                        {
+                            Name = Naming.Translate
                             (
-                                x => new Parameter
-                                {
-                                    Count = x.IsNullTerminated ? null :
-                                        x.ElementCountSymbolic != null ? function.Parameters.Any
-                                            (y => y.Name == x.ElementCountSymbolic)
-                                            ? new(x.ElementCountSymbolic)
-                                            : new(x.ElementCountSymbolic.Split(',')) :
-                                        new(x.ElementCount),
-                                    Flow = ConvertFlow(x.Modifier), Name = x.Name, Type = ConvertType(x.Type)
-                                }
-                            )
-                            .ToList(),
-                        NativeName = function.Name,
-                        ReturnType = ConvertType(function.ReturnType)
-                    }
-                );
+                                NameTrimmer.Trim(TrimName(function.Name, task), task.FunctionPrefix),
+                                task.FunctionPrefix
+                            ),
+                            Parameters = function.Parameters.Select
+                                (x => new Parameter
+                                    {
+                                        Count = x.IsNullTerminated ? null :
+                                            x.ElementCountSymbolic != null ? function.Parameters.Any
+                                                (y => y.Name == x.ElementCountSymbolic)
+                                                ? new(x.ElementCountSymbolic)
+                                                : new(x.ElementCountSymbolic.Split(',')) :
+                                            new(x.ElementCount),
+                                        Flow = ConvertFlow(x.Modifier), Name = x.Name, Type = ConvertType(x.Type)
+                                    }
+                                )
+                                .ToList(),
+                            NativeName = function.Name,
+                            ReturnType = ConvertType(function.ReturnType)
+                        }
+                    );
+                }
             }
 
             return ret;
@@ -685,38 +706,40 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var ret = new Dictionary<(string?, string), Enum>();
             foreach (var e in spec.Enums)
             {
-                ret.Add
-                (
-                    (e.Api, e.Name),
-                    new Enum
-                    {
-                        Name = Naming.TranslateLite(TrimName(e.Name, task), task.FunctionPrefix),
-                        NativeName = e.Name,
-                        Tokens = e.Values.Select
-                            (
-                                x => new Token
-                                {
-                                    Doc = $"/// <summary>{x.Comment}</summary>",
-                                    Name = TryTrim
-                                    (
-                                        Naming.Translate(TrimName(x.Name, task), task.FunctionPrefix),
-                                        Naming.TranslateLite(TrimName(e.Name, task), task.FunctionPrefix)
-                                    ),
-                                    Value = x.Value.ToString(),
-                                    NativeName = x.Name
-                                }
-                            )
-                            .ToList(),
-                        Attributes = e.Type == EnumType.Bitmask
-                            ? new List<Attribute> {new Attribute {Name = "Flags"}}
-                            : new List<Attribute>(),
-                        EnumBaseType = e.BitWidth switch
+                foreach (var api in e.Api ?? [null])
+                {
+                    ret.Add
+                    (
+                        (api, e.Name),
+                        new Enum
                         {
-                            64 => new() {Name = "long"},
-                            _ => new() {Name = "int"}
+                            Name = Naming.TranslateLite(TrimName(e.Name, task), task.FunctionPrefix),
+                            NativeName = e.Name,
+                            Tokens = e.Values.Select
+                                (x => new Token
+                                    {
+                                        Doc = $"/// <summary>{x.Comment}</summary>",
+                                        Name = TryTrim
+                                        (
+                                            Naming.Translate(TrimName(x.Name, task), task.FunctionPrefix),
+                                            Naming.TranslateLite(TrimName(e.Name, task), task.FunctionPrefix)
+                                        ),
+                                        Value = x.Value.ToString(),
+                                        NativeName = x.Name
+                                    }
+                                )
+                                .ToList(),
+                            Attributes = e.Type == EnumType.Bitmask
+                                ? new List<Attribute> { new Attribute { Name = "Flags" } }
+                                : new List<Attribute>(),
+                            EnumBaseType = e.BitWidth switch
+                            {
+                                64 => new() { Name = "long" },
+                                _ => new() { Name = "int" }
+                            }
                         }
-                    }
-                );
+                    );
+                }
             }
 
             return ret;
@@ -733,12 +756,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public IEnumerable<ConverterTypemap> ReadTypedefs(object obj, BindTask task)
         {
             var spec = (VulkanSpecification) obj;
-            foreach (var api in spec.Enums.Select(x => x.Api).Distinct())
+            foreach (var api in spec.Enums.SelectMany(x => x.Api ?? [null]).Distinct())
             {
                 yield return new ConverterTypemap
                 (
                     spec.Enums
-                        .Where(x => x.Api == api && x.Name.Contains("FlagBits"))
+                        .Where(x => (x.Api?.Contains(api) ?? api is null) && x.Name.Contains("FlagBits"))
                         .ToDictionary
                         (
                             x => x.Name,
@@ -754,7 +777,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 yield return new ConverterTypemap
                 (
                     spec.Enums
-                        .Where(x => x.Api == api || x.Api is null)
+                        .Where(x => x.Api?.Contains(api) ?? true)
                         .ToDictionary
                         (
                             x => x.Name.Replace("FlagBits", "Flags"),
@@ -767,7 +790,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 yield return new ConverterTypemap
                 (
                     spec.Typedefs
-                        .Where(x => x.Api == api && spec.Enums.All(y => y.Name.Replace("FlagBits", "Flags") != x.Name))
+                        .Where(x => (x.Api?.Contains(api) ?? api is null) && spec.Enums.All(y => y.Name.Replace("FlagBits", "Flags") != x.Name))
                         .ToDictionary(x => x.Name, x => x.Type),
                     api
                 );
@@ -776,7 +799,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 yield return new ConverterTypemap
                 (
                     spec.Handles
-                        .Where(x => x.Api == api || x.Api is null)
+                        .Where(x => x.Api?.Contains(api) ?? true)
                         .ToDictionary
                         (
                             x => x.Name, x => Naming.TranslateLite(TrimName(x.Name, task), task.FunctionPrefix)
@@ -786,7 +809,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 yield return new ConverterTypemap
                 (
                     spec.Structures
-                        .Where(x => x.Api == api || x.Api is null)
+                        .Where(x => x.Api?.Contains(api) ?? true)
                         .ToDictionary
                         (
                             x => x.Name, x => Naming.TranslateLite(TrimName(x.Name, task), task.FunctionPrefix)
@@ -796,7 +819,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 yield return new ConverterTypemap
                 (
                     spec.Unions
-                        .Where(x => x.Api == api || x.Api is null)
+                        .Where(x => x.Api?.Contains(api) ?? true)
                         .ToDictionary
                         (
                             x => x.Name, x => Naming.TranslateLite(TrimName(x.Name, task), task.FunctionPrefix)

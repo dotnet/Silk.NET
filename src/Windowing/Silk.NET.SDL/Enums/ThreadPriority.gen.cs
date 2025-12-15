@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_thread_L75_C9")]
     [NativeName("Name", "SDL_ThreadPriority")]
     public enum ThreadPriority : int
     {

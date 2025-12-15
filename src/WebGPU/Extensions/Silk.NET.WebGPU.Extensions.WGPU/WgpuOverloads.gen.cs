@@ -17,7 +17,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
     public static class WgpuOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 291, Column 6 in wgpu.h")]
+        [NativeName("Src", "Line 259, Column 6 in wgpu.h")]
         public static unsafe void GenerateReport(this Wgpu thisApi, Instance* instance, Span<GlobalReport> report)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 292, Column 8 in wgpu.h")]
+        [NativeName("Src", "Line 260, Column 8 in wgpu.h")]
         public static unsafe nuint InstanceEnumerateAdapters(this Wgpu thisApi, Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InstanceEnumerateAdapterOptions> options, Adapter** adapters)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 292, Column 8 in wgpu.h")]
+        [NativeName("Src", "Line 260, Column 8 in wgpu.h")]
         public static unsafe nuint InstanceEnumerateAdapters(this Wgpu thisApi, Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<InstanceEnumerateAdapterOptions> options, ref Adapter* adapters)
         {
             // SpanOverloader
@@ -41,23 +41,15 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 297, Column 10 in wgpu.h")]
-        public static unsafe Silk.NET.Core.Bool32 DevicePoll(this Wgpu thisApi, Device* device, Silk.NET.Core.Bool32 wait, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> submissionIndex)
+        [NativeName("Src", "Line 265, Column 10 in wgpu.h")]
+        public static unsafe Silk.NET.Core.Bool32 DevicePoll(this Wgpu thisApi, Device* device, Silk.NET.Core.Bool32 wait, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WrappedSubmissionIndex> wrappedSubmissionIndex)
         {
             // SpanOverloader
-            return thisApi.DevicePoll(device, wait, in submissionIndex.GetPinnableReference());
+            return thisApi.DevicePoll(device, wait, in wrappedSubmissionIndex.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 298, Column 18 in wgpu.h")]
-        public static unsafe ShaderModule* DeviceCreateShaderModuleSpirV(this Wgpu thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleDescriptorSpirV> descriptor)
-        {
-            // SpanOverloader
-            return thisApi.DeviceCreateShaderModuleSpirV(device, in descriptor.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 300, Column 6 in wgpu.h")]
+        [NativeName("Src", "Line 267, Column 6 in wgpu.h")]
         public static unsafe void SetLogCallback<T0>(this Wgpu thisApi, PfnLogCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
@@ -65,27 +57,11 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 306, Column 6 in wgpu.h")]
-        public static unsafe void RenderPassEncoderSetPushConstants<T0>(this Wgpu thisApi, RenderPassEncoder* encoder, ulong stages, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        [NativeName("Src", "Line 273, Column 6 in wgpu.h")]
+        public static unsafe void RenderPassEncoderSetPushConstants<T0>(this Wgpu thisApi, RenderPassEncoder* encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.RenderPassEncoderSetPushConstants(encoder, stages, offset, sizeBytes, in data.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 307, Column 6 in wgpu.h")]
-        public static unsafe void ComputePassEncoderSetPushConstants<T0>(this Wgpu thisApi, ComputePassEncoder* encoder, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.ComputePassEncoderSetPushConstants(encoder, offset, sizeBytes, in data.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 308, Column 6 in wgpu.h")]
-        public static unsafe void RenderBundleEncoderSetPushConstants<T0>(this Wgpu thisApi, RenderBundleEncoder* encoder, ulong stages, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.RenderBundleEncoderSetPushConstants(encoder, stages, offset, sizeBytes, in data.GetPinnableReference());
         }
 
     }

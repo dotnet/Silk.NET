@@ -13,11 +13,11 @@ namespace Silk.NET.WebGPU
     public enum RequestDeviceStatus : int
     {
         [NativeName("Name", "WGPURequestDeviceStatus_Success")]
-        Success = 0x1,
-        [NativeName("Name", "WGPURequestDeviceStatus_CallbackCancelled")]
-        CallbackCancelled = 0x2,
+        Success = 0x0,
         [NativeName("Name", "WGPURequestDeviceStatus_Error")]
-        Error = 0x3,
+        Error = 0x1,
+        [NativeName("Name", "WGPURequestDeviceStatus_Unknown")]
+        Unknown = 0x2,
         [NativeName("Name", "WGPURequestDeviceStatus_Force32")]
         Force32 = 0x7FFFFFFF,
     }

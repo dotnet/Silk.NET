@@ -24,9 +24,9 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.VideoEncodeAV1SessionParametersCreateInfoKhr,
             void* pNext = null,
             Video.StdVideoAV1SequenceHeader* pStdSequenceHeader = null,
-            StdVideoEncodeAV1DecoderModelInfo* pStdDecoderModelInfo = null,
+            Video.StdVideoEncodeAV1DecoderModelInfo* pStdDecoderModelInfo = null,
             uint? stdOperatingPointCount = null,
-            StdVideoEncodeAV1OperatingPointInfo* pStdOperatingPoints = null
+            Video.StdVideoEncodeAV1OperatingPointInfo* pStdOperatingPoints = null
         ) : this()
         {
             if (sType is not null)
@@ -79,7 +79,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoEncodeAV1DecoderModelInfo*")]
         [NativeName("Type.Name", "StdVideoEncodeAV1DecoderModelInfo")]
         [NativeName("Name", "pStdDecoderModelInfo")]
-        public StdVideoEncodeAV1DecoderModelInfo* PStdDecoderModelInfo;
+        public Video.StdVideoEncodeAV1DecoderModelInfo* PStdDecoderModelInfo;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -89,7 +89,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoEncodeAV1OperatingPointInfo*")]
         [NativeName("Type.Name", "StdVideoEncodeAV1OperatingPointInfo")]
         [NativeName("Name", "pStdOperatingPoints")]
-        public StdVideoEncodeAV1OperatingPointInfo* PStdOperatingPoints;
+        public Video.StdVideoEncodeAV1OperatingPointInfo* PStdOperatingPoints;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -32,7 +32,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
             RegistryReport? renderBundles = null,
             RegistryReport? renderPipelines = null,
             RegistryReport? computePipelines = null,
-            RegistryReport? pipelineCaches = null,
             RegistryReport? querySets = null,
             RegistryReport? buffers = null,
             RegistryReport? textures = null,
@@ -93,11 +92,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
             if (computePipelines is not null)
             {
                 ComputePipelines = computePipelines.Value;
-            }
-
-            if (pipelineCaches is not null)
-            {
-                PipelineCaches = pipelineCaches.Value;
             }
 
             if (querySets is not null)
@@ -181,11 +175,6 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Type.Name", "WGPURegistryReport")]
         [NativeName("Name", "computePipelines")]
         public RegistryReport ComputePipelines;
-
-        [NativeName("Type", "WGPURegistryReport")]
-        [NativeName("Type.Name", "WGPURegistryReport")]
-        [NativeName("Name", "pipelineCaches")]
-        public RegistryReport PipelineCaches;
 
         [NativeName("Type", "WGPURegistryReport")]
         [NativeName("Type.Name", "WGPURegistryReport")]

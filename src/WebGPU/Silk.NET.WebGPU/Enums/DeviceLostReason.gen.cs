@@ -16,10 +16,6 @@ namespace Silk.NET.WebGPU
         Unknown = 0x1,
         [NativeName("Name", "WGPUDeviceLostReason_Destroyed")]
         Destroyed = 0x2,
-        [NativeName("Name", "WGPUDeviceLostReason_CallbackCancelled")]
-        CallbackCancelled = 0x3,
-        [NativeName("Name", "WGPUDeviceLostReason_FailedCreation")]
-        FailedCreation = 0x4,
         [NativeName("Name", "WGPUDeviceLostReason_Force32")]
         Force32 = 0x7FFFFFFF,
     }
