@@ -707,7 +707,8 @@
             "clang": {},
             "bakery": {
                 "profileNames": [
-                    "vulkan"
+                    "vulkan",
+                    "vulkanbase"
                 ]
             },
             "exclude": [
@@ -2473,7 +2474,7 @@
             },
             "bakery": {
                 "profileNames": [
-                    "silk.net.core.direct3d12"
+                    "silk.net.direct3d12"
                 ]
             },
             "output": {

@@ -30,8 +30,10 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         public string ExtensionName { get; set; }
 
-        [JsonIgnore] public string ProfileName { get; set; }
-        [JsonIgnore] public Version ProfileVersion { get; set; }
+        //[JsonIgnore]
+        public string ProfileName { get; set; }
+        //[JsonIgnore]
+        public Version ProfileVersion { get; set; }
         [JsonIgnore] public string[] ClangMetadata { get; set; }
 
         /// <summary>

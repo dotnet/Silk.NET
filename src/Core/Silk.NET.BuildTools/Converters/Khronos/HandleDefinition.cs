@@ -28,7 +28,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <summary>
         /// The specific API this handle is applicable to.
         /// </summary>
-        public string? Api { get; }
+        public string[]? Api { get; }
 
         /// <summary>
         /// Create a new HandleDefinition.
@@ -37,6 +37,10 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <param name="canBeDispatched">Whether or not this handle can be dispatched.</param>
         /// <param name="parent">The parent of this handle.</param>
         public HandleDefinition(string name, bool canBeDispatched, string parent, string? api)
+           : this(name, canBeDispatched, parent, api?.Split(','))
+        {
+        }
+        public HandleDefinition(string name, bool canBeDispatched, string parent, string[]? api)
         {
             Name = name;
             CanBeDispatched = canBeDispatched;

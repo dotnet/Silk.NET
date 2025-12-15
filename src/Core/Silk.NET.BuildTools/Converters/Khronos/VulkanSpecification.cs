@@ -162,7 +162,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 {
                     var enumDef = GetEnumDef(enums, enumEx.ExtendedType);
                     var value = long.Parse(enumEx.Value);
-                    foreach (var api in enumDef.Api?.Split(',') ?? exDef.Supported)
+                    foreach (var api in enumDef.Api ?? exDef.Supported)
                     {
                         enumDef.Values = enumDef.Values.Append(new EnumValue(enumEx.Name, value, null, api)).ToArray();
                     }
@@ -237,7 +237,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             (
                 Structures.SelectMany
                 (
-                    x => (x.Api?.Split(',') ?? Enumerable.Empty<string>())
+                    x => (x.Api ?? Enumerable.Empty<string>())
                         .Concat(x.Members.SelectMany(y => y.Api?.Split(',') ?? Enumerable.Empty<string>()))
                 )
             )
@@ -245,7 +245,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             (
                 Unions.SelectMany
                 (
-                    x => (x.Api?.Split(',') ?? Enumerable.Empty<string>())
+                    x => (x.Api ?? Enumerable.Empty<string>())
                         .Concat(x.Members.SelectMany(y => y.Api?.Split(',') ?? Enumerable.Empty<string>()))
                 )
             )
@@ -253,7 +253,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             (
                 Enums.SelectMany
                 (
-                    x => (x.Api?.Split(',') ?? Enumerable.Empty<string>())
+                    x => (x.Api ?? Enumerable.Empty<string>())
                         .Concat(x.Values.SelectMany(y => y.Api?.Split(',') ?? Enumerable.Empty<string>()))
                 )
             )
