@@ -61,7 +61,7 @@ namespace Silk.NET.Direct3D12
         public uint DataSize;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12video_L7520_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12video_L7637_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoEncoderSequenceGopStructureUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

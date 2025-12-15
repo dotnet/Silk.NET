@@ -21,7 +21,8 @@ namespace Silk.NET.WebGPU
     {
         public SurfaceCapabilities
         (
-            ChainedStructOut* nextInChain = null,
+            ChainedStruct* nextInChain = null,
+            ulong? usages = null,
             nuint? formatCount = null,
             TextureFormat* formats = null,
             nuint? presentModeCount = null,
@@ -33,6 +34,11 @@ namespace Silk.NET.WebGPU
             if (nextInChain is not null)
             {
                 NextInChain = nextInChain;
+            }
+
+            if (usages is not null)
+            {
+                Usages = usages.Value;
             }
 
             if (formatCount is not null)
@@ -67,10 +73,15 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "WGPUChainedStructOut *")]
-        [NativeName("Type.Name", "WGPUChainedStructOut *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
-        public ChainedStructOut* NextInChain;
+        public ChainedStruct* NextInChain;
+
+        [NativeName("Type", "WGPUTextureUsage")]
+        [NativeName("Type.Name", "WGPUTextureUsage")]
+        [NativeName("Name", "usages")]
+        public ulong Usages;
 
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]

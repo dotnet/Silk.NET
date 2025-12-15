@@ -129,44 +129,20 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterServiceDriverUpdateTrigger(SC_HANDLE__* hServiceHandle)
+        public readonly int RegisterServiceDriverUpdateTrigger(Silk.NET.Core.Native.ScHandle hServiceHandle)
         {
             var @this = (ID3DShaderCacheInstaller*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, SC_HANDLE__*, int>)@this->LpVtbl[5])(@this, hServiceHandle);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, Silk.NET.Core.Native.ScHandle, int>)@this->LpVtbl[5])(@this, hServiceHandle);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterServiceDriverUpdateTrigger(ref SC_HANDLE__ hServiceHandle)
+        public readonly int UnregisterServiceDriverUpdateTrigger(Silk.NET.Core.Native.ScHandle hServiceHandle)
         {
             var @this = (ID3DShaderCacheInstaller*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (SC_HANDLE__* hServiceHandlePtr = &hServiceHandle)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, SC_HANDLE__*, int>)@this->LpVtbl[5])(@this, hServiceHandlePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int UnregisterServiceDriverUpdateTrigger(SC_HANDLE__* hServiceHandle)
-        {
-            var @this = (ID3DShaderCacheInstaller*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, SC_HANDLE__*, int>)@this->LpVtbl[6])(@this, hServiceHandle);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int UnregisterServiceDriverUpdateTrigger(ref SC_HANDLE__ hServiceHandle)
-        {
-            var @this = (ID3DShaderCacheInstaller*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (SC_HANDLE__* hServiceHandlePtr = &hServiceHandle)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, SC_HANDLE__*, int>)@this->LpVtbl[6])(@this, hServiceHandlePtr);
-            }
+            ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, Silk.NET.Core.Native.ScHandle, int>)@this->LpVtbl[6])(@this, hServiceHandle);
             return ret;
         }
 

@@ -25,7 +25,8 @@ namespace Silk.NET.Direct3D12
             RaytracingGeometryFlags? flags = null,
             RaytracingGeometryDescUnion? anonymous = null,
             RaytracingGeometryTrianglesDesc? triangles = null,
-            RaytracingGeometryAabbsDesc? aABBs = null
+            RaytracingGeometryAabbsDesc? aABBs = null,
+            RaytracingGeometryOmmTrianglesDesc? ommTriangles = null
         ) : this()
         {
             if (type is not null)
@@ -52,6 +53,11 @@ namespace Silk.NET.Direct3D12
             {
                 AABBs = aABBs.Value;
             }
+
+            if (ommTriangles is not null)
+            {
+                OmmTriangles = ommTriangles.Value;
+            }
         }
 
 
@@ -66,7 +72,7 @@ namespace Silk.NET.Direct3D12
         public RaytracingGeometryFlags Flags;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L14661_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L15560_C5")]
         [NativeName("Name", "anonymous1")]
         public RaytracingGeometryDescUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
@@ -94,6 +100,20 @@ namespace Silk.NET.Direct3D12
         {
             get => Anonymous.AABBs;
             set => Anonymous.AABBs = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref RaytracingGeometryOmmTrianglesDesc OmmTriangles
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].OmmTriangles;
+        }
+#else
+        public RaytracingGeometryOmmTrianglesDesc OmmTriangles
+        {
+            get => Anonymous.OmmTriangles;
+            set => Anonymous.OmmTriangles = value;
         }
 #endif
 

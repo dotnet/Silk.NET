@@ -238,6 +238,15 @@ public unsafe static class D3D12WorkGraphPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
+    public static uint GetEntrypointRecordAlignmentInBytes(this ComPtr<ID3D12WorkGraphProperties> thisVtbl, uint WorkGraphIndex, uint EntrypointIndex)
+    {
+        var @this = thisVtbl.Handle;
+        uint ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12WorkGraphProperties*, uint, uint, uint>)@this->LpVtbl[15])(@this, WorkGraphIndex, EntrypointIndex);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
     public static int QueryInterface<TI0>(this ComPtr<ID3D12WorkGraphProperties> thisVtbl, out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;

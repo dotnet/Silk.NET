@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAGS")]
     public enum VideoEncoderPictureControlFlags : int
     {
@@ -18,9 +19,24 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"UsedAsReferencePicture\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_USED_AS_REFERENCE_PICTURE")]
         VideoEncoderPictureControlFlagUsedAsReferencePicture = 0x1,
+        [Obsolete("Deprecated in favour of \"EnableQuantizationMatrixInput\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_ENABLE_QUANTIZATION_MATRIX_INPUT")]
+        VideoEncoderPictureControlFlagEnableQuantizationMatrixInput = 0x2,
+        [Obsolete("Deprecated in favour of \"EnableDirtyRegionsInput\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_ENABLE_DIRTY_REGIONS_INPUT")]
+        VideoEncoderPictureControlFlagEnableDirtyRegionsInput = 0x4,
+        [Obsolete("Deprecated in favour of \"EnableMotionVectorsInput\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_ENABLE_MOTION_VECTORS_INPUT")]
+        VideoEncoderPictureControlFlagEnableMotionVectorsInput = 0x8,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_USED_AS_REFERENCE_PICTURE")]
         UsedAsReferencePicture = 0x1,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_ENABLE_QUANTIZATION_MATRIX_INPUT")]
+        EnableQuantizationMatrixInput = 0x2,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_ENABLE_DIRTY_REGIONS_INPUT")]
+        EnableDirtyRegionsInput = 0x4,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAG_ENABLE_MOTION_VECTORS_INPUT")]
+        EnableMotionVectorsInput = 0x8,
     }
 }

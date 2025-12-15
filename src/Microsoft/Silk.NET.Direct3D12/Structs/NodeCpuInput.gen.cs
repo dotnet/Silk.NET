@@ -59,8 +59,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "NumRecords")]
         public uint NumRecords;
 
-        [NativeName("Type", "void *")]
-        [NativeName("Type.Name", "void *")]
+        [NativeName("Type", "const void *")]
+        [NativeName("Type.Name", "const void *")]
         [NativeName("Name", "pRecords")]
         public void* PRecords;
 

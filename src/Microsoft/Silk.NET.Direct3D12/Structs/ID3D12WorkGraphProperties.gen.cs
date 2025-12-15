@@ -264,6 +264,15 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
+        public readonly uint GetEntrypointRecordAlignmentInBytes(uint WorkGraphIndex, uint EntrypointIndex)
+        {
+            var @this = (ID3D12WorkGraphProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12WorkGraphProperties*, uint, uint, uint>)@this->LpVtbl[15])(@this, WorkGraphIndex, EntrypointIndex);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D12WorkGraphProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

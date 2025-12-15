@@ -99,9 +99,21 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"DepthStencil2\"")]
         [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL2")]
         StateSubobjectTypeDepthStencil2 = 0x1E,
+        [Obsolete("Deprecated in favour of \"GlobalSerializedRootSignature\"")]
+        [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_GLOBAL_SERIALIZED_ROOT_SIGNATURE")]
+        StateSubobjectTypeGlobalSerializedRootSignature = 0x1F,
+        [Obsolete("Deprecated in favour of \"LocalSerializedRootSignature\"")]
+        [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_LOCAL_SERIALIZED_ROOT_SIGNATURE")]
+        StateSubobjectTypeLocalSerializedRootSignature = 0x20,
+        [Obsolete("Deprecated in favour of \"CompilerExisitingCollection\"")]
+        [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_COMPILER_EXISITING_COLLECTION")]
+        StateSubobjectTypeCompilerExisitingCollection = 0x21,
+        [Obsolete("Deprecated in favour of \"ExistingCollectionByKey\"")]
+        [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_EXISTING_COLLECTION_BY_KEY")]
+        StateSubobjectTypeExistingCollectionByKey = 0x24,
         [Obsolete("Deprecated in favour of \"MaxValid\"")]
         [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_MAX_VALID")]
-        StateSubobjectTypeMaxValid = 0x1F,
+        StateSubobjectTypeMaxValid = 0x25,
         [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_STATE_OBJECT_CONFIG")]
         StateObjectConfig = 0x0,
         [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_GLOBAL_ROOT_SIGNATURE")]
@@ -160,7 +172,15 @@ namespace Silk.NET.Direct3D12
         GenericProgram = 0x1D,
         [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL2")]
         DepthStencil2 = 0x1E,
+        [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_GLOBAL_SERIALIZED_ROOT_SIGNATURE")]
+        GlobalSerializedRootSignature = 0x1F,
+        [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_LOCAL_SERIALIZED_ROOT_SIGNATURE")]
+        LocalSerializedRootSignature = 0x20,
+        [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_COMPILER_EXISITING_COLLECTION")]
+        CompilerExisitingCollection = 0x21,
+        [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_EXISTING_COLLECTION_BY_KEY")]
+        ExistingCollectionByKey = 0x24,
         [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_MAX_VALID")]
-        MaxValid = 0x1F,
+        MaxValid = 0x25,
     }
 }

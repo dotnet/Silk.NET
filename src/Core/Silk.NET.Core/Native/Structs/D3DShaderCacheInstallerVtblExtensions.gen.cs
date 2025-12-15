@@ -103,44 +103,20 @@ public unsafe static class D3DShaderCacheInstallerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterServiceDriverUpdateTrigger(this ComPtr<ID3DShaderCacheInstaller> thisVtbl, SC_HANDLE__* hServiceHandle)
+    public static int RegisterServiceDriverUpdateTrigger(this ComPtr<ID3DShaderCacheInstaller> thisVtbl, Silk.NET.Core.Native.ScHandle hServiceHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, SC_HANDLE__*, int>)@this->LpVtbl[5])(@this, hServiceHandle);
+        ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, Silk.NET.Core.Native.ScHandle, int>)@this->LpVtbl[5])(@this, hServiceHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterServiceDriverUpdateTrigger(this ComPtr<ID3DShaderCacheInstaller> thisVtbl, ref SC_HANDLE__ hServiceHandle)
+    public static int UnregisterServiceDriverUpdateTrigger(this ComPtr<ID3DShaderCacheInstaller> thisVtbl, Silk.NET.Core.Native.ScHandle hServiceHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (SC_HANDLE__* hServiceHandlePtr = &hServiceHandle)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, SC_HANDLE__*, int>)@this->LpVtbl[5])(@this, hServiceHandlePtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int UnregisterServiceDriverUpdateTrigger(this ComPtr<ID3DShaderCacheInstaller> thisVtbl, SC_HANDLE__* hServiceHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, SC_HANDLE__*, int>)@this->LpVtbl[6])(@this, hServiceHandle);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int UnregisterServiceDriverUpdateTrigger(this ComPtr<ID3DShaderCacheInstaller> thisVtbl, ref SC_HANDLE__ hServiceHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (SC_HANDLE__* hServiceHandlePtr = &hServiceHandle)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, SC_HANDLE__*, int>)@this->LpVtbl[6])(@this, hServiceHandlePtr);
-        }
+        ret = ((delegate* unmanaged[Stdcall]<ID3DShaderCacheInstaller*, Silk.NET.Core.Native.ScHandle, int>)@this->LpVtbl[6])(@this, hServiceHandle);
         return ret;
     }
 
@@ -735,22 +711,6 @@ public unsafe static class D3DShaderCacheInstallerVtblExtensions
         var @this = thisVtbl.Handle;
         // SpanOverloader
         return @this->QueryInterface(ref riid.GetPinnableReference(), ref ppvObject);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int RegisterServiceDriverUpdateTrigger(this ComPtr<ID3DShaderCacheInstaller> thisVtbl, Span<SC_HANDLE__> hServiceHandle)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->RegisterServiceDriverUpdateTrigger(ref hServiceHandle.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int UnregisterServiceDriverUpdateTrigger(this ComPtr<ID3DShaderCacheInstaller> thisVtbl, Span<SC_HANDLE__> hServiceHandle)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->UnregisterServiceDriverUpdateTrigger(ref hServiceHandle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

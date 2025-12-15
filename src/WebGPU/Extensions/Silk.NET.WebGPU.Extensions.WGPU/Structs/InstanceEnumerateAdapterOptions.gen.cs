@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         public InstanceEnumerateAdapterOptions
         (
             ChainedStruct* nextInChain = null,
-            Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend? backends = null
+            ulong? backends = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -42,9 +42,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "WGPUInstanceBackendFlags")]
-        [NativeName("Type.Name", "WGPUInstanceBackendFlags")]
+        [NativeName("Type", "WGPUInstanceBackend")]
+        [NativeName("Type.Name", "WGPUInstanceBackend")]
         [NativeName("Name", "backends")]
-        public Silk.NET.WebGPU.Extensions.WGPU.InstanceBackend Backends;
+        public ulong Backends;
     }
 }

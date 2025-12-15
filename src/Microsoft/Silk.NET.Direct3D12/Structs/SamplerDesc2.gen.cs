@@ -127,7 +127,7 @@ namespace Silk.NET.Direct3D12
         public ComparisonFunc ComparisonFunc;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3603_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3768_C5")]
         [NativeName("Name", "anonymous1")]
         public SamplerDesc2Union Anonymous;
 

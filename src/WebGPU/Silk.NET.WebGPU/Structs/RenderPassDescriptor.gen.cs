@@ -22,12 +22,12 @@ namespace Silk.NET.WebGPU
         public RenderPassDescriptor
         (
             ChainedStruct* nextInChain = null,
-            byte* label = null,
+            StringView? label = null,
             nuint? colorAttachmentCount = null,
             RenderPassColorAttachment* colorAttachments = null,
             RenderPassDepthStencilAttachment* depthStencilAttachment = null,
             QuerySet* occlusionQuerySet = null,
-            RenderPassTimestampWrites* timestampWrites = null
+            PassTimestampWrites* timestampWrites = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -37,7 +37,7 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label;
+                Label = label.Value;
             }
 
             if (colorAttachmentCount is not null)
@@ -67,15 +67,15 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "label")]
-        public byte* Label;
+        public StringView Label;
 
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
@@ -97,9 +97,9 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "occlusionQuerySet")]
         public QuerySet* OcclusionQuerySet;
 
-        [NativeName("Type", "const WGPURenderPassTimestampWrites *")]
-        [NativeName("Type.Name", "const WGPURenderPassTimestampWrites *")]
+        [NativeName("Type", "const WGPUPassTimestampWrites *")]
+        [NativeName("Type.Name", "const WGPUPassTimestampWrites *")]
         [NativeName("Name", "timestampWrites")]
-        public RenderPassTimestampWrites* TimestampWrites;
+        public PassTimestampWrites* TimestampWrites;
     }
 }

@@ -108,9 +108,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"ComputeQueueCopyDest\"")]
         [NativeName("Name", "D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COPY_DEST")]
         BarrierLayoutComputeQueueCopyDest = 0x1D,
-        [Obsolete("Deprecated in favour of \"VideoQueueCommon\"")]
-        [NativeName("Name", "D3D12_BARRIER_LAYOUT_VIDEO_QUEUE_COMMON")]
-        BarrierLayoutVideoQueueCommon = 0x1E,
+        [Obsolete("Deprecated in favour of \"DirectQueueGenericReadComputeQueueAccessible\"")]
+        [NativeName("Name", "D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_GENERIC_READ_COMPUTE_QUEUE_ACCESSIBLE")]
+        BarrierLayoutDirectQueueGenericReadComputeQueueAccessible = 0x1F,
         [NativeName("Name", "D3D12_BARRIER_LAYOUT_UNDEFINED")]
         Undefined = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "D3D12_BARRIER_LAYOUT_COMMON")]
@@ -175,7 +175,7 @@ namespace Silk.NET.Direct3D12
         ComputeQueueCopySource = 0x1C,
         [NativeName("Name", "D3D12_BARRIER_LAYOUT_COMPUTE_QUEUE_COPY_DEST")]
         ComputeQueueCopyDest = 0x1D,
-        [NativeName("Name", "D3D12_BARRIER_LAYOUT_VIDEO_QUEUE_COMMON")]
-        VideoQueueCommon = 0x1E,
+        [NativeName("Name", "D3D12_BARRIER_LAYOUT_DIRECT_QUEUE_GENERIC_READ_COMPUTE_QUEUE_ACCESSIBLE")]
+        DirectQueueGenericReadComputeQueueAccessible = 0x1F,
     }
 }

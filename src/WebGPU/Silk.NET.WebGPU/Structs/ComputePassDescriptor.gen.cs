@@ -22,8 +22,8 @@ namespace Silk.NET.WebGPU
         public ComputePassDescriptor
         (
             ChainedStruct* nextInChain = null,
-            byte* label = null,
-            ComputePassTimestampWrites* timestampWrites = null
+            StringView? label = null,
+            PassTimestampWrites* timestampWrites = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -33,7 +33,7 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label;
+                Label = label.Value;
             }
 
             if (timestampWrites is not null)
@@ -43,19 +43,19 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "label")]
-        public byte* Label;
+        public StringView Label;
 
-        [NativeName("Type", "const WGPUComputePassTimestampWrites *")]
-        [NativeName("Type.Name", "const WGPUComputePassTimestampWrites *")]
+        [NativeName("Type", "const WGPUPassTimestampWrites *")]
+        [NativeName("Type.Name", "const WGPUPassTimestampWrites *")]
         [NativeName("Name", "timestampWrites")]
-        public ComputePassTimestampWrites* TimestampWrites;
+        public PassTimestampWrites* TimestampWrites;
     }
 }

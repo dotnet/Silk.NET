@@ -46,6 +46,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"SkipProceduralPrimitives\"")]
         [NativeName("Name", "D3D12_RAY_FLAG_SKIP_PROCEDURAL_PRIMITIVES")]
         RayFlagSkipProceduralPrimitives = 0x200,
+        [Obsolete("Deprecated in favour of \"ForceOmm2State\"")]
+        [NativeName("Name", "D3D12_RAY_FLAG_FORCE_OMM_2_STATE")]
+        RayFlagForceOmm2State = 0x400,
         [NativeName("Name", "D3D12_RAY_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_RAY_FLAG_FORCE_OPAQUE")]
@@ -68,5 +71,7 @@ namespace Silk.NET.Direct3D12
         SkipTriangles = 0x100,
         [NativeName("Name", "D3D12_RAY_FLAG_SKIP_PROCEDURAL_PRIMITIVES")]
         SkipProceduralPrimitives = 0x200,
+        [NativeName("Name", "D3D12_RAY_FLAG_FORCE_OMM_2_STATE")]
+        ForceOmm2State = 0x400,
     }
 }

@@ -22,9 +22,7 @@ namespace Silk.NET.WebGPU
         public ShaderModuleDescriptor
         (
             ChainedStruct* nextInChain = null,
-            byte* label = null,
-            nuint? hintCount = null,
-            ShaderModuleCompilationHint* hints = null
+            StringView? label = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -34,39 +32,19 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label;
-            }
-
-            if (hintCount is not null)
-            {
-                HintCount = hintCount.Value;
-            }
-
-            if (hints is not null)
-            {
-                Hints = hints;
+                Label = label.Value;
             }
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "label")]
-        public byte* Label;
-
-        [NativeName("Type", "size_t")]
-        [NativeName("Type.Name", "size_t")]
-        [NativeName("Name", "hintCount")]
-        public nuint HintCount;
-
-        [NativeName("Type", "const WGPUShaderModuleCompilationHint *")]
-        [NativeName("Type.Name", "const WGPUShaderModuleCompilationHint *")]
-        [NativeName("Name", "hints")]
-        public ShaderModuleCompilationHint* Hints;
+        public StringView Label;
     }
 }
