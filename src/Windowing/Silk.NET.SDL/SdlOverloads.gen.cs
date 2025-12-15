@@ -1970,7 +1970,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
-        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, nuint* inbytesleft, byte** outbuf, Span<nuint> outbytesleft)
+        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* inbuf, nuint* inbytesleft, byte** outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
             return thisApi.Iconv(cd, in inbuf, inbytesleft, outbuf, ref outbytesleft.GetPinnableReference());
@@ -1978,7 +1978,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
-        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, nuint* inbytesleft, ref byte* outbuf, Span<nuint> outbytesleft)
+        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* inbuf, nuint* inbytesleft, ref byte* outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
             return thisApi.Iconv(cd, in inbuf, inbytesleft, ref outbuf, ref outbytesleft.GetPinnableReference());
@@ -1986,7 +1986,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
-        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, Span<nuint> inbytesleft, byte** outbuf, nuint* outbytesleft)
+        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* inbuf, Span<nuint> inbytesleft, byte** outbuf, nuint* outbytesleft)
         {
             // SpanOverloader
             return thisApi.Iconv(cd, in inbuf, ref inbytesleft.GetPinnableReference(), outbuf, outbytesleft);
@@ -1994,7 +1994,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
-        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, Span<nuint> inbytesleft, byte** outbuf, Span<nuint> outbytesleft)
+        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* inbuf, Span<nuint> inbytesleft, byte** outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
             return thisApi.Iconv(cd, in inbuf, ref inbytesleft.GetPinnableReference(), outbuf, ref outbytesleft.GetPinnableReference());
@@ -2002,7 +2002,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
-        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, Span<nuint> inbytesleft, ref byte* outbuf, nuint* outbytesleft)
+        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* inbuf, Span<nuint> inbytesleft, ref byte* outbuf, nuint* outbytesleft)
         {
             // SpanOverloader
             return thisApi.Iconv(cd, in inbuf, ref inbytesleft.GetPinnableReference(), ref outbuf, outbytesleft);
@@ -2010,7 +2010,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 695, Column 32 in SDL_stdinc.h")]
-        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* inbuf, Span<nuint> inbytesleft, ref byte* outbuf, Span<nuint> outbytesleft)
+        public static unsafe nuint Iconv(this Sdl thisApi, Icon* cd, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* inbuf, Span<nuint> inbytesleft, ref byte* outbuf, Span<nuint> outbytesleft)
         {
             // SpanOverloader
             return thisApi.Iconv(cd, in inbuf, ref inbytesleft.GetPinnableReference(), ref outbuf, ref outbytesleft.GetPinnableReference());
@@ -7154,7 +7154,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public static unsafe SdlBool VulkanGetInstanceExtensions(this Sdl thisApi, Window* window, Span<uint> pCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* pNames)
+        public static unsafe SdlBool VulkanGetInstanceExtensions(this Sdl thisApi, Window* window, Span<uint> pCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* pNames)
         {
             // SpanOverloader
             return thisApi.VulkanGetInstanceExtensions(window, ref pCount.GetPinnableReference(), in pNames);
