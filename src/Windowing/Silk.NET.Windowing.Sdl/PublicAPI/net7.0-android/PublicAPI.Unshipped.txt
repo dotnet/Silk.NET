@@ -1,4 +1,10 @@
 #nullable enable
+Org.Libsdl.App.HIDDeviceManager.HIDDeviceManager(nint javaReference, Android.Runtime.JniHandleOwnership transfer) -> void
+Org.Libsdl.App.SDL.SDL(nint javaReference, Android.Runtime.JniHandleOwnership transfer) -> void
+Org.Libsdl.App.SDLActivity.SDLActivity(nint javaReference, Android.Runtime.JniHandleOwnership transfer) -> void
+Org.Libsdl.App.SDLActivity.SDLCommandHandler.SDLCommandHandler(nint javaReference, Android.Runtime.JniHandleOwnership transfer) -> void
+Org.Libsdl.App.SDLAudioManager.SDLAudioManager(nint javaReference, Android.Runtime.JniHandleOwnership transfer) -> void
+Org.Libsdl.App.SDLControllerManager.SDLControllerManager(nint javaReference, Android.Runtime.JniHandleOwnership transfer) -> void
 Org.Libsdl.App.SDLSurface
 Org.Libsdl.App.SDLSurface.MDisplay.get -> Android.Views.Display?
 Org.Libsdl.App.SDLSurface.MDisplay.set -> void
@@ -11,9 +17,15 @@ Org.Libsdl.App.SDLSurface.MSensorManager.set -> void
 Org.Libsdl.App.SDLSurface.MWidth.get -> float
 Org.Libsdl.App.SDLSurface.MWidth.set -> void
 Org.Libsdl.App.SDLSurface.SDLSurface(Android.Content.Context? context) -> void
-Org.Libsdl.App.SDLSurface.SDLSurface(System.IntPtr javaReference, Android.Runtime.JniHandleOwnership transfer) -> void
+Org.Libsdl.App.SDLSurface.SDLSurface(nint javaReference, Android.Runtime.JniHandleOwnership transfer) -> void
+override Org.Libsdl.App.HIDDeviceManager.ThresholdClass.get -> nint
+override Org.Libsdl.App.SDL.ThresholdClass.get -> nint
+override Org.Libsdl.App.SDLActivity.SDLCommandHandler.ThresholdClass.get -> nint
+override Org.Libsdl.App.SDLActivity.ThresholdClass.get -> nint
+override Org.Libsdl.App.SDLAudioManager.ThresholdClass.get -> nint
+override Org.Libsdl.App.SDLControllerManager.ThresholdClass.get -> nint
 override Org.Libsdl.App.SDLSurface.JniPeerMembers.get -> Java.Interop.JniPeerMembers!
-override Org.Libsdl.App.SDLSurface.ThresholdClass.get -> System.IntPtr
+override Org.Libsdl.App.SDLSurface.ThresholdClass.get -> nint
 override Org.Libsdl.App.SDLSurface.ThresholdType.get -> System.Type!
 static Org.Libsdl.App.SDL.LoadLibrary(string? libraryName, Android.Content.Context? context) -> void
 static Org.Libsdl.App.SDLActivity.DestroyCustomCursor(int cursorID) -> void
