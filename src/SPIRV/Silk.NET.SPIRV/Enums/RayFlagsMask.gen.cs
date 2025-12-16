@@ -31,8 +31,6 @@ namespace Silk.NET.SPIRV
         CullOpaqueKhrMask = 0x40,
         [NativeName("Name", "SpvRayFlagsCullNoOpaqueKHRMask")]
         CullNoOpaqueKhrMask = 0x80,
-        [NativeName("Name", "SpvRayFlagsSkipBuiltinPrimitivesNVMask")]
-        SkipBuiltinPrimitivesNVMask = 0x100,
         [NativeName("Name", "SpvRayFlagsSkipTrianglesKHRMask")]
         SkipTrianglesKhrMask = 0x100,
         [NativeName("Name", "SpvRayFlagsSkipAABBsKHRMask")]

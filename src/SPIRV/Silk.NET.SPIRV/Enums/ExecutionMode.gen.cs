@@ -108,18 +108,12 @@ namespace Silk.NET.SPIRV
         RoundingModeRte = 0x116E,
         [NativeName("Name", "SpvExecutionModeRoundingModeRTZ")]
         RoundingModeRtz = 0x116F,
-        [NativeName("Name", "SpvExecutionModeNonCoherentTileAttachmentReadQCOM")]
-        NonCoherentTileAttachmentReadQCom = 0x1189,
-        [NativeName("Name", "SpvExecutionModeTileShadingRateQCOM")]
-        TileShadingRateQCom = 0x118A,
         [NativeName("Name", "SpvExecutionModeEarlyAndLateFragmentTestsAMD")]
         EarlyAndLateFragmentTestsAmd = 0x1399,
         [NativeName("Name", "SpvExecutionModeStencilRefReplacingEXT")]
         StencilRefReplacingExt = 0x13A3,
         [NativeName("Name", "SpvExecutionModeCoalescingAMDX")]
         CoalescingAmdx = 0x13CD,
-        [NativeName("Name", "SpvExecutionModeIsApiEntryAMDX")]
-        IsApiEntryAmdx = 0x13CE,
         [NativeName("Name", "SpvExecutionModeMaxNodeRecursionAMDX")]
         MaxNodeRecursionAmdx = 0x13CF,
         [NativeName("Name", "SpvExecutionModeStaticNumWorkgroupsAMDX")]
@@ -144,8 +138,6 @@ namespace Silk.NET.SPIRV
         QuadDerivativesKhr = 0x13E0,
         [NativeName("Name", "SpvExecutionModeRequireFullQuadsKHR")]
         RequireFullQuadsKhr = 0x13E1,
-        [NativeName("Name", "SpvExecutionModeSharesInputWithAMDX")]
-        SharesInputWithAmdx = 0x13EE,
         [NativeName("Name", "SpvExecutionModeOutputLinesEXT")]
         OutputLinesExt = 0x1495,
         [NativeName("Name", "SpvExecutionModeOutputLinesNV")]

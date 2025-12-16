@@ -28,7 +28,7 @@ namespace Silk.NET.SPIRV.Reflect
             Silk.NET.SPIRV.StorageClass? storageClass = null,
             byte* semantic = null,
             uint? decorationFlags = null,
-            int? builtIn = null,
+            Silk.NET.SPIRV.BuiltIn? builtIn = null,
             NumericTraits? numeric = null,
             ArrayTraits? array = null,
             uint? memberCount = null,
@@ -150,10 +150,10 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Name", "decoration_flags")]
         public uint DecorationFlags;
 
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
+        [NativeName("Type", "SpvBuiltIn")]
+        [NativeName("Type.Name", "SpvBuiltIn")]
         [NativeName("Name", "built_in")]
-        public int BuiltIn;
+        public Silk.NET.SPIRV.BuiltIn BuiltIn;
 
         [NativeName("Type", "SpvReflectNumericTraits")]
         [NativeName("Type.Name", "SpvReflectNumericTraits")]
@@ -185,8 +185,8 @@ namespace Silk.NET.SPIRV.Reflect
         [NativeName("Name", "type_description")]
         public TypeDescription* TypeDescription;
 
-        [NativeName("Type", "struct (unnamed struct at spirv_reflect.h:451:3)")]
-        [NativeName("Type.Name", "struct (unnamed struct at spirv_reflect.h:451:3)")]
+        [NativeName("Type", "struct (unnamed struct at spirv_reflect.h:447:3)")]
+        [NativeName("Type.Name", "struct (unnamed struct at spirv_reflect.h:447:3)")]
         [NativeName("Name", "word_offset")]
         public InterfaceVariableWordOffset WordOffset;
     }

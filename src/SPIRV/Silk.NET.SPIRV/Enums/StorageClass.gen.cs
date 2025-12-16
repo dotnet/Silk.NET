@@ -40,10 +40,10 @@ namespace Silk.NET.SPIRV
         StorageBuffer = 0xC,
         [NativeName("Name", "SpvStorageClassTileImageEXT")]
         TileImageExt = 0x104C,
-        [NativeName("Name", "SpvStorageClassTileAttachmentQCOM")]
-        TileAttachmentQCom = 0x118B,
         [NativeName("Name", "SpvStorageClassNodePayloadAMDX")]
         NodePayloadAmdx = 0x13CC,
+        [NativeName("Name", "SpvStorageClassNodeOutputPayloadAMDX")]
+        NodeOutputPayloadAmdx = 0x13D4,
         [NativeName("Name", "SpvStorageClassCallableDataKHR")]
         CallableDataKhr = 0x14D0,
         [NativeName("Name", "SpvStorageClassCallableDataNV")]

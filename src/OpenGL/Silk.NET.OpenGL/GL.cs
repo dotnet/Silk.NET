@@ -475,7 +475,7 @@ namespace Silk.NET.OpenGL
         {
             unsafe
             {
-                var length = @string.Length;
+                var length = Encoding.UTF8.GetByteCount(@string);
                 ShaderSource((uint) shader, 1, new[] { @string }, &length);
             }
         }

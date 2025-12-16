@@ -706,28 +706,6 @@ namespace Silk.NET.SPIRV
         DepthAttachmentReadExt = 0x1041,
         [NativeName("Name", "SpvOpStencilAttachmentReadEXT")]
         StencilAttachmentReadExt = 0x1042,
-        [NativeName("Name", "SpvOpTypeTensorARM")]
-        TypeTensorArm = 0x1043,
-        [NativeName("Name", "SpvOpTensorReadARM")]
-        TensorReadArm = 0x1044,
-        [NativeName("Name", "SpvOpTensorWriteARM")]
-        TensorWriteArm = 0x1045,
-        [NativeName("Name", "SpvOpTensorQuerySizeARM")]
-        TensorQuerySizeArm = 0x1046,
-        [NativeName("Name", "SpvOpGraphConstantARM")]
-        GraphConstantArm = 0x1055,
-        [NativeName("Name", "SpvOpGraphEntryPointARM")]
-        GraphEntryPointArm = 0x1056,
-        [NativeName("Name", "SpvOpGraphARM")]
-        GraphArm = 0x1057,
-        [NativeName("Name", "SpvOpGraphInputARM")]
-        GraphInputArm = 0x1058,
-        [NativeName("Name", "SpvOpGraphSetOutputARM")]
-        GraphSetOutputArm = 0x1059,
-        [NativeName("Name", "SpvOpGraphEndARM")]
-        GraphEndArm = 0x105A,
-        [NativeName("Name", "SpvOpTypeGraphARM")]
-        TypeGraphArm = 0x105E,
         [NativeName("Name", "SpvOpTerminateInvocation")]
         TerminateInvocation = 0x1140,
         [NativeName("Name", "SpvOpTypeUntypedPointerKHR")]
@@ -864,22 +842,12 @@ namespace Silk.NET.SPIRV
         FragmentFetchAmd = 0x1394,
         [NativeName("Name", "SpvOpReadClockKHR")]
         ReadClockKhr = 0x13C0,
-        [NativeName("Name", "SpvOpAllocateNodePayloadsAMDX")]
-        AllocateNodePayloadsAmdx = 0x13D2,
-        [NativeName("Name", "SpvOpEnqueueNodePayloadsAMDX")]
-        EnqueueNodePayloadsAmdx = 0x13D3,
-        [NativeName("Name", "SpvOpTypeNodePayloadArrayAMDX")]
-        TypeNodePayloadArrayAmdx = 0x13D4,
+        [NativeName("Name", "SpvOpFinalizeNodePayloadsAMDX")]
+        FinalizeNodePayloadsAmdx = 0x13D3,
         [NativeName("Name", "SpvOpFinishWritingNodePayloadAMDX")]
         FinishWritingNodePayloadAmdx = 0x13D6,
-        [NativeName("Name", "SpvOpNodePayloadArrayLengthAMDX")]
-        NodePayloadArrayLengthAmdx = 0x13E2,
-        [NativeName("Name", "SpvOpIsNodePayloadValidAMDX")]
-        IsNodePayloadValidAmdx = 0x13ED,
-        [NativeName("Name", "SpvOpConstantStringAMDX")]
-        ConstantStringAmdx = 0x13EF,
-        [NativeName("Name", "SpvOpSpecConstantStringAMDX")]
-        SpecConstantStringAmdx = 0x13F0,
+        [NativeName("Name", "SpvOpInitializeNodePayloadsAMDX")]
+        InitializeNodePayloadsAmdx = 0x13E2,
         [NativeName("Name", "SpvOpGroupNonUniformQuadAllKHR")]
         GroupNonUniformQuadAllKhr = 0x13F6,
         [NativeName("Name", "SpvOpGroupNonUniformQuadAnyKHR")]
@@ -952,18 +920,6 @@ namespace Silk.NET.SPIRV
         TypeHitObjectNV = 0x14A1,
         [NativeName("Name", "SpvOpImageSampleFootprintNV")]
         ImageSampleFootprintNV = 0x14A3,
-        [NativeName("Name", "SpvOpTypeCooperativeVectorNV")]
-        TypeCooperativeVectorNV = 0x14A8,
-        [NativeName("Name", "SpvOpCooperativeVectorMatrixMulNV")]
-        CooperativeVectorMatrixMulNV = 0x14A9,
-        [NativeName("Name", "SpvOpCooperativeVectorOuterProductAccumulateNV")]
-        CooperativeVectorOuterProductAccumulateNV = 0x14AA,
-        [NativeName("Name", "SpvOpCooperativeVectorReduceSumAccumulateNV")]
-        CooperativeVectorReduceSumAccumulateNV = 0x14AB,
-        [NativeName("Name", "SpvOpCooperativeVectorMatrixMulAddNV")]
-        CooperativeVectorMatrixMulAddNV = 0x14AC,
-        [NativeName("Name", "SpvOpCooperativeMatrixConvertNV")]
-        CooperativeMatrixConvertNV = 0x14AD,
         [NativeName("Name", "SpvOpEmitMeshTasksEXT")]
         EmitMeshTasksExt = 0x14AE,
         [NativeName("Name", "SpvOpSetMeshOutputsEXT")]
@@ -976,10 +932,6 @@ namespace Silk.NET.SPIRV
         FetchMicroTriangleVertexPositionNV = 0x14B4,
         [NativeName("Name", "SpvOpFetchMicroTriangleVertexBarycentricNV")]
         FetchMicroTriangleVertexBarycentricNV = 0x14B5,
-        [NativeName("Name", "SpvOpCooperativeVectorLoadNV")]
-        CooperativeVectorLoadNV = 0x14B6,
-        [NativeName("Name", "SpvOpCooperativeVectorStoreNV")]
-        CooperativeVectorStoreNV = 0x14B7,
         [NativeName("Name", "SpvOpReportIntersectionKHR")]
         ReportIntersectionKhr = 0x14D6,
         [NativeName("Name", "SpvOpReportIntersectionNV")]
@@ -1002,10 +954,6 @@ namespace Silk.NET.SPIRV
         TypeAccelerationStructureNV = 0x14DD,
         [NativeName("Name", "SpvOpExecuteCallableNV")]
         ExecuteCallableNV = 0x14E0,
-        [NativeName("Name", "SpvOpRayQueryGetClusterIdNV")]
-        RayQueryGetClusterIdNV = 0x14E1,
-        [NativeName("Name", "SpvOpHitObjectGetClusterIdNV")]
-        HitObjectGetClusterIdNV = 0x14E2,
         [NativeName("Name", "SpvOpTypeCooperativeMatrixNV")]
         TypeCooperativeMatrixNV = 0x14EE,
         [NativeName("Name", "SpvOpCooperativeMatrixLoadNV")]
@@ -1020,46 +968,12 @@ namespace Silk.NET.SPIRV
         BeginInvocationInterlockExt = 0x14F4,
         [NativeName("Name", "SpvOpEndInvocationInterlockEXT")]
         EndInvocationInterlockExt = 0x14F5,
-        [NativeName("Name", "SpvOpCooperativeMatrixReduceNV")]
-        CooperativeMatrixReduceNV = 0x14F6,
-        [NativeName("Name", "SpvOpCooperativeMatrixLoadTensorNV")]
-        CooperativeMatrixLoadTensorNV = 0x14F7,
-        [NativeName("Name", "SpvOpCooperativeMatrixStoreTensorNV")]
-        CooperativeMatrixStoreTensorNV = 0x14F8,
-        [NativeName("Name", "SpvOpCooperativeMatrixPerElementOpNV")]
-        CooperativeMatrixPerElementOpNV = 0x14F9,
-        [NativeName("Name", "SpvOpTypeTensorLayoutNV")]
-        TypeTensorLayoutNV = 0x14FA,
-        [NativeName("Name", "SpvOpTypeTensorViewNV")]
-        TypeTensorViewNV = 0x14FB,
-        [NativeName("Name", "SpvOpCreateTensorLayoutNV")]
-        CreateTensorLayoutNV = 0x14FC,
-        [NativeName("Name", "SpvOpTensorLayoutSetDimensionNV")]
-        TensorLayoutSetDimensionNV = 0x14FD,
-        [NativeName("Name", "SpvOpTensorLayoutSetStrideNV")]
-        TensorLayoutSetStrideNV = 0x14FE,
-        [NativeName("Name", "SpvOpTensorLayoutSliceNV")]
-        TensorLayoutSliceNV = 0x14FF,
-        [NativeName("Name", "SpvOpTensorLayoutSetClampValueNV")]
-        TensorLayoutSetClampValueNV = 0x1500,
-        [NativeName("Name", "SpvOpCreateTensorViewNV")]
-        CreateTensorViewNV = 0x1501,
-        [NativeName("Name", "SpvOpTensorViewSetDimensionNV")]
-        TensorViewSetDimensionNV = 0x1502,
-        [NativeName("Name", "SpvOpTensorViewSetStrideNV")]
-        TensorViewSetStrideNV = 0x1503,
         [NativeName("Name", "SpvOpDemoteToHelperInvocation")]
         DemoteToHelperInvocation = 0x1504,
         [NativeName("Name", "SpvOpDemoteToHelperInvocationEXT")]
         DemoteToHelperInvocationExt = 0x1504,
         [NativeName("Name", "SpvOpIsHelperInvocationEXT")]
         IsHelperInvocationExt = 0x1505,
-        [NativeName("Name", "SpvOpTensorViewSetClipNV")]
-        TensorViewSetClipNV = 0x1506,
-        [NativeName("Name", "SpvOpTensorLayoutSetBlockSizeNV")]
-        TensorLayoutSetBlockSizeNV = 0x1508,
-        [NativeName("Name", "SpvOpCooperativeMatrixTransposeNV")]
-        CooperativeMatrixTransposeNV = 0x150E,
         [NativeName("Name", "SpvOpConvertUToImageNV")]
         ConvertUToImageNV = 0x150F,
         [NativeName("Name", "SpvOpConvertUToSamplerNV")]
@@ -1076,32 +990,6 @@ namespace Silk.NET.SPIRV
         SamplerImageAddressingModeNV = 0x1515,
         [NativeName("Name", "SpvOpRawAccessChainNV")]
         RawAccessChainNV = 0x1516,
-        [NativeName("Name", "SpvOpRayQueryGetIntersectionSpherePositionNV")]
-        RayQueryGetIntersectionSpherePositionNV = 0x1533,
-        [NativeName("Name", "SpvOpRayQueryGetIntersectionSphereRadiusNV")]
-        RayQueryGetIntersectionSphereRadiusNV = 0x1534,
-        [NativeName("Name", "SpvOpRayQueryGetIntersectionLSSPositionsNV")]
-        RayQueryGetIntersectionLssPositionsNV = 0x1535,
-        [NativeName("Name", "SpvOpRayQueryGetIntersectionLSSRadiiNV")]
-        RayQueryGetIntersectionLssRadiiNV = 0x1536,
-        [NativeName("Name", "SpvOpRayQueryGetIntersectionLSSHitValueNV")]
-        RayQueryGetIntersectionLssHitValueNV = 0x1537,
-        [NativeName("Name", "SpvOpHitObjectGetSpherePositionNV")]
-        HitObjectGetSpherePositionNV = 0x1538,
-        [NativeName("Name", "SpvOpHitObjectGetSphereRadiusNV")]
-        HitObjectGetSphereRadiusNV = 0x1539,
-        [NativeName("Name", "SpvOpHitObjectGetLSSPositionsNV")]
-        HitObjectGetLssPositionsNV = 0x153A,
-        [NativeName("Name", "SpvOpHitObjectGetLSSRadiiNV")]
-        HitObjectGetLssRadiiNV = 0x153B,
-        [NativeName("Name", "SpvOpHitObjectIsSphereHitNV")]
-        HitObjectIsSphereHitNV = 0x153C,
-        [NativeName("Name", "SpvOpHitObjectIsLSSHitNV")]
-        HitObjectIsLssHitNV = 0x153D,
-        [NativeName("Name", "SpvOpRayQueryIsSphereHitNV")]
-        RayQueryIsSphereHitNV = 0x153E,
-        [NativeName("Name", "SpvOpRayQueryIsLSSHitNV")]
-        RayQueryIsLssHitNV = 0x153F,
         [NativeName("Name", "SpvOpSubgroupShuffleINTEL")]
         SubgroupShuffleIntel = 0x15C3,
         [NativeName("Name", "SpvOpSubgroupShuffleDownINTEL")]
@@ -1594,34 +1482,8 @@ namespace Silk.NET.SPIRV
         ControlBarrierArriveIntel = 0x17FE,
         [NativeName("Name", "SpvOpControlBarrierWaitINTEL")]
         ControlBarrierWaitIntel = 0x17FF,
-        [NativeName("Name", "SpvOpArithmeticFenceEXT")]
-        ArithmeticFenceExt = 0x1801,
-        [NativeName("Name", "SpvOpTaskSequenceCreateINTEL")]
-        TaskSequenceCreateIntel = 0x1813,
-        [NativeName("Name", "SpvOpTaskSequenceAsyncINTEL")]
-        TaskSequenceAsyncIntel = 0x1814,
-        [NativeName("Name", "SpvOpTaskSequenceGetINTEL")]
-        TaskSequenceGetIntel = 0x1815,
-        [NativeName("Name", "SpvOpTaskSequenceReleaseINTEL")]
-        TaskSequenceReleaseIntel = 0x1816,
-        [NativeName("Name", "SpvOpTypeTaskSequenceINTEL")]
-        TypeTaskSequenceIntel = 0x1837,
         [NativeName("Name", "SpvOpSubgroupBlockPrefetchINTEL")]
         SubgroupBlockPrefetchIntel = 0x184D,
-        [NativeName("Name", "SpvOpSubgroup2DBlockLoadINTEL")]
-        Subgroup2DBlockLoadIntel = 0x1857,
-        [NativeName("Name", "SpvOpSubgroup2DBlockLoadTransformINTEL")]
-        Subgroup2DBlockLoadTransformIntel = 0x1858,
-        [NativeName("Name", "SpvOpSubgroup2DBlockLoadTransposeINTEL")]
-        Subgroup2DBlockLoadTransposeIntel = 0x1859,
-        [NativeName("Name", "SpvOpSubgroup2DBlockPrefetchINTEL")]
-        Subgroup2DBlockPrefetchIntel = 0x185A,
-        [NativeName("Name", "SpvOpSubgroup2DBlockStoreINTEL")]
-        Subgroup2DBlockStoreIntel = 0x185B,
-        [NativeName("Name", "SpvOpSubgroupMatrixMultiplyAccumulateINTEL")]
-        SubgroupMatrixMultiplyAccumulateIntel = 0x185D,
-        [NativeName("Name", "SpvOpBitwiseFunctionINTEL")]
-        BitwiseFunctionIntel = 0x1862,
         [NativeName("Name", "SpvOpGroupIMulKHR")]
         GroupIMulKhr = 0x1901,
         [NativeName("Name", "SpvOpGroupFMulKHR")]
@@ -1638,18 +1500,10 @@ namespace Silk.NET.SPIRV
         GroupLogicalOrKhr = 0x1907,
         [NativeName("Name", "SpvOpGroupLogicalXorKHR")]
         GroupLogicalXorKhr = 0x1908,
-        [NativeName("Name", "SpvOpRoundFToTF32INTEL")]
-        RoundFToTF32intel = 0x191A,
         [NativeName("Name", "SpvOpMaskedGatherINTEL")]
         MaskedGatherIntel = 0x191C,
         [NativeName("Name", "SpvOpMaskedScatterINTEL")]
         MaskedScatterIntel = 0x191D,
-        [NativeName("Name", "SpvOpConvertHandleToImageINTEL")]
-        ConvertHandleToImageIntel = 0x1981,
-        [NativeName("Name", "SpvOpConvertHandleToSamplerINTEL")]
-        ConvertHandleToSamplerIntel = 0x1982,
-        [NativeName("Name", "SpvOpConvertHandleToSampledImageINTEL")]
-        ConvertHandleToSampledImageIntel = 0x1983,
         [NativeName("Name", "SpvOpMax")]
         Max = 0x7FFFFFFF,
     }

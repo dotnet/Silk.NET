@@ -106,8 +106,6 @@ namespace Silk.NET.SPIRV
         AlignmentId = 0x2E,
         [NativeName("Name", "SpvDecorationMaxByteOffsetId")]
         MaxByteOffsetId = 0x2F,
-        [NativeName("Name", "SpvDecorationSaturatedToLargestFloat8NormalConversionEXT")]
-        SaturatedToLargestFloat8NormalConversionExt = 0x1078,
         [NativeName("Name", "SpvDecorationNoSignedWrap")]
         NoSignedWrap = 0x1175,
         [NativeName("Name", "SpvDecorationNoUnsignedWrap")]
@@ -128,14 +126,6 @@ namespace Silk.NET.SPIRV
         TrackFinishWritingAmdx = 0x13D6,
         [NativeName("Name", "SpvDecorationPayloadNodeNameAMDX")]
         PayloadNodeNameAmdx = 0x13E3,
-        [NativeName("Name", "SpvDecorationPayloadNodeBaseIndexAMDX")]
-        PayloadNodeBaseIndexAmdx = 0x13EA,
-        [NativeName("Name", "SpvDecorationPayloadNodeSparseArrayAMDX")]
-        PayloadNodeSparseArrayAmdx = 0x13EB,
-        [NativeName("Name", "SpvDecorationPayloadNodeArraySizeAMDX")]
-        PayloadNodeArraySizeAmdx = 0x13EC,
-        [NativeName("Name", "SpvDecorationPayloadDispatchIndirectAMDX")]
-        PayloadDispatchIndirectAmdx = 0x13F1,
         [NativeName("Name", "SpvDecorationOverrideCoverageNV")]
         OverrideCoverageNV = 0x1480,
         [NativeName("Name", "SpvDecorationPassthroughNV")]

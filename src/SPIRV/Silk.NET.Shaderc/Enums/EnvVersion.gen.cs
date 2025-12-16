@@ -21,8 +21,6 @@ namespace Silk.NET.Shaderc
         Vulkan12 = 0x402000,
         [NativeName("Name", "shaderc_env_version_vulkan_1_3")]
         Vulkan13 = 0x403000,
-        [NativeName("Name", "shaderc_env_version_vulkan_1_4")]
-        Vulkan14 = 0x404000,
         [NativeName("Name", "shaderc_env_version_opengl_4_5")]
         Opengl45 = 0x1C2,
         [NativeName("Name", "shaderc_env_version_webgpu")]
