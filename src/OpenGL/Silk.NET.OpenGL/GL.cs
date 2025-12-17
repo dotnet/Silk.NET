@@ -7,6 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using System.Text;
 using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
