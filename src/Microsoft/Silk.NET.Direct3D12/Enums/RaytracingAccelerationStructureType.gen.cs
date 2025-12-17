@@ -18,9 +18,14 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"BottomLevel\"")]
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL")]
         RaytracingAccelerationStructureTypeBottomLevel = 0x1,
+        [Obsolete("Deprecated in favour of \"OpacityMicromapArray\"")]
+        [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE_OPACITY_MICROMAP_ARRAY")]
+        RaytracingAccelerationStructureTypeOpacityMicromapArray = 0x2,
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL")]
         TopLevel = 0x0,
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL")]
         BottomLevel = 0x1,
+        [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE_OPACITY_MICROMAP_ARRAY")]
+        OpacityMicromapArray = 0x2,
     }
 }

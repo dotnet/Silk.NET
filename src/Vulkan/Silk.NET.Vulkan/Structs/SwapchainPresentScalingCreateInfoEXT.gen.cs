@@ -17,15 +17,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainPresentScalingCreateInfoEXT")]
+    [NativeName("AliasOf", "VkSwapchainPresentScalingCreateInfoKHR")]
     public unsafe partial struct SwapchainPresentScalingCreateInfoEXT : IExtendsChain<SwapchainCreateInfoKHR>
     {
         public SwapchainPresentScalingCreateInfoEXT
         (
-            StructureType? sType = StructureType.SwapchainPresentScalingCreateInfoExt,
+            StructureType? sType = StructureType.SwapchainPresentScalingCreateInfoKhr,
             void* pNext = null,
-            PresentScalingFlagsEXT? scalingBehavior = null,
-            PresentGravityFlagsEXT? presentGravityX = null,
-            PresentGravityFlagsEXT? presentGravityY = null
+            PresentScalingFlagsKHR? scalingBehavior = null,
+            PresentGravityFlagsKHR? presentGravityX = null,
+            PresentGravityFlagsKHR? presentGravityY = null
         ) : this()
         {
             if (sType is not null)
@@ -65,25 +66,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPresentScalingFlagsEXT")]
-        [NativeName("Type.Name", "VkPresentScalingFlagsEXT")]
+        [NativeName("Type", "VkPresentScalingFlagsKHR")]
+        [NativeName("Type.Name", "VkPresentScalingFlagsKHR")]
         [NativeName("Name", "scalingBehavior")]
-        public PresentScalingFlagsEXT ScalingBehavior;
+        public PresentScalingFlagsKHR ScalingBehavior;
 /// <summary></summary>
-        [NativeName("Type", "VkPresentGravityFlagsEXT")]
-        [NativeName("Type.Name", "VkPresentGravityFlagsEXT")]
+        [NativeName("Type", "VkPresentGravityFlagsKHR")]
+        [NativeName("Type.Name", "VkPresentGravityFlagsKHR")]
         [NativeName("Name", "presentGravityX")]
-        public PresentGravityFlagsEXT PresentGravityX;
+        public PresentGravityFlagsKHR PresentGravityX;
 /// <summary></summary>
-        [NativeName("Type", "VkPresentGravityFlagsEXT")]
-        [NativeName("Type.Name", "VkPresentGravityFlagsEXT")]
+        [NativeName("Type", "VkPresentGravityFlagsKHR")]
+        [NativeName("Type.Name", "VkPresentGravityFlagsKHR")]
         [NativeName("Name", "presentGravityY")]
-        public PresentGravityFlagsEXT PresentGravityY;
+        public PresentGravityFlagsKHR PresentGravityY;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.SwapchainPresentScalingCreateInfoExt;
+            return SType = StructureType.SwapchainPresentScalingCreateInfoKhr;
         }
 
         /// <inheritdoc />

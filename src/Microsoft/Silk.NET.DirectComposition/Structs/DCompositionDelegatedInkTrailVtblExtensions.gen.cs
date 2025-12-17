@@ -106,7 +106,7 @@ public unsafe static class DCompositionDelegatedInkTrailVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddTrailPoints(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, uint* generationId)
+    public static unsafe int AddTrailPoints(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, uint* generationId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DCompositionDelegatedInkTrailVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddTrailPoints(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, ref uint generationId)
+    public static int AddTrailPoints(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, ref uint generationId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -154,7 +154,7 @@ public unsafe static class DCompositionDelegatedInkTrailVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
+    public static unsafe int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class DCompositionDelegatedInkTrailVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
+    public static unsafe int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -181,7 +181,7 @@ public unsafe static class DCompositionDelegatedInkTrailVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
+    public static unsafe int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -193,7 +193,7 @@ public unsafe static class DCompositionDelegatedInkTrailVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
+    public static unsafe int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] InkTrailPoint* predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -208,7 +208,7 @@ public unsafe static class DCompositionDelegatedInkTrailVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
+    public static unsafe int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, uint* generationId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -223,7 +223,7 @@ public unsafe static class DCompositionDelegatedInkTrailVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
+    public static int AddTrailPointsWithPrediction(this ComPtr<IDCompositionDelegatedInkTrail> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint inkPoints, uint inkPointsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InkTrailPoint predictedInkPoints, uint predictedInkPointsCount, ref uint generationId)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

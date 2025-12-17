@@ -15,10 +15,15 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"MemcpyExt\"")]
-        [NativeName("Name", "VK_HOST_IMAGE_COPY_MEMCPY_EXT")]
-        HostImageCopyMemcpyExt = 1,
-        [NativeName("Name", "VK_HOST_IMAGE_COPY_MEMCPY_EXT")]
-        MemcpyExt = 1,
+        [Obsolete("Deprecated in favour of \"MemcpyBit\"")]
+        [NativeName("Name", "VK_HOST_IMAGE_COPY_MEMCPY_BIT")]
+        HostImageCopyMemcpyBit = 1,
+        [Obsolete("Deprecated in favour of \"Memcpy\"")]
+        [NativeName("Name", "VK_HOST_IMAGE_COPY_MEMCPY")]
+        HostImageCopyMemcpy = 1,
+        [NativeName("Name", "VK_HOST_IMAGE_COPY_MEMCPY_BIT")]
+        MemcpyBit = 1,
+        [NativeName("Name", "VK_HOST_IMAGE_COPY_MEMCPY")]
+        Memcpy = 1,
     }
 }

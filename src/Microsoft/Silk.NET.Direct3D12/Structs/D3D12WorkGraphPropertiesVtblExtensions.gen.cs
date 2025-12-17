@@ -122,7 +122,7 @@ public unsafe static class D3D12WorkGraphPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetWorkGraphIndex(this ComPtr<ID3D12WorkGraphProperties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pProgramName)
+    public static uint GetWorkGraphIndex(this ComPtr<ID3D12WorkGraphProperties> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pProgramName)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
@@ -235,6 +235,15 @@ public unsafe static class D3D12WorkGraphPropertiesVtblExtensions
         {
             ((delegate* unmanaged[Stdcall]<ID3D12WorkGraphProperties*, uint, WorkGraphMemoryRequirements*, void>)@this->LpVtbl[14])(@this, WorkGraphIndex, pWorkGraphMemoryRequirementsPtr);
         }
+    }
+
+    /// <summary>To be documented.</summary>
+    public static uint GetEntrypointRecordAlignmentInBytes(this ComPtr<ID3D12WorkGraphProperties> thisVtbl, uint WorkGraphIndex, uint EntrypointIndex)
+    {
+        var @this = thisVtbl.Handle;
+        uint ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12WorkGraphProperties*, uint, uint, uint>)@this->LpVtbl[15])(@this, WorkGraphIndex, EntrypointIndex);
+        return ret;
     }
 
     /// <summary>To be documented.</summary>

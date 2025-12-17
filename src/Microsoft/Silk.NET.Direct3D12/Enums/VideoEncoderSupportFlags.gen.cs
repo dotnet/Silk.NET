@@ -61,6 +61,33 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"RateControlQualityVSSpeedAvailable\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_QUALITY_VS_SPEED_AVAILABLE")]
         VideoEncoderSupportFlagRateControlQualityVSSpeedAvailable = 0x4000,
+        [Obsolete("Deprecated in favour of \"ReadableReconstructedPictureLayoutAvailable\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_READABLE_RECONSTRUCTED_PICTURE_LAYOUT_AVAILABLE")]
+        VideoEncoderSupportFlagReadableReconstructedPictureLayoutAvailable = 0x8000,
+        [Obsolete("Deprecated in favour of \"PerBlockQPMapMetadataAvailable\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_PER_BLOCK_QP_MAP_METADATA_AVAILABLE")]
+        VideoEncoderSupportFlagPerBlockQPMapMetadataAvailable = 0x10000,
+        [Obsolete("Deprecated in favour of \"PerBlockSatdMapMetadataAvailable\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_PER_BLOCK_SATD_MAP_METADATA_AVAILABLE")]
+        VideoEncoderSupportFlagPerBlockSatdMapMetadataAvailable = 0x20000,
+        [Obsolete("Deprecated in favour of \"PerBlockRCBitAllocationMapMetadataAvailable\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_PER_BLOCK_RC_BIT_ALLOCATION_MAP_METADATA_AVAILABLE")]
+        VideoEncoderSupportFlagPerBlockRCBitAllocationMapMetadataAvailable = 0x40000,
+        [Obsolete("Deprecated in favour of \"SubregionNotificationArrayOfBuffersAvailable\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_SUBREGION_NOTIFICATION_ARRAY_OF_BUFFERS_AVAILABLE")]
+        VideoEncoderSupportFlagSubregionNotificationArrayOfBuffersAvailable = 0x80000,
+        [Obsolete("Deprecated in favour of \"SubregionNotificationSingleBufferAvailable\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_SUBREGION_NOTIFICATION_SINGLE_BUFFER_AVAILABLE")]
+        VideoEncoderSupportFlagSubregionNotificationSingleBufferAvailable = 0x100000,
+        [Obsolete("Deprecated in favour of \"FramePsnrMetadataAvailable\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_FRAME_PSNR_METADATA_AVAILABLE")]
+        VideoEncoderSupportFlagFramePsnrMetadataAvailable = 0x200000,
+        [Obsolete("Deprecated in favour of \"SubregionsPsnrMetadataAvailable\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_SUBREGIONS_PSNR_METADATA_AVAILABLE")]
+        VideoEncoderSupportFlagSubregionsPsnrMetadataAvailable = 0x400000,
+        [Obsolete("Deprecated in favour of \"RateControlSpatialAdaptiveQPAvailable\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_SPATIAL_ADAPTIVE_QP_AVAILABLE")]
+        VideoEncoderSupportFlagRateControlSpatialAdaptiveQPAvailable = 0x800000,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_GENERAL_SUPPORT_OK")]
@@ -93,5 +120,23 @@ namespace Silk.NET.Direct3D12
         RateControlExtension1Support = 0x2000,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_QUALITY_VS_SPEED_AVAILABLE")]
         RateControlQualityVSSpeedAvailable = 0x4000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_READABLE_RECONSTRUCTED_PICTURE_LAYOUT_AVAILABLE")]
+        ReadableReconstructedPictureLayoutAvailable = 0x8000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_PER_BLOCK_QP_MAP_METADATA_AVAILABLE")]
+        PerBlockQPMapMetadataAvailable = 0x10000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_PER_BLOCK_SATD_MAP_METADATA_AVAILABLE")]
+        PerBlockSatdMapMetadataAvailable = 0x20000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_PER_BLOCK_RC_BIT_ALLOCATION_MAP_METADATA_AVAILABLE")]
+        PerBlockRCBitAllocationMapMetadataAvailable = 0x40000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_SUBREGION_NOTIFICATION_ARRAY_OF_BUFFERS_AVAILABLE")]
+        SubregionNotificationArrayOfBuffersAvailable = 0x80000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_SUBREGION_NOTIFICATION_SINGLE_BUFFER_AVAILABLE")]
+        SubregionNotificationSingleBufferAvailable = 0x100000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_FRAME_PSNR_METADATA_AVAILABLE")]
+        FramePsnrMetadataAvailable = 0x200000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_SUBREGIONS_PSNR_METADATA_AVAILABLE")]
+        SubregionsPsnrMetadataAvailable = 0x400000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_SUPPORT_FLAG_RATE_CONTROL_SPATIAL_ADAPTIVE_QP_AVAILABLE")]
+        RateControlSpatialAdaptiveQPAvailable = 0x800000,
     }
 }

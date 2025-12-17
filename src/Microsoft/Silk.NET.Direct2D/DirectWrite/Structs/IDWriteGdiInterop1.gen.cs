@@ -135,7 +135,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateFontFromLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, IDWriteFont** font) where T0 : unmanaged
+        public readonly unsafe int CreateFontFromLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, IDWriteFont** font) where T0 : unmanaged
         {
             var @this = (IDWriteGdiInterop1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -147,7 +147,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateFontFromLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, ref IDWriteFont* font) where T0 : unmanaged
+        public readonly unsafe int CreateFontFromLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, ref IDWriteFont* font) where T0 : unmanaged
         {
             var @this = (IDWriteGdiInterop1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -456,7 +456,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFontsByLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, IDWriteFontSet* fontSet, IDWriteFontSet** filteredSet) where T0 : unmanaged
+        public readonly unsafe int GetMatchingFontsByLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, IDWriteFontSet* fontSet, IDWriteFontSet** filteredSet) where T0 : unmanaged
         {
             var @this = (IDWriteGdiInterop1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -468,7 +468,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFontsByLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, IDWriteFontSet* fontSet, ref IDWriteFontSet* filteredSet) where T0 : unmanaged
+        public readonly unsafe int GetMatchingFontsByLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, IDWriteFontSet* fontSet, ref IDWriteFontSet* filteredSet) where T0 : unmanaged
         {
             var @this = (IDWriteGdiInterop1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -483,7 +483,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFontsByLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, ref IDWriteFontSet fontSet, IDWriteFontSet** filteredSet) where T0 : unmanaged
+        public readonly unsafe int GetMatchingFontsByLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, ref IDWriteFontSet fontSet, IDWriteFontSet** filteredSet) where T0 : unmanaged
         {
             var @this = (IDWriteGdiInterop1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -498,7 +498,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFontsByLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, ref IDWriteFontSet fontSet, ref IDWriteFontSet* filteredSet) where T0 : unmanaged
+        public readonly unsafe int GetMatchingFontsByLOGFONT<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, ref IDWriteFontSet fontSet, ref IDWriteFontSet* filteredSet) where T0 : unmanaged
         {
             var @this = (IDWriteGdiInterop1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -533,7 +533,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateFontFromLOGFONT<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, ref ComPtr<TI0> font) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
+        public readonly int CreateFontFromLOGFONT<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, ref ComPtr<TI0> font) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFont>, IComVtbl<TI0>
         {
             var @this = (IDWriteGdiInterop1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -645,7 +645,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMatchingFontsByLOGFONT<T0, TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, ComPtr<TI0> fontSet, ref ComPtr<TI1> filteredSet) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI1>
+        public readonly int GetMatchingFontsByLOGFONT<T0, TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, ComPtr<TI0> fontSet, ref ComPtr<TI1> filteredSet) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI1>
         {
             var @this = (IDWriteGdiInterop1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -653,7 +653,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMatchingFontsByLOGFONT<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, ComPtr<TI0> fontSet, ref IDWriteFontSet* filteredSet) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0>
+        public readonly unsafe int GetMatchingFontsByLOGFONT<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, ComPtr<TI0> fontSet, ref IDWriteFontSet* filteredSet) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0>
         {
             var @this = (IDWriteGdiInterop1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -661,7 +661,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMatchingFontsByLOGFONT<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 logFont, ref IDWriteFontSet fontSet, ref ComPtr<TI0> filteredSet) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0>
+        public readonly int GetMatchingFontsByLOGFONT<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 logFont, ref IDWriteFontSet fontSet, ref ComPtr<TI0> filteredSet) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontSet>, IComVtbl<TI0>
         {
             var @this = (IDWriteGdiInterop1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

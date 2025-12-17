@@ -4,11 +4,11 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <LangVersion>9</LangVersion>
+        <LangVersion>preview</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="BenchmarkDotNet" Version="0.13.10" />
+      <PackageReference Include="BenchmarkDotNet" Version="0.15.2" />
     </ItemGroup>
 
     <ItemGroup>

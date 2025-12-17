@@ -92,7 +92,7 @@ public unsafe static class DStorageQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void EnqueueRequest(this ComPtr<IDStorageQueue> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Request request)
+    public static void EnqueueRequest(this ComPtr<IDStorageQueue> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Request request)
     {
         var @this = thisVtbl.Handle;
         fixed (Request* requestPtr = &request)

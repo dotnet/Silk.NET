@@ -106,7 +106,7 @@ public unsafe static class PropertySetStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Create(this ComPtr<IPropertySetStorage> thisVtbl, Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, IPropertyStorage** ppprstg)
+    public static unsafe int Create(this ComPtr<IPropertySetStorage> thisVtbl, Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, IPropertyStorage** ppprstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class PropertySetStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Create(this ComPtr<IPropertySetStorage> thisVtbl, Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, ref IPropertyStorage* ppprstg)
+    public static unsafe int Create(this ComPtr<IPropertySetStorage> thisVtbl, Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, ref IPropertyStorage* ppprstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class PropertySetStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Create(this ComPtr<IPropertySetStorage> thisVtbl, ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, IPropertyStorage** ppprstg)
+    public static unsafe int Create(this ComPtr<IPropertySetStorage> thisVtbl, ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, IPropertyStorage** ppprstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class PropertySetStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Create(this ComPtr<IPropertySetStorage> thisVtbl, ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, ref IPropertyStorage* ppprstg)
+    public static unsafe int Create(this ComPtr<IPropertySetStorage> thisVtbl, ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, ref IPropertyStorage* ppprstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -324,7 +324,7 @@ public unsafe static class PropertySetStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Create<TI0>(this ComPtr<IPropertySetStorage> thisVtbl, Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, ref ComPtr<TI0> ppprstg) where TI0 : unmanaged, IComVtbl<IPropertyStorage>, IComVtbl<TI0>
+    public static unsafe int Create<TI0>(this ComPtr<IPropertySetStorage> thisVtbl, Guid* rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, ref ComPtr<TI0> ppprstg) where TI0 : unmanaged, IComVtbl<IPropertyStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -372,7 +372,7 @@ public unsafe static class PropertySetStorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Create<TI0>(this ComPtr<IPropertySetStorage> thisVtbl, ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pclsid, uint grfFlags, uint grfMode, ref ComPtr<TI0> ppprstg) where TI0 : unmanaged, IComVtbl<IPropertyStorage>, IComVtbl<TI0>
+    public static int Create<TI0>(this ComPtr<IPropertySetStorage> thisVtbl, ref Guid rfmtid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pclsid, uint grfFlags, uint grfMode, ref ComPtr<TI0> ppprstg) where TI0 : unmanaged, IComVtbl<IPropertyStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

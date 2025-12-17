@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkResolveImageInfo2KHR")]
     [NativeName("AliasOf", "VkResolveImageInfo2")]
-    public unsafe partial struct ResolveImageInfo2KHR : IChainable
+    public unsafe partial struct ResolveImageInfo2KHR : IChainStart
     {
         public ResolveImageInfo2KHR
         (
@@ -125,6 +125,18 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref ResolveImageInfo2KHR Chain(
+            out ResolveImageInfo2KHR capture)
+        {
+            capture = new ResolveImageInfo2KHR(StructureType.ResolveImageInfo2);
+            return ref capture;
         }
     }
 }

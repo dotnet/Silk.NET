@@ -31,12 +31,12 @@ namespace Silk.NET.Vulkan.Extensions.QNX
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetScreenBufferPropertiesQNX", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetScreenBufferPropertiesQnx<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ScreenBufferPropertiesQNX* pProperties) where T0 : unmanaged;
+        public unsafe partial Result GetScreenBufferPropertiesQnx<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ScreenBufferPropertiesQNX* pProperties) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.ScreenBufferPropertiesQnx);")]
         [NativeApi(EntryPoint = "vkGetScreenBufferPropertiesQNX", Convention = CallingConvention.Winapi)]
-        public partial Result GetScreenBufferPropertiesQnx<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ScreenBufferPropertiesQNX pProperties) where T0 : unmanaged;
+        public partial Result GetScreenBufferPropertiesQnx<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out ScreenBufferPropertiesQNX pProperties) where T0 : unmanaged;
 
         public QnxExternalMemoryScreenBuffer(INativeContext ctx)
             : base(ctx)

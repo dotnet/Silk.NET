@@ -90,9 +90,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MesaHoneykrisp\"")]
         [NativeName("Name", "VK_DRIVER_ID_MESA_HONEYKRISP")]
         DriverIDMesaHoneykrisp = 26,
-        [Obsolete("Deprecated in favour of \"Reserved27\"")]
-        [NativeName("Name", "VK_DRIVER_ID_RESERVED_27")]
-        DriverIDReserved27 = 27,
+        [Obsolete("Deprecated in favour of \"VulkanSCEmulationOnVulkan\"")]
+        [NativeName("Name", "VK_DRIVER_ID_VULKAN_SC_EMULATION_ON_VULKAN")]
+        DriverIDVulkanSCEmulationOnVulkan = 27,
+        [Obsolete("Deprecated in favour of \"MesaKosmickrisp\"")]
+        [NativeName("Name", "VK_DRIVER_ID_MESA_KOSMICKRISP")]
+        DriverIDMesaKosmickrisp = 28,
         [NativeName("Name", "VK_DRIVER_ID_AMD_PROPRIETARY")]
         AmdProprietary = 1,
         [NativeName("Name", "VK_DRIVER_ID_AMD_OPEN_SOURCE")]
@@ -145,7 +148,9 @@ namespace Silk.NET.Vulkan
         ImaginationOpenSourceMesa = 25,
         [NativeName("Name", "VK_DRIVER_ID_MESA_HONEYKRISP")]
         MesaHoneykrisp = 26,
-        [NativeName("Name", "VK_DRIVER_ID_RESERVED_27")]
-        Reserved27 = 27,
+        [NativeName("Name", "VK_DRIVER_ID_VULKAN_SC_EMULATION_ON_VULKAN")]
+        VulkanSCEmulationOnVulkan = 27,
+        [NativeName("Name", "VK_DRIVER_ID_MESA_KOSMICKRISP")]
+        MesaKosmickrisp = 28,
     }
 }

@@ -17,6 +17,178 @@ namespace Silk.NET.Vulkan
     public static class VkOverloads
     {
         /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindDescriptorSets2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BindDescriptorSetsInfo> pBindDescriptorSetsInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdBindDescriptorSets2(commandBuffer, in pBindDescriptorSetsInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushConstants2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PushConstantsInfo> pPushConstantsInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdPushConstants2(commandBuffer, in pPushConstantsInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushDescriptorSet(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<WriteDescriptorSet> pDescriptorWrites)
+        {
+            // SpanOverloader
+            thisApi.CmdPushDescriptorSet(commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, in pDescriptorWrites.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushDescriptorSet2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PushDescriptorSetInfo> pPushDescriptorSetInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdPushDescriptorSet2(commandBuffer, in pPushDescriptorSetInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushDescriptorSetWithTemplate<T0>(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.CmdPushDescriptorSetWithTemplate(commandBuffer, descriptorUpdateTemplate, layout, set, ref pData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushDescriptorSetWithTemplate2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PushDescriptorSetWithTemplateInfo> pPushDescriptorSetWithTemplateInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdPushDescriptorSetWithTemplate2(commandBuffer, in pPushDescriptorSetWithTemplateInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetRenderingAttachmentLocation(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingAttachmentLocationInfo> pLocationInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdSetRenderingAttachmentLocation(commandBuffer, in pLocationInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetRenderingInputAttachmentIndices(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingInputAttachmentIndexInfo> pInputAttachmentIndexInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdSetRenderingInputAttachmentIndices(commandBuffer, in pInputAttachmentIndexInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetRenderingAreaGranularity(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Extent2D> pGranularity)
+        {
+            // SpanOverloader
+            thisApi.GetRenderingAreaGranularity(device, pRenderingAreaInfo, out pGranularity.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetRenderingAreaGranularity(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingAreaInfo> pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity)
+        {
+            // SpanOverloader
+            thisApi.GetRenderingAreaGranularity(device, in pRenderingAreaInfo.GetPinnableReference(), pGranularity);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetRenderingAreaGranularity(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderingAreaInfo> pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Extent2D> pGranularity)
+        {
+            // SpanOverloader
+            thisApi.GetRenderingAreaGranularity(device, in pRenderingAreaInfo.GetPinnableReference(), out pGranularity.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CopyImageToImage(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyImageToImageInfo> pCopyImageToImageInfo)
+        {
+            // SpanOverloader
+            return thisApi.CopyImageToImage(device, in pCopyImageToImageInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CopyImageToMemory(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyImageToMemoryInfo> pCopyImageToMemoryInfo)
+        {
+            // SpanOverloader
+            return thisApi.CopyImageToMemory(device, in pCopyImageToMemoryInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CopyMemoryToImage(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyMemoryToImageInfo> pCopyMemoryToImageInfo)
+        {
+            // SpanOverloader
+            return thisApi.CopyMemoryToImage(device, in pCopyMemoryToImageInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public static unsafe void GetDeviceImageSubresourceLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfo* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2> pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSubresourceLayout(device, pInfo, out pLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDeviceImageSubresourceLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceImageSubresourceInfo> pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSubresourceLayout(device, in pInfo.GetPinnableReference(), pLayout);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public static unsafe void GetDeviceImageSubresourceLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceImageSubresourceInfo> pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2> pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSubresourceLayout(device, in pInfo.GetPinnableReference(), out pLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public static unsafe void GetImageSubresourceLayout2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2* pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2> pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetImageSubresourceLayout2(device, image, pSubresource, out pLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetImageSubresourceLayout2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresource2> pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetImageSubresourceLayout2(device, image, in pSubresource.GetPinnableReference(), pLayout);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public static unsafe void GetImageSubresourceLayout2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresource2> pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SubresourceLayout2> pLayout)
+        {
+            // SpanOverloader
+            thisApi.GetImageSubresourceLayout2(device, image, in pSubresource.GetPinnableReference(), out pLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result MapMemory2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryMapInfo> pMemoryMapInfo, [Count(Count = 0)] void** ppData)
+        {
+            // SpanOverloader
+            return thisApi.MapMemory2(device, in pMemoryMapInfo.GetPinnableReference(), ppData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result MapMemory2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryMapInfo> pMemoryMapInfo, [Count(Count = 0)] ref void* ppData)
+        {
+            // SpanOverloader
+            return thisApi.MapMemory2(device, in pMemoryMapInfo.GetPinnableReference(), ref ppData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result TransitionImageLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint transitionCount, [Count(Parameter = "transitionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<HostImageLayoutTransitionInfo> pTransitions)
+        {
+            // SpanOverloader
+            return thisApi.TransitionImageLayout(device, transitionCount, in pTransitions.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result UnmapMemory2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryUnmapInfo> pMemoryUnmapInfo)
+        {
+            // SpanOverloader
+            return thisApi.UnmapMemory2(device, in pMemoryUnmapInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdBeginRenderPass2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SubpassBeginInfo> pSubpassBeginInfo)
         {
             // SpanOverloader
@@ -276,6 +448,27 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        public static unsafe void CmdResolveImage2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResolveImageInfo2> pResolveImageInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdResolveImage2(commandBuffer, in pResolveImageInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetScissorWithCount(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect2D> pScissors)
+        {
+            // SpanOverloader
+            thisApi.CmdSetScissorWithCount(commandBuffer, scissorCount, in pScissors.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetViewportWithCount(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Viewport> pViewports)
+        {
+            // SpanOverloader
+            thisApi.CmdSetViewportWithCount(commandBuffer, viewportCount, in pViewports.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdCopyBuffer2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyBufferInfo2> pCopyBufferInfo)
         {
             // SpanOverloader
@@ -308,55 +501,6 @@ namespace Silk.NET.Vulkan
         {
             // SpanOverloader
             thisApi.CmdPipelineBarrier2(commandBuffer, in pDependencyInfo.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdResolveImage2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ResolveImageInfo2> pResolveImageInfo)
-        {
-            // SpanOverloader
-            thisApi.CmdResolveImage2(commandBuffer, in pResolveImageInfo.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetEvent2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfo)
-        {
-            // SpanOverloader
-            thisApi.CmdSetEvent2(commandBuffer, @event, in pDependencyInfo.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetScissorWithCount(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect2D> pScissors)
-        {
-            // SpanOverloader
-            thisApi.CmdSetScissorWithCount(commandBuffer, scissorCount, in pScissors.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetViewportWithCount(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Viewport> pViewports)
-        {
-            // SpanOverloader
-            thisApi.CmdSetViewportWithCount(commandBuffer, viewportCount, in pViewports.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfos)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents2(commandBuffer, eventCount, pEvents, in pDependencyInfos.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfos)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents2(commandBuffer, eventCount, in pEvents.GetPinnableReference(), pDependencyInfos);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfos)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents2(commandBuffer, eventCount, in pEvents.GetPinnableReference(), in pDependencyInfos.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -552,6 +696,34 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetEvent2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdSetEvent2(commandBuffer, @event, in pDependencyInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfos)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents2(commandBuffer, eventCount, pEvents, in pDependencyInfos.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DependencyInfo* pDependencyInfos)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents2(commandBuffer, eventCount, in pEvents.GetPinnableReference(), pDependencyInfos);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfos)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents2(commandBuffer, eventCount, in pEvents.GetPinnableReference(), in pDependencyInfos.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe Result BindBufferMemory2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BindBufferMemoryInfo> pBindInfos)
         {
             // SpanOverloader
@@ -563,118 +735,6 @@ namespace Silk.NET.Vulkan
         {
             // SpanOverloader
             return thisApi.BindImageMemory2(device, bindInfoCount, in pBindInfos.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorUpdateTemplate> pDescriptorUpdateTemplate)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorUpdateTemplate(device, pCreateInfo, pAllocator, out pDescriptorUpdateTemplate.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorUpdateTemplate(device, pCreateInfo, in pAllocator.GetPinnableReference(), pDescriptorUpdateTemplate);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorUpdateTemplate> pDescriptorUpdateTemplate)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorUpdateTemplate(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pDescriptorUpdateTemplate.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorUpdateTemplateCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorUpdateTemplate(device, in pCreateInfo.GetPinnableReference(), pAllocator, pDescriptorUpdateTemplate);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorUpdateTemplateCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorUpdateTemplate> pDescriptorUpdateTemplate)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorUpdateTemplate(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pDescriptorUpdateTemplate.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorUpdateTemplateCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorUpdateTemplate(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pDescriptorUpdateTemplate);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorUpdateTemplateCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorUpdateTemplate> pDescriptorUpdateTemplate)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorUpdateTemplate(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pDescriptorUpdateTemplate.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
-        {
-            // SpanOverloader
-            return thisApi.CreateSamplerYcbcrConversion(device, pCreateInfo, pAllocator, out pYcbcrConversion.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
-        {
-            // SpanOverloader
-            return thisApi.CreateSamplerYcbcrConversion(device, pCreateInfo, in pAllocator.GetPinnableReference(), pYcbcrConversion);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
-        {
-            // SpanOverloader
-            return thisApi.CreateSamplerYcbcrConversion(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pYcbcrConversion.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
-        {
-            // SpanOverloader
-            return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), pAllocator, pYcbcrConversion);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
-        {
-            // SpanOverloader
-            return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pYcbcrConversion.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
-        {
-            // SpanOverloader
-            return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pYcbcrConversion);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
-        {
-            // SpanOverloader
-            return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pYcbcrConversion.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void DestroyDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyDescriptorUpdateTemplate(device, descriptorUpdateTemplate, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void DestroySamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroySamplerYcbcrConversion(device, ycbcrConversion, in pAllocator.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -726,29 +786,6 @@ namespace Silk.NET.Vulkan
         {
             // SpanOverloader
             thisApi.GetBufferMemoryRequirements2(device, in pInfo.GetPinnableReference(), out pMemoryRequirements.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
-        public static unsafe void GetDescriptorSetLayoutSupport(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
-        {
-            // SpanOverloader
-            thisApi.GetDescriptorSetLayoutSupport(device, pCreateInfo, out pSupport.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void GetDescriptorSetLayoutSupport(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport)
-        {
-            // SpanOverloader
-            thisApi.GetDescriptorSetLayoutSupport(device, in pCreateInfo.GetPinnableReference(), pSupport);
-        }
-
-        /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
-        public static unsafe void GetDescriptorSetLayoutSupport(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
-        {
-            // SpanOverloader
-            thisApi.GetDescriptorSetLayoutSupport(device, in pCreateInfo.GetPinnableReference(), out pSupport.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -1056,6 +1093,141 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorUpdateTemplate> pDescriptorUpdateTemplate)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorUpdateTemplate(device, pCreateInfo, pAllocator, out pDescriptorUpdateTemplate.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorUpdateTemplate(device, pCreateInfo, in pAllocator.GetPinnableReference(), pDescriptorUpdateTemplate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorUpdateTemplate> pDescriptorUpdateTemplate)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorUpdateTemplate(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pDescriptorUpdateTemplate.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorUpdateTemplateCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorUpdateTemplate(device, in pCreateInfo.GetPinnableReference(), pAllocator, pDescriptorUpdateTemplate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorUpdateTemplateCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorUpdateTemplate> pDescriptorUpdateTemplate)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorUpdateTemplate(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pDescriptorUpdateTemplate.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorUpdateTemplateCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorUpdateTemplate(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pDescriptorUpdateTemplate);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorUpdateTemplateCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorUpdateTemplate> pDescriptorUpdateTemplate)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorUpdateTemplate(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pDescriptorUpdateTemplate.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
+        {
+            // SpanOverloader
+            return thisApi.CreateSamplerYcbcrConversion(device, pCreateInfo, pAllocator, out pYcbcrConversion.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
+        {
+            // SpanOverloader
+            return thisApi.CreateSamplerYcbcrConversion(device, pCreateInfo, in pAllocator.GetPinnableReference(), pYcbcrConversion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
+        {
+            // SpanOverloader
+            return thisApi.CreateSamplerYcbcrConversion(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pYcbcrConversion.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
+        {
+            // SpanOverloader
+            return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), pAllocator, pYcbcrConversion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
+        {
+            // SpanOverloader
+            return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pYcbcrConversion.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion)
+        {
+            // SpanOverloader
+            return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pYcbcrConversion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerYcbcrConversionCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<SamplerYcbcrConversion> pYcbcrConversion)
+        {
+            // SpanOverloader
+            return thisApi.CreateSamplerYcbcrConversion(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pYcbcrConversion.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyDescriptorUpdateTemplate(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyDescriptorUpdateTemplate(device, descriptorUpdateTemplate, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroySamplerYcbcrConversion(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroySamplerYcbcrConversion(device, ycbcrConversion, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
+        public static unsafe void GetDescriptorSetLayoutSupport(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
+        {
+            // SpanOverloader
+            thisApi.GetDescriptorSetLayoutSupport(device, pCreateInfo, out pSupport.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDescriptorSetLayoutSupport(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport)
+        {
+            // SpanOverloader
+            thisApi.GetDescriptorSetLayoutSupport(device, in pCreateInfo.GetPinnableReference(), pSupport);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
+        public static unsafe void GetDescriptorSetLayoutSupport(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
+        {
+            // SpanOverloader
+            thisApi.GetDescriptorSetLayoutSupport(device, in pCreateInfo.GetPinnableReference(), out pSupport.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe void UpdateDescriptorSetWithTemplate<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1081,27 +1253,6 @@ namespace Silk.NET.Vulkan
         {
             // SpanOverloader
             return thisApi.AllocateCommandBuffers(device, in pAllocateInfo.GetPinnableReference(), out pCommandBuffers.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result AllocateDescriptorSets(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSet> pDescriptorSets)
-        {
-            // SpanOverloader
-            return thisApi.AllocateDescriptorSets(device, pAllocateInfo, out pDescriptorSets.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result AllocateDescriptorSets(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetAllocateInfo> pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSet* pDescriptorSets)
-        {
-            // SpanOverloader
-            return thisApi.AllocateDescriptorSets(device, in pAllocateInfo.GetPinnableReference(), pDescriptorSets);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result AllocateDescriptorSets(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetAllocateInfo> pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSet> pDescriptorSets)
-        {
-            // SpanOverloader
-            return thisApi.AllocateDescriptorSets(device, in pAllocateInfo.GetPinnableReference(), out pDescriptorSets.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -1158,125 +1309,6 @@ namespace Silk.NET.Vulkan
         {
             // SpanOverloader
             return thisApi.BeginCommandBuffer(commandBuffer, in pBeginInfo.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdBeginRenderPass(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPassBeginInfo> pRenderPassBegin, [Count(Count = 0)] SubpassContents contents)
-        {
-            // SpanOverloader
-            thisApi.CmdBeginRenderPass(commandBuffer, in pRenderPassBegin.GetPinnableReference(), contents);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdBindDescriptorSets(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDynamicOffsets)
-        {
-            // SpanOverloader
-            thisApi.CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, pDescriptorSets, dynamicOffsetCount, in pDynamicOffsets.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdBindDescriptorSets(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDynamicOffsets)
-        {
-            // SpanOverloader
-            thisApi.CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, in pDescriptorSets.GetPinnableReference(), dynamicOffsetCount, pDynamicOffsets);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdBindDescriptorSets(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDynamicOffsets)
-        {
-            // SpanOverloader
-            thisApi.CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, in pDescriptorSets.GetPinnableReference(), dynamicOffsetCount, in pDynamicOffsets.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdBindVertexBuffers(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pOffsets)
-        {
-            // SpanOverloader
-            thisApi.CmdBindVertexBuffers(commandBuffer, firstBinding, bindingCount, pBuffers, in pOffsets.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdBindVertexBuffers(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets)
-        {
-            // SpanOverloader
-            thisApi.CmdBindVertexBuffers(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), pOffsets);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdBindVertexBuffers(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pOffsets)
-        {
-            // SpanOverloader
-            thisApi.CmdBindVertexBuffers(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdBlitImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageBlit> pRegions, [Count(Count = 0)] Filter filter)
-        {
-            // SpanOverloader
-            thisApi.CmdBlitImage(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, in pRegions.GetPinnableReference(), filter);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdClearAttachments(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearAttachment* pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearRect> pRects)
-        {
-            // SpanOverloader
-            thisApi.CmdClearAttachments(commandBuffer, attachmentCount, pAttachments, rectCount, in pRects.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdClearAttachments(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearAttachment> pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearRect* pRects)
-        {
-            // SpanOverloader
-            thisApi.CmdClearAttachments(commandBuffer, attachmentCount, in pAttachments.GetPinnableReference(), rectCount, pRects);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdClearAttachments(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearAttachment> pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearRect> pRects)
-        {
-            // SpanOverloader
-            thisApi.CmdClearAttachments(commandBuffer, attachmentCount, in pAttachments.GetPinnableReference(), rectCount, in pRects.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdClearColorImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearColorValue* pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
-        {
-            // SpanOverloader
-            thisApi.CmdClearColorImage(commandBuffer, image, imageLayout, pColor, rangeCount, in pRanges.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdClearColorImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearColorValue> pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges)
-        {
-            // SpanOverloader
-            thisApi.CmdClearColorImage(commandBuffer, image, imageLayout, in pColor.GetPinnableReference(), rangeCount, pRanges);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdClearColorImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearColorValue> pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
-        {
-            // SpanOverloader
-            thisApi.CmdClearColorImage(commandBuffer, image, imageLayout, in pColor.GetPinnableReference(), rangeCount, in pRanges.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdClearDepthStencilImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
-        {
-            // SpanOverloader
-            thisApi.CmdClearDepthStencilImage(commandBuffer, image, imageLayout, pDepthStencil, rangeCount, in pRanges.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdClearDepthStencilImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearDepthStencilValue> pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges)
-        {
-            // SpanOverloader
-            thisApi.CmdClearDepthStencilImage(commandBuffer, image, imageLayout, in pDepthStencil.GetPinnableReference(), rangeCount, pRanges);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdClearDepthStencilImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearDepthStencilValue> pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
-        {
-            // SpanOverloader
-            thisApi.CmdClearDepthStencilImage(commandBuffer, image, imageLayout, in pDepthStencil.GetPinnableReference(), rangeCount, in pRanges.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -1364,150 +1396,10 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdPushConstants<T0>(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] Span<T0> pValues) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.CmdPushConstants(commandBuffer, layout, stageFlags, offset, size, ref pValues.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdResolveImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageResolve> pRegions)
-        {
-            // SpanOverloader
-            thisApi.CmdResolveImage(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, in pRegions.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetBlendConstants(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> blendConstants)
-        {
-            // SpanOverloader
-            thisApi.CmdSetBlendConstants(commandBuffer, in blendConstants.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetScissor(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect2D> pScissors)
-        {
-            // SpanOverloader
-            thisApi.CmdSetScissor(commandBuffer, firstScissor, scissorCount, in pScissors.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetViewport(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Viewport> pViewports)
-        {
-            // SpanOverloader
-            thisApi.CmdSetViewport(commandBuffer, firstViewport, viewportCount, in pViewports.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe void CmdUpdateBuffer<T0>(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong dataSize, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CmdUpdateBuffer(commandBuffer, dstBuffer, dstOffset, dataSize, ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, pImageMemoryBarriers);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, pImageMemoryBarriers);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, pImageMemoryBarriers);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, pImageMemoryBarriers);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
-        {
-            // SpanOverloader
-            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -1560,55 +1452,6 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<BufferView> pView)
-        {
-            // SpanOverloader
-            return thisApi.CreateBufferView(device, pCreateInfo, pAllocator, out pView.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView)
-        {
-            // SpanOverloader
-            return thisApi.CreateBufferView(device, pCreateInfo, in pAllocator.GetPinnableReference(), pView);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<BufferView> pView)
-        {
-            // SpanOverloader
-            return thisApi.CreateBufferView(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pView.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferViewCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView)
-        {
-            // SpanOverloader
-            return thisApi.CreateBufferView(device, in pCreateInfo.GetPinnableReference(), pAllocator, pView);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferViewCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<BufferView> pView)
-        {
-            // SpanOverloader
-            return thisApi.CreateBufferView(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pView.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferViewCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView)
-        {
-            // SpanOverloader
-            return thisApi.CreateBufferView(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pView);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferViewCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<BufferView> pView)
-        {
-            // SpanOverloader
-            return thisApi.CreateBufferView(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pView.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe Result CreateCommandPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CommandPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<CommandPool> pCommandPool)
         {
             // SpanOverloader
@@ -1655,153 +1498,6 @@ namespace Silk.NET.Vulkan
         {
             // SpanOverloader
             return thisApi.CreateCommandPool(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pCommandPool.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, pCreateInfos, in pAllocator.GetPinnableReference(), pPipelines);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, pCreateInfos, in pAllocator.GetPinnableReference(), out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), pAllocator, pPipelines);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), pPipelines);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorPool> pDescriptorPool)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorPool(device, pCreateInfo, pAllocator, out pDescriptorPool.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorPool(device, pCreateInfo, in pAllocator.GetPinnableReference(), pDescriptorPool);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorPool> pDescriptorPool)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorPool(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pDescriptorPool.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorPoolCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorPool(device, in pCreateInfo.GetPinnableReference(), pAllocator, pDescriptorPool);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorPoolCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorPool> pDescriptorPool)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorPool(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pDescriptorPool.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorPoolCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorPool(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pDescriptorPool);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorPoolCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorPool> pDescriptorPool)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorPool(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pDescriptorPool.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayout> pSetLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorSetLayout(device, pCreateInfo, pAllocator, out pSetLayout.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorSetLayout(device, pCreateInfo, in pAllocator.GetPinnableReference(), pSetLayout);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayout> pSetLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorSetLayout(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pSetLayout.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorSetLayout(device, in pCreateInfo.GetPinnableReference(), pAllocator, pSetLayout);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayout> pSetLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorSetLayout(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pSetLayout.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorSetLayout(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pSetLayout);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayout> pSetLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreateDescriptorSetLayout(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pSetLayout.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -1861,55 +1557,6 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Event> pEvent)
-        {
-            // SpanOverloader
-            return thisApi.CreateEvent(device, pCreateInfo, pAllocator, out pEvent.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent)
-        {
-            // SpanOverloader
-            return thisApi.CreateEvent(device, pCreateInfo, in pAllocator.GetPinnableReference(), pEvent);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Event> pEvent)
-        {
-            // SpanOverloader
-            return thisApi.CreateEvent(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pEvent.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent)
-        {
-            // SpanOverloader
-            return thisApi.CreateEvent(device, in pCreateInfo.GetPinnableReference(), pAllocator, pEvent);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Event> pEvent)
-        {
-            // SpanOverloader
-            return thisApi.CreateEvent(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pEvent.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent)
-        {
-            // SpanOverloader
-            return thisApi.CreateEvent(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pEvent);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Event> pEvent)
-        {
-            // SpanOverloader
-            return thisApi.CreateEvent(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pEvent.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe Result CreateFence(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FenceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Fence> pFence)
         {
             // SpanOverloader
@@ -1956,104 +1603,6 @@ namespace Silk.NET.Vulkan
         {
             // SpanOverloader
             return thisApi.CreateFence(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pFence.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Framebuffer> pFramebuffer)
-        {
-            // SpanOverloader
-            return thisApi.CreateFramebuffer(device, pCreateInfo, pAllocator, out pFramebuffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer)
-        {
-            // SpanOverloader
-            return thisApi.CreateFramebuffer(device, pCreateInfo, in pAllocator.GetPinnableReference(), pFramebuffer);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Framebuffer> pFramebuffer)
-        {
-            // SpanOverloader
-            return thisApi.CreateFramebuffer(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pFramebuffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FramebufferCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer)
-        {
-            // SpanOverloader
-            return thisApi.CreateFramebuffer(device, in pCreateInfo.GetPinnableReference(), pAllocator, pFramebuffer);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FramebufferCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Framebuffer> pFramebuffer)
-        {
-            // SpanOverloader
-            return thisApi.CreateFramebuffer(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pFramebuffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FramebufferCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer)
-        {
-            // SpanOverloader
-            return thisApi.CreateFramebuffer(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pFramebuffer);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FramebufferCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Framebuffer> pFramebuffer)
-        {
-            // SpanOverloader
-            return thisApi.CreateFramebuffer(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pFramebuffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, pCreateInfos, in pAllocator.GetPinnableReference(), pPipelines);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, pCreateInfos, in pAllocator.GetPinnableReference(), out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), pAllocator, pPipelines);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), pAllocator, out pPipelines.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), pPipelines);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
-        {
-            // SpanOverloader
-            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pPipelines.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2211,104 +1760,6 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineCache> pPipelineCache)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineCache(device, pCreateInfo, pAllocator, out pPipelineCache.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineCache* pPipelineCache)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineCache(device, pCreateInfo, in pAllocator.GetPinnableReference(), pPipelineCache);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineCache> pPipelineCache)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineCache(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pPipelineCache.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCacheCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineCache* pPipelineCache)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineCache(device, in pCreateInfo.GetPinnableReference(), pAllocator, pPipelineCache);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCacheCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineCache> pPipelineCache)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineCache(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pPipelineCache.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCacheCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineCache* pPipelineCache)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineCache(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pPipelineCache);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCacheCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineCache> pPipelineCache)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineCache(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pPipelineCache.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineLayout> pPipelineLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineLayout(device, pCreateInfo, pAllocator, out pPipelineLayout.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineLayout(device, pCreateInfo, in pAllocator.GetPinnableReference(), pPipelineLayout);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineLayout> pPipelineLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineLayout(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pPipelineLayout.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineLayout(device, in pCreateInfo.GetPinnableReference(), pAllocator, pPipelineLayout);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineLayout> pPipelineLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineLayout(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pPipelineLayout.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineLayout(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pPipelineLayout);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineLayout> pPipelineLayout)
-        {
-            // SpanOverloader
-            return thisApi.CreatePipelineLayout(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pPipelineLayout.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe Result CreateQueryPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] QueryPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<QueryPool> pQueryPool)
         {
             // SpanOverloader
@@ -2355,104 +1806,6 @@ namespace Silk.NET.Vulkan
         {
             // SpanOverloader
             return thisApi.CreateQueryPool(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pQueryPool.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<RenderPass> pRenderPass)
-        {
-            // SpanOverloader
-            return thisApi.CreateRenderPass(device, pCreateInfo, pAllocator, out pRenderPass.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass)
-        {
-            // SpanOverloader
-            return thisApi.CreateRenderPass(device, pCreateInfo, in pAllocator.GetPinnableReference(), pRenderPass);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<RenderPass> pRenderPass)
-        {
-            // SpanOverloader
-            return thisApi.CreateRenderPass(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pRenderPass.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPassCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass)
-        {
-            // SpanOverloader
-            return thisApi.CreateRenderPass(device, in pCreateInfo.GetPinnableReference(), pAllocator, pRenderPass);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPassCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<RenderPass> pRenderPass)
-        {
-            // SpanOverloader
-            return thisApi.CreateRenderPass(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pRenderPass.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPassCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass)
-        {
-            // SpanOverloader
-            return thisApi.CreateRenderPass(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pRenderPass);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPassCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<RenderPass> pRenderPass)
-        {
-            // SpanOverloader
-            return thisApi.CreateRenderPass(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pRenderPass.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Sampler> pSampler)
-        {
-            // SpanOverloader
-            return thisApi.CreateSampler(device, pCreateInfo, pAllocator, out pSampler.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler)
-        {
-            // SpanOverloader
-            return thisApi.CreateSampler(device, pCreateInfo, in pAllocator.GetPinnableReference(), pSampler);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Sampler> pSampler)
-        {
-            // SpanOverloader
-            return thisApi.CreateSampler(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pSampler.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler)
-        {
-            // SpanOverloader
-            return thisApi.CreateSampler(device, in pCreateInfo.GetPinnableReference(), pAllocator, pSampler);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Sampler> pSampler)
-        {
-            // SpanOverloader
-            return thisApi.CreateSampler(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pSampler.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler)
-        {
-            // SpanOverloader
-            return thisApi.CreateSampler(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pSampler);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Sampler> pSampler)
-        {
-            // SpanOverloader
-            return thisApi.CreateSampler(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pSampler.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2505,66 +1858,10 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ShaderModule> pShaderModule)
-        {
-            // SpanOverloader
-            return thisApi.CreateShaderModule(device, pCreateInfo, pAllocator, out pShaderModule.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule)
-        {
-            // SpanOverloader
-            return thisApi.CreateShaderModule(device, pCreateInfo, in pAllocator.GetPinnableReference(), pShaderModule);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ShaderModule> pShaderModule)
-        {
-            // SpanOverloader
-            return thisApi.CreateShaderModule(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pShaderModule.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule)
-        {
-            // SpanOverloader
-            return thisApi.CreateShaderModule(device, in pCreateInfo.GetPinnableReference(), pAllocator, pShaderModule);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ShaderModule> pShaderModule)
-        {
-            // SpanOverloader
-            return thisApi.CreateShaderModule(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pShaderModule.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule)
-        {
-            // SpanOverloader
-            return thisApi.CreateShaderModule(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pShaderModule);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ShaderModule> pShaderModule)
-        {
-            // SpanOverloader
-            return thisApi.CreateShaderModule(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pShaderModule.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe void DestroyBuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
             thisApi.DestroyBuffer(device, buffer, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void DestroyBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] BufferView bufferView, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyBufferView(device, bufferView, in pAllocator.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2575,20 +1872,6 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DestroyDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyDescriptorPool(device, descriptorPool, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void DestroyDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSetLayout descriptorSetLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyDescriptorSetLayout(device, descriptorSetLayout, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe void DestroyDevice(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
@@ -2596,24 +1879,10 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DestroyEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyEvent(device, @event, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe void DestroyFence(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Fence fence, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
             thisApi.DestroyFence(device, fence, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void DestroyFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Framebuffer framebuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyFramebuffer(device, framebuffer, in pAllocator.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2638,27 +1907,6 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DestroyPipeline(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyPipeline(device, pipeline, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void DestroyPipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyPipelineCache(device, pipelineCache, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void DestroyPipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineLayout pipelineLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyPipelineLayout(device, pipelineLayout, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe void DestroyQueryPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
@@ -2666,31 +1914,10 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DestroyRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyRenderPass(device, renderPass, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void DestroySampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Sampler sampler, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroySampler(device, sampler, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe void DestroySemaphore(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
             thisApi.DestroySemaphore(device, semaphore, in pAllocator.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void DestroyShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
-        {
-            // SpanOverloader
-            thisApi.DestroyShaderModule(device, shaderModule, in pAllocator.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -2911,13 +2138,6 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result FreeDescriptorSets(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets)
-        {
-            // SpanOverloader
-            return thisApi.FreeDescriptorSets(device, descriptorPool, descriptorSetCount, in pDescriptorSets.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe void FreeMemory(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
@@ -3086,27 +2306,6 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetPipelineCacheData(device, pipelineCache, pDataSize, ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] void* pData)
-        {
-            // SpanOverloader
-            return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), pData);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe Result GetQueryPoolResults<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged
         {
             // SpanOverloader
@@ -3114,24 +2313,10 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetRenderAreaGranularity(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Extent2D> pGranularity)
-        {
-            // SpanOverloader
-            thisApi.GetRenderAreaGranularity(device, renderPass, out pGranularity.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         public static unsafe Result InvalidateMappedMemoryRanges(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint memoryRangeCount, [Count(Parameter = "memoryRangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MappedMemoryRange> pMemoryRanges)
         {
             // SpanOverloader
             return thisApi.InvalidateMappedMemoryRanges(device, memoryRangeCount, in pMemoryRanges.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result MergePipelineCaches(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCache> pSrcCaches)
-        {
-            // SpanOverloader
-            return thisApi.MergePipelineCaches(device, dstCache, srcCacheCount, in pSrcCaches.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -3156,6 +2341,727 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        public static unsafe Result WaitForFences(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Fence> pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout)
+        {
+            // SpanOverloader
+            return thisApi.WaitForFences(device, fenceCount, in pFences.GetPinnableReference(), waitAll, timeout);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result AllocateDescriptorSets(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSet> pDescriptorSets)
+        {
+            // SpanOverloader
+            return thisApi.AllocateDescriptorSets(device, pAllocateInfo, out pDescriptorSets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result AllocateDescriptorSets(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetAllocateInfo> pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSet* pDescriptorSets)
+        {
+            // SpanOverloader
+            return thisApi.AllocateDescriptorSets(device, in pAllocateInfo.GetPinnableReference(), pDescriptorSets);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result AllocateDescriptorSets(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetAllocateInfo> pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSet> pDescriptorSets)
+        {
+            // SpanOverloader
+            return thisApi.AllocateDescriptorSets(device, in pAllocateInfo.GetPinnableReference(), out pDescriptorSets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindDescriptorSets(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDynamicOffsets)
+        {
+            // SpanOverloader
+            thisApi.CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, pDescriptorSets, dynamicOffsetCount, in pDynamicOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindDescriptorSets(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pDynamicOffsets)
+        {
+            // SpanOverloader
+            thisApi.CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, in pDescriptorSets.GetPinnableReference(), dynamicOffsetCount, pDynamicOffsets);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindDescriptorSets(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Parameter = "dynamicOffsetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pDynamicOffsets)
+        {
+            // SpanOverloader
+            thisApi.CmdBindDescriptorSets(commandBuffer, pipelineBindPoint, layout, firstSet, descriptorSetCount, in pDescriptorSets.GetPinnableReference(), dynamicOffsetCount, in pDynamicOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdClearColorImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearColorValue* pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
+        {
+            // SpanOverloader
+            thisApi.CmdClearColorImage(commandBuffer, image, imageLayout, pColor, rangeCount, in pRanges.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdClearColorImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearColorValue> pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges)
+        {
+            // SpanOverloader
+            thisApi.CmdClearColorImage(commandBuffer, image, imageLayout, in pColor.GetPinnableReference(), rangeCount, pRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdClearColorImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearColorValue> pColor, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
+        {
+            // SpanOverloader
+            thisApi.CmdClearColorImage(commandBuffer, image, imageLayout, in pColor.GetPinnableReference(), rangeCount, in pRanges.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPushConstants<T0>(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Parameter = "size")] Span<T0> pValues) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.CmdPushConstants(commandBuffer, layout, stageFlags, offset, size, ref pValues.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, pImageMemoryBarriers);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, pImageMemoryBarriers);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, pEvents, srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, pImageMemoryBarriers);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, pMemoryBarriers, bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, pImageMemoryBarriers);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, pBufferMemoryBarriers, imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, pImageMemoryBarriers);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Parameter = "memoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<MemoryBarrier> pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Parameter = "bufferMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferMemoryBarrier> pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Parameter = "imageMemoryBarrierCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageMemoryBarrier> pImageMemoryBarriers)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents(commandBuffer, eventCount, in pEvents.GetPinnableReference(), srcStageMask, dstStageMask, memoryBarrierCount, in pMemoryBarriers.GetPinnableReference(), bufferMemoryBarrierCount, in pBufferMemoryBarriers.GetPinnableReference(), imageMemoryBarrierCount, in pImageMemoryBarriers.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<BufferView> pView)
+        {
+            // SpanOverloader
+            return thisApi.CreateBufferView(device, pCreateInfo, pAllocator, out pView.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView)
+        {
+            // SpanOverloader
+            return thisApi.CreateBufferView(device, pCreateInfo, in pAllocator.GetPinnableReference(), pView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<BufferView> pView)
+        {
+            // SpanOverloader
+            return thisApi.CreateBufferView(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pView.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferViewCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView)
+        {
+            // SpanOverloader
+            return thisApi.CreateBufferView(device, in pCreateInfo.GetPinnableReference(), pAllocator, pView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferViewCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<BufferView> pView)
+        {
+            // SpanOverloader
+            return thisApi.CreateBufferView(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pView.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferViewCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] BufferView* pView)
+        {
+            // SpanOverloader
+            return thisApi.CreateBufferView(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<BufferViewCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<BufferView> pView)
+        {
+            // SpanOverloader
+            return thisApi.CreateBufferView(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pView.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, out pPipelines.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, pCreateInfos, in pAllocator.GetPinnableReference(), pPipelines);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, pCreateInfos, in pAllocator.GetPinnableReference(), out pPipelines.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), pAllocator, pPipelines);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), pAllocator, out pPipelines.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), pPipelines);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateComputePipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ComputePipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateComputePipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pPipelines.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorPool> pDescriptorPool)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorPool(device, pCreateInfo, pAllocator, out pDescriptorPool.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorPool(device, pCreateInfo, in pAllocator.GetPinnableReference(), pDescriptorPool);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorPool> pDescriptorPool)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorPool(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pDescriptorPool.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorPoolCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorPool(device, in pCreateInfo.GetPinnableReference(), pAllocator, pDescriptorPool);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorPoolCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorPool> pDescriptorPool)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorPool(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pDescriptorPool.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorPoolCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorPool* pDescriptorPool)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorPool(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pDescriptorPool);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorPoolCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorPool> pDescriptorPool)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorPool(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pDescriptorPool.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayout> pSetLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorSetLayout(device, pCreateInfo, pAllocator, out pSetLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorSetLayout(device, pCreateInfo, in pAllocator.GetPinnableReference(), pSetLayout);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayout> pSetLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorSetLayout(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pSetLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorSetLayout(device, in pCreateInfo.GetPinnableReference(), pAllocator, pSetLayout);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayout> pSetLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorSetLayout(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pSetLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DescriptorSetLayout* pSetLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorSetLayout(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pSetLayout);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<DescriptorSetLayout> pSetLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreateDescriptorSetLayout(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pSetLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Event> pEvent)
+        {
+            // SpanOverloader
+            return thisApi.CreateEvent(device, pCreateInfo, pAllocator, out pEvent.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent)
+        {
+            // SpanOverloader
+            return thisApi.CreateEvent(device, pCreateInfo, in pAllocator.GetPinnableReference(), pEvent);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Event> pEvent)
+        {
+            // SpanOverloader
+            return thisApi.CreateEvent(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pEvent.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent)
+        {
+            // SpanOverloader
+            return thisApi.CreateEvent(device, in pCreateInfo.GetPinnableReference(), pAllocator, pEvent);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Event> pEvent)
+        {
+            // SpanOverloader
+            return thisApi.CreateEvent(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pEvent.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Event* pEvent)
+        {
+            // SpanOverloader
+            return thisApi.CreateEvent(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pEvent);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<EventCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Event> pEvent)
+        {
+            // SpanOverloader
+            return thisApi.CreateEvent(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pEvent.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineCache> pPipelineCache)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineCache(device, pCreateInfo, pAllocator, out pPipelineCache.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineCache* pPipelineCache)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineCache(device, pCreateInfo, in pAllocator.GetPinnableReference(), pPipelineCache);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineCache> pPipelineCache)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineCache(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pPipelineCache.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCacheCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineCache* pPipelineCache)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineCache(device, in pCreateInfo.GetPinnableReference(), pAllocator, pPipelineCache);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCacheCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineCache> pPipelineCache)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineCache(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pPipelineCache.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCacheCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineCache* pPipelineCache)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineCache(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pPipelineCache);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCacheCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineCache> pPipelineCache)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineCache(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pPipelineCache.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineLayout> pPipelineLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineLayout(device, pCreateInfo, pAllocator, out pPipelineLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineLayout(device, pCreateInfo, in pAllocator.GetPinnableReference(), pPipelineLayout);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineLayout> pPipelineLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineLayout(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pPipelineLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineLayout(device, in pCreateInfo.GetPinnableReference(), pAllocator, pPipelineLayout);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineLayout> pPipelineLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineLayout(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pPipelineLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PipelineLayout* pPipelineLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineLayout(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pPipelineLayout);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<PipelineLayout> pPipelineLayout)
+        {
+            // SpanOverloader
+            return thisApi.CreatePipelineLayout(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pPipelineLayout.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Sampler> pSampler)
+        {
+            // SpanOverloader
+            return thisApi.CreateSampler(device, pCreateInfo, pAllocator, out pSampler.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler)
+        {
+            // SpanOverloader
+            return thisApi.CreateSampler(device, pCreateInfo, in pAllocator.GetPinnableReference(), pSampler);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Sampler> pSampler)
+        {
+            // SpanOverloader
+            return thisApi.CreateSampler(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pSampler.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler)
+        {
+            // SpanOverloader
+            return thisApi.CreateSampler(device, in pCreateInfo.GetPinnableReference(), pAllocator, pSampler);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Sampler> pSampler)
+        {
+            // SpanOverloader
+            return thisApi.CreateSampler(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pSampler.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Sampler* pSampler)
+        {
+            // SpanOverloader
+            return thisApi.CreateSampler(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pSampler);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateSampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<SamplerCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Sampler> pSampler)
+        {
+            // SpanOverloader
+            return thisApi.CreateSampler(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pSampler.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ShaderModule> pShaderModule)
+        {
+            // SpanOverloader
+            return thisApi.CreateShaderModule(device, pCreateInfo, pAllocator, out pShaderModule.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule)
+        {
+            // SpanOverloader
+            return thisApi.CreateShaderModule(device, pCreateInfo, in pAllocator.GetPinnableReference(), pShaderModule);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ShaderModule> pShaderModule)
+        {
+            // SpanOverloader
+            return thisApi.CreateShaderModule(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pShaderModule.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule)
+        {
+            // SpanOverloader
+            return thisApi.CreateShaderModule(device, in pCreateInfo.GetPinnableReference(), pAllocator, pShaderModule);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ShaderModule> pShaderModule)
+        {
+            // SpanOverloader
+            return thisApi.CreateShaderModule(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pShaderModule.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] ShaderModule* pShaderModule)
+        {
+            // SpanOverloader
+            return thisApi.CreateShaderModule(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pShaderModule);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ShaderModuleCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<ShaderModule> pShaderModule)
+        {
+            // SpanOverloader
+            return thisApi.CreateShaderModule(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pShaderModule.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyBufferView(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] BufferView bufferView, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyBufferView(device, bufferView, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyDescriptorPool(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyDescriptorPool(device, descriptorPool, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyDescriptorSetLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSetLayout descriptorSetLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyDescriptorSetLayout(device, descriptorSetLayout, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyEvent(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyEvent(device, @event, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyPipeline(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyPipeline(device, pipeline, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyPipelineCache(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyPipelineCache(device, pipelineCache, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyPipelineLayout(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineLayout pipelineLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyPipelineLayout(device, pipelineLayout, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroySampler(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Sampler sampler, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroySampler(device, sampler, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyShaderModule(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyShaderModule(device, shaderModule, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result FreeDescriptorSets(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint descriptorSetCount, [Count(Parameter = "descriptorSetCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DescriptorSet> pDescriptorSets)
+        {
+            // SpanOverloader
+            return thisApi.FreeDescriptorSets(device, descriptorPool, descriptorSetCount, in pDescriptorSets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetPipelineCacheData(device, pipelineCache, pDataSize, ref pData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetPipelineCacheData(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] void* pData)
+        {
+            // SpanOverloader
+            return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), pData);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Parameter = "pDataSize")] Span<T0> pData) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result MergePipelineCaches(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PipelineCache> pSrcCaches)
+        {
+            // SpanOverloader
+            return thisApi.MergePipelineCaches(device, dstCache, srcCacheCount, in pSrcCaches.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe void UpdateDescriptorSets(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites, [Count(Count = 0)] uint descriptorCopyCount, [Count(Parameter = "descriptorCopyCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<CopyDescriptorSet> pDescriptorCopies)
         {
             // SpanOverloader
@@ -3177,10 +3083,276 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WaitForFences(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Fence> pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout)
+        public static unsafe void CmdBeginRenderPass(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPassBeginInfo> pRenderPassBegin, [Count(Count = 0)] SubpassContents contents)
         {
             // SpanOverloader
-            return thisApi.WaitForFences(device, fenceCount, in pFences.GetPinnableReference(), waitAll, timeout);
+            thisApi.CmdBeginRenderPass(commandBuffer, in pRenderPassBegin.GetPinnableReference(), contents);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pOffsets)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers(commandBuffer, firstBinding, bindingCount, pBuffers, in pOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pOffsets)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), pOffsets);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pOffsets)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBlitImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageBlit> pRegions, [Count(Count = 0)] Filter filter)
+        {
+            // SpanOverloader
+            thisApi.CmdBlitImage(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, in pRegions.GetPinnableReference(), filter);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdClearAttachments(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearAttachment* pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearRect> pRects)
+        {
+            // SpanOverloader
+            thisApi.CmdClearAttachments(commandBuffer, attachmentCount, pAttachments, rectCount, in pRects.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdClearAttachments(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearAttachment> pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearRect* pRects)
+        {
+            // SpanOverloader
+            thisApi.CmdClearAttachments(commandBuffer, attachmentCount, in pAttachments.GetPinnableReference(), rectCount, pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdClearAttachments(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearAttachment> pAttachments, [Count(Count = 0)] uint rectCount, [Count(Parameter = "rectCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearRect> pRects)
+        {
+            // SpanOverloader
+            thisApi.CmdClearAttachments(commandBuffer, attachmentCount, in pAttachments.GetPinnableReference(), rectCount, in pRects.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdClearDepthStencilImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
+        {
+            // SpanOverloader
+            thisApi.CmdClearDepthStencilImage(commandBuffer, image, imageLayout, pDepthStencil, rangeCount, in pRanges.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdClearDepthStencilImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearDepthStencilValue> pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresourceRange* pRanges)
+        {
+            // SpanOverloader
+            thisApi.CmdClearDepthStencilImage(commandBuffer, image, imageLayout, in pDepthStencil.GetPinnableReference(), rangeCount, pRanges);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdClearDepthStencilImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ClearDepthStencilValue> pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Parameter = "rangeCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageSubresourceRange> pRanges)
+        {
+            // SpanOverloader
+            thisApi.CmdClearDepthStencilImage(commandBuffer, image, imageLayout, in pDepthStencil.GetPinnableReference(), rangeCount, in pRanges.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdResolveImage(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Parameter = "regionCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ImageResolve> pRegions)
+        {
+            // SpanOverloader
+            thisApi.CmdResolveImage(commandBuffer, srcImage, srcImageLayout, dstImage, dstImageLayout, regionCount, in pRegions.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetBlendConstants(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<float> blendConstants)
+        {
+            // SpanOverloader
+            thisApi.CmdSetBlendConstants(commandBuffer, in blendConstants.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetScissor(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Rect2D> pScissors)
+        {
+            // SpanOverloader
+            thisApi.CmdSetScissor(commandBuffer, firstScissor, scissorCount, in pScissors.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetViewport(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Viewport> pViewports)
+        {
+            // SpanOverloader
+            thisApi.CmdSetViewport(commandBuffer, firstViewport, viewportCount, in pViewports.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Framebuffer> pFramebuffer)
+        {
+            // SpanOverloader
+            return thisApi.CreateFramebuffer(device, pCreateInfo, pAllocator, out pFramebuffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer)
+        {
+            // SpanOverloader
+            return thisApi.CreateFramebuffer(device, pCreateInfo, in pAllocator.GetPinnableReference(), pFramebuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Framebuffer> pFramebuffer)
+        {
+            // SpanOverloader
+            return thisApi.CreateFramebuffer(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pFramebuffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FramebufferCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer)
+        {
+            // SpanOverloader
+            return thisApi.CreateFramebuffer(device, in pCreateInfo.GetPinnableReference(), pAllocator, pFramebuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FramebufferCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Framebuffer> pFramebuffer)
+        {
+            // SpanOverloader
+            return thisApi.CreateFramebuffer(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pFramebuffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FramebufferCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Framebuffer* pFramebuffer)
+        {
+            // SpanOverloader
+            return thisApi.CreateFramebuffer(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pFramebuffer);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<FramebufferCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Framebuffer> pFramebuffer)
+        {
+            // SpanOverloader
+            return thisApi.CreateFramebuffer(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pFramebuffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, out pPipelines.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, pCreateInfos, in pAllocator.GetPinnableReference(), pPipelines);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, pCreateInfos, in pAllocator.GetPinnableReference(), out pPipelines.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), pAllocator, pPipelines);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), pAllocator, out pPipelines.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Pipeline* pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), pPipelines);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateGraphicsPipelines(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<GraphicsPipelineCreateInfo> pCreateInfos, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Pipeline> pPipelines)
+        {
+            // SpanOverloader
+            return thisApi.CreateGraphicsPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pPipelines.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<RenderPass> pRenderPass)
+        {
+            // SpanOverloader
+            return thisApi.CreateRenderPass(device, pCreateInfo, pAllocator, out pRenderPass.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass)
+        {
+            // SpanOverloader
+            return thisApi.CreateRenderPass(device, pCreateInfo, in pAllocator.GetPinnableReference(), pRenderPass);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<RenderPass> pRenderPass)
+        {
+            // SpanOverloader
+            return thisApi.CreateRenderPass(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pRenderPass.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPassCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass)
+        {
+            // SpanOverloader
+            return thisApi.CreateRenderPass(device, in pCreateInfo.GetPinnableReference(), pAllocator, pRenderPass);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPassCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<RenderPass> pRenderPass)
+        {
+            // SpanOverloader
+            return thisApi.CreateRenderPass(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pRenderPass.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPassCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] RenderPass* pRenderPass)
+        {
+            // SpanOverloader
+            return thisApi.CreateRenderPass(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pRenderPass);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreateRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RenderPassCreateInfo> pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<RenderPass> pRenderPass)
+        {
+            // SpanOverloader
+            return thisApi.CreateRenderPass(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pRenderPass.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyFramebuffer(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Framebuffer framebuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyFramebuffer(device, framebuffer, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyRenderPass(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyRenderPass(device, renderPass, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetRenderAreaGranularity(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Span<Extent2D> pGranularity)
+        {
+            // SpanOverloader
+            thisApi.GetRenderAreaGranularity(device, renderPass, out pGranularity.GetPinnableReference());
         }
 
     }

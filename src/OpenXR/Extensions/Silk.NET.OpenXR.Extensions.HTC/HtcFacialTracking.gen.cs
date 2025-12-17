@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.HTC
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateFacialTrackerHTC", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateFacialTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FacialTrackerCreateInfoHTC createInfo, [Count(Count = 0)] FacialTrackerHTC* facialTracker);
+        public unsafe partial Result CreateFacialTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FacialTrackerCreateInfoHTC createInfo, [Count(Count = 0)] FacialTrackerHTC* facialTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateFacialTrackerHTC", Convention = CallingConvention.Winapi)]
-        public partial Result CreateFacialTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FacialTrackerCreateInfoHTC createInfo, [Count(Count = 0)] ref FacialTrackerHTC facialTracker);
+        public partial Result CreateFacialTrackerHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FacialTrackerCreateInfoHTC createInfo, [Count(Count = 0)] ref FacialTrackerHTC facialTracker);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyFacialTrackerHTC", Convention = CallingConvention.Winapi)]

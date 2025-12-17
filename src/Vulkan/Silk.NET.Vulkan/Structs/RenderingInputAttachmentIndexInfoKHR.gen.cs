@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingInputAttachmentIndexInfoKHR")]
+    [NativeName("AliasOf", "VkRenderingInputAttachmentIndexInfo")]
     public unsafe partial struct RenderingInputAttachmentIndexInfoKHR : IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<CommandBufferInheritanceInfo>
     {
         public RenderingInputAttachmentIndexInfoKHR
         (
-            StructureType? sType = StructureType.RenderingInputAttachmentIndexInfoKhr,
+            StructureType? sType = StructureType.RenderingInputAttachmentIndexInfo,
             void* pNext = null,
             uint? colorAttachmentCount = null,
             uint* pColorAttachmentInputIndices = null,
@@ -94,7 +95,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.RenderingInputAttachmentIndexInfoKhr;
+            return SType = StructureType.RenderingInputAttachmentIndexInfo;
         }
 
         /// <inheritdoc />

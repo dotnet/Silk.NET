@@ -106,7 +106,7 @@ public unsafe static class DWriteTextAnalysisSourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTextAtPosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* textString, uint* textLength)
+    public static unsafe int GetTextAtPosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* textString, uint* textLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DWriteTextAnalysisSourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTextAtPosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* textString, ref uint textLength)
+    public static unsafe int GetTextAtPosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* textString, ref uint textLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -154,7 +154,7 @@ public unsafe static class DWriteTextAnalysisSourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTextBeforePosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* textString, uint* textLength)
+    public static unsafe int GetTextBeforePosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* textString, uint* textLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class DWriteTextAnalysisSourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTextBeforePosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* textString, ref uint textLength)
+    public static unsafe int GetTextBeforePosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* textString, ref uint textLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -199,7 +199,7 @@ public unsafe static class DWriteTextAnalysisSourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetLocaleName(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, uint* textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* localeName)
+    public static unsafe int GetLocaleName(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, uint* textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* localeName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -223,7 +223,7 @@ public unsafe static class DWriteTextAnalysisSourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetLocaleName(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, ref uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* localeName)
+    public static unsafe int GetLocaleName(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, ref uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* localeName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -343,7 +343,7 @@ public unsafe static class DWriteTextAnalysisSourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTextAtPosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* textString, Span<uint> textLength)
+    public static unsafe int GetTextAtPosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* textString, Span<uint> textLength)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -383,7 +383,7 @@ public unsafe static class DWriteTextAnalysisSourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTextBeforePosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* textString, Span<uint> textLength)
+    public static unsafe int GetTextBeforePosition(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* textString, Span<uint> textLength)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -423,7 +423,7 @@ public unsafe static class DWriteTextAnalysisSourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetLocaleName(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, Span<uint> textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* localeName)
+    public static unsafe int GetLocaleName(this ComPtr<IDWriteTextAnalysisSource> thisVtbl, uint textPosition, Span<uint> textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* localeName)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

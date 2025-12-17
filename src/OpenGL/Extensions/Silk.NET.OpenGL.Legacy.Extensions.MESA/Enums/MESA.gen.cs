@@ -22,6 +22,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         PackInvertMesa = 0x8758,
         [NativeName("Name", "GL_PROGRAM_BINARY_FORMAT_MESA")]
         ProgramBinaryFormatMesa = 0x875F,
+        [NativeName("Name", "GL_CONST_BW_TILING_MESA")]
+        ConstBWTilingMesa = 0x8BBE,
         [NativeName("Name", "GL_TILE_RASTER_ORDER_FIXED_MESA")]
         TileRasterOrderFixedMesa = 0x8BB8,
         [NativeName("Name", "GL_TILE_RASTER_ORDER_INCREASING_X_MESA")]

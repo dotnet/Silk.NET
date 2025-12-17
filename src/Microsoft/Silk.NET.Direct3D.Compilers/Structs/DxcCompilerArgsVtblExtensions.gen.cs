@@ -112,7 +112,7 @@ public unsafe static class DxcCompilerArgsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddArguments(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount)
+    public static unsafe int AddArguments(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class DxcCompilerArgsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddArgumentsUTF8(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte* pArguments, uint argCount)
+    public static unsafe int AddArgumentsUTF8(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte* pArguments, uint argCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -154,7 +154,7 @@ public unsafe static class DxcCompilerArgsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddDefines(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Define pDefines, uint defineCount)
+    public static int AddDefines(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Define pDefines, uint defineCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

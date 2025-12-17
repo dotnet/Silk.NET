@@ -132,7 +132,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFilename, IDxcBlob** ppIncludeSource)
+        public readonly unsafe int LoadSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFilename, ref IDxcBlob* ppIncludeSource)
+        public readonly unsafe int LoadSource([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadSource<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        public readonly int LoadSource<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

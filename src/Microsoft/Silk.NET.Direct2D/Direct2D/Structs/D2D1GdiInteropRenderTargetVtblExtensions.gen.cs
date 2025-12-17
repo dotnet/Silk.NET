@@ -115,7 +115,7 @@ public unsafe static class D2D1GdiInteropRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReleaseDC(this ComPtr<ID2D1GdiInteropRenderTarget> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> update)
+    public static int ReleaseDC(this ComPtr<ID2D1GdiInteropRenderTarget> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> update)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

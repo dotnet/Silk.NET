@@ -200,7 +200,7 @@ public unsafe static class WICMetadataQueryReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
+    public static unsafe int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzName, Silk.NET.Core.Win32Extras.PropVariant* pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -212,7 +212,7 @@ public unsafe static class WICMetadataQueryReaderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzName, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
+    public static int GetMetadataByName(this ComPtr<IWICMetadataQueryReader> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzName, ref Silk.NET.Core.Win32Extras.PropVariant pvarValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

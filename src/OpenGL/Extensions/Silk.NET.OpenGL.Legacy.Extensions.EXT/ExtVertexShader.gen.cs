@@ -267,25 +267,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void SetInvariant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glSetInvariantEXT", Convention = CallingConvention.Winapi)]
-        public partial void SetInvariant<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 addr) where T0 : unmanaged;
+        public partial void SetInvariant<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 addr) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glSetInvariantEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void SetInvariant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glSetInvariantEXT", Convention = CallingConvention.Winapi)]
-        public partial void SetInvariant<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 addr) where T0 : unmanaged;
+        public partial void SetInvariant<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 addr) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glSetLocalConstantEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void SetLocalConstant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glSetLocalConstantEXT", Convention = CallingConvention.Winapi)]
-        public partial void SetLocalConstant<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 addr) where T0 : unmanaged;
+        public partial void SetLocalConstant<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 addr) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glSetLocalConstantEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void SetLocalConstant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glSetLocalConstantEXT", Convention = CallingConvention.Winapi)]
-        public partial void SetLocalConstant<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 addr) where T0 : unmanaged;
+        public partial void SetLocalConstant<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 addr) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glShaderOp1EXT", Convention = CallingConvention.Winapi)]
         public partial void ShaderOp1([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT op, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint res, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint arg1);
@@ -357,37 +357,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] sbyte* addr);
 
         [NativeApi(EntryPoint = "glVariantbvEXT", Convention = CallingConvention.Winapi)]
-        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in sbyte addr);
+        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly sbyte addr);
 
         [NativeApi(EntryPoint = "glVariantsvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] short* addr);
 
         [NativeApi(EntryPoint = "glVariantsvEXT", Convention = CallingConvention.Winapi)]
-        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in short addr);
+        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly short addr);
 
         [NativeApi(EntryPoint = "glVariantivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* addr);
 
         [NativeApi(EntryPoint = "glVariantivEXT", Convention = CallingConvention.Winapi)]
-        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int addr);
+        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int addr);
 
         [NativeApi(EntryPoint = "glVariantfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* addr);
 
         [NativeApi(EntryPoint = "glVariantfvEXT", Convention = CallingConvention.Winapi)]
-        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float addr);
+        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float addr);
 
         [NativeApi(EntryPoint = "glVariantdvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* addr);
 
         [NativeApi(EntryPoint = "glVariantdvEXT", Convention = CallingConvention.Winapi)]
-        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double addr);
+        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double addr);
 
         [NativeApi(EntryPoint = "glVariantubvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* addr);
 
         [NativeApi(EntryPoint = "glVariantubvEXT", Convention = CallingConvention.Winapi)]
-        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte addr);
+        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte addr);
 
         [NativeApi(EntryPoint = "glVariantubvEXT", Convention = CallingConvention.Winapi)]
         public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string addr);
@@ -396,13 +396,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* addr);
 
         [NativeApi(EntryPoint = "glVariantusvEXT", Convention = CallingConvention.Winapi)]
-        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort addr);
+        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort addr);
 
         [NativeApi(EntryPoint = "glVariantuivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* addr);
 
         [NativeApi(EntryPoint = "glVariantuivEXT", Convention = CallingConvention.Winapi)]
-        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint addr);
+        public partial void Variant([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint addr);
 
         [NativeApi(EntryPoint = "glVariantPointerEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void VariantPointer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] void* addr);

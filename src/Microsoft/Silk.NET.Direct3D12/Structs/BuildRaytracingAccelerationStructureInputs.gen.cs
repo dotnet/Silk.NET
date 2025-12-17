@@ -28,7 +28,8 @@ namespace Silk.NET.Direct3D12
             BuildRaytracingAccelerationStructureInputsUnion? anonymous = null,
             ulong? instanceDescs = null,
             RaytracingGeometryDesc* pGeometryDescs = null,
-            RaytracingGeometryDesc** ppGeometryDescs = null
+            RaytracingGeometryDesc** ppGeometryDescs = null,
+            RaytracingOpacityMicromapArrayDesc* pOpacityMicromapArrayDesc = null
         ) : this()
         {
             if (type is not null)
@@ -70,6 +71,11 @@ namespace Silk.NET.Direct3D12
             {
                 PpGeometryDescs = ppGeometryDescs;
             }
+
+            if (pOpacityMicromapArrayDesc is not null)
+            {
+                POpacityMicromapArrayDesc = pOpacityMicromapArrayDesc;
+            }
         }
 
 
@@ -94,7 +100,7 @@ namespace Silk.NET.Direct3D12
         public ElementsLayout DescsLayout;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L14674_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L15589_C5")]
         [NativeName("Name", "anonymous1")]
         public BuildRaytracingAccelerationStructureInputsUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
@@ -136,6 +142,20 @@ namespace Silk.NET.Direct3D12
         {
             get => Anonymous.PpGeometryDescs;
             set => Anonymous.PpGeometryDescs = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref RaytracingOpacityMicromapArrayDesc* POpacityMicromapArrayDesc
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].POpacityMicromapArrayDesc;
+        }
+#else
+        public RaytracingOpacityMicromapArrayDesc* POpacityMicromapArrayDesc
+        {
+            get => Anonymous.POpacityMicromapArrayDesc;
+            set => Anonymous.POpacityMicromapArrayDesc = value;
         }
 #endif
 

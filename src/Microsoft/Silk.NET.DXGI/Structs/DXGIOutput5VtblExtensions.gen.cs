@@ -94,7 +94,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIOutput5> thisVtbl, Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIOutput5> thisVtbl, Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGIOutput5> thisVtbl, ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIOutput5> thisVtbl, ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -142,7 +142,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIOutput5> thisVtbl, Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<IDXGIOutput5> thisVtbl, Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<IDXGIOutput5> thisVtbl, ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+    public static int SetPrivateDataInterface(this ComPtr<IDXGIOutput5> thisVtbl, ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -454,7 +454,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -466,7 +466,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -481,7 +481,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+    public static unsafe int FindClosestMatchingMode(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -496,7 +496,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindClosestMatchingMode(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+    public static int FindClosestMatchingMode(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -581,7 +581,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetGammaControl(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in GammaControl pArray)
+    public static int SetGammaControl(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly GammaControl pArray)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -773,7 +773,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -785,7 +785,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -800,7 +800,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+    public static unsafe int FindClosestMatchingMode1(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -815,7 +815,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindClosestMatchingMode1(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+    public static int FindClosestMatchingMode1(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1028,7 +1028,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput1(this ComPtr<IDXGIOutput5> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
+    public static unsafe int DuplicateOutput1(this ComPtr<IDXGIOutput5> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Format pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1040,7 +1040,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput1(this ComPtr<IDXGIOutput5> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
+    public static unsafe int DuplicateOutput1(this ComPtr<IDXGIOutput5> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1082,7 +1082,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput1(this ComPtr<IDXGIOutput5> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
+    public static unsafe int DuplicateOutput1(this ComPtr<IDXGIOutput5> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Format pSupportedFormats, IDXGIOutputDuplication** ppOutputDuplication)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1097,7 +1097,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput1(this ComPtr<IDXGIOutput5> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
+    public static unsafe int DuplicateOutput1(this ComPtr<IDXGIOutput5> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1365,7 +1365,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int FindClosestMatchingMode<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1389,7 +1389,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindClosestMatchingMode<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int FindClosestMatchingMode<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1557,7 +1557,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindClosestMatchingMode1<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int FindClosestMatchingMode1<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1581,7 +1581,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindClosestMatchingMode1<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int FindClosestMatchingMode1<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1757,7 +1757,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DuplicateOutput1<TI0, TI1>(this ComPtr<IDXGIOutput5> thisVtbl, ComPtr<TI0> pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pSupportedFormats, ref ComPtr<TI1> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI1>
+    public static int DuplicateOutput1<TI0, TI1>(this ComPtr<IDXGIOutput5> thisVtbl, ComPtr<TI0> pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Format pSupportedFormats, ref ComPtr<TI1> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1773,7 +1773,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DuplicateOutput1<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, ComPtr<TI0> pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int DuplicateOutput1<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, ComPtr<TI0> pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Format pSupportedFormats, ref IDXGIOutputDuplication* ppOutputDuplication) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1813,7 +1813,7 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DuplicateOutput1<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Format pSupportedFormats, ref ComPtr<TI0> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI0>
+    public static int DuplicateOutput1<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, uint Flags, uint SupportedFormatsCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Format pSupportedFormats, ref ComPtr<TI0> ppOutputDuplication) where TI0 : unmanaged, IComVtbl<IDXGIOutputDuplication>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

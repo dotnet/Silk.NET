@@ -132,7 +132,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEnumeratorFromKey<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator) where T0 : unmanaged
+        public readonly unsafe int CreateEnumeratorFromKey<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator) where T0 : unmanaged
         {
             var @this = (IDWriteFontCollectionLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEnumeratorFromKey<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged
+        public readonly unsafe int CreateEnumeratorFromKey<T0>(IDWriteFactory* factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged
         {
             var @this = (IDWriteFontCollectionLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -186,7 +186,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEnumeratorFromKey<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator) where T0 : unmanaged
+        public readonly unsafe int CreateEnumeratorFromKey<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, IDWriteFontFileEnumerator** fontFileEnumerator) where T0 : unmanaged
         {
             var @this = (IDWriteFontCollectionLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEnumeratorFromKey<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged
+        public readonly unsafe int CreateEnumeratorFromKey<T0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged
         {
             var @this = (IDWriteFontCollectionLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -244,7 +244,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateEnumeratorFromKey<T0, TI0, TI1>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref ComPtr<TI1> fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFileEnumerator>, IComVtbl<TI1>
+        public readonly int CreateEnumeratorFromKey<T0, TI0, TI1>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref ComPtr<TI1> fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDWriteFontFileEnumerator>, IComVtbl<TI1>
         {
             var @this = (IDWriteFontCollectionLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -252,7 +252,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEnumeratorFromKey<T0, TI0>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
+        public readonly unsafe int CreateEnumeratorFromKey<T0, TI0>(ComPtr<TI0> factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref IDWriteFontFileEnumerator* fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFactory>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontCollectionLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -268,7 +268,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateEnumeratorFromKey<T0, TI0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 collectionKey, uint collectionKeySize, ref ComPtr<TI0> fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileEnumerator>, IComVtbl<TI0>
+        public readonly int CreateEnumeratorFromKey<T0, TI0>(ref IDWriteFactory factory, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 collectionKey, uint collectionKeySize, ref ComPtr<TI0> fontFileEnumerator) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDWriteFontFileEnumerator>, IComVtbl<TI0>
         {
             var @this = (IDWriteFontCollectionLoader*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

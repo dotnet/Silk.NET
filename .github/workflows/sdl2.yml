@@ -43,14 +43,11 @@ jobs:
           git config --local user.name "The Silk.NET Automaton"
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v3
-        if: runner.os == 'Windows'
         with:
           dotnet-version: |
             6.0.201
             7.0.*
             8.0.*
-        env:
-          DOTNET_INSTALL_DIR: ~/.dotnet
       - name: Setup PowerShell Core
         continue-on-error: true
         if: runner.os == 'Windows'

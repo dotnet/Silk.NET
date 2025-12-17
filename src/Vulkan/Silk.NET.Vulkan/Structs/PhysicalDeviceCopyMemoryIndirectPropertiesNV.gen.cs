@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceCopyMemoryIndirectPropertiesNV")]
+    [NativeName("AliasOf", "VkPhysicalDeviceCopyMemoryIndirectPropertiesKHR")]
     public unsafe partial struct PhysicalDeviceCopyMemoryIndirectPropertiesNV : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceCopyMemoryIndirectPropertiesNV
         (
-            StructureType? sType = StructureType.PhysicalDeviceCopyMemoryIndirectPropertiesNV,
+            StructureType? sType = StructureType.PhysicalDeviceCopyMemoryIndirectPropertiesKhr,
             void* pNext = null,
             QueueFlags? supportedQueues = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceCopyMemoryIndirectPropertiesNV;
+            return SType = StructureType.PhysicalDeviceCopyMemoryIndirectPropertiesKhr;
         }
 
         /// <inheritdoc />

@@ -132,7 +132,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        public readonly unsafe int CreateStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        public readonly unsafe int CreateStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -232,7 +232,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, void* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+        public readonly unsafe int OpenStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, void* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -244,7 +244,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, void* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+        public readonly unsafe int OpenStream([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, void* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -259,7 +259,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStream<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm) where T0 : unmanaged
+        public readonly unsafe int OpenStream<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm) where T0 : unmanaged
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -274,7 +274,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStream<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm) where T0 : unmanaged
+        public readonly unsafe int OpenStream<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm) where T0 : unmanaged
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -369,7 +369,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, IStorage** ppstg)
+        public readonly unsafe int CreateStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, IStorage** ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -381,7 +381,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref IStorage* ppstg)
+        public readonly unsafe int CreateStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref IStorage* ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -529,7 +529,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, char** snbExclude, uint reserved, IStorage** ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, char** snbExclude, uint reserved, IStorage** ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -541,7 +541,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -556,7 +556,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, IStorage** ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, IStorage** ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -571,7 +571,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -589,7 +589,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, IStorage** ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, IStorage** ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -604,7 +604,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -622,7 +622,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, IStorage** ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, IStorage** ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -640,7 +640,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -833,7 +833,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, char** snbExclude, IStorage* pstgDest)
+        public readonly unsafe int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, char** snbExclude, IStorage* pstgDest)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -845,7 +845,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, char** snbExclude, ref IStorage pstgDest)
+        public readonly unsafe int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, char** snbExclude, ref IStorage pstgDest)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -860,7 +860,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+        public readonly unsafe int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -875,7 +875,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, ref char* snbExclude, ref IStorage pstgDest)
+        public readonly unsafe int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, ref char* snbExclude, ref IStorage pstgDest)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -902,7 +902,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -937,7 +937,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -966,7 +966,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags)
+        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -978,7 +978,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -993,7 +993,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags)
+        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1007,7 +1007,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags)
+        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1022,7 +1022,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+        public readonly int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1040,7 +1040,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags)
+        public readonly int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1068,7 +1068,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+        public readonly unsafe int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1109,7 +1109,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+        public readonly int MoveElementTo([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1217,7 +1217,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DestroyElement([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName)
+        public readonly int DestroyElement([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1249,7 +1249,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RenameElement([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName)
+        public readonly unsafe int RenameElement([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1272,7 +1272,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RenameElement([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName)
+        public readonly unsafe int RenameElement([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1284,7 +1284,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RenameElement([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName)
+        public readonly int RenameElement([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1299,7 +1299,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RenameElement([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName)
+        public readonly int RenameElement([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1324,7 +1324,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RenameElement([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName)
+        public readonly int RenameElement([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1360,7 +1360,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1372,7 +1372,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1384,7 +1384,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1399,7 +1399,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1411,7 +1411,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1426,7 +1426,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1441,7 +1441,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1459,7 +1459,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1471,7 +1471,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1486,7 +1486,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1501,7 +1501,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1519,7 +1519,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1534,7 +1534,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1552,7 +1552,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1570,7 +1570,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1602,7 +1602,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1616,7 +1616,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1630,7 +1630,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1647,7 +1647,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1661,7 +1661,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1678,7 +1678,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+        public readonly unsafe int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1695,7 +1695,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+        public readonly int SetElementTimes([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1783,7 +1783,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateStream<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref ComPtr<TI0> ppstm) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly int CreateStream<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref ComPtr<TI0> ppstm) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1815,7 +1815,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStream<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, void* reserved1, uint grfMode, uint reserved2, ref ComPtr<TI0> ppstm) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int OpenStream<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, void* reserved1, uint grfMode, uint reserved2, ref ComPtr<TI0> ppstm) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1823,7 +1823,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int OpenStream<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, ref ComPtr<TI0> ppstm) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly int OpenStream<T0, TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, ref ComPtr<TI0> ppstm) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1855,7 +1855,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateStorage<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly int CreateStorage<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1967,7 +1967,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, IStorage** ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, IStorage** ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1979,7 +1979,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref ComPtr<TI1> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI1>
+        public readonly unsafe int OpenStorage<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref ComPtr<TI1> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI1>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1987,7 +1987,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, ref IStorage* ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, ref IStorage* ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -1999,7 +1999,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int OpenStorage<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2007,7 +2007,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref ComPtr<TI1> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI1>
+        public readonly unsafe int OpenStorage<TI0, TI1>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref ComPtr<TI1> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI1>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2015,7 +2015,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int OpenStorage<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2023,7 +2023,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, IStorage** ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, IStorage** ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2035,7 +2035,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int OpenStorage<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2043,7 +2043,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, ref IStorage* ppstg)
+        public readonly unsafe int OpenStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, ref IStorage* ppstg)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2055,7 +2055,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OpenStorage<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int OpenStorage<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2199,7 +2199,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, string[] snbExcludeSa, IStorage* pstgDest)
+        public readonly unsafe int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, string[] snbExcludeSa, IStorage* pstgDest)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2211,7 +2211,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTo<TI0>(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, char** snbExclude, ComPtr<TI0> pstgDest) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int CopyTo<TI0>(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, char** snbExclude, ComPtr<TI0> pstgDest) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2219,7 +2219,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, string[] snbExcludeSa, ref IStorage pstgDest)
+        public readonly int CopyTo(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, string[] snbExcludeSa, ref IStorage pstgDest)
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // StringArrayOverloader
@@ -2231,7 +2231,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CopyTo<TI0>(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, ref char* snbExclude, ComPtr<TI0> pstgDest) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int CopyTo<TI0>(uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, ref char* snbExclude, ComPtr<TI0> pstgDest) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2247,7 +2247,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MoveElementTo<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int MoveElementTo<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2263,7 +2263,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MoveElementTo<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly unsafe int MoveElementTo<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2271,7 +2271,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MoveElementTo<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly int MoveElementTo<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2279,7 +2279,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MoveElementTo<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly int MoveElementTo<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -2295,7 +2295,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MoveElementTo<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+        public readonly int MoveElementTo<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
         {
             var @this = (IStorage*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

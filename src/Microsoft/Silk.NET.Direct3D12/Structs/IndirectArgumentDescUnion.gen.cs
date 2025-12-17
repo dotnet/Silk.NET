@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L4527_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L4706_C5")]
     public unsafe partial struct IndirectArgumentDescUnion
     {
         public IndirectArgumentDescUnion
@@ -63,38 +63,38 @@ namespace Silk.NET.Direct3D12
 
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at d3d12.h:4529:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4529:9)")]
+        [NativeName("Type", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4708:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4708:9)")]
         [NativeName("Name", "VertexBuffer")]
         public IndirectArgumentDescUnionVertexBuffer VertexBuffer;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at d3d12.h:4533:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4533:9)")]
+        [NativeName("Type", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4712:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4712:9)")]
         [NativeName("Name", "Constant")]
         public IndirectArgumentDescUnionConstant Constant;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at d3d12.h:4539:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4539:9)")]
+        [NativeName("Type", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4718:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4718:9)")]
         [NativeName("Name", "ConstantBufferView")]
         public IndirectArgumentDescUnionConstantBufferView ConstantBufferView;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at d3d12.h:4543:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4543:9)")]
+        [NativeName("Type", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4722:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4722:9)")]
         [NativeName("Name", "ShaderResourceView")]
         public IndirectArgumentDescUnionShaderResourceView ShaderResourceView;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at d3d12.h:4547:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4547:9)")]
+        [NativeName("Type", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4726:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4726:9)")]
         [NativeName("Name", "UnorderedAccessView")]
         public IndirectArgumentDescUnionUnorderedAccessView UnorderedAccessView;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at d3d12.h:4551:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4551:9)")]
+        [NativeName("Type", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4730:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at C:\\Windows\\SystemTemp\\eowzh5p2.p5f\\build\\native\\include/d3d12.h:4730:9)")]
         [NativeName("Name", "IncrementingConstant")]
         public IndirectArgumentDescUnionIncrementingConstant IncrementingConstant;
     }

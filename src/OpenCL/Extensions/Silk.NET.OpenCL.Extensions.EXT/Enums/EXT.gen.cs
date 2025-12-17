@@ -119,6 +119,18 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         UnsignedIntRaw12Ext = 0x10E4,
         [NativeName("Name", "CL_UNORM_INT_2_101010_EXT")]
         UnormInt2101010Ext = 0x10E5,
+        [NativeName("Name", "CL_UNSIGNED_INT10X6_EXT")]
+        UnsignedInt10X6Ext = 0x10E6,
+        [NativeName("Name", "CL_UNSIGNED_INT12X4_EXT")]
+        UnsignedInt12X4Ext = 0x10E7,
+        [NativeName("Name", "CL_UNSIGNED_INT14X2_EXT")]
+        UnsignedInt14X2Ext = 0x10E8,
+        [NativeName("Name", "CL_UNORM_INT10X6_EXT")]
+        UnormInt10X6Ext = 0x10E1,
+        [NativeName("Name", "CL_UNORM_INT12X4_EXT")]
+        UnormInt12X4Ext = 0x10E9,
+        [NativeName("Name", "CL_UNORM_INT14X2_EXT")]
+        UnormInt14X2Ext = 0x10EA,
         [NativeName("Name", "CL_COMMAND_MIGRATE_MEM_OBJECT_EXT")]
         MigrateMemObjectExt = 0x4040,
         [NativeName("Name", "CL_COMMAND_MIGRATE_MEM_OBJECT_EXT")]
@@ -165,5 +177,21 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         InvalidPartitionCountExt = unchecked((int) 0xFFFFFFFFFFFFFBDE),
         [NativeName("Name", "CL_INVALID_PARTITION_NAME_EXT")]
         InvalidPartitionNameExt = unchecked((int) 0xFFFFFFFFFFFFFBDD),
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_DEVICE_PTRS_EXT")]
+        DevicePtrsExt = 0x5002,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_DEVICE_PTRS_EXT")]
+        KernelExecInfoDevicePtrsExt = 0x5002,
+        [NativeName("Name", "CL_MEM_IMMUTABLE_EXT")]
+        ImmutableExt = 0x40,
+        [NativeName("Name", "CL_MEM_IMMUTABLE_EXT")]
+        MemImmutableExt = 0x40,
+        [NativeName("Name", "CL_MEM_DEVICE_ADDRESS_EXT")]
+        DeviceAddressExt = 0x5001,
+        [NativeName("Name", "CL_MEM_DEVICE_ADDRESS_EXT")]
+        MemDeviceAddressExt = 0x5001,
+        [NativeName("Name", "CL_MEM_DEVICE_PRIVATE_ADDRESS_EXT")]
+        DevicePrivateAddressExt = 0x5000,
+        [NativeName("Name", "CL_MEM_DEVICE_PRIVATE_ADDRESS_EXT")]
+        MemDevicePrivateAddressExt = 0x5000,
     }
 }

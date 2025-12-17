@@ -92,7 +92,7 @@ public unsafe static class D3D12ManualWriteTrackingResourceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void TrackWrite(this ComPtr<ID3D12ManualWriteTrackingResource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Range pWrittenRange)
+    public static void TrackWrite(this ComPtr<ID3D12ManualWriteTrackingResource> thisVtbl, uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Range pWrittenRange)
     {
         var @this = thisVtbl.Handle;
         fixed (Range* pWrittenRangePtr = &pWrittenRange)

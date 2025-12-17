@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassFragmentDensityMapOffsetEndInfoQCOM")]
-    public unsafe partial struct SubpassFragmentDensityMapOffsetEndInfoQCOM : IExtendsChain<SubpassEndInfo>, IExtendsChain<SubpassEndInfoKHR>
+    [NativeName("AliasOf", "VkRenderPassFragmentDensityMapOffsetEndInfoEXT")]
+    public unsafe partial struct SubpassFragmentDensityMapOffsetEndInfoQCOM : IExtendsChain<SubpassEndInfo>, IExtendsChain<SubpassEndInfoKHR>, IExtendsChain<RenderingEndInfoKHR>, IExtendsChain<RenderingEndInfoEXT>
     {
         public SubpassFragmentDensityMapOffsetEndInfoQCOM
         (
-            StructureType? sType = StructureType.SubpassFragmentDensityMapOffsetEndInfoQCom,
+            StructureType? sType = StructureType.RenderPassFragmentDensityMapOffsetEndInfoExt,
             void* pNext = null,
             uint? fragmentDensityOffsetCount = null,
             Offset2D* pFragmentDensityOffsets = null
@@ -72,7 +73,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.SubpassFragmentDensityMapOffsetEndInfoQCom;
+            return SType = StructureType.RenderPassFragmentDensityMapOffsetEndInfoExt;
         }
 
         /// <inheritdoc />

@@ -37,6 +37,36 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"UseConstrainedIntraprediction\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_USE_CONSTRAINED_INTRAPREDICTION")]
         VideoEncoderCodecConfigurationHevcFlagUseConstrainedIntraprediction = 0x40,
+        [Obsolete("Deprecated in favour of \"TransformSkipRotation\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_TRANSFORM_SKIP_ROTATION")]
+        VideoEncoderCodecConfigurationHevcFlagTransformSkipRotation = 0x80,
+        [Obsolete("Deprecated in favour of \"TransformSkipContext\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_TRANSFORM_SKIP_CONTEXT")]
+        VideoEncoderCodecConfigurationHevcFlagTransformSkipContext = 0x100,
+        [Obsolete("Deprecated in favour of \"ImplicitRdpcm\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_IMPLICIT_RDPCM")]
+        VideoEncoderCodecConfigurationHevcFlagImplicitRdpcm = 0x200,
+        [Obsolete("Deprecated in favour of \"ExplicitRdpcm\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_EXPLICIT_RDPCM")]
+        VideoEncoderCodecConfigurationHevcFlagExplicitRdpcm = 0x400,
+        [Obsolete("Deprecated in favour of \"ExtendedPrecisionProcessing\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_EXTENDED_PRECISION_PROCESSING")]
+        VideoEncoderCodecConfigurationHevcFlagExtendedPrecisionProcessing = 0x800,
+        [Obsolete("Deprecated in favour of \"IntraSmoothingDisabled\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_INTRA_SMOOTHING_DISABLED")]
+        VideoEncoderCodecConfigurationHevcFlagIntraSmoothingDisabled = 0x1000,
+        [Obsolete("Deprecated in favour of \"HighPrecisionOffsets\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_HIGH_PRECISION_OFFSETS")]
+        VideoEncoderCodecConfigurationHevcFlagHighPrecisionOffsets = 0x2000,
+        [Obsolete("Deprecated in favour of \"PersistentRiceAdaptation\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_PERSISTENT_RICE_ADAPTATION")]
+        VideoEncoderCodecConfigurationHevcFlagPersistentRiceAdaptation = 0x4000,
+        [Obsolete("Deprecated in favour of \"CabacBypassAlignment\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_CABAC_BYPASS_ALIGNMENT")]
+        VideoEncoderCodecConfigurationHevcFlagCabacBypassAlignment = 0x8000,
+        [Obsolete("Deprecated in favour of \"SeparateColourPlane\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_SEPARATE_COLOUR_PLANE")]
+        VideoEncoderCodecConfigurationHevcFlagSeparateColourPlane = 0x10000,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_DISABLE_LOOP_FILTER_ACROSS_SLICES")]
@@ -53,5 +83,25 @@ namespace Silk.NET.Direct3D12
         EnableTransformSkipping = 0x20,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_USE_CONSTRAINED_INTRAPREDICTION")]
         UseConstrainedIntraprediction = 0x40,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_TRANSFORM_SKIP_ROTATION")]
+        TransformSkipRotation = 0x80,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_TRANSFORM_SKIP_CONTEXT")]
+        TransformSkipContext = 0x100,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_IMPLICIT_RDPCM")]
+        ImplicitRdpcm = 0x200,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_EXPLICIT_RDPCM")]
+        ExplicitRdpcm = 0x400,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_EXTENDED_PRECISION_PROCESSING")]
+        ExtendedPrecisionProcessing = 0x800,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_INTRA_SMOOTHING_DISABLED")]
+        IntraSmoothingDisabled = 0x1000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_HIGH_PRECISION_OFFSETS")]
+        HighPrecisionOffsets = 0x2000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_PERSISTENT_RICE_ADAPTATION")]
+        PersistentRiceAdaptation = 0x4000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_CABAC_BYPASS_ALIGNMENT")]
+        CabacBypassAlignment = 0x8000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_FLAG_SEPARATE_COLOUR_PLANE")]
+        SeparateColourPlane = 0x10000,
     }
 }

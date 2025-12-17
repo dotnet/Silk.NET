@@ -165,7 +165,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SerializeVersionedRootSignature(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VersionedRootSignatureDesc pDesc, Silk.NET.Core.Native.ID3D10Blob** ppResult, Silk.NET.Core.Native.ID3D10Blob** ppError)
+    public static unsafe int SerializeVersionedRootSignature(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VersionedRootSignatureDesc pDesc, Silk.NET.Core.Native.ID3D10Blob** ppResult, Silk.NET.Core.Native.ID3D10Blob** ppError)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -177,7 +177,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SerializeVersionedRootSignature(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VersionedRootSignatureDesc pDesc, Silk.NET.Core.Native.ID3D10Blob** ppResult, ref Silk.NET.Core.Native.ID3D10Blob* ppError)
+    public static unsafe int SerializeVersionedRootSignature(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VersionedRootSignatureDesc pDesc, Silk.NET.Core.Native.ID3D10Blob** ppResult, ref Silk.NET.Core.Native.ID3D10Blob* ppError)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -192,7 +192,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SerializeVersionedRootSignature(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VersionedRootSignatureDesc pDesc, ref Silk.NET.Core.Native.ID3D10Blob* ppResult, Silk.NET.Core.Native.ID3D10Blob** ppError)
+    public static unsafe int SerializeVersionedRootSignature(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VersionedRootSignatureDesc pDesc, ref Silk.NET.Core.Native.ID3D10Blob* ppResult, Silk.NET.Core.Native.ID3D10Blob** ppError)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -207,7 +207,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SerializeVersionedRootSignature(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VersionedRootSignatureDesc pDesc, ref Silk.NET.Core.Native.ID3D10Blob* ppResult, ref Silk.NET.Core.Native.ID3D10Blob* ppError)
+    public static unsafe int SerializeVersionedRootSignature(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VersionedRootSignatureDesc pDesc, ref Silk.NET.Core.Native.ID3D10Blob* ppResult, ref Silk.NET.Core.Native.ID3D10Blob* ppError)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -273,7 +273,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pBlob, nuint Size, Guid* riid, void** ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pBlob, nuint Size, Guid* riid, void** ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -285,7 +285,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pBlob, nuint Size, Guid* riid, ref void* ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pBlob, nuint Size, Guid* riid, ref void* ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -300,7 +300,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pBlob, nuint Size, ref Guid riid, void** ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pBlob, nuint Size, ref Guid riid, void** ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -315,7 +315,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pBlob, nuint Size, ref Guid riid, ref void* ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pBlob, nuint Size, ref Guid riid, ref void* ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -381,7 +381,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName, Guid* riid, void** ppvDeserializer)
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName, Guid* riid, void** ppvDeserializer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -393,7 +393,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName, Guid* riid, ref void* ppvDeserializer)
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName, Guid* riid, ref void* ppvDeserializer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -408,7 +408,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName, ref Guid riid, void** ppvDeserializer)
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName, ref Guid riid, void** ppvDeserializer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -423,7 +423,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName, ref Guid riid, ref void* ppvDeserializer)
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName, ref Guid riid, ref void* ppvDeserializer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -497,7 +497,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, Guid* riid, void** ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, Guid* riid, void** ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -509,7 +509,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, Guid* riid, ref void* ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, Guid* riid, ref void* ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -524,7 +524,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, ref Guid riid, void** ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, ref Guid riid, void** ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -539,7 +539,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, ref Guid riid, ref void* ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, ref Guid riid, ref void* ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -557,7 +557,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName, Guid* riid, void** ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName, Guid* riid, void** ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -572,7 +572,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName, Guid* riid, ref void* ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName, Guid* riid, ref void* ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -590,7 +590,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName, ref Guid riid, void** ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName, ref Guid riid, void** ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -608,7 +608,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName, ref Guid riid, ref void* ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName, ref Guid riid, ref void* ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -629,7 +629,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, Guid* riid, void** ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, Guid* riid, void** ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -643,7 +643,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, Guid* riid, ref void* ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, Guid* riid, ref void* ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -660,7 +660,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, ref Guid riid, void** ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, ref Guid riid, void** ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -677,7 +677,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, ref Guid riid, ref void* ppvDeserializer) where T0 : unmanaged
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, ref Guid riid, ref void* ppvDeserializer) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -762,7 +762,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SerializeVersionedRootSignature<TI0, TI1>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VersionedRootSignatureDesc pDesc, ref ComPtr<TI0> ppResult, ref ComPtr<TI1> ppError) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
+    public static int SerializeVersionedRootSignature<TI0, TI1>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VersionedRootSignatureDesc pDesc, ref ComPtr<TI0> ppResult, ref ComPtr<TI1> ppError) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -778,7 +778,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SerializeVersionedRootSignature<TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VersionedRootSignatureDesc pDesc, ref ComPtr<TI0> ppResult, ref Silk.NET.Core.Native.ID3D10Blob* ppError) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+    public static unsafe int SerializeVersionedRootSignature<TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VersionedRootSignatureDesc pDesc, ref ComPtr<TI0> ppResult, ref Silk.NET.Core.Native.ID3D10Blob* ppError) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -794,7 +794,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SerializeVersionedRootSignature<TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VersionedRootSignatureDesc pDesc, ref Silk.NET.Core.Native.ID3D10Blob* ppResult, ref ComPtr<TI0> ppError) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
+    public static unsafe int SerializeVersionedRootSignature<TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VersionedRootSignatureDesc pDesc, ref Silk.NET.Core.Native.ID3D10Blob* ppResult, ref ComPtr<TI0> ppError) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.ID3D10Blob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -843,7 +843,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVersionedRootSignatureDeserializer<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pBlob, nuint Size, out ComPtr<TI0> ppvDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateVersionedRootSignatureDeserializer<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pBlob, nuint Size, out ComPtr<TI0> ppvDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -909,7 +909,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName, out ComPtr<TI0> ppvDeserializer) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName, out ComPtr<TI0> ppvDeserializer) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -975,7 +975,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, out ComPtr<TI0> ppvDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, out ComPtr<TI0> ppvDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1016,7 +1016,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName, out ComPtr<TI0> ppvDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName, out ComPtr<TI0> ppvDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1057,7 +1057,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, out ComPtr<TI0> ppvDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, out ComPtr<TI0> ppvDeserializer) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1108,7 +1108,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVersionedRootSignatureDeserializer<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pBlob, nuint Size) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateVersionedRootSignatureDeserializer<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pBlob, nuint Size) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1126,7 +1126,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1144,7 +1144,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1153,7 +1153,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char RootSignatureSubobjectName) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char RootSignatureSubobjectName) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1162,7 +1162,7 @@ public unsafe static class D3D12DeviceConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0, TI0>(this ComPtr<ID3D12DeviceConfiguration1> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pLibraryBlob, nuint Size, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

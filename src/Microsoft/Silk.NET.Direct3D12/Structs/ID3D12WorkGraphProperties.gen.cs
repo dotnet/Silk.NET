@@ -148,7 +148,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint GetWorkGraphIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pProgramName)
+        public readonly uint GetWorkGraphIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pProgramName)
         {
             var @this = (ID3D12WorkGraphProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
@@ -261,6 +261,15 @@ namespace Silk.NET.Direct3D12
             {
                 ((delegate* unmanaged[Stdcall]<ID3D12WorkGraphProperties*, uint, WorkGraphMemoryRequirements*, void>)@this->LpVtbl[14])(@this, WorkGraphIndex, pWorkGraphMemoryRequirementsPtr);
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly uint GetEntrypointRecordAlignmentInBytes(uint WorkGraphIndex, uint EntrypointIndex)
+        {
+            var @this = (ID3D12WorkGraphProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12WorkGraphProperties*, uint, uint, uint>)@this->LpVtbl[15])(@this, WorkGraphIndex, EntrypointIndex);
+            return ret;
         }
 
         /// <summary>To be documented.</summary>

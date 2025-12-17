@@ -138,6 +138,30 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"EncoderSupport1\"")]
         [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_SUPPORT1")]
         FeatureVideoEncoderSupport1 = 0x2F,
+        [Obsolete("Deprecated in favour of \"EncoderResourceRequirements1\"")]
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS1")]
+        FeatureVideoEncoderResourceRequirements1 = 0x30,
+        [Obsolete("Deprecated in favour of \"EncoderResolveInputParamLayout\"")]
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RESOLVE_INPUT_PARAM_LAYOUT")]
+        FeatureVideoEncoderResolveInputParamLayout = 0x31,
+        [Obsolete("Deprecated in favour of \"EncoderQpmapInput\"")]
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_QPMAP_INPUT")]
+        FeatureVideoEncoderQpmapInput = 0x32,
+        [Obsolete("Deprecated in favour of \"EncoderDirtyRegions\"")]
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_DIRTY_REGIONS")]
+        FeatureVideoEncoderDirtyRegions = 0x33,
+        [Obsolete("Deprecated in favour of \"EncoderMotionSearch\"")]
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_MOTION_SEARCH")]
+        FeatureVideoEncoderMotionSearch = 0x34,
+        [Obsolete("Deprecated in favour of \"EncoderSupport2\"")]
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_SUPPORT2")]
+        FeatureVideoEncoderSupport2 = 0x37,
+        [Obsolete("Deprecated in favour of \"EncoderHeapSize1\"")]
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_HEAP_SIZE1")]
+        FeatureVideoEncoderHeapSize1 = 0x38,
+        [Obsolete("Deprecated in favour of \"EncoderRateControlFrameAnalysis\"")]
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RATE_CONTROL_FRAME_ANALYSIS")]
+        FeatureVideoEncoderRateControlFrameAnalysis = 0x39,
         [NativeName("Name", "D3D12_FEATURE_VIDEO_DECODE_SUPPORT")]
         DecodeSupport = 0x0,
         [NativeName("Name", "D3D12_FEATURE_VIDEO_DECODE_PROFILES")]
@@ -222,5 +246,21 @@ namespace Silk.NET.Direct3D12
         EncoderFrameSubregionLayoutConfig = 0x2E,
         [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_SUPPORT1")]
         EncoderSupport1 = 0x2F,
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS1")]
+        EncoderResourceRequirements1 = 0x30,
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RESOLVE_INPUT_PARAM_LAYOUT")]
+        EncoderResolveInputParamLayout = 0x31,
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_QPMAP_INPUT")]
+        EncoderQpmapInput = 0x32,
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_DIRTY_REGIONS")]
+        EncoderDirtyRegions = 0x33,
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_MOTION_SEARCH")]
+        EncoderMotionSearch = 0x34,
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_SUPPORT2")]
+        EncoderSupport2 = 0x37,
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_HEAP_SIZE1")]
+        EncoderHeapSize1 = 0x38,
+        [NativeName("Name", "D3D12_FEATURE_VIDEO_ENCODER_RATE_CONTROL_FRAME_ANALYSIS")]
+        EncoderRateControlFrameAnalysis = 0x39,
     }
 }

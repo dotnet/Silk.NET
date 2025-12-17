@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEXT", Convention = CallingConvention.Winapi)]
-        public partial void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Parameter = "discardRectangleCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Rect2D pDiscardRectangles);
+        public partial void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Parameter = "discardRectangleCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Rect2D pDiscardRectangles);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEnableEXT", Convention = CallingConvention.Winapi)]

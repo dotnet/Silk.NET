@@ -115,7 +115,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, Guid* refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, Guid* refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -139,7 +139,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, ref Guid refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, ref Guid refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -395,7 +395,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -419,7 +419,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, ref LockedRect pLockedRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect, uint Flags)
+    public static int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, ref LockedRect pLockedRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

@@ -22,7 +22,9 @@ namespace Silk.NET.Direct3D12
         public RaytracingAccelerationStructurePostbuildInfoSerializationDesc
         (
             ulong? serializedSizeInBytes = null,
-            ulong? numBottomLevelAccelerationStructurePointers = null
+            RaytracingAccelerationStructurePostbuildInfoSerializationDescUnion? anonymous = null,
+            ulong? numBottomLevelAccelerationStructurePointers = null,
+            ulong? numBottomLevelAccelerationStructureHeaderAndPointerListPairs = null
         ) : this()
         {
             if (serializedSizeInBytes is not null)
@@ -30,9 +32,19 @@ namespace Silk.NET.Direct3D12
                 SerializedSizeInBytes = serializedSizeInBytes.Value;
             }
 
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
             if (numBottomLevelAccelerationStructurePointers is not null)
             {
                 NumBottomLevelAccelerationStructurePointers = numBottomLevelAccelerationStructurePointers.Value;
+            }
+
+            if (numBottomLevelAccelerationStructureHeaderAndPointerListPairs is not null)
+            {
+                NumBottomLevelAccelerationStructureHeaderAndPointerListPairs = numBottomLevelAccelerationStructureHeaderAndPointerListPairs.Value;
             }
         }
 
@@ -42,9 +54,37 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "SerializedSizeInBytes")]
         public ulong SerializedSizeInBytes;
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "NumBottomLevelAccelerationStructurePointers")]
-        public ulong NumBottomLevelAccelerationStructurePointers;
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L15470_C5")]
+        [NativeName("Name", "anonymous1")]
+        public RaytracingAccelerationStructurePostbuildInfoSerializationDescUnion Anonymous;
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref ulong NumBottomLevelAccelerationStructurePointers
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].NumBottomLevelAccelerationStructurePointers;
+        }
+#else
+        public ulong NumBottomLevelAccelerationStructurePointers
+        {
+            get => Anonymous.NumBottomLevelAccelerationStructurePointers;
+            set => Anonymous.NumBottomLevelAccelerationStructurePointers = value;
+        }
+#endif
+
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
+        public ref ulong NumBottomLevelAccelerationStructureHeaderAndPointerListPairs
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].NumBottomLevelAccelerationStructureHeaderAndPointerListPairs;
+        }
+#else
+        public ulong NumBottomLevelAccelerationStructureHeaderAndPointerListPairs
+        {
+            get => Anonymous.NumBottomLevelAccelerationStructureHeaderAndPointerListPairs;
+            set => Anonymous.NumBottomLevelAccelerationStructureHeaderAndPointerListPairs = value;
+        }
+#endif
+
     }
 }
