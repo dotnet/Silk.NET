@@ -15,7 +15,7 @@ namespace Silk.NET.SilkTouch.Sources;
 /// </summary>
 /// <param name="logger">The logger.</param>
 /// <param name="cache">The cache into which the repo is cloned.</param>
-public class GitInputSource(ILogger<GitInputSource> logger, ICacheProvider cache) : IInputSource
+public class GitInputSource(ILogger<GitInputSource> logger, ICacheProvider? cache) : IInputSource
 {
     /// <inheritdoc />
     public async Task<string?> TryResolvePath(string path)
@@ -24,13 +24,31 @@ public class GitInputSource(ILogger<GitInputSource> logger, ICacheProvider cache
             XxHash32.Hash(MemoryMarshal.Cast<char, byte>(path.AsSpan()))
         );
         logger.LogDebug("Cache key for {} = {}", path, cacheKey);
-        var (dir, shouldClone) = (
-            await cache.GetDirectory(
+        var cacheDir = await (
+            cache?.GetDirectoryAsync(
                 cacheKey,
                 CacheIntent.ResolvedForeignInput,
-                CacheFlags.AllowNewLocked
-            )
-        )!.Value;
+                CacheFlags.AllowNew | CacheFlags.RequireHostDirectory,
+                FileAccess.ReadWrite
+            ) ?? ValueTask.FromResult<ICacheDirectory?>(null)
+        );
+
+        string dir;
+        var shouldClone = true;
+        if (cacheDir is { Path: { } fsPath })
+        {
+            dir = fsPath;
+            shouldClone = !Directory.GetFiles(fsPath, "*", SearchOption.AllDirectories).Any();
+        }
+        else
+        {
+            logger.LogWarning(
+                "Failed to open cache for \"{0}\" (cache key {1}), clone will not be cached.",
+                path,
+                cacheKey
+            );
+            dir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        }
 
         path = path[4..].TrimStart('/');
         var url = path;
@@ -79,11 +97,7 @@ public class GitInputSource(ILogger<GitInputSource> logger, ICacheProvider cache
                 );
             }
 
-            await cache.CommitDirectory(
-                cacheKey,
-                CacheIntent.ResolvedForeignInput,
-                CacheFlags.NoHostDirectory
-            );
+            await (cacheDir?.CommitAsync() ?? ValueTask.CompletedTask);
         }
 
         return Path.Combine(dir, pathInRepo);

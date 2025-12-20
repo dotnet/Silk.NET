@@ -1,16 +1,10 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.IO.Hashing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Threading;
-using System.Threading.Tasks;
 using ClangSharp;
 using ClangSharp.Interop;
 using Microsoft.CodeAnalysis;
@@ -35,8 +29,8 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <param name="config">The configuration to use.</param>
 /// <param name="logger">The logger to use.</param>
 /// <param name="inputResolver">The input resolver to use.</param>
-/// <param name="cacheProvider">The cache provider into which ClangSharp outputs are cached.</param>
 /// <param name="responseFileMods">The mods that modify response files before they are fed to ClangSharp.</param>
+/// <param name="cacheProvider">The cache provider into which ClangSharp outputs are cached.</param>
 [ModConfiguration<Configuration>]
 public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
@@ -85,6 +79,11 @@ public sealed class ClangScraper(
         /// </summary>
         // TODO document
         public string[]? SkipScrapeIf { get; init; }
+
+        /// <summary>
+        /// Forces the scraper to use cache. Best used on the command line.
+        /// </summary>
+        public bool ForceCache { get; init; }
     }
 
     /// <summary>
@@ -161,7 +160,7 @@ public sealed class ClangScraper(
                             CXDiagnostic_Warning => LogLevel.Warning,
                             CXDiagnostic_Error => LogLevel.Error,
                             CXDiagnostic_Fatal => LogLevel.Critical,
-                            _ => LogLevel.Trace
+                            _ => LogLevel.Trace,
                         },
                         "    {0}",
                         diagnostic.Format(CXDiagnostic.DefaultDisplayOptions).ToString()
@@ -227,7 +226,7 @@ public sealed class ClangScraper(
         IReadOnlyList<ResponseFile> rsps,
         IModContext job,
         Configuration cfg,
-        string? cacheKey = null,
+        string cacheKey,
         CancellationToken ct = default
     )
     {
@@ -236,12 +235,6 @@ public sealed class ClangScraper(
         {
             parallelism = Environment.ProcessorCount;
         }
-        if (cacheProvider is null)
-        {
-            cacheKey = null;
-        }
-
-        string? cacheDir = null;
 
         // Figure out what the common root is so we can aggregate the file paths without collisions
         var srcRoot =
@@ -260,116 +253,92 @@ public sealed class ClangScraper(
         // Generate all the sources and tests.
         var aggregatedSources = new ConcurrentDictionary<string, SyntaxTree>();
         var aggregatedTests = new ConcurrentDictionary<string, SyntaxTree>();
-        try
-        {
-            await Parallel.ForEachAsync(
-                rsps,
-                new ParallelOptions
-                {
-                    CancellationToken = ct,
-                    MaxDegreeOfParallelism = parallelism
-                },
-                async (rsp, innerCt) =>
-                    await Task.Run(
-                        async () =>
+        await using var cacheDir = await (
+            cacheProvider?.GetDirectoryAsync(
+                cacheKey,
+                CacheIntent.StageIntermediateOutput,
+                CacheFlags.RequireNew,
+                FileAccess.Write
+            ) ?? ValueTask.FromResult<ICacheDirectory?>(null)
+        );
+        await Parallel.ForEachAsync(
+            rsps,
+            new ParallelOptions { CancellationToken = ct, MaxDegreeOfParallelism = parallelism },
+            async (rsp, innerCt) =>
+                await Task.Run(
+                    async () =>
+                    {
+                        // Generate the raw bindings.
+                        var (sources, tests, hasErrors) = ScrapeRawBindings(rsp);
+                        static MemoryStream Reopen(MemoryStream ms) =>
+                            ms.TryGetBuffer(out var buff) && buff.Array is not null
+                                ? new MemoryStream(buff.Array, buff.Offset, buff.Count)
+                                : new MemoryStream(buff.ToArray());
+
+                        // Parse and optionally cache the files for the compilation.
+                        foreach (
+                            var (isTest, (path, stream)) in sources
+                                .Select(x => (false, x))
+                                .Concat(tests.Select(x => (true, x)))
+                                .Select(x => (x.Item1, (x.x.Key, Reopen((MemoryStream)x.x.Value))))
+                        )
                         {
-                            // Generate the raw bindings.
-                            var (sources, tests, hasErrors) = ScrapeRawBindings(rsp);
+                            // Make the path relative as above.
+                            var relativeKey = Path.GetRelativePath(
+                                    isTest ? testRoot : srcRoot,
+                                    path
+                                )
+                                .Replace('\\', '/')
+                                .TrimEnd('/');
 
-                            static MemoryStream Reopen(MemoryStream ms) =>
-                                ms.TryGetBuffer(out var buff) && buff.Array is not null
-                                    ? new MemoryStream(buff.Array, buff.Offset, buff.Count)
-                                    : new MemoryStream(buff.ToArray());
-
-                            // Parse and optionally cache the files for the compilation.
-                            foreach (
-                                var (isTest, (path, stream)) in sources
-                                    .Select(x => (false, x))
-                                    .Concat(tests.Select(x => (true, x)))
-                                    .Select(x =>
-                                        (x.Item1, (x.x.Key, Reopen((MemoryStream)x.x.Value)))
-                                    )
-                            )
+                            // Cache the output.
+                            if (!hasErrors)
                             {
-                                // Make the path relative as above.
-                                var relativeKey = Path.GetRelativePath(
-                                        isTest ? testRoot : srcRoot,
-                                        path
-                                    )
-                                    .Replace('\\', '/')
-                                    .TrimEnd('/');
-
-                                // Cache the output.
-                                if (cacheKey is not null && !hasErrors)
-                                {
-                                    cacheDir ??= (
-                                        await cacheProvider!.GetDirectory(
-                                            cacheKey,
-                                            CacheIntent.StageIntermediateOutput,
-                                            CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory
-                                        )
-                                    )?.Path;
-                                    await cacheProvider!.CommitFile(
-                                        cacheKey,
-                                        CacheIntent.StageIntermediateOutput,
-                                        CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory,
+                                await (
+                                    cacheDir?.AddFileAsync(
                                         $"{(isTest ? "tests" : "sources")}/{relativeKey}",
                                         stream
-                                    );
-                                    stream.Seek(0, SeekOrigin.Begin);
-                                }
+                                    ) ?? ValueTask.CompletedTask
+                                );
+                                stream.Seek(0, SeekOrigin.Begin);
+                            }
 
-                                // Add it to the dictionary.
-                                if (
-                                    !(isTest ? aggregatedTests : aggregatedSources).TryAdd(
-                                        relativeKey,
-                                        CSharpSyntaxTree.ParseText(
-                                            SourceText.From(
-                                                cfg.ManualOverrides?.TryGetValue(
-                                                    $"{(isTest ? "tests" : "sources")}/{relativeKey}",
-                                                    out var @override
-                                                ) ?? false
-                                                    ? File.OpenRead(
-                                                        await inputResolver.ResolvePath(@override)
-                                                    )
-                                                    : stream
-                                            ),
-                                            path: relativeKey
-                                        )
+                            // Add it to the dictionary.
+                            if (
+                                !(isTest ? aggregatedTests : aggregatedSources).TryAdd(
+                                    relativeKey,
+                                    CSharpSyntaxTree.ParseText(
+                                        SourceText.From(
+                                            cfg.ManualOverrides?.TryGetValue(
+                                                $"{(isTest ? "tests" : "sources")}/{relativeKey}",
+                                                out var @override
+                                            ) ?? false
+                                                ? File.OpenRead(
+                                                    await inputResolver.ResolvePath(@override)
+                                                )
+                                                : stream
+                                        ),
+                                        path: relativeKey
                                     )
                                 )
-                                {
-                                    logger.LogError(
-                                        "Failed to add {0} - are the response file outputs conflicting?",
-                                        relativeKey
-                                    );
-                                }
-                                else
-                                {
-                                    logger.LogTrace("ClangSharp generated {0}", relativeKey);
-                                }
+                            )
+                            {
+                                logger.LogError(
+                                    "Failed to add {0} - are the response file outputs conflicting?",
+                                    relativeKey
+                                );
                             }
-                        },
-                        innerCt
-                    )
-            );
-        }
-        catch
-        {
-            cacheKey = null;
-            throw;
-        }
-        finally
-        {
-            if (cacheKey is not null)
-            {
-                await cacheProvider!.CommitDirectory(
-                    cacheKey,
-                    CacheIntent.StageIntermediateOutput,
-                    CacheFlags.RequireNewLocked | CacheFlags.NoHostDirectory
-                );
-            }
-        }
+                            else
+                            {
+                                logger.LogTrace("ClangSharp generated {0}", relativeKey);
+                            }
+                        }
+                    },
+                    innerCt
+                )
+        );
+
+        await (cacheDir?.CommitAsync() ?? ValueTask.CompletedTask);
 
         var src = job.SourceProject;
         foreach (var (fname, tree) in aggregatedSources)
@@ -429,7 +398,7 @@ public sealed class ClangScraper(
             // Others
             VisualStudioResolver.TryGetVisualStudioInfo(out _)
                 ? "vs"
-                : "!vs"
+                : "!vs",
         };
 
         // Read the configuration.
@@ -448,19 +417,12 @@ public sealed class ClangScraper(
             rsps = await mod.BeforeScrapeAsync(ctx.JobKey, rsps);
         }
 
-        // If we're caching the outputs from the entire job, then obtain a cache key to use.
-        // We need to do this before we change the file paths using the input resolver.
-        var cacheKey = Convert.ToHexString(
-            XxHash3.Hash(
-                MemoryMarshal.Cast<ulong, byte>(rsps.Select(x => x.FileHash).Order().ToArray())
-            )
-        );
-
         // Resolve any foreign paths referenced in the response files
         await inputResolver.ResolveInPlace(rsps);
 
         // Should we completely skip running ClangSharp (e.g. we can't get Windows SDK bindings on macOS)
         var skip = (cfg.SkipScrapeIf?.Any(applicableSkipIfs.Contains)).GetValueOrDefault();
+        var cacheKey = $"{ctx.JobKey}-ClangSharp";
         Exception? innerException = null;
         try
         {
@@ -478,9 +440,55 @@ public sealed class ClangScraper(
         }
         finally
         {
-            if (skip)
+            if (skip && cacheProvider is not null)
             {
-                await AttemptToLoadCache();
+                await using var cacheDir = await cacheProvider.GetDirectoryAsync(
+                    cacheKey,
+                    CacheIntent.StageIntermediateOutput,
+                    CacheFlags.None,
+                    FileAccess.Read
+                );
+                var src = ctx.SourceProject;
+                var tst = ctx.TestProject;
+                await foreach (
+                    var file in (
+                        cacheDir?.GetCommittedFilesAsync() ?? AsyncEnumerable.Empty<string>()
+                    ).WithCancellation(ct)
+                )
+                {
+                    await cacheDir!.GetCommittedFileAsync(file);
+                    var isSource = file.StartsWith("sources");
+                    var isTest = file.StartsWith("tests");
+                    if (!isSource && !isTest)
+                    {
+                        continue;
+                    }
+
+                    // Have to do this if statement this way as we can't have a ref var over an await point
+                    if ((isSource && src is null) || (isTest && tst is null))
+                    {
+                        continue;
+                    }
+
+                    var rel = file[(isSource ? "sources".Length : "tests".Length)..]
+                        .TrimStart('/', '\\');
+                    var content = await cacheDir.GetCommittedFileAsync(file);
+                    var root = await CSharpSyntaxTree
+                        .ParseText(SourceText.From(content), path: rel, cancellationToken: ct)
+                        .GetRootAsync(ct);
+                    ref var proj = ref isSource ? ref src : ref tst;
+                    var filePath = proj!.FullPath(rel);
+                    proj = proj
+                        ?.AddDocument(Path.GetFileName(file), root, filePath: filePath)
+                        .Project;
+                }
+
+                skip = cacheDir is not null;
+                if (!skip)
+                {
+                    ctx.SourceProject = src;
+                    ctx.TestProject = tst;
+                }
             }
         }
 
@@ -500,83 +508,6 @@ public sealed class ClangScraper(
                 "Bindings generation has been requested to be skipped despite there being no cache to "
                     + "fall back on."
             );
-        }
-
-        // Local function to improve readability
-        async Task AttemptToLoadCache()
-        {
-            var dirOpt = await cacheProvider!.GetDirectory(
-                cacheKey,
-                CacheIntent.StageIntermediateOutput,
-                CacheFlags.NoHostDirectory
-            );
-            if (dirOpt is not null)
-            {
-                var files = (
-                    await cacheProvider.GetFiles(
-                        cacheKey,
-                        CacheIntent.StageIntermediateOutput,
-                        CacheFlags.NoHostDirectory
-                    )
-                ).ToArray();
-
-                async Task<SyntaxTree> GetSyntaxTree(string file, string startingWith) =>
-                    CSharpSyntaxTree.ParseText(
-                        SourceText.From(
-                            await cacheProvider.GetFile(
-                                cacheKey,
-                                CacheIntent.StageIntermediateOutput,
-                                CacheFlags.NoHostDirectory,
-                                file
-                            )
-                        ),
-                        path: file[(startingWith.Length + 1)..],
-                        cancellationToken: ct
-                    );
-
-                async Task<IEnumerable<SyntaxTree>> GetSyntaxTrees(string startingWith) =>
-                    await Task.WhenAll(
-                        files
-                            .Where(x =>
-                                x.StartsWith(startingWith)
-                                && x.Length > startingWith.Length
-                                && x[startingWith.Length] is '/' or '\\'
-                            )
-                            .Select(x => GetSyntaxTree(x, startingWith))
-                    );
-
-                var src = ctx.SourceProject;
-                foreach (var tree in await GetSyntaxTrees("sources"))
-                {
-                    src = src
-                        ?.AddDocument(
-                            Path.GetFileName(tree.FilePath),
-                            await tree.GetRootAsync(ct),
-                            filePath: src.FullPath(tree.FilePath)
-                        )
-                        .Project;
-                }
-
-                ctx.SourceProject = src;
-                var test = ctx.TestProject;
-                foreach (var tree in await GetSyntaxTrees("tests"))
-                {
-                    test = test
-                        ?.AddDocument(
-                            Path.GetFileName(tree.FilePath),
-                            await tree.GetRootAsync(ct),
-                            filePath: test.FullPath(tree.FilePath)
-                        )
-                        .Project;
-                }
-
-                ctx.TestProject = test;
-                skip = false;
-            }
-            else
-            {
-                logger.LogError("Failed to retrieve cache.");
-            }
         }
     }
 
