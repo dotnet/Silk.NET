@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -231,6 +232,43 @@ namespace Silk.NET.Core
                 );
             }
         }
+
+        /// <summary>
+        /// Populates the given span with the characters of this <see cref="Ptr{T}"/> as a c-style string.
+        /// </summary>
+        /// <param name="this"></param>
+        /// <param name="span">The span to populate characters into</param>
+        /// <returns>True if the given span is of sufficient length and can be filled - false otherwise, in which case
+        /// no data has been modified in the given span</returns>
+        public static bool TryReadToSpan(this Ptr<sbyte> @this, ref Span<char> span)
+        {
+            fixed (void* raw = @this)
+            {
+                var bytes = MemoryMarshal.CreateReadOnlySpanFromNullTerminated((byte*)raw);
+                var count = Encoding.UTF8.GetCharCount(bytes);
+                if (span.Length < count)
+                {
+                    return false;
+                }
+
+                #if DEBUG
+                // This if-def is here to prevent this constant string from taking up space in extremely constrained
+                // release environments.
+                const string assertionLog = $"{nameof(Encoding)}.{nameof(Encoding.UTF8)}." +
+                                            $"{nameof(Encoding.UTF8.GetChars)}) returned an unexpected number of " +
+                                            $"characters";
+
+                var charCount = Encoding.UTF8.GetChars(bytes, span);
+                Debug.Assert(charCount == count, assertionLog);;
+                #else
+                Encoding.UTF8.GetChars(bytes, span);
+                #endif
+
+                span = span[..count];
+                return true;
+            }
+        }
+
 
         /// <summary>
         /// Creates a string from this <see cref="Ptr{T}"/> with the given length
