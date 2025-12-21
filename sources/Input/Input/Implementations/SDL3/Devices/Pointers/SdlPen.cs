@@ -5,9 +5,8 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
 internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
 {
-    public SdlPen(SdlInputBackend backend, nint silkId, uint sdlDeviceId, IReadOnlyList<IPointerTarget> targets, string name) : base(backend, silkId, sdlDeviceId)
+    public SdlPen(SdlInputBackend backend, nint silkId, uint sdlDeviceId, string name, IPointerTarget unbounded) : base(backend, silkId, sdlDeviceId, unbounded)
     {
-        Targets = targets;
         Name = name;
     }
 
@@ -16,9 +15,14 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         throw new NotImplementedException();
     }
 
+    protected override uint GetButtonMaskSdl()
+    {
+        throw new NotImplementedException();
+    }
+
     public override PointerState State => throw new NotImplementedException();
-    public override IReadOnlyList<IPointerTarget> Targets { get; }
-    protected override bool IsBounded => true; // should this always be bounded?
+
+    protected override bool OnePointOnly => true;
 
 
     public override string Name { get; }

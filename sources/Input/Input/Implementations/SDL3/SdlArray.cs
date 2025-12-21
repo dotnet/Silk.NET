@@ -63,6 +63,10 @@ internal readonly unsafe ref struct SdlArray<T> : IDisposable, IEquatable<SdlArr
     public static bool operator !=(SdlArray<T> left, SdlArray<T> right) => left._sdl == right._sdl && left._ptr != right._ptr;
     public static bool operator ==(SdlArray<T> left, NullPtr right) => left._ptr == right;
     public static bool operator !=(SdlArray<T> left, NullPtr right) => left._ptr != right;
+    public static bool operator ==(NullPtr left, SdlArray<T> right) => left == right._ptr;
+    public static bool operator !=(NullPtr left, SdlArray<T> right) => left != right._ptr;
+
+
 
     public bool IsNull => _ptr.Native == null;
 

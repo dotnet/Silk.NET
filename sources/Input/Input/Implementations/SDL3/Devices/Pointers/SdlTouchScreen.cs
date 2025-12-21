@@ -28,6 +28,8 @@ internal class SdlTouchScreen : SdlPointerDevice, ISdlDevice<SdlTouchScreen>, IP
         throw new NotImplementedException();
     }
 
+    protected override uint GetButtonMaskSdl() => throw new NotImplementedException();
+
     public override PointerState State
     {
         get
@@ -36,17 +38,9 @@ internal class SdlTouchScreen : SdlPointerDevice, ISdlDevice<SdlTouchScreen>, IP
         }
     }
 
-    public override IReadOnlyList<IPointerTarget> Targets
-    {
-        get
-        {
-            throw new NotImplementedException();
-        }
-    }
+    protected override bool OnePointOnly => false;
 
-    protected override bool IsBounded { get; }
-
-    public SdlTouchScreen(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
+    public SdlTouchScreen(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unbounded) : base(backend, uniqueId, sdlDeviceId, unbounded)
     {
     }
 }

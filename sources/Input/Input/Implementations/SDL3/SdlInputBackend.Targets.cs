@@ -44,10 +44,16 @@ internal partial class SdlInputBackend
         return windowId;
     }
 
-    private unsafe SdlArray<WindowHandle> GetWindowHandles(ISdl sdl)
+    internal bool TryGetWindowHandles(out SdlArray<WindowHandle> handles)
+    {
+        handles = GetWindowHandles(_sdl);
+        return handles != nullptr;
+    }
+
+    internal static unsafe SdlArray<WindowHandle> GetWindowHandles(ISdl sdl)
     {
         var windowCount = 0;
-        var windows = _sdl.GetWindows(&windowCount);
+        var windows = sdl.GetWindows(&windowCount);
         if (windows != null)
         {
             return new SdlArray<WindowHandle>(windows, windowCount, sdl, true);
@@ -58,10 +64,11 @@ internal partial class SdlInputBackend
 
     }
 
-    private unsafe SdlArray<SilkSdlDisplayHandle> GetDisplayHandles(ISdl sdl)
+
+    private static unsafe SdlArray<SilkSdlDisplayHandle> GetDisplayHandles(ISdl sdl)
     {
         var displayCount = 0;
-        var displays = _sdl.GetDisplays(&displayCount);
+        var displays = sdl.GetDisplays(&displayCount);
         if (displays != null)
         {
             return new SdlArray<SilkSdlDisplayHandle>(displays, displayCount, sdl);

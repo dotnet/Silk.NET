@@ -33,4 +33,15 @@ internal static class InputLog
         var log = GenerateLog(message, path, line, member);
         Console.WriteLine(log);
     }
+
+
+    [Conditional("DEBUG")]
+    public static void Warn(string? message = null,
+        [CallerFilePath] string? path = null,
+        [CallerLineNumber] int line = 0,
+        [CallerMemberName] string? member = null)
+    {
+        var log = GenerateLog(message, path, line, member);
+        Console.WriteLine(log);
+    }
 }
