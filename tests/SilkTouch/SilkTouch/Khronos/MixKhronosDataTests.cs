@@ -14,7 +14,6 @@ using NameTrimmer = Silk.NET.SilkTouch.Naming.NameTrimmer;
 
 namespace Silk.NET.SilkTouch.UnitTests.Khronos;
 
-[TestFixture]
 public class MixKhronosDataTests
 {
     struct Options : IOptionsSnapshot<MixKhronosData.Configuration>
@@ -50,18 +49,20 @@ public class MixKhronosDataTests
         IEnumerable<string> files = ["gl.xml", "wgl.xml", "glx.xml", "cl.xml", "vk.xml"];
         return files
             .ToAsyncEnumerable()
-            .Select(async (x, ct) =>
-            {
-                var mod = new MixKhronosData(
-                    new NullLogger<MixKhronosData>(),
-                    new Options
-                    {
-                        Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) },
-                    }
-                );
-                await mod.InitializeAsync(new DummyModContext(), ct);
-                return (object[])[x, mod.Jobs[""]];
-            });
+            .Select(
+                async (x, ct) =>
+                {
+                    var mod = new MixKhronosData(
+                        new NullLogger<MixKhronosData>(),
+                        new Options
+                        {
+                            Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) },
+                        }
+                    );
+                    await mod.InitializeAsync(new DummyModContext(), ct);
+                    return (object[])[x, mod.Jobs[""]];
+                }
+            );
     }
 
     private static IAsyncEnumerable<object[]> EnumTestCases() =>
@@ -69,22 +70,23 @@ public class MixKhronosDataTests
 
     private static IAsyncEnumerable<object[]> RegressionTestCases() =>
         TestCases()
-            .Select(async (object[] s, CancellationToken ct) =>
-                s[0] is "gl.xml" or "cl.xml"
-                    ? (object[])
-                        [
-                            s[0],
-                            s[1],
-                            await Task.WhenAll(
-                                TestFiles(
-                                        new Regex(
-                                            $@"regression\.2\.21\.{((string)s[0])[..^4]}.*\.json\.gz"
+            .Select(
+                async (object[] s, CancellationToken ct) =>
+                    s[0] is "gl.xml" or "cl.xml"
+                        ? (object[])
+                            [
+                                s[0],
+                                s[1],
+                                await Task.WhenAll(
+                                    TestFiles(
+                                            new Regex(
+                                                $@"regression\.2\.21\.{((string)s[0])[..^4]}.*\.json\.gz"
+                                            )
                                         )
-                                    )
-                                    .Select(ReadProfile)
-                            ),
-                        ]
-                    : null
+                                        .Select(ReadProfile)
+                                ),
+                            ]
+                        : null
             )
             .OfType<object[]>();
 
