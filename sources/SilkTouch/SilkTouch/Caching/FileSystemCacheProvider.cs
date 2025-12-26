@@ -47,9 +47,11 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
                 var committedPath = GetCachePath(cacheKey, intent);
                 if (
                     (flags & CacheFlags.AllowNew) == 0
-                    && (Directory.Exists(committedPath) || File.Exists(committedPath))
+                    && !Directory.Exists(committedPath)
+                    && !File.Exists(committedPath)
                 )
                 {
+                    _openKeys.Remove(cacheKey);
                     return null;
                 }
 
