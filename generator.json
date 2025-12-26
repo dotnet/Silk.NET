@@ -2,8 +2,8 @@
   "Jobs": {
     "Microsoft": {
       "Solution": "Silk.NET.sln",
-      "SourceProject": "TODO.csproj",
-      "TestProject": "tests/TODO.csproj",
+      "SourceProject": "sources/Win32/Win32/Silk.NET.Win32.csproj",
+      "TestProject": "tests/Win32/Win32/Silk.NET.Win32.UnitTests.csproj",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
@@ -18,7 +18,8 @@
           "sources/Windows/um/icm/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
           "sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
           "sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
-          "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs"
+          "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs",
+          "sources/Windows/shared/strsafe/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/strsafe/Windows.gen.cs"
         },
         "InputSourceRoot": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
         "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",

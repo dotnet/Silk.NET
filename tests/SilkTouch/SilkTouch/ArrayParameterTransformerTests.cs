@@ -12,7 +12,6 @@ using Silk.NET.SilkTouch.Mods.Transformation;
 
 namespace Silk.NET.SilkTouch.UnitTests;
 
-[TestFixture]
 public class ArrayParameterTransformerTests
 {
     [
@@ -247,7 +246,7 @@ public class ArrayParameterTransformerTests
                                 IsOut: childNativeName.Contains('o'),
                                 IsIn: childNativeName.Contains('i')
                             )
-                        )
+                        ),
                     ],
                     ElementTypeConstraints: new SymbolConstraints(
                         [
@@ -257,7 +256,7 @@ public class ArrayParameterTransformerTests
                                 null,
                                 null,
                                 new UsageConstraints()
-                            )
+                            ),
                         ]
                     ),
                     IsMutable: childNativeName.Contains('m')
@@ -279,7 +278,7 @@ public class ArrayParameterTransformerTests
                                 IsOut: childNativeName.Contains('o'),
                                 IsIn: childNativeName.Contains('i')
                             )
-                        )
+                        ),
                     ],
                     ElementTypeConstraints: new SymbolConstraints(
                         [
@@ -289,7 +288,7 @@ public class ArrayParameterTransformerTests
                                 null,
                                 null,
                                 new UsageConstraints()
-                            )
+                            ),
                         ]
                     ),
                     IsMutable: childNativeName.Contains('m')

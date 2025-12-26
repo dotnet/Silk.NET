@@ -20,11 +20,11 @@ var skip = new Option<string[]>(
     "A list of job names to skip."
 )
 {
-    Arity = ArgumentArity.ZeroOrMore
+    Arity = ArgumentArity.ZeroOrMore,
 };
 var configs = new Argument<string[]>("configs", "Path(s) to JSON SilkTouch configuration(s)")
 {
-    Arity = ArgumentArity.OneOrMore
+    Arity = ArgumentArity.OneOrMore,
 };
 var configOverrides = new Argument<string[]>(
     "overrides",
@@ -32,7 +32,7 @@ var configOverrides = new Argument<string[]>(
     "Arguments recognisable by Microsoft.Extensions.Configuration.CommandLine to override JSON configuration items."
 )
 {
-    Arity = ArgumentArity.ZeroOrMore
+    Arity = ArgumentArity.ZeroOrMore,
 };
 var jobs = new Option<int>(
     new[] { "--max-jobs", "-j" },
