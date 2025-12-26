@@ -87,7 +87,7 @@ jobs:
             - name: Restore
               run: dotnet restore --runtime ${{ matrix.rid }}
             - name: Test
-              run: dotnet test -c Release --no-restore --runtime ${{ matrix.rid }} --collect:"XPlat Code Coverage" --results-directory ./coverage --logger:"trx"
+              run: dotnet test -c Release --no-restore --collect:"XPlat Code Coverage" --results-directory ./coverage --logger:"trx"
             # TODO: https://github.com/dorny/test-reporter?tab=readme-ov-file#recommended-setup-for-public-repositories
             #- name: Test Report
             #  uses: dorny/test-reporter@v1
