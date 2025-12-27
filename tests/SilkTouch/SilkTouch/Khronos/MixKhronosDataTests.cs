@@ -16,15 +16,20 @@ namespace Silk.NET.SilkTouch.UnitTests.Khronos;
 
 public class MixKhronosDataTests
 {
+    static MixKhronosDataTests()
+    {
+        if (!VerifyDiffPlex.Initialized)
+        {
+            VerifyDiffPlex.Initialize();
+        }
+    }
+
     struct Options : IOptionsSnapshot<MixKhronosData.Configuration>
     {
         public required MixKhronosData.Configuration Value { get; init; }
 
         public MixKhronosData.Configuration Get(string? name) => Value;
     }
-
-    [ModuleInitializer]
-    public static void Initialize() => VerifyDiffPlex.Initialize();
 
     public static string TestFile(string name, [CallerFilePath] string? fPath = null) =>
         Path.Combine(

@@ -36,4 +36,10 @@
     <PackageReference Include="coverlet.collector" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" />
+    <PackageReference Include="Microsoft.Testing.Extensions.CodeCoverage" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" />
+  </ItemGroup>
+
 </Project>
