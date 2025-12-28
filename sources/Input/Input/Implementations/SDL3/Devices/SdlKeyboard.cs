@@ -12,27 +12,27 @@ namespace Silk.NET.Input.SDL3;
 internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 {
     public KeyboardState State { get; }
-    public override string Name => NativeBackend.GetKeyboardNameForID(SdlDeviceId).ReadToString();
+    public override string Name => NativeBackend.GetKeyboardNameForID((uint)SdlDeviceId).ReadToString();
     public string? ClipboardText
     {
         get => NativeBackend.HasClipboardText() ? NativeBackend.GetClipboardText().ReadToString() : null;
         set => NativeBackend.SetClipboardText(value);
     }
 
-    public static SdlKeyboard CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
+    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
     {
-        var namePtr = backend.Sdl.GetKeyboardNameForID(sdlDeviceId);
+        var namePtr = backend.Sdl.GetKeyboardNameForID((uint)sdlDeviceId);
         nint uniqueId = 0;
         if (backend.AttemptUniqueId(namePtr, ref uniqueId))
         {
             return new SdlKeyboard(sdlDeviceId, uniqueId, backend);
         }
 
-        uniqueId = backend.FallbackUniqueId(sdlDeviceId, uniqueId);
+        uniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, uniqueId);
         return new SdlKeyboard(sdlDeviceId, uniqueId, backend);
     }
 
-    private SdlKeyboard(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
+    private SdlKeyboard(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
     {
         _modState = NativeBackend.GetModState();
         _keyStates = new ButtonStates();
@@ -144,7 +144,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         }
         else if (evt.WindowID != NativeBackend.GetWindowID(_textEntryWindow.Value))
         {
-            Console.Error.WriteLine("Received text editing event for a different window than the " +
+            InputLog.Error("Received text editing event for a different window than the " +
                                     "one we're recording text for.");
         }
 
@@ -193,7 +193,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         }
         else if (evt.WindowID != NativeBackend.GetWindowID(_textEntryWindow.Value))
         {
-            Console.Error.WriteLine("Received text input event for a different window than the " +
+            InputLog.Error("Received text input event for a different window than the " +
                                     "one we're recording text for.");
         }
 

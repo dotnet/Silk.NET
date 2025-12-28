@@ -3,6 +3,7 @@
 
 using System.Diagnostics;
 using System.Text;
+using Silk.NET.Input.SDL3;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.KeyHandling;
@@ -142,7 +143,7 @@ internal sealed class TextRecorder
                     SetSelectionLength(0);
                     break;
                 default:
-                    Console.Error.WriteLine("Unexpected text deletion type");
+                    InputLog.Error($"Unexpected text deletion type: {deletionType}");
                     break;
             }
         }
@@ -259,7 +260,7 @@ internal sealed class TextRecorder
         }
         else
         {
-            Console.Error.WriteLine("Failed to read text from text editing event.");
+            InputLog.Error("Failed to read text from text editing event.");
             // insert empty just to synchronize cursor position
             SetSelection(cursorStart, 0);
         }

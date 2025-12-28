@@ -23,6 +23,12 @@ public class PointerState(
             other.GripPressure
         ) { }
 
+    public PointerState(IReadOnlyList<Button<PointerButton>> buttons, IReadOnlyList<TargetPoint> points, float gripPressure = 0):
+        this(new ButtonReadOnlyList<PointerButton>(buttons), new InputReadOnlyList<TargetPoint>(points), gripPressure)
+    {
+
+    }
+
     /// <summary>
     /// Gets the captured state of each of the buttons on the device.
     /// </summary>

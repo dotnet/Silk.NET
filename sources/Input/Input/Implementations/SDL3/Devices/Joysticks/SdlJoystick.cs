@@ -12,48 +12,48 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     internal readonly JoystickType JoystickType;
     internal JoystickHandle JoystickHandle { get; }
 
-    public static SdlJoystick CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
+    public static SdlJoystick CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
     {
         nint uniqueId = 0;
 
-        var guid = backend.Sdl.GetJoystickGuidForID(sdlDeviceId);
+        var guid = backend.Sdl.GetJoystickGuidForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(new ReadOnlySpan<byte>(&guid, 16), ref uniqueId))
         {
             return new SdlJoystick(sdlDeviceId, uniqueId, backend);
         }
 
-        var pathPtr = backend.Sdl.GetJoystickPathForID(sdlDeviceId);
+        var pathPtr = backend.Sdl.GetJoystickPathForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(pathPtr, ref uniqueId))
         {
             return new SdlJoystick(sdlDeviceId, uniqueId, backend);
         }
 
-        var name = backend.Sdl.GetJoystickNameForID(sdlDeviceId);
+        var name = backend.Sdl.GetJoystickNameForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(name, ref uniqueId))
         {
             return new SdlJoystick(sdlDeviceId, uniqueId, backend);
         }
 
-        var type = backend.Sdl.GetJoystickTypeForID(sdlDeviceId);
+        var type = backend.Sdl.GetJoystickTypeForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(type, ref uniqueId))
         {
             return new SdlJoystick(sdlDeviceId, uniqueId, backend);
         }
 
-        uniqueId = backend.FallbackUniqueId(sdlDeviceId, uniqueId);
+        uniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, uniqueId);
         return new SdlJoystick(sdlDeviceId, uniqueId, backend);
     }
 
 
-    public override string Name => NativeBackend.GetJoystickNameForID(SdlDeviceId).ReadToString();
+    public override string Name => NativeBackend.GetJoystickNameForID((uint)SdlDeviceId).ReadToString();
 
-    public override uint SdlDeviceId => _sdlDeviceId;
+    public override ulong SdlDeviceId => _sdlDeviceId;
 
 
 
-    private SdlJoystick(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
+    private SdlJoystick(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
     {
-        var joystickHandle = NativeBackend.OpenJoystick(sdlDeviceId);
+        var joystickHandle = NativeBackend.OpenJoystick((uint)sdlDeviceId);
         _sdlDeviceId = sdlDeviceId;
 
         if (joystickHandle.Handle == null)
@@ -174,7 +174,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     protected override void Release() => NativeBackend.CloseJoystick(JoystickHandle);
 
     public void RefreshSdlId() => _sdlDeviceId = NativeBackend.GetJoystickID(JoystickHandle);
-    private uint _sdlDeviceId;
+    private ulong _sdlDeviceId;
 
     // State
     private readonly Button<JoystickButton>[] _rawButtonState;

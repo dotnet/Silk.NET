@@ -18,7 +18,7 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
 
     public nint Id { get; }
 
-    public virtual uint SdlDeviceId { get; }
+    public virtual ulong SdlDeviceId { get; }
 
     public SdlInputBackend Backend { get; }
 
@@ -29,7 +29,7 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
 
     public abstract string Name { get; }
 
-    protected SdlDevice(SdlInputBackend backend, nint uniqueId, uint sdlDeviceId)
+    protected SdlDevice(SdlInputBackend backend, nint uniqueId, ulong sdlDeviceId)
     {
         Backend = backend;
         Id = uniqueId;
@@ -46,7 +46,7 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
         #if DEBUG
         if (!Backend.DeviceRegistry.Remove(Id))
         {
-            Console.Error.WriteLine($"Failed to remove device {Id} from registry");
+            InputLog.Error($"Failed to remove device {Id} from registry");
         }
         #else
         Backend.DeviceRegistry.Remove(Id);

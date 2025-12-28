@@ -13,7 +13,7 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
 {
     protected SdlPointerDevice(SdlInputBackend backend, nint silkId,
-        uint sdlDeviceId, IPointerTarget unboundedPointerTarget) : base(backend, silkId, sdlDeviceId)
+        ulong sdlDeviceId, IPointerTarget unboundedPointerTarget) : base(backend, silkId, sdlDeviceId)
     {
         _unboundedPointerTarget = unboundedPointerTarget;
         UnboundedTargetList = [unboundedPointerTarget];

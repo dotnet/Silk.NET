@@ -1,11 +1,13 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Silk.NET.SDL;
+
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
-internal class SdlTouchScreen : SdlPointerDevice, ISdlDevice<SdlTouchScreen>, IPointerDevice
+internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, IPointerDevice
 {
-    public static SdlTouchScreen CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
+    public static SdlTouchSurface CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
     {
         throw new NotImplementedException();
     }
@@ -40,7 +42,11 @@ internal class SdlTouchScreen : SdlPointerDevice, ISdlDevice<SdlTouchScreen>, IP
 
     protected override bool OnePointOnly => false;
 
-    public SdlTouchScreen(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unbounded) : base(backend, uniqueId, sdlDeviceId, unbounded)
+    public SdlTouchSurface(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unbounded) : base(backend, uniqueId, sdlDeviceId, unbounded)
+    {
+    }
+
+    public void Event(in TouchFingerEvent finger, IPointerTarget? target, SdlInputBackend.FingerEventType fingerType)
     {
     }
 }

@@ -107,7 +107,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     public void Remap() => Remap(_gamepadHandle);
 
-    public override uint SdlDeviceId => _sdlDeviceId;
+    public override ulong SdlDeviceId => _sdlDeviceId;
     private uint _sdlDeviceId;
 
     public void RefreshSdlId() => _sdlDeviceId = NativeBackend.GetGamepadID(_gamepadHandle);
@@ -133,7 +133,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     #endregion
 
-    public static SdlGamepad? CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
+    public static SdlGamepad? CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
     {
         if (!backend.TryGetOrCreateDevice<SdlJoystick>(sdlDeviceId, out var joystick))
         {
@@ -141,7 +141,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         }
 
         var joystickUniqueId = joystick.Id;
-        var gpn = backend.Sdl.GetRealGamepadTypeForID(sdlDeviceId);
+        var gpn = backend.Sdl.GetRealGamepadTypeForID((uint)sdlDeviceId);
 
         if (backend.AttemptUniqueId(gpn, ref joystickUniqueId))
         {
@@ -149,13 +149,13 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         }
 
         // manipulate the joystick id to make a unique gamepad id
-        var guid = backend.Sdl.GetGamepadGuidForID(sdlDeviceId);
+        var guid = backend.Sdl.GetGamepadGuidForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(guid, ref joystickUniqueId))
         {
             return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
         }
 
-        joystickUniqueId = backend.FallbackUniqueId(sdlDeviceId, joystickUniqueId);
+        joystickUniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, joystickUniqueId);
         return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
     }
 

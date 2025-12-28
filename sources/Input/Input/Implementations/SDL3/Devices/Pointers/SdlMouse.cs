@@ -13,7 +13,7 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 
     private readonly MouseState _state;
 
-    private SdlMouse(uint sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unboundedPointerTarget,
+    private SdlMouse(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unboundedPointerTarget,
         ICursorConfiguration cursor)
         : base(backend, uniqueId, sdlDeviceId, unboundedPointerTarget)
     {
@@ -46,13 +46,13 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     protected override uint GetButtonMaskSdl() => NativeBackend.GetMouseState(nullptr, nullptr);
 
 
-    public static unsafe SdlMouse CreateDevice(uint sdlDeviceId, SdlInputBackend backend)
+    public static unsafe SdlMouse CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
     {
-        var deviceName = backend.Sdl.GetMouseNameForID(sdlDeviceId);
+        var deviceName = backend.Sdl.GetMouseNameForID((uint)sdlDeviceId);
         nint uniqueId = 0;
         if (!backend.AttemptUniqueId(deviceName, ref uniqueId))
         {
-            uniqueId = backend.FallbackUniqueId(sdlDeviceId, uniqueId);
+            uniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, uniqueId);
         }
 
         backend.Sdl.Free(deviceName);
@@ -60,7 +60,7 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
             backend.CursorConfiguration);
     }
 
-    public override string Name => NativeBackend.GetMouseNameForID(SdlDeviceId).ReadToString();
+    public override string Name => NativeBackend.GetMouseNameForID((uint)SdlDeviceId).ReadToString();
 
     protected override void Release()
     {

@@ -11,9 +11,9 @@ internal static unsafe class BackendExtensions
     extension(SdlInputBackend backend)
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public nint FallbackUniqueId(uint sdlDeviceId, nint uniqueId)
+        public static nint FallbackUniqueId(ulong sdlDeviceId, nint uniqueId)
         {
-            Console.Error.WriteLine("Failed to create a deterministically unique identifier for joystick");
+            InputLog.Error("Failed to create a deterministically unique identifier for joystick");
             return uniqueId ^ ((nint)sdlDeviceId | ((nint)sdlDeviceId << 16));
         }
 
@@ -28,9 +28,9 @@ internal static unsafe class BackendExtensions
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool AttemptUniqueId<T>(T ptr, ref nint uniqueId1)
+        public bool AttemptUniqueId<T>(T value, ref nint uniqueId1)
             where T : unmanaged =>
-            AttemptUniqueId(backend, new ReadOnlySpan<byte>(&ptr, sizeof(T)), ref uniqueId1);
+            AttemptUniqueId(backend, new ReadOnlySpan<byte>(&value, sizeof(T)), ref uniqueId1);
 
         public bool AttemptUniqueId(ReadOnlySpan<byte> bytes, ref nint uniqueId1)
         {

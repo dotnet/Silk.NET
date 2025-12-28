@@ -3,6 +3,7 @@
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
 using Silk.NET.Input.SDL3.Devices.Pointers;
@@ -370,6 +371,63 @@ internal partial class SdlInputBackend : IInputBackend
 
                 break;
             }
+                // pen
+            case >= EventType.PenProximityIn and <= EventType.PenAxis:
+            {
+                var which = evt.Ptouch.Which;
+                if (!TryGetOrCreateDevice(which, out SdlPen penDevice))
+                {
+                    return;
+                }
+
+                _ = TryGetPointerTargetForWindow(evt.Ptouch.WindowID, out var target);
+
+                switch (type)
+                {
+                    case EventType.PenProximityIn:
+                    {
+                        penDevice.SetProximity(target, true);
+                        return;
+                    }
+                    case EventType.PenProximityOut:
+                    {
+                        penDevice.SetProximity(target, false);
+                        break;
+                    }
+                    case EventType.PenDown:
+                    case EventType.PenUp:
+                    case EventType.PenButtonDown:
+                    case EventType.PenButtonUp:
+                    case EventType.PenMotion:
+                    {
+                        ref readonly var penEvt = ref evt.Ptouch;
+                        penDevice.Event(target, new Vector2(penEvt.X, penEvt.Y), (SdlPenInputFlags)penEvt.PenState);
+                        break;
+                    }
+                    case EventType.PenAxis:
+                    {
+                        ref readonly var penEvt = ref evt.Paxis;
+                        penDevice.Event(target, new Vector2(penEvt.X, penEvt.Y), (SdlPenInputFlags)penEvt.PenState, penEvt.Axis, penEvt.Value);
+                        break;
+                    }
+                }
+
+                break;
+            }
+
+            case >= EventType.FingerDown and <= EventType.FingerCanceled:
+            {
+                var finger = evt.Tfinger;
+                var device = finger.TouchID;
+                if (!TryGetOrCreateDevice(device, out SdlTouchSurface touchDevice))
+                {
+                    return;
+                }
+
+                _ = TryGetPointerTargetForWindow(finger.WindowID, out var target);
+                touchDevice.Event(finger, target, (FingerEventType)finger.Type);
+                break;
+            }
         }
 
         switch (type)
@@ -378,47 +436,29 @@ internal partial class SdlInputBackend : IInputBackend
 
             // sensor? for what?
             case EventType.SensorUpdate:
+            {
                 break;
-
-            // ----- Pointer events
-
-            // mouse
-            case EventType.MouseMotion:
-                break;
-            case EventType.MouseButtonDown:
-                break;
-            case EventType.MouseButtonUp:
-                break;
-            case EventType.MouseWheel:
-                break;
+            }
 
             // touch
             case EventType.FingerDown:
+            {
                 break;
+            }
             case EventType.FingerUp:
+            {
                 break;
+            }
             case EventType.FingerMotion:
+            {
                 break;
+            }
             case EventType.FingerCanceled:
+            {
                 break;
+            }
 
-            // pen
-            case EventType.PenProximityIn:
-                break;
-            case EventType.PenProximityOut:
-                break;
-            case EventType.PenDown:
-                break;
-            case EventType.PenUp:
-                break;
-            case EventType.PenButtonDown:
-                break;
-            case EventType.PenButtonUp:
-                break;
-            case EventType.PenMotion:
-                break;
-            case EventType.PenAxis:
-                break;
+
 
             // Display & window (pointer target) events ----------------------------
             case EventType.DisplayOrientation:
@@ -448,17 +488,27 @@ internal partial class SdlInputBackend : IInputBackend
             // Text input events -------------------------------------------
             // todo: attribute this to a keyboard device? or something else?
             case EventType.TextEditing:
+            {
                 break;
+            }
             case EventType.TextInput:
+            {
                 break;
+            }
             case EventType.TextEditingCandidates:
+            {
                 break;
+            }
             case EventType.ClipboardUpdate:
+            {
                 break;
+            }
         }
+
+        return;
     }
 
-    internal bool TryGetOrCreateDevice<T>(uint id, [NotNullWhen(true)] out T? device) where T : SdlDevice, ISdlDevice<T>
+    internal bool TryGetOrCreateDevice<T>(ulong id, [NotNullWhen(true)] out T? device) where T : SdlDevice, ISdlDevice<T>
     {
         // If we already have a device with this ID, return it.
         for (var i = 0; i < _devices.Count; i++)
@@ -476,20 +526,20 @@ internal partial class SdlInputBackend : IInputBackend
         }
         catch (Exception e)
         {
-            Console.Error.WriteLine($"Failed to create device {nameof(T)} with id '{id}': {e}");
+            InputLog.Error($"Failed to create device {nameof(T)} with id '{id}': {e}");
             device = null;
             return false;
         }
 
         if (device is null)
         {
-            Console.Error.WriteLine($"Failed to create device {nameof(T)} with id '{id}'");
+            InputLog.Error($"Failed to create device {nameof(T)} with id '{id}'");
             return false;
         }
 
 
         _devices.Add(device);
-        Console.WriteLine($"Gamepad added: (sdl ID: {id})");
+        InputLog.Debug($"{typeof(T)} added: (sdl ID: {id})");
         return true;
     }
 
@@ -576,5 +626,29 @@ internal partial class SdlInputBackend : IInputBackend
 
         target = _windowTargets.FirstOrDefault(x => x.Id == id);
         return target != null;
+    }
+
+    internal enum SdlPenInputFlags : uint
+    {
+        Down = SDL.Sdl.PenInputDown,
+
+        Button1 = SDL.Sdl.PenInputButton1,
+        Button2 = SDL.Sdl.PenInputButton2,
+        Button3 = SDL.Sdl.PenInputButton3,
+        Button4 = SDL.Sdl.PenInputButton4,
+        Button5 = SDL.Sdl.PenInputButton5,
+
+        EraserTip = SDL.Sdl.PenInputEraserTip,
+
+        // Sdl 3.4
+        PenInProximity = SDL.Sdl.PenInputEraserTip << 1
+    }
+
+    internal enum FingerEventType : uint
+    {
+        Down = EventType.FingerDown,
+        Up = EventType.FingerUp,
+        Motion = EventType.FingerMotion,
+        Canceled = EventType.FingerCanceled
     }
 }
