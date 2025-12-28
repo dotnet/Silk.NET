@@ -440,26 +440,6 @@ internal partial class SdlInputBackend : IInputBackend
                 break;
             }
 
-            // touch
-            case EventType.FingerDown:
-            {
-                break;
-            }
-            case EventType.FingerUp:
-            {
-                break;
-            }
-            case EventType.FingerMotion:
-            {
-                break;
-            }
-            case EventType.FingerCanceled:
-            {
-                break;
-            }
-
-
-
             // Display & window (pointer target) events ----------------------------
             case EventType.DisplayOrientation:
             case EventType.DisplayAdded:
@@ -491,21 +471,7 @@ internal partial class SdlInputBackend : IInputBackend
             {
                 break;
             }
-            case EventType.TextInput:
-            {
-                break;
-            }
-            case EventType.TextEditingCandidates:
-            {
-                break;
-            }
-            case EventType.ClipboardUpdate:
-            {
-                break;
-            }
         }
-
-        return;
     }
 
     internal bool TryGetOrCreateDevice<T>(ulong id, [NotNullWhen(true)] out T? device) where T : SdlDevice, ISdlDevice<T>
