@@ -59,7 +59,7 @@ public class PrettifyNames(
         /// The key specifies the category name.
         /// </summary>
         /// <remarks>
-        /// This property should either be left unconfigured or fully configured.
+        /// This property should be fully configured or not configured at all.
         /// Fully configured means that each affix category encountered needs to have a corresponding configuration.
         /// This is to ensure that behavior is predictable and fully specified.
         /// <para/>
@@ -117,6 +117,38 @@ public class PrettifyNames(
         foreach (var doc in ctx.SourceProject.Documents)
         {
             visitor.Visit(await doc.GetSyntaxRootAsync(ct));
+        }
+
+        // Log missing name affix configurations if there is at least one category configured
+        if (cfg.NameAffixes.Count > 0)
+        {
+            var categories = new HashSet<string>();
+            foreach (var (_, typeAffixData) in visitor.AffixTypes)
+            {
+                foreach (var affix in typeAffixData.TypeAffixes)
+                {
+                    categories.Add(affix.Category);
+                }
+
+                if (typeAffixData.MemberAffixes != null)
+                {
+                    foreach (var (_, memberAffixes) in typeAffixData.MemberAffixes)
+                    {
+                        foreach (var affix in memberAffixes)
+                        {
+                            categories.Add(affix.Category);
+                        }
+                    }
+                }
+            }
+
+            foreach (var category in categories)
+            {
+                if (!cfg.NameAffixes.ContainsKey(category))
+                {
+                    logger.LogWarning("Name affix category is not configured: {Category}", category);
+                }
+            }
         }
 
         // The dictionary containing mappings from the original type names to the new names of the type and its members
