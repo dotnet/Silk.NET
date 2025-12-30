@@ -169,11 +169,6 @@ public partial class MixKhronosData(
         public List<string>? Vendors { get; init; }
 
         /// <summary>
-        /// The order with which vendor suffixes are applied.
-        /// </summary>
-        public int VendorSuffixOrder { get; init; } = 0;
-
-        /// <summary>
         /// The set of identifiers that should be excluded from vendor suffix identification.
         /// </summary>
         /// <remarks>
@@ -183,24 +178,25 @@ public partial class MixKhronosData(
 
         /// <summary>
         /// Additional suffixes that may follow a data type suffix but precede a vendor suffix that should be ignored
-        /// when determining a data type suffix to trim when <see cref="TrimFunctionDataTypes"/> is on. For example,
+        /// when determining a data type suffix to trim when <see cref="IdentifyFunctionDataTypes"/> is on. For example,
         /// <c>Direct</c> for OpenAL.
+        /// <para/>
+        /// Identified suffixes will be categorized as a "KhronosNonVendor" affix.
         /// </summary>
         public List<string> NonVendorSuffixes { get; init; } = [];
 
         /// <summary>
-        /// The order with which non-vendor suffixes are applied.
+        /// Whether OpenGL-style data type suffixes should be identified.
+        /// <para/>
+        /// Identified suffixes will be categorized as a "KhronosFunctionDataType" affix.
         /// </summary>
-        public int NonVendorSuffixOrder { get; init; } = 0;
+        public bool IdentifyFunctionDataTypes { get; init; }
 
         /// <summary>
-        /// Whether OpenGL-style data type suffixes should be trimmed.
-        /// </summary>
-        public bool TrimFunctionDataTypes { get; init; }
-
-        /// <summary>
-        /// Whether enum type vendor suffixes should be identified and trimmed
+        /// Whether enum type vendor suffixes should be identified
         /// if the enum type contains members that don't match the exclusive vendor.
+        /// <para/>
+        /// Identified suffixes will be categorized as a "KhronosNonExclusiveVendor" affix.
         /// </summary>
         /// <remarks>
         /// For context, OpenGL has a problem where an enum group starts out as ARB but never gets promoted,
@@ -210,13 +206,17 @@ public partial class MixKhronosData(
         /// <c>BufferUsageARB</c> in OpenGL is an ARB suffixed enum that contains <c>GL_STREAM_DRAW</c> which is a core enum.
         /// In this case, ARB is the exclusive vendor suffix, but it is contradicted by the existence of a non-suffixed enum member.
         /// This implies that <c>BufferUsageARB</c> was incorrectly promoted and that we should remove its vendor suffix.
-        /// Enabling this option will trim <c>BufferUsageARB</c> as <c>BufferUsage</c>.
+        /// <para/>
+        /// Enabling this option will identify these types of suffixes,
+        /// allowing <c>BufferUsageARB</c> to be trimmed as <c>BufferUsage</c>.
         /// </example>
-        public bool TrimEnumTypeNonExclusiveVendors { get; init; } = false;
+        public bool IdentifyEnumTypeNonExclusiveVendors { get; init; } = false;
 
         /// <summary>
-        /// Whether enum members should have their vendor suffixes trimmed
+        /// Whether enum members should have their vendor suffixes identified
         /// if they share a vendor suffix with the containing type.
+        /// <para/>
+        /// Identified suffixes will be categorized as a "KhronosImpliedVendor" affix.
         /// </summary>
         /// <example>
         /// <c>VkPresentModeKHR</c> in Vulkan is a KHR suffixed enum that contains <c>VK_PRESENT_MODE_IMMEDIATE_KHR</c>.
@@ -224,9 +224,10 @@ public partial class MixKhronosData(
         /// However, in C#, enum members are always part of an enum type, and as such, we can assume that if an enum member belongs
         /// to a KHR enum type, then the non-suffixed enum member is also a KHR enum member.
         /// <para/>
-        /// Enabling this option will trim <c>VK_PRESENT_MODE_IMMEDIATE_KHR</c> as <c>VK_PRESENT_MODE_IMMEDIATE</c>.
+        /// Enabling this option will identify these types of suffixes,
+        /// allowing <c>VK_PRESENT_MODE_IMMEDIATE_KHR</c> to be trimmed as <c>VK_PRESENT_MODE_IMMEDIATE</c>.
         /// </example>
-        public bool TrimEnumMemberImpliedVendors { get; init; } = false;
+        public bool IdentifyEnumMemberImpliedVendors { get; init; } = false;
     }
 
     /// <inheritdoc />
@@ -1865,7 +1866,7 @@ public partial class MixKhronosData(
                 {
                     trimmedName = trimmedName[..^handleSuffix.Length];
                     attributeLists = attributeLists
-                        .AddNameSuffix(handleSuffix, -1)
+                        .AddNameSuffix(handleSuffix, "KhronosHandleType", true)
                         .WithNativeName(trimmedName);
                 }
             }
@@ -1877,7 +1878,7 @@ public partial class MixKhronosData(
                 {
                     if (trimmedName.EndsWith(vendor))
                     {
-                        attributeLists = attributeLists.AddNameSuffix(vendor, config.VendorSuffixOrder);
+                        attributeLists = attributeLists.AddNameSuffix(vendor, "KhronosVendor");
                         trimmedName = trimmedName[..^vendor.Length];
 
                         break;
@@ -1892,7 +1893,7 @@ public partial class MixKhronosData(
                 {
                     if (trimmedName.EndsWith(suffix))
                     {
-                        attributeLists = attributeLists.AddNameSuffix(suffix, config.NonVendorSuffixOrder);
+                        attributeLists = attributeLists.AddNameSuffix(suffix, "KhronosNonVendor", true);
                         trimmedName = trimmedName[..^suffix.Length];
 
                         break;
@@ -1900,7 +1901,7 @@ public partial class MixKhronosData(
                 }
 
                 // Try to identify data type suffixes
-                if (config.TrimFunctionDataTypes)
+                if (config.IdentifyFunctionDataTypes)
                 {
                     if (EndingsToTrim().Match(trimmedName) is { Success: true } match // Check if we end in a data type suffix
                         && !EndingsNotToTrim().IsMatch(trimmedName)) // Check if the ending is excluded
@@ -1908,7 +1909,7 @@ public partial class MixKhronosData(
                         var dataTypeSuffix = trimmedName[match.Index..];
                         trimmedName = trimmedName[..match.Index];
 
-                        attributeLists = attributeLists.AddNameSuffix(dataTypeSuffix, 0, 0);
+                        attributeLists = attributeLists.AddNameSuffix(dataTypeSuffix, "KhronosFunctionDataType", true);
                     }
                 }
             }
@@ -1935,7 +1936,8 @@ public partial class MixKhronosData(
 
         // Special case for enums since this code needs information about
         // the enum type name and its member names at the same time
-        // in order to properly trim the type name and member name
+        // in order to properly identify the affixes of type names and member names
+        // for trimming
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             var typeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
@@ -1943,7 +1945,7 @@ public partial class MixKhronosData(
 
             var typeVendor = job.Vendors.FirstOrDefault(typeName.EndsWith);
             var hasTypeSuffix = typeVendor != null;
-            var vendorFromTypeNameOrder = config.VendorSuffixOrder;
+            var vendorAffixType = "KhronosVendor";
 
             // Figure out the enum's exclusive vendor
             var exclusiveVendor = groupInfo?.ExclusiveVendor ?? typeVendor;
@@ -1955,7 +1957,7 @@ public partial class MixKhronosData(
             }
 
             // See config option for more info and examples on what this does
-            if (config.TrimEnumTypeNonExclusiveVendors && typeVendor != null)
+            if (config.IdentifyEnumTypeNonExclusiveVendors && typeVendor != null)
             {
                 // Trim if the type vendor suffix does not match the identified exclusive vendor suffix
                 var shouldTrimType = typeVendor != exclusiveVendor;
@@ -1971,7 +1973,7 @@ public partial class MixKhronosData(
                 if (shouldTrimType && isSafeToTrimType)
                 {
                     // Remove the exclusive vendor since it isn't actually exclusive
-                    vendorFromTypeNameOrder = -1;
+                    vendorAffixType = "KhronosNonExclusiveVendor";
 
                     // Type suffix has been removed
                     hasTypeSuffix = false;
@@ -1981,7 +1983,7 @@ public partial class MixKhronosData(
             if (typeVendor != null)
             {
                 // Mark the type vendor suffix as identified
-                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(typeVendor, vendorFromTypeNameOrder));
+                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(typeVendor, vendorAffixType, true));
             }
 
             // Check if the enum contains unsuffixed members
@@ -2010,13 +2012,13 @@ public partial class MixKhronosData(
 
             // Trim the enum members if needed
             // See config option for more info and examples on what this does
-            if (config.TrimEnumMemberImpliedVendors && typeVendor != null && canTrimImpliedVendors)
+            if (config.IdentifyEnumMemberImpliedVendors && typeVendor != null && canTrimImpliedVendors)
             {
                 node = node.WithMembers([
                     ..node.Members.Select(member => {
                         if (member.AttributeLists.GetNativeNameOrDefault(member.Identifier).EndsWith(typeVendor))
                         {
-                            return member.WithAttributeLists(member.AttributeLists.AddNameSuffix(typeVendor, -1));
+                            return member.WithAttributeLists(member.AttributeLists.AddNameSuffix(typeVendor, "KhronosImpliedVendor", true));
                         }
 
                         // Default behavior - Identify, but keep the member suffixes

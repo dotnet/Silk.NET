@@ -7,7 +7,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -35,26 +34,12 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </description></item>
 /// </list>
 /// </summary>
-[ModConfiguration<Configuration>]
-public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger, IOptionsSnapshot<ExtractNestedTyping.Configuration> cfg) : Mod
+public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : Mod
 {
-    /// <summary>
-    /// ExtractNestedTyping configuration.
-    /// </summary>
-    public record Configuration
-    {
-        /// <summary>
-        /// The order with which the -Delegate suffix is applied.
-        /// </summary>
-        public int DelegateSuffixOrder { get; init; } = 0;
-    }
-
     /// <inheritdoc />
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         await base.ExecuteAsync(ctx, ct);
-
-        var config = cfg.Get(ctx.JobKey);
 
         var project = ctx.SourceProject;
         if (project == null)
@@ -77,7 +62,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger, IO
         }
 
         // Second pass to modify existing files as per our discovery.
-        var rewriter = new Rewriter(logger, config.DelegateSuffixOrder);
+        var rewriter = new Rewriter(logger);
         // rewriter.FunctionPointerTypes = walker.GetFunctionPointerTypes();
         var (enums, constants) = walker.GetExtractedEnums();
         rewriter.ConstantsToRemove = constants;
@@ -251,7 +236,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger, IO
         }
     }
 
-    partial class Rewriter(ILogger logger, int delegateSuffixPriority) : CSharpSyntaxRewriter
+    partial class Rewriter(ILogger logger) : CSharpSyntaxRewriter
     {
         private Dictionary<string, string> _typeRenames = [];
 
@@ -531,7 +516,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger, IO
                         ? SingletonList(AttributeList(SingletonSeparatedList(Attribute(IdentifierName("Transformed")))))
                         : default)
                         .WithNativeName(currentNativeTypeName)
-                        .AddNameSuffix("Delegate", delegateSuffixPriority),
+                        .AddNameSuffix("Delegate", "FunctionPointerDelegateType"),
                     node
                 );
                 FunctionPointerTypes[currentNativeTypeName] = pfnInfo = (pfn, @delegate, [], []);

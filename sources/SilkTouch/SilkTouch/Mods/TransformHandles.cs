@@ -48,11 +48,6 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         /// Whether the DSL (i.e. <c>nullptr</c>) should be usable with handle types.
         /// </summary>
         public bool UseDSL { get; init; }
-
-        /// <summary>
-        /// The order with which the -Handle suffix is applied.
-        /// </summary>
-        public int HandleSuffixOrder { get; init; } = 0;
     }
 
     /// <inheritdoc />
@@ -134,7 +129,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         project = ctx.SourceProject;
 
         // Use document IDs from earlier
-        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL, cfg.HandleSuffixOrder);
+        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL);
         foreach (var (originalName, documentId) in handleTypeDocumentIds)
         {
             var document = project.GetDocument(documentId) ?? throw new InvalidOperationException("Failed to find document");
@@ -482,7 +477,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         }
     }
 
-    private class HandleTypeRewriter(bool useDSL, int handleSuffixPriority) : CSharpSyntaxRewriter
+    private class HandleTypeRewriter(bool useDSL) : CSharpSyntaxRewriter
     {
         public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
@@ -492,7 +487,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 .WithAttributeLists(
                     new SyntaxList<AttributeListSyntax>()
                         .WithNativeName(structName)
-                        .AddNameSuffix("Handle", handleSuffixPriority))
+                        .AddNameSuffix("Handle", "HandleType"))
                 .WithMembers(
                     List(
                         GetDefaultHandleMembers(structName).Concat(useDSL ? GetDSLHandleMembers(structName) : [])
