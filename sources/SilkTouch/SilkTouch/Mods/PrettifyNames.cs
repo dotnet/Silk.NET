@@ -53,6 +53,48 @@ public class PrettifyNames(
         /// Multiple candidate name prefixes that may apply across all of the bindings generated.
         /// </summary>
         public IReadOnlyList<string>? GlobalPrefixHints { get; init; }
+
+        /// <summary>
+        /// The configuration for each category of name affixes.
+        /// The key specifies the category name.
+        /// </summary>
+        /// <remarks>
+        /// This property should either be left unconfigured or fully configured.
+        /// Fully configured means that each affix category encountered needs to have a corresponding configuration.
+        /// This is to ensure that behavior is predictable and fully specified.
+        /// <para/>
+        /// If this is partially configured, the unconfigured categories will be logged as warnings for visibility.
+        /// </remarks>
+        public Dictionary<string, NameAffixConfiguration> NameAffixes { get; init; } = [];
+    }
+
+    /// <summary>
+    /// Specifies how a category of name affixes are to be processed by <see cref="PrettifyNames"/>.
+    /// </summary>
+    public record NameAffixConfiguration
+    {
+        /// <summary>
+        /// The order with which the affix is applied.
+        /// <para/>
+        /// Negative means the affix is not reapplied after trimming.
+        /// Higher means the affix is applied first.
+        /// <para/>
+        /// Affixes with the same order have ties broken using the order the <see cref="NameAffixAttribute"/>s are declared on the identifier.
+        /// First declared are applied first.
+        /// </summary>
+        public int Order { get; init; } = 0;
+
+        /// <summary>
+        /// The priority with which the affix is used
+        /// to create secondary names in case of conflicts.
+        /// <para/>
+        /// Negative means the affix is required, but won't be used to create secondaries.
+        /// Non-negative means the affix is optional, but will be used to create secondaries.
+        /// Higher means the names created using the affix is tried first.
+        /// <para/>
+        /// Affixes with the same priority are applied together as a group.
+        /// </summary>
+        public int DiscriminatorPriority { get; init; } = 0;
     }
 
     /// <inheritdoc />
@@ -66,7 +108,7 @@ public class PrettifyNames(
         hints?.Sort((x, y) => -x.Length.CompareTo(y.Length));
         cfg = cfg with { GlobalPrefixHints = hints };
 
-        var visitor = new Visitor();
+        var visitor = new Visitor(cfg);
         if (ctx.SourceProject is null)
         {
             return;
@@ -974,13 +1016,13 @@ public class PrettifyNames(
     /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
     private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
 
-    private record struct NameAffix(bool IsPrefix, string Affix, int Order, int DiscriminatorPriority, int DeclarationOrder);
+    private record struct NameAffix(bool IsPrefix, string Category, string Affix, int Order, int DiscriminatorPriority, int DeclarationOrder);
 
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
     private record struct TypeAffixData(NameAffix[] TypeAffixes, Dictionary<string, NameAffix[]>? MemberAffixes);
 
-    private class Visitor : CSharpSyntaxWalker
+    private class Visitor(Configuration config) : CSharpSyntaxWalker
     {
         /// <summary>
         /// A mapping from type names to their member names (along with some additional info).
@@ -1061,18 +1103,21 @@ public class PrettifyNames(
                         continue;
                     }
 
-                    if (attribute.ArgumentList != null)
+                    if (attribute.ArgumentList != null
+                        && (attribute.ArgumentList.Arguments[0].Expression as LiteralExpressionSyntax)?.Token.Value is string type
+                        && (attribute.ArgumentList.Arguments[1].Expression as LiteralExpressionSyntax)?.Token.Value is string category
+                        && (attribute.ArgumentList.Arguments[2].Expression as LiteralExpressionSyntax)?.Token.Value is string affix)
                     {
-                        var type = (attribute.ArgumentList.Arguments[0].Expression as LiteralExpressionSyntax)?.Token.Value as string;
-                        var affix = (attribute.ArgumentList.Arguments[1].Expression as LiteralExpressionSyntax)?.Token.Value as string;
-                        var order = (attribute.ArgumentList.Arguments[2].Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
-                        var discriminatorPriority = (attribute.ArgumentList.Arguments[3].Expression as LiteralExpressionSyntax)?.Token.Value as int? ?? -1;
-
-                        if (affix != null)
+                        var order = 0;
+                        var discriminatorPriority = 0;
+                        if (config.NameAffixes.TryGetValue(category, out var nameAffixConfig))
                         {
-                            affixes = [..affixes, new NameAffix(type == "Prefix", affix, order, discriminatorPriority, declarationOrder)];
-                            declarationOrder++;
+                            order = nameAffixConfig.Order;
+                            discriminatorPriority = nameAffixConfig.DiscriminatorPriority;
                         }
+
+                        affixes = [..affixes, new NameAffix(type == "Prefix", category, affix, order, discriminatorPriority, declarationOrder)];
+                        declarationOrder++;
                     }
                 }
             }

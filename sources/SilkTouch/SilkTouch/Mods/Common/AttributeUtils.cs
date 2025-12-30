@@ -201,41 +201,29 @@ public static class AttributeUtils
     /// <summary>
     /// Adds a name prefix attribute to the given attribute list.
     /// </summary>
-    /// <remarks>
-    /// See <see cref="NameAffixAttribute"/> for what the parameters do.
-    /// </remarks>
-    public static SyntaxList<AttributeListSyntax> AddNamePrefix(this IEnumerable<AttributeListSyntax> attributeLists, string prefix, int order, int discriminatorPriority = -1)
-        => attributeLists.AddNamePrefixOrSuffix("Prefix", prefix, order, discriminatorPriority);
+    public static SyntaxList<AttributeListSyntax> AddNamePrefix(this IEnumerable<AttributeListSyntax> attributeLists, string category, string prefix, bool addToEnd = false)
+        => attributeLists.AddNamePrefixOrSuffix("Prefix", prefix, category, addToEnd);
 
     /// <summary>
     /// Adds a name suffix attribute to the given attribute list.
     /// </summary>
-    /// <remarks>
-    /// See <see cref="NameAffixAttribute"/> for what the parameters do.
-    /// </remarks>
-    public static SyntaxList<AttributeListSyntax> AddNameSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string suffix, int order, int discriminatorPriority = -1)
-        => attributeLists.AddNamePrefixOrSuffix("Suffix", suffix, order, discriminatorPriority);
+    public static SyntaxList<AttributeListSyntax> AddNameSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string category, string suffix, bool addToEnd = false)
+        => attributeLists.AddNamePrefixOrSuffix("Suffix", suffix, category, addToEnd);
 
-    private static SyntaxList<AttributeListSyntax> AddNamePrefixOrSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string type, string affix, int order, int discriminatorPriority)
+    private static SyntaxList<AttributeListSyntax> AddNamePrefixOrSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string type, string category, string affix, bool addToEnd = false)
     {
         var typeArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{type}\"", type)));
+        var categoryArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{category}\"", category)));
         var affixArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{affix}\"", affix)));
-        var orderArgument = AttributeArgument(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(order)));
-        var discriminatorPriorityArgument = AttributeArgument(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(discriminatorPriority)));
-        var argumentList = AttributeArgumentList([typeArgument, affixArgument, orderArgument, discriminatorPriorityArgument]);
+        var argumentList = AttributeArgumentList([typeArgument, categoryArgument, affixArgument]);
 
         var attribute = AttributeList([
             Attribute(IdentifierName("NameAffix"), argumentList),
         ]);
 
-        return [
-            // Add attribute to the top of the attribute lists
-            // This is important and ensures that affixes added later are applied first
-            // Affixes that are added later are usually affixes on the inside of the name
-            // This ensures we apply affixes of the same priority starting from the inside first
-            attribute,
-            ..attributeLists,
-        ];
+        return addToEnd
+            ? [..attributeLists, attribute]
+            : [attribute, ..attributeLists];
     }
 
     /// <summary>
