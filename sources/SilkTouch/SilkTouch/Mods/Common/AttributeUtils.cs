@@ -201,16 +201,32 @@ public static class AttributeUtils
     /// <summary>
     /// Adds a name prefix attribute to the given attribute list.
     /// </summary>
-    public static SyntaxList<AttributeListSyntax> AddNamePrefix(this IEnumerable<AttributeListSyntax> attributeLists, string category, string prefix, bool addToEnd = false)
-        => attributeLists.AddNamePrefixOrSuffix("Prefix", prefix, category, addToEnd);
+    /// <param name="attributeLists">The attribute lists to add the attribute to.</param>
+    /// <param name="category">The affix category.</param>
+    /// <param name="prefix">The value of the affix.</param>
+    /// <param name="addToInner">
+    /// Use true if the affix comes from the inside of the name.
+    /// Use false if not (outside or appended to end).
+    /// True means that the attribute is added to the start of the attribute list, meaning that the affix is re-appended earlier.
+    /// </param>
+    public static SyntaxList<AttributeListSyntax> AddNamePrefix(this IEnumerable<AttributeListSyntax> attributeLists, string category, string prefix, bool addToInner = false)
+        => attributeLists.AddNamePrefixOrSuffix("Prefix", prefix, category, addToInner);
 
     /// <summary>
     /// Adds a name suffix attribute to the given attribute list.
     /// </summary>
-    public static SyntaxList<AttributeListSyntax> AddNameSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string category, string suffix, bool addToEnd = false)
-        => attributeLists.AddNamePrefixOrSuffix("Suffix", suffix, category, addToEnd);
+    /// <param name="attributeLists">The attribute lists to add the attribute to.</param>
+    /// <param name="category">The affix category.</param>
+    /// <param name="suffix">The value of the affix.</param>
+    /// <param name="addToInner">
+    /// Use true if the affix comes from the inside of the name.
+    /// Use false if not (outside or appended to end).
+    /// True means that the attribute is added to the start of the attribute list, meaning that the affix is re-appended earlier.
+    /// </param>
+    public static SyntaxList<AttributeListSyntax> AddNameSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string category, string suffix, bool addToInner = false)
+        => attributeLists.AddNamePrefixOrSuffix("Suffix", suffix, category, addToInner);
 
-    private static SyntaxList<AttributeListSyntax> AddNamePrefixOrSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string type, string category, string affix, bool addToEnd = false)
+    private static SyntaxList<AttributeListSyntax> AddNamePrefixOrSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string type, string category, string affix, bool addToInner = false)
     {
         var typeArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{type}\"", type)));
         var categoryArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{category}\"", category)));
@@ -221,9 +237,9 @@ public static class AttributeUtils
             Attribute(IdentifierName("NameAffix"), argumentList),
         ]);
 
-        return addToEnd
-            ? [..attributeLists, attribute]
-            : [attribute, ..attributeLists];
+        return addToInner
+            ? [attribute, ..attributeLists]
+            : [..attributeLists, attribute];
     }
 
     /// <summary>
