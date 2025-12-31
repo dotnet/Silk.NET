@@ -180,6 +180,10 @@ public class FunctionTransformer(
                     var newFun = function
                         .WithRenameSafeAttributeLists()
                         .WithIdentifier(Identifier(newIden));
+
+                    newFun = newFun.WithAttributeLists(
+                        newFun.AttributeLists.AddNameSuffix("RawFunction", "Raw"));
+
                     discrim = ModUtils.DiscrimStr(
                         function.Modifiers,
                         function.TypeParameterList,
