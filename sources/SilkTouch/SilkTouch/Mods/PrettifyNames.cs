@@ -74,6 +74,16 @@ public class PrettifyNames(
     public record NameAffixConfiguration
     {
         /// <summary>
+        /// The default value used for <see cref="Order"/>.
+        /// </summary>
+        public const int DefaultOrder = 0;
+
+        /// <summary>
+        /// The default value used for <see cref="DiscriminatorPriority"/>.
+        /// </summary>
+        public const int DefaultDiscriminatorPriority = -1;
+
+        /// <summary>
         /// The order with which the affix is applied.
         /// <para/>
         /// Negative means the affix is not reapplied after trimming.
@@ -82,19 +92,19 @@ public class PrettifyNames(
         /// Affixes with the same order have ties broken using the order the <see cref="NameAffixAttribute"/>s are declared on the identifier.
         /// First declared are applied first.
         /// </summary>
-        public int Order { get; init; } = 0;
+        public int Order { get; init; } = DefaultOrder;
 
         /// <summary>
         /// The priority with which the affix is used
         /// to create secondary names in case of conflicts.
         /// <para/>
-        /// Negative means the affix is required, but won't be used to create secondaries.
-        /// Non-negative means the affix is optional, but will be used to create secondaries.
+        /// Negative means the affix is required and will not be used to create secondaries.
+        /// Non-negative means the affix is optional and will be used to create secondaries.
         /// Higher means the names created using the affix is tried first.
         /// <para/>
         /// Affixes with the same priority are applied together as a group.
         /// </summary>
-        public int DiscriminatorPriority { get; init; } = 0;
+        public int DiscriminatorPriority { get; init; } = DefaultDiscriminatorPriority;
     }
 
     /// <inheritdoc />
@@ -1140,8 +1150,8 @@ public class PrettifyNames(
                         && (attribute.ArgumentList.Arguments[1].Expression as LiteralExpressionSyntax)?.Token.Value is string category
                         && (attribute.ArgumentList.Arguments[2].Expression as LiteralExpressionSyntax)?.Token.Value is string affix)
                     {
-                        var order = 0;
-                        var discriminatorPriority = 0;
+                        var order = NameAffixConfiguration.DefaultOrder;
+                        var discriminatorPriority = NameAffixConfiguration.DefaultDiscriminatorPriority;
                         if (config.Affixes.TryGetValue(category, out var nameAffixConfig))
                         {
                             order = nameAffixConfig.Order;
