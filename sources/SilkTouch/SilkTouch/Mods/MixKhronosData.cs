@@ -1936,8 +1936,10 @@ public partial class MixKhronosData(
 
         // Special case for enums since this code needs information about
         // the enum type name and its member names at the same time
-        // in order to properly identify the affixes of type names and member names
-        // for trimming
+        // in order to properly identify the affix types of the enum type and member names
+        //
+        // Note that this code identifies affixes for trimming, but does not actually trim them
+        // Trimming is done by PrettifyNames, if PrettifyNames is configured to do so
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
             var typeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
@@ -1959,9 +1961,6 @@ public partial class MixKhronosData(
             // See config option for more info and examples on what this does
             if (config.IdentifyEnumTypeNonExclusiveVendors && typeVendor != null)
             {
-                // Trim if the type vendor suffix does not match the identified exclusive vendor suffix
-                var shouldTrimType = typeVendor != exclusiveVendor;
-
                 // Check if there are other versions of the enum (this includes the core variant and other vendor variants)
                 //
                 // For example, SamplePatternEXT and SamplePatternSGIS are both enum types.
@@ -1970,12 +1969,14 @@ public partial class MixKhronosData(
                 var hasMultipleVersions = job.Groups.Count(x => x.Key.StartsWith(typeName[..^typeVendor.Length])) > 1;
                 var isSafeToTrimType = !hasMultipleVersions;
 
-                if (shouldTrimType && isSafeToTrimType)
+                // Identify the affix for trimming if the type vendor suffix does not match the identified exclusive vendor suffix
+                var isVendorMismatch = typeVendor != exclusiveVendor;
+                if (isVendorMismatch && isSafeToTrimType)
                 {
-                    // Remove the exclusive vendor since it isn't actually exclusive
+                    // Identify the affix as a non exclusive vendor since it isn't actually exclusive
                     vendorAffixType = "KhronosNonExclusiveVendor";
 
-                    // Type suffix has been removed
+                    // Assume that non exclusive vendor suffixes are trimmed
                     hasTypeSuffix = false;
                 }
             }
@@ -1998,7 +1999,7 @@ public partial class MixKhronosData(
                 return false;
             });
 
-            // We should not trim member suffixes if the enum type already contains unsuffixed members
+            // We should not identify member suffixes for trimming if the enum type already contains unsuffixed members
             // We also should not trim member suffixes if the type suffix was removed
             //
             // For example (direct conflict with existing):
@@ -2010,7 +2011,6 @@ public partial class MixKhronosData(
             // If we trim SOFT from ALC_DONT_CARE_SOFT, it is not immediately obvious that the enum members have different promotion statuses.
             var canTrimImpliedVendors = hasTypeSuffix && !containsUnsuffixedMembers;
 
-            // Trim the enum members if needed
             // See config option for more info and examples on what this does
             if (config.IdentifyEnumMemberImpliedVendors && typeVendor != null && canTrimImpliedVendors)
             {
@@ -2018,17 +2018,18 @@ public partial class MixKhronosData(
                     ..node.Members.Select(member => {
                         if (member.AttributeLists.GetNativeNameOrDefault(member.Identifier).EndsWith(typeVendor))
                         {
+                            // Identify for trimming
                             return member.WithAttributeLists(member.AttributeLists.AddNameSuffix(typeVendor, "KhronosImpliedVendor", true));
                         }
 
-                        // Default behavior - Identify, but keep the member suffixes
+                        // Default behavior - Identify, but not for trimming
                         return member.WithAttributeLists(ProcessAndGetNewAttributes(member.AttributeLists, member.Identifier, false));
                     }),
                 ]);
             }
             else
             {
-                // Default behavior - Identify, but keep the member suffixes
+                // Default behavior - Identify, but not for trimming
                 node = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
             }
 
