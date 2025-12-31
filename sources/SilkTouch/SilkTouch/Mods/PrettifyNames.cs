@@ -79,9 +79,9 @@ public class PrettifyNames(
         public const int DefaultOrder = 0;
 
         /// <summary>
-        /// The default value used for <see cref="DiscriminatorPriority"/>.
+        /// The default value used for <see cref="Discriminator"/>.
         /// </summary>
-        public const int DefaultDiscriminatorPriority = -1;
+        public const int DefaultDiscriminator = -1;
 
         /// <summary>
         /// The order with which the affix is applied.
@@ -104,7 +104,7 @@ public class PrettifyNames(
         /// <para/>
         /// Affixes with the same priority are applied together as a group.
         /// </summary>
-        public int DiscriminatorPriority { get; init; } = DefaultDiscriminatorPriority;
+        public int Discriminator { get; init; } = DefaultDiscriminator;
     }
 
     /// <inheritdoc />
@@ -1151,11 +1151,11 @@ public class PrettifyNames(
                         && (attribute.ArgumentList.Arguments[2].Expression as LiteralExpressionSyntax)?.Token.Value is string affix)
                     {
                         var order = NameAffixConfiguration.DefaultOrder;
-                        var discriminatorPriority = NameAffixConfiguration.DefaultDiscriminatorPriority;
+                        var discriminatorPriority = NameAffixConfiguration.DefaultDiscriminator;
                         if (config.Affixes.TryGetValue(category, out var nameAffixConfig))
                         {
                             order = nameAffixConfig.Order;
-                            discriminatorPriority = nameAffixConfig.DiscriminatorPriority;
+                            discriminatorPriority = nameAffixConfig.Discriminator;
                         }
 
                         affixes = [..affixes, new NameAffix(type == "Prefix", category, affix, order, discriminatorPriority, declarationOrder)];
