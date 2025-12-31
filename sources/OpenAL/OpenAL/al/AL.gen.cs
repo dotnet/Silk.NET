@@ -4116,7 +4116,7 @@ public unsafe partial class AL : IAL, IAL.Static
         ]
         [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
         public static Constant<int, ALEnum, ErrorCode> GetErrorDirect(ContextHandle context) =>
-            (Constant<int, ALEnum, ErrorCode>)(int)GetErrorDirectRawDirect(context);
+            (Constant<int, ALEnum, ErrorCode>)(int)GetErrorDirectRaw(context);
 
         [NativeName("alGetErrorDirect")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetErrorDirect")]
@@ -4124,7 +4124,7 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        public static extern int GetErrorDirectRawDirect(ContextHandle context);
+        public static extern int GetErrorDirectRaw(ContextHandle context);
 
         [NativeName("alGetError")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGetError")]
@@ -6252,7 +6252,7 @@ public unsafe partial class AL : IAL, IAL.Static
         public static MaybeBool<sbyte> IsAuxiliaryEffectSlotDirect(
             ContextHandle context,
             uint effectslot
-        ) => (MaybeBool<sbyte>)(sbyte)IsAuxiliaryEffectSlotDirectRawDirect(context, effectslot);
+        ) => (MaybeBool<sbyte>)(sbyte)IsAuxiliaryEffectSlotDirectRaw(context, effectslot);
 
         [NativeName("alIsAuxiliaryEffectSlotDirect")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
@@ -6260,7 +6260,7 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
         ]
-        public static extern sbyte IsAuxiliaryEffectSlotDirectRawDirect(
+        public static extern sbyte IsAuxiliaryEffectSlotDirectRaw(
             ContextHandle context,
             uint effectslot
         );
@@ -6283,7 +6283,7 @@ public unsafe partial class AL : IAL, IAL.Static
         ]
         [NativeFunction("openal", EntryPoint = "alIsBufferDirect")]
         public static MaybeBool<sbyte> IsBufferDirect(ContextHandle context, uint buffer) =>
-            (MaybeBool<sbyte>)(sbyte)IsBufferDirectRawDirect(context, buffer);
+            (MaybeBool<sbyte>)(sbyte)IsBufferDirectRaw(context, buffer);
 
         [NativeName("alIsBufferDirect")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsBufferDirect")]
@@ -6291,18 +6291,18 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        public static extern sbyte IsBufferDirectRawDirect(ContextHandle context, uint buffer);
+        public static extern sbyte IsBufferDirectRaw(ContextHandle context, uint buffer);
 
         [NativeName("alIsBufferFormatSupportedSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
         public static MaybeBool<sbyte> IsBufferFormatSupportedSOFT(int format) =>
-            (MaybeBool<sbyte>)(sbyte)IsBufferFormatSupportedSOFTRawSOFT(format);
+            (MaybeBool<sbyte>)(sbyte)IsBufferFormatSupportedSOFTRaw(format);
 
         [NativeName("alIsBufferFormatSupportedSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsBufferFormatSupportedSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
-        public static extern sbyte IsBufferFormatSupportedSOFTRawSOFT(int format);
+        public static extern sbyte IsBufferFormatSupportedSOFTRaw(int format);
 
         [NativeName("alIsBuffer")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsBuffer")]
@@ -6322,7 +6322,7 @@ public unsafe partial class AL : IAL, IAL.Static
         ]
         [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
         public static MaybeBool<sbyte> IsEffectDirect(ContextHandle context, uint effect) =>
-            (MaybeBool<sbyte>)(sbyte)IsEffectDirectRawDirect(context, effect);
+            (MaybeBool<sbyte>)(sbyte)IsEffectDirectRaw(context, effect);
 
         [NativeName("alIsEffectDirect")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsEffectDirect")]
@@ -6330,7 +6330,7 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
         ]
-        public static extern sbyte IsEffectDirectRawDirect(ContextHandle context, uint effect);
+        public static extern sbyte IsEffectDirectRaw(ContextHandle context, uint effect);
 
         [NativeName("alIsEffect")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsEffect")]
@@ -6427,7 +6427,7 @@ public unsafe partial class AL : IAL, IAL.Static
         ]
         [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
         public static MaybeBool<sbyte> IsFilterDirect(ContextHandle context, uint filter) =>
-            (MaybeBool<sbyte>)(sbyte)IsFilterDirectRawDirect(context, filter);
+            (MaybeBool<sbyte>)(sbyte)IsFilterDirectRaw(context, filter);
 
         [NativeName("alIsFilterDirect")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsFilterDirect")]
@@ -6435,7 +6435,7 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
             SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
         ]
-        public static extern sbyte IsFilterDirectRawDirect(ContextHandle context, uint filter);
+        public static extern sbyte IsFilterDirectRaw(ContextHandle context, uint filter);
 
         [NativeName("alIsFilter")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsFilter")]
@@ -6455,7 +6455,7 @@ public unsafe partial class AL : IAL, IAL.Static
         ]
         [NativeFunction("openal", EntryPoint = "alIsSourceDirect")]
         public static MaybeBool<sbyte> IsSourceDirect(ContextHandle context, uint source) =>
-            (MaybeBool<sbyte>)(sbyte)IsSourceDirectRawDirect(context, source);
+            (MaybeBool<sbyte>)(sbyte)IsSourceDirectRaw(context, source);
 
         [NativeName("alIsSourceDirect")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsSourceDirect")]
@@ -6463,7 +6463,7 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        public static extern sbyte IsSourceDirectRawDirect(ContextHandle context, uint source);
+        public static extern sbyte IsSourceDirectRaw(ContextHandle context, uint source);
 
         [NativeName("alIsSource")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsSource")]
@@ -12224,8 +12224,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int GetErrorDirectRawDirect(ContextHandle context) =>
-            T.GetErrorDirectRawDirect(context);
+        public int GetErrorDirectRaw(ContextHandle context) => T.GetErrorDirectRaw(context);
 
         [NativeName("alGetError")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -14155,8 +14154,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte IsAuxiliaryEffectSlotDirectRawDirect(ContextHandle context, uint effectslot) =>
-            T.IsAuxiliaryEffectSlotDirectRawDirect(context, effectslot);
+        public sbyte IsAuxiliaryEffectSlotDirectRaw(ContextHandle context, uint effectslot) =>
+            T.IsAuxiliaryEffectSlotDirectRaw(context, effectslot);
 
         [NativeName("alIsAuxiliaryEffectSlot")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -14196,8 +14195,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte IsBufferDirectRawDirect(ContextHandle context, uint buffer) =>
-            T.IsBufferDirectRawDirect(context, buffer);
+        public sbyte IsBufferDirectRaw(ContextHandle context, uint buffer) =>
+            T.IsBufferDirectRaw(context, buffer);
 
         [NativeName("alIsBufferFormatSupportedSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
@@ -14214,8 +14213,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte IsBufferFormatSupportedSOFTRawSOFT(int format) =>
-            T.IsBufferFormatSupportedSOFTRawSOFT(format);
+        public sbyte IsBufferFormatSupportedSOFTRaw(int format) =>
+            T.IsBufferFormatSupportedSOFTRaw(format);
 
         [NativeName("alIsBuffer")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -14254,8 +14253,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte IsEffectDirectRawDirect(ContextHandle context, uint effect) =>
-            T.IsEffectDirectRawDirect(context, effect);
+        public sbyte IsEffectDirectRaw(ContextHandle context, uint effect) =>
+            T.IsEffectDirectRaw(context, effect);
 
         [NativeName("alIsEffect")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -14380,8 +14379,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte IsFilterDirectRawDirect(ContextHandle context, uint filter) =>
-            T.IsFilterDirectRawDirect(context, filter);
+        public sbyte IsFilterDirectRaw(ContextHandle context, uint filter) =>
+            T.IsFilterDirectRaw(context, filter);
 
         [NativeName("alIsFilter")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -14420,8 +14419,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte IsSourceDirectRawDirect(ContextHandle context, uint source) =>
-            T.IsSourceDirectRawDirect(context, source);
+        public sbyte IsSourceDirectRaw(ContextHandle context, uint source) =>
+            T.IsSourceDirectRaw(context, source);
 
         [NativeName("alIsSource")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -21174,8 +21173,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int GetErrorDirectRawDirect(ContextHandle context) =>
-            Underlying.Value!.GetErrorDirectRawDirect(context);
+        public static int GetErrorDirectRaw(ContextHandle context) =>
+            Underlying.Value!.GetErrorDirectRaw(context);
 
         [NativeName("alGetError")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -23564,10 +23563,10 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte IsAuxiliaryEffectSlotDirectRawDirect(
+        public static sbyte IsAuxiliaryEffectSlotDirectRaw(
             ContextHandle context,
             uint effectslot
-        ) => Underlying.Value!.IsAuxiliaryEffectSlotDirectRawDirect(context, effectslot);
+        ) => Underlying.Value!.IsAuxiliaryEffectSlotDirectRaw(context, effectslot);
 
         [NativeName("alIsAuxiliaryEffectSlot")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -23607,8 +23606,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte IsBufferDirectRawDirect(ContextHandle context, uint buffer) =>
-            Underlying.Value!.IsBufferDirectRawDirect(context, buffer);
+        public static sbyte IsBufferDirectRaw(ContextHandle context, uint buffer) =>
+            Underlying.Value!.IsBufferDirectRaw(context, buffer);
 
         [NativeName("alIsBufferFormatSupportedSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
@@ -23625,8 +23624,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte IsBufferFormatSupportedSOFTRawSOFT(int format) =>
-            Underlying.Value!.IsBufferFormatSupportedSOFTRawSOFT(format);
+        public static sbyte IsBufferFormatSupportedSOFTRaw(int format) =>
+            Underlying.Value!.IsBufferFormatSupportedSOFTRaw(format);
 
         [NativeName("alIsBuffer")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -23665,8 +23664,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte IsEffectDirectRawDirect(ContextHandle context, uint effect) =>
-            Underlying.Value!.IsEffectDirectRawDirect(context, effect);
+        public static sbyte IsEffectDirectRaw(ContextHandle context, uint effect) =>
+            Underlying.Value!.IsEffectDirectRaw(context, effect);
 
         [NativeName("alIsEffect")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -23803,8 +23802,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte IsFilterDirectRawDirect(ContextHandle context, uint filter) =>
-            Underlying.Value!.IsFilterDirectRawDirect(context, filter);
+        public static sbyte IsFilterDirectRaw(ContextHandle context, uint filter) =>
+            Underlying.Value!.IsFilterDirectRaw(context, filter);
 
         [NativeName("alIsFilter")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -23843,8 +23842,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte IsSourceDirectRawDirect(ContextHandle context, uint source) =>
-            Underlying.Value!.IsSourceDirectRawDirect(context, source);
+        public static sbyte IsSourceDirectRaw(ContextHandle context, uint source) =>
+            Underlying.Value!.IsSourceDirectRaw(context, source);
 
         [NativeName("alIsSource")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -34316,7 +34315,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     Constant<int, ALEnum, ErrorCode> IAL.GetErrorDirect(ContextHandle context) =>
-        (Constant<int, ALEnum, ErrorCode>)(int)((IAL)this).GetErrorDirectRawDirect(context);
+        (Constant<int, ALEnum, ErrorCode>)(int)((IAL)this).GetErrorDirectRaw(context);
 
     [NativeName("alGetErrorDirect")]
     [
@@ -34335,7 +34334,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IAL.GetErrorDirectRawDirect(ContextHandle context) =>
+    int IAL.GetErrorDirectRaw(ContextHandle context) =>
         (
             (delegate* unmanaged<ContextHandle, int>)(
                 _slots[135] is not null and var loadedFnPtr
@@ -34351,8 +34350,8 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int GetErrorDirectRawDirect(ContextHandle context) =>
-        ThisThread.GetErrorDirectRawDirect(context);
+    public static int GetErrorDirectRaw(ContextHandle context) =>
+        ThisThread.GetErrorDirectRaw(context);
 
     [NativeName("alGetError")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -38374,8 +38373,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsAuxiliaryEffectSlotDirect(ContextHandle context, uint effectslot) =>
-        (MaybeBool<sbyte>)
-            (sbyte)((IAL)this).IsAuxiliaryEffectSlotDirectRawDirect(context, effectslot);
+        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsAuxiliaryEffectSlotDirectRaw(context, effectslot);
 
     [NativeName("alIsAuxiliaryEffectSlotDirect")]
     [
@@ -38396,7 +38394,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAL.IsAuxiliaryEffectSlotDirectRawDirect(ContextHandle context, uint effectslot) =>
+    sbyte IAL.IsAuxiliaryEffectSlotDirectRaw(ContextHandle context, uint effectslot) =>
         (
             (delegate* unmanaged<ContextHandle, uint, sbyte>)(
                 _slots[205] is not null and var loadedFnPtr
@@ -38415,10 +38413,8 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte IsAuxiliaryEffectSlotDirectRawDirect(
-        ContextHandle context,
-        uint effectslot
-    ) => ThisThread.IsAuxiliaryEffectSlotDirectRawDirect(context, effectslot);
+    public static sbyte IsAuxiliaryEffectSlotDirectRaw(ContextHandle context, uint effectslot) =>
+        ThisThread.IsAuxiliaryEffectSlotDirectRaw(context, effectslot);
 
     [NativeName("alIsAuxiliaryEffectSlot")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -38461,7 +38457,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alIsBufferDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsBufferDirect(ContextHandle context, uint buffer) =>
-        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsBufferDirectRawDirect(context, buffer);
+        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsBufferDirectRaw(context, buffer);
 
     [NativeName("alIsBufferDirect")]
     [
@@ -38480,7 +38476,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alIsBufferDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAL.IsBufferDirectRawDirect(ContextHandle context, uint buffer) =>
+    sbyte IAL.IsBufferDirectRaw(ContextHandle context, uint buffer) =>
         (
             (delegate* unmanaged<ContextHandle, uint, sbyte>)(
                 _slots[207] is not null and var loadedFnPtr
@@ -38496,15 +38492,15 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alIsBufferDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte IsBufferDirectRawDirect(ContextHandle context, uint buffer) =>
-        ThisThread.IsBufferDirectRawDirect(context, buffer);
+    public static sbyte IsBufferDirectRaw(ContextHandle context, uint buffer) =>
+        ThisThread.IsBufferDirectRaw(context, buffer);
 
     [NativeName("alIsBufferFormatSupportedSOFT")]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsBufferFormatSupportedSOFT(int format) =>
-        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsBufferFormatSupportedSOFTRawSOFT(format);
+        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsBufferFormatSupportedSOFTRaw(format);
 
     [NativeName("alIsBufferFormatSupportedSOFT")]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
@@ -38517,7 +38513,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAL.IsBufferFormatSupportedSOFTRawSOFT(int format) =>
+    sbyte IAL.IsBufferFormatSupportedSOFTRaw(int format) =>
         (
             (delegate* unmanaged<int, sbyte>)(
                 _slots[208] is not null and var loadedFnPtr
@@ -38533,8 +38529,8 @@ public unsafe partial class AL : IAL, IAL.Static
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte IsBufferFormatSupportedSOFTRawSOFT(int format) =>
-        ThisThread.IsBufferFormatSupportedSOFTRawSOFT(format);
+    public static sbyte IsBufferFormatSupportedSOFTRaw(int format) =>
+        ThisThread.IsBufferFormatSupportedSOFTRaw(format);
 
     [NativeName("alIsBuffer")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -38576,7 +38572,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsEffectDirect(ContextHandle context, uint effect) =>
-        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsEffectDirectRawDirect(context, effect);
+        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsEffectDirectRaw(context, effect);
 
     [NativeName("alIsEffectDirect")]
     [
@@ -38595,7 +38591,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAL.IsEffectDirectRawDirect(ContextHandle context, uint effect) =>
+    sbyte IAL.IsEffectDirectRaw(ContextHandle context, uint effect) =>
         (
             (delegate* unmanaged<ContextHandle, uint, sbyte>)(
                 _slots[210] is not null and var loadedFnPtr
@@ -38611,8 +38607,8 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte IsEffectDirectRawDirect(ContextHandle context, uint effect) =>
-        ThisThread.IsEffectDirectRawDirect(context, effect);
+    public static sbyte IsEffectDirectRaw(ContextHandle context, uint effect) =>
+        ThisThread.IsEffectDirectRaw(context, effect);
 
     [NativeName("alIsEffect")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -38833,7 +38829,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsFilterDirect(ContextHandle context, uint filter) =>
-        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsFilterDirectRawDirect(context, filter);
+        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsFilterDirectRaw(context, filter);
 
     [NativeName("alIsFilterDirect")]
     [
@@ -38852,7 +38848,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAL.IsFilterDirectRawDirect(ContextHandle context, uint filter) =>
+    sbyte IAL.IsFilterDirectRaw(ContextHandle context, uint filter) =>
         (
             (delegate* unmanaged<ContextHandle, uint, sbyte>)(
                 _slots[216] is not null and var loadedFnPtr
@@ -38868,8 +38864,8 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte IsFilterDirectRawDirect(ContextHandle context, uint filter) =>
-        ThisThread.IsFilterDirectRawDirect(context, filter);
+    public static sbyte IsFilterDirectRaw(ContextHandle context, uint filter) =>
+        ThisThread.IsFilterDirectRaw(context, filter);
 
     [NativeName("alIsFilter")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -38911,7 +38907,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alIsSourceDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsSourceDirect(ContextHandle context, uint source) =>
-        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsSourceDirectRawDirect(context, source);
+        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsSourceDirectRaw(context, source);
 
     [NativeName("alIsSourceDirect")]
     [
@@ -38930,7 +38926,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alIsSourceDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAL.IsSourceDirectRawDirect(ContextHandle context, uint source) =>
+    sbyte IAL.IsSourceDirectRaw(ContextHandle context, uint source) =>
         (
             (delegate* unmanaged<ContextHandle, uint, sbyte>)(
                 _slots[218] is not null and var loadedFnPtr
@@ -38946,8 +38942,8 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "alIsSourceDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte IsSourceDirectRawDirect(ContextHandle context, uint source) =>
-        ThisThread.IsSourceDirectRawDirect(context, source);
+    public static sbyte IsSourceDirectRaw(ContextHandle context, uint source) =>
+        ThisThread.IsSourceDirectRaw(context, source);
 
     [NativeName("alIsSource")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]

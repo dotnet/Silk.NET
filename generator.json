@@ -180,16 +180,19 @@
         },
         "Affixes": {
           "HandleType": {
-            "Order": 3
+            "Order": 4
           },
           "FunctionPointerDelegateType": {
-            "Order": 2
+            "Order": 3
           },
           "KhronosFunctionDataType": {
-            "Order": 1,
+            "Order": 2,
             "Discriminator": 0
           },
           "KhronosVendor": {
+            "Order": 1
+          },
+          "RawFunction": {
             "Order": 0
           },
           "KhronosImpliedVendor": {
@@ -317,19 +320,25 @@
         },
         "Affixes": {
           "HandleType": {
-            "Order": 4
+            "Order": 6
           },
           "FunctionPointerDelegateType": {
-            "Order": 3
+            "Order": 5
           },
           "KhronosFunctionDataType": {
-            "Order": 2,
+            "Order": 4,
             "Discriminator": 0
           },
           "KhronosNonVendor": {
-            "Order": 1
+            "Order": 3
           },
           "KhronosVendor": {
+            "Order": 2
+          },
+          "InterceptedFunction": {
+            "Order": 1
+          },
+          "RawFunction": {
             "Order": 0
           },
           "KhronosImpliedVendor": {
@@ -436,12 +445,18 @@
         },
         "Affixes": {
           "HandleType": {
-            "Order": 2
+            "Order": 4
           },
           "FunctionPointerDelegateType": {
-            "Order": 1
+            "Order": 3
           },
           "KhronosVendor": {
+            "Order": 2
+          },
+          "InterceptedFunction": {
+            "Order": 1
+          },
+          "RawFunction": {
             "Order": 0
           },
           "KhronosImpliedVendor": {
