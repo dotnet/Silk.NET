@@ -1866,7 +1866,7 @@ public partial class MixKhronosData(
                 {
                     trimmedName = trimmedName[..^handleSuffix.Length];
                     attributeLists = attributeLists
-                        .AddNameSuffix(handleSuffix, "KhronosHandleType", true)
+                        .AddNameSuffix("KhronosHandleType", handleSuffix, true)
                         .WithNativeName(trimmedName);
                 }
             }
@@ -1878,7 +1878,7 @@ public partial class MixKhronosData(
                 {
                     if (trimmedName.EndsWith(vendor))
                     {
-                        attributeLists = attributeLists.AddNameSuffix(vendor, "KhronosVendor");
+                        attributeLists = attributeLists.AddNameSuffix("KhronosVendor", vendor);
                         trimmedName = trimmedName[..^vendor.Length];
 
                         break;
@@ -1893,7 +1893,7 @@ public partial class MixKhronosData(
                 {
                     if (trimmedName.EndsWith(suffix))
                     {
-                        attributeLists = attributeLists.AddNameSuffix(suffix, "KhronosNonVendor", true);
+                        attributeLists = attributeLists.AddNameSuffix("KhronosNonVendor", suffix, true);
                         trimmedName = trimmedName[..^suffix.Length];
 
                         break;
@@ -1909,7 +1909,7 @@ public partial class MixKhronosData(
                         var dataTypeSuffix = trimmedName[match.Index..];
                         trimmedName = trimmedName[..match.Index];
 
-                        attributeLists = attributeLists.AddNameSuffix(dataTypeSuffix, "KhronosFunctionDataType", true);
+                        attributeLists = attributeLists.AddNameSuffix("KhronosFunctionDataType", dataTypeSuffix, true);
                     }
                 }
             }
@@ -1984,7 +1984,7 @@ public partial class MixKhronosData(
             if (typeVendor != null)
             {
                 // Mark the type vendor suffix as identified
-                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(typeVendor, vendorAffixType, true));
+                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(vendorAffixType, typeVendor, true));
             }
 
             // Check if the enum contains unsuffixed members
@@ -2019,7 +2019,7 @@ public partial class MixKhronosData(
                         if (member.AttributeLists.GetNativeNameOrDefault(member.Identifier).EndsWith(typeVendor))
                         {
                             // Identify for trimming
-                            return member.WithAttributeLists(member.AttributeLists.AddNameSuffix(typeVendor, "KhronosImpliedVendor", true));
+                            return member.WithAttributeLists(member.AttributeLists.AddNameSuffix("KhronosImpliedVendor", typeVendor, true));
                         }
 
                         // Default behavior - Identify, but not for trimming

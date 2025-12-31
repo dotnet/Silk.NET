@@ -516,7 +516,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                         ? SingletonList(AttributeList(SingletonSeparatedList(Attribute(IdentifierName("Transformed")))))
                         : default)
                         .WithNativeName(currentNativeTypeName)
-                        .AddNameSuffix("Delegate", "FunctionPointerDelegateType"),
+                        .AddNameSuffix("FunctionPointerDelegateType", "Delegate"),
                     node
                 );
                 FunctionPointerTypes[currentNativeTypeName] = pfnInfo = (pfn, @delegate, [], []);

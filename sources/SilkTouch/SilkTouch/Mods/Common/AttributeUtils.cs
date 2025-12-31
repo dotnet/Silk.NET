@@ -210,7 +210,7 @@ public static class AttributeUtils
     /// True means that the attribute is added to the start of the attribute list, meaning that the affix is re-appended earlier.
     /// </param>
     public static SyntaxList<AttributeListSyntax> AddNamePrefix(this IEnumerable<AttributeListSyntax> attributeLists, string category, string prefix, bool addToInner = false)
-        => attributeLists.AddNamePrefixOrSuffix("Prefix", prefix, category, addToInner);
+        => attributeLists.AddNamePrefixOrSuffix("Prefix", category, prefix, addToInner);
 
     /// <summary>
     /// Adds a name suffix attribute to the given attribute list.
@@ -224,7 +224,7 @@ public static class AttributeUtils
     /// True means that the attribute is added to the start of the attribute list, meaning that the affix is re-appended earlier.
     /// </param>
     public static SyntaxList<AttributeListSyntax> AddNameSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string category, string suffix, bool addToInner = false)
-        => attributeLists.AddNamePrefixOrSuffix("Suffix", suffix, category, addToInner);
+        => attributeLists.AddNamePrefixOrSuffix("Suffix", category, suffix, addToInner);
 
     private static SyntaxList<AttributeListSyntax> AddNamePrefixOrSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string type, string category, string affix, bool addToInner = false)
     {

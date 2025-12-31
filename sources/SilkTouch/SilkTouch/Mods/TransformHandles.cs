@@ -487,7 +487,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 .WithAttributeLists(
                     new SyntaxList<AttributeListSyntax>()
                         .WithNativeName(structName)
-                        .AddNameSuffix("Handle", "HandleType"))
+                        .AddNameSuffix("HandleType", "Handle"))
                 .WithMembers(
                     List(
                         GetDefaultHandleMembers(structName).Concat(useDSL ? GetDSLHandleMembers(structName) : [])
