@@ -65,7 +65,7 @@ public class PrettifyNames(
         /// <para/>
         /// If this is partially configured, the unconfigured categories will be logged as warnings for visibility.
         /// </remarks>
-        public Dictionary<string, NameAffixConfiguration> NameAffixes { get; init; } = [];
+        public Dictionary<string, NameAffixConfiguration> Affixes { get; init; } = [];
     }
 
     /// <summary>
@@ -120,7 +120,7 @@ public class PrettifyNames(
         }
 
         // Log missing name affix configurations if there is at least one category configured
-        if (cfg.NameAffixes.Count > 0)
+        if (cfg.Affixes.Count > 0)
         {
             var categories = new HashSet<string>();
             foreach (var (_, typeAffixData) in visitor.AffixTypes)
@@ -144,7 +144,7 @@ public class PrettifyNames(
 
             foreach (var category in categories)
             {
-                if (!cfg.NameAffixes.ContainsKey(category))
+                if (!cfg.Affixes.ContainsKey(category))
                 {
                     logger.LogWarning("Name affix category is not configured: {Category}", category);
                 }
@@ -1142,7 +1142,7 @@ public class PrettifyNames(
                     {
                         var order = 0;
                         var discriminatorPriority = 0;
-                        if (config.NameAffixes.TryGetValue(category, out var nameAffixConfig))
+                        if (config.Affixes.TryGetValue(category, out var nameAffixConfig))
                         {
                             order = nameAffixConfig.Order;
                             discriminatorPriority = nameAffixConfig.DiscriminatorPriority;
