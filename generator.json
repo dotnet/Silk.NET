@@ -180,26 +180,19 @@
         },
         "Affixes": {
           "HandleType": {
-            "Order": 4
-          },
-          "FunctionPointerDelegateType": {
-            "Order": 3
-          },
-          "KhronosFunctionDataType": {
-            "Order": 2,
-            "Discriminator": 0
-          },
-          "KhronosVendor": {
             "Order": 1
           },
-          "RawFunction": {
-            "Order": 0
+          "FunctionPointerDelegateType": {
+            "Order": 1
+          },
+          "KhronosFunctionDataType": {
+            "IsDiscriminator": true
           },
           "KhronosImpliedVendor": {
-            "Order": -1
+            "Remove": true
           },
           "KhronosNonExclusiveVendor": {
-            "Order": -1
+            "Remove": true
           }
         }
       },
@@ -320,32 +313,19 @@
         },
         "Affixes": {
           "HandleType": {
-            "Order": 6
-          },
-          "FunctionPointerDelegateType": {
-            "Order": 5
-          },
-          "KhronosFunctionDataType": {
-            "Order": 4,
-            "Discriminator": 0
-          },
-          "KhronosNonVendor": {
-            "Order": 3
-          },
-          "KhronosVendor": {
-            "Order": 2
-          },
-          "InterceptedFunction": {
             "Order": 1
           },
-          "RawFunction": {
-            "Order": 0
+          "FunctionPointerDelegateType": {
+            "Order": 1
+          },
+          "KhronosFunctionDataType": {
+            "IsDiscriminator": true
           },
           "KhronosImpliedVendor": {
-            "Order": -1
+            "Remove": true
           },
           "KhronosNonExclusiveVendor": {
-            "Order": -1
+            "Remove": true
           }
         }
       },
@@ -445,25 +425,16 @@
         },
         "Affixes": {
           "HandleType": {
-            "Order": 4
-          },
-          "FunctionPointerDelegateType": {
-            "Order": 3
-          },
-          "KhronosVendor": {
-            "Order": 2
-          },
-          "InterceptedFunction": {
             "Order": 1
           },
-          "RawFunction": {
-            "Order": 0
+          "FunctionPointerDelegateType": {
+            "Order": 1
           },
           "KhronosImpliedVendor": {
-            "Order": -1
+            "Remove": true
           },
           "KhronosHandleType": {
-            "Order": -1
+            "Remove": true
           }
         }
       },
