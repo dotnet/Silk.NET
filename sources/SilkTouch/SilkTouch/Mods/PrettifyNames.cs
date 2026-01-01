@@ -1176,37 +1176,7 @@ public class PrettifyNames(
     /// <param name="config">The configuration from <see cref="Configuration.Affixes"/>.</param>
     private class NameAffixer(Dictionary<string, TypeAffixData> affixTypes, Dictionary<string, NameAffixConfiguration> config)
     {
-        private readonly NameAffixConfiguration defaultConfig = new();
-
-        /// <summary>
-        /// Gets affix data for the specified container and original name of the identifier.
-        /// </summary>
-        /// <param name="container">The container name. Either null or the containing type.</param>
-        /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
-        /// <returns>The name affixes for the specified identifier.</returns>
-        public NameAffix[] GetAffixes(string? container, string originalName)
-        {
-            TypeAffixData typeAffixData;
-            if (container == null)
-            {
-                if (!affixTypes.TryGetValue(originalName, out typeAffixData))
-                {
-                    return [];
-                }
-
-                return typeAffixData.TypeAffixes;
-            }
-
-            if (affixTypes.TryGetValue(container, out typeAffixData))
-            {
-                if (typeAffixData.MemberAffixes?.TryGetValue(originalName, out var affixes) ?? false)
-                {
-                    return affixes;
-                }
-            }
-
-            return [];
-        }
+        private static readonly NameAffixConfiguration _defaultConfig = new();
 
         /// <summary>
         /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list if provided.
@@ -1230,16 +1200,9 @@ public class PrettifyNames(
             var originalPrimary = primary;
 
             // Sort affixes so that the outer affixes are first
-            affixes.Sort((a, b) =>
+            affixes.Sort(static (a, b) =>
             {
-                // Sort by ascending order
-                // Higher order means the affix is closer to the inside of the name
-                if (GetConfiguration(a).Order != GetConfiguration(b).Order)
-                {
-                    return GetConfiguration(a).Order.CompareTo(GetConfiguration(b).Order);
-                }
-
-                // Then by descending declaration order
+                // Sort by descending declaration order
                 // Lower declaration order means the affix is closer to the inside of the name
                 return -a.DeclarationOrder.CompareTo(b.DeclarationOrder);
             });
@@ -1304,14 +1267,17 @@ public class PrettifyNames(
 
             // Sort affixes by priority
             // Negative priority is first, followed by highest non-negative priority
-            // This groups the required affixes at the start and each group of fallback affixes together
+            // This groups the non-discriminator affixes at the start and each group of discriminator affixes together
+            // For example: If we have [..A, ..B, ..C] where A are non-discriminator affixes; B and C are grouped discriminator affixes
+            // Processing [..A] will give us our primary name
+            // Processing [..A, ..B] will give us the first secondary name
+            // Processing [..A, ..B, ..C] will give us the second secondary name
             affixes.Sort((a, b) =>
             {
-                // Negative priority first
-                // These are our required affixes
-                if (int.Sign(GetConfiguration(a).DiscriminatorPriority) != 1 || int.Sign(GetConfiguration(b).DiscriminatorPriority) != 1)
+                // Sort so that non-discriminator affixes are first
+                if (GetConfiguration(a).IsDiscriminator != GetConfiguration(b).IsDiscriminator)
                 {
-                    return GetConfiguration(a).DiscriminatorPriority.CompareTo(GetConfiguration(b).DiscriminatorPriority);
+                    return -GetConfiguration(a).IsDiscriminator.CompareTo(GetConfiguration(b).IsDiscriminator);
                 }
 
                 // Then sort the remaining by descending priority
@@ -1321,17 +1287,21 @@ public class PrettifyNames(
             // This is guaranteed to be non-null when this method returns if there is at least one affix
             string? newPrimary = null;
 
-            var currentPriority = -1;
+            // Process each group of affixes
+            var hasProcessedNonDiscriminator = false;
+            var currentPriority = int.MaxValue;
             for (var affixI = 0; affixI < affixes.Length; affixI++)
             {
                 var affix = affixes[affixI];
-                if (currentPriority == -1 && GetConfiguration(affix).DiscriminatorPriority < 0)
+                if (!GetConfiguration(affix).IsDiscriminator)
                 {
                     continue;
                 }
 
-                if (currentPriority == -1 || GetConfiguration(affix).DiscriminatorPriority < currentPriority)
+                // Process group if we reached the end of the non-discriminator affixes or if the priority changes
+                if (!hasProcessedNonDiscriminator || GetConfiguration(affix).DiscriminatorPriority < currentPriority)
                 {
+                    hasProcessedNonDiscriminator = true;
                     currentPriority = GetConfiguration(affix).DiscriminatorPriority;
                     CreateName(primary, affixes.AsSpan()[..affixI]);
                     if (secondary == null)
@@ -1341,6 +1311,7 @@ public class PrettifyNames(
                 }
             }
 
+            // Process final group since the loop above skips the final group
             CreateName(primary, affixes);
 
             return newPrimary!;
@@ -1364,7 +1335,7 @@ public class PrettifyNames(
 
                 foreach (var affix in currentAffixes)
                 {
-                    if (GetConfiguration(affix).Order >= 0)
+                    if (!GetConfiguration(affix).Remove)
                     {
                         if (affix.IsPrefix)
                         {
@@ -1388,9 +1359,39 @@ public class PrettifyNames(
             }
         }
 
+        /// <summary>
+        /// Gets affix data for the specified container and original name of the identifier.
+        /// </summary>
+        /// <param name="container">The container name. Either null or the containing type.</param>
+        /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
+        /// <returns>The name affixes for the specified identifier.</returns>
+        private NameAffix[] GetAffixes(string? container, string originalName)
+        {
+            TypeAffixData typeAffixData;
+            if (container == null)
+            {
+                if (!affixTypes.TryGetValue(originalName, out typeAffixData))
+                {
+                    return [];
+                }
+
+                return typeAffixData.TypeAffixes;
+            }
+
+            if (affixTypes.TryGetValue(container, out typeAffixData))
+            {
+                if (typeAffixData.MemberAffixes?.TryGetValue(originalName, out var affixes) ?? false)
+                {
+                    return affixes;
+                }
+            }
+
+            return [];
+        }
+
         private NameAffixConfiguration GetConfiguration(NameAffix affix) => GetConfiguration(affix.Category);
 
-        private NameAffixConfiguration GetConfiguration(string category) => config.GetValueOrDefault(category, defaultConfig);
+        private NameAffixConfiguration GetConfiguration(string category) => config.GetValueOrDefault(category, _defaultConfig);
     }
 
     /// <summary>
