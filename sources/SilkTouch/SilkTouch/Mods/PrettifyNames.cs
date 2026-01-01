@@ -1277,7 +1277,7 @@ public class PrettifyNames(
                 // Sort so that non-discriminator affixes are first
                 if (GetConfiguration(a).IsDiscriminator != GetConfiguration(b).IsDiscriminator)
                 {
-                    return -GetConfiguration(a).IsDiscriminator.CompareTo(GetConfiguration(b).IsDiscriminator);
+                    return GetConfiguration(a).IsDiscriminator.CompareTo(GetConfiguration(b).IsDiscriminator);
                 }
 
                 // Then sort the remaining by descending priority
