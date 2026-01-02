@@ -16,7 +16,7 @@ internal class FileSystemDiskCacheDirectory(
 ) : ICacheDirectory
 {
     private string? _newPath;
-    private bool _committed; // literally just for logging purposes
+    private bool _committed;
 
     public async ValueTask InitAsync()
     {
@@ -97,7 +97,7 @@ internal class FileSystemDiskCacheDirectory(
             return _newPath;
         }
     }
-    public string? Path => (Flags & CacheFlags.RequireHostDirectory) != 0 ? _newPath : null;
+    public string? Path => (Flags & CacheFlags.RequireHostDirectory) != 0 ? NewPath : null;
 
     public IAsyncEnumerable<string> GetCommittedFilesAsync()
     {
@@ -105,9 +105,18 @@ internal class FileSystemDiskCacheDirectory(
         {
             CacheUtils.ThrowAccessException();
         }
+
+        if (
+            !Directory.Exists(committedPath)
+            || ((Flags & CacheFlags.RequireNew) == CacheFlags.RequireNew && !_committed)
+        )
+        {
+            return AsyncEnumerable.Empty<string>();
+        }
+
         return Directory
             .GetFiles(committedPath, "*", SearchOption.AllDirectories)
-            .Select(x => IOPath.GetRelativePath(committedPath, x))
+            .Select(x => IOPath.GetRelativePath(committedPath, x).ToCacheEntryPath())
             .ToAsyncEnumerable();
     }
 
@@ -151,6 +160,10 @@ internal class FileSystemDiskCacheDirectory(
         {
             parent.Logger.LogTrace("Erasing {0} as RequireNew is set", committedPath);
             Directory.Delete(committedPath, true);
+        }
+
+        if (!Directory.Exists(committedPath))
+        {
             Directory.CreateDirectory(committedPath);
         }
 
@@ -179,7 +192,8 @@ internal class FileSystemDiskCacheDirectory(
                         {
                             File.Copy(
                                 x,
-                                IOPath.Combine(committedPath, IOPath.GetRelativePath(_newPath, x))
+                                IOPath.Combine(committedPath, IOPath.GetRelativePath(_newPath, x)),
+                                true
                             );
                         }
                         else

@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO.Compression;
 using System.Text;
 using Microsoft.Extensions.Logging;
@@ -19,13 +20,18 @@ internal class FileSystemArchiveCacheDirectory(
 ) : ICacheDirectory
 {
     private ZipArchive? _committed;
+    private bool _hasCommitted;
     private string? _newPath;
     private ZipArchive? _new;
+    private HashSet<string>? _newEntries;
     private SemaphoreSlim _sema = new(1, 1);
 
     private async ValueTask<ZipArchive?> GetOrCreateCommittedAsync()
     {
-        if (!File.Exists(committedPath) || (Flags & CacheFlags.RequireNew) == CacheFlags.RequireNew)
+        if (
+            !File.Exists(committedPath)
+            || (Flags & CacheFlags.RequireNew) == CacheFlags.RequireNew && !_hasCommitted
+        )
         {
             parent.Logger.LogDebug(
                 "Cache miss with key \"{0}\"! Expected ZIP archive at {1}",
@@ -48,17 +54,22 @@ internal class FileSystemArchiveCacheDirectory(
         );
     }
 
+    // [MemberNotNull(nameof(_new))] <-- TODO WHY IS THE COMPILER NOT HAPPY?
+    [MemberNotNull(nameof(_newEntries))]
     private async ValueTask<ZipArchive> GetOrCreateNewAsync()
     {
         if (_new is not null)
         {
+            Debug.Assert(_newEntries is not null);
             return _new;
         }
 
         if ((Access & FileAccess.Write) == 0)
         {
             CacheUtils.ThrowAccessException();
+#pragma warning disable CS8774 // Member must have a non-null value when exiting.
             return null!;
+#pragma warning restore CS8774 // Member must have a non-null value when exiting.
         }
 
         _newPath = IOPath.GetTempFileName();
@@ -67,6 +78,7 @@ internal class FileSystemArchiveCacheDirectory(
             CacheKey,
             _newPath
         );
+        _newEntries = [];
         return _new = await ZipArchive.CreateAsync(
             File.OpenWrite(_newPath),
             ZipArchiveMode.Create,
@@ -93,7 +105,7 @@ internal class FileSystemArchiveCacheDirectory(
                 ?? Enumerable.Empty<ZipArchiveEntry>()
         )
         {
-            yield return entry.FullName;
+            yield return entry.FullName.ToCacheEntryPath();
         }
     }
 
@@ -105,12 +117,14 @@ internal class FileSystemArchiveCacheDirectory(
         }
 
         parent.Logger.LogTrace("Cache hit (\"{0}\", ZIP): {1}", CacheKey, filePath);
-        var entry = _committed?.GetEntry(filePath) ?? throw new FileNotFoundException();
+        var entry =
+            _committed?.GetEntry(filePath.ToCacheEntryPath()) ?? throw new FileNotFoundException();
         return await entry.OpenAsync();
     }
 
     public async ValueTask AddFileAsync(string filePath, Stream stream)
     {
+        filePath = filePath.ToCacheEntryPath();
         if ((Access & FileAccess.Write) == 0)
         {
             CacheUtils.ThrowAccessException();
@@ -124,6 +138,7 @@ internal class FileSystemArchiveCacheDirectory(
                 .CreateEntry(filePath, CompressionLevel.SmallestSize)
                 .OpenAsync();
             await stream.CopyToAsync(dst);
+            _newEntries.Add(filePath);
         }
         finally
         {
@@ -153,7 +168,7 @@ internal class FileSystemArchiveCacheDirectory(
                 // If the user doesn't want this, they can use RequireNew.
                 foreach (var entry in _committed.Entries)
                 {
-                    if (@new.GetEntry(entry.FullName) is null)
+                    if (!_newEntries.Contains(entry.FullName.ToCacheEntryPath()))
                     {
                         parent.Logger.LogTrace(
                             "Cache unchanged (\"{0}\", ZIP): {1}",
@@ -181,6 +196,7 @@ internal class FileSystemArchiveCacheDirectory(
 
             await @new.DisposeAsync();
             _new = null;
+            _hasCommitted = true;
             Debug.Assert(_newPath is not null);
             File.Move(_newPath, committedPath, true);
         }

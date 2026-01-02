@@ -15,4 +15,7 @@ internal static class CacheUtils
             "CacheFlags.RequireHostDirectory needs FileAccess.Write due to the cache accesses being uncontrolled by "
                 + "the cache system."
         );
+
+    internal static string ToCacheEntryPath(this string s) =>
+        s.Trim('\r', '\n', '\\', '/').Replace('\\', '/');
 }

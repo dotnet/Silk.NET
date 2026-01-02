@@ -16,6 +16,12 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
 
     static string GetCachePath(string cacheKey, CacheIntent intent)
     {
+        var outDir = Path.Combine(CommonDir, ".silktouch");
+        if (!Directory.Exists(outDir))
+        {
+            Directory.CreateDirectory(outDir);
+        }
+
         cacheKey = cacheKey.ToLower();
         var ext = intent switch
         {
@@ -23,7 +29,7 @@ public class FileSystemCacheProvider(ILogger<FileSystemCacheProvider> logger) : 
             CacheIntent.StageIntermediateOutput => "stout",
             _ => throw new ArgumentOutOfRangeException(nameof(intent), intent, null),
         };
-        return Path.Combine(CommonDir, ".silktouch", $"{cacheKey}.{ext}");
+        return Path.Combine(outDir, $"{cacheKey}.{ext}");
     }
 
     /// <inheritdoc />
