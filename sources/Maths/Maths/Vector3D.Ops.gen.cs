@@ -48,7 +48,7 @@ namespace Silk.NET.Maths
         public static Vector3D<T> Reflect<T>(Vector3D<T> vector, Vector3D<T> normal)
             where T : INumberBase<T>
         {
-            T dot = vector.Dot(normal);
+            T dot = Dot(vector, normal);
             return vector - (normal * (dot + dot));
         }
 
