@@ -23,5 +23,5 @@ public enum CopyBufferSubDataTarget : uint
     AtomicCounterBuffer = unchecked((uint)0x92C0),
     DispatchIndirectBuffer = unchecked((uint)0x90EE),
     ShaderStorageBuffer = unchecked((uint)0x90D2),
-    QueryBuffer = unchecked((uint)0x9192)
+    QueryBuffer = unchecked((uint)0x9192),
 }

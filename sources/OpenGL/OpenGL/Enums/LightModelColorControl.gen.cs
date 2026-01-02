@@ -13,5 +13,5 @@ public enum LightModelColorControl : uint
     SingleColor = unchecked((uint)0x81F9),
     SeparateSpecularColor = unchecked((uint)0x81FA),
     SingleColorEXT = unchecked((uint)0x81F9),
-    SeparateSpecularColorEXT = unchecked((uint)0x81FA)
+    SeparateSpecularColorEXT = unchecked((uint)0x81FA),
 }

@@ -17,5 +17,5 @@ public enum FeedBackToken : uint
     BitmapToken = unchecked((uint)0x0704),
     DrawPixelToken = unchecked((uint)0x0705),
     CopyPixelToken = unchecked((uint)0x0706),
-    LineResetToken = unchecked((uint)0x0707)
+    LineResetToken = unchecked((uint)0x0707),
 }

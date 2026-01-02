@@ -34,5 +34,5 @@ public enum PrimitiveType : uint
     TrianglesAdjacencyEXT = unchecked((uint)0x000C),
     TriangleStripAdjacencyEXT = unchecked((uint)0x000D),
     PatchesEXT = unchecked((uint)0x000E),
-    QuadsEXT = unchecked((uint)0x0007)
+    QuadsEXT = unchecked((uint)0x0007),
 }

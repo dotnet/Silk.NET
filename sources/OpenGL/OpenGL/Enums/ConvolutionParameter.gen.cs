@@ -26,5 +26,5 @@ public enum ConvolutionParameter : uint
     ConvolutionWidthEXT = unchecked((uint)0x8018),
     ConvolutionHeightEXT = unchecked((uint)0x8019),
     MaxConvolutionWidthEXT = unchecked((uint)0x801A),
-    MaxConvolutionHeightEXT = unchecked((uint)0x801B)
+    MaxConvolutionHeightEXT = unchecked((uint)0x801B),
 }

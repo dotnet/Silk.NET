@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum PathHandleMissingGlyphs : uint
 {
     SkipMissingGlyphNV = unchecked((uint)0x90A9),
-    UseMissingGlyphNV = unchecked((uint)0x90AA)
+    UseMissingGlyphNV = unchecked((uint)0x90AA),
 }

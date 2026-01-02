@@ -18,5 +18,5 @@ public enum VertexArrayPName : uint
     ArrayInteger = unchecked((uint)0x88FD),
     ArrayDivisor = unchecked((uint)0x88FE),
     ArrayLong = unchecked((uint)0x874E),
-    RelativeOffset = unchecked((uint)0x82D5)
+    RelativeOffset = unchecked((uint)0x82D5),
 }

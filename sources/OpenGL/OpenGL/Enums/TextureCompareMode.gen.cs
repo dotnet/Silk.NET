@@ -12,5 +12,5 @@ public enum TextureCompareMode : uint
 {
     None = unchecked((uint)0),
     CompareRToTexture = unchecked((uint)0x884E),
-    CompareRefToTexture = unchecked((uint)0x884E)
+    CompareRefToTexture = unchecked((uint)0x884E),
 }

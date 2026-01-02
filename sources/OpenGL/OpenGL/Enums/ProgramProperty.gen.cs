@@ -29,5 +29,5 @@ public enum ProgramProperty : uint
     GeometryOutputType = unchecked((uint)0x8918),
     ProgramBinaryLength = unchecked((uint)0x8741),
     ActiveAtomicCounterBuffers = unchecked((uint)0x92D9),
-    ComputeWorkGroupSize = unchecked((uint)0x8267)
+    ComputeWorkGroupSize = unchecked((uint)0x8267),
 }

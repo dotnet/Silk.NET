@@ -24,5 +24,5 @@ public enum BufferStorageMask : uint
     DynamicStorageBitEXT = unchecked((uint)0x0100),
     ClientStorageBitEXT = unchecked((uint)0x0200),
     MapReadBitEXT = unchecked((uint)0x0001),
-    MapWriteBitEXT = unchecked((uint)0x0002)
+    MapWriteBitEXT = unchecked((uint)0x0002),
 }

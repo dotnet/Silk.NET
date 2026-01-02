@@ -13,5 +13,5 @@ public enum FragmentShaderDestMask : uint
     None = unchecked((uint)0),
     RedBitATI = unchecked((uint)0x00000001),
     GreenBitATI = unchecked((uint)0x00000002),
-    BlueBitATI = unchecked((uint)0x00000004)
+    BlueBitATI = unchecked((uint)0x00000004),
 }

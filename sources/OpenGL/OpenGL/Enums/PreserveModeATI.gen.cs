@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum PreserveModeATI : uint
 {
     Preserve = unchecked((uint)0x8762),
-    Discard = unchecked((uint)0x8763)
+    Discard = unchecked((uint)0x8763),
 }

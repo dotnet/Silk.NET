@@ -18,5 +18,5 @@ public enum TextureMagFilter : uint
     LinearSharpenSGIS = unchecked((uint)0x80AD),
     LinearSharpenAlphaSGIS = unchecked((uint)0x80AE),
     LinearSharpenColorSGIS = unchecked((uint)0x80AF),
-    Filter4Sgis = unchecked((uint)0x8146)
+    Filter4Sgis = unchecked((uint)0x8146),
 }

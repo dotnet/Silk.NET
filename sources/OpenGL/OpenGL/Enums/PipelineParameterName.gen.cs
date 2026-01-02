@@ -16,5 +16,5 @@ public enum PipelineParameterName : uint
     GeometryShader = unchecked((uint)0x8DD9),
     TessEvaluationShader = unchecked((uint)0x8E87),
     TessControlShader = unchecked((uint)0x8E88),
-    ActiveProgram = unchecked((uint)0x8259)
+    ActiveProgram = unchecked((uint)0x8259),
 }

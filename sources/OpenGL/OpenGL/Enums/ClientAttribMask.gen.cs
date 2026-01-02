@@ -12,5 +12,5 @@ public enum ClientAttribMask : uint
 {
     PixelStoreBit = unchecked((uint)0x00000001),
     VertexArrayBit = unchecked((uint)0x00000002),
-    AllAttribBits = unchecked((uint)0xFFFFFFFF)
+    AllAttribBits = unchecked((uint)0xFFFFFFFF),
 }

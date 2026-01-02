@@ -13,5 +13,5 @@ public enum GetTexBumpParameterATI : uint
     RotMatrix = unchecked((uint)0x8775),
     RotMatrixSize = unchecked((uint)0x8776),
     NumTexUnits = unchecked((uint)0x8777),
-    TexUnits = unchecked((uint)0x8778)
+    TexUnits = unchecked((uint)0x8778),
 }

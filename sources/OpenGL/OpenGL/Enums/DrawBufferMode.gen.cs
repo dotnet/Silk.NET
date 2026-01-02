@@ -72,5 +72,5 @@ public enum DrawBufferMode : uint
     ColorAttachment13NV = unchecked((uint)0x8CED),
     ColorAttachment14NV = unchecked((uint)0x8CEE),
     ColorAttachment15NV = unchecked((uint)0x8CEF),
-    NoneOES = unchecked((uint)0)
+    NoneOES = unchecked((uint)0),
 }

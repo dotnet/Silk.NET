@@ -11,7 +11,7 @@ namespace Silk.NET.OpenGL;
 
 partial class GL(INativeContext nativeContext) : IDisposable
 {
-    public partial class DllImport
+    public partial class DllImport : IGL.Static
     {
         static DllImport() => LoaderInterface.RegisterHook(Assembly.GetExecutingAssembly());
     }

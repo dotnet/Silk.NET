@@ -615,5 +615,5 @@ public enum GetPName : uint
     BlendEquationOES = unchecked((uint)0x8009),
     TextureBindingCubeMapOES = unchecked((uint)0x8514),
     MaxCubeMapTextureSizeOES = unchecked((uint)0x851C),
-    TextureGenStrOES = unchecked((uint)0x8D60)
+    TextureGenStrOES = unchecked((uint)0x8D60),
 }

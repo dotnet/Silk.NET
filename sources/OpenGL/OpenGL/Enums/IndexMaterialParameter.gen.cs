@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum IndexMaterialParameter : uint
 {
-    IndexOffset = unchecked((uint)0x0D13)
+    IndexOffset = unchecked((uint)0x0D13),
 }

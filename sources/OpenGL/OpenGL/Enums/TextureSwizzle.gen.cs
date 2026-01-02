@@ -15,5 +15,5 @@ public enum TextureSwizzle : uint
     Red = unchecked((uint)0x1903),
     Green = unchecked((uint)0x1904),
     Blue = unchecked((uint)0x1905),
-    Alpha = unchecked((uint)0x1906)
+    Alpha = unchecked((uint)0x1906),
 }

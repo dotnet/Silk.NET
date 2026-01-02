@@ -13,5 +13,5 @@ public enum PixelTexGenMode : uint
     None = unchecked((uint)0),
     Alpha = unchecked((uint)0x1906),
     Rgb = unchecked((uint)0x1907),
-    Rgba = unchecked((uint)0x1908)
+    Rgba = unchecked((uint)0x1908),
 }

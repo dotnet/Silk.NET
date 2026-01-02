@@ -14,5 +14,5 @@ public enum PathGenMode : uint
     EyeLinear = unchecked((uint)0x2400),
     ObjectLinear = unchecked((uint)0x2401),
     Constant = unchecked((uint)0x8576),
-    PathObjectBoundingBoxNV = unchecked((uint)0x908A)
+    PathObjectBoundingBoxNV = unchecked((uint)0x908A),
 }

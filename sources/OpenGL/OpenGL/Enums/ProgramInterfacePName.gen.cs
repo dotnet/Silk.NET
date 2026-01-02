@@ -13,5 +13,5 @@ public enum ProgramInterfacePName : uint
     ActiveResources = unchecked((uint)0x92F5),
     MaxNameLength = unchecked((uint)0x92F6),
     MaxNumActiveVariables = unchecked((uint)0x92F7),
-    MaxNumCompatibleSubroutines = unchecked((uint)0x92F8)
+    MaxNumCompatibleSubroutines = unchecked((uint)0x92F8),
 }

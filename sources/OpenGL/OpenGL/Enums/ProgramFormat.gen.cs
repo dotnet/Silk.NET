@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ProgramFormat : uint
 {
-    ProgramFormatAsciiARB = unchecked((uint)0x8875)
+    ProgramFormatAsciiARB = unchecked((uint)0x8875),
 }

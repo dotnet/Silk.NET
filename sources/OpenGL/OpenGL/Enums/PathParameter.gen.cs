@@ -33,5 +33,5 @@ public enum PathParameter : uint
     ComputedLengthNV = unchecked((uint)0x90A0),
     FillBoundingBoxNV = unchecked((uint)0x90A1),
     StrokeBoundingBoxNV = unchecked((uint)0x90A2),
-    DashOffsetResetNV = unchecked((uint)0x90B4)
+    DashOffsetResetNV = unchecked((uint)0x90B4),
 }

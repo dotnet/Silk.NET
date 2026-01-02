@@ -14,5 +14,5 @@ public enum LightTextureMode : uint
     DepthEXT = unchecked((uint)0x8452),
     MaterialEXT = unchecked((uint)0x8349),
     NormalEXT = unchecked((uint)0x834A),
-    ColorEXT = unchecked((uint)0x834C)
+    ColorEXT = unchecked((uint)0x834C),
 }

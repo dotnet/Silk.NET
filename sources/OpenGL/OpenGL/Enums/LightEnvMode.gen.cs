@@ -12,5 +12,5 @@ public enum LightEnvMode : uint
 {
     Replace = unchecked((uint)0x1E01),
     Add = unchecked((uint)0x0104),
-    Modulate = unchecked((uint)0x2100)
+    Modulate = unchecked((uint)0x2100),
 }

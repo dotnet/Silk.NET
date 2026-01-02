@@ -16,5 +16,5 @@ public enum CombinerRegister : uint
     SecondaryColorNV = unchecked((uint)0x852D),
     Spare0NV = unchecked((uint)0x852E),
     Spare1NV = unchecked((uint)0x852F),
-    DiscardNV = unchecked((uint)0x8530)
+    DiscardNV = unchecked((uint)0x8530),
 }

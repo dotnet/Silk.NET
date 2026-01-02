@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum ClipControlOrigin : uint
 {
     LowerLeft = unchecked((uint)0x8CA1),
-    UpperLeft = unchecked((uint)0x8CA2)
+    UpperLeft = unchecked((uint)0x8CA2),
 }

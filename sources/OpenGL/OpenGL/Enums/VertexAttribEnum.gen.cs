@@ -18,5 +18,5 @@ public enum VertexAttribEnum : uint
     CurrentVertexAttrib = unchecked((uint)0x8626),
     VertexAttribArrayNormalized = unchecked((uint)0x886A),
     VertexAttribArrayInteger = unchecked((uint)0x88FD),
-    VertexAttribArrayDivisor = unchecked((uint)0x88FE)
+    VertexAttribArrayDivisor = unchecked((uint)0x88FE),
 }

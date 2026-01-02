@@ -17,5 +17,5 @@ public enum SamplerParameterI : uint
     WrapR = unchecked((uint)0x8072),
     CompareMode = unchecked((uint)0x884C),
     CompareFunc = unchecked((uint)0x884D),
-    UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A)
+    UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
 }

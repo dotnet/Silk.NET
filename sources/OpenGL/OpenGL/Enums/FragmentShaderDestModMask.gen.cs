@@ -17,5 +17,5 @@ public enum FragmentShaderDestModMask : uint
     HalfBitATI = unchecked((uint)0x00000008),
     QuarterBitATI = unchecked((uint)0x00000010),
     EighthBitATI = unchecked((uint)0x00000020),
-    SaturateBitATI = unchecked((uint)0x00000040)
+    SaturateBitATI = unchecked((uint)0x00000040),
 }

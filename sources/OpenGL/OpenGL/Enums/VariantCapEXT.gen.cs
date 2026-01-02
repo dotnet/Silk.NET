@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VariantCapEXT : uint
 {
-    VariantArray = unchecked((uint)0x87E8)
+    VariantArray = unchecked((uint)0x87E8),
 }

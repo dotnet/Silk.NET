@@ -14,5 +14,5 @@ public enum FragmentOp3ATI : uint
     Lerp = unchecked((uint)0x8969),
     Cnd = unchecked((uint)0x896A),
     Cnd0 = unchecked((uint)0x896B),
-    Dot2Add = unchecked((uint)0x896C)
+    Dot2Add = unchecked((uint)0x896C),
 }

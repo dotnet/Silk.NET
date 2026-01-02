@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum Boolean : uint
 {
     False = unchecked((uint)0),
-    True = unchecked((uint)1)
+    True = unchecked((uint)1),
 }

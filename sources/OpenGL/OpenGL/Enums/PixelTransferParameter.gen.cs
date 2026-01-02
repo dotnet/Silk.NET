@@ -55,5 +55,5 @@ public enum PixelTransferParameter : uint
     PostColorMatrixRedBiasSGI = unchecked((uint)0x80B8),
     PostColorMatrixGreenBiasSGI = unchecked((uint)0x80B9),
     PostColorMatrixBlueBiasSGI = unchecked((uint)0x80BA),
-    PostColorMatrixAlphaBiasSGI = unchecked((uint)0x80BB)
+    PostColorMatrixAlphaBiasSGI = unchecked((uint)0x80BB),
 }

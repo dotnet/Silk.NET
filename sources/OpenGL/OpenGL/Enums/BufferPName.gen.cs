@@ -22,5 +22,5 @@ public enum BufferPName : uint
     SizeARB = unchecked((uint)0x8764),
     UsageARB = unchecked((uint)0x8765),
     AccessARB = unchecked((uint)0x88BB),
-    MappedARB = unchecked((uint)0x88BC)
+    MappedARB = unchecked((uint)0x88BC),
 }

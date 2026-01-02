@@ -28,5 +28,5 @@ public enum BlendingFactor : uint
     Src1Alpha = unchecked((uint)0x8589),
     Src1Color = unchecked((uint)0x88F9),
     OneMinusSrc1Color = unchecked((uint)0x88FA),
-    OneMinusSrc1Alpha = unchecked((uint)0x88FB)
+    OneMinusSrc1Alpha = unchecked((uint)0x88FB),
 }

@@ -22,5 +22,5 @@ public enum VertexAttribProperty : uint
     VertexAttribArrayLong = unchecked((uint)0x874E),
     VertexAttribBinding = unchecked((uint)0x82D4),
     VertexAttribRelativeOffset = unchecked((uint)0x82D5),
-    VertexAttribArrayIntegerEXT = unchecked((uint)0x88FD)
+    VertexAttribArrayIntegerEXT = unchecked((uint)0x88FD),
 }

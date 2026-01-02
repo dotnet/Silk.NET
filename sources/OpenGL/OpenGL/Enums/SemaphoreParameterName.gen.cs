@@ -14,5 +14,5 @@ public enum SemaphoreParameterName : uint
     TimelineSemaphoreValueNV = unchecked((uint)0x9595),
     SemaphoreTypeNV = unchecked((uint)0x95B3),
     SemaphoreTypeBinaryNV = unchecked((uint)0x95B4),
-    SemaphoreTypeTimelineNV = unchecked((uint)0x95B5)
+    SemaphoreTypeTimelineNV = unchecked((uint)0x95B5),
 }

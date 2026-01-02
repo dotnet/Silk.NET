@@ -41,5 +41,5 @@ public enum TextureUnit : uint
     Texture28 = unchecked((uint)0x84DC),
     Texture29 = unchecked((uint)0x84DD),
     Texture30 = unchecked((uint)0x84DE),
-    Texture31 = unchecked((uint)0x84DF)
+    Texture31 = unchecked((uint)0x84DF),
 }

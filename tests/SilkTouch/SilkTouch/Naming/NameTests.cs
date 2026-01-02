@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using NUnit.Framework;
+using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Naming;
 
 namespace Silk.NET.SilkTouch.UnitTests.Naming;
@@ -21,14 +22,23 @@ public class NameTests : NameTrimmer
             { "Glfw", ("Glfw", null) },
             { "GLFWcursor", ("GLFWcursor", null) },
             { "GLFWmonitor", ("GLFWmonitor", null) },
-            { "GLFWwindow", ("GLFWwindow", null) }
+            { "GLFWwindow", ("GLFWwindow", null) },
         };
         Assert.That(
             GetPrefix(null, hint, test, null, null, false, true)?.Prefix,
             Is.EqualTo("GLFW")
         );
-        string? identifiedPrefix = null;
-        Trim(null, hint, "GLFW", test, null, null, ref identifiedPrefix);
+        Trim(
+            new NameTrimmerContext
+            {
+                Configuration = new PrettifyNames.Configuration
+                {
+                    GlobalPrefixHints = hint is null ? null : [hint],
+                },
+                Names = test,
+                JobKey = "GLFW",
+            }
+        );
         var expected = new Dictionary<string, string>
         {
             { "GLFWallocator", "Allocator" },
@@ -39,7 +49,7 @@ public class NameTests : NameTrimmer
             { "Glfw", "Glfw" },
             { "GLFWcursor", "Cursor" },
             { "GLFWmonitor", "Monitor" },
-            { "GLFWwindow", "Window" }
+            { "GLFWwindow", "Window" },
         };
         foreach (var (key, (trimmed, _)) in test)
         {
@@ -58,24 +68,23 @@ public class NameTests : NameTrimmer
             { "GL_2X_BIT_ATI", ("GL_2X_BIT_ATI", null) },
             { "GL_COMP_BIT_ATI", ("GL_COMP_BIT_ATI", null) },
             { "GL_NEGATE_BIT_ATI", ("GL_NEGATE_BIT_ATI", null) },
-            { "GL_BIAS_BIT_ATI", ("GL_BIAS_BIT_ATI", null) }
+            { "GL_BIAS_BIT_ATI", ("GL_BIAS_BIT_ATI", null) },
         };
-        string? identifiedPrefix = null;
         Trim(
-            "FragmentShaderColorModMaskATI",
-            "gl",
-            "OpenGL",
-            test,
-            null,
-            null,
-            ref identifiedPrefix
+            new NameTrimmerContext
+            {
+                Container = "FragmentShaderColorModMaskATI",
+                Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
+                Names = test,
+                JobKey = "OpenGL",
+            }
         );
         var expected = new Dictionary<string, string>
         {
             { "GL_2X_BIT_ATI", "X2XBitAti" },
             { "GL_COMP_BIT_ATI", "CompBitAti" },
             { "GL_NEGATE_BIT_ATI", "NegateBitAti" },
-            { "GL_BIAS_BIT_ATI", "BiasBitAti" }
+            { "GL_BIAS_BIT_ATI", "BiasBitAti" },
         };
         foreach (var (key, (trimmed, _)) in test)
         {
@@ -92,14 +101,21 @@ public class NameTests : NameTrimmer
         var test = new Dictionary<string, (string, List<string>?)>
         {
             { "GL_EVAL_2D_NV", ("GL_EVAL_2D_NV", null) },
-            { "GL_EVAL_TRIANGULAR_2D_NV", ("GL_EVAL_TRIANGULAR_2D_NV", null) }
+            { "GL_EVAL_TRIANGULAR_2D_NV", ("GL_EVAL_TRIANGULAR_2D_NV", null) },
         };
-        string? identifiedPrefix = null;
-        Trim("EvalTargetNV", "gl", "OpenGL", test, null, null, ref identifiedPrefix);
+        Trim(
+            new NameTrimmerContext
+            {
+                Container = "EvalTargetNV",
+                Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
+                Names = test,
+                JobKey = "OpenGL",
+            }
+        );
         var expected = new Dictionary<string, string>
         {
             { "GL_EVAL_2D_NV", "Eval2DNv" },
-            { "GL_EVAL_TRIANGULAR_2D_NV", "EvalTriangular2DNv" }
+            { "GL_EVAL_TRIANGULAR_2D_NV", "EvalTriangular2DNv" },
         };
         foreach (var (key, (trimmed, _)) in test)
         {
@@ -116,4 +132,42 @@ public class NameTests : NameTrimmer
             NameUtils.FindCommonPrefix(["Silk.NET.SDL", "Silk.NET.SDL"], true, false, true),
             Is.EqualTo("Silk.NET.SDL")
         );
+
+    [Test]
+    public void RegressionSingleMemberEnumUsesGlobalPrefixHint()
+    {
+        var names = new Dictionary<string, (string, List<string>?)>
+        {
+            { "GL_FILL_NV", ("GL_FILL_NV", null) },
+        };
+        var ctx = new NameTrimmerContext
+        {
+            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
+            Container = "EvalMapsModeNV",
+            JobKey = "OpenGL",
+            Names = names,
+        };
+        var uut = new NameTrimmer();
+        uut.Trim(ctx);
+        Assert.That(names["GL_FILL_NV"].Item1, Is.EqualTo("FILL_NV"));
+    }
+
+    [Test]
+    public void MultipleGlobalPrefixHints()
+    {
+        var names = new Dictionary<string, (string, List<string>?)>
+        {
+            { "ALC_CONTEXT_DEBUG_BIT_EXT", ("ALC_CONTEXT_DEBUG_BIT_EXT", null) },
+        };
+        var ctx = new NameTrimmerContext
+        {
+            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["alc", "al"] },
+            Container = "ContextFlagsEXT",
+            JobKey = "OpenAL",
+            Names = names,
+        };
+        var uut = new NameTrimmer();
+        uut.Trim(ctx);
+        Assert.That(names["ALC_CONTEXT_DEBUG_BIT_EXT"].Item1, Is.EqualTo("CONTEXT_DEBUG_BIT_EXT"));
+    }
 }

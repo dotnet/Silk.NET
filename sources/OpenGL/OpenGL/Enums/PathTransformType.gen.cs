@@ -18,5 +18,5 @@ public enum PathTransformType : uint
     Affine2DNV = unchecked((uint)0x9092),
     Affine3DNV = unchecked((uint)0x9094),
     TransposeAffine2DNV = unchecked((uint)0x9096),
-    TransposeAffine3DNV = unchecked((uint)0x9098)
+    TransposeAffine3DNV = unchecked((uint)0x9098),
 }

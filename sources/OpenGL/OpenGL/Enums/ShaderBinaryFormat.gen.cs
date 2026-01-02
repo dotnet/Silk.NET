@@ -15,5 +15,5 @@ public enum ShaderBinaryFormat : uint
     ShaderBinaryDMP = unchecked((uint)0x9250),
     GccsoShaderBinaryFJ = unchecked((uint)0x9260),
     SgxBinaryIMG = unchecked((uint)0x8C0A),
-    ShaderBinaryVIV = unchecked((uint)0x8FC4)
+    ShaderBinaryVIV = unchecked((uint)0x8FC4),
 }

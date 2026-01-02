@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum PathElementType : uint
 {
     Utf8NV = unchecked((uint)0x909A),
-    Utf16NV = unchecked((uint)0x909B)
+    Utf16NV = unchecked((uint)0x909B),
 }

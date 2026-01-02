@@ -17,5 +17,5 @@ public enum TextureGenParameter : uint
     ObjectPointSGIS = unchecked((uint)0x81F5),
     EyeLineSGIS = unchecked((uint)0x81F6),
     ObjectLineSGIS = unchecked((uint)0x81F7),
-    TextureGenModeOES = unchecked((uint)0x2500)
+    TextureGenModeOES = unchecked((uint)0x2500),
 }

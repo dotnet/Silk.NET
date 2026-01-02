@@ -29,5 +29,5 @@ public enum MapTarget : uint
     Map2Vertex3 = unchecked((uint)0x0DB7),
     Map2Vertex4 = unchecked((uint)0x0DB8),
     GeometryDeformationSGIX = unchecked((uint)0x8194),
-    TextureDeformationSGIX = unchecked((uint)0x8195)
+    TextureDeformationSGIX = unchecked((uint)0x8195),
 }

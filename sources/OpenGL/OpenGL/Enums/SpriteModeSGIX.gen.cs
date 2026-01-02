@@ -12,5 +12,5 @@ public enum SpriteModeSGIX : uint
 {
     Axial = unchecked((uint)0x814C),
     ObjectAligned = unchecked((uint)0x814D),
-    EyeAligned = unchecked((uint)0x814E)
+    EyeAligned = unchecked((uint)0x814E),
 }

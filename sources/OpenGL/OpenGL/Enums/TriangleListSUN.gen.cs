@@ -12,5 +12,5 @@ public enum TriangleListSUN : uint
 {
     Restart = unchecked((uint)0x0001),
     ReplaceMiddle = unchecked((uint)0x0002),
-    ReplaceOldest = unchecked((uint)0x0003)
+    ReplaceOldest = unchecked((uint)0x0003),
 }

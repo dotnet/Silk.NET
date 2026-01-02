@@ -387,7 +387,7 @@ public static unsafe class SilkMarshal
         nint charSize = 1
     )
     {
-        if (native == null || native.Length != lengths.Length)
+        if (native.IsEmpty || native.Length != lengths.Length)
         {
             return null;
         }
@@ -423,7 +423,7 @@ public static unsafe class SilkMarshal
         nint charSize = 1
     )
     {
-        if (native == null || native.Length != lengths0.Length)
+        if (native.IsEmpty || native.Length != lengths0.Length)
         {
             return null;
         }

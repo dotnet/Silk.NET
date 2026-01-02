@@ -24,5 +24,5 @@ public enum TexStorageAttribs : uint
     SurfaceCompressionFixedRate9BpcEXT = unchecked((uint)0x96CC),
     SurfaceCompressionFixedRate10BpcEXT = unchecked((uint)0x96CD),
     SurfaceCompressionFixedRate11BpcEXT = unchecked((uint)0x96CE),
-    SurfaceCompressionFixedRate12BpcEXT = unchecked((uint)0x96CF)
+    SurfaceCompressionFixedRate12BpcEXT = unchecked((uint)0x96CF),
 }

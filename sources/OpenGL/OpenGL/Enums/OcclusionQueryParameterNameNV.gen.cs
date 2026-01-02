@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum OcclusionQueryParameterNameNV : uint
 {
     PixelCount = unchecked((uint)0x8866),
-    PixelCountAvailable = unchecked((uint)0x8867)
+    PixelCountAvailable = unchecked((uint)0x8867),
 }

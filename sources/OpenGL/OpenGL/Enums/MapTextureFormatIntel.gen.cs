@@ -12,5 +12,5 @@ public enum MapTextureFormatIntel : uint
 {
     Default = unchecked((uint)0),
     Linear = unchecked((uint)1),
-    LinearCpuCached = unchecked((uint)2)
+    LinearCpuCached = unchecked((uint)2),
 }

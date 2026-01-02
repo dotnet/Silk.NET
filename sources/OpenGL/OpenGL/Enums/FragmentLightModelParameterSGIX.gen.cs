@@ -13,5 +13,5 @@ public enum FragmentLightModelParameterSGIX : uint
     LocalViewer = unchecked((uint)0x8408),
     TwoSide = unchecked((uint)0x8409),
     Ambient = unchecked((uint)0x840A),
-    NormalInterpolation = unchecked((uint)0x840B)
+    NormalInterpolation = unchecked((uint)0x840B),
 }

@@ -15,5 +15,5 @@ public enum PixelCopyType : uint
     Stencil = unchecked((uint)0x1802),
     ColorEXT = unchecked((uint)0x1800),
     DepthEXT = unchecked((uint)0x1801),
-    StencilEXT = unchecked((uint)0x1802)
+    StencilEXT = unchecked((uint)0x1802),
 }

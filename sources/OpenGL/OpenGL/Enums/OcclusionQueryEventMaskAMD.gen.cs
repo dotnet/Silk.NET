@@ -14,5 +14,5 @@ public enum OcclusionQueryEventMaskAMD : uint
     DepthFailEventBit = unchecked((uint)0x00000002),
     StencilFailEventBit = unchecked((uint)0x00000004),
     DepthBoundsFailEventBit = unchecked((uint)0x00000008),
-    AllEventBits = unchecked((uint)0xFFFFFFFF)
+    AllEventBits = unchecked((uint)0xFFFFFFFF),
 }

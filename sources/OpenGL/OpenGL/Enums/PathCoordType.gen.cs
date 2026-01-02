@@ -54,5 +54,5 @@ public enum PathCoordType : uint
     RelativeRoundedRect8NV = unchecked((uint)0xEF),
     RelativeRectNV = unchecked((uint)0xF7),
     ConicCurveToNV = unchecked((uint)0x1A),
-    RelativeConicCurveToNV = unchecked((uint)0x1B)
+    RelativeConicCurveToNV = unchecked((uint)0x1B),
 }

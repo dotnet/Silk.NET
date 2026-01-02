@@ -19,5 +19,5 @@ public enum PixelMap : uint
     RToR = unchecked((uint)0x0C76),
     GToG = unchecked((uint)0x0C77),
     BToB = unchecked((uint)0x0C78),
-    AToA = unchecked((uint)0x0C79)
+    AToA = unchecked((uint)0x0C79),
 }

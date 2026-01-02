@@ -41,5 +41,5 @@ public enum FragmentShaderRegATI : uint
     Reg28 = unchecked((uint)0x893D),
     Reg29 = unchecked((uint)0x893E),
     Reg30 = unchecked((uint)0x893F),
-    Reg31 = unchecked((uint)0x8940)
+    Reg31 = unchecked((uint)0x8940),
 }

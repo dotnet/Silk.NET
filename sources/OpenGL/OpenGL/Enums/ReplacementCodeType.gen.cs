@@ -12,5 +12,5 @@ public enum ReplacementCodeType : uint
 {
     UnsignedByte = unchecked((uint)0x1401),
     UnsignedShort = unchecked((uint)0x1403),
-    UnsignedInt = unchecked((uint)0x1405)
+    UnsignedInt = unchecked((uint)0x1405),
 }

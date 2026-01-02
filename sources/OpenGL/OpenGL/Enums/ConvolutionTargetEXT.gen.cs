@@ -13,5 +13,5 @@ public enum ConvolutionTargetEXT : uint
     Convolution1D = unchecked((uint)0x8010),
     Convolution2D = unchecked((uint)0x8011),
     Convolution1DEXT = unchecked((uint)0x8010),
-    Convolution2DEXT = unchecked((uint)0x8011)
+    Convolution2DEXT = unchecked((uint)0x8011),
 }

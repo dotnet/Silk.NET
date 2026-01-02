@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum FragmentOp1ATI : uint
 {
-    Mov = unchecked((uint)0x8961)
+    Mov = unchecked((uint)0x8961),
 }

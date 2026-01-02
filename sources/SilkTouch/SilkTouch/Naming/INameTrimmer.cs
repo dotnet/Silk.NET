@@ -18,22 +18,6 @@ public interface INameTrimmer
     /// <summary>
     /// Trims prefixes from the given constituent names within the given container.
     /// </summary>
-    /// <param name="container">
-    /// The name of the container. e.g. if we're trimming enum members, this would be the enum type name.
-    /// </param>
-    /// <param name="hint">A prefix hint. Generally this is a global method prefix or what have you.</param>
-    /// <param name="jobKey">The job key.</param>
-    /// <param name="names">The names within the container.</param>
-    /// <param name="prefixOverrides">The prefix overrides.</param>
-    /// <param name="nonDeterminant">Names that should not be treated as determinant of the identified prefix.</param>
-    /// <param name="identifiedPrefix">The prefix identified that this trimmer is trimming from the functions.</param>
-    void Trim(
-        string? container,
-        string? hint,
-        string? jobKey,
-        Dictionary<string, (string Primary, List<string>? Secondary)>? names,
-        Dictionary<string, string>? prefixOverrides,
-        HashSet<string>? nonDeterminant,
-        ref string? identifiedPrefix
-    );
+    /// <param name="context">The arguments.</param>
+    void Trim(NameTrimmerContext context);
 }

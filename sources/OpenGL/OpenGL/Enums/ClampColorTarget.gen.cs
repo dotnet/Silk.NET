@@ -13,5 +13,5 @@ public enum ClampColorTarget : uint
     ReadColor = unchecked((uint)0x891C),
     VertexColorARB = unchecked((uint)0x891A),
     FragmentColorARB = unchecked((uint)0x891B),
-    ReadColorARB = unchecked((uint)0x891C)
+    ReadColorARB = unchecked((uint)0x891C),
 }

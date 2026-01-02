@@ -15,5 +15,5 @@ public enum SamplerParameterF : uint
     MaxLod = unchecked((uint)0x813B),
     LodBias = unchecked((uint)0x8501),
     MaxAnisotropy = unchecked((uint)0x84FE),
-    UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A)
+    UnnormalizedCoordinatesARM = unchecked((uint)0x8F6A),
 }

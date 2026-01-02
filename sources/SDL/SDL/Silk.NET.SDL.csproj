@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <NoWarn>1591</NoWarn>
@@ -9,5 +9,4 @@
     <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
     <ProjectReference Include="..\Native\Silk.NET.SDL.Native.csproj" />
   </ItemGroup>
-  <Import Project="..\..\Core\Core\Silk.NET.Core.targets" />
 </Project>

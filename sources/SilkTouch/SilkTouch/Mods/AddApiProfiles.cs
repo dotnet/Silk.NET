@@ -39,6 +39,13 @@ public class AddApiProfiles(
         /// The API profile declarations.
         /// </summary>
         public ApiProfileDecl[]? Profiles { get; init; }
+
+        /// <summary>
+        /// Whether to also search for <see cref="SupportedApiProfileAttribute"/>s for files that do not match any
+        /// profiles in <see cref="Profiles"/> but that might match against an <see cref="IApiMetadataProvider{T}"/>.
+        /// Defaults to <c>true</c> if <see cref="Profiles"/> is <c>null</c> or empty.
+        /// </summary>
+        public bool? SearchAllFiles { get; init; }
     }
 
     /// <summary>
@@ -63,19 +70,24 @@ public class AddApiProfiles(
 
         private string? _currentParentSymbol;
 
-        private AttributeSyntax GetProfileAttribute(string? childSymbol)
-        {
-            Debug.Assert(Profile is not null);
-            return versionProviders
-                .GetMetadata(
-                    jobKey,
-                    _currentParentSymbol,
-                    childSymbol,
-                    x => x.Profile == Profile.Profile,
-                    Profile
-                )
-                .GetSupportedApiProfileAttribute();
-        }
+        private IEnumerable<AttributeSyntax> GetProfileAttributes(string? childSymbol) =>
+            Profile is null
+                ? versionProviders
+                    .GetAllMetadata(jobKey, _currentParentSymbol, childSymbol)
+                    .Select(x => x?.GetSupportedApiProfileAttribute())
+                    .OfType<AttributeSyntax>()
+                :
+                [
+                    versionProviders
+                        .GetMetadata(
+                            jobKey,
+                            _currentParentSymbol,
+                            childSymbol,
+                            x => x.Metadata.Profile == Profile.Profile,
+                            Profile
+                        )
+                        .GetSupportedApiProfileAttribute(),
+                ];
 
         public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
             Visit(node, node.Identifier.ToString(), base.VisitDelegateDeclaration);
@@ -176,15 +188,9 @@ public class AddApiProfiles(
             );
             var retNode = @base(node);
             _currentParentSymbol = parentSymbolBefore;
-            if (Profile is null)
-            {
-                return retNode;
-            }
-
-            return retNode is T ret
-                ? ret.AddAttributeLists(
-                    AttributeList(SingletonSeparatedList(GetProfileAttribute(null)))
-                )
+            var attrs = SeparatedList(GetProfileAttributes(null));
+            return retNode is T ret && attrs.Any()
+                ? ret.AddAttributeLists(AttributeList(attrs))
                 : retNode;
         }
 
@@ -194,17 +200,11 @@ public class AddApiProfiles(
             // First, call the base visitor logic.
             var retNode = @base(node);
 
-            // If we have no profile to get information pertaining to the current profile (why are we even here?)
-            if (Profile is null || retNode is not T ret)
-            {
-                // early out, we can't do anything
-                return retNode;
-            }
-
             // Add the attribute if this is the node we are visiting.
-            return ret.AddAttributeLists(
-                AttributeList(SingletonSeparatedList(GetProfileAttribute(name)))
-            );
+            var attrs = SeparatedList(GetProfileAttributes(name));
+            return retNode is T ret && attrs.Any()
+                ? ret.AddAttributeLists(AttributeList(attrs))
+                : retNode;
         }
     }
 
@@ -245,12 +245,26 @@ public class AddApiProfiles(
                     path.StartsWith(x.SourceSubdirectory, StringComparison.OrdinalIgnoreCase)
                 )
                 .MaxBy(x => x.SourceSubdirectory.Length);
-            if (rewriter.Profile is null)
+            if (
+                rewriter.Profile is null
+                && !(
+                    cfg.SearchAllFiles.GetValueOrDefault()
+                    || (cfg.SearchAllFiles is null && cfg.Profiles is null or { Length: 0 })
+                )
+            )
             {
                 continue;
             }
 
-            logger.LogDebug("Identified profile {} for {}", rewriter.Profile, path);
+            if (rewriter.Profile is not null)
+            {
+                logger.LogDebug("Identified profile {} for {}", rewriter.Profile, path);
+            }
+            else
+            {
+                logger.LogDebug("No profile identified for {}", path);
+            }
+
             ctx.SourceProject = doc.WithSyntaxRoot(
                 rewriter.Visit(root).NormalizeWhitespace()
             ).Project;

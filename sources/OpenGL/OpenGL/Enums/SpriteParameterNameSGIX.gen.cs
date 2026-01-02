@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum SpriteParameterNameSGIX : uint
 {
-    SpriteMode = unchecked((uint)0x8149)
+    SpriteMode = unchecked((uint)0x8149),
 }

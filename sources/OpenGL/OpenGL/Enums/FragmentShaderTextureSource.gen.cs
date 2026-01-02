@@ -73,5 +73,5 @@ public enum FragmentShaderTextureSource : uint
     Reg28ATI = unchecked((uint)0x893D),
     Reg29ATI = unchecked((uint)0x893E),
     Reg30ATI = unchecked((uint)0x893F),
-    Reg31ATI = unchecked((uint)0x8940)
+    Reg31ATI = unchecked((uint)0x8940),
 }

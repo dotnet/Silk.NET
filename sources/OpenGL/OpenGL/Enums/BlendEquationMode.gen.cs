@@ -21,5 +21,5 @@ public enum BlendEquationMode : uint
     FuncSubtractEXT = unchecked((uint)0x800A),
     FuncReverseSubtractEXT = unchecked((uint)0x800B),
     AlphaMinSGIX = unchecked((uint)0x8320),
-    AlphaMaxSGIX = unchecked((uint)0x8321)
+    AlphaMaxSGIX = unchecked((uint)0x8321),
 }

@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum SeparableTargetEXT : uint
 {
     Separable2D = unchecked((uint)0x8012),
-    Separable2DEXT = unchecked((uint)0x8012)
+    Separable2DEXT = unchecked((uint)0x8012),
 }

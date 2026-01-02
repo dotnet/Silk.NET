@@ -14,5 +14,5 @@ public enum StringName : uint
     Renderer = unchecked((uint)0x1F01),
     Version = unchecked((uint)0x1F02),
     Extensions = unchecked((uint)0x1F03),
-    ShadingLanguageVersion = unchecked((uint)0x8B8C)
+    ShadingLanguageVersion = unchecked((uint)0x8B8C),
 }

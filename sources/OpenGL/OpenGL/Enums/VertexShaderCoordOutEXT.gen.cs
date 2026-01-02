@@ -20,5 +20,5 @@ public enum VertexShaderCoordOutEXT : uint
     NegativeW = unchecked((uint)0x87DC),
     Zero = unchecked((uint)0x87DD),
     One = unchecked((uint)0x87DE),
-    NegativeOne = unchecked((uint)0x87DF)
+    NegativeOne = unchecked((uint)0x87DF),
 }

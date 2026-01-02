@@ -16,5 +16,5 @@ public enum ProgramTarget : uint
     ComputeProgramNV = unchecked((uint)0x90FB),
     GeometryProgramNV = unchecked((uint)0x8C26),
     TessControlProgramNV = unchecked((uint)0x891E),
-    TessEvaluationProgramNV = unchecked((uint)0x891F)
+    TessEvaluationProgramNV = unchecked((uint)0x891F),
 }

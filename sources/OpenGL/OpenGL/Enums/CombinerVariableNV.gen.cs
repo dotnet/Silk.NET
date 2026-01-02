@@ -16,5 +16,5 @@ public enum CombinerVariableNV : uint
     D = unchecked((uint)0x8526),
     E = unchecked((uint)0x8527),
     F = unchecked((uint)0x8528),
-    G = unchecked((uint)0x8529)
+    G = unchecked((uint)0x8529),
 }

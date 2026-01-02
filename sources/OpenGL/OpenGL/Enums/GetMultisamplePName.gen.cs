@@ -12,5 +12,5 @@ public enum GetMultisamplePName : uint
 {
     SamplePosition = unchecked((uint)0x8E50),
     SampleLocationARB = unchecked((uint)0x8E50),
-    ProgrammableSampleLocationARB = unchecked((uint)0x9341)
+    ProgrammableSampleLocationARB = unchecked((uint)0x9341),
 }

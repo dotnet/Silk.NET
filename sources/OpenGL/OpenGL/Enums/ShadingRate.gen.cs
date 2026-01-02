@@ -18,5 +18,5 @@ public enum ShadingRate : uint
     Rate4X1PixelsEXT = unchecked((uint)0x96AB),
     Rate4X2PixelsEXT = unchecked((uint)0x96AC),
     Rate2X4PixelsEXT = unchecked((uint)0x96AD),
-    Rate4X4PixelsEXT = unchecked((uint)0x96AE)
+    Rate4X4PixelsEXT = unchecked((uint)0x96AE),
 }

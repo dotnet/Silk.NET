@@ -17,5 +17,5 @@ public enum DepthFunction : uint
     Greater = unchecked((uint)0x0204),
     Notequal = unchecked((uint)0x0205),
     Gequal = unchecked((uint)0x0206),
-    Always = unchecked((uint)0x0207)
+    Always = unchecked((uint)0x0207),
 }

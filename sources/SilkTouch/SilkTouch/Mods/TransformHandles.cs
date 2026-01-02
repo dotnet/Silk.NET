@@ -1,35 +1,37 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+using System.Collections.Immutable;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.FindSymbols;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Silk.NET.SilkTouch.Clang;
+using Silk.NET.SilkTouch.Mods.LocationTransformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// Transforms any pointers to an opaque struct or pointers to a non-existent type to be "handle" type. That is, a
-/// struct that wraps the underlying opaque pointer (or other underlying value)
+/// Identifies handle types by finding pointers to empty structs or missing types.
+/// In general, a handle type is a struct that wraps an underlying opaque pointer (or some other underlying value).
+/// These handle types are then transformed by making the struct wrap the underlying pointer and
+/// reducing the dimension of pointers referencing that handle type by one.
 /// </summary>
+/// <example>
+/// Given an empty struct, <c>struct VkBuffer</c>, and all usages of that struct are through a pointer,
+/// <c>VkBuffer*</c>, usages of that pointer will be replaced by <c>VkBufferHandle</c>. For a 2-dimensional pointer,
+/// <c>VkBuffer**</c>, the resulting replacement is <c>VkBufferHandle*</c>.
+/// </example>
 /// <remarks>
 /// It is assumed that all handle types in the generated syntax do not require a <c>using</c> directive in order to be
 /// in scope. That is, if a file with the namespace <c>Silk.NET.OpenGL</c> is encountered and it is referencing
 /// <c>Program</c>, <c>Program</c> must be declared in <c>Silk.NET.OpenGL</c>, <c>Silk.NET</c>, or <c>Silk</c>.
-/// When <see cref="Config.AssumeMissingTypesOpaque"/> is used, types will be generated to this effect.
 /// </remarks>
 [ModConfiguration<Config>]
-public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) : Mod
+public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, ILogger<TransformHandles> logger) : Mod
 {
     /// <summary>
     /// The configuration for the <see cref="TransformHandles"/> mod.
@@ -52,466 +54,469 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         await base.ExecuteAsync(ctx, ct);
+
+        var project = ctx.SourceProject;
+        if (project == null)
+        {
+            return;
+        }
+
+        var compilation = await project.GetCompilationAsync(ct);
+        if (compilation == null)
+        {
+            throw new InvalidOperationException("Failed to get compilation");
+        }
+
         var cfg = config.Get(ctx.JobKey);
-        var firstPass = new TypeDiscoverer();
-        var proj = ctx.SourceProject;
-        foreach (var doc in ctx.SourceProject?.Documents ?? [])
+        if (cfg.AssumeMissingTypesOpaque)
         {
-            if (await doc.GetSyntaxRootAsync(ct) is { } root)
+            // Find missing handle types
+            var handleDiscoverer = new MissingHandleTypeDiscoverer(logger, compilation, ct);
+            var missingHandleTypes = handleDiscoverer.GetMissingHandleTypes();
+
+            // Generate syntax nodes containing empty structs to represent the missing handle types
+            var structGenerator = new EmptyStructGenerator();
+            var syntaxNodes = structGenerator.GenerateSyntaxNodes(missingHandleTypes);
+
+            // Add syntax nodes to the project as new documents
+            foreach (var (fullyQualifiedName, node) in syntaxNodes)
             {
-                firstPass.Visit(root);
+                var relativePath = $"Handles/{PathForFullyQualified(fullyQualifiedName)}";
+                project = project.AddDocument(
+                    Path.GetFileName(relativePath),
+                    node.NormalizeWhitespace(),
+                    filePath: project.FullPath(relativePath)).Project;
+            }
+
+            // Update compilation
+            compilation = await project.GetCompilationAsync(ct);
+            if (compilation == null)
+            {
+                throw new InvalidOperationException("Failed to get compilation");
             }
         }
 
-        Dictionary<string, SyntaxNode>? missingFullyQualifiedTypeNamesToRootNodes =
-            cfg.AssumeMissingTypesOpaque ? [] : null;
-        var handles = firstPass.GetHandleTypes(missingFullyQualifiedTypeNamesToRootNodes);
-        if (missingFullyQualifiedTypeNamesToRootNodes is not null)
+        // Find handle documents
+        var handleTypeDiscoverer = new HandleTypeDiscoverer(project, compilation, ct);
+        var handleTypes = await handleTypeDiscoverer.GetHandleTypesAsync();
+
+        // Store handle document IDs for later
+        // We will use these IDs to know which documents to rewrite and rename
+        var handleTypeDocumentIds = new List<(string OriginalName, DocumentId DocumentId)>();
+        foreach (var handleTypeSymbol in handleTypes)
         {
-            foreach (var (fqTypeName, node) in missingFullyQualifiedTypeNamesToRootNodes)
+            if (handleTypeSymbol.DeclaringSyntaxReferences.Length > 1)
             {
-                var rel = $"Handles/{PathForFullyQualified(fqTypeName)}";
-                proj = proj
-                    ?.AddDocument(
-                        Path.GetFileName(rel),
-                        node.NormalizeWhitespace(),
-                        filePath: proj.FullPath(rel)
-                    )
-                    .Project;
+                // The struct is defined in multiple places (eg: partial keyword)
+                // This means we don't know which of the parts to rewrite
+                throw new InvalidOperationException("Struct has more than 1 declaring syntax reference");
+            }
+
+            var declaringSyntaxReference = handleTypeSymbol.DeclaringSyntaxReferences.Single();
+            var documentId = project.GetDocumentId(declaringSyntaxReference.SyntaxTree);
+            if (documentId != null)
+            {
+                handleTypeDocumentIds.Add((handleTypeSymbol.Name, documentId));
             }
         }
 
-        var rewriter = new Rewriter(handles, cfg.UseDSL);
-        foreach (var docId in proj?.DocumentIds ?? [])
+        // Do the two following transformation to all references of the handle types:
+        // 1. Add -Handle suffix
+        // 2. Reduce pointer dimensions
+        ctx.SourceProject = project;
+        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, handleTypes, [
+            new IdentifierRenamingTransformer(handleTypes.Select(t => ((ISymbol)t, GetNewHandleTypeName(t.Name)))),
+            new PointerDimensionReductionTransformer(),
+        ], logger, ct);
+        project = ctx.SourceProject;
+
+        // Use document IDs from earlier
+        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL);
+        foreach (var (originalName, documentId) in handleTypeDocumentIds)
         {
-            var doc =
-                proj?.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
-            if (await doc.GetSyntaxRootAsync(ct) is not { } root)
+            var document = project.GetDocument(documentId) ?? throw new InvalidOperationException("Failed to find document");
+
+            var syntaxTree = await document.GetSyntaxTreeAsync(ct);
+            if (syntaxTree == null)
             {
                 continue;
             }
 
-            doc = doc.WithSyntaxRoot(rewriter.Visit(root).NormalizeWhitespace());
-            var effectiveName = ModUtils.GetEffectiveName(doc.FilePath).ToString();
-            if (handles.ContainsKey(effectiveName))
-            {
-                doc = doc.WithFilePath(
-                        doc.FilePath!.Replace(effectiveName, $"{effectiveName}Handle")
-                    )
-                    .WithName(doc.Name.Replace(effectiveName, $"{effectiveName}Handle"));
-            }
+            var syntaxRoot = await syntaxTree.GetRootAsync(ct);
 
-            proj = doc.Project;
+            // Rewrite handle struct to include handle members
+            document = document.WithSyntaxRoot(handleTypeRewriter.Visit(syntaxRoot).NormalizeWhitespace());
+
+            // Rename document to match type name
+            document = document.ReplaceNameAndPath(originalName, GetNewHandleTypeName(originalName));
+
+            project = document.Project;
         }
 
-        ctx.SourceProject = proj;
+        ctx.SourceProject = project;
+
+        return;
+
+        string GetNewHandleTypeName(string name)
+        {
+            // TODO: Hack: This is a temporary fix for trimming _T off of Vulkan handle structs. Remove after implementing the new prettification strategy and things should still work.
+            if (name.EndsWith("_T"))
+            {
+                name = name[..^2];
+            }
+
+            name += "Handle";
+
+            return name;
+        }
     }
 
-    class TypeDiscoverer : CSharpSyntaxWalker
+    private class MissingHandleTypeDiscoverer(ILogger logger, Compilation compilation, CancellationToken ct) : SymbolVisitor
     {
-        /// <summary>
-        /// A map of type names to a map of scopes that reference that type name and whether it was referenced as a
-        /// pointer.
-        /// </summary>
-        private Dictionary<string, Dictionary<string, bool>> _referencedTypes = new();
+        private readonly HashSet<IErrorTypeSymbol> _nonHandleTypes = new(SymbolEqualityComparer.Default);
+        private readonly Dictionary<IErrorTypeSymbol, string> _missingTypes = new(SymbolEqualityComparer.Default);
+
+        private string? _currentNamespace = null;
+        private int _pointerTypeDepth = 0;
 
         /// <summary>
-        /// A map of parent scopes to types declared within that scope and whether they are an empty struct.
+        /// Gets all missing handle types that are found and the namespace that they should be created in.
         /// </summary>
-        private Dictionary<string, Dictionary<string, bool>> _declaredTypes = new();
-
-        /// <summary>
-        /// The current scope i.e. fully qualified type name.
-        /// </summary>
-        private string _currentScope = string.Empty;
-
-        private bool _isPointerType;
-
-        private void VisitType<T>(T type, SyntaxToken identifier, Action<T> @base)
-            where T : SyntaxNode
+        public Dictionary<IErrorTypeSymbol, string> GetMissingHandleTypes()
         {
-            var before = _currentScope;
-            if (!_declaredTypes.TryGetValue(_currentScope, out var v))
+            // We need to find and generate all missing handle types
+            // Handle types are types that are only referenced through a pointer
+            // We do this by parsing through the list of type errors
+            var typeErrors = compilation.GetDiagnostics(ct)
+                .Where(d => d.Id == "CS0246") // Type errors
+                .ToList();
+
+            // Find symbols that contain ITypeErrorSymbols
+            // These symbols are not necessarily ITypeErrorSymbols
+            var symbolsFound = new HashSet<ISymbol>(SymbolEqualityComparer.Default);
+            foreach (var typeError in typeErrors)
             {
-                _declaredTypes[_currentScope] = v = [];
-            }
-
-            v.Add(
-                identifier.ToString(),
-                type is StructDeclarationSyntax s
-                    && !s.Members.OfType<BaseFieldDeclarationSyntax>().Any()
-            );
-            _currentScope = string.IsNullOrWhiteSpace(_currentScope)
-                ? $"{type.NamespaceFromSyntaxNode()}.{identifier}"
-                : $"{_currentScope}.{identifier}";
-            @base(type);
-            _currentScope = before;
-        }
-
-        // We restrict the allowed parents to hopefully avoid mistaking references to e.g. variable names as type
-        // references.
-        internal static bool SkipTypeNode(SyntaxNode node) =>
-            node.Parent
-                is not (
-                        TypeSyntax
-                        or BaseParameterSyntax
-                        or BaseMethodDeclarationSyntax
-                        or VariableDeclarationSyntax
-                    )
-                    or QualifiedNameSyntax;
-
-        public override void VisitPointerType(PointerTypeSyntax node)
-        {
-            if (SkipTypeNode(node))
-            {
-                return;
-            }
-            var before = _isPointerType;
-            _isPointerType = true;
-            base.VisitPointerType(node);
-            _isPointerType = before;
-        }
-
-        public override void VisitGenericName(GenericNameSyntax node) { }
-
-        public override void VisitAttributeList(AttributeListSyntax node) { }
-
-        public override void VisitIdentifierName(IdentifierNameSyntax node)
-        {
-            if (SkipTypeNode(node) || node.IsNint || node.IsNuint)
-            {
-                return;
-            }
-
-            if (
-                !_referencedTypes.TryGetValue(node.Identifier.ToString(), out var referencingScopes)
-            )
-            {
-                _referencedTypes[node.Identifier.ToString()] = referencingScopes = [];
-            }
-
-            referencingScopes[_currentScope] =
-                _isPointerType && (!referencingScopes.TryGetValue(_currentScope, out var v) || v);
-        }
-
-        public override void VisitStructDeclaration(StructDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitStructDeclaration);
-
-        public override void VisitClassDeclaration(ClassDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitClassDeclaration);
-
-        public override void VisitRecordDeclaration(RecordDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitRecordDeclaration);
-
-        public override void VisitEnumDeclaration(EnumDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitEnumDeclaration);
-
-        public override void VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitDelegateDeclaration);
-
-        public override void VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitInterfaceDeclaration);
-
-        public Dictionary<string, Dictionary<string, string>> GetHandleTypes(
-            Dictionary<string, SyntaxNode>? missingFullyQualifiedTypeNamesToRootNodes
-        )
-        {
-            var typeNameToScopesAvailableToDeclaringScope =
-                new Dictionary<string, Dictionary<string, string>>();
-
-            // First, let's go through and remove the type references that can be resolved.
-            RemoveResolvableTypeReferences(typeNameToScopesAvailableToDeclaringScope);
-
-            if (missingFullyQualifiedTypeNamesToRootNodes is not null)
-            {
-                GenerateRemainingTypes(
-                    typeNameToScopesAvailableToDeclaringScope,
-                    missingFullyQualifiedTypeNamesToRootNodes
-                );
-            }
-
-            _referencedTypes.Clear();
-            _declaredTypes.Clear();
-            return typeNameToScopesAvailableToDeclaringScope;
-        }
-
-        private void RemoveResolvableTypeReferences(
-            // ReSharper disable once SuggestBaseTypeForParameter
-            Dictionary<
-                string,
-                Dictionary<string, string>
-            > typeNameToScopesAvailableToDeclaringScope
-        )
-        {
-            foreach (var (typeName, scopeAndIsPointer) in _referencedTypes)
-            {
-                var reloop = true; // <-- this is used to get around the whole "can't mutate while iterating" issue
-                while (reloop)
-                {
-                    reloop = false;
-                    foreach (var (scope, _) in scopeAndIsPointer.OrderBy(x => x.Key.Length))
-                    {
-                        // First, we find the scope in which the type is declared. This is expected to be within the
-                        // reach of the current scope per the documentation remarks on the mod class.
-                        var scopeSpan = scope.AsSpan();
-                        string? declaringScope = null;
-                        var isEmpty = false;
-
-                        // For each parent scope...
-                        for (
-                            var i = scopeSpan.Length;
-                            i != -1;
-                            i = scopeSpan.LastIndexOf('.'),
-                                scopeSpan = i == -1 ? default : scopeSpan[..i]
-                        )
-                        {
-                            var thisScope = scopeSpan.ToString();
-                            if (
-                                !_declaredTypes.TryGetValue(
-                                    thisScope,
-                                    out var declaredTypesToIsEmpty
-                                ) || !declaredTypesToIsEmpty.TryGetValue(typeName, out isEmpty)
-                            )
-                            {
-                                continue;
-                            }
-
-                            // If we have a found a declaration in the parent scope, this is the declaring scope.
-                            declaringScope = thisScope;
-                            break;
-                        }
-
-                        // The above for loop won't check the global scope, so let's check it now.
-                        if (
-                            declaringScope is null
-                            && _declaredTypes.TryGetValue("", out var globalDeclTypesToIsEmpty)
-                            && globalDeclTypesToIsEmpty.TryGetValue(typeName, out isEmpty)
-                        )
-                        {
-                            declaringScope = string.Empty;
-                        }
-
-                        if (declaringScope is null)
-                        {
-                            // Type does not exist, keep in the reference list.
-                            continue;
-                        }
-
-                        var isHandle =
-                            isEmpty
-                            && scopeAndIsPointer
-                                .Where(x => x.Key.StartsWith(declaringScope))
-                                .All(x => x.Value);
-                        reloop = true;
-                        while (reloop)
-                        {
-                            reloop = false;
-                            foreach (var relatedScope in scopeAndIsPointer.Keys)
-                            {
-                                if (!relatedScope.StartsWith(declaringScope))
-                                {
-                                    // Not related.
-                                    continue;
-                                }
-
-                                scopeAndIsPointer.Remove(relatedScope);
-                                if (isHandle)
-                                {
-                                    if (
-                                        !typeNameToScopesAvailableToDeclaringScope.TryGetValue(
-                                            typeName,
-                                            out var scopesAvailableToDeclaringScope
-                                        )
-                                    )
-                                    {
-                                        typeNameToScopesAvailableToDeclaringScope[typeName] =
-                                            scopesAvailableToDeclaringScope = [];
-                                    }
-
-                                    scopesAvailableToDeclaringScope[relatedScope] = declaringScope;
-                                }
-
-                                reloop = true;
-                                break;
-                            }
-                        }
-
-                        reloop = true;
-                        break;
-                    }
-                }
-            }
-        }
-
-        private void GenerateRemainingTypes(
-            Dictionary<
-                string,
-                Dictionary<string, string>
-            > typeNameToScopesAvailableToDeclaringScope,
-            Dictionary<string, SyntaxNode> missingFullyQualifiedTypeNamesToRootNodes
-        )
-        {
-            foreach (var (typeName, scopeAndIsPointer) in _referencedTypes)
-            {
-                if (scopeAndIsPointer.Count == 0 || scopeAndIsPointer.Any(x => !x.Value))
+                var syntaxTree = typeError.Location.SourceTree;
+                if (syntaxTree == null)
                 {
                     continue;
                 }
 
-                var destNs = NameUtils
-                    .FindCommonPrefix(
-                        scopeAndIsPointer
-                            .Keys.Select(x =>
-                                // Get the parent scopes because each scope is actually the fully qualified type name,
-                                // not the namespace
-                                x[..(x.LastIndexOf('.') is var i && i == -1 ? x.Length : i)]
-                            )
-                            .ToArray(),
-                        true,
-                        false,
-                        true
-                    )
-                    .Trim('.');
-                var fq = string.IsNullOrWhiteSpace(destNs) ? typeName : $"{destNs}.{typeName}";
-                var s = StructDeclaration(typeName)
-                    .WithModifiers(
-                        TokenList(
-                            Token(SyntaxKind.PublicKeyword),
-                            Token(SyntaxKind.UnsafeKeyword),
-                            Token(SyntaxKind.PartialKeyword)
-                        )
-                    );
-                if (
-                    !typeNameToScopesAvailableToDeclaringScope.TryGetValue(
-                        typeName,
-                        out var scopesAvailableToDeclaringScope
-                    )
-                )
+                var semanticModel = compilation.GetSemanticModel(syntaxTree);
+
+                // Get the syntax node the type error corresponds to
+                var currentSyntax = syntaxTree.GetRoot().FindNode(typeError.Location.SourceSpan);
+
+                // Search upwards to find a syntax node that we can call GetDeclaredSymbol on
+                // This is because calling GetDeclaredSymbol on the starting node will just return null
+                var isSuccess = false;
+                while (currentSyntax != null && currentSyntax is not TypeDeclarationSyntax)
                 {
-                    typeNameToScopesAvailableToDeclaringScope[typeName] =
-                        scopesAvailableToDeclaringScope = [];
+                    switch (currentSyntax)
+                    {
+                        case VariableDeclarationSyntax variableDeclarationSyntax:
+                        {
+                            foreach (var declaratorSyntax in variableDeclarationSyntax.Variables)
+                            {
+                                var symbol = semanticModel.GetDeclaredSymbol(declaratorSyntax, ct);
+                                if (symbol != null)
+                                {
+                                    symbolsFound.Add(symbol);
+                                    isSuccess = true;
+
+                                    // All of the declarators will have the same type, so getting the first symbol is enough
+                                    break;
+                                }
+                            }
+
+                            break;
+                        }
+                        case MemberDeclarationSyntax memberDeclarationSyntax:
+                        {
+                            var symbol = semanticModel.GetDeclaredSymbol(memberDeclarationSyntax, ct);
+                            if (symbol != null)
+                            {
+                                symbolsFound.Add(symbol);
+                                isSuccess = true;
+                            }
+
+                            break;
+                        }
+                        // Skip syntaxes that will never contain handle types
+                        case BaseTypeSyntax:
+                        case AttributeSyntax:
+                        {
+                            isSuccess = true;
+                            break;
+                        }
+                    }
+
+                    currentSyntax = currentSyntax.Parent;
                 }
 
-                foreach (var scope in scopeAndIsPointer.Keys)
+                if (!isSuccess)
                 {
-                    scopesAvailableToDeclaringScope[scope] = destNs;
+                    // This is to warn of unhandled cases
+                    logger.LogWarning("Failed to find corresponding symbol for type error. There may be an unhandled case in the code");
+                }
+            }
+
+            // These symbols contain at least one IErrorTypeSymbol, we need to search downwards for them
+            foreach (var symbol in symbolsFound)
+            {
+                Visit(symbol);
+            }
+
+            return new Dictionary<IErrorTypeSymbol, string>(_missingTypes.Where(kvp => !_nonHandleTypes.Contains(kvp.Key)), SymbolEqualityComparer.Default);
+        }
+
+        public override void VisitMethod(IMethodSymbol symbol)
+        {
+            base.VisitMethod(symbol);
+
+            _currentNamespace = symbol.NamespaceFromSymbol();
+            foreach (var parameterSymbol in symbol.Parameters)
+            {
+                Visit(parameterSymbol);
+            }
+            _currentNamespace = null;
+        }
+
+        public override void VisitParameter(IParameterSymbol symbol)
+        {
+            base.VisitParameter(symbol);
+
+            _currentNamespace = symbol.NamespaceFromSymbol();
+            Visit(symbol.Type);
+            _currentNamespace = null;
+        }
+
+        public override void VisitProperty(IPropertySymbol symbol)
+        {
+            base.VisitProperty(symbol);
+
+            _currentNamespace = symbol.NamespaceFromSymbol();
+            Visit(symbol.Type);
+            _currentNamespace = null;
+        }
+
+        public override void VisitField(IFieldSymbol symbol)
+        {
+            base.VisitField(symbol);
+
+            _currentNamespace = symbol.NamespaceFromSymbol();
+            Visit(symbol.Type);
+            _currentNamespace = null;
+        }
+
+        public override void VisitLocal(ILocalSymbol symbol)
+        {
+            base.VisitLocal(symbol);
+
+            _currentNamespace = symbol.NamespaceFromSymbol();
+            Visit(symbol.Type);
+            _currentNamespace = null;
+        }
+
+        public override void VisitPointerType(IPointerTypeSymbol symbol)
+        {
+            base.VisitPointerType(symbol);
+
+            _pointerTypeDepth++;
+            Visit(symbol.PointedAtType);
+            _pointerTypeDepth--;
+        }
+
+        public override void VisitNamedType(INamedTypeSymbol symbol)
+        {
+            base.VisitNamedType(symbol);
+
+            if (symbol is IErrorTypeSymbol errorTypeSymbol)
+            {
+                if (_currentNamespace == null)
+                {
+                    throw new InvalidOperationException($"{nameof(_currentNamespace)} should not be null");
                 }
 
-                missingFullyQualifiedTypeNamesToRootNodes[fq] = CompilationUnit()
-                    .WithMembers(
-                        SingletonList<MemberDeclarationSyntax>(
-                            string.IsNullOrWhiteSpace(destNs)
-                                ? s
-                                : FileScopedNamespaceDeclaration(
-                                        ModUtils.NamespaceIntoIdentifierName(destNs)
-                                    )
-                                    .WithMembers(SingletonList<MemberDeclarationSyntax>(s))
-                        )
-                    );
+                if (_pointerTypeDepth == 0)
+                {
+                    _nonHandleTypes.Add(errorTypeSymbol);
+                }
+
+                if (_missingTypes.TryGetValue(errorTypeSymbol, out var sharedNamespace))
+                {
+                    _missingTypes[errorTypeSymbol] = NameUtils.FindCommonPrefix([sharedNamespace, _currentNamespace], true, false, true).Trim('.');
+                }
+                else
+                {
+                    _missingTypes[errorTypeSymbol] = _currentNamespace;
+                }
             }
         }
     }
 
-    class Rewriter(Dictionary<string, Dictionary<string, string>> handles, bool useDSL)
-        : CSharpSyntaxRewriter
+    private class EmptyStructGenerator
     {
         /// <summary>
-        /// The current scope i.e. fully qualified type name.
+        /// Generates a syntax node for each specified type.
         /// </summary>
-        private string _currentScope = string.Empty;
+        /// <param name="typesToGenerate">Map from error type symbol to the namespace the type should be created in.</param>
+        /// <returns>Map from the fully qualified name of the generated type to the syntax node containing code for that type.</returns>
+        public Dictionary<string, SyntaxNode> GenerateSyntaxNodes(
+            Dictionary<IErrorTypeSymbol, string> typesToGenerate) =>
+            GenerateSyntaxNodes(typesToGenerate
+                .Select(kvp => new KeyValuePair<string, string>(kvp.Key.Name, kvp.Value))
+                .ToDictionary());
 
-        private bool _isPointerType;
-        private bool _derefPtr;
-
-        private SyntaxNode? VisitType<T>(T type, SyntaxToken identifier, Func<T, SyntaxNode?> @base)
-            where T : SyntaxNode
+        /// <summary>
+        /// Generates a syntax node for each specified type.
+        /// </summary>
+        /// <param name="missingHandleTypes">Map from type name to the namespace the type should be created in.</param>
+        /// <returns>Map from the fully qualified name of the generated type to the syntax node containing code for that type.</returns>
+        public Dictionary<string, SyntaxNode> GenerateSyntaxNodes(
+            Dictionary<string, string> missingHandleTypes)
         {
-            var before = _currentScope;
-            _currentScope = string.IsNullOrWhiteSpace(_currentScope)
-                ? $"{type.NamespaceFromSyntaxNode()}.{identifier}"
-                : $"{_currentScope}.{identifier}";
-            var ret = @base(type);
-            _currentScope = before;
-            return ret;
-        }
-
-        public override SyntaxNode? VisitPointerType(PointerTypeSyntax node)
-        {
-            if (TypeDiscoverer.SkipTypeNode(node))
+            var results = new Dictionary<string, SyntaxNode>();
+            foreach (var (name, ns) in missingHandleTypes)
             {
-                return node;
-            }
-            var before = _isPointerType;
-            _isPointerType = true;
-            var ret = base.VisitPointerType(node);
-            _isPointerType = before;
-            if (_derefPtr && ret is PointerTypeSyntax ptr)
-            {
-                ret = ptr.ElementType;
-            }
-
-            _derefPtr = false;
-            return ret;
-        }
-
-        public override SyntaxNode VisitGenericName(GenericNameSyntax node) => node;
-
-        public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node)
-        {
-            if (TypeDiscoverer.SkipTypeNode(node))
-            {
-                return node;
-            }
-
-            _derefPtr =
-                handles.TryGetValue(node.Identifier.ToString(), out var applicableScopes)
-                && applicableScopes.ContainsKey(_currentScope);
-            return _derefPtr ? node.WithIdentifier(Identifier($"{node.Identifier}Handle")) : node;
-        }
-
-        public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
-        {
-            if (
-                handles.TryGetValue(node.Identifier.ToString(), out var scopes)
-                && scopes.ContainsValue(node.NamespaceFromSyntaxNode())
-            )
-            {
-                var self = $"{node.Identifier}Handle";
-                return node.WithIdentifier(Identifier(self))
-                    .WithMembers(
-                        List(
-                            GetDefaultMembers(self).Concat(useDSL ? GetDSLImplementation(self) : [])
-                        )
-                    )
+                var fullyQualifiedName = string.IsNullOrWhiteSpace(ns) ? name : $"{ns}.{name}";
+                var structDeclarationSyntax = StructDeclaration(name)
                     .WithModifiers(
                         TokenList(
                             Token(SyntaxKind.PublicKeyword),
-                            Token(SyntaxKind.ReadOnlyKeyword),
                             Token(SyntaxKind.UnsafeKeyword),
                             Token(SyntaxKind.PartialKeyword)
                         )
                     );
+
+                results[fullyQualifiedName] = CompilationUnit()
+                    .WithMembers(
+                        SingletonList<MemberDeclarationSyntax>(
+                            string.IsNullOrWhiteSpace(ns)
+                                ? structDeclarationSyntax
+                                : FileScopedNamespaceDeclaration(
+                                        ModUtils.NamespaceIntoIdentifierName(ns)
+                                    )
+                                    .WithMembers(SingletonList<MemberDeclarationSyntax>(structDeclarationSyntax))
+                        )
+                    );
             }
 
-            return VisitType(node, node.Identifier, base.VisitStructDeclaration);
+            return results;
+        }
+    }
+
+    private class HandleTypeDiscoverer(Project project, Compilation compilation, CancellationToken ct) : SymbolVisitor
+    {
+        private readonly Solution _solution = project.Solution;
+
+        /// <summary>
+        /// All discovered empty structs. These are not all handle types.
+        /// </summary>
+        private readonly List<INamedTypeSymbol> _emptyStructs = new();
+
+        /// <summary>
+        /// Finds all symbols that correspond to a handle type.
+        /// These symbols are identified by finding empty structs that are only ever referenced through a pointer.
+        /// </summary>
+        public async Task<List<INamedTypeSymbol>> GetHandleTypesAsync()
+        {
+            Visit(compilation.GlobalNamespace);
+
+            var results = new List<INamedTypeSymbol>();
+            var documents = project.Documents.ToImmutableHashSet();
+            foreach (var structSymbol in _emptyStructs)
+            {
+                // For each struct, find its references
+                // Verify that all references are through pointers
+                // Also verify that there is at least one reference through a pointer
+                var references = await SymbolFinder.FindReferencesAsync(structSymbol, _solution, documents, ct);
+
+                var wasReferencedAsPointer = false;
+                var wasReferencedAsNonPointer = false;
+                foreach (var referencedLocation in references.SelectMany(r => r.Locations))
+                {
+                    var syntaxTree = referencedLocation.Location.SourceTree;
+                    if (syntaxTree == null)
+                    {
+                        continue;
+                    }
+
+                    // Get the syntax node that references this struct
+                    var syntaxRoot = await syntaxTree.GetRootAsync(ct);
+                    var syntaxNode = syntaxRoot.FindNode(referencedLocation.Location.SourceSpan);
+                    if (syntaxNode.Parent.IsKind(SyntaxKind.PointerType))
+                    {
+                        // This lets us know if there was at least one reference through a pointer
+                        wasReferencedAsPointer = true;
+                    }
+                    else
+                    {
+                        // Was referenced through a non-pointer
+                        // Immediately break
+                        wasReferencedAsNonPointer = true;
+
+                        break;
+                    }
+                }
+
+                if (wasReferencedAsPointer && !wasReferencedAsNonPointer)
+                {
+                    results.Add(structSymbol);
+                }
+            }
+
+            return results;
         }
 
-        public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitClassDeclaration);
+        public override void VisitNamespace(INamespaceSymbol symbol)
+        {
+            base.VisitNamespace(symbol);
 
-        public override SyntaxNode? VisitRecordDeclaration(RecordDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitRecordDeclaration);
+            foreach (var member in symbol.Members())
+            {
+                Visit(member);
+            }
+        }
 
-        public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitEnumDeclaration);
+        public override void VisitNamedType(INamedTypeSymbol symbol)
+        {
+            base.VisitNamedType(symbol);
 
-        public override SyntaxNode? VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitDelegateDeclaration);
+            // Find empty structs
+            // IsImplicitlyDeclared lets us ignore implicitly declared constructors
+            // SpecialType lets us ignore Void and System.RuntimeArgumentHandle
+            if (symbol.TypeKind != TypeKind.Struct || symbol.Members().Any(member => !member.IsImplicitlyDeclared) || symbol.SpecialType != SpecialType.None)
+            {
+                return;
+            }
 
-        public override SyntaxNode? VisitInterfaceDeclaration(InterfaceDeclarationSyntax node) =>
-            VisitType(node, node.Identifier, base.VisitInterfaceDeclaration);
+            _emptyStructs.Add(symbol);
+        }
+    }
 
-        private static IEnumerable<MemberDeclarationSyntax> GetDefaultMembers(string self)
+    private class HandleTypeRewriter(bool useDSL) : CSharpSyntaxRewriter
+    {
+        public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
+        {
+            var structName = node.Identifier.Text;
+            return node.WithIdentifier(Identifier(structName))
+                .WithMembers(
+                    List(
+                        GetDefaultHandleMembers(structName).Concat(useDSL ? GetDSLHandleMembers(structName) : [])
+                    )
+                )
+                .WithModifiers(
+                    TokenList(
+                        Token(SyntaxKind.PublicKeyword),
+                        Token(SyntaxKind.ReadOnlyKeyword),
+                        Token(SyntaxKind.UnsafeKeyword),
+                        Token(SyntaxKind.PartialKeyword)
+                    )
+                );
+        }
+
+        private static IEnumerable<MemberDeclarationSyntax> GetDefaultHandleMembers(string structName)
         {
             yield return FieldDeclaration(
                     VariableDeclaration(
@@ -522,6 +527,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                 .WithModifiers(
                     TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.ReadOnlyKeyword))
                 );
+
             yield return MethodDeclaration(
                     PredefinedType(Token(SyntaxKind.BoolKeyword)),
                     Identifier("Equals")
@@ -530,7 +536,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                 .WithParameterList(
                     ParameterList(
                         SingletonSeparatedList(
-                            Parameter(Identifier("other")).WithType(IdentifierName(self))
+                            Parameter(Identifier("other")).WithType(IdentifierName(structName))
                         )
                     )
                 )
@@ -548,6 +554,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                     )
                 )
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
             yield return MethodDeclaration(
                     PredefinedType(Token(SyntaxKind.BoolKeyword)),
                     Identifier("Equals")
@@ -572,7 +579,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                             IsPatternExpression(
                                 IdentifierName("obj"),
                                 DeclarationPattern(
-                                    IdentifierName(self),
+                                    IdentifierName(structName),
                                     SingleVariableDesignation(Identifier("other"))
                                 )
                             ),
@@ -586,6 +593,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                     )
                 )
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
             yield return MethodDeclaration(
                     PredefinedType(Token(SyntaxKind.IntKeyword)),
                     Identifier("GetHashCode")
@@ -617,6 +625,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                     )
                 )
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
             yield return OperatorDeclaration(
                     PredefinedType(Token(SyntaxKind.BoolKeyword)),
                     Token(SyntaxKind.EqualsEqualsToken)
@@ -629,9 +638,9 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                         SeparatedList<ParameterSyntax>(
                             new SyntaxNodeOrToken[]
                             {
-                                Parameter(Identifier("left")).WithType(IdentifierName(self)),
+                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
                                 Token(SyntaxKind.CommaToken),
-                                Parameter(Identifier("right")).WithType(IdentifierName(self))
+                                Parameter(Identifier("right")).WithType(IdentifierName(structName))
                             }
                         )
                     )
@@ -653,6 +662,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                     )
                 )
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
             yield return OperatorDeclaration(
                     PredefinedType(Token(SyntaxKind.BoolKeyword)),
                     Token(SyntaxKind.ExclamationEqualsToken)
@@ -664,8 +674,8 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                     ParameterList(
                         SeparatedList(
                             [
-                                Parameter(Identifier("left")).WithType(IdentifierName(self)),
-                                Parameter(Identifier("right")).WithType(IdentifierName(self))
+                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
+                                Parameter(Identifier("right")).WithType(IdentifierName(structName))
                             ]
                         )
                     )
@@ -692,7 +702,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
         }
 
-        private static IEnumerable<MemberDeclarationSyntax> GetDSLImplementation(string self)
+        private static IEnumerable<MemberDeclarationSyntax> GetDSLHandleMembers(string structName)
         {
             yield return MethodDeclaration(
                     PredefinedType(Token(SyntaxKind.BoolKeyword)),
@@ -715,6 +725,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                     )
                 )
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
             yield return OperatorDeclaration(
                     PredefinedType(Token(SyntaxKind.BoolKeyword)),
                     Token(SyntaxKind.EqualsEqualsToken)
@@ -727,7 +738,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                         SeparatedList<ParameterSyntax>(
                             new SyntaxNodeOrToken[]
                             {
-                                Parameter(Identifier("left")).WithType(IdentifierName(self)),
+                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
                                 Token(SyntaxKind.CommaToken),
                                 Parameter(Identifier("right")).WithType(IdentifierName("NullPtr"))
                             }
@@ -751,6 +762,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                     )
                 )
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
             yield return OperatorDeclaration(
                     PredefinedType(Token(SyntaxKind.BoolKeyword)),
                     Token(SyntaxKind.ExclamationEqualsToken)
@@ -762,7 +774,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                     ParameterList(
                         SeparatedList(
                             [
-                                Parameter(Identifier("left")).WithType(IdentifierName(self)),
+                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
                                 Parameter(Identifier("right")).WithType(IdentifierName("NullPtr"))
                             ]
                         )
@@ -788,9 +800,10 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config) 
                     )
                 )
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+
             yield return ConversionOperatorDeclaration(
                     Token(SyntaxKind.ImplicitKeyword),
-                    IdentifierName(self)
+                    IdentifierName(structName)
                 )
                 .WithModifiers(
                     TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])

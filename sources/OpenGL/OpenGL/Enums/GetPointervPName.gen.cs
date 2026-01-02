@@ -26,5 +26,5 @@ public enum GetPointervPName : uint
     IndexArrayPointerEXT = unchecked((uint)0x8091),
     TextureCoordArrayPointerEXT = unchecked((uint)0x8092),
     EdgeFlagArrayPointerEXT = unchecked((uint)0x8093),
-    InstrumentBufferPointerSGIX = unchecked((uint)0x8180)
+    InstrumentBufferPointerSGIX = unchecked((uint)0x8180),
 }

@@ -1,0 +1,11 @@
+@../../common.rsp
+--define-macro
+TODO_DEFINE_MACROS=HERE
+--headerFile
+../header.txt
+--include-directory
+../../../submodules/vulkan-headers/include
+--with-callconv
+*=Winapi
+--with-librarypath
+*=vulkan

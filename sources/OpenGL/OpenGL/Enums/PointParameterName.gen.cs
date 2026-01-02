@@ -25,5 +25,5 @@ public enum PointParameterName : uint
     PointSizeMinSGIS = unchecked((uint)0x8126),
     PointSizeMaxSGIS = unchecked((uint)0x8127),
     PointFadeThresholdSizeSGIS = unchecked((uint)0x8128),
-    DistanceAttenuationSGIS = unchecked((uint)0x8129)
+    DistanceAttenuationSGIS = unchecked((uint)0x8129),
 }

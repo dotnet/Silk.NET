@@ -28,5 +28,5 @@ public enum CommandOpcodesNV : uint
     AlphaRefCommand = unchecked((uint)0x000F),
     ViewportCommand = unchecked((uint)0x0010),
     ScissorCommand = unchecked((uint)0x0011),
-    FrontFaceCommand = unchecked((uint)0x0012)
+    FrontFaceCommand = unchecked((uint)0x0012),
 }

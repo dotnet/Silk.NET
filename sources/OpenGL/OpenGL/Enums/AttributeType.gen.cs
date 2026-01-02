@@ -157,5 +157,5 @@ public enum AttributeType : uint
     FloatMAT3X2NV = unchecked((uint)0x8B67),
     FloatMAT3X4NV = unchecked((uint)0x8B68),
     FloatMAT4X2NV = unchecked((uint)0x8B69),
-    FloatMAT4X3NV = unchecked((uint)0x8B6A)
+    FloatMAT4X3NV = unchecked((uint)0x8B6A),
 }

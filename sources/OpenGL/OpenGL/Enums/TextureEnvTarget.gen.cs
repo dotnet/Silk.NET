@@ -12,5 +12,5 @@ public enum TextureEnvTarget : uint
 {
     TextureENV = unchecked((uint)0x2300),
     TextureFilterControl = unchecked((uint)0x8500),
-    PointSprite = unchecked((uint)0x8861)
+    PointSprite = unchecked((uint)0x8861),
 }

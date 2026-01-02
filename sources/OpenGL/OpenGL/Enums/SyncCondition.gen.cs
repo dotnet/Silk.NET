@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum SyncCondition : uint
 {
-    SyncGpuCommandsComplete = unchecked((uint)0x9117)
+    SyncGpuCommandsComplete = unchecked((uint)0x9117),
 }

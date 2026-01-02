@@ -16,5 +16,5 @@ public enum TextureGenMode : uint
     EyeDistanceToPointSGIS = unchecked((uint)0x81F0),
     ObjectDistanceToPointSGIS = unchecked((uint)0x81F1),
     EyeDistanceToLineSGIS = unchecked((uint)0x81F2),
-    ObjectDistanceToLineSGIS = unchecked((uint)0x81F3)
+    ObjectDistanceToLineSGIS = unchecked((uint)0x81F3),
 }

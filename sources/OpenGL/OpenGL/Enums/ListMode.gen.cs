@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum ListMode : uint
 {
     Compile = unchecked((uint)0x1300),
-    CompileAndExecute = unchecked((uint)0x1301)
+    CompileAndExecute = unchecked((uint)0x1301),
 }

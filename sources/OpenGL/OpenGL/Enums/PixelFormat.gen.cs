@@ -43,5 +43,5 @@ public enum PixelFormat : uint
     Ycrcb422Sgix = unchecked((uint)0x81BB),
     Ycrcb444Sgix = unchecked((uint)0x81BC),
     RedEXT = unchecked((uint)0x1903),
-    BgraIMG = unchecked((uint)0x80E1)
+    BgraIMG = unchecked((uint)0x80E1),
 }

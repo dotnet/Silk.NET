@@ -12,5 +12,5 @@ public enum PixelTransformPNameEXT : uint
 {
     MagFilter = unchecked((uint)0x8331),
     MinFilter = unchecked((uint)0x8332),
-    CubicWeight = unchecked((uint)0x8333)
+    CubicWeight = unchecked((uint)0x8333),
 }

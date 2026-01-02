@@ -17,5 +17,5 @@ public enum ContextFlagMask : uint
     RobustAccessBitARB = unchecked((uint)0x00000004),
     NoErrorBitKHR = unchecked((uint)0x00000008),
     DebugBitKHR = unchecked((uint)0x00000002),
-    ProtectedContentBitEXT = unchecked((uint)0x00000010)
+    ProtectedContentBitEXT = unchecked((uint)0x00000010),
 }

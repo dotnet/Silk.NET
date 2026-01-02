@@ -12,5 +12,5 @@ public enum GetMapQuery : uint
 {
     Coeff = unchecked((uint)0x0A00),
     Order = unchecked((uint)0x0A01),
-    Domain = unchecked((uint)0x0A02)
+    Domain = unchecked((uint)0x0A02),
 }

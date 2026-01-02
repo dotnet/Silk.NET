@@ -14,5 +14,5 @@ public enum LightModelParameter : uint
     TwoSide = unchecked((uint)0x0B52),
     Ambient = unchecked((uint)0x0B53),
     ColorControl = unchecked((uint)0x81F8),
-    ColorControlEXT = unchecked((uint)0x81F8)
+    ColorControlEXT = unchecked((uint)0x81F8),
 }

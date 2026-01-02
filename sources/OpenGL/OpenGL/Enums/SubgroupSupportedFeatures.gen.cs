@@ -18,5 +18,5 @@ public enum SubgroupSupportedFeatures : uint
     ShuffleRelativeBitKHR = unchecked((uint)0x00000020),
     ClusteredBitKHR = unchecked((uint)0x00000040),
     QuadBitKHR = unchecked((uint)0x00000080),
-    PartitionedBitNV = unchecked((uint)0x00000100)
+    PartitionedBitNV = unchecked((uint)0x00000100),
 }

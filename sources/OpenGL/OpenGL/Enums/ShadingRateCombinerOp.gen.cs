@@ -14,5 +14,5 @@ public enum ShadingRateCombinerOp : uint
     ReplaceEXT = unchecked((uint)0x96D3),
     MinEXT = unchecked((uint)0x96D4),
     MaxEXT = unchecked((uint)0x96D5),
-    MulEXT = unchecked((uint)0x96D6)
+    MulEXT = unchecked((uint)0x96D6),
 }

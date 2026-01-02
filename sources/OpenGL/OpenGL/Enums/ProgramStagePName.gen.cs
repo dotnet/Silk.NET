@@ -14,5 +14,5 @@ public enum ProgramStagePName : uint
     SubroutineUniforms = unchecked((uint)0x8DE6),
     SubroutineUniformLocations = unchecked((uint)0x8E47),
     SubroutineMaxLength = unchecked((uint)0x8E48),
-    SubroutineUniformMaxLength = unchecked((uint)0x8E49)
+    SubroutineUniformMaxLength = unchecked((uint)0x8E49),
 }

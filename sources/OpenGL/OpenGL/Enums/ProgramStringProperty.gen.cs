@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum ProgramStringProperty : uint
 {
-    ProgramStringARB = unchecked((uint)0x8628)
+    ProgramStringARB = unchecked((uint)0x8628),
 }

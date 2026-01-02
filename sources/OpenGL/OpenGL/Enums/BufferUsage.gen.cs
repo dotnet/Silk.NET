@@ -18,5 +18,5 @@ public enum BufferUsage : uint
     StaticCopy = unchecked((uint)0x88E6),
     DynamicDraw = unchecked((uint)0x88E8),
     DynamicRead = unchecked((uint)0x88E9),
-    DynamicCopy = unchecked((uint)0x88EA)
+    DynamicCopy = unchecked((uint)0x88EA),
 }

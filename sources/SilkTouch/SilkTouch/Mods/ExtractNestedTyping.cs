@@ -1,48 +1,37 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Buffers;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
-using Silk.NET.Core;
-using Silk.NET.SilkTouch.Clang;
-using Silk.NET.SilkTouch.Mods.Transformation;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
 
 /// <summary>
-/// A mod that extracts type system information nested within other types. Today this includes:
+/// A mod that extracts type system information nested within other types. This currently includes:
 /// <list type="bullet">
-/// <item>
-/// <description>
-/// Function pointers identified by their <see cref="NativeTypeNameAttribute"/>s into delegates and <c>Pfn</c>-prefixed
-/// structures.
-/// </description>
-/// </item>
-/// <item>
-/// <description>
-/// Enums identified by their <see cref="NativeTypeNameAttribute"/>s where there are constants declared with a matching
-/// prefix. This accounts for the below pattern seen frequently pre-C99:
+/// <item><description>
+/// Replacing function pointers identified by their <see cref="NativeTypeNameAttribute"/>s with delegates and
+/// <c>Pfn</c>-prefixed structures.
+/// </description></item>
+/// <item><description>
+/// Moving constants into their respective enums. These constants are identified by checking for an enum with
+/// a matching prefix, as identified by the enum's <see cref="NativeTypeNameAttribute"/>.
+/// This accounts for the below pattern seen frequently pre-C99:
 /// <code>
 /// typedef unsigned int MyEnum;
 /// #define MY_ENUM_HELLO 0
 /// extern MyEnum GetMyEnum();
 /// </code>
-/// </description>
-/// </item>
-/// <item><description>Fixed buffers and anonymous structures contained within structures.</description></item>
+/// </description></item>
+/// <item><description>
+/// Extracting fixed buffers and anonymous structures contained within structures into separate types.
+/// </description></item>
 /// </list>
 /// </summary>
 public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : Mod
@@ -51,11 +40,16 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
     public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         await base.ExecuteAsync(ctx, ct);
-        var walker = new Walker();
-        var rewriter = new Rewriter(logger);
 
-        // First pass to discover the types to extract.
-        foreach (var doc in ctx.SourceProject?.Documents ?? [])
+        var project = ctx.SourceProject;
+        if (project == null)
+        {
+            return;
+        }
+
+        // First pass to gather data, such as the types to extract and generate
+        var walker = new Walker();
+        foreach (var doc in project.Documents)
         {
             var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
             if (fname is null)
@@ -68,29 +62,37 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
         }
 
         // Second pass to modify existing files as per our discovery.
+        var rewriter = new Rewriter(logger);
         // rewriter.FunctionPointerTypes = walker.GetFunctionPointerTypes();
         var (enums, constants) = walker.GetExtractedEnums();
         rewriter.ConstantsToRemove = constants;
         rewriter.ExtractedEnums = enums.Keys;
-        var proj = ctx.SourceProject;
-        foreach (var docId in ctx.SourceProject?.DocumentIds ?? [])
+        foreach (var docId in project.DocumentIds)
         {
             var doc =
-                proj!.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                project.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
             if (fname is null)
             {
                 continue;
             }
 
+            // Rewrite node
+            // What this does depends on the node's type
+            //
+            // For example:
+            // This will handle removing nested structs.
+            // This is also where extracted enums are processed.
             rewriter.File = fname;
-            proj = doc.WithSyntaxRoot(
+            project = doc.WithSyntaxRoot(
                 rewriter.Visit(node)?.NormalizeWhitespace()
                     ?? throw new InvalidOperationException("Rewriter returned null")
             ).Project;
+
             foreach (var newStruct in rewriter.ExtractedNestedStructs)
             {
-                proj = proj.AddDocument(
+                // Add new documents for each nested struct
+                 project = project.AddDocument(
                     $"{newStruct.Identifier}.gen.cs",
                     CompilationUnit()
                         .WithMembers(
@@ -106,7 +108,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                                 : SingletonList<MemberDeclarationSyntax>(newStruct)
                         )
                         .NormalizeWhitespace(),
-                    filePath: proj.FullPath(
+                    filePath: project.FullPath(
                         $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
                     )
                 ).Project;
@@ -117,46 +119,47 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             rewriter.ExtractedNestedStructs.Clear();
         }
 
-        foreach (
-            var (typeDecl, identifier, fileDirs, namespaces) in rewriter
-                .FunctionPointerTypes.Values //.Where(x => x.IsUnique)
-                .SelectMany(x =>
-                    (IEnumerable<(
-                        MemberDeclarationSyntax,
-                        string,
-                        HashSet<string>,
-                        HashSet<string>
-                    )>)
-                        [
-                            (
-                                x.Delegate,
-                                x.Delegate.Identifier.ToString(),
-                                x.ReferencingFileDirs,
-                                x.ReferencingNamespaces
-                            ),
-                            (
-                                x.Pfn,
-                                x.Pfn.Identifier.ToString(),
-                                x.ReferencingFileDirs,
-                                x.ReferencingNamespaces
-                            ),
-                        ]
-                )
-                .Concat(
-                    enums.Select(x =>
-                        (
-                            (MemberDeclarationSyntax)x.Value.Item1,
-                            x.Value.Item1.Identifier.ToString(),
-                            x.Value.Item2,
-                            x.Value.Item3
-                        )
+        // Add documents for each extracted function pointer
+        // This is moved out of the foreach statement for better debuggability
+        var extractedFunctionPointers = rewriter
+            .FunctionPointerTypes.Values //.Where(x => x.IsUnique)
+            .SelectMany(x =>
+                (IEnumerable<(
+                    MemberDeclarationSyntax,
+                    string,
+                    HashSet<string>,
+                    HashSet<string>
+                    )>) [
+                    (
+                        x.Delegate,
+                        x.Delegate.Identifier.ToString(),
+                        x.ReferencingFileDirs,
+                        x.ReferencingNamespaces
+                    ),
+                    (
+                        x.Pfn,
+                        x.Pfn.Identifier.ToString(),
+                        x.ReferencingFileDirs,
+                        x.ReferencingNamespaces
+                    ),
+                ]
+            )
+            .Concat(
+                enums.Select(x =>
+                    (
+                        (MemberDeclarationSyntax)x.Value.Item1,
+                        x.Value.Item1.Identifier.ToString(),
+                        x.Value.Item2,
+                        x.Value.Item3
                     )
                 )
-        )
+            ).ToList();
+
+        foreach (var (typeDecl, identifier, fileDirs, namespaces) in extractedFunctionPointers)
         {
             var ns = NameUtils.FindCommonPrefix(namespaces, true, false, true);
             var dir = NameUtils.FindCommonPrefix(fileDirs, true, false, true).TrimEnd('/');
-            proj = proj
+            project = project
                 ?.AddDocument(
                     $"{identifier}.gen.cs",
                     CompilationUnit()
@@ -171,12 +174,12 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                                 : SingletonList(typeDecl)
                         )
                         .NormalizeWhitespace(),
-                    filePath: proj.FullPath($"{dir}/{identifier}.gen.cs")
+                    filePath: project.FullPath($"{dir}/{identifier}.gen.cs")
                 )
                 .Project;
         }
 
-        ctx.SourceProject = proj;
+        ctx.SourceProject = project;
     }
 
     private static ReadOnlySpan<char> GetNativeTypeNameForPredefinedType(
@@ -205,17 +208,20 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             return default;
         }
 
-        var ret = attrs.GetNativeElementTypeName(out var readIndirectionLevels);
+        if (!attrs.TryParseNativeTypeName(out var info))
+        {
+            return null;
+        }
 
         // Ensure that the indirection levels indicated by the type name is the same as we've encountered when walking
         // up the type. If this isn't, this indicates that the native type name is a typedef to a pointer and shouldn't
         // be something that is mapped into an enum.
-        if (ret is null || readIndirectionLevels == indirectionLevels)
+        if (info.IndirectionLevels == indirectionLevels)
         {
-            return ret;
+            return info.Name;
         }
 
-        InvalidateIfSeen(numericTypeNames, ret);
+        InvalidateIfSeen(numericTypeNames, info.Name);
         return null;
     }
 
@@ -296,7 +302,10 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
 
         public override SyntaxNode? VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            // Extract nested structs.
+            // Extract nested structs
+            // This will do two things:
+            // 1. Remove the nested struct(s) from the original struct
+            // 2. Add them to the ExtractedNestedStructs list to be processed later
             var nextExtractedNestedIdx = ExtractedNestedStructs.Count;
             var members = node.Members;
             for (var i = 0; i < members.Count; i++)
@@ -378,11 +387,6 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                 ),
                 _ => (null, null),
             };
-
-            if ((current as ParameterSyntax)?.Identifier.ToString() == "handler")
-            {
-                Debugger.Break();
-            }
 
             // If the native type name is actually the function pointer signature (i.e. not through a typedef) then we
             // should pass the native type name down when recursing.
@@ -545,6 +549,10 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                 HashSet<string> ReferencingNamespaces
             )?
         > _numericTypeNames = new();
+
+        /// <summary>
+        /// Tracks the name and value of constants discovered.
+        /// </summary>
         private readonly Dictionary<string, ExpressionSyntax> _constants = [];
 
         public string? File { get; set; }
@@ -738,376 +746,6 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             InvalidateIfSeen(_numericTypeNames, node.Identifier.ToString());
             return base.VisitEnumDeclaration(node);
         }
-
-        /*
-        public override SyntaxNode VisitFunctionPointerType(FunctionPointerTypeSyntax node)
-        {
-            var ogNode = node;
-            node = base.VisitFunctionPointerType(node) as FunctionPointerTypeSyntax ?? node;
-            var identifier =
-                ogNode.Ancestors().FirstOrDefault(x => x is not TypeSyntax) is var first
-                && first is MethodDeclarationSyntax meth
-                    ? meth.GetNativeReturnTypeName()
-                : first is ParameterSyntax param ? param.GetNativeTypeName()
-                : first is VariableDeclarationSyntax { Parent: FieldDeclarationSyntax field }
-                    ? field.AttributeLists.GetNativeTypeName()
-                : null;
-            var idSpan = identifier is not null ? identifier.AsSpan() : default;
-            if (idSpan.StartsWith("const "))
-            {
-                idSpan = idSpan["const ".Length..];
-            }
-
-            if (idSpan.ContainsAny(' ', '*'))
-            {
-                idSpan = idSpan[..(idSpan.LastIndexOfAny(NameUtils.IdentifierChars) + 1)];
-            }
-
-            if (idSpan.ContainsAnyExcept(NameUtils.IdentifierChars))
-            {
-                idSpan = identifier = null;
-            }
-
-            identifier =
-                identifier is null || idSpan == identifier ? identifier : idSpan.ToString();
-            var discrim = ModUtils.DiscrimStr(
-                null,
-                null,
-                null,
-                node.ParameterList.Parameters,
-                null // <-- technically this is the last parameter, but we don't really care here. we're just trying to match signatures.
-            );
-            if (!_fnPtrs.TryGetValue(discrim, out var info))
-            {
-                _fnPtrs[discrim] = info = (node, [], [], [], null);
-            }
-
-            if (identifier is not null)
-            {
-                info.Names.Add(identifier);
-            }
-            else if (info.Names.Count == 0)
-            {
-                var declarator = ogNode.Ancestors().First(x => x is not TypeSyntax);
-                (string, string, int?)? addUsage = declarator switch
-                {
-                    ParameterSyntax { Parent.Parent: MethodDeclarationSyntax useMeth } psyn
-                        when useMeth.AttributeLists.GetNativeFunctionInfo(
-                            out _,
-                            out var ep,
-                            out _
-                        ) => (
-                        ep ?? useMeth.Identifier.ToString(),
-                        psyn.Identifier.ToString(),
-                        useMeth.ParameterList.Parameters.IndexOf(psyn)
-                    ),
-                    VariableDeclarationSyntax
-                    {
-                        Parent: FieldDeclarationSyntax { Parent: BaseTypeDeclarationSyntax tdecl },
-                        Variables.Count: 1
-                    } vardec => (
-                        tdecl.Identifier.ToString(),
-                        vardec.Variables[0].Identifier.ToString(),
-                        tdecl
-                            .DescendantNodes()
-                            .OfType<FieldDeclarationSyntax>()
-                            .Select((x, i) => (x.Declaration, i))
-                            .First(x => x.Declaration == vardec)
-                            .i
-                    ),
-                    _ => null,
-                };
-
-                if (addUsage is { } v)
-                {
-                    if (info.UsageHints is null)
-                    {
-                        _fnPtrs[discrim] = info = (node, [], [], [], []);
-                    }
-                    info.UsageHints.Add((v.Item1, v.Item2, v.Item3));
-                }
-            }
-
-            info.ReferencingNamespaces.Add(ogNode.NamespaceFromSyntaxNode());
-            if (File is not null)
-            {
-                info.ReferencingFileDirs.Add(File[..File.LastIndexOf('/')]);
-            }
-
-            return IdentifierName(discrim);
-        }
-
-        public Dictionary<
-            string,
-            (
-                StructDeclarationSyntax Pfn,
-                DelegateDeclarationSyntax Delegate,
-                HashSet<string> ReferencingFileDirs,
-                HashSet<string> ReferencingNamespaces,
-                bool IsUnique
-            )
-        > GetFunctionPointerTypes()
-        {
-            var dst = new Dictionary<
-                string,
-                (
-                    StructDeclarationSyntax,
-                    DelegateDeclarationSyntax,
-                    HashSet<string>,
-                    HashSet<string>,
-                    bool
-                )
-            >(_fnPtrs.Count);
-            foreach (var (discrim, info) in _fnPtrs)
-            {
-                AddFunctionPointerType(dst, discrim, info);
-            }
-
-            return dst;
-        }
-
-        private void AddFunctionPointerType(
-            Dictionary<
-                string,
-                (
-                    StructDeclarationSyntax Pfn,
-                    DelegateDeclarationSyntax Delegate,
-                    HashSet<string> ReferencingFileDirs,
-                    HashSet<string> ReferencingNamespaces,
-                    bool IsUnique
-                )
-            > dst,
-            string discrim,
-            (
-                FunctionPointerTypeSyntax Pfn,
-                List<string> Names,
-                HashSet<string> ReferencingFileDirs,
-                HashSet<string> ReferencingNamespaces,
-                List<(string ParentSymbol, string Symbol, int? SymbolIdx)>? UsageHints
-            ) info
-        )
-        {
-            if (dst.ContainsKey(discrim))
-            {
-                return;
-            }
-
-            // 1. Try to find an identifier for this function pointer.
-            string? identifier = null;
-            foreach (var iden in info.Names.Distinct().Order())
-            {
-                if (identifier is null)
-                {
-                    identifier = iden;
-                }
-                else
-                {
-                    Logger?.LogWarning(
-                        "Function pointer signature {} referred to by multiple names: {} and {}. "
-                            + "Using {} as it appeared first.",
-                        info.Pfn,
-                        identifier,
-                        iden,
-                        identifier
-                    );
-                }
-            }
-
-            // 2. If there's no identifier, do we have usage hints that we can use to infer a member name?
-            var transformed = identifier is null; // <-- generated names need to be non-determinant for PrettifyNames
-            if (identifier is null)
-            {
-                if (
-                    info.UsageHints?.Select((x, i) => (x, i)).Distinct().LastOrDefault() is
-
-                    ({ Item1: not null, Item2: not null } kvp, 0)
-                )
-                {
-                    transformed = false;
-                    identifier = $"{kvp.Item1}_{kvp.Item2}";
-                }
-                else if (
-                    info
-                        .UsageHints?.DistinctBy(x => x.Item2)
-                        .Select((x, i) => (x.Item2, i))
-                        .LastOrDefault() is
-
-                    ({ } fieldOrParam, 0)
-                )
-                {
-                    identifier = $"{fieldOrParam} function".Pascalize();
-                }
-                else if (
-                    info.UsageHints?.DistinctBy(x => x.Item1).Count(x => x.SymbolIdx is not null)
-                    == 1
-                )
-                {
-                    // So this is essentially so that any function pointer signature that is reused throughout a struct
-                    // and is only present in that struct, we name the function as SomeStructFunctionN where N is the
-                    // index of that function pointer signature amongst all the unique function pointer signatures
-                    // declared in that struct. This is the only way I could think of to make us maximally resistant to
-                    // breaking changes - if we did alphabetical ordering, introducing a new field at the end of a
-                    // struct (which technically is ABI safe to do so long as that struct is only accessed through a
-                    // pointer) could change N. This isn't completely fool-proof either, but I'm just trying to mitigate
-                    // as many potential user complaints as possible.
-                    var functionNumber =
-                        _fnPtrs
-                            .Where(x =>
-                                // 1. For each function pointer signature that is uniquely defined by this struct
-                                x.Value.UsageHints?[0].ParentSymbol
-                                    == info.UsageHints[0].ParentSymbol
-                                && x.Value.UsageHints?.DistinctBy(y => y.Item2).Count() != 1
-                                && x.Value.UsageHints?.DistinctBy(y => y.Item1)
-                                    .Count(y => y.SymbolIndex is not null) == 1
-                            )
-                            // 2. Order them by the order in which they're declared by a field
-                            .OrderBy(x => x.Value.UsageHints?.Min(y => y.SymbolIndex))
-                            // 3. And get the index of our function pointer signature amongst that list
-                            .Select((x, i) => (x, i))
-                            .First(x => x.x.Key == discrim)
-                            .i + 1;
-                    identifier = $"{info.UsageHints[0].ParentSymbol}_function_{functionNumber}";
-                }
-            }
-
-            var rawPfn = info.Pfn;
-            Dictionary<string, string>? replacements = null;
-            foreach (
-                var referencedIden in info.Pfn.DescendantNodes().OfType<IdentifierNameSyntax>()
-            )
-            {
-                var id = referencedIden.Identifier.ToString();
-                // Ensure we visit nested function pointers first to get their up-to-date name for generated pfn names.
-                if (
-                    referencedIden.Identifier.ToString() != discrim
-                    && _fnPtrs.TryGetValue(id, out var v)
-                )
-                {
-                    AddFunctionPointerType(dst, id, v);
-                    (replacements ??= []).Add(id, dst[id].Pfn.Identifier.ToString());
-                }
-            }
-
-            string? newDiscrim = null;
-            if (replacements is not null)
-            {
-                rawPfn =
-                    rawPfn.ReplaceIdentifiers(replacements) as FunctionPointerTypeSyntax ?? rawPfn;
-                newDiscrim = ModUtils.DiscrimStr(
-                    null,
-                    null,
-                    null,
-                    rawPfn.ParameterList.Parameters,
-                    null
-                );
-            }
-
-            var (newName, delegateName) = identifier is null
-                ? GetGeneratedPfnName(rawPfn, dst)
-                : (identifier, transformed ? $"{identifier}Delegate" : $"{identifier}_delegate");
-            var attrLists = transformed
-                ? SingletonList(
-                    AttributeList(
-                        // non-determinant identifier
-                        SingletonSeparatedList(Attribute(IdentifierName("Transformed")))
-                    )
-                )
-                : default;
-
-            dst[discrim] = (
-                pfn,
-                @delegate,
-                info.ReferencingFileDirs,
-                info.ReferencingNamespaces,
-                true
-            );
-            if (newDiscrim is not null)
-            {
-                dst[newDiscrim] = (
-                    pfn,
-                    @delegate,
-                    info.ReferencingFileDirs,
-                    info.ReferencingNamespaces,
-                    false
-                );
-            }
-        }
-
-        // Ported from https://github.com/dotnet/Silk.NET/blob/d30cc43b/src/Core/Silk.NET.BuildTools/Cpp/Clang.cs#L349-L372
-        private (string Pfn, string Delegate) GetGeneratedPfnName(
-            FunctionPointerTypeSyntax syn,
-            Dictionary<
-                string,
-                (
-                    StructDeclarationSyntax Pfn,
-                    DelegateDeclarationSyntax Delegate,
-                    HashSet<string> ReferencingFileDirs,
-                    HashSet<string> ReferencingNamespaces,
-                    bool IsUnique
-                )
-            > dst,
-            bool topLevel = true
-        )
-        {
-            var @params = string.Join(
-                ' ',
-                syn.ParameterList.Parameters.Select(x => ForType(x.Type, dst))
-            );
-            return topLevel
-                ? ($"Pfn {@params}".Pascalize(), $"{@params} Proc".Pascalize())
-                : ($"Pfn {@params}", $"{@params} Proc");
-            string ForType(
-                TypeSyntax type,
-                Dictionary<
-                    string,
-                    (
-                        StructDeclarationSyntax Pfn,
-                        DelegateDeclarationSyntax Delegate,
-                        HashSet<string> ReferencingFileDirs,
-                        HashSet<string> ReferencingNamespaces,
-                        bool IsUnique
-                    )
-                > dest
-            ) =>
-                type switch
-                {
-                    ArrayTypeSyntax at => $"{ForType(at.ElementType, dest)}v",
-                    AliasQualifiedNameSyntax aq => ForType(aq.Name, dest),
-                    FunctionPointerTypeSyntax fn => GetGeneratedPfnName(fn, dest, false).Pfn,
-                    GenericNameSyntax gn =>
-                        $"{gn.Identifier}T{gn.TypeArgumentList.Arguments.Count}",
-                    IdentifierNameSyntax id
-                        when dest.TryGetValue(id.Identifier.ToString(), out var v) =>
-                        v.Pfn.Identifier.ToString(),
-                    IdentifierNameSyntax id => id.Identifier.ToString(),
-                    QualifiedNameSyntax qn => qn.Right.Identifier.ToString(),
-                    SimpleNameSyntax sn => sn.Identifier.ToString(),
-                    NullableTypeSyntax nt => ForType(nt.ElementType, dest),
-                    PointerTypeSyntax pt => $"{ForType(pt.ElementType, dest)}v",
-                    PredefinedTypeSyntax pt => pt.Keyword.Kind() switch
-                    {
-                        SyntaxKind.VoidKeyword => "V",
-                        SyntaxKind.IntKeyword => "i",
-                        SyntaxKind.UIntKeyword => "ui",
-                        SyntaxKind.LongKeyword => "i64",
-                        SyntaxKind.ULongKeyword => "ui64",
-                        SyntaxKind.ShortKeyword => "s",
-                        SyntaxKind.UShortKeyword => "us",
-                        SyntaxKind.FloatKeyword => "f",
-                        SyntaxKind.DoubleKeyword => "d",
-                        SyntaxKind.BoolKeyword or SyntaxKind.SByteKeyword => "b",
-                        SyntaxKind.ByteKeyword => "ub",
-                        _ => pt.ToString(),
-                    },
-                    RefTypeSyntax rt => $"{ForType(rt.Type, dest)}v",
-                    ScopedTypeSyntax st => ForType(st.Type, dest),
-                    TupleTypeSyntax tt => string.Join(
-                        ' ',
-                        tt.Elements.Select(x => ForType(x.Type, dest))
-                    ),
-                    _ => throw new ArgumentOutOfRangeException(nameof(type)),
-                };
-        }*/
     }
 
     private static (

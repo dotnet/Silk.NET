@@ -79,5 +79,5 @@ public enum FragmentShaderGenericSource : uint
     Con30ATI = unchecked((uint)0x895F),
     Con31ATI = unchecked((uint)0x8960),
     SecondaryInterpolatorATI = unchecked((uint)0x896D),
-    PrimaryColorEXT = unchecked((uint)0x8577)
+    PrimaryColorEXT = unchecked((uint)0x8577),
 }

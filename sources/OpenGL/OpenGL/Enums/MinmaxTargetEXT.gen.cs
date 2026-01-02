@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum MinmaxTargetEXT : uint
 {
     Minmax = unchecked((uint)0x802E),
-    MinmaxEXT = unchecked((uint)0x802E)
+    MinmaxEXT = unchecked((uint)0x802E),
 }

@@ -89,5 +89,5 @@ public enum TextureEnvParameter : uint
     Source3AlphaNV = unchecked((uint)0x858B),
     Operand3RgbNV = unchecked((uint)0x8593),
     Operand3AlphaNV = unchecked((uint)0x859B),
-    Src1AlphaEXT = unchecked((uint)0x8589)
+    Src1AlphaEXT = unchecked((uint)0x8589),
 }

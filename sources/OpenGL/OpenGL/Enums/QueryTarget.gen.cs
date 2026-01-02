@@ -19,5 +19,5 @@ public enum QueryTarget : uint
     VerticesSubmitted = unchecked((uint)0x82EE),
     PrimitivesSubmitted = unchecked((uint)0x82EF),
     VertexShaderInvocations = unchecked((uint)0x82F0),
-    TransformFeedbackOverflow = unchecked((uint)0x82EC)
+    TransformFeedbackOverflow = unchecked((uint)0x82EC),
 }

@@ -41,5 +41,5 @@ public enum BufferBitQCOM : uint
     MultisampleBufferBit4 = unchecked((uint)0x10000000),
     MultisampleBufferBit5 = unchecked((uint)0x20000000),
     MultisampleBufferBit6 = unchecked((uint)0x40000000),
-    MultisampleBufferBit7 = unchecked((uint)0x80000000)
+    MultisampleBufferBit7 = unchecked((uint)0x80000000),
 }

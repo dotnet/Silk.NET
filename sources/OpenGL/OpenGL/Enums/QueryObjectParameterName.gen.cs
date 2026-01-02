@@ -13,5 +13,5 @@ public enum QueryObjectParameterName : uint
     Result = unchecked((uint)0x8866),
     ResultAvailable = unchecked((uint)0x8867),
     ResultNoWait = unchecked((uint)0x9194),
-    Target = unchecked((uint)0x82EA)
+    Target = unchecked((uint)0x82EA),
 }

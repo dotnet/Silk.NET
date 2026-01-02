@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.CommandLine;
+﻿using System.Collections.Concurrent;
 using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Threading.Channels;
-using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -19,7 +9,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Naming;
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
 
@@ -63,9 +52,9 @@ public class PrettifyNames(
         public int? LongAcronymThreshold { get; init; }
 
         /// <summary>
-        /// A hint for a "global prefix".
+        /// Multiple candidate name prefixes that may apply across all of the bindings generated.
         /// </summary>
-        public string? GlobalPrefixHint { get; init; }
+        public IReadOnlyList<string>? GlobalPrefixHints { get; init; }
     }
 
     /// <inheritdoc />
@@ -73,7 +62,13 @@ public class PrettifyNames(
     {
         // First pass to scan the sources and create a dictionary of type/member names.
         var cfg = config.Get(ctx.JobKey);
-        var visitor = new Visitor { NameOverrides = (cfg.NameOverrides?.ToDictionary() ?? [])! };
+
+        // Sort the hints from large to small (longest prefix match)
+        var hints = cfg.GlobalPrefixHints?.ToList();
+        hints?.Sort((x, y) => -x.Length.CompareTo(y.Length));
+        cfg = cfg with { GlobalPrefixHints = hints };
+
+        var visitor = new Visitor();
         if (ctx.SourceProject is null)
         {
             return;
@@ -115,17 +110,18 @@ public class PrettifyNames(
 
             // If we don't have a prefix hint and don't have more than one type, we can't determine a prefix so don't
             // trim.
-            if (typeNames.Count > 1 || cfg.GlobalPrefixHint is not null)
+            if (typeNames.Count > 1 || cfg.GlobalPrefixHints is not null)
             {
                 Trim(
-                    null,
-                    cfg.GlobalPrefixHint,
-                    ctx.JobKey,
-                    typeNames,
-                    cfg.PrefixOverrides,
-                    trimmers,
-                    visitor.NameOverrides,
-                    visitor.NonDeterminant
+                    new NameTrimmerContext
+                    {
+                        Container = null,
+                        Names = typeNames,
+                        Configuration = cfg,
+                        JobKey = ctx.JobKey,
+                        NonDeterminant = visitor.NonDeterminant,
+                    },
+                    trimmers
                 );
             }
 
@@ -145,14 +141,15 @@ public class PrettifyNames(
                 if (constNames is not null)
                 {
                     Trim(
-                        typeName,
-                        cfg.GlobalPrefixHint,
-                        ctx.JobKey,
-                        constNames,
-                        cfg.PrefixOverrides,
-                        trimmers,
-                        cfg.NameOverrides!,
-                        visitor.NonDeterminant
+                        new NameTrimmerContext
+                        {
+                            Container = typeName,
+                            Names = constNames,
+                            Configuration = cfg,
+                            JobKey = ctx.JobKey,
+                            NonDeterminant = visitor.NonDeterminant,
+                        },
+                        trimmers
                     );
                 }
                 else
@@ -179,14 +176,15 @@ public class PrettifyNames(
                 if (functionNames is not null)
                 {
                     Trim(
-                        typeName,
-                        cfg.GlobalPrefixHint,
-                        ctx.JobKey,
-                        functionNames,
-                        cfg.PrefixOverrides,
+                        new NameTrimmerContext
+                        {
+                            Container = typeName,
+                            Names = functionNames,
+                            Configuration = cfg,
+                            JobKey = ctx.JobKey,
+                            NonDeterminant = visitor.NonDeterminant,
+                        },
                         trimmers,
-                        cfg.NameOverrides!,
-                        visitor.NonDeterminant,
                         functionSyntax
                     );
                 }
@@ -197,7 +195,7 @@ public class PrettifyNames(
                         x,
                         (x, null)
                     ))
-                    : Enumerable.Empty<KeyValuePair<string, (string Primary, List<string>?)>>();
+                    : [];
 
                 // Add it to the rewriter's list of names to... rewrite...
                 types[typeName] = (
@@ -273,7 +271,7 @@ public class PrettifyNames(
             ?? throw new InvalidOperationException(
                 "Failed to obtain compilation for source project!"
             );
-        await RenameAllAsync(
+        await NameUtils.RenameAllAsync(
             ctx,
             types.SelectMany(x =>
             {
@@ -285,7 +283,6 @@ public class PrettifyNames(
                 return comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
                     .OfType<ITypeSymbol>()
                     .SelectMany<ITypeSymbol, (ISymbol, string)>(y =>
-
                         [
                             .. Enumerable.SelectMany(
                                 [
@@ -297,7 +294,7 @@ public class PrettifyNames(
                                             )
                                             : z
                                     ) ?? [],
-                                    .. x.Value.Functions ?? []
+                                    .. x.Value.Functions ?? [],
                                 ],
                                 z =>
                                 {
@@ -310,10 +307,11 @@ public class PrettifyNames(
                                     z.MethodKind is MethodKind.Constructor or MethodKind.Destructor
                                 )
                                 .Select(z => (z, x.Value.NewName)),
-                            (y, x.Value.NewName)
+                            (y, x.Value.NewName),
                         ]
                     );
             }),
+            logger,
             ct
         );
         logger.LogDebug(
@@ -338,9 +336,7 @@ public class PrettifyNames(
                 continue;
             }
 
-            proj = doc.WithFilePath(doc.FilePath.Replace(oldName, newName))
-                .WithName(doc.Name.Replace(oldName, newName))
-                .Project;
+            proj = doc.ReplaceNameAndPath(oldName, newName).Project;
         }
 
         ctx.SourceProject = proj;
@@ -362,22 +358,16 @@ public class PrettifyNames(
         );
 
     private void Trim(
-        string? container,
-        string? globalPrefixHint,
-        string? key,
-        Dictionary<string, (string Primary, List<string>? Secondary)> names,
-        Dictionary<string, string>? prefixOverrides,
+        NameTrimmerContext context,
         IEnumerable<INameTrimmer> trimmers,
-        Dictionary<string, string>? nameOverrides,
-        HashSet<string> nonDeterminant,
         Dictionary<string, IEnumerable<MethodDeclarationSyntax>>? functionSyntax = null
     )
     {
         // Ensure the trimmers don't see names that have been manually overridden, as we don't want them to influence
         // automatic prefix determination for example
-        var namesToTrim = names;
+        var namesToTrim = context.Names!;
         foreach (
-            var (nativeName, overriddenName) in nameOverrides
+            var (nativeName, overriddenName) in context.Configuration.NameOverrides
                 ?? Enumerable.Empty<KeyValuePair<string, string>>()
         )
         {
@@ -385,14 +375,17 @@ public class PrettifyNames(
             if (nativeName.Contains('.'))
             {
                 // We're processing a type dictionary, so don't add a member thing.
-                if (container is null)
+                if (context.Container is null)
                 {
                     continue;
                 }
 
                 // Check whether the override is for this type.
-                var span = container.AsSpan();
-                if (span[..span.IndexOf('.')] == "*" || span[..span.IndexOf('.')] == container)
+                var span = context.Container.AsSpan();
+                if (
+                    span[..span.IndexOf('.')] is "*"
+                    || span[..span.IndexOf('.')] == context.Container
+                )
                 {
                     nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
                 }
@@ -410,7 +403,7 @@ public class PrettifyNames(
             // If we haven't created the differentiated dictionary yet, then do so now. We do want to keep the original
             // dictionary so we can actually apply the renames; if we have created two different branching dictionaries
             // they are recombined following trimming.
-            if (namesToTrim == names)
+            if (namesToTrim == context.Names)
             {
                 namesToTrim = namesToTrim.ToDictionary();
             }
@@ -419,46 +412,40 @@ public class PrettifyNames(
             namesToTrim.Remove(nameToAdd);
 
             // Apply the name override to the dictionary we actually use.
-            names[nameToAdd] = (
+            context.Names![nameToAdd] = (
                 overriddenName,
                 [.. v.Secondary ?? Enumerable.Empty<string>(), nameToAdd]
             );
         }
 
         // Run each trimmer
-        string? identifiedPrefix = null;
         foreach (var trimmer in trimmers)
         {
-            trimmer.Trim(
-                container,
-                globalPrefixHint,
-                key,
-                names,
-                prefixOverrides,
-                nonDeterminant,
-                ref identifiedPrefix
-            );
+            trimmer.Trim(context with { Names = namesToTrim });
         }
 
         // Apply changes.
-        if (namesToTrim != names)
+        if (namesToTrim != context.Names)
         {
             foreach (var (evalName, result) in namesToTrim)
             {
-                names[evalName] = result;
+                context.Names![evalName] = result;
             }
         }
 
         // Prefer shorter names
-        foreach (var (trimmingName, (primary, secondary)) in names)
+        foreach (var (trimmingName, (primary, secondary)) in context.Names!)
         {
-            names[trimmingName] = (primary, secondary?.OrderByDescending(x => x.Length).ToList());
+            context.Names![trimmingName] = (
+                primary,
+                secondary?.OrderByDescending(x => x.Length).ToList()
+            );
         }
 
         // Create a map from primaries to trimming names, to account for multiple overloads with the same primary and
         // same trimming name (i.e. it is a generated/transformed overload) but differing discriminators.
         var primaries = new Dictionary<string, HashSet<string>>();
-        foreach (var (trimmingName, (primary, _)) in names)
+        foreach (var (trimmingName, (primary, _)) in context.Names!)
         {
             var trimmingNamesForPrimary = primaries.TryGetValue(primary, out var tnfp)
                 ? tnfp
@@ -492,6 +479,8 @@ public class PrettifyNames(
 
             // Function-specific logic where some conflicts are okay, so we have to evaluate each signature to see if
             // we can discriminate each one such that there are no conflicts.
+            //
+            // An example of where this is the case is e.g. alGetBufferf/alGetBufferfv - signatures are identical.
             var nMethConflicts = 0;
             var nMethods = 0;
             var nNoSecondaries = 0; // <-- at least all but one needs to have a secondary to resolve conflicts
@@ -499,7 +488,7 @@ public class PrettifyNames(
             foreach (var trimmingNameToEval in trimmingNamesForOldPrimary)
             {
                 // Do we even have a secondary to fall back on if there is a conflict?
-                if ((names[trimmingNameToEval].Secondary?.Count ?? 0) == 0)
+                if ((context.Names![trimmingNameToEval].Secondary?.Count ?? 0) == 0)
                 {
                     noSecondaryTrimmingName ??= trimmingNameToEval;
                     nNoSecondaries++;
@@ -533,7 +522,7 @@ public class PrettifyNames(
                         {
                             2 => 2, // The original needs to be counted as a conflict in addition to this conflict
                             > 2 => 1, // Just mark this conflict, original is already counted.
-                            _ => 0 // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
+                            _ => 0, // No conflict to see here (not yet anyway, call it Schrodinger's Conflict)
                         };
 
                         if (discrimMatches.Count == 2 && ogTrimmingName is not null)
@@ -614,13 +603,13 @@ public class PrettifyNames(
                     {
                         // Update the output name.
                         var firstSecondary =
-                            names[first].Secondary
+                            context.Names![first].Secondary
                             ?? throw new InvalidOperationException(
                                 "More than one trimming name without secondary names."
                             );
                         var firstNextPrimary = firstSecondary[^1];
                         firstSecondary.RemoveAt(firstSecondary.Count - 1);
-                        names[first] = (
+                        context.Names![first] = (
                             firstNextPrimary,
                             firstSecondary.Count == 0 ? null : firstSecondary
                         );
@@ -659,13 +648,13 @@ public class PrettifyNames(
 
                 // Conflict resolution! Update the output name.
                 var secondary =
-                    names[conflictingTrimmingName].Secondary
+                    context.Names![conflictingTrimmingName].Secondary
                     ?? throw new InvalidOperationException(
                         "More than one trimming name without secondary names."
                     );
                 var nextPrimary = secondary[^1];
                 secondary.RemoveAt(secondary.Count - 1);
-                names[conflictingTrimmingName] = (
+                context.Names![conflictingTrimmingName] = (
                     nextPrimary,
                     secondary.Count == 0 ? null : secondary
                 );
@@ -709,7 +698,6 @@ public class PrettifyNames(
         > Types = new();
 
         public Dictionary<string, List<string>> PrettifyOnlyTypes = new();
-        public required Dictionary<string, string> NameOverrides { get; init; }
         public HashSet<string> NonDeterminant { get; } = [];
         private (
             ClassDeclarationSyntax Class,
@@ -949,119 +937,8 @@ public class PrettifyNames(
             VariableDeclaratorSyntax v => v.Identifier.GetLocation(),
             ConstructorDeclarationSyntax c => c.Identifier.GetLocation(),
             DestructorDeclarationSyntax d => d.Identifier.GetLocation(),
-            _ => null
+            _ => null,
         };
-
-    private async Task RenameAllAsync(
-        IModContext ctx,
-        IEnumerable<(ISymbol Symbol, string NewName)> toRename,
-        CancellationToken ct = default
-    )
-    {
-        if (ctx.SourceProject is null)
-        {
-            return;
-        }
-
-        var locations = new ConcurrentDictionary<Location, string>();
-        // TODO this needs parallelisation config & be sensitive to the environment (future src generator form factor?)
-        await Parallel.ForEachAsync(
-            toRename,
-            ct,
-            async (tuple, _) =>
-            {
-                // First, let's add all of the locations of the declaration identifiers.
-                var (symbol, newName) = tuple;
-                foreach (var syntaxRef in symbol.DeclaringSyntaxReferences)
-                {
-                    var identifierLocation = IdentifierLocation(await syntaxRef.GetSyntaxAsync(ct));
-                    if (identifierLocation is not null)
-                    {
-                        locations.TryAdd(identifierLocation, newName);
-                    }
-                }
-
-                // Next, let's find all the references of the symbols.
-                var references = await SymbolFinder.FindReferencesAsync(
-                    symbol,
-                    ctx.SourceProject?.Solution
-                        ?? throw new ArgumentException("SourceProject is null"),
-                    ct
-                );
-
-                foreach (var referencedSymbol in references)
-                {
-                    foreach (var referencedSymbolLocation in referencedSymbol.Locations)
-                    {
-                        if (
-                            referencedSymbolLocation.IsCandidateLocation
-                            || referencedSymbolLocation.IsImplicit
-                        )
-                        {
-                            continue;
-                        }
-
-                        locations.TryAdd(referencedSymbolLocation.Location, newName);
-                    }
-                }
-            }
-        );
-
-        logger.LogDebug("{} referencing locations for renames for {}", locations.Count, ctx.JobKey);
-
-        // Now it's just a simple find and replace.
-        var sln = ctx.SourceProject.Solution;
-        var srcProjId = ctx.SourceProject.Id;
-        var testProjId = ctx.TestProject?.Id;
-        foreach (
-            var (syntaxTree, renameLocations) in locations
-                .GroupBy(x => x.Key.SourceTree)
-                .Select(x => (x.Key, x.OrderByDescending(y => y.Key.SourceSpan)))
-        )
-        {
-            if (
-                syntaxTree is null
-                || sln.GetDocument(syntaxTree) is not { } doc
-                || (doc.Project.Id != srcProjId && doc.Project.Id != testProjId)
-                || await syntaxTree.GetTextAsync(ct) is not { } text
-            )
-            {
-                continue;
-            }
-
-            var ogText = text;
-            foreach (var (location, newName) in renameLocations)
-            {
-                var contents = ogText.GetSubText(location.SourceSpan).ToString();
-                if (contents.Contains(' '))
-                {
-                    logger.LogWarning(
-                        "Refusing to do unsafe rename/replacement of \"{}\" to \"{}\" at {}",
-                        contents,
-                        newName,
-                        location.GetLineSpan()
-                    );
-                    continue;
-                }
-
-                if (logger.IsEnabled(LogLevel.Trace))
-                {
-                    logger.LogTrace(
-                        "\"{}\" -> \"{}\" at {}",
-                        contents,
-                        newName,
-                        location.GetLineSpan()
-                    );
-                }
-
-                text = text.Replace(location.SourceSpan, newName);
-            }
-
-            sln = doc.WithText(text).Project.Solution;
-        }
-
-        ctx.SourceProject = sln.GetProject(srcProjId);
-    }
 
     /// <inheritdoc />
     public Task<List<ResponseFile>> BeforeScrapeAsync(string key, List<ResponseFile> rsps)

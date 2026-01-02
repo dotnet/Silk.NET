@@ -78,5 +78,5 @@ public enum TextureTarget : uint
     TextureCubeMapPositiveYOES = unchecked((uint)0x8517),
     TextureCubeMapNegativeYOES = unchecked((uint)0x8518),
     TextureCubeMapPositiveZOES = unchecked((uint)0x8519),
-    TextureCubeMapNegativeZOES = unchecked((uint)0x851A)
+    TextureCubeMapNegativeZOES = unchecked((uint)0x851A),
 }

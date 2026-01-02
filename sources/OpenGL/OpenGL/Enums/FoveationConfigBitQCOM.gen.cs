@@ -12,5 +12,5 @@ public enum FoveationConfigBitQCOM : uint
 {
     EnableBit = unchecked((uint)0x00000001),
     ScaledBinMethodBit = unchecked((uint)0x00000002),
-    SubsampledLayoutMethodBit = unchecked((uint)0x00000004)
+    SubsampledLayoutMethodBit = unchecked((uint)0x00000004),
 }

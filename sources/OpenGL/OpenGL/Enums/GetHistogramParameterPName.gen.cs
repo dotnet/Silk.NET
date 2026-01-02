@@ -25,5 +25,5 @@ public enum GetHistogramParameterPName : uint
     BlueSizeEXT = unchecked((uint)0x802A),
     AlphaSizeEXT = unchecked((uint)0x802B),
     LuminanceSizeEXT = unchecked((uint)0x802C),
-    SinkEXT = unchecked((uint)0x802D)
+    SinkEXT = unchecked((uint)0x802D),
 }

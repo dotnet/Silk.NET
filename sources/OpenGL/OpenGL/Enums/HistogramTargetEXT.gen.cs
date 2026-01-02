@@ -13,5 +13,5 @@ public enum HistogramTargetEXT : uint
     Histogram = unchecked((uint)0x8024),
     ProxyHistogram = unchecked((uint)0x8025),
     HistogramEXT = unchecked((uint)0x8024),
-    ProxyHistogramEXT = unchecked((uint)0x8025)
+    ProxyHistogramEXT = unchecked((uint)0x8025),
 }

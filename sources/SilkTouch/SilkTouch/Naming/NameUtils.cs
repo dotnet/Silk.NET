@@ -1,11 +1,12 @@
-﻿using System;
-using System.Buffers;
-using System.Collections.Generic;
+﻿using System.Buffers;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using System.Text.RegularExpressions;
 using Humanizer;
+using Microsoft.CodeAnalysis;
+using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Mods;
+using Silk.NET.SilkTouch.Mods.LocationTransformation;
 
 namespace Silk.NET.SilkTouch.Naming;
 
@@ -59,6 +60,12 @@ public static partial class NameUtils
                 .Pascalize()
                 .Where(x => char.IsLetter(x) || char.IsNumber(x))
         );
+
+        if (ret.Length == 0)
+        {
+            throw new InvalidOperationException($"Failed to prettify string: {str}");
+        }
+
         var retSpan = ret.AsSpan();
         if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
         {
@@ -73,7 +80,7 @@ public static partial class NameUtils
     /// Finds a common prefix in a set of names with respect to the word boundaries
     /// </summary>
     /// <param name="names">Set of names, snake_case</param>
-    /// <param name="allowFullMatch">Allows result to be a a full match with one of the names</param>
+    /// <param name="allowFullMatch">Allows result to be a full match with one of the names</param>
     /// <param name="allowLeadingDigits">Allows remainder tokens to start with a digit</param>
     /// <param name="naive">
     /// Just match the start of the strings, don't bother checking for obvious name separation gaps.
@@ -86,6 +93,11 @@ public static partial class NameUtils
         bool naive = false
     )
     {
+        if (names.Count == 0)
+        {
+            return "";
+        }
+
         if (allowFullMatch && names.Count == 1)
         {
             return names.First();
@@ -127,6 +139,11 @@ public static partial class NameUtils
         bool naive = false
     )
     {
+        if (names.Count == 0)
+        {
+            return "";
+        }
+
         var pos = 0;
         var foundPrefix = "";
         var minLen = names.Min(x => x.Length);
@@ -290,5 +307,25 @@ public static partial class NameUtils
         // https://chat.openai.com/share/8d3f2ec4-7eec-4dbd-a01e-a8d73e885964
         [GeneratedRegex(@"(?<=\D)(?=\d)|(?<=\d)(?=\D)|\W+")]
         private static partial Regex Words();
+    }
+
+    /// <summary>
+    /// Rename all symbols with the given new names
+    /// </summary>
+    /// <param name="ctx">Mod context to use</param>
+    /// <param name="toRename">list of symbols to rename with new names</param>
+    /// <param name="ct">cancellation token</param>
+    /// <param name="logger">logger</param>
+    public static async Task RenameAllAsync(
+        IModContext ctx,
+        IEnumerable<(ISymbol Symbol, string NewName)> toRename,
+        ILogger? logger = null,
+        CancellationToken ct = default
+    )
+    {
+        var newNames = toRename.ToList();
+        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, newNames.Select(x => x.Symbol), [
+            new IdentifierRenamingTransformer(newNames),
+        ], logger, ct);
     }
 }

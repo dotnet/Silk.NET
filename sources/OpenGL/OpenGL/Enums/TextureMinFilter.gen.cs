@@ -20,5 +20,5 @@ public enum TextureMinFilter : uint
     LinearClipmapLinearSGIX = unchecked((uint)0x8170),
     NearestClipmapNearestSGIX = unchecked((uint)0x844D),
     NearestClipmapLinearSGIX = unchecked((uint)0x844E),
-    LinearClipmapNearestSGIX = unchecked((uint)0x844F)
+    LinearClipmapNearestSGIX = unchecked((uint)0x844F),
 }

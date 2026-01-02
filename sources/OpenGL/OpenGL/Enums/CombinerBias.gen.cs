@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum CombinerBias : uint
 {
     None = unchecked((uint)0),
-    BiasByNegativeOneHalfNV = unchecked((uint)0x8541)
+    BiasByNegativeOneHalfNV = unchecked((uint)0x8541),
 }

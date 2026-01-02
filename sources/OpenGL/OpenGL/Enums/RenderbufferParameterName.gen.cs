@@ -45,5 +45,5 @@ public enum RenderbufferParameterName : uint
     BlueSizeOES = unchecked((uint)0x8D52),
     AlphaSizeOES = unchecked((uint)0x8D53),
     DepthSizeOES = unchecked((uint)0x8D54),
-    StencilSizeOES = unchecked((uint)0x8D55)
+    StencilSizeOES = unchecked((uint)0x8D55),
 }

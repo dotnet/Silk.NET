@@ -12,5 +12,5 @@ public enum PatchParameterName : uint
 {
     Vertices = unchecked((uint)0x8E72),
     DefaultInnerLevel = unchecked((uint)0x8E73),
-    DefaultOuterLevel = unchecked((uint)0x8E74)
+    DefaultOuterLevel = unchecked((uint)0x8E74),
 }

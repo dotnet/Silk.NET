@@ -39,5 +39,5 @@ public enum ReadBufferMode : uint
     ColorAttachment13 = unchecked((uint)0x8CED),
     ColorAttachment14 = unchecked((uint)0x8CEE),
     ColorAttachment15 = unchecked((uint)0x8CEF),
-    NoneOES = unchecked((uint)0)
+    NoneOES = unchecked((uint)0),
 }

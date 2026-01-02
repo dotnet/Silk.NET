@@ -18,5 +18,5 @@ public enum FramebufferStatus : uint
     IncompleteReadBuffer = unchecked((uint)0x8CDC),
     Unsupported = unchecked((uint)0x8CDD),
     IncompleteMultisample = unchecked((uint)0x8D56),
-    IncompleteLayerTargets = unchecked((uint)0x8DA8)
+    IncompleteLayerTargets = unchecked((uint)0x8DA8),
 }

@@ -18,5 +18,5 @@ public enum UniformPName : uint
     ArrayStride = unchecked((uint)0x8A3C),
     MatrixStride = unchecked((uint)0x8A3D),
     IsRowMajor = unchecked((uint)0x8A3E),
-    AtomicCounterBufferIndex = unchecked((uint)0x92DA)
+    AtomicCounterBufferIndex = unchecked((uint)0x92DA),
 }

@@ -23,5 +23,5 @@ public enum VertexAttribType : uint
     HalfFloat = unchecked((uint)0x140B),
     Int2X10X10X10Rev = unchecked((uint)0x8D9F),
     Fixed = unchecked((uint)0x140C),
-    UnsignedInt2X10X10X10RevEXT = unchecked((uint)0x8368)
+    UnsignedInt2X10X10X10RevEXT = unchecked((uint)0x8368),
 }

@@ -23,5 +23,5 @@ public enum SamplePatternSGIS : uint
     X4Pass0Sgis = unchecked((uint)0x80A4),
     X4Pass1Sgis = unchecked((uint)0x80A5),
     X4Pass2Sgis = unchecked((uint)0x80A6),
-    X4Pass3Sgis = unchecked((uint)0x80A7)
+    X4Pass3Sgis = unchecked((uint)0x80A7),
 }

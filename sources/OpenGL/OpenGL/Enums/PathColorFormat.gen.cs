@@ -16,5 +16,5 @@ public enum PathColorFormat : uint
     Rgba = unchecked((uint)0x1908),
     Luminance = unchecked((uint)0x1909),
     LuminanceAlpha = unchecked((uint)0x190A),
-    Intensity = unchecked((uint)0x8049)
+    Intensity = unchecked((uint)0x8049),
 }

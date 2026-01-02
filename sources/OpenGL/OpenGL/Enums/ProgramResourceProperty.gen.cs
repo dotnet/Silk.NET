@@ -39,5 +39,5 @@ public enum ProgramResourceProperty : uint
     IsPerPatch = unchecked((uint)0x92E7),
     LocationComponent = unchecked((uint)0x934A),
     TransformFeedbackBufferIndex = unchecked((uint)0x934B),
-    TransformFeedbackBufferStride = unchecked((uint)0x934C)
+    TransformFeedbackBufferStride = unchecked((uint)0x934C),
 }

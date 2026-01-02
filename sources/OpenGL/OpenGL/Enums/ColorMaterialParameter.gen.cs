@@ -14,5 +14,5 @@ public enum ColorMaterialParameter : uint
     Diffuse = unchecked((uint)0x1201),
     Specular = unchecked((uint)0x1202),
     Emission = unchecked((uint)0x1600),
-    AmbientAndDiffuse = unchecked((uint)0x1602)
+    AmbientAndDiffuse = unchecked((uint)0x1602),
 }

@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum QueryCounterTarget : uint
 {
     Timestamp = unchecked((uint)0x8E28),
-    TimestampEXT = unchecked((uint)0x8E28)
+    TimestampEXT = unchecked((uint)0x8E28),
 }

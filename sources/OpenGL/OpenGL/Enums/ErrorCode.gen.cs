@@ -22,5 +22,5 @@ public enum ErrorCode : uint
     InvalidFramebufferOperationEXT = unchecked((uint)0x0506),
     TableTooLargeEXT = unchecked((uint)0x8031),
     TextureTooLargeEXT = unchecked((uint)0x8065),
-    InvalidFramebufferOperationOES = unchecked((uint)0x0506)
+    InvalidFramebufferOperationOES = unchecked((uint)0x0506),
 }

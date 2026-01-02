@@ -10,5 +10,5 @@ namespace Silk.NET.OpenGL;
 [Transformed]
 public enum VertexWeightPointerType : uint
 {
-    Float = unchecked((uint)0x1406)
+    Float = unchecked((uint)0x1406),
 }

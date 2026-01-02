@@ -12,5 +12,5 @@ public enum DataTypeEXT : uint
 {
     Scalar = unchecked((uint)0x87BE),
     Vector = unchecked((uint)0x87BF),
-    Matrix = unchecked((uint)0x87C0)
+    Matrix = unchecked((uint)0x87C0),
 }

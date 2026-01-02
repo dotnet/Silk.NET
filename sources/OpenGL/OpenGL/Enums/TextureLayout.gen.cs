@@ -18,5 +18,5 @@ public enum TextureLayout : uint
     TransferSrcEXT = unchecked((uint)0x9592),
     TransferDstEXT = unchecked((uint)0x9593),
     DepthReadOnlyStencilAttachmentEXT = unchecked((uint)0x9530),
-    DepthAttachmentStencilReadOnlyEXT = unchecked((uint)0x9531)
+    DepthAttachmentStencilReadOnlyEXT = unchecked((uint)0x9531),
 }

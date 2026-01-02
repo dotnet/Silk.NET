@@ -11,5 +11,5 @@ namespace Silk.NET.OpenGL;
 public enum ArrayObjectUsageATI : uint
 {
     Static = unchecked((uint)0x8760),
-    Dynamic = unchecked((uint)0x8761)
+    Dynamic = unchecked((uint)0x8761),
 }

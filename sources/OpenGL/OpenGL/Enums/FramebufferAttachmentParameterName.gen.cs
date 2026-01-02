@@ -43,5 +43,5 @@ public enum FramebufferAttachmentParameterName : uint
     ObjectTypeOES = unchecked((uint)0x8CD0),
     ObjectNameOES = unchecked((uint)0x8CD1),
     TextureLevelOES = unchecked((uint)0x8CD2),
-    TextureCubeMapFaceOES = unchecked((uint)0x8CD3)
+    TextureCubeMapFaceOES = unchecked((uint)0x8CD3),
 }

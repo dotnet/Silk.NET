@@ -17,5 +17,5 @@ public enum ExternalHandleType : uint
     D3D12ResourceEXT = unchecked((uint)0x958A),
     D3D11ImageEXT = unchecked((uint)0x958B),
     D3D11ImageKmtEXT = unchecked((uint)0x958C),
-    D3D12FenceEXT = unchecked((uint)0x9594)
+    D3D12FenceEXT = unchecked((uint)0x9594),
 }
