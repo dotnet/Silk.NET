@@ -2278,7 +2278,7 @@ public partial class MixKhronosData(
             }
 
             // Some enum groups don't have members, meaning that the code above won't catch them
-            if (groupName != null && !data.Groups.ContainsKey(groupName))
+            if (groupName != null && !IsUngroupable(groupName) && !data.Groups.ContainsKey(groupName))
             {
                 data.Groups[groupName] = new EnumGroup(
                     groupName,
