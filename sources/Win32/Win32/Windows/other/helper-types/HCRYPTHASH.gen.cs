@@ -1,97 +1,108 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HCRYPTHASH
+public readonly unsafe partial struct Hcrypthash
     : IComparable,
-        IComparable<HCRYPTHASH>,
-        IEquatable<HCRYPTHASH>,
+        IComparable<Hcrypthash>,
+        IEquatable<Hcrypthash>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HCRYPTHASH(void* value)
+    public Hcrypthash(void* value)
     {
         Value = value;
     }
 
-    public static HCRYPTHASH INVALID_VALUE => new HCRYPTHASH((void*)(-1));
-    public static HCRYPTHASH NULL => new HCRYPTHASH(null);
+    public static Hcrypthash INVALID_VALUE => new Hcrypthash((void*)(-1));
+    public static Hcrypthash NULL => new Hcrypthash(null);
 
-    public static bool operator ==(HCRYPTHASH left, HCRYPTHASH right) => left.Value == right.Value;
+    public static bool operator ==(Hcrypthash left, Hcrypthash right) => left.Value == right.Value;
 
-    public static bool operator !=(HCRYPTHASH left, HCRYPTHASH right) => left.Value != right.Value;
+    public static bool operator !=(Hcrypthash left, Hcrypthash right) => left.Value != right.Value;
 
-    public static bool operator <(HCRYPTHASH left, HCRYPTHASH right) => left.Value < right.Value;
+    public static bool operator <(Hcrypthash left, Hcrypthash right) => left.Value < right.Value;
 
-    public static bool operator <=(HCRYPTHASH left, HCRYPTHASH right) => left.Value <= right.Value;
+    public static bool operator <=(Hcrypthash left, Hcrypthash right) => left.Value <= right.Value;
 
-    public static bool operator >(HCRYPTHASH left, HCRYPTHASH right) => left.Value > right.Value;
+    public static bool operator >(Hcrypthash left, Hcrypthash right) => left.Value > right.Value;
 
-    public static bool operator >=(HCRYPTHASH left, HCRYPTHASH right) => left.Value >= right.Value;
+    public static bool operator >=(Hcrypthash left, Hcrypthash right) => left.Value >= right.Value;
 
-    public static explicit operator HCRYPTHASH(void* value) => new HCRYPTHASH(value);
+    public static explicit operator Hcrypthash(void* value) => new Hcrypthash(value);
 
-    public static implicit operator void*(HCRYPTHASH value) => value.Value;
+    public static implicit operator void*(Hcrypthash value) => value.Value;
 
-    public static explicit operator HCRYPTHASH(HANDLE value) => new HCRYPTHASH(value);
+    public static explicit operator Hcrypthash(Handle value) => new Hcrypthash(value);
 
-    public static implicit operator HANDLE(HCRYPTHASH value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hcrypthash value) => new Handle(value.Value);
 
-    public static explicit operator HCRYPTHASH(byte value) =>
-        new HCRYPTHASH(unchecked((void*)(value)));
+    public static explicit operator Hcrypthash(byte value) =>
+        new Hcrypthash(unchecked((void*)(value)));
 
-    public static explicit operator byte(HCRYPTHASH value) => (byte)(value.Value);
+    public static explicit operator byte(Hcrypthash value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTHASH(short value) =>
-        new HCRYPTHASH(unchecked((void*)(value)));
+    public static explicit operator Hcrypthash(short value) =>
+        new Hcrypthash(unchecked((void*)(value)));
 
-    public static explicit operator short(HCRYPTHASH value) => (short)(value.Value);
+    public static explicit operator short(Hcrypthash value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTHASH(int value) =>
-        new HCRYPTHASH(unchecked((void*)(value)));
+    public static explicit operator Hcrypthash(int value) =>
+        new Hcrypthash(unchecked((void*)(value)));
 
-    public static explicit operator int(HCRYPTHASH value) => (int)(value.Value);
+    public static explicit operator int(Hcrypthash value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTHASH(long value) =>
-        new HCRYPTHASH(unchecked((void*)(value)));
+    public static explicit operator Hcrypthash(long value) =>
+        new Hcrypthash(unchecked((void*)(value)));
 
-    public static explicit operator long(HCRYPTHASH value) => (long)(value.Value);
+    public static explicit operator long(Hcrypthash value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTHASH(nint value) =>
-        new HCRYPTHASH(unchecked((void*)(value)));
+    public static explicit operator Hcrypthash(nint value) =>
+        new Hcrypthash(unchecked((void*)(value)));
 
-    public static implicit operator nint(HCRYPTHASH value) => (nint)(value.Value);
+    public static implicit operator nint(Hcrypthash value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTHASH(sbyte value) =>
-        new HCRYPTHASH(unchecked((void*)(value)));
+    public static explicit operator Hcrypthash(sbyte value) =>
+        new Hcrypthash(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HCRYPTHASH value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hcrypthash value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTHASH(ushort value) =>
-        new HCRYPTHASH(unchecked((void*)(value)));
+    public static explicit operator Hcrypthash(ushort value) =>
+        new Hcrypthash(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HCRYPTHASH value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hcrypthash value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTHASH(uint value) =>
-        new HCRYPTHASH(unchecked((void*)(value)));
+    public static explicit operator Hcrypthash(uint value) =>
+        new Hcrypthash(unchecked((void*)(value)));
 
-    public static explicit operator uint(HCRYPTHASH value) => (uint)(value.Value);
+    public static explicit operator uint(Hcrypthash value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTHASH(ulong value) =>
-        new HCRYPTHASH(unchecked((void*)(value)));
+    public static explicit operator Hcrypthash(ulong value) =>
+        new Hcrypthash(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HCRYPTHASH value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hcrypthash value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTHASH(nuint value) =>
-        new HCRYPTHASH(unchecked((void*)(value)));
+    public static explicit operator Hcrypthash(nuint value) =>
+        new Hcrypthash(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HCRYPTHASH value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hcrypthash value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HCRYPTHASH other)
+        if (obj is Hcrypthash other)
         {
             return CompareTo(other);
         }
@@ -100,11 +111,11 @@ public readonly unsafe partial struct HCRYPTHASH
             : throw new ArgumentException("obj is not an instance of HCRYPTHASH.");
     }
 
-    public int CompareTo(HCRYPTHASH other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hcrypthash other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HCRYPTHASH other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hcrypthash other) && Equals(other);
 
-    public bool Equals(HCRYPTHASH other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hcrypthash other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

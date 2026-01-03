@@ -1,23 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <SilkDescription>A package that will pull in all non-extension Silk.NET packages for every API.</SilkDescription>
-        <SilkExtendedDescription>You probably don't want all that, and it is strongly recommended to pull in only the packages you need instead. This package exists just to simplify project bring-up.</SilkExtendedDescription>
-        <SilkMetapackage>true</SilkMetapackage>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <!-- Include sources/A/A/Silk.NET.A.csproj in the metapackage -->
-        <SilkSourceRoot Include="$([System.IO.Directory]::GetDirectories(&quot;$(MSBuildThisFileDirectory)../../&quot;))" />
-        <SilkSourceCategory Include="@(SilkSourceRoot->'%(Filename)')" />
-        <ProjectReference Include="@(SilkSourceCategory->'../../%(Filename)/%(Filename)/Silk.NET.%(Filename).csproj'->Exists())" />
-        <ProjectReference Remove="../../Win32/Win32/Silk.NET.Win32.csproj" /> <!-- TODO remove once Win32 is worked on -->
-        <ProjectReference Remove="../../SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj" /> <!-- Not user facing today. -->
-        <SilkSourceCategory Remove="@(SilkSourceCategory)" />
-        <SilkSourceRoot Remove="@(SilkSourceRoot)" />
-    </ItemGroup>
-
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <SilkDescription>A package that will pull in all non-extension Silk.NET packages for every API.</SilkDescription>
+    <SilkExtendedDescription>You probably don't want all that, and it is strongly recommended to pull in only the packages you need instead. This package exists just to simplify project bring-up.</SilkExtendedDescription>
+    <SilkMetapackage>true</SilkMetapackage>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Include sources/A/A/Silk.NET.A.csproj in the metapackage -->
+    <SilkSourceRoot Include="$([System.IO.Directory]::GetDirectories(&quot;$(MSBuildThisFileDirectory)../../&quot;))" />
+    <SilkSourceCategory Include="@(SilkSourceRoot->'%(Filename)')" />
+    <ProjectReference Include="@(SilkSourceCategory->'../../%(Filename)/%(Filename)/Silk.NET.%(Filename).csproj'->Exists())" />
+    <ProjectReference Remove="../../Win32/Win32/Silk.NET.Win32.csproj" /> <!-- TODO remove once Win32 is worked on -->
+    <ProjectReference Remove="../../SilkTouch/SilkTouch/Silk.NET.SilkTouch.csproj" /> <!-- Not user facing today. -->
+    <SilkSourceCategory Remove="@(SilkSourceCategory)" />
+    <SilkSourceRoot Remove="@(SilkSourceRoot)" />
+  </ItemGroup>
 </Project>

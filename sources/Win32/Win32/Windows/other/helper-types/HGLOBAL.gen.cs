@@ -1,87 +1,98 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HGLOBAL
+public readonly unsafe partial struct Hglobal
     : IComparable,
-        IComparable<HGLOBAL>,
-        IEquatable<HGLOBAL>,
+        IComparable<Hglobal>,
+        IEquatable<Hglobal>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HGLOBAL(void* value)
+    public Hglobal(void* value)
     {
         Value = value;
     }
 
-    public static HGLOBAL INVALID_VALUE => new HGLOBAL((void*)(-1));
-    public static HGLOBAL NULL => new HGLOBAL(null);
+    public static Hglobal INVALID_VALUE => new Hglobal((void*)(-1));
+    public static Hglobal NULL => new Hglobal(null);
 
-    public static bool operator ==(HGLOBAL left, HGLOBAL right) => left.Value == right.Value;
+    public static bool operator ==(Hglobal left, Hglobal right) => left.Value == right.Value;
 
-    public static bool operator !=(HGLOBAL left, HGLOBAL right) => left.Value != right.Value;
+    public static bool operator !=(Hglobal left, Hglobal right) => left.Value != right.Value;
 
-    public static bool operator <(HGLOBAL left, HGLOBAL right) => left.Value < right.Value;
+    public static bool operator <(Hglobal left, Hglobal right) => left.Value < right.Value;
 
-    public static bool operator <=(HGLOBAL left, HGLOBAL right) => left.Value <= right.Value;
+    public static bool operator <=(Hglobal left, Hglobal right) => left.Value <= right.Value;
 
-    public static bool operator >(HGLOBAL left, HGLOBAL right) => left.Value > right.Value;
+    public static bool operator >(Hglobal left, Hglobal right) => left.Value > right.Value;
 
-    public static bool operator >=(HGLOBAL left, HGLOBAL right) => left.Value >= right.Value;
+    public static bool operator >=(Hglobal left, Hglobal right) => left.Value >= right.Value;
 
-    public static explicit operator HGLOBAL(void* value) => new HGLOBAL(value);
+    public static explicit operator Hglobal(void* value) => new Hglobal(value);
 
-    public static implicit operator void*(HGLOBAL value) => value.Value;
+    public static implicit operator void*(Hglobal value) => value.Value;
 
-    public static explicit operator HGLOBAL(HANDLE value) => new HGLOBAL(value);
+    public static explicit operator Hglobal(Handle value) => new Hglobal(value);
 
-    public static implicit operator HANDLE(HGLOBAL value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hglobal value) => new Handle(value.Value);
 
-    public static explicit operator HGLOBAL(byte value) => new HGLOBAL(unchecked((void*)(value)));
+    public static explicit operator Hglobal(byte value) => new Hglobal(unchecked((void*)(value)));
 
-    public static explicit operator byte(HGLOBAL value) => (byte)(value.Value);
+    public static explicit operator byte(Hglobal value) => (byte)(value.Value);
 
-    public static explicit operator HGLOBAL(short value) => new HGLOBAL(unchecked((void*)(value)));
+    public static explicit operator Hglobal(short value) => new Hglobal(unchecked((void*)(value)));
 
-    public static explicit operator short(HGLOBAL value) => (short)(value.Value);
+    public static explicit operator short(Hglobal value) => (short)(value.Value);
 
-    public static explicit operator HGLOBAL(int value) => new HGLOBAL(unchecked((void*)(value)));
+    public static explicit operator Hglobal(int value) => new Hglobal(unchecked((void*)(value)));
 
-    public static explicit operator int(HGLOBAL value) => (int)(value.Value);
+    public static explicit operator int(Hglobal value) => (int)(value.Value);
 
-    public static explicit operator HGLOBAL(long value) => new HGLOBAL(unchecked((void*)(value)));
+    public static explicit operator Hglobal(long value) => new Hglobal(unchecked((void*)(value)));
 
-    public static explicit operator long(HGLOBAL value) => (long)(value.Value);
+    public static explicit operator long(Hglobal value) => (long)(value.Value);
 
-    public static explicit operator HGLOBAL(nint value) => new HGLOBAL(unchecked((void*)(value)));
+    public static explicit operator Hglobal(nint value) => new Hglobal(unchecked((void*)(value)));
 
-    public static implicit operator nint(HGLOBAL value) => (nint)(value.Value);
+    public static implicit operator nint(Hglobal value) => (nint)(value.Value);
 
-    public static explicit operator HGLOBAL(sbyte value) => new HGLOBAL(unchecked((void*)(value)));
+    public static explicit operator Hglobal(sbyte value) => new Hglobal(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HGLOBAL value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hglobal value) => (sbyte)(value.Value);
 
-    public static explicit operator HGLOBAL(ushort value) => new HGLOBAL(unchecked((void*)(value)));
+    public static explicit operator Hglobal(ushort value) => new Hglobal(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HGLOBAL value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hglobal value) => (ushort)(value.Value);
 
-    public static explicit operator HGLOBAL(uint value) => new HGLOBAL(unchecked((void*)(value)));
+    public static explicit operator Hglobal(uint value) => new Hglobal(unchecked((void*)(value)));
 
-    public static explicit operator uint(HGLOBAL value) => (uint)(value.Value);
+    public static explicit operator uint(Hglobal value) => (uint)(value.Value);
 
-    public static explicit operator HGLOBAL(ulong value) => new HGLOBAL(unchecked((void*)(value)));
+    public static explicit operator Hglobal(ulong value) => new Hglobal(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HGLOBAL value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hglobal value) => (ulong)(value.Value);
 
-    public static explicit operator HGLOBAL(nuint value) => new HGLOBAL(unchecked((void*)(value)));
+    public static explicit operator Hglobal(nuint value) => new Hglobal(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HGLOBAL value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hglobal value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HGLOBAL other)
+        if (obj is Hglobal other)
         {
             return CompareTo(other);
         }
@@ -90,11 +101,11 @@ public readonly unsafe partial struct HGLOBAL
             : throw new ArgumentException("obj is not an instance of HGLOBAL.");
     }
 
-    public int CompareTo(HGLOBAL other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hglobal other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HGLOBAL other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hglobal other) && Equals(other);
 
-    public bool Equals(HGLOBAL other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hglobal other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

@@ -9,6 +9,7 @@ using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -18,7 +19,8 @@ namespace Silk.NET.SilkTouch.Mods.Transformation;
 /// <summary>
 /// Transforms functions with exactly one pointer parameter with an element count determined from another parameter.
 /// </summary>
-public class ArrayParameterTransformer : IFunctionTransformer
+public class ArrayParameterTransformer(IOptionsSnapshot<TransformFunctions.Configuration>? options)
+    : IFunctionTransformer
 {
     /// <inheritdoc />
     public void Transform(
@@ -30,6 +32,8 @@ public class ArrayParameterTransformer : IFunctionTransformer
         // Ported from https://github.com/dotnet/Silk.NET/blob/0e8e0398/src/Core/Silk.NET.BuildTools/Overloading/Complex/ArrayParameterOverloader.cs#L32
         // Modified heavily to use count metadata instead of function signature styles. This allowed us to also coalesce
         // the ReturnTypeOverloader and NonKhrReturnTypeOverloader into this single transformer.
+
+        var cfg = options?.Get(ctx.JobKey);
 
         // Keep the original in the loop:
         next(decl);
@@ -87,8 +91,8 @@ public class ArrayParameterTransformer : IFunctionTransformer
                         x.CountParamIdx,
                         // 2. Select only the last parameter this count parameter is associated with
                         ParamForCount: x.ParamsForCount.Select(
-                            (y, j) => (PtrParamInfo: y, ParamForCountIdx: j)
-                        )
+                                (y, j) => (PtrParamInfo: y, ParamForCountIdx: j)
+                            )
                             .LastOrDefault()
                     )
                 )
@@ -130,7 +134,8 @@ public class ArrayParameterTransformer : IFunctionTransformer
         verb = verb[..(verb[1..].IndexOfAny(NameUtils.Uppercase) + 1)];
         var benefitOfDoubt = false;
         if (
-            countParam is null
+            (cfg?.BenefitOfTheDoubtArrayTransformation ?? false)
+            && countParam is null
             && ptrParam is null
             && verb is "Get" or "Gen" or "Create" or "New" or "Delete"
             && decl.ParameterList.Parameters.Count == 2 // Type checking is done in the next if.
@@ -253,7 +258,6 @@ public class ArrayParameterTransformer : IFunctionTransformer
                             // call.
                             ? Block(
                                 (StatementSyntax[])
-
                                     [
                                         LocalDeclarationStatement(
                                             VariableDeclaration(
@@ -271,7 +275,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
                                             )
                                         ),
                                         .. blk.Statements,
-                                        ReturnStatement(IdentifierName(ptrParam))
+                                        ReturnStatement(IdentifierName(ptrParam)),
                                     ]
                             )
                             : blk
@@ -309,15 +313,15 @@ public class ArrayParameterTransformer : IFunctionTransformer
                 ? syn.WithParameters(
                     SeparatedList(
                         syn.Parameters.Select(x =>
-                            x.Identifier.ToString() == countParam
-                            || (isOutput && x.Identifier.ToString() == ptrParam)
-                                ? null
+                                x.Identifier.ToString() == countParam
+                                || (isOutput && x.Identifier.ToString() == ptrParam)
+                                    ? null
                                 : base.VisitParameter(x) is ParameterSyntax p
                                     ? p.Identifier.ToString() == ptrParam
-                                        ? p.WithType(ptrElementType)
+                                            ? p.WithType(ptrElementType)
                                         : p
-                                    : null
-                        )
+                                : null
+                            )
                             .OfType<ParameterSyntax>()
                     )
                 )

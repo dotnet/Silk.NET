@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFrameworks>net10.0</TargetFrameworks>
     <TargetFrameworks Condition="'$(SilkAndroidDisabled)' != 'true'">$(TargetFrameworks);net10.0-android</TargetFrameworks>
@@ -10,5 +9,4 @@
     <EnableDefaultAndroidItems>false</EnableDefaultAndroidItems>
     <PackageLicenseExpression>Zlib</PackageLicenseExpression>
   </PropertyGroup>
-
 </Project>

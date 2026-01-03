@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -215,10 +215,8 @@ public class NameTrimmer : INameTrimmer
         var containerTrimmingName = getTrimmingName
             ? GetTrimmingName(prefixOverrides, container ?? hint ?? string.Empty, true, hint)
             : container ?? hint ?? string.Empty;
-        var localNames = names.ToDictionary(
-            x => getTrimmingName ? GetTrimmingName(prefixOverrides, x.Key, false, hint) : x.Key,
-            x => (x.Value.Primary, x.Value.Secondary, x.Key)
-        );
+        var localNames = names.Select(x => new KeyValuePair<string, (string Primary, List<string>? Secondary, string Key)>(getTrimmingName ? GetTrimmingName(prefixOverrides, x.Key, false, hint) : x.Key, (x.Value.Primary, x.Value.Secondary, x.Key))).DistinctBy(x => x.Key).ToDictionary();
+        localNames = localNames.Concat(names.Where(name => localNames.All(x => x.Value.Key != name.Key)).Select(x => new KeyValuePair<string, (string Primary, List<string>? Secondary, string Key)>(x.Key, (x.Value.Primary, x.Value.Secondary, x.Key)))).ToDictionary();
 
         // Set the prefix to the prefix override for this container, if it exists.
         // This is to allow us to handle poorly/inconsistently named containers,

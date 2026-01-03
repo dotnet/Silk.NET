@@ -1,103 +1,114 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HWINEVENTHOOK
+public readonly unsafe partial struct Hwineventhook
     : IComparable,
-        IComparable<HWINEVENTHOOK>,
-        IEquatable<HWINEVENTHOOK>,
+        IComparable<Hwineventhook>,
+        IEquatable<Hwineventhook>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HWINEVENTHOOK(void* value)
+    public Hwineventhook(void* value)
     {
         Value = value;
     }
 
-    public static HWINEVENTHOOK INVALID_VALUE => new HWINEVENTHOOK((void*)(-1));
-    public static HWINEVENTHOOK NULL => new HWINEVENTHOOK(null);
+    public static Hwineventhook INVALID_VALUE => new Hwineventhook((void*)(-1));
+    public static Hwineventhook NULL => new Hwineventhook(null);
 
-    public static bool operator ==(HWINEVENTHOOK left, HWINEVENTHOOK right) =>
+    public static bool operator ==(Hwineventhook left, Hwineventhook right) =>
         left.Value == right.Value;
 
-    public static bool operator !=(HWINEVENTHOOK left, HWINEVENTHOOK right) =>
+    public static bool operator !=(Hwineventhook left, Hwineventhook right) =>
         left.Value != right.Value;
 
-    public static bool operator <(HWINEVENTHOOK left, HWINEVENTHOOK right) =>
+    public static bool operator <(Hwineventhook left, Hwineventhook right) =>
         left.Value < right.Value;
 
-    public static bool operator <=(HWINEVENTHOOK left, HWINEVENTHOOK right) =>
+    public static bool operator <=(Hwineventhook left, Hwineventhook right) =>
         left.Value <= right.Value;
 
-    public static bool operator >(HWINEVENTHOOK left, HWINEVENTHOOK right) =>
+    public static bool operator >(Hwineventhook left, Hwineventhook right) =>
         left.Value > right.Value;
 
-    public static bool operator >=(HWINEVENTHOOK left, HWINEVENTHOOK right) =>
+    public static bool operator >=(Hwineventhook left, Hwineventhook right) =>
         left.Value >= right.Value;
 
-    public static explicit operator HWINEVENTHOOK(void* value) => new HWINEVENTHOOK(value);
+    public static explicit operator Hwineventhook(void* value) => new Hwineventhook(value);
 
-    public static implicit operator void*(HWINEVENTHOOK value) => value.Value;
+    public static implicit operator void*(Hwineventhook value) => value.Value;
 
-    public static explicit operator HWINEVENTHOOK(HANDLE value) => new HWINEVENTHOOK(value);
+    public static explicit operator Hwineventhook(Handle value) => new Hwineventhook(value);
 
-    public static implicit operator HANDLE(HWINEVENTHOOK value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hwineventhook value) => new Handle(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(byte value) =>
-        new HWINEVENTHOOK(unchecked((void*)(value)));
+    public static explicit operator Hwineventhook(byte value) =>
+        new Hwineventhook(unchecked((void*)(value)));
 
-    public static explicit operator byte(HWINEVENTHOOK value) => (byte)(value.Value);
+    public static explicit operator byte(Hwineventhook value) => (byte)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(short value) =>
-        new HWINEVENTHOOK(unchecked((void*)(value)));
+    public static explicit operator Hwineventhook(short value) =>
+        new Hwineventhook(unchecked((void*)(value)));
 
-    public static explicit operator short(HWINEVENTHOOK value) => (short)(value.Value);
+    public static explicit operator short(Hwineventhook value) => (short)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(int value) =>
-        new HWINEVENTHOOK(unchecked((void*)(value)));
+    public static explicit operator Hwineventhook(int value) =>
+        new Hwineventhook(unchecked((void*)(value)));
 
-    public static explicit operator int(HWINEVENTHOOK value) => (int)(value.Value);
+    public static explicit operator int(Hwineventhook value) => (int)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(long value) =>
-        new HWINEVENTHOOK(unchecked((void*)(value)));
+    public static explicit operator Hwineventhook(long value) =>
+        new Hwineventhook(unchecked((void*)(value)));
 
-    public static explicit operator long(HWINEVENTHOOK value) => (long)(value.Value);
+    public static explicit operator long(Hwineventhook value) => (long)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(nint value) =>
-        new HWINEVENTHOOK(unchecked((void*)(value)));
+    public static explicit operator Hwineventhook(nint value) =>
+        new Hwineventhook(unchecked((void*)(value)));
 
-    public static implicit operator nint(HWINEVENTHOOK value) => (nint)(value.Value);
+    public static implicit operator nint(Hwineventhook value) => (nint)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(sbyte value) =>
-        new HWINEVENTHOOK(unchecked((void*)(value)));
+    public static explicit operator Hwineventhook(sbyte value) =>
+        new Hwineventhook(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HWINEVENTHOOK value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hwineventhook value) => (sbyte)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(ushort value) =>
-        new HWINEVENTHOOK(unchecked((void*)(value)));
+    public static explicit operator Hwineventhook(ushort value) =>
+        new Hwineventhook(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HWINEVENTHOOK value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hwineventhook value) => (ushort)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(uint value) =>
-        new HWINEVENTHOOK(unchecked((void*)(value)));
+    public static explicit operator Hwineventhook(uint value) =>
+        new Hwineventhook(unchecked((void*)(value)));
 
-    public static explicit operator uint(HWINEVENTHOOK value) => (uint)(value.Value);
+    public static explicit operator uint(Hwineventhook value) => (uint)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(ulong value) =>
-        new HWINEVENTHOOK(unchecked((void*)(value)));
+    public static explicit operator Hwineventhook(ulong value) =>
+        new Hwineventhook(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HWINEVENTHOOK value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hwineventhook value) => (ulong)(value.Value);
 
-    public static explicit operator HWINEVENTHOOK(nuint value) =>
-        new HWINEVENTHOOK(unchecked((void*)(value)));
+    public static explicit operator Hwineventhook(nuint value) =>
+        new Hwineventhook(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HWINEVENTHOOK value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hwineventhook value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HWINEVENTHOOK other)
+        if (obj is Hwineventhook other)
         {
             return CompareTo(other);
         }
@@ -106,11 +117,11 @@ public readonly unsafe partial struct HWINEVENTHOOK
             : throw new ArgumentException("obj is not an instance of HWINEVENTHOOK.");
     }
 
-    public int CompareTo(HWINEVENTHOOK other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hwineventhook other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HWINEVENTHOOK other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hwineventhook other) && Equals(other);
 
-    public bool Equals(HWINEVENTHOOK other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hwineventhook other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

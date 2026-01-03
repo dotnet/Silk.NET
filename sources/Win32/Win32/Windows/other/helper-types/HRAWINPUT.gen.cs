@@ -1,97 +1,107 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HRAWINPUT
+public readonly unsafe partial struct Hrawinput
     : IComparable,
-        IComparable<HRAWINPUT>,
-        IEquatable<HRAWINPUT>,
+        IComparable<Hrawinput>,
+        IEquatable<Hrawinput>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HRAWINPUT(void* value)
+    public Hrawinput(void* value)
     {
         Value = value;
     }
 
-    public static HRAWINPUT INVALID_VALUE => new HRAWINPUT((void*)(-1));
-    public static HRAWINPUT NULL => new HRAWINPUT(null);
+    public static Hrawinput INVALID_VALUE => new Hrawinput((void*)(-1));
+    public static Hrawinput NULL => new Hrawinput(null);
 
-    public static bool operator ==(HRAWINPUT left, HRAWINPUT right) => left.Value == right.Value;
+    public static bool operator ==(Hrawinput left, Hrawinput right) => left.Value == right.Value;
 
-    public static bool operator !=(HRAWINPUT left, HRAWINPUT right) => left.Value != right.Value;
+    public static bool operator !=(Hrawinput left, Hrawinput right) => left.Value != right.Value;
 
-    public static bool operator <(HRAWINPUT left, HRAWINPUT right) => left.Value < right.Value;
+    public static bool operator <(Hrawinput left, Hrawinput right) => left.Value < right.Value;
 
-    public static bool operator <=(HRAWINPUT left, HRAWINPUT right) => left.Value <= right.Value;
+    public static bool operator <=(Hrawinput left, Hrawinput right) => left.Value <= right.Value;
 
-    public static bool operator >(HRAWINPUT left, HRAWINPUT right) => left.Value > right.Value;
+    public static bool operator >(Hrawinput left, Hrawinput right) => left.Value > right.Value;
 
-    public static bool operator >=(HRAWINPUT left, HRAWINPUT right) => left.Value >= right.Value;
+    public static bool operator >=(Hrawinput left, Hrawinput right) => left.Value >= right.Value;
 
-    public static explicit operator HRAWINPUT(void* value) => new HRAWINPUT(value);
+    public static explicit operator Hrawinput(void* value) => new Hrawinput(value);
 
-    public static implicit operator void*(HRAWINPUT value) => value.Value;
+    public static implicit operator void*(Hrawinput value) => value.Value;
 
-    public static explicit operator HRAWINPUT(HANDLE value) => new HRAWINPUT(value);
+    public static explicit operator Hrawinput(Handle value) => new Hrawinput(value);
 
-    public static implicit operator HANDLE(HRAWINPUT value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hrawinput value) => new Handle(value.Value);
 
-    public static explicit operator HRAWINPUT(byte value) =>
-        new HRAWINPUT(unchecked((void*)(value)));
+    public static explicit operator Hrawinput(byte value) =>
+        new Hrawinput(unchecked((void*)(value)));
 
-    public static explicit operator byte(HRAWINPUT value) => (byte)(value.Value);
+    public static explicit operator byte(Hrawinput value) => (byte)(value.Value);
 
-    public static explicit operator HRAWINPUT(short value) =>
-        new HRAWINPUT(unchecked((void*)(value)));
+    public static explicit operator Hrawinput(short value) =>
+        new Hrawinput(unchecked((void*)(value)));
 
-    public static explicit operator short(HRAWINPUT value) => (short)(value.Value);
+    public static explicit operator short(Hrawinput value) => (short)(value.Value);
 
-    public static explicit operator HRAWINPUT(int value) =>
-        new HRAWINPUT(unchecked((void*)(value)));
+    public static explicit operator Hrawinput(int value) =>
+        new Hrawinput(unchecked((void*)(value)));
 
-    public static explicit operator int(HRAWINPUT value) => (int)(value.Value);
+    public static explicit operator int(Hrawinput value) => (int)(value.Value);
 
-    public static explicit operator HRAWINPUT(long value) =>
-        new HRAWINPUT(unchecked((void*)(value)));
+    public static explicit operator Hrawinput(long value) =>
+        new Hrawinput(unchecked((void*)(value)));
 
-    public static explicit operator long(HRAWINPUT value) => (long)(value.Value);
+    public static explicit operator long(Hrawinput value) => (long)(value.Value);
 
-    public static explicit operator HRAWINPUT(nint value) =>
-        new HRAWINPUT(unchecked((void*)(value)));
+    public static explicit operator Hrawinput(nint value) =>
+        new Hrawinput(unchecked((void*)(value)));
 
-    public static implicit operator nint(HRAWINPUT value) => (nint)(value.Value);
+    public static implicit operator nint(Hrawinput value) => (nint)(value.Value);
 
-    public static explicit operator HRAWINPUT(sbyte value) =>
-        new HRAWINPUT(unchecked((void*)(value)));
+    public static explicit operator Hrawinput(sbyte value) =>
+        new Hrawinput(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HRAWINPUT value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hrawinput value) => (sbyte)(value.Value);
 
-    public static explicit operator HRAWINPUT(ushort value) =>
-        new HRAWINPUT(unchecked((void*)(value)));
+    public static explicit operator Hrawinput(ushort value) =>
+        new Hrawinput(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HRAWINPUT value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hrawinput value) => (ushort)(value.Value);
 
-    public static explicit operator HRAWINPUT(uint value) =>
-        new HRAWINPUT(unchecked((void*)(value)));
+    public static explicit operator Hrawinput(uint value) =>
+        new Hrawinput(unchecked((void*)(value)));
 
-    public static explicit operator uint(HRAWINPUT value) => (uint)(value.Value);
+    public static explicit operator uint(Hrawinput value) => (uint)(value.Value);
 
-    public static explicit operator HRAWINPUT(ulong value) =>
-        new HRAWINPUT(unchecked((void*)(value)));
+    public static explicit operator Hrawinput(ulong value) =>
+        new Hrawinput(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HRAWINPUT value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hrawinput value) => (ulong)(value.Value);
 
-    public static explicit operator HRAWINPUT(nuint value) =>
-        new HRAWINPUT(unchecked((void*)(value)));
+    public static explicit operator Hrawinput(nuint value) =>
+        new Hrawinput(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HRAWINPUT value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hrawinput value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HRAWINPUT other)
+        if (obj is Hrawinput other)
         {
             return CompareTo(other);
         }
@@ -100,11 +110,11 @@ public readonly unsafe partial struct HRAWINPUT
             : throw new ArgumentException("obj is not an instance of HRAWINPUT.");
     }
 
-    public int CompareTo(HRAWINPUT other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hrawinput other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HRAWINPUT other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hrawinput other) && Equals(other);
 
-    public bool Equals(HRAWINPUT other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hrawinput other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Sources;
 using Diagnostic = ClangSharp.Diagnostic;
@@ -20,11 +21,13 @@ namespace Silk.NET.SilkTouch;
 /// <param name="mods">The mods to use.</param>
 /// <param name="modContextProvider">The provider of <see cref="IModContext"/>s.</param>
 /// <param name="inputResolver">The user path input resolver.</param>
+/// <param name="progressService">the service controlling the progress bar</param>
 public class SilkTouchGenerator(
     ILogger<SilkTouchGenerator> logger,
     IEnumerable<IMod> mods,
     IModContextProvider modContextProvider,
-    IInputResolver inputResolver
+    IInputResolver inputResolver,
+    IProgressService progressService
 )
 {
     private AsyncLocal<SilkTouchConfiguration> _jobConfig = new();
@@ -52,6 +55,8 @@ public class SilkTouchGenerator(
         CancellationToken ct = default
     )
     {
+        using var scope = logger.BeginScope("{} >", key);
+
         var sw = Stopwatch.StartNew();
         var job =
             jobConfig.Get<SilkTouchConfiguration>()
@@ -72,11 +77,16 @@ public class SilkTouchGenerator(
         var srcProj = ctx.SourceProject;
         var testProj = ctx.TestProject;
 
+        var modPerf = new Dictionary<IMod, Stopwatch>();
+
         // Initialize the mods
         foreach (var jobMod in jobMods)
         {
             logger.LogDebug("Using mod {0} for {1}", jobMod.GetType().Name, key);
+            modPerf.Add(jobMod, Stopwatch.StartNew());
+            progressService.SetMod($"{jobMod.GetType().Name}-Init");
             await jobMod.InitializeAsync(ctx, ct);
+            modPerf[jobMod].Stop();
             if (ctx.SourceProject != srcProj || ctx.TestProject != testProj)
             {
                 throw new InvalidOperationException(
@@ -88,11 +98,30 @@ public class SilkTouchGenerator(
         foreach (var jobMod in jobMods)
         {
             logger.LogInformation("Executing {} for {}...", jobMod.GetType().Name, key);
+            modPerf[jobMod].Start();
+            progressService.SetMod(jobMod.GetType().Name);
             await jobMod.ExecuteAsync(ctx, ct);
+            modPerf[jobMod].Stop();
+
+            if (!ctx.SourceProject?.Documents.Any(doc => doc.Name.ToLower().Contains("mediasubtype")) ?? false)
+            {
+                logger.LogError($"MediaSubType Missing after {jobMod.GetType().Name}");
+            }
         }
 
         // Manually dispose so that we don't do this when generation fails (await using is too clever).
         await ctx.DisposeAsync();
+
+        logger.LogInformation(
+            "Job Mod Performance Data for {} \n{}",
+            key,
+            string.Join(
+                "\n",
+                modPerf.Select(kvp =>
+                    $"{kvp.Key.GetType().Name} : {kvp.Value.Elapsed.TotalSeconds} seconds"
+                )
+            )
+        );
 
         // Output the generated bindings
         logger.LogInformation(

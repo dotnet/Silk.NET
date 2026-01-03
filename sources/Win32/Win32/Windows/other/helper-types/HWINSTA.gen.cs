@@ -1,87 +1,98 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HWINSTA
+public readonly unsafe partial struct Hwinsta
     : IComparable,
-        IComparable<HWINSTA>,
-        IEquatable<HWINSTA>,
+        IComparable<Hwinsta>,
+        IEquatable<Hwinsta>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HWINSTA(void* value)
+    public Hwinsta(void* value)
     {
         Value = value;
     }
 
-    public static HWINSTA INVALID_VALUE => new HWINSTA((void*)(-1));
-    public static HWINSTA NULL => new HWINSTA(null);
+    public static Hwinsta INVALID_VALUE => new Hwinsta((void*)(-1));
+    public static Hwinsta NULL => new Hwinsta(null);
 
-    public static bool operator ==(HWINSTA left, HWINSTA right) => left.Value == right.Value;
+    public static bool operator ==(Hwinsta left, Hwinsta right) => left.Value == right.Value;
 
-    public static bool operator !=(HWINSTA left, HWINSTA right) => left.Value != right.Value;
+    public static bool operator !=(Hwinsta left, Hwinsta right) => left.Value != right.Value;
 
-    public static bool operator <(HWINSTA left, HWINSTA right) => left.Value < right.Value;
+    public static bool operator <(Hwinsta left, Hwinsta right) => left.Value < right.Value;
 
-    public static bool operator <=(HWINSTA left, HWINSTA right) => left.Value <= right.Value;
+    public static bool operator <=(Hwinsta left, Hwinsta right) => left.Value <= right.Value;
 
-    public static bool operator >(HWINSTA left, HWINSTA right) => left.Value > right.Value;
+    public static bool operator >(Hwinsta left, Hwinsta right) => left.Value > right.Value;
 
-    public static bool operator >=(HWINSTA left, HWINSTA right) => left.Value >= right.Value;
+    public static bool operator >=(Hwinsta left, Hwinsta right) => left.Value >= right.Value;
 
-    public static explicit operator HWINSTA(void* value) => new HWINSTA(value);
+    public static explicit operator Hwinsta(void* value) => new Hwinsta(value);
 
-    public static implicit operator void*(HWINSTA value) => value.Value;
+    public static implicit operator void*(Hwinsta value) => value.Value;
 
-    public static explicit operator HWINSTA(HANDLE value) => new HWINSTA(value);
+    public static explicit operator Hwinsta(Handle value) => new Hwinsta(value);
 
-    public static implicit operator HANDLE(HWINSTA value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hwinsta value) => new Handle(value.Value);
 
-    public static explicit operator HWINSTA(byte value) => new HWINSTA(unchecked((void*)(value)));
+    public static explicit operator Hwinsta(byte value) => new Hwinsta(unchecked((void*)(value)));
 
-    public static explicit operator byte(HWINSTA value) => (byte)(value.Value);
+    public static explicit operator byte(Hwinsta value) => (byte)(value.Value);
 
-    public static explicit operator HWINSTA(short value) => new HWINSTA(unchecked((void*)(value)));
+    public static explicit operator Hwinsta(short value) => new Hwinsta(unchecked((void*)(value)));
 
-    public static explicit operator short(HWINSTA value) => (short)(value.Value);
+    public static explicit operator short(Hwinsta value) => (short)(value.Value);
 
-    public static explicit operator HWINSTA(int value) => new HWINSTA(unchecked((void*)(value)));
+    public static explicit operator Hwinsta(int value) => new Hwinsta(unchecked((void*)(value)));
 
-    public static explicit operator int(HWINSTA value) => (int)(value.Value);
+    public static explicit operator int(Hwinsta value) => (int)(value.Value);
 
-    public static explicit operator HWINSTA(long value) => new HWINSTA(unchecked((void*)(value)));
+    public static explicit operator Hwinsta(long value) => new Hwinsta(unchecked((void*)(value)));
 
-    public static explicit operator long(HWINSTA value) => (long)(value.Value);
+    public static explicit operator long(Hwinsta value) => (long)(value.Value);
 
-    public static explicit operator HWINSTA(nint value) => new HWINSTA(unchecked((void*)(value)));
+    public static explicit operator Hwinsta(nint value) => new Hwinsta(unchecked((void*)(value)));
 
-    public static implicit operator nint(HWINSTA value) => (nint)(value.Value);
+    public static implicit operator nint(Hwinsta value) => (nint)(value.Value);
 
-    public static explicit operator HWINSTA(sbyte value) => new HWINSTA(unchecked((void*)(value)));
+    public static explicit operator Hwinsta(sbyte value) => new Hwinsta(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HWINSTA value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hwinsta value) => (sbyte)(value.Value);
 
-    public static explicit operator HWINSTA(ushort value) => new HWINSTA(unchecked((void*)(value)));
+    public static explicit operator Hwinsta(ushort value) => new Hwinsta(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HWINSTA value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hwinsta value) => (ushort)(value.Value);
 
-    public static explicit operator HWINSTA(uint value) => new HWINSTA(unchecked((void*)(value)));
+    public static explicit operator Hwinsta(uint value) => new Hwinsta(unchecked((void*)(value)));
 
-    public static explicit operator uint(HWINSTA value) => (uint)(value.Value);
+    public static explicit operator uint(Hwinsta value) => (uint)(value.Value);
 
-    public static explicit operator HWINSTA(ulong value) => new HWINSTA(unchecked((void*)(value)));
+    public static explicit operator Hwinsta(ulong value) => new Hwinsta(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HWINSTA value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hwinsta value) => (ulong)(value.Value);
 
-    public static explicit operator HWINSTA(nuint value) => new HWINSTA(unchecked((void*)(value)));
+    public static explicit operator Hwinsta(nuint value) => new Hwinsta(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HWINSTA value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hwinsta value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HWINSTA other)
+        if (obj is Hwinsta other)
         {
             return CompareTo(other);
         }
@@ -90,11 +101,11 @@ public readonly unsafe partial struct HWINSTA
             : throw new ArgumentException("obj is not an instance of HWINSTA.");
     }
 
-    public int CompareTo(HWINSTA other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hwinsta other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HWINSTA other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hwinsta other) && Equals(other);
 
-    public bool Equals(HWINSTA other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hwinsta other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

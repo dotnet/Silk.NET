@@ -1,97 +1,108 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HTREEITEM
+public readonly unsafe partial struct Htreeitem
     : IComparable,
-        IComparable<HTREEITEM>,
-        IEquatable<HTREEITEM>,
+        IComparable<Htreeitem>,
+        IEquatable<Htreeitem>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HTREEITEM(void* value)
+    public Htreeitem(void* value)
     {
         Value = value;
     }
 
-    public static HTREEITEM INVALID_VALUE => new HTREEITEM((void*)(-1));
-    public static HTREEITEM NULL => new HTREEITEM(null);
+    public static Htreeitem INVALID_VALUE => new Htreeitem((void*)(-1));
+    public static Htreeitem NULL => new Htreeitem(null);
 
-    public static bool operator ==(HTREEITEM left, HTREEITEM right) => left.Value == right.Value;
+    public static bool operator ==(Htreeitem left, Htreeitem right) => left.Value == right.Value;
 
-    public static bool operator !=(HTREEITEM left, HTREEITEM right) => left.Value != right.Value;
+    public static bool operator !=(Htreeitem left, Htreeitem right) => left.Value != right.Value;
 
-    public static bool operator <(HTREEITEM left, HTREEITEM right) => left.Value < right.Value;
+    public static bool operator <(Htreeitem left, Htreeitem right) => left.Value < right.Value;
 
-    public static bool operator <=(HTREEITEM left, HTREEITEM right) => left.Value <= right.Value;
+    public static bool operator <=(Htreeitem left, Htreeitem right) => left.Value <= right.Value;
 
-    public static bool operator >(HTREEITEM left, HTREEITEM right) => left.Value > right.Value;
+    public static bool operator >(Htreeitem left, Htreeitem right) => left.Value > right.Value;
 
-    public static bool operator >=(HTREEITEM left, HTREEITEM right) => left.Value >= right.Value;
+    public static bool operator >=(Htreeitem left, Htreeitem right) => left.Value >= right.Value;
 
-    public static explicit operator HTREEITEM(void* value) => new HTREEITEM(value);
+    public static explicit operator Htreeitem(void* value) => new Htreeitem(value);
 
-    public static implicit operator void*(HTREEITEM value) => value.Value;
+    public static implicit operator void*(Htreeitem value) => value.Value;
 
-    public static explicit operator HTREEITEM(HANDLE value) => new HTREEITEM(value);
+    public static explicit operator Htreeitem(Handle value) => new Htreeitem(value);
 
-    public static implicit operator HANDLE(HTREEITEM value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Htreeitem value) => new Handle(value.Value);
 
-    public static explicit operator HTREEITEM(byte value) =>
-        new HTREEITEM(unchecked((void*)(value)));
+    public static explicit operator Htreeitem(byte value) =>
+        new Htreeitem(unchecked((void*)(value)));
 
-    public static explicit operator byte(HTREEITEM value) => (byte)(value.Value);
+    public static explicit operator byte(Htreeitem value) => (byte)(value.Value);
 
-    public static explicit operator HTREEITEM(short value) =>
-        new HTREEITEM(unchecked((void*)(value)));
+    public static explicit operator Htreeitem(short value) =>
+        new Htreeitem(unchecked((void*)(value)));
 
-    public static explicit operator short(HTREEITEM value) => (short)(value.Value);
+    public static explicit operator short(Htreeitem value) => (short)(value.Value);
 
-    public static explicit operator HTREEITEM(int value) =>
-        new HTREEITEM(unchecked((void*)(value)));
+    public static explicit operator Htreeitem(int value) =>
+        new Htreeitem(unchecked((void*)(value)));
 
-    public static explicit operator int(HTREEITEM value) => (int)(value.Value);
+    public static explicit operator int(Htreeitem value) => (int)(value.Value);
 
-    public static explicit operator HTREEITEM(long value) =>
-        new HTREEITEM(unchecked((void*)(value)));
+    public static explicit operator Htreeitem(long value) =>
+        new Htreeitem(unchecked((void*)(value)));
 
-    public static explicit operator long(HTREEITEM value) => (long)(value.Value);
+    public static explicit operator long(Htreeitem value) => (long)(value.Value);
 
-    public static explicit operator HTREEITEM(nint value) =>
-        new HTREEITEM(unchecked((void*)(value)));
+    public static explicit operator Htreeitem(nint value) =>
+        new Htreeitem(unchecked((void*)(value)));
 
-    public static implicit operator nint(HTREEITEM value) => (nint)(value.Value);
+    public static implicit operator nint(Htreeitem value) => (nint)(value.Value);
 
-    public static explicit operator HTREEITEM(sbyte value) =>
-        new HTREEITEM(unchecked((void*)(value)));
+    public static explicit operator Htreeitem(sbyte value) =>
+        new Htreeitem(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HTREEITEM value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Htreeitem value) => (sbyte)(value.Value);
 
-    public static explicit operator HTREEITEM(ushort value) =>
-        new HTREEITEM(unchecked((void*)(value)));
+    public static explicit operator Htreeitem(ushort value) =>
+        new Htreeitem(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HTREEITEM value) => (ushort)(value.Value);
+    public static explicit operator ushort(Htreeitem value) => (ushort)(value.Value);
 
-    public static explicit operator HTREEITEM(uint value) =>
-        new HTREEITEM(unchecked((void*)(value)));
+    public static explicit operator Htreeitem(uint value) =>
+        new Htreeitem(unchecked((void*)(value)));
 
-    public static explicit operator uint(HTREEITEM value) => (uint)(value.Value);
+    public static explicit operator uint(Htreeitem value) => (uint)(value.Value);
 
-    public static explicit operator HTREEITEM(ulong value) =>
-        new HTREEITEM(unchecked((void*)(value)));
+    public static explicit operator Htreeitem(ulong value) =>
+        new Htreeitem(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HTREEITEM value) => (ulong)(value.Value);
+    public static explicit operator ulong(Htreeitem value) => (ulong)(value.Value);
 
-    public static explicit operator HTREEITEM(nuint value) =>
-        new HTREEITEM(unchecked((void*)(value)));
+    public static explicit operator Htreeitem(nuint value) =>
+        new Htreeitem(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HTREEITEM value) => (nuint)(value.Value);
+    public static implicit operator nuint(Htreeitem value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HTREEITEM other)
+        if (obj is Htreeitem other)
         {
             return CompareTo(other);
         }
@@ -100,11 +111,11 @@ public readonly unsafe partial struct HTREEITEM
             : throw new ArgumentException("obj is not an instance of HTREEITEM.");
     }
 
-    public int CompareTo(HTREEITEM other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Htreeitem other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HTREEITEM other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Htreeitem other) && Equals(other);
 
-    public bool Equals(HTREEITEM other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Htreeitem other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

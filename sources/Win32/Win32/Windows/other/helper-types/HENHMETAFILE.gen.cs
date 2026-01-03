@@ -1,103 +1,114 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HENHMETAFILE
+public readonly unsafe partial struct Henhmetafile
     : IComparable,
-        IComparable<HENHMETAFILE>,
-        IEquatable<HENHMETAFILE>,
+        IComparable<Henhmetafile>,
+        IEquatable<Henhmetafile>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HENHMETAFILE(void* value)
+    public Henhmetafile(void* value)
     {
         Value = value;
     }
 
-    public static HENHMETAFILE INVALID_VALUE => new HENHMETAFILE((void*)(-1));
-    public static HENHMETAFILE NULL => new HENHMETAFILE(null);
+    public static Henhmetafile INVALID_VALUE => new Henhmetafile((void*)(-1));
+    public static Henhmetafile NULL => new Henhmetafile(null);
 
-    public static bool operator ==(HENHMETAFILE left, HENHMETAFILE right) =>
+    public static bool operator ==(Henhmetafile left, Henhmetafile right) =>
         left.Value == right.Value;
 
-    public static bool operator !=(HENHMETAFILE left, HENHMETAFILE right) =>
+    public static bool operator !=(Henhmetafile left, Henhmetafile right) =>
         left.Value != right.Value;
 
-    public static bool operator <(HENHMETAFILE left, HENHMETAFILE right) =>
+    public static bool operator <(Henhmetafile left, Henhmetafile right) =>
         left.Value < right.Value;
 
-    public static bool operator <=(HENHMETAFILE left, HENHMETAFILE right) =>
+    public static bool operator <=(Henhmetafile left, Henhmetafile right) =>
         left.Value <= right.Value;
 
-    public static bool operator >(HENHMETAFILE left, HENHMETAFILE right) =>
+    public static bool operator >(Henhmetafile left, Henhmetafile right) =>
         left.Value > right.Value;
 
-    public static bool operator >=(HENHMETAFILE left, HENHMETAFILE right) =>
+    public static bool operator >=(Henhmetafile left, Henhmetafile right) =>
         left.Value >= right.Value;
 
-    public static explicit operator HENHMETAFILE(void* value) => new HENHMETAFILE(value);
+    public static explicit operator Henhmetafile(void* value) => new Henhmetafile(value);
 
-    public static implicit operator void*(HENHMETAFILE value) => value.Value;
+    public static implicit operator void*(Henhmetafile value) => value.Value;
 
-    public static explicit operator HENHMETAFILE(HANDLE value) => new HENHMETAFILE(value);
+    public static explicit operator Henhmetafile(Handle value) => new Henhmetafile(value);
 
-    public static implicit operator HANDLE(HENHMETAFILE value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Henhmetafile value) => new Handle(value.Value);
 
-    public static explicit operator HENHMETAFILE(byte value) =>
-        new HENHMETAFILE(unchecked((void*)(value)));
+    public static explicit operator Henhmetafile(byte value) =>
+        new Henhmetafile(unchecked((void*)(value)));
 
-    public static explicit operator byte(HENHMETAFILE value) => (byte)(value.Value);
+    public static explicit operator byte(Henhmetafile value) => (byte)(value.Value);
 
-    public static explicit operator HENHMETAFILE(short value) =>
-        new HENHMETAFILE(unchecked((void*)(value)));
+    public static explicit operator Henhmetafile(short value) =>
+        new Henhmetafile(unchecked((void*)(value)));
 
-    public static explicit operator short(HENHMETAFILE value) => (short)(value.Value);
+    public static explicit operator short(Henhmetafile value) => (short)(value.Value);
 
-    public static explicit operator HENHMETAFILE(int value) =>
-        new HENHMETAFILE(unchecked((void*)(value)));
+    public static explicit operator Henhmetafile(int value) =>
+        new Henhmetafile(unchecked((void*)(value)));
 
-    public static explicit operator int(HENHMETAFILE value) => (int)(value.Value);
+    public static explicit operator int(Henhmetafile value) => (int)(value.Value);
 
-    public static explicit operator HENHMETAFILE(long value) =>
-        new HENHMETAFILE(unchecked((void*)(value)));
+    public static explicit operator Henhmetafile(long value) =>
+        new Henhmetafile(unchecked((void*)(value)));
 
-    public static explicit operator long(HENHMETAFILE value) => (long)(value.Value);
+    public static explicit operator long(Henhmetafile value) => (long)(value.Value);
 
-    public static explicit operator HENHMETAFILE(nint value) =>
-        new HENHMETAFILE(unchecked((void*)(value)));
+    public static explicit operator Henhmetafile(nint value) =>
+        new Henhmetafile(unchecked((void*)(value)));
 
-    public static implicit operator nint(HENHMETAFILE value) => (nint)(value.Value);
+    public static implicit operator nint(Henhmetafile value) => (nint)(value.Value);
 
-    public static explicit operator HENHMETAFILE(sbyte value) =>
-        new HENHMETAFILE(unchecked((void*)(value)));
+    public static explicit operator Henhmetafile(sbyte value) =>
+        new Henhmetafile(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HENHMETAFILE value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Henhmetafile value) => (sbyte)(value.Value);
 
-    public static explicit operator HENHMETAFILE(ushort value) =>
-        new HENHMETAFILE(unchecked((void*)(value)));
+    public static explicit operator Henhmetafile(ushort value) =>
+        new Henhmetafile(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HENHMETAFILE value) => (ushort)(value.Value);
+    public static explicit operator ushort(Henhmetafile value) => (ushort)(value.Value);
 
-    public static explicit operator HENHMETAFILE(uint value) =>
-        new HENHMETAFILE(unchecked((void*)(value)));
+    public static explicit operator Henhmetafile(uint value) =>
+        new Henhmetafile(unchecked((void*)(value)));
 
-    public static explicit operator uint(HENHMETAFILE value) => (uint)(value.Value);
+    public static explicit operator uint(Henhmetafile value) => (uint)(value.Value);
 
-    public static explicit operator HENHMETAFILE(ulong value) =>
-        new HENHMETAFILE(unchecked((void*)(value)));
+    public static explicit operator Henhmetafile(ulong value) =>
+        new Henhmetafile(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HENHMETAFILE value) => (ulong)(value.Value);
+    public static explicit operator ulong(Henhmetafile value) => (ulong)(value.Value);
 
-    public static explicit operator HENHMETAFILE(nuint value) =>
-        new HENHMETAFILE(unchecked((void*)(value)));
+    public static explicit operator Henhmetafile(nuint value) =>
+        new Henhmetafile(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HENHMETAFILE value) => (nuint)(value.Value);
+    public static implicit operator nuint(Henhmetafile value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HENHMETAFILE other)
+        if (obj is Henhmetafile other)
         {
             return CompareTo(other);
         }
@@ -106,11 +117,11 @@ public readonly unsafe partial struct HENHMETAFILE
             : throw new ArgumentException("obj is not an instance of HENHMETAFILE.");
     }
 
-    public int CompareTo(HENHMETAFILE other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Henhmetafile other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HENHMETAFILE other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Henhmetafile other) && Equals(other);
 
-    public bool Equals(HENHMETAFILE other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Henhmetafile other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

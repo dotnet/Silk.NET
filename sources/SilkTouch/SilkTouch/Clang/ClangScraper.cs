@@ -1,20 +1,22 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Concurrent;
 using System.Diagnostics;
-using System.IO.Hashing;
-using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using ClangSharp;
 using ClangSharp.Interop;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
+using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Caching;
+using Silk.NET.SilkTouch.Logging;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Sources;
+using Silk.NET.SilkTouch.Utility;
 using static ClangSharp.Interop.CXDiagnosticSeverity;
 using static ClangSharp.Interop.CXErrorCode;
 
@@ -29,14 +31,16 @@ namespace Silk.NET.SilkTouch.Clang;
 /// <param name="config">The configuration to use.</param>
 /// <param name="logger">The logger to use.</param>
 /// <param name="inputResolver">The input resolver to use.</param>
-/// <param name="responseFileMods">The mods that modify response files before they are fed to ClangSharp.</param>
+/// <param name="progressService">the progress service to use</param>
 /// <param name="cacheProvider">The cache provider into which ClangSharp outputs are cached.</param>
+/// <param name="responseFileMods">The mods that modify response files before they are fed to ClangSharp.</param>
 [ModConfiguration<Configuration>]
 public sealed class ClangScraper(
     ResponseFileHandler rspHandler,
     IOptionsSnapshot<ClangScraper.Configuration> config,
     ILogger<ClangScraper> logger,
     IInputResolver inputResolver,
+    IProgressService progressService,
     ICacheProvider? cacheProvider = null,
     IEnumerable<IJobDependency<IResponseFileMod>>? responseFileMods = null
 ) : IMod
@@ -54,10 +58,21 @@ public sealed class ClangScraper(
         public required string[] ClangSharpResponseFiles { get; init; }
 
         /// <summary>
+        /// Whether or not to Cache the output when scraping
+        /// Caching currently fails on large multithreaded jobs
+        /// </summary>
+        public bool CacheOutput { get; init; } = true;
+
+        /// <summary>
         /// Manual overrides for ClangSharp outputs (i.e. manual tweaks of generated output) that should still flow through
         /// the SilkTouch pipeline as if it came from ClangSharp.
         /// </summary>
         public Dictionary<string, string>? ManualOverrides { get; init; }
+
+        /// <summary>
+        /// ResponseFiles to be composited with all other response files
+        /// </summary>
+        public Dictionary<string, string[]>? CompositeRsps { get; init; }
 
         /// <summary>
         /// The root output directory as defined in the response files.
@@ -81,6 +96,11 @@ public sealed class ClangScraper(
         public string[]? SkipScrapeIf { get; init; }
 
         /// <summary>
+        /// Generated files to Remove
+        /// </summary>
+        public string[]? GeneratedToRemove { get; init; }
+
+        /// <summary>
         /// Forces the scraper to use cache. Best used on the command line.
         /// </summary>
         public bool ForceCache { get; init; }
@@ -90,11 +110,13 @@ public sealed class ClangScraper(
     /// Runs ClangSharp to obtain the raw bindings for the given response file.
     /// </summary>
     /// <param name="config">The ClangSharp configuration.</param>
+    /// <param name="rspIndex">the index of the current rsp for logging</param>
+    /// <param name="rspCount">the total number of rsps</param>
     private (
         IEnumerable<KeyValuePair<string, Stream>> Sources,
         IEnumerable<KeyValuePair<string, Stream>> Tests,
         bool HasErrors
-    ) ScrapeRawBindings(ResponseFile config)
+    ) ScrapeRawBindings(ResponseFile config, int rspIndex, int rspCount)
     {
         var files = new Dictionary<string, Stream>();
 
@@ -114,8 +136,11 @@ public sealed class ClangScraper(
             OutputStreamFactory
         );
         var hasErrors = false;
+        int index = 0;
+        int count = config.Files.Count;
         foreach (var file in config.Files)
         {
+            index++;
             var filePath = Path.Combine(config.FileDirectory, file);
             var fileName = Path.GetFileName(file);
             logger.LogTrace(
@@ -141,7 +166,9 @@ public sealed class ClangScraper(
             if (translationUnitError != CXError_Success)
             {
                 var msg = $"Parsing failed for '{fileName}' due to '{translationUnitError}'.";
+
                 logger.LogError(msg);
+
                 skipProcessing = true;
             }
             else if (handle.NumDiagnostics != 0)
@@ -183,7 +210,15 @@ public sealed class ClangScraper(
                 using var translationUnit = TranslationUnit.GetOrCreate(handle);
                 Debug.Assert(translationUnit is not null);
 
-                logger.LogInformation("Generating raw bindings for '{0}'", fileName);
+                logger.LogInformation(
+                    "Generating raw bindings for '{0}' ({1}/{2}) ({3}/{4})",
+                    fileName,
+                    index,
+                    count,
+                    rspIndex,
+                    rspCount
+                );
+
                 pinvokeGenerator.GenerateBindings(
                     translationUnit,
                     filePath,
@@ -191,11 +226,19 @@ public sealed class ClangScraper(
                     config.TranslationFlags
                 );
                 pinvokeGenerator.Close();
-                logger.LogDebug(
-                    "Completed generation for {0}, file count: {1}",
-                    filePath,
-                    files.Count
-                );
+
+                if (files.Count == 0)
+                {
+                    logger.LogWarning("No files generated for {0}", filePath);
+                }
+                else
+                {
+                    logger.LogDebug(
+                        "Completed generation for {0}, file count: {1}",
+                        filePath,
+                        files.Count
+                    );
+                }
             }
             catch (Exception e)
             {
@@ -217,6 +260,7 @@ public sealed class ClangScraper(
     /// Runs ClangSharp for each of the given response files and aggregates the raw outputs.
     /// </summary>
     /// <param name="rsps">The response files.</param>
+    /// <param name="toRemoveMatcher">glob matcher to remove</param>
     /// <param name="job">The job context.</param>
     /// <param name="cfg">The configuration.</param>
     /// <param name="cacheKey">The cache key.</param>
@@ -224,6 +268,7 @@ public sealed class ClangScraper(
     /// <exception cref="InvalidOperationException">The scraper output wasn't as expected.</exception>
     private async Task ScrapeBindingsAsync(
         IReadOnlyList<ResponseFile> rsps,
+        Matcher toRemoveMatcher,
         IModContext job,
         Configuration cfg,
         string cacheKey,
@@ -234,6 +279,15 @@ public sealed class ClangScraper(
         if (parallelism == 0)
         {
             parallelism = Environment.ProcessorCount;
+        }
+
+        Dictionary<Regex, string> regexConverters = [];
+        foreach (var import in cfg.ManualOverrides ?? [])
+        {
+            string regexPatternIn = FileUtils.GlobToRegexInput(import.Key);
+            string regexPatternOut = FileUtils.GlobToRegexOutput(import.Value);
+
+            regexConverters.Add(new(regexPatternIn), regexPatternOut);
         }
 
         // Figure out what the common root is so we can aggregate the file paths without collisions
@@ -261,6 +315,11 @@ public sealed class ClangScraper(
                 FileAccess.Write
             ) ?? ValueTask.FromResult<ICacheDirectory?>(null)
         );
+
+        int rspIndex = 0;
+        int rspCount = rsps.Count;
+        int completionIndex = 0;
+        progressService.SetTask("Generating Raw Bindings");
         await Parallel.ForEachAsync(
             rsps,
             new ParallelOptions { CancellationToken = ct, MaxDegreeOfParallelism = parallelism },
@@ -268,8 +327,10 @@ public sealed class ClangScraper(
                 await Task.Run(
                     async () =>
                     {
+                        int index = Interlocked.Increment(ref rspIndex);
                         // Generate the raw bindings.
-                        var (sources, tests, hasErrors) = ScrapeRawBindings(rsp);
+                        var (sources, tests, hasErrors) = ScrapeRawBindings(rsp, index, rspCount);
+
                         static MemoryStream Reopen(MemoryStream ms) =>
                             ms.TryGetBuffer(out var buff) && buff.Array is not null
                                 ? new MemoryStream(buff.Array, buff.Offset, buff.Count)
@@ -292,53 +353,44 @@ public sealed class ClangScraper(
                                 .TrimEnd('/');
 
                             // Cache the output.
-                            if (!hasErrors)
+                            //TODO: Refactor for better Parallelisation
+                            //Breaks with high concurrency
+                            string relativePath = $"{(isTest ? "tests" : "sources")}/{relativeKey}";
+                            if (toRemoveMatcher.Match(relativePath).HasMatches)
                             {
-                                await (
-                                    cacheDir?.AddFileAsync(
-                                        $"{(isTest ? "tests" : "sources")}/{relativeKey}",
-                                        stream
-                                    ) ?? ValueTask.CompletedTask
-                                );
-                                stream.Seek(0, SeekOrigin.Begin);
+                                logger.LogTrace("ClangSharp skipped {0}", relativePath);
+                                continue;
                             }
 
                             // Add it to the dictionary.
                             if (
-                                !(isTest ? aggregatedTests : aggregatedSources).TryAdd(
+                                !FileUtils.ImportIfRegexMatches(
+                                    regexConverters,
+                                    relativePath,
+                                    isTest,
                                     relativeKey,
-                                    CSharpSyntaxTree.ParseText(
-                                        SourceText.From(
-                                            cfg.ManualOverrides?.TryGetValue(
-                                                $"{(isTest ? "tests" : "sources")}/{relativeKey}",
-                                                out var @override
-                                            ) ?? false
-                                                ? File.OpenRead(
-                                                    await inputResolver.ResolvePath(@override)
-                                                )
-                                                : stream
-                                        ),
-                                        path: relativeKey
-                                    )
+                                    aggregatedTests,
+                                    aggregatedSources,
+                                    logger,
+                                    stream
                                 )
                             )
                             {
-                                logger.LogError(
-                                    "Failed to add {0} - are the response file outputs conflicting?",
-                                    relativeKey
-                                );
-                            }
-                            else
-                            {
                                 logger.LogTrace("ClangSharp generated {0}", relativeKey);
+                                if (cacheDir is not null && !hasErrors && cfg.CacheOutput)
+                                {
+                                    stream.Seek(0, SeekOrigin.Begin);
+                                    await cacheDir.AddFileAsync(relativePath, stream);
+                                }
                             }
                         }
+
+                        Interlocked.Increment(ref completionIndex);
+                        progressService.SetProgress(completionIndex / (float)rspCount);
                     },
                     innerCt
                 )
         );
-
-        await (cacheDir?.CommitAsync() ?? ValueTask.CompletedTask);
 
         var src = job.SourceProject;
         foreach (var (fname, tree) in aggregatedSources)
@@ -350,6 +402,7 @@ public sealed class ClangScraper(
                     filePath: src.FullPath(fname)
                 )
                 .Project;
+            logger.LogDebug($"Add Src Document {fname}");
         }
 
         job.SourceProject = src;
@@ -407,8 +460,47 @@ public sealed class ClangScraper(
         // Read the response files.
         logger.LogInformation("Reading response files for {}, please wait...", ctx.JobKey);
         var rsps = rspHandler
-            .ReadResponseFiles(ctx.ConfigurationDirectory, cfg.ClangSharpResponseFiles)
+            .ReadResponseFiles(
+                ctx.ConfigurationDirectory,
+                cfg.ClangSharpResponseFiles,
+                cfg.CompositeRsps
+            )
             .ToList();
+
+        var toRemoveMatcher = new Matcher();
+        if (cfg.GeneratedToRemove is not null)
+        {
+            toRemoveMatcher.AddIncludePatterns(
+                cfg.GeneratedToRemove.Where(toRemove => !toRemove.StartsWith("!"))
+                    .Select(FileUtils.PathFixup)
+            );
+            toRemoveMatcher.AddExcludePatterns(
+                cfg.GeneratedToRemove.Where(toRemove => toRemove.StartsWith("!"))
+                    .Select(toRemove => toRemove[1..])
+                    .Select(FileUtils.PathFixup)
+            );
+        }
+
+        if (rsps.Count == 0)
+        {
+            logger.LogWarning("No Response files found for {}", ctx.JobKey);
+        }
+
+        var missingIncludes = rsps.SelectMany<ResponseFile, string>(rsp =>
+                rsp.ClangCommandLineArgs.Where(arg =>
+                    arg.StartsWith("--include-directory=") && !Directory.Exists(arg[20..])
+                )
+            )
+            .Select(arg => arg[20..])
+            .Distinct()
+            .ToList();
+        if (missingIncludes.Count > 0)
+        {
+            logger.LogWarning(
+                "The following includes are missing and may cause erroneous generation: \n"
+                    + string.Join("\n", missingIncludes)
+            );
+        }
 
         // Apply modifications. This is done before the cache key as modifications to the rsps result in different
         // outputs.
@@ -418,7 +510,7 @@ public sealed class ClangScraper(
         }
 
         // Resolve any foreign paths referenced in the response files
-        await inputResolver.ResolveInPlace(rsps);
+        await inputResolver.ResolveInPlace(rsps, progressService);
 
         // Should we completely skip running ClangSharp (e.g. we can't get Windows SDK bindings on macOS)
         var skip = (cfg.SkipScrapeIf?.Any(applicableSkipIfs.Contains)).GetValueOrDefault();
@@ -429,7 +521,7 @@ public sealed class ClangScraper(
             if (!skip)
             {
                 // Run the scraper over the response files
-                await ScrapeBindingsAsync(rsps, ctx, cfg, cacheKey, ct);
+                await ScrapeBindingsAsync(rsps, toRemoveMatcher, ctx, cfg, cacheKey, ct);
             }
         }
         catch (Exception e)
@@ -537,92 +629,94 @@ public sealed class ClangScraper(
             === Generator configuration ===
             DefaultClass: {0}
             DontUseUsingStaticsForEnums: {1}
-            ExcludeAnonymousFieldHelpers: {2}
-            ExcludeComProxies: {3}
-            ExcludeEmptyRecords: {4}
-            ExcludeEnumOperators: {5}
-            ExcludeFnptrCodegen: {6}
-            ExcludeFunctionsWithBody: {7}
-            ExcludeNIntCodegen: {8}
-            GenerateAggressiveInlining: {9}
-            GenerateCompatibleCode: {10}
-            GenerateCppAttributes: {11}
-            GenerateDocIncludes: {12}
-            GenerateExplicitVtbls: {13}
-            GenerateFileScopedNamespaces: {14}
-            GenerateGuidMember: {15}
-            GenerateHelperTypes: {16}
-            GenerateLatestCode: {17}
-            GenerateMacroBindings: {18}
-            GenerateMarkerInterfaces: {19}
-            GenerateMultipleFiles: {20}
-            GenerateNativeBitfieldAttribute: {21}
-            GenerateNativeInheritanceAttribute: {22}
-            GeneratePreviewCode: {23}
-            GenerateSetsLastSystemErrorAttribute: {24}
-            GenerateSourceLocationAttribute: {25}
-            GenerateTemplateBindings: {26}
-            GenerateTestsNUnit: {27}
-            GenerateTestsXUnit: {28}
-            GenerateTrimmableVtbls: {29}
-            GenerateUnixTypes: {30}
-            GenerateUnmanagedConstants: {31}
-            GenerateVtblIndexAttribute: {32}
-            HeaderText: {33}
-            LibraryPath: {34}
-            LogExclusions: {35}
-            LogPotentialTypedefRemappings: {36}
-            LogVisitedFiles: {37}
+            DontUseUsingStaticsForGuidMember: {2}
+            ExcludeAnonymousFieldHelpers: {3}
+            ExcludeComProxies: {4}
+            ExcludeEmptyRecords: {5}
+            ExcludeEnumOperators: {6}
+            ExcludeFnptrCodegen: {7}
+            ExcludeFunctionsWithBody: {8}
+            ExcludeNIntCodegen: {9}
+            GenerateAggressiveInlining: {10}
+            GenerateCompatibleCode: {11}
+            GenerateCppAttributes: {12}
+            GenerateDocIncludes: {13}
+            GenerateExplicitVtbls: {14}
+            GenerateFileScopedNamespaces: {15}
+            GenerateGuidMember: {16}
+            GenerateHelperTypes: {17}
+            GenerateLatestCode: {18}
+            GenerateMacroBindings: {19}
+            GenerateMarkerInterfaces: {20}
+            GenerateMultipleFiles: {21}
+            GenerateNativeBitfieldAttribute: {22}
+            GenerateNativeInheritanceAttribute: {23}
+            GeneratePreviewCode: {24}
+            GenerateSetsLastSystemErrorAttribute: {25}
+            GenerateSourceLocationAttribute: {26}
+            GenerateTemplateBindings: {27}
+            GenerateTestsNUnit: {28}
+            GenerateTestsXUnit: {29}
+            GenerateTrimmableVtbls: {30}
+            GenerateUnixTypes: {31}
+            GenerateUnmanagedConstants: {32}
+            GenerateVtblIndexAttribute: {33}
+            HeaderText: {34}
+            LibraryPath: {35}
+            LogExclusions: {36}
+            LogPotentialTypedefRemappings: {37}
+            LogVisitedFiles: {38}
             MethodPrefixToStrip: {38}
-            DefaultNamespace: {39}
-            OutputMode: {40}
-            OutputLocation: {41}
-            Language: {42}
-            LanguageStandard: {43}
-            TestOutputLocation: {44}
+            DefaultNamespace: {40}
+            OutputMode: {41}
+            OutputLocation: {42}
+            Language: {43}
+            LanguageStandard: {44}
+            TestOutputLocation: {45}
             ExcludedNames:
-                {45}
-            IncludedNames:
                 {46}
-            NativeTypeNamesToStrip:
+            IncludedNames:
                 {47}
-            ForceRemappedNames:
+            NativeTypeNamesToStrip:
                 {48}
-            TraversalNames:
+            ForceRemappedNames:
                 {49}
-            WithManualImports:
+            TraversalNames:
                 {50}
-            WithSetLastErrors:
+            WithManualImports:
                 {51}
-            WithSuppressGCTransitions:
+            WithSetLastErrors:
                 {52}
-            RemappedNames:
+            WithSuppressGCTransitions:
                 {53}
-            WithAccessSpecifiers:
+            RemappedNames:
                 {54}
-            WithCallConvs:
+            WithAccessSpecifiers:
                 {55}
-            WithClasses:
+            WithCallConvs:
                 {56}
-            WithGuids:
+            WithClasses:
                 {57}
-            WithLibraryPaths:
+            WithGuids:
                 {58}
-            WithNamespaces:
+            WithLibraryPaths:
                 {59}
-            WithTypes:
+            WithNamespaces:
                 {60}
-            WithPackings:
+            WithTypes:
                 {61}
-            WithTransparentStructs:
+            WithPackings:
                 {62}
-            WithAttributes:
+            WithTransparentStructs:
                 {63}
-            WithUsings:
+            WithAttributes:
                 {64}
+            WithUsings:
+                {65}
             """,
             cfg.GeneratorConfiguration.DefaultClass,
             cfg.GeneratorConfiguration.DontUseUsingStaticsForEnums,
+            cfg.GeneratorConfiguration.DontUseUsingStaticsForGuidMember,
             cfg.GeneratorConfiguration.ExcludeAnonymousFieldHelpers,
             cfg.GeneratorConfiguration.ExcludeComProxies,
             cfg.GeneratorConfiguration.ExcludeEmptyRecords,

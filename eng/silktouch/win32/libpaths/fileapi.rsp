@@ -1,0 +1,8 @@
+--with-librarypath
+CreateFile3=kernel32
+CreateDirectory2A=kernel32
+CreateDirectory2W=kernel32
+RemoveDirectory2A=kernel32
+RemoveDirectory2W=kernel32
+DeleteFile2A=kernel32
+DeleteFile2W=kernel32

@@ -1,10 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Windows\other\helper-types\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Core\Silk.NET.Core.csproj" />
   </ItemGroup>

@@ -1,97 +1,108 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HSWDEVICE
+public readonly unsafe partial struct Hswdevice
     : IComparable,
-        IComparable<HSWDEVICE>,
-        IEquatable<HSWDEVICE>,
+        IComparable<Hswdevice>,
+        IEquatable<Hswdevice>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HSWDEVICE(void* value)
+    public Hswdevice(void* value)
     {
         Value = value;
     }
 
-    public static HSWDEVICE INVALID_VALUE => new HSWDEVICE((void*)(-1));
-    public static HSWDEVICE NULL => new HSWDEVICE(null);
+    public static Hswdevice INVALID_VALUE => new Hswdevice((void*)(-1));
+    public static Hswdevice NULL => new Hswdevice(null);
 
-    public static bool operator ==(HSWDEVICE left, HSWDEVICE right) => left.Value == right.Value;
+    public static bool operator ==(Hswdevice left, Hswdevice right) => left.Value == right.Value;
 
-    public static bool operator !=(HSWDEVICE left, HSWDEVICE right) => left.Value != right.Value;
+    public static bool operator !=(Hswdevice left, Hswdevice right) => left.Value != right.Value;
 
-    public static bool operator <(HSWDEVICE left, HSWDEVICE right) => left.Value < right.Value;
+    public static bool operator <(Hswdevice left, Hswdevice right) => left.Value < right.Value;
 
-    public static bool operator <=(HSWDEVICE left, HSWDEVICE right) => left.Value <= right.Value;
+    public static bool operator <=(Hswdevice left, Hswdevice right) => left.Value <= right.Value;
 
-    public static bool operator >(HSWDEVICE left, HSWDEVICE right) => left.Value > right.Value;
+    public static bool operator >(Hswdevice left, Hswdevice right) => left.Value > right.Value;
 
-    public static bool operator >=(HSWDEVICE left, HSWDEVICE right) => left.Value >= right.Value;
+    public static bool operator >=(Hswdevice left, Hswdevice right) => left.Value >= right.Value;
 
-    public static explicit operator HSWDEVICE(void* value) => new HSWDEVICE(value);
+    public static explicit operator Hswdevice(void* value) => new Hswdevice(value);
 
-    public static implicit operator void*(HSWDEVICE value) => value.Value;
+    public static implicit operator void*(Hswdevice value) => value.Value;
 
-    public static explicit operator HSWDEVICE(HANDLE value) => new HSWDEVICE(value);
+    public static explicit operator Hswdevice(Handle value) => new Hswdevice(value);
 
-    public static implicit operator HANDLE(HSWDEVICE value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hswdevice value) => new Handle(value.Value);
 
-    public static explicit operator HSWDEVICE(byte value) =>
-        new HSWDEVICE(unchecked((void*)(value)));
+    public static explicit operator Hswdevice(byte value) =>
+        new Hswdevice(unchecked((void*)(value)));
 
-    public static explicit operator byte(HSWDEVICE value) => (byte)(value.Value);
+    public static explicit operator byte(Hswdevice value) => (byte)(value.Value);
 
-    public static explicit operator HSWDEVICE(short value) =>
-        new HSWDEVICE(unchecked((void*)(value)));
+    public static explicit operator Hswdevice(short value) =>
+        new Hswdevice(unchecked((void*)(value)));
 
-    public static explicit operator short(HSWDEVICE value) => (short)(value.Value);
+    public static explicit operator short(Hswdevice value) => (short)(value.Value);
 
-    public static explicit operator HSWDEVICE(int value) =>
-        new HSWDEVICE(unchecked((void*)(value)));
+    public static explicit operator Hswdevice(int value) =>
+        new Hswdevice(unchecked((void*)(value)));
 
-    public static explicit operator int(HSWDEVICE value) => (int)(value.Value);
+    public static explicit operator int(Hswdevice value) => (int)(value.Value);
 
-    public static explicit operator HSWDEVICE(long value) =>
-        new HSWDEVICE(unchecked((void*)(value)));
+    public static explicit operator Hswdevice(long value) =>
+        new Hswdevice(unchecked((void*)(value)));
 
-    public static explicit operator long(HSWDEVICE value) => (long)(value.Value);
+    public static explicit operator long(Hswdevice value) => (long)(value.Value);
 
-    public static explicit operator HSWDEVICE(nint value) =>
-        new HSWDEVICE(unchecked((void*)(value)));
+    public static explicit operator Hswdevice(nint value) =>
+        new Hswdevice(unchecked((void*)(value)));
 
-    public static implicit operator nint(HSWDEVICE value) => (nint)(value.Value);
+    public static implicit operator nint(Hswdevice value) => (nint)(value.Value);
 
-    public static explicit operator HSWDEVICE(sbyte value) =>
-        new HSWDEVICE(unchecked((void*)(value)));
+    public static explicit operator Hswdevice(sbyte value) =>
+        new Hswdevice(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HSWDEVICE value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hswdevice value) => (sbyte)(value.Value);
 
-    public static explicit operator HSWDEVICE(ushort value) =>
-        new HSWDEVICE(unchecked((void*)(value)));
+    public static explicit operator Hswdevice(ushort value) =>
+        new Hswdevice(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HSWDEVICE value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hswdevice value) => (ushort)(value.Value);
 
-    public static explicit operator HSWDEVICE(uint value) =>
-        new HSWDEVICE(unchecked((void*)(value)));
+    public static explicit operator Hswdevice(uint value) =>
+        new Hswdevice(unchecked((void*)(value)));
 
-    public static explicit operator uint(HSWDEVICE value) => (uint)(value.Value);
+    public static explicit operator uint(Hswdevice value) => (uint)(value.Value);
 
-    public static explicit operator HSWDEVICE(ulong value) =>
-        new HSWDEVICE(unchecked((void*)(value)));
+    public static explicit operator Hswdevice(ulong value) =>
+        new Hswdevice(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HSWDEVICE value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hswdevice value) => (ulong)(value.Value);
 
-    public static explicit operator HSWDEVICE(nuint value) =>
-        new HSWDEVICE(unchecked((void*)(value)));
+    public static explicit operator Hswdevice(nuint value) =>
+        new Hswdevice(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HSWDEVICE value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hswdevice value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HSWDEVICE other)
+        if (obj is Hswdevice other)
         {
             return CompareTo(other);
         }
@@ -100,11 +111,11 @@ public readonly unsafe partial struct HSWDEVICE
             : throw new ArgumentException("obj is not an instance of HSWDEVICE.");
     }
 
-    public int CompareTo(HSWDEVICE other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hswdevice other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HSWDEVICE other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hswdevice other) && Equals(other);
 
-    public bool Equals(HSWDEVICE other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hswdevice other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

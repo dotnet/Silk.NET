@@ -1,92 +1,103 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HSPFILEQ
+public readonly unsafe partial struct Hspfileq
     : IComparable,
-        IComparable<HSPFILEQ>,
-        IEquatable<HSPFILEQ>,
+        IComparable<Hspfileq>,
+        IEquatable<Hspfileq>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HSPFILEQ(void* value)
+    public Hspfileq(void* value)
     {
         Value = value;
     }
 
-    public static HSPFILEQ INVALID_VALUE => new HSPFILEQ((void*)(-1));
-    public static HSPFILEQ NULL => new HSPFILEQ(null);
+    public static Hspfileq INVALID_VALUE => new Hspfileq((void*)(-1));
+    public static Hspfileq NULL => new Hspfileq(null);
 
-    public static bool operator ==(HSPFILEQ left, HSPFILEQ right) => left.Value == right.Value;
+    public static bool operator ==(Hspfileq left, Hspfileq right) => left.Value == right.Value;
 
-    public static bool operator !=(HSPFILEQ left, HSPFILEQ right) => left.Value != right.Value;
+    public static bool operator !=(Hspfileq left, Hspfileq right) => left.Value != right.Value;
 
-    public static bool operator <(HSPFILEQ left, HSPFILEQ right) => left.Value < right.Value;
+    public static bool operator <(Hspfileq left, Hspfileq right) => left.Value < right.Value;
 
-    public static bool operator <=(HSPFILEQ left, HSPFILEQ right) => left.Value <= right.Value;
+    public static bool operator <=(Hspfileq left, Hspfileq right) => left.Value <= right.Value;
 
-    public static bool operator >(HSPFILEQ left, HSPFILEQ right) => left.Value > right.Value;
+    public static bool operator >(Hspfileq left, Hspfileq right) => left.Value > right.Value;
 
-    public static bool operator >=(HSPFILEQ left, HSPFILEQ right) => left.Value >= right.Value;
+    public static bool operator >=(Hspfileq left, Hspfileq right) => left.Value >= right.Value;
 
-    public static explicit operator HSPFILEQ(void* value) => new HSPFILEQ(value);
+    public static explicit operator Hspfileq(void* value) => new Hspfileq(value);
 
-    public static implicit operator void*(HSPFILEQ value) => value.Value;
+    public static implicit operator void*(Hspfileq value) => value.Value;
 
-    public static explicit operator HSPFILEQ(HANDLE value) => new HSPFILEQ(value);
+    public static explicit operator Hspfileq(Handle value) => new Hspfileq(value);
 
-    public static implicit operator HANDLE(HSPFILEQ value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hspfileq value) => new Handle(value.Value);
 
-    public static explicit operator HSPFILEQ(byte value) => new HSPFILEQ(unchecked((void*)(value)));
+    public static explicit operator Hspfileq(byte value) => new Hspfileq(unchecked((void*)(value)));
 
-    public static explicit operator byte(HSPFILEQ value) => (byte)(value.Value);
+    public static explicit operator byte(Hspfileq value) => (byte)(value.Value);
 
-    public static explicit operator HSPFILEQ(short value) =>
-        new HSPFILEQ(unchecked((void*)(value)));
+    public static explicit operator Hspfileq(short value) =>
+        new Hspfileq(unchecked((void*)(value)));
 
-    public static explicit operator short(HSPFILEQ value) => (short)(value.Value);
+    public static explicit operator short(Hspfileq value) => (short)(value.Value);
 
-    public static explicit operator HSPFILEQ(int value) => new HSPFILEQ(unchecked((void*)(value)));
+    public static explicit operator Hspfileq(int value) => new Hspfileq(unchecked((void*)(value)));
 
-    public static explicit operator int(HSPFILEQ value) => (int)(value.Value);
+    public static explicit operator int(Hspfileq value) => (int)(value.Value);
 
-    public static explicit operator HSPFILEQ(long value) => new HSPFILEQ(unchecked((void*)(value)));
+    public static explicit operator Hspfileq(long value) => new Hspfileq(unchecked((void*)(value)));
 
-    public static explicit operator long(HSPFILEQ value) => (long)(value.Value);
+    public static explicit operator long(Hspfileq value) => (long)(value.Value);
 
-    public static explicit operator HSPFILEQ(nint value) => new HSPFILEQ(unchecked((void*)(value)));
+    public static explicit operator Hspfileq(nint value) => new Hspfileq(unchecked((void*)(value)));
 
-    public static implicit operator nint(HSPFILEQ value) => (nint)(value.Value);
+    public static implicit operator nint(Hspfileq value) => (nint)(value.Value);
 
-    public static explicit operator HSPFILEQ(sbyte value) =>
-        new HSPFILEQ(unchecked((void*)(value)));
+    public static explicit operator Hspfileq(sbyte value) =>
+        new Hspfileq(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HSPFILEQ value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hspfileq value) => (sbyte)(value.Value);
 
-    public static explicit operator HSPFILEQ(ushort value) =>
-        new HSPFILEQ(unchecked((void*)(value)));
+    public static explicit operator Hspfileq(ushort value) =>
+        new Hspfileq(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HSPFILEQ value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hspfileq value) => (ushort)(value.Value);
 
-    public static explicit operator HSPFILEQ(uint value) => new HSPFILEQ(unchecked((void*)(value)));
+    public static explicit operator Hspfileq(uint value) => new Hspfileq(unchecked((void*)(value)));
 
-    public static explicit operator uint(HSPFILEQ value) => (uint)(value.Value);
+    public static explicit operator uint(Hspfileq value) => (uint)(value.Value);
 
-    public static explicit operator HSPFILEQ(ulong value) =>
-        new HSPFILEQ(unchecked((void*)(value)));
+    public static explicit operator Hspfileq(ulong value) =>
+        new Hspfileq(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HSPFILEQ value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hspfileq value) => (ulong)(value.Value);
 
-    public static explicit operator HSPFILEQ(nuint value) =>
-        new HSPFILEQ(unchecked((void*)(value)));
+    public static explicit operator Hspfileq(nuint value) =>
+        new Hspfileq(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HSPFILEQ value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hspfileq value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HSPFILEQ other)
+        if (obj is Hspfileq other)
         {
             return CompareTo(other);
         }
@@ -95,11 +106,11 @@ public readonly unsafe partial struct HSPFILEQ
             : throw new ArgumentException("obj is not an instance of HSPFILEQ.");
     }
 
-    public int CompareTo(HSPFILEQ other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hspfileq other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HSPFILEQ other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hspfileq other) && Equals(other);
 
-    public bool Equals(HSPFILEQ other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hspfileq other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

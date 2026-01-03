@@ -1,103 +1,114 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HCRYPTOIDFUNCADDR
+public readonly unsafe partial struct Hcryptoidfuncaddr
     : IComparable,
-        IComparable<HCRYPTOIDFUNCADDR>,
-        IEquatable<HCRYPTOIDFUNCADDR>,
+        IComparable<Hcryptoidfuncaddr>,
+        IEquatable<Hcryptoidfuncaddr>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HCRYPTOIDFUNCADDR(void* value)
+    public Hcryptoidfuncaddr(void* value)
     {
         Value = value;
     }
 
-    public static HCRYPTOIDFUNCADDR INVALID_VALUE => new HCRYPTOIDFUNCADDR((void*)(-1));
-    public static HCRYPTOIDFUNCADDR NULL => new HCRYPTOIDFUNCADDR(null);
+    public static Hcryptoidfuncaddr INVALID_VALUE => new Hcryptoidfuncaddr((void*)(-1));
+    public static Hcryptoidfuncaddr NULL => new Hcryptoidfuncaddr(null);
 
-    public static bool operator ==(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) =>
+    public static bool operator ==(Hcryptoidfuncaddr left, Hcryptoidfuncaddr right) =>
         left.Value == right.Value;
 
-    public static bool operator !=(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) =>
+    public static bool operator !=(Hcryptoidfuncaddr left, Hcryptoidfuncaddr right) =>
         left.Value != right.Value;
 
-    public static bool operator <(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) =>
+    public static bool operator <(Hcryptoidfuncaddr left, Hcryptoidfuncaddr right) =>
         left.Value < right.Value;
 
-    public static bool operator <=(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) =>
+    public static bool operator <=(Hcryptoidfuncaddr left, Hcryptoidfuncaddr right) =>
         left.Value <= right.Value;
 
-    public static bool operator >(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) =>
+    public static bool operator >(Hcryptoidfuncaddr left, Hcryptoidfuncaddr right) =>
         left.Value > right.Value;
 
-    public static bool operator >=(HCRYPTOIDFUNCADDR left, HCRYPTOIDFUNCADDR right) =>
+    public static bool operator >=(Hcryptoidfuncaddr left, Hcryptoidfuncaddr right) =>
         left.Value >= right.Value;
 
-    public static explicit operator HCRYPTOIDFUNCADDR(void* value) => new HCRYPTOIDFUNCADDR(value);
+    public static explicit operator Hcryptoidfuncaddr(void* value) => new Hcryptoidfuncaddr(value);
 
-    public static implicit operator void*(HCRYPTOIDFUNCADDR value) => value.Value;
+    public static implicit operator void*(Hcryptoidfuncaddr value) => value.Value;
 
-    public static explicit operator HCRYPTOIDFUNCADDR(HANDLE value) => new HCRYPTOIDFUNCADDR(value);
+    public static explicit operator Hcryptoidfuncaddr(Handle value) => new Hcryptoidfuncaddr(value);
 
-    public static implicit operator HANDLE(HCRYPTOIDFUNCADDR value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hcryptoidfuncaddr value) => new Handle(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(byte value) =>
-        new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
+    public static explicit operator Hcryptoidfuncaddr(byte value) =>
+        new Hcryptoidfuncaddr(unchecked((void*)(value)));
 
-    public static explicit operator byte(HCRYPTOIDFUNCADDR value) => (byte)(value.Value);
+    public static explicit operator byte(Hcryptoidfuncaddr value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(short value) =>
-        new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
+    public static explicit operator Hcryptoidfuncaddr(short value) =>
+        new Hcryptoidfuncaddr(unchecked((void*)(value)));
 
-    public static explicit operator short(HCRYPTOIDFUNCADDR value) => (short)(value.Value);
+    public static explicit operator short(Hcryptoidfuncaddr value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(int value) =>
-        new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
+    public static explicit operator Hcryptoidfuncaddr(int value) =>
+        new Hcryptoidfuncaddr(unchecked((void*)(value)));
 
-    public static explicit operator int(HCRYPTOIDFUNCADDR value) => (int)(value.Value);
+    public static explicit operator int(Hcryptoidfuncaddr value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(long value) =>
-        new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
+    public static explicit operator Hcryptoidfuncaddr(long value) =>
+        new Hcryptoidfuncaddr(unchecked((void*)(value)));
 
-    public static explicit operator long(HCRYPTOIDFUNCADDR value) => (long)(value.Value);
+    public static explicit operator long(Hcryptoidfuncaddr value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(nint value) =>
-        new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
+    public static explicit operator Hcryptoidfuncaddr(nint value) =>
+        new Hcryptoidfuncaddr(unchecked((void*)(value)));
 
-    public static implicit operator nint(HCRYPTOIDFUNCADDR value) => (nint)(value.Value);
+    public static implicit operator nint(Hcryptoidfuncaddr value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(sbyte value) =>
-        new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
+    public static explicit operator Hcryptoidfuncaddr(sbyte value) =>
+        new Hcryptoidfuncaddr(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HCRYPTOIDFUNCADDR value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hcryptoidfuncaddr value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(ushort value) =>
-        new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
+    public static explicit operator Hcryptoidfuncaddr(ushort value) =>
+        new Hcryptoidfuncaddr(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HCRYPTOIDFUNCADDR value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hcryptoidfuncaddr value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(uint value) =>
-        new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
+    public static explicit operator Hcryptoidfuncaddr(uint value) =>
+        new Hcryptoidfuncaddr(unchecked((void*)(value)));
 
-    public static explicit operator uint(HCRYPTOIDFUNCADDR value) => (uint)(value.Value);
+    public static explicit operator uint(Hcryptoidfuncaddr value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(ulong value) =>
-        new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
+    public static explicit operator Hcryptoidfuncaddr(ulong value) =>
+        new Hcryptoidfuncaddr(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HCRYPTOIDFUNCADDR value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hcryptoidfuncaddr value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTOIDFUNCADDR(nuint value) =>
-        new HCRYPTOIDFUNCADDR(unchecked((void*)(value)));
+    public static explicit operator Hcryptoidfuncaddr(nuint value) =>
+        new Hcryptoidfuncaddr(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HCRYPTOIDFUNCADDR value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hcryptoidfuncaddr value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HCRYPTOIDFUNCADDR other)
+        if (obj is Hcryptoidfuncaddr other)
         {
             return CompareTo(other);
         }
@@ -106,12 +117,12 @@ public readonly unsafe partial struct HCRYPTOIDFUNCADDR
             : throw new ArgumentException("obj is not an instance of HCRYPTOIDFUNCADDR.");
     }
 
-    public int CompareTo(HCRYPTOIDFUNCADDR other) =>
+    public int CompareTo(Hcryptoidfuncaddr other) =>
         ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HCRYPTOIDFUNCADDR other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hcryptoidfuncaddr other) && Equals(other);
 
-    public bool Equals(HCRYPTOIDFUNCADDR other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hcryptoidfuncaddr other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

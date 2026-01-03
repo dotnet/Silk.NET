@@ -1,15 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <NoWarn>8012;$(NoWarn)</NoWarn>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\..\sources\SilkTouch\SilkTouch\Silk.NET.SilkTouch.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.Build.Framework" PrivateAssets="all" ExcludeAssets="runtime" />
     <PackageReference Include="Silk.NET.BuildTools" />
@@ -18,5 +15,4 @@
     <None Include="**/*.received.*" />
     <None Include="**/*.verified.*" />
   </ItemGroup>
-
 </Project>

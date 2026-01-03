@@ -1,0 +1,5 @@
+--with-librarypath
+HSTRING_UserSize=combase
+HSTRING_UserMarshal=combase
+HSTRING_UserUnmarshal=combase
+HSTRING_UserFree=combase

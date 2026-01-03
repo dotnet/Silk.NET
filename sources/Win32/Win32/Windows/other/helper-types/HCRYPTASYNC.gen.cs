@@ -1,101 +1,112 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HCRYPTASYNC
+public readonly unsafe partial struct Hcryptasync
     : IComparable,
-        IComparable<HCRYPTASYNC>,
-        IEquatable<HCRYPTASYNC>,
+        IComparable<Hcryptasync>,
+        IEquatable<Hcryptasync>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HCRYPTASYNC(void* value)
+    public Hcryptasync(void* value)
     {
         Value = value;
     }
 
-    public static HCRYPTASYNC INVALID_VALUE => new HCRYPTASYNC((void*)(-1));
-    public static HCRYPTASYNC NULL => new HCRYPTASYNC(null);
+    public static Hcryptasync INVALID_VALUE => new Hcryptasync((void*)(-1));
+    public static Hcryptasync NULL => new Hcryptasync(null);
 
-    public static bool operator ==(HCRYPTASYNC left, HCRYPTASYNC right) =>
+    public static bool operator ==(Hcryptasync left, Hcryptasync right) =>
         left.Value == right.Value;
 
-    public static bool operator !=(HCRYPTASYNC left, HCRYPTASYNC right) =>
+    public static bool operator !=(Hcryptasync left, Hcryptasync right) =>
         left.Value != right.Value;
 
-    public static bool operator <(HCRYPTASYNC left, HCRYPTASYNC right) => left.Value < right.Value;
+    public static bool operator <(Hcryptasync left, Hcryptasync right) => left.Value < right.Value;
 
-    public static bool operator <=(HCRYPTASYNC left, HCRYPTASYNC right) =>
+    public static bool operator <=(Hcryptasync left, Hcryptasync right) =>
         left.Value <= right.Value;
 
-    public static bool operator >(HCRYPTASYNC left, HCRYPTASYNC right) => left.Value > right.Value;
+    public static bool operator >(Hcryptasync left, Hcryptasync right) => left.Value > right.Value;
 
-    public static bool operator >=(HCRYPTASYNC left, HCRYPTASYNC right) =>
+    public static bool operator >=(Hcryptasync left, Hcryptasync right) =>
         left.Value >= right.Value;
 
-    public static explicit operator HCRYPTASYNC(void* value) => new HCRYPTASYNC(value);
+    public static explicit operator Hcryptasync(void* value) => new Hcryptasync(value);
 
-    public static implicit operator void*(HCRYPTASYNC value) => value.Value;
+    public static implicit operator void*(Hcryptasync value) => value.Value;
 
-    public static explicit operator HCRYPTASYNC(HANDLE value) => new HCRYPTASYNC(value);
+    public static explicit operator Hcryptasync(Handle value) => new Hcryptasync(value);
 
-    public static implicit operator HANDLE(HCRYPTASYNC value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Hcryptasync value) => new Handle(value.Value);
 
-    public static explicit operator HCRYPTASYNC(byte value) =>
-        new HCRYPTASYNC(unchecked((void*)(value)));
+    public static explicit operator Hcryptasync(byte value) =>
+        new Hcryptasync(unchecked((void*)(value)));
 
-    public static explicit operator byte(HCRYPTASYNC value) => (byte)(value.Value);
+    public static explicit operator byte(Hcryptasync value) => (byte)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(short value) =>
-        new HCRYPTASYNC(unchecked((void*)(value)));
+    public static explicit operator Hcryptasync(short value) =>
+        new Hcryptasync(unchecked((void*)(value)));
 
-    public static explicit operator short(HCRYPTASYNC value) => (short)(value.Value);
+    public static explicit operator short(Hcryptasync value) => (short)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(int value) =>
-        new HCRYPTASYNC(unchecked((void*)(value)));
+    public static explicit operator Hcryptasync(int value) =>
+        new Hcryptasync(unchecked((void*)(value)));
 
-    public static explicit operator int(HCRYPTASYNC value) => (int)(value.Value);
+    public static explicit operator int(Hcryptasync value) => (int)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(long value) =>
-        new HCRYPTASYNC(unchecked((void*)(value)));
+    public static explicit operator Hcryptasync(long value) =>
+        new Hcryptasync(unchecked((void*)(value)));
 
-    public static explicit operator long(HCRYPTASYNC value) => (long)(value.Value);
+    public static explicit operator long(Hcryptasync value) => (long)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(nint value) =>
-        new HCRYPTASYNC(unchecked((void*)(value)));
+    public static explicit operator Hcryptasync(nint value) =>
+        new Hcryptasync(unchecked((void*)(value)));
 
-    public static implicit operator nint(HCRYPTASYNC value) => (nint)(value.Value);
+    public static implicit operator nint(Hcryptasync value) => (nint)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(sbyte value) =>
-        new HCRYPTASYNC(unchecked((void*)(value)));
+    public static explicit operator Hcryptasync(sbyte value) =>
+        new Hcryptasync(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HCRYPTASYNC value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Hcryptasync value) => (sbyte)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(ushort value) =>
-        new HCRYPTASYNC(unchecked((void*)(value)));
+    public static explicit operator Hcryptasync(ushort value) =>
+        new Hcryptasync(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HCRYPTASYNC value) => (ushort)(value.Value);
+    public static explicit operator ushort(Hcryptasync value) => (ushort)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(uint value) =>
-        new HCRYPTASYNC(unchecked((void*)(value)));
+    public static explicit operator Hcryptasync(uint value) =>
+        new Hcryptasync(unchecked((void*)(value)));
 
-    public static explicit operator uint(HCRYPTASYNC value) => (uint)(value.Value);
+    public static explicit operator uint(Hcryptasync value) => (uint)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(ulong value) =>
-        new HCRYPTASYNC(unchecked((void*)(value)));
+    public static explicit operator Hcryptasync(ulong value) =>
+        new Hcryptasync(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HCRYPTASYNC value) => (ulong)(value.Value);
+    public static explicit operator ulong(Hcryptasync value) => (ulong)(value.Value);
 
-    public static explicit operator HCRYPTASYNC(nuint value) =>
-        new HCRYPTASYNC(unchecked((void*)(value)));
+    public static explicit operator Hcryptasync(nuint value) =>
+        new Hcryptasync(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HCRYPTASYNC value) => (nuint)(value.Value);
+    public static implicit operator nuint(Hcryptasync value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HCRYPTASYNC other)
+        if (obj is Hcryptasync other)
         {
             return CompareTo(other);
         }
@@ -104,11 +115,11 @@ public readonly unsafe partial struct HCRYPTASYNC
             : throw new ArgumentException("obj is not an instance of HCRYPTASYNC.");
     }
 
-    public int CompareTo(HCRYPTASYNC other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Hcryptasync other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HCRYPTASYNC other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Hcryptasync other) && Equals(other);
 
-    public bool Equals(HCRYPTASYNC other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Hcryptasync other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

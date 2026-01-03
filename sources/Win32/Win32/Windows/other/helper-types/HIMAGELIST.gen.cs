@@ -1,97 +1,108 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
+// Original source is Copyright © Microsoft. All rights reserved.
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+using Silk.NET.DirectX;
+using Silk.NET.Win32;
+using Silk.NET.WinRT;
+#pragma warning disable CS1589, CS0419, CA1416, CS0618
+namespace Silk.NET.Win32;
 
-namespace Silk.NET.Windows;
-
-public readonly unsafe partial struct HIMAGELIST
+public readonly unsafe partial struct Himagelist
     : IComparable,
-        IComparable<HIMAGELIST>,
-        IEquatable<HIMAGELIST>,
+        IComparable<Himagelist>,
+        IEquatable<Himagelist>,
         IFormattable
 {
     public readonly void* Value;
 
-    public HIMAGELIST(void* value)
+    public Himagelist(void* value)
     {
         Value = value;
     }
 
-    public static HIMAGELIST INVALID_VALUE => new HIMAGELIST((void*)(-1));
-    public static HIMAGELIST NULL => new HIMAGELIST(null);
+    public static Himagelist INVALID_VALUE => new Himagelist((void*)(-1));
+    public static Himagelist NULL => new Himagelist(null);
 
-    public static bool operator ==(HIMAGELIST left, HIMAGELIST right) => left.Value == right.Value;
+    public static bool operator ==(Himagelist left, Himagelist right) => left.Value == right.Value;
 
-    public static bool operator !=(HIMAGELIST left, HIMAGELIST right) => left.Value != right.Value;
+    public static bool operator !=(Himagelist left, Himagelist right) => left.Value != right.Value;
 
-    public static bool operator <(HIMAGELIST left, HIMAGELIST right) => left.Value < right.Value;
+    public static bool operator <(Himagelist left, Himagelist right) => left.Value < right.Value;
 
-    public static bool operator <=(HIMAGELIST left, HIMAGELIST right) => left.Value <= right.Value;
+    public static bool operator <=(Himagelist left, Himagelist right) => left.Value <= right.Value;
 
-    public static bool operator >(HIMAGELIST left, HIMAGELIST right) => left.Value > right.Value;
+    public static bool operator >(Himagelist left, Himagelist right) => left.Value > right.Value;
 
-    public static bool operator >=(HIMAGELIST left, HIMAGELIST right) => left.Value >= right.Value;
+    public static bool operator >=(Himagelist left, Himagelist right) => left.Value >= right.Value;
 
-    public static explicit operator HIMAGELIST(void* value) => new HIMAGELIST(value);
+    public static explicit operator Himagelist(void* value) => new Himagelist(value);
 
-    public static implicit operator void*(HIMAGELIST value) => value.Value;
+    public static implicit operator void*(Himagelist value) => value.Value;
 
-    public static explicit operator HIMAGELIST(HANDLE value) => new HIMAGELIST(value);
+    public static explicit operator Himagelist(Handle value) => new Himagelist(value);
 
-    public static implicit operator HANDLE(HIMAGELIST value) => new HANDLE(value.Value);
+    public static implicit operator Handle(Himagelist value) => new Handle(value.Value);
 
-    public static explicit operator HIMAGELIST(byte value) =>
-        new HIMAGELIST(unchecked((void*)(value)));
+    public static explicit operator Himagelist(byte value) =>
+        new Himagelist(unchecked((void*)(value)));
 
-    public static explicit operator byte(HIMAGELIST value) => (byte)(value.Value);
+    public static explicit operator byte(Himagelist value) => (byte)(value.Value);
 
-    public static explicit operator HIMAGELIST(short value) =>
-        new HIMAGELIST(unchecked((void*)(value)));
+    public static explicit operator Himagelist(short value) =>
+        new Himagelist(unchecked((void*)(value)));
 
-    public static explicit operator short(HIMAGELIST value) => (short)(value.Value);
+    public static explicit operator short(Himagelist value) => (short)(value.Value);
 
-    public static explicit operator HIMAGELIST(int value) =>
-        new HIMAGELIST(unchecked((void*)(value)));
+    public static explicit operator Himagelist(int value) =>
+        new Himagelist(unchecked((void*)(value)));
 
-    public static explicit operator int(HIMAGELIST value) => (int)(value.Value);
+    public static explicit operator int(Himagelist value) => (int)(value.Value);
 
-    public static explicit operator HIMAGELIST(long value) =>
-        new HIMAGELIST(unchecked((void*)(value)));
+    public static explicit operator Himagelist(long value) =>
+        new Himagelist(unchecked((void*)(value)));
 
-    public static explicit operator long(HIMAGELIST value) => (long)(value.Value);
+    public static explicit operator long(Himagelist value) => (long)(value.Value);
 
-    public static explicit operator HIMAGELIST(nint value) =>
-        new HIMAGELIST(unchecked((void*)(value)));
+    public static explicit operator Himagelist(nint value) =>
+        new Himagelist(unchecked((void*)(value)));
 
-    public static implicit operator nint(HIMAGELIST value) => (nint)(value.Value);
+    public static implicit operator nint(Himagelist value) => (nint)(value.Value);
 
-    public static explicit operator HIMAGELIST(sbyte value) =>
-        new HIMAGELIST(unchecked((void*)(value)));
+    public static explicit operator Himagelist(sbyte value) =>
+        new Himagelist(unchecked((void*)(value)));
 
-    public static explicit operator sbyte(HIMAGELIST value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Himagelist value) => (sbyte)(value.Value);
 
-    public static explicit operator HIMAGELIST(ushort value) =>
-        new HIMAGELIST(unchecked((void*)(value)));
+    public static explicit operator Himagelist(ushort value) =>
+        new Himagelist(unchecked((void*)(value)));
 
-    public static explicit operator ushort(HIMAGELIST value) => (ushort)(value.Value);
+    public static explicit operator ushort(Himagelist value) => (ushort)(value.Value);
 
-    public static explicit operator HIMAGELIST(uint value) =>
-        new HIMAGELIST(unchecked((void*)(value)));
+    public static explicit operator Himagelist(uint value) =>
+        new Himagelist(unchecked((void*)(value)));
 
-    public static explicit operator uint(HIMAGELIST value) => (uint)(value.Value);
+    public static explicit operator uint(Himagelist value) => (uint)(value.Value);
 
-    public static explicit operator HIMAGELIST(ulong value) =>
-        new HIMAGELIST(unchecked((void*)(value)));
+    public static explicit operator Himagelist(ulong value) =>
+        new Himagelist(unchecked((void*)(value)));
 
-    public static explicit operator ulong(HIMAGELIST value) => (ulong)(value.Value);
+    public static explicit operator ulong(Himagelist value) => (ulong)(value.Value);
 
-    public static explicit operator HIMAGELIST(nuint value) =>
-        new HIMAGELIST(unchecked((void*)(value)));
+    public static explicit operator Himagelist(nuint value) =>
+        new Himagelist(unchecked((void*)(value)));
 
-    public static implicit operator nuint(HIMAGELIST value) => (nuint)(value.Value);
+    public static implicit operator nuint(Himagelist value) => (nuint)(value.Value);
 
     public int CompareTo(object? obj)
     {
-        if (obj is HIMAGELIST other)
+        if (obj is Himagelist other)
         {
             return CompareTo(other);
         }
@@ -100,11 +111,11 @@ public readonly unsafe partial struct HIMAGELIST
             : throw new ArgumentException("obj is not an instance of HIMAGELIST.");
     }
 
-    public int CompareTo(HIMAGELIST other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
+    public int CompareTo(Himagelist other) => ((nuint)(Value)).CompareTo((nuint)(other.Value));
 
-    public override bool Equals(object? obj) => (obj is HIMAGELIST other) && Equals(other);
+    public override bool Equals(object? obj) => (obj is Himagelist other) && Equals(other);
 
-    public bool Equals(HIMAGELIST other) => ((nuint)(Value)).Equals((nuint)(other.Value));
+    public bool Equals(Himagelist other) => ((nuint)(Value)).Equals((nuint)(other.Value));
 
     public override int GetHashCode() => ((nuint)(Value)).GetHashCode();
 

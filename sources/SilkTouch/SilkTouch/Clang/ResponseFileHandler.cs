@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.CommandLine;
 using System.CommandLine.Parsing;
@@ -8,9 +8,13 @@ using System.IO.Hashing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using ClangSharp;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Logging;
+using Silk.NET.SilkTouch.Utility;
 using static ClangSharp.Interop.CXTranslationUnit_Flags;
 
 namespace Silk.NET.SilkTouch.Clang;
@@ -19,7 +23,10 @@ namespace Silk.NET.SilkTouch.Clang;
 /// Reads a response file (rsp) containing ClangSharpPInvokeGenerator command line arguments.
 /// </summary>
 [SuppressMessage("ReSharper", "InconsistentNaming")]
-public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
+public class ResponseFileHandler(
+    ILogger<ResponseFileHandler> logger,
+    IProgressService progressService
+)
 {
     // Begin verbatim ClangSharp code
     private static readonly string[] s_additionalOptionAliases = ["--additional", "-a"];
@@ -964,7 +971,8 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
 
         foreach (var key in withTransparentStructs.Keys)
         {
-            remappedNames.Add(key, key);
+            if (!remappedNames.ContainsKey(key))
+                remappedNames.Add(key, key);
         }
 
         var configOptions = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
@@ -1103,6 +1111,14 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
                 {
                     configOptions |=
                         PInvokeGeneratorConfigurationOptions.DontUseUsingStaticsForEnums;
+                    break;
+                }
+
+                case "exclude-using-statics-for-guid-members":
+                case "dont-use-using-statics-for-guid-members":
+                {
+                    configOptions |=
+                        PInvokeGeneratorConfigurationOptions.DontUseUsingStaticsForGuidMember;
                     break;
                 }
 
@@ -1478,13 +1494,15 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
     /// </summary>
     /// <param name="directory">The directory in which the patterns are applied.</param>
     /// <param name="globs">The glob patterns used to match rsp files.</param>
+    /// <param name="compositeRspGlobs">rsp globs to be composited</param>
     /// <returns>The read response files.</returns>
     /// <exception cref="InvalidOperationException">
     /// If the directory name of the file could not be determined.
     /// </exception>
     public IEnumerable<ResponseFile> ReadResponseFiles(
         string directory,
-        IReadOnlyList<string> globs
+        IReadOnlyList<string> globs,
+        Dictionary<string,string[]>? compositeRspGlobs = null
     )
     {
         logger.LogDebug(
@@ -1492,13 +1510,59 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
             directory,
             Environment.CurrentDirectory
         );
-        foreach (var rsp in Glob(globs))
+
+        Dictionary<Regex, string> compositeRegex = compositeRspGlobs is null ? [] :
+            compositeRspGlobs.Keys.Select(glob => (new Regex(FileUtils.GlobToRegexInput(glob)), glob)).ToDictionary();
+
+        IEnumerable<string> rsps = FileUtils.Glob(globs);
+        int index = 0;
+        int count = rsps.Count();
+        progressService.SetTask("Reading ResponseFiles");
+        foreach (var rsp in rsps)
         {
+            index++;
+
+            IEnumerable<string> additionalArgs = [];
+            if (compositeRspGlobs is not null)
+            {
+                List<string> regexMatch = [];
+                foreach (var regex in compositeRegex)
+                {
+                    if (regex.Key.IsMatch(rsp))
+                    {
+                        regexMatch.Add(regex.Value);
+                    }
+                }
+
+                IEnumerable<string> additionalRsps = [];
+
+                foreach (var match in regexMatch)
+                {
+                    additionalRsps = additionalRsps.Concat(FileUtils.Glob(compositeRspGlobs.TryGetValue(match, out string[]? addedArgs) ? addedArgs : []));
+                }
+
+                additionalArgs = additionalRsps.SelectMany(rsp => {
+                    logger.LogDebug("Reading found file: {0}", rsp);
+                    var dir =
+                        Path.GetDirectoryName(rsp)
+                        ?? throw new InvalidOperationException("Couldn't get directory name of path");
+                    return RspRelativeTo(dir, rsp);
+                });
+            }
+
+                
+
             logger.LogDebug("Reading found file: {0}", rsp);
             var dir =
                 Path.GetDirectoryName(rsp)
                 ?? throw new InvalidOperationException("Couldn't get directory name of path");
-            var read = ReadResponseFile(RspRelativeTo(dir, rsp).ToArray(), dir, rsp);
+            var read = ReadResponseFile(
+                RspRelativeTo(dir, rsp).Concat(additionalArgs).ToArray(),
+                dir,
+                rsp
+            );
+
+            progressService.SetProgress(index / (float)count);
             yield return read with
             {
                 FileDirectory = dir,
@@ -1530,41 +1594,5 @@ public class ResponseFileHandler(ILogger<ResponseFileHandler> logger)
                 yield return arg;
             }
         }
-    }
-
-    internal static IEnumerable<string> Glob(IReadOnlyCollection<string> paths, string? cd = null)
-    {
-        cd ??= Environment.CurrentDirectory;
-        var matcher = new Matcher();
-        static string PathFixup(string path)
-        {
-            if (Path.IsPathFullyQualified(path))
-            {
-                path = Path.GetRelativePath(Path.GetPathRoot(path)!, path);
-            }
-
-            return path.Replace('\\', '/');
-        }
-
-        matcher.AddIncludePatterns(paths.Where(x => !x.StartsWith("!")).Select(PathFixup));
-        matcher.AddExcludePatterns(
-            paths.Where(x => x.StartsWith("!")).Select(x => x[1..]).Select(PathFixup)
-        );
-
-        return matcher
-            .GetResultsInFullPath(cd)
-            .Concat(
-                paths
-                    .Select(x => x.StartsWith('!') ? x[1..] : x)
-                    .Where(Path.IsPathFullyQualified)
-                    .Select(Path.GetPathRoot)
-                    .Where(x => x is not null)
-                    .Distinct()
-                    .SelectMany(x => matcher.GetResultsInFullPath(x!))
-            )
-            .Concat(paths.Where(File.Exists))
-            .Select(x => Path.GetFullPath(x).Replace('\\', '/'))
-            .Distinct()
-            .ToArray();
     }
 }
