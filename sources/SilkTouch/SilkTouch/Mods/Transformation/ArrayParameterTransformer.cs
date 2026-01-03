@@ -232,7 +232,9 @@ public class ArrayParameterTransformer : IFunctionTransformer
     ) : CSharpSyntaxRewriter
     {
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            node.WithIdentifier(Identifier(node.Identifier.ToString().Singularize(false)))
+            node.WithIdentifier(
+                    // TODO: Temporarily hack to fix issue where OpenGL -OES vendor suffix gets replaced with -O
+                    Identifier(node.Identifier.Text.EndsWith("OES") ? node.Identifier.Text : node.Identifier.Text.Singularize(false)))
                 .WithReturnType(
                     isOutput ? ptrElementType : PredefinedType(Token(SyntaxKind.VoidKeyword))
                 )
