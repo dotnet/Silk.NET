@@ -6,7 +6,6 @@ using Silk.NET.SilkTouch.Naming;
 
 namespace Silk.NET.SilkTouch.UnitTests.Naming;
 
-[TestFixture]
 public class NameTests : NameTrimmer
 {
     [Test, TestCase(null), TestCase("glfw")]
