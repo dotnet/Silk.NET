@@ -13,24 +13,26 @@ internal static unsafe class BackendExtensions
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static nint FallbackUniqueId(ulong sdlDeviceId, nint uniqueId)
         {
-            InputLog.Error("Failed to create a deterministically unique identifier for joystick");
+            InputLog.Warn($"Failed to create a deterministically unique identifier for device {sdlDeviceId}.");
             return uniqueId ^ ((nint)sdlDeviceId | ((nint)sdlDeviceId << 16));
         }
 
         public bool AttemptUniqueId(Ptr<sbyte> ptr, ref nint uniqueId1)
         {
             if (ptr.Native == null)
+            {
                 return false;
+            }
 
             var name = ptr.ReadToString();
             var bytes = Encoding.Default.GetBytes(name);
-            return AttemptUniqueId(backend, bytes, ref uniqueId1);
+            return backend.AttemptUniqueId(bytes, ref uniqueId1);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool AttemptUniqueId<T>(T value, ref nint uniqueId1)
             where T : unmanaged =>
-            AttemptUniqueId(backend, new ReadOnlySpan<byte>(&value, sizeof(T)), ref uniqueId1);
+            backend.AttemptUniqueId(new ReadOnlySpan<byte>(&value, sizeof(T)), ref uniqueId1);
 
         public bool AttemptUniqueId(ReadOnlySpan<byte> bytes, ref nint uniqueId1)
         {

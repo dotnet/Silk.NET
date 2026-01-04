@@ -46,7 +46,7 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     protected override uint GetButtonMaskSdl() => NativeBackend.GetMouseState(nullptr, nullptr);
 
 
-    public static unsafe SdlMouse CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
+    public static SdlMouse CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
     {
         var deviceName = backend.Sdl.GetMouseNameForID((uint)sdlDeviceId);
         nint uniqueId = 0;
@@ -55,7 +55,6 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
             uniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, uniqueId);
         }
 
-        backend.Sdl.Free(deviceName);
         return new SdlMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget,
             backend.CursorConfiguration);
     }
@@ -67,6 +66,12 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     }
 
     MouseState IMouse.State => _state;
+
+    // todo (maybe): pair with simulated touch device if simulated touch events occur
+    // though, we can probably only pair if there is *one* mouse - multiple mice
+    // would make it difficult to pair, as simulated touch input does not specify the mouse
+    // it comes from
+    public int? TouchId { get; private set; }
 
     private bool IsMouseRelative
     {

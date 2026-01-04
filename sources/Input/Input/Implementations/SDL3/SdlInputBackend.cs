@@ -292,16 +292,13 @@ internal partial class SdlInputBackend : IInputBackend
                     case EventType.GamepadRemapped:
                         gamepad.Remap();
                         break;
+
+                    // todo - sensor + touchpad
                     case EventType.GamepadTouchpadDown:
-                        break;
                     case EventType.GamepadTouchpadMotion:
-                        break;
                     case EventType.GamepadTouchpadUp:
-                        break;
                     case EventType.GamepadSensorUpdate:
-                        break;
                     case EventType.GamepadUpdateComplete:
-                        break;
                     case EventType.GamepadSteamHandleUpdated:
                         break;
                 }
@@ -375,7 +372,7 @@ internal partial class SdlInputBackend : IInputBackend
             case >= EventType.PenProximityIn and <= EventType.PenAxis:
             {
                 var which = evt.Ptouch.Which;
-                if (!TryGetOrCreateDevice(which, out SdlPen penDevice))
+                if (!TryGetOrCreateDevice<SdlPen>(which, out var penDevice))
                 {
                     return;
                 }
@@ -419,7 +416,7 @@ internal partial class SdlInputBackend : IInputBackend
             {
                 var finger = evt.Tfinger;
                 var device = finger.TouchID;
-                if (!TryGetOrCreateDevice(device, out SdlTouchSurface touchDevice))
+                if (!TryGetOrCreateDevice<SdlTouchSurface>(device, out var touchDevice))
                 {
                     return;
                 }
