@@ -186,6 +186,9 @@
           "FunctionPointerDelegateType": {
             "Order": 1
           },
+          "KhronosVendor": {
+            "Order": -1
+          },
           "KhronosFunctionDataType": {
             "IsDiscriminator": true
           },
@@ -319,6 +322,9 @@
           "FunctionPointerDelegateType": {
             "Order": 1
           },
+          "KhronosVendor": {
+            "Order": -1
+          },
           "KhronosFunctionDataType": {
             "IsDiscriminator": true
           },
@@ -430,6 +436,9 @@
           },
           "FunctionPointerDelegateType": {
             "Order": 1
+          },
+          "KhronosVendor": {
+            "Order": -1
           },
           "KhronosImpliedVendor": {
             "Remove": true

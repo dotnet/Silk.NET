@@ -4458,7 +4458,7 @@ public unsafe partial interface IAL
         [NativeName("alIsBufferFormatSupportedSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
-        static abstract sbyte IsBufferFormatSupportedSOFTRaw(int format);
+        static abstract sbyte IsBufferFormatSupportedRawSOFT(int format);
 
         [NativeName("alIsBuffer")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -10031,7 +10031,7 @@ public unsafe partial interface IAL
     [NativeName("alIsBufferFormatSupportedSOFT")]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
-    sbyte IsBufferFormatSupportedSOFTRaw(int format);
+    sbyte IsBufferFormatSupportedRawSOFT(int format);
 
     [NativeName("alIsBuffer")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
