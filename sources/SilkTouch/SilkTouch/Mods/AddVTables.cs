@@ -777,9 +777,13 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                                 x.WithAttributes(
                                     SeparatedList(
                                         x.Attributes.Where(y =>
-                                            !y.IsAttribute("System.Runtime.InteropServices.DllImport")
+                                            !y.IsAttribute(
+                                                "System.Runtime.InteropServices.DllImport"
+                                            )
                                             && !y.IsAttribute("Silk.NET.Core.NativeFunction")
-                                            && !y.IsAttribute("System.Runtime.CompilerServices.MethodImpl")
+                                            && !y.IsAttribute(
+                                                "System.Runtime.CompilerServices.MethodImpl"
+                                            )
                                         )
                                     )
                                 )
@@ -995,7 +999,8 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         && x.ChildTokens()
                             .FirstOrDefault(y => y.IsKind(SyntaxKind.IdentifierToken))
                             .ToString() == tok.ToString()
-                    ) ?? false
+                    )
+                    ?? false
                 )
             )
             {

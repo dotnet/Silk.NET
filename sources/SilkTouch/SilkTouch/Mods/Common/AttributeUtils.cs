@@ -29,9 +29,9 @@ public static class AttributeUtils
         var sep = node.Name.ToString().Split("::").Last();
         var name = fullNameWithoutSuffix.Split('.').Last();
         return sep == name
-               || sep == $"{name}Attribute"
-               || sep.EndsWith(fullNameWithoutSuffix)
-               || sep.EndsWith($"{fullNameWithoutSuffix}Attribute");
+            || sep == $"{name}Attribute"
+            || sep.EndsWith(fullNameWithoutSuffix)
+            || sep.EndsWith($"{fullNameWithoutSuffix}Attribute");
     }
 
     /// <summary>
@@ -41,8 +41,13 @@ public static class AttributeUtils
     /// <param name="fullNameWithoutSuffix">
     /// The fully-qualified attribute name including the namespace but without the <c>Attribute</c> suffix.
     /// </param>
-    public static bool ContainsAttribute(this IEnumerable<AttributeListSyntax> attributeLists, string fullNameWithoutSuffix) =>
-        attributeLists.Any(list => list.Attributes.Any(attribute => attribute.IsAttribute(fullNameWithoutSuffix)));
+    public static bool ContainsAttribute(
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        string fullNameWithoutSuffix
+    ) =>
+        attributeLists.Any(list =>
+            list.Attributes.Any(attribute => attribute.IsAttribute(fullNameWithoutSuffix))
+        );
 
     /// <summary>
     /// Modifies the <see cref="DllImportAttribute"/>s the method may have to make them resistant to method identifier
@@ -63,7 +68,8 @@ public static class AttributeUtils
                                 && (
                                     y.ArgumentList?.Arguments.All(z =>
                                         z.NameEquals?.Name.ToString() != "EntryPoint"
-                                    ) ?? true
+                                    )
+                                    ?? true
                                 )
                                     ? y.AddArgumentListArguments(
                                         AttributeArgument(
@@ -209,8 +215,12 @@ public static class AttributeUtils
     /// Use false if not (outside or appended to end).
     /// True means that the attribute is added to the start of the attribute list, meaning that the affix is re-appended earlier.
     /// </param>
-    public static SyntaxList<AttributeListSyntax> AddNamePrefix(this IEnumerable<AttributeListSyntax> attributeLists, string category, string prefix, bool addToInner = false)
-        => attributeLists.AddNamePrefixOrSuffix("Prefix", category, prefix, addToInner);
+    public static SyntaxList<AttributeListSyntax> AddNamePrefix(
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        string category,
+        string prefix,
+        bool addToInner = false
+    ) => attributeLists.AddNamePrefixOrSuffix("Prefix", category, prefix, addToInner);
 
     /// <summary>
     /// Adds a name suffix attribute to the given attribute list.
@@ -223,23 +233,38 @@ public static class AttributeUtils
     /// Use false if not (outside or appended to end).
     /// True means that the attribute is added to the start of the attribute list, meaning that the affix is re-appended earlier.
     /// </param>
-    public static SyntaxList<AttributeListSyntax> AddNameSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string category, string suffix, bool addToInner = false)
-        => attributeLists.AddNamePrefixOrSuffix("Suffix", category, suffix, addToInner);
+    public static SyntaxList<AttributeListSyntax> AddNameSuffix(
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        string category,
+        string suffix,
+        bool addToInner = false
+    ) => attributeLists.AddNamePrefixOrSuffix("Suffix", category, suffix, addToInner);
 
-    private static SyntaxList<AttributeListSyntax> AddNamePrefixOrSuffix(this IEnumerable<AttributeListSyntax> attributeLists, string type, string category, string affix, bool addToInner = false)
+    private static SyntaxList<AttributeListSyntax> AddNamePrefixOrSuffix(
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        string type,
+        string category,
+        string affix,
+        bool addToInner = false
+    )
     {
-        var typeArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{type}\"", type)));
-        var categoryArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{category}\"", category)));
-        var affixArgument = AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{affix}\"", affix)));
+        var typeArgument = AttributeArgument(
+            LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{type}\"", type))
+        );
+        var categoryArgument = AttributeArgument(
+            LiteralExpression(
+                SyntaxKind.StringLiteralExpression,
+                Literal($"\"{category}\"", category)
+            )
+        );
+        var affixArgument = AttributeArgument(
+            LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{affix}\"", affix))
+        );
         var argumentList = AttributeArgumentList([typeArgument, categoryArgument, affixArgument]);
 
-        var attribute = AttributeList([
-            Attribute(IdentifierName("NameAffix"), argumentList),
-        ]);
+        var attribute = AttributeList([Attribute(IdentifierName("NameAffix"), argumentList)]);
 
-        return addToInner
-            ? [attribute, ..attributeLists]
-            : [..attributeLists, attribute];
+        return addToInner ? [attribute, .. attributeLists] : [.. attributeLists, attribute];
     }
 
     /// <summary>
@@ -248,7 +273,10 @@ public static class AttributeUtils
     /// <remarks>
     /// The default usually should be the node's identifier.
     /// </remarks>
-    public static string GetNativeNameOrDefault(this IEnumerable<AttributeListSyntax> attributeLists, SyntaxToken identifier)
+    public static string GetNativeNameOrDefault(
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        SyntaxToken identifier
+    )
     {
         if (TryGetNativeName(attributeLists, out var nativeName))
         {
@@ -264,7 +292,10 @@ public static class AttributeUtils
     /// <remarks>
     /// The default usually should be the node's identifier.
     /// </remarks>
-    public static string GetNativeNameOrDefault(this IEnumerable<AttributeListSyntax> attributeLists, string defaultName)
+    public static string GetNativeNameOrDefault(
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        string defaultName
+    )
     {
         if (TryGetNativeName(attributeLists, out var nativeName))
         {
@@ -277,9 +308,14 @@ public static class AttributeUtils
     /// <summary>
     /// Gets the value of the native name attribute from the given attribute list.
     /// </summary>
-    public static bool TryGetNativeName(this IEnumerable<AttributeListSyntax> attributeLists, [NotNullWhen(true)] out string? nativeName)
+    public static bool TryGetNativeName(
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        [NotNullWhen(true)] out string? nativeName
+    )
     {
-        var nativeNameAttribute = attributeLists.SelectMany(list => list.Attributes).FirstOrDefault(attribute => attribute.IsAttribute("Silk.NET.Core.NativeName"));
+        var nativeNameAttribute = attributeLists
+            .SelectMany(list => list.Attributes)
+            .FirstOrDefault(attribute => attribute.IsAttribute("Silk.NET.Core.NativeName"));
         if (nativeNameAttribute == null)
         {
             nativeName = null;
@@ -295,25 +331,43 @@ public static class AttributeUtils
     /// <summary>
     /// Sets or replaces the native name attribute in the given attribute list.
     /// </summary>
-    public static SyntaxList<AttributeListSyntax> WithNativeName(this IEnumerable<AttributeListSyntax> attributeLists, string nativeName)
+    public static SyntaxList<AttributeListSyntax> WithNativeName(
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        string nativeName
+    )
     {
         var nativeNameAttribute = AttributeList([
             Attribute(
                 IdentifierName("NativeName"),
                 AttributeArgumentList([
-                    AttributeArgument(LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{nativeName}\"", nativeName))),
-                ])),
+                    AttributeArgument(
+                        LiteralExpression(
+                            SyntaxKind.StringLiteralExpression,
+                            Literal($"\"{nativeName}\"", nativeName)
+                        )
+                    ),
+                ])
+            ),
         ]);
 
-        return List(attributeLists.Select(list => {
-                var attributes = list.Attributes;
-                attributes = [..attributes.Where(attribute => !attribute.IsAttribute("Silk.NET.Core.NativeName"))];
+        return List(
+            attributeLists
+                .Select(list =>
+                {
+                    var attributes = list.Attributes;
+                    attributes =
+                    [
+                        .. attributes.Where(attribute =>
+                            !attribute.IsAttribute("Silk.NET.Core.NativeName")
+                        ),
+                    ];
 
-                return attributes.Count == 0 ? null : list.WithAttributes(attributes);
-            })
-            .Where(list => list != null)
-            .Cast<AttributeListSyntax>()
-            .Prepend(nativeNameAttribute));
+                    return attributes.Count == 0 ? null : list.WithAttributes(attributes);
+                })
+                .Where(list => list != null)
+                .Cast<AttributeListSyntax>()
+                .Prepend(nativeNameAttribute)
+        );
     }
 
     /// <summary>
@@ -368,7 +422,7 @@ public static class AttributeUtils
         switch (nativeTypeName)
         {
             // Handle case: "#define NAME VALUE"
-            case {} when nativeTypeName.StartsWith("#define "):
+            case { } when nativeTypeName.StartsWith("#define "):
             {
                 // Trim off the #define
                 var nativeTypeSpan = nativeTypeName["#define ".Length..].Trim();
@@ -404,7 +458,7 @@ public static class AttributeUtils
             }
 
             // Handle cases: "const NAME **", "NAME **"
-            case {}:
+            case { }:
             {
                 // Trim off the const
                 var isConst = false;

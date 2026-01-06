@@ -136,9 +136,35 @@ public class PrettifyNames(
             foreach (var (name, (nonFunctions, functions)) in visitor.TrimmableTypes)
             {
                 newNames[name] = new RenamedType(
-                    ApplyPrettifyOnlyPipeline(null, name, cfg.NameOverrides, nameAffixer, nameTransformer),
-                    nonFunctions.ToDictionary(x => x, x => ApplyPrettifyOnlyPipeline(name, x, cfg.NameOverrides, nameAffixer, nameTransformer)),
-                    functions.ToDictionary(x => x.Name, x => ApplyPrettifyOnlyPipeline(name, x.Name, cfg.NameOverrides, nameAffixer, nameTransformer))
+                    ApplyPrettifyOnlyPipeline(
+                        null,
+                        name,
+                        cfg.NameOverrides,
+                        nameAffixer,
+                        nameTransformer
+                    ),
+                    nonFunctions.ToDictionary(
+                        x => x,
+                        x =>
+                            ApplyPrettifyOnlyPipeline(
+                                name,
+                                x,
+                                cfg.NameOverrides,
+                                nameAffixer,
+                                nameTransformer
+                            )
+                    ),
+                    functions.ToDictionary(
+                        x => x.Name,
+                        x =>
+                            ApplyPrettifyOnlyPipeline(
+                                name,
+                                x.Name,
+                                cfg.NameOverrides,
+                                nameAffixer,
+                                nameTransformer
+                            )
+                    )
                 );
             }
         }
@@ -188,10 +214,7 @@ public class PrettifyNames(
 
                 // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
                 // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
-                var constNames = consts.ToDictionary(
-                    x => x,
-                    x => new CandidateNames(x, [])
-                );
+                var constNames = consts.ToDictionary(x => x, x => new CandidateNames(x, []));
 
                 // Trim the constants.
                 Trim(
@@ -246,12 +269,28 @@ public class PrettifyNames(
         {
             if (!newNames.TryGetValue(typeName, out var renamedType))
             {
-                renamedType = new RenamedType(ApplyPrettifyOnlyPipeline(null, typeName, cfg.NameOverrides, nameAffixer, nameTransformer), [], []);
+                renamedType = new RenamedType(
+                    ApplyPrettifyOnlyPipeline(
+                        null,
+                        typeName,
+                        cfg.NameOverrides,
+                        nameAffixer,
+                        nameTransformer
+                    ),
+                    [],
+                    []
+                );
             }
 
             foreach (var memberName in memberNames)
             {
-                renamedType.NonFunctions[memberName] = ApplyPrettifyOnlyPipeline(typeName, memberName, cfg.NameOverrides, nameAffixer, nameTransformer);
+                renamedType.NonFunctions[memberName] = ApplyPrettifyOnlyPipeline(
+                    typeName,
+                    memberName,
+                    cfg.NameOverrides,
+                    nameAffixer,
+                    nameTransformer
+                );
             }
 
             newNames[typeName] = renamedType;
@@ -301,16 +340,16 @@ public class PrettifyNames(
 
         var comp =
             await proj.GetCompilationAsync(ct)
-            ?? throw new InvalidOperationException("Failed to obtain compilation for source project!");
+            ?? throw new InvalidOperationException(
+                "Failed to obtain compilation for source project!"
+            );
 
         await NameUtils.RenameAllAsync(
             ctx,
             newNames.SelectMany(x =>
             {
                 var nonFunctionConflicts = x
-                    .Value.NonFunctions.Values.Where(y =>
-                        x.Value.Functions.ContainsValue(y)
-                    )
+                    .Value.NonFunctions.Values.Where(y => x.Value.Functions.ContainsValue(y))
                     .ToHashSet();
                 return comp.GetSymbolsWithName(x.Key, SymbolFilter.Type, ct)
                     .OfType<ITypeSymbol>()
@@ -398,7 +437,9 @@ public class PrettifyNames(
 
             if (found)
             {
-                logger.LogError($"{originalName} -> {doc.Name} failed to rename file as a file already exists at {doc.FilePath}");
+                logger.LogError(
+                    $"{originalName} -> {doc.Name} failed to rename file as a file already exists at {doc.FilePath}"
+                );
             }
             else
             {
@@ -420,7 +461,8 @@ public class PrettifyNames(
         string name,
         Dictionary<string, string> nameOverrides,
         NameAffixer nameAffixer,
-        ICulturedStringTransformer nameTransformer)
+        ICulturedStringTransformer nameTransformer
+    )
     {
         // Check for overrides
         foreach (var (nativeName, overriddenName) in nameOverrides)
@@ -436,7 +478,10 @@ public class PrettifyNames(
                 // Check whether the override is for this type.
                 var span = nativeName.AsSpan();
                 var containerSpan = span[..span.IndexOf('.')];
-                if (!containerSpan.Equals("*", StringComparison.Ordinal) && !containerSpan.Equals(container, StringComparison.Ordinal))
+                if (
+                    !containerSpan.Equals("*", StringComparison.Ordinal)
+                    && !containerSpan.Equals(container, StringComparison.Ordinal)
+                )
                 {
                     continue;
                 }
@@ -487,7 +532,10 @@ public class PrettifyNames(
                 // Check whether the override is for this type.
                 var span = nativeName.AsSpan();
                 var containerSpan = span[..span.IndexOf('.')];
-                if (containerSpan.Equals("*", StringComparison.Ordinal) || containerSpan.Equals(context.Container, StringComparison.Ordinal))
+                if (
+                    containerSpan.Equals("*", StringComparison.Ordinal)
+                    || containerSpan.Equals(context.Container, StringComparison.Ordinal)
+                )
                 {
                     nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
                 }
@@ -559,7 +607,11 @@ public class PrettifyNames(
         // Keep track of the method discriminators to determine whether we have incompatible overloads that need to be
         // renamed. We keep track of the first trimming name so that we can add it to conflictingTrimmingNames when we
         // do discover a conflict (along with the trimming name of the actual conflict).
-        var methDiscrims = new Dictionary<string, (string? FirstTrimmingName, List<MethodDeclarationSyntax> Methods)>();
+        var methDiscrims =
+            new Dictionary<
+                string,
+                (string? FirstTrimmingName, List<MethodDeclarationSyntax> Methods)
+            >();
         var conflictingTrimmingNames = new HashSet<string>();
         while (namesToEval.GetEnumerator() is var e && e.MoveNext() && e.Current is var primary)
         {
@@ -699,7 +751,9 @@ public class PrettifyNames(
                         // Update the output name.
                         var firstSecondary =
                             context.Names[first].Secondary
-                            ?? throw new InvalidOperationException("More than one trimming name without secondary names.");
+                            ?? throw new InvalidOperationException(
+                                "More than one trimming name without secondary names."
+                            );
                         var firstNextPrimary = firstSecondary[^1];
                         firstSecondary.RemoveAt(firstSecondary.Count - 1);
                         context.Names[first] = new CandidateNames(firstNextPrimary, firstSecondary);
@@ -739,7 +793,9 @@ public class PrettifyNames(
                 // Conflict resolution! Update the output name.
                 var secondary =
                     context.Names[conflictingTrimmingName].Secondary
-                    ?? throw new InvalidOperationException("More than one trimming name without secondary names.");
+                    ?? throw new InvalidOperationException(
+                        "More than one trimming name without secondary names."
+                    );
                 var nextPrimary = secondary[^1];
                 secondary.RemoveAt(secondary.Count - 1);
                 context.Names[conflictingTrimmingName] = new CandidateNames(nextPrimary, secondary);
@@ -780,7 +836,7 @@ public class PrettifyNames(
             {
                 logger.LogWarning(
                     "{} (for {}) should use exclude-using-statics-for-enums as PrettifyNames does not resolve "
-                    + "conflicts with members of other types.",
+                        + "conflicts with members of other types.",
                     responseFile.FilePath,
                     key
                 );
@@ -789,7 +845,7 @@ public class PrettifyNames(
             {
                 logger.LogWarning(
                     "{} (for {}) should use exclude-using-statics-for-guid-members as PrettifyNames does not resolve "
-                    + "conflicts with members of other types.",
+                        + "conflicts with members of other types.",
                     responseFile.FilePath,
                     key
                 );
@@ -805,13 +861,27 @@ public class PrettifyNames(
     /// <param name="NewName">The new name of the type.</param>
     /// <param name="NonFunctions">The mappings from original names to new names of the type's non-function members.</param>
     /// <param name="Functions">The mappings from original names to new names of the type's function members.</param>
-    private record struct RenamedType(string NewName, Dictionary<string, string> NonFunctions, Dictionary<string, string> Functions);
+    private record struct RenamedType(
+        string NewName,
+        Dictionary<string, string> NonFunctions,
+        Dictionary<string, string> Functions
+    );
 
-    private record struct NameAffix(bool IsPrefix, string Category, string Affix, int DeclarationOrder);
+    private record struct NameAffix(
+        bool IsPrefix,
+        string Category,
+        string Affix,
+        int DeclarationOrder
+    );
 
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
+
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
-    private record struct TypeAffixData(NameAffix[] TypeAffixes, Dictionary<string, NameAffix[]>? MemberAffixes);
+
+    private record struct TypeAffixData(
+        NameAffix[] TypeAffixes,
+        Dictionary<string, NameAffix[]>? MemberAffixes
+    );
 
     private class Visitor : CSharpSyntaxWalker
     {
@@ -859,7 +929,11 @@ public class PrettifyNames(
         /// <param name="Type">The class or struct's declaration syntax node.</param>
         /// <param name="NonFunctions">The names of the non-function members directly contained by the type.</param>
         /// <param name="Functions">The names of the function members directly contained by the type.</param>
-        private record struct TypeInProgress(TypeDeclarationSyntax Type, List<string> NonFunctions, List<FunctionData> Functions);
+        private record struct TypeInProgress(
+            TypeDeclarationSyntax Type,
+            List<string> NonFunctions,
+            List<FunctionData> Functions
+        );
 
         /// <summary>
         /// Represents an enum.
@@ -881,7 +955,10 @@ public class PrettifyNames(
             || _enumInProgress is not null
             || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
 
-        private bool TryGetAffixData(SyntaxList<AttributeListSyntax> attributeLists, out NameAffix[] affixes)
+        private bool TryGetAffixData(
+            SyntaxList<AttributeListSyntax> attributeLists,
+            out NameAffix[] affixes
+        )
         {
             affixes = [];
             var declarationOrder = 0;
@@ -894,12 +971,36 @@ public class PrettifyNames(
                         continue;
                     }
 
-                    if (attribute.ArgumentList != null
-                        && (attribute.ArgumentList.Arguments[0].Expression as LiteralExpressionSyntax)?.Token.Value is string type
-                        && (attribute.ArgumentList.Arguments[1].Expression as LiteralExpressionSyntax)?.Token.Value is string category
-                        && (attribute.ArgumentList.Arguments[2].Expression as LiteralExpressionSyntax)?.Token.Value is string affix)
+                    if (
+                        attribute.ArgumentList != null
+                        && (
+                            attribute.ArgumentList.Arguments[0].Expression
+                            as LiteralExpressionSyntax
+                        )
+                            ?.Token
+                            .Value
+                            is string type
+                        && (
+                            attribute.ArgumentList.Arguments[1].Expression
+                            as LiteralExpressionSyntax
+                        )
+                            ?.Token
+                            .Value
+                            is string category
+                        && (
+                            attribute.ArgumentList.Arguments[2].Expression
+                            as LiteralExpressionSyntax
+                        )
+                            ?.Token
+                            .Value
+                            is string affix
+                    )
                     {
-                        affixes = [..affixes, new NameAffix(type == "Prefix", category, affix, declarationOrder)];
+                        affixes =
+                        [
+                            .. affixes,
+                            new NameAffix(type == "Prefix", category, affix, declarationOrder),
+                        ];
                         declarationOrder++;
                     }
                 }
@@ -908,7 +1009,10 @@ public class PrettifyNames(
             return affixes.Length != 0;
         }
 
-        private void ReportTypeAffixData(string typeIdentifier, SyntaxList<AttributeListSyntax> attributeLists)
+        private void ReportTypeAffixData(
+            string typeIdentifier,
+            SyntaxList<AttributeListSyntax> attributeLists
+        )
         {
             if (!TryGetAffixData(attributeLists, out var affixes))
             {
@@ -922,11 +1026,15 @@ public class PrettifyNames(
 
             AffixTypes[typeIdentifier] = typeAffixData with
             {
-                TypeAffixes = [..typeAffixData.TypeAffixes, ..affixes],
+                TypeAffixes = [.. typeAffixData.TypeAffixes, .. affixes],
             };
         }
 
-        private void ReportMemberAffixData(string typeIdentifier, string memberIdentifier, SyntaxList<AttributeListSyntax> attributeLists)
+        private void ReportMemberAffixData(
+            string typeIdentifier,
+            string memberIdentifier,
+            SyntaxList<AttributeListSyntax> attributeLists
+        )
         {
             if (!TryGetAffixData(attributeLists, out var affixData))
             {
@@ -972,7 +1080,11 @@ public class PrettifyNames(
                 TrimmableTypes.Add(identifier, typeData);
             }
 
-            typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions.Contains(nonFunction)));
+            typeData.NonFunctions.AddRange(
+                _typeInProgress.Value.NonFunctions.Where(nonFunction =>
+                    !typeData.NonFunctions.Contains(nonFunction)
+                )
+            );
             typeData.Functions.AddRange(_typeInProgress.Value.Functions);
 
             _typeInProgress = null;
@@ -1004,7 +1116,11 @@ public class PrettifyNames(
                 TrimmableTypes.Add(identifier, typeData);
             }
 
-            typeData.NonFunctions.AddRange(_typeInProgress.Value.NonFunctions.Where(nonFunction => !typeData.NonFunctions.Contains(nonFunction)));
+            typeData.NonFunctions.AddRange(
+                _typeInProgress.Value.NonFunctions.Where(nonFunction =>
+                    !typeData.NonFunctions.Contains(nonFunction)
+                )
+            );
             typeData.Functions.AddRange(_typeInProgress.Value.Functions);
 
             _typeInProgress = null;
@@ -1080,7 +1196,9 @@ public class PrettifyNames(
         {
             // If it's not a constant then we only prettify
             // C constants are globally scoped and typically prefixed, so we trim in addition to prettifying
-            var prettifyOnly = !node.Modifiers.Any(SyntaxKind.ConstKeyword) && !node.Modifiers.Any(SyntaxKind.StaticKeyword);
+            var prettifyOnly =
+                !node.Modifiers.Any(SyntaxKind.ConstKeyword)
+                && !node.Modifiers.Any(SyntaxKind.StaticKeyword);
 
             if (node.Parent == _typeInProgress?.Type)
             {
@@ -1146,7 +1264,12 @@ public class PrettifyNames(
                 ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
 
                 // If it's not a constant then we only prettify.
-                var hasSetter = node.AccessorList?.Accessors.Any(a => a.IsKind(SyntaxKind.SetAccessorDeclaration) || a.IsKind(SyntaxKind.InitAccessorDeclaration)) ?? false;
+                var hasSetter =
+                    node.AccessorList?.Accessors.Any(a =>
+                        a.IsKind(SyntaxKind.SetAccessorDeclaration)
+                        || a.IsKind(SyntaxKind.InitAccessorDeclaration)
+                    )
+                    ?? false;
                 if (hasSetter)
                 {
                     if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
@@ -1168,13 +1291,17 @@ public class PrettifyNames(
     private class RenameSafeAttributeListsRewriter : CSharpSyntaxRewriter
     {
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            ((MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!)
-                .WithRenameSafeAttributeLists();
+            (
+                (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!
+            ).WithRenameSafeAttributeLists();
     }
 
     /// <param name="affixTypes">The affix data retrieved by the <see cref="Visitor"/>.</param>
     /// <param name="config">The configuration from <see cref="Configuration.Affixes"/>.</param>
-    private class NameAffixer(Dictionary<string, TypeAffixData> affixTypes, Dictionary<string, NameAffixConfiguration> config)
+    private class NameAffixer(
+        Dictionary<string, TypeAffixData> affixTypes,
+        Dictionary<string, NameAffixConfiguration> config
+    )
     {
         private static readonly NameAffixConfiguration _defaultConfig = new();
 
@@ -1189,7 +1316,12 @@ public class PrettifyNames(
         /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
         /// <param name="secondary">The list of secondary names. This should be null if used by <see cref="ApplyPrettifyOnlyPipeline"/>.</param>
         /// <returns>The new primary name.</returns>
-        public string RemoveAffixes(string primary, string? container, string originalName, List<string>? secondary)
+        public string RemoveAffixes(
+            string primary,
+            string? container,
+            string originalName,
+            List<string>? secondary
+        )
         {
             var affixes = GetAffixes(container, originalName);
             if (affixes.Length == 0)
@@ -1200,12 +1332,14 @@ public class PrettifyNames(
             var originalPrimary = primary;
 
             // Sort affixes so that the outer affixes are first
-            affixes.Sort(static (a, b) =>
-            {
-                // Sort by descending declaration order
-                // Lower declaration order means the affix is closer to the inside of the name
-                return -a.DeclarationOrder.CompareTo(b.DeclarationOrder);
-            });
+            affixes.Sort(
+                static (a, b) =>
+                {
+                    // Sort by descending declaration order
+                    // Lower declaration order means the affix is closer to the inside of the name
+                    return -a.DeclarationOrder.CompareTo(b.DeclarationOrder);
+                }
+            );
 
             var prefixes = affixes.Where(x => x.IsPrefix).ToList();
             var suffixes = affixes.Where(x => !x.IsPrefix).ToList();
@@ -1228,9 +1362,15 @@ public class PrettifyNames(
                     for (var i = 0; i < nameAffixes.Count; i++)
                     {
                         var affix = nameAffixes[i];
-                        if (isPrefix ? primary.StartsWith(affix.Affix) : primary.EndsWith(affix.Affix))
+                        if (
+                            isPrefix
+                                ? primary.StartsWith(affix.Affix)
+                                : primary.EndsWith(affix.Affix)
+                        )
                         {
-                            primary = isPrefix ? primary[affix.Affix.Length..] : primary[..^affix.Affix.Length];
+                            primary = isPrefix
+                                ? primary[affix.Affix.Length..]
+                                : primary[..^affix.Affix.Length];
 
                             nameAffixes.RemoveAt(i);
                             removedAffix = true;
@@ -1257,7 +1397,12 @@ public class PrettifyNames(
         /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
         /// <param name="secondary">The list of secondary names. This should be null if used by <see cref="ApplyPrettifyOnlyPipeline"/>.</param>
         /// <returns>The new primary name.</returns>
-        public string ApplyAffixes(string primary, string? container, string originalName, List<string>? secondary)
+        public string ApplyAffixes(
+            string primary,
+            string? container,
+            string originalName,
+            List<string>? secondary
+        )
         {
             var affixes = GetAffixes(container, originalName);
             if (affixes.Length == 0)
@@ -1272,17 +1417,21 @@ public class PrettifyNames(
             // Processing [..A] will give us our primary name
             // Processing [..A, ..B] will give us the first secondary name
             // Processing [..A, ..B, ..C] will give us the second secondary name
-            affixes.Sort((a, b) =>
-            {
-                // Sort so that non-discriminator affixes are first
-                if (GetConfiguration(a).IsDiscriminator != GetConfiguration(b).IsDiscriminator)
+            affixes.Sort(
+                (a, b) =>
                 {
-                    return GetConfiguration(a).IsDiscriminator.CompareTo(GetConfiguration(b).IsDiscriminator);
-                }
+                    // Sort so that non-discriminator affixes are first
+                    if (GetConfiguration(a).IsDiscriminator != GetConfiguration(b).IsDiscriminator)
+                    {
+                        return GetConfiguration(a)
+                            .IsDiscriminator.CompareTo(GetConfiguration(b).IsDiscriminator);
+                    }
 
-                // Then sort the remaining by descending priority
-                return -GetConfiguration(a).DiscriminatorPriority.CompareTo(GetConfiguration(b).DiscriminatorPriority);
-            });
+                    // Then sort the remaining by descending priority
+                    return -GetConfiguration(a)
+                        .DiscriminatorPriority.CompareTo(GetConfiguration(b).DiscriminatorPriority);
+                }
+            );
 
             // This is guaranteed to be non-null when this method returns if there is at least one affix
             string? newPrimary = null;
@@ -1299,7 +1448,10 @@ public class PrettifyNames(
                 }
 
                 // Process group if we reached the end of the non-discriminator affixes or if the priority changes
-                if (!hasProcessedNonDiscriminator || GetConfiguration(affix).DiscriminatorPriority < currentPriority)
+                if (
+                    !hasProcessedNonDiscriminator
+                    || GetConfiguration(affix).DiscriminatorPriority < currentPriority
+                )
                 {
                     hasProcessedNonDiscriminator = true;
                     currentPriority = GetConfiguration(affix).DiscriminatorPriority;
@@ -1319,19 +1471,21 @@ public class PrettifyNames(
             void CreateName(string name, Span<NameAffix> currentAffixes)
             {
                 // Sort affixes so that the inner affixes are first
-                currentAffixes.Sort((a, b) =>
-                {
-                    // Sort by descending order
-                    // Higher order means the affix is closer to the inside of the name
-                    if (GetConfiguration(a).Order != GetConfiguration(b).Order)
+                currentAffixes.Sort(
+                    (a, b) =>
                     {
-                        return -GetConfiguration(a).Order.CompareTo(GetConfiguration(b).Order);
-                    }
+                        // Sort by descending order
+                        // Higher order means the affix is closer to the inside of the name
+                        if (GetConfiguration(a).Order != GetConfiguration(b).Order)
+                        {
+                            return -GetConfiguration(a).Order.CompareTo(GetConfiguration(b).Order);
+                        }
 
-                    // Then by ascending declaration order
-                    // Lower declaration order means the affix is closer to the inside of the name
-                    return a.DeclarationOrder.CompareTo(b.DeclarationOrder);
-                });
+                        // Then by ascending declaration order
+                        // Lower declaration order means the affix is closer to the inside of the name
+                        return a.DeclarationOrder.CompareTo(b.DeclarationOrder);
+                    }
+                );
 
                 foreach (var affix in currentAffixes)
                 {
@@ -1380,7 +1534,9 @@ public class PrettifyNames(
 
             if (affixTypes.TryGetValue(container, out typeAffixData))
             {
-                if (typeAffixData.MemberAffixes?.TryGetValue(originalName, out var affixes) ?? false)
+                if (
+                    typeAffixData.MemberAffixes?.TryGetValue(originalName, out var affixes) ?? false
+                )
                 {
                     return affixes;
                 }
@@ -1389,9 +1545,11 @@ public class PrettifyNames(
             return [];
         }
 
-        private NameAffixConfiguration GetConfiguration(NameAffix affix) => GetConfiguration(affix.Category);
+        private NameAffixConfiguration GetConfiguration(NameAffix affix) =>
+            GetConfiguration(affix.Category);
 
-        private NameAffixConfiguration GetConfiguration(string category) => config.GetValueOrDefault(category, _defaultConfig);
+        private NameAffixConfiguration GetConfiguration(string category) =>
+            config.GetValueOrDefault(category, _defaultConfig);
     }
 
     /// <summary>
@@ -1423,7 +1581,12 @@ public class PrettifyNames(
             foreach (var (original, (primary, secondary)) in context.Names)
             {
                 var secondaries = secondary;
-                var newPrimary = affixer.RemoveAffixes(primary, context.Container, original, secondaries);
+                var newPrimary = affixer.RemoveAffixes(
+                    primary,
+                    context.Container,
+                    original,
+                    secondaries
+                );
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }
         }
@@ -1457,7 +1620,12 @@ public class PrettifyNames(
             foreach (var (original, (primary, secondary)) in context.Names)
             {
                 var secondaries = secondary;
-                var newPrimary = affixer.ApplyAffixes(primary, context.Container, original, secondaries);
+                var newPrimary = affixer.ApplyAffixes(
+                    primary,
+                    context.Container,
+                    original,
+                    secondaries
+                );
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }
         }
@@ -1483,7 +1651,10 @@ public class PrettifyNames(
                     secondary[i] = secondary[i].Prettify(nameTransformer, allowAllCaps);
                 }
 
-                context.Names[original] = new CandidateNames(primary.Prettify(nameTransformer, allowAllCaps), secondary);
+                context.Names[original] = new CandidateNames(
+                    primary.Prettify(nameTransformer, allowAllCaps),
+                    secondary
+                );
             }
         }
     }

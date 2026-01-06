@@ -65,7 +65,8 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         /// The strategy to use when coercing backing types.
         /// Defaults to not modify the backing types at all.
         /// </summary>
-        public EnumBackingTypePreference CoerceBackingTypes { get; init; } = EnumBackingTypePreference.None;
+        public EnumBackingTypePreference CoerceBackingTypes { get; init; } =
+            EnumBackingTypePreference.None;
 
         /// <summary>
         /// Whether to rewrite enum member values or not.
@@ -116,7 +117,10 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
             {
                 if (configuration.MemberValue.StartsWith("0x"))
                 {
-                    MemberValue = long.Parse(configuration.MemberValue["0x".Length..], NumberStyles.AllowHexSpecifier);
+                    MemberValue = long.Parse(
+                        configuration.MemberValue["0x".Length..],
+                        NumberStyles.AllowHexSpecifier
+                    );
                 }
                 else
                 {
@@ -163,7 +167,9 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         var config = cfg.Get(ctx.JobKey);
-        var removeMemberFilters = config.RemoveMembers.Select(c => new EnumMemberFilter(c)).ToList();
+        var removeMemberFilters = config
+            .RemoveMembers.Select(c => new EnumMemberFilter(c))
+            .ToList();
 
         var proj = ctx.SourceProject;
         if (proj == null)
@@ -181,17 +187,23 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         var rewriter = new Rewriter(config, removeMemberFilters, compilation, memberRewriteDecider);
         foreach (var docId in proj.DocumentIds)
         {
-            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc =
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
-                ?? throw new InvalidOperationException("Visit returned null.")
+                    ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
 
         ctx.SourceProject = proj;
     }
 
-    private class Rewriter(Configuration config, List<EnumMemberFilter> removeMemberFilters, Compilation compilation, MemberRewriteDecider memberRewriteDecider) : CSharpSyntaxRewriter
+    private class Rewriter(
+        Configuration config,
+        List<EnumMemberFilter> removeMemberFilters,
+        Compilation compilation,
+        MemberRewriteDecider memberRewriteDecider
+    ) : CSharpSyntaxRewriter
     {
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
@@ -223,31 +235,34 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
             if (isFlagsEnum && config.AddNoneMemberToFlags)
             {
                 // Add None member if it doesn't exist yet
-                var hasNoneMember = symbol.Members().Any(member =>
-                {
-                    if (member is not IFieldSymbol fieldSymbol)
+                var hasNoneMember = symbol
+                    .Members()
+                    .Any(member =>
                     {
-                        return false;
-                    }
+                        if (member is not IFieldSymbol fieldSymbol)
+                        {
+                            return false;
+                        }
 
-                    if (member.Name == "None")
-                    {
-                        return true;
-                    }
+                        if (member.Name == "None")
+                        {
+                            return true;
+                        }
 
-                    if (fieldSymbol.ConstantValue == null)
-                    {
-                        // We don't know the constant value for sure
-                        // Return false as a default
-                        return false;
-                    }
+                        if (fieldSymbol.ConstantValue == null)
+                        {
+                            // We don't know the constant value for sure
+                            // Return false as a default
+                            return false;
+                        }
 
-                    return Convert.ToInt64(fieldSymbol.ConstantValue) == 0;
-                });
+                        return Convert.ToInt64(fieldSymbol.ConstantValue) == 0;
+                    });
 
                 if (!hasNoneMember)
                 {
-                    var noneMember = EnumMemberDeclaration("None").WithEqualsValue(CreateEqualsValueClause(0, isFlagsEnum));
+                    var noneMember = EnumMemberDeclaration("None")
+                        .WithEqualsValue(CreateEqualsValueClause(0, isFlagsEnum));
                     members.Insert(0, noneMember);
                 }
             }
@@ -263,14 +278,26 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                         {
                             var type = semanticModel.GetTypeInfo(t.Type).Type;
 
-                            if (SymbolEqualityComparer.Default.Equals(type, compilation.GetSpecialType(SpecialType.System_UInt32)))
+                            if (
+                                SymbolEqualityComparer.Default.Equals(
+                                    type,
+                                    compilation.GetSpecialType(SpecialType.System_UInt32)
+                                )
+                            )
                             {
                                 return null;
                             }
 
-                            if (SymbolEqualityComparer.Default.Equals(type, compilation.GetSpecialType(SpecialType.System_UInt64)))
+                            if (
+                                SymbolEqualityComparer.Default.Equals(
+                                    type,
+                                    compilation.GetSpecialType(SpecialType.System_UInt64)
+                                )
+                            )
                             {
-                                return SimpleBaseType(PredefinedType(Token(SyntaxKind.LongKeyword)));
+                                return SimpleBaseType(
+                                    PredefinedType(Token(SyntaxKind.LongKeyword))
+                                );
                             }
 
                             return t;
@@ -285,7 +312,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                     }
                     else
                     {
-                        node = node.WithBaseList(BaseList([..baseTypes]));
+                        node = node.WithBaseList(BaseList([.. baseTypes]));
                     }
 
                     break;
@@ -293,7 +320,8 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
 
                 case EnumBackingTypePreference.PreferUnsigned:
                 {
-                    var hasNegativeValues = members.Any(m => {
+                    var hasNegativeValues = members.Any(m =>
+                    {
                         if (m.Parent == null)
                         {
                             return false;
@@ -321,14 +349,28 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                         {
                             var type = semanticModel.GetTypeInfo(t.Type).Type;
 
-                            if (SymbolEqualityComparer.Default.Equals(type, compilation.GetSpecialType(SpecialType.System_Int32)))
+                            if (
+                                SymbolEqualityComparer.Default.Equals(
+                                    type,
+                                    compilation.GetSpecialType(SpecialType.System_Int32)
+                                )
+                            )
                             {
-                                return SimpleBaseType(PredefinedType(Token(SyntaxKind.UIntKeyword)));
+                                return SimpleBaseType(
+                                    PredefinedType(Token(SyntaxKind.UIntKeyword))
+                                );
                             }
 
-                            if (SymbolEqualityComparer.Default.Equals(type, compilation.GetSpecialType(SpecialType.System_Int64)))
+                            if (
+                                SymbolEqualityComparer.Default.Equals(
+                                    type,
+                                    compilation.GetSpecialType(SpecialType.System_Int64)
+                                )
+                            )
                             {
-                                return SimpleBaseType(PredefinedType(Token(SyntaxKind.ULongKeyword)));
+                                return SimpleBaseType(
+                                    PredefinedType(Token(SyntaxKind.ULongKeyword))
+                                );
                             }
 
                             return t;
@@ -339,11 +381,15 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
 
                     if (baseTypes.Count == 0)
                     {
-                        node = node.WithBaseList(BaseList([SimpleBaseType(PredefinedType(Token(SyntaxKind.UIntKeyword)))]));
+                        node = node.WithBaseList(
+                            BaseList([
+                                SimpleBaseType(PredefinedType(Token(SyntaxKind.UIntKeyword))),
+                            ])
+                        );
                     }
                     else
                     {
-                        node = node.WithBaseList(BaseList([..baseTypes]));
+                        node = node.WithBaseList(BaseList([.. baseTypes]));
                     }
 
                     break;
@@ -386,7 +432,7 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                     .ToList();
             }
 
-            node = node.WithMembers([..members]);
+            node = node.WithMembers([.. members]);
 
             return base.VisitEnumDeclaration(node);
         }
@@ -395,8 +441,11 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
         {
             var stringValue = useHex ? $"0x{value:X}" : $"{value}";
             return EqualsValueClause(
-                LiteralExpression(SyntaxKind.NumericLiteralExpression,
-                    Literal([], stringValue, value, [])));
+                LiteralExpression(
+                    SyntaxKind.NumericLiteralExpression,
+                    Literal([], stringValue, value, [])
+                )
+            );
         }
     }
 

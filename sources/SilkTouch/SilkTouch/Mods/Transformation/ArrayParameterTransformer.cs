@@ -87,8 +87,8 @@ public class ArrayParameterTransformer : IFunctionTransformer
                         x.CountParamIdx,
                         // 2. Select only the last parameter this count parameter is associated with
                         ParamForCount: x.ParamsForCount.Select(
-                            (y, j) => (PtrParamInfo: y, ParamForCountIdx: j)
-                        )
+                                (y, j) => (PtrParamInfo: y, ParamForCountIdx: j)
+                            )
                             .LastOrDefault()
                     )
                 )
@@ -234,7 +234,12 @@ public class ArrayParameterTransformer : IFunctionTransformer
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
             node.WithIdentifier(
                     // TODO: Temporarily hack to fix issue where OpenGL -OES vendor suffix gets replaced with -O
-                    Identifier(node.Identifier.Text.EndsWith("OES") ? node.Identifier.Text : node.Identifier.Text.Singularize(false)))
+                    Identifier(
+                        node.Identifier.Text.EndsWith("OES")
+                            ? node.Identifier.Text
+                            : node.Identifier.Text.Singularize(false)
+                    )
+                )
                 .WithReturnType(
                     isOutput ? ptrElementType : PredefinedType(Token(SyntaxKind.VoidKeyword))
                 )
@@ -255,7 +260,6 @@ public class ArrayParameterTransformer : IFunctionTransformer
                             // call.
                             ? Block(
                                 (StatementSyntax[])
-
                                     [
                                         LocalDeclarationStatement(
                                             VariableDeclaration(
@@ -273,7 +277,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
                                             )
                                         ),
                                         .. blk.Statements,
-                                        ReturnStatement(IdentifierName(ptrParam))
+                                        ReturnStatement(IdentifierName(ptrParam)),
                                     ]
                             )
                             : blk
@@ -311,15 +315,15 @@ public class ArrayParameterTransformer : IFunctionTransformer
                 ? syn.WithParameters(
                     SeparatedList(
                         syn.Parameters.Select(x =>
-                            x.Identifier.ToString() == countParam
-                            || (isOutput && x.Identifier.ToString() == ptrParam)
-                                ? null
+                                x.Identifier.ToString() == countParam
+                                || (isOutput && x.Identifier.ToString() == ptrParam)
+                                    ? null
                                 : base.VisitParameter(x) is ParameterSyntax p
                                     ? p.Identifier.ToString() == ptrParam
-                                        ? p.WithType(ptrElementType)
+                                            ? p.WithType(ptrElementType)
                                         : p
-                                    : null
-                        )
+                                : null
+                            )
                             .OfType<ParameterSyntax>()
                     )
                 )

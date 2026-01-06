@@ -80,7 +80,8 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                             ty.BaseList.Types.Concat(
                                     ((BaseTypeDeclarationSyntax)existing.Value.Syntax)
                                         .BaseList
-                                        ?.Types ?? []
+                                        ?.Types
+                                        ?? []
                                 )
                                 .DistinctBy(x => x.ToString())
                         )
@@ -197,7 +198,9 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
                     node.AttributeLists.Select(x =>
                             x.WithAttributes(
                                 SeparatedList(
-                                    x.Attributes.Where(y => y.IsAttribute("Silk.NET.Core.SupportedApiAttribute"))
+                                    x.Attributes.Where(y =>
+                                        y.IsAttribute("Silk.NET.Core.SupportedApiAttribute")
+                                    )
                                 )
                             )
                         )
@@ -210,7 +213,6 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         // Check that constants and enums have the same value
         if (
             (existing.Value.Syntax, node) is
-
             (EnumMemberDeclarationSyntax lEnum, EnumMemberDeclarationSyntax rEnum)
         )
         {
@@ -226,7 +228,6 @@ public class DefaultBakeStrategy(ILogger<DefaultBakeStrategy> logger) : IBakeStr
         }
         else if (
             (existing.Value.Syntax, node) is
-
             (FieldDeclarationSyntax lConst, FieldDeclarationSyntax rConst)
         )
         {
