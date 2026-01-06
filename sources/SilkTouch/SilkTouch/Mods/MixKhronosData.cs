@@ -279,32 +279,33 @@ public partial class MixKhronosData(
             .Select(x => x.Profile)
             .ToHashSet();
 
-        job.Vendors.UnionWith([
-            .. xml.Element("registry")
-                ?.Element("tags")
-                ?.Elements("tag")
-                .Attributes("name")
-                .Select(x => x.Value)
-                ?? [],
-            .. currentConfig.NonStandardExtensionNomenclature
-                ? []
-                : xml.Element("registry")
-                    ?.Element("extensions")
-                    ?.Elements("extension")
-                    // Only include vendors who have extensions that match a declared profile
-                    // This is mainly to exclude extensions that are declared as supported="disabled"
-                    .Where(ext =>
-                    {
-                        var supportedProfiles = ext.Attribute("supported")?.Value.Split("|") ?? [];
-                        return profiles.Intersect(supportedProfiles).Any();
-                    })
+        job.Vendors.UnionWith(
+            [
+                .. xml.Element("registry")
+                    ?.Element("tags")
+                    ?.Elements("tag")
                     .Attributes("name")
-                    // Extract the second part from the extension name
-                    // Eg: GL_NV_command_list -> NV
-                    .Select(name => name.Value.Split('_')[1].ToUpper())
-                    ?? [],
-            .. currentConfig.Vendors ?? [],
-        ]);
+                    .Select(x => x.Value) ?? [],
+                .. currentConfig.NonStandardExtensionNomenclature
+                    ? []
+                    : xml.Element("registry")
+                        ?.Element("extensions")
+                        ?.Elements("extension")
+                        // Only include vendors who have extensions that match a declared profile
+                        // This is mainly to exclude extensions that are declared as supported="disabled"
+                        .Where(ext =>
+                        {
+                            var supportedProfiles =
+                                ext.Attribute("supported")?.Value.Split("|") ?? [];
+                            return profiles.Intersect(supportedProfiles).Any();
+                        })
+                        .Attributes("name")
+                        // Extract the second part from the extension name
+                        // Eg: GL_NV_command_list -> NV
+                        .Select(name => name.Value.Split('_')[1].ToUpper()) ?? [],
+                .. currentConfig.Vendors ?? [],
+            ]
+        );
 
         job.DeprecatedAliases = xml.Descendants()
             .Where(x =>
@@ -584,8 +585,7 @@ public partial class MixKhronosData(
                         )[0]
                 )
                 .ThenBy(x => x.Attribute("number")?.Value, VersionComparer.Instance)
-                .ToArray()
-            ?? [];
+                .ToArray() ?? [];
 
         // Record the variations declared within those elements (OpenGL only atm)
         var profileVariations = new Dictionary<string, HashSet<string>>();
@@ -659,8 +659,7 @@ public partial class MixKhronosData(
                     ?.Value.Split(
                         _listSeparators,
                         StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries
-                    )
-                ?? [];
+                    ) ?? [];
 
             // Evaluate all of the elements.
             for (var i = 0; i < allApis.Length; i++)
@@ -1133,8 +1132,7 @@ public partial class MixKhronosData(
                     ?.Value.Split(
                         _listSeparators,
                         StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries
-                    )
-                ?? [];
+                    ) ?? [];
 
             foreach (var supportedApi in supportedApis)
             {
@@ -1612,7 +1610,8 @@ public partial class MixKhronosData(
                         .Distinct()
                         .Select((x, i) => (x, i))
                         .LastOrDefault()
-                        is (var n, 0)
+                        is
+                        (var n, 0)
                         ? n
                         : null;
 
@@ -1659,9 +1658,9 @@ public partial class MixKhronosData(
                                                         )
                                                         .WithAttributeLists(attributes)
                                                         .WithBaseList(
-                                                            BaseList([
-                                                                SimpleBaseType(baseTypeSyntax),
-                                                            ])
+                                                            BaseList(
+                                                                [SimpleBaseType(baseTypeSyntax)]
+                                                            )
                                                         )
                                                         .WithMembers(
                                                             SeparatedList(
@@ -1796,11 +1795,13 @@ public partial class MixKhronosData(
             if (node.Members.Any(m => job.DeprecatedAliases.Contains(m.Identifier.ValueText)))
             {
                 // Remove deprecated aliases
-                node = node.WithMembers([
-                    .. node.Members.Where(m =>
-                        !job.DeprecatedAliases.Contains(m.Identifier.ValueText)
-                    ),
-                ]);
+                node = node.WithMembers(
+                    [
+                        .. node.Members.Where(m =>
+                            !job.DeprecatedAliases.Contains(m.Identifier.ValueText)
+                        ),
+                    ]
+                );
             }
 
             if (job.Groups.TryGetValue(identifier, out var group) && group.KnownBitmask)
@@ -1826,11 +1827,13 @@ public partial class MixKhronosData(
             {
                 // Remove deprecated aliases
                 node = node.WithDeclaration(
-                    node.Declaration.WithVariables([
-                        .. node.Declaration.Variables.Where(v =>
-                            !job.DeprecatedAliases.Contains(v.Identifier.ValueText)
-                        ),
-                    ])
+                    node.Declaration.WithVariables(
+                        [
+                            .. node.Declaration.Variables.Where(v =>
+                                !job.DeprecatedAliases.Contains(v.Identifier.ValueText)
+                            ),
+                        ]
+                    )
                 );
 
                 if (node.Declaration.Variables.Count == 0)
@@ -2108,35 +2111,37 @@ public partial class MixKhronosData(
                 && canTrimImpliedVendors
             )
             {
-                node = node.WithMembers([
-                    .. node.Members.Select(member =>
-                    {
-                        if (
-                            member
-                                .AttributeLists.GetNativeNameOrDefault(member.Identifier)
-                                .EndsWith(typeVendor)
-                        )
+                node = node.WithMembers(
+                    [
+                        .. node.Members.Select(member =>
                         {
-                            // Identify for trimming
+                            if (
+                                member
+                                    .AttributeLists.GetNativeNameOrDefault(member.Identifier)
+                                    .EndsWith(typeVendor)
+                            )
+                            {
+                                // Identify for trimming
+                                return member.WithAttributeLists(
+                                    member.AttributeLists.AddNameSuffix(
+                                        "KhronosImpliedVendor",
+                                        typeVendor,
+                                        true
+                                    )
+                                );
+                            }
+
+                            // Default behavior - Identify, but not for trimming
                             return member.WithAttributeLists(
-                                member.AttributeLists.AddNameSuffix(
-                                    "KhronosImpliedVendor",
-                                    typeVendor,
-                                    true
+                                ProcessAndGetNewAttributes(
+                                    member.AttributeLists,
+                                    member.Identifier,
+                                    false
                                 )
                             );
-                        }
-
-                        // Default behavior - Identify, but not for trimming
-                        return member.WithAttributeLists(
-                            ProcessAndGetNewAttributes(
-                                member.AttributeLists,
-                                member.Identifier,
-                                false
-                            )
-                        );
-                    }),
-                ]);
+                        }),
+                    ]
+                );
             }
             else
             {

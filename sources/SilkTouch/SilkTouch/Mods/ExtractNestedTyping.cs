@@ -792,149 +792,156 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             )
             .WithAttributeLists(pfnAttrLists)
             .WithMembers(
-                List<MemberDeclarationSyntax>([
-                    FieldDeclaration(
-                            VariableDeclaration(
-                                PointerType(PredefinedType(Token(SyntaxKind.VoidKeyword))),
-                                SingletonSeparatedList(VariableDeclarator("_pointer"))
-                            )
-                        )
-                        .WithModifiers(
-                            TokenList(
-                                Token(SyntaxKind.PrivateKeyword),
-                                Token(SyntaxKind.ReadOnlyKeyword)
-                            )
-                        ),
-                    PropertyDeclaration(rawPfn, "Handle")
-                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                        .WithExpressionBody(
-                            ArrowExpressionClause(
-                                CastExpression(rawPfn, IdentifierName("_pointer"))
-                            )
-                        )
-                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                    ConstructorDeclaration(pfnName)
-                        .WithParameterList(
-                            ParameterList(
-                                SingletonSeparatedList(
-                                    Parameter(Identifier("ptr")).WithType(rawPfn)
+                List<MemberDeclarationSyntax>(
+                    [
+                        FieldDeclaration(
+                                VariableDeclaration(
+                                    PointerType(PredefinedType(Token(SyntaxKind.VoidKeyword))),
+                                    SingletonSeparatedList(VariableDeclarator("_pointer"))
                                 )
                             )
-                        )
-                        .WithExpressionBody(
-                            ArrowExpressionClause(
-                                AssignmentExpression(
-                                    SyntaxKind.SimpleAssignmentExpression,
-                                    IdentifierName("_pointer"),
-                                    IdentifierName("ptr")
+                            .WithModifiers(
+                                TokenList(
+                                    Token(SyntaxKind.PrivateKeyword),
+                                    Token(SyntaxKind.ReadOnlyKeyword)
+                                )
+                            ),
+                        PropertyDeclaration(rawPfn, "Handle")
+                            .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                            .WithExpressionBody(
+                                ArrowExpressionClause(
+                                    CastExpression(rawPfn, IdentifierName("_pointer"))
                                 )
                             )
-                        )
-                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                    ConstructorDeclaration(pfnName)
-                        .WithParameterList(
-                            ParameterList(
-                                SingletonSeparatedList(
-                                    Parameter(Identifier("proc"))
-                                        .WithType(IdentifierName(delegateName))
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                        ConstructorDeclaration(pfnName)
+                            .WithParameterList(
+                                ParameterList(
+                                    SingletonSeparatedList(
+                                        Parameter(Identifier("ptr")).WithType(rawPfn)
+                                    )
                                 )
                             )
-                        )
-                        .WithExpressionBody(
-                            ArrowExpressionClause(
-                                AssignmentExpression(
-                                    SyntaxKind.SimpleAssignmentExpression,
-                                    IdentifierName("_pointer"),
-                                    InvocationExpression(
-                                        MemberAccessExpression(
-                                            SyntaxKind.SimpleMemberAccessExpression,
-                                            IdentifierName("SilkMarshal"),
-                                            IdentifierName("DelegateToPtr")
-                                        ),
-                                        ArgumentList(
-                                            SingletonSeparatedList(Argument(IdentifierName("proc")))
+                            .WithExpressionBody(
+                                ArrowExpressionClause(
+                                    AssignmentExpression(
+                                        SyntaxKind.SimpleAssignmentExpression,
+                                        IdentifierName("_pointer"),
+                                        IdentifierName("ptr")
+                                    )
+                                )
+                            )
+                            .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                        ConstructorDeclaration(pfnName)
+                            .WithParameterList(
+                                ParameterList(
+                                    SingletonSeparatedList(
+                                        Parameter(Identifier("proc"))
+                                            .WithType(IdentifierName(delegateName))
+                                    )
+                                )
+                            )
+                            .WithExpressionBody(
+                                ArrowExpressionClause(
+                                    AssignmentExpression(
+                                        SyntaxKind.SimpleAssignmentExpression,
+                                        IdentifierName("_pointer"),
+                                        InvocationExpression(
+                                            MemberAccessExpression(
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                IdentifierName("SilkMarshal"),
+                                                IdentifierName("DelegateToPtr")
+                                            ),
+                                            ArgumentList(
+                                                SingletonSeparatedList(
+                                                    Argument(IdentifierName("proc"))
+                                                )
+                                            )
                                         )
                                     )
                                 )
                             )
-                        )
-                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                    MethodDeclaration(PredefinedType(Token(SyntaxKind.VoidKeyword)), "Dispose")
-                        .WithExpressionBody(
-                            ArrowExpressionClause(
-                                InvocationExpression(
-                                    MemberAccessExpression(
-                                        SyntaxKind.SimpleMemberAccessExpression,
-                                        IdentifierName("SilkMarshal"),
-                                        IdentifierName("Free")
-                                    ),
-                                    ArgumentList(
-                                        SingletonSeparatedList(Argument(IdentifierName("_pointer")))
+                            .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                        MethodDeclaration(PredefinedType(Token(SyntaxKind.VoidKeyword)), "Dispose")
+                            .WithExpressionBody(
+                                ArrowExpressionClause(
+                                    InvocationExpression(
+                                        MemberAccessExpression(
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            IdentifierName("SilkMarshal"),
+                                            IdentifierName("Free")
+                                        ),
+                                        ArgumentList(
+                                            SingletonSeparatedList(
+                                                Argument(IdentifierName("_pointer"))
+                                            )
+                                        )
                                     )
                                 )
                             )
-                        )
-                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                    ConversionOperatorDeclaration(
-                            Token(SyntaxKind.ImplicitKeyword),
-                            IdentifierName(pfnName)
-                        )
-                        .WithParameterList(
-                            ParameterList(
-                                SingletonSeparatedList(
-                                    Parameter(Identifier("pfn")).WithType(rawPfn)
-                                )
+                            .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                        ConversionOperatorDeclaration(
+                                Token(SyntaxKind.ImplicitKeyword),
+                                IdentifierName(pfnName)
                             )
-                        )
-                        .WithModifiers(
-                            TokenList(
-                                Token(SyntaxKind.PublicKeyword),
-                                Token(SyntaxKind.StaticKeyword)
-                            )
-                        )
-                        .WithExpressionBody(
-                            ArrowExpressionClause(
-                                ImplicitObjectCreationExpression(
-                                    ArgumentList(
-                                        SingletonSeparatedList(Argument(IdentifierName("pfn")))
-                                    ),
-                                    null
-                                )
-                            )
-                        )
-                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                    ConversionOperatorDeclaration(Token(SyntaxKind.ImplicitKeyword), rawPfn)
-                        .WithParameterList(
-                            ParameterList(
-                                SingletonSeparatedList(
-                                    Parameter(Identifier("pfn")).WithType(IdentifierName(pfnName))
-                                )
-                            )
-                        )
-                        .WithModifiers(
-                            TokenList(
-                                Token(SyntaxKind.PublicKeyword),
-                                Token(SyntaxKind.StaticKeyword)
-                            )
-                        )
-                        .WithExpressionBody(
-                            ArrowExpressionClause(
-                                CastExpression(
-                                    rawPfn,
-                                    MemberAccessExpression(
-                                        SyntaxKind.SimpleMemberAccessExpression,
-                                        IdentifierName("pfn"),
-                                        IdentifierName("_pointer")
+                            .WithParameterList(
+                                ParameterList(
+                                    SingletonSeparatedList(
+                                        Parameter(Identifier("pfn")).WithType(rawPfn)
                                     )
                                 )
                             )
-                        )
-                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                    // TODO invoke method?
-                ])
+                            .WithModifiers(
+                                TokenList(
+                                    Token(SyntaxKind.PublicKeyword),
+                                    Token(SyntaxKind.StaticKeyword)
+                                )
+                            )
+                            .WithExpressionBody(
+                                ArrowExpressionClause(
+                                    ImplicitObjectCreationExpression(
+                                        ArgumentList(
+                                            SingletonSeparatedList(Argument(IdentifierName("pfn")))
+                                        ),
+                                        null
+                                    )
+                                )
+                            )
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                        ConversionOperatorDeclaration(Token(SyntaxKind.ImplicitKeyword), rawPfn)
+                            .WithParameterList(
+                                ParameterList(
+                                    SingletonSeparatedList(
+                                        Parameter(Identifier("pfn"))
+                                            .WithType(IdentifierName(pfnName))
+                                    )
+                                )
+                            )
+                            .WithModifiers(
+                                TokenList(
+                                    Token(SyntaxKind.PublicKeyword),
+                                    Token(SyntaxKind.StaticKeyword)
+                                )
+                            )
+                            .WithExpressionBody(
+                                ArrowExpressionClause(
+                                    CastExpression(
+                                        rawPfn,
+                                        MemberAccessExpression(
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            IdentifierName("pfn"),
+                                            IdentifierName("_pointer")
+                                        )
+                                    )
+                                )
+                            )
+                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                        // TODO invoke method?
+                    ]
+                )
             );
 
         var @delegate = DelegateDeclaration(

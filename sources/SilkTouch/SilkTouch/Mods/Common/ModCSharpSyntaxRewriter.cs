@@ -16,9 +16,8 @@ public abstract class ModCSharpSyntaxRewriter(bool visitIntoStructuredTrivia = f
     : CSharpSyntaxRewriter(visitIntoStructuredTrivia),
         ITransformationContext
 {
-    private ThreadLocal<Dictionary<string, UsingDirectiveSyntax>> _usingsToAdd = new(() =>
-        new Dictionary<string, UsingDirectiveSyntax>()
-    );
+    private ThreadLocal<Dictionary<string, UsingDirectiveSyntax>> _usingsToAdd =
+        new(() => new Dictionary<string, UsingDirectiveSyntax>());
 
     /// <summary>
     /// <c>using</c>s to add to the appropriate place within the syntax tree.

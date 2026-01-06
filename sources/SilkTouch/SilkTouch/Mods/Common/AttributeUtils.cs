@@ -68,8 +68,7 @@ public static class AttributeUtils
                                 && (
                                     y.ArgumentList?.Arguments.All(z =>
                                         z.NameEquals?.Name.ToString() != "EntryPoint"
-                                    )
-                                    ?? true
+                                    ) ?? true
                                 )
                                     ? y.AddArgumentListArguments(
                                         AttributeArgument(
@@ -336,19 +335,23 @@ public static class AttributeUtils
         string nativeName
     )
     {
-        var nativeNameAttribute = AttributeList([
-            Attribute(
-                IdentifierName("NativeName"),
-                AttributeArgumentList([
-                    AttributeArgument(
-                        LiteralExpression(
-                            SyntaxKind.StringLiteralExpression,
-                            Literal($"\"{nativeName}\"", nativeName)
-                        )
-                    ),
-                ])
-            ),
-        ]);
+        var nativeNameAttribute = AttributeList(
+            [
+                Attribute(
+                    IdentifierName("NativeName"),
+                    AttributeArgumentList(
+                        [
+                            AttributeArgument(
+                                LiteralExpression(
+                                    SyntaxKind.StringLiteralExpression,
+                                    Literal($"\"{nativeName}\"", nativeName)
+                                )
+                            ),
+                        ]
+                    )
+                ),
+            ]
+        );
 
         return List(
             attributeLists

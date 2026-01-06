@@ -999,8 +999,7 @@ public class AddVTables(IOptionsSnapshot<AddVTables.Configuration> config) : IMo
                         && x.ChildTokens()
                             .FirstOrDefault(y => y.IsKind(SyntaxKind.IdentifierToken))
                             .ToString() == tok.ToString()
-                    )
-                    ?? false
+                    ) ?? false
                 )
             )
             {

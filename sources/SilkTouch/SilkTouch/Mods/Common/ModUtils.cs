@@ -104,8 +104,7 @@ public static class ModUtils
     public static string DiscrimStr(SyntaxTokenList? toks, TypeSyntax? type) =>
         toks?.Any(x =>
             x.Kind() is SyntaxKind.RefKeyword or SyntaxKind.InKeyword or SyntaxKind.OutKeyword
-        )
-        ?? false
+        ) ?? false
             ? $"{type}&"
             : type?.ToString() ?? string.Empty;
 

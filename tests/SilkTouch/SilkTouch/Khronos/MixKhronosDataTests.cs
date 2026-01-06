@@ -264,8 +264,7 @@ public class MixKhronosDataTests
                         .SupportedApiProfiles?.OrderBy(x => x.Key)
                         .Select(x =>
                             $"{x.Key}\n{new string('-', x.Key.Length)}\n{string.Join('\n', x.Value.Select(y => AttributeList(SingletonSeparatedList(y.GetSupportedApiProfileAttribute())).ToString()).Order())}\n"
-                        )
-                        ?? []
+                        ) ?? []
                 )
             )
             .UseFileName($"{nameof(MixKhronosDataTests)}.{nameof(SupportedApiProfiles)}.{file}");

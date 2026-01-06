@@ -1268,8 +1268,7 @@ public class PrettifyNames(
                     node.AccessorList?.Accessors.Any(a =>
                         a.IsKind(SyntaxKind.SetAccessorDeclaration)
                         || a.IsKind(SyntaxKind.InitAccessorDeclaration)
-                    )
-                    ?? false;
+                    ) ?? false;
                 if (hasSetter)
                 {
                     if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))

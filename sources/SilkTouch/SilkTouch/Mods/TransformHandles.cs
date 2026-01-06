@@ -175,12 +175,10 @@ public class TransformHandles(
         CancellationToken ct
     ) : SymbolVisitor
     {
-        private readonly HashSet<IErrorTypeSymbol> _nonHandleTypes = new(
-            SymbolEqualityComparer.Default
-        );
-        private readonly Dictionary<IErrorTypeSymbol, string> _missingTypes = new(
-            SymbolEqualityComparer.Default
-        );
+        private readonly HashSet<IErrorTypeSymbol> _nonHandleTypes =
+            new(SymbolEqualityComparer.Default);
+        private readonly Dictionary<IErrorTypeSymbol, string> _missingTypes =
+            new(SymbolEqualityComparer.Default);
 
         private string? _currentNamespace = null;
         private int _pointerTypeDepth = 0;
@@ -743,10 +741,12 @@ public class TransformHandles(
                 )
                 .WithParameterList(
                     ParameterList(
-                        SeparatedList([
-                            Parameter(Identifier("left")).WithType(IdentifierName(structName)),
-                            Parameter(Identifier("right")).WithType(IdentifierName(structName)),
-                        ])
+                        SeparatedList(
+                            [
+                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
+                                Parameter(Identifier("right")).WithType(IdentifierName(structName)),
+                            ]
+                        )
                     )
                 )
                 .WithExpressionBody(
@@ -841,10 +841,12 @@ public class TransformHandles(
                 )
                 .WithParameterList(
                     ParameterList(
-                        SeparatedList([
-                            Parameter(Identifier("left")).WithType(IdentifierName(structName)),
-                            Parameter(Identifier("right")).WithType(IdentifierName("NullPtr")),
-                        ])
+                        SeparatedList(
+                            [
+                                Parameter(Identifier("left")).WithType(IdentifierName(structName)),
+                                Parameter(Identifier("right")).WithType(IdentifierName("NullPtr")),
+                            ]
+                        )
                     )
                 )
                 .WithExpressionBody(

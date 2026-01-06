@@ -382,9 +382,9 @@ public class TransformEnums(IOptionsSnapshot<TransformEnums.Configuration> cfg) 
                     if (baseTypes.Count == 0)
                     {
                         node = node.WithBaseList(
-                            BaseList([
-                                SimpleBaseType(PredefinedType(Token(SyntaxKind.UIntKeyword))),
-                            ])
+                            BaseList(
+                                [SimpleBaseType(PredefinedType(Token(SyntaxKind.UIntKeyword)))]
+                            )
                         );
                     }
                     else

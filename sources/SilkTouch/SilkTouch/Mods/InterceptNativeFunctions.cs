@@ -104,27 +104,31 @@ public class InterceptNativeFunctions(
                         )
                     )
                     .AddNativeFunction(node)
-                    .WithModifiers([
-                        .. node.Modifiers.Where(x => x.Kind() is not SyntaxKind.ExternKeyword),
-                        Token(SyntaxKind.PartialKeyword),
-                    ])
+                    .WithModifiers(
+                        [
+                            .. node.Modifiers.Where(x => x.Kind() is not SyntaxKind.ExternKeyword),
+                            Token(SyntaxKind.PartialKeyword),
+                        ]
+                    )
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
             );
 
             node = node.WithRenameSafeAttributeLists()
                 .WithIdentifier(Identifier($"{node.Identifier}Internal"))
-                .WithModifiers([
-                    Token(SyntaxKind.PrivateKeyword),
-                    .. node.Modifiers.Where(x =>
-                        x.Kind()
-                            is not (
-                                SyntaxKind.PrivateKeyword
-                                or SyntaxKind.PublicKeyword
-                                or SyntaxKind.InternalKeyword
-                                or SyntaxKind.ProtectedKeyword
-                            )
-                    ),
-                ]);
+                .WithModifiers(
+                    [
+                        Token(SyntaxKind.PrivateKeyword),
+                        .. node.Modifiers.Where(x =>
+                            x.Kind()
+                                is not (
+                                    SyntaxKind.PrivateKeyword
+                                    or SyntaxKind.PublicKeyword
+                                    or SyntaxKind.InternalKeyword
+                                    or SyntaxKind.ProtectedKeyword
+                                )
+                        ),
+                    ]
+                );
 
             return node.WithAttributeLists(
                 node.AttributeLists.AddNameSuffix("InterceptedFunction", "Internal")
