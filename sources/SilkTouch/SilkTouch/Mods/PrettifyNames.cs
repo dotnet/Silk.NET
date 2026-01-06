@@ -971,29 +971,15 @@ public class PrettifyNames(
                         continue;
                     }
 
+                    var argumentList = attribute.ArgumentList;
                     if (
-                        attribute.ArgumentList != null
-                        && (
-                            attribute.ArgumentList.Arguments[0].Expression
-                            as LiteralExpressionSyntax
-                        )
-                            ?.Token
-                            .Value
-                            is string type
-                        && (
-                            attribute.ArgumentList.Arguments[1].Expression
-                            as LiteralExpressionSyntax
-                        )
-                            ?.Token
-                            .Value
-                            is string category
-                        && (
-                            attribute.ArgumentList.Arguments[2].Expression
-                            as LiteralExpressionSyntax
-                        )
-                            ?.Token
-                            .Value
-                            is string affix
+                        argumentList != null
+                        && argumentList.Arguments[0].Expression
+                            is LiteralExpressionSyntax { Token.Value: string type }
+                        && argumentList.Arguments[1].Expression
+                            is LiteralExpressionSyntax { Token.Value: string category }
+                        && argumentList.Arguments[2].Expression
+                            is LiteralExpressionSyntax { Token.Value: string affix }
                     )
                     {
                         affixes =
