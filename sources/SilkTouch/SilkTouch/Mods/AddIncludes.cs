@@ -64,8 +64,13 @@ public class AddIncludes(
             var rsp = rsps[i];
             var cmdLineArgs = rsp.ClangCommandLineArgs.ToList();
 
-            cmdLineArgs.InsertRange(0, cfg.PriorityIncludes?.Select(x => $"--include-directory={x}") ?? []);
-            cmdLineArgs.AddRange(cfg.AdditionalIncludes?.Select(x => $"--include-directory={x}") ?? []);
+            cmdLineArgs.InsertRange(
+                0,
+                cfg.PriorityIncludes?.Select(x => $"--include-directory={x}") ?? []
+            );
+            cmdLineArgs.AddRange(
+                cfg.AdditionalIncludes?.Select(x => $"--include-directory={x}") ?? []
+            );
 
             if (!cfg.SuppressStdIncludes)
             {

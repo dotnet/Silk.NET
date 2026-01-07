@@ -52,7 +52,10 @@ public class NameTests : NameTrimmer
         };
         foreach (var (key, (trimmed, _)) in test)
         {
-            Assert.That(trimmed.Prettify(new NameUtils.NameTransformer(4)), Is.EqualTo(expected[key]));
+            Assert.That(
+                trimmed.Prettify(new NameUtils.NameTransformer(4)),
+                Is.EqualTo(expected[key])
+            );
         }
     }
 
@@ -84,7 +87,10 @@ public class NameTests : NameTrimmer
         };
         foreach (var (key, (trimmed, _)) in test)
         {
-            Assert.That(trimmed.Prettify(new NameUtils.NameTransformer(4)), Is.EqualTo(expected[key]));
+            Assert.That(
+                trimmed.Prettify(new NameUtils.NameTransformer(4)),
+                Is.EqualTo(expected[key])
+            );
         }
     }
 
@@ -112,7 +118,10 @@ public class NameTests : NameTrimmer
         };
         foreach (var (key, (trimmed, _)) in test)
         {
-            Assert.That(trimmed.Prettify(new NameUtils.NameTransformer(4)), Is.EqualTo(expected[key]));
+            Assert.That(
+                trimmed.Prettify(new NameUtils.NameTransformer(4)),
+                Is.EqualTo(expected[key])
+            );
         }
     }
 
@@ -158,6 +167,9 @@ public class NameTests : NameTrimmer
         };
         var uut = new NameTrimmer();
         uut.Trim(ctx);
-        Assert.That(names["ALC_CONTEXT_DEBUG_BIT_EXT"].Primary, Is.EqualTo("CONTEXT_DEBUG_BIT_EXT"));
+        Assert.That(
+            names["ALC_CONTEXT_DEBUG_BIT_EXT"].Primary,
+            Is.EqualTo("CONTEXT_DEBUG_BIT_EXT")
+        );
     }
 }
