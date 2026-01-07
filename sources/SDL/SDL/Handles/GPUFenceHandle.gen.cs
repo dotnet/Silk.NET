@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUFence")]
 public readonly unsafe partial struct GPUFenceHandle
 {
     public readonly void* Handle;
+
+    public GPUFenceHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(GPUFenceHandle other) => Handle == other.Handle;
 

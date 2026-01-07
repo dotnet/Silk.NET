@@ -8,19 +8,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("StdVideoH264ProfileIdc")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH264ProfileIdc : uint
 {
+    [NativeName("STD_VIDEO_H264_PROFILE_IDC_BASELINE")]
     [SupportedApiProfile("vulkan")]
     Baseline = 66,
 
+    [NativeName("STD_VIDEO_H264_PROFILE_IDC_MAIN")]
     [SupportedApiProfile("vulkan")]
     Main = 77,
 
+    [NativeName("STD_VIDEO_H264_PROFILE_IDC_HIGH")]
     [SupportedApiProfile("vulkan")]
     High = 100,
 
+    [NativeName("STD_VIDEO_H264_PROFILE_IDC_HIGH_444_PREDICTIVE")]
     [SupportedApiProfile("vulkan")]
     High444Predictive = 244,
 }

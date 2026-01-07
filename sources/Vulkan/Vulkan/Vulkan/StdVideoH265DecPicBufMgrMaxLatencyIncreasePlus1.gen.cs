@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_max_latency_increase_plus1_e__FixedBuffer")]
 [InlineArray(7)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265DecPicBufMgrMaxLatencyIncreasePlus1
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public uint E0;
 }

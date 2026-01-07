@@ -6,7 +6,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[Transformed]
+[NativeName("SDL_VirtualJoystickDesc_SetLED")]
 public unsafe delegate byte VirtualJoystickDescSetLEDDelegate(
     void* arg0,
     byte arg1,

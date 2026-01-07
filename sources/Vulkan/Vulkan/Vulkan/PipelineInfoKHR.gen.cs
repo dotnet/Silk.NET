@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -21,7 +23,7 @@ public unsafe partial struct PipelineInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],
@@ -32,7 +34,7 @@ public unsafe partial struct PipelineInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipeline")]
+    [NativeName("pipeline")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_pipeline_executable_properties"],

@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeAV1FrameSizeKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct VideoEncodeAV1FrameSizeKHR
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("intraFrameSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -19,7 +20,7 @@ public partial struct VideoEncodeAV1FrameSizeKHR
     )]
     public uint IntraFrameSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("predictiveFrameSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -27,7 +28,7 @@ public partial struct VideoEncodeAV1FrameSizeKHR
     )]
     public uint PredictiveFrameSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("bipredictiveFrameSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

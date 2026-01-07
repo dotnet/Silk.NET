@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSamplerBlockMatchWindowCreateInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SamplerBlockMatchWindowCreateInfoQCOM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],
@@ -18,7 +20,7 @@ public unsafe partial struct SamplerBlockMatchWindowCreateInfoQCOM
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],
@@ -26,6 +28,7 @@ public unsafe partial struct SamplerBlockMatchWindowCreateInfoQCOM
     )]
     public void* PNext;
 
+    [NativeName("windowExtent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],
@@ -33,6 +36,7 @@ public unsafe partial struct SamplerBlockMatchWindowCreateInfoQCOM
     )]
     public Extent2D WindowExtent;
 
+    [NativeName("windowCompareMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing2"],

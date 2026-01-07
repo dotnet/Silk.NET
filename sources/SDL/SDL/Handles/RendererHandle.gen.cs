@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Renderer")]
 public readonly unsafe partial struct RendererHandle
 {
     public readonly void* Handle;
+
+    public RendererHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(RendererHandle other) => Handle == other.Handle;
 

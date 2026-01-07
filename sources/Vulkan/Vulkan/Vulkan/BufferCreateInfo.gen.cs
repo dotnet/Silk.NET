@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBufferCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BufferCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public unsafe partial struct BufferCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +70,7 @@ public unsafe partial struct BufferCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBufferCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +99,7 @@ public unsafe partial struct BufferCreateInfo
     )]
     public BufferCreateFlags Flags;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +128,7 @@ public unsafe partial struct BufferCreateInfo
     )]
     public ulong Size;
 
-    [NativeTypeName("VkBufferUsageFlags")]
+    [NativeName("usage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -155,6 +157,7 @@ public unsafe partial struct BufferCreateInfo
     )]
     public BufferUsageFlags Usage;
 
+    [NativeName("sharingMode")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -183,7 +186,7 @@ public unsafe partial struct BufferCreateInfo
     )]
     public SharingMode SharingMode;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queueFamilyIndexCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -212,7 +215,7 @@ public unsafe partial struct BufferCreateInfo
     )]
     public uint QueueFamilyIndexCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pQueueFamilyIndices")]
     [SupportedApiProfile(
         "vulkan",
         [

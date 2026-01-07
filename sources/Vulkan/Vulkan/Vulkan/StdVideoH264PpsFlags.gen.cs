@@ -8,15 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH264PpsFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264PpsFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("transform_8x8_mode_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint transform_8x8_mode_flag
+    public uint Transform8X8ModeFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -24,9 +26,9 @@ public partial struct StdVideoH264PpsFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("redundant_pic_cnt_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint redundant_pic_cnt_present_flag
+    public uint RedundantPicCntPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -34,9 +36,9 @@ public partial struct StdVideoH264PpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("constrained_intra_pred_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint constrained_intra_pred_flag
+    public uint ConstrainedIntraPredFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -44,9 +46,9 @@ public partial struct StdVideoH264PpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("deblocking_filter_control_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint deblocking_filter_control_present_flag
+    public uint DeblockingFilterControlPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -54,9 +56,9 @@ public partial struct StdVideoH264PpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("weighted_pred_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint weighted_pred_flag
+    public uint WeightedPredFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0x1u; }
@@ -64,9 +66,9 @@ public partial struct StdVideoH264PpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 4)) | ((value & 0x1u) << 4); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("bottom_field_pic_order_in_frame_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint bottom_field_pic_order_in_frame_present_flag
+    public uint BottomFieldPicOrderInFramePresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 5) & 0x1u; }
@@ -74,9 +76,9 @@ public partial struct StdVideoH264PpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 5)) | ((value & 0x1u) << 5); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("entropy_coding_mode_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint entropy_coding_mode_flag
+    public uint EntropyCodingModeFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 6) & 0x1u; }
@@ -84,9 +86,9 @@ public partial struct StdVideoH264PpsFlags
         set { Bitfield = (Bitfield & ~(0x1u << 6)) | ((value & 0x1u) << 6); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("pic_scaling_matrix_present_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint pic_scaling_matrix_present_flag
+    public uint PicScalingMatrixPresentFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 7) & 0x1u; }

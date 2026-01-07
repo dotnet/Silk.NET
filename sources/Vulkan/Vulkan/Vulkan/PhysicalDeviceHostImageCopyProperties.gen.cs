@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceHostImageCopyProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceHostImageCopyProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -23,6 +25,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +38,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("copySrcLayoutCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,6 +51,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public uint CopySrcLayoutCount;
 
+    [NativeName("pCopySrcLayouts")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -60,7 +64,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public ImageLayout* PCopySrcLayouts;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("copyDstLayoutCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -73,6 +77,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public uint CopyDstLayoutCount;
 
+    [NativeName("pCopyDstLayouts")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -85,7 +90,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public ImageLayout* PCopyDstLayouts;
 
-    [NativeTypeName("uint8_t[16]")]
+    [NativeName("optimalTilingLayoutUUID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -98,7 +103,7 @@ public unsafe partial struct PhysicalDeviceHostImageCopyProperties
     )]
     public PhysicalDeviceHostImageCopyPropertiesOptimalTilingLayoutUUID OptimalTilingLayoutUUID;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("identicalMemoryTypeRequirements")]
     [SupportedApiProfile(
         "vulkan",
         [

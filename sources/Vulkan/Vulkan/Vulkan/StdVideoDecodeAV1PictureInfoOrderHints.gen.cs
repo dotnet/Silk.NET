@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_OrderHints_e__FixedBuffer")]
 [InlineArray(8)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeAV1PictureInfoOrderHints
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

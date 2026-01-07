@@ -7,13 +7,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkConditionalRenderingFlagBitsEXT")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum ConditionalRenderingFlagsEXT : uint
 {
     None = 0x0,
 
+    [NativeName("VK_CONDITIONAL_RENDERING_INVERTED_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_conditional_rendering"],
@@ -22,5 +23,5 @@ public enum ConditionalRenderingFlagsEXT : uint
             "VK_EXT_conditional_rendering+VK_VERSION_1_1",
         ]
     )]
-    InvertedBitEXT = 0x1,
+    InvertedBit = 0x1,
 }

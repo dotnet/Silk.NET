@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkHostImageCopyFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum HostImageCopyFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_HOST_IMAGE_COPY_MEMCPY_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,6 +28,7 @@ public enum HostImageCopyFlags : uint
     )]
     MemcpyBit = 0x1,
 
+    [NativeName("VK_HOST_IMAGE_COPY_MEMCPY_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_host_image_copy"],

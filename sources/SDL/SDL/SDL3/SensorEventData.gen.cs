@@ -8,8 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("_data_e__FixedBuffer")]
 [InlineArray(6)]
 public partial struct SensorEventData
 {
+    [NativeName("e0")]
     public float E0;
 }

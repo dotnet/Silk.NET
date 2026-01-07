@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAabbPositionsKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct AabbPositionsKHR
 {
+    [NativeName("minX")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -21,6 +23,7 @@ public partial struct AabbPositionsKHR
     )]
     public float MinX;
 
+    [NativeName("minY")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -31,6 +34,7 @@ public partial struct AabbPositionsKHR
     )]
     public float MinY;
 
+    [NativeName("minZ")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -41,6 +45,7 @@ public partial struct AabbPositionsKHR
     )]
     public float MinZ;
 
+    [NativeName("maxX")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -51,6 +56,7 @@ public partial struct AabbPositionsKHR
     )]
     public float MaxX;
 
+    [NativeName("maxY")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -61,6 +67,7 @@ public partial struct AabbPositionsKHR
     )]
     public float MaxY;
 
+    [NativeName("maxZ")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

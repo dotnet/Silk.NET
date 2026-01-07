@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("PixelStoreSubsampleRate")]
 public enum PixelStoreSubsampleRate : uint
 {
-    Subsample4444Sgix = unchecked((uint)0x85A2),
-    Subsample2424Sgix = unchecked((uint)0x85A3),
-    Subsample4242Sgix = unchecked((uint)0x85A4),
+    [NativeName("GL_PIXEL_SUBSAMPLE_4444_SGIX")]
+    Subsample4444SGIX = 34210,
+
+    [NativeName("GL_PIXEL_SUBSAMPLE_2424_SGIX")]
+    Subsample2424SGIX = 34211,
+
+    [NativeName("GL_PIXEL_SUBSAMPLE_4242_SGIX")]
+    Subsample4242SGIX = 34212,
 }

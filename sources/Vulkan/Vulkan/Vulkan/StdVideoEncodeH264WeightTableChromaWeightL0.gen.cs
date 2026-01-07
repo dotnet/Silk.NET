@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_chroma_weight_l0_e__FixedBuffer")]
 [InlineArray(32 * 2)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH264WeightTableChromaWeightL0
 {
+    [NativeName("e0_0")]
     [SupportedApiProfile("vulkan")]
     public sbyte E0X0;
 }

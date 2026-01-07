@@ -34,10 +34,11 @@ public class MarkNativeNames : IMod
         var rewriter = new Rewriter();
         foreach (var docId in proj.DocumentIds)
         {
-            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc =
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
-                ?? throw new InvalidOperationException("Visit returned null.")
+                    ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
 
@@ -46,7 +47,10 @@ public class MarkNativeNames : IMod
 
     private class Rewriter : ModCSharpSyntaxRewriter
     {
-        private SyntaxList<AttributeListSyntax> TryAddNativeNameAttribute(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier)
+        private SyntaxList<AttributeListSyntax> TryAddNativeNameAttribute(
+            SyntaxList<AttributeListSyntax> attributeLists,
+            SyntaxToken identifier
+        )
         {
             if (attributeLists.TryGetNativeName(out _))
             {
@@ -61,7 +65,9 @@ public class MarkNativeNames : IMod
         /// <inheritdoc />
         public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
-            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = node.WithAttributeLists(
+                TryAddNativeNameAttribute(node.AttributeLists, node.Identifier)
+            );
             node = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
             return node;
         }
@@ -69,7 +75,9 @@ public class MarkNativeNames : IMod
         /// <inheritdoc />
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = node.WithAttributeLists(
+                TryAddNativeNameAttribute(node.AttributeLists, node.Identifier)
+            );
             node = (EnumDeclarationSyntax)base.VisitEnumDeclaration(node)!;
             return node;
         }
@@ -79,7 +87,9 @@ public class MarkNativeNames : IMod
         /// <inheritdoc />
         public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node)
         {
-            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = node.WithAttributeLists(
+                TryAddNativeNameAttribute(node.AttributeLists, node.Identifier)
+            );
             node = (EnumMemberDeclarationSyntax)base.VisitEnumMemberDeclaration(node)!;
             return node;
         }
@@ -87,7 +97,9 @@ public class MarkNativeNames : IMod
         /// <inheritdoc />
         public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node)
         {
-            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = node.WithAttributeLists(
+                TryAddNativeNameAttribute(node.AttributeLists, node.Identifier)
+            );
             node = (PropertyDeclarationSyntax)base.VisitPropertyDeclaration(node)!;
             return node;
         }
@@ -95,7 +107,9 @@ public class MarkNativeNames : IMod
         /// <inheritdoc />
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node)
         {
-            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Identifier));
+            node = node.WithAttributeLists(
+                TryAddNativeNameAttribute(node.AttributeLists, node.Identifier)
+            );
             node = (MethodDeclarationSyntax)base.VisitMethodDeclaration(node)!;
             return node;
         }
@@ -105,7 +119,12 @@ public class MarkNativeNames : IMod
         {
             // This just uses the first declared field's identifier in cases where a field declares multiple variables
             // Eg: int a, b;
-            node = node.WithAttributeLists(TryAddNativeNameAttribute(node.AttributeLists, node.Declaration.Variables.First().Identifier));
+            node = node.WithAttributeLists(
+                TryAddNativeNameAttribute(
+                    node.AttributeLists,
+                    node.Declaration.Variables.First().Identifier
+                )
+            );
             node = (FieldDeclarationSyntax)base.VisitFieldDeclaration(node)!;
             return node;
         }

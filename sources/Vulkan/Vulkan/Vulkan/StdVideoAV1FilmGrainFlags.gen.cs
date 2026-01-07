@@ -8,15 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoAV1FilmGrainFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1FilmGrainFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("chroma_scaling_from_luma")]
     [SupportedApiProfile("vulkan")]
-    public uint chroma_scaling_from_luma
+    public uint ChromaScalingFromLuma
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -24,9 +26,9 @@ public partial struct StdVideoAV1FilmGrainFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("overlap_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint overlap_flag
+    public uint OverlapFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -34,9 +36,9 @@ public partial struct StdVideoAV1FilmGrainFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("clip_to_restricted_range")]
     [SupportedApiProfile("vulkan")]
-    public uint clip_to_restricted_range
+    public uint ClipToRestrictedRange
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -44,9 +46,9 @@ public partial struct StdVideoAV1FilmGrainFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("update_grain")]
     [SupportedApiProfile("vulkan")]
-    public uint update_grain
+    public uint UpdateGrain
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -54,9 +56,9 @@ public partial struct StdVideoAV1FilmGrainFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeTypeName("uint32_t : 28")]
+    [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0xFFFFFFFu; }

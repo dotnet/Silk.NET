@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkInstanceCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct InstanceCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public unsafe partial struct InstanceCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +70,7 @@ public unsafe partial struct InstanceCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkInstanceCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +99,7 @@ public unsafe partial struct InstanceCreateInfo
     )]
     public InstanceCreateFlags Flags;
 
-    [NativeTypeName("const VkApplicationInfo *")]
+    [NativeName("pApplicationInfo")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +128,7 @@ public unsafe partial struct InstanceCreateInfo
     )]
     public ApplicationInfo* PApplicationInfo;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("enabledLayerCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -155,7 +157,7 @@ public unsafe partial struct InstanceCreateInfo
     )]
     public uint EnabledLayerCount;
 
-    [NativeTypeName("const char *const *")]
+    [NativeName("ppEnabledLayerNames")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -184,7 +186,7 @@ public unsafe partial struct InstanceCreateInfo
     )]
     public sbyte** PpEnabledLayerNames;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("enabledExtensionCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -213,7 +215,7 @@ public unsafe partial struct InstanceCreateInfo
     )]
     public uint EnabledExtensionCount;
 
-    [NativeTypeName("const char *const *")]
+    [NativeName("ppEnabledExtensionNames")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoInlineQueryInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoInlineQueryInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
@@ -18,7 +20,7 @@ public unsafe partial struct VideoInlineQueryInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
@@ -26,7 +28,7 @@ public unsafe partial struct VideoInlineQueryInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkQueryPool")]
+    [NativeName("queryPool")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
@@ -34,7 +36,7 @@ public unsafe partial struct VideoInlineQueryInfoKHR
     )]
     public QueryPoolHandle QueryPool;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("firstQuery")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],
@@ -42,7 +44,7 @@ public unsafe partial struct VideoInlineQueryInfoKHR
     )]
     public uint FirstQuery;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queryCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_maintenance1"],

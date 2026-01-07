@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AudioStreamCallback")]
 public readonly unsafe struct AudioStreamCallback : IDisposable
 {
     private readonly void* Pointer;

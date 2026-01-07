@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSwapchainPresentFenceInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SwapchainPresentFenceInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -21,7 +23,7 @@ public unsafe partial struct SwapchainPresentFenceInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -33,7 +35,7 @@ public unsafe partial struct SwapchainPresentFenceInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("swapchainCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],
@@ -45,7 +47,7 @@ public unsafe partial struct SwapchainPresentFenceInfoKHR
     )]
     public uint SwapchainCount;
 
-    [NativeTypeName("const VkFence *")]
+    [NativeName("pFences")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_swapchain_maintenance1"],

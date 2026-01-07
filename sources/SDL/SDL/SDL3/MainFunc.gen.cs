@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_main_func")]
 public readonly unsafe struct MainFunc : IDisposable
 {
     private readonly void* Pointer;

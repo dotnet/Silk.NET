@@ -7,105 +7,107 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoAV1FilmGrain")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1FilmGrain
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrainFlags Flags;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("grain_scaling_minus_8")]
     [SupportedApiProfile("vulkan")]
     public byte GrainScalingMinus8;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("ar_coeff_lag")]
     [SupportedApiProfile("vulkan")]
     public byte ArCoeffLag;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("ar_coeff_shift_minus_6")]
     [SupportedApiProfile("vulkan")]
     public byte ArCoeffShiftMinus6;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("grain_scale_shift")]
     [SupportedApiProfile("vulkan")]
     public byte GrainScaleShift;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("grain_seed")]
     [SupportedApiProfile("vulkan")]
     public ushort GrainSeed;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("film_grain_params_ref_idx")]
     [SupportedApiProfile("vulkan")]
     public byte FilmGrainParamsRefIdx;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_y_points")]
     [SupportedApiProfile("vulkan")]
     public byte NumYPoints;
 
-    [NativeTypeName("uint8_t[14]")]
+    [NativeName("point_y_value")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrainPointYValue PointYValue;
 
-    [NativeTypeName("uint8_t[14]")]
+    [NativeName("point_y_scaling")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrainPointYScaling PointYScaling;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_cb_points")]
     [SupportedApiProfile("vulkan")]
     public byte NumCbPoints;
 
-    [NativeTypeName("uint8_t[10]")]
+    [NativeName("point_cb_value")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrainPointCbValue PointCbValue;
 
-    [NativeTypeName("uint8_t[10]")]
+    [NativeName("point_cb_scaling")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrainPointCbScaling PointCbScaling;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("num_cr_points")]
     [SupportedApiProfile("vulkan")]
     public byte NumCrPoints;
 
-    [NativeTypeName("uint8_t[10]")]
+    [NativeName("point_cr_value")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrainPointCrValue PointCrValue;
 
-    [NativeTypeName("uint8_t[10]")]
+    [NativeName("point_cr_scaling")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrainPointCrScaling PointCrScaling;
 
-    [NativeTypeName("int8_t[24]")]
+    [NativeName("ar_coeffs_y_plus_128")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrainArCoeffsYPlus128 ArCoeffsYPlus128;
 
-    [NativeTypeName("int8_t[25]")]
+    [NativeName("ar_coeffs_cb_plus_128")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrainArCoeffsCbPlus128 ArCoeffsCbPlus128;
 
-    [NativeTypeName("int8_t[25]")]
+    [NativeName("ar_coeffs_cr_plus_128")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAV1FilmGrainArCoeffsCrPlus128 ArCoeffsCrPlus128;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("cb_mult")]
     [SupportedApiProfile("vulkan")]
     public byte CbMult;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("cb_luma_mult")]
     [SupportedApiProfile("vulkan")]
     public byte CbLumaMult;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("cb_offset")]
     [SupportedApiProfile("vulkan")]
     public ushort CbOffset;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("cr_mult")]
     [SupportedApiProfile("vulkan")]
     public byte CrMult;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("cr_luma_mult")]
     [SupportedApiProfile("vulkan")]
     public byte CrLumaMult;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("cr_offset")]
     [SupportedApiProfile("vulkan")]
     public ushort CrOffset;
 }

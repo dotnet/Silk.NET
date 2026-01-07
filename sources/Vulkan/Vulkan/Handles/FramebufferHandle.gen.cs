@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkFramebuffer")]
 public readonly unsafe partial struct FramebufferHandle
 {
     public readonly void* Handle;
+
+    public FramebufferHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(FramebufferHandle other) => Handle == other.Handle;
 

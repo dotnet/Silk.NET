@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMultiviewFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMultiviewFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,6 +29,7 @@ public unsafe partial struct PhysicalDeviceMultiviewFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -43,7 +46,7 @@ public unsafe partial struct PhysicalDeviceMultiviewFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("multiview")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_1", "VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -51,7 +54,7 @@ public unsafe partial struct PhysicalDeviceMultiviewFeatures
     )]
     public uint Multiview;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("multiviewGeometryShader")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +71,7 @@ public unsafe partial struct PhysicalDeviceMultiviewFeatures
     )]
     public uint MultiviewGeometryShader;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("multiviewTessellationShader")]
     [SupportedApiProfile(
         "vulkan",
         [

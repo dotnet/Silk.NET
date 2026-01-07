@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_point_cr_scaling_e__FixedBuffer")]
 [InlineArray(10)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAV1FilmGrainPointCrScaling
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

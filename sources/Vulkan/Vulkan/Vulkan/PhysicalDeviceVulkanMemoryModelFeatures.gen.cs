@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceVulkanMemoryModelFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVulkanMemoryModelFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,6 +32,7 @@ public unsafe partial struct PhysicalDeviceVulkanMemoryModelFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,15 +53,15 @@ public unsafe partial struct PhysicalDeviceVulkanMemoryModelFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("vulkanMemoryModel")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint VulkanMemoryModel;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("vulkanMemoryModelDeviceScope")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]
     public uint VulkanMemoryModelDeviceScope;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("vulkanMemoryModelAvailabilityVisibilityChains")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,41 +8,47 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDisplaySurfaceCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DisplaySurfaceCreateInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public void* PNext;
 
-    [NativeTypeName("VkDisplaySurfaceCreateFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public uint Flags;
 
-    [NativeTypeName("VkDisplayModeKHR")]
+    [NativeName("displayMode")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
-    public DisplayModeKHRHandle DisplayMode;
+    public DisplayModeHandleKHR DisplayMode;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("planeIndex")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public uint PlaneIndex;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("planeStackIndex")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public uint PlaneStackIndex;
 
+    [NativeName("transform")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public SurfaceTransformFlagsKHR Transform;
 
+    [NativeName("globalAlpha")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public float GlobalAlpha;
 
+    [NativeName("alphaMode")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public DisplayPlaneAlphaFlagsKHR AlphaMode;
 
+    [NativeName("imageExtent")]
     [SupportedApiProfile("vulkan", ["VK_KHR_display"], ImpliesSets = ["VK_KHR_surface"])]
     public Extent2D ImageExtent;
 }

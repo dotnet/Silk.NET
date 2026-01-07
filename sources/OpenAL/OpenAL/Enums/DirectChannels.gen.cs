@@ -10,10 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("DirectChannelsSOFT")]
 public enum DirectChannels : uint
 {
-    False = unchecked((uint)0),
-    DropUnmatchedSOFT = unchecked((uint)0x0001),
-    RemixUnmatchedSOFT = unchecked((uint)0x0002),
+    [NativeName("AL_FALSE")]
+    False = 0,
+
+    [NativeName("AL_DROP_UNMATCHED_SOFT")]
+    DropUnmatchedSOFT = 1,
+
+    [NativeName("AL_REMIX_UNMATCHED_SOFT")]
+    RemixUnmatchedSOFT = 2,
 }

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceLineRasterizationFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("rectangularLines")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -33,11 +36,11 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
     )]
     public uint RectangularLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("bresenhamLines")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint BresenhamLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("smoothLines")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -45,7 +48,7 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
     )]
     public uint SmoothLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("stippledRectangularLines")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
     )]
     public uint StippledRectangularLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("stippledBresenhamLines")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -61,7 +64,7 @@ public unsafe partial struct PhysicalDeviceLineRasterizationFeatures
     )]
     public uint StippledBresenhamLines;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("stippledSmoothLines")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],

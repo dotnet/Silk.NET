@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccelerationStructureMotionInstanceNV")]
 [SupportedApiProfile("vulkan")]
 public partial struct AccelerationStructureMotionInstanceNV
 {
+    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -17,7 +19,7 @@ public partial struct AccelerationStructureMotionInstanceNV
     )]
     public AccelerationStructureMotionInstanceTypeNV Type;
 
-    [NativeTypeName("VkAccelerationStructureMotionInstanceFlagsNV")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],
@@ -25,6 +27,7 @@ public partial struct AccelerationStructureMotionInstanceNV
     )]
     public uint Flags;
 
+    [NativeName("data")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing_motion_blur"],

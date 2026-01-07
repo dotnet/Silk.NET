@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMicromapBuildSizesInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MicromapBuildSizesInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -20,7 +22,7 @@ public unsafe partial struct MicromapBuildSizesInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -31,7 +33,7 @@ public unsafe partial struct MicromapBuildSizesInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("micromapSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -42,7 +44,7 @@ public unsafe partial struct MicromapBuildSizesInfoEXT
     )]
     public ulong MicromapSize;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("buildScratchSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],
@@ -53,7 +55,7 @@ public unsafe partial struct MicromapBuildSizesInfoEXT
     )]
     public ulong BuildScratchSize;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("discardable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_opacity_micromap"],

@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_AppEvent_func")]
 public unsafe delegate AppResult AppEventFuncDelegate(void* arg0, Event* arg1);

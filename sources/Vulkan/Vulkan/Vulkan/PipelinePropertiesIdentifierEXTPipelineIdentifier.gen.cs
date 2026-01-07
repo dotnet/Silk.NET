@@ -8,17 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_pipelineIdentifier_e__FixedBuffer")]
 [InlineArray(16)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_EXT_pipeline_properties"],
-    ImpliesSets = [
-        "VK_EXT_pipeline_properties+VK_KHR_get_physical_device_properties2",
-        "VK_EXT_pipeline_properties+VK_VERSION_1_1",
-    ]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct PipelinePropertiesIdentifierEXTPipelineIdentifier
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public byte E0;
 }

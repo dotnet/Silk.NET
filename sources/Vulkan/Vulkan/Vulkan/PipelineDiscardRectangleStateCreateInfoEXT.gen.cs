@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineDiscardRectangleStateCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],
@@ -20,7 +22,7 @@ public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],
@@ -31,7 +33,7 @@ public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineDiscardRectangleStateCreateFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],
@@ -42,6 +44,7 @@ public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
     )]
     public uint Flags;
 
+    [NativeName("discardRectangleMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],
@@ -52,7 +55,7 @@ public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
     )]
     public DiscardRectangleModeEXT DiscardRectangleMode;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("discardRectangleCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],
@@ -63,7 +66,7 @@ public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
     )]
     public uint DiscardRectangleCount;
 
-    [NativeTypeName("const VkRect2D *")]
+    [NativeName("pDiscardRectangles")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_discard_rectangles"],

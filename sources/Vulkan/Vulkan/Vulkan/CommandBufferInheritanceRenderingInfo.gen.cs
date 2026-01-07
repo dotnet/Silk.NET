@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCommandBufferInheritanceRenderingInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CommandBufferInheritanceRenderingInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -18,7 +20,7 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -26,7 +28,7 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkRenderingFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -34,7 +36,7 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
     )]
     public RenderingFlags Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("viewMask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -42,7 +44,7 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
     )]
     public uint ViewMask;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("colorAttachmentCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -50,7 +52,7 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
     )]
     public uint ColorAttachmentCount;
 
-    [NativeTypeName("const VkFormat *")]
+    [NativeName("pColorAttachmentFormats")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -58,6 +60,7 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
     )]
     public Format* PColorAttachmentFormats;
 
+    [NativeName("depthAttachmentFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -65,6 +68,7 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
     )]
     public Format DepthAttachmentFormat;
 
+    [NativeName("stencilAttachmentFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],
@@ -72,6 +76,7 @@ public unsafe partial struct CommandBufferInheritanceRenderingInfo
     )]
     public Format StencilAttachmentFormat;
 
+    [NativeName("rasterizationSamples")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_3", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_3", "VK_VERSION_1_4"],

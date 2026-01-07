@@ -8,15 +8,17 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoVP9SegmentationFlags")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoVP9SegmentationFlags
 {
+    [NativeName("_bitfield")]
     [SupportedApiProfile("vulkan")]
     public uint Bitfield;
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("segmentation_update_map")]
     [SupportedApiProfile("vulkan")]
-    public uint segmentation_update_map
+    public uint SegmentationUpdateMap
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }
@@ -24,9 +26,9 @@ public partial struct StdVideoVP9SegmentationFlags
         set { Bitfield = (Bitfield & ~0x1u) | (value & 0x1u); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("segmentation_temporal_update")]
     [SupportedApiProfile("vulkan")]
-    public uint segmentation_temporal_update
+    public uint SegmentationTemporalUpdate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 1) & 0x1u; }
@@ -34,9 +36,9 @@ public partial struct StdVideoVP9SegmentationFlags
         set { Bitfield = (Bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("segmentation_update_data")]
     [SupportedApiProfile("vulkan")]
-    public uint segmentation_update_data
+    public uint SegmentationUpdateData
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }
@@ -44,9 +46,9 @@ public partial struct StdVideoVP9SegmentationFlags
         set { Bitfield = (Bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2); }
     }
 
-    [NativeTypeName("uint32_t : 1")]
+    [NativeName("segmentation_abs_or_delta_update")]
     [SupportedApiProfile("vulkan")]
-    public uint segmentation_abs_or_delta_update
+    public uint SegmentationAbsOrDeltaUpdate
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 3) & 0x1u; }
@@ -54,9 +56,9 @@ public partial struct StdVideoVP9SegmentationFlags
         set { Bitfield = (Bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3); }
     }
 
-    [NativeTypeName("uint32_t : 28")]
+    [NativeName("reserved")]
     [SupportedApiProfile("vulkan")]
-    public uint reserved
+    public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 4) & 0xFFFFFFFu; }

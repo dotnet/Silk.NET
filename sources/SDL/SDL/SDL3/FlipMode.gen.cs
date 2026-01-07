@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum FlipMode : uint
+[NativeName("SDL_FlipMode")]
+public enum FlipMode
 {
-    None,
-    Horizontal,
-    Vertical,
+    [NativeName("SDL_FLIP_NONE")]
+    None = 0,
+
+    [NativeName("SDL_FLIP_HORIZONTAL")]
+    Horizontal = 1,
+
+    [NativeName("SDL_FLIP_VERTICAL")]
+    Vertical = 2,
 }

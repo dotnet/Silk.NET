@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("SyncStatus")]
 public enum SyncStatus : uint
 {
-    AlreadySignaled = unchecked((uint)0x911A),
-    TimeoutExpired = unchecked((uint)0x911B),
-    ConditionSatisfied = unchecked((uint)0x911C),
-    WaitFailed = unchecked((uint)0x911D),
+    [NativeName("GL_ALREADY_SIGNALED")]
+    AlreadySignaled = 37146,
+
+    [NativeName("GL_TIMEOUT_EXPIRED")]
+    TimeoutExpired = 37147,
+
+    [NativeName("GL_CONDITION_SATISFIED")]
+    ConditionSatisfied = 37148,
+
+    [NativeName("GL_WAIT_FAILED")]
+    WaitFailed = 37149,
 }

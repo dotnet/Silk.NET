@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkBufferImageCopy2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct BufferImageCopy2
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -27,7 +29,7 @@ public unsafe partial struct BufferImageCopy2
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -44,7 +46,7 @@ public unsafe partial struct BufferImageCopy2
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("bufferOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -61,7 +63,7 @@ public unsafe partial struct BufferImageCopy2
     )]
     public ulong BufferOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("bufferRowLength")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -78,7 +80,7 @@ public unsafe partial struct BufferImageCopy2
     )]
     public uint BufferRowLength;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("bufferImageHeight")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -95,6 +97,7 @@ public unsafe partial struct BufferImageCopy2
     )]
     public uint BufferImageHeight;
 
+    [NativeName("imageSubresource")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -111,6 +114,7 @@ public unsafe partial struct BufferImageCopy2
     )]
     public ImageSubresourceLayers ImageSubresource;
 
+    [NativeName("imageOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -127,6 +131,7 @@ public unsafe partial struct BufferImageCopy2
     )]
     public Offset3D ImageOffset;
 
+    [NativeName("imageExtent")]
     [SupportedApiProfile(
         "vulkan",
         [

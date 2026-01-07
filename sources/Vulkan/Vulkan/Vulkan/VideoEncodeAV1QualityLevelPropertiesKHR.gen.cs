@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeAV1QualityLevelPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -18,6 +20,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -25,7 +28,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkVideoEncodeAV1RateControlFlagsKHR")]
+    [NativeName("preferredRateControlFlags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -33,7 +36,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public VideoEncodeAV1RateControlFlagsKHR PreferredRateControlFlags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredGopFrameCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -41,7 +44,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredGopFrameCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredKeyFramePeriod")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -49,7 +52,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredKeyFramePeriod;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredConsecutiveBipredictiveFrameCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -57,7 +60,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredConsecutiveBipredictiveFrameCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredTemporalLayerCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -65,6 +68,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredTemporalLayerCount;
 
+    [NativeName("preferredConstantQIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -72,7 +76,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public VideoEncodeAV1QIndexKHR PreferredConstantQIndex;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredMaxSingleReferenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -80,7 +84,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredMaxSingleReferenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredSingleReferenceNameMask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -88,7 +92,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredSingleReferenceNameMask;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredMaxUnidirectionalCompoundReferenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -96,7 +100,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredMaxUnidirectionalCompoundReferenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredMaxUnidirectionalCompoundGroup1ReferenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -104,7 +108,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredMaxUnidirectionalCompoundGroup1ReferenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredUnidirectionalCompoundReferenceNameMask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -112,7 +116,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredUnidirectionalCompoundReferenceNameMask;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredMaxBidirectionalCompoundReferenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -120,7 +124,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredMaxBidirectionalCompoundReferenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredMaxBidirectionalCompoundGroup1ReferenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -128,7 +132,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredMaxBidirectionalCompoundGroup1ReferenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredMaxBidirectionalCompoundGroup2ReferenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -136,7 +140,7 @@ public unsafe partial struct VideoEncodeAV1QualityLevelPropertiesKHR
     )]
     public uint PreferredMaxBidirectionalCompoundGroup2ReferenceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("preferredBidirectionalCompoundReferenceNameMask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_delta_frame_id_minus_1_e__FixedBuffer")]
 [InlineArray(7)]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeAV1PictureInfoDeltaFrameIdMinus1
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public uint E0;
 }

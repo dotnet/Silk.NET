@@ -45,10 +45,11 @@ public class StripAttributes(IOptionsSnapshot<StripAttributes.Configuration> cfg
         var rewriter = new Rewriter(config);
         foreach (var docId in proj.DocumentIds)
         {
-            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc =
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
-                ?? throw new InvalidOperationException("Visit returned null.")
+                    ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
 
@@ -57,13 +58,20 @@ public class StripAttributes(IOptionsSnapshot<StripAttributes.Configuration> cfg
 
     private class Rewriter(Configuration config) : ModCSharpSyntaxRewriter
     {
-        private SyntaxList<AttributeListSyntax> StripAttributes(SyntaxList<AttributeListSyntax> attributeLists)
+        private SyntaxList<AttributeListSyntax> StripAttributes(
+            SyntaxList<AttributeListSyntax> attributeLists
+        )
         {
             var results = attributeLists
                 .Select(list =>
                 {
                     var attributes = list.Attributes;
-                    attributes = [..attributes.Where(attribute => !config.Remove.Contains(attribute.Name.ToString()))];
+                    attributes =
+                    [
+                        .. attributes.Where(attribute =>
+                            !config.Remove.Contains(attribute.Name.ToString())
+                        ),
+                    ];
 
                     return attributes.Count == 0 ? null : list.WithAttributes(attributes);
                 })

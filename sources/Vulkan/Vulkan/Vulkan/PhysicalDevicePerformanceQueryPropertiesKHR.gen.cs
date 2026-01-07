@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDevicePerformanceQueryPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("allowCommandBufferQueryCopies")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],

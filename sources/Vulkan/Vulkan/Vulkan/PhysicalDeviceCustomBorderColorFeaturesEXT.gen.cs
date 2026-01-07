@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceCustomBorderColorFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceCustomBorderColorFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_custom_border_color"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceCustomBorderColorFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_custom_border_color"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceCustomBorderColorFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("customBorderColors")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_custom_border_color"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDeviceCustomBorderColorFeaturesEXT
     )]
     public uint CustomBorderColors;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("customBorderColorWithoutFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_custom_border_color"],

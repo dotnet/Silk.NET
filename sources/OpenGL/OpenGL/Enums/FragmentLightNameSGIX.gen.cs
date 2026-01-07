@@ -7,15 +7,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FragmentLightNameSGIX")]
 public enum FragmentLightNameSGIX : uint
 {
-    Light0 = unchecked((uint)0x840C),
-    Light1 = unchecked((uint)0x840D),
-    Light2 = unchecked((uint)0x840E),
-    Light3 = unchecked((uint)0x840F),
-    Light4 = unchecked((uint)0x8410),
-    Light5 = unchecked((uint)0x8411),
-    Light6 = unchecked((uint)0x8412),
-    Light7 = unchecked((uint)0x8413),
+    [NativeName("GL_FRAGMENT_LIGHT0_SGIX")]
+    Light0 = 33804,
+
+    [NativeName("GL_FRAGMENT_LIGHT1_SGIX")]
+    Light1 = 33805,
+
+    [NativeName("GL_FRAGMENT_LIGHT2_SGIX")]
+    Light2 = 33806,
+
+    [NativeName("GL_FRAGMENT_LIGHT3_SGIX")]
+    Light3 = 33807,
+
+    [NativeName("GL_FRAGMENT_LIGHT4_SGIX")]
+    Light4 = 33808,
+
+    [NativeName("GL_FRAGMENT_LIGHT5_SGIX")]
+    Light5 = 33809,
+
+    [NativeName("GL_FRAGMENT_LIGHT6_SGIX")]
+    Light6 = 33810,
+
+    [NativeName("GL_FRAGMENT_LIGHT7_SGIX")]
+    Light7 = 33811,
 }

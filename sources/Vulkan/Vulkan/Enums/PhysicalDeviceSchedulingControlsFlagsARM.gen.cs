@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[Transformed]
+[NativeName("VkPhysicalDeviceSchedulingControlsFlagsARM")]
 [Flags]
 public enum PhysicalDeviceSchedulingControlsFlagsARM : ulong
 {
     None = 0x0,
-    ShaderCoreCountARM = 0x1,
+
+    [NativeName("VK_PHYSICAL_DEVICE_SCHEDULING_CONTROLS_SHADER_CORE_COUNT_ARM")]
+    ShaderCoreCount = 0x1,
 }

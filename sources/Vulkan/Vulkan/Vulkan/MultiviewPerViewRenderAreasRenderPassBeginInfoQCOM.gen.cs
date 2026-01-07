@@ -6,9 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_multiview_per_view_render_areas"],
@@ -19,7 +21,7 @@ public unsafe partial struct MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_multiview_per_view_render_areas"],
@@ -30,7 +32,7 @@ public unsafe partial struct MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("perViewRenderAreaCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_multiview_per_view_render_areas"],
@@ -41,7 +43,7 @@ public unsafe partial struct MultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
     )]
     public uint PerViewRenderAreaCount;
 
-    [NativeTypeName("const VkRect2D *")]
+    [NativeName("pPerViewRenderAreas")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_multiview_per_view_render_areas"],

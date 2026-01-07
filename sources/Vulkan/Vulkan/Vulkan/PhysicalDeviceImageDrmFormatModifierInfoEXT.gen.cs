@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceImageDrmFormatModifierInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -21,7 +23,7 @@ public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -33,7 +35,7 @@ public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("drmFormatModifier")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -45,6 +47,7 @@ public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT
     )]
     public ulong DrmFormatModifier;
 
+    [NativeName("sharingMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -56,7 +59,7 @@ public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT
     )]
     public SharingMode SharingMode;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queueFamilyIndexCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],
@@ -68,7 +71,7 @@ public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT
     )]
     public uint QueueFamilyIndexCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pQueueFamilyIndices")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_drm_format_modifier"],

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceShaderBfloat16FeaturesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceShaderBfloat16FeaturesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_bfloat16"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceShaderBfloat16FeaturesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_bfloat16"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceShaderBfloat16FeaturesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderBFloat16Type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_bfloat16"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceShaderBfloat16FeaturesKHR
     )]
     public uint ShaderBFloat16Type;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderBFloat16DotProduct")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_bfloat16"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDeviceShaderBfloat16FeaturesKHR
     )]
     public uint ShaderBFloat16DotProduct;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("shaderBFloat16CooperativeMatrix")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_shader_bfloat16"],

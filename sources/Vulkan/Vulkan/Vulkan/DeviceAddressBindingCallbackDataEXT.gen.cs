@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceAddressBindingCallbackDataEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceAddressBindingCallbackDataEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],
@@ -21,6 +23,7 @@ public unsafe partial struct DeviceAddressBindingCallbackDataEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],
@@ -31,7 +34,7 @@ public unsafe partial struct DeviceAddressBindingCallbackDataEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceAddressBindingFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],
@@ -42,7 +45,7 @@ public unsafe partial struct DeviceAddressBindingCallbackDataEXT
     )]
     public DeviceAddressBindingFlagsEXT Flags;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("baseAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],
@@ -53,7 +56,7 @@ public unsafe partial struct DeviceAddressBindingCallbackDataEXT
     )]
     public ulong BaseAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],
@@ -64,6 +67,7 @@ public unsafe partial struct DeviceAddressBindingCallbackDataEXT
     )]
     public ulong Size;
 
+    [NativeName("bindingType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],

@@ -7,8 +7,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FragmentOp1ATI")]
 public enum FragmentOp1ATI : uint
 {
-    Mov = unchecked((uint)0x8961),
+    [NativeName("GL_MOV_ATI")]
+    Mov = 35169,
 }

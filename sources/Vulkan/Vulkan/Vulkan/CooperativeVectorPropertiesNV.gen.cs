@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCooperativeVectorPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CooperativeVectorPropertiesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -21,6 +23,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -31,6 +34,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
     )]
     public void* PNext;
 
+    [NativeName("inputType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -41,6 +45,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
     )]
     public ComponentTypeKHR InputType;
 
+    [NativeName("inputInterpretation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -51,6 +56,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
     )]
     public ComponentTypeKHR InputInterpretation;
 
+    [NativeName("matrixInterpretation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -61,6 +67,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
     )]
     public ComponentTypeKHR MatrixInterpretation;
 
+    [NativeName("biasInterpretation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -71,6 +78,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
     )]
     public ComponentTypeKHR BiasInterpretation;
 
+    [NativeName("resultType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],
@@ -81,7 +89,7 @@ public unsafe partial struct CooperativeVectorPropertiesNV
     )]
     public ComponentTypeKHR ResultType;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("transpose")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_cooperative_vector"],

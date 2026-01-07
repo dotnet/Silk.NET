@@ -8,33 +8,35 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoEncodeAV1OperatingPointInfo")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeAV1OperatingPointInfo
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeAV1OperatingPointInfoFlags Flags;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("operating_point_idc")]
     [SupportedApiProfile("vulkan")]
     public ushort OperatingPointIdc;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("seq_level_idx")]
     [SupportedApiProfile("vulkan")]
     public byte SeqLevelIdx;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("seq_tier")]
     [SupportedApiProfile("vulkan")]
     public byte SeqTier;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("decoder_buffer_delay")]
     [SupportedApiProfile("vulkan")]
     public uint DecoderBufferDelay;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("encoder_buffer_delay")]
     [SupportedApiProfile("vulkan")]
     public uint EncoderBufferDelay;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("initial_display_delay_minus_1")]
     [SupportedApiProfile("vulkan")]
     public byte InitialDisplayDelayMinus1;
 }

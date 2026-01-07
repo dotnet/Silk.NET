@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUCopyPass")]
 public readonly unsafe partial struct GPUCopyPassHandle
 {
     public readonly void* Handle;
+
+    public GPUCopyPassHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(GPUCopyPassHandle other) => Handle == other.Handle;
 

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMaintenance5Properties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMaintenance5Properties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -23,6 +25,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +38,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("earlyFragmentMultisampleCoverageAfterSampleCounting")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +51,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
     )]
     public uint EarlyFragmentMultisampleCoverageAfterSampleCounting;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("earlyFragmentSampleMaskTestBeforeSampleCounting")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -61,7 +64,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
     )]
     public uint EarlyFragmentSampleMaskTestBeforeSampleCounting;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("depthStencilSwizzleOneSupport")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -74,7 +77,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
     )]
     public uint DepthStencilSwizzleOneSupport;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("polygonModePointSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +90,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
     )]
     public uint PolygonModePointSize;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("nonStrictSinglePixelWideLinesUseParallelogram")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -100,7 +103,7 @@ public unsafe partial struct PhysicalDeviceMaintenance5Properties
     )]
     public uint NonStrictSinglePixelWideLinesUseParallelogram;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("nonStrictWideLinesUseParallelogram")]
     [SupportedApiProfile(
         "vulkan",
         [

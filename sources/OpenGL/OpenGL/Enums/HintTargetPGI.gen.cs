@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("HintTargetPGI")]
 public enum HintTargetPGI : uint
 {
-    VertexDataHint = unchecked((uint)0x1A22A),
-    VertexConsistentHint = unchecked((uint)0x1A22B),
-    MaterialSideHint = unchecked((uint)0x1A22C),
-    MaxVertexHint = unchecked((uint)0x1A22D),
+    [NativeName("GL_VERTEX_DATA_HINT_PGI")]
+    VertexDataHint = 107050,
+
+    [NativeName("GL_VERTEX_CONSISTENT_HINT_PGI")]
+    VertexConsistentHint = 107051,
+
+    [NativeName("GL_MATERIAL_SIDE_HINT_PGI")]
+    MaterialSideHint = 107052,
+
+    [NativeName("GL_MAX_VERTEX_HINT_PGI")]
+    MaxVertexHint = 107053,
 }

@@ -7,39 +7,102 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FragmentShaderConATI")]
 public enum FragmentShaderConATI : uint
 {
-    Con0 = unchecked((uint)0x8941),
-    Con1 = unchecked((uint)0x8942),
-    Con2 = unchecked((uint)0x8943),
-    Con3 = unchecked((uint)0x8944),
-    Con4 = unchecked((uint)0x8945),
-    Con5 = unchecked((uint)0x8946),
-    Con6 = unchecked((uint)0x8947),
-    Con7 = unchecked((uint)0x8948),
-    Con8 = unchecked((uint)0x8949),
-    Con9 = unchecked((uint)0x894A),
-    Con10 = unchecked((uint)0x894B),
-    Con11 = unchecked((uint)0x894C),
-    Con12 = unchecked((uint)0x894D),
-    Con13 = unchecked((uint)0x894E),
-    Con14 = unchecked((uint)0x894F),
-    Con15 = unchecked((uint)0x8950),
-    Con16 = unchecked((uint)0x8951),
-    Con17 = unchecked((uint)0x8952),
-    Con18 = unchecked((uint)0x8953),
-    Con19 = unchecked((uint)0x8954),
-    Con20 = unchecked((uint)0x8955),
-    Con21 = unchecked((uint)0x8956),
-    Con22 = unchecked((uint)0x8957),
-    Con23 = unchecked((uint)0x8958),
-    Con24 = unchecked((uint)0x8959),
-    Con25 = unchecked((uint)0x895A),
-    Con26 = unchecked((uint)0x895B),
-    Con27 = unchecked((uint)0x895C),
-    Con28 = unchecked((uint)0x895D),
-    Con29 = unchecked((uint)0x895E),
-    Con30 = unchecked((uint)0x895F),
-    Con31 = unchecked((uint)0x8960),
+    [NativeName("GL_CON_0_ATI")]
+    Con0 = 35137,
+
+    [NativeName("GL_CON_1_ATI")]
+    Con1 = 35138,
+
+    [NativeName("GL_CON_2_ATI")]
+    Con2 = 35139,
+
+    [NativeName("GL_CON_3_ATI")]
+    Con3 = 35140,
+
+    [NativeName("GL_CON_4_ATI")]
+    Con4 = 35141,
+
+    [NativeName("GL_CON_5_ATI")]
+    Con5 = 35142,
+
+    [NativeName("GL_CON_6_ATI")]
+    Con6 = 35143,
+
+    [NativeName("GL_CON_7_ATI")]
+    Con7 = 35144,
+
+    [NativeName("GL_CON_8_ATI")]
+    Con8 = 35145,
+
+    [NativeName("GL_CON_9_ATI")]
+    Con9 = 35146,
+
+    [NativeName("GL_CON_10_ATI")]
+    Con10 = 35147,
+
+    [NativeName("GL_CON_11_ATI")]
+    Con11 = 35148,
+
+    [NativeName("GL_CON_12_ATI")]
+    Con12 = 35149,
+
+    [NativeName("GL_CON_13_ATI")]
+    Con13 = 35150,
+
+    [NativeName("GL_CON_14_ATI")]
+    Con14 = 35151,
+
+    [NativeName("GL_CON_15_ATI")]
+    Con15 = 35152,
+
+    [NativeName("GL_CON_16_ATI")]
+    Con16 = 35153,
+
+    [NativeName("GL_CON_17_ATI")]
+    Con17 = 35154,
+
+    [NativeName("GL_CON_18_ATI")]
+    Con18 = 35155,
+
+    [NativeName("GL_CON_19_ATI")]
+    Con19 = 35156,
+
+    [NativeName("GL_CON_20_ATI")]
+    Con20 = 35157,
+
+    [NativeName("GL_CON_21_ATI")]
+    Con21 = 35158,
+
+    [NativeName("GL_CON_22_ATI")]
+    Con22 = 35159,
+
+    [NativeName("GL_CON_23_ATI")]
+    Con23 = 35160,
+
+    [NativeName("GL_CON_24_ATI")]
+    Con24 = 35161,
+
+    [NativeName("GL_CON_25_ATI")]
+    Con25 = 35162,
+
+    [NativeName("GL_CON_26_ATI")]
+    Con26 = 35163,
+
+    [NativeName("GL_CON_27_ATI")]
+    Con27 = 35164,
+
+    [NativeName("GL_CON_28_ATI")]
+    Con28 = 35165,
+
+    [NativeName("GL_CON_29_ATI")]
+    Con29 = 35166,
+
+    [NativeName("GL_CON_30_ATI")]
+    Con30 = 35167,
+
+    [NativeName("GL_CON_31_ATI")]
+    Con31 = 35168,
 }

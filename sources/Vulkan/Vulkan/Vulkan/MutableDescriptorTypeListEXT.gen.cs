@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMutableDescriptorTypeListEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MutableDescriptorTypeListEXT
 {
-    [NativeTypeName("uint32_t")]
+    [NativeName("descriptorTypeCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mutable_descriptor_type"],
@@ -22,7 +23,7 @@ public unsafe partial struct MutableDescriptorTypeListEXT
     )]
     public uint DescriptorTypeCount;
 
-    [NativeTypeName("const VkDescriptorType *")]
+    [NativeName("pDescriptorTypes")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_mutable_descriptor_type"],

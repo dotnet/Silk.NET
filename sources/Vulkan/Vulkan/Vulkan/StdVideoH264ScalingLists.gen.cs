@@ -7,22 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH264ScalingLists")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264ScalingLists
 {
-    [NativeTypeName("uint16_t")]
+    [NativeName("scaling_list_present_mask")]
     [SupportedApiProfile("vulkan")]
     public ushort ScalingListPresentMask;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("use_default_scaling_matrix_mask")]
     [SupportedApiProfile("vulkan")]
     public ushort UseDefaultScalingMatrixMask;
 
-    [NativeTypeName("uint8_t[6][16]")]
+    [NativeName("ScalingList4x4")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264ScalingListsScalingList4X4 ScalingList4X4;
 
-    [NativeTypeName("uint8_t[6][64]")]
+    [NativeName("ScalingList8x8")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264ScalingListsScalingList8X8 ScalingList8X8;
 }

@@ -7,32 +7,54 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUSamplerCreateInfo")]
 public partial struct GPUSamplerCreateInfo
 {
+    [NativeName("min_filter")]
     public GPUFilter MinFilter;
+
+    [NativeName("mag_filter")]
     public GPUFilter MagFilter;
+
+    [NativeName("mipmap_mode")]
     public GPUSamplerMipmapMode MipmapMode;
+
+    [NativeName("address_mode_u")]
     public GPUSamplerAddressMode AddressModeU;
+
+    [NativeName("address_mode_v")]
     public GPUSamplerAddressMode AddressModeV;
+
+    [NativeName("address_mode_w")]
     public GPUSamplerAddressMode AddressModeW;
+
+    [NativeName("mip_lod_bias")]
     public float MipLodBias;
+
+    [NativeName("max_anisotropy")]
     public float MaxAnisotropy;
+
+    [NativeName("compare_op")]
     public GPUCompareOp CompareOp;
+
+    [NativeName("min_lod")]
     public float MinLod;
+
+    [NativeName("max_lod")]
     public float MaxLod;
 
-    [NativeTypeName("bool")]
+    [NativeName("enable_anisotropy")]
     public byte EnableAnisotropy;
 
-    [NativeTypeName("bool")]
+    [NativeName("enable_compare")]
     public byte EnableCompare;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding1")]
     public byte Padding1;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding2")]
     public byte Padding2;
 
-    [NativeTypeName("SDL_PropertiesID")]
+    [NativeName("props")]
     public uint Props;
 }

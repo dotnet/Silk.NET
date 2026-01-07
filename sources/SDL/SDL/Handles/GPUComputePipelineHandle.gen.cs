@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUComputePipeline")]
 public readonly unsafe partial struct GPUComputePipelineHandle
 {
     public readonly void* Handle;
+
+    public GPUComputePipelineHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(GPUComputePipelineHandle other) => Handle == other.Handle;
 

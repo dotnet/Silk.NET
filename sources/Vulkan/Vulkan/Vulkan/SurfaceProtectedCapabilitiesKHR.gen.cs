@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSurfaceProtectedCapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct SurfaceProtectedCapabilitiesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_protected_capabilities"],
@@ -18,7 +20,7 @@ public unsafe partial struct SurfaceProtectedCapabilitiesKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_protected_capabilities"],
@@ -26,7 +28,7 @@ public unsafe partial struct SurfaceProtectedCapabilitiesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("supportsProtected")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_surface_protected_capabilities"],

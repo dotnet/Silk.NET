@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkFragmentShadingRateCombinerOpKHR")]
 [SupportedApiProfile("vulkan")]
 public enum FragmentShadingRateCombinerOpKHR : uint
 {
+    [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_KEEP_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -21,8 +22,9 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    KeepKHR = 0,
+    Keep = 0,
 
+    [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -32,8 +34,9 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    ReplaceKHR = 1,
+    Replace = 1,
 
+    [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -43,8 +46,9 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    MinKHR = 2,
+    Min = 2,
 
+    [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -54,8 +58,9 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    MaxKHR = 3,
+    Max = 3,
 
+    [NativeName("VK_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_fragment_shading_rate"],
@@ -65,5 +70,5 @@ public enum FragmentShadingRateCombinerOpKHR : uint
             "VK_VERSION_1_2",
         ]
     )]
-    MulKHR = 4,
+    Mul = 4,
 }

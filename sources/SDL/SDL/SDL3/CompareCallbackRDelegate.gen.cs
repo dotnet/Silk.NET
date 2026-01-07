@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_CompareCallback_r")]
 public unsafe delegate int CompareCallbackRDelegate(void* arg0, void* arg1, void* arg2);

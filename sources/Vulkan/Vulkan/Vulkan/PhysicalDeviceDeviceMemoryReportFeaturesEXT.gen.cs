@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDeviceMemoryReportFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDeviceMemoryReportFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -20,6 +22,7 @@ public unsafe partial struct PhysicalDeviceDeviceMemoryReportFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],
@@ -30,7 +33,7 @@ public unsafe partial struct PhysicalDeviceDeviceMemoryReportFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("deviceMemoryReport")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_memory_report"],

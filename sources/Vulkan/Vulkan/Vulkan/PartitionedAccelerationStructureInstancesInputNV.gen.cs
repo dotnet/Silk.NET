@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPartitionedAccelerationStructureInstancesInputNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PartitionedAccelerationStructureInstancesInputNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -18,6 +20,7 @@ public unsafe partial struct PartitionedAccelerationStructureInstancesInputNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -25,7 +28,7 @@ public unsafe partial struct PartitionedAccelerationStructureInstancesInputNV
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBuildAccelerationStructureFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -33,7 +36,7 @@ public unsafe partial struct PartitionedAccelerationStructureInstancesInputNV
     )]
     public BuildAccelerationStructureFlagsKHR Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("instanceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -41,7 +44,7 @@ public unsafe partial struct PartitionedAccelerationStructureInstancesInputNV
     )]
     public uint InstanceCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxInstancePerPartitionCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -49,7 +52,7 @@ public unsafe partial struct PartitionedAccelerationStructureInstancesInputNV
     )]
     public uint MaxInstancePerPartitionCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("partitionCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],
@@ -57,7 +60,7 @@ public unsafe partial struct PartitionedAccelerationStructureInstancesInputNV
     )]
     public uint PartitionCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxInstanceInGlobalPartitionCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_partitioned_acceleration_structure"],

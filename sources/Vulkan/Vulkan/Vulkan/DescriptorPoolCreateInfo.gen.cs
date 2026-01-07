@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDescriptorPoolCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorPoolCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +36,7 @@ public unsafe partial struct DescriptorPoolCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,7 +60,7 @@ public unsafe partial struct DescriptorPoolCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDescriptorPoolCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -82,7 +84,7 @@ public unsafe partial struct DescriptorPoolCreateInfo
     )]
     public DescriptorPoolCreateFlags Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxSets")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -106,7 +108,7 @@ public unsafe partial struct DescriptorPoolCreateInfo
     )]
     public uint MaxSets;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("poolSizeCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -130,7 +132,7 @@ public unsafe partial struct DescriptorPoolCreateInfo
     )]
     public uint PoolSizeCount;
 
-    [NativeTypeName("const VkDescriptorPoolSize *")]
+    [NativeName("pPoolSizes")]
     [SupportedApiProfile(
         "vulkan",
         [

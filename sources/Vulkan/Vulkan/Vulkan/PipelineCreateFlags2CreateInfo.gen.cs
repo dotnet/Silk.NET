@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineCreateFlags2CreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineCreateFlags2CreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -18,7 +20,7 @@ public unsafe partial struct PipelineCreateFlags2CreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -26,7 +28,7 @@ public unsafe partial struct PipelineCreateFlags2CreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineCreateFlags2")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_COMPUTE_VERSION_1_4", "VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],

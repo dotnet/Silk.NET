@@ -6,11 +6,11 @@
     <PackageVersion Include="Microsoft.Build.Tasks.Core" Version="17.14.28" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
     <PackageVersion Include="NAudio.Core" Version="2.2.1" />
-    <PackageVersion Include="NUnit3TestAdapter" Version="5.2.0" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="6.0.1" />
     <PackageVersion Include="NUnit.Analyzers" Version="4.11.2" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="NUnit" Version="4.4.0" />
-    <PackageVersion Include="xunit" Version="2.9.3" />
+    <PackageVersion Include="xunit.v3.mtp-v2" Version="3.2.1" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
     <!-- eng/benchmarks -->
     <PackageVersion Include="BenchmarkDotNet" Version="0.15.6" />
@@ -40,8 +40,11 @@
     <PackageVersion Include="System.Configuration.ConfigurationManager" Version="10.0.0" />
     <PackageVersion Include="System.IO.Hashing" Version="10.0.0" />
     <!-- SilkTouch Unit Tests -->
-    <PackageVersion Include="Silk.NET.BuildTools" Version="2.22.0" />
+    <PackageVersion Include="Silk.NET.BuildTools" Version="2.23.0-pr2526.5226" />
     <PackageVersion Include="Verify.DiffPlex" Version="3.1.2" />
     <PackageVersion Include="Verify.NUnit" Version="31.6.0" />
+    <PackageVersion Include="Microsoft.Testing.Extensions.TrxReport" Version="2.0.2" />
+    <PackageVersion Include="Microsoft.Testing.Extensions.CodeCoverage" Version="18.1.0" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyModel" Version="8.0.2" />
   </ItemGroup>
 </Project>

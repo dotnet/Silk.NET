@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkQueryPoolPerformanceCreateInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct QueryPoolPerformanceCreateInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -21,7 +23,7 @@ public unsafe partial struct QueryPoolPerformanceCreateInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -32,7 +34,7 @@ public unsafe partial struct QueryPoolPerformanceCreateInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("queueFamilyIndex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -43,7 +45,7 @@ public unsafe partial struct QueryPoolPerformanceCreateInfoKHR
     )]
     public uint QueueFamilyIndex;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("counterIndexCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -54,7 +56,7 @@ public unsafe partial struct QueryPoolPerformanceCreateInfoKHR
     )]
     public uint CounterIndexCount;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pCounterIndices")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],

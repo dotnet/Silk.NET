@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineRasterizationProvokingVertexStateCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRasterizationProvokingVertexStateCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_provoking_vertex"],
@@ -21,7 +23,7 @@ public unsafe partial struct PipelineRasterizationProvokingVertexStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_provoking_vertex"],
@@ -32,6 +34,7 @@ public unsafe partial struct PipelineRasterizationProvokingVertexStateCreateInfo
     )]
     public void* PNext;
 
+    [NativeName("provokingVertexMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_provoking_vertex"],

@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMemoryDedicatedRequirements")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryDedicatedRequirements
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,6 +36,7 @@ public unsafe partial struct MemoryDedicatedRequirements
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,7 +61,7 @@ public unsafe partial struct MemoryDedicatedRequirements
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("prefersDedicatedAllocation")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -83,7 +86,7 @@ public unsafe partial struct MemoryDedicatedRequirements
     )]
     public uint PrefersDedicatedAllocation;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("requiresDedicatedAllocation")]
     [SupportedApiProfile(
         "vulkan",
         [

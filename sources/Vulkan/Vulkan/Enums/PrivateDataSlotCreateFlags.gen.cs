@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[Transformed]
+[NativeName("VkPrivateDataSlotCreateFlagBits")]
 [Flags]
 public enum PrivateDataSlotCreateFlags : uint
 {

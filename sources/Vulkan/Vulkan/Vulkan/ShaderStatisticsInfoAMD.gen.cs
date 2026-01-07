@@ -8,33 +8,35 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkShaderStatisticsInfoAMD")]
 [SupportedApiProfile("vulkan")]
 public partial struct ShaderStatisticsInfoAMD
 {
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("shaderStageMask")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public ShaderStageFlags ShaderStageMask;
 
+    [NativeName("resourceUsage")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public ShaderResourceUsageAMD ResourceUsage;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("numPhysicalVgprs")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public uint NumPhysicalVgprs;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("numPhysicalSgprs")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public uint NumPhysicalSgprs;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("numAvailableVgprs")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public uint NumAvailableVgprs;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("numAvailableSgprs")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public uint NumAvailableSgprs;
 
-    [NativeTypeName("uint32_t[3]")]
+    [NativeName("computeWorkGroupSize")]
     [SupportedApiProfile("vulkan", ["VK_AMD_shader_info"])]
     public ShaderStatisticsInfoAMDComputeWorkGroupSize ComputeWorkGroupSize;
 }

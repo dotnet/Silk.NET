@@ -10,10 +10,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("EventTypeSOFT")]
 public enum EventTypeSOFT : uint
 {
-    BufferCompleted = unchecked((uint)0x19A4),
-    SourceStateChanged = unchecked((uint)0x19A5),
-    Disconnected = unchecked((uint)0x19A6),
+    [NativeName("AL_EVENT_TYPE_BUFFER_COMPLETED_SOFT")]
+    BufferCompleted = 6564,
+
+    [NativeName("AL_EVENT_TYPE_SOURCE_STATE_CHANGED_SOFT")]
+    SourceStateChanged = 6565,
+
+    [NativeName("AL_EVENT_TYPE_DISCONNECTED_SOFT")]
+    Disconnected = 6566,
 }

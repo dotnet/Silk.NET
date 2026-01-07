@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineRasterizationStateStreamCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRasterizationStateStreamCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -21,7 +23,7 @@ public unsafe partial struct PipelineRasterizationStateStreamCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -32,7 +34,7 @@ public unsafe partial struct PipelineRasterizationStateStreamCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineRasterizationStateStreamCreateFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],
@@ -43,7 +45,7 @@ public unsafe partial struct PipelineRasterizationStateStreamCreateInfoEXT
     )]
     public uint Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("rasterizationStream")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_transform_feedback"],

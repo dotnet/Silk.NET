@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Camera")]
 public readonly unsafe partial struct CameraHandle
 {
     public readonly void* Handle;
+
+    public CameraHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(CameraHandle other) => Handle == other.Handle;
 

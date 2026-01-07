@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("OcclusionQueryParameterNameNV")]
 public enum OcclusionQueryParameterNameNV : uint
 {
-    PixelCount = unchecked((uint)0x8866),
-    PixelCountAvailable = unchecked((uint)0x8867),
+    [NativeName("GL_PIXEL_COUNT_NV")]
+    PixelCount = 34918,
+
+    [NativeName("GL_PIXEL_COUNT_AVAILABLE_NV")]
+    PixelCountAvailable = 34919,
 }

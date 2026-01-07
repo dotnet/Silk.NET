@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCooperativeMatrixPropertiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CooperativeMatrixPropertiesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -21,6 +23,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -31,7 +34,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("MSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -42,7 +45,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
     )]
     public uint MSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("NSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -53,7 +56,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
     )]
     public uint NSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("KSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -64,6 +67,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
     )]
     public uint KSize;
 
+    [NativeName("AType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -74,6 +78,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
     )]
     public ComponentTypeKHR AType;
 
+    [NativeName("BType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -84,6 +89,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
     )]
     public ComponentTypeKHR BType;
 
+    [NativeName("CType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -94,6 +100,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
     )]
     public ComponentTypeKHR CType;
 
+    [NativeName("ResultType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -104,7 +111,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
     )]
     public ComponentTypeKHR ResultType;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("saturatingAccumulation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],
@@ -115,6 +122,7 @@ public unsafe partial struct CooperativeMatrixPropertiesKHR
     )]
     public uint SaturatingAccumulation;
 
+    [NativeName("scope")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_cooperative_matrix"],

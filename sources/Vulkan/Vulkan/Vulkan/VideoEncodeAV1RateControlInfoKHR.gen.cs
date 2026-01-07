@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeAV1RateControlInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeAV1RateControlInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -18,7 +20,7 @@ public unsafe partial struct VideoEncodeAV1RateControlInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -26,7 +28,7 @@ public unsafe partial struct VideoEncodeAV1RateControlInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkVideoEncodeAV1RateControlFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -34,7 +36,7 @@ public unsafe partial struct VideoEncodeAV1RateControlInfoKHR
     )]
     public VideoEncodeAV1RateControlFlagsKHR Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("gopFrameCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -42,7 +44,7 @@ public unsafe partial struct VideoEncodeAV1RateControlInfoKHR
     )]
     public uint GopFrameCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("keyFramePeriod")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -50,7 +52,7 @@ public unsafe partial struct VideoEncodeAV1RateControlInfoKHR
     )]
     public uint KeyFramePeriod;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("consecutiveBipredictiveFrameCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],
@@ -58,7 +60,7 @@ public unsafe partial struct VideoEncodeAV1RateControlInfoKHR
     )]
     public uint ConsecutiveBipredictiveFrameCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("temporalLayerCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_av1"],

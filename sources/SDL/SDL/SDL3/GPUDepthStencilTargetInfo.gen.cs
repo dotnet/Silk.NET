@@ -7,24 +7,36 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_GPUDepthStencilTargetInfo")]
 public unsafe partial struct GPUDepthStencilTargetInfo
 {
+    [NativeName("texture")]
     public GPUTextureHandle Texture;
+
+    [NativeName("clear_depth")]
     public float ClearDepth;
+
+    [NativeName("load_op")]
     public GPULoadOp LoadOp;
+
+    [NativeName("store_op")]
     public GPUStoreOp StoreOp;
+
+    [NativeName("stencil_load_op")]
     public GPULoadOp StencilLoadOp;
+
+    [NativeName("stencil_store_op")]
     public GPUStoreOp StencilStoreOp;
 
-    [NativeTypeName("bool")]
+    [NativeName("cycle")]
     public byte Cycle;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("clear_stencil")]
     public byte ClearStencil;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding1")]
     public byte Padding1;
 
-    [NativeTypeName("Uint8")]
+    [NativeName("padding2")]
     public byte Padding2;
 }
