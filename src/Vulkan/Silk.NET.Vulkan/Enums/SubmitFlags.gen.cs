@@ -15,15 +15,10 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Bit\"")]
+        [Obsolete("Deprecated in favour of \"ProtectedBit\"")]
         [NativeName("Name", "VK_SUBMIT_PROTECTED_BIT")]
         SubmitProtectedBit = 1,
-        [Obsolete("Deprecated in favour of \"BitKhr\"")]
-        [NativeName("Name", "VK_SUBMIT_PROTECTED_BIT_KHR")]
-        SubmitProtectedBitKhr = 1,
         [NativeName("Name", "VK_SUBMIT_PROTECTED_BIT")]
-        Bit = 1,
-        [NativeName("Name", "VK_SUBMIT_PROTECTED_BIT_KHR")]
-        BitKhr = 1,
+        ProtectedBit = 1,
     }
 }

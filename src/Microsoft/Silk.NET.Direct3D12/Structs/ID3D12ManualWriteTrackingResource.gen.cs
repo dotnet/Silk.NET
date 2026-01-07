@@ -118,7 +118,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void TrackWrite(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Range pWrittenRange)
+        public readonly void TrackWrite(uint Subresource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Range pWrittenRange)
         {
             var @this = (ID3D12ManualWriteTrackingResource*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Range* pWrittenRangePtr = &pWrittenRange)

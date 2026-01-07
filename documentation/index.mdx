@@ -1,0 +1,77 @@
+---
+title: "Welcome"
+id: "index"
+description: 'Get Started with Silk.NET'
+slug: '/'
+---
+
+import DocCardList from '@theme/DocCardList';
+import { useDocsSidebar } from '@docusaurus/plugin-content-docs/client'
+
+# Welcome to Silk.NET!
+
+## Getting Started
+
+To get started, install the relevant NuGet packages. They all start with `Silk.NET`, and the next inner namespace after
+that indicates the binding or High-Level Utility (HLU, e.g. Windowing or Input) that package belongs. Here' some example
+commands to install such NuGet packages:
+
+```bash
+dotnet add package Silk.NET.Assimp
+dotnet add package Silk.NET.Input
+dotnet add package Silk.NET.Maths
+dotnet add package Silk.NET.Direct2D
+dotnet add package Silk.NET.Direct3D.Compilers
+dotnet add package Silk.NET.Direct3D9
+dotnet add package Silk.NET.Direct3D11
+dotnet add package Silk.NET.Direct3D12
+dotnet add package Silk.NET.DirectComposition
+dotnet add package Silk.NET.DirectStorage
+dotnet add package Silk.NET.DXGI
+dotnet add package Silk.NET.DXVA
+dotnet add package Silk.NET.XAudio
+dotnet add package Silk.NET.XInput
+dotnet add package Silk.NET.OpenAL
+dotnet add package Silk.NET.OpenCL
+dotnet add package Silk.NET.OpenGL
+dotnet add package Silk.NET.OpenGL.Legacy
+dotnet add package Silk.NET.OpenGLES
+dotnet add package Silk.NET.OpenXR
+dotnet add package Silk.NET.Shaderc
+dotnet add package Silk.NET.SPIRV.Cross
+dotnet add package Silk.NET.SPIRV.Reflect
+dotnet add package Silk.NET.Vulkan
+dotnet add package Silk.NET.WebGPU
+dotnet add package Silk.NET.Windowing
+```
+
+If you don't know which API you'd like to start with, try OpenGL if you'd like to draw graphics - it's an old but tested
+API that has universal compatibility on most platforms. It is succeeded by Vulkan, but there is a large jump in
+difficulty thereafter. Alternatively, if you only care about Microsoft platforms, try Direct3D 11! Note that the same
+caveat for Vulkan vs OpenGL applies to Direct3D 12 vs Direct3D 11.
+
+If you can't decide on one for now, we maintain a "metapackage" that pulls in most of Silk.NET's core packages from all
+bindings and High-Level Utilities (HLUs). You can install that as follows:
+
+```bash
+dotnet add package Silk.NET
+```
+
+As always, we're happy to help in our Discord server with whatever questions you have, no matter how far along you are!
+
+## Find Documentation
+
+Now that you've pulled in the APIs you would like to use, it's time to find documentation to follow. Most Silk.NET APIs
+(other than our High-Level Utilities) map 1:1 directly into a native API signature that should be easily searchable by
+its API name (e.g. `glGetString` becomes `GL.GetString` in Silk.NET). Note that these rules are not consistent and it is expected
+that you have at least some familiarity with how the native API is structured.
+
+Of course, there are some bindings for which we have our own introductory documentation for, which presents a good
+jumping-off point for new users to Silk.NET - regardless of whether you've used the native API before (e.g. with C/C++)
+or you've never seen anything about it before! To that end, you can find our own documentation indexed below or
+throughout this site.
+
+<DocCardList items={useDocsSidebar().items.filter((e) => e.label != "Welcome")} />
+
+Have fun! We always look forward to seeing what people can create with Silk.NET and would love to hear how you get on in
+[our Discord server](https://discord.gg/DTHHXRt).

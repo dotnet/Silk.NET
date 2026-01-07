@@ -34,6 +34,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"PerformUpdate\"")]
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_PERFORM_UPDATE")]
         RaytracingAccelerationStructureBuildFlagPerformUpdate = 0x20,
+        [Obsolete("Deprecated in favour of \"AllowOmmUpdate\"")]
+        [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_ALLOW_OMM_UPDATE")]
+        RaytracingAccelerationStructureBuildFlagAllowOmmUpdate = 0x40,
+        [Obsolete("Deprecated in favour of \"AllowDisableOmms\"")]
+        [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_ALLOW_DISABLE_OMMS")]
+        RaytracingAccelerationStructureBuildFlagAllowDisableOmms = 0x80,
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_ALLOW_UPDATE")]
@@ -48,5 +54,9 @@ namespace Silk.NET.Direct3D12
         MinimizeMemory = 0x10,
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_PERFORM_UPDATE")]
         PerformUpdate = 0x20,
+        [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_ALLOW_OMM_UPDATE")]
+        AllowOmmUpdate = 0x40,
+        [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_BUILD_FLAG_ALLOW_DISABLE_OMMS")]
+        AllowDisableOmms = 0x80,
     }
 }

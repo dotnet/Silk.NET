@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <LangVersion>8.0</LangVersion>
+        <LangVersion>preview</LangVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 

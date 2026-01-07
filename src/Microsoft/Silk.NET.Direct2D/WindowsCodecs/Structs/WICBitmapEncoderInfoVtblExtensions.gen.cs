@@ -1000,7 +1000,7 @@ public unsafe static class WICBitmapEncoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MatchesMimeType(this ComPtr<IWICBitmapEncoderInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzMimeType, int* pfMatches)
+    public static unsafe int MatchesMimeType(this ComPtr<IWICBitmapEncoderInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzMimeType, int* pfMatches)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1012,7 +1012,7 @@ public unsafe static class WICBitmapEncoderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MatchesMimeType(this ComPtr<IWICBitmapEncoderInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char wzMimeType, ref int pfMatches)
+    public static int MatchesMimeType(this ComPtr<IWICBitmapEncoderInfo> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char wzMimeType, ref int pfMatches)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

@@ -106,7 +106,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterLibrary(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pLibName, IDxcBlob* pLib)
+    public static unsafe int RegisterLibrary(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pLibName, IDxcBlob* pLib)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterLibrary(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pLibName, ref IDxcBlob pLib)
+    public static int RegisterLibrary(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pLibName, ref IDxcBlob pLib)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -179,7 +179,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -191,7 +191,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -206,7 +206,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -218,7 +218,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -233,7 +233,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -248,7 +248,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -266,7 +266,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -278,7 +278,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -293,7 +293,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -308,7 +308,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -326,7 +326,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -341,7 +341,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -359,7 +359,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -377,7 +377,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -423,7 +423,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -437,7 +437,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -454,7 +454,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -468,7 +468,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -485,7 +485,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -502,7 +502,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -522,7 +522,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -534,7 +534,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -549,7 +549,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -564,7 +564,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -582,7 +582,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -597,7 +597,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -615,7 +615,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -633,7 +633,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -654,7 +654,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -669,7 +669,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -687,7 +687,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -705,7 +705,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -726,7 +726,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -744,7 +744,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -765,7 +765,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -786,7 +786,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -810,7 +810,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -824,7 +824,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -841,7 +841,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -858,7 +858,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -878,7 +878,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -895,7 +895,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -915,7 +915,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -935,7 +935,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -983,7 +983,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -997,7 +997,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1014,7 +1014,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1028,7 +1028,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1045,7 +1045,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1062,7 +1062,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1082,7 +1082,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1096,7 +1096,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1113,7 +1113,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1130,7 +1130,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1150,7 +1150,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1167,7 +1167,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1187,7 +1187,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1207,7 +1207,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1259,7 +1259,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1275,7 +1275,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1294,7 +1294,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1310,7 +1310,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1329,7 +1329,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1348,7 +1348,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1419,7 +1419,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterLibrary<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pLibName, ComPtr<TI0> pLib) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+    public static int RegisterLibrary<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pLibName, ComPtr<TI0> pLib) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1489,7 +1489,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1501,7 +1501,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1509,7 +1509,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1521,7 +1521,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1533,7 +1533,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1541,7 +1541,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1553,7 +1553,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1561,7 +1561,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1584,7 +1584,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1592,7 +1592,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1615,7 +1615,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1627,7 +1627,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1635,7 +1635,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1643,7 +1643,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1655,7 +1655,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1663,7 +1663,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1675,7 +1675,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1683,7 +1683,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1691,7 +1691,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1703,7 +1703,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1711,7 +1711,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1719,7 +1719,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1727,7 +1727,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1773,7 +1773,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1785,7 +1785,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1793,7 +1793,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1805,7 +1805,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1817,7 +1817,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1825,7 +1825,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1837,7 +1837,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1845,7 +1845,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1868,7 +1868,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1876,7 +1876,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1899,7 +1899,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1911,7 +1911,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1919,7 +1919,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1927,7 +1927,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1939,7 +1939,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1947,7 +1947,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1959,7 +1959,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1967,7 +1967,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1975,7 +1975,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -1987,7 +1987,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1995,7 +1995,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2003,7 +2003,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2011,7 +2011,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2019,7 +2019,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2042,7 +2042,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2050,7 +2050,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2073,7 +2073,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2085,7 +2085,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2093,7 +2093,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2101,7 +2101,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2113,7 +2113,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2121,7 +2121,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2133,7 +2133,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2141,7 +2141,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2149,7 +2149,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2161,7 +2161,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2169,7 +2169,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2177,7 +2177,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2185,7 +2185,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2193,7 +2193,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2216,7 +2216,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2224,7 +2224,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2247,7 +2247,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2259,7 +2259,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2267,7 +2267,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2275,7 +2275,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2287,7 +2287,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2295,7 +2295,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2307,7 +2307,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2315,7 +2315,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2323,7 +2323,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2335,7 +2335,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2343,7 +2343,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2351,7 +2351,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2359,7 +2359,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2405,7 +2405,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2417,7 +2417,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2425,7 +2425,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2437,7 +2437,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2449,7 +2449,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2457,7 +2457,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2469,7 +2469,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2477,7 +2477,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2500,7 +2500,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2508,7 +2508,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2531,7 +2531,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2543,7 +2543,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2551,7 +2551,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2559,7 +2559,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2571,7 +2571,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2579,7 +2579,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2591,7 +2591,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2599,7 +2599,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2607,7 +2607,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2619,7 +2619,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2627,7 +2627,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2635,7 +2635,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2643,7 +2643,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2689,7 +2689,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2701,7 +2701,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2709,7 +2709,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pLibNamesSa, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2721,7 +2721,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, IDxcOperationResult** ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2733,7 +2733,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char** pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2741,7 +2741,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
+    public static unsafe int Link(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] string[] pArgumentsSa, uint argCount, ref IDxcOperationResult* ppResult)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2753,7 +2753,7 @@ public unsafe static class DxcLinkerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
+    public static unsafe int Link<TI0>(this ComPtr<IDxcLinker> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pEntryName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pTargetProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pLibNames, uint libCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char* pArguments, uint argCount, ref ComPtr<TI0> ppResult) where TI0 : unmanaged, IComVtbl<IDxcOperationResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

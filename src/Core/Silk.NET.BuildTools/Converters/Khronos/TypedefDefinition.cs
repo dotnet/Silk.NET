@@ -8,7 +8,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public string Requires { get; }
         public string BitValues { get; }
         public string Type { get; }
-        public string? Api { get; }
+        public string[]? Api { get; }
 
         public TypedefDefinition(string name, string requires, string type, string bitValues = null, string? api = null)
         {
@@ -16,7 +16,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Requires = requires;
             Type = type;
             BitValues = bitValues;
-            Api = api;
+            Api = api?.Split(',');
         }
 
         public static TypedefDefinition CreateFromXml(XElement xe)

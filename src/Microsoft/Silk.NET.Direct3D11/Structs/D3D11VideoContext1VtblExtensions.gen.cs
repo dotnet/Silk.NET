@@ -219,7 +219,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -243,7 +243,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -267,7 +267,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11VideoContext1> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11VideoContext1> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -291,7 +291,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D11VideoContext1> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D11VideoContext1> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -444,7 +444,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey) where T0 : unmanaged
+    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -468,7 +468,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey) where T0 : unmanaged
+    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -495,7 +495,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey) where T0 : unmanaged
+    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -525,7 +525,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey) where T0 : unmanaged
+    public static int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -573,7 +573,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderBufferDesc pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderBufferDesc pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -597,7 +597,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderBufferDesc pBufferDesc)
+    public static int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderBufferDesc pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -621,7 +621,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderExtension pExtensionData)
+    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderExtension pExtensionData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -645,7 +645,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderExtension pExtensionData)
+    public static int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderExtension pExtensionData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -667,7 +667,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -687,7 +687,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect)
+    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -707,7 +707,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoColor pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoColor pColor)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoColor* pColorPtr = &pColor)
@@ -727,7 +727,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoColor pColor)
+    public static void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoColor pColor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -747,7 +747,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorColorSpace pColorSpace)
+    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorColorSpace pColorSpace)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
@@ -767,7 +767,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorColorSpace pColorSpace)
+    public static void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorColorSpace pColorSpace)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -852,7 +852,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -864,7 +864,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -906,7 +906,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -921,7 +921,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1408,7 +1408,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1420,7 +1420,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1462,7 +1462,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1477,7 +1477,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1519,7 +1519,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorColorSpace pColorSpace)
+    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorColorSpace pColorSpace)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
@@ -1539,7 +1539,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorColorSpace pColorSpace)
+    public static void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorColorSpace pColorSpace)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1559,7 +1559,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pCustomRate)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
@@ -1579,7 +1579,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pCustomRate)
+    public static void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pCustomRate)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1599,7 +1599,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -1619,7 +1619,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect)
+    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1639,7 +1639,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -1659,7 +1659,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect)
+    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1696,7 +1696,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pEntries)
+    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pEntries)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pEntriesPtr = &pEntries)
@@ -1716,7 +1716,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pEntries)
+    public static void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pEntries)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1736,7 +1736,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
@@ -1746,7 +1746,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
@@ -1756,7 +1756,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
@@ -1779,7 +1779,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1792,7 +1792,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1805,7 +1805,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1910,7 +1910,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1922,7 +1922,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1964,7 +1964,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1979,7 +1979,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5410,7 +5410,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5422,7 +5422,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5464,7 +5464,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5479,7 +5479,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5506,7 +5506,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStream pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStream pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5530,7 +5530,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStream pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStream pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5557,7 +5557,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStream pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStream pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5587,7 +5587,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStream pStreams)
+    public static int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStream pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5878,7 +5878,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pContentKeyPtr = &pContentKey)
@@ -5888,7 +5888,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pContentKeyPtr = &pContentKey)
@@ -5924,7 +5924,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
@@ -5937,7 +5937,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
@@ -5976,7 +5976,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -5989,7 +5989,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6034,7 +6034,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6050,7 +6050,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6092,7 +6092,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6105,7 +6105,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6150,7 +6150,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6166,7 +6166,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6214,7 +6214,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6230,7 +6230,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6284,7 +6284,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6303,7 +6303,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6348,7 +6348,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6361,7 +6361,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6406,7 +6406,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6422,7 +6422,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6470,7 +6470,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6486,7 +6486,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6540,7 +6540,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6559,7 +6559,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6610,7 +6610,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6626,7 +6626,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6680,7 +6680,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6699,7 +6699,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6756,7 +6756,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6775,7 +6775,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6838,7 +6838,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6860,7 +6860,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -7059,7 +7059,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7071,7 +7071,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7113,7 +7113,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7128,7 +7128,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
+    public static int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7167,7 +7167,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
+    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7179,7 +7179,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
+    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7221,7 +7221,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
+    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7236,7 +7236,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
+    public static int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7372,7 +7372,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderBufferDesc1 pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderBufferDesc1 pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7396,7 +7396,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderBufferDesc1 pBufferDesc)
+    public static int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderBufferDesc1 pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7432,7 +7432,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
+    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7444,7 +7444,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
+    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7486,7 +7486,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
+    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7501,7 +7501,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
+    public static int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7576,7 +7576,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
+    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7600,7 +7600,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
+    public static int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7624,7 +7624,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSampleDesc pOutputDesc)
+    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSampleDesc pOutputDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7648,7 +7648,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSampleDesc pOutputDesc)
+    public static int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSampleDesc pOutputDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8080,7 +8080,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8092,7 +8092,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8134,7 +8134,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8149,7 +8149,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
+    public static int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8432,7 +8432,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderBeginFrame<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
+    public static int DecoderBeginFrame<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8464,7 +8464,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderBeginFrame<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int DecoderBeginFrame<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8496,7 +8496,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderBeginFrame<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
+    public static int DecoderBeginFrame<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8552,7 +8552,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SubmitDecoderBuffers<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderBufferDesc pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int SubmitDecoderBuffers<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderBufferDesc pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8592,7 +8592,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderExtension pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int DecoderExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderExtension pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8632,7 +8632,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8672,7 +8672,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputBackgroundColor<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputBackgroundColor<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8712,7 +8712,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8816,7 +8816,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorSetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8832,7 +8832,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorSetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorSetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9336,7 +9336,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9352,7 +9352,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorGetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9424,7 +9424,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9464,7 +9464,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamOutputRate<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamOutputRate<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9504,7 +9504,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9544,7 +9544,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9600,7 +9600,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPalette<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamPalette<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9640,7 +9640,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9656,7 +9656,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9672,7 +9672,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9808,7 +9808,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorSetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9824,7 +9824,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorSetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorSetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12488,7 +12488,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12504,7 +12504,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorGetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12560,7 +12560,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+    public static int VideoProcessorBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12592,7 +12592,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12624,7 +12624,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
+    public static int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12952,7 +12952,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12968,7 +12968,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13016,7 +13016,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13032,7 +13032,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static void DecryptionBlt<T0, T1, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13080,7 +13080,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13096,7 +13096,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13144,7 +13144,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13160,7 +13160,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13208,7 +13208,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13224,7 +13224,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13272,7 +13272,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13288,7 +13288,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13336,7 +13336,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13352,7 +13352,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13400,7 +13400,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13416,7 +13416,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13464,7 +13464,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13480,7 +13480,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13528,7 +13528,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13544,7 +13544,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13592,7 +13592,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13608,7 +13608,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13656,7 +13656,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13672,7 +13672,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13720,7 +13720,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13736,7 +13736,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13784,7 +13784,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13800,7 +13800,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14040,7 +14040,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static unsafe int QueryAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14056,7 +14056,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryAuthenticatedChannel<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static int QueryAuthenticatedChannel<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14128,7 +14128,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static unsafe int ConfigureAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14144,7 +14144,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ConfigureAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static int ConfigureAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14304,7 +14304,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SubmitDecoderBuffers1<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderBufferDesc1 pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int SubmitDecoderBuffers1<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderBufferDesc1 pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14360,7 +14360,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe int GetDataForNewHardwareKey<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14376,7 +14376,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDataForNewHardwareKey<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static int GetDataForNewHardwareKey<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14472,7 +14472,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderEnableDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSampleDesc pOutputDesc, uint ReferenceFrameCount) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int DecoderEnableDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSampleDesc pOutputDesc, uint ReferenceFrameCount) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14512,7 +14512,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderUpdateDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoSampleDesc pOutputDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int DecoderUpdateDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoSampleDesc pOutputDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14936,7 +14936,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14952,7 +14952,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

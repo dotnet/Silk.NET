@@ -279,7 +279,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int EnqueueCharacterDownloadRequest([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char characters, uint characterCount)
+        public readonly int EnqueueCharacterDownloadRequest([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char characters, uint characterCount)
         {
             var @this = (IDWriteFontFaceReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -311,7 +311,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int EnqueueGlyphDownloadRequest([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort glyphIndices, uint glyphCount)
+        public readonly int EnqueueGlyphDownloadRequest([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort glyphIndices, uint glyphCount)
         {
             var @this = (IDWriteFontFaceReference*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

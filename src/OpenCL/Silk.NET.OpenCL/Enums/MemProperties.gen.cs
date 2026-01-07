@@ -16,6 +16,8 @@ namespace Silk.NET.OpenCL
         AllocFlagsImg = 0x40D7,
         [NativeName("Name", "CL_MEM_DEVICE_HANDLE_LIST_KHR")]
         DeviceHandleListKhr = 0x2051,
+        [NativeName("Name", "CL_MEM_DEVICE_PRIVATE_ADDRESS_EXT")]
+        DevicePrivateAddressExt = 0x5000,
         [NativeName("Name", "CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
         LocallyUncachedResourceIntel = 0x4218,
         [NativeName("Name", "CL_MEM_DEVICE_ID_INTEL")]

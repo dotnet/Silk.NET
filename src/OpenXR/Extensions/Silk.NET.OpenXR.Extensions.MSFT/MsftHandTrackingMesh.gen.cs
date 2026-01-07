@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateHandMeshSpaceMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateHandMeshSpaceMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HandMeshSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] Space* space);
+        public unsafe partial Result CreateHandMeshSpaceMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HandMeshSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateHandMeshSpaceMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result CreateHandMeshSpaceMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HandMeshSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] ref Space space);
+        public partial Result CreateHandMeshSpaceMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HandMeshSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrUpdateHandMeshMSFT", Convention = CallingConvention.Winapi)]
@@ -46,11 +46,11 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrUpdateHandMeshMSFT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result UpdateHandMeshMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HandMeshUpdateInfoMSFT updateInfo, [Count(Count = 0)] HandMeshMSFT* handMesh);
+        public unsafe partial Result UpdateHandMeshMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HandMeshUpdateInfoMSFT updateInfo, [Count(Count = 0)] HandMeshMSFT* handMesh);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrUpdateHandMeshMSFT", Convention = CallingConvention.Winapi)]
-        public partial Result UpdateHandMeshMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in HandMeshUpdateInfoMSFT updateInfo, [Count(Count = 0)] ref HandMeshMSFT handMesh);
+        public partial Result UpdateHandMeshMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly HandMeshUpdateInfoMSFT updateInfo, [Count(Count = 0)] ref HandMeshMSFT handMesh);
 
         public MsftHandTrackingMesh(INativeContext ctx)
             : base(ctx)

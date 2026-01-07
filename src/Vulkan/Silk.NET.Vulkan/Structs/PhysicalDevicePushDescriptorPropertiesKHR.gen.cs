@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePushDescriptorPropertiesKHR")]
+    [NativeName("AliasOf", "VkPhysicalDevicePushDescriptorProperties")]
     public unsafe partial struct PhysicalDevicePushDescriptorPropertiesKHR : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDevicePushDescriptorPropertiesKHR
         (
-            StructureType? sType = StructureType.PhysicalDevicePushDescriptorPropertiesKhr,
+            StructureType? sType = StructureType.PhysicalDevicePushDescriptorProperties,
             void* pNext = null,
             uint? maxPushDescriptors = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDevicePushDescriptorPropertiesKhr;
+            return SType = StructureType.PhysicalDevicePushDescriptorProperties;
         }
 
         /// <inheritdoc />

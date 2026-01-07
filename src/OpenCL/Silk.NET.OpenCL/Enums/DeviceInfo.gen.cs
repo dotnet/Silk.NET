@@ -380,6 +380,12 @@ namespace Silk.NET.OpenCL
         BuiltInKernelsWithVersionKhr = 0x1062,
         [NativeName("Name", "CL_DEVICE_MEMORY_CAPABILITIES_IMG")]
         MemoryCapabilitiesImg = 0x40D8,
+        [NativeName("Name", "CL_DEVICE_WORKGROUP_PROTECTION_SVM_CAPABILITIES_IMG")]
+        WorkgroupProtectionSvmCapabilitiesImg = 0x40DA,
+        [NativeName("Name", "CL_DEVICE_WORKGROUP_PROTECTION_DEVICE_ENQUEUE_CAPABILITIES_IMG")]
+        WorkgroupProtectionDeviceEnqueueCapabilitiesImg = 0x40DB,
+        [NativeName("Name", "CL_DEVICE_SAFETY_MEM_SIZE_IMG")]
+        SafetyMemSizeImg = 0x40DC,
         [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_CAPABILITIES_ARM")]
         ControlledTerminationCapabilitiesArm = 0x41EE,
         [NativeName("Name", "CL_DEVICE_QUEUE_FAMILY_PROPERTIES_INTEL")]
@@ -418,6 +424,8 @@ namespace Silk.NET.OpenCL
         ExternalMemoryImportAssumeLinearImagesHandleTypesKhr = 0x2052,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_CAPABILITIES_KHR")]
         CommandBufferCapabilitiesKhr = 0x12A9,
+        [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_SUPPORTED_QUEUE_PROPERTIES_KHR")]
+        CommandBufferSupportedQueuePropertiesKhr = 0x129A,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
         CommandBufferRequiredQueuePropertiesKhr = 0x12AA,
         [NativeName("Name", "CL_DEVICE_SINGLE_FP_ATOMIC_CAPABILITIES_EXT")]
@@ -436,5 +444,15 @@ namespace Silk.NET.OpenCL
         CommandBufferSyncDevicesKhr = 0x12AC,
         [NativeName("Name", "CL_DEVICE_KERNEL_CLOCK_CAPABILITIES_KHR")]
         KernelClockCapabilitiesKhr = 0x1076,
+        [NativeName("Name", "CL_DEVICE_SPIRV_EXTENDED_INSTRUCTION_SETS_KHR")]
+        SpirvExtendedInstructionSetsKhr = 0x12B9,
+        [NativeName("Name", "CL_DEVICE_SPIRV_EXTENSIONS_KHR")]
+        SpirvExtensionsKhr = 0x12BA,
+        [NativeName("Name", "CL_DEVICE_SPIRV_CAPABILITIES_KHR")]
+        SpirvCapabilitiesKhr = 0x12BB,
+        [NativeName("Name", "CL_DEVICE_SVM_TYPE_CAPABILITIES_KHR")]
+        SvmTypeCapabilitiesKhr = 0x1077,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_IMG")]
+        SchedulingControlsCapabilitiesImg = 0x4222,
     }
 }

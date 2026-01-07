@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainPresentFenceInfoEXT")]
+    [NativeName("AliasOf", "VkSwapchainPresentFenceInfoKHR")]
     public unsafe partial struct SwapchainPresentFenceInfoEXT : IExtendsChain<PresentInfoKHR>
     {
         public SwapchainPresentFenceInfoEXT
         (
-            StructureType? sType = StructureType.SwapchainPresentFenceInfoExt,
+            StructureType? sType = StructureType.SwapchainPresentFenceInfoKhr,
             void* pNext = null,
             uint? swapchainCount = null,
             Fence* pFences = null
@@ -72,7 +73,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.SwapchainPresentFenceInfoExt;
+            return SType = StructureType.SwapchainPresentFenceInfoKhr;
         }
 
         /// <inheritdoc />

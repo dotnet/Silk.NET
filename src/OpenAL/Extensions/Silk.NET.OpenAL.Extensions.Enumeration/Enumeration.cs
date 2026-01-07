@@ -3,7 +3,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
+using System.Linq;
+using System.Text;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
@@ -36,24 +37,18 @@ namespace Silk.NET.OpenAL.Extensions.Enumeration
             unsafe
             {
                 var result = GetStringList(null, param);
-                if (result == (byte*) 0)
-                {
-                    return new List<string>();
-                }
+                if (result is null) return Enumerable.Empty<string>();
 
                 var strings = new List<string>();
 
                 var currentPos = result;
-                while (true)
+                while (*currentPos != '\0')
                 {
-                    var currentString = Marshal.PtrToStringAnsi((nint) currentPos);
-                    if (string.IsNullOrEmpty(currentString))
-                    {
-                        break;
-                    }
+                    var currentLength = (int) SilkMarshal.StringLength((nint) currentPos, NativeStringEncoding.UTF8);
+                    var currentString = Encoding.UTF8.GetString(currentPos, currentLength);
 
                     strings.Add(currentString);
-                    currentPos += currentString.Length + 1;
+                    currentPos += currentLength + 1;
                 }
 
                 return strings;

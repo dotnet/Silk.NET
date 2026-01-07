@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* @string);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT", Convention = CallingConvention.Winapi)]
-        public partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte @string);
+        public partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte @string);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT", Convention = CallingConvention.Winapi)]
         public partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] EXT type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string);
@@ -36,7 +36,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public unsafe partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* @string);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT", Convention = CallingConvention.Winapi)]
-        public partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte @string);
+        public partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte @string);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT", Convention = CallingConvention.Winapi)]
         public partial uint CreateShaderProgram([Flow(Silk.NET.Core.Native.FlowDirection.In)] ShaderType type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string);

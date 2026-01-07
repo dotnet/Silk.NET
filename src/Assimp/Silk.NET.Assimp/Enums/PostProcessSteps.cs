@@ -1,4 +1,4 @@
-﻿/*
+/*
 * Copyright (c) 2012-2014 AssimpNet - Nicholas Woodfield
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -30,7 +30,7 @@ namespace Silk.NET.Assimp
     /// data or optimize the imported data.
     /// </summary>
     [Flags]
-    public enum PostProcessSteps
+    public enum PostProcessSteps : uint
     {
         /// <summary>
         /// No flags enabled.
@@ -416,6 +416,11 @@ namespace Silk.NET.Assimp
         /// <para>Usage of the configuration AI_CONFIG_PP_DB_THRESHOLD to control the threshold and AI_CONFIG_PP_DB_ALL_OR_NONE if you want bones
         /// removed if and only if all bones within the scene qualify for removal.</para>
         /// </summary>
-        Debone = 0x4000000
+        Debone = 0x4000000,
+
+        /// <summary>
+        /// Calculates mesh axis aligned bounding boxes <see cref="Mesh.MAABB"/>
+        /// </summary>
+        GenerateBoundingBoxes = 0x80000000,
     }
 }

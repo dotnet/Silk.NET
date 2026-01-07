@@ -106,7 +106,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderConfig pConfig, ID3D11VideoDecoder** ppDecoder)
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderConfig pConfig, ID3D11VideoDecoder** ppDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderConfig pConfig, ref ID3D11VideoDecoder* ppDecoder)
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderConfig pConfig, ref ID3D11VideoDecoder* ppDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderConfig* pConfig, ID3D11VideoDecoder** ppDecoder)
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderConfig* pConfig, ID3D11VideoDecoder** ppDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderConfig* pConfig, ref ID3D11VideoDecoder* ppDecoder)
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderConfig* pConfig, ref ID3D11VideoDecoder* ppDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderConfig pConfig, ID3D11VideoDecoder** ppDecoder)
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderConfig pConfig, ID3D11VideoDecoder** ppDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderConfig pConfig, ref ID3D11VideoDecoder* ppDecoder)
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderConfig pConfig, ref ID3D11VideoDecoder* ppDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -283,7 +283,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -295,7 +295,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -322,7 +322,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -337,7 +337,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -352,7 +352,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -370,7 +370,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -382,7 +382,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -397,7 +397,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -412,7 +412,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -430,7 +430,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -445,7 +445,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -463,7 +463,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -481,7 +481,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+    public static unsafe int CreateCryptoSession(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -523,7 +523,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderOutputViewDesc pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
+    public static unsafe int CreateVideoDecoderOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderOutputViewDesc pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -535,7 +535,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
+    public static unsafe int CreateVideoDecoderOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -577,7 +577,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderOutputViewDesc pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
+    public static unsafe int CreateVideoDecoderOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderOutputViewDesc pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -592,7 +592,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
+    public static unsafe int CreateVideoDecoderOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -631,7 +631,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -643,7 +643,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -685,7 +685,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -700,7 +700,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -745,7 +745,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -760,7 +760,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -811,7 +811,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -829,7 +829,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+    public static unsafe int CreateVideoProcessorInputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -871,7 +871,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -883,7 +883,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -925,7 +925,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -940,7 +940,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -985,7 +985,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1000,7 +1000,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1051,7 +1051,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1069,7 +1069,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+    public static unsafe int CreateVideoProcessorOutputView(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1111,7 +1111,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorEnumerator(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorContentDesc pDesc, ID3D11VideoProcessorEnumerator** ppEnum)
+    public static unsafe int CreateVideoProcessorEnumerator(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorContentDesc pDesc, ID3D11VideoProcessorEnumerator** ppEnum)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1123,7 +1123,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorEnumerator(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorContentDesc pDesc, ref ID3D11VideoProcessorEnumerator* ppEnum)
+    public static unsafe int CreateVideoProcessorEnumerator(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorContentDesc pDesc, ref ID3D11VideoProcessorEnumerator* ppEnum)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1189,7 +1189,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckVideoDecoderFormat(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, Silk.NET.DXGI.Format Format, int* pSupported)
+    public static unsafe int CheckVideoDecoderFormat(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, Silk.NET.DXGI.Format Format, int* pSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1201,7 +1201,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckVideoDecoderFormat(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, Silk.NET.DXGI.Format Format, ref int pSupported)
+    public static int CheckVideoDecoderFormat(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, Silk.NET.DXGI.Format Format, ref int pSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1237,7 +1237,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoDecoderConfigCount(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pDesc, uint* pCount)
+    public static unsafe int GetVideoDecoderConfigCount(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pDesc, uint* pCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1249,7 +1249,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetVideoDecoderConfigCount(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pDesc, ref uint pCount)
+    public static int GetVideoDecoderConfigCount(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pDesc, ref uint pCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1285,7 +1285,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoDecoderConfig(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pDesc, uint Index, VideoDecoderConfig* pConfig)
+    public static unsafe int GetVideoDecoderConfig(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pDesc, uint Index, VideoDecoderConfig* pConfig)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1297,7 +1297,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetVideoDecoderConfig(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pDesc, uint Index, ref VideoDecoderConfig pConfig)
+    public static int GetVideoDecoderConfig(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pDesc, uint Index, ref VideoDecoderConfig pConfig)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1333,7 +1333,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, VideoContentProtectionCaps* pCaps)
+    public static unsafe int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, VideoContentProtectionCaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1345,7 +1345,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, ref VideoContentProtectionCaps pCaps)
+    public static unsafe int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, ref VideoContentProtectionCaps pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1360,7 +1360,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, VideoContentProtectionCaps* pCaps)
+    public static unsafe int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, VideoContentProtectionCaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1372,7 +1372,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, ref VideoContentProtectionCaps pCaps)
+    public static unsafe int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, ref VideoContentProtectionCaps pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1387,7 +1387,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, VideoContentProtectionCaps* pCaps)
+    public static unsafe int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, VideoContentProtectionCaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1402,7 +1402,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, ref VideoContentProtectionCaps pCaps)
+    public static int GetContentProtectionCaps(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, ref VideoContentProtectionCaps pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1441,7 +1441,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, uint Index, Guid* pKeyExchangeType)
+    public static unsafe int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, uint Index, Guid* pKeyExchangeType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1453,7 +1453,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
+    public static unsafe int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1468,7 +1468,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, uint Index, Guid* pKeyExchangeType)
+    public static unsafe int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, uint Index, Guid* pKeyExchangeType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1480,7 +1480,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
+    public static unsafe int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1495,7 +1495,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, uint Index, Guid* pKeyExchangeType)
+    public static unsafe int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, uint Index, Guid* pKeyExchangeType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1510,7 +1510,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
+    public static int CheckCryptoKeyExchange(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1537,7 +1537,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11VideoDevice> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11VideoDevice> thisVtbl, Guid* guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1561,7 +1561,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref Guid guid, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1585,7 +1585,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11VideoDevice> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static unsafe int SetPrivateDataInterface(this ComPtr<ID3D11VideoDevice> thisVtbl, Guid* guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1609,7 +1609,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateDataInterface(this ComPtr<ID3D11VideoDevice> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pData)
+    public static int SetPrivateDataInterface(this ComPtr<ID3D11VideoDevice> thisVtbl, ref Guid guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1665,7 +1665,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderConfig pConfig, ref ComPtr<TI0> ppDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderConfig pConfig, ref ComPtr<TI0> ppDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1689,7 +1689,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderConfig* pConfig, ref ComPtr<TI0> ppDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static unsafe int CreateVideoDecoder<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoDecoderConfig* pConfig, ref ComPtr<TI0> ppDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1713,7 +1713,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoDecoder<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderConfig pConfig, ref ComPtr<TI0> ppDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int CreateVideoDecoder<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderConfig pConfig, ref ComPtr<TI0> ppDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1794,7 +1794,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1818,7 +1818,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, out ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, out ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1843,7 +1843,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1867,7 +1867,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, out ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, out ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1892,7 +1892,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1916,7 +1916,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, out ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, out ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1941,7 +1941,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static int CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1981,7 +1981,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoDecoderOutputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderOutputViewDesc pDesc, ref ComPtr<TI1> ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
+    public static int CreateVideoDecoderOutputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderOutputViewDesc pDesc, ref ComPtr<TI1> ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1997,7 +1997,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderOutputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CreateVideoDecoderOutputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2037,7 +2037,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoDecoderOutputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderOutputViewDesc pDesc, ref ComPtr<TI0> ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
+    public static int CreateVideoDecoderOutputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderOutputViewDesc pDesc, ref ComPtr<TI0> ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2077,7 +2077,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessorInputView<TI0, TI1, TI2>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ComPtr<TI2> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI2>
+    public static int CreateVideoProcessorInputView<TI0, TI1, TI2>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ComPtr<TI2> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2093,7 +2093,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1>
+    public static unsafe int CreateVideoProcessorInputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2141,7 +2141,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessorInputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ComPtr<TI1> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI1>
+    public static int CreateVideoProcessorInputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ComPtr<TI1> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2157,7 +2157,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CreateVideoProcessorInputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2205,7 +2205,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessorInputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ComPtr<TI1> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI1>
+    public static int CreateVideoProcessorInputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ComPtr<TI1> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2221,7 +2221,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorInputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
+    public static unsafe int CreateVideoProcessorInputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2261,7 +2261,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessorInputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorInputViewDesc pDesc, ref ComPtr<TI0> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI0>
+    public static int CreateVideoProcessorInputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorInputViewDesc pDesc, ref ComPtr<TI0> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2301,7 +2301,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessorOutputView<TI0, TI1, TI2>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI2> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI2>
+    public static int CreateVideoProcessorOutputView<TI0, TI1, TI2>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI2> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2317,7 +2317,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1>
+    public static unsafe int CreateVideoProcessorOutputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2365,7 +2365,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessorOutputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI1> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+    public static int CreateVideoProcessorOutputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI1> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2381,7 +2381,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+    public static unsafe int CreateVideoProcessorOutputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2429,7 +2429,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessorOutputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI1> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+    public static int CreateVideoProcessorOutputView<TI0, TI1>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI1> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2445,7 +2445,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessorOutputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
+    public static unsafe int CreateVideoProcessorOutputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2485,7 +2485,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessorOutputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI0> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
+    public static int CreateVideoProcessorOutputView<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI0> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2517,7 +2517,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessorEnumerator<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessorContentDesc pDesc, ref ComPtr<TI0> ppEnum) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
+    public static int CreateVideoProcessorEnumerator<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessorContentDesc pDesc, ref ComPtr<TI0> ppEnum) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2807,7 +2807,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2816,7 +2816,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -2825,7 +2825,7 @@ public unsafe static class D3D11VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateCryptoSession<TI0>(this ComPtr<ID3D11VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

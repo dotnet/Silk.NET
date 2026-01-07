@@ -190,7 +190,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UpdateDashes([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float dashes, uint dashesCount, uint startIndex)
+        public readonly int UpdateDashes([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float dashes, uint dashesCount, uint startIndex)
         {
             var @this = (ID2D1SvgStrokeDashArray*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

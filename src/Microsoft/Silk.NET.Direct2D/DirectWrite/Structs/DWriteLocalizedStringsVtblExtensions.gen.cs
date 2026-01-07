@@ -142,7 +142,7 @@ public unsafe static class DWriteLocalizedStringsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindLocaleName(this ComPtr<IDWriteLocalizedStrings> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint* index, int* exists)
+    public static unsafe int FindLocaleName(this ComPtr<IDWriteLocalizedStrings> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint* index, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -154,7 +154,7 @@ public unsafe static class DWriteLocalizedStringsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindLocaleName(this ComPtr<IDWriteLocalizedStrings> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint* index, ref int exists)
+    public static unsafe int FindLocaleName(this ComPtr<IDWriteLocalizedStrings> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint* index, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -169,7 +169,7 @@ public unsafe static class DWriteLocalizedStringsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindLocaleName(this ComPtr<IDWriteLocalizedStrings> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref uint index, int* exists)
+    public static unsafe int FindLocaleName(this ComPtr<IDWriteLocalizedStrings> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref uint index, int* exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -184,7 +184,7 @@ public unsafe static class DWriteLocalizedStringsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindLocaleName(this ComPtr<IDWriteLocalizedStrings> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref uint index, ref int exists)
+    public static int FindLocaleName(this ComPtr<IDWriteLocalizedStrings> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref uint index, ref int exists)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

@@ -45,8 +45,12 @@ namespace Silk.NET.OpenGL
         ComputeShaderBit = 0x20,
         [NativeName("Name", "GL_MESH_SHADER_BIT_NV")]
         MeshShaderBitNV = 0x40,
+        [NativeName("Name", "GL_MESH_SHADER_BIT_EXT")]
+        MeshShaderBitExt = 0x40,
         [NativeName("Name", "GL_TASK_SHADER_BIT_NV")]
         TaskShaderBitNV = 0x80,
+        [NativeName("Name", "GL_TASK_SHADER_BIT_EXT")]
+        TaskShaderBitExt = 0x80,
         [NativeName("Name", "GL_ALL_SHADER_BITS")]
         AllShaderBits = unchecked((int)0xFFFFFFFF),
         [NativeName("Name", "GL_ALL_SHADER_BITS_EXT")]

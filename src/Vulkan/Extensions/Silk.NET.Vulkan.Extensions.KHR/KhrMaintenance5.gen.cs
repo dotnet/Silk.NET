@@ -26,94 +26,94 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceImageSubresourceLayoutKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfoKHR* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2KHR* pLayout);
+        public unsafe partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfo* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout);
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
         [NativeApi(EntryPoint = "vkGetDeviceImageSubresourceLayoutKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfoKHR* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2KHR pLayout);
+        public unsafe partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfo* pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2 pLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceImageSubresourceLayoutKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceImageSubresourceInfoKHR pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2KHR* pLayout);
+        public unsafe partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceImageSubresourceInfo pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout);
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
         [NativeApi(EntryPoint = "vkGetDeviceImageSubresourceLayoutKHR", Convention = CallingConvention.Winapi)]
-        public partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceImageSubresourceInfoKHR pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2KHR pLayout);
+        public partial void GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceImageSubresourceInfo pInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2 pLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2KHR* pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2KHR* pLayout);
+        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2* pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout);
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2KHR* pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2KHR pLayout);
+        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2* pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2 pLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageSubresource2KHR pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2KHR* pLayout);
+        public unsafe partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresource2 pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SubresourceLayout2* pLayout);
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout2KHR", Convention = CallingConvention.Winapi)]
-        public partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageSubresource2KHR pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2KHR pLayout);
+        public partial void GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresource2 pSubresource, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SubresourceLayout2 pLayout);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRenderingAreaGranularityKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfoKHR* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
+        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRenderingAreaGranularityKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfoKHR* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
+        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRenderingAreaGranularityKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingAreaInfoKHR pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
+        public unsafe partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingAreaInfo pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] Extent2D* pGranularity);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRenderingAreaGranularityKHR", Convention = CallingConvention.Winapi)]
-        public partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingAreaInfoKHR pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
+        public partial void GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingAreaInfo pRenderingAreaInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out Extent2D pGranularity);
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
-        public unsafe SubresourceLayout2KHR GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfoKHR* pInfo)
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public unsafe SubresourceLayout2 GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] DeviceImageSubresourceInfo* pInfo)
         {
             // NonKhrReturnTypeOverloader
-            GetDeviceImageSubresourceLayout(device, pInfo, out SubresourceLayout2KHR silkRet);
+            GetDeviceImageSubresourceLayout(device, pInfo, out SubresourceLayout2 silkRet);
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
-        public unsafe SubresourceLayout2KHR GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceImageSubresourceInfoKHR pInfo)
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public unsafe SubresourceLayout2 GetDeviceImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceImageSubresourceInfo pInfo)
         {
             // NonKhrReturnTypeOverloader
-            GetDeviceImageSubresourceLayout(device, in pInfo, out SubresourceLayout2KHR silkRet);
+            GetDeviceImageSubresourceLayout(device, in pInfo, out SubresourceLayout2 silkRet);
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
-        public unsafe SubresourceLayout2KHR GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2KHR* pSubresource)
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public unsafe SubresourceLayout2 GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ImageSubresource2* pSubresource)
         {
             // NonKhrReturnTypeOverloader
-            GetImageSubresourceLayout2(device, image, pSubresource, out SubresourceLayout2KHR silkRet);
+            GetImageSubresourceLayout2(device, image, pSubresource, out SubresourceLayout2 silkRet);
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2Khr);")]
-        public unsafe SubresourceLayout2KHR GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ImageSubresource2KHR pSubresource)
+        [Inject(SilkTouchStage.Begin, "pLayout = new(StructureType.SubresourceLayout2);")]
+        public unsafe SubresourceLayout2 GetImageSubresourceLayout2([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ImageSubresource2 pSubresource)
         {
             // NonKhrReturnTypeOverloader
-            GetImageSubresourceLayout2(device, image, in pSubresource, out SubresourceLayout2KHR silkRet);
+            GetImageSubresourceLayout2(device, image, in pSubresource, out SubresourceLayout2 silkRet);
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Extent2D GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfoKHR* pRenderingAreaInfo)
+        public unsafe Extent2D GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] RenderingAreaInfo* pRenderingAreaInfo)
         {
             // NonKhrReturnTypeOverloader
             GetRenderingAreaGranularity(device, pRenderingAreaInfo, out Extent2D silkRet);
@@ -121,7 +121,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Extent2D GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in RenderingAreaInfoKHR pRenderingAreaInfo)
+        public unsafe Extent2D GetRenderingAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly RenderingAreaInfo pRenderingAreaInfo)
         {
             // NonKhrReturnTypeOverloader
             GetRenderingAreaGranularity(device, in pRenderingAreaInfo, out Extent2D silkRet);

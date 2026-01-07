@@ -43,12 +43,12 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 260, Column 8 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuInstanceEnumerateAdapters")]
-        public unsafe partial nuint InstanceEnumerateAdapters(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceEnumerateAdapterOptions options, Adapter** adapters);
+        public unsafe partial nuint InstanceEnumerateAdapters(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InstanceEnumerateAdapterOptions options, Adapter** adapters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 260, Column 8 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuInstanceEnumerateAdapters")]
-        public unsafe partial nuint InstanceEnumerateAdapters(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in InstanceEnumerateAdapterOptions options, ref Adapter* adapters);
+        public unsafe partial nuint InstanceEnumerateAdapters(Instance* instance, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly InstanceEnumerateAdapterOptions options, ref Adapter* adapters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 262, Column 21 in wgpu.h")]
@@ -68,7 +68,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 265, Column 10 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuDevicePoll")]
-        public unsafe partial Silk.NET.Core.Bool32 DevicePoll(Device* device, Silk.NET.Core.Bool32 wait, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WrappedSubmissionIndex wrappedSubmissionIndex);
+        public unsafe partial Silk.NET.Core.Bool32 DevicePoll(Device* device, Silk.NET.Core.Bool32 wait, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WrappedSubmissionIndex wrappedSubmissionIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 267, Column 6 in wgpu.h")]
@@ -98,7 +98,7 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 273, Column 6 in wgpu.h")]
         [NativeApi(EntryPoint = "wgpuRenderPassEncoderSetPushConstants")]
-        public unsafe partial void RenderPassEncoderSetPushConstants<T0>(RenderPassEncoder* encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data) where T0 : unmanaged;
+        public unsafe partial void RenderPassEncoderSetPushConstants<T0>(RenderPassEncoder* encoder, Silk.NET.WebGPU.ShaderStage stages, uint offset, uint sizeBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 275, Column 6 in wgpu.h")]

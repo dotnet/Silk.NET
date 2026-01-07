@@ -26,7 +26,7 @@ namespace Silk.NET.OpenXR.Extensions.HTC
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrApplyFoveationHTC", Convention = CallingConvention.Winapi)]
-        public partial Result ApplyFoveationHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FoveationApplyInfoHTC applyInfo);
+        public partial Result ApplyFoveationHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FoveationApplyInfoHTC applyInfo);
 
         public HtcFoveation(INativeContext ctx)
             : base(ctx)

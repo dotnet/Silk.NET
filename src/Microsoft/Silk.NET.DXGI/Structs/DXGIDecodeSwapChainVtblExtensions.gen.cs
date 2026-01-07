@@ -103,7 +103,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect)
+    public static int SetSourceRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -124,7 +124,7 @@ public unsafe static class DXGIDecodeSwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> pRect)
+    public static int SetTargetRect(this ComPtr<IDXGIDecodeSwapChain> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

@@ -34,11 +34,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetDeviceGroupSurfacePresentModes2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DeviceGroupPresentModeFlagsKHR* pModes);
+        public unsafe partial Result GetDeviceGroupSurfacePresentModes2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] DeviceGroupPresentModeFlagsKHR* pModes);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceGroupSurfacePresentModes2EXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetDeviceGroupSurfacePresentModes2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DeviceGroupPresentModeFlagsKHR pModes);
+        public partial Result GetDeviceGroupSurfacePresentModes2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out DeviceGroupPresentModeFlagsKHR pModes);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT", Convention = CallingConvention.Winapi)]
@@ -58,19 +58,19 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceSurfacePresentModes2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] uint* pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PresentModeKHR* pPresentModes);
+        public unsafe partial Result GetPhysicalDeviceSurfacePresentModes2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] uint* pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PresentModeKHR* pPresentModes);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceSurfacePresentModes2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] uint* pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PresentModeKHR pPresentModes);
+        public unsafe partial Result GetPhysicalDeviceSurfacePresentModes2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] uint* pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PresentModeKHR pPresentModes);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetPhysicalDeviceSurfacePresentModes2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] ref uint pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PresentModeKHR* pPresentModes);
+        public unsafe partial Result GetPhysicalDeviceSurfacePresentModes2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] ref uint pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] PresentModeKHR* pPresentModes);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSurfacePresentModes2EXT", Convention = CallingConvention.Winapi)]
-        public partial Result GetPhysicalDeviceSurfacePresentModes2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] ref uint pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PresentModeKHR pPresentModes);
+        public partial Result GetPhysicalDeviceSurfacePresentModes2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PhysicalDeviceSurfaceInfo2KHR pSurfaceInfo, [Count(Count = 0)] ref uint pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out PresentModeKHR pPresentModes);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkReleaseFullScreenExclusiveModeEXT", Convention = CallingConvention.Winapi)]

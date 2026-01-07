@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM")]
+    [NativeName("AliasOf", "VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT")]
     public unsafe partial struct PhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceFragmentDensityMapOffsetPropertiesQCOM
         (
-            StructureType? sType = StructureType.PhysicalDeviceFragmentDensityMapOffsetPropertiesQCom,
+            StructureType? sType = StructureType.PhysicalDeviceFragmentDensityMapOffsetPropertiesExt,
             void* pNext = null,
             Extent2D? fragmentDensityOffsetGranularity = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceFragmentDensityMapOffsetPropertiesQCom;
+            return SType = StructureType.PhysicalDeviceFragmentDensityMapOffsetPropertiesExt;
         }
 
         /// <inheritdoc />

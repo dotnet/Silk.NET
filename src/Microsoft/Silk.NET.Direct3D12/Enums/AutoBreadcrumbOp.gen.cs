@@ -159,6 +159,21 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"Setprogram\"")]
         [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_SETPROGRAM")]
         AutoBreadcrumbOpSetprogram = 0x30,
+        [Obsolete("Deprecated in favour of \"Encodeframe1\"")]
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_ENCODEFRAME1")]
+        AutoBreadcrumbOpEncodeframe1 = 0x31,
+        [Obsolete("Deprecated in favour of \"Resolveencoderoutputmetadata1\"")]
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_RESOLVEENCODEROUTPUTMETADATA1")]
+        AutoBreadcrumbOpResolveencoderoutputmetadata1 = 0x32,
+        [Obsolete("Deprecated in favour of \"Resolveinputparamlayout\"")]
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_RESOLVEINPUTPARAMLAYOUT")]
+        AutoBreadcrumbOpResolveinputparamlayout = 0x33,
+        [Obsolete("Deprecated in favour of \"Processframes2\"")]
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_PROCESSFRAMES2")]
+        AutoBreadcrumbOpProcessframes2 = 0x34,
+        [Obsolete("Deprecated in favour of \"SetWorkGraphMaximumGpuInputRecords\"")]
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_SET_WORK_GRAPH_MAXIMUM_GPU_INPUT_RECORDS")]
+        AutoBreadcrumbOpSetWorkGraphMaximumGpuInputRecords = 0x35,
         [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_SETMARKER")]
         Setmarker = 0x0,
         [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_BEGINEVENT")]
@@ -257,5 +272,15 @@ namespace Silk.NET.Direct3D12
         Dispatchgraph = 0x2F,
         [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_SETPROGRAM")]
         Setprogram = 0x30,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_ENCODEFRAME1")]
+        Encodeframe1 = 0x31,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_RESOLVEENCODEROUTPUTMETADATA1")]
+        Resolveencoderoutputmetadata1 = 0x32,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_RESOLVEINPUTPARAMLAYOUT")]
+        Resolveinputparamlayout = 0x33,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_PROCESSFRAMES2")]
+        Processframes2 = 0x34,
+        [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_SET_WORK_GRAPH_MAXIMUM_GPU_INPUT_RECORDS")]
+        SetWorkGraphMaximumGpuInputRecords = 0x35,
     }
 }

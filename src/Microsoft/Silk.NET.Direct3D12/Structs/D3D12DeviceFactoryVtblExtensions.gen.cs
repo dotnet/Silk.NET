@@ -277,7 +277,7 @@ public unsafe static class D3D12DeviceFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnableExperimentalFeatures(this ComPtr<ID3D12DeviceFactory> thisVtbl, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes)
+    public static unsafe int EnableExperimentalFeatures(this ComPtr<ID3D12DeviceFactory> thisVtbl, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12DeviceFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnableExperimentalFeatures(this ComPtr<ID3D12DeviceFactory> thisVtbl, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pIIDs, void* pConfigurationStructs, ref uint pConfigurationStructSizes)
+    public static unsafe int EnableExperimentalFeatures(this ComPtr<ID3D12DeviceFactory> thisVtbl, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pIIDs, void* pConfigurationStructs, ref uint pConfigurationStructSizes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class D3D12DeviceFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnableExperimentalFeatures<T0>(this ComPtr<ID3D12DeviceFactory> thisVtbl, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pIIDs, ref T0 pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged
+    public static unsafe int EnableExperimentalFeatures<T0>(this ComPtr<ID3D12DeviceFactory> thisVtbl, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pIIDs, ref T0 pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -319,7 +319,7 @@ public unsafe static class D3D12DeviceFactoryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnableExperimentalFeatures<T0>(this ComPtr<ID3D12DeviceFactory> thisVtbl, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pIIDs, ref T0 pConfigurationStructs, ref uint pConfigurationStructSizes) where T0 : unmanaged
+    public static int EnableExperimentalFeatures<T0>(this ComPtr<ID3D12DeviceFactory> thisVtbl, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pIIDs, ref T0 pConfigurationStructs, ref uint pConfigurationStructSizes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;

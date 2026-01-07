@@ -94,7 +94,7 @@ public unsafe static class D3D12SDKConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath)
+    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -165,7 +165,7 @@ public unsafe static class D3D12SDKConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDeviceFactory(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath, Guid* riid, void** ppvFactory)
+    public static unsafe int CreateDeviceFactory(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath, Guid* riid, void** ppvFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -177,7 +177,7 @@ public unsafe static class D3D12SDKConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDeviceFactory(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath, Guid* riid, ref void* ppvFactory)
+    public static unsafe int CreateDeviceFactory(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath, Guid* riid, ref void* ppvFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -192,7 +192,7 @@ public unsafe static class D3D12SDKConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDeviceFactory(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath, ref Guid riid, void** ppvFactory)
+    public static unsafe int CreateDeviceFactory(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath, ref Guid riid, void** ppvFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -207,7 +207,7 @@ public unsafe static class D3D12SDKConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDeviceFactory(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath, ref Guid riid, ref void* ppvFactory)
+    public static unsafe int CreateDeviceFactory(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath, ref Guid riid, ref void* ppvFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -354,7 +354,7 @@ public unsafe static class D3D12SDKConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDeviceFactory<TI0>(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath, out ComPtr<TI0> ppvFactory) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateDeviceFactory<TI0>(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath, out ComPtr<TI0> ppvFactory) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -430,7 +430,7 @@ public unsafe static class D3D12SDKConfiguration1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateDeviceFactory<TI0>(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte SDKPath) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateDeviceFactory<TI0>(this ComPtr<ID3D12SDKConfiguration1> thisVtbl, uint SDKVersion, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte SDKPath) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

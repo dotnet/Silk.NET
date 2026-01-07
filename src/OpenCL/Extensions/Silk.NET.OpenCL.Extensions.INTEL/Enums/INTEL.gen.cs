@@ -1000,11 +1000,7 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_MEM_DEVICE_ID_INTEL")]
         MemDeviceIDIntel = 0x4219,
         [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
-        FamilyIntel = 0x418C,
-        [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
         QueueFamilyIntel = 0x418C,
-        [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
-        IndexIntel = 0x418D,
         [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
         QueueIndexIntel = 0x418D,
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]

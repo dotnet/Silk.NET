@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT", Convention = CallingConvention.Winapi)]
-        public partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferDeviceAddressInfo pInfo);
+        public partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferDeviceAddressInfo pInfo);
 
         public ExtBufferDeviceAddress(INativeContext ctx)
             : base(ctx)

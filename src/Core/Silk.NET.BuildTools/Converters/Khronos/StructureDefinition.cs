@@ -15,7 +15,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public string Alias { get; }
         public MemberSpec[] Members { get; }
         public IReadOnlyList<string> Extends { get; }
-        public string? Api { get; }
+        public string[]? Api { get; }
 
         public StructureDefinition(string name, string alias, MemberSpec[] members, string extends, string? api)
         {
@@ -25,7 +25,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Extends = string.IsNullOrWhiteSpace(extends)
                 ? Array.Empty<string>()
                 : extends.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
-            Api = api;
+            Api = api?.Split(',');
         }
 
         public static StructureDefinition CreateFromXml(XElement xe)

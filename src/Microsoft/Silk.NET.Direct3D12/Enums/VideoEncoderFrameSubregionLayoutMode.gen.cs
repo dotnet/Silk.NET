@@ -33,6 +33,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"ConfigurableGridPartition\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE_CONFIGURABLE_GRID_PARTITION")]
         VideoEncoderFrameSubregionLayoutModeConfigurableGridPartition = 0x6,
+        [Obsolete("Deprecated in favour of \"Auto\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE_AUTO")]
+        VideoEncoderFrameSubregionLayoutModeAuto = 0x7,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE_FULL_FRAME")]
         FullFrame = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE_BYTES_PER_SUBREGION")]
@@ -47,5 +50,7 @@ namespace Silk.NET.Direct3D12
         UniformGridPartition = 0x5,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE_CONFIGURABLE_GRID_PARTITION")]
         ConfigurableGridPartition = 0x6,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE_AUTO")]
+        Auto = 0x7,
     }
 }

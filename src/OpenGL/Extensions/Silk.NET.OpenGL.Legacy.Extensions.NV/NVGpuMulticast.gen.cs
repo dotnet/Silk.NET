@@ -33,7 +33,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void MulticastBufferSubData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint gpuMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glMulticastBufferSubDataNV", Convention = CallingConvention.Winapi)]
-        public partial void MulticastBufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint gpuMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 data) where T0 : unmanaged;
+        public partial void MulticastBufferSubData<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint gpuMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint buffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMulticastCopyBufferSubDataNV", Convention = CallingConvention.Winapi)]
         public partial void MulticastCopyBufferSubData([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint readGpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint writeGpuMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint readBuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint writeBuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint readOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nint writeOffset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] nuint size);
@@ -45,7 +45,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void MulticastFramebufferSampleLocations([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint gpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glMulticastFramebufferSampleLocationsfvNV", Convention = CallingConvention.Winapi)]
-        public partial void MulticastFramebufferSampleLocations([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint gpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float v);
+        public partial void MulticastFramebufferSampleLocations([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint gpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint framebuffer, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint start, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float v);
 
         [NativeApi(EntryPoint = "glMulticastGetQueryObjectivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void MulticastGetQueryObject([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint gpu, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] int* @params);

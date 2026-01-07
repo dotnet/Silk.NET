@@ -27,6 +27,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ShaderResolveBitQCom\"")]
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_SHADER_RESOLVE_BIT_QCOM")]
         SubpassDescriptionShaderResolveBitQCom = 8,
+        [Obsolete("Deprecated in favour of \"TileShadingApronBitQCom\"")]
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_TILE_SHADING_APRON_BIT_QCOM")]
+        SubpassDescriptionTileShadingApronBitQCom = 256,
         [Obsolete("Deprecated in favour of \"RasterizationOrderAttachmentColorAccessBitArm\"")]
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_ARM")]
         SubpassDescriptionRasterizationOrderAttachmentColorAccessBitArm = 16,
@@ -48,6 +51,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"EnableLegacyDitheringBitExt\"")]
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_ENABLE_LEGACY_DITHERING_BIT_EXT")]
         SubpassDescriptionEnableLegacyDitheringBitExt = 128,
+        [Obsolete("Deprecated in favour of \"FragmentRegionBitExt\"")]
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_EXT")]
+        SubpassDescriptionFragmentRegionBitExt = 4,
+        [Obsolete("Deprecated in favour of \"CustomResolveBitExt\"")]
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_CUSTOM_RESOLVE_BIT_EXT")]
+        SubpassDescriptionCustomResolveBitExt = 8,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_PER_VIEW_ATTRIBUTES_BIT_NVX")]
         PerViewAttributesBitNvx = 1,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_PER_VIEW_POSITION_X_ONLY_BIT_NVX")]
@@ -56,6 +65,8 @@ namespace Silk.NET.Vulkan
         FragmentRegionBitQCom = 4,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_SHADER_RESOLVE_BIT_QCOM")]
         ShaderResolveBitQCom = 8,
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_TILE_SHADING_APRON_BIT_QCOM")]
+        TileShadingApronBitQCom = 256,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_COLOR_ACCESS_BIT_ARM")]
         RasterizationOrderAttachmentColorAccessBitArm = 16,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_RASTERIZATION_ORDER_ATTACHMENT_DEPTH_ACCESS_BIT_ARM")]
@@ -70,5 +81,9 @@ namespace Silk.NET.Vulkan
         RasterizationOrderAttachmentStencilAccessBitExt = 64,
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_ENABLE_LEGACY_DITHERING_BIT_EXT")]
         EnableLegacyDitheringBitExt = 128,
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_FRAGMENT_REGION_BIT_EXT")]
+        FragmentRegionBitExt = 4,
+        [NativeName("Name", "VK_SUBPASS_DESCRIPTION_CUSTOM_RESOLVE_BIT_EXT")]
+        CustomResolveBitExt = 8,
     }
 }

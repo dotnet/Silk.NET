@@ -33,7 +33,7 @@ namespace Silk.NET.WGL.Extensions.EXT
         public unsafe partial bool LoadDisplayColorTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] ushort* table, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "wglLoadDisplayColorTableEXT", Convention = CallingConvention.Winapi)]
-        public partial bool LoadDisplayColorTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ushort table, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length);
+        public partial bool LoadDisplayColorTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ushort table, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint length);
 
         public ExtDisplayColorTable(INativeContext ctx)
             : base(ctx)

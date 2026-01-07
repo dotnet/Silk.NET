@@ -183,7 +183,7 @@ namespace Silk.NET.WindowsCodecs
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WriteScan(uint cbScanData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte pbScanData)
+        public readonly int WriteScan(uint cbScanData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte pbScanData)
         {
             var @this = (IWICJpegFrameEncode*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

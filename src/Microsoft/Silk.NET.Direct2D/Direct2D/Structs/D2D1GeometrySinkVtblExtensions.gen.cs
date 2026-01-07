@@ -113,7 +113,7 @@ public unsafe static class D2D1GeometrySinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AddLines(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount)
+    public static void AddLines(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> points, uint pointsCount)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Vector2D<float>* pointsPtr = &points)
@@ -130,7 +130,7 @@ public unsafe static class D2D1GeometrySinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AddBeziers(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BezierSegment beziers, uint beziersCount)
+    public static void AddBeziers(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BezierSegment beziers, uint beziersCount)
     {
         var @this = thisVtbl.Handle;
         fixed (BezierSegment* beziersPtr = &beziers)
@@ -170,7 +170,7 @@ public unsafe static class D2D1GeometrySinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AddBezier(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BezierSegment bezier)
+    public static void AddBezier(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BezierSegment bezier)
     {
         var @this = thisVtbl.Handle;
         fixed (BezierSegment* bezierPtr = &bezier)
@@ -187,7 +187,7 @@ public unsafe static class D2D1GeometrySinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AddQuadraticBezier(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in QuadraticBezierSegment bezier)
+    public static void AddQuadraticBezier(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QuadraticBezierSegment bezier)
     {
         var @this = thisVtbl.Handle;
         fixed (QuadraticBezierSegment* bezierPtr = &bezier)
@@ -204,7 +204,7 @@ public unsafe static class D2D1GeometrySinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AddQuadraticBeziers(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in QuadraticBezierSegment beziers, uint beziersCount)
+    public static void AddQuadraticBeziers(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly QuadraticBezierSegment beziers, uint beziersCount)
     {
         var @this = thisVtbl.Handle;
         fixed (QuadraticBezierSegment* beziersPtr = &beziers)
@@ -221,7 +221,7 @@ public unsafe static class D2D1GeometrySinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AddArc(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ArcSegment arc)
+    public static void AddArc(this ComPtr<ID2D1GeometrySink> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ArcSegment arc)
     {
         var @this = thisVtbl.Handle;
         fixed (ArcSegment* arcPtr = &arc)

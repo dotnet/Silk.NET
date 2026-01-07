@@ -17,7 +17,7 @@ namespace Silk.NET.Direct3D12
     public static class D3D12Overloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4322, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4487, Column 16 in d3d12.h")]
         public static unsafe int SerializeRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RootSignatureDesc> pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4322, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4487, Column 16 in d3d12.h")]
         public static unsafe int SerializeRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RootSignatureDesc> pRootSignature, D3DRootSignatureVersion Version, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4322, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4487, Column 16 in d3d12.h")]
         public static unsafe int SerializeRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RootSignatureDesc> pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob)
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4322, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4487, Column 16 in d3d12.h")]
         public static unsafe int SerializeRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<RootSignatureDesc> pRootSignature, D3DRootSignatureVersion Version, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4334, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4499, Column 16 in d3d12.h")]
         public static unsafe int CreateRootSignatureDeserializer(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
         {
             // SpanOverloader
@@ -57,7 +57,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4334, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4499, Column 16 in d3d12.h")]
         public static unsafe int CreateRootSignatureDeserializer(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
         {
             // SpanOverloader
@@ -65,7 +65,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4334, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4499, Column 16 in d3d12.h")]
         public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
@@ -73,7 +73,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4334, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4499, Column 16 in d3d12.h")]
         public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4334, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4499, Column 16 in d3d12.h")]
         public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4334, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4499, Column 16 in d3d12.h")]
         public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
@@ -97,7 +97,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4345, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4510, Column 16 in d3d12.h")]
         public static unsafe int SerializeVersionedRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VersionedRootSignatureDesc> pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob)
         {
             // SpanOverloader
@@ -105,7 +105,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4345, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4510, Column 16 in d3d12.h")]
         public static unsafe int SerializeVersionedRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VersionedRootSignatureDesc> pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob)
         {
             // SpanOverloader
@@ -113,7 +113,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4345, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4510, Column 16 in d3d12.h")]
         public static unsafe int SerializeVersionedRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VersionedRootSignatureDesc> pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob)
         {
             // SpanOverloader
@@ -121,7 +121,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4345, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4510, Column 16 in d3d12.h")]
         public static unsafe int SerializeVersionedRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VersionedRootSignatureDesc> pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob)
         {
             // SpanOverloader
@@ -129,7 +129,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4356, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4521, Column 16 in d3d12.h")]
         public static unsafe int CreateVersionedRootSignatureDeserializer(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
         {
             // SpanOverloader
@@ -137,7 +137,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4356, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4521, Column 16 in d3d12.h")]
         public static unsafe int CreateVersionedRootSignatureDeserializer(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
         {
             // SpanOverloader
@@ -145,7 +145,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4356, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4521, Column 16 in d3d12.h")]
         public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
@@ -153,7 +153,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4356, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4521, Column 16 in d3d12.h")]
         public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
@@ -161,7 +161,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4356, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4521, Column 16 in d3d12.h")]
         public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
@@ -169,7 +169,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 4356, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4521, Column 16 in d3d12.h")]
         public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
@@ -177,7 +177,167 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28655, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(pSrcData, SrcDataSizeInBytes, RootSignatureSubobjectName, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(pSrcData, SrcDataSizeInBytes, RootSignatureSubobjectName, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> RootSignatureSubobjectName, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(pSrcData, SrcDataSizeInBytes, in RootSignatureSubobjectName.GetPinnableReference(), pRootSignatureDeserializerInterface, ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> RootSignatureSubobjectName, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(pSrcData, SrcDataSizeInBytes, in RootSignatureSubobjectName.GetPinnableReference(), pRootSignatureDeserializerInterface, ref ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(pSrcData, SrcDataSizeInBytes, in RootSignatureSubobjectName.GetPinnableReference(), ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(pSrcData, SrcDataSizeInBytes, in RootSignatureSubobjectName.GetPinnableReference(), ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(pSrcData, SrcDataSizeInBytes, RootSignatureSubobjectName, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(pSrcData, SrcDataSizeInBytes, RootSignatureSubobjectName, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, RootSignatureSubobjectName, pRootSignatureDeserializerInterface, ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, RootSignatureSubobjectName, pRootSignatureDeserializerInterface, ref ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, RootSignatureSubobjectName, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, RootSignatureSubobjectName, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> RootSignatureSubobjectName, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, in RootSignatureSubobjectName.GetPinnableReference(), pRootSignatureDeserializerInterface, ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> RootSignatureSubobjectName, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, in RootSignatureSubobjectName.GetPinnableReference(), pRootSignatureDeserializerInterface, ref ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, in RootSignatureSubobjectName.GetPinnableReference(), ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, in RootSignatureSubobjectName.GetPinnableReference(), ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, RootSignatureSubobjectName, pRootSignatureDeserializerInterface, ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, RootSignatureSubobjectName, pRootSignatureDeserializerInterface, ref ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, RootSignatureSubobjectName, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 4534, Column 16 in d3d12.h")]
+        public static unsafe int CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary<T0>(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> pSrcData, nuint SrcDataSizeInBytes, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string RootSignatureSubobjectName, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary(in pSrcData.GetPinnableReference(), SrcDataSizeInBytes, RootSignatureSubobjectName, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 30414, Column 16 in d3d12.h")]
         public static unsafe int CreateDevice(this D3D12 thisApi, Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Span<Guid> riid, void** ppDevice)
         {
             // SpanOverloader
@@ -185,7 +345,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28655, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30414, Column 16 in d3d12.h")]
         public static unsafe int CreateDevice(this D3D12 thisApi, Silk.NET.Core.Native.IUnknown* pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Span<Guid> riid, ref void* ppDevice)
         {
             // SpanOverloader
@@ -193,7 +353,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28655, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30414, Column 16 in d3d12.h")]
         public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, void** ppDevice)
         {
             // SpanOverloader
@@ -201,7 +361,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28655, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30414, Column 16 in d3d12.h")]
         public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Guid* riid, ref void* ppDevice)
         {
             // SpanOverloader
@@ -209,7 +369,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28655, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30414, Column 16 in d3d12.h")]
         public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Span<Guid> riid, void** ppDevice)
         {
             // SpanOverloader
@@ -217,7 +377,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28655, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30414, Column 16 in d3d12.h")]
         public static unsafe int CreateDevice(this D3D12 thisApi, Span<Silk.NET.Core.Native.IUnknown> pAdapter, Silk.NET.Core.Native.D3DFeatureLevel MinimumFeatureLevel, Span<Guid> riid, ref void* ppDevice)
         {
             // SpanOverloader
@@ -225,7 +385,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28664, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30423, Column 16 in d3d12.h")]
         public static unsafe int GetDebugInterface(this D3D12 thisApi, Span<Guid> riid, void** ppvDebug)
         {
             // SpanOverloader
@@ -233,7 +393,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28664, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30423, Column 16 in d3d12.h")]
         public static unsafe int GetDebugInterface(this D3D12 thisApi, Span<Guid> riid, ref void* ppvDebug)
         {
             // SpanOverloader
@@ -241,7 +401,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28690, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30449, Column 16 in d3d12.h")]
         public static unsafe int EnableExperimentalFeatures(this D3D12 thisApi, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pIIDs, void* pConfigurationStructs, Span<uint> pConfigurationStructSizes)
         {
             // SpanOverloader
@@ -249,7 +409,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28690, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30449, Column 16 in d3d12.h")]
         public static unsafe int EnableExperimentalFeatures<T0>(this D3D12 thisApi, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pIIDs, Span<T0> pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged
         {
             // SpanOverloader
@@ -257,7 +417,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28690, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30449, Column 16 in d3d12.h")]
         public static unsafe int EnableExperimentalFeatures<T0>(this D3D12 thisApi, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pIIDs, Span<T0> pConfigurationStructs, Span<uint> pConfigurationStructSizes) where T0 : unmanaged
         {
             // SpanOverloader
@@ -265,7 +425,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28690, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30449, Column 16 in d3d12.h")]
         public static unsafe int EnableExperimentalFeatures(this D3D12 thisApi, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes)
         {
             // SpanOverloader
@@ -273,7 +433,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28690, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30449, Column 16 in d3d12.h")]
         public static unsafe int EnableExperimentalFeatures(this D3D12 thisApi, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pIIDs, void* pConfigurationStructs, Span<uint> pConfigurationStructSizes)
         {
             // SpanOverloader
@@ -281,7 +441,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28690, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30449, Column 16 in d3d12.h")]
         public static unsafe int EnableExperimentalFeatures<T0>(this D3D12 thisApi, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pIIDs, Span<T0> pConfigurationStructs, uint* pConfigurationStructSizes) where T0 : unmanaged
         {
             // SpanOverloader
@@ -289,7 +449,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28690, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30449, Column 16 in d3d12.h")]
         public static unsafe int EnableExperimentalFeatures<T0>(this D3D12 thisApi, uint NumFeatures, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Guid> pIIDs, Span<T0> pConfigurationStructs, Span<uint> pConfigurationStructSizes) where T0 : unmanaged
         {
             // SpanOverloader
@@ -297,7 +457,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28740, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30516, Column 16 in d3d12.h")]
         public static unsafe int GetInterface(this D3D12 thisApi, Guid* rclsid, Span<Guid> riid, void** ppvDebug)
         {
             // SpanOverloader
@@ -305,7 +465,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28740, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30516, Column 16 in d3d12.h")]
         public static unsafe int GetInterface(this D3D12 thisApi, Guid* rclsid, Span<Guid> riid, ref void* ppvDebug)
         {
             // SpanOverloader
@@ -313,7 +473,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28740, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30516, Column 16 in d3d12.h")]
         public static unsafe int GetInterface(this D3D12 thisApi, Span<Guid> rclsid, Guid* riid, void** ppvDebug)
         {
             // SpanOverloader
@@ -321,7 +481,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28740, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30516, Column 16 in d3d12.h")]
         public static unsafe int GetInterface(this D3D12 thisApi, Span<Guid> rclsid, Guid* riid, ref void* ppvDebug)
         {
             // SpanOverloader
@@ -329,7 +489,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28740, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30516, Column 16 in d3d12.h")]
         public static unsafe int GetInterface(this D3D12 thisApi, Span<Guid> rclsid, Span<Guid> riid, void** ppvDebug)
         {
             // SpanOverloader
@@ -337,11 +497,107 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 28740, Column 16 in d3d12.h")]
+        [NativeName("Src", "Line 30516, Column 16 in d3d12.h")]
         public static unsafe int GetInterface(this D3D12 thisApi, Span<Guid> rclsid, Span<Guid> riid, ref void* ppvDebug)
         {
             // SpanOverloader
             return thisApi.GetInterface(ref rclsid.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppvDebug);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 117, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerCreateFactory(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pPluginCompilerDllPath, Span<Guid> riid, void** ppFactory)
+        {
+            // SpanOverloader
+            return thisApi.CompilerCreateFactory(pPluginCompilerDllPath, ref riid.GetPinnableReference(), ppFactory);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 117, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerCreateFactory(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pPluginCompilerDllPath, Span<Guid> riid, ref void* ppFactory)
+        {
+            // SpanOverloader
+            return thisApi.CompilerCreateFactory(pPluginCompilerDllPath, ref riid.GetPinnableReference(), ref ppFactory);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 117, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerCreateFactory(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pPluginCompilerDllPath, Guid* riid, void** ppFactory)
+        {
+            // SpanOverloader
+            return thisApi.CompilerCreateFactory(in pPluginCompilerDllPath.GetPinnableReference(), riid, ppFactory);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 117, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerCreateFactory(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pPluginCompilerDllPath, Guid* riid, ref void* ppFactory)
+        {
+            // SpanOverloader
+            return thisApi.CompilerCreateFactory(in pPluginCompilerDllPath.GetPinnableReference(), riid, ref ppFactory);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 117, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerCreateFactory(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pPluginCompilerDllPath, Span<Guid> riid, void** ppFactory)
+        {
+            // SpanOverloader
+            return thisApi.CompilerCreateFactory(in pPluginCompilerDllPath.GetPinnableReference(), ref riid.GetPinnableReference(), ppFactory);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 117, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerCreateFactory(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> pPluginCompilerDllPath, Span<Guid> riid, ref void* ppFactory)
+        {
+            // SpanOverloader
+            return thisApi.CompilerCreateFactory(in pPluginCompilerDllPath.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppFactory);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 117, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerCreateFactory(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pPluginCompilerDllPath, Span<Guid> riid, void** ppFactory)
+        {
+            // SpanOverloader
+            return thisApi.CompilerCreateFactory(pPluginCompilerDllPath, ref riid.GetPinnableReference(), ppFactory);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 117, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerCreateFactory(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pPluginCompilerDllPath, Span<Guid> riid, ref void* ppFactory)
+        {
+            // SpanOverloader
+            return thisApi.CompilerCreateFactory(pPluginCompilerDllPath, ref riid.GetPinnableReference(), ref ppFactory);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 127, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerSerializeVersionedRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VersionedRootSignatureDesc> pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob)
+        {
+            // SpanOverloader
+            return thisApi.CompilerSerializeVersionedRootSignature(in pRootSignature.GetPinnableReference(), ppBlob, ppErrorBlob);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 127, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerSerializeVersionedRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VersionedRootSignatureDesc> pRootSignature, Silk.NET.Core.Native.ID3D10Blob** ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob)
+        {
+            // SpanOverloader
+            return thisApi.CompilerSerializeVersionedRootSignature(in pRootSignature.GetPinnableReference(), ppBlob, ref ppErrorBlob);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 127, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerSerializeVersionedRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VersionedRootSignatureDesc> pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBlob)
+        {
+            // SpanOverloader
+            return thisApi.CompilerSerializeVersionedRootSignature(in pRootSignature.GetPinnableReference(), ref ppBlob, ppErrorBlob);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 127, Column 16 in d3d12compiler.h")]
+        public static unsafe int CompilerSerializeVersionedRootSignature(this D3D12 thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VersionedRootSignatureDesc> pRootSignature, ref Silk.NET.Core.Native.ID3D10Blob* ppBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBlob)
+        {
+            // SpanOverloader
+            return thisApi.CompilerSerializeVersionedRootSignature(in pRootSignature.GetPinnableReference(), ref ppBlob, ref ppErrorBlob);
         }
 
     }

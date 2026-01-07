@@ -30,11 +30,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pHandle);
+        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] nint* pHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleKHR", Convention = CallingConvention.Winapi)]
-        public partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MemoryGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pHandle);
+        public partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MemoryGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out nint pHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR", Convention = CallingConvention.Winapi)]

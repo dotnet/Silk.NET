@@ -24,7 +24,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result BuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
+        public static unsafe Result BuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
         {
             // SpanOverloader
             return thisApi.BuildAccelerationStructures(device, deferredOperation, infoCount, in pInfos.GetPinnableReference(), in ppBuildRangeInfos);
@@ -38,7 +38,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
+        public static unsafe void CmdBuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructures(commandBuffer, infoCount, in pInfos.GetPinnableReference(), in ppBuildRangeInfos);
@@ -52,7 +52,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
@@ -66,7 +66,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, pInfos, in pIndirectDeviceAddresses.GetPinnableReference(), pIndirectStrides, in ppMaxPrimitiveCounts);
@@ -80,7 +80,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, pInfos, in pIndirectDeviceAddresses.GetPinnableReference(), in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
@@ -94,7 +94,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), pIndirectDeviceAddresses, pIndirectStrides, in ppMaxPrimitiveCounts);
@@ -108,7 +108,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), pIndirectDeviceAddresses, in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
@@ -122,7 +122,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), in pIndirectDeviceAddresses.GetPinnableReference(), pIndirectStrides, in ppMaxPrimitiveCounts);
@@ -136,7 +136,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), in pIndirectDeviceAddresses.GetPinnableReference(), in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);

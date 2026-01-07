@@ -81,6 +81,21 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"SampleBlockMatchBitQCom\"")]
         [NativeName("Name", "VK_IMAGE_USAGE_SAMPLE_BLOCK_MATCH_BIT_QCOM")]
         ImageUsageSampleBlockMatchBitQCom = 2097152,
+        [Obsolete("Deprecated in favour of \"TensorAliasingBitArm\"")]
+        [NativeName("Name", "VK_IMAGE_USAGE_TENSOR_ALIASING_BIT_ARM")]
+        ImageUsageTensorAliasingBitArm = 8388608,
+        [Obsolete("Deprecated in favour of \"TileMemoryBitQCom\"")]
+        [NativeName("Name", "VK_IMAGE_USAGE_TILE_MEMORY_BIT_QCOM")]
+        ImageUsageTileMemoryBitQCom = 134217728,
+        [Obsolete("Deprecated in favour of \"VideoEncodeQuantizationDeltaMapBitKhr\"")]
+        [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_QUANTIZATION_DELTA_MAP_BIT_KHR")]
+        ImageUsageVideoEncodeQuantizationDeltaMapBitKhr = 33554432,
+        [Obsolete("Deprecated in favour of \"VideoEncodeEmphasisMapBitKhr\"")]
+        [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_EMPHASIS_MAP_BIT_KHR")]
+        ImageUsageVideoEncodeEmphasisMapBitKhr = 67108864,
+        [Obsolete("Deprecated in favour of \"HostTransferBit\"")]
+        [NativeName("Name", "VK_IMAGE_USAGE_HOST_TRANSFER_BIT")]
+        ImageUsageHostTransferBit = 4194304,
         [NativeName("Name", "VK_IMAGE_USAGE_TRANSFER_SRC_BIT")]
         TransferSrcBit = 1,
         [NativeName("Name", "VK_IMAGE_USAGE_TRANSFER_DST_BIT")]
@@ -125,5 +140,15 @@ namespace Silk.NET.Vulkan
         SampleWeightBitQCom = 1048576,
         [NativeName("Name", "VK_IMAGE_USAGE_SAMPLE_BLOCK_MATCH_BIT_QCOM")]
         SampleBlockMatchBitQCom = 2097152,
+        [NativeName("Name", "VK_IMAGE_USAGE_TENSOR_ALIASING_BIT_ARM")]
+        TensorAliasingBitArm = 8388608,
+        [NativeName("Name", "VK_IMAGE_USAGE_TILE_MEMORY_BIT_QCOM")]
+        TileMemoryBitQCom = 134217728,
+        [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_QUANTIZATION_DELTA_MAP_BIT_KHR")]
+        VideoEncodeQuantizationDeltaMapBitKhr = 33554432,
+        [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_EMPHASIS_MAP_BIT_KHR")]
+        VideoEncodeEmphasisMapBitKhr = 67108864,
+        [NativeName("Name", "VK_IMAGE_USAGE_HOST_TRANSFER_BIT")]
+        HostTransferBit = 4194304,
     }
 }

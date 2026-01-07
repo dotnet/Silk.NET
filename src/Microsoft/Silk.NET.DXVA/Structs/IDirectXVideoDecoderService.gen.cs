@@ -426,7 +426,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -438,7 +438,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -453,7 +453,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -468,7 +468,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -486,7 +486,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -501,7 +501,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -519,7 +519,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -537,7 +537,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -690,7 +690,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -705,7 +705,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -723,7 +723,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -741,7 +741,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -762,7 +762,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -780,7 +780,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -801,7 +801,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -822,7 +822,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -894,7 +894,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -906,7 +906,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -921,7 +921,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -936,7 +936,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -954,7 +954,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -966,7 +966,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -981,7 +981,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -996,7 +996,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1014,7 +1014,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1029,7 +1029,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1047,7 +1047,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1065,7 +1065,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1146,7 +1146,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1161,7 +1161,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1179,7 +1179,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1197,7 +1197,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1218,7 +1218,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1233,7 +1233,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1251,7 +1251,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1269,7 +1269,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1290,7 +1290,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1308,7 +1308,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1329,7 +1329,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1350,7 +1350,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1399,7 +1399,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1407,7 +1407,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1415,7 +1415,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1423,7 +1423,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1431,7 +1431,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1439,7 +1439,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1463,7 +1463,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1471,7 +1471,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1479,7 +1479,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1487,7 +1487,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1495,7 +1495,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1503,7 +1503,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

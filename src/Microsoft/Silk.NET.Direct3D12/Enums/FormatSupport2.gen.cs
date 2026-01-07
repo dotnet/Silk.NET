@@ -52,6 +52,9 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"SamplerFeedback\"")]
         [NativeName("Name", "D3D12_FORMAT_SUPPORT2_SAMPLER_FEEDBACK")]
         FormatSupport2SamplerFeedback = 0x8000,
+        [Obsolete("Deprecated in favour of \"Displayable\"")]
+        [NativeName("Name", "D3D12_FORMAT_SUPPORT2_DISPLAYABLE")]
+        FormatSupport2Displayable = 0x10000,
         [NativeName("Name", "D3D12_FORMAT_SUPPORT2_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_FORMAT_SUPPORT2_UAV_ATOMIC_ADD")]
@@ -78,5 +81,7 @@ namespace Silk.NET.Direct3D12
         MultiplaneOverlay = 0x4000,
         [NativeName("Name", "D3D12_FORMAT_SUPPORT2_SAMPLER_FEEDBACK")]
         SamplerFeedback = 0x8000,
+        [NativeName("Name", "D3D12_FORMAT_SUPPORT2_DISPLAYABLE")]
+        Displayable = 0x10000,
     }
 }

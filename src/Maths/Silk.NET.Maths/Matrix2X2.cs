@@ -22,6 +22,7 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public Vector2D<T> Row1;
+
         /// <summary>
         /// Row 2 of the matrix.
         /// </summary>
@@ -39,7 +40,6 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public Vector2D<T> Column2 => new(M12, M22);
-
 
         /// <summary>Value at row 1, column 1 of the matrix.</summary>
         [DataMember]
@@ -130,8 +130,8 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22);
         }
 
-        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given Matrix4x3.</summary>
-        /// <param name="value">The source Matrix4x3.</param>
+        /// <summary>Constructs a <see cref="Matrix2X2{T}"/> from the given <see cref="Matrix4X3{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix4X3{T}"/>.</param>
         public Matrix2X2(Matrix4X3<T> value)
         {
             Row1 = new(value.M11, value.M12);
@@ -166,6 +166,7 @@ namespace Silk.NET.Maths
         public static Matrix2X2<T> Identity => _identity;
 
         /// <summary>Returns whether the matrix is the identity matrix.</summary>
+        [IgnoreDataMember]
         public readonly bool IsIdentity
             => Scalar.Equal(M11, Scalar<T>.One) &&
                Scalar.Equal(M22, Scalar<T>.One) && // Check diagonal element first for early out.
@@ -225,7 +226,7 @@ namespace Silk.NET.Maths
         /// <returns>The result of the multiplication.</returns>
         public static unsafe Vector2D<T> operator *(Vector2D<T> value1, Matrix2X2<T> value2)
         {
-            return value1 * value2.Row1 + value1 * value2.Row2;
+            return value1.X * value2.Row1 + value1.Y * value2.Row2;
         }
 
         /// <summary>Multiplies a matrix by a scalar value.</summary>

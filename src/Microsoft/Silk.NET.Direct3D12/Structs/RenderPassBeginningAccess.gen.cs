@@ -55,7 +55,7 @@ namespace Silk.NET.Direct3D12
         public RenderPassBeginningAccessType Type;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L20676_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L21680_C5")]
         [NativeName("Name", "anonymous1")]
         public RenderPassBeginningAccessUnion Anonymous;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER

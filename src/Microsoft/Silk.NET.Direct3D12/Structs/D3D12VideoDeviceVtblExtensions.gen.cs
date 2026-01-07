@@ -154,7 +154,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pDesc, Guid* riid, void** ppVideoDecoder)
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pDesc, Guid* riid, void** ppVideoDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pDesc, Guid* riid, ref void* ppVideoDecoder)
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pDesc, Guid* riid, ref void* ppVideoDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -181,7 +181,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pDesc, ref Guid riid, void** ppVideoDecoder)
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pDesc, ref Guid riid, void** ppVideoDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -196,7 +196,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pDesc, ref Guid riid, ref void* ppVideoDecoder)
+    public static unsafe int CreateVideoDecoder(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pDesc, ref Guid riid, ref void* ppVideoDecoder)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -262,7 +262,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderHeapDesc pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap)
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderHeapDesc pVideoDecoderHeapDesc, Guid* riid, void** ppVideoDecoderHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -274,7 +274,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderHeapDesc pVideoDecoderHeapDesc, Guid* riid, ref void* ppVideoDecoderHeap)
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderHeapDesc pVideoDecoderHeapDesc, Guid* riid, ref void* ppVideoDecoderHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref Guid riid, void** ppVideoDecoderHeap)
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref Guid riid, void** ppVideoDecoderHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref Guid riid, ref void* ppVideoDecoderHeap)
+    public static unsafe int CreateVideoDecoderHeap(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderHeapDesc pVideoDecoderHeapDesc, ref Guid riid, ref void* ppVideoDecoderHeap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -370,7 +370,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -382,7 +382,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -397,7 +397,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, void** ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, void** ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -412,7 +412,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -430,7 +430,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -442,7 +442,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -457,7 +457,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, void** ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, void** ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -472,7 +472,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -490,7 +490,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, void** ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -505,7 +505,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs, Guid* riid, ref void* ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -523,7 +523,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, void** ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, void** ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -541,7 +541,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs, ref Guid riid, ref void* ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -628,7 +628,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoDecoder<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pDesc, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateVideoDecoder<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pDesc, out ComPtr<TI0> ppVideoDecoder) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -694,7 +694,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoDecoderHeap<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderHeapDesc pVideoDecoderHeapDesc, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateVideoDecoderHeap<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderHeapDesc pVideoDecoderHeapDesc, out ComPtr<TI0> ppVideoDecoderHeap) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -760,7 +760,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -801,7 +801,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -842,7 +842,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs, out ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -893,7 +893,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoDecoder<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateVideoDecoder<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -911,7 +911,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoDecoderHeap<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoDecoderHeapDesc pVideoDecoderHeapDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateVideoDecoderHeap<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoDecoderHeapDesc pVideoDecoderHeapDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -929,7 +929,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessOutputStreamDesc* pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -938,7 +938,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VideoProcessInputStreamDesc* pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -947,7 +947,7 @@ public unsafe static class D3D12VideoDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VideoProcessInputStreamDesc pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> CreateVideoProcessor<TI0>(this ComPtr<ID3D12VideoDevice> thisVtbl, uint NodeMask, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessOutputStreamDesc pOutputStreamDesc, uint NumInputStreamDescs, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VideoProcessInputStreamDesc pInputStreamDescs) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader

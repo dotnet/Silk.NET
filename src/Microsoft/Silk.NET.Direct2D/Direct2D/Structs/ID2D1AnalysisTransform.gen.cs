@@ -120,7 +120,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ProcessAnalysisResults([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte analysisData, uint analysisDataCount)
+        public readonly int ProcessAnalysisResults([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte analysisData, uint analysisDataCount)
         {
             var @this = (ID2D1AnalysisTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

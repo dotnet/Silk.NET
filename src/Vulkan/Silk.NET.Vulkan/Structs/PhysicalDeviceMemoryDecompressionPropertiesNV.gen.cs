@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMemoryDecompressionPropertiesNV")]
+    [NativeName("AliasOf", "VkPhysicalDeviceMemoryDecompressionPropertiesEXT")]
     public unsafe partial struct PhysicalDeviceMemoryDecompressionPropertiesNV : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceMemoryDecompressionPropertiesNV
         (
-            StructureType? sType = StructureType.PhysicalDeviceMemoryDecompressionPropertiesNV,
+            StructureType? sType = StructureType.PhysicalDeviceMemoryDecompressionPropertiesExt,
             void* pNext = null,
-            MemoryDecompressionMethodFlagsNV? decompressionMethods = null,
+            MemoryDecompressionMethodFlagsEXT? decompressionMethods = null,
             ulong? maxDecompressionIndirectCount = null
         ) : this()
         {
@@ -59,10 +60,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkMemoryDecompressionMethodFlagsNV")]
-        [NativeName("Type.Name", "VkMemoryDecompressionMethodFlagsNV")]
+        [NativeName("Type", "VkMemoryDecompressionMethodFlagsEXT")]
+        [NativeName("Type.Name", "VkMemoryDecompressionMethodFlagsEXT")]
         [NativeName("Name", "decompressionMethods")]
-        public MemoryDecompressionMethodFlagsNV DecompressionMethods;
+        public MemoryDecompressionMethodFlagsEXT DecompressionMethods;
 /// <summary></summary>
         [NativeName("Type", "uint64_t")]
         [NativeName("Type.Name", "uint64_t")]
@@ -72,7 +73,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceMemoryDecompressionPropertiesNV;
+            return SType = StructureType.PhysicalDeviceMemoryDecompressionPropertiesExt;
         }
 
         /// <inheritdoc />

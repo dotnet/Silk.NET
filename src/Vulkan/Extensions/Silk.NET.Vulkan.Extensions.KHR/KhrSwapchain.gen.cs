@@ -38,11 +38,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] uint* pImageIndex);
+        public unsafe partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] uint* pImageIndex);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquireNextImage2KHR", Convention = CallingConvention.Winapi)]
-        public partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] ref uint pImageIndex);
+        public partial Result AcquireNextImage2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AcquireNextImageInfoKHR pAcquireInfo, [Count(Count = 0)] ref uint pImageIndex);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
@@ -54,27 +54,27 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SwapchainKHR* pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SwapchainKHR pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SwapchainKHR* pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SwapchainKHR pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SwapchainKHR* pSwapchain);
+        public unsafe partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] SwapchainKHR* pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSwapchainKHR", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SwapchainKHR pSwapchain);
+        public partial Result CreateSwapchain([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SwapchainCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out SwapchainKHR pSwapchain);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroySwapchainKHR", Convention = CallingConvention.Winapi)]
@@ -82,7 +82,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroySwapchainKHR", Convention = CallingConvention.Winapi)]
-        public partial void DestroySwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial void DestroySwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceGroupPresentCapabilitiesKHR", Convention = CallingConvention.Winapi)]
@@ -139,7 +139,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkQueuePresentKHR", Convention = CallingConvention.Winapi)]
-        public partial Result QueuePresent([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PresentInfoKHR pPresentInfo);
+        public partial Result QueuePresent([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PresentInfoKHR pPresentInfo);
 
         public KhrSwapchain(INativeContext ctx)
             : base(ctx)

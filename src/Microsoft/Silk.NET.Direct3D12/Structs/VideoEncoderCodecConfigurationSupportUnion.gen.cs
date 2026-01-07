@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12video_L7321_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12video_L7414_C5")]
     public unsafe partial struct VideoEncoderCodecConfigurationSupportUnion
     {
         public VideoEncoderCodecConfigurationSupportUnion
         (
             VideoEncoderCodecConfigurationSupportH264* pH264Support = null,
             VideoEncoderCodecConfigurationSupportHevc* pHEVCSupport = null,
+            VideoEncoderCodecConfigurationSupportHevc1* pHEVCSupport1 = null,
             VideoEncoderAV1CodecConfigurationSupport* pAV1Support = null
         ) : this()
         {
@@ -35,6 +36,11 @@ namespace Silk.NET.Direct3D12
             if (pHEVCSupport is not null)
             {
                 PHEVCSupport = pHEVCSupport;
+            }
+
+            if (pHEVCSupport1 is not null)
+            {
+                PHEVCSupport1 = pHEVCSupport1;
             }
 
             if (pAV1Support is not null)
@@ -55,6 +61,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC *")]
         [NativeName("Name", "pHEVCSupport")]
         public VideoEncoderCodecConfigurationSupportHevc* PHEVCSupport;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC1 *")]
+        [NativeName("Type.Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC1 *")]
+        [NativeName("Name", "pHEVCSupport1")]
+        public VideoEncoderCodecConfigurationSupportHevc1* PHEVCSupport1;
 
         [FieldOffset(0)]
         [NativeName("Type", "D3D12_VIDEO_ENCODER_AV1_CODEC_CONFIGURATION_SUPPORT *")]

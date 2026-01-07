@@ -26,7 +26,7 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnableUserCalibrationEventsML", Convention = CallingConvention.Winapi)]
-        public partial Result EnableUserCalibrationEventsML([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UserCalibrationEnableEventsInfoML enableInfo);
+        public partial Result EnableUserCalibrationEventsML([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UserCalibrationEnableEventsInfoML enableInfo);
 
         public MLUserCalibration(INativeContext ctx)
             : base(ctx)

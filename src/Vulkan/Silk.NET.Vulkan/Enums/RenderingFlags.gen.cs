@@ -18,21 +18,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ContentsSecondaryCommandBuffersBit\"")]
         [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT")]
         RenderingContentsSecondaryCommandBuffersBit = 1,
-        [Obsolete("Deprecated in favour of \"ContentsSecondaryCommandBuffersBitKhr\"")]
-        [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR")]
-        RenderingContentsSecondaryCommandBuffersBitKhr = 1,
         [Obsolete("Deprecated in favour of \"SuspendingBit\"")]
         [NativeName("Name", "VK_RENDERING_SUSPENDING_BIT")]
         RenderingSuspendingBit = 2,
-        [Obsolete("Deprecated in favour of \"SuspendingBitKhr\"")]
-        [NativeName("Name", "VK_RENDERING_SUSPENDING_BIT_KHR")]
-        RenderingSuspendingBitKhr = 2,
         [Obsolete("Deprecated in favour of \"ResumingBit\"")]
         [NativeName("Name", "VK_RENDERING_RESUMING_BIT")]
         RenderingResumingBit = 4,
-        [Obsolete("Deprecated in favour of \"ResumingBitKhr\"")]
-        [NativeName("Name", "VK_RENDERING_RESUMING_BIT_KHR")]
-        RenderingResumingBitKhr = 4,
         [Obsolete("Deprecated in favour of \"ContentsInlineBitExt\"")]
         [NativeName("Name", "VK_RENDERING_CONTENTS_INLINE_BIT_EXT")]
         RenderingContentsInlineBitExt = 16,
@@ -42,23 +33,37 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ContentsInlineBitKhr\"")]
         [NativeName("Name", "VK_RENDERING_CONTENTS_INLINE_BIT_KHR")]
         RenderingContentsInlineBitKhr = 16,
+        [Obsolete("Deprecated in favour of \"PerLayerFragmentDensityBitValve\"")]
+        [NativeName("Name", "VK_RENDERING_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
+        RenderingPerLayerFragmentDensityBitValve = 32,
+        [Obsolete("Deprecated in favour of \"FragmentRegionBitExt\"")]
+        [NativeName("Name", "VK_RENDERING_FRAGMENT_REGION_BIT_EXT")]
+        RenderingFragmentRegionBitExt = 64,
+        [Obsolete("Deprecated in favour of \"CustomResolveBitExt\"")]
+        [NativeName("Name", "VK_RENDERING_CUSTOM_RESOLVE_BIT_EXT")]
+        RenderingCustomResolveBitExt = 128,
+        [Obsolete("Deprecated in favour of \"LocalReadConcurrentAccessControlBitKhr\"")]
+        [NativeName("Name", "VK_RENDERING_LOCAL_READ_CONCURRENT_ACCESS_CONTROL_BIT_KHR")]
+        RenderingLocalReadConcurrentAccessControlBitKhr = 256,
         [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT")]
         ContentsSecondaryCommandBuffersBit = 1,
-        [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR")]
-        ContentsSecondaryCommandBuffersBitKhr = 1,
         [NativeName("Name", "VK_RENDERING_SUSPENDING_BIT")]
         SuspendingBit = 2,
-        [NativeName("Name", "VK_RENDERING_SUSPENDING_BIT_KHR")]
-        SuspendingBitKhr = 2,
         [NativeName("Name", "VK_RENDERING_RESUMING_BIT")]
         ResumingBit = 4,
-        [NativeName("Name", "VK_RENDERING_RESUMING_BIT_KHR")]
-        ResumingBitKhr = 4,
         [NativeName("Name", "VK_RENDERING_CONTENTS_INLINE_BIT_EXT")]
         ContentsInlineBitExt = 16,
         [NativeName("Name", "VK_RENDERING_ENABLE_LEGACY_DITHERING_BIT_EXT")]
         EnableLegacyDitheringBitExt = 8,
         [NativeName("Name", "VK_RENDERING_CONTENTS_INLINE_BIT_KHR")]
         ContentsInlineBitKhr = 16,
+        [NativeName("Name", "VK_RENDERING_PER_LAYER_FRAGMENT_DENSITY_BIT_VALVE")]
+        PerLayerFragmentDensityBitValve = 32,
+        [NativeName("Name", "VK_RENDERING_FRAGMENT_REGION_BIT_EXT")]
+        FragmentRegionBitExt = 64,
+        [NativeName("Name", "VK_RENDERING_CUSTOM_RESOLVE_BIT_EXT")]
+        CustomResolveBitExt = 128,
+        [NativeName("Name", "VK_RENDERING_LOCAL_READ_CONCURRENT_ACCESS_CONTROL_BIT_KHR")]
+        LocalReadConcurrentAccessControlBitKhr = 256,
     }
 }

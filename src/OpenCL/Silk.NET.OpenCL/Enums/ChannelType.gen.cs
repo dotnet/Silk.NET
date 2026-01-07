@@ -52,5 +52,17 @@ namespace Silk.NET.OpenCL
         UnsignedIntRaw12Ext = 0x10E4,
         [NativeName("Name", "CL_UNORM_INT_2_101010_EXT")]
         UnormInt2101010Ext = 0x10E5,
+        [NativeName("Name", "CL_UNSIGNED_INT10X6_EXT")]
+        UnsignedInt10X6Ext = 0x10E6,
+        [NativeName("Name", "CL_UNSIGNED_INT12X4_EXT")]
+        UnsignedInt12X4Ext = 0x10E7,
+        [NativeName("Name", "CL_UNSIGNED_INT14X2_EXT")]
+        UnsignedInt14X2Ext = 0x10E8,
+        [NativeName("Name", "CL_UNORM_INT10X6_EXT")]
+        UnormInt10X6Ext = 0x10E1,
+        [NativeName("Name", "CL_UNORM_INT12X4_EXT")]
+        UnormInt12X4Ext = 0x10E9,
+        [NativeName("Name", "CL_UNORM_INT14X2_EXT")]
+        UnormInt14X2Ext = 0x10EA,
     }
 }

@@ -18,6 +18,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ExternallySynchronizedBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_EXTERNALLY_SYNCHRONIZED_BIT_EXT")]
         PipelineCacheCreateExternallySynchronizedBitExt = 1,
+        [Obsolete("Deprecated in favour of \"InternallySynchronizedMergeBitKhr\"")]
+        [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_INTERNALLY_SYNCHRONIZED_MERGE_BIT_KHR")]
+        PipelineCacheCreateInternallySynchronizedMergeBitKhr = 8,
         [Obsolete("Deprecated in favour of \"ExternallySynchronizedBit\"")]
         [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_EXTERNALLY_SYNCHRONIZED_BIT")]
         PipelineCacheCreateExternallySynchronizedBit = 1,
@@ -29,6 +32,8 @@ namespace Silk.NET.Vulkan
         PipelineCacheCreateUseApplicationStorageBit = 4,
         [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_EXTERNALLY_SYNCHRONIZED_BIT_EXT")]
         ExternallySynchronizedBitExt = 1,
+        [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_INTERNALLY_SYNCHRONIZED_MERGE_BIT_KHR")]
+        InternallySynchronizedMergeBitKhr = 8,
         [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_EXTERNALLY_SYNCHRONIZED_BIT")]
         ExternallySynchronizedBit = 1,
         [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_READ_ONLY_BIT")]

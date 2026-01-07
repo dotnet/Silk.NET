@@ -106,7 +106,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, Contentprotectioncaps* pCaps)
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, Contentprotectioncaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, ref Contentprotectioncaps pCaps)
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, ref Contentprotectioncaps pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, Contentprotectioncaps* pCaps)
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, Contentprotectioncaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, ref Contentprotectioncaps pCaps)
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, ref Contentprotectioncaps pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, Contentprotectioncaps* pCaps)
+    public static unsafe int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, Contentprotectioncaps* pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, ref Contentprotectioncaps pCaps)
+    public static int GetContentProtectionCaps(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, ref Contentprotectioncaps pCaps)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -301,7 +301,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -316,7 +316,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -331,7 +331,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -349,7 +349,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -361,7 +361,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -376,7 +376,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -391,7 +391,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -409,7 +409,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -424,7 +424,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -442,7 +442,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -460,7 +460,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
+    public static unsafe int CreateCryptoSession(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -602,7 +602,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -618,7 +618,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -650,7 +650,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -666,7 +666,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -698,7 +698,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -714,7 +714,7 @@ public unsafe static class Direct3DDevice9VideoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+    public static unsafe int CreateCryptoSession<TI0>(this ComPtr<IDirect3DDevice9Video> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pCryptoType, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

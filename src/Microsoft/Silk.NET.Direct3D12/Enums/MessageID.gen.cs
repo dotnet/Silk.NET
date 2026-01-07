@@ -2868,9 +2868,129 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"GpuBasedValidationStructuredBufferStrideMismatch\"")]
         [NativeName("Name", "D3D12_MESSAGE_ID_GPU_BASED_VALIDATION_STRUCTURED_BUFFER_STRIDE_MISMATCH")]
         MessageIDGpuBasedValidationStructuredBufferStrideMismatch = 0x56B,
+        [Obsolete("Deprecated in favour of \"DispatchGraphInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DISPATCH_GRAPH_INVALID")]
+        MessageIDDispatchGraphInvalid = 0x56C,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresTargetFormatInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_TARGET_FORMAT_INVALID")]
+        MessageIDDirectsrSuperresTargetFormatInvalid = 0x56D,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresTargetDimensionInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_TARGET_DIMENSION_INVALID")]
+        MessageIDDirectsrSuperresTargetDimensionInvalid = 0x56E,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresSourceColorFormatInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_SOURCE_COLOR_FORMAT_INVALID")]
+        MessageIDDirectsrSuperresSourceColorFormatInvalid = 0x56F,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresSourceDepthFormatInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_SOURCE_DEPTH_FORMAT_INVALID")]
+        MessageIDDirectsrSuperresSourceDepthFormatInvalid = 0x570,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresExposureScaleFormatInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_EXPOSURE_SCALE_FORMAT_INVALID")]
+        MessageIDDirectsrSuperresExposureScaleFormatInvalid = 0x571,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresEngineCreateFlagsInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_ENGINE_CREATE_FLAGS_INVALID")]
+        MessageIDDirectsrSuperresEngineCreateFlagsInvalid = 0x572,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresExtensionInternalLoadFailure\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_EXTENSION_INTERNAL_LOAD_FAILURE")]
+        MessageIDDirectsrSuperresExtensionInternalLoadFailure = 0x573,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresExtensionInternalEngineCreationError\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_EXTENSION_INTERNAL_ENGINE_CREATION_ERROR")]
+        MessageIDDirectsrSuperresExtensionInternalEngineCreationError = 0x574,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresExtensionInternalUpscalerCreationError\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_EXTENSION_INTERNAL_UPSCALER_CREATION_ERROR")]
+        MessageIDDirectsrSuperresExtensionInternalUpscalerCreationError = 0x575,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresExtensionInternalUpscalerExecutionError\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_EXTENSION_INTERNAL_UPSCALER_EXECUTION_ERROR")]
+        MessageIDDirectsrSuperresExtensionInternalUpscalerExecutionError = 0x576,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerExecuteRegionInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_REGION_INVALID")]
+        MessageIDDirectsrSuperresUpscalerExecuteRegionInvalid = 0x577,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerExecuteTimeDeltaInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_TIME_DELTA_INVALID")]
+        MessageIDDirectsrSuperresUpscalerExecuteTimeDeltaInvalid = 0x578,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerExecuteRequiredTextureIsNull\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_REQUIRED_TEXTURE_IS_NULL")]
+        MessageIDDirectsrSuperresUpscalerExecuteRequiredTextureIsNull = 0x579,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerExecuteMotionVectorsFormatInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_MOTION_VECTORS_FORMAT_INVALID")]
+        MessageIDDirectsrSuperresUpscalerExecuteMotionVectorsFormatInvalid = 0x57A,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerExecuteFlagsInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_FLAGS_INVALID")]
+        MessageIDDirectsrSuperresUpscalerExecuteFlagsInvalid = 0x57B,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerExecuteFormatInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_FORMAT_INVALID")]
+        MessageIDDirectsrSuperresUpscalerExecuteFormatInvalid = 0x57C,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerExecuteExposureScaleTextureSizeInvalid\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_EXPOSURE_SCALE_TEXTURE_SIZE_INVALID")]
+        MessageIDDirectsrSuperresUpscalerExecuteExposureScaleTextureSizeInvalid = 0x57D,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresVariantIndexOutOfBounds\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_VARIANT_INDEX_OUT_OF_BOUNDS")]
+        MessageIDDirectsrSuperresVariantIndexOutOfBounds = 0x57E,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresVariantIDNotFound\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_VARIANT_ID_NOT_FOUND")]
+        MessageIDDirectsrSuperresVariantIDNotFound = 0x57F,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresDuplicateVariantID\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_DUPLICATE_VARIANT_ID")]
+        MessageIDDirectsrSuperresDuplicateVariantID = 0x580,
+        [Obsolete("Deprecated in favour of \"DirectsrOutOfMemory\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_OUT_OF_MEMORY")]
+        MessageIDDirectsrOutOfMemory = 0x581,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerExecuteUnexpectedTextureIsIgnored\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_UNEXPECTED_TEXTURE_IS_IGNORED")]
+        MessageIDDirectsrSuperresUpscalerExecuteUnexpectedTextureIsIgnored = 0x582,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerEvictUnderflow\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EVICT_UNDERFLOW")]
+        MessageIDDirectsrSuperresUpscalerEvictUnderflow = 0x583,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerExecuteOptionalTextureIsNull\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_OPTIONAL_TEXTURE_IS_NULL")]
+        MessageIDDirectsrSuperresUpscalerExecuteOptionalTextureIsNull = 0x584,
+        [Obsolete("Deprecated in favour of \"DirectsrSuperresUpscalerExecuteInvalidCameraJitter\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_INVALID_CAMERA_JITTER")]
+        MessageIDDirectsrSuperresUpscalerExecuteInvalidCameraJitter = 0x585,
+        [Obsolete("Deprecated in favour of \"CreateStateObjectWarning\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_STATE_OBJECT_WARNING")]
+        MessageIDCreateStateObjectWarning = 0x586,
+        [Obsolete("Deprecated in favour of \"GuidTextureLayoutUnsupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_GUID_TEXTURE_LAYOUT_UNSUPPORTED")]
+        MessageIDGuidTextureLayoutUnsupported = 0x587,
+        [Obsolete("Deprecated in favour of \"ResolveEncoderInputParamLayoutInvalidParameters\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_RESOLVE_ENCODER_INPUT_PARAM_LAYOUT_INVALID_PARAMETERS")]
+        MessageIDResolveEncoderInputParamLayoutInvalidParameters = 0x588,
+        [Obsolete("Deprecated in favour of \"InvalidBarrierAccess\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_INVALID_BARRIER_ACCESS")]
+        MessageIDInvalidBarrierAccess = 0x589,
+        [Obsolete("Deprecated in favour of \"CommandListDrawInstanceCountZero\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_COMMAND_LIST_DRAW_INSTANCE_COUNT_ZERO")]
+        MessageIDCommandListDrawInstanceCountZero = 0x58A,
+        [Obsolete("Deprecated in favour of \"DescriptorHeapNotSetBeforeRootSignatureWithDirectlyIndexedFlag\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DESCRIPTOR_HEAP_NOT_SET_BEFORE_ROOT_SIGNATURE_WITH_DIRECTLY_INDEXED_FLAG")]
+        MessageIDDescriptorHeapNotSetBeforeRootSignatureWithDirectlyIndexedFlag = 0x58B,
+        [Obsolete("Deprecated in favour of \"DifferentDescriptorHeapSetAfterRootSignatureWithDirectlyIndexedFlag\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIFFERENT_DESCRIPTOR_HEAP_SET_AFTER_ROOT_SIGNATURE_WITH_DIRECTLY_INDEXED_FLAG")]
+        MessageIDDifferentDescriptorHeapSetAfterRootSignatureWithDirectlyIndexedFlag = 0x58C,
+        [Obsolete("Deprecated in favour of \"ApplicationSpecificDriverStateNotSupported\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_APPLICATION_SPECIFIC_DRIVER_STATE_NOT_SUPPORTED")]
+        MessageIDApplicationSpecificDriverStateNotSupported = 0x58D,
+        [Obsolete("Deprecated in favour of \"RenderTargetOrDepthStencilResouceNotInitialized\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_TARGET_OR_DEPTH_STENCIL_RESOUCE_NOT_INITIALIZED")]
+        MessageIDRenderTargetOrDepthStencilResouceNotInitialized = 0x58E,
+        [Obsolete("Deprecated in favour of \"BytecodeValidationError\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_BYTECODE_VALIDATION_ERROR")]
+        MessageIDBytecodeValidationError = 0x58F,
+        [Obsolete("Deprecated in favour of \"FenceZeroWait\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_FENCE_ZERO_WAIT")]
+        MessageIDFenceZeroWait = 0x590,
+        [Obsolete("Deprecated in favour of \"NonCommonResourceInCopyQueue\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_NON_COMMON_RESOURCE_IN_COPY_QUEUE")]
+        MessageIDNonCommonResourceInCopyQueue = 0x597,
+        [Obsolete("Deprecated in favour of \"CreatepipelinestateMultipleRootSignaturesDefined\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEPIPELINESTATE_MULTIPLE_ROOT_SIGNATURES_DEFINED")]
+        MessageIDCreatepipelinestateMultipleRootSignaturesDefined = 0x59B,
+        [Obsolete("Deprecated in favour of \"TextureBarrierInvalidFlags\"")]
+        [NativeName("Name", "D3D12_MESSAGE_ID_TEXTURE_BARRIER_INVALID_FLAGS")]
+        MessageIDTextureBarrierInvalidFlags = 0x59C,
         [Obsolete("Deprecated in favour of \"D3D12MessagesEnd\"")]
         [NativeName("Name", "D3D12_MESSAGE_ID_D3D12_MESSAGES_END")]
-        MessageIDD3D12MessagesEnd = 0x56C,
+        MessageIDD3D12MessagesEnd = 0x5A2,
         [NativeName("Name", "D3D12_MESSAGE_ID_UNKNOWN")]
         Unknown = 0x0,
         [NativeName("Name", "D3D12_MESSAGE_ID_STRING_FROM_APPLICATION")]
@@ -4775,7 +4895,87 @@ namespace Silk.NET.Direct3D12
         RecreateatInsufficientSupport = 0x56A,
         [NativeName("Name", "D3D12_MESSAGE_ID_GPU_BASED_VALIDATION_STRUCTURED_BUFFER_STRIDE_MISMATCH")]
         GpuBasedValidationStructuredBufferStrideMismatch = 0x56B,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DISPATCH_GRAPH_INVALID")]
+        DispatchGraphInvalid = 0x56C,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_TARGET_FORMAT_INVALID")]
+        DirectsrSuperresTargetFormatInvalid = 0x56D,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_TARGET_DIMENSION_INVALID")]
+        DirectsrSuperresTargetDimensionInvalid = 0x56E,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_SOURCE_COLOR_FORMAT_INVALID")]
+        DirectsrSuperresSourceColorFormatInvalid = 0x56F,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_SOURCE_DEPTH_FORMAT_INVALID")]
+        DirectsrSuperresSourceDepthFormatInvalid = 0x570,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_EXPOSURE_SCALE_FORMAT_INVALID")]
+        DirectsrSuperresExposureScaleFormatInvalid = 0x571,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_ENGINE_CREATE_FLAGS_INVALID")]
+        DirectsrSuperresEngineCreateFlagsInvalid = 0x572,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_EXTENSION_INTERNAL_LOAD_FAILURE")]
+        DirectsrSuperresExtensionInternalLoadFailure = 0x573,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_EXTENSION_INTERNAL_ENGINE_CREATION_ERROR")]
+        DirectsrSuperresExtensionInternalEngineCreationError = 0x574,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_EXTENSION_INTERNAL_UPSCALER_CREATION_ERROR")]
+        DirectsrSuperresExtensionInternalUpscalerCreationError = 0x575,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_EXTENSION_INTERNAL_UPSCALER_EXECUTION_ERROR")]
+        DirectsrSuperresExtensionInternalUpscalerExecutionError = 0x576,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_REGION_INVALID")]
+        DirectsrSuperresUpscalerExecuteRegionInvalid = 0x577,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_TIME_DELTA_INVALID")]
+        DirectsrSuperresUpscalerExecuteTimeDeltaInvalid = 0x578,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_REQUIRED_TEXTURE_IS_NULL")]
+        DirectsrSuperresUpscalerExecuteRequiredTextureIsNull = 0x579,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_MOTION_VECTORS_FORMAT_INVALID")]
+        DirectsrSuperresUpscalerExecuteMotionVectorsFormatInvalid = 0x57A,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_FLAGS_INVALID")]
+        DirectsrSuperresUpscalerExecuteFlagsInvalid = 0x57B,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_FORMAT_INVALID")]
+        DirectsrSuperresUpscalerExecuteFormatInvalid = 0x57C,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_EXPOSURE_SCALE_TEXTURE_SIZE_INVALID")]
+        DirectsrSuperresUpscalerExecuteExposureScaleTextureSizeInvalid = 0x57D,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_VARIANT_INDEX_OUT_OF_BOUNDS")]
+        DirectsrSuperresVariantIndexOutOfBounds = 0x57E,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_VARIANT_ID_NOT_FOUND")]
+        DirectsrSuperresVariantIDNotFound = 0x57F,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_DUPLICATE_VARIANT_ID")]
+        DirectsrSuperresDuplicateVariantID = 0x580,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_OUT_OF_MEMORY")]
+        DirectsrOutOfMemory = 0x581,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_UNEXPECTED_TEXTURE_IS_IGNORED")]
+        DirectsrSuperresUpscalerExecuteUnexpectedTextureIsIgnored = 0x582,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EVICT_UNDERFLOW")]
+        DirectsrSuperresUpscalerEvictUnderflow = 0x583,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_OPTIONAL_TEXTURE_IS_NULL")]
+        DirectsrSuperresUpscalerExecuteOptionalTextureIsNull = 0x584,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIRECTSR_SUPERRES_UPSCALER_EXECUTE_INVALID_CAMERA_JITTER")]
+        DirectsrSuperresUpscalerExecuteInvalidCameraJitter = 0x585,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATE_STATE_OBJECT_WARNING")]
+        CreateStateObjectWarning = 0x586,
+        [NativeName("Name", "D3D12_MESSAGE_ID_GUID_TEXTURE_LAYOUT_UNSUPPORTED")]
+        GuidTextureLayoutUnsupported = 0x587,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RESOLVE_ENCODER_INPUT_PARAM_LAYOUT_INVALID_PARAMETERS")]
+        ResolveEncoderInputParamLayoutInvalidParameters = 0x588,
+        [NativeName("Name", "D3D12_MESSAGE_ID_INVALID_BARRIER_ACCESS")]
+        InvalidBarrierAccess = 0x589,
+        [NativeName("Name", "D3D12_MESSAGE_ID_COMMAND_LIST_DRAW_INSTANCE_COUNT_ZERO")]
+        CommandListDrawInstanceCountZero = 0x58A,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DESCRIPTOR_HEAP_NOT_SET_BEFORE_ROOT_SIGNATURE_WITH_DIRECTLY_INDEXED_FLAG")]
+        DescriptorHeapNotSetBeforeRootSignatureWithDirectlyIndexedFlag = 0x58B,
+        [NativeName("Name", "D3D12_MESSAGE_ID_DIFFERENT_DESCRIPTOR_HEAP_SET_AFTER_ROOT_SIGNATURE_WITH_DIRECTLY_INDEXED_FLAG")]
+        DifferentDescriptorHeapSetAfterRootSignatureWithDirectlyIndexedFlag = 0x58C,
+        [NativeName("Name", "D3D12_MESSAGE_ID_APPLICATION_SPECIFIC_DRIVER_STATE_NOT_SUPPORTED")]
+        ApplicationSpecificDriverStateNotSupported = 0x58D,
+        [NativeName("Name", "D3D12_MESSAGE_ID_RENDER_TARGET_OR_DEPTH_STENCIL_RESOUCE_NOT_INITIALIZED")]
+        RenderTargetOrDepthStencilResouceNotInitialized = 0x58E,
+        [NativeName("Name", "D3D12_MESSAGE_ID_BYTECODE_VALIDATION_ERROR")]
+        BytecodeValidationError = 0x58F,
+        [NativeName("Name", "D3D12_MESSAGE_ID_FENCE_ZERO_WAIT")]
+        FenceZeroWait = 0x590,
+        [NativeName("Name", "D3D12_MESSAGE_ID_NON_COMMON_RESOURCE_IN_COPY_QUEUE")]
+        NonCommonResourceInCopyQueue = 0x597,
+        [NativeName("Name", "D3D12_MESSAGE_ID_CREATEPIPELINESTATE_MULTIPLE_ROOT_SIGNATURES_DEFINED")]
+        CreatepipelinestateMultipleRootSignaturesDefined = 0x59B,
+        [NativeName("Name", "D3D12_MESSAGE_ID_TEXTURE_BARRIER_INVALID_FLAGS")]
+        TextureBarrierInvalidFlags = 0x59C,
         [NativeName("Name", "D3D12_MESSAGE_ID_D3D12_MESSAGES_END")]
-        D3D12MessagesEnd = 0x56C,
+        D3D12MessagesEnd = 0x5A2,
     }
 }

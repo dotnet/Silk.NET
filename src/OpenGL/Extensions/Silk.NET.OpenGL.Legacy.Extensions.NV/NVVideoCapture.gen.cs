@@ -72,19 +72,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void VideoCaptureStreamParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glVideoCaptureStreamParameterivNV", Convention = CallingConvention.Winapi)]
-        public partial void VideoCaptureStreamParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int @params);
+        public partial void VideoCaptureStreamParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int @params);
 
         [NativeApi(EntryPoint = "glVideoCaptureStreamParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VideoCaptureStreamParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glVideoCaptureStreamParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void VideoCaptureStreamParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float @params);
+        public partial void VideoCaptureStreamParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float @params);
 
         [NativeApi(EntryPoint = "glVideoCaptureStreamParameterdvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void VideoCaptureStreamParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] double* @params);
 
         [NativeApi(EntryPoint = "glVideoCaptureStreamParameterdvNV", Convention = CallingConvention.Winapi)]
-        public partial void VideoCaptureStreamParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in double @params);
+        public partial void VideoCaptureStreamParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint stream, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly double @params);
 
         public unsafe int GetVideoCapture([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint video_capture_slot, [Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname)
         {

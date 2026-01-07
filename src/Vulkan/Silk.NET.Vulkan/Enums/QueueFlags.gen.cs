@@ -36,6 +36,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"OpticalFlowBitNV\"")]
         [NativeName("Name", "VK_QUEUE_OPTICAL_FLOW_BIT_NV")]
         QueueOpticalFlowBitNV = 256,
+        [Obsolete("Deprecated in favour of \"DataGraphBitArm\"")]
+        [NativeName("Name", "VK_QUEUE_DATA_GRAPH_BIT_ARM")]
+        QueueDataGraphBitArm = 1024,
         [Obsolete("Deprecated in favour of \"ProtectedBit\"")]
         [NativeName("Name", "VK_QUEUE_PROTECTED_BIT")]
         QueueProtectedBit = 16,
@@ -53,6 +56,8 @@ namespace Silk.NET.Vulkan
         VideoEncodeBitKhr = 64,
         [NativeName("Name", "VK_QUEUE_OPTICAL_FLOW_BIT_NV")]
         OpticalFlowBitNV = 256,
+        [NativeName("Name", "VK_QUEUE_DATA_GRAPH_BIT_ARM")]
+        DataGraphBitArm = 1024,
         [NativeName("Name", "VK_QUEUE_PROTECTED_BIT")]
         ProtectedBit = 16,
     }

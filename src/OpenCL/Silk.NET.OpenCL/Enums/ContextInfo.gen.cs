@@ -42,5 +42,7 @@ namespace Silk.NET.OpenCL
         D3D9EXDeviceIntel = 0x4072,
         [NativeName("Name", "CL_CONTEXT_DXVA_DEVICE_INTEL")]
         DxvaDeviceIntel = 0x4073,
+        [NativeName("Name", "CL_CONTEXT_PERF_HINT_QCOM")]
+        PerfHintQCom = 0x40C2,
     }
 }

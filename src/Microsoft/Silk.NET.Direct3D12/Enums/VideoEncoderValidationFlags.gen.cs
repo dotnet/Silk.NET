@@ -46,6 +46,18 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"SubregionLayoutDataNotSupported\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_SUBREGION_LAYOUT_DATA_NOT_SUPPORTED")]
         VideoEncoderValidationFlagSubregionLayoutDataNotSupported = 0x1000,
+        [Obsolete("Deprecated in favour of \"QpmapNotSupported\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_QPMAP_NOT_SUPPORTED")]
+        VideoEncoderValidationFlagQpmapNotSupported = 0x2000,
+        [Obsolete("Deprecated in favour of \"DirtyRegionsNotSupported\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_DIRTY_REGIONS_NOT_SUPPORTED")]
+        VideoEncoderValidationFlagDirtyRegionsNotSupported = 0x4000,
+        [Obsolete("Deprecated in favour of \"MotionSearchNotSupported\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_MOTION_SEARCH_NOT_SUPPORTED")]
+        VideoEncoderValidationFlagMotionSearchNotSupported = 0x8000,
+        [Obsolete("Deprecated in favour of \"FrameAnalysisNotSupported\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_FRAME_ANALYSIS_NOT_SUPPORTED")]
+        VideoEncoderValidationFlagFrameAnalysisNotSupported = 0x10000,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_CODEC_NOT_SUPPORTED")]
@@ -68,5 +80,13 @@ namespace Silk.NET.Direct3D12
         GopStructureNotSupported = 0x800,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_SUBREGION_LAYOUT_DATA_NOT_SUPPORTED")]
         SubregionLayoutDataNotSupported = 0x1000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_QPMAP_NOT_SUPPORTED")]
+        QpmapNotSupported = 0x2000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_DIRTY_REGIONS_NOT_SUPPORTED")]
+        DirtyRegionsNotSupported = 0x4000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_MOTION_SEARCH_NOT_SUPPORTED")]
+        MotionSearchNotSupported = 0x8000,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_VALIDATION_FLAG_FRAME_ANALYSIS_NOT_SUPPORTED")]
+        FrameAnalysisNotSupported = 0x10000,
     }
 }

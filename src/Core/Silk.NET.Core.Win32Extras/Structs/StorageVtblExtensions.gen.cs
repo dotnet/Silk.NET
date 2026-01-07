@@ -106,7 +106,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStream(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+    public static unsafe int CreateStream(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStream(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+    public static unsafe int CreateStream(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -206,7 +206,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStream(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, void* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
+    public static unsafe int OpenStream(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, void* reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -218,7 +218,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStream(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, void* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
+    public static unsafe int OpenStream(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, void* reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -233,7 +233,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStream<T0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm) where T0 : unmanaged
+    public static unsafe int OpenStream<T0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, Silk.NET.Core.Win32Extras.IStream** ppstm) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -248,7 +248,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStream<T0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm) where T0 : unmanaged
+    public static unsafe int OpenStream<T0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, ref Silk.NET.Core.Win32Extras.IStream* ppstm) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -343,7 +343,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, IStorage** ppstg)
+    public static unsafe int CreateStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, IStorage** ppstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -355,7 +355,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref IStorage* ppstg)
+    public static unsafe int CreateStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref IStorage* ppstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -503,7 +503,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, char** snbExclude, uint reserved, IStorage** ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, char** snbExclude, uint reserved, IStorage** ppstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -515,7 +515,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -530,7 +530,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, IStorage** ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, IStorage** ppstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -545,7 +545,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -563,7 +563,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, IStorage** ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, IStorage** ppstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -578,7 +578,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -596,7 +596,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, IStorage** ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, IStorage** ppstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -614,7 +614,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -807,7 +807,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, char** snbExclude, IStorage* pstgDest)
+    public static unsafe int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, char** snbExclude, IStorage* pstgDest)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -819,7 +819,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, char** snbExclude, ref IStorage pstgDest)
+    public static unsafe int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, char** snbExclude, ref IStorage pstgDest)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -834,7 +834,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
+    public static unsafe int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, ref char* snbExclude, IStorage* pstgDest)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -849,7 +849,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, ref char* snbExclude, ref IStorage pstgDest)
+    public static unsafe int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, ref char* snbExclude, ref IStorage pstgDest)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -876,7 +876,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -911,7 +911,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -940,7 +940,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags)
+    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -952,7 +952,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -967,7 +967,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags)
+    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -981,7 +981,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags)
+    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -996,7 +996,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+    public static int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1014,7 +1014,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags)
+    public static int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1042,7 +1042,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+    public static unsafe int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, IStorage* pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1083,7 +1083,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags)
+    public static int MoveElementTo(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, ref IStorage pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1191,7 +1191,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DestroyElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName)
+    public static int DestroyElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1223,7 +1223,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RenameElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName)
+    public static unsafe int RenameElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1246,7 +1246,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RenameElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName)
+    public static unsafe int RenameElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1258,7 +1258,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RenameElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName)
+    public static int RenameElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1273,7 +1273,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RenameElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName)
+    public static int RenameElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1298,7 +1298,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RenameElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName)
+    public static int RenameElement(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsOldName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1334,7 +1334,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1346,7 +1346,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1358,7 +1358,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1373,7 +1373,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1385,7 +1385,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1400,7 +1400,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1415,7 +1415,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1433,7 +1433,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1445,7 +1445,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1460,7 +1460,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1475,7 +1475,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1493,7 +1493,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1508,7 +1508,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1526,7 +1526,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1544,7 +1544,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1576,7 +1576,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1590,7 +1590,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1604,7 +1604,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1621,7 +1621,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1635,7 +1635,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1652,7 +1652,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
+    public static unsafe int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Filetime* pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1669,7 +1669,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Filetime pmtime)
+    public static int SetElementTimes(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pctime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime patime, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Filetime pmtime)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1781,7 +1781,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStream<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref ComPtr<TI0> ppstm) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static int CreateStream<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref ComPtr<TI0> ppstm) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1845,7 +1845,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStream<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, void* reserved1, uint grfMode, uint reserved2, ref ComPtr<TI0> ppstm) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static unsafe int OpenStream<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, void* reserved1, uint grfMode, uint reserved2, ref ComPtr<TI0> ppstm) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1869,7 +1869,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OpenStream<T0, TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, ref ComPtr<TI0> ppstm) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+    public static int OpenStream<T0, TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref T0 reserved1, uint grfMode, uint reserved2, ref ComPtr<TI0> ppstm) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1933,7 +1933,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStorage<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static int CreateStorage<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, uint grfMode, uint reserved1, uint reserved2, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2085,7 +2085,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, IStorage** ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, IStorage** ppstg)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2105,7 +2105,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage<TI0, TI1>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref ComPtr<TI1> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI1>
+    public static unsafe int OpenStorage<TI0, TI1>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref ComPtr<TI1> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2113,7 +2113,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, IStorage* pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, ref IStorage* ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, IStorage* pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, ref IStorage* ppstg)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2133,7 +2133,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int OpenStorage<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref IStorage* ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2149,7 +2149,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage<TI0, TI1>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref ComPtr<TI1> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI1>
+    public static unsafe int OpenStorage<TI0, TI1>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref ComPtr<TI1> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2165,7 +2165,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int OpenStorage<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref IStorage* ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2173,7 +2173,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, IStorage** ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, IStorage** ppstg)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2193,7 +2193,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int OpenStorage<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, char** snbExclude, uint reserved, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2201,7 +2201,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, ref IStorage* ppstg)
+    public static unsafe int OpenStorage(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, string[] snbExcludeSa, uint reserved, ref IStorage* ppstg)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2229,7 +2229,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OpenStorage<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int OpenStorage<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ref IStorage pstgPriority, uint grfMode, ref char* snbExclude, uint reserved, ref ComPtr<TI0> ppstg) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2429,7 +2429,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, string[] snbExcludeSa, IStorage* pstgDest)
+    public static unsafe int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, string[] snbExcludeSa, IStorage* pstgDest)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2449,7 +2449,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTo<TI0>(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, char** snbExclude, ComPtr<TI0> pstgDest) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int CopyTo<TI0>(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, char** snbExclude, ComPtr<TI0> pstgDest) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2457,7 +2457,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, string[] snbExcludeSa, ref IStorage pstgDest)
+    public static int CopyTo(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, string[] snbExcludeSa, ref IStorage pstgDest)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -2485,7 +2485,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyTo<TI0>(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid rgiidExclude, ref char* snbExclude, ComPtr<TI0> pstgDest) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int CopyTo<TI0>(this ComPtr<IStorage> thisVtbl, uint ciidExclude, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid rgiidExclude, ref char* snbExclude, ComPtr<TI0> pstgDest) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2517,7 +2517,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveElementTo<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int MoveElementTo<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2565,7 +2565,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MoveElementTo<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static unsafe int MoveElementTo<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2581,7 +2581,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MoveElementTo<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static int MoveElementTo<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2597,7 +2597,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MoveElementTo<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static int MoveElementTo<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2645,7 +2645,7 @@ public unsafe static class StorageVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MoveElementTo<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
+    public static int MoveElementTo<TI0>(this ComPtr<IStorage> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pwcsName, ComPtr<TI0> pstgDest, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char pwcsNewName, uint grfFlags) where TI0 : unmanaged, IComVtbl<IStorage>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

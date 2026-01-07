@@ -17,14 +17,15 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L14674_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L15589_C5")]
     public unsafe partial struct BuildRaytracingAccelerationStructureInputsUnion
     {
         public BuildRaytracingAccelerationStructureInputsUnion
         (
             ulong? instanceDescs = null,
             RaytracingGeometryDesc* pGeometryDescs = null,
-            RaytracingGeometryDesc** ppGeometryDescs = null
+            RaytracingGeometryDesc** ppGeometryDescs = null,
+            RaytracingOpacityMicromapArrayDesc* pOpacityMicromapArrayDesc = null
         ) : this()
         {
             if (instanceDescs is not null)
@@ -40,6 +41,11 @@ namespace Silk.NET.Direct3D12
             if (ppGeometryDescs is not null)
             {
                 PpGeometryDescs = ppGeometryDescs;
+            }
+
+            if (pOpacityMicromapArrayDesc is not null)
+            {
+                POpacityMicromapArrayDesc = pOpacityMicromapArrayDesc;
             }
         }
 
@@ -61,5 +67,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "const D3D12_RAYTRACING_GEOMETRY_DESC *const *")]
         [NativeName("Name", "ppGeometryDescs")]
         public RaytracingGeometryDesc** PpGeometryDescs;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "const D3D12_RAYTRACING_OPACITY_MICROMAP_ARRAY_DESC *")]
+        [NativeName("Type.Name", "const D3D12_RAYTRACING_OPACITY_MICROMAP_ARRAY_DESC *")]
+        [NativeName("Name", "pOpacityMicromapArrayDesc")]
+        public RaytracingOpacityMicromapArrayDesc* POpacityMicromapArrayDesc;
     }
 }

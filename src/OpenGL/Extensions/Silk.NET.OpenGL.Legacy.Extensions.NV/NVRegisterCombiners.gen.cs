@@ -600,13 +600,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glCombinerParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float @params);
+        public partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float @params);
 
         [NativeApi(EntryPoint = "glCombinerParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glCombinerParameterfvNV", Convention = CallingConvention.Winapi)]
-        public partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float @params);
+        public partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float @params);
 
         [NativeApi(EntryPoint = "glCombinerParameterfNV", Convention = CallingConvention.Winapi)]
         public partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float param);
@@ -618,13 +618,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glCombinerParameterivNV", Convention = CallingConvention.Winapi)]
-        public partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int @params);
+        public partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int @params);
 
         [NativeApi(EntryPoint = "glCombinerParameterivNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glCombinerParameterivNV", Convention = CallingConvention.Winapi)]
-        public partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int @params);
+        public partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int @params);
 
         [NativeApi(EntryPoint = "glCombinerParameteriNV", Convention = CallingConvention.Winapi)]
         public partial void CombinerParameter([Flow(Silk.NET.Core.Native.FlowDirection.In)] NV pname, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int param);

@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.QueryPoolCreateInfo,
             void* pNext = null,
-            uint? flags = null,
+            QueryPoolCreateFlags? flags = null,
             QueryType? queryType = null,
             uint? queryCount = null,
             QueryPipelineStatisticFlags? pipelineStatistics = null
@@ -74,7 +74,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkQueryPoolCreateFlags")]
         [NativeName("Type.Name", "VkQueryPoolCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public QueryPoolCreateFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkQueryType")]
         [NativeName("Type.Name", "VkQueryType")]

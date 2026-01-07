@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L14661_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L15560_C5")]
     public unsafe partial struct RaytracingGeometryDescUnion
     {
         public RaytracingGeometryDescUnion
         (
             RaytracingGeometryTrianglesDesc? triangles = null,
-            RaytracingGeometryAabbsDesc? aABBs = null
+            RaytracingGeometryAabbsDesc? aABBs = null,
+            RaytracingGeometryOmmTrianglesDesc? ommTriangles = null
         ) : this()
         {
             if (triangles is not null)
@@ -34,6 +35,11 @@ namespace Silk.NET.Direct3D12
             if (aABBs is not null)
             {
                 AABBs = aABBs.Value;
+            }
+
+            if (ommTriangles is not null)
+            {
+                OmmTriangles = ommTriangles.Value;
             }
         }
 
@@ -49,5 +55,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_RAYTRACING_GEOMETRY_AABBS_DESC")]
         [NativeName("Name", "AABBs")]
         public RaytracingGeometryAabbsDesc AABBs;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "D3D12_RAYTRACING_GEOMETRY_OMM_TRIANGLES_DESC")]
+        [NativeName("Type.Name", "D3D12_RAYTRACING_GEOMETRY_OMM_TRIANGLES_DESC")]
+        [NativeName("Name", "OmmTriangles")]
+        public RaytracingGeometryOmmTrianglesDesc OmmTriangles;
     }
 }

@@ -133,7 +133,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -145,7 +145,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -253,7 +253,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -268,7 +268,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -286,7 +286,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -304,7 +304,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, uint* puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -385,7 +385,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -400,7 +400,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -418,7 +418,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -436,7 +436,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, uint* puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -529,7 +529,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -547,7 +547,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, BitmapPlaneDescription* pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -568,7 +568,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
+    public static unsafe int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, int* pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -589,7 +589,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
+    public static int DoesSupportTransform(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, ref uint puiWidth, ref uint puiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid pguidDstFormats, ref BitmapPlaneDescription pPlaneDescriptions, uint cPlanes, ref int pfIsSupported)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -622,7 +622,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapPlane pDstPlanes, uint cPlanes)
+    public static unsafe int CopyPixels(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapPlane pDstPlanes, uint cPlanes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -634,7 +634,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapPlane* pDstPlanes, uint cPlanes)
+    public static unsafe int CopyPixels(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] BitmapPlane* pDstPlanes, uint cPlanes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -646,7 +646,7 @@ public unsafe static class WICPlanarBitmapSourceTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BitmapPlane pDstPlanes, uint cPlanes)
+    public static int CopyPixels(this ComPtr<IWICPlanarBitmapSourceTransform> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcSource, uint uiWidth, uint uiHeight, BitmapTransformOptions dstTransform, PlanarOptions dstPlanarOptions, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BitmapPlane pDstPlanes, uint cPlanes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

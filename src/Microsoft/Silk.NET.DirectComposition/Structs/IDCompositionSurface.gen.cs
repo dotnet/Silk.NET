@@ -219,7 +219,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, void** updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
+        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, void** updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -231,7 +231,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, void** updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
+        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, void** updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -246,7 +246,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, ref void* updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
+        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, ref void* updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -261,7 +261,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, ref void* updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
+        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, Guid* iid, ref void* updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -279,7 +279,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, void** updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
+        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, void** updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -294,7 +294,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, void** updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
+        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, void** updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -312,7 +312,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, ref void* updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
+        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, ref void* updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -330,7 +330,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, ref void* updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
+        public readonly unsafe int BeginDraw([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref Guid iid, ref void* updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -387,7 +387,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Scroll([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> clipRect, int offsetX, int offsetY)
+        public readonly unsafe int Scroll([Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> clipRect, int offsetX, int offsetY)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -399,7 +399,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Scroll([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* clipRect, int offsetX, int offsetY)
+        public readonly unsafe int Scroll([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Silk.NET.Maths.Box2D<int>* clipRect, int offsetX, int offsetY)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -411,7 +411,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Scroll([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> clipRect, int offsetX, int offsetY)
+        public readonly int Scroll([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> scrollRect, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> clipRect, int offsetX, int offsetY)
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -451,7 +451,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BeginDraw<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref ComPtr<TI0> updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int BeginDraw<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref ComPtr<TI0> updateObject, Silk.NET.Maths.Vector2D<int>* updateOffset) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -459,7 +459,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BeginDraw<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Box2D<int> updateRect, ref ComPtr<TI0> updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int BeginDraw<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Box2D<int> updateRect, ref ComPtr<TI0> updateObject, ref Silk.NET.Maths.Vector2D<int> updateOffset) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDCompositionSurface*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

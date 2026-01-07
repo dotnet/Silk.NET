@@ -513,7 +513,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateChild([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char tagName, ID2D1SvgElement** newChild)
+        public readonly unsafe int CreateChild([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char tagName, ID2D1SvgElement** newChild)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -525,7 +525,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateChild([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char tagName, ref ID2D1SvgElement* newChild)
+        public readonly unsafe int CreateChild([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char tagName, ref ID2D1SvgElement* newChild)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -586,7 +586,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe Silk.NET.Core.Bool32 IsAttributeSpecified([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, int* inherited)
+        public readonly unsafe Silk.NET.Core.Bool32 IsAttributeSpecified([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, int* inherited)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Silk.NET.Core.Bool32 ret = default;
@@ -598,7 +598,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly Silk.NET.Core.Bool32 IsAttributeSpecified([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, ref int inherited)
+        public readonly Silk.NET.Core.Bool32 IsAttributeSpecified([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, ref int inherited)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Silk.NET.Core.Bool32 ret = default;
@@ -777,7 +777,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RemoveAttribute([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name)
+        public readonly int RemoveAttribute([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -809,7 +809,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTextValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, uint nameCount)
+        public readonly int SetTextValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, uint nameCount)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -882,7 +882,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char value)
+        public readonly unsafe int SetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] char* name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char value)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -905,7 +905,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* value)
+        public readonly unsafe int SetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* value)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -917,7 +917,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char value)
+        public readonly int SetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char value)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -932,7 +932,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
+        public readonly int SetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -957,7 +957,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char value)
+        public readonly int SetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char value)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1016,7 +1016,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, char* value, uint valueCount)
+        public readonly unsafe int GetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, char* value, uint valueCount)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1028,7 +1028,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, ref char value, uint valueCount)
+        public readonly int GetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, ref char value, uint valueCount)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1043,7 +1043,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
+        public readonly int GetAttributeValue([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1116,7 +1116,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetAttributeValueLength([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, uint* valueLength)
+        public readonly unsafe int GetAttributeValueLength([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, uint* valueLength)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1128,7 +1128,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetAttributeValueLength([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char name, SvgAttributeStringType type, ref uint valueLength)
+        public readonly int GetAttributeValueLength([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char name, SvgAttributeStringType type, ref uint valueLength)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1337,7 +1337,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateChild<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char tagName, ref ComPtr<TI0> newChild) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        public readonly int CreateChild<TI0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char tagName, ref ComPtr<TI0> newChild) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

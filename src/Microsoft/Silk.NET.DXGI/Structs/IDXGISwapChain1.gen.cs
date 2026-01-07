@@ -129,7 +129,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -153,7 +153,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -177,7 +177,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Core.Native.IUnknown pUnknown)
+        public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -585,7 +585,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ResizeTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ModeDesc pNewTargetParameters)
+        public readonly int ResizeTarget([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ModeDesc pNewTargetParameters)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -780,7 +780,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Present1(uint SyncInterval, uint PresentFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in PresentParameters pPresentParameters)
+        public readonly int Present1(uint SyncInterval, uint PresentFlags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly PresentParameters pPresentParameters)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -831,7 +831,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBackgroundColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in D3Dcolorvalue pColor)
+        public readonly int SetBackgroundColor([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly D3Dcolorvalue pColor)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

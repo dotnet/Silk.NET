@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyMemoryToImageIndirectCommandNV")]
+    [NativeName("AliasOf", "VkCopyMemoryToImageIndirectCommandKHR")]
     public unsafe partial struct CopyMemoryToImageIndirectCommandNV
     {
         public CopyMemoryToImageIndirectCommandNV

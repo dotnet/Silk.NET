@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryUnmapInfoKHR")]
+    [NativeName("AliasOf", "VkMemoryUnmapInfo")]
     public unsafe partial struct MemoryUnmapInfoKHR : IChainable
     {
         public MemoryUnmapInfoKHR
         (
-            StructureType? sType = StructureType.MemoryUnmapInfoKhr,
+            StructureType? sType = StructureType.MemoryUnmapInfo,
             void* pNext = null,
-            MemoryUnmapFlagsKHR? flags = null,
+            MemoryUnmapFlags? flags = null,
             DeviceMemory? memory = null
         ) : this()
         {
@@ -59,10 +60,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkMemoryUnmapFlagsKHR")]
-        [NativeName("Type.Name", "VkMemoryUnmapFlagsKHR")]
+        [NativeName("Type", "VkMemoryUnmapFlags")]
+        [NativeName("Type.Name", "VkMemoryUnmapFlags")]
         [NativeName("Name", "flags")]
-        public MemoryUnmapFlagsKHR Flags;
+        public MemoryUnmapFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "VkDeviceMemory")]
         [NativeName("Type.Name", "VkDeviceMemory")]
@@ -72,7 +73,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.MemoryUnmapInfoKhr;
+            return SType = StructureType.MemoryUnmapInfo;
         }
 
         /// <inheritdoc />

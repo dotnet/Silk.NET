@@ -36,13 +36,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         public unsafe partial void SharpenTexFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* points);
 
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS", Convention = CallingConvention.Winapi)]
-        public partial void SharpenTexFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float points);
+        public partial void SharpenTexFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float points);
 
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS", Convention = CallingConvention.Winapi)]
         public unsafe partial void SharpenTexFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* points);
 
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS", Convention = CallingConvention.Winapi)]
-        public partial void SharpenTexFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float points);
+        public partial void SharpenTexFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] TextureTarget target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n", Expression = "*2"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float points);
 
         public unsafe float GetSharpenTexFunc([Flow(Silk.NET.Core.Native.FlowDirection.In)] SGIS target)
         {

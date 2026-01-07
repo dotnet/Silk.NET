@@ -716,6 +716,32 @@ namespace Silk.NET.Core.Native
             static void ThrowManagedNonStatic()
                 => throw new InvalidOperationException("Can't get a passthrough pointer to a non-static method group.");
         }
+        
+        /// <summary>
+        /// Gets a function pointer for the given delegate.
+        /// </summary>
+        /// <param name="delegate">The delegate to get a function pointer to.</param>
+        /// <param name="pinned">
+        /// Whether to pin the delegate such that the returned pointer remains valid for long periods of time.
+        /// </param>
+        /// <typeparam name="TDelegate">The delegate's type to marshal.</typeparam>
+        /// <returns>A function pointer to the given delegate.</returns>
+        public static nint DelegateToPtr<TDelegate>
+        (
+            TDelegate @delegate,
+            bool pinned = true
+        ) where TDelegate : notnull
+        {
+            if (pinned)
+            {
+                var gcHandle = GCHandle.Alloc(@delegate);
+                var ret = Marshal.GetFunctionPointerForDelegate<TDelegate>(@delegate);
+                _otherGCHandles.TryAdd(ret, gcHandle);
+                return ret;
+            }
+
+            return Marshal.GetFunctionPointerForDelegate<TDelegate>(@delegate);
+        }
 
         private static void DelegateSafetyCheck(Delegate @delegate, CallingConvention conv)
         {

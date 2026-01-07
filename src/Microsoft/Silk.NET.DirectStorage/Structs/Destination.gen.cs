@@ -26,7 +26,8 @@ namespace Silk.NET.DirectStorage
             DestinationBuffer? buffer = null,
             DestinationTextureRegion? texture = null,
             DestinationMultipleSubresources? multipleSubresources = null,
-            DestinationTiles? tiles = null
+            DestinationTiles? tiles = null,
+            DestinationMultipleSubresourcesRange? multipleSubresourcesRange = null
         ) : this()
         {
             if (memory is not null)
@@ -52,6 +53,11 @@ namespace Silk.NET.DirectStorage
             if (tiles is not null)
             {
                 Tiles = tiles.Value;
+            }
+
+            if (multipleSubresourcesRange is not null)
+            {
+                MultipleSubresourcesRange = multipleSubresourcesRange.Value;
             }
         }
 
@@ -85,5 +91,11 @@ namespace Silk.NET.DirectStorage
         [NativeName("Type.Name", "DSTORAGE_DESTINATION_TILES")]
         [NativeName("Name", "Tiles")]
         public DestinationTiles Tiles;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "DSTORAGE_DESTINATION_MULTIPLE_SUBRESOURCES_RANGE")]
+        [NativeName("Type.Name", "DSTORAGE_DESTINATION_MULTIPLE_SUBRESOURCES_RANGE")]
+        [NativeName("Name", "MultipleSubresourcesRange")]
+        public DestinationMultipleSubresourcesRange MultipleSubresourcesRange;
     }
 }

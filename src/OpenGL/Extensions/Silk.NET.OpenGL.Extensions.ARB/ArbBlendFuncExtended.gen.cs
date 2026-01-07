@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe partial void BindFragDataLocationIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint colorNumber, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glBindFragDataLocationIndexed", Convention = CallingConvention.Winapi)]
-        public partial void BindFragDataLocationIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint colorNumber, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
+        public partial void BindFragDataLocationIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint colorNumber, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name);
 
         [NativeApi(EntryPoint = "glBindFragDataLocationIndexed", Convention = CallingConvention.Winapi)]
         public partial void BindFragDataLocationIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint colorNumber, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
@@ -33,7 +33,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public unsafe partial int GetFragDataIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetFragDataIndex", Convention = CallingConvention.Winapi)]
-        public partial int GetFragDataIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in byte name);
+        public partial int GetFragDataIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly byte name);
 
         [NativeApi(EntryPoint = "glGetFragDataIndex", Convention = CallingConvention.Winapi)]
         public partial int GetFragDataIndex([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint program, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);

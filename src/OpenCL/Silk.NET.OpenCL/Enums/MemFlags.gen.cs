@@ -55,5 +55,7 @@ namespace Silk.NET.OpenCL
         ForceHostMemoryIntel = 0x100000,
         [NativeName("Name", "CL_MEM_PROTECTED_ALLOC_ARM")]
         ProtectedAllocArm = 0x1000000000,
+        [NativeName("Name", "CL_MEM_IMMUTABLE_EXT")]
+        ImmutableExt = 0x40,
     }
 }

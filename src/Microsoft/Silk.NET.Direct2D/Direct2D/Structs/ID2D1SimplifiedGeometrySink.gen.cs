@@ -139,7 +139,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddLines([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount)
+        public readonly void AddLines([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Vector2D<float> points, uint pointsCount)
         {
             var @this = (ID2D1SimplifiedGeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Vector2D<float>* pointsPtr = &points)
@@ -156,7 +156,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddBeziers([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BezierSegment beziers, uint beziersCount)
+        public readonly void AddBeziers([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BezierSegment beziers, uint beziersCount)
         {
             var @this = (ID2D1SimplifiedGeometrySink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BezierSegment* beziersPtr = &beziers)

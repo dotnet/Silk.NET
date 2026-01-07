@@ -306,7 +306,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetField(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField)
+        public readonly unsafe int GetField(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField)
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -318,7 +318,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetField(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField)
+        public readonly unsafe int GetField(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField)
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -385,7 +385,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetField<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField) where T0 : unmanaged
+        public readonly unsafe int GetField<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField) where T0 : unmanaged
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -400,7 +400,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetField<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField) where T0 : unmanaged
+        public readonly int GetField<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField) where T0 : unmanaged
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -497,7 +497,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFieldNoCopy(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField, void** ppvDataCArray)
+        public readonly unsafe int GetFieldNoCopy(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField, void** ppvDataCArray)
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -509,7 +509,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFieldNoCopy(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField, ref void* ppvDataCArray)
+        public readonly unsafe int GetFieldNoCopy(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField, ref void* ppvDataCArray)
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -524,7 +524,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFieldNoCopy(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField, void** ppvDataCArray)
+        public readonly unsafe int GetFieldNoCopy(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField, void** ppvDataCArray)
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -539,7 +539,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFieldNoCopy(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField, ref void* ppvDataCArray)
+        public readonly unsafe int GetFieldNoCopy(void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField, ref void* ppvDataCArray)
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -673,7 +673,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFieldNoCopy<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField, void** ppvDataCArray) where T0 : unmanaged
+        public readonly unsafe int GetFieldNoCopy<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField, void** ppvDataCArray) where T0 : unmanaged
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -688,7 +688,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFieldNoCopy<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField, ref void* ppvDataCArray) where T0 : unmanaged
+        public readonly unsafe int GetFieldNoCopy<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField, ref void* ppvDataCArray) where T0 : unmanaged
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -706,7 +706,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFieldNoCopy<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField, void** ppvDataCArray) where T0 : unmanaged
+        public readonly unsafe int GetFieldNoCopy<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField, void** ppvDataCArray) where T0 : unmanaged
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -724,7 +724,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFieldNoCopy<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField, ref void* ppvDataCArray) where T0 : unmanaged
+        public readonly unsafe int GetFieldNoCopy<T0>(ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField, ref void* ppvDataCArray) where T0 : unmanaged
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -834,7 +834,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PutField(uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField)
+        public readonly unsafe int PutField(uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField)
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -846,7 +846,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PutField(uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField)
+        public readonly unsafe int PutField(uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField)
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -913,7 +913,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PutField<T0>(uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField) where T0 : unmanaged
+        public readonly unsafe int PutField<T0>(uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField) where T0 : unmanaged
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -928,7 +928,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PutField<T0>(uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField) where T0 : unmanaged
+        public readonly int PutField<T0>(uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField) where T0 : unmanaged
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -998,7 +998,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PutFieldNoCopy(uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField)
+        public readonly unsafe int PutFieldNoCopy(uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField)
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1010,7 +1010,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PutFieldNoCopy(uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField)
+        public readonly unsafe int PutFieldNoCopy(uint wFlags, void* pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField)
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1077,7 +1077,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int PutFieldNoCopy<T0>(uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, Variant* pvarField) where T0 : unmanaged
+        public readonly unsafe int PutFieldNoCopy<T0>(uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, Variant* pvarField) where T0 : unmanaged
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1092,7 +1092,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int PutFieldNoCopy<T0>(uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szFieldName, ref Variant pvarField) where T0 : unmanaged
+        public readonly int PutFieldNoCopy<T0>(uint wFlags, ref T0 pvData, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szFieldName, ref Variant pvarField) where T0 : unmanaged
         {
             var @this = (IRecordInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

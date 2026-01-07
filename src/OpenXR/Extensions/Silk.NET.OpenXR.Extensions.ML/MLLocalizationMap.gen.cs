@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateExportedLocalizationMapML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateExportedLocalizationMapML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UuidEXT mapUuid, [Count(Count = 0)] ExportedLocalizationMapML* map);
+        public unsafe partial Result CreateExportedLocalizationMapML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UuidEXT mapUuid, [Count(Count = 0)] ExportedLocalizationMapML* map);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateExportedLocalizationMapML", Convention = CallingConvention.Winapi)]
-        public partial Result CreateExportedLocalizationMapML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in UuidEXT mapUuid, [Count(Count = 0)] ref ExportedLocalizationMapML map);
+        public partial Result CreateExportedLocalizationMapML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly UuidEXT mapUuid, [Count(Count = 0)] ref ExportedLocalizationMapML map);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrDestroyExportedLocalizationMapML", Convention = CallingConvention.Winapi)]
@@ -78,11 +78,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrImportLocalizationMapML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result ImportLocalizationMapML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LocalizationMapImportInfoML importInfo, [Count(Count = 0)] UuidEXT* mapUuid);
+        public unsafe partial Result ImportLocalizationMapML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LocalizationMapImportInfoML importInfo, [Count(Count = 0)] UuidEXT* mapUuid);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrImportLocalizationMapML", Convention = CallingConvention.Winapi)]
-        public partial Result ImportLocalizationMapML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LocalizationMapImportInfoML importInfo, [Count(Count = 0)] ref UuidEXT mapUuid);
+        public partial Result ImportLocalizationMapML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LocalizationMapImportInfoML importInfo, [Count(Count = 0)] ref UuidEXT mapUuid);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrQueryLocalizationMapsML", Convention = CallingConvention.Winapi)]
@@ -94,11 +94,11 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrQueryLocalizationMapsML", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result QueryLocalizationMapsML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LocalizationMapQueryInfoBaseHeaderML queryInfo, [Count(Count = 0)] uint mapCapacityInput, [Count(Count = 0)] uint mapCountOutput, [Count(Parameter = "mapCapacityInput")] LocalizationMapML* maps);
+        public unsafe partial Result QueryLocalizationMapsML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LocalizationMapQueryInfoBaseHeaderML queryInfo, [Count(Count = 0)] uint mapCapacityInput, [Count(Count = 0)] uint mapCountOutput, [Count(Parameter = "mapCapacityInput")] LocalizationMapML* maps);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrQueryLocalizationMapsML", Convention = CallingConvention.Winapi)]
-        public partial Result QueryLocalizationMapsML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LocalizationMapQueryInfoBaseHeaderML queryInfo, [Count(Count = 0)] uint mapCapacityInput, [Count(Count = 0)] uint mapCountOutput, [Count(Parameter = "mapCapacityInput")] ref LocalizationMapML maps);
+        public partial Result QueryLocalizationMapsML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LocalizationMapQueryInfoBaseHeaderML queryInfo, [Count(Count = 0)] uint mapCapacityInput, [Count(Count = 0)] uint mapCountOutput, [Count(Parameter = "mapCapacityInput")] ref LocalizationMapML maps);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestMapLocalizationML", Convention = CallingConvention.Winapi)]
@@ -106,7 +106,7 @@ namespace Silk.NET.OpenXR.Extensions.ML
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestMapLocalizationML", Convention = CallingConvention.Winapi)]
-        public partial Result RequestMapLocalizationML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in MapLocalizationRequestInfoML requestInfo);
+        public partial Result RequestMapLocalizationML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly MapLocalizationRequestInfoML requestInfo);
 
         /// <summary>To be documented.</summary>
         public unsafe Result GetExportedLocalizationMapDataML([Count(Count = 0)] ExportedLocalizationMapML map, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
@@ -130,7 +130,7 @@ namespace Silk.NET.OpenXR.Extensions.ML
         }
 
         /// <summary>To be documented.</summary>
-        public unsafe Result QueryLocalizationMapsML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LocalizationMapQueryInfoBaseHeaderML queryInfo, [Count(Count = 0)] uint mapCountOutput, [Count(Parameter = "mapCapacityInput")] Span<LocalizationMapML> maps)
+        public unsafe Result QueryLocalizationMapsML([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LocalizationMapQueryInfoBaseHeaderML queryInfo, [Count(Count = 0)] uint mapCountOutput, [Count(Parameter = "mapCapacityInput")] Span<LocalizationMapML> maps)
         {
             // ImplicitCountSpanOverloader
             return QueryLocalizationMapsML(session, in queryInfo, (uint) maps.Length, mapCountOutput, ref maps.GetPinnableReference());

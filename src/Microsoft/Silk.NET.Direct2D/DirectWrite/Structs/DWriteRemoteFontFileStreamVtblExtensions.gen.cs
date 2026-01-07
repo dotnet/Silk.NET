@@ -106,7 +106,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFileFragment(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fragmentStart, ulong fileOffset, ulong fragmentSize, void** fragmentContext)
+    public static unsafe int ReadFileFragment(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fragmentStart, ulong fileOffset, ulong fragmentSize, void** fragmentContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFileFragment(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fragmentStart, ulong fileOffset, ulong fragmentSize, ref void* fragmentContext)
+    public static unsafe int ReadFileFragment(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fragmentStart, ulong fileOffset, ulong fragmentSize, ref void* fragmentContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -291,7 +291,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
+    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -303,7 +303,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
+    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -318,7 +318,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
+    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -330,7 +330,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
+    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -345,7 +345,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
+    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, IDWriteAsyncResult** asyncResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -360,7 +360,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
+    public static unsafe int BeginDownload(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, ref IDWriteAsyncResult* asyncResult)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -475,7 +475,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDownload<TI0>(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
+    public static unsafe int BeginDownload<TI0>(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] Guid* downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -499,7 +499,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginDownload<TI0>(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
+    public static unsafe int BeginDownload<TI0>(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] FileFragment* fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -523,7 +523,7 @@ public unsafe static class DWriteRemoteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BeginDownload<TI0>(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in FileFragment fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
+    public static int BeginDownload<TI0>(this ComPtr<IDWriteRemoteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Guid downloadOperationID, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly FileFragment fileFragments, uint fragmentCount, ref ComPtr<TI0> asyncResult) where TI0 : unmanaged, IComVtbl<IDWriteAsyncResult>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

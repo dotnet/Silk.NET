@@ -78,8 +78,8 @@ namespace Silk.NET.Maths
         [DataMember]
         public T M21
         {
-            readonly get => Row1.X;
-            set => Row1.X = value;
+            readonly get => Row2.X;
+            set => Row2.X = value;
         }
 
         /// <summary>Value at row 2, column 2 of the matrix.</summary>

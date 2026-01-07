@@ -106,6 +106,7 @@ partial class Build {
 
                     // Not expecting this to succeed, but we need to do this so we generate the bindings to go in the public API.
                     InheritedShell($"dotnet build \"{SourceDirectory / "Windowing" / "Silk.NET.Windowing.Sdl" / "Silk.NET.Windowing.Sdl.csproj"}\"").AssertWaitForExit();
+                    
 
                     // Update the public API.
                     InheritedShell(string.Format(FormatDeclCmd, SourceDirectory / "Windowing" / "Silk.NET.Windowing.Sdl" / "Silk.NET.Windowing.Sdl.csproj")).AssertZeroExitCode();

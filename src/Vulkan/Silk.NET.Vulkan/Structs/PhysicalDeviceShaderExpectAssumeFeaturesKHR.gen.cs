@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderExpectAssumeFeaturesKHR")]
+    [NativeName("AliasOf", "VkPhysicalDeviceShaderExpectAssumeFeatures")]
     public unsafe partial struct PhysicalDeviceShaderExpectAssumeFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceShaderExpectAssumeFeaturesKHR
         (
-            StructureType? sType = StructureType.PhysicalDeviceShaderExpectAssumeFeaturesKhr,
+            StructureType? sType = StructureType.PhysicalDeviceShaderExpectAssumeFeatures,
             void* pNext = null,
             Bool32? shaderExpectAssume = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceShaderExpectAssumeFeaturesKhr;
+            return SType = StructureType.PhysicalDeviceShaderExpectAssumeFeatures;
         }
 
         /// <inheritdoc />

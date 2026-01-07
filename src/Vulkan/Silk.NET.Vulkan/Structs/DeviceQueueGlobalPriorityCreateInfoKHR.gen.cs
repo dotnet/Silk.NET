@@ -17,14 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceQueueGlobalPriorityCreateInfoKHR")]
-    [NativeName("Aliases", "VkDeviceQueueGlobalPriorityCreateInfoEXT")]
+    [NativeName("AliasOf", "VkDeviceQueueGlobalPriorityCreateInfo")]
     public unsafe partial struct DeviceQueueGlobalPriorityCreateInfoKHR : IExtendsChain<DeviceQueueCreateInfo>
     {
         public DeviceQueueGlobalPriorityCreateInfoKHR
         (
-            StructureType? sType = StructureType.DeviceQueueGlobalPriorityCreateInfoKhr,
+            StructureType? sType = StructureType.DeviceQueueGlobalPriorityCreateInfo,
             void* pNext = null,
-            QueueGlobalPriorityKHR? globalPriority = null
+            QueueGlobalPriority? globalPriority = null
         ) : this()
         {
             if (sType is not null)
@@ -54,15 +54,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkQueueGlobalPriorityKHR")]
-        [NativeName("Type.Name", "VkQueueGlobalPriorityKHR")]
+        [NativeName("Type", "VkQueueGlobalPriority")]
+        [NativeName("Type.Name", "VkQueueGlobalPriority")]
         [NativeName("Name", "globalPriority")]
-        public QueueGlobalPriorityKHR GlobalPriority;
+        public QueueGlobalPriority GlobalPriority;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.DeviceQueueGlobalPriorityCreateInfoKhr;
+            return SType = StructureType.DeviceQueueGlobalPriorityCreateInfo;
         }
 
         /// <inheritdoc />

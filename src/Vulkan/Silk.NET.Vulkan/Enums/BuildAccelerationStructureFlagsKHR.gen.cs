@@ -33,21 +33,39 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MotionBitNV\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MOTION_BIT_NV")]
         BuildAccelerationStructureMotionBitNV = 32,
+        [Obsolete("Deprecated in favour of \"AllowOpacityMicromapUpdateBitExt\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_BIT_EXT")]
+        BuildAccelerationStructureAllowOpacityMicromapUpdateBitExt = 64,
         [Obsolete("Deprecated in favour of \"AllowOpacityMicromapUpdateExt\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_EXT")]
         BuildAccelerationStructureAllowOpacityMicromapUpdateExt = 64,
+        [Obsolete("Deprecated in favour of \"AllowDisableOpacityMicromapsBitExt\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
+        BuildAccelerationStructureAllowDisableOpacityMicromapsBitExt = 128,
         [Obsolete("Deprecated in favour of \"AllowDisableOpacityMicromapsExt\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_EXT")]
         BuildAccelerationStructureAllowDisableOpacityMicromapsExt = 128,
+        [Obsolete("Deprecated in favour of \"AllowOpacityMicromapDataUpdateBitExt\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_DATA_UPDATE_BIT_EXT")]
+        BuildAccelerationStructureAllowOpacityMicromapDataUpdateBitExt = 256,
         [Obsolete("Deprecated in favour of \"AllowOpacityMicromapDataUpdateExt\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_DATA_UPDATE_EXT")]
         BuildAccelerationStructureAllowOpacityMicromapDataUpdateExt = 256,
+        [Obsolete("Deprecated in favour of \"AllowDisplacementMicromapUpdateBitNV\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISPLACEMENT_MICROMAP_UPDATE_BIT_NV")]
+        BuildAccelerationStructureAllowDisplacementMicromapUpdateBitNV = 512,
         [Obsolete("Deprecated in favour of \"AllowDisplacementMicromapUpdateNV\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISPLACEMENT_MICROMAP_UPDATE_NV")]
         BuildAccelerationStructureAllowDisplacementMicromapUpdateNV = 512,
+        [Obsolete("Deprecated in favour of \"AllowDataAccessBitKhr\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DATA_ACCESS_BIT_KHR")]
+        BuildAccelerationStructureAllowDataAccessBitKhr = 2048,
         [Obsolete("Deprecated in favour of \"AllowDataAccessKhr\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DATA_ACCESS_KHR")]
         BuildAccelerationStructureAllowDataAccessKhr = 2048,
+        [Obsolete("Deprecated in favour of \"AllowClusterOpacityMicromapsBitNV\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_CLUSTER_OPACITY_MICROMAPS_BIT_NV")]
+        BuildAccelerationStructureAllowClusterOpacityMicromapsBitNV = 4096,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_KHR")]
         AllowUpdateBitKhr = 1,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_KHR")]
@@ -60,15 +78,27 @@ namespace Silk.NET.Vulkan
         LowMemoryBitKhr = 16,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MOTION_BIT_NV")]
         MotionBitNV = 32,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_BIT_EXT")]
+        AllowOpacityMicromapUpdateBitExt = 64,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_EXT")]
         AllowOpacityMicromapUpdateExt = 64,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_BIT_EXT")]
+        AllowDisableOpacityMicromapsBitExt = 128,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_EXT")]
         AllowDisableOpacityMicromapsExt = 128,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_DATA_UPDATE_BIT_EXT")]
+        AllowOpacityMicromapDataUpdateBitExt = 256,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_DATA_UPDATE_EXT")]
         AllowOpacityMicromapDataUpdateExt = 256,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISPLACEMENT_MICROMAP_UPDATE_BIT_NV")]
+        AllowDisplacementMicromapUpdateBitNV = 512,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISPLACEMENT_MICROMAP_UPDATE_NV")]
         AllowDisplacementMicromapUpdateNV = 512,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DATA_ACCESS_BIT_KHR")]
+        AllowDataAccessBitKhr = 2048,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DATA_ACCESS_KHR")]
         AllowDataAccessKhr = 2048,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_CLUSTER_OPACITY_MICROMAPS_BIT_NV")]
+        AllowClusterOpacityMicromapsBitNV = 4096,
     }
 }

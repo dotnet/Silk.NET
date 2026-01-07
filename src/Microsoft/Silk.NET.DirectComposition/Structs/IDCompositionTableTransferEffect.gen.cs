@@ -147,7 +147,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetRedTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float tableValues, uint count)
+        public readonly int SetRedTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -168,7 +168,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetGreenTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float tableValues, uint count)
+        public readonly int SetGreenTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -189,7 +189,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBlueTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float tableValues, uint count)
+        public readonly int SetBlueTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -210,7 +210,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetAlphaTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float tableValues, uint count)
+        public readonly int SetAlphaTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float tableValues, uint count)
         {
             var @this = (IDCompositionTableTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

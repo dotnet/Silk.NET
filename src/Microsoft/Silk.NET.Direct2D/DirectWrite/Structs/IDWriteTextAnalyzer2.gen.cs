@@ -498,7 +498,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBaseline(IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, int* exists)
+        public readonly unsafe int GetBaseline(IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, int* exists)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -510,7 +510,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBaseline(IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, ref int exists)
+        public readonly unsafe int GetBaseline(IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, ref int exists)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -525,7 +525,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBaseline(IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, int* exists)
+        public readonly unsafe int GetBaseline(IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, int* exists)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -540,7 +540,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBaseline(IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, ref int exists)
+        public readonly unsafe int GetBaseline(IDWriteFontFace* fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, ref int exists)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -674,7 +674,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBaseline(ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, int* exists)
+        public readonly unsafe int GetBaseline(ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, int* exists)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -689,7 +689,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBaseline(ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, ref int exists)
+        public readonly unsafe int GetBaseline(ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, ref int exists)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -707,7 +707,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBaseline(ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, int* exists)
+        public readonly unsafe int GetBaseline(ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, int* exists)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -725,7 +725,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBaseline(ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, ref int exists)
+        public readonly int GetBaseline(ref IDWriteFontFace fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, ref int exists)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1010,7 +1010,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypographicFeatures(IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags)
+        public readonly unsafe int GetTypographicFeatures(IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1022,7 +1022,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypographicFeatures(IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags)
+        public readonly unsafe int GetTypographicFeatures(IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1037,7 +1037,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypographicFeatures(IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags)
+        public readonly unsafe int GetTypographicFeatures(IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1052,7 +1052,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypographicFeatures(IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags)
+        public readonly unsafe int GetTypographicFeatures(IDWriteFontFace* fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1186,7 +1186,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypographicFeatures(ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags)
+        public readonly unsafe int GetTypographicFeatures(ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1201,7 +1201,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypographicFeatures(ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags)
+        public readonly unsafe int GetTypographicFeatures(ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1219,7 +1219,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypographicFeatures(ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags)
+        public readonly unsafe int GetTypographicFeatures(ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1237,7 +1237,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetTypographicFeatures(ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags)
+        public readonly int GetTypographicFeatures(ref IDWriteFontFace fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags)
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1603,7 +1603,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBaseline<TI0>(ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, int* exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+        public readonly unsafe int GetBaseline<TI0>(ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, int* exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1611,7 +1611,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBaseline<TI0>(ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, int* baselineCoordinate, ref int exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+        public readonly unsafe int GetBaseline<TI0>(ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, int* baselineCoordinate, ref int exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1619,7 +1619,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetBaseline<TI0>(ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, int* exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+        public readonly unsafe int GetBaseline<TI0>(ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, int* exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1627,7 +1627,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBaseline<TI0>(ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, ref int baselineCoordinate, ref int exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+        public readonly int GetBaseline<TI0>(ComPtr<TI0> fontFace, Baseline baseline, Silk.NET.Core.Bool32 isVertical, Silk.NET.Core.Bool32 isSimulationAllowed, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, ref int baselineCoordinate, ref int exists) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1763,7 +1763,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypographicFeatures<TI0>(ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+        public readonly unsafe int GetTypographicFeatures<TI0>(ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, FontFeatureTag* tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1771,7 +1771,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypographicFeatures<TI0>(ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+        public readonly unsafe int GetTypographicFeatures<TI0>(ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, uint* actualTagCount, ref FontFeatureTag tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1779,7 +1779,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTypographicFeatures<TI0>(ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+        public readonly unsafe int GetTypographicFeatures<TI0>(ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, FontFeatureTag* tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1787,7 +1787,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetTypographicFeatures<TI0>(ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
+        public readonly int GetTypographicFeatures<TI0>(ComPtr<TI0> fontFace, ScriptAnalysis scriptAnalysis, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char localeName, uint maxTagCount, ref uint actualTagCount, ref FontFeatureTag tags) where TI0 : unmanaged, IComVtbl<IDWriteFontFace>, IComVtbl<TI0>
         {
             var @this = (IDWriteTextAnalyzer2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

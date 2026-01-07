@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetBufferDeviceAddressKHR", Convention = CallingConvention.Winapi)]
-        public partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferDeviceAddressInfo pInfo);
+        public partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferDeviceAddressInfo pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR", Convention = CallingConvention.Winapi)]
@@ -34,7 +34,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddressKHR", Convention = CallingConvention.Winapi)]
-        public partial ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in BufferDeviceAddressInfo pInfo);
+        public partial ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly BufferDeviceAddressInfo pInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR", Convention = CallingConvention.Winapi)]
@@ -42,7 +42,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddressKHR", Convention = CallingConvention.Winapi)]
-        public partial ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DeviceMemoryOpaqueCaptureAddressInfo pInfo);
+        public partial ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DeviceMemoryOpaqueCaptureAddressInfo pInfo);
 
         public KhrBufferDeviceAddress(INativeContext ctx)
             : base(ctx)

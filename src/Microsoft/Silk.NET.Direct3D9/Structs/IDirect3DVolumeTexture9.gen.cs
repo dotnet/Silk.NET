@@ -147,7 +147,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
         {
             var @this = (IDirect3DVolumeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -171,7 +171,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid refguid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
         {
             var @this = (IDirect3DVolumeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -452,7 +452,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockBox(uint Level, LockedBox* pLockedVolume, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pBox, uint Flags)
+        public readonly unsafe int LockBox(uint Level, LockedBox* pLockedVolume, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pBox, uint Flags)
         {
             var @this = (IDirect3DVolumeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -476,7 +476,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LockBox(uint Level, ref LockedBox pLockedVolume, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pBox, uint Flags)
+        public readonly int LockBox(uint Level, ref LockedBox pLockedVolume, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pBox, uint Flags)
         {
             var @this = (IDirect3DVolumeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -509,7 +509,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddDirtyBox([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Box pDirtyBox)
+        public readonly int AddDirtyBox([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Box pDirtyBox)
         {
             var @this = (IDirect3DVolumeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

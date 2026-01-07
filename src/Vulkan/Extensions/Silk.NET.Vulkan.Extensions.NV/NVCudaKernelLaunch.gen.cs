@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdCudaLaunchKernelNV", Convention = CallingConvention.Winapi)]
-        public partial void CmdCudaLaunchKernel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CudaLaunchInfoNV pLaunchInfo);
+        public partial void CmdCudaLaunchKernel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CudaLaunchInfoNV pLaunchInfo);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaFunctionNV", Convention = CallingConvention.Winapi)]
@@ -38,27 +38,27 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaFunctionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CudaFunctionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaFunctionNV* pFunction);
+        public unsafe partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CudaFunctionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaFunctionNV* pFunction);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaFunctionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CudaFunctionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaFunctionNV pFunction);
+        public unsafe partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CudaFunctionCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaFunctionNV pFunction);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaFunctionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CudaFunctionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaFunctionNV* pFunction);
+        public unsafe partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CudaFunctionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaFunctionNV* pFunction);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaFunctionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CudaFunctionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaFunctionNV pFunction);
+        public unsafe partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CudaFunctionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaFunctionNV pFunction);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaFunctionNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CudaFunctionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaFunctionNV* pFunction);
+        public unsafe partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CudaFunctionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaFunctionNV* pFunction);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaFunctionNV", Convention = CallingConvention.Winapi)]
-        public partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CudaFunctionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaFunctionNV pFunction);
+        public partial Result CreateCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CudaFunctionCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaFunctionNV pFunction);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaModuleNV", Convention = CallingConvention.Winapi)]
@@ -70,27 +70,27 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaModuleNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CudaModuleCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaModuleNV* pModule);
+        public unsafe partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CudaModuleCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaModuleNV* pModule);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaModuleNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CudaModuleCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaModuleNV pModule);
+        public unsafe partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] CudaModuleCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaModuleNV pModule);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaModuleNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CudaModuleCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaModuleNV* pModule);
+        public unsafe partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CudaModuleCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaModuleNV* pModule);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaModuleNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CudaModuleCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaModuleNV pModule);
+        public unsafe partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CudaModuleCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaModuleNV pModule);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaModuleNV", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CudaModuleCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaModuleNV* pModule);
+        public unsafe partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CudaModuleCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] CudaModuleNV* pModule);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateCudaModuleNV", Convention = CallingConvention.Winapi)]
-        public partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in CudaModuleCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaModuleNV pModule);
+        public partial Result CreateCudaModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly CudaModuleCreateInfoNV pCreateInfo, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.Out)] out CudaModuleNV pModule);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyCudaFunctionNV", Convention = CallingConvention.Winapi)]
@@ -98,7 +98,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyCudaFunctionNV", Convention = CallingConvention.Winapi)]
-        public partial void DestroyCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0)] CudaFunctionNV function, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial void DestroyCudaFunction([Count(Count = 0)] Device device, [Count(Count = 0)] CudaFunctionNV function, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyCudaModuleNV", Convention = CallingConvention.Winapi)]
@@ -106,7 +106,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkDestroyCudaModuleNV", Convention = CallingConvention.Winapi)]
-        public partial void DestroyCudaModule([Count(Count = 0)] Device device, [Count(Count = 0)] CudaModuleNV module, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in AllocationCallbacks pAllocator);
+        public partial void DestroyCudaModule([Count(Count = 0)] Device device, [Count(Count = 0)] CudaModuleNV module, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetCudaModuleCacheNV", Convention = CallingConvention.Winapi)]

@@ -106,7 +106,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount, modestride);
@@ -118,7 +118,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), count, type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<IBM> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<IBM> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), count, type, in indices, primcount, modestride);
@@ -130,7 +130,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), in count.GetPinnableReference(), type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<IBM> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<IBM> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), in count.GetPinnableReference(), type, in indices, primcount, modestride);
@@ -142,7 +142,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM* mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount, modestride);
@@ -154,7 +154,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), count, type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<IBM> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<IBM> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), count, type, in indices, primcount, modestride);
@@ -166,7 +166,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), in count.GetPinnableReference(), type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<IBM> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<IBM> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), in count.GetPinnableReference(), type, in indices, primcount, modestride);
@@ -178,7 +178,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount, modestride);
@@ -190,7 +190,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), count, type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrimitiveType> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrimitiveType> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), count, type, in indices, primcount, modestride);
@@ -202,7 +202,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), in count.GetPinnableReference(), type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrimitiveType> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrimitiveType> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] IBM type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), in count.GetPinnableReference(), type, in indices, primcount, modestride);
@@ -214,7 +214,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] PrimitiveType* mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount, modestride);
@@ -226,7 +226,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), count, type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrimitiveType> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrimitiveType> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), count, type, in indices, primcount, modestride);
@@ -238,7 +238,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), in count.GetPinnableReference(), type, indices, primcount, modestride);
         }
 
-        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrimitiveType> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
+        public static unsafe void MultiModeDrawElements(this IbmMultimodeDrawArrays thisApi, [Count(Computed = "primcount, modestride"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<PrimitiveType> mode, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* indices, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint primcount, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int modestride)
         {
             // SpanOverloader
             thisApi.MultiModeDrawElements(in mode.GetPinnableReference(), in count.GetPinnableReference(), type, in indices, primcount, modestride);

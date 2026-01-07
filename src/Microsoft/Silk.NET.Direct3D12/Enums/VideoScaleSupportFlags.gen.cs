@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAGS")]
     public enum VideoScaleSupportFlags : int
     {
@@ -21,11 +22,16 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"EvenDimensionsOnly\"")]
         [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAG_EVEN_DIMENSIONS_ONLY")]
         VideoScaleSupportFlagEvenDimensionsOnly = 0x2,
+        [Obsolete("Deprecated in favour of \"DpbEncoderResources\"")]
+        [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAG_DPB_ENCODER_RESOURCES")]
+        VideoScaleSupportFlagDpbEncoderResources = 0x4,
         [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAG_POW2_ONLY")]
         Pow2Only = 0x1,
         [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAG_EVEN_DIMENSIONS_ONLY")]
         EvenDimensionsOnly = 0x2,
+        [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAG_DPB_ENCODER_RESOURCES")]
+        DpbEncoderResources = 0x4,
     }
 }

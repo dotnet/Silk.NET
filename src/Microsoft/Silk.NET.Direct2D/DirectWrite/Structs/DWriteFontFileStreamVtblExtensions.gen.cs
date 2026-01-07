@@ -106,7 +106,7 @@ public unsafe static class DWriteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFileFragment(this ComPtr<IDWriteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fragmentStart, ulong fileOffset, ulong fragmentSize, void** fragmentContext)
+    public static unsafe int ReadFileFragment(this ComPtr<IDWriteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fragmentStart, ulong fileOffset, ulong fragmentSize, void** fragmentContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DWriteFontFileStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFileFragment(this ComPtr<IDWriteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* fragmentStart, ulong fileOffset, ulong fragmentSize, ref void* fragmentContext)
+    public static unsafe int ReadFileFragment(this ComPtr<IDWriteFontFileStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* fragmentStart, ulong fileOffset, ulong fragmentSize, ref void* fragmentContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

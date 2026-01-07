@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe partial void ClearPixelLocalStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] uint* values);
 
         [NativeApi(EntryPoint = "glClearPixelLocalStorageuiEXT", Convention = CallingConvention.Winapi)]
-        public partial void ClearPixelLocalStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in uint values);
+        public partial void ClearPixelLocalStorage([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint offset, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly uint values);
 
         [NativeApi(EntryPoint = "glFramebufferPixelLocalStorageSizeEXT", Convention = CallingConvention.Winapi)]
         public partial void FramebufferPixelLocalStorageSize([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint size);

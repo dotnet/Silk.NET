@@ -24,7 +24,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         public unsafe partial void DepthRangeArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glDepthRangeArrayfvOES", Convention = CallingConvention.Winapi)]
-        public partial void DepthRangeArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float v);
+        public partial void DepthRangeArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float v);
 
         [NativeApi(EntryPoint = "glDepthRangeIndexedfOES", Convention = CallingConvention.Winapi)]
         public partial void DepthRangeIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float n, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float f);
@@ -63,7 +63,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         public unsafe partial void ScissorArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glScissorArrayvOES", Convention = CallingConvention.Winapi)]
-        public partial void ScissorArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int v);
+        public partial void ScissorArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int v);
 
         [NativeApi(EntryPoint = "glScissorIndexedOES", Convention = CallingConvention.Winapi)]
         public partial void ScissorIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int left, [Flow(Silk.NET.Core.Native.FlowDirection.In)] int bottom, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint width, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint height);
@@ -72,13 +72,13 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         public unsafe partial void ScissorIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glScissorIndexedvOES", Convention = CallingConvention.Winapi)]
-        public partial void ScissorIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in int v);
+        public partial void ScissorIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly int v);
 
         [NativeApi(EntryPoint = "glViewportArrayvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void ViewportArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glViewportArrayvOES", Convention = CallingConvention.Winapi)]
-        public partial void ViewportArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float v);
+        public partial void ViewportArray([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint first, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float v);
 
         [NativeApi(EntryPoint = "glViewportIndexedfOES", Convention = CallingConvention.Winapi)]
         public partial void ViewportIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float x, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float y, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float w, [Flow(Silk.NET.Core.Native.FlowDirection.In)] float h);
@@ -87,7 +87,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         public unsafe partial void ViewportIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glViewportIndexedfvOES", Convention = CallingConvention.Winapi)]
-        public partial void ViewportIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float v);
+        public partial void ViewportIndexed([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index, [Count(Count = 4), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float v);
 
         public unsafe float GetFloat([Flow(Silk.NET.Core.Native.FlowDirection.In)] OES target, [Flow(Silk.NET.Core.Native.FlowDirection.In)] uint index)
         {

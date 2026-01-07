@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.HTC
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorHTC", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result CreateSpatialAnchorHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorCreateInfoHTC createInfo, [Count(Count = 0)] Space* anchor);
+        public unsafe partial Result CreateSpatialAnchorHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorCreateInfoHTC createInfo, [Count(Count = 0)] Space* anchor);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorHTC", Convention = CallingConvention.Winapi)]
-        public partial Result CreateSpatialAnchorHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpatialAnchorCreateInfoHTC createInfo, [Count(Count = 0)] ref Space anchor);
+        public partial Result CreateSpatialAnchorHtc([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpatialAnchorCreateInfoHTC createInfo, [Count(Count = 0)] ref Space anchor);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetSpatialAnchorNameHTC", Convention = CallingConvention.Winapi)]

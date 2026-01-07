@@ -12,15 +12,15 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkRayTracingInvocationReorderModeNV")]
     public enum RayTracingInvocationReorderModeNV : int
     {
-        [Obsolete("Deprecated in favour of \"NoneNV\"")]
-        [NativeName("Name", "VK_RAY_TRACING_INVOCATION_REORDER_MODE_NONE_NV")]
-        RayTracingInvocationReorderModeNoneNV = 0,
-        [Obsolete("Deprecated in favour of \"ReorderNV\"")]
-        [NativeName("Name", "VK_RAY_TRACING_INVOCATION_REORDER_MODE_REORDER_NV")]
-        RayTracingInvocationReorderModeReorderNV = 1,
-        [NativeName("Name", "VK_RAY_TRACING_INVOCATION_REORDER_MODE_NONE_NV")]
-        NoneNV = 0,
-        [NativeName("Name", "VK_RAY_TRACING_INVOCATION_REORDER_MODE_REORDER_NV")]
-        ReorderNV = 1,
+        [Obsolete("Deprecated in favour of \"NoneExt\"")]
+        [NativeName("Name", "VK_RAY_TRACING_INVOCATION_REORDER_MODE_NONE_EXT")]
+        RayTracingInvocationReorderModeNoneExt = 0,
+        [Obsolete("Deprecated in favour of \"ReorderExt\"")]
+        [NativeName("Name", "VK_RAY_TRACING_INVOCATION_REORDER_MODE_REORDER_EXT")]
+        RayTracingInvocationReorderModeReorderExt = 1,
+        [NativeName("Name", "VK_RAY_TRACING_INVOCATION_REORDER_MODE_NONE_EXT")]
+        NoneExt = 0,
+        [NativeName("Name", "VK_RAY_TRACING_INVOCATION_REORDER_MODE_REORDER_EXT")]
+        ReorderExt = 1,
     }
 }

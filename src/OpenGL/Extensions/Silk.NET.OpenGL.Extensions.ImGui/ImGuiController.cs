@@ -287,7 +287,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         /// </summary>
         /// <param name="key">The Silk.NET.Input.Key to translate.</param>
         /// <returns>The corresponding ImGuiKey.</returns>
-        /// <exception cref="NotImplementedException">When the key has not been implemented yet.</exception>
         private static ImGuiKey TranslateInputKeyToImGuiKey(Key key)
         {
             return key switch
@@ -409,7 +408,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
                 Key.F22 => ImGuiKey.F22,
                 Key.F23 => ImGuiKey.F23,
                 Key.F24 => ImGuiKey.F24,
-                _ => throw new NotImplementedException(),
+                _ => ImGuiKey.None,       // Key isn't implemented
             };
         }
 

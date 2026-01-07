@@ -154,7 +154,7 @@ public unsafe static class StreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write<T0>(this ComPtr<IStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+    public static unsafe int Write<T0>(this ComPtr<IStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class StreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Write<T0>(this ComPtr<IStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
+    public static int Write<T0>(this ComPtr<IStream> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;

@@ -30,11 +30,11 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateSpacesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpacesLocateInfo locateInfo, [Count(Count = 0)] SpaceLocations* spaceLocations);
+        public unsafe partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpacesLocateInfo locateInfo, [Count(Count = 0)] SpaceLocations* spaceLocations);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrLocateSpacesKHR", Convention = CallingConvention.Winapi)]
-        public partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in SpacesLocateInfo locateInfo, [Count(Count = 0)] ref SpaceLocations spaceLocations);
+        public partial Result LocateSpaces([Count(Count = 0)] Session session, [Count(Count = 0), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly SpacesLocateInfo locateInfo, [Count(Count = 0)] ref SpaceLocations spaceLocations);
 
         public KhrLocateSpaces(INativeContext ctx)
             : base(ctx)

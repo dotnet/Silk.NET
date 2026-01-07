@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAGS")]
     public enum VideoEncoderPictureControlCodecDataHevcFlags : int
     {
@@ -21,11 +22,21 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"RequestNumRefIdxActiveOverrideFlagSlice\"")]
         [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAG_REQUEST_NUM_REF_IDX_ACTIVE_OVERRIDE_FLAG_SLICE")]
         VideoEncoderPictureControlCodecDataHevcFlagRequestNumRefIdxActiveOverrideFlagSlice = 0x2,
+        [Obsolete("Deprecated in favour of \"CrossComponentPrediction\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAG_CROSS_COMPONENT_PREDICTION")]
+        VideoEncoderPictureControlCodecDataHevcFlagCrossComponentPrediction = 0x4,
+        [Obsolete("Deprecated in favour of \"ChromaQPOffsetList\"")]
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAG_CHROMA_QP_OFFSET_LIST")]
+        VideoEncoderPictureControlCodecDataHevcFlagChromaQPOffsetList = 0x8,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAG_NONE")]
         None = 0x0,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAG_REQUEST_INTRA_CONSTRAINED_SLICES")]
         RequestIntraConstrainedSlices = 0x1,
         [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAG_REQUEST_NUM_REF_IDX_ACTIVE_OVERRIDE_FLAG_SLICE")]
         RequestNumRefIdxActiveOverrideFlagSlice = 0x2,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAG_CROSS_COMPONENT_PREDICTION")]
+        CrossComponentPrediction = 0x4,
+        [NativeName("Name", "D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAG_CHROMA_QP_OFFSET_LIST")]
+        ChromaQPOffsetList = 0x8,
     }
 }

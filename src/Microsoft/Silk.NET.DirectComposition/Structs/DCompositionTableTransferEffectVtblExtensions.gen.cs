@@ -115,7 +115,7 @@ public unsafe static class DCompositionTableTransferEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetRedTable(this ComPtr<IDCompositionTableTransferEffect> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float tableValues, uint count)
+    public static int SetRedTable(this ComPtr<IDCompositionTableTransferEffect> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float tableValues, uint count)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -136,7 +136,7 @@ public unsafe static class DCompositionTableTransferEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetGreenTable(this ComPtr<IDCompositionTableTransferEffect> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float tableValues, uint count)
+    public static int SetGreenTable(this ComPtr<IDCompositionTableTransferEffect> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float tableValues, uint count)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -157,7 +157,7 @@ public unsafe static class DCompositionTableTransferEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBlueTable(this ComPtr<IDCompositionTableTransferEffect> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float tableValues, uint count)
+    public static int SetBlueTable(this ComPtr<IDCompositionTableTransferEffect> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float tableValues, uint count)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -178,7 +178,7 @@ public unsafe static class DCompositionTableTransferEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAlphaTable(this ComPtr<IDCompositionTableTransferEffect> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float tableValues, uint count)
+    public static int SetAlphaTable(this ComPtr<IDCompositionTableTransferEffect> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float tableValues, uint count)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

@@ -123,7 +123,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetScriptAnalysis(uint textPosition, uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in ScriptAnalysis scriptAnalysis)
+        public readonly int SetScriptAnalysis(uint textPosition, uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly ScriptAnalysis scriptAnalysis)
         {
             var @this = (IDWriteTextAnalysisSink1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.DirectWrite
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetLineBreakpoints(uint textPosition, uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in LineBreakpoint lineBreakpoints)
+        public readonly int SetLineBreakpoints(uint textPosition, uint textLength, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly LineBreakpoint lineBreakpoints)
         {
             var @this = (IDWriteTextAnalysisSink1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubresourceHostMemcpySizeEXT")]
-    public unsafe partial struct SubresourceHostMemcpySizeEXT : IExtendsChain<SubresourceLayout2KHR>, IExtendsChain<SubresourceLayout2EXT>
+    [NativeName("AliasOf", "VkSubresourceHostMemcpySize")]
+    public unsafe partial struct SubresourceHostMemcpySizeEXT : IExtendsChain<SubresourceLayout2>, IExtendsChain<SubresourceLayout2KHR>, IExtendsChain<SubresourceLayout2EXT>
     {
         public SubresourceHostMemcpySizeEXT
         (
-            StructureType? sType = StructureType.SubresourceHostMemcpySizeExt,
+            StructureType? sType = StructureType.SubresourceHostMemcpySize,
             void* pNext = null,
             ulong? size = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.SubresourceHostMemcpySizeExt;
+            return SType = StructureType.SubresourceHostMemcpySize;
         }
 
         /// <inheritdoc />

@@ -255,7 +255,7 @@ public unsafe static class WICBitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CopyPixels(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
+    public static unsafe int CopyPixels(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, byte* pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -267,7 +267,7 @@ public unsafe static class WICBitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, ref byte pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -282,7 +282,7 @@ public unsafe static class WICBitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CopyPixels(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
+    public static int CopyPixels(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prc, uint cbStride, uint cbBufferSize, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pbBuffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -317,7 +317,7 @@ public unsafe static class WICBitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Lock(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcLock, uint flags, IWICBitmapLock** ppILock)
+    public static unsafe int Lock(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcLock, uint flags, IWICBitmapLock** ppILock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -329,7 +329,7 @@ public unsafe static class WICBitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Lock(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcLock, uint flags, ref IWICBitmapLock* ppILock)
+    public static unsafe int Lock(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcLock, uint flags, ref IWICBitmapLock* ppILock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -519,7 +519,7 @@ public unsafe static class WICBitmapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Lock<TI0>(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Silk.NET.Maths.Rectangle<int> prcLock, uint flags, ref ComPtr<TI0> ppILock) where TI0 : unmanaged, IComVtbl<IWICBitmapLock>, IComVtbl<TI0>
+    public static int Lock<TI0>(this ComPtr<IWICBitmap> thisVtbl, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Silk.NET.Maths.Rectangle<int> prcLock, uint flags, ref ComPtr<TI0> ppILock) where TI0 : unmanaged, IComVtbl<IWICBitmapLock>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

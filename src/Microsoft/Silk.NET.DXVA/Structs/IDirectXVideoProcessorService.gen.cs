@@ -231,7 +231,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorDeviceGuids([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, uint* pCount, Guid** pGuids)
+        public readonly unsafe int GetVideoProcessorDeviceGuids([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, uint* pCount, Guid** pGuids)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -243,7 +243,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorDeviceGuids([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, uint* pCount, ref Guid* pGuids)
+        public readonly unsafe int GetVideoProcessorDeviceGuids([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, uint* pCount, ref Guid* pGuids)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -258,7 +258,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorDeviceGuids([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref uint pCount, Guid** pGuids)
+        public readonly unsafe int GetVideoProcessorDeviceGuids([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref uint pCount, Guid** pGuids)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -273,7 +273,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorDeviceGuids([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Guid* pGuids)
+        public readonly unsafe int GetVideoProcessorDeviceGuids([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Guid* pGuids)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -339,7 +339,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorRenderTargets(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+        public readonly unsafe int GetVideoProcessorRenderTargets(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -351,7 +351,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorRenderTargets(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+        public readonly unsafe int GetVideoProcessorRenderTargets(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -366,7 +366,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorRenderTargets(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+        public readonly unsafe int GetVideoProcessorRenderTargets(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -381,7 +381,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorRenderTargets(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+        public readonly unsafe int GetVideoProcessorRenderTargets(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -459,7 +459,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorRenderTargets(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+        public readonly unsafe int GetVideoProcessorRenderTargets(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -474,7 +474,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorRenderTargets(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+        public readonly unsafe int GetVideoProcessorRenderTargets(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -492,7 +492,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorRenderTargets(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+        public readonly unsafe int GetVideoProcessorRenderTargets(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -510,7 +510,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorRenderTargets(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+        public readonly unsafe int GetVideoProcessorRenderTargets(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -579,7 +579,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorSubStreamFormats(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+        public readonly unsafe int GetVideoProcessorSubStreamFormats(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -591,7 +591,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorSubStreamFormats(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+        public readonly unsafe int GetVideoProcessorSubStreamFormats(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -606,7 +606,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorSubStreamFormats(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+        public readonly unsafe int GetVideoProcessorSubStreamFormats(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -621,7 +621,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorSubStreamFormats(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+        public readonly unsafe int GetVideoProcessorSubStreamFormats(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -699,7 +699,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorSubStreamFormats(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
+        public readonly unsafe int GetVideoProcessorSubStreamFormats(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, Silk.NET.Direct3D9.Format** pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -714,7 +714,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorSubStreamFormats(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+        public readonly unsafe int GetVideoProcessorSubStreamFormats(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint* pCount, ref Silk.NET.Direct3D9.Format* pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -732,7 +732,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorSubStreamFormats(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
+        public readonly unsafe int GetVideoProcessorSubStreamFormats(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, Silk.NET.Direct3D9.Format** pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -750,7 +750,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorSubStreamFormats(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
+        public readonly unsafe int GetVideoProcessorSubStreamFormats(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref uint pCount, ref Silk.NET.Direct3D9.Format* pFormats)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -792,7 +792,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorCaps(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
+        public readonly unsafe int GetVideoProcessorCaps(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -804,7 +804,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorCaps(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
+        public readonly unsafe int GetVideoProcessorCaps(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -846,7 +846,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorCaps(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
+        public readonly unsafe int GetVideoProcessorCaps(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, DXVA2VideoProcessorCaps* pCaps)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -861,7 +861,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetVideoProcessorCaps(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
+        public readonly int GetVideoProcessorCaps(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, ref DXVA2VideoProcessorCaps pCaps)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -900,7 +900,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetProcAmpRange(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
+        public readonly unsafe int GetProcAmpRange(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -912,7 +912,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetProcAmpRange(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
+        public readonly unsafe int GetProcAmpRange(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -954,7 +954,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetProcAmpRange(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
+        public readonly unsafe int GetProcAmpRange(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, DXVA2ValueRange* pRange)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -969,7 +969,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetProcAmpRange(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
+        public readonly int GetProcAmpRange(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint ProcAmpCap, ref DXVA2ValueRange pRange)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1008,7 +1008,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilterPropertyRange(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
+        public readonly unsafe int GetFilterPropertyRange(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1020,7 +1020,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilterPropertyRange(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
+        public readonly unsafe int GetFilterPropertyRange(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1062,7 +1062,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFilterPropertyRange(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
+        public readonly unsafe int GetFilterPropertyRange(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, DXVA2ValueRange* pRange)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1077,7 +1077,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetFilterPropertyRange(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
+        public readonly int GetFilterPropertyRange(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint FilterSetting, ref DXVA2ValueRange pRange)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1116,7 +1116,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
+        public readonly unsafe int CreateVideoProcessor(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1128,7 +1128,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
+        public readonly unsafe int CreateVideoProcessor(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1170,7 +1170,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
+        public readonly unsafe int CreateVideoProcessor(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, IDirectXVideoProcessor** ppVidProcess)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1185,7 +1185,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
+        public readonly unsafe int CreateVideoProcessor(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref IDirectXVideoProcessor* ppVidProcess)
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1220,7 +1220,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor<TI0>(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int CreateVideoProcessor<TI0>(Guid* VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1236,7 +1236,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateVideoProcessor<TI0>(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
+        public readonly int CreateVideoProcessor<TI0>(ref Guid VideoProcDeviceGuid, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DXVA2VideoDesc pVideoDesc, Silk.NET.Direct3D9.Format RenderTargetFormat, uint MaxNumSubStreams, ref ComPtr<TI0> ppVidProcess) where TI0 : unmanaged, IComVtbl<IDirectXVideoProcessor>, IComVtbl<TI0>
         {
             var @this = (IDirectXVideoProcessorService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

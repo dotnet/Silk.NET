@@ -34,7 +34,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <summary>
         /// The specific API this enum is applicable to.
         /// </summary>
-        public string? Api { get; }
+        public string[]? Api { get; }
 
         /// <summary>
         /// The enum definition.
@@ -44,6 +44,10 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <param name="values">The values of the enum.</param>
         /// <param name="bitWidth">The bit width of the enum.</param>
         public EnumDefinition(string name, EnumType type, EnumValue[] values, int bitWidth, string? api)
+        :this(name, type, values, bitWidth, api?.Split(','))
+        {
+        }
+        public EnumDefinition(string name, EnumType type, EnumValue[] values, int bitWidth, string[]? api)
         {
             Require.NotNullOrEmpty(name);
             Require.NotNull(values);

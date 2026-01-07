@@ -481,3 +481,6 @@ src/Website/Silk.NET.Statiq/cache
 
 # As much as I love Mac, really not interested in this litter.
 **/.DS_Store
+
+website/
+version.txt

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryMapPlacedInfoEXT")]
-    public unsafe partial struct MemoryMapPlacedInfoEXT : IExtendsChain<MemoryMapInfoKHR>
+    public unsafe partial struct MemoryMapPlacedInfoEXT : IExtendsChain<MemoryMapInfo>, IExtendsChain<MemoryMapInfoKHR>
     {
         public MemoryMapPlacedInfoEXT
         (

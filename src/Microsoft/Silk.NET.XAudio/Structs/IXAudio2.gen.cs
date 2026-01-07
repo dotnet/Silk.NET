@@ -158,7 +158,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -170,7 +170,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -182,7 +182,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -209,7 +209,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -224,7 +224,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -239,7 +239,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -257,7 +257,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -269,7 +269,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -284,7 +284,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -299,7 +299,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -317,7 +317,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -332,7 +332,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -350,7 +350,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -368,7 +368,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(IXAudio2SourceVoice** ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -401,7 +401,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -416,7 +416,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -431,7 +431,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -464,7 +464,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -482,7 +482,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -500,7 +500,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -521,7 +521,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -536,7 +536,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -554,7 +554,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -572,7 +572,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -593,7 +593,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -611,7 +611,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -632,7 +632,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -653,7 +653,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSourceVoice(ref IXAudio2SourceVoice* ppSourceVoice, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -686,7 +686,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -698,7 +698,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -710,7 +710,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSubmixVoice(IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -737,7 +737,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSubmixVoice(ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSubmixVoice(ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] VoiceSends* pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -752,7 +752,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSubmixVoice(ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
+        public readonly unsafe int CreateSubmixVoice(ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -767,7 +767,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSubmixVoice(ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain)
+        public readonly unsafe int CreateSubmixVoice(ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly VoiceSends pSendList, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -794,7 +794,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -806,7 +806,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -818,7 +818,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -844,7 +844,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -870,7 +870,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] char* szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -885,7 +885,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -900,7 +900,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in char szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly char szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -932,7 +932,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+        public readonly unsafe int CreateMasteringVoice(ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly EffectChain pEffectChain, AudioStreamCategory StreamCategory)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1008,7 +1008,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetDebugConfiguration([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugConfiguration pDebugConfiguration, void* pReserved)
+        public readonly unsafe void SetDebugConfiguration([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugConfiguration pDebugConfiguration, void* pReserved)
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DebugConfiguration* pDebugConfigurationPtr = &pDebugConfiguration)
@@ -1018,7 +1018,7 @@ namespace Silk.NET.XAudio
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetDebugConfiguration<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in DebugConfiguration pDebugConfiguration, ref T0 pReserved) where T0 : unmanaged
+        public readonly void SetDebugConfiguration<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly DebugConfiguration pDebugConfiguration, ref T0 pReserved) where T0 : unmanaged
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DebugConfiguration* pDebugConfigurationPtr = &pDebugConfiguration)

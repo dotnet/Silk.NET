@@ -52,25 +52,25 @@ namespace Silk.NET.OpenCL.Extensions.LOADER
         public unsafe partial int InitLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** layer_dispatch_ret);
 
         [NativeApi(EntryPoint = "clInitLayer", Convention = CallingConvention.Winapi)]
-        public unsafe partial int InitLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* layer_dispatch_ret);
+        public unsafe partial int InitLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* layer_dispatch_ret);
 
         [NativeApi(EntryPoint = "clInitLayer", Convention = CallingConvention.Winapi)]
         public unsafe partial int InitLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** layer_dispatch_ret);
 
         [NativeApi(EntryPoint = "clInitLayer", Convention = CallingConvention.Winapi)]
-        public unsafe partial int InitLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* layer_dispatch_ret);
+        public unsafe partial int InitLayer([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* layer_dispatch_ret);
 
         [NativeApi(EntryPoint = "clInitLayer", Convention = CallingConvention.Winapi)]
-        public unsafe partial int InitLayer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** layer_dispatch_ret) where T0 : unmanaged;
+        public unsafe partial int InitLayer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** layer_dispatch_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clInitLayer", Convention = CallingConvention.Winapi)]
-        public unsafe partial int InitLayer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* layer_dispatch_ret) where T0 : unmanaged;
+        public unsafe partial int InitLayer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] uint* num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* layer_dispatch_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clInitLayer", Convention = CallingConvention.Winapi)]
-        public unsafe partial int InitLayer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** layer_dispatch_ret) where T0 : unmanaged;
+        public unsafe partial int InitLayer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void** layer_dispatch_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clInitLayer", Convention = CallingConvention.Winapi)]
-        public unsafe partial int InitLayer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in T0 target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in void* layer_dispatch_ret) where T0 : unmanaged;
+        public unsafe partial int InitLayer<T0>([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint num_entries, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly T0 target_dispatch, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] out uint num_entries_ret, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly void* layer_dispatch_ret) where T0 : unmanaged;
 
         public LoaderLayers(INativeContext ctx)
             : base(ctx)

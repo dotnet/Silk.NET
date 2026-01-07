@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public unsafe partial void CoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
-        public partial void CoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in float v);
+        public partial void CoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly float v);
 
         [NativeApi(EntryPoint = "glGetCoverageModulationTableNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetCoverageModulationTable([Flow(Silk.NET.Core.Native.FlowDirection.In)] uint bufSize, [Flow(Silk.NET.Core.Native.FlowDirection.Out)] float* v);

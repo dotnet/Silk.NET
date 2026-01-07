@@ -124,7 +124,7 @@ namespace Silk.NET.DirectStorage
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void EnqueueRequest([Flow(Silk.NET.Core.Native.FlowDirection.In)] [RequiresLocation] in Request request)
+        public readonly void EnqueueRequest([Flow(Silk.NET.Core.Native.FlowDirection.In)] ref readonly Request request)
         {
             var @this = (IDStorageQueue2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Request* requestPtr = &request)

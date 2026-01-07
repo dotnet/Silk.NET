@@ -18,9 +18,14 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"ProceduralPrimitiveAabbs\"")]
         [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_TYPE_PROCEDURAL_PRIMITIVE_AABBS")]
         RaytracingGeometryTypeProceduralPrimitiveAabbs = 0x1,
+        [Obsolete("Deprecated in favour of \"OmmTriangles\"")]
+        [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_TYPE_OMM_TRIANGLES")]
+        RaytracingGeometryTypeOmmTriangles = 0x2,
         [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_TYPE_TRIANGLES")]
         Triangles = 0x0,
         [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_TYPE_PROCEDURAL_PRIMITIVE_AABBS")]
         ProceduralPrimitiveAabbs = 0x1,
+        [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_TYPE_OMM_TRIANGLES")]
+        OmmTriangles = 0x2,
     }
 }

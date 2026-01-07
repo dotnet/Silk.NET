@@ -96,9 +96,12 @@ namespace Silk.NET.Direct3D12
         [Obsolete("Deprecated in favour of \"Rasterizer2\"")]
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER2")]
         PipelineStateSubobjectTypeRasterizer2 = 0x1C,
+        [Obsolete("Deprecated in favour of \"SerializedRootSignature\"")]
+        [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_SERIALIZED_ROOT_SIGNATURE")]
+        PipelineStateSubobjectTypeSerializedRootSignature = 0x1D,
         [Obsolete("Deprecated in favour of \"MaxValid\"")]
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID")]
-        PipelineStateSubobjectTypeMaxValid = 0x1D,
+        PipelineStateSubobjectTypeMaxValid = 0x1E,
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_ROOT_SIGNATURE")]
         RootSignature = 0x0,
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_VS")]
@@ -155,7 +158,9 @@ namespace Silk.NET.Direct3D12
         Rasterizer1 = 0x1B,
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER2")]
         Rasterizer2 = 0x1C,
+        [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_SERIALIZED_ROOT_SIGNATURE")]
+        SerializedRootSignature = 0x1D,
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID")]
-        MaxValid = 0x1D,
+        MaxValid = 0x1E,
     }
 }
