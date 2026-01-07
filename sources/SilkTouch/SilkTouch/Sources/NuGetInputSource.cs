@@ -15,7 +15,8 @@ namespace Silk.NET.SilkTouch.Sources;
 /// <summary>
 /// Uses NuGet as an input source i.e. so we can use files within NuGet packages.
 /// </summary>
-public class NuGetInputSource(ICacheProvider cache, ILogger<NuGetInputSource> logger) : IInputSource
+public class NuGetInputSource(ICacheProvider? cache, ILogger<NuGetInputSource> logger)
+    : IInputSource
 {
     private const string VersionsUrl = "https://api.nuget.org/v3-flatcontainer/{0}/index.json";
     private const string DownloadUrl = "https://www.nuget.org/api/v2/package/{0}/{1}";
@@ -38,23 +39,38 @@ public class NuGetInputSource(ICacheProvider cache, ILogger<NuGetInputSource> lo
         }
 
         var pathInPackage = uri.GetComponents(UriComponents.Path, UriFormat.Unescaped);
-        var (dir, needsDownload) = (
-            await cache.GetDirectory(
+        var cacheDir = await (
+            cache?.GetDirectoryAsync(
                 $"{packageName}.{version}",
                 CacheIntent.ResolvedForeignInput,
-                CacheFlags.AllowNewLocked
-            )
-        )!.Value;
+                CacheFlags.AllowNew | CacheFlags.RequireHostDirectory,
+                FileAccess.ReadWrite
+            ) ?? ValueTask.FromResult<ICacheDirectory?>(null)
+        );
+
+        string dir;
+        var needsDownload = true;
+        if (cacheDir is { Path: { } fsPath })
+        {
+            dir = fsPath;
+            needsDownload = !Directory.GetFiles(fsPath, "*", SearchOption.AllDirectories).Any();
+        }
+        else
+        {
+            logger.LogWarning(
+                "Failed to open cache for {0} v{1}, download will not be cached.",
+                packageName,
+                version
+            );
+            dir = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        }
+
         if (needsDownload)
         {
             var url = string.Format(DownloadUrl, packageName, version);
             logger.LogInformation("Downloading & extracting {} into {}", url, dir);
-            new ZipArchive(await _client.GetStreamAsync(url)).ExtractToDirectory(dir);
-            await cache.CommitDirectory(
-                $"{packageName}.{version}",
-                CacheIntent.ResolvedForeignInput,
-                CacheFlags.AllowNewLocked
-            );
+            await new ZipArchive(await _client.GetStreamAsync(url)).ExtractToDirectoryAsync(dir);
+            await (cacheDir?.CommitAsync() ?? ValueTask.CompletedTask);
         }
 
         var semver1x4 = version[..(version.IndexOf('-') is not -1 and var v ? v : ^0)];

@@ -28,13 +28,11 @@ internal class MSBuildModContext(
     ILogger logger
 ) : IModContext
 {
-    private string? _cacheKey;
     private Project? _srcProject,
         _testProject;
 
     private SilkTouchConfiguration? _cfg = cfg.Get<SilkTouchConfiguration>();
     public string JobKey { get; } = cfg.Key;
-    public string JobCacheKey => _cacheKey ??= ObtainCacheKey();
     public string ConfigurationDirectory { get; init; } = Environment.CurrentDirectory;
 
     public Project? SourceProject

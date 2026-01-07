@@ -46,7 +46,11 @@ public static partial class NameUtils
     /// </param>
     /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
     /// <returns>The pretty string.</returns>
-    public static string Prettify(this string str, ICulturedStringTransformer nameTransformer, bool allowAllCaps = false)
+    public static string Prettify(
+        this string str,
+        ICulturedStringTransformer nameTransformer,
+        bool allowAllCaps = false
+    )
     {
         if (str.Length == 0)
         {
@@ -64,7 +68,9 @@ public static partial class NameUtils
 
         if (ret.Length == 0)
         {
-            throw new InvalidOperationException($"Prettification for '{str}' led to an empty string");
+            throw new InvalidOperationException(
+                $"Prettification for '{str}' led to an empty string"
+            );
         }
 
         // Disallow all capitals
@@ -328,8 +334,12 @@ public static partial class NameUtils
     )
     {
         var newNames = toRename.ToList();
-        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, newNames.Select(x => x.Symbol), [
-            new IdentifierRenamingTransformer(newNames),
-        ], logger, ct);
+        await LocationTransformationUtils.ModifyAllReferencesAsync(
+            ctx,
+            newNames.Select(x => x.Symbol),
+            [new IdentifierRenamingTransformer(newNames)],
+            logger,
+            ct
+        );
     }
 }

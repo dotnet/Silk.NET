@@ -6297,12 +6297,12 @@ public unsafe partial class AL : IAL, IAL.Static
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
         public static MaybeBool<sbyte> IsBufferFormatSupportedSOFT(int format) =>
-            (MaybeBool<sbyte>)(sbyte)IsBufferFormatSupportedSOFTRaw(format);
+            (MaybeBool<sbyte>)(sbyte)IsBufferFormatSupportedRawSOFT(format);
 
         [NativeName("alIsBufferFormatSupportedSOFT")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsBufferFormatSupportedSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
-        public static extern sbyte IsBufferFormatSupportedSOFTRaw(int format);
+        public static extern sbyte IsBufferFormatSupportedRawSOFT(int format);
 
         [NativeName("alIsBuffer")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alIsBuffer")]
@@ -14213,8 +14213,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte IsBufferFormatSupportedSOFTRaw(int format) =>
-            T.IsBufferFormatSupportedSOFTRaw(format);
+        public sbyte IsBufferFormatSupportedRawSOFT(int format) =>
+            T.IsBufferFormatSupportedRawSOFT(format);
 
         [NativeName("alIsBuffer")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -23624,8 +23624,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte IsBufferFormatSupportedSOFTRaw(int format) =>
-            Underlying.Value!.IsBufferFormatSupportedSOFTRaw(format);
+        public static sbyte IsBufferFormatSupportedRawSOFT(int format) =>
+            Underlying.Value!.IsBufferFormatSupportedRawSOFT(format);
 
         [NativeName("alIsBuffer")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -38500,7 +38500,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     MaybeBool<sbyte> IAL.IsBufferFormatSupportedSOFT(int format) =>
-        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsBufferFormatSupportedSOFTRaw(format);
+        (MaybeBool<sbyte>)(sbyte)((IAL)this).IsBufferFormatSupportedRawSOFT(format);
 
     [NativeName("alIsBufferFormatSupportedSOFT")]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
@@ -38513,7 +38513,7 @@ public unsafe partial class AL : IAL, IAL.Static
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAL.IsBufferFormatSupportedSOFTRaw(int format) =>
+    sbyte IAL.IsBufferFormatSupportedRawSOFT(int format) =>
         (
             (delegate* unmanaged<int, sbyte>)(
                 _slots[208] is not null and var loadedFnPtr
@@ -38529,8 +38529,8 @@ public unsafe partial class AL : IAL, IAL.Static
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte IsBufferFormatSupportedSOFTRaw(int format) =>
-        ThisThread.IsBufferFormatSupportedSOFTRaw(format);
+    public static sbyte IsBufferFormatSupportedRawSOFT(int format) =>
+        ThisThread.IsBufferFormatSupportedRawSOFT(format);
 
     [NativeName("alIsBuffer")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]

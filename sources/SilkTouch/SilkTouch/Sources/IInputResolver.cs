@@ -89,10 +89,13 @@ public interface IInputResolver
                     (await TryResolvePath(rsp.FileDirectory))?.Replace('\\', '/')
                     ?? rsp.FileDirectory,
                 ClangCommandLineArgs = rsp.ClangCommandLineArgs,
-                GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with {
+                GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with
+                {
                     OutputLocation = await ResolvePath(rsp.GeneratorConfiguration.OutputLocation),
                     TraversalNames = traversals,
-                    TestOutputLocation = await ResolvePath(rsp.GeneratorConfiguration.TestOutputLocation),
+                    TestOutputLocation = await ResolvePath(
+                        rsp.GeneratorConfiguration.TestOutputLocation
+                    ),
                 },
             };
         }
@@ -130,7 +133,7 @@ public interface IInputResolver
                 : await ResolvePath(config.InputSourceRoot),
             InputTestRoot = config.InputTestRoot is null
                 ? null
-                : await ResolvePath(config.InputTestRoot)
+                : await ResolvePath(config.InputTestRoot),
         };
     }
 
@@ -145,6 +148,6 @@ public interface IInputResolver
             SourceProject = config.SourceProject is null
                 ? null
                 : await ResolvePath(config.SourceProject),
-            TestProject = config.TestProject is null ? null : await ResolvePath(config.TestProject)
+            TestProject = config.TestProject is null ? null : await ResolvePath(config.TestProject),
         };
 }
