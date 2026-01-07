@@ -339,7 +339,10 @@ public class MixKhronosDataTests
         var names = new Dictionary<string, CandidateNames>
         {
             { "GL_PIXEL_COUNT_NV", new CandidateNames("GL_PIXEL_COUNT_NV", []) },
-            { "GL_PIXEL_COUNT_AVAILABLE_NV", new CandidateNames("GL_PIXEL_COUNT_AVAILABLE_NV", []) },
+            {
+                "GL_PIXEL_COUNT_AVAILABLE_NV",
+                new CandidateNames("GL_PIXEL_COUNT_AVAILABLE_NV", [])
+            },
         };
         var ctx = new NameTrimmerContext
         {
@@ -351,7 +354,10 @@ public class MixKhronosDataTests
         baseTrimmer.Trim(ctx);
         uut.Trim(ctx);
         Assert.That(names["GL_PIXEL_COUNT_NV"].Primary, Is.EqualTo("PixelCount"));
-        Assert.That(names["GL_PIXEL_COUNT_AVAILABLE_NV"].Primary, Is.EqualTo("PixelCountAvailable"));
+        Assert.That(
+            names["GL_PIXEL_COUNT_AVAILABLE_NV"].Primary,
+            Is.EqualTo("PixelCountAvailable")
+        );
     }
 
     [Test]

@@ -187,14 +187,20 @@ public static class ModUtils
     /// <summary>
     /// Searches and replaces all occurrences of the <paramref name="oldValue"/> with the <paramref name="newValue"/> in the document name and project *relative* file path.
     /// </summary>
-    public static Document ReplaceNameAndPath(this Document document, string oldValue, string newValue)
+    public static Document ReplaceNameAndPath(
+        this Document document,
+        string oldValue,
+        string newValue
+    )
     {
         document = document.WithName(document.Name.Replace(oldValue, newValue));
 
         var relativePath = document.RelativePath();
         if (relativePath != null)
         {
-            document = document.WithFilePath(FullPath(document.Project, relativePath.Replace(oldValue, newValue)));
+            document = document.WithFilePath(
+                FullPath(document.Project, relativePath.Replace(oldValue, newValue))
+            );
         }
 
         return document;

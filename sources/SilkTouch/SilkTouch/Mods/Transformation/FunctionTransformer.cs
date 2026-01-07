@@ -182,7 +182,8 @@ public class FunctionTransformer(
                         .WithIdentifier(Identifier(newIden));
 
                     newFun = newFun.WithAttributeLists(
-                        newFun.AttributeLists.AddNameSuffix("RawFunction", "Raw"));
+                        newFun.AttributeLists.AddNameSuffix("RawFunction", "Raw")
+                    );
 
                     discrim = ModUtils.DiscrimStr(
                         function.Modifiers,
@@ -255,7 +256,9 @@ public class FunctionTransformer(
                                     x.Attributes.Where(y =>
                                         !y.IsAttribute("System.Runtime.InteropServices.DllImport")
                                         && !y.IsAttribute("Silk.NET.Core.NativeFunction")
-                                        && !y.IsAttribute("System.Runtime.CompilerServices.MethodImpl")
+                                        && !y.IsAttribute(
+                                            "System.Runtime.CompilerServices.MethodImpl"
+                                        )
                                     )
                                 )
                             )

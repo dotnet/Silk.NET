@@ -274,36 +274,45 @@ public partial class MixKhronosData(
         job.ApiSets = apiSets;
         job.SupportedApiProfiles = supportedApiProfiles;
 
-        var profiles = supportedApiProfiles.SelectMany(x => x.Value).Select(x => x.Profile).ToHashSet();
+        var profiles = supportedApiProfiles
+            .SelectMany(x => x.Value)
+            .Select(x => x.Profile)
+            .ToHashSet();
 
-        job.Vendors.UnionWith([
-            .. xml.Element("registry")
-                ?.Element("tags")
-                ?.Elements("tag")
-                .Attributes("name")
-                .Select(x => x.Value) ?? [],
-            .. currentConfig.NonStandardExtensionNomenclature
-                ? []
-                : xml.Element("registry")
-                    ?.Element("extensions")
-                    ?.Elements("extension")
-                    // Only include vendors who have extensions that match a declared profile
-                    // This is mainly to exclude extensions that are declared as supported="disabled"
-                    .Where(ext =>
-                    {
-                        var supportedProfiles = ext.Attribute("supported")?.Value.Split("|") ?? [];
-                        return profiles.Intersect(supportedProfiles).Any();
-                    })
+        job.Vendors.UnionWith(
+            [
+                .. xml.Element("registry")
+                    ?.Element("tags")
+                    ?.Elements("tag")
                     .Attributes("name")
-                    // Extract the second part from the extension name
-                    // Eg: GL_NV_command_list -> NV
-                    .Select(name => name.Value.Split('_')[1].ToUpper()) ?? [],
-            .. currentConfig.Vendors ?? [],
-        ]);
+                    .Select(x => x.Value) ?? [],
+                .. currentConfig.NonStandardExtensionNomenclature
+                    ? []
+                    : xml.Element("registry")
+                        ?.Element("extensions")
+                        ?.Elements("extension")
+                        // Only include vendors who have extensions that match a declared profile
+                        // This is mainly to exclude extensions that are declared as supported="disabled"
+                        .Where(ext =>
+                        {
+                            var supportedProfiles =
+                                ext.Attribute("supported")?.Value.Split("|") ?? [];
+                            return profiles.Intersect(supportedProfiles).Any();
+                        })
+                        .Attributes("name")
+                        // Extract the second part from the extension name
+                        // Eg: GL_NV_command_list -> NV
+                        .Select(name => name.Value.Split('_')[1].ToUpper()) ?? [],
+                .. currentConfig.Vendors ?? [],
+            ]
+        );
 
         job.DeprecatedAliases = xml.Descendants()
-            .Where(x => x.Attribute("deprecated")?.Value == "aliased" && x.Attribute("name") != null)
-            .Select(x => x.Attribute("name")!.Value).ToHashSet();
+            .Where(x =>
+                x.Attribute("deprecated")?.Value == "aliased" && x.Attribute("name") != null
+            )
+            .Select(x => x.Attribute("name")!.Value)
+            .ToHashSet();
 
         ReadGroups(xml, job, job.Vendors);
 
@@ -360,33 +369,33 @@ public partial class MixKhronosData(
         var rewriter1 = new RewriterPhase1(jobData, logger);
         foreach (var docId in proj.DocumentIds)
         {
-            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc =
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter1.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
-                ?? throw new InvalidOperationException("Visit returned null.")
+                    ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
 
         // Add missing enum types
         foreach (var (filePath, node) in rewriter1.GetMissingEnums())
         {
-            proj = proj
-                .AddDocument(
-                    Path.GetFileName(filePath),
-                    node.NormalizeWhitespace(),
-                    filePath: proj.FullPath(filePath)
-                )
-                .Project;
+            proj = proj.AddDocument(
+                Path.GetFileName(filePath),
+                node.NormalizeWhitespace(),
+                filePath: proj.FullPath(filePath)
+            ).Project;
         }
 
         // Rewrite phase 2
         var rewriter2 = new RewriterPhase2(jobData, rewriter1);
         foreach (var docId in proj.DocumentIds)
         {
-            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc =
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter2.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
-                ?? throw new InvalidOperationException("Visit returned null.")
+                    ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
 
@@ -394,17 +403,19 @@ public partial class MixKhronosData(
         var rewriter3 = new RewriterPhase3(jobData, currentConfig);
         foreach (var docId in proj.DocumentIds)
         {
-            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc =
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             proj = doc.WithSyntaxRoot(
                 rewriter3.Visit(await doc.GetSyntaxRootAsync(ct))?.NormalizeWhitespace()
-                ?? throw new InvalidOperationException("Visit returned null.")
+                    ?? throw new InvalidOperationException("Visit returned null.")
             ).Project;
         }
 
         // Rename documents to account for FlagBits/Flags differences
         foreach (var docId in proj.DocumentIds)
         {
-            var doc = proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+            var doc =
+                proj.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
             if (doc.FilePath == null)
             {
                 continue;
@@ -421,12 +432,20 @@ public partial class MixKhronosData(
     {
         var job = Jobs[key];
 
-        rsps = rsps.Select(rsp => rsp with
-        {
-            GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with {
-                RemappedNames = rsp.GeneratorConfiguration.RemappedNames.Concat(job.AdditionalTypeRemappings).ToDictionary(),
-            },
-        }).ToList();
+        rsps = rsps.Select(rsp =>
+                rsp with
+                {
+                    GeneratorConfiguration = rsp.GeneratorConfiguration.ToWrapper() with
+                    {
+                        RemappedNames = rsp
+                            .GeneratorConfiguration.RemappedNames.Concat(
+                                job.AdditionalTypeRemappings
+                            )
+                            .ToDictionary(),
+                    },
+                }
+            )
+            .ToList();
 
         return Task.FromResult(rsps);
     }
@@ -1222,8 +1241,10 @@ public partial class MixKhronosData(
             {
                 foreach (var name in (IEnumerable<string>)[current, .. previous])
                 {
-                    if (job.Groups.TryGetValue(name, out var group)
-                        && name == $"{group.Namespace}Enum")
+                    if (
+                        job.Groups.TryGetValue(name, out var group)
+                        && name == $"{group.Namespace}Enum"
+                    )
                     {
                         context.Names[original] = new CandidateNames(name, []);
                         break;
@@ -1491,7 +1512,11 @@ public partial class MixKhronosData(
         [NotNullWhen(true)] out IEnumerable<SupportedApiProfileAttribute>? metadata
     )
     {
-        if (jobKey is null || !Jobs.TryGetValue(jobKey, out var job) || job.SupportedApiProfiles is null)
+        if (
+            jobKey is null
+            || !Jobs.TryGetValue(jobKey, out var job)
+            || job.SupportedApiProfiles is null
+        )
         {
             metadata = null;
             return false;
@@ -1604,8 +1629,8 @@ public partial class MixKhronosData(
                     AllKnownEnums.Add(groupName);
 
                     var attributes = SingletonList(
-                        AttributeList(
-                            [Attribute(IdentifierName("Transformed"))]));
+                        AttributeList([Attribute(IdentifierName("Transformed"))])
+                    );
 
                     if (groupInfo.NativeName != null)
                     {
@@ -1614,44 +1639,60 @@ public partial class MixKhronosData(
 
                     var baseTypeSyntax = ParseTypeName(baseType);
 
-                    results.Add((
-                        $"Enums/{groupName}.gen.cs",
-                        CompilationUnit()
-                            .WithMembers(
-                                SingletonList<MemberDeclarationSyntax>(
-                                    FileScopedNamespaceDeclaration(ModUtils.NamespaceIntoIdentifierName(ns))
-                                        .WithMembers(
-                                            SingletonList<MemberDeclarationSyntax>(
-                                                EnumDeclaration(groupName)
-                                                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
-                                                    .WithAttributeLists(attributes)
-                                                    .WithBaseList(BaseList([SimpleBaseType(baseTypeSyntax)]))
-                                                    .WithMembers(
-                                                        SeparatedList(
-                                                            groupInfo.Enums.Select(x =>
-                                                                EnumMemberDeclaration(x.Identifier.ToString())
-                                                                    .WithAttributeLists(
-                                                                        new SyntaxList<AttributeListSyntax>()
-                                                                        .WithNativeName(x.Identifier.Text))
-                                                                    .WithEqualsValue(
-                                                                        x.Initializer?.WithValue(
-                                                                            CheckedExpression(
-                                                                                SyntaxKind.UncheckedExpression,
-                                                                                CastExpression(
-                                                                                    baseTypeSyntax,
-                                                                                    x.Initializer.Value
+                    results.Add(
+                        (
+                            $"Enums/{groupName}.gen.cs",
+                            CompilationUnit()
+                                .WithMembers(
+                                    SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(ns)
+                                            )
+                                            .WithMembers(
+                                                SingletonList<MemberDeclarationSyntax>(
+                                                    EnumDeclaration(groupName)
+                                                        .WithModifiers(
+                                                            TokenList(
+                                                                Token(SyntaxKind.PublicKeyword)
+                                                            )
+                                                        )
+                                                        .WithAttributeLists(attributes)
+                                                        .WithBaseList(
+                                                            BaseList(
+                                                                [SimpleBaseType(baseTypeSyntax)]
+                                                            )
+                                                        )
+                                                        .WithMembers(
+                                                            SeparatedList(
+                                                                groupInfo.Enums.Select(x =>
+                                                                    EnumMemberDeclaration(
+                                                                            x.Identifier.ToString()
+                                                                        )
+                                                                        .WithAttributeLists(
+                                                                            new SyntaxList<AttributeListSyntax>().WithNativeName(
+                                                                                x.Identifier.Text
+                                                                            )
+                                                                        )
+                                                                        .WithEqualsValue(
+                                                                            x.Initializer?.WithValue(
+                                                                                CheckedExpression(
+                                                                                    SyntaxKind.UncheckedExpression,
+                                                                                    CastExpression(
+                                                                                        baseTypeSyntax,
+                                                                                        x.Initializer.Value
+                                                                                    )
                                                                                 )
                                                                             )
                                                                         )
-                                                                    )
+                                                                )
                                                             )
                                                         )
-                                                    )
+                                                )
                                             )
-                                        )
+                                    )
                                 )
-                            )
-                    ));
+                        )
+                    );
                 }
             }
 
@@ -1673,8 +1714,10 @@ public partial class MixKhronosData(
 
             AllKnownEnums.Add(identifier);
 
-            if (job.Groups.TryGetValue(identifier, out _)
-                && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any())
+            if (
+                job.Groups.TryGetValue(identifier, out _)
+                && !node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any()
+            )
             {
                 AlreadyPresentGroups.Add(identifier);
             }
@@ -1685,8 +1728,10 @@ public partial class MixKhronosData(
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
             // Only match constant fields
-            if (node.Declaration.Variables.Count != 1
-                || !node.Modifiers.Any(SyntaxKind.ConstKeyword))
+            if (
+                node.Declaration.Variables.Count != 1
+                || !node.Modifiers.Any(SyntaxKind.ConstKeyword)
+            )
             {
                 return base.VisitFieldDeclaration(node);
             }
@@ -1740,7 +1785,8 @@ public partial class MixKhronosData(
     /// </summary>
     private class RewriterPhase2(JobData job, RewriterPhase1 phase1) : CSharpSyntaxRewriter(true)
     {
-        public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node) => IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
+        public override SyntaxNode VisitIdentifierName(IdentifierNameSyntax node) =>
+            IdentifierName(node.Identifier.ToString().Replace("FlagBits", "Flags"));
 
         public override SyntaxNode? VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
@@ -1749,17 +1795,21 @@ public partial class MixKhronosData(
             if (node.Members.Any(m => job.DeprecatedAliases.Contains(m.Identifier.ValueText)))
             {
                 // Remove deprecated aliases
-                node = node.WithMembers([
-                    ..node.Members.Where(m => !job.DeprecatedAliases.Contains(m.Identifier.ValueText)),
-                ]);
+                node = node.WithMembers(
+                    [
+                        .. node.Members.Where(m =>
+                            !job.DeprecatedAliases.Contains(m.Identifier.ValueText)
+                        ),
+                    ]
+                );
             }
 
             if (job.Groups.TryGetValue(identifier, out var group) && group.KnownBitmask)
             {
                 // Add [Flags] attribute
                 var flagsAttribute = AttributeList(
-                    SingletonSeparatedList(
-                        Attribute(IdentifierName("Flags"))));
+                    SingletonSeparatedList(Attribute(IdentifierName("Flags")))
+                );
 
                 node = node.WithAttributeLists(node.AttributeLists.Add(flagsAttribute));
             }
@@ -1769,12 +1819,22 @@ public partial class MixKhronosData(
 
         public override SyntaxNode? VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
-            if (node.Declaration.Variables.Any(v => job.DeprecatedAliases.Contains(v.Identifier.ValueText)))
+            if (
+                node.Declaration.Variables.Any(v =>
+                    job.DeprecatedAliases.Contains(v.Identifier.ValueText)
+                )
+            )
             {
                 // Remove deprecated aliases
-                node = node.WithDeclaration(node.Declaration.WithVariables([
-                    ..node.Declaration.Variables.Where(v => !job.DeprecatedAliases.Contains(v.Identifier.ValueText)),
-                ]));
+                node = node.WithDeclaration(
+                    node.Declaration.WithVariables(
+                        [
+                            .. node.Declaration.Variables.Where(v =>
+                                !job.DeprecatedAliases.Contains(v.Identifier.ValueText)
+                            ),
+                        ]
+                    )
+                );
 
                 if (node.Declaration.Variables.Count == 0)
                 {
@@ -1816,7 +1876,10 @@ public partial class MixKhronosData(
         /// <remarks>
         /// This method is intentionally implemented in a naive manner to keep things simple.
         /// </remarks>
-        private bool TryGetManagedEnumType(SyntaxList<AttributeListSyntax> attributes, [NotNullWhen(true)] out string? managedName)
+        private bool TryGetManagedEnumType(
+            SyntaxList<AttributeListSyntax> attributes,
+            [NotNullWhen(true)] out string? managedName
+        )
         {
             managedName = null;
 
@@ -1853,7 +1916,12 @@ public partial class MixKhronosData(
     /// </remarks>
     private class RewriterPhase3(JobData job, Configuration config) : CSharpSyntaxRewriter
     {
-        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(SyntaxList<AttributeListSyntax> attributeLists, SyntaxToken identifier, bool trimHandleSuffix, MethodDeclarationSyntax? methodDeclaration = null)
+        private SyntaxList<AttributeListSyntax> ProcessAndGetNewAttributes(
+            SyntaxList<AttributeListSyntax> attributeLists,
+            SyntaxToken identifier,
+            bool trimHandleSuffix,
+            MethodDeclarationSyntax? methodDeclaration = null
+        )
         {
             // Get the name of the identifier, preferring the native one if available
             // This name will be modified by the code below as different suffixes are identified
@@ -1886,14 +1954,21 @@ public partial class MixKhronosData(
                 }
             }
 
-            if (methodDeclaration != null && methodDeclaration.Parent.IsKind(SyntaxKind.ClassDeclaration))
+            if (
+                methodDeclaration != null
+                && methodDeclaration.Parent.IsKind(SyntaxKind.ClassDeclaration)
+            )
             {
                 // Try to identify non-vendor suffixes
                 foreach (var suffix in config.NonVendorSuffixes)
                 {
                     if (trimmedName.EndsWith(suffix))
                     {
-                        attributeLists = attributeLists.AddNameSuffix("KhronosNonVendor", suffix, true);
+                        attributeLists = attributeLists.AddNameSuffix(
+                            "KhronosNonVendor",
+                            suffix,
+                            true
+                        );
                         trimmedName = trimmedName[..^suffix.Length];
 
                         break;
@@ -1903,13 +1978,19 @@ public partial class MixKhronosData(
                 // Try to identify data type suffixes
                 if (config.IdentifyFunctionDataTypes)
                 {
-                    if (EndingsToTrim().Match(trimmedName) is { Success: true } match // Check if we end in a data type suffix
-                        && !EndingsNotToTrim().IsMatch(trimmedName)) // Check if the ending is excluded
+                    if (
+                        EndingsToTrim().Match(trimmedName) is { Success: true } match // Check if we end in a data type suffix
+                        && !EndingsNotToTrim().IsMatch(trimmedName)
+                    ) // Check if the ending is excluded
                     {
                         var dataTypeSuffix = trimmedName[match.Index..];
                         trimmedName = trimmedName[..match.Index];
 
-                        attributeLists = attributeLists.AddNameSuffix("KhronosFunctionDataType", dataTypeSuffix, true);
+                        attributeLists = attributeLists.AddNameSuffix(
+                            "KhronosFunctionDataType",
+                            dataTypeSuffix,
+                            true
+                        );
                     }
                 }
             }
@@ -1922,17 +2003,23 @@ public partial class MixKhronosData(
         public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
             node = (StructDeclarationSyntax)base.VisitStructDeclaration(node)!;
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, true));
+            return node.WithAttributeLists(
+                ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, true)
+            );
         }
 
         public override SyntaxNode VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
             var variable = node.Declaration.Variables.First();
-            return node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, variable.Identifier, false));
+            return node.WithAttributeLists(
+                ProcessAndGetNewAttributes(node.AttributeLists, variable.Identifier, false)
+            );
         }
 
         public override SyntaxNode VisitDelegateDeclaration(DelegateDeclarationSyntax node) =>
-            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false));
+            node.WithAttributeLists(
+                ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false)
+            );
 
         // Special case for enums since this code needs information about
         // the enum type name and its member names at the same time
@@ -1951,7 +2038,10 @@ public partial class MixKhronosData(
 
             // Figure out the enum's exclusive vendor
             var exclusiveVendor = groupInfo?.ExclusiveVendor ?? typeVendor;
-            if (exclusiveVendor == null || !node.Members.All(member => member.Identifier.Text.EndsWith(exclusiveVendor)))
+            if (
+                exclusiveVendor == null
+                || !node.Members.All(member => member.Identifier.Text.EndsWith(exclusiveVendor))
+            )
             {
                 // Not all enum members share the exclusive vendor
                 // This means the vendor suffix isn't actually exclusive
@@ -1966,7 +2056,8 @@ public partial class MixKhronosData(
                 // For example, SamplePatternEXT and SamplePatternSGIS are both enum types.
                 // Trimming both would cause conflicts.
                 // Trimming one but not the other would imply one is core and the other is not.
-                var hasMultipleVersions = job.Groups.Count(x => x.Key.StartsWith(typeName[..^typeVendor.Length])) > 1;
+                var hasMultipleVersions =
+                    job.Groups.Count(x => x.Key.StartsWith(typeName[..^typeVendor.Length])) > 1;
                 var isSafeToTrimType = !hasMultipleVersions;
 
                 // Identify the affix for trimming if the type vendor suffix does not match the identified exclusive vendor suffix
@@ -1984,7 +2075,9 @@ public partial class MixKhronosData(
             if (typeVendor != null)
             {
                 // Mark the type vendor suffix as identified
-                node = node.WithAttributeLists(node.AttributeLists.AddNameSuffix(vendorAffixType, typeVendor, true));
+                node = node.WithAttributeLists(
+                    node.AttributeLists.AddNameSuffix(vendorAffixType, typeVendor, true)
+                );
             }
 
             // Check if the enum contains unsuffixed members
@@ -2012,20 +2105,43 @@ public partial class MixKhronosData(
             var canTrimImpliedVendors = hasTypeSuffix && !containsUnsuffixedMembers;
 
             // See config option for more info and examples on what this does
-            if (config.IdentifyEnumMemberImpliedVendors && typeVendor != null && canTrimImpliedVendors)
+            if (
+                config.IdentifyEnumMemberImpliedVendors
+                && typeVendor != null
+                && canTrimImpliedVendors
+            )
             {
-                node = node.WithMembers([
-                    ..node.Members.Select(member => {
-                        if (member.AttributeLists.GetNativeNameOrDefault(member.Identifier).EndsWith(typeVendor))
+                node = node.WithMembers(
+                    [
+                        .. node.Members.Select(member =>
                         {
-                            // Identify for trimming
-                            return member.WithAttributeLists(member.AttributeLists.AddNameSuffix("KhronosImpliedVendor", typeVendor, true));
-                        }
+                            if (
+                                member
+                                    .AttributeLists.GetNativeNameOrDefault(member.Identifier)
+                                    .EndsWith(typeVendor)
+                            )
+                            {
+                                // Identify for trimming
+                                return member.WithAttributeLists(
+                                    member.AttributeLists.AddNameSuffix(
+                                        "KhronosImpliedVendor",
+                                        typeVendor,
+                                        true
+                                    )
+                                );
+                            }
 
-                        // Default behavior - Identify, but not for trimming
-                        return member.WithAttributeLists(ProcessAndGetNewAttributes(member.AttributeLists, member.Identifier, false));
-                    }),
-                ]);
+                            // Default behavior - Identify, but not for trimming
+                            return member.WithAttributeLists(
+                                ProcessAndGetNewAttributes(
+                                    member.AttributeLists,
+                                    member.Identifier,
+                                    false
+                                )
+                            );
+                        }),
+                    ]
+                );
             }
             else
             {
@@ -2039,13 +2155,19 @@ public partial class MixKhronosData(
         // ----- Members -----
 
         public override SyntaxNode VisitEnumMemberDeclaration(EnumMemberDeclarationSyntax node) =>
-            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false));
+            node.WithAttributeLists(
+                ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false)
+            );
 
         public override SyntaxNode VisitPropertyDeclaration(PropertyDeclarationSyntax node) =>
-            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false));
+            node.WithAttributeLists(
+                ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false)
+            );
 
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            node.WithAttributeLists(ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false, node));
+            node.WithAttributeLists(
+                ProcessAndGetNewAttributes(node.AttributeLists, node.Identifier, false, node)
+            );
     }
 
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]
@@ -2190,7 +2312,11 @@ public partial class MixKhronosData(
             }
 
             // Some enum groups don't have members, meaning that the code above won't catch them
-            if (groupName != null && !IsUngroupable(groupName) && !data.Groups.ContainsKey(groupName))
+            if (
+                groupName != null
+                && !IsUngroupable(groupName)
+                && !data.Groups.ContainsKey(groupName)
+            )
             {
                 data.Groups[groupName] = new EnumGroup(
                     groupName,
