@@ -7,7 +7,6 @@ using Silk.NET.SilkTouch.Mods.Metadata;
 
 namespace Silk.NET.SilkTouch.UnitTests;
 
-[TestFixture]
 public class MetadataUtilsTests
 {
     [

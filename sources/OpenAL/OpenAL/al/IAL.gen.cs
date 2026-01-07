@@ -2936,7 +2936,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
-        static abstract int GetErrorDirectRawDirect(ContextHandle context);
+        static abstract int GetErrorDirectRaw(ContextHandle context);
 
         [NativeName("alGetError")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -4419,7 +4419,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
-        static abstract sbyte IsAuxiliaryEffectSlotDirectRawDirect(
+        static abstract sbyte IsAuxiliaryEffectSlotDirectRaw(
             ContextHandle context,
             uint effectslot
         );
@@ -4448,7 +4448,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "alIsBufferDirect")]
-        static abstract sbyte IsBufferDirectRawDirect(ContextHandle context, uint buffer);
+        static abstract sbyte IsBufferDirectRaw(ContextHandle context, uint buffer);
 
         [NativeName("alIsBufferFormatSupportedSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
@@ -4458,7 +4458,7 @@ public unsafe partial interface IAL
         [NativeName("alIsBufferFormatSupportedSOFT")]
         [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
         [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
-        static abstract sbyte IsBufferFormatSupportedSOFTRawSOFT(int format);
+        static abstract sbyte IsBufferFormatSupportedRawSOFT(int format);
 
         [NativeName("alIsBuffer")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -4484,7 +4484,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
-        static abstract sbyte IsEffectDirectRawDirect(ContextHandle context, uint effect);
+        static abstract sbyte IsEffectDirectRaw(ContextHandle context, uint effect);
 
         [NativeName("alIsEffect")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -4568,7 +4568,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
         ]
         [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
-        static abstract sbyte IsFilterDirectRawDirect(ContextHandle context, uint filter);
+        static abstract sbyte IsFilterDirectRaw(ContextHandle context, uint filter);
 
         [NativeName("alIsFilter")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -4594,7 +4594,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "alIsSourceDirect")]
-        static abstract sbyte IsSourceDirectRawDirect(ContextHandle context, uint source);
+        static abstract sbyte IsSourceDirectRaw(ContextHandle context, uint source);
 
         [NativeName("alIsSource")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -8707,7 +8707,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "alGetErrorDirect")]
-    int GetErrorDirectRawDirect(ContextHandle context);
+    int GetErrorDirectRaw(ContextHandle context);
 
     [NativeName("alGetError")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -9995,7 +9995,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alIsAuxiliaryEffectSlotDirect")]
-    sbyte IsAuxiliaryEffectSlotDirectRawDirect(ContextHandle context, uint effectslot);
+    sbyte IsAuxiliaryEffectSlotDirectRaw(ContextHandle context, uint effectslot);
 
     [NativeName("alIsAuxiliaryEffectSlot")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -10021,7 +10021,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "alIsBufferDirect")]
-    sbyte IsBufferDirectRawDirect(ContextHandle context, uint buffer);
+    sbyte IsBufferDirectRaw(ContextHandle context, uint buffer);
 
     [NativeName("alIsBufferFormatSupportedSOFT")]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
@@ -10031,7 +10031,7 @@ public unsafe partial interface IAL
     [NativeName("alIsBufferFormatSupportedSOFT")]
     [SupportedApiProfile("al", ["AL_SOFT_buffer_samples"])]
     [NativeFunction("openal", EntryPoint = "alIsBufferFormatSupportedSOFT")]
-    sbyte IsBufferFormatSupportedSOFTRawSOFT(int format);
+    sbyte IsBufferFormatSupportedRawSOFT(int format);
 
     [NativeName("alIsBuffer")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -10057,7 +10057,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alIsEffectDirect")]
-    sbyte IsEffectDirectRawDirect(ContextHandle context, uint effect);
+    sbyte IsEffectDirectRaw(ContextHandle context, uint effect);
 
     [NativeName("alIsEffect")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -10138,7 +10138,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
     ]
     [NativeFunction("openal", EntryPoint = "alIsFilterDirect")]
-    sbyte IsFilterDirectRawDirect(ContextHandle context, uint filter);
+    sbyte IsFilterDirectRaw(ContextHandle context, uint filter);
 
     [NativeName("alIsFilter")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -10164,7 +10164,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "alIsSourceDirect")]
-    sbyte IsSourceDirectRawDirect(ContextHandle context, uint source);
+    sbyte IsSourceDirectRaw(ContextHandle context, uint source);
 
     [NativeName("alIsSource")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]

@@ -2,8 +2,8 @@
   "Jobs": {
     "Microsoft": {
       "Solution": "Silk.NET.sln",
-      "SourceProject": "TODO.csproj",
-      "TestProject": "tests/TODO.csproj",
+      "SourceProject": "sources/Win32/Win32/Silk.NET.Win32.csproj",
+      "TestProject": "tests/Win32/Win32/Silk.NET.Win32.UnitTests.csproj",
       "DefaultLicenseHeader": "eng/silktouch/header.txt",
       "Mods": [
         "AddIncludes",
@@ -18,7 +18,8 @@
           "sources/Windows/um/icm/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/um/icm/Windows.cs",
           "sources/Gdiplus/um/gdiplustypes/GpRect.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRect.cs",
           "sources/Gdiplus/um/gdiplustypes/GpRectF.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpRectF.cs",
-          "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs"
+          "sources/Gdiplus/um/gdiplustypes/GpPathData.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Gdiplus/um/gdiplustypes/GpPathData.cs",
+          "sources/Windows/shared/strsafe/Windows.gen.cs": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows/Windows/shared/strsafe/Windows.gen.cs"
         },
         "InputSourceRoot": "eng/submodules/terrafx.interop.windows/sources/Interop/Windows",
         "InputTestRoot": "eng/submodules/terrafx.interop.windows/tests/Interop/Windows",
@@ -57,13 +58,9 @@
         "InputSourceRoot": "sources/SDL",
         "InputTestRoot": "tests/SDL"
       },
-      "ExtractNestedTyping": {
-        "DelegateSuffixOrder": 1
-      },
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
-        "UseDSL": true,
-        "HandleSuffixOrder": 1
+        "UseDSL": true
       },
       "TransformFunctions": {
         "BoolTypes": {
@@ -154,9 +151,9 @@
           "PathRenderingTokenNV": "byte",
           "PathCoordType": "byte"
         },
-        "TrimFunctionDataTypes": true,
-        "TrimEnumTypeNonExclusiveVendors": true,
-        "TrimEnumMemberImpliedVendors": true
+        "IdentifyFunctionDataTypes": true,
+        "IdentifyEnumTypeNonExclusiveVendors": true,
+        "IdentifyEnumMemberImpliedVendors": true
       },
       "AddVTables": {
         "VTables": [
@@ -181,6 +178,26 @@
           "OcclusionQueryParameterNameNV": "GL",
           "TexStorageAttribs": "GL",
           "ContainerType": "GL"
+        },
+        "Affixes": {
+          "HandleType": {
+            "Order": 1
+          },
+          "FunctionPointerDelegateType": {
+            "Order": 1
+          },
+          "KhronosVendor": {
+            "Order": -1
+          },
+          "KhronosFunctionDataType": {
+            "IsDiscriminator": true
+          },
+          "KhronosImpliedVendor": {
+            "Remove": true
+          },
+          "KhronosNonExclusiveVendor": {
+            "Remove": true
+          }
         }
       },
       "TransformEnums": {
@@ -248,9 +265,9 @@
         "NonVendorSuffixes": [
           "Direct"
         ],
-        "TrimFunctionDataTypes": true,
-        "TrimEnumTypeNonExclusiveVendors": true,
-        "TrimEnumMemberImpliedVendors": true
+        "IdentifyFunctionDataTypes": true,
+        "IdentifyEnumTypeNonExclusiveVendors": true,
+        "IdentifyEnumMemberImpliedVendors": true
       },
       "InterceptNativeFunctions": {
         "NativeFunctionNames": [
@@ -297,6 +314,26 @@
           "EAXGetDirect": "EAXGetDirect",
           "EAXGetBufferModeDirect": "EAXGetBufferModeDirect",
           "EAXSetBufferModeDirect": "EAXSetBufferModeDirect"
+        },
+        "Affixes": {
+          "HandleType": {
+            "Order": 1
+          },
+          "FunctionPointerDelegateType": {
+            "Order": 1
+          },
+          "KhronosVendor": {
+            "Order": -1
+          },
+          "KhronosFunctionDataType": {
+            "IsDiscriminator": true
+          },
+          "KhronosImpliedVendor": {
+            "Remove": true
+          },
+          "KhronosNonExclusiveVendor": {
+            "Remove": true
+          }
         }
       },
       "TransformEnums": {
@@ -312,11 +349,7 @@
       },
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
-        "UseDSL": true,
-        "HandleSuffixOrder": 1
-      },
-      "ExtractNestedTyping": {
-        "DelegateSuffixOrder": 1
+        "UseDSL": true
       },
       "StripAttributes": {
         "Remove": [
@@ -361,9 +394,6 @@
           }
         ]
       },
-      "ExtractNestedTyping": {
-        "DelegateSuffixOrder": 1
-      },
       "MixKhronosData": {
         "SpecPath": "eng/submodules/vulkan/xml/vk.xml",
         "Namespace": "Silk.NET.Vulkan",
@@ -376,7 +406,7 @@
           "VK_VENDOR_ID_VSI",
           "VK_VENDOR_ID_MESA"
         ],
-        "TrimEnumMemberImpliedVendors": true
+        "IdentifyEnumMemberImpliedVendors": true
       },
       "InterceptNativeFunctions": {
         "NativeFunctionNames": [
@@ -391,8 +421,7 @@
       },
       "TransformHandles": {
         "AssumeMissingTypesOpaque": true,
-        "UseDSL": true,
-        "HandleSuffixOrder": 1
+        "UseDSL": true
       },
       "PrettifyNames": {
         "LongAcronymThreshold": 4,
@@ -400,6 +429,23 @@
         "PrefixOverrides": {
           "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2",
           "VkMemoryDecompressionMethodFlagsEXT": "VK_MEMORY_DECOMPRESSION_METHOD"
+        },
+        "Affixes": {
+          "HandleType": {
+            "Order": 1
+          },
+          "FunctionPointerDelegateType": {
+            "Order": 1
+          },
+          "KhronosVendor": {
+            "Order": -1
+          },
+          "KhronosImpliedVendor": {
+            "Remove": true
+          },
+          "KhronosHandleType": {
+            "Remove": true
+          }
         }
       },
       "TransformEnums": {
