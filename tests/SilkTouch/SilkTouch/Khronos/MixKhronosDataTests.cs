@@ -2,6 +2,7 @@ using System.IO.Compression;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
@@ -297,59 +298,142 @@ public class MixKhronosDataTests
         );
 
     [Test]
-    public void OverzealousNameTrimming()
+    public async Task PrettifyNames_TrimsSharedPrefix()
     {
-        // This had an issue where GL_PIXEL_COUNT_NV and GL_PIXEL_COUNT_AVAILABLE_NV resulted in a trimming name of
-        // GL_PIXEL_COUNT_ resulting in GL_PIXEL_COUNT_NV becoming _NV which would in turn be turned into nothing.
-        var baseTrimmer = new NameTrimmer();
-        var uut = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var project = new AdhocWorkspace()
+            .CurrentSolution.AddProject("TestProject", "TestAssembly", LanguageNames.CSharp)
+            .AddDocument(
+                "OcclusionQueryParameterNameNV.gen.cs",
+                """
+                public enum OcclusionQueryParameterNameNV
+                {
+                    GL_PIXEL_COUNT_NV = 34918,
+                    GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration() { GlobalPrefixHints = ["gl"] }
+            ),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // The prefix shared by the member names should be trimmed
+        // The type name should not be modified
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task MixKhronosData_IdentifiesVendorSuffixes()
+    {
+        var project = new AdhocWorkspace()
+            .CurrentSolution.AddProject("TestProject", "TestAssembly", LanguageNames.CSharp)
+            .AddDocument(
+                "OcclusionQueryParameterNameNV.gen.cs",
+                """
+                public enum OcclusionQueryParameterNameNV
+                {
+                    GL_PIXEL_COUNT_NV = 34918,
+                    GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+
+        var mixKhronosDataConfig = new MixKhronosData.Configuration();
+        var mixKhronosData = new MixKhronosData(
+            NullLogger<MixKhronosData>.Instance,
+            new DummyOptions<MixKhronosData.Configuration>(mixKhronosDataConfig)
+        )
         {
             Jobs =
             {
                 ["OpenGL"] = new MixKhronosData.JobData
                 {
-                    Configuration = new MixKhronosData.Configuration(),
+                    Configuration = mixKhronosDataConfig,
                     Vendors = ["NV"],
-                    Groups =
-                    {
-                        {
-                            "OcclusionQueryParameterNameNV",
-                            new MixKhronosData.EnumGroup(
-                                "OcclusionQueryParameterNameNV",
-                                "OcclusionQueryParameterNameNV",
-                                "uint",
-                                [],
-                                false,
-                                "NV",
-                                "Silk.NET.OpenGL"
-                            )
-                        },
-                    },
                 },
             },
         };
-        var names = new Dictionary<string, CandidateNames>
+
+        await mixKhronosData.ExecuteAsync(context);
+
+        // There should be 3 NV suffixes identified
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task PrettifyNames_TrimsSharedPrefix_AfterRemovalOf_VendorSuffixes()
+    {
+        var project = new AdhocWorkspace()
+            .CurrentSolution.AddProject("TestProject", "TestAssembly", LanguageNames.CSharp)
+            .AddDocument(
+                "OcclusionQueryParameterNameNV.gen.cs",
+                """
+                public enum OcclusionQueryParameterNameNV
+                {
+                    GL_PIXEL_COUNT_NV = 34918,
+                    GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+
+        var mixKhronosDataConfig = new MixKhronosData.Configuration();
+        var mixKhronosData = new MixKhronosData(
+            NullLogger<MixKhronosData>.Instance,
+            new DummyOptions<MixKhronosData.Configuration>(mixKhronosDataConfig)
+        )
         {
-            { "GL_PIXEL_COUNT_NV", new CandidateNames("GL_PIXEL_COUNT_NV", []) },
+            Jobs =
             {
-                "GL_PIXEL_COUNT_AVAILABLE_NV",
-                new CandidateNames("GL_PIXEL_COUNT_AVAILABLE_NV", [])
+                ["OpenGL"] = new MixKhronosData.JobData
+                {
+                    Configuration = mixKhronosDataConfig,
+                    Vendors = ["NV"],
+                },
             },
         };
-        var ctx = new NameTrimmerContext
-        {
-            Container = "OcclusionQueryParameterNameNV",
-            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
-            Names = names,
-            JobKey = "OpenGL",
-        };
-        baseTrimmer.Trim(ctx);
-        uut.Trim(ctx);
-        Assert.That(names["GL_PIXEL_COUNT_NV"].Primary, Is.EqualTo("PixelCount"));
-        Assert.That(
-            names["GL_PIXEL_COUNT_AVAILABLE_NV"].Primary,
-            Is.EqualTo("PixelCountAvailable")
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration()
+                {
+                    GlobalPrefixHints = ["gl"],
+                    Affixes =
+                    {
+                        {
+                            "KhronosVendor",
+                            new PrettifyNames.NameAffixConfiguration() { Remove = true }
+                        },
+                    },
+                }
+            ),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
         );
+
+        await mixKhronosData.ExecuteAsync(context);
+        await prettifyNames.ExecuteAsync(context);
+
+        // The removal of the 3 NV suffixes should make PrettifyNames trim less of the member name
+        // The type name should remain unchanged except for the removal of the NV suffix
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
     }
 
     [Test]
