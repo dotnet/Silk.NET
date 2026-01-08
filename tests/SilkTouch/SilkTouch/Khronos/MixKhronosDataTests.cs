@@ -422,6 +422,53 @@ public class MixKhronosDataTests
     }
 
     [Test]
+    public async Task MixKhronosData_IdentifiesNonExclusiveVendorSuffixes()
+    {
+        var project = new AdhocWorkspace()
+            .CurrentSolution.AddProject("TestProject", "TestAssembly", LanguageNames.CSharp)
+            .AddDocument(
+                "BufferUsageARB.gen.cs",
+                """
+                public enum BufferUsageARB : uint
+                {
+                    GL_STREAM_DRAW = 35040,
+                    GL_STREAM_READ = 35041,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+
+        var mixKhronosDataConfig = new MixKhronosData.Configuration()
+        {
+            IdentifyEnumTypeNonExclusiveVendors = true,
+        };
+
+        var mixKhronosData = new MixKhronosData(
+            NullLogger<MixKhronosData>.Instance,
+            new DummyOptions<MixKhronosData.Configuration>(mixKhronosDataConfig)
+        )
+        {
+            Jobs =
+            {
+                ["OpenGL"] = new MixKhronosData.JobData
+                {
+                    Configuration = mixKhronosDataConfig,
+                    Vendors = ["ARB"],
+                },
+            },
+        };
+
+        await mixKhronosData.ExecuteAsync(context);
+
+        // The ARB suffix on the type name should be identified as KhronosNonExclusiveVendor
+        // This is because the enum group contains core enums
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
     public async Task PrettifyNames_TrimsSharedPrefix_AfterRemovalOf_VendorSuffixes()
     {
         var project = new AdhocWorkspace()
