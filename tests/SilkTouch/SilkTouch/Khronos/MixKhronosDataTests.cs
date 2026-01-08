@@ -24,13 +24,6 @@ public class MixKhronosDataTests
         }
     }
 
-    struct Options : IOptionsSnapshot<MixKhronosData.Configuration>
-    {
-        public required MixKhronosData.Configuration Value { get; init; }
-
-        public MixKhronosData.Configuration Get(string? name) => Value;
-    }
-
     public static string TestFile(string name, [CallerFilePath] string? fPath = null) =>
         Path.Combine(
             Path.GetDirectoryName(fPath)
@@ -59,10 +52,9 @@ public class MixKhronosDataTests
                 {
                     var mod = new MixKhronosData(
                         new NullLogger<MixKhronosData>(),
-                        new Options
-                        {
-                            Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) },
-                        }
+                        new DummyOptions<MixKhronosData.Configuration>(
+                            new MixKhronosData.Configuration { SpecPath = TestFile(x) }
+                        )
                     );
                     await mod.InitializeAsync(new DummyModContext(), ct);
                     return (object[])[x, mod.Jobs[""]];
