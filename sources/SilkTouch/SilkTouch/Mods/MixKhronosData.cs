@@ -356,8 +356,8 @@ public partial class MixKhronosData(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var currentConfig = cfg.Get(ctx.JobKey);
         var jobData = Jobs[ctx.JobKey];
+        var currentConfig = jobData.Configuration;
         var proj = ctx.SourceProject;
 
         if (proj == null)

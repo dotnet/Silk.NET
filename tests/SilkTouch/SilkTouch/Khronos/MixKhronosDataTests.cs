@@ -4,7 +4,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging.Abstractions;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.SilkTouch.Mods;
@@ -351,17 +350,13 @@ public class MixKhronosDataTests
 
         var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
 
-        var mixKhronosDataConfig = new MixKhronosData.Configuration();
-        var mixKhronosData = new MixKhronosData(
-            NullLogger<MixKhronosData>.Instance,
-            new DummyOptions<MixKhronosData.Configuration>(mixKhronosDataConfig)
-        )
+        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
             Jobs =
             {
                 ["OpenGL"] = new MixKhronosData.JobData
                 {
-                    Configuration = mixKhronosDataConfig,
+                    Configuration = new MixKhronosData.Configuration(),
                     Vendors = ["NV"],
                 },
             },
@@ -393,21 +388,16 @@ public class MixKhronosDataTests
 
         var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
 
-        var mixKhronosDataConfig = new MixKhronosData.Configuration()
-        {
-            IdentifyEnumMemberImpliedVendors = true,
-        };
-
-        var mixKhronosData = new MixKhronosData(
-            NullLogger<MixKhronosData>.Instance,
-            new DummyOptions<MixKhronosData.Configuration>(mixKhronosDataConfig)
-        )
+        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
             Jobs =
             {
                 ["OpenGL"] = new MixKhronosData.JobData
                 {
-                    Configuration = mixKhronosDataConfig,
+                    Configuration = new MixKhronosData.Configuration()
+                    {
+                        IdentifyEnumMemberImpliedVendors = true,
+                    },
                     Vendors = ["NV"],
                 },
             },
@@ -440,21 +430,16 @@ public class MixKhronosDataTests
 
         var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
 
-        var mixKhronosDataConfig = new MixKhronosData.Configuration()
-        {
-            IdentifyEnumTypeNonExclusiveVendors = true,
-        };
-
-        var mixKhronosData = new MixKhronosData(
-            NullLogger<MixKhronosData>.Instance,
-            new DummyOptions<MixKhronosData.Configuration>(mixKhronosDataConfig)
-        )
+        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
             Jobs =
             {
                 ["OpenGL"] = new MixKhronosData.JobData
                 {
-                    Configuration = mixKhronosDataConfig,
+                    Configuration = new MixKhronosData.Configuration()
+                    {
+                        IdentifyEnumTypeNonExclusiveVendors = true,
+                    },
                     Vendors = ["ARB"],
                 },
             },
@@ -487,17 +472,13 @@ public class MixKhronosDataTests
 
         var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
 
-        var mixKhronosDataConfig = new MixKhronosData.Configuration();
-        var mixKhronosData = new MixKhronosData(
-            NullLogger<MixKhronosData>.Instance,
-            new DummyOptions<MixKhronosData.Configuration>(mixKhronosDataConfig)
-        )
+        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
             Jobs =
             {
                 ["OpenGL"] = new MixKhronosData.JobData
                 {
-                    Configuration = mixKhronosDataConfig,
+                    Configuration = new MixKhronosData.Configuration(),
                     Vendors = ["NV"],
                 },
             },
@@ -549,17 +530,13 @@ public class MixKhronosDataTests
 
         var context = new DummyModContext() { JobKey = "Vulkan", SourceProject = project };
 
-        var mixKhronosDataConfig = new MixKhronosData.Configuration();
-        var mixKhronosData = new MixKhronosData(
-            NullLogger<MixKhronosData>.Instance,
-            new DummyOptions<MixKhronosData.Configuration>(mixKhronosDataConfig)
-        )
+        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
             Jobs =
             {
                 ["Vulkan"] = new MixKhronosData.JobData
                 {
-                    Configuration = mixKhronosDataConfig,
+                    Configuration = new MixKhronosData.Configuration(),
                     Vendors = ["KHR", "EXT"],
                 },
             },
