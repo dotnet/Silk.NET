@@ -375,6 +375,53 @@ public class MixKhronosDataTests
     }
 
     [Test]
+    public async Task MixKhronosData_IdentifiesImpliedVendorSuffixes()
+    {
+        var project = new AdhocWorkspace()
+            .CurrentSolution.AddProject("TestProject", "TestAssembly", LanguageNames.CSharp)
+            .AddDocument(
+                "OcclusionQueryParameterNameNV.gen.cs",
+                """
+                public enum OcclusionQueryParameterNameNV
+                {
+                    GL_PIXEL_COUNT_NV = 34918,
+                    GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+
+        var mixKhronosDataConfig = new MixKhronosData.Configuration()
+        {
+            IdentifyEnumMemberImpliedVendors = true,
+        };
+
+        var mixKhronosData = new MixKhronosData(
+            NullLogger<MixKhronosData>.Instance,
+            new DummyOptions<MixKhronosData.Configuration>(mixKhronosDataConfig)
+        )
+        {
+            Jobs =
+            {
+                ["OpenGL"] = new MixKhronosData.JobData
+                {
+                    Configuration = mixKhronosDataConfig,
+                    Vendors = ["NV"],
+                },
+            },
+        };
+
+        await mixKhronosData.ExecuteAsync(context);
+
+        // The NV suffix on the type name should be identified as KhronosVendor
+        // The NV suffixes on the member names should be identified as KhronosImpliedVendor
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
     public async Task PrettifyNames_TrimsSharedPrefix_AfterRemovalOf_VendorSuffixes()
     {
         var project = new AdhocWorkspace()
