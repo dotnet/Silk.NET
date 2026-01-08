@@ -531,6 +531,56 @@ public class MixKhronosDataTests
     }
 
     [Test]
+    public async Task PrettifyNames_TrimsSharedPrefix_AfterRemovalOf_VendorSuffixes_AndShortenedNamesConflict()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "OcclusionQueryParameterNameNV.gen.cs",
+                """
+                public enum VkPresentModeKHR
+                {
+                    VK_PRESENT_MODE_FIFO_LATEST_READY_KHR = 1000361000,
+                    VK_PRESENT_MODE_FIFO_LATEST_READY_EXT = VK_PRESENT_MODE_FIFO_LATEST_READY_KHR,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "Vulkan", SourceProject = project };
+
+        var mixKhronosDataConfig = new MixKhronosData.Configuration();
+        var mixKhronosData = new MixKhronosData(
+            NullLogger<MixKhronosData>.Instance,
+            new DummyOptions<MixKhronosData.Configuration>(mixKhronosDataConfig)
+        )
+        {
+            Jobs =
+            {
+                ["Vulkan"] = new MixKhronosData.JobData
+                {
+                    Configuration = mixKhronosDataConfig,
+                    Vendors = ["KHR", "EXT"],
+                },
+            },
+        };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await mixKhronosData.ExecuteAsync(context);
+        await prettifyNames.ExecuteAsync(context);
+
+        // The removal of the 3 NV suffixes should make PrettifyNames trim less of the member name
+        // The type name should remain unchanged except for the removal of the NV suffix
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
     public void OverzealousNameTrimmingFixupIsNotOverzealousForOpenAL()
     {
         var baseTrimmer = new NameTrimmer();
