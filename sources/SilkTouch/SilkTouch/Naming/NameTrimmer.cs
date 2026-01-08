@@ -46,17 +46,12 @@ public class NameTrimmer : INameTrimmer
         {
             for (var i = 0; i < nPasses; i++) // try with both trimming name and non trimming name
             {
-                if (context.Names is null)
-                {
-                    continue;
-                }
-
                 // Attempt to identify the hint being used.
                 string? hint = null;
                 foreach (var candidateHint in context.Configuration.GlobalPrefixHints ?? [])
                 {
                     var match = true;
-                    foreach (var name in context.Names.Keys)
+                    foreach (var (name, _) in context.Names.Values)
                     {
                         if (!name.StartsWith(candidateHint, StringComparison.OrdinalIgnoreCase))
                         {
@@ -218,7 +213,10 @@ public class NameTrimmer : INameTrimmer
             ? GetTrimmingName(prefixOverrides, container ?? hint ?? string.Empty, true, hint)
             : container ?? hint ?? string.Empty;
         var localNames = names.ToDictionary(
-            x => getTrimmingName ? GetTrimmingName(prefixOverrides, x.Key, false, hint) : x.Key,
+            x =>
+                getTrimmingName
+                    ? GetTrimmingName(prefixOverrides, x.Value.Primary, false, hint)
+                    : x.Value.Primary,
             x => new CandidateNamesWithOriginal(x.Value.Primary, x.Value.Secondary, x.Key)
         );
 
@@ -241,7 +239,7 @@ public class NameTrimmer : INameTrimmer
             : names.Count == 1 && !string.IsNullOrWhiteSpace(containerTrimmingName)
                 ? NameUtils.FindCommonPrefix(
                     [
-                        names.Keys.First(x => !(nonDeterminant?.Contains(x) ?? false)),
+                        names.First(x => !(nonDeterminant?.Contains(x.Key) ?? false)).Value.Primary,
                         containerTrimmingName,
                     ],
                     true,

@@ -8,11 +8,11 @@ namespace Silk.NET.SilkTouch.Naming;
 /// </summary>
 internal enum TrimmerOrder
 {
-    NameTrimmer = 100,
-    NameTrimmer217 = 110,
-    NameTrimmer218 = 120,
+    NameAffixerEarlyTrimmer = 100,
 
-    NameAffixerEarlyTrimmer = 200,
+    NameTrimmer = 200,
+    NameTrimmer217 = 210,
+    NameTrimmer218 = 220,
 
     MixKhronosData = 300,
 
