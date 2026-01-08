@@ -300,8 +300,8 @@ public class MixKhronosDataTests
     [Test]
     public async Task PrettifyNames_TrimsSharedPrefix()
     {
-        var project = new AdhocWorkspace()
-            .CurrentSolution.AddProject("TestProject", "TestAssembly", LanguageNames.CSharp)
+        var project = TestUtils
+            .CreateTestProject()
             .AddDocument(
                 "OcclusionQueryParameterNameNV.gen.cs",
                 """
@@ -335,8 +335,8 @@ public class MixKhronosDataTests
     [Test]
     public async Task MixKhronosData_IdentifiesVendorSuffixes()
     {
-        var project = new AdhocWorkspace()
-            .CurrentSolution.AddProject("TestProject", "TestAssembly", LanguageNames.CSharp)
+        var project = TestUtils
+            .CreateTestProject()
             .AddDocument(
                 "OcclusionQueryParameterNameNV.gen.cs",
                 """
@@ -377,8 +377,8 @@ public class MixKhronosDataTests
     [Test]
     public async Task MixKhronosData_IdentifiesImpliedVendorSuffixes()
     {
-        var project = new AdhocWorkspace()
-            .CurrentSolution.AddProject("TestProject", "TestAssembly", LanguageNames.CSharp)
+        var project = TestUtils
+            .CreateTestProject()
             .AddDocument(
                 "OcclusionQueryParameterNameNV.gen.cs",
                 """
@@ -424,8 +424,8 @@ public class MixKhronosDataTests
     [Test]
     public async Task MixKhronosData_IdentifiesNonExclusiveVendorSuffixes()
     {
-        var project = new AdhocWorkspace()
-            .CurrentSolution.AddProject("TestProject", "TestAssembly", LanguageNames.CSharp)
+        var project = TestUtils
+            .CreateTestProject()
             .AddDocument(
                 "BufferUsageARB.gen.cs",
                 """
@@ -471,8 +471,8 @@ public class MixKhronosDataTests
     [Test]
     public async Task PrettifyNames_TrimsSharedPrefix_AfterRemovalOf_VendorSuffixes()
     {
-        var project = new AdhocWorkspace()
-            .CurrentSolution.AddProject("TestProject", "TestAssembly", LanguageNames.CSharp)
+        var project = TestUtils
+            .CreateTestProject()
             .AddDocument(
                 "OcclusionQueryParameterNameNV.gen.cs",
                 """
