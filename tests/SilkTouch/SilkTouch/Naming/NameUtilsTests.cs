@@ -13,4 +13,14 @@ public class NameUtilsTests
             NameUtils.FindCommonPrefix(["Silk.NET.SDL", "Silk.NET.SDL"], true, false, true),
             Is.EqualTo("Silk.NET.SDL")
         );
+
+    [Test]
+    public void Prettify_IsNotAffectedBy_TrailingUnderscore()
+    {
+        var nameTransformer = new NameUtils.NameTransformer(4);
+        var withoutUnderscore = "RGB32F".Prettify(nameTransformer);
+        var withUnderscore = "RGB32F_".Prettify(nameTransformer);
+
+        Assert.That(withUnderscore, Is.EqualTo(withoutUnderscore));
+    }
 }
