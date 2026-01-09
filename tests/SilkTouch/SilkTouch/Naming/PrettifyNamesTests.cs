@@ -160,4 +160,57 @@ public class PrettifyNamesTests
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
+
+    [Test]
+    public async Task TrimsPrefix_WhenMatchingHint()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument("VkPresentModeKHR.gen.cs", "public enum VkPresentModeKHR { }")
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration() { GlobalPrefixHints = ["vk"] }
+            ),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // The type name should remain as OcclusionQueryParameterNameNV
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task DoesNotTrimTypeName_WhenNotMatchingHint_AndOnlyOneType()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "OcclusionQueryParameterNameNV.gen.cs",
+                "public enum OcclusionQueryParameterNameNV { }"
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration() { GlobalPrefixHints = ["gl"] }
+            ),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // The type name should remain as OcclusionQueryParameterNameNV
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
 }
