@@ -59,7 +59,8 @@ public static partial class NameUtils
 
         var ret = string.Join(
             null,
-            str.LenientUnderscore()
+            str.Trim('_')
+                .LenientUnderscore()
                 .Humanize()
                 .Transform(nameTransformer)
                 .Pascalize()
