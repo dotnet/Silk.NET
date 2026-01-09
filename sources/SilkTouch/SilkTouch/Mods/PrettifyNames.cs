@@ -47,7 +47,7 @@ public class PrettifyNames(
         /// The maximum length of an all capitals string to be treated as a single acronym, rather than as an all
         /// capitals word.
         /// </summary>
-        public int? LongAcronymThreshold { get; init; }
+        public int LongAcronymThreshold { get; init; } = 3; // TODO: Change default to 2 in next PR to match framework design guidelines
 
         /// <summary>
         /// Multiple candidate name prefixes that may apply across all of the bindings generated.
@@ -126,7 +126,7 @@ public class PrettifyNames(
         var newNames = new Dictionary<string, RenamedType>();
 
         var nameAffixer = new NameAffixer(visitor.AffixTypes, cfg.Affixes);
-        var nameTransformer = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3); // TODO: Change to 2 in next PR to match framework design guidelines
+        var nameTransformer = new NameUtils.NameTransformer(cfg.LongAcronymThreshold);
 
         // Trim the trimmable names if the trimmer baseline is set
         // Otherwise, we just prettify the trimmable names
