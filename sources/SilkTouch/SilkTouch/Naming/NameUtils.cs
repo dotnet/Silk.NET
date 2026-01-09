@@ -258,17 +258,17 @@ public static partial class NameUtils
         {
             culture ??= CultureInfo.CurrentCulture;
 
-            var matches = RemoveNullOrWhiteSpace(Words().Split(input));
-            for (var i = 0; i < matches.Length; i++)
+            var words = RemoveNullOrWhiteSpace(Words().Split(input));
+            for (var i = 0; i < words.Length; i++)
             {
-                ref var word = ref matches[i];
+                ref var word = ref words[i];
                 if (
                     word.Length > longAcronymThreshold
                     || !AllCapitals(word)
                     || (
                         AllCapitals(input)
                         && input.Length > longAcronymThreshold
-                        && matches.Length > 1
+                        && words.Length > 1
                     )
                 )
                 {
@@ -278,7 +278,7 @@ public static partial class NameUtils
                 var previous = i - 1;
                 if (previous >= 0)
                 {
-                    if (i > 0 && char.IsDigit(word[0]) && char.IsDigit(matches[previous][^1]))
+                    if (i > 0 && char.IsDigit(word[0]) && char.IsDigit(words[previous][^1]))
                     {
                         word = $"x{word}";
                     }
@@ -287,7 +287,7 @@ public static partial class NameUtils
                 }
             }
 
-            return string.Join(" ", matches);
+            return string.Join(" ", words);
         }
 
         /// <summary>
