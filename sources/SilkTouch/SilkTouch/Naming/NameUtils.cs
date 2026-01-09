@@ -258,15 +258,10 @@ public static partial class NameUtils
         {
             culture ??= CultureInfo.CurrentCulture;
 
-            var matches = Words().Split(input);
+            var matches = RemoveNullOrWhiteSpace(Words().Split(input));
             for (var i = 0; i < matches.Length; i++)
             {
                 ref var word = ref matches[i];
-                if (string.IsNullOrWhiteSpace(word))
-                {
-                    continue;
-                }
-
                 if (
                     word.Length > longAcronymThreshold
                     || !AllCapitals(word)
@@ -280,13 +275,10 @@ public static partial class NameUtils
                     word = MakeFirstLetterUpper(word, culture);
                 }
 
-                for (var j = i - 1; j >= 0; j--)
+                var previous = i - 1;
+                if (previous >= 0)
                 {
-                    if (string.IsNullOrWhiteSpace(matches[j]))
-                    {
-                        continue;
-                    }
-                    if (i > 0 && char.IsDigit(word[0]) && char.IsDigit(matches[j][^1]))
+                    if (i > 0 && char.IsDigit(word[0]) && char.IsDigit(matches[previous][^1]))
                     {
                         word = $"x{word}";
                     }
@@ -296,6 +288,29 @@ public static partial class NameUtils
             }
 
             return string.Join(" ", matches);
+        }
+
+        /// <summary>
+        /// Returns a span without entries that are null or whitespace.
+        /// This is done by sorting those entries to the end of the input span
+        /// and returning the slice that doesn't contain those entries.
+        /// </summary>
+        private static Span<string> RemoveNullOrWhiteSpace(Span<string> values)
+        {
+            values.Sort(
+                static (a, b) =>
+                    string.IsNullOrWhiteSpace(a).CompareTo(string.IsNullOrWhiteSpace(b))
+            );
+
+            for (var i = 0; i < values.Length; i++)
+            {
+                if (string.IsNullOrWhiteSpace(values[i]))
+                {
+                    return values[..i];
+                }
+            }
+
+            return values;
         }
 
         private static bool AllCapitals(string input) =>
