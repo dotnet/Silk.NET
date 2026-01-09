@@ -181,7 +181,7 @@ public class PrettifyNamesTests
 
         await prettifyNames.ExecuteAsync(context);
 
-        // The type name should remain as OcclusionQueryParameterNameNV
+        // The type name should be trimmed as PresentModeKHR
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
