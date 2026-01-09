@@ -144,9 +144,12 @@ public class PrettifyNamesTests
 
         await prettifyNames.ExecuteAsync(context);
 
-        // The declaration of the 3 NV suffixes should make PrettifyNames trim less of the member name
+        // The declaration of the 2 NV member suffixes should make PrettifyNames trim less of the member name
         // This is because NameTrimmer only sees the name without the suffixes
         // The type name should remain unchanged except for the removal of the NV suffix
+        //
+        // Note: When this test was first added, the names were not being trimmed at all.
+        // The fix was to ensure NameTrimmer.GetTrimmingName trimmed the trailing underscore.
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }

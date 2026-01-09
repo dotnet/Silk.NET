@@ -357,9 +357,12 @@ public class NameTrimmer : INameTrimmer
             return name;
         }
 
-        return hint is not null && name.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
-            ? $"{hint}_{name[hint.Length..].Trim('_').LenientUnderscore()}"
-            : name.LenientUnderscore();
+        if (hint is not null && name.StartsWith(hint, StringComparison.OrdinalIgnoreCase))
+        {
+            return $"{hint}_{name[hint.Length..].Trim('_').LenientUnderscore()}";
+        }
+
+        return name.Trim('_').LenientUnderscore();
     }
 
     /// <summary>
