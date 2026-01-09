@@ -153,6 +153,154 @@ public class PrettifyNamesTests
     }
 
     [Test]
+    public async Task HintShouldNotAffectSharedPrefixTrimming()
+    {
+        string result1;
+        string result2;
+
+        {
+            var project = TestUtils
+                .CreateTestProject()
+                .AddDocument(
+                    "OcclusionQueryParameterNameNV.gen.cs",
+                    """
+                    public enum OcclusionQueryParameterNameNV
+                    {
+                        GL_PIXEL_COUNT_NV = 34918,
+                        GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
+                    }
+                    """
+                )
+                .Project;
+
+            var context = new DummyModContext() { SourceProject = project };
+
+            var prettifyNames = new PrettifyNames(
+                NullLogger<PrettifyNames>.Instance,
+                new DummyOptions<PrettifyNames.Configuration>(
+                    new PrettifyNames.Configuration() { GlobalPrefixHints = ["gl"] }
+                ),
+                [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            );
+
+            await prettifyNames.ExecuteAsync(context);
+
+            var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+            result1 = result!.NormalizeWhitespace().ToString();
+        }
+
+        {
+            var project = TestUtils
+                .CreateTestProject()
+                .AddDocument(
+                    "OcclusionQueryParameterNameNV.gen.cs",
+                    """
+                    public enum OcclusionQueryParameterNameNV
+                    {
+                        GL_PIXEL_COUNT_NV = 34918,
+                        GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
+                    }
+                    """
+                )
+                .Project;
+
+            var context = new DummyModContext() { SourceProject = project };
+
+            var prettifyNames = new PrettifyNames(
+                NullLogger<PrettifyNames>.Instance,
+                new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
+                [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            );
+
+            await prettifyNames.ExecuteAsync(context);
+
+            var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+            result2 = result!.NormalizeWhitespace().ToString();
+        }
+
+        // The two results should match because member names share prefixes in both cases, regardless of what the hint is
+        // The NameAffix attributes are also required to cause the regression back when this test was first added
+        Assert.That(result1, Is.EqualTo(result2));
+    }
+
+    [Test]
+    public async Task HintShouldNotAffectSharedPrefixTrimming_WhenAffixesDeclared()
+    {
+        string result1;
+        string result2;
+
+        {
+            var project = TestUtils
+                .CreateTestProject()
+                .AddDocument(
+                    "OcclusionQueryParameterNameNV.gen.cs",
+                    """
+                    public enum OcclusionQueryParameterNameNV
+                    {
+                        [NameAffix("Suffix", "KhronosVendor", "NV")]
+                        GL_PIXEL_COUNT_NV = 34918,
+
+                        [NameAffix("Suffix", "KhronosVendor", "NV")]
+                        GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
+                    }
+                    """
+                )
+                .Project;
+
+            var context = new DummyModContext() { SourceProject = project };
+
+            var prettifyNames = new PrettifyNames(
+                NullLogger<PrettifyNames>.Instance,
+                new DummyOptions<PrettifyNames.Configuration>(
+                    new PrettifyNames.Configuration() { GlobalPrefixHints = ["gl"] }
+                ),
+                [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            );
+
+            await prettifyNames.ExecuteAsync(context);
+
+            var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+            result1 = result!.NormalizeWhitespace().ToString();
+        }
+
+        {
+            var project = TestUtils
+                .CreateTestProject()
+                .AddDocument(
+                    "OcclusionQueryParameterNameNV.gen.cs",
+                    """
+                    public enum OcclusionQueryParameterNameNV
+                    {
+                        [NameAffix("Suffix", "KhronosVendor", "NV")]
+                        GL_PIXEL_COUNT_NV = 34918,
+
+                        [NameAffix("Suffix", "KhronosVendor", "NV")]
+                        GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
+                    }
+                    """
+                )
+                .Project;
+
+            var context = new DummyModContext() { SourceProject = project };
+
+            var prettifyNames = new PrettifyNames(
+                NullLogger<PrettifyNames>.Instance,
+                new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
+                [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            );
+
+            await prettifyNames.ExecuteAsync(context);
+
+            var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+            result2 = result!.NormalizeWhitespace().ToString();
+        }
+
+        // The two results should match because member names share prefixes in both cases, regardless of what the hint is
+        // The NameAffix attributes are also required to cause the regression back when this test was first added
+        Assert.That(result1, Is.EqualTo(result2));
+    }
+
+    [Test]
     public async Task TrimsSharedPrefix_WhenAffixesDeclared_AndNamesWithoutAffixesConflict()
     {
         var project = TestUtils
@@ -239,6 +387,43 @@ public class PrettifyNamesTests
         await prettifyNames.ExecuteAsync(context);
 
         // The type name should remain as OcclusionQueryParameterNameNV
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task Regression_UnexpectedScreamingCase()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "InternalFormat.gen.cs",
+                """
+                public enum InternalFormat
+                {
+                    [NameAffix("Suffix", "KhronosVendor", "ARB")]
+                    GL_RGBA32F_ARB = 34836,
+
+                    [NameAffix("Suffix", "KhronosVendor", "ARB")]
+                    GL_RGB32F_ARB = 34837,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // This is to catch a regression originally caused by changing NameTrimmer to be executed after affix removal by NameAffixerEarlyTrimmer
+        // TODO: This may or may not be committed depending on the nature of the issue (I'm unsure if the new or old behavior is correct).
+        // TODO: Hmm, maybe I should commit this regardless since this behavior is a bit volatile.
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
