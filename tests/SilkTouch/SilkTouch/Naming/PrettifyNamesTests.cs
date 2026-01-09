@@ -394,7 +394,7 @@ public class PrettifyNamesTests
     }
 
     [Test]
-    public async Task Regression_UnexpectedScreamingCase()
+    public async Task Regression_UnexpectedCasingChangesInFormatEnums()
     {
         var project = TestUtils
             .CreateTestProject()
@@ -417,15 +417,20 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration() { LongAcronymThreshold = 3 }
+            ),
             [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
         );
 
         await prettifyNames.ExecuteAsync(context);
 
-        // This is to catch a regression originally caused by changing NameTrimmer to be executed after affix removal by NameAffixerEarlyTrimmer
-        // TODO: This may or may not be committed depending on the nature of the issue (I'm unsure if the new or old behavior is correct).
-        // TODO: Hmm, maybe I should commit this regardless since this behavior is a bit volatile.
+        // This is to catch a bug revealed by changing NameTrimmer to be executed after affix removal by NameAffixerEarlyTrimmer
+        // The underlying reason is actually unrelated and was an issue that existed long before
+        // NameUtilsTests.Prettify_IsNotAffectedBy_TrailingUnderscore tests for the underlying issue
+        //
+        // While the core issue is already covered by another test,
+        // this test is kept because the format enums tend to be a bit sensitive to codebase changes
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
