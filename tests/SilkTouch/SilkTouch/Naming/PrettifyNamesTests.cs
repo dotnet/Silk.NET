@@ -129,7 +129,7 @@ public class PrettifyNamesTests
         var project = TestUtils
             .CreateTestProject()
             .AddDocument(
-                "OcclusionQueryParameterNameNV.gen.cs",
+                "VkPresentModeKHR.gen.cs",
                 """
                 [NameAffix("Suffix", "KhronosVendor", "KHR")]
                 public enum VkPresentModeKHR
