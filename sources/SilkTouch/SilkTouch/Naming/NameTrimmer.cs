@@ -299,10 +299,10 @@ public class NameTrimmer : INameTrimmer
             {
                 // Trim the end of the prefix to the start of the forbidden trimming
                 // ex:
-                //     word = GL
-                //     prefix = THIS_GL_
+                //     input prefix = THIS_GL_
+                //     forbidden trimming = GL
                 //
-                //     it makes prefix = THIS
+                //     resulting prefix = THIS
                 prefix = prefix[..idx];
             }
         }
