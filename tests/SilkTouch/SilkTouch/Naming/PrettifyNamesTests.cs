@@ -122,7 +122,6 @@ public class PrettifyNamesTests
             .AddDocument(
                 "OcclusionQueryParameterNameNV.gen.cs",
                 """
-                [NameAffix("Suffix", "KhronosVendor", "NV")]
                 public enum OcclusionQueryParameterNameNV
                 {
                     [NameAffix("Suffix", "KhronosVendor", "NV")]
