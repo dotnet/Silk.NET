@@ -35,13 +35,11 @@ public class PrettifyNamesTests
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+        var context = new DummyModContext() { SourceProject = project };
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration() { GlobalPrefixHints = ["gl"] }
-            ),
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
             [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
         );
 
@@ -71,13 +69,11 @@ public class PrettifyNamesTests
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenAL", SourceProject = project };
+        var context = new DummyModContext() { SourceProject = project };
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration() { GlobalPrefixHints = ["al"] }
-            ),
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
             [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
         );
 
@@ -90,93 +86,27 @@ public class PrettifyNamesTests
     }
 
     [Test]
-    public async Task PrettifyNames_TrimsSharedPrefix_AfterRemovalOf_VendorSuffixes()
+    public async Task PrettifyNames_TrimsSharedPrefix_WhenAffixesDeclared()
     {
         var project = TestUtils
             .CreateTestProject()
             .AddDocument(
                 "OcclusionQueryParameterNameNV.gen.cs",
                 """
+                [NameAffix("Suffix", "KhronosVendor", "NV")
                 public enum OcclusionQueryParameterNameNV
                 {
+                    [NameAffix("Suffix", "KhronosVendor", "NV")
                     GL_PIXEL_COUNT_NV = 34918,
+
+                    [NameAffix("Suffix", "KhronosVendor", "NV")
                     GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
                 }
                 """
             )
             .Project;
 
-        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
-
-        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
-        {
-            Jobs =
-            {
-                ["OpenGL"] = new MixKhronosData.JobData
-                {
-                    Configuration = new MixKhronosData.Configuration(),
-                    Vendors = ["NV"],
-                },
-            },
-        };
-
-        var prettifyNames = new PrettifyNames(
-            NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(
-                new PrettifyNames.Configuration()
-                {
-                    GlobalPrefixHints = ["gl"],
-                    Affixes =
-                    {
-                        {
-                            "KhronosVendor",
-                            new PrettifyNames.NameAffixConfiguration() { Remove = true }
-                        },
-                    },
-                }
-            ),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
-        );
-
-        await mixKhronosData.ExecuteAsync(context);
-        await prettifyNames.ExecuteAsync(context);
-
-        // The removal of the 3 NV suffixes should make PrettifyNames trim less of the member name
-        // The type name should remain unchanged except for the removal of the NV suffix
-        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
-        await Verify(result!.NormalizeWhitespace().ToString());
-    }
-
-    [Test]
-    public async Task PrettifyNames_TrimsSharedPrefix_AfterRemovalOf_VendorSuffixes_AndShortenedNamesConflict()
-    {
-        var project = TestUtils
-            .CreateTestProject()
-            .AddDocument(
-                "OcclusionQueryParameterNameNV.gen.cs",
-                """
-                public enum VkPresentModeKHR
-                {
-                    VK_PRESENT_MODE_FIFO_LATEST_READY_KHR = 1000361000,
-                    VK_PRESENT_MODE_FIFO_LATEST_READY_EXT = VK_PRESENT_MODE_FIFO_LATEST_READY_KHR,
-                }
-                """
-            )
-            .Project;
-
-        var context = new DummyModContext() { JobKey = "Vulkan", SourceProject = project };
-
-        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
-        {
-            Jobs =
-            {
-                ["Vulkan"] = new MixKhronosData.JobData
-                {
-                    Configuration = new MixKhronosData.Configuration(),
-                    Vendors = ["KHR", "EXT"],
-                },
-            },
-        };
+        var context = new DummyModContext() { SourceProject = project };
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
@@ -184,11 +114,49 @@ public class PrettifyNamesTests
             [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
         );
 
-        await mixKhronosData.ExecuteAsync(context);
         await prettifyNames.ExecuteAsync(context);
 
-        // The removal of the 3 NV suffixes should make PrettifyNames trim less of the member name
+        // The declaration of the 3 NV suffixes should make PrettifyNames trim less of the member name
+        // This is because NameTrimmer only sees the name without the suffixes
         // The type name should remain unchanged except for the removal of the NV suffix
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task PrettifyNames_TrimsSharedPrefix_WhenAffixesDeclared_AndNamesWithoutAffixesConflict()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "OcclusionQueryParameterNameNV.gen.cs",
+                """
+                [NameAffix("Suffix", "KhronosVendor", "KHR")
+                public enum VkPresentModeKHR
+                {
+                    [NameAffix("Suffix", "KhronosVendor", "KHR")
+                    VK_PRESENT_MODE_FIFO_LATEST_READY_KHR = 1000361000,
+
+                    [NameAffix("Suffix", "KhronosVendor", "EXT")
+                    VK_PRESENT_MODE_FIFO_LATEST_READY_EXT = VK_PRESENT_MODE_FIFO_LATEST_READY_KHR,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // This test should run without erroring
+        // This is to catch a regression where NameTrimmer would error
+        // since the names with the affixes removed would conflict
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
