@@ -13,40 +13,66 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
+
 internal partial class SdlInputBackend : IInputBackend
 {
-    private static readonly double _ticksPerNanosecond = Stopwatch.Frequency / 10e9d;
 
-    private bool _pumped;
-    private long _epoch;
-    private List<SdlDevice> _devices = [];
-    private readonly EventQueue _pumpedEvents = new();
-    private WindowHandle _focusedWindow;
-    private ISdl _sdl;
+    [field: MaybeNull]
+    public SdlUnboundedPointerTarget UnboundedPointerTarget =>
+        field ??= new SdlUnboundedPointerTarget(this);
 
-    public unsafe WindowHandle? FocusedWindow => _focusedWindow.Handle == null ? null : _focusedWindow;
+    public ISdl Sdl { get; }
+
+    public string Name =>
+        $"Silk.NET.Input Reference Implementation using SDL3 ({Sdl.GetPlatform().ReadToString()})";
+
+    public nint Id { get; }
+
+    public IReadOnlyList<IInputDevice> Devices => _eventProcessingArgs.Devices;
+
+    // todo - properly implement window focus tracking
+    public WindowHandle? FocusedWindow { get; private set; }
+
     public readonly ICursorConfiguration CursorConfiguration;
 
     public unsafe SdlInputBackend(SdlPlatformInfo info)
     {
-        ArgumentNullException.ThrowIfNull(info.Sdl);
-        ArgumentNullException.ThrowIfNull(info.Window.Handle);
+        Sdl = info.Sdl ?? SDL.Sdl.Instance;
+        if (Sdl == null)
+        {
+            throw new ArgumentNullException(nameof(info), "No SDL instance was provided or found.");
+        }
+
+        if (info.Window == nullptr)
+        {
+            var focusedWindow = Sdl.GetMouseFocus();
+            if (focusedWindow == nullptr)
+            {
+                focusedWindow = Sdl.GetKeyboardFocus();
+            }
+
+            if (focusedWindow == nullptr)
+            {
+                throw new ArgumentNullException(nameof(info), "No window was provided and no window had focus.");
+            }
+
+            FocusedWindow = focusedWindow;
+        }
 
         _getDisplayHandles = GetDisplayHandles;
         _getWindowHandles = GetWindowHandles;
         _getWindowId = GetWindowId;
         _getDisplayId = GetDisplayId;
+        _eventProcessingArgs = new ProcessEventArgs(this);
 
         var ptr = new EventFilter(OnEvent);
-        _sdl = info.Sdl;
-        _focusedWindow = info.Window;
         // TODO overload resolution priority?
         if (!Sdl.AddEventWatch(ptr, (Ref)nullptr))
         {
             Sdl.ThrowError();
         }
-
         Id = (nint)ptr.Handle;
+        CursorConfiguration = new SdlCursor(Sdl);
 
         // The epoch deals in nanoseconds, so we take multiple measurements for the most accurate timestamps.
         const byte epochMeasurements = 3;
@@ -63,7 +89,6 @@ internal partial class SdlInputBackend : IInputBackend
         }
 
         _epoch = epoch / epochMeasurements;
-        CursorConfiguration = new SdlCursor(Sdl);
 
         // ===============================================================================================
         // === If we ever need to share common state across window-specific "backends", use the below: ===
@@ -126,27 +151,12 @@ internal partial class SdlInputBackend : IInputBackend
     // }
     // public SdlBackendRoot Root { get; }
 
-    // NOTE: Be careful where these are used!
-    public SdlPlatformInfo Info { get; }
 
-    [field: MaybeNull]
-    public SdlUnboundedPointerTarget UnboundedPointerTarget =>
-        field ??= new SdlUnboundedPointerTarget(this);
-
-    public ISdl Sdl=> Info.Sdl ?? SDL.Sdl.Instance;
-
-    public string Name =>
-        $"Silk.NET.Input Reference Implementation using SDL3 ({Sdl.GetPlatform().ReadToString()})";
-
-    public nint Id { get; }
-
-    public IReadOnlyList<IInputDevice> Devices => _devices;
 
     // TODO we can't query support for these modes, but should we try-it-and-see to be accurate?
 
     // TODO if you're using one input context for all windows, there is no way to specify a window for grabbed cursor mode
 
-    public HashSet<nint> DeviceRegistry { get; } = [];
 
     // This is complicated, as the input proposal mandates that nothing happens until Update is called (so the events
     // can be received on the given actor) but to also track logical events that happen between calls (i.e. from a
@@ -157,68 +167,63 @@ internal partial class SdlInputBackend : IInputBackend
     {
         if (!_pumped)
         {
+            _silkEvents.ClearEvents();
             Sdl.PumpEvents();
         }
-
-        UpdatePointerTargets();
 
         _pumped = false;
         if (handler == null)
         {
-            _pumpedEvents.Clear();
+            _pumpedSdlEvents.Clear();
             return;
         }
 
-        // process all events that have been queued?
+        // todo - do we want this before or after the event processing? or should
+        // it always just be done in the same way as other input events? e.g. via events
+        // windows can change without input events being processed... but who cares? as long as the devices
+        // have the latest information when they're updated, we should be good?
+        UpdatePointerTargets(_eventProcessingArgs.SdlWindowTargets, _eventProcessingArgs.DisplayTargets);
 
-        while (_pumpedEvents.TryDequeue(out var evt))
+        // actually process the events
+        if (!_pumpedSdlEvents.HasEvents)
         {
-            ProcessEvent(in evt, handler);
+            return;
         }
 
-        foreach (var device in _devices)
+
+        while (_pumpedSdlEvents.TryDequeue(out var evt))
         {
+            ProcessEvent(evt, ref _eventProcessingArgs);
+        }
+
+        foreach (var device in _eventProcessingArgs.Devices)
+        {
+            // todo - implement this for all device types instead
             if (device is SdlKeyboard keyboard)
             {
-                keyboard.UpdateModState();
+                keyboard.FinalizeUpdate(_silkEvents);
             }
         }
+
+        _silkEvents.RaiseEvents(handler);
     }
 
-    private enum QueuedEventType : byte
-    {
-        /// <summary>
-        /// The mouse has exited the window and the shared point should be marked inactive until proven otherwise by
-        /// further mouse motion (indicating it has entered another window).
-        /// </summary>
-        /// <remarks>
-        /// We do not track the mouse enter events as this would cause us to fire twice for a mouse entering a window:
-        /// once for the entering, and once for new position.
-        /// </remarks>
-        MouseExitedWindow,
 
-        /// <summary>
-        /// The display bounds have been changed, meaning that <see cref="SdlBoundedPointerTarget"/>'s
-        /// <see cref="IPointerTarget.Bounds"/> will have changed.
-        /// </summary>
-        BoundedPointerTargetUpdate,
-    }
-
-    private ulong GetTimestamp(in Event @event) =>
-        unchecked((ulong)(_epoch + (@event.Common.Timestamp * _ticksPerNanosecond)));
-
+    // ?? [UnmanagedFunctionPointer()]
     private unsafe byte OnEvent(void* arg0, Event* arg1)
     {
         _pumped = true;
-        _pumpedEvents.Add(ref *arg1);
+        _pumpedSdlEvents.Add(ref *arg1);
         return 1;
     }
 
-    private void ProcessEvent(in Event evt, IInputHandler handler)
+    private static void ProcessEvent(in Event evt, ref ProcessEventArgs processEventArgs)
     {
+        var backend = processEventArgs.Backend;
+        var devices = processEventArgs.Devices;
         var timestamp = GetTimestamp(in evt);
-        Debug.Assert(timestamp >= _previousTimestamp, "Events out of order");
-        _previousTimestamp = timestamp;
+        Debug.Assert(timestamp >= processEventArgs.PreviousTimestamp, "Events out of order");
+        processEventArgs.PreviousTimestamp = timestamp;
 
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         var type = (EventType)evt.Common.Type;
@@ -226,20 +231,22 @@ internal partial class SdlInputBackend : IInputBackend
         switch (type)
         {
             case EventType.GamepadRemoved:
-                RemoveDevice<SdlGamepad>(_devices, evt.Gdevice.Which);
+                backend.RemoveDevice<SdlGamepad>(devices, evt.Gdevice.Which);
                 return;
             case EventType.JoystickRemoved:
-                RemoveDevice<SdlJoystick>(_devices, evt.Jdevice.Which);
+                backend.RemoveDevice<SdlJoystick>(devices, evt.Jdevice.Which);
                 return;
             case EventType.KeyboardRemoved:
-                RemoveDevice<SdlKeyboard>(_devices, evt.Kdevice.Which);
+                backend.RemoveDevice<SdlKeyboard>(devices, evt.Kdevice.Which);
                 return;
             case EventType.MouseRemoved:
-                RemoveDevice<SdlMouse>(_devices, evt.Mdevice.Which);
+                backend.RemoveDevice<SdlMouse>(devices, evt.Mdevice.Which);
                 return;
+
+            // Keyboard events
             case >= EventType.KeyDown and <= EventType.TextEditingCandidates:
             {
-                if (!TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, out var keyboard))
+                if (!backend.TryGetOrCreateDevice<SdlKeyboard>(evt.Kdevice.Which, out var keyboard))
                 {
                     return;
                 }
@@ -268,9 +275,13 @@ internal partial class SdlInputBackend : IInputBackend
 
                 break;
             }
+
+            #region Joysticks
+
+            // Gamepad events
             case >= EventType.GamepadAxisMotion and <= EventType.GamepadSteamHandleUpdated:
             {
-                if (!TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, out var gamepad))
+                if (!backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, out var gamepad))
                 {
                     return;
                 }
@@ -305,9 +316,11 @@ internal partial class SdlInputBackend : IInputBackend
 
                 break;
             }
+
+            // Joystick events
             case >= EventType.JoystickAxisMotion and <= EventType.JoystickUpdateComplete:
             {
-                if (!TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, out var joystick))
+                if (!backend.TryGetOrCreateDevice<SdlJoystick>(evt.Jdevice.Which, out var joystick))
                 {
                     return;
                 }
@@ -340,9 +353,12 @@ internal partial class SdlInputBackend : IInputBackend
                 }
                 break;
             }
+            #endregion
+            #region Pointers
+            // Mouse events
             case >= EventType.MouseMotion and <= EventType.MouseAdded:
             {
-                if(!TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, out var mouse))
+                if(!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, out var mouse))
                 {
                     return;
                 }
@@ -368,16 +384,17 @@ internal partial class SdlInputBackend : IInputBackend
 
                 break;
             }
-                // pen
+
+            // Pen events
             case >= EventType.PenProximityIn and <= EventType.PenAxis:
             {
                 var which = evt.Ptouch.Which;
-                if (!TryGetOrCreateDevice<SdlPen>(which, out var penDevice))
+                if (!backend.TryGetOrCreateDevice<SdlPen>(which, out var penDevice))
                 {
                     return;
                 }
 
-                _ = TryGetPointerTargetForWindow(evt.Ptouch.WindowID, out var target);
+                _ = backend.TryGetPointerTargetForWindow(evt.Ptouch.WindowID, out var target);
 
                 switch (type)
                 {
@@ -412,21 +429,24 @@ internal partial class SdlInputBackend : IInputBackend
                 break;
             }
 
+            // Touch events
             case >= EventType.FingerDown and <= EventType.FingerCanceled:
             {
                 var finger = evt.Tfinger;
                 var device = finger.TouchID;
-                if (!TryGetOrCreateDevice<SdlTouchSurface>(device, out var touchDevice))
+                if (!backend.TryGetOrCreateDevice<SdlTouchSurface>(device, out var touchDevice))
                 {
                     return;
                 }
 
-                _ = TryGetPointerTargetForWindow(finger.WindowID, out var target);
+                _ = backend.TryGetPointerTargetForWindow(finger.WindowID, out var target);
                 touchDevice.Event(finger, target, (FingerEventType)finger.Type);
                 break;
             }
+            #endregion
         }
 
+        #region unimplemented
         switch (type)
         {
             //  Input events ----------------------------------------------------------
@@ -438,6 +458,9 @@ internal partial class SdlInputBackend : IInputBackend
             }
 
             // Display & window (pointer target) events ----------------------------
+            // todo - update pointer targets list based on add/remove?
+            //  unless the way we currently collect them is sufficient
+            // (see PopulatePointerTargets in SdlInputBackend.Targets.cs)
             case EventType.DisplayOrientation:
             case EventType.DisplayAdded:
             case EventType.DisplayRemoved:
@@ -446,7 +469,7 @@ internal partial class SdlInputBackend : IInputBackend
             case EventType.DisplayCurrentModeChanged:
             case EventType.DisplayContentScaleChanged:
             {
-                var bounds = SdlBoundedPointerTarget.CalculateAllDisplayBounds(Sdl);
+                var bounds = SdlBoundedPointerTarget.CalculateAllDisplayBounds(backend.Sdl);
                 var x = (QueuedEventType.BoundedPointerTargetUpdate,
                         timestamp,
                         bounds.Min.ToSystem(),
@@ -461,82 +484,15 @@ internal partial class SdlInputBackend : IInputBackend
                 //var x = (QueuedEventType.MouseExitedWindow, timestamp);
                 break;
             }
-
-            // Text input events -------------------------------------------
-            // todo: attribute this to a keyboard device? or something else?
-            case EventType.TextEditing:
-            {
-                break;
-            }
         }
+        #endregion
+
+        return;
+
+        ulong GetTimestamp(in Event @event) =>
+            unchecked((ulong)(backend._epoch + (@event.Common.Timestamp * _ticksPerNanosecond)));
     }
 
-    internal bool TryGetOrCreateDevice<T>(ulong id, [NotNullWhen(true)] out T? device) where T : SdlDevice, ISdlDevice<T>
-    {
-        // If we already have a device with this ID, return it.
-        for (var i = 0; i < _devices.Count; i++)
-        {
-            if (_devices[i] is T typedDevice && typedDevice.SdlDeviceId == id)
-            {
-                device = typedDevice;
-                return true;
-            }
-        }
-
-        try
-        {
-            device = T.CreateDevice(id, this);
-        }
-        catch (Exception e)
-        {
-            InputLog.Error($"Failed to create device {nameof(T)} with id '{id}': {e}");
-            device = null;
-            return false;
-        }
-
-        if (device is null)
-        {
-            InputLog.Error($"Failed to create device {nameof(T)} with id '{id}'");
-            return false;
-        }
-
-
-        _devices.Add(device);
-        InputLog.Debug($"{typeof(T)} added: (sdl ID: {id})");
-        return true;
-    }
-
-    private static bool RemoveDevice<T>(List<SdlDevice> devices, uint id)
-    {
-        var deviceIdx = devices.FindIndex(x => x is T && x.SdlDeviceId == id);
-
-        if (deviceIdx == -1)
-        {
-            // we never used this device to begin with, so just ignore its removal
-            return false;
-        }
-
-        var device = devices[deviceIdx];
-        device.Dispose();
-        devices.RemoveAt(deviceIdx);
-
-        // device IDs may have changed when a device was removed, so we need to refresh them
-        RefreshDeviceIds(devices);
-        return true;
-    }
-
-    private static void RefreshDeviceIds(List<SdlDevice> devices)
-    {
-        for (var i = 0; i < devices.Count; i++)
-        {
-            if (devices[i] is IOrderedDevice d)
-            {
-                d.RefreshSdlId();
-            }
-        }
-    }
-
-    private ulong _previousTimestamp = ulong.MinValue;
 
     private unsafe void ReleaseUnmanagedResources()
     {
@@ -553,9 +509,37 @@ internal partial class SdlInputBackend : IInputBackend
         GC.SuppressFinalize(this);
     }
 
+
     ~SdlInputBackend() => ReleaseUnmanagedResources();
 
-    private class EventQueue
+    internal unsafe bool TryGetPointerTargetForWindow(WindowHandle window,
+        [NotNullWhen(true)] out IPointerTarget? target)
+    {
+        if (window.Handle == null)
+        {
+            target = null;
+            return false;
+        }
+
+        var id = Sdl!.GetWindowID(window);
+        return TryGetPointerTargetForWindow(id, out target);
+    }
+
+    internal bool TryGetPointerTargetForWindow(uint id,
+        [NotNullWhen(true)] out IPointerTarget? target)
+    {
+        if (id == 0)
+        {
+            target = null;
+            return false;
+        }
+
+        target = _eventProcessingArgs.SdlWindowTargets.FirstOrDefault(x => x.Id == id);
+        return target != null;
+    }
+
+
+    private class SdlEventQueue
     {
         private readonly Queue<Event> _events = new(1024);
         public void Add(ref Event p0) => _events.Enqueue(p0);
@@ -565,30 +549,63 @@ internal partial class SdlInputBackend : IInputBackend
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public void Clear() => _events.Clear();
+
+        public bool HasEvents => _events.Count > 0;
     }
 
-    internal unsafe bool TryGetPointerTargetForWindow(WindowHandle window, [NotNullWhen(true)] out IPointerTarget? target)
+    internal class SilkEventQueues
     {
-        if (window.Handle == null)
+        public Queue<ButtonChangedEvent<JoystickButton>> ButtonChangedEvents { get; } = new();
+        public Queue<ConnectionEvent> ConnectionEvents { get; } = new();
+        public Queue<KeyChangedEvent> KeyChangedEvents { get; } = new();
+        public Queue<GamepadThumbstickMoveEvent> GamepadThumbstickMoveEvents { get; } = new();
+        public Queue<GamepadTriggerMoveEvent> GamepadTriggerMoveEvents { get; } = new();
+        public Queue<JoystickAxisMoveEvent> JoystickAxisMoveEvents { get; } = new();
+        public Queue<JoystickHatMoveEvent> JoystickHatMoveEvents { get; } = new();
+        public Queue<KeyCharEvent> KeyCharEvents { get; } = new();
+        public Queue<MouseScrollEvent> MouseScrollEvents { get; } = new();
+        public Queue<PointChangedEvent> PointChangedEvents { get; } = new();
+        public Queue<PointerClickEvent> PointerClickEvents{ get; } = new();
+        public Queue<PointerGripChangedEvent> PointerGripChangedEvents { get; } = new();
+        public Queue<PointerTargetChangedEvent> PointerTargetChangedEvents { get; } = new();
+
+        public void RaiseEvents(IInputHandler handler)
         {
-            target = null;
-            return false;
+
         }
 
-        var id = _sdl.GetWindowID(window);
-        return TryGetPointerTargetForWindow(id, out target);
+        public void ClearEvents()
+        {
+            ButtonChangedEvents.Clear();
+            ConnectionEvents.Clear();
+            KeyChangedEvents.Clear();
+            GamepadThumbstickMoveEvents.Clear();
+            GamepadTriggerMoveEvents.Clear();
+            JoystickAxisMoveEvents.Clear();
+            JoystickHatMoveEvents.Clear();
+            KeyCharEvents.Clear();
+            MouseScrollEvents.Clear();
+            PointChangedEvents.Clear();
+        }
     }
 
-    internal bool TryGetPointerTargetForWindow(uint id, [NotNullWhen(true)] out IPointerTarget? target)
+    private struct ProcessEventArgs
     {
-        if (id == 0)
+        public readonly SdlInputBackend Backend;
+        public readonly List<SdlDevice> Devices;
+        public readonly List<SdlWindowTarget> SdlWindowTargets;
+        public readonly List<SdlDisplayTarget> DisplayTargets;
+        public ulong PreviousTimestamp;
+
+        public ProcessEventArgs(SdlInputBackend backend)
         {
-            target = null;
-            return false;
+            Backend = backend;
+            PreviousTimestamp = ulong.MinValue;
+            Devices = [];
+            SdlWindowTargets = [];
+            DisplayTargets = [];
         }
 
-        target = _windowTargets.FirstOrDefault(x => x.Id == id);
-        return target != null;
     }
 
     internal enum SdlPenInputFlags : uint
@@ -614,4 +631,34 @@ internal partial class SdlInputBackend : IInputBackend
         Motion = EventType.FingerMotion,
         Canceled = EventType.FingerCanceled
     }
+
+    private enum QueuedEventType : byte
+    {
+        /// <summary>
+        /// The mouse has exited the window and the shared point should be marked inactive until proven otherwise by
+        /// further mouse motion (indicating it has entered another window).
+        /// </summary>
+        /// <remarks>
+        /// We do not track the mouse enter events as this would cause us to fire twice for a mouse entering a window:
+        /// once for the entering, and once for new position.
+        /// </remarks>
+        MouseExitedWindow,
+
+        /// <summary>
+        /// The display bounds have been changed, meaning that <see cref="SdlBoundedPointerTarget"/>'s
+        /// <see cref="IPointerTarget.Bounds"/> will have changed.
+        /// </summary>
+        BoundedPointerTargetUpdate,
+    }
+
+    private readonly HashSet<nint> _deviceRegistry = [];
+
+    // NOTE: Be careful where these are used!
+    private static readonly double _ticksPerNanosecond = Stopwatch.Frequency / 10e9d;
+
+    private ProcessEventArgs _eventProcessingArgs;
+    private bool _pumped;
+    private readonly long _epoch;
+    private readonly SdlEventQueue _pumpedSdlEvents = new();
+    private readonly SilkEventQueues _silkEvents = new();
 }

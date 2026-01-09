@@ -9,8 +9,6 @@ namespace Silk.NET.Input.SDL3;
 
 internal partial class SdlInputBackend
 {
-    private readonly List<SdlWindowTarget> _windowTargets = [];
-    private readonly List<SdlDisplayTarget> _displayTargets = [];
     private delegate SdlArray<T> GetHandlesCallback<T>(ISdl sdl) where T : unmanaged;
     private readonly List<SdlBoundedPointerTarget> _tempTargets = new();
 
@@ -19,10 +17,10 @@ internal partial class SdlInputBackend
     private readonly Func<WindowHandle, uint?> _getWindowId;
     private readonly Func<SilkSdlDisplayHandle, uint?> _getDisplayId;
 
-    private void UpdatePointerTargets()
+    private void UpdatePointerTargets(in List<SdlWindowTarget> windowTargets, in List<SdlDisplayTarget> displayTargets)
     {
-        PopulateTargets(_windowTargets, _sdl, _getWindowHandles, _getWindowId);
-        PopulateTargets(_displayTargets, _sdl, _getDisplayHandles, _getDisplayId);
+        PopulateTargets(windowTargets, Sdl, _getWindowHandles, _getWindowId);
+        PopulateTargets(displayTargets, Sdl, _getDisplayHandles, _getDisplayId);
     }
 
     private uint? GetDisplayId(SilkSdlDisplayHandle x) => x.Id;
@@ -34,7 +32,7 @@ internal partial class SdlInputBackend
             return null;
         }
 
-        var windowId = _sdl.GetWindowID(x);
+        var windowId = Sdl.GetWindowID(x);
         if (windowId == 0)
         {
             SdlLog.Error("Failed to get window ID");
@@ -46,7 +44,7 @@ internal partial class SdlInputBackend
 
     internal bool TryGetWindowHandles(out SdlArray<WindowHandle> handles)
     {
-        handles = GetWindowHandles(_sdl);
+        handles = GetWindowHandles(Sdl);
         return handles != nullptr;
     }
 

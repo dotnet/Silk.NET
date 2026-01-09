@@ -43,20 +43,16 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
         ObjectDisposedException.ThrowIf(_isDisposed, GetType());
         _isDisposed = true;
         Release();
-        #if DEBUG
-        if (!Backend.DeviceRegistry.Remove(Id))
-        {
-            InputLog.Error($"Failed to remove device {Id} from registry");
-        }
-        #else
-        Backend.DeviceRegistry.Remove(Id);
-        #endif
-
         GC.SuppressFinalize(this);
     }
 
     ~SdlDevice()
     {
+        if (!_isDisposed)
+        {
+            InputLog.Error($"Failed to properly dispose {GetType().Name} {Id} (sdl ID: {SdlDeviceId}).");
+        }
+
         _isDisposed = true;
         Release();
     }

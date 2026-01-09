@@ -19,6 +19,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         set => NativeBackend.SetClipboardText(value);
     }
 
+    private bool _hasUpdates;
+
     public static SdlKeyboard CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
     {
         var namePtr = backend.Sdl.GetKeyboardNameForID((uint)sdlDeviceId);
@@ -78,7 +80,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         _textEntryWindow = sdlWindow;
     }
 
-    public unsafe string? EndInput()
+    public string? EndInput()
     {
         switch (_textIsRecording)
         {
@@ -108,10 +110,17 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     /// This mod state is purely used for sdl-related calls and modifiers that are independent of key state (e.g. numlock, caps lock)
     /// - otherwise, we handle the modifier states with our standard key handling logic
     /// </remarks>
-    public void UpdateModState() => _modState = NativeBackend.GetModState();
+    public void FinalizeUpdate(SdlInputBackend.SilkEventQueues queues)
+    {
+        if (_hasUpdates)
+        {
+            _modState = NativeBackend.GetModState();
+        }
+    }
 
     public void AddKeyEvent(in KeyboardEvent key)
     {
+        _hasUpdates = true;
         var keyName = SdlKeyConversions.ScancodeToKeyName(key.Scancode); // SdlToKeyName(key.Which);
 
         if (ButtonStates.IsDefined(keyName))
@@ -133,6 +142,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 
     public unsafe void AddTextEditingEvent(in TextEditingEvent evt)
     {
+        _hasUpdates = true;
         if (_textEntryWindow == null)
         {
             var windowHandle = NativeBackend.GetWindowFromID(evt.WindowID);
@@ -167,6 +177,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 
     public unsafe void AddTextCandidatesEvent(in TextEditingCandidatesEvent evt)
     {
+        _hasUpdates = true;
         if (evt.SelectedCandidate == -1 || evt.NumCandidates == 0)
         {
             return;
@@ -182,6 +193,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 
     public unsafe void AddTextInputEvent(in TextInputEvent evt)
     {
+        _hasUpdates = true;
         if (_textEntryWindow == null)
         {
             var windowHandle = NativeBackend.GetWindowFromID(evt.WindowID);
