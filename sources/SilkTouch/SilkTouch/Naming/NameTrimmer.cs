@@ -196,7 +196,7 @@ public class NameTrimmer : INameTrimmer
     protected (string Prefix, List<AugmentedCandidateNames>)? GetPrefix(
         string? container,
         string? hint,
-        Dictionary<string, CandidateNames>? names,
+        Dictionary<string, CandidateNames> names,
         Dictionary<string, string>? prefixOverrides,
         HashSet<string>? nonDeterminant,
         bool getTrimmingName,
@@ -204,7 +204,7 @@ public class NameTrimmer : INameTrimmer
     )
     {
         // If the type has no members,
-        if (names is null || names.Count == 0)
+        if (names.Count == 0)
         {
             // skip it
             return null;
