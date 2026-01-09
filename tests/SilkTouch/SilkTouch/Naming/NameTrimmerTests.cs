@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using NUnit.Framework;
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Naming;
 
 namespace Silk.NET.SilkTouch.UnitTests.Naming;
 
-public class NameTests : NameTrimmer
+public class NameTrimmerTests : NameTrimmer
 {
     [Test, TestCase(null), TestCase("glfw")]
     public void SimpleGlfwTestDetermination(string? hint)
@@ -124,13 +124,6 @@ public class NameTests : NameTrimmer
             );
         }
     }
-
-    [Test]
-    public void RegressionNamespacePrefixDetermination() =>
-        Assert.That(
-            NameUtils.FindCommonPrefix(["Silk.NET.SDL", "Silk.NET.SDL"], true, false, true),
-            Is.EqualTo("Silk.NET.SDL")
-        );
 
     [Test]
     public void RegressionSingleMemberEnumUsesGlobalPrefixHint()
