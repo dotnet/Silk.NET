@@ -244,24 +244,37 @@ public class NameTrimmer : INameTrimmer
             && (prefixOverrides?.TryGetValue(container, out var @override) ?? false)
         )
         {
+            // Use the override
             prefix = @override;
         }
         else
         {
-            if (names.Count == 1 && !string.IsNullOrWhiteSpace(containerTrimmingName))
+            if (names.Count == 1)
             {
-                prefix = NameUtils.FindCommonPrefix(
-                    [
-                        names.First(x => !(nonDeterminant?.Contains(x.Key) ?? false)).Value.Primary,
-                        containerTrimmingName,
-                    ],
-                    true,
-                    false,
-                    naive
-                );
+                if (!string.IsNullOrWhiteSpace(containerTrimmingName))
+                {
+                    // Use the member name and its container.
+                    prefix = NameUtils.FindCommonPrefix(
+                        [
+                            names
+                                .First(x => !(nonDeterminant?.Contains(x.Key) ?? false))
+                                .Value.Primary,
+                            containerTrimmingName,
+                        ],
+                        true,
+                        false,
+                        naive
+                    );
+                }
+                else
+                {
+                    // One name. Can't determine prefix.
+                    prefix = "";
+                }
             }
             else
             {
+                // Common case - Find the prefix based on the container's members
                 prefix = NameUtils.FindCommonPrefix(
                     localNames
                         .Where(x => !(nonDeterminant?.Contains(x.Original) ?? false))
