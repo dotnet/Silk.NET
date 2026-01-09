@@ -93,13 +93,13 @@ public class PrettifyNamesTests
             .AddDocument(
                 "OcclusionQueryParameterNameNV.gen.cs",
                 """
-                [NameAffix("Suffix", "KhronosVendor", "NV")
+                [NameAffix("Suffix", "KhronosVendor", "NV")]
                 public enum OcclusionQueryParameterNameNV
                 {
-                    [NameAffix("Suffix", "KhronosVendor", "NV")
+                    [NameAffix("Suffix", "KhronosVendor", "NV")]
                     GL_PIXEL_COUNT_NV = 34918,
 
-                    [NameAffix("Suffix", "KhronosVendor", "NV")
+                    [NameAffix("Suffix", "KhronosVendor", "NV")]
                     GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
                 }
                 """
@@ -131,13 +131,13 @@ public class PrettifyNamesTests
             .AddDocument(
                 "OcclusionQueryParameterNameNV.gen.cs",
                 """
-                [NameAffix("Suffix", "KhronosVendor", "KHR")
+                [NameAffix("Suffix", "KhronosVendor", "KHR")]
                 public enum VkPresentModeKHR
                 {
-                    [NameAffix("Suffix", "KhronosVendor", "KHR")
+                    [NameAffix("Suffix", "KhronosVendor", "KHR")]
                     VK_PRESENT_MODE_FIFO_LATEST_READY_KHR = 1000361000,
 
-                    [NameAffix("Suffix", "KhronosVendor", "EXT")
+                    [NameAffix("Suffix", "KhronosVendor", "EXT")]
                     VK_PRESENT_MODE_FIFO_LATEST_READY_EXT = VK_PRESENT_MODE_FIFO_LATEST_READY_KHR,
                 }
                 """
