@@ -238,12 +238,19 @@ public class NameTrimmer : INameTrimmer
         // then it will trim ThingsRGB to sRGB and ThingRGB to RGB
         // a case like this is simple to add a special case for in the generator to handle sRGB specially,
         // but see ImageChannelOrder from spirv.h for a more problematic occurrence.
-        var prefix =
+        string prefix;
+        if (
             container is not null
             && (prefixOverrides?.TryGetValue(container, out var @override) ?? false)
-                ? @override
-            : names.Count == 1 && !string.IsNullOrWhiteSpace(containerTrimmingName)
-                ? NameUtils.FindCommonPrefix(
+        )
+        {
+            prefix = @override;
+        }
+        else
+        {
+            if (names.Count == 1 && !string.IsNullOrWhiteSpace(containerTrimmingName))
+            {
+                prefix = NameUtils.FindCommonPrefix(
                     [
                         names.First(x => !(nonDeterminant?.Contains(x.Key) ?? false)).Value.Primary,
                         containerTrimmingName,
@@ -251,18 +258,23 @@ public class NameTrimmer : INameTrimmer
                     true,
                     false,
                     naive
-                )
-            : NameUtils.FindCommonPrefix(
-                localNames
-                    .Where(x => !(nonDeterminant?.Contains(x.Original) ?? false))
-                    .Select(x => x.TrimmingName)
-                    .ToList(),
-                // If naive mode is on and we're trimming type names, allow full matches (method class is
-                // probably the prefix)
-                naive && container is null,
-                false,
-                naive
-            );
+                );
+            }
+            else
+            {
+                prefix = NameUtils.FindCommonPrefix(
+                    localNames
+                        .Where(x => !(nonDeterminant?.Contains(x.Original) ?? false))
+                        .Select(x => x.TrimmingName)
+                        .ToList(),
+                    // If naive mode is on and we're trimming type names, allow full matches (method class is
+                    // probably the prefix)
+                    naive && container is null,
+                    false,
+                    naive
+                );
+            }
+        }
 
         // If any of the children's trimming name is shorter than the prefix length,
         if (
