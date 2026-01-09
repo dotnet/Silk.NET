@@ -434,4 +434,54 @@ public class PrettifyNamesTests
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
+
+    [Test]
+    public async Task InconsistentCasing_LettersFollowingNumbers_WhenAffixesDeclared()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                public enum GLEnum
+                {
+                    [NameAffix("Suffix", "KhronosVendor", "EXT")]
+                    GL_RGB16_EXT = 32852,
+
+                    [NameAffix("Suffix", "KhronosVendor", "EXT")]
+                    GL_RGB16F_EXT = 34843,
+                }
+
+                public enum ALEnum
+                {
+                    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+                    AL_MONO16_SOFT = 4353,
+
+                    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+                    AL_MONO32F_SOFT = 65552,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration() { LongAcronymThreshold = 4 }
+            ),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // This is to catch an inconsistency related to how letters following numbers are handled
+        // In both cases, MONO should be prettified as Mono
+        // NameUtilsTests.Prettify_Capital_AfterNumber_DoesNotAffect_PreviousWord tests for the underlying issue
+        //
+        // Note that the NameAffix attributes do affect the output
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
 }
