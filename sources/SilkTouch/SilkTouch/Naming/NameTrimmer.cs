@@ -35,7 +35,7 @@ public class NameTrimmer : INameTrimmer
     public void Trim(NameTrimmerContext context)
     {
         string? identifiedPrefix = null;
-        Dictionary<string, CandidateNamesWithOriginal> localNames = null!;
+        List<AugmentedCandidateNames> localNames = null!;
         var nPasses = HasRawPass
             ? HasNaivePass
                 ? 3
@@ -88,7 +88,7 @@ public class NameTrimmer : INameTrimmer
                 // If we have found a prefix,
                 if (
                     identifiedPrefix.Length > 0
-                    && identifiedPrefix.Length < localNames.Keys.Min(x => x.Length)
+                    && identifiedPrefix.Length < localNames.Min(x => x.TrimmingName.Length)
                 )
                 {
                     // break and use it for trimming!
@@ -98,10 +98,10 @@ public class NameTrimmer : INameTrimmer
                 // If not, do most of them at least start with the hint?
                 if (
                     hint is null
-                    || localNames.Keys.Count(x =>
-                        x.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
+                    || localNames.Count(x =>
+                        x.TrimmingName.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
                     )
-                        >= localNames.Keys.Count / 2
+                        >= localNames.Count / 2
                 )
                 {
                     // Nope, nothing we can do it seems, we've already tried both trimming name and non trimming name...
@@ -127,7 +127,7 @@ public class NameTrimmer : INameTrimmer
         }
 
         identifiedPrefix = identifiedPrefix?.Trim('_');
-        foreach (var (trimmingName, (oldPrimary, secondary, originalName)) in localNames)
+        foreach (var (oldPrimary, secondary, originalName, trimmingName) in localNames)
         {
             foreach (
                 var candidatePrefix in !string.IsNullOrWhiteSpace(identifiedPrefix)
@@ -188,10 +188,12 @@ public class NameTrimmer : INameTrimmer
     /// </param>
     /// <returns>
     /// Null to skip this container outright, empty if no prefix was found, or the prefix otherwise.
-    /// Returns the local names dictionary alongside it as well. That is, the mapping of the results of
-    /// <see cref="GetTrimmingName"/> to the new name.
+    /// <para/>
+    /// A local names list is also returned.
+    /// This is the list of names to be used for the remainder of the trimming process
+    /// and contains the trimming name and original name.
     /// </returns>
-    protected (string Prefix, Dictionary<string, CandidateNamesWithOriginal>)? GetPrefix(
+    protected (string Prefix, List<AugmentedCandidateNames>)? GetPrefix(
         string? container,
         string? hint,
         Dictionary<string, CandidateNames>? names,
@@ -212,13 +214,17 @@ public class NameTrimmer : INameTrimmer
         var containerTrimmingName = getTrimmingName
             ? GetTrimmingName(prefixOverrides, container ?? hint ?? string.Empty, true, hint)
             : container ?? hint ?? string.Empty;
-        var localNames = names.ToDictionary(
-            x =>
+
+        var localNames = names
+            .Select(x => new AugmentedCandidateNames(
+                x.Value.Primary,
+                x.Value.Secondary,
+                x.Key,
                 getTrimmingName
                     ? GetTrimmingName(prefixOverrides, x.Value.Primary, false, hint)
-                    : x.Value.Primary,
-            x => new CandidateNamesWithOriginal(x.Value.Primary, x.Value.Secondary, x.Key)
-        );
+                    : x.Value.Primary
+            ))
+            .ToList();
 
         // Set the prefix to the prefix override for this container, if it exists.
         // This is to allow us to handle poorly/inconsistently named containers,
@@ -248,8 +254,8 @@ public class NameTrimmer : INameTrimmer
                 )
             : NameUtils.FindCommonPrefix(
                 localNames
-                    .Where(x => !(nonDeterminant?.Contains(x.Value.Original) ?? false))
-                    .Select(x => x.Key)
+                    .Where(x => !(nonDeterminant?.Contains(x.Original) ?? false))
+                    .Select(x => x.TrimmingName)
                     .ToList(),
                 // If naive mode is on and we're trimming type names, allow full matches (method class is
                 // probably the prefix)
@@ -260,14 +266,18 @@ public class NameTrimmer : INameTrimmer
 
         // If any of the children's trimming name is shorter than the prefix length,
         if (
-            localNames.Keys.Any(x =>
-                x.Length <= prefix.Length && !(nonDeterminant?.Contains(x) ?? false)
+            localNames.Any(x =>
+                x.TrimmingName.Length <= prefix.Length
+                && !(nonDeterminant?.Contains(x.Original) ?? false)
             ) && !string.IsNullOrWhiteSpace(containerTrimmingName)
         )
         {
             // Do a second pass, but put the container name in the loop to see if it makes a difference
             prefix = NameUtils.FindCommonPrefix(
-                localNames.Keys.Concat(Enumerable.Repeat(containerTrimmingName, 1)).ToList(),
+                localNames
+                    .Select(x => x.TrimmingName)
+                    .Concat(Enumerable.Repeat(containerTrimmingName, 1))
+                    .ToList(),
                 // If naive mode is on and we're trimming type names, allow full matches (method class is probably the
                 // prefix)
                 naive && container is null,
@@ -328,5 +338,26 @@ public class NameTrimmer : INameTrimmer
         return hint is not null && name.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
             ? $"{hint}_{name[hint.Length..].Trim('_').LenientUnderscore()}"
             : name.LenientUnderscore();
+    }
+
+    /// <summary>
+    /// Similar to <see cref="CandidateNames"/>, but with some additional information.
+    /// </summary>
+    /// <param name="Primary">The preferred version of the trimmed name.</param>
+    /// <param name="Secondary">The fallback versions of the trimmed name in case the primary does not work.</param>
+    /// <param name="Original">The original, unmodified name.</param>
+    /// <param name="TrimmingName">The name used for trimming purposes.</param>
+    protected record struct AugmentedCandidateNames(
+        string Primary,
+        List<string> Secondary,
+        string Original,
+        string TrimmingName
+    )
+    {
+        /// <summary>
+        /// Formats this instance as a string.
+        /// </summary>
+        public override string ToString() =>
+            $"(Original={Original}, TrimmingName={TrimmingName}, Primary={Primary}, Secondary=[{string.Join(", ", Secondary)}])";
     }
 }
