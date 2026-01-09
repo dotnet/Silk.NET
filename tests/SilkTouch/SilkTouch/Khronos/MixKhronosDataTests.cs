@@ -332,6 +332,42 @@ public class MixKhronosDataTests
     }
 
     [Test]
+    public async Task PrettifyNames_TrimsSharedPrefix2()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "VocalMorpherPhoneme.gen.cs",
+                """
+                public enum VocalMorpherPhoneme
+                {
+                    AL_VOCAL_MORPHER_PHONEME_A = 0,
+                    AL_VOCAL_MORPHER_PHONEME_E = 1,
+                    AL_VOCAL_MORPHER_PHONEME_I = 2,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenAL", SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration() { GlobalPrefixHints = ["al"] }
+            ),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // The prefix shared by the member names should be trimmed
+        // The type name should not be modified
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
     public async Task MixKhronosData_IdentifiesVendorSuffixes()
     {
         var project = TestUtils
@@ -555,55 +591,5 @@ public class MixKhronosDataTests
         // The type name should remain unchanged except for the removal of the NV suffix
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
-    }
-
-    [Test]
-    public void OverzealousNameTrimmingFixupIsNotOverzealousForOpenAL()
-    {
-        var baseTrimmer = new NameTrimmer();
-        var uut = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
-        {
-            Jobs =
-            {
-                ["OpenAL"] = new MixKhronosData.JobData
-                {
-                    Configuration = new MixKhronosData.Configuration(),
-                    Vendors = ["SOFT"],
-                    Groups =
-                    {
-                        {
-                            "VocalMorpherPhoneme",
-                            new MixKhronosData.EnumGroup(
-                                "VocalMorpherPhoneme",
-                                "VocalMorpherPhoneme",
-                                "uint",
-                                [],
-                                false,
-                                null,
-                                "Silk.NET.OpenAL"
-                            )
-                        },
-                    },
-                },
-            },
-        };
-        var names = new Dictionary<string, CandidateNames>
-        {
-            { "AL_VOCAL_MORPHER_PHONEME_A", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_A", []) },
-            { "AL_VOCAL_MORPHER_PHONEME_E", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_E", []) },
-            { "AL_VOCAL_MORPHER_PHONEME_I", new CandidateNames("AL_VOCAL_MORPHER_PHONEME_I", []) },
-        };
-        var ctx = new NameTrimmerContext
-        {
-            Container = "VocalMorpherPhoneme",
-            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["al"] },
-            Names = names,
-            JobKey = "OpenAL",
-        };
-        baseTrimmer.Trim(ctx);
-        uut.Trim(ctx);
-        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_A"].Primary, Is.EqualTo("A"));
-        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_E"].Primary, Is.EqualTo("E"));
-        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_I"].Primary, Is.EqualTo("I"));
     }
 }
