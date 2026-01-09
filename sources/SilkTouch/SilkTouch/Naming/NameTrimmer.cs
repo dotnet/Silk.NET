@@ -274,10 +274,7 @@ public class NameTrimmer : INameTrimmer
         {
             // Do a second pass, but put the container name in the loop to see if it makes a difference
             prefix = NameUtils.FindCommonPrefix(
-                localNames
-                    .Select(x => x.TrimmingName)
-                    .Concat(Enumerable.Repeat(containerTrimmingName, 1))
-                    .ToList(),
+                localNames.Select(x => x.TrimmingName).Append(containerTrimmingName).ToList(),
                 // If naive mode is on and we're trimming type names, allow full matches (method class is probably the
                 // prefix)
                 naive && container is null,
