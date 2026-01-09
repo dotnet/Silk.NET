@@ -1,0 +1,7 @@
+﻿public enum PresentModeKHR
+{
+}
+
+public enum PresentIdKHR
+{
+}

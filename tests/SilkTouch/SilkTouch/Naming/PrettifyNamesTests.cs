@@ -86,6 +86,35 @@ public class PrettifyNamesTests
     }
 
     [Test]
+    public async Task TrimsSharedPrefix_ForTypes()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Vk.gen.cs",
+                """
+                public enum VkPresentModeKHR { }
+                public enum VkPresentIdKHR { }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // The type name should be trimmed as PresentModeKHR
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
     public async Task TrimsSharedPrefix_WhenAffixesDeclared()
     {
         var project = TestUtils
