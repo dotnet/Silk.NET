@@ -297,7 +297,7 @@ public class MixKhronosDataTests
         );
 
     [Test]
-    public async Task MixKhronosData_IdentifiesVendorSuffixes()
+    public async Task IdentifiesVendorSuffixes()
     {
         var project = TestUtils
             .CreateTestProject()
@@ -335,7 +335,7 @@ public class MixKhronosDataTests
     }
 
     [Test]
-    public async Task MixKhronosData_IdentifiesImpliedVendorSuffixes()
+    public async Task IdentifiesImpliedVendorSuffixes()
     {
         var project = TestUtils
             .CreateTestProject()
@@ -377,7 +377,7 @@ public class MixKhronosDataTests
     }
 
     [Test]
-    public async Task MixKhronosData_IdentifiesNonExclusiveVendorSuffixes()
+    public async Task IdentifiesNonExclusiveVendorSuffixes()
     {
         var project = TestUtils
             .CreateTestProject()

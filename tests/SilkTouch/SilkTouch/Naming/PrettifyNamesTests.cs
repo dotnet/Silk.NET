@@ -19,7 +19,7 @@ public class PrettifyNamesTests
     }
 
     [Test]
-    public async Task PrettifyNames_TrimsSharedPrefix()
+    public async Task TrimsSharedPrefix()
     {
         var project = TestUtils
             .CreateTestProject()
@@ -52,7 +52,7 @@ public class PrettifyNamesTests
     }
 
     [Test]
-    public async Task PrettifyNames_TrimsSharedPrefix2()
+    public async Task TrimsSharedPrefix2()
     {
         var project = TestUtils
             .CreateTestProject()
@@ -86,7 +86,7 @@ public class PrettifyNamesTests
     }
 
     [Test]
-    public async Task PrettifyNames_TrimsSharedPrefix_WhenAffixesDeclared()
+    public async Task TrimsSharedPrefix_WhenAffixesDeclared()
     {
         var project = TestUtils
             .CreateTestProject()
@@ -124,7 +124,7 @@ public class PrettifyNamesTests
     }
 
     [Test]
-    public async Task PrettifyNames_TrimsSharedPrefix_WhenAffixesDeclared_AndNamesWithoutAffixesConflict()
+    public async Task TrimsSharedPrefix_WhenAffixesDeclared_AndNamesWithoutAffixesConflict()
     {
         var project = TestUtils
             .CreateTestProject()
