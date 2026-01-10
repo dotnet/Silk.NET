@@ -151,7 +151,8 @@ public class NamePrettifier(int longAcronymThreshold)
                             wordI + 1 < words.Count
                             && IsAcronym(words[wordI + 1], longAcronymThreshold);
 
-                        if (!wasPreviousAcronym && !isNextAcronym)
+                        // TODO: Temporarily disabled
+                        // if (!wasPreviousAcronym && !isNextAcronym)
                         {
                             // Preserve the acronym
                             continue;
