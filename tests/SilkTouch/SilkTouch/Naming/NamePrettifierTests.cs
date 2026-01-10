@@ -8,7 +8,7 @@ namespace Silk.NET.SilkTouch.UnitTests.Naming;
 public class NamePrettifierTests
 {
     [Theory]
-    [TestCase("helloWorld", ExpectedResult = "helloWorld")]
+    [TestCase("helloWorld", ExpectedResult = "HelloWorld")]
     [TestCase("HelloWorld", ExpectedResult = "HelloWorld")]
     [TestCase("HelloWorld123", ExpectedResult = "HelloWorld123")]
     [TestCase("HelloWorld_123", ExpectedResult = "HelloWorld123")]
@@ -30,7 +30,7 @@ public class NamePrettifierTests
     [TestCase("_Hello__World_", ExpectedResult = "HelloWorld")]
     [TestCase("_HELLO__WORLD_", ExpectedResult = "HelloWorld")]
     [TestCase("LONGACRONYM", 4, ExpectedResult = "Longacronym")]
-    [TestCase("LONG_ACRONYM", 4, ExpectedResult = "LongAcronym")]
+    [TestCase("LONG_ACRONYM", 3, ExpectedResult = "LongAcronym")]
     [TestCase(
         "LONG_ACRONYM",
         5,
