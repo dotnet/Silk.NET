@@ -20,17 +20,30 @@ namespace Silk.NET.SilkTouch.Naming;
 /// </param>
 public class NamePrettifier(int longAcronymThreshold)
 {
+    private enum CharType
+    {
+        Upper,
+        Number,
+        Separator,
+        Other,
+    }
+
     /// <summary>
-    /// An instance of <see cref="SearchValues{T}"/> matching capital letters and all digits.
+    /// All capital letters.
     /// </summary>
-    public static readonly SearchValues<char> Uppercase = SearchValues.Create(
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    private static readonly SearchValues<char> UpperChars = SearchValues.Create(
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     );
 
     /// <summary>
-    /// An instance of <see cref="SearchValues"/> matching all characters that separate words in a C# identifier.
+    /// All digits.
     /// </summary>
-    public static readonly SearchValues<char> Separators = SearchValues.Create("_");
+    private static readonly SearchValues<char> NumberChars = SearchValues.Create("0123456789");
+
+    /// <summary>
+    /// All characters that separate words in a C# identifier.
+    /// </summary>
+    private static readonly SearchValues<char> SeparatorChars = SearchValues.Create("_");
 
     /// <summary>
     /// Prettifies the given C# identifier.
@@ -82,62 +95,79 @@ public class NamePrettifier(int longAcronymThreshold)
         {
             var c = identifier[i];
 
-            var isPreviousUpper = i <= 0 || IsUpper(identifier[i - 1]);
-            var isPreviousSeparator = i <= 0 || IsSeparator(identifier[i - 1]);
+            var previous = i - 1 >= 0 ? GetCharType(identifier[i - 1]) : CharType.Separator;
 
-            var isCurrentUpper = IsUpper(c);
-            var isCurrentSeparator = IsSeparator(c);
+            var current = GetCharType(identifier[i]);
 
-            var isNextUpper = i + 1 >= identifier.Length || IsUpper(identifier[i + 1]);
-            var isNextSeparator = i + 1 >= identifier.Length || IsSeparator(identifier[i + 1]);
+            var next =
+                i + 1 < identifier.Length ? GetCharType(identifier[i + 1]) : CharType.Separator;
 
             switch (i)
             {
-                // Handle separators
-                case { } when isCurrentSeparator:
+                // Split at separators
+                case { } when current == CharType.Separator:
                 {
-                    if (currentWord.Length > 0)
-                    {
-                        words.Add(currentWord.ToString());
-                        currentWord.Clear();
-                    }
-
+                    NewWord();
                     break;
                 }
 
-                // TODO: Might not actually be needed
-                // Handle end of acronyms
-                case { } when isPreviousUpper && isCurrentUpper && !isNextUpper && !isNextSeparator:
+                // Split at end of acronyms
+                case { }
+                    when previous is CharType.Upper
+                        && current is CharType.Upper
+                        && next is CharType.Other:
                 {
-                    if (currentWord.Length > 0)
-                    {
-                        words.Add(currentWord.ToString());
-                        currentWord.Clear();
-                    }
-
-                    currentWord.Append(c);
+                    NewWord();
+                    AddCurrent();
                     break;
                 }
 
-                // Handle start of new words
-                case { } when !isPreviousUpper && isCurrentUpper:
+                // Split at start of new words
+                case { } when previous is not CharType.Upper && current is CharType.Upper:
                 {
-                    if (currentWord.Length > 0)
-                    {
-                        words.Add(currentWord.ToString());
-                        currentWord.Clear();
-                    }
+                    NewWord();
+                    AddCurrent();
+                    break;
+                }
 
-                    currentWord.Append(c);
+                // Split at start of numbers
+                case { } when previous is not CharType.Number && current is CharType.Number:
+                {
+                    NewWord();
+                    AddCurrent();
+                    break;
+                }
+
+                // Split at end of numbers
+                case { } when current is CharType.Number && next is not CharType.Number:
+                {
+                    AddCurrent();
+                    NewWord();
                     break;
                 }
 
                 // Default
                 case { }:
                 {
-                    currentWord.Append(c);
+                    AddCurrent();
                     break;
                 }
+            }
+
+            continue;
+
+            void NewWord()
+            {
+                if (currentWord.Length > 0)
+                {
+                    words.Add(currentWord.ToString());
+                    currentWord.Clear();
+                }
+            }
+
+            void AddCurrent()
+            {
+                currentWord.Append(c);
             }
         }
 
@@ -150,9 +180,14 @@ public class NamePrettifier(int longAcronymThreshold)
         return words;
     }
 
-    private static bool IsSeparator(char c) => Separators.Contains(c);
-
-    private static bool IsUpper(char c) => Uppercase.Contains(c);
+    private static CharType GetCharType(char c) =>
+        c switch
+        {
+            { } when UpperChars.Contains(c) => CharType.Upper,
+            { } when NumberChars.Contains(c) => CharType.Number,
+            { } when SeparatorChars.Contains(c) => CharType.Separator,
+            _ => CharType.Other,
+        };
 
     // public string Transform(string input, CultureInfo? culture)
     // {
