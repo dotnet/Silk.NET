@@ -132,7 +132,7 @@ public class NamePrettifier(int longAcronymThreshold)
         for (var wordI = 0; wordI < words.Count; wordI++)
         {
             var current = words[wordI];
-            var isCurrentAcronym = current.Length <= longAcronymThreshold && IsAcronym(current);
+            var isCurrentAcronym = IsAcronym(current, longAcronymThreshold);
             try
             {
                 if (isCurrentAcronym)
@@ -141,8 +141,7 @@ public class NamePrettifier(int longAcronymThreshold)
                     // Eg: [RGBA, ASTC] should result in [Rgba, Astc] since "RGBAASTC" is hard to read
                     var isNextAcronym =
                         wordI + 1 < words.Count
-                        && words[wordI + 1].Length <= longAcronymThreshold
-                        && IsAcronym(words[wordI + 1]);
+                        && IsAcronym(words[wordI + 1], longAcronymThreshold);
 
                     if (!wasPreviousAcronym && !isNextAcronym)
                     {
@@ -292,8 +291,9 @@ public class NamePrettifier(int longAcronymThreshold)
             _ => CharType.Other,
         };
 
-    private static bool IsAcronym(string word) =>
-        word.All(c => GetCharType(c) is CharType.Upper or CharType.Number);
+    private static bool IsAcronym(string word, int threshold) =>
+        word.Length <= threshold
+        && word.All(c => GetCharType(c) is CharType.Upper or CharType.Number);
 
     // public string Transform(string input, CultureInfo? culture)
     // {
