@@ -26129,9 +26129,6 @@ public unsafe partial class AL : IAL, IAL.Static
         }
     }
 
-    [NativeName("AL_CPLUSPLUS")]
-    public const int Cplusplus = 201402;
-
     [NativeName("AL_EXT_FOLDBACK_NAME")]
     [SupportedApiProfile("al", ["AL_EXT_FOLDBACK"])]
     public static ReadOnlySpan<byte> ExtFoldbackName => "AL_EXT_FOLDBACK"u8;
