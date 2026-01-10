@@ -164,11 +164,6 @@ public class NamePrettifier(int longAcronymThreshold)
             words[wordI] = new string(chars);
         }
 
-        if (longAcronymThreshold < 0)
-        {
-            Console.WriteLine();
-        }
-
         var result = string.Join("", words);
         if (result.Length == 0)
         {
@@ -185,9 +180,6 @@ public class NamePrettifier(int longAcronymThreshold)
             resultSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
             result = $"{result[0]}{caps}";
         }
-
-        // For testing
-        // result = $"[{string.Join(", ", words)}] ({longAcronymThreshold})";
 
         return result;
     }
