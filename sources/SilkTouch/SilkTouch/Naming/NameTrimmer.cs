@@ -157,15 +157,12 @@ public class NameTrimmer : INameTrimmer
                     continue;
                 }
 
-                var sec = secondary;
-                sec.Add(oldPrimary);
-
                 // this was trimmingName originally. given that we're using trimming name to determine a prefix but then
                 // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
                 // a better way to do this. (this is working around glDisablei -> glDisable -> Disablei).
                 context.Names[originalName] = new CandidateNames(
                     oldPrimary[prefixLen..].Trim('_'),
-                    sec
+                    secondary
                 );
                 break;
             }
