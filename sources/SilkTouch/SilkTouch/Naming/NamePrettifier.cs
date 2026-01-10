@@ -96,12 +96,11 @@ public class NamePrettifier(int longAcronymThreshold)
             var c = identifier[i];
 
             var previous = i - 1 >= 0 ? GetCharType(identifier[i - 1]) : CharType.Separator;
-
-            var current = GetCharType(identifier[i]);
-
+            var current = GetCharType(c);
             var next =
                 i + 1 < identifier.Length ? GetCharType(identifier[i + 1]) : CharType.Separator;
 
+            // Identify breakpoints within the identifier by examining 3 characters at a time
             switch (i)
             {
                 // Split at separators
@@ -156,28 +155,26 @@ public class NamePrettifier(int longAcronymThreshold)
 
             continue;
 
-            void NewWord()
-            {
-                if (currentWord.Length > 0)
-                {
-                    words.Add(currentWord.ToString());
-                    currentWord.Clear();
-                }
-            }
-
+            // Adds the current character to the current word
             void AddCurrent()
             {
                 currentWord.Append(c);
             }
         }
 
-        if (currentWord.Length > 0)
-        {
-            words.Add(currentWord.ToString());
-            currentWord.Clear();
-        }
+        NewWord();
 
         return words;
+
+        // Starts a new word
+        void NewWord()
+        {
+            if (currentWord.Length > 0)
+            {
+                words.Add(currentWord.ToString());
+                currentWord.Clear();
+            }
+        }
     }
 
     private static CharType GetCharType(char c) =>
