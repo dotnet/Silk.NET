@@ -3,5 +3,5 @@
     [NameAffix("Suffix", "KhronosVendor", "ARB")]
     Rgba32FARB = 34836,
     [NameAffix("Suffix", "KhronosVendor", "ARB")]
-    RGB32FARB = 34837,
+    Rgb32FARB = 34837,
 }
