@@ -161,15 +161,7 @@ public class NamePrettifier(int longAcronymThreshold)
             }
 
             // Apply pascal casing
-            var chars = current.ToCharArray();
-            chars[0] = char.ToUpper(chars[0]);
-
-            for (var charI = 1; charI < chars.Length; charI++)
-            {
-                chars[charI] = char.ToLower(chars[charI]);
-            }
-
-            words[wordI] = new string(chars);
+            words[wordI] = UpperCaseFirstCharacter(current);
         }
 
         var result = string.Join("", words);
@@ -309,4 +301,18 @@ public class NamePrettifier(int longAcronymThreshold)
     // TODO: Rename this or handle this better
     private static bool IsAllCapsStrict(string word) =>
         word.All(c => GetCharType(c) is CharType.Upper);
+
+    private static string UpperCaseFirstCharacter(string current)
+    {
+        var chars = current.ToCharArray();
+        chars[0] = char.ToUpper(chars[0]);
+
+        for (var charI = 1; charI < chars.Length; charI++)
+        {
+            chars[charI] = char.ToLower(chars[charI]);
+        }
+
+        var a = new string(chars);
+        return a;
+    }
 }
