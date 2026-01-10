@@ -84,6 +84,8 @@ public class NamePrettifierTests
     // 1. The name is all uppercase
     // 2. The name is short (less than or equal to acronym threshold)
     // 3. There is 1 word after the name has been split
+    // Note that these names typically become Pascal cased anyway
+    // since allow all caps is usually false.
     [TestCase("RGB", 4, ExpectedResult = "RGB")]
     public string ShortUppercasedNames_ThatCanBeAcronyms(
         string input,
