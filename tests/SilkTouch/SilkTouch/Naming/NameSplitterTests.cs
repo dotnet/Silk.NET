@@ -71,4 +71,16 @@ public class NameSplitterTests
             Assert.That(NamePrettifier.BreakIntoWords("8X8"), Is.EqualTo(["8", "X", "8"]));
         }
     }
+
+    [Test]
+    public void ComplexCases()
+    {
+        using (Assert.EnterMultipleScope())
+        {
+            Assert.That(
+                NamePrettifier.BreakIntoWords("SpvImageFormatR32ui"),
+                Is.EqualTo(["Spv", "Image", "Format", "R", "32", "ui"])
+            );
+        }
+    }
 }
