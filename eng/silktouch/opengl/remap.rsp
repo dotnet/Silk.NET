@@ -24,3 +24,5 @@ GLclampf=float
 GLdouble=double
 GLclampd=double
 GLhandleARB=uint
+GLintptrARB=nint
+GLsizeiptrARB=nuint
