@@ -48,6 +48,8 @@ public class NamePrettifierTests
         ExpectedResult = "X123",
         Description = "C# identifiers cannot start with a number"
     )]
+    [TestCase("123_123_123", 2, ExpectedResult = "X123x123x123")]
+    [TestCase("Hello123_123_123", 2, ExpectedResult = "Hello123x123x123")]
     public string CommonCases(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
