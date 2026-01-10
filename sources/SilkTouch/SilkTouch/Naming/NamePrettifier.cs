@@ -133,24 +133,30 @@ public class NamePrettifier(int longAcronymThreshold)
         {
             var current = words[wordI];
             var isCurrentAcronym = current.Length <= longAcronymThreshold && IsAcronym(current);
-            if (isCurrentAcronym)
+            try
             {
-                // Check if previous or next are acronyms and if they are also preserved
-                // Eg: [RGBA, ASTC] should result in [Rgba, Astc] since "RGBAASTC" is hard to read
-                var isNextAcronym =
-                    wordI + 1 < words.Count
-                    && words[wordI + 1].Length <= longAcronymThreshold
-                    && IsAcronym(words[wordI + 1]);
-
-                if (!wasPreviousAcronym && !isNextAcronym)
+                if (isCurrentAcronym)
                 {
-                    // Preserve the acronym
-                    wasPreviousAcronym = true;
-                    continue;
+                    // Check if previous or next are acronyms and if they are also preserved
+                    // Eg: [RGBA, ASTC] should result in [Rgba, Astc] since "RGBAASTC" is hard to read
+                    var isNextAcronym =
+                        wordI + 1 < words.Count
+                        && words[wordI + 1].Length <= longAcronymThreshold
+                        && IsAcronym(words[wordI + 1]);
+
+                    if (!wasPreviousAcronym && !isNextAcronym)
+                    {
+                        // Preserve the acronym
+                        continue;
+                    }
                 }
             }
-
-            wasPreviousAcronym = isCurrentAcronym;
+            finally
+            {
+                // Save whether the current word was an acronym or not
+                // This is important since we lose information about the current word after it is modified below
+                wasPreviousAcronym = isCurrentAcronym;
+            }
 
             // Apply pascal casing
             var chars = current.ToCharArray();
