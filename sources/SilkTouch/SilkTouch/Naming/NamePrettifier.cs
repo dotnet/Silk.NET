@@ -1,6 +1,9 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Buffers;
+using System.Text;
+
 namespace Silk.NET.SilkTouch.Naming;
 
 /// <summary>
@@ -18,6 +21,18 @@ namespace Silk.NET.SilkTouch.Naming;
 public class NamePrettifier(int longAcronymThreshold)
 {
     /// <summary>
+    /// An instance of <see cref="SearchValues{T}"/> matching capital letters and all digits.
+    /// </summary>
+    public static readonly SearchValues<char> Uppercase = SearchValues.Create(
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    );
+
+    /// <summary>
+    /// An instance of <see cref="SearchValues"/> matching all characters that separate words in a C# identifier.
+    /// </summary>
+    public static readonly SearchValues<char> Separators = SearchValues.Create("_");
+
+    /// <summary>
     /// Prettifies the given C# identifier.
     /// </summary>
     /// <param name="identifier">
@@ -29,6 +44,8 @@ public class NamePrettifier(int longAcronymThreshold)
     /// <exception cref="InvalidOperationException">Thrown when the input or output is an empty identifier.</exception>
     public string Prettify(string identifier, bool allowAllCaps = false)
     {
+        var words = BreakIntoWords(identifier);
+
         // if (identifier.Length == 0)
         // {
         //     throw new InvalidOperationException("Cannot prettify an empty identifier");
@@ -53,16 +70,89 @@ public class NamePrettifier(int longAcronymThreshold)
         //
         // return result;
 
-        var words = new List<string>();
+        return $"[{string.Join(", ", words)}] ({longAcronymThreshold})";
+    }
 
-        if (longAcronymThreshold != 1000000)
+    private static List<string> BreakIntoWords(string identifier)
+    {
+        var words = new List<string>();
+        var currentWord = new StringBuilder();
+
+        for (var i = 0; i < identifier.Length; i++)
         {
-            // TODO
-            return identifier + "";
+            var c = identifier[i];
+
+            var isPreviousUpper = i <= 0 || IsUpper(identifier[i - 1]);
+            var isPreviousSeparator = i <= 0 || IsSeparator(identifier[i - 1]);
+
+            var isCurrentUpper = IsUpper(c);
+            var isCurrentSeparator = IsSeparator(c);
+
+            var isNextUpper = i + 1 >= identifier.Length || IsUpper(identifier[i + 1]);
+            var isNextSeparator = i + 1 >= identifier.Length || IsSeparator(identifier[i + 1]);
+
+            switch (i)
+            {
+                // Handle separators
+                case { } when isCurrentSeparator:
+                {
+                    if (currentWord.Length > 0)
+                    {
+                        words.Add(currentWord.ToString());
+                        currentWord.Clear();
+                    }
+
+                    break;
+                }
+
+                // TODO: Might not actually be needed
+                // Handle end of acronyms
+                case { } when isPreviousUpper && isCurrentUpper && !isNextUpper && !isNextSeparator:
+                {
+                    if (currentWord.Length > 0)
+                    {
+                        words.Add(currentWord.ToString());
+                        currentWord.Clear();
+                    }
+
+                    currentWord.Append(c);
+                    break;
+                }
+
+                // Handle start of new words
+                case { } when !isPreviousUpper && isCurrentUpper:
+                {
+                    if (currentWord.Length > 0)
+                    {
+                        words.Add(currentWord.ToString());
+                        currentWord.Clear();
+                    }
+
+                    currentWord.Append(c);
+                    break;
+                }
+
+                // Default
+                case { }:
+                {
+                    currentWord.Append(c);
+                    break;
+                }
+            }
         }
 
-        return identifier;
+        if (currentWord.Length > 0)
+        {
+            words.Add(currentWord.ToString());
+            currentWord.Clear();
+        }
+
+        return words;
     }
+
+    private static bool IsSeparator(char c) => Separators.Contains(c);
+
+    private static bool IsUpper(char c) => Uppercase.Contains(c);
 
     // public string Transform(string input, CultureInfo? culture)
     // {
