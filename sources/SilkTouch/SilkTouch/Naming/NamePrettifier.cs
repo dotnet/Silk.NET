@@ -109,7 +109,7 @@ public class NamePrettifier(int longAcronymThreshold)
             var startOfCurrent = GetCharType(words[i][0]);
             var endOfPrevious = GetCharType(words[i - 1][^1]);
 
-            // Merge lowercase into previous
+            // Merge lowercase into previous numbers
             // Eg: [RGB, 16, f] becomes [RGB, 16f]
             // Eg: [RGB, 16, F] remains [RGB, 16, F]
             if (startOfCurrent is CharType.Other && endOfPrevious is CharType.Number)
@@ -118,7 +118,7 @@ public class NamePrettifier(int longAcronymThreshold)
                 words.RemoveAt(i);
             }
 
-            // Merge numbers into previous
+            // Merge numbers into previous non-numbers
             // Eg: [RGB, 16] becomes [RGB16]
             if (startOfCurrent is CharType.Number && endOfPrevious is not CharType.Number)
             {
