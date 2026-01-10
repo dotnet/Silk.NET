@@ -1,3 +1,4 @@
+@../../remap-stdint.rsp
 --remap
 SDL_fabsf=float.Abs
 VkSurfaceKHR=ulong
