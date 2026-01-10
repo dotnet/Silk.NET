@@ -198,7 +198,12 @@ public class NamePrettifier(int longAcronymThreshold)
         return result;
     }
 
-    private static List<string> BreakIntoWords(string identifier)
+    /// <summary>
+    /// TODO: Probably move this to a separate class and also needs documentation
+    /// </summary>
+    /// <param name="identifier"></param>
+    /// <returns></returns>
+    public static List<string> BreakIntoWords(string identifier)
     {
         var words = new List<string>();
         var currentWord = new StringBuilder();
@@ -251,10 +256,10 @@ public class NamePrettifier(int longAcronymThreshold)
                 }
 
                 // Split at end of numbers
-                case { } when current is CharType.Number && next is not CharType.Number:
+                case { } when previous is CharType.Number && current is not CharType.Number:
                 {
-                    AddCurrent();
                     NewWord();
+                    AddCurrent();
                     break;
                 }
 
