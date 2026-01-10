@@ -8,6 +8,7 @@ namespace Silk.NET.SilkTouch.UnitTests.Naming;
 public class NamePrettifierTests
 {
     [Theory]
+    [TestCase("helloWorld", ExpectedResult = "helloWorld")]
     [TestCase("HelloWorld", ExpectedResult = "HelloWorld")]
     [TestCase("HelloWorld123", ExpectedResult = "HelloWorld123")]
     [TestCase("HelloWorld_123", ExpectedResult = "HelloWorld123")]
@@ -48,9 +49,10 @@ public class NamePrettifierTests
         ExpectedResult = "X123",
         Description = "C# identifiers cannot start with a number"
     )]
-    [TestCase("123_123_123", 2, ExpectedResult = "X123x123x123")]
-    [TestCase("Hello123_123_123", 2, ExpectedResult = "Hello123x123x123")]
-    public string CommonCases(string input, int longAcronymThreshold = 0) =>
+    [TestCase("123_123_123", ExpectedResult = "X123x123x123")]
+    [TestCase("Hello123_123_123", ExpectedResult = "Hello123x123x123")]
+    [TestCase("A123f123", ExpectedResult = "A123f123")]
+    public string CoreFunctionality(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Test]
