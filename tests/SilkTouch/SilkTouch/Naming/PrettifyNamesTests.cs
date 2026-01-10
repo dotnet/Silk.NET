@@ -484,4 +484,57 @@ public class PrettifyNamesTests
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
+
+    [Test]
+    public async Task Regression_IncorrectSecondary_ChosenAsFallback()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "AL.gen.cs",
+                """
+                public class AL
+                {
+                    [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
+                    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+                    public void alGetBufferPtrDirectSOFT() { }
+
+                    [NameAffix("Suffix", "KhronosFunctionDataType", "v")]
+                    [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
+                    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+                    public void alGetBufferPtrvDirectSOFT() { }
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration()
+                {
+                    LongAcronymThreshold = 4,
+                    GlobalPrefixHints = ["al"],
+                    Affixes =
+                    {
+                        {
+                            "KhronosFunctionDataType",
+                            new PrettifyNames.NameAffixConfiguration() { IsDiscriminator = true }
+                        },
+                    },
+                }
+            ),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // This is to catch a regression where choosing the shortest secondary available is not always correct
+        // The second method (with the -v suffix) should not have the global prefix restored
+        // Eg: We don't want AlGetBufferPtr
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
 }
