@@ -3,7 +3,6 @@
 
 using System.Buffers;
 using System.Globalization;
-using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Silk.NET.SilkTouch.Naming;
@@ -316,82 +315,4 @@ public class NamePrettifier(int longAcronymThreshold)
     // TODO: Rename this or handle this better
     private static bool IsAllCapsStrict(string word) =>
         word.All(c => GetCharType(c) is CharType.Upper);
-
-    // public string Transform(string input, CultureInfo? culture)
-    // {
-    //     var words = RemoveNullOrWhiteSpace(Words().Split(input));
-    //     for (var i = 0; i < words.Length; i++)
-    //     {
-    //         ref var word = ref words[i];
-    //         if (
-    //             word.Length > longAcronymThreshold
-    //             || !AllCapitals(word)
-    //             || (
-    //                 AllCapitals(input)
-    //                 && input.Length > longAcronymThreshold
-    //                 && words.Length > 1
-    //             )
-    //         )
-    //         {
-    //             word = MakeFirstLetterUpper(word, culture);
-    //         }
-    //
-    //         var previous = i - 1;
-    //         if (previous >= 0)
-    //         {
-    //             if (i > 0 && char.IsDigit(word[0]) && char.IsDigit(words[previous][^1]))
-    //             {
-    //                 word = $"x{word}";
-    //             }
-    //
-    //             break;
-    //         }
-    //     }
-    //
-    //     return string.Join(" ", words);
-    // }
-
-    // /// <summary>
-    // /// Returns a span without entries that are null or whitespace.
-    // /// This is done by sorting those entries to the end of the input span
-    // /// and returning the slice that doesn't contain those entries.
-    // /// </summary>
-    // private static Span<string> RemoveNullOrWhiteSpace(Span<string> values)
-    // {
-    //     values.Sort(
-    //         static (a, b) =>
-    //             string.IsNullOrWhiteSpace(a).CompareTo(string.IsNullOrWhiteSpace(b))
-    //     );
-    //
-    //     for (var i = 0; i < values.Length; i++)
-    //     {
-    //         if (string.IsNullOrWhiteSpace(values[i]))
-    //         {
-    //             return values[..i];
-    //         }
-    //     }
-    //
-    //     return values;
-    // }
-    //
-    // private static bool AllCapitals(string input) =>
-    //     input.ToCharArray().All(x => char.IsUpper(x) || !char.IsLetter(x));
-    //
-    // private static string MakeFirstLetterUpper(string wordToConvert, CultureInfo culture)
-    // {
-    //     var nextLetter = wordToConvert.TakeWhile(char.IsDigit).Count() + 1;
-    //     if (nextLetter > wordToConvert.Length)
-    //     {
-    //         // It's not a word?
-    //         return wordToConvert;
-    //     }
-    //
-    //     return culture.TextInfo.ToUpper(wordToConvert[..nextLetter])
-    //         + culture.TextInfo.ToLower(wordToConvert.Remove(0, nextLetter));
-    // }
-    //
-    // // https://chat.openai.com/share/f5eb195b-96a4-4f0f-955b-9d08b976a955
-    // // https://chat.openai.com/share/8d3f2ec4-7eec-4dbd-a01e-a8d73e885964
-    // [GeneratedRegex(@"(?<=\D)(?=\d)|(?<=\d)(?=\D)|\W+")]
-    // private static partial Regex Words();
 }

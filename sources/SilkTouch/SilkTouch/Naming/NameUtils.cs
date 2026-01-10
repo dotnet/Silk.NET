@@ -1,8 +1,6 @@
 ﻿using System.Buffers;
 using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
 using System.Text.RegularExpressions;
-using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
