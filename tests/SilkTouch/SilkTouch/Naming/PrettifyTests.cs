@@ -62,7 +62,7 @@ public class PrettifyTests
     }
 
     [Test]
-    public void Capital_AfterNumber_DoesNotAffect_PreviousWord()
+    public void Uppercase_AfterNumber_DoesNotAffect_PreviousWord()
     {
         var nameTransformer = new NamePrettifier(4);
 
@@ -73,6 +73,21 @@ public class PrettifyTests
 
             Assert.That(nameTransformer.Prettify("MONO16"), Is.EqualTo("Mono16"));
             Assert.That(nameTransformer.Prettify("MONO16F"), Is.EqualTo("Mono16F"));
+        }
+    }
+
+    [Test]
+    public void Lowercase_AfterNumber_IsPartOf_PreviousWord()
+    {
+        var nameTransformer = new NamePrettifier(4);
+
+        using (Assert.EnterMultipleScope())
+        {
+            Assert.That(nameTransformer.Prettify("RGB16"), Is.EqualTo("Rgb16"));
+            Assert.That(nameTransformer.Prettify("RGB16f"), Is.EqualTo("Rgb16f"));
+
+            Assert.That(nameTransformer.Prettify("MONO16"), Is.EqualTo("Mono16"));
+            Assert.That(nameTransformer.Prettify("MONO16f"), Is.EqualTo("Mono16f"));
         }
     }
 }
