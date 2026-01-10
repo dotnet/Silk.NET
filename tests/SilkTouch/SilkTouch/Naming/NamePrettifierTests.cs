@@ -11,8 +11,20 @@ public class NamePrettifierTests
     [TestCase("helloWorld", ExpectedResult = "HelloWorld")]
     [TestCase("HelloWorld", ExpectedResult = "HelloWorld")]
     [TestCase("HelloWorld123", ExpectedResult = "HelloWorld123")]
-    [TestCase("HelloWorld_123", ExpectedResult = "HelloWorld123")]
+    public string SimplePascalCase(string input, int longAcronymThreshold = 0) =>
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
+
+    [Theory]
     [TestCase("Hello_World", ExpectedResult = "HelloWorld")]
+    [TestCase("HelloWorld_123", ExpectedResult = "HelloWorld123")]
+    [TestCase("_Hello__World_", ExpectedResult = "HelloWorld")]
+    [TestCase("_HELLO__WORLD_", ExpectedResult = "HelloWorld")]
+    public string RemoveUnderscores(string input, int longAcronymThreshold = 0) =>
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
+
+    [Theory]
+    // Note the long acronym threshold
+    // GUI is too long so it becomes Gui
     [TestCase("HelloUI", 2, ExpectedResult = "HelloUI")]
     [TestCase("HelloGUI", 2, ExpectedResult = "HelloGui")]
     [TestCase("UIHello", 2, ExpectedResult = "UIHello")]
@@ -21,44 +33,44 @@ public class NamePrettifierTests
     [TestCase("Hello_GUI", 2, ExpectedResult = "HelloGui")]
     [TestCase("UI_Hello", 2, ExpectedResult = "UIHello")]
     [TestCase("GUI_Hello", 2, ExpectedResult = "GuiHello")]
-    [TestCase(
-        "G_UI_Hello",
-        2,
-        ExpectedResult = "GUiHello",
-        Description = "Both should be uppercased, but since they are adjacent, they conflict and revert back to pascal case"
-    )]
-    [TestCase("_Hello__World_", ExpectedResult = "HelloWorld")]
-    [TestCase("_HELLO__WORLD_", ExpectedResult = "HelloWorld")]
-    [TestCase("LONGACRONYM", 4, ExpectedResult = "Longacronym")]
-    [TestCase("LONG_ACRONYM", 3, ExpectedResult = "LongAcronym")]
-    [TestCase(
-        "LONG_ACRONYM_Can_Identify",
-        5,
-        ExpectedResult = "LONGAcronymCanIdentify",
-        Description = "LONG is short enough to be uppercased"
-    )]
-    [TestCase("LONG_Acronym", 5, ExpectedResult = "LONGAcronym")]
-    [TestCase(
-        "ACRONYM_CANNOT_IDENTIFY",
-        10,
-        ExpectedResult = "AcronymCannotIdentify",
-        Description = "The name contains only capitals so we can't properly identify acronyms"
-    )]
-    [TestCase(
-        "LONG_ACRONYM_Can_Identify",
-        10,
-        ExpectedResult = "LongAcronymCanIdentify",
-        Description = "We can identify in this case. But because both should be uppercased and adjacent, they conflict and revert back to pascal case"
-    )]
-    [TestCase(
-        "123",
-        ExpectedResult = "X123",
-        Description = "C# identifiers cannot start with a number"
-    )]
+    public string SimpleAcronyms(string input, int longAcronymThreshold = 0) =>
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
+
+    [Theory]
+    // Both want to be uppercased, but conflict, so both revert back to pascal case
+    [TestCase("ABC_XYZ_Hello", 4, ExpectedResult = "AbcXyzHello")]
+    // Single capitals are still treated as acronyms when checking for conflicts
+    [TestCase("G_UI_Hello", 2, ExpectedResult = "GUiHello")]
+    // XYZ is allowed to be uppercased since the first is too long
+    [TestCase("ABCDEFG_XYZ_Hello", 3, ExpectedResult = "AbcdefgXYZHello")]
+    public string AdjacentAcronyms(string input, int longAcronymThreshold = 0) =>
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
+
+    [Theory]
+    // C# identifiers cannot start with numbers
+    [TestCase("123", ExpectedResult = "X123")]
+    [TestCase("123Hello", ExpectedResult = "X123Hello")]
+    public string StartsWithNumber(string input, int longAcronymThreshold = 0) =>
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
+
+    [Theory]
+    // Add x between numbers to maintain separation
     [TestCase("123_123_123", ExpectedResult = "X123x123x123")]
     [TestCase("Hello123_123_123", ExpectedResult = "Hello123x123x123")]
+    public string ConsecutiveNumbers(string input, int longAcronymThreshold = 0) =>
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
+
+    [Theory]
+    // If the name is all caps, then we cannot safely identify acronyms (many false positives)
+    [TestCase("CANNOT_IDENTIFY_ABC_XYZ", 3, ExpectedResult = "CannotIdentifyAbcXyz")]
+    public string AllUppercaseCannotIdentifyAcronyms(string input, int longAcronymThreshold = 0) =>
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
+
+    [Theory]
     [TestCase("A123f123", ExpectedResult = "A123f123")]
-    public string CoreFunctionality(string input, int longAcronymThreshold = 0) =>
+    [TestCase("A123_f123", ExpectedResult = "A123f123")]
+    [TestCase("Hello_123a", ExpectedResult = "Hello123a")]
+    public string LowercaseFragments(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Test]
