@@ -38,60 +38,6 @@ public static partial class NameUtils
     );
 
     /// <summary>
-    /// Prettifies the given C# identifier.
-    /// </summary>
-    /// <param name="identifier">
-    /// The C# identifier to prettify.
-    /// Must be a valid identifier for defined behavior.
-    /// </param>
-    /// <param name="nameTransformer">
-    /// The transformer that processes the string.
-    /// This defines most of the logic and should be an instance of <see cref="NameTransformer"/>.
-    /// </param>
-    /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
-    /// <returns>The prettified C# identifier.</returns>
-    public static string Prettify(
-        this string identifier,
-        ICulturedStringTransformer nameTransformer,
-        bool allowAllCaps = false
-    )
-    {
-        if (identifier.Length == 0)
-        {
-            throw new InvalidOperationException("Cannot prettify an empty identifier");
-        }
-
-        var ret = string.Join(
-            null,
-            identifier
-                .Trim('_')
-                .LenientUnderscore()
-                .Humanize()
-                .Transform(nameTransformer)
-                .Pascalize()
-                .Where(x => char.IsLetter(x) || char.IsNumber(x))
-        );
-
-        if (ret.Length == 0)
-        {
-            throw new InvalidOperationException(
-                $"Prettification for '{identifier}' led to an empty identifier"
-            );
-        }
-
-        // Disallow all capitals
-        var retSpan = ret.AsSpan();
-        if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
-        {
-            Span<char> caps = stackalloc char[retSpan.Length - 1];
-            retSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
-            ret = $"{ret[0]}{caps}";
-        }
-
-        return !char.IsLetter(ret[0]) ? $"X{ret}" : ret;
-    }
-
-    /// <summary>
     /// Finds a common prefix in a set of names with respect to the word boundaries
     /// </summary>
     /// <param name="names">Set of names, snake_case</param>
@@ -254,6 +200,60 @@ public static partial class NameUtils
 
     [GeneratedRegex(@"([\p{Lu}]+)([\p{Lu}][\p{Ll}])")]
     private static partial Regex LowerUpperLower();
+
+    /// <summary>
+    /// Prettifies the given C# identifier.
+    /// </summary>
+    /// <param name="identifier">
+    /// The C# identifier to prettify.
+    /// Must be a valid identifier for defined behavior.
+    /// </param>
+    /// <param name="nameTransformer">
+    /// The transformer that processes the string.
+    /// This defines most of the logic and should be an instance of <see cref="NameTransformer"/>.
+    /// </param>
+    /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
+    /// <returns>The prettified C# identifier.</returns>
+    public static string Prettify(
+        this string identifier,
+        ICulturedStringTransformer nameTransformer,
+        bool allowAllCaps = false
+    )
+    {
+        if (identifier.Length == 0)
+        {
+            throw new InvalidOperationException("Cannot prettify an empty identifier");
+        }
+
+        var ret = string.Join(
+            null,
+            identifier
+                .Trim('_')
+                .LenientUnderscore()
+                .Humanize()
+                .Transform(nameTransformer)
+                .Pascalize()
+                .Where(x => char.IsLetter(x) || char.IsNumber(x))
+        );
+
+        if (ret.Length == 0)
+        {
+            throw new InvalidOperationException(
+                $"Prettification for '{identifier}' led to an empty identifier"
+            );
+        }
+
+        // Disallow all capitals
+        var retSpan = ret.AsSpan();
+        if (!allowAllCaps && retSpan.IndexOfAny(NotUppercase) == -1)
+        {
+            Span<char> caps = stackalloc char[retSpan.Length - 1];
+            retSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
+            ret = $"{ret[0]}{caps}";
+        }
+
+        return !char.IsLetter(ret[0]) ? $"X{ret}" : ret;
+    }
 
     internal partial class NameTransformer(int longAcronymThreshold) : ICulturedStringTransformer
     {
