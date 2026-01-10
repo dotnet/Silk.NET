@@ -1,4 +1,4 @@
-﻿public enum GlEnum
+﻿public enum GLEnum
 {
     [NameAffix("Suffix", "KhronosVendor", "EXT")]
     Rgb16EXT = 32852,
@@ -6,7 +6,7 @@
     Rgb16FEXT = 34843,
 }
 
-public enum AlEnum
+public enum ALEnum
 {
     [NameAffix("Suffix", "KhronosVendor", "SOFT")]
     Mono16SOFT = 4353,
