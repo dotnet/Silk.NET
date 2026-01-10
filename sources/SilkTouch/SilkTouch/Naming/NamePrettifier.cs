@@ -2,6 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Buffers;
+using System.Globalization;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Silk.NET.SilkTouch.Naming;
@@ -73,7 +75,33 @@ public class NamePrettifier(int longAcronymThreshold)
     /// <exception cref="InvalidOperationException">Thrown when the input or output is an empty identifier.</exception>
     public string Prettify(string identifier, bool allowAllCaps = false)
     {
+        if (identifier.Length == 0)
+        {
+            throw new InvalidOperationException("Cannot prettify an empty identifier");
+        }
+
         var words = BreakIntoWords(identifier);
+
+        // Add "x" to separate out numbers
+        for (var i = words.Count - 1; i >= 1; i--)
+        {
+            var startOfCurrent = GetCharType(words[i][0]);
+            var endOfPrevious = GetCharType(words[i - 1][^1]);
+
+            if (startOfCurrent is CharType.Number && endOfPrevious is CharType.Number)
+            {
+                words.Insert(i, "x");
+            }
+        }
+
+        // Add "X" if first word is a number
+        if (words.Count > 0)
+        {
+            if (GetCharType(words[0][0]) is CharType.Number)
+            {
+                words.Insert(0, "X");
+            }
+        }
 
         // Merge "fragments"
         for (var i = words.Count - 1; i >= 1; i--)
@@ -99,31 +127,69 @@ public class NamePrettifier(int longAcronymThreshold)
             }
         }
 
-        // if (identifier.Length == 0)
-        // {
-        //     throw new InvalidOperationException("Cannot prettify an empty identifier");
-        // }
-        //
-        // var result = identifier.Transform();
-        // if (result.Length == 0)
-        // {
-        //     throw new InvalidOperationException(
-        //         $"Prettification for '{identifier}' led to an empty identifier"
-        //     );
-        // }
-        //
-        // // Disallow all capitals
-        // var resultSpan = result.AsSpan();
-        // if (!allowAllCaps && resultSpan.IndexOfAny(NotUppercase) == -1)
-        // {
-        //     Span<char> caps = stackalloc char[resultSpan.Length - 1];
-        //     resultSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
-        //     result = $"{result[0]}{caps}";
-        // }
-        //
-        // return result;
+        // Apply pascal casing
+        var wasPreviousAcronym = false;
+        for (var wordI = 0; wordI < words.Count; wordI++)
+        {
+            var current = words[wordI];
+            var isCurrentAcronym = current.Length <= longAcronymThreshold && IsAcronym(current);
+            if (isCurrentAcronym)
+            {
+                // Check if previous or next are acronyms and if they are also preserved
+                // Eg: [RGBA, ASTC] should result in [Rgba, Astc] since "RGBAASTC" is hard to read
+                var isNextAcronym =
+                    wordI + 1 < words.Count
+                    && words[wordI + 1].Length <= longAcronymThreshold
+                    && IsAcronym(words[wordI + 1]);
 
-        return $"[{string.Join(", ", words)}] ({longAcronymThreshold})";
+                if (!wasPreviousAcronym && !isNextAcronym)
+                {
+                    // Preserve the acronym
+                    wasPreviousAcronym = true;
+                    continue;
+                }
+            }
+
+            wasPreviousAcronym = isCurrentAcronym;
+
+            // Apply pascal casing
+            var chars = current.ToCharArray();
+            chars[0] = char.ToUpper(chars[0]);
+
+            for (var charI = 1; charI < chars.Length; charI++)
+            {
+                chars[charI] = char.ToLower(chars[charI]);
+            }
+
+            words[wordI] = new string(chars);
+        }
+
+        if (longAcronymThreshold < 0)
+        {
+            Console.WriteLine();
+        }
+
+        var result = string.Join("", words);
+        if (result.Length == 0)
+        {
+            throw new InvalidOperationException(
+                $"Prettification for '{identifier}' led to an empty identifier"
+            );
+        }
+
+        // Disallow all capitals
+        var resultSpan = result.AsSpan();
+        if (!allowAllCaps && resultSpan.IndexOfAny(NameUtils.NotUppercase) == -1)
+        {
+            Span<char> caps = stackalloc char[resultSpan.Length - 1];
+            resultSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
+            result = $"{result[0]}{caps}";
+        }
+
+        // For testing
+        // result = $"[{string.Join(", ", words)}] ({longAcronymThreshold})";
+
+        return result;
     }
 
     private static List<string> BreakIntoWords(string identifier)
@@ -227,6 +293,9 @@ public class NamePrettifier(int longAcronymThreshold)
             { } when SeparatorChars.Contains(c) => CharType.Separator,
             _ => CharType.Other,
         };
+
+    private static bool IsAcronym(string word) =>
+        word.All(c => GetCharType(c) is CharType.Upper or CharType.Number);
 
     // public string Transform(string input, CultureInfo? culture)
     // {
