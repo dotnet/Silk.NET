@@ -14,8 +14,6 @@ internal enum TrimmerOrder
     NameTrimmer217 = 210,
     NameTrimmer218 = 220,
 
-    MixKhronosData = 300,
-
     PrettifyNamesTrimmer = 400,
 
     NameAffixerLateTrimmer = 500,

@@ -537,4 +537,35 @@ public class PrettifyNamesTests
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
+
+    [Test]
+    public async Task PreserveKhronosNamespaceEnumPrefix()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "GLEnum.gen.cs",
+                """
+                [NameAffix("Prefix", "KhronosNamespaceEnum", "GL")]
+                public enum GLEnum { }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(
+                new PrettifyNames.Configuration() { GlobalPrefixHints = ["gl"] }
+            ),
+            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // The presence of the NameAffix attribute should prevent the GL- prefix of GLEnum from being removed
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
 }

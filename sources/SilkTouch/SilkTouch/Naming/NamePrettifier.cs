@@ -118,10 +118,13 @@ public class NamePrettifier(int longAcronymThreshold)
             }
         }
 
+        // Ported from old prettifier
+        var cantIdentifyAcronyms =
+            IsAllCaps(identifier) && identifier.Length > longAcronymThreshold && words.Count > 1;
+
         // We can't identify acronyms if the name is in all caps,
         // unless it itself is short enough to be an acronym
-        var canIdentifyAcronyms =
-            !IsAllCaps(identifier) || identifier.Length <= longAcronymThreshold;
+        var canIdentifyAcronyms = !cantIdentifyAcronyms;
 
         // Apply pascal casing
         var wasPreviousAcronym = false;

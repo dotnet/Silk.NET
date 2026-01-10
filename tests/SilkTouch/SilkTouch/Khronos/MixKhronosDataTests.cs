@@ -8,9 +8,7 @@ using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Metadata;
-using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using NameTrimmer = Silk.NET.SilkTouch.Naming.NameTrimmer;
 
 namespace Silk.NET.SilkTouch.UnitTests.Khronos;
 
@@ -406,6 +404,59 @@ public class MixKhronosDataTests
                         IdentifyEnumTypeNonExclusiveVendors = true,
                     },
                     Vendors = ["ARB"],
+                },
+            },
+        };
+
+        await mixKhronosData.ExecuteAsync(context);
+
+        // The ARB suffix on the type name should be identified as KhronosNonExclusiveVendor
+        // This is because the enum group contains core enums
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task IdentifiesNamespaceEnumPrefix()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "GLEnum.gen.cs",
+                """
+                public enum GLEnum { }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+
+        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        {
+            Jobs =
+            {
+                ["OpenGL"] = new MixKhronosData.JobData
+                {
+                    Configuration = new MixKhronosData.Configuration()
+                    {
+                        IdentifyEnumTypeNonExclusiveVendors = true,
+                    },
+                    Vendors = ["ARB"],
+                    Groups =
+                    {
+                        {
+                            "GLEnum",
+                            new MixKhronosData.EnumGroup(
+                                "GLEnum",
+                                "GLEnum",
+                                "Glenum",
+                                [],
+                                false,
+                                null,
+                                "GL"
+                            )
+                        },
+                    },
                 },
             },
         };
