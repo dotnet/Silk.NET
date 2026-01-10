@@ -32,17 +32,23 @@ public class NamePrettifierTests
     [TestCase("LONGACRONYM", 4, ExpectedResult = "Longacronym")]
     [TestCase("LONG_ACRONYM", 3, ExpectedResult = "LongAcronym")]
     [TestCase(
-        "LONG_ACRONYM",
+        "LONG_ACRONYM_Can_Identify",
         5,
-        ExpectedResult = "LONGAcronym",
+        ExpectedResult = "LONGAcronymCanIdentify",
         Description = "LONG is short enough to be uppercased"
     )]
     [TestCase("LONG_Acronym", 5, ExpectedResult = "LONGAcronym")]
     [TestCase(
-        "LONG_ACRONYM",
+        "ACRONYM_CANNOT_IDENTIFY",
         10,
-        ExpectedResult = "LongAcronym",
-        Description = "Both should be uppercased, but since they are adjacent, they conflict and revert back to pascal case"
+        ExpectedResult = "AcronymCannotIdentify",
+        Description = "The name contains only capitals so we can't properly identify acronyms"
+    )]
+    [TestCase(
+        "LONG_ACRONYM_Can_Identify",
+        10,
+        ExpectedResult = "LongAcronymCanIdentify",
+        Description = "We can identify in this case. But because both should be uppercased and adjacent, they conflict and revert back to pascal case"
     )]
     [TestCase(
         "123",
