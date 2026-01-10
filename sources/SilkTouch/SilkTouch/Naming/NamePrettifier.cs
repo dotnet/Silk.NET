@@ -127,34 +127,42 @@ public class NamePrettifier(int longAcronymThreshold)
             }
         }
 
+        // We can't identify acronyms if the name is in all caps,
+        // unless it itself is short enough to be an acronym
+        var canIdentifyAcronyms =
+            !IsAllCaps(identifier) || identifier.Length <= longAcronymThreshold;
+
         // Apply pascal casing
         var wasPreviousAcronym = false;
         for (var wordI = 0; wordI < words.Count; wordI++)
         {
             var current = words[wordI];
-            var isCurrentAcronym = IsAcronym(current, longAcronymThreshold);
-            try
+            if (canIdentifyAcronyms)
             {
-                if (isCurrentAcronym)
+                var isCurrentAcronym = IsAcronym(current, longAcronymThreshold);
+                try
                 {
-                    // Check if previous or next are acronyms and if they are also preserved
-                    // Eg: [RGBA, ASTC] should result in [Rgba, Astc] since "RGBAASTC" is hard to read
-                    var isNextAcronym =
-                        wordI + 1 < words.Count
-                        && IsAcronym(words[wordI + 1], longAcronymThreshold);
-
-                    if (!wasPreviousAcronym && !isNextAcronym)
+                    if (isCurrentAcronym)
                     {
-                        // Preserve the acronym
-                        continue;
+                        // Check if previous or next are acronyms and if they are also preserved
+                        // Eg: [RGBA, ASTC] should result in [Rgba, Astc] since "RGBAASTC" is hard to read
+                        var isNextAcronym =
+                            wordI + 1 < words.Count
+                            && IsAcronym(words[wordI + 1], longAcronymThreshold);
+
+                        if (!wasPreviousAcronym && !isNextAcronym)
+                        {
+                            // Preserve the acronym
+                            continue;
+                        }
                     }
                 }
-            }
-            finally
-            {
-                // Save whether the current word was an acronym or not
-                // This is important since we lose information about the current word after it is modified below
-                wasPreviousAcronym = isCurrentAcronym;
+                finally
+                {
+                    // Save whether the current word was an acronym or not
+                    // This is important since we lose information about the current word after it is modified below
+                    wasPreviousAcronym = isCurrentAcronym;
+                }
             }
 
             // Apply pascal casing
@@ -179,7 +187,7 @@ public class NamePrettifier(int longAcronymThreshold)
 
         // Disallow all capitals
         var resultSpan = result.AsSpan();
-        if (!allowAllCaps && resultSpan.IndexOfAny(NameUtils.NotUppercase) == -1)
+        if (!allowAllCaps && IsAllCaps(result))
         {
             Span<char> caps = stackalloc char[resultSpan.Length - 1];
             resultSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
@@ -294,6 +302,9 @@ public class NamePrettifier(int longAcronymThreshold)
     private static bool IsAcronym(string word, int threshold) =>
         word.Length <= threshold
         && word.All(c => GetCharType(c) is CharType.Upper or CharType.Number);
+
+    private static bool IsAllCaps(string word) =>
+        word.All(c => GetCharType(c) is CharType.Upper or CharType.Number or CharType.Separator);
 
     // public string Transform(string input, CultureInfo? culture)
     // {
