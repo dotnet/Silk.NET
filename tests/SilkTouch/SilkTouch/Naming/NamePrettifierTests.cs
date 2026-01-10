@@ -5,7 +5,7 @@ using Silk.NET.SilkTouch.Naming;
 
 namespace Silk.NET.SilkTouch.UnitTests.Naming;
 
-public class PrettifyTests
+public class NamePrettifierTests
 {
     [Theory]
     [TestCase("HelloWorld", ExpectedResult = "HelloWorld")]
