@@ -52,10 +52,7 @@ public class NameTrimmerTests : NameTrimmer
         };
         foreach (var (key, (trimmed, _)) in test)
         {
-            Assert.That(
-                trimmed.Prettify(new NameUtils.NameTransformer(4)),
-                Is.EqualTo(expected[key])
-            );
+            Assert.That(new NamePrettifier(4).Prettify(trimmed), Is.EqualTo(expected[key]));
         }
     }
 
@@ -87,10 +84,7 @@ public class NameTrimmerTests : NameTrimmer
         };
         foreach (var (key, (trimmed, _)) in test)
         {
-            Assert.That(
-                trimmed.Prettify(new NameUtils.NameTransformer(4)),
-                Is.EqualTo(expected[key])
-            );
+            Assert.That(new NamePrettifier(4).Prettify(trimmed), Is.EqualTo(expected[key]));
         }
     }
 
@@ -118,10 +112,7 @@ public class NameTrimmerTests : NameTrimmer
         };
         foreach (var (key, (trimmed, _)) in test)
         {
-            Assert.That(
-                trimmed.Prettify(new NameUtils.NameTransformer(4)),
-                Is.EqualTo(expected[key])
-            );
+            Assert.That(new NamePrettifier(4).Prettify(trimmed), Is.EqualTo(expected[key]));
         }
     }
 

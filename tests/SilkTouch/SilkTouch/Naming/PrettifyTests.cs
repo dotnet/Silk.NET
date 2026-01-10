@@ -35,14 +35,14 @@ public class PrettifyTests
         Description = "C# identifiers cannot start with a number"
     )]
     public string CommonCases(string input, int longAcronymThreshold = 0) =>
-        input.Prettify(new NameUtils.NameTransformer(longAcronymThreshold));
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Test]
     public void IsNotAffectedBy_TrailingUnderscore()
     {
-        var nameTransformer = new NameUtils.NameTransformer(4);
-        var withoutUnderscore = "RGB32F".Prettify(nameTransformer);
-        var withUnderscore = "RGB32F_".Prettify(nameTransformer);
+        var nameTransformer = new NamePrettifier(4);
+        var withoutUnderscore = nameTransformer.Prettify("RGB32F");
+        var withUnderscore = nameTransformer.Prettify("RGB32F_");
 
         Assert.That(withUnderscore, Is.EqualTo(withoutUnderscore));
     }
@@ -50,15 +50,15 @@ public class PrettifyTests
     [Test]
     public void Capital_AfterNumber_DoesNotAffect_PreviousWord()
     {
-        var nameTransformer = new NameUtils.NameTransformer(4);
+        var nameTransformer = new NamePrettifier(4);
 
         using (Assert.EnterMultipleScope())
         {
-            Assert.That("RGB16".Prettify(nameTransformer), Is.EqualTo("Rgb16"));
-            Assert.That("RGB16F".Prettify(nameTransformer), Is.EqualTo("Rgb16F"));
+            Assert.That(nameTransformer.Prettify("RGB16"), Is.EqualTo("Rgb16"));
+            Assert.That(nameTransformer.Prettify("RGB16F"), Is.EqualTo("Rgb16F"));
 
-            Assert.That("MONO16".Prettify(nameTransformer), Is.EqualTo("Mono16"));
-            Assert.That("MONO16F".Prettify(nameTransformer), Is.EqualTo("Mono16F"));
+            Assert.That(nameTransformer.Prettify("MONO16"), Is.EqualTo("Mono16"));
+            Assert.That(nameTransformer.Prettify("MONO16F"), Is.EqualTo("Mono16F"));
         }
     }
 }
