@@ -82,7 +82,7 @@ public class NamePrettifier(int longAcronymThreshold)
 
         var words = BreakIntoWords(identifier);
 
-        // Add "x" to separate out numbers
+        // Add "X" to separate out numbers
         for (var i = words.Count - 1; i >= 1; i--)
         {
             var startOfCurrent = GetCharType(words[i][0]);
@@ -90,7 +90,7 @@ public class NamePrettifier(int longAcronymThreshold)
 
             if (startOfCurrent is CharType.Number && endOfPrevious is CharType.Number)
             {
-                words.Insert(i, "x");
+                words.Insert(i, "X");
             }
         }
 
@@ -109,17 +109,18 @@ public class NamePrettifier(int longAcronymThreshold)
             var startOfCurrent = GetCharType(words[i][0]);
             var endOfPrevious = GetCharType(words[i - 1][^1]);
 
-            // Merge lowercase into previous numbers
-            // Eg: [RGB, 16, f] becomes [RGB, 16f]
-            // Eg: [RGB, 16, F] remains [RGB, 16, F]
-            if (startOfCurrent is CharType.Other && endOfPrevious is CharType.Number)
-            {
-                words[i - 1] += words[i];
-                words.RemoveAt(i);
-            }
+            // // Merge lowercase into previous numbers
+            // // Eg: [RGB, 16, f] becomes [RGB, 16f]
+            // // Eg: [RGB, 16, F] remains [RGB, 16, F]
+            // if (startOfCurrent is CharType.Other && endOfPrevious is CharType.Number)
+            // {
+            //     words[i - 1] += words[i];
+            //     words.RemoveAt(i);
+            // }
 
             // Merge numbers into previous non-numbers
             // Eg: [RGB, 16] becomes [RGB16]
+            // This affects acronyms since numbers are treated as being part of acronyms in IsAcronym
             if (startOfCurrent is CharType.Number && endOfPrevious is not CharType.Number)
             {
                 words[i - 1] += words[i];
@@ -187,7 +188,7 @@ public class NamePrettifier(int longAcronymThreshold)
 
         // Disallow all capitals
         var resultSpan = result.AsSpan();
-        if (!allowAllCaps && IsAllCaps(result))
+        if (!allowAllCaps && IsAllCapsStrict(result))
         {
             Span<char> caps = stackalloc char[resultSpan.Length - 1];
             resultSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
@@ -305,6 +306,10 @@ public class NamePrettifier(int longAcronymThreshold)
 
     private static bool IsAllCaps(string word) =>
         word.All(c => GetCharType(c) is CharType.Upper or CharType.Number or CharType.Separator);
+
+    // TODO: Rename this or handle this better
+    private static bool IsAllCapsStrict(string word) =>
+        word.All(c => GetCharType(c) is CharType.Upper);
 
     // public string Transform(string input, CultureInfo? culture)
     // {

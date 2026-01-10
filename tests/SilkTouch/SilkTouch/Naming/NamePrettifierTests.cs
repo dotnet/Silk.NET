@@ -73,6 +73,12 @@ public class NamePrettifierTests
     public string LowercaseFragments(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
+    [Theory]
+    [TestCase("StdVideoAV1FilmGrain", 4, ExpectedResult = "StdVideoAV1FilmGrain")]
+    [TestCase("N3D", 0, ExpectedResult = "N3D")]
+    public string Regressions(string input, int longAcronymThreshold = 0) =>
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
+
     [Test]
     public void IsNotAffectedBy_TrailingUnderscore()
     {
