@@ -87,6 +87,7 @@ public class NamePrettifierTests
     // Note that these names typically become Pascal cased anyway
     // since allow all caps is usually false.
     [TestCase("RGB", 4, ExpectedResult = "RGB")]
+    [TestCase("RGBA", 4, ExpectedResult = "RGBA")]
     public string ShortUppercasedNames_ThatCanBeAcronyms(
         string input,
         int longAcronymThreshold = 0

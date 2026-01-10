@@ -65,10 +65,10 @@ public class NamePrettifier(int longAcronymThreshold)
     /// <summary>
     /// Prettifies the given C# identifier.
     /// </summary>
-    /// <param name="identifier">
-    /// The C# identifier to prettify.
-    /// Must be a valid identifier for defined behavior.
-    /// </param>
+    /// <remarks>
+    /// See the test cases for this method to see examples on how this method behaves.
+    /// </remarks>
+    /// <param name="identifier">A string that contains only valid C# identifier characters.</param>
     /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
     /// <returns>The prettified C# identifier.</returns>
     /// <exception cref="InvalidOperationException">Thrown when the input or output is an empty identifier.</exception>
@@ -103,20 +103,26 @@ public class NamePrettifier(int longAcronymThreshold)
         }
 
         // Pretend there is an underscore between each word
-        // TODO Explain this
+        // This is used as a heuristic for determining whether we can treat short, all uppercase words as acronyms
+        //
+        // Eg: Assuming longAcronymThreshold is 4
+        // ["RGBA"] has an effective length of 4 and can be treated as an acronym even though it is fully uppercase
+        // "RGBA" remains "RGBA" (but is usually forced back to pascal case due to the allowAllCaps parameter)
+        // ["REG", "0"] is also 4 characters, but has an effective length of 5
+        // "REG0" therefore becomes "Reg0"
+        //
+        // Comment from Exanite: This behavior is ported from the original Silk 3 prettifier, which used spaces instead.
+        // I'm not sure if this was intentionally taken advantage of or a happy accident from using Humanizer's Humanize method.
         var effectiveLength = int.Max(0, words.Count - 1);
         foreach (var word in words)
         {
             effectiveLength += word.Length;
         }
 
-        // Ported from old prettifier
-        // TODO Explain this
-        var cantIdentifyAcronyms = IsAllCaps(identifier) && effectiveLength > longAcronymThreshold;
-
-        // We can't identify acronyms if the name is in all caps,
-        // unless it itself is short enough to be an acronym
-        var canIdentifyAcronyms = !cantIdentifyAcronyms;
+        // We can only identify acronyms if the name is not in all caps
+        // We make an exception for short identifiers since the entire name might be an acronym
+        var canIdentifyAcronyms =
+            !IsAllNonLower(identifier) || effectiveLength <= longAcronymThreshold;
 
         // Merge "fragments"
         for (var i = words.Count - 1; i >= 1; i--)
@@ -136,9 +142,9 @@ public class NamePrettifier(int longAcronymThreshold)
 
         // Apply pascal casing
         var wasPreviousAcronym = false;
-        for (var wordI = 0; wordI < words.Count; wordI++)
+        for (var i = 0; i < words.Count; i++)
         {
-            var current = words[wordI];
+            var current = words[i];
             if (canIdentifyAcronyms)
             {
                 var isCurrentAcronym = IsAcronym(current, longAcronymThreshold);
@@ -149,8 +155,7 @@ public class NamePrettifier(int longAcronymThreshold)
                         // Check if previous or next are acronyms and if they are also preserved
                         // Eg: [RGBA, ASTC] should result in [Rgba, Astc] since "RGBAASTC" is hard to read
                         var isNextAcronym =
-                            wordI + 1 < words.Count
-                            && IsAcronym(words[wordI + 1], longAcronymThreshold);
+                            i + 1 < words.Count && IsAcronym(words[i + 1], longAcronymThreshold);
 
                         // TODO: Temporarily disabled
                         // if (!wasPreviousAcronym && !isNextAcronym)
@@ -169,7 +174,7 @@ public class NamePrettifier(int longAcronymThreshold)
             }
 
             // Apply pascal casing
-            words[wordI] = UpperCaseFirstCharacter(current);
+            words[i] = PascalCaseWord(current);
         }
 
         var result = string.Join("", words);
@@ -182,7 +187,7 @@ public class NamePrettifier(int longAcronymThreshold)
 
         // Disallow all capitals
         var resultSpan = result.AsSpan();
-        if (!allowAllCaps && IsAllCapsStrict(result))
+        if (!allowAllCaps && IsAllCaps(result))
         {
             Span<char> caps = stackalloc char[resultSpan.Length - 1];
             resultSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);
@@ -193,10 +198,12 @@ public class NamePrettifier(int longAcronymThreshold)
     }
 
     /// <summary>
-    /// TODO: Probably move this to a separate class and also needs documentation
+    /// Splits the given C# identifier into separate words.
     /// </summary>
-    /// <param name="identifier"></param>
-    /// <returns></returns>
+    /// <remarks>
+    /// See the test cases for this method to see examples on how this method behaves.
+    /// </remarks>
+    /// <param name="identifier">A string that contains only valid C# identifier characters.</param>
     public static List<string> BreakIntoWords(string identifier)
     {
         var words = new List<string>();
@@ -290,6 +297,10 @@ public class NamePrettifier(int longAcronymThreshold)
         }
     }
 
+    /// <summary>
+    /// Gets the char type for the specified character according
+    /// to the categorization defined by <see cref="CharType"/>.
+    /// </summary>
     private static CharType GetCharType(char c) =>
         c switch
         {
@@ -299,28 +310,39 @@ public class NamePrettifier(int longAcronymThreshold)
             _ => CharType.Other,
         };
 
+    /// <summary>
+    /// Returns whether the word is an acronym or not for the purposes of pascal casing.
+    /// If the word is longer than the threshold, it is not considered an acronym.
+    /// </summary>
     private static bool IsAcronym(string word, int threshold) =>
-        word.Length <= threshold
-        && word.All(c => GetCharType(c) is CharType.Upper or CharType.Number);
+        word.Length <= threshold && IsAllNonLower(word);
 
-    private static bool IsAllCaps(string word) =>
-        word.All(c => GetCharType(c) is CharType.Upper or CharType.Number or CharType.Separator);
+    /// <summary>
+    /// Returns if the word is entirely composed of non-lowercase characters.
+    /// Uncategorized characters are considered to be lowercase for this method.
+    /// </summary>
+    private static bool IsAllNonLower(string word) =>
+        !word.Any(c => GetCharType(c) is CharType.Other);
 
-    // TODO: Rename this or handle this better
-    private static bool IsAllCapsStrict(string word) =>
-        word.All(c => GetCharType(c) is CharType.Upper);
+    /// <summary>
+    /// Returns if the word is entirely composed of capital letters.
+    /// </summary>
+    private static bool IsAllCaps(string word) => word.All(c => GetCharType(c) is CharType.Upper);
 
-    private static string UpperCaseFirstCharacter(string current)
+    /// <summary>
+    /// Pascal cases the provided word.
+    /// This sets the first character to be uppercase and the rest to be lowercase.
+    /// </summary>
+    private static string PascalCaseWord(string word)
     {
-        var chars = current.ToCharArray();
+        var chars = word.ToCharArray();
         chars[0] = char.ToUpper(chars[0]);
 
-        for (var charI = 1; charI < chars.Length; charI++)
+        for (var i = 1; i < chars.Length; i++)
         {
-            chars[charI] = char.ToLower(chars[charI]);
+            chars[i] = char.ToLower(chars[i]);
         }
 
-        var a = new string(chars);
-        return a;
+        return new string(chars);
     }
 }
