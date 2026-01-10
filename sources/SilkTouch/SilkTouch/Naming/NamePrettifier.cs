@@ -22,9 +22,25 @@ public class NamePrettifier(int longAcronymThreshold)
 {
     private enum CharType
     {
+        /// <summary>
+        /// Characters that are capital letters.
+        /// </summary>
         Upper,
+
+        /// <summary>
+        /// Characters that are digits.
+        /// </summary>
         Number,
+
+        /// <summary>
+        /// Characters that separate words in C# identifiers.
+        /// </summary>
         Separator,
+
+        /// <summary>
+        /// All other characters.
+        /// Often lowercase letters.
+        /// </summary>
         Other,
     }
 
@@ -41,7 +57,7 @@ public class NamePrettifier(int longAcronymThreshold)
     private static readonly SearchValues<char> NumberChars = SearchValues.Create("0123456789");
 
     /// <summary>
-    /// All characters that separate words in a C# identifier.
+    /// All characters that separate words in C# identifiers.
     /// </summary>
     private static readonly SearchValues<char> SeparatorChars = SearchValues.Create("_");
 
@@ -58,6 +74,30 @@ public class NamePrettifier(int longAcronymThreshold)
     public string Prettify(string identifier, bool allowAllCaps = false)
     {
         var words = BreakIntoWords(identifier);
+
+        // Merge "fragments"
+        for (var i = words.Count - 1; i >= 1; i--)
+        {
+            var startOfCurrent = GetCharType(words[i][0]);
+            var endOfPrevious = GetCharType(words[i - 1][^1]);
+
+            // Merge lowercase into previous
+            // Eg: [RGB, 16, f] becomes [RGB, 16f]
+            // Eg: [RGB, 16, F] remains [RGB, 16, F]
+            if (startOfCurrent is CharType.Other && endOfPrevious is CharType.Number)
+            {
+                words[i - 1] += words[i];
+                words.RemoveAt(i);
+            }
+
+            // Merge numbers into previous
+            // Eg: [RGB, 16] becomes [RGB16]
+            if (startOfCurrent is CharType.Number && endOfPrevious is not CharType.Number)
+            {
+                words[i - 1] += words[i];
+                words.RemoveAt(i);
+            }
+        }
 
         // if (identifier.Length == 0)
         // {
@@ -91,6 +131,7 @@ public class NamePrettifier(int longAcronymThreshold)
         var words = new List<string>();
         var currentWord = new StringBuilder();
 
+        // Break into words
         for (var i = 0; i < identifier.Length; i++)
         {
             var c = identifier[i];
@@ -162,6 +203,7 @@ public class NamePrettifier(int longAcronymThreshold)
             }
         }
 
+        // Flush pending word
         NewWord();
 
         return words;
