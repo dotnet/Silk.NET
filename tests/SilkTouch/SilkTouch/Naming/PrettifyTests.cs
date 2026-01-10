@@ -16,6 +16,16 @@ public class PrettifyTests
     [TestCase("HelloGUI", 2, ExpectedResult = "HelloGui")]
     [TestCase("UIHello", 2, ExpectedResult = "UIHello")]
     [TestCase("GUIHello", 2, ExpectedResult = "GuiHello")]
+    [TestCase("Hello_UI", 2, ExpectedResult = "HelloUI")]
+    [TestCase("Hello_GUI", 2, ExpectedResult = "HelloGui")]
+    [TestCase("UI_Hello", 2, ExpectedResult = "UIHello")]
+    [TestCase("GUI_Hello", 2, ExpectedResult = "GuiHello")]
+    [TestCase(
+        "G_UI_Hello",
+        2,
+        ExpectedResult = "GUiHello",
+        Description = "Both should be uppercased, but since they are adjacent, they conflict and revert back to pascal case"
+    )]
     [TestCase("_Hello__World_", ExpectedResult = "HelloWorld")]
     [TestCase("_HELLO__WORLD_", ExpectedResult = "HelloWorld")]
     [TestCase("LONGACRONYM", 4, ExpectedResult = "Longacronym")]
@@ -31,7 +41,7 @@ public class PrettifyTests
         "LONG_ACRONYM",
         10,
         ExpectedResult = "LongAcronym",
-        Description = "Both should be uppercased, but since they are adjacent, they conflict and revert back to lowercase"
+        Description = "Both should be uppercased, but since they are adjacent, they conflict and revert back to pascal case"
     )]
     [TestCase(
         "123",
