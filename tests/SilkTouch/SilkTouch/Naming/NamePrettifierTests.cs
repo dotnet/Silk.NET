@@ -47,6 +47,12 @@ public class NamePrettifierTests
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Theory]
+    [TestCase("StdVideoAV1FilmGrain", 4, ExpectedResult = "StdVideoAV1FilmGrain")]
+    [TestCase("N3D", 4, ExpectedResult = "N3D")]
+    public string AcronymsWithNumbers(string input, int longAcronymThreshold = 0) =>
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
+
+    [Theory]
     // C# identifiers cannot start with numbers
     [TestCase("123", ExpectedResult = "X123")]
     [TestCase("123Hello", ExpectedResult = "X123Hello")]
@@ -61,12 +67,6 @@ public class NamePrettifierTests
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Theory]
-    // If the name is all caps, then we cannot safely identify acronyms (many false positives)
-    [TestCase("CANNOT_IDENTIFY_ABC_XYZ", 3, ExpectedResult = "CannotIdentifyAbcXyz")]
-    public string AllUppercaseCannotIdentifyAcronyms(string input, int longAcronymThreshold = 0) =>
-        new NamePrettifier(longAcronymThreshold).Prettify(input);
-
-    [Theory]
     [TestCase("A123f123", ExpectedResult = "A123F123")]
     [TestCase("A123_f123", ExpectedResult = "A123F123")]
     [TestCase("Hello_123a", ExpectedResult = "Hello123A")]
@@ -74,9 +74,9 @@ public class NamePrettifierTests
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Theory]
-    [TestCase("StdVideoAV1FilmGrain", 4, ExpectedResult = "StdVideoAV1FilmGrain")]
-    [TestCase("N3D", 4, ExpectedResult = "N3D")]
-    public string AcronymsWithNumbers(string input, int longAcronymThreshold = 0) =>
+    // If the name is all caps, then we cannot safely identify acronyms (many false positives)
+    [TestCase("CANNOT_IDENTIFY_ABC_XYZ", 3, ExpectedResult = "CannotIdentifyAbcXyz")]
+    public string AllUppercaseCannotIdentifyAcronyms(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Theory]
