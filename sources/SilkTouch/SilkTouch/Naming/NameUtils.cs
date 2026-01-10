@@ -38,28 +38,33 @@ public static partial class NameUtils
     );
 
     /// <summary>
-    /// Prettifies the given string.
+    /// Prettifies the given C# identifier.
     /// </summary>
-    /// <param name="str">The string to prettify.</param>
+    /// <param name="identifier">
+    /// The C# identifier to prettify.
+    /// Must be a valid identifier for defined behavior.
+    /// </param>
     /// <param name="nameTransformer">
-    /// The transformer that mutates a humanised string before being converted back to pascal case.
+    /// The transformer that processes the string.
+    /// This defines most of the logic and should be an instance of <see cref="NameTransformer"/>.
     /// </param>
     /// <param name="allowAllCaps">Whether the output is allowed to be fully capitalised ("all caps").</param>
-    /// <returns>The pretty string.</returns>
+    /// <returns>The prettified C# identifier.</returns>
     public static string Prettify(
-        this string str,
+        this string identifier,
         ICulturedStringTransformer nameTransformer,
         bool allowAllCaps = false
     )
     {
-        if (str.Length == 0)
+        if (identifier.Length == 0)
         {
-            throw new InvalidOperationException("Cannot prettify an empty string");
+            throw new InvalidOperationException("Cannot prettify an empty identifier");
         }
 
         var ret = string.Join(
             null,
-            str.Trim('_')
+            identifier
+                .Trim('_')
                 .LenientUnderscore()
                 .Humanize()
                 .Transform(nameTransformer)
@@ -70,7 +75,7 @@ public static partial class NameUtils
         if (ret.Length == 0)
         {
             throw new InvalidOperationException(
-                $"Prettification for '{str}' led to an empty string"
+                $"Prettification for '{identifier}' led to an empty identifier"
             );
         }
 
