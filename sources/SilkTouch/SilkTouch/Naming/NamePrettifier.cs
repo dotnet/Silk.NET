@@ -102,6 +102,22 @@ public class NamePrettifier(int longAcronymThreshold)
             }
         }
 
+        // Pretend there is an underscore between each word
+        // TODO Explain this
+        var effectiveLength = int.Max(0, words.Count - 1);
+        foreach (var word in words)
+        {
+            effectiveLength += word.Length;
+        }
+
+        // Ported from old prettifier
+        // TODO Explain this
+        var cantIdentifyAcronyms = IsAllCaps(identifier) && effectiveLength > longAcronymThreshold;
+
+        // We can't identify acronyms if the name is in all caps,
+        // unless it itself is short enough to be an acronym
+        var canIdentifyAcronyms = !cantIdentifyAcronyms;
+
         // Merge "fragments"
         for (var i = words.Count - 1; i >= 1; i--)
         {
@@ -117,14 +133,6 @@ public class NamePrettifier(int longAcronymThreshold)
                 words.RemoveAt(i);
             }
         }
-
-        // Ported from old prettifier
-        var cantIdentifyAcronyms =
-            IsAllCaps(identifier) && identifier.Length > longAcronymThreshold && words.Count > 1;
-
-        // We can't identify acronyms if the name is in all caps,
-        // unless it itself is short enough to be an acronym
-        var canIdentifyAcronyms = !cantIdentifyAcronyms;
 
         // Apply pascal casing
         var wasPreviousAcronym = false;

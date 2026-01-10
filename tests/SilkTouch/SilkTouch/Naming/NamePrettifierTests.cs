@@ -75,9 +75,39 @@ public class NamePrettifierTests
 
     [Theory]
     [TestCase("StdVideoAV1FilmGrain", 4, ExpectedResult = "StdVideoAV1FilmGrain")]
-    [TestCase("N3D", 0, ExpectedResult = "N3D")]
+    [TestCase("N3D", 4, ExpectedResult = "N3D")]
     public string Regressions(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
+
+    [Theory]
+    // This set of tests checks for how the following case is handled:
+    // 1. The name is all uppercase
+    // 2. The name is short (less than or equal to acronym threshold)
+    // 3. There is 1 word after the name has been split
+    [TestCase("RGB", 4, ExpectedResult = "RGB")]
+    public string ShortUppercasedNames_ThatCanBeAcronyms(
+        string input,
+        int longAcronymThreshold = 0
+    ) =>
+        // Note the allow all caps
+        new NamePrettifier(longAcronymThreshold).Prettify(input, true);
+
+    [Theory]
+    // This set of tests checks for how the following case is handled:
+    // 1. The name is all uppercase (ignoring numbers)
+    // 2. The name is short (less than or equal to acronym threshold)
+    // 3. There are multiple words after the name has been split
+    [TestCase("SN3D", 4, ExpectedResult = "Sn3D")]
+    [TestCase("AUX0", 4, ExpectedResult = "Aux0")]
+    [TestCase("I_TO_I", 4, ExpectedResult = "IToI")]
+    [TestCase("REG0", 4, ExpectedResult = "Reg0")]
+    [TestCase("REG_0", 4, ExpectedResult = "Reg0")]
+    public string ShortUppercasedNames_ThatCannotBeAcronyms(
+        string input,
+        int longAcronymThreshold = 0
+    ) =>
+        // Note the allow all caps
+        new NamePrettifier(longAcronymThreshold).Prettify(input, true);
 
     [Test]
     public void IsNotAffectedBy_TrailingUnderscore()
