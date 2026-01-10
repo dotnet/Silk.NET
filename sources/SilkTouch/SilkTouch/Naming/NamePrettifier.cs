@@ -108,15 +108,6 @@ public class NamePrettifier(int longAcronymThreshold)
             var startOfCurrent = GetCharType(words[i][0]);
             var endOfPrevious = GetCharType(words[i - 1][^1]);
 
-            // // Merge lowercase into previous numbers
-            // // Eg: [RGB, 16, f] becomes [RGB, 16f]
-            // // Eg: [RGB, 16, F] remains [RGB, 16, F]
-            // if (startOfCurrent is CharType.Other && endOfPrevious is CharType.Number)
-            // {
-            //     words[i - 1] += words[i];
-            //     words.RemoveAt(i);
-            // }
-
             // Merge numbers into previous non-numbers
             // Eg: [RGB, 16] becomes [RGB16]
             // This affects acronyms since numbers are treated as being part of acronyms in IsAcronym

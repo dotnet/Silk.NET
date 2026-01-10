@@ -67,9 +67,9 @@ public class NamePrettifierTests
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Theory]
-    [TestCase("A123f123", ExpectedResult = "A123f123")]
-    [TestCase("A123_f123", ExpectedResult = "A123f123")]
-    [TestCase("Hello_123a", ExpectedResult = "Hello123a")]
+    [TestCase("A123f123", ExpectedResult = "A123F123")]
+    [TestCase("A123_f123", ExpectedResult = "A123F123")]
+    [TestCase("Hello_123a", ExpectedResult = "Hello123A")]
     public string LowercaseFragments(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
@@ -105,17 +105,17 @@ public class NamePrettifierTests
     }
 
     [Test]
-    public void Lowercase_AfterNumber_IsPartOf_PreviousWord()
+    public void Lowercase_AfterNumber_IsPartOf_NewWord()
     {
         var nameTransformer = new NamePrettifier(4);
 
         using (Assert.EnterMultipleScope())
         {
             Assert.That(nameTransformer.Prettify("RGB16"), Is.EqualTo("Rgb16"));
-            Assert.That(nameTransformer.Prettify("RGB16f"), Is.EqualTo("Rgb16f"));
+            Assert.That(nameTransformer.Prettify("RGB16f"), Is.EqualTo("Rgb16F"));
 
             Assert.That(nameTransformer.Prettify("MONO16"), Is.EqualTo("Mono16"));
-            Assert.That(nameTransformer.Prettify("MONO16f"), Is.EqualTo("Mono16f"));
+            Assert.That(nameTransformer.Prettify("MONO16f"), Is.EqualTo("Mono16F"));
         }
     }
 }
