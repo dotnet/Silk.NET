@@ -49,6 +49,7 @@ public class NamePrettifierTests
     [Theory]
     // Both want to be uppercased, but conflict, so both revert back to pascal case
     [TestCase("ABC_XYZ_Hello", 4, ExpectedResult = "AbcXyzHello")]
+    [TestCase("ABC_XYZ_IJK_Hello", 4, ExpectedResult = "AbcXyzIjkHello")]
     // Single capitals are still treated as acronyms when checking for conflicts
     [TestCase("G_UI_Hello", 2, ExpectedResult = "GUiHello")]
     // XYZ is allowed to be uppercased since the first is too long
