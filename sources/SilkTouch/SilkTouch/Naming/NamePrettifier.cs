@@ -190,6 +190,27 @@ public class NamePrettifier(int longAcronymThreshold)
             words[i] = PascalCaseWord(current);
         }
 
+        // Lowercase "X" if it is between two numbers
+        // Eg: [2, X2] becomes [2, x2]
+        // "2X2" becomes "2x2"
+        // Note that numbers get merged into previous words above
+        for (var i = words.Count - 1; i >= 1; i--)
+        {
+            var current = words[i];
+            if (
+                current.Length >= 2
+                && current[0] == 'X'
+                && GetCharType(current[1]) is CharType.Number
+            )
+            {
+                var endOfPrevious = GetCharType(words[i - 1][^1]);
+                if (endOfPrevious is CharType.Number)
+                {
+                    words[i] = "x" + current[1..];
+                }
+            }
+        }
+
         var result = string.Join("", words);
         if (result.Length == 0)
         {
