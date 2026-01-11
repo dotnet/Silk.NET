@@ -37,19 +37,26 @@ public class NamePrettifierTests
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Theory]
+    [TestCase("StdVideoAV1FilmGrain", 4, ExpectedResult = "StdVideoAV1FilmGrain")]
+    // The 3 is considered part of the acronym so the acronym's length is 4, exceeding the threshold of 3
+    [TestCase("XYZ3", 3, ExpectedResult = "Xyz3")]
+    // The D is not part of the acronym
+    [TestCase("N3D", 4, ExpectedResult = "N3D")]
+    public string AcronymsWithNumbers(string input, int longAcronymThreshold = 0) =>
+        new NamePrettifier(longAcronymThreshold).Prettify(input);
+
+    [Theory]
     // Both want to be uppercased, but conflict, so both revert back to pascal case
     [TestCase("ABC_XYZ_Hello", 4, ExpectedResult = "AbcXyzHello")]
     // Single capitals are still treated as acronyms when checking for conflicts
     [TestCase("G_UI_Hello", 2, ExpectedResult = "GUiHello")]
     // XYZ is allowed to be uppercased since the first is too long
     [TestCase("ABCDEFG_XYZ_Hello", 3, ExpectedResult = "AbcdefgXYZHello")]
-    public string AdjacentAcronyms(string input, int longAcronymThreshold = 0) =>
-        new NamePrettifier(longAcronymThreshold).Prettify(input);
-
-    [Theory]
-    [TestCase("StdVideoAV1FilmGrain", 4, ExpectedResult = "StdVideoAV1FilmGrain")]
-    [TestCase("N3D", 4, ExpectedResult = "N3D")]
-    public string AcronymsWithNumbers(string input, int longAcronymThreshold = 0) =>
+    // 123 is considered part of acronyms for the purposes of preserving acronyms,
+    // but not for whether consecutive acronyms conflict
+    [TestCase("ABC123_XYZ", 6, ExpectedResult = "ABC123XYZ")]
+    [TestCase("ABC123_XYZ", 3, ExpectedResult = "Abc123XYZ")]
+    public string ConsecutiveAcronyms(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Theory]
@@ -70,7 +77,8 @@ public class NamePrettifierTests
     [TestCase("A123f123", ExpectedResult = "A123F123")]
     [TestCase("A123_f123", ExpectedResult = "A123F123")]
     [TestCase("Hello_123a", ExpectedResult = "Hello123A")]
-    public string LowercaseFragments(string input, int longAcronymThreshold = 0) =>
+    [TestCase("Hello_123a_hello", ExpectedResult = "Hello123AHello")]
+    public string LowercaseWords(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Theory]
