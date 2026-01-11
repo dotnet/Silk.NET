@@ -41,7 +41,7 @@ public class NamePrettifierTests
     // The 3 is considered part of the acronym so the acronym's length is 4, exceeding the threshold of 3
     [TestCase("XYZ3", 3, ExpectedResult = "Xyz3")]
     // The D is not part of the acronym
-    [TestCase("N3D", 4, ExpectedResult = "N3D")]
+    [TestCase("N3D", 2, ExpectedResult = "N3D")]
     public string AcronymsWithNumbers(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
