@@ -150,8 +150,15 @@ public class NameTrimmer : INameTrimmer
                 }
 
                 var oldPrimaryI = 0;
+                var isPrefixTooLong = false;
                 for (var candidateI = 0; candidateI < candidatePrefix.Length; candidateI++)
                 {
+                    if (oldPrimaryI >= oldPrimary.Length)
+                    {
+                        isPrefixTooLong = true;
+                        break;
+                    }
+
                     if (
                         char.ToLower(candidatePrefix[candidateI])
                         == char.ToLower(oldPrimary[oldPrimaryI])
@@ -167,10 +174,7 @@ public class NameTrimmer : INameTrimmer
                     }
                 }
 
-                var prefixLen = candidatePrefix
-                    .TakeWhile((x, i) => char.ToLower(oldPrimary[i]) == char.ToLower(x))
-                    .Count();
-                if (oldPrimaryI >= oldPrimary.Length)
+                if (isPrefixTooLong)
                 {
                     continue;
                 }
