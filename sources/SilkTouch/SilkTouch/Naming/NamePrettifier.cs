@@ -112,17 +112,30 @@ public class NamePrettifier(int longAcronymThreshold)
         // "REG0" therefore becomes "Reg0"
         //
         // Comment from Exanite: This behavior is ported from the original Silk 3 prettifier, which used spaces instead.
-        // I'm not sure if this was intentionally taken advantage of or a happy accident from using Humanizer's Humanize method.
+        // Since this leads to better behavior, I'm not sure if this was intentionally taken advantage of
+        // or a happy accident from using Humanizer's Humanize method.
         var effectiveLength = int.Max(0, words.Count - 1);
         foreach (var word in words)
         {
             effectiveLength += word.Length;
         }
 
+        var isAllNonLower = true;
+        foreach (var word in words)
+        {
+            // Allow lowercase "x" as a special case
+            // Eg: GL_COMPRESSED_RGBA_ASTC_4x4_KHR, GL_DOUBLE_MAT2x3_EXT, VK_FORMAT_ASTC_4x4_SRGB_BLOCK
+            // These names contain a lowercase "x", but are effectively still
+            // fully uppercase for the purpose of identifying acronyms
+            if (word != "x" && !IsAllNonLower(word))
+            {
+                isAllNonLower = false;
+            }
+        }
+
         // We can only identify acronyms if the name is not in all caps
         // We make an exception for short identifiers since the entire name might be an acronym
-        var canIdentifyAcronyms =
-            !IsAllNonLower(identifier) || effectiveLength <= longAcronymThreshold;
+        var canIdentifyAcronyms = !isAllNonLower || effectiveLength <= longAcronymThreshold;
 
         // Merge "fragments"
         for (var i = words.Count - 1; i >= 1; i--)
