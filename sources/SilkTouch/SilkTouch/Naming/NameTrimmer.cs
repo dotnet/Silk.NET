@@ -149,10 +149,28 @@ public class NameTrimmer : INameTrimmer
                     continue;
                 }
 
+                var oldPrimaryI = 0;
+                for (var candidateI = 0; candidateI < candidatePrefix.Length; candidateI++)
+                {
+                    if (
+                        char.ToLower(candidatePrefix[candidateI])
+                        == char.ToLower(oldPrimary[oldPrimaryI])
+                    )
+                    {
+                        oldPrimaryI++;
+                        continue;
+                    }
+
+                    if (candidatePrefix[candidateI] == '_')
+                    {
+                        oldPrimaryI++;
+                    }
+                }
+
                 var prefixLen = candidatePrefix
                     .TakeWhile((x, i) => char.ToLower(oldPrimary[i]) == char.ToLower(x))
                     .Count();
-                if (prefixLen >= oldPrimary.Length)
+                if (oldPrimaryI >= oldPrimary.Length)
                 {
                     continue;
                 }
@@ -161,7 +179,7 @@ public class NameTrimmer : INameTrimmer
                 // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
                 // a better way to do this. (this is working around glDisablei -> glDisable -> Disablei).
                 context.Names[originalName] = new CandidateNames(
-                    oldPrimary[prefixLen..].Trim('_'),
+                    oldPrimary[oldPrimaryI..].Trim('_'),
                     secondary
                 );
                 break;

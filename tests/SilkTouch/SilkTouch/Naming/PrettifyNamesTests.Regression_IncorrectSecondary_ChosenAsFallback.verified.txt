@@ -12,4 +12,10 @@
     public void GetBufferPtrvDirectSOFT()
     {
     }
+
+    // This is to ensure that prefix identification doesn't trim too much
+    [NameAffix("Suffix", "KhronosFunctionDataType", "i")]
+    public void Filter()
+    {
+    }
 }

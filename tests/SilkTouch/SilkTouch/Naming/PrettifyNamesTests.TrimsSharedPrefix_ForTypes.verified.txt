@@ -1,7 +1,7 @@
-﻿public enum PresentModeKHR
+﻿public enum ModeKHR
 {
 }
 
-public enum PresentIdKHR
+public enum IdKHR
 {
 }

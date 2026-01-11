@@ -110,8 +110,6 @@ public class PrettifyNamesTests
         await prettifyNames.ExecuteAsync(context);
 
         // The type names should be trimmed as ModeKHR and IdKHR
-        // TODO: The results of this test are currently incorrect! This is a bug due to how trimming names work.
-        // TODO: See: https://discord.com/channels/521092042781229087/587346162802229298/1459987658783850772
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
@@ -505,6 +503,10 @@ public class PrettifyNamesTests
                     [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
                     [NameAffix("Suffix", "KhronosVendor", "SOFT")]
                     public void alGetBufferPtrvDirectSOFT() { }
+
+                    // This is to ensure that prefix identification doesn't trim too much
+                    [NameAffix("Suffix", "KhronosFunctionDataType", "i")]
+                    public void alFilteri() { }
                 }
                 """
             )
