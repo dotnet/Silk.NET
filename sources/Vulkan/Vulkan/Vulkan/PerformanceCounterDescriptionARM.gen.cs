@@ -54,5 +54,5 @@ public unsafe partial struct PerformanceCounterDescriptionARM
             "VK_ARM_performance_counters_by_region+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionARMName Name;
+    public PerformanceCounterDescriptionArmName Name;
 }

@@ -31,7 +31,7 @@ public partial struct RenderPassSubpassFeedbackInfoEXT
             "VK_EXT_subpass_merge_feedback+VK_VERSION_1_1",
         ]
     )]
-    public RenderPassSubpassFeedbackInfoEXTDescription Description;
+    public RenderPassSubpassFeedbackInfoExtDescription Description;
 
     [NativeName("postMergeIndex")]
     [SupportedApiProfile(

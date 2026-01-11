@@ -130,5 +130,5 @@ public partial struct PipelineCacheHeaderVersionOne
         ],
         MinVersion = "1.0"
     )]
-    public PipelineCacheHeaderVersionOnePipelineCacheUUID PipelineCacheUUID;
+    public PipelineCacheHeaderVersionOnePipelineCacheUuid PipelineCacheUuid;
 }

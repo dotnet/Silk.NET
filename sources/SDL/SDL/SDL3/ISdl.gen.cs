@@ -37,24 +37,24 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_AcquireGPUCommandBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUCommandBuffer")]
-        static abstract GPUCommandBufferHandle AcquireGPUCommandBuffer(GPUDeviceHandle device);
+        static abstract GpuCommandBufferHandle AcquireGpuCommandBuffer(GpuDeviceHandle device);
 
         [NativeName("SDL_AcquireGPUSwapchainTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
-        static abstract byte AcquireGPUSwapchainTexture(
-            GPUCommandBufferHandle command_buffer,
+        static abstract byte AcquireGpuSwapchainTexture(
+            GpuCommandBufferHandle command_buffer,
             WindowHandle window,
-            GPUTextureHandle* swapchain_texture,
+            GpuTextureHandle* swapchain_texture,
             uint* swapchain_texture_width,
             uint* swapchain_texture_height
         );
 
         [NativeName("SDL_AcquireGPUSwapchainTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
-        static abstract MaybeBool<byte> AcquireGPUSwapchainTexture(
-            GPUCommandBufferHandle command_buffer,
+        static abstract MaybeBool<byte> AcquireGpuSwapchainTexture(
+            GpuCommandBufferHandle command_buffer,
             WindowHandle window,
-            Ref<GPUTextureHandle> swapchain_texture,
+            Ref<GpuTextureHandle> swapchain_texture,
             Ref<uint> swapchain_texture_width,
             Ref<uint> swapchain_texture_height
         );
@@ -238,44 +238,44 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_BeginGPUComputePass")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
-        static abstract GPUComputePassHandle BeginGPUComputePass(
-            GPUCommandBufferHandle command_buffer,
-            GPUStorageTextureReadWriteBinding* storage_texture_bindings,
+        static abstract GpuComputePassHandle BeginGpuComputePass(
+            GpuCommandBufferHandle command_buffer,
+            GpuStorageTextureReadWriteBinding* storage_texture_bindings,
             uint num_storage_texture_bindings,
-            GPUStorageBufferReadWriteBinding* storage_buffer_bindings,
+            GpuStorageBufferReadWriteBinding* storage_buffer_bindings,
             uint num_storage_buffer_bindings
         );
 
         [NativeName("SDL_BeginGPUComputePass")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
-        static abstract GPUComputePassHandle BeginGPUComputePass(
-            GPUCommandBufferHandle command_buffer,
-            Ref<GPUStorageTextureReadWriteBinding> storage_texture_bindings,
+        static abstract GpuComputePassHandle BeginGpuComputePass(
+            GpuCommandBufferHandle command_buffer,
+            Ref<GpuStorageTextureReadWriteBinding> storage_texture_bindings,
             uint num_storage_texture_bindings,
-            Ref<GPUStorageBufferReadWriteBinding> storage_buffer_bindings,
+            Ref<GpuStorageBufferReadWriteBinding> storage_buffer_bindings,
             uint num_storage_buffer_bindings
         );
 
         [NativeName("SDL_BeginGPUCopyPass")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUCopyPass")]
-        static abstract GPUCopyPassHandle BeginGPUCopyPass(GPUCommandBufferHandle command_buffer);
+        static abstract GpuCopyPassHandle BeginGpuCopyPass(GpuCommandBufferHandle command_buffer);
 
         [NativeName("SDL_BeginGPURenderPass")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
-        static abstract GPURenderPassHandle BeginGPURenderPass(
-            GPUCommandBufferHandle command_buffer,
-            GPUColorTargetInfo* color_target_infos,
+        static abstract GpuRenderPassHandle BeginGpuRenderPass(
+            GpuCommandBufferHandle command_buffer,
+            GpuColorTargetInfo* color_target_infos,
             uint num_color_targets,
-            GPUDepthStencilTargetInfo* depth_stencil_target_info
+            GpuDepthStencilTargetInfo* depth_stencil_target_info
         );
 
         [NativeName("SDL_BeginGPURenderPass")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
-        static abstract GPURenderPassHandle BeginGPURenderPass(
-            GPUCommandBufferHandle command_buffer,
-            Ref<GPUColorTargetInfo> color_target_infos,
+        static abstract GpuRenderPassHandle BeginGpuRenderPass(
+            GpuCommandBufferHandle command_buffer,
+            Ref<GpuColorTargetInfo> color_target_infos,
             uint num_color_targets,
-            Ref<GPUDepthStencilTargetInfo> depth_stencil_target_info
+            Ref<GpuDepthStencilTargetInfo> depth_stencil_target_info
         );
 
         [NativeName("SDL_BindAudioStream")]
@@ -304,226 +304,226 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_BindGPUComputePipeline")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputePipeline")]
-        static abstract void BindGPUComputePipeline(
-            GPUComputePassHandle compute_pass,
-            GPUComputePipelineHandle compute_pipeline
+        static abstract void BindGpuComputePipeline(
+            GpuComputePassHandle compute_pass,
+            GpuComputePipelineHandle compute_pipeline
         );
 
         [NativeName("SDL_BindGPUComputeSamplers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
-        static abstract void BindGPUComputeSamplers(
-            GPUComputePassHandle compute_pass,
+        static abstract void BindGpuComputeSamplers(
+            GpuComputePassHandle compute_pass,
             uint first_slot,
-            GPUTextureSamplerBinding* texture_sampler_bindings,
+            GpuTextureSamplerBinding* texture_sampler_bindings,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUComputeSamplers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
-        static abstract void BindGPUComputeSamplers(
-            GPUComputePassHandle compute_pass,
+        static abstract void BindGpuComputeSamplers(
+            GpuComputePassHandle compute_pass,
             uint first_slot,
-            Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            Ref<GpuTextureSamplerBinding> texture_sampler_bindings,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUComputeStorageBuffers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
-        static abstract void BindGPUComputeStorageBuffers(
-            GPUComputePassHandle compute_pass,
+        static abstract void BindGpuComputeStorageBuffers(
+            GpuComputePassHandle compute_pass,
             uint first_slot,
-            GPUBufferHandle* storage_buffers,
+            GpuBufferHandle* storage_buffers,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUComputeStorageBuffers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
-        static abstract void BindGPUComputeStorageBuffers(
-            GPUComputePassHandle compute_pass,
+        static abstract void BindGpuComputeStorageBuffers(
+            GpuComputePassHandle compute_pass,
             uint first_slot,
-            Ref<GPUBufferHandle> storage_buffers,
+            Ref<GpuBufferHandle> storage_buffers,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUComputeStorageTextures")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
-        static abstract void BindGPUComputeStorageTextures(
-            GPUComputePassHandle compute_pass,
+        static abstract void BindGpuComputeStorageTextures(
+            GpuComputePassHandle compute_pass,
             uint first_slot,
-            GPUTextureHandle* storage_textures,
+            GpuTextureHandle* storage_textures,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUComputeStorageTextures")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
-        static abstract void BindGPUComputeStorageTextures(
-            GPUComputePassHandle compute_pass,
+        static abstract void BindGpuComputeStorageTextures(
+            GpuComputePassHandle compute_pass,
             uint first_slot,
-            Ref<GPUTextureHandle> storage_textures,
+            Ref<GpuTextureHandle> storage_textures,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUFragmentSamplers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
-        static abstract void BindGPUFragmentSamplers(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuFragmentSamplers(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            GPUTextureSamplerBinding* texture_sampler_bindings,
+            GpuTextureSamplerBinding* texture_sampler_bindings,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUFragmentSamplers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
-        static abstract void BindGPUFragmentSamplers(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuFragmentSamplers(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            Ref<GpuTextureSamplerBinding> texture_sampler_bindings,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUFragmentStorageBuffers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
-        static abstract void BindGPUFragmentStorageBuffers(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuFragmentStorageBuffers(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            GPUBufferHandle* storage_buffers,
+            GpuBufferHandle* storage_buffers,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUFragmentStorageBuffers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
-        static abstract void BindGPUFragmentStorageBuffers(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuFragmentStorageBuffers(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            Ref<GPUBufferHandle> storage_buffers,
+            Ref<GpuBufferHandle> storage_buffers,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUFragmentStorageTextures")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
-        static abstract void BindGPUFragmentStorageTextures(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuFragmentStorageTextures(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            GPUTextureHandle* storage_textures,
+            GpuTextureHandle* storage_textures,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUFragmentStorageTextures")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
-        static abstract void BindGPUFragmentStorageTextures(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuFragmentStorageTextures(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            Ref<GPUTextureHandle> storage_textures,
+            Ref<GpuTextureHandle> storage_textures,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUGraphicsPipeline")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUGraphicsPipeline")]
-        static abstract void BindGPUGraphicsPipeline(
-            GPURenderPassHandle render_pass,
-            GPUGraphicsPipelineHandle graphics_pipeline
+        static abstract void BindGpuGraphicsPipeline(
+            GpuRenderPassHandle render_pass,
+            GpuGraphicsPipelineHandle graphics_pipeline
         );
 
         [NativeName("SDL_BindGPUIndexBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
-        static abstract void BindGPUIndexBuffer(
-            GPURenderPassHandle render_pass,
-            GPUBufferBinding* binding,
-            GPUIndexElementSize index_element_size
+        static abstract void BindGpuIndexBuffer(
+            GpuRenderPassHandle render_pass,
+            GpuBufferBinding* binding,
+            GpuIndexElementSize index_element_size
         );
 
         [NativeName("SDL_BindGPUIndexBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
-        static abstract void BindGPUIndexBuffer(
-            GPURenderPassHandle render_pass,
-            Ref<GPUBufferBinding> binding,
-            GPUIndexElementSize index_element_size
+        static abstract void BindGpuIndexBuffer(
+            GpuRenderPassHandle render_pass,
+            Ref<GpuBufferBinding> binding,
+            GpuIndexElementSize index_element_size
         );
 
         [NativeName("SDL_BindGPUVertexBuffers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
-        static abstract void BindGPUVertexBuffers(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuVertexBuffers(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            GPUBufferBinding* bindings,
+            GpuBufferBinding* bindings,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUVertexBuffers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
-        static abstract void BindGPUVertexBuffers(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuVertexBuffers(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            Ref<GPUBufferBinding> bindings,
+            Ref<GpuBufferBinding> bindings,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUVertexSamplers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
-        static abstract void BindGPUVertexSamplers(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuVertexSamplers(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            GPUTextureSamplerBinding* texture_sampler_bindings,
+            GpuTextureSamplerBinding* texture_sampler_bindings,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUVertexSamplers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
-        static abstract void BindGPUVertexSamplers(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuVertexSamplers(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+            Ref<GpuTextureSamplerBinding> texture_sampler_bindings,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUVertexStorageBuffers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
-        static abstract void BindGPUVertexStorageBuffers(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuVertexStorageBuffers(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            GPUBufferHandle* storage_buffers,
+            GpuBufferHandle* storage_buffers,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUVertexStorageBuffers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
-        static abstract void BindGPUVertexStorageBuffers(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuVertexStorageBuffers(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            Ref<GPUBufferHandle> storage_buffers,
+            Ref<GpuBufferHandle> storage_buffers,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUVertexStorageTextures")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
-        static abstract void BindGPUVertexStorageTextures(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuVertexStorageTextures(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            GPUTextureHandle* storage_textures,
+            GpuTextureHandle* storage_textures,
             uint num_bindings
         );
 
         [NativeName("SDL_BindGPUVertexStorageTextures")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
-        static abstract void BindGPUVertexStorageTextures(
-            GPURenderPassHandle render_pass,
+        static abstract void BindGpuVertexStorageTextures(
+            GpuRenderPassHandle render_pass,
             uint first_slot,
-            Ref<GPUTextureHandle> storage_textures,
+            Ref<GpuTextureHandle> storage_textures,
             uint num_bindings
         );
 
         [NativeName("SDL_BlitGPUTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
-        static abstract void BlitGPUTexture(
-            GPUCommandBufferHandle command_buffer,
-            GPUBlitInfo* info
+        static abstract void BlitGpuTexture(
+            GpuCommandBufferHandle command_buffer,
+            GpuBlitInfo* info
         );
 
         [NativeName("SDL_BlitGPUTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
-        static abstract void BlitGPUTexture(
-            GPUCommandBufferHandle command_buffer,
-            Ref<GPUBlitInfo> info
+        static abstract void BlitGpuTexture(
+            GpuCommandBufferHandle command_buffer,
+            Ref<GpuBlitInfo> info
         );
 
         [NativeName("SDL_BlitSurface")]
@@ -715,8 +715,8 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_CalculateGPUTextureFormatSize")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CalculateGPUTextureFormatSize")]
-        static abstract uint CalculateGPUTextureFormatSize(
-            GPUTextureFormat format,
+        static abstract uint CalculateGpuTextureFormatSize(
+            GpuTextureFormat format,
             uint width,
             uint height,
             uint depth_or_layer_count
@@ -732,13 +732,13 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_CancelGPUCommandBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
-        static abstract MaybeBool<byte> CancelGPUCommandBuffer(
-            GPUCommandBufferHandle command_buffer
+        static abstract MaybeBool<byte> CancelGpuCommandBuffer(
+            GpuCommandBufferHandle command_buffer
         );
 
         [NativeName("SDL_CancelGPUCommandBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
-        static abstract byte CancelGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer);
+        static abstract byte CancelGpuCommandBufferRaw(GpuCommandBufferHandle command_buffer);
 
         [NativeName("SDL_CaptureMouse")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CaptureMouse")]
@@ -758,21 +758,21 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_ClaimWindowForGPUDevice")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
-        static abstract MaybeBool<byte> ClaimWindowForGPUDevice(
-            GPUDeviceHandle device,
+        static abstract MaybeBool<byte> ClaimWindowForGpuDevice(
+            GpuDeviceHandle device,
             WindowHandle window
         );
 
         [NativeName("SDL_ClaimWindowForGPUDevice")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
-        static abstract byte ClaimWindowForGPUDeviceRaw(
-            GPUDeviceHandle device,
+        static abstract byte ClaimWindowForGpuDeviceRaw(
+            GpuDeviceHandle device,
             WindowHandle window
         );
 
         [NativeName("SDL_CleanupTLS")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CleanupTLS")]
-        static abstract void CleanupTLS();
+        static abstract void CleanupTls();
 
         [NativeName("SDL_ClearAudioStream")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ClearAudioStream")]
@@ -1049,30 +1049,30 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_CopyGPUBufferToBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
-        static abstract void CopyGPUBufferToBuffer(
-            GPUCopyPassHandle copy_pass,
-            GPUBufferLocation* source,
-            GPUBufferLocation* destination,
+        static abstract void CopyGpuBufferToBuffer(
+            GpuCopyPassHandle copy_pass,
+            GpuBufferLocation* source,
+            GpuBufferLocation* destination,
             uint size,
             byte cycle
         );
 
         [NativeName("SDL_CopyGPUBufferToBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
-        static abstract void CopyGPUBufferToBuffer(
-            GPUCopyPassHandle copy_pass,
-            Ref<GPUBufferLocation> source,
-            Ref<GPUBufferLocation> destination,
+        static abstract void CopyGpuBufferToBuffer(
+            GpuCopyPassHandle copy_pass,
+            Ref<GpuBufferLocation> source,
+            Ref<GpuBufferLocation> destination,
             uint size,
             MaybeBool<byte> cycle
         );
 
         [NativeName("SDL_CopyGPUTextureToTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
-        static abstract void CopyGPUTextureToTexture(
-            GPUCopyPassHandle copy_pass,
-            GPUTextureLocation* source,
-            GPUTextureLocation* destination,
+        static abstract void CopyGpuTextureToTexture(
+            GpuCopyPassHandle copy_pass,
+            GpuTextureLocation* source,
+            GpuTextureLocation* destination,
             uint w,
             uint h,
             uint d,
@@ -1081,10 +1081,10 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_CopyGPUTextureToTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
-        static abstract void CopyGPUTextureToTexture(
-            GPUCopyPassHandle copy_pass,
-            Ref<GPUTextureLocation> source,
-            Ref<GPUTextureLocation> destination,
+        static abstract void CopyGpuTextureToTexture(
+            GpuCopyPassHandle copy_pass,
+            Ref<GpuTextureLocation> source,
+            Ref<GpuTextureLocation> destination,
             uint w,
             uint h,
             uint d,
@@ -1209,35 +1209,35 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_CreateGPUBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
-        static abstract GPUBufferHandle CreateGPUBuffer(
-            GPUDeviceHandle device,
-            GPUBufferCreateInfo* createinfo
+        static abstract GpuBufferHandle CreateGpuBuffer(
+            GpuDeviceHandle device,
+            GpuBufferCreateInfo* createinfo
         );
 
         [NativeName("SDL_CreateGPUBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
-        static abstract GPUBufferHandle CreateGPUBuffer(
-            GPUDeviceHandle device,
-            Ref<GPUBufferCreateInfo> createinfo
+        static abstract GpuBufferHandle CreateGpuBuffer(
+            GpuDeviceHandle device,
+            Ref<GpuBufferCreateInfo> createinfo
         );
 
         [NativeName("SDL_CreateGPUComputePipeline")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
-        static abstract GPUComputePipelineHandle CreateGPUComputePipeline(
-            GPUDeviceHandle device,
-            GPUComputePipelineCreateInfo* createinfo
+        static abstract GpuComputePipelineHandle CreateGpuComputePipeline(
+            GpuDeviceHandle device,
+            GpuComputePipelineCreateInfo* createinfo
         );
 
         [NativeName("SDL_CreateGPUComputePipeline")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
-        static abstract GPUComputePipelineHandle CreateGPUComputePipeline(
-            GPUDeviceHandle device,
-            Ref<GPUComputePipelineCreateInfo> createinfo
+        static abstract GpuComputePipelineHandle CreateGpuComputePipeline(
+            GpuDeviceHandle device,
+            Ref<GpuComputePipelineCreateInfo> createinfo
         );
 
         [NativeName("SDL_CreateGPUDevice")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
-        static abstract GPUDeviceHandle CreateGPUDevice(
+        static abstract GpuDeviceHandle CreateGpuDevice(
             uint format_flags,
             byte debug_mode,
             sbyte* name
@@ -1245,7 +1245,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_CreateGPUDevice")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
-        static abstract GPUDeviceHandle CreateGPUDevice(
+        static abstract GpuDeviceHandle CreateGpuDevice(
             uint format_flags,
             MaybeBool<byte> debug_mode,
             Ref<sbyte> name
@@ -1253,76 +1253,76 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_CreateGPUDeviceWithProperties")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDeviceWithProperties")]
-        static abstract GPUDeviceHandle CreateGPUDeviceWithProperties(uint props);
+        static abstract GpuDeviceHandle CreateGpuDeviceWithProperties(uint props);
 
         [NativeName("SDL_CreateGPUGraphicsPipeline")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
-        static abstract GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
-            GPUDeviceHandle device,
-            GPUGraphicsPipelineCreateInfo* createinfo
+        static abstract GpuGraphicsPipelineHandle CreateGpuGraphicsPipeline(
+            GpuDeviceHandle device,
+            GpuGraphicsPipelineCreateInfo* createinfo
         );
 
         [NativeName("SDL_CreateGPUGraphicsPipeline")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
-        static abstract GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
-            GPUDeviceHandle device,
-            Ref<GPUGraphicsPipelineCreateInfo> createinfo
+        static abstract GpuGraphicsPipelineHandle CreateGpuGraphicsPipeline(
+            GpuDeviceHandle device,
+            Ref<GpuGraphicsPipelineCreateInfo> createinfo
         );
 
         [NativeName("SDL_CreateGPUSampler")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
-        static abstract GPUSamplerHandle CreateGPUSampler(
-            GPUDeviceHandle device,
-            GPUSamplerCreateInfo* createinfo
+        static abstract GpuSamplerHandle CreateGpuSampler(
+            GpuDeviceHandle device,
+            GpuSamplerCreateInfo* createinfo
         );
 
         [NativeName("SDL_CreateGPUSampler")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
-        static abstract GPUSamplerHandle CreateGPUSampler(
-            GPUDeviceHandle device,
-            Ref<GPUSamplerCreateInfo> createinfo
+        static abstract GpuSamplerHandle CreateGpuSampler(
+            GpuDeviceHandle device,
+            Ref<GpuSamplerCreateInfo> createinfo
         );
 
         [NativeName("SDL_CreateGPUShader")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
-        static abstract GPUShaderHandle CreateGPUShader(
-            GPUDeviceHandle device,
-            GPUShaderCreateInfo* createinfo
+        static abstract GpuShaderHandle CreateGpuShader(
+            GpuDeviceHandle device,
+            GpuShaderCreateInfo* createinfo
         );
 
         [NativeName("SDL_CreateGPUShader")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
-        static abstract GPUShaderHandle CreateGPUShader(
-            GPUDeviceHandle device,
-            Ref<GPUShaderCreateInfo> createinfo
+        static abstract GpuShaderHandle CreateGpuShader(
+            GpuDeviceHandle device,
+            Ref<GpuShaderCreateInfo> createinfo
         );
 
         [NativeName("SDL_CreateGPUTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
-        static abstract GPUTextureHandle CreateGPUTexture(
-            GPUDeviceHandle device,
-            GPUTextureCreateInfo* createinfo
+        static abstract GpuTextureHandle CreateGpuTexture(
+            GpuDeviceHandle device,
+            GpuTextureCreateInfo* createinfo
         );
 
         [NativeName("SDL_CreateGPUTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
-        static abstract GPUTextureHandle CreateGPUTexture(
-            GPUDeviceHandle device,
-            Ref<GPUTextureCreateInfo> createinfo
+        static abstract GpuTextureHandle CreateGpuTexture(
+            GpuDeviceHandle device,
+            Ref<GpuTextureCreateInfo> createinfo
         );
 
         [NativeName("SDL_CreateGPUTransferBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
-        static abstract GPUTransferBufferHandle CreateGPUTransferBuffer(
-            GPUDeviceHandle device,
-            GPUTransferBufferCreateInfo* createinfo
+        static abstract GpuTransferBufferHandle CreateGpuTransferBuffer(
+            GpuDeviceHandle device,
+            GpuTransferBufferCreateInfo* createinfo
         );
 
         [NativeName("SDL_CreateGPUTransferBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
-        static abstract GPUTransferBufferHandle CreateGPUTransferBuffer(
-            GPUDeviceHandle device,
-            Ref<GPUTransferBufferCreateInfo> createinfo
+        static abstract GpuTransferBufferHandle CreateGpuTransferBuffer(
+            GpuDeviceHandle device,
+            Ref<GpuTransferBufferCreateInfo> createinfo
         );
 
         [NativeName("SDL_CreateHapticEffect")]
@@ -1607,7 +1607,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_DestroyGPUDevice")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyGPUDevice")]
-        static abstract void DestroyGPUDevice(GPUDeviceHandle device);
+        static abstract void DestroyGpuDevice(GpuDeviceHandle device);
 
         [NativeName("SDL_DestroyHapticEffect")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DestroyHapticEffect")]
@@ -1695,8 +1695,8 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_DispatchGPUCompute")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DispatchGPUCompute")]
-        static abstract void DispatchGPUCompute(
-            GPUComputePassHandle compute_pass,
+        static abstract void DispatchGpuCompute(
+            GpuComputePassHandle compute_pass,
             uint groupcount_x,
             uint groupcount_y,
             uint groupcount_z
@@ -1704,48 +1704,48 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_DispatchGPUComputeIndirect")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DispatchGPUComputeIndirect")]
-        static abstract void DispatchGPUComputeIndirect(
-            GPUComputePassHandle compute_pass,
-            GPUBufferHandle buffer,
+        static abstract void DispatchGpuComputeIndirect(
+            GpuComputePassHandle compute_pass,
+            GpuBufferHandle buffer,
             uint offset
         );
 
         [NativeName("SDL_DownloadFromGPUBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
-        static abstract void DownloadFromGPUBuffer(
-            GPUCopyPassHandle copy_pass,
-            GPUBufferRegion* source,
-            GPUTransferBufferLocation* destination
+        static abstract void DownloadFromGpuBuffer(
+            GpuCopyPassHandle copy_pass,
+            GpuBufferRegion* source,
+            GpuTransferBufferLocation* destination
         );
 
         [NativeName("SDL_DownloadFromGPUBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
-        static abstract void DownloadFromGPUBuffer(
-            GPUCopyPassHandle copy_pass,
-            Ref<GPUBufferRegion> source,
-            Ref<GPUTransferBufferLocation> destination
+        static abstract void DownloadFromGpuBuffer(
+            GpuCopyPassHandle copy_pass,
+            Ref<GpuBufferRegion> source,
+            Ref<GpuTransferBufferLocation> destination
         );
 
         [NativeName("SDL_DownloadFromGPUTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
-        static abstract void DownloadFromGPUTexture(
-            GPUCopyPassHandle copy_pass,
-            GPUTextureRegion* source,
-            GPUTextureTransferInfo* destination
+        static abstract void DownloadFromGpuTexture(
+            GpuCopyPassHandle copy_pass,
+            GpuTextureRegion* source,
+            GpuTextureTransferInfo* destination
         );
 
         [NativeName("SDL_DownloadFromGPUTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
-        static abstract void DownloadFromGPUTexture(
-            GPUCopyPassHandle copy_pass,
-            Ref<GPUTextureRegion> source,
-            Ref<GPUTextureTransferInfo> destination
+        static abstract void DownloadFromGpuTexture(
+            GpuCopyPassHandle copy_pass,
+            Ref<GpuTextureRegion> source,
+            Ref<GpuTextureTransferInfo> destination
         );
 
         [NativeName("SDL_DrawGPUIndexedPrimitives")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUIndexedPrimitives")]
-        static abstract void DrawGPUIndexedPrimitives(
-            GPURenderPassHandle render_pass,
+        static abstract void DrawGpuIndexedPrimitives(
+            GpuRenderPassHandle render_pass,
             uint num_indices,
             uint num_instances,
             uint first_index,
@@ -1755,17 +1755,17 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_DrawGPUIndexedPrimitivesIndirect")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUIndexedPrimitivesIndirect")]
-        static abstract void DrawGPUIndexedPrimitivesIndirect(
-            GPURenderPassHandle render_pass,
-            GPUBufferHandle buffer,
+        static abstract void DrawGpuIndexedPrimitivesIndirect(
+            GpuRenderPassHandle render_pass,
+            GpuBufferHandle buffer,
             uint offset,
             uint draw_count
         );
 
         [NativeName("SDL_DrawGPUPrimitives")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUPrimitives")]
-        static abstract void DrawGPUPrimitives(
-            GPURenderPassHandle render_pass,
+        static abstract void DrawGpuPrimitives(
+            GpuRenderPassHandle render_pass,
             uint num_vertices,
             uint num_instances,
             uint first_vertex,
@@ -1774,9 +1774,9 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_DrawGPUPrimitivesIndirect")]
         [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUPrimitivesIndirect")]
-        static abstract void DrawGPUPrimitivesIndirect(
-            GPURenderPassHandle render_pass,
-            GPUBufferHandle buffer,
+        static abstract void DrawGpuPrimitivesIndirect(
+            GpuRenderPassHandle render_pass,
+            GpuBufferHandle buffer,
             uint offset,
             uint draw_count
         );
@@ -1791,51 +1791,51 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_EGL_GetCurrentConfig")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentConfig")]
-        static abstract Ptr EGLGetCurrentConfig();
+        static abstract Ptr EglGetCurrentConfig();
 
         [NativeName("SDL_EGL_GetCurrentConfig")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentConfig")]
-        static abstract void* EGLGetCurrentConfigRaw();
+        static abstract void* EglGetCurrentConfigRaw();
 
         [NativeName("SDL_EGL_GetCurrentDisplay")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentDisplay")]
-        static abstract Ptr EGLGetCurrentDisplay();
+        static abstract Ptr EglGetCurrentDisplay();
 
         [NativeName("SDL_EGL_GetCurrentDisplay")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentDisplay")]
-        static abstract void* EGLGetCurrentDisplayRaw();
+        static abstract void* EglGetCurrentDisplayRaw();
 
         [NativeName("SDL_EGL_GetProcAddress")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
-        static abstract FunctionPointer EGLGetProcAddress(sbyte* proc);
+        static abstract FunctionPointer EglGetProcAddress(sbyte* proc);
 
         [NativeName("SDL_EGL_GetProcAddress")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
-        static abstract FunctionPointer EGLGetProcAddress(Ref<sbyte> proc);
+        static abstract FunctionPointer EglGetProcAddress(Ref<sbyte> proc);
 
         [NativeName("SDL_EGL_GetWindowSurface")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowSurface")]
-        static abstract Ptr EGLGetWindowSurface(WindowHandle window);
+        static abstract Ptr EglGetWindowSurface(WindowHandle window);
 
         [NativeName("SDL_EGL_GetWindowSurface")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowSurface")]
-        static abstract void* EGLGetWindowSurfaceRaw(WindowHandle window);
+        static abstract void* EglGetWindowSurfaceRaw(WindowHandle window);
 
         [NativeName("SDL_EGL_SetAttributeCallbacks")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetAttributeCallbacks")]
-        static abstract void EGLSetAttributeCallbacks(
-            EGLAttribArrayCallback platformAttribCallback,
-            EGLIntArrayCallback surfaceAttribCallback,
-            EGLIntArrayCallback contextAttribCallback,
+        static abstract void EglSetAttributeCallbacks(
+            EglAttribArrayCallback platformAttribCallback,
+            EglIntArrayCallback surfaceAttribCallback,
+            EglIntArrayCallback contextAttribCallback,
             void* userdata
         );
 
         [NativeName("SDL_EGL_SetAttributeCallbacks")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetAttributeCallbacks")]
-        static abstract void EGLSetAttributeCallbacks(
-            EGLAttribArrayCallback platformAttribCallback,
-            EGLIntArrayCallback surfaceAttribCallback,
-            EGLIntArrayCallback contextAttribCallback,
+        static abstract void EglSetAttributeCallbacks(
+            EglAttribArrayCallback platformAttribCallback,
+            EglIntArrayCallback surfaceAttribCallback,
+            EglIntArrayCallback contextAttribCallback,
             Ref userdata
         );
 
@@ -1849,15 +1849,15 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_EndGPUComputePass")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EndGPUComputePass")]
-        static abstract void EndGPUComputePass(GPUComputePassHandle compute_pass);
+        static abstract void EndGpuComputePass(GpuComputePassHandle compute_pass);
 
         [NativeName("SDL_EndGPUCopyPass")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EndGPUCopyPass")]
-        static abstract void EndGPUCopyPass(GPUCopyPassHandle copy_pass);
+        static abstract void EndGpuCopyPass(GpuCopyPassHandle copy_pass);
 
         [NativeName("SDL_EndGPURenderPass")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EndGPURenderPass")]
-        static abstract void EndGPURenderPass(GPURenderPassHandle render_pass);
+        static abstract void EndGpuRenderPass(GpuRenderPassHandle render_pass);
 
         [NativeName("SDL_EnterAppMainCallbacks")]
         [NativeFunction("SDL3", EntryPoint = "SDL_EnterAppMainCallbacks")]
@@ -2112,13 +2112,13 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GDKSuspendComplete")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GDKSuspendComplete")]
-        static abstract void GDKSuspendComplete();
+        static abstract void GdkSuspendComplete();
 
         [NativeName("SDL_GenerateMipmapsForGPUTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GenerateMipmapsForGPUTexture")]
-        static abstract void GenerateMipmapsForGPUTexture(
-            GPUCommandBufferHandle command_buffer,
-            GPUTextureHandle texture
+        static abstract void GenerateMipmapsForGpuTexture(
+            GpuCommandBufferHandle command_buffer,
+            GpuTextureHandle texture
         );
 
         [NativeName("SDL_GetAppMetadataProperty")]
@@ -2430,7 +2430,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GetCPUCacheLineSize")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCPUCacheLineSize")]
-        static abstract int GetCPUCacheLineSize();
+        static abstract int GetCpuCacheLineSize();
 
         [NativeName("SDL_GetCurrentAudioDriver")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentAudioDriver")]
@@ -3037,28 +3037,28 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GetGPUDeviceDriver")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
-        static abstract Ptr<sbyte> GetGPUDeviceDriver(GPUDeviceHandle device);
+        static abstract Ptr<sbyte> GetGpuDeviceDriver(GpuDeviceHandle device);
 
         [NativeName("SDL_GetGPUDeviceDriver")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
-        static abstract sbyte* GetGPUDeviceDriverRaw(GPUDeviceHandle device);
+        static abstract sbyte* GetGpuDeviceDriverRaw(GpuDeviceHandle device);
 
         [NativeName("SDL_GetGPUDriver")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
-        static abstract Ptr<sbyte> GetGPUDriver(int index);
+        static abstract Ptr<sbyte> GetGpuDriver(int index);
 
         [NativeName("SDL_GetGPUDriver")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
-        static abstract sbyte* GetGPUDriverRaw(int index);
+        static abstract sbyte* GetGpuDriverRaw(int index);
 
         [NativeName("SDL_GetGPUShaderFormats")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUShaderFormats")]
-        static abstract uint GetGPUShaderFormats(GPUDeviceHandle device);
+        static abstract uint GetGpuShaderFormats(GpuDeviceHandle device);
 
         [NativeName("SDL_GetGPUSwapchainTextureFormat")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUSwapchainTextureFormat")]
-        static abstract GPUTextureFormat GetGPUSwapchainTextureFormat(
-            GPUDeviceHandle device,
+        static abstract GpuTextureFormat GetGpuSwapchainTextureFormat(
+            GpuDeviceHandle device,
             WindowHandle window
         );
 
@@ -3516,7 +3516,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GetNumGPUDrivers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumGPUDrivers")]
-        static abstract int GetNumGPUDrivers();
+        static abstract int GetNumGpuDrivers();
 
         [NativeName("SDL_GetNumHapticAxes")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumHapticAxes")]
@@ -3540,7 +3540,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GetNumLogicalCPUCores")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumLogicalCPUCores")]
-        static abstract int GetNumLogicalCPUCores();
+        static abstract int GetNumLogicalCpuCores();
 
         [NativeName("SDL_GetNumRenderDrivers")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetNumRenderDrivers")]
@@ -4035,7 +4035,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GetRGB")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
-        static abstract void GetRGB(
+        static abstract void GetRgb(
             uint pixel,
             PixelFormatDetails* format,
             Palette* palette,
@@ -4046,7 +4046,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GetRGB")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
-        static abstract void GetRGB(
+        static abstract void GetRgb(
             uint pixel,
             Ref<PixelFormatDetails> format,
             Ref<Palette> palette,
@@ -4305,7 +4305,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GetSystemRAM")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSystemRAM")]
-        static abstract int GetSystemRAM();
+        static abstract int GetSystemRam();
 
         [NativeName("SDL_GetSystemTheme")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetSystemTheme")]
@@ -4441,11 +4441,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GetTLS")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
-        static abstract void* GetTLS(AtomicInt* id);
+        static abstract void* GetTls(AtomicInt* id);
 
         [NativeName("SDL_GetTLS")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
-        static abstract Ptr GetTLS(Ref<AtomicInt> id);
+        static abstract Ptr GetTls(Ref<AtomicInt> id);
 
         [NativeName("SDL_GetTouchDeviceName")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDeviceName")]
@@ -4561,11 +4561,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GetWindowICCProfile")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowICCProfile")]
-        static abstract void* GetWindowICCProfile(WindowHandle window, nuint* size);
+        static abstract void* GetWindowIccProfile(WindowHandle window, nuint* size);
 
         [NativeName("SDL_GetWindowICCProfile")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowICCProfile")]
-        static abstract Ptr GetWindowICCProfile(WindowHandle window, Ref<nuint> size);
+        static abstract Ptr GetWindowIccProfile(WindowHandle window, Ref<nuint> size);
 
         [NativeName("SDL_GetWindowID")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowID")]
@@ -4857,59 +4857,59 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_GPUSupportsProperties")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
-        static abstract MaybeBool<byte> GPUSupportsProperties(uint props);
+        static abstract MaybeBool<byte> GpuSupportsProperties(uint props);
 
         [NativeName("SDL_GPUSupportsProperties")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
-        static abstract byte GPUSupportsPropertiesRaw(uint props);
+        static abstract byte GpuSupportsPropertiesRaw(uint props);
 
         [NativeName("SDL_GPUSupportsShaderFormats")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
-        static abstract byte GPUSupportsShaderFormats(uint format_flags, sbyte* name);
+        static abstract byte GpuSupportsShaderFormats(uint format_flags, sbyte* name);
 
         [NativeName("SDL_GPUSupportsShaderFormats")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
-        static abstract MaybeBool<byte> GPUSupportsShaderFormats(
+        static abstract MaybeBool<byte> GpuSupportsShaderFormats(
             uint format_flags,
             Ref<sbyte> name
         );
 
         [NativeName("SDL_GPUTextureFormatTexelBlockSize")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureFormatTexelBlockSize")]
-        static abstract uint GPUTextureFormatTexelBlockSize(GPUTextureFormat format);
+        static abstract uint GpuTextureFormatTexelBlockSize(GpuTextureFormat format);
 
         [NativeName("SDL_GPUTextureSupportsFormat")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
-        static abstract MaybeBool<byte> GPUTextureSupportsFormat(
-            GPUDeviceHandle device,
-            GPUTextureFormat format,
-            GPUTextureType type,
+        static abstract MaybeBool<byte> GpuTextureSupportsFormat(
+            GpuDeviceHandle device,
+            GpuTextureFormat format,
+            GpuTextureType type,
             uint usage
         );
 
         [NativeName("SDL_GPUTextureSupportsFormat")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
-        static abstract byte GPUTextureSupportsFormatRaw(
-            GPUDeviceHandle device,
-            GPUTextureFormat format,
-            GPUTextureType type,
+        static abstract byte GpuTextureSupportsFormatRaw(
+            GpuDeviceHandle device,
+            GpuTextureFormat format,
+            GpuTextureType type,
             uint usage
         );
 
         [NativeName("SDL_GPUTextureSupportsSampleCount")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
-        static abstract MaybeBool<byte> GPUTextureSupportsSampleCount(
-            GPUDeviceHandle device,
-            GPUTextureFormat format,
-            GPUSampleCount sample_count
+        static abstract MaybeBool<byte> GpuTextureSupportsSampleCount(
+            GpuDeviceHandle device,
+            GpuTextureFormat format,
+            GpuSampleCount sample_count
         );
 
         [NativeName("SDL_GPUTextureSupportsSampleCount")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
-        static abstract byte GPUTextureSupportsSampleCountRaw(
-            GPUDeviceHandle device,
-            GPUTextureFormat format,
-            GPUSampleCount sample_count
+        static abstract byte GpuTextureSupportsSampleCountRaw(
+            GpuDeviceHandle device,
+            GpuTextureFormat format,
+            GpuSampleCount sample_count
         );
 
         [NativeName("SDL_GUIDToString")]
@@ -4957,7 +4957,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_HasAVX")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX")]
-        static abstract MaybeBool<byte> HasAVX();
+        static abstract MaybeBool<byte> HasAvx();
 
         [NativeName("SDL_HasAVX2")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX2")]
@@ -4977,7 +4977,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_HasAVX")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX")]
-        static abstract byte HasAVXRaw();
+        static abstract byte HasAvxRaw();
 
         [NativeName("SDL_HasClipboardData")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasClipboardData")]
@@ -5045,19 +5045,19 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_HasLSX")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasLSX")]
-        static abstract MaybeBool<byte> HasLSX();
+        static abstract MaybeBool<byte> HasLsx();
 
         [NativeName("SDL_HasLSX")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasLSX")]
-        static abstract byte HasLSXRaw();
+        static abstract byte HasLsxRaw();
 
         [NativeName("SDL_HasMMX")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasMMX")]
-        static abstract MaybeBool<byte> HasMMX();
+        static abstract MaybeBool<byte> HasMmx();
 
         [NativeName("SDL_HasMMX")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasMMX")]
-        static abstract byte HasMMXRaw();
+        static abstract byte HasMmxRaw();
 
         [NativeName("SDL_HasMouse")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasMouse")]
@@ -5117,7 +5117,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_HasSSE")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE")]
-        static abstract MaybeBool<byte> HasSSE();
+        static abstract MaybeBool<byte> HasSse();
 
         [NativeName("SDL_HasSSE2")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE2")]
@@ -5153,7 +5153,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_HasSSE")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE")]
-        static abstract byte HasSSERaw();
+        static abstract byte HasSseRaw();
 
         [NativeName("SDL_hid_ble_scan")]
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_ble_scan")]
@@ -5455,15 +5455,15 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_InsertGPUDebugLabel")]
         [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
-        static abstract void InsertGPUDebugLabel(
-            GPUCommandBufferHandle command_buffer,
+        static abstract void InsertGpuDebugLabel(
+            GpuCommandBufferHandle command_buffer,
             sbyte* text
         );
 
         [NativeName("SDL_InsertGPUDebugLabel")]
         [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
-        static abstract void InsertGPUDebugLabel(
-            GPUCommandBufferHandle command_buffer,
+        static abstract void InsertGpuDebugLabel(
+            GpuCommandBufferHandle command_buffer,
             Ref<sbyte> text
         );
 
@@ -5681,19 +5681,19 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_LoadBMP")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP")]
-        static abstract Surface* LoadBMP(sbyte* file);
+        static abstract Surface* LoadBmp(sbyte* file);
 
         [NativeName("SDL_LoadBMP")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP")]
-        static abstract Ptr<Surface> LoadBMP(Ref<sbyte> file);
+        static abstract Ptr<Surface> LoadBmp(Ref<sbyte> file);
 
         [NativeName("SDL_LoadBMP_IO")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP_IO")]
-        static abstract Surface* LoadBmpIo(IOStreamHandle src, byte closeio);
+        static abstract Surface* LoadBmpIO(IOStreamHandle src, byte closeio);
 
         [NativeName("SDL_LoadBMP_IO")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP_IO")]
-        static abstract Ptr<Surface> LoadBmpIo(IOStreamHandle src, MaybeBool<byte> closeio);
+        static abstract Ptr<Surface> LoadBmpIO(IOStreamHandle src, MaybeBool<byte> closeio);
 
         [NativeName("SDL_LoadFile")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadFile")]
@@ -5733,7 +5733,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_LoadWAV")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV")]
-        static abstract byte LoadWAV(
+        static abstract byte LoadWav(
             sbyte* path,
             AudioSpec* spec,
             byte** audio_buf,
@@ -5742,7 +5742,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_LoadWAV")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV")]
-        static abstract MaybeBool<byte> LoadWAV(
+        static abstract MaybeBool<byte> LoadWav(
             Ref<sbyte> path,
             Ref<AudioSpec> spec,
             Ref2D<byte> audio_buf,
@@ -5751,7 +5751,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_LoadWAV_IO")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV_IO")]
-        static abstract byte LoadWavIo(
+        static abstract byte LoadWavIO(
             IOStreamHandle src,
             byte closeio,
             AudioSpec* spec,
@@ -5761,7 +5761,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_LoadWAV_IO")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV_IO")]
-        static abstract MaybeBool<byte> LoadWavIo(
+        static abstract MaybeBool<byte> LoadWavIO(
             IOStreamHandle src,
             MaybeBool<byte> closeio,
             Ref<AudioSpec> spec,
@@ -5905,23 +5905,23 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_MapGPUTransferBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
-        static abstract void* MapGPUTransferBuffer(
-            GPUDeviceHandle device,
-            GPUTransferBufferHandle transfer_buffer,
+        static abstract void* MapGpuTransferBuffer(
+            GpuDeviceHandle device,
+            GpuTransferBufferHandle transfer_buffer,
             byte cycle
         );
 
         [NativeName("SDL_MapGPUTransferBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
-        static abstract Ptr MapGPUTransferBuffer(
-            GPUDeviceHandle device,
-            GPUTransferBufferHandle transfer_buffer,
+        static abstract Ptr MapGpuTransferBuffer(
+            GpuDeviceHandle device,
+            GpuTransferBufferHandle transfer_buffer,
             MaybeBool<byte> cycle
         );
 
         [NativeName("SDL_MapRGB")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapRGB")]
-        static abstract uint MapRGB(
+        static abstract uint MapRgb(
             PixelFormatDetails* format,
             Palette* palette,
             byte r,
@@ -5931,7 +5931,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_MapRGB")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapRGB")]
-        static abstract uint MapRGB(
+        static abstract uint MapRgb(
             Ref<PixelFormatDetails> format,
             Ref<Palette> palette,
             byte r,
@@ -5963,11 +5963,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_MapSurfaceRGB")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGB")]
-        static abstract uint MapSurfaceRGB(Surface* surface, byte r, byte g, byte b);
+        static abstract uint MapSurfaceRgb(Surface* surface, byte r, byte g, byte b);
 
         [NativeName("SDL_MapSurfaceRGB")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGB")]
-        static abstract uint MapSurfaceRGB(Ref<Surface> surface, byte r, byte g, byte b);
+        static abstract uint MapSurfaceRgb(Ref<Surface> surface, byte r, byte g, byte b);
 
         [NativeName("SDL_MapSurfaceRGBA")]
         [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGBA")]
@@ -6201,11 +6201,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_OpenURL")]
         [NativeFunction("SDL3", EntryPoint = "SDL_OpenURL")]
-        static abstract byte OpenURL(sbyte* url);
+        static abstract byte OpenUrl(sbyte* url);
 
         [NativeName("SDL_OpenURL")]
         [NativeFunction("SDL3", EntryPoint = "SDL_OpenURL")]
-        static abstract MaybeBool<byte> OpenURL(Ref<sbyte> url);
+        static abstract MaybeBool<byte> OpenUrl(Ref<sbyte> url);
 
         [NativeName("SDL_OpenUserStorage")]
         [NativeFunction("SDL3", EntryPoint = "SDL_OpenUserStorage")]
@@ -6289,7 +6289,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_PopGPUDebugGroup")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PopGPUDebugGroup")]
-        static abstract void PopGPUDebugGroup(GPUCommandBufferHandle command_buffer);
+        static abstract void PopGpuDebugGroup(GpuCommandBufferHandle command_buffer);
 
         [NativeName("SDL_pow")]
         [NativeFunction("SDL3", EntryPoint = "SDL_pow")]
@@ -6352,8 +6352,8 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_PushGPUComputeUniformData")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
-        static abstract void PushGPUComputeUniformData(
-            GPUCommandBufferHandle command_buffer,
+        static abstract void PushGpuComputeUniformData(
+            GpuCommandBufferHandle command_buffer,
             uint slot_index,
             void* data,
             uint length
@@ -6361,8 +6361,8 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_PushGPUComputeUniformData")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
-        static abstract void PushGPUComputeUniformData(
-            GPUCommandBufferHandle command_buffer,
+        static abstract void PushGpuComputeUniformData(
+            GpuCommandBufferHandle command_buffer,
             uint slot_index,
             Ref data,
             uint length
@@ -6370,19 +6370,19 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_PushGPUDebugGroup")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
-        static abstract void PushGPUDebugGroup(GPUCommandBufferHandle command_buffer, sbyte* name);
+        static abstract void PushGpuDebugGroup(GpuCommandBufferHandle command_buffer, sbyte* name);
 
         [NativeName("SDL_PushGPUDebugGroup")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
-        static abstract void PushGPUDebugGroup(
-            GPUCommandBufferHandle command_buffer,
+        static abstract void PushGpuDebugGroup(
+            GpuCommandBufferHandle command_buffer,
             Ref<sbyte> name
         );
 
         [NativeName("SDL_PushGPUFragmentUniformData")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
-        static abstract void PushGPUFragmentUniformData(
-            GPUCommandBufferHandle command_buffer,
+        static abstract void PushGpuFragmentUniformData(
+            GpuCommandBufferHandle command_buffer,
             uint slot_index,
             void* data,
             uint length
@@ -6390,8 +6390,8 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_PushGPUFragmentUniformData")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
-        static abstract void PushGPUFragmentUniformData(
-            GPUCommandBufferHandle command_buffer,
+        static abstract void PushGpuFragmentUniformData(
+            GpuCommandBufferHandle command_buffer,
             uint slot_index,
             Ref data,
             uint length
@@ -6399,8 +6399,8 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_PushGPUVertexUniformData")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
-        static abstract void PushGPUVertexUniformData(
-            GPUCommandBufferHandle command_buffer,
+        static abstract void PushGpuVertexUniformData(
+            GpuCommandBufferHandle command_buffer,
             uint slot_index,
             void* data,
             uint length
@@ -6408,8 +6408,8 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_PushGPUVertexUniformData")]
         [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
-        static abstract void PushGPUVertexUniformData(
-            GPUCommandBufferHandle command_buffer,
+        static abstract void PushGpuVertexUniformData(
+            GpuCommandBufferHandle command_buffer,
             uint slot_index,
             Ref data,
             uint length
@@ -6457,11 +6457,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_QueryGPUFence")]
         [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
-        static abstract MaybeBool<byte> QueryGPUFence(GPUDeviceHandle device, GPUFenceHandle fence);
+        static abstract MaybeBool<byte> QueryGpuFence(GpuDeviceHandle device, GpuFenceHandle fence);
 
         [NativeName("SDL_QueryGPUFence")]
         [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
-        static abstract byte QueryGPUFenceRaw(GPUDeviceHandle device, GPUFenceHandle fence);
+        static abstract byte QueryGpuFenceRaw(GpuDeviceHandle device, GpuFenceHandle fence);
 
         [NativeName("SDL_Quit")]
         [NativeFunction("SDL3", EntryPoint = "SDL_Quit")]
@@ -6743,49 +6743,49 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_ReleaseGPUBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUBuffer")]
-        static abstract void ReleaseGPUBuffer(GPUDeviceHandle device, GPUBufferHandle buffer);
+        static abstract void ReleaseGpuBuffer(GpuDeviceHandle device, GpuBufferHandle buffer);
 
         [NativeName("SDL_ReleaseGPUComputePipeline")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUComputePipeline")]
-        static abstract void ReleaseGPUComputePipeline(
-            GPUDeviceHandle device,
-            GPUComputePipelineHandle compute_pipeline
+        static abstract void ReleaseGpuComputePipeline(
+            GpuDeviceHandle device,
+            GpuComputePipelineHandle compute_pipeline
         );
 
         [NativeName("SDL_ReleaseGPUFence")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUFence")]
-        static abstract void ReleaseGPUFence(GPUDeviceHandle device, GPUFenceHandle fence);
+        static abstract void ReleaseGpuFence(GpuDeviceHandle device, GpuFenceHandle fence);
 
         [NativeName("SDL_ReleaseGPUGraphicsPipeline")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUGraphicsPipeline")]
-        static abstract void ReleaseGPUGraphicsPipeline(
-            GPUDeviceHandle device,
-            GPUGraphicsPipelineHandle graphics_pipeline
+        static abstract void ReleaseGpuGraphicsPipeline(
+            GpuDeviceHandle device,
+            GpuGraphicsPipelineHandle graphics_pipeline
         );
 
         [NativeName("SDL_ReleaseGPUSampler")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUSampler")]
-        static abstract void ReleaseGPUSampler(GPUDeviceHandle device, GPUSamplerHandle sampler);
+        static abstract void ReleaseGpuSampler(GpuDeviceHandle device, GpuSamplerHandle sampler);
 
         [NativeName("SDL_ReleaseGPUShader")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUShader")]
-        static abstract void ReleaseGPUShader(GPUDeviceHandle device, GPUShaderHandle shader);
+        static abstract void ReleaseGpuShader(GpuDeviceHandle device, GpuShaderHandle shader);
 
         [NativeName("SDL_ReleaseGPUTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUTexture")]
-        static abstract void ReleaseGPUTexture(GPUDeviceHandle device, GPUTextureHandle texture);
+        static abstract void ReleaseGpuTexture(GpuDeviceHandle device, GpuTextureHandle texture);
 
         [NativeName("SDL_ReleaseGPUTransferBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUTransferBuffer")]
-        static abstract void ReleaseGPUTransferBuffer(
-            GPUDeviceHandle device,
-            GPUTransferBufferHandle transfer_buffer
+        static abstract void ReleaseGpuTransferBuffer(
+            GpuDeviceHandle device,
+            GpuTransferBufferHandle transfer_buffer
         );
 
         [NativeName("SDL_ReleaseWindowFromGPUDevice")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseWindowFromGPUDevice")]
-        static abstract void ReleaseWindowFromGPUDevice(
-            GPUDeviceHandle device,
+        static abstract void ReleaseWindowFromGpuDevice(
+            GpuDeviceHandle device,
             WindowHandle window
         );
 
@@ -7423,19 +7423,19 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SaveBMP")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
-        static abstract byte SaveBMP(Surface* surface, sbyte* file);
+        static abstract byte SaveBmp(Surface* surface, sbyte* file);
 
         [NativeName("SDL_SaveBMP")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
-        static abstract MaybeBool<byte> SaveBMP(Ref<Surface> surface, Ref<sbyte> file);
+        static abstract MaybeBool<byte> SaveBmp(Ref<Surface> surface, Ref<sbyte> file);
 
         [NativeName("SDL_SaveBMP_IO")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP_IO")]
-        static abstract byte SaveBmpIo(Surface* surface, IOStreamHandle dst, byte closeio);
+        static abstract byte SaveBmpIO(Surface* surface, IOStreamHandle dst, byte closeio);
 
         [NativeName("SDL_SaveBMP_IO")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP_IO")]
-        static abstract MaybeBool<byte> SaveBmpIo(
+        static abstract MaybeBool<byte> SaveBmpIO(
             Ref<Surface> surface,
             IOStreamHandle dst,
             MaybeBool<byte> closeio
@@ -7860,7 +7860,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SetGamepadLED")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadLED")]
-        static abstract MaybeBool<byte> SetGamepadLED(
+        static abstract MaybeBool<byte> SetGamepadLed(
             GamepadHandle gamepad,
             byte red,
             byte green,
@@ -7869,7 +7869,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SetGamepadLED")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadLED")]
-        static abstract byte SetGamepadLEDRaw(
+        static abstract byte SetGamepadLedRaw(
             GamepadHandle gamepad,
             byte red,
             byte green,
@@ -7913,99 +7913,99 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SetGPUAllowedFramesInFlight")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUAllowedFramesInFlight")]
-        static abstract MaybeBool<byte> SetGPUAllowedFramesInFlight(
-            GPUDeviceHandle device,
+        static abstract MaybeBool<byte> SetGpuAllowedFramesInFlight(
+            GpuDeviceHandle device,
             uint allowed_frames_in_flight
         );
 
         [NativeName("SDL_SetGPUAllowedFramesInFlight")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUAllowedFramesInFlight")]
-        static abstract byte SetGPUAllowedFramesInFlightRaw(
-            GPUDeviceHandle device,
+        static abstract byte SetGpuAllowedFramesInFlightRaw(
+            GpuDeviceHandle device,
             uint allowed_frames_in_flight
         );
 
         [NativeName("SDL_SetGPUBlendConstants")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBlendConstants")]
-        static abstract void SetGPUBlendConstants(
-            GPURenderPassHandle render_pass,
+        static abstract void SetGpuBlendConstants(
+            GpuRenderPassHandle render_pass,
             FColor blend_constants
         );
 
         [NativeName("SDL_SetGPUBufferName")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
-        static abstract void SetGPUBufferName(
-            GPUDeviceHandle device,
-            GPUBufferHandle buffer,
+        static abstract void SetGpuBufferName(
+            GpuDeviceHandle device,
+            GpuBufferHandle buffer,
             sbyte* text
         );
 
         [NativeName("SDL_SetGPUBufferName")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
-        static abstract void SetGPUBufferName(
-            GPUDeviceHandle device,
-            GPUBufferHandle buffer,
+        static abstract void SetGpuBufferName(
+            GpuDeviceHandle device,
+            GpuBufferHandle buffer,
             Ref<sbyte> text
         );
 
         [NativeName("SDL_SetGPUScissor")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
-        static abstract void SetGPUScissor(GPURenderPassHandle render_pass, Rect* scissor);
+        static abstract void SetGpuScissor(GpuRenderPassHandle render_pass, Rect* scissor);
 
         [NativeName("SDL_SetGPUScissor")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
-        static abstract void SetGPUScissor(GPURenderPassHandle render_pass, Ref<Rect> scissor);
+        static abstract void SetGpuScissor(GpuRenderPassHandle render_pass, Ref<Rect> scissor);
 
         [NativeName("SDL_SetGPUStencilReference")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUStencilReference")]
-        static abstract void SetGPUStencilReference(
-            GPURenderPassHandle render_pass,
+        static abstract void SetGpuStencilReference(
+            GpuRenderPassHandle render_pass,
             byte reference
         );
 
         [NativeName("SDL_SetGPUSwapchainParameters")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
-        static abstract MaybeBool<byte> SetGPUSwapchainParameters(
-            GPUDeviceHandle device,
+        static abstract MaybeBool<byte> SetGpuSwapchainParameters(
+            GpuDeviceHandle device,
             WindowHandle window,
-            GPUSwapchainComposition swapchain_composition,
-            GPUPresentMode present_mode
+            GpuSwapchainComposition swapchain_composition,
+            GpuPresentMode present_mode
         );
 
         [NativeName("SDL_SetGPUSwapchainParameters")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
-        static abstract byte SetGPUSwapchainParametersRaw(
-            GPUDeviceHandle device,
+        static abstract byte SetGpuSwapchainParametersRaw(
+            GpuDeviceHandle device,
             WindowHandle window,
-            GPUSwapchainComposition swapchain_composition,
-            GPUPresentMode present_mode
+            GpuSwapchainComposition swapchain_composition,
+            GpuPresentMode present_mode
         );
 
         [NativeName("SDL_SetGPUTextureName")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
-        static abstract void SetGPUTextureName(
-            GPUDeviceHandle device,
-            GPUTextureHandle texture,
+        static abstract void SetGpuTextureName(
+            GpuDeviceHandle device,
+            GpuTextureHandle texture,
             sbyte* text
         );
 
         [NativeName("SDL_SetGPUTextureName")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
-        static abstract void SetGPUTextureName(
-            GPUDeviceHandle device,
-            GPUTextureHandle texture,
+        static abstract void SetGpuTextureName(
+            GpuDeviceHandle device,
+            GpuTextureHandle texture,
             Ref<sbyte> text
         );
 
         [NativeName("SDL_SetGPUViewport")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
-        static abstract void SetGPUViewport(GPURenderPassHandle render_pass, GPUViewport* viewport);
+        static abstract void SetGpuViewport(GpuRenderPassHandle render_pass, GpuViewport* viewport);
 
         [NativeName("SDL_SetGPUViewport")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
-        static abstract void SetGPUViewport(
-            GPURenderPassHandle render_pass,
-            Ref<GPUViewport> viewport
+        static abstract void SetGpuViewport(
+            GpuRenderPassHandle render_pass,
+            Ref<GpuViewport> viewport
         );
 
         [NativeName("SDL_SetHapticAutocenter")]
@@ -8062,7 +8062,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SetJoystickLED")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickLED")]
-        static abstract MaybeBool<byte> SetJoystickLED(
+        static abstract MaybeBool<byte> SetJoystickLed(
             JoystickHandle joystick,
             byte red,
             byte green,
@@ -8071,7 +8071,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SetJoystickLED")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickLED")]
-        static abstract byte SetJoystickLEDRaw(
+        static abstract byte SetJoystickLedRaw(
             JoystickHandle joystick,
             byte red,
             byte green,
@@ -8513,11 +8513,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SetSurfaceRLE")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceRLE")]
-        static abstract byte SetSurfaceRLE(Surface* surface, byte enabled);
+        static abstract byte SetSurfaceRle(Surface* surface, byte enabled);
 
         [NativeName("SDL_SetSurfaceRLE")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceRLE")]
-        static abstract MaybeBool<byte> SetSurfaceRLE(
+        static abstract MaybeBool<byte> SetSurfaceRle(
             Ref<Surface> surface,
             MaybeBool<byte> enabled
         );
@@ -8600,14 +8600,14 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SetTLS")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTLS")]
-        static abstract byte SetTLS(AtomicInt* id, void* value, TLSDestructorCallback destructor);
+        static abstract byte SetTls(AtomicInt* id, void* value, TlsDestructorCallback destructor);
 
         [NativeName("SDL_SetTLS")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetTLS")]
-        static abstract MaybeBool<byte> SetTLS(
+        static abstract MaybeBool<byte> SetTls(
             Ref<AtomicInt> id,
             Ref value,
-            TLSDestructorCallback destructor
+            TlsDestructorCallback destructor
         );
 
         [NativeName("SDL_SetWindowAlwaysOnTop")]
@@ -9331,19 +9331,19 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SubmitGPUCommandBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
-        static abstract MaybeBool<byte> SubmitGPUCommandBuffer(
-            GPUCommandBufferHandle command_buffer
+        static abstract MaybeBool<byte> SubmitGpuCommandBuffer(
+            GpuCommandBufferHandle command_buffer
         );
 
         [NativeName("SDL_SubmitGPUCommandBufferAndAcquireFence")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBufferAndAcquireFence")]
-        static abstract GPUFenceHandle SubmitGPUCommandBufferAndAcquireFence(
-            GPUCommandBufferHandle command_buffer
+        static abstract GpuFenceHandle SubmitGpuCommandBufferAndAcquireFence(
+            GpuCommandBufferHandle command_buffer
         );
 
         [NativeName("SDL_SubmitGPUCommandBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
-        static abstract byte SubmitGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer);
+        static abstract byte SubmitGpuCommandBufferRaw(GpuCommandBufferHandle command_buffer);
 
         [NativeName("SDL_SurfaceHasAlternateImages")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasAlternateImages")]
@@ -9363,11 +9363,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SurfaceHasRLE")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasRLE")]
-        static abstract byte SurfaceHasRLE(Surface* surface);
+        static abstract byte SurfaceHasRle(Surface* surface);
 
         [NativeName("SDL_SurfaceHasRLE")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasRLE")]
-        static abstract MaybeBool<byte> SurfaceHasRLE(Ref<Surface> surface);
+        static abstract MaybeBool<byte> SurfaceHasRle(Ref<Surface> surface);
 
         [NativeName("SDL_SyncWindow")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SyncWindow")]
@@ -9579,9 +9579,9 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_UnmapGPUTransferBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UnmapGPUTransferBuffer")]
-        static abstract void UnmapGPUTransferBuffer(
-            GPUDeviceHandle device,
-            GPUTransferBufferHandle transfer_buffer
+        static abstract void UnmapGpuTransferBuffer(
+            GpuDeviceHandle device,
+            GpuTransferBufferHandle transfer_buffer
         );
 
         [NativeName("SDL_UnregisterApp")]
@@ -9696,7 +9696,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_UpdateYUVTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateYUVTexture")]
-        static abstract byte UpdateYUVTexture(
+        static abstract byte UpdateYuvTexture(
             Texture* texture,
             Rect* rect,
             byte* Yplane,
@@ -9709,7 +9709,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_UpdateYUVTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UpdateYUVTexture")]
-        static abstract MaybeBool<byte> UpdateYUVTexture(
+        static abstract MaybeBool<byte> UpdateYuvTexture(
             Ref<Texture> texture,
             Ref<Rect> rect,
             Ref<byte> Yplane,
@@ -9722,37 +9722,37 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_UploadToGPUBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
-        static abstract void UploadToGPUBuffer(
-            GPUCopyPassHandle copy_pass,
-            GPUTransferBufferLocation* source,
-            GPUBufferRegion* destination,
+        static abstract void UploadToGpuBuffer(
+            GpuCopyPassHandle copy_pass,
+            GpuTransferBufferLocation* source,
+            GpuBufferRegion* destination,
             byte cycle
         );
 
         [NativeName("SDL_UploadToGPUBuffer")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
-        static abstract void UploadToGPUBuffer(
-            GPUCopyPassHandle copy_pass,
-            Ref<GPUTransferBufferLocation> source,
-            Ref<GPUBufferRegion> destination,
+        static abstract void UploadToGpuBuffer(
+            GpuCopyPassHandle copy_pass,
+            Ref<GpuTransferBufferLocation> source,
+            Ref<GpuBufferRegion> destination,
             MaybeBool<byte> cycle
         );
 
         [NativeName("SDL_UploadToGPUTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
-        static abstract void UploadToGPUTexture(
-            GPUCopyPassHandle copy_pass,
-            GPUTextureTransferInfo* source,
-            GPUTextureRegion* destination,
+        static abstract void UploadToGpuTexture(
+            GpuCopyPassHandle copy_pass,
+            GpuTextureTransferInfo* source,
+            GpuTextureRegion* destination,
             byte cycle
         );
 
         [NativeName("SDL_UploadToGPUTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
-        static abstract void UploadToGPUTexture(
-            GPUCopyPassHandle copy_pass,
-            Ref<GPUTextureTransferInfo> source,
-            Ref<GPUTextureRegion> destination,
+        static abstract void UploadToGpuTexture(
+            GpuCopyPassHandle copy_pass,
+            Ref<GpuTextureTransferInfo> source,
+            Ref<GpuTextureRegion> destination,
             MaybeBool<byte> cycle
         );
 
@@ -9885,20 +9885,20 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_WaitAndAcquireGPUSwapchainTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitAndAcquireGPUSwapchainTexture")]
-        static abstract byte WaitAndAcquireGPUSwapchainTexture(
-            GPUCommandBufferHandle command_buffer,
+        static abstract byte WaitAndAcquireGpuSwapchainTexture(
+            GpuCommandBufferHandle command_buffer,
             WindowHandle window,
-            GPUTextureHandle* swapchain_texture,
+            GpuTextureHandle* swapchain_texture,
             uint* swapchain_texture_width,
             uint* swapchain_texture_height
         );
 
         [NativeName("SDL_WaitAndAcquireGPUSwapchainTexture")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitAndAcquireGPUSwapchainTexture")]
-        static abstract MaybeBool<byte> WaitAndAcquireGPUSwapchainTexture(
-            GPUCommandBufferHandle command_buffer,
+        static abstract MaybeBool<byte> WaitAndAcquireGpuSwapchainTexture(
+            GpuCommandBufferHandle command_buffer,
             WindowHandle window,
-            Ref<GPUTextureHandle> swapchain_texture,
+            Ref<GpuTextureHandle> swapchain_texture,
             Ref<uint> swapchain_texture_width,
             Ref<uint> swapchain_texture_height
         );
@@ -9941,40 +9941,40 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_WaitForGPUFences")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
-        static abstract byte WaitForGPUFences(
-            GPUDeviceHandle device,
+        static abstract byte WaitForGpuFences(
+            GpuDeviceHandle device,
             byte wait_all,
-            GPUFenceHandle* fences,
+            GpuFenceHandle* fences,
             uint num_fences
         );
 
         [NativeName("SDL_WaitForGPUFences")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
-        static abstract MaybeBool<byte> WaitForGPUFences(
-            GPUDeviceHandle device,
+        static abstract MaybeBool<byte> WaitForGpuFences(
+            GpuDeviceHandle device,
             MaybeBool<byte> wait_all,
-            Ref<GPUFenceHandle> fences,
+            Ref<GpuFenceHandle> fences,
             uint num_fences
         );
 
         [NativeName("SDL_WaitForGPUIdle")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
-        static abstract MaybeBool<byte> WaitForGPUIdle(GPUDeviceHandle device);
+        static abstract MaybeBool<byte> WaitForGpuIdle(GpuDeviceHandle device);
 
         [NativeName("SDL_WaitForGPUIdle")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
-        static abstract byte WaitForGPUIdleRaw(GPUDeviceHandle device);
+        static abstract byte WaitForGpuIdleRaw(GpuDeviceHandle device);
 
         [NativeName("SDL_WaitForGPUSwapchain")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUSwapchain")]
-        static abstract MaybeBool<byte> WaitForGPUSwapchain(
-            GPUDeviceHandle device,
+        static abstract MaybeBool<byte> WaitForGpuSwapchain(
+            GpuDeviceHandle device,
             WindowHandle window
         );
 
         [NativeName("SDL_WaitForGPUSwapchain")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUSwapchain")]
-        static abstract byte WaitForGPUSwapchainRaw(GPUDeviceHandle device, WindowHandle window);
+        static abstract byte WaitForGpuSwapchainRaw(GpuDeviceHandle device, WindowHandle window);
 
         [NativeName("SDL_WaitProcess")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WaitProcess")]
@@ -10130,34 +10130,34 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_WindowSupportsGPUPresentMode")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
-        static abstract MaybeBool<byte> WindowSupportsGPUPresentMode(
-            GPUDeviceHandle device,
+        static abstract MaybeBool<byte> WindowSupportsGpuPresentMode(
+            GpuDeviceHandle device,
             WindowHandle window,
-            GPUPresentMode present_mode
+            GpuPresentMode present_mode
         );
 
         [NativeName("SDL_WindowSupportsGPUPresentMode")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
-        static abstract byte WindowSupportsGPUPresentModeRaw(
-            GPUDeviceHandle device,
+        static abstract byte WindowSupportsGpuPresentModeRaw(
+            GpuDeviceHandle device,
             WindowHandle window,
-            GPUPresentMode present_mode
+            GpuPresentMode present_mode
         );
 
         [NativeName("SDL_WindowSupportsGPUSwapchainComposition")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
-        static abstract MaybeBool<byte> WindowSupportsGPUSwapchainComposition(
-            GPUDeviceHandle device,
+        static abstract MaybeBool<byte> WindowSupportsGpuSwapchainComposition(
+            GpuDeviceHandle device,
             WindowHandle window,
-            GPUSwapchainComposition swapchain_composition
+            GpuSwapchainComposition swapchain_composition
         );
 
         [NativeName("SDL_WindowSupportsGPUSwapchainComposition")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
-        static abstract byte WindowSupportsGPUSwapchainCompositionRaw(
-            GPUDeviceHandle device,
+        static abstract byte WindowSupportsGpuSwapchainCompositionRaw(
+            GpuDeviceHandle device,
             WindowHandle window,
-            GPUSwapchainComposition swapchain_composition
+            GpuSwapchainComposition swapchain_composition
         );
 
         [NativeName("SDL_WriteIO")]
@@ -10369,24 +10369,24 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_AcquireGPUCommandBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUCommandBuffer")]
-    GPUCommandBufferHandle AcquireGPUCommandBuffer(GPUDeviceHandle device);
+    GpuCommandBufferHandle AcquireGpuCommandBuffer(GpuDeviceHandle device);
 
     [NativeName("SDL_AcquireGPUSwapchainTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
-    byte AcquireGPUSwapchainTexture(
-        GPUCommandBufferHandle command_buffer,
+    byte AcquireGpuSwapchainTexture(
+        GpuCommandBufferHandle command_buffer,
         WindowHandle window,
-        GPUTextureHandle* swapchain_texture,
+        GpuTextureHandle* swapchain_texture,
         uint* swapchain_texture_width,
         uint* swapchain_texture_height
     );
 
     [NativeName("SDL_AcquireGPUSwapchainTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_AcquireGPUSwapchainTexture")]
-    MaybeBool<byte> AcquireGPUSwapchainTexture(
-        GPUCommandBufferHandle command_buffer,
+    MaybeBool<byte> AcquireGpuSwapchainTexture(
+        GpuCommandBufferHandle command_buffer,
         WindowHandle window,
-        Ref<GPUTextureHandle> swapchain_texture,
+        Ref<GpuTextureHandle> swapchain_texture,
         Ref<uint> swapchain_texture_width,
         Ref<uint> swapchain_texture_height
     );
@@ -10563,44 +10563,44 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_BeginGPUComputePass")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
-    GPUComputePassHandle BeginGPUComputePass(
-        GPUCommandBufferHandle command_buffer,
-        GPUStorageTextureReadWriteBinding* storage_texture_bindings,
+    GpuComputePassHandle BeginGpuComputePass(
+        GpuCommandBufferHandle command_buffer,
+        GpuStorageTextureReadWriteBinding* storage_texture_bindings,
         uint num_storage_texture_bindings,
-        GPUStorageBufferReadWriteBinding* storage_buffer_bindings,
+        GpuStorageBufferReadWriteBinding* storage_buffer_bindings,
         uint num_storage_buffer_bindings
     );
 
     [NativeName("SDL_BeginGPUComputePass")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUComputePass")]
-    GPUComputePassHandle BeginGPUComputePass(
-        GPUCommandBufferHandle command_buffer,
-        Ref<GPUStorageTextureReadWriteBinding> storage_texture_bindings,
+    GpuComputePassHandle BeginGpuComputePass(
+        GpuCommandBufferHandle command_buffer,
+        Ref<GpuStorageTextureReadWriteBinding> storage_texture_bindings,
         uint num_storage_texture_bindings,
-        Ref<GPUStorageBufferReadWriteBinding> storage_buffer_bindings,
+        Ref<GpuStorageBufferReadWriteBinding> storage_buffer_bindings,
         uint num_storage_buffer_bindings
     );
 
     [NativeName("SDL_BeginGPUCopyPass")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPUCopyPass")]
-    GPUCopyPassHandle BeginGPUCopyPass(GPUCommandBufferHandle command_buffer);
+    GpuCopyPassHandle BeginGpuCopyPass(GpuCommandBufferHandle command_buffer);
 
     [NativeName("SDL_BeginGPURenderPass")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
-    GPURenderPassHandle BeginGPURenderPass(
-        GPUCommandBufferHandle command_buffer,
-        GPUColorTargetInfo* color_target_infos,
+    GpuRenderPassHandle BeginGpuRenderPass(
+        GpuCommandBufferHandle command_buffer,
+        GpuColorTargetInfo* color_target_infos,
         uint num_color_targets,
-        GPUDepthStencilTargetInfo* depth_stencil_target_info
+        GpuDepthStencilTargetInfo* depth_stencil_target_info
     );
 
     [NativeName("SDL_BeginGPURenderPass")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BeginGPURenderPass")]
-    GPURenderPassHandle BeginGPURenderPass(
-        GPUCommandBufferHandle command_buffer,
-        Ref<GPUColorTargetInfo> color_target_infos,
+    GpuRenderPassHandle BeginGpuRenderPass(
+        GpuCommandBufferHandle command_buffer,
+        Ref<GpuColorTargetInfo> color_target_infos,
         uint num_color_targets,
-        Ref<GPUDepthStencilTargetInfo> depth_stencil_target_info
+        Ref<GpuDepthStencilTargetInfo> depth_stencil_target_info
     );
 
     [NativeName("SDL_BindAudioStream")]
@@ -10621,221 +10621,221 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_BindGPUComputePipeline")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputePipeline")]
-    void BindGPUComputePipeline(
-        GPUComputePassHandle compute_pass,
-        GPUComputePipelineHandle compute_pipeline
+    void BindGpuComputePipeline(
+        GpuComputePassHandle compute_pass,
+        GpuComputePipelineHandle compute_pipeline
     );
 
     [NativeName("SDL_BindGPUComputeSamplers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
-    void BindGPUComputeSamplers(
-        GPUComputePassHandle compute_pass,
+    void BindGpuComputeSamplers(
+        GpuComputePassHandle compute_pass,
         uint first_slot,
-        GPUTextureSamplerBinding* texture_sampler_bindings,
+        GpuTextureSamplerBinding* texture_sampler_bindings,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUComputeSamplers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeSamplers")]
-    void BindGPUComputeSamplers(
-        GPUComputePassHandle compute_pass,
+    void BindGpuComputeSamplers(
+        GpuComputePassHandle compute_pass,
         uint first_slot,
-        Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+        Ref<GpuTextureSamplerBinding> texture_sampler_bindings,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUComputeStorageBuffers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
-    void BindGPUComputeStorageBuffers(
-        GPUComputePassHandle compute_pass,
+    void BindGpuComputeStorageBuffers(
+        GpuComputePassHandle compute_pass,
         uint first_slot,
-        GPUBufferHandle* storage_buffers,
+        GpuBufferHandle* storage_buffers,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUComputeStorageBuffers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageBuffers")]
-    void BindGPUComputeStorageBuffers(
-        GPUComputePassHandle compute_pass,
+    void BindGpuComputeStorageBuffers(
+        GpuComputePassHandle compute_pass,
         uint first_slot,
-        Ref<GPUBufferHandle> storage_buffers,
+        Ref<GpuBufferHandle> storage_buffers,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUComputeStorageTextures")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
-    void BindGPUComputeStorageTextures(
-        GPUComputePassHandle compute_pass,
+    void BindGpuComputeStorageTextures(
+        GpuComputePassHandle compute_pass,
         uint first_slot,
-        GPUTextureHandle* storage_textures,
+        GpuTextureHandle* storage_textures,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUComputeStorageTextures")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUComputeStorageTextures")]
-    void BindGPUComputeStorageTextures(
-        GPUComputePassHandle compute_pass,
+    void BindGpuComputeStorageTextures(
+        GpuComputePassHandle compute_pass,
         uint first_slot,
-        Ref<GPUTextureHandle> storage_textures,
+        Ref<GpuTextureHandle> storage_textures,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUFragmentSamplers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
-    void BindGPUFragmentSamplers(
-        GPURenderPassHandle render_pass,
+    void BindGpuFragmentSamplers(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        GPUTextureSamplerBinding* texture_sampler_bindings,
+        GpuTextureSamplerBinding* texture_sampler_bindings,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUFragmentSamplers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentSamplers")]
-    void BindGPUFragmentSamplers(
-        GPURenderPassHandle render_pass,
+    void BindGpuFragmentSamplers(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+        Ref<GpuTextureSamplerBinding> texture_sampler_bindings,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUFragmentStorageBuffers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
-    void BindGPUFragmentStorageBuffers(
-        GPURenderPassHandle render_pass,
+    void BindGpuFragmentStorageBuffers(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        GPUBufferHandle* storage_buffers,
+        GpuBufferHandle* storage_buffers,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUFragmentStorageBuffers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageBuffers")]
-    void BindGPUFragmentStorageBuffers(
-        GPURenderPassHandle render_pass,
+    void BindGpuFragmentStorageBuffers(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        Ref<GPUBufferHandle> storage_buffers,
+        Ref<GpuBufferHandle> storage_buffers,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUFragmentStorageTextures")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
-    void BindGPUFragmentStorageTextures(
-        GPURenderPassHandle render_pass,
+    void BindGpuFragmentStorageTextures(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        GPUTextureHandle* storage_textures,
+        GpuTextureHandle* storage_textures,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUFragmentStorageTextures")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUFragmentStorageTextures")]
-    void BindGPUFragmentStorageTextures(
-        GPURenderPassHandle render_pass,
+    void BindGpuFragmentStorageTextures(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        Ref<GPUTextureHandle> storage_textures,
+        Ref<GpuTextureHandle> storage_textures,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUGraphicsPipeline")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUGraphicsPipeline")]
-    void BindGPUGraphicsPipeline(
-        GPURenderPassHandle render_pass,
-        GPUGraphicsPipelineHandle graphics_pipeline
+    void BindGpuGraphicsPipeline(
+        GpuRenderPassHandle render_pass,
+        GpuGraphicsPipelineHandle graphics_pipeline
     );
 
     [NativeName("SDL_BindGPUIndexBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
-    void BindGPUIndexBuffer(
-        GPURenderPassHandle render_pass,
-        GPUBufferBinding* binding,
-        GPUIndexElementSize index_element_size
+    void BindGpuIndexBuffer(
+        GpuRenderPassHandle render_pass,
+        GpuBufferBinding* binding,
+        GpuIndexElementSize index_element_size
     );
 
     [NativeName("SDL_BindGPUIndexBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUIndexBuffer")]
-    void BindGPUIndexBuffer(
-        GPURenderPassHandle render_pass,
-        Ref<GPUBufferBinding> binding,
-        GPUIndexElementSize index_element_size
+    void BindGpuIndexBuffer(
+        GpuRenderPassHandle render_pass,
+        Ref<GpuBufferBinding> binding,
+        GpuIndexElementSize index_element_size
     );
 
     [NativeName("SDL_BindGPUVertexBuffers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
-    void BindGPUVertexBuffers(
-        GPURenderPassHandle render_pass,
+    void BindGpuVertexBuffers(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        GPUBufferBinding* bindings,
+        GpuBufferBinding* bindings,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUVertexBuffers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexBuffers")]
-    void BindGPUVertexBuffers(
-        GPURenderPassHandle render_pass,
+    void BindGpuVertexBuffers(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        Ref<GPUBufferBinding> bindings,
+        Ref<GpuBufferBinding> bindings,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUVertexSamplers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
-    void BindGPUVertexSamplers(
-        GPURenderPassHandle render_pass,
+    void BindGpuVertexSamplers(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        GPUTextureSamplerBinding* texture_sampler_bindings,
+        GpuTextureSamplerBinding* texture_sampler_bindings,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUVertexSamplers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexSamplers")]
-    void BindGPUVertexSamplers(
-        GPURenderPassHandle render_pass,
+    void BindGpuVertexSamplers(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        Ref<GPUTextureSamplerBinding> texture_sampler_bindings,
+        Ref<GpuTextureSamplerBinding> texture_sampler_bindings,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUVertexStorageBuffers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
-    void BindGPUVertexStorageBuffers(
-        GPURenderPassHandle render_pass,
+    void BindGpuVertexStorageBuffers(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        GPUBufferHandle* storage_buffers,
+        GpuBufferHandle* storage_buffers,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUVertexStorageBuffers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageBuffers")]
-    void BindGPUVertexStorageBuffers(
-        GPURenderPassHandle render_pass,
+    void BindGpuVertexStorageBuffers(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        Ref<GPUBufferHandle> storage_buffers,
+        Ref<GpuBufferHandle> storage_buffers,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUVertexStorageTextures")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
-    void BindGPUVertexStorageTextures(
-        GPURenderPassHandle render_pass,
+    void BindGpuVertexStorageTextures(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        GPUTextureHandle* storage_textures,
+        GpuTextureHandle* storage_textures,
         uint num_bindings
     );
 
     [NativeName("SDL_BindGPUVertexStorageTextures")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BindGPUVertexStorageTextures")]
-    void BindGPUVertexStorageTextures(
-        GPURenderPassHandle render_pass,
+    void BindGpuVertexStorageTextures(
+        GpuRenderPassHandle render_pass,
         uint first_slot,
-        Ref<GPUTextureHandle> storage_textures,
+        Ref<GpuTextureHandle> storage_textures,
         uint num_bindings
     );
 
     [NativeName("SDL_BlitGPUTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
-    void BlitGPUTexture(GPUCommandBufferHandle command_buffer, GPUBlitInfo* info);
+    void BlitGpuTexture(GpuCommandBufferHandle command_buffer, GpuBlitInfo* info);
 
     [NativeName("SDL_BlitGPUTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BlitGPUTexture")]
-    void BlitGPUTexture(GPUCommandBufferHandle command_buffer, Ref<GPUBlitInfo> info);
+    void BlitGpuTexture(GpuCommandBufferHandle command_buffer, Ref<GpuBlitInfo> info);
 
     [NativeName("SDL_BlitSurface")]
     [NativeFunction("SDL3", EntryPoint = "SDL_BlitSurface")]
@@ -11004,8 +11004,8 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_CalculateGPUTextureFormatSize")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CalculateGPUTextureFormatSize")]
-    uint CalculateGPUTextureFormatSize(
-        GPUTextureFormat format,
+    uint CalculateGpuTextureFormatSize(
+        GpuTextureFormat format,
         uint width,
         uint height,
         uint depth_or_layer_count
@@ -11021,11 +11021,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_CancelGPUCommandBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
-    MaybeBool<byte> CancelGPUCommandBuffer(GPUCommandBufferHandle command_buffer);
+    MaybeBool<byte> CancelGpuCommandBuffer(GpuCommandBufferHandle command_buffer);
 
     [NativeName("SDL_CancelGPUCommandBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CancelGPUCommandBuffer")]
-    byte CancelGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer);
+    byte CancelGpuCommandBufferRaw(GpuCommandBufferHandle command_buffer);
 
     [NativeName("SDL_CaptureMouse")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CaptureMouse")]
@@ -11045,15 +11045,15 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_ClaimWindowForGPUDevice")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
-    MaybeBool<byte> ClaimWindowForGPUDevice(GPUDeviceHandle device, WindowHandle window);
+    MaybeBool<byte> ClaimWindowForGpuDevice(GpuDeviceHandle device, WindowHandle window);
 
     [NativeName("SDL_ClaimWindowForGPUDevice")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ClaimWindowForGPUDevice")]
-    byte ClaimWindowForGPUDeviceRaw(GPUDeviceHandle device, WindowHandle window);
+    byte ClaimWindowForGpuDeviceRaw(GpuDeviceHandle device, WindowHandle window);
 
     [NativeName("SDL_CleanupTLS")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CleanupTLS")]
-    void CleanupTLS();
+    void CleanupTls();
 
     [NativeName("SDL_ClearAudioStream")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ClearAudioStream")]
@@ -11306,30 +11306,30 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_CopyGPUBufferToBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
-    void CopyGPUBufferToBuffer(
-        GPUCopyPassHandle copy_pass,
-        GPUBufferLocation* source,
-        GPUBufferLocation* destination,
+    void CopyGpuBufferToBuffer(
+        GpuCopyPassHandle copy_pass,
+        GpuBufferLocation* source,
+        GpuBufferLocation* destination,
         uint size,
         byte cycle
     );
 
     [NativeName("SDL_CopyGPUBufferToBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUBufferToBuffer")]
-    void CopyGPUBufferToBuffer(
-        GPUCopyPassHandle copy_pass,
-        Ref<GPUBufferLocation> source,
-        Ref<GPUBufferLocation> destination,
+    void CopyGpuBufferToBuffer(
+        GpuCopyPassHandle copy_pass,
+        Ref<GpuBufferLocation> source,
+        Ref<GpuBufferLocation> destination,
         uint size,
         MaybeBool<byte> cycle
     );
 
     [NativeName("SDL_CopyGPUTextureToTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
-    void CopyGPUTextureToTexture(
-        GPUCopyPassHandle copy_pass,
-        GPUTextureLocation* source,
-        GPUTextureLocation* destination,
+    void CopyGpuTextureToTexture(
+        GpuCopyPassHandle copy_pass,
+        GpuTextureLocation* source,
+        GpuTextureLocation* destination,
         uint w,
         uint h,
         uint d,
@@ -11338,10 +11338,10 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_CopyGPUTextureToTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CopyGPUTextureToTexture")]
-    void CopyGPUTextureToTexture(
-        GPUCopyPassHandle copy_pass,
-        Ref<GPUTextureLocation> source,
-        Ref<GPUTextureLocation> destination,
+    void CopyGpuTextureToTexture(
+        GpuCopyPassHandle copy_pass,
+        Ref<GpuTextureLocation> source,
+        Ref<GpuTextureLocation> destination,
         uint w,
         uint h,
         uint d,
@@ -11442,88 +11442,88 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_CreateGPUBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
-    GPUBufferHandle CreateGPUBuffer(GPUDeviceHandle device, GPUBufferCreateInfo* createinfo);
+    GpuBufferHandle CreateGpuBuffer(GpuDeviceHandle device, GpuBufferCreateInfo* createinfo);
 
     [NativeName("SDL_CreateGPUBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUBuffer")]
-    GPUBufferHandle CreateGPUBuffer(GPUDeviceHandle device, Ref<GPUBufferCreateInfo> createinfo);
+    GpuBufferHandle CreateGpuBuffer(GpuDeviceHandle device, Ref<GpuBufferCreateInfo> createinfo);
 
     [NativeName("SDL_CreateGPUComputePipeline")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
-    GPUComputePipelineHandle CreateGPUComputePipeline(
-        GPUDeviceHandle device,
-        GPUComputePipelineCreateInfo* createinfo
+    GpuComputePipelineHandle CreateGpuComputePipeline(
+        GpuDeviceHandle device,
+        GpuComputePipelineCreateInfo* createinfo
     );
 
     [NativeName("SDL_CreateGPUComputePipeline")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUComputePipeline")]
-    GPUComputePipelineHandle CreateGPUComputePipeline(
-        GPUDeviceHandle device,
-        Ref<GPUComputePipelineCreateInfo> createinfo
+    GpuComputePipelineHandle CreateGpuComputePipeline(
+        GpuDeviceHandle device,
+        Ref<GpuComputePipelineCreateInfo> createinfo
     );
 
     [NativeName("SDL_CreateGPUDevice")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
-    GPUDeviceHandle CreateGPUDevice(uint format_flags, byte debug_mode, sbyte* name);
+    GpuDeviceHandle CreateGpuDevice(uint format_flags, byte debug_mode, sbyte* name);
 
     [NativeName("SDL_CreateGPUDevice")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDevice")]
-    GPUDeviceHandle CreateGPUDevice(uint format_flags, MaybeBool<byte> debug_mode, Ref<sbyte> name);
+    GpuDeviceHandle CreateGpuDevice(uint format_flags, MaybeBool<byte> debug_mode, Ref<sbyte> name);
 
     [NativeName("SDL_CreateGPUDeviceWithProperties")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUDeviceWithProperties")]
-    GPUDeviceHandle CreateGPUDeviceWithProperties(uint props);
+    GpuDeviceHandle CreateGpuDeviceWithProperties(uint props);
 
     [NativeName("SDL_CreateGPUGraphicsPipeline")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
-    GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
-        GPUDeviceHandle device,
-        GPUGraphicsPipelineCreateInfo* createinfo
+    GpuGraphicsPipelineHandle CreateGpuGraphicsPipeline(
+        GpuDeviceHandle device,
+        GpuGraphicsPipelineCreateInfo* createinfo
     );
 
     [NativeName("SDL_CreateGPUGraphicsPipeline")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUGraphicsPipeline")]
-    GPUGraphicsPipelineHandle CreateGPUGraphicsPipeline(
-        GPUDeviceHandle device,
-        Ref<GPUGraphicsPipelineCreateInfo> createinfo
+    GpuGraphicsPipelineHandle CreateGpuGraphicsPipeline(
+        GpuDeviceHandle device,
+        Ref<GpuGraphicsPipelineCreateInfo> createinfo
     );
 
     [NativeName("SDL_CreateGPUSampler")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
-    GPUSamplerHandle CreateGPUSampler(GPUDeviceHandle device, GPUSamplerCreateInfo* createinfo);
+    GpuSamplerHandle CreateGpuSampler(GpuDeviceHandle device, GpuSamplerCreateInfo* createinfo);
 
     [NativeName("SDL_CreateGPUSampler")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUSampler")]
-    GPUSamplerHandle CreateGPUSampler(GPUDeviceHandle device, Ref<GPUSamplerCreateInfo> createinfo);
+    GpuSamplerHandle CreateGpuSampler(GpuDeviceHandle device, Ref<GpuSamplerCreateInfo> createinfo);
 
     [NativeName("SDL_CreateGPUShader")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
-    GPUShaderHandle CreateGPUShader(GPUDeviceHandle device, GPUShaderCreateInfo* createinfo);
+    GpuShaderHandle CreateGpuShader(GpuDeviceHandle device, GpuShaderCreateInfo* createinfo);
 
     [NativeName("SDL_CreateGPUShader")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUShader")]
-    GPUShaderHandle CreateGPUShader(GPUDeviceHandle device, Ref<GPUShaderCreateInfo> createinfo);
+    GpuShaderHandle CreateGpuShader(GpuDeviceHandle device, Ref<GpuShaderCreateInfo> createinfo);
 
     [NativeName("SDL_CreateGPUTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
-    GPUTextureHandle CreateGPUTexture(GPUDeviceHandle device, GPUTextureCreateInfo* createinfo);
+    GpuTextureHandle CreateGpuTexture(GpuDeviceHandle device, GpuTextureCreateInfo* createinfo);
 
     [NativeName("SDL_CreateGPUTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTexture")]
-    GPUTextureHandle CreateGPUTexture(GPUDeviceHandle device, Ref<GPUTextureCreateInfo> createinfo);
+    GpuTextureHandle CreateGpuTexture(GpuDeviceHandle device, Ref<GpuTextureCreateInfo> createinfo);
 
     [NativeName("SDL_CreateGPUTransferBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
-    GPUTransferBufferHandle CreateGPUTransferBuffer(
-        GPUDeviceHandle device,
-        GPUTransferBufferCreateInfo* createinfo
+    GpuTransferBufferHandle CreateGpuTransferBuffer(
+        GpuDeviceHandle device,
+        GpuTransferBufferCreateInfo* createinfo
     );
 
     [NativeName("SDL_CreateGPUTransferBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_CreateGPUTransferBuffer")]
-    GPUTransferBufferHandle CreateGPUTransferBuffer(
-        GPUDeviceHandle device,
-        Ref<GPUTransferBufferCreateInfo> createinfo
+    GpuTransferBufferHandle CreateGpuTransferBuffer(
+        GpuDeviceHandle device,
+        Ref<GpuTransferBufferCreateInfo> createinfo
     );
 
     [NativeName("SDL_CreateHapticEffect")]
@@ -11787,7 +11787,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_DestroyGPUDevice")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyGPUDevice")]
-    void DestroyGPUDevice(GPUDeviceHandle device);
+    void DestroyGpuDevice(GpuDeviceHandle device);
 
     [NativeName("SDL_DestroyHapticEffect")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DestroyHapticEffect")]
@@ -11875,8 +11875,8 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_DispatchGPUCompute")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DispatchGPUCompute")]
-    void DispatchGPUCompute(
-        GPUComputePassHandle compute_pass,
+    void DispatchGpuCompute(
+        GpuComputePassHandle compute_pass,
         uint groupcount_x,
         uint groupcount_y,
         uint groupcount_z
@@ -11884,48 +11884,48 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_DispatchGPUComputeIndirect")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DispatchGPUComputeIndirect")]
-    void DispatchGPUComputeIndirect(
-        GPUComputePassHandle compute_pass,
-        GPUBufferHandle buffer,
+    void DispatchGpuComputeIndirect(
+        GpuComputePassHandle compute_pass,
+        GpuBufferHandle buffer,
         uint offset
     );
 
     [NativeName("SDL_DownloadFromGPUBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
-    void DownloadFromGPUBuffer(
-        GPUCopyPassHandle copy_pass,
-        GPUBufferRegion* source,
-        GPUTransferBufferLocation* destination
+    void DownloadFromGpuBuffer(
+        GpuCopyPassHandle copy_pass,
+        GpuBufferRegion* source,
+        GpuTransferBufferLocation* destination
     );
 
     [NativeName("SDL_DownloadFromGPUBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUBuffer")]
-    void DownloadFromGPUBuffer(
-        GPUCopyPassHandle copy_pass,
-        Ref<GPUBufferRegion> source,
-        Ref<GPUTransferBufferLocation> destination
+    void DownloadFromGpuBuffer(
+        GpuCopyPassHandle copy_pass,
+        Ref<GpuBufferRegion> source,
+        Ref<GpuTransferBufferLocation> destination
     );
 
     [NativeName("SDL_DownloadFromGPUTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
-    void DownloadFromGPUTexture(
-        GPUCopyPassHandle copy_pass,
-        GPUTextureRegion* source,
-        GPUTextureTransferInfo* destination
+    void DownloadFromGpuTexture(
+        GpuCopyPassHandle copy_pass,
+        GpuTextureRegion* source,
+        GpuTextureTransferInfo* destination
     );
 
     [NativeName("SDL_DownloadFromGPUTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DownloadFromGPUTexture")]
-    void DownloadFromGPUTexture(
-        GPUCopyPassHandle copy_pass,
-        Ref<GPUTextureRegion> source,
-        Ref<GPUTextureTransferInfo> destination
+    void DownloadFromGpuTexture(
+        GpuCopyPassHandle copy_pass,
+        Ref<GpuTextureRegion> source,
+        Ref<GpuTextureTransferInfo> destination
     );
 
     [NativeName("SDL_DrawGPUIndexedPrimitives")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUIndexedPrimitives")]
-    void DrawGPUIndexedPrimitives(
-        GPURenderPassHandle render_pass,
+    void DrawGpuIndexedPrimitives(
+        GpuRenderPassHandle render_pass,
         uint num_indices,
         uint num_instances,
         uint first_index,
@@ -11935,17 +11935,17 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_DrawGPUIndexedPrimitivesIndirect")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUIndexedPrimitivesIndirect")]
-    void DrawGPUIndexedPrimitivesIndirect(
-        GPURenderPassHandle render_pass,
-        GPUBufferHandle buffer,
+    void DrawGpuIndexedPrimitivesIndirect(
+        GpuRenderPassHandle render_pass,
+        GpuBufferHandle buffer,
         uint offset,
         uint draw_count
     );
 
     [NativeName("SDL_DrawGPUPrimitives")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUPrimitives")]
-    void DrawGPUPrimitives(
-        GPURenderPassHandle render_pass,
+    void DrawGpuPrimitives(
+        GpuRenderPassHandle render_pass,
         uint num_vertices,
         uint num_instances,
         uint first_vertex,
@@ -11954,9 +11954,9 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_DrawGPUPrimitivesIndirect")]
     [NativeFunction("SDL3", EntryPoint = "SDL_DrawGPUPrimitivesIndirect")]
-    void DrawGPUPrimitivesIndirect(
-        GPURenderPassHandle render_pass,
-        GPUBufferHandle buffer,
+    void DrawGpuPrimitivesIndirect(
+        GpuRenderPassHandle render_pass,
+        GpuBufferHandle buffer,
         uint offset,
         uint draw_count
     );
@@ -11971,51 +11971,51 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_EGL_GetCurrentConfig")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentConfig")]
-    Ptr EGLGetCurrentConfig();
+    Ptr EglGetCurrentConfig();
 
     [NativeName("SDL_EGL_GetCurrentConfig")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentConfig")]
-    void* EGLGetCurrentConfigRaw();
+    void* EglGetCurrentConfigRaw();
 
     [NativeName("SDL_EGL_GetCurrentDisplay")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentDisplay")]
-    Ptr EGLGetCurrentDisplay();
+    Ptr EglGetCurrentDisplay();
 
     [NativeName("SDL_EGL_GetCurrentDisplay")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetCurrentDisplay")]
-    void* EGLGetCurrentDisplayRaw();
+    void* EglGetCurrentDisplayRaw();
 
     [NativeName("SDL_EGL_GetProcAddress")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
-    FunctionPointer EGLGetProcAddress(sbyte* proc);
+    FunctionPointer EglGetProcAddress(sbyte* proc);
 
     [NativeName("SDL_EGL_GetProcAddress")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetProcAddress")]
-    FunctionPointer EGLGetProcAddress(Ref<sbyte> proc);
+    FunctionPointer EglGetProcAddress(Ref<sbyte> proc);
 
     [NativeName("SDL_EGL_GetWindowSurface")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowSurface")]
-    Ptr EGLGetWindowSurface(WindowHandle window);
+    Ptr EglGetWindowSurface(WindowHandle window);
 
     [NativeName("SDL_EGL_GetWindowSurface")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_GetWindowSurface")]
-    void* EGLGetWindowSurfaceRaw(WindowHandle window);
+    void* EglGetWindowSurfaceRaw(WindowHandle window);
 
     [NativeName("SDL_EGL_SetAttributeCallbacks")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetAttributeCallbacks")]
-    void EGLSetAttributeCallbacks(
-        EGLAttribArrayCallback platformAttribCallback,
-        EGLIntArrayCallback surfaceAttribCallback,
-        EGLIntArrayCallback contextAttribCallback,
+    void EglSetAttributeCallbacks(
+        EglAttribArrayCallback platformAttribCallback,
+        EglIntArrayCallback surfaceAttribCallback,
+        EglIntArrayCallback contextAttribCallback,
         void* userdata
     );
 
     [NativeName("SDL_EGL_SetAttributeCallbacks")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EGL_SetAttributeCallbacks")]
-    void EGLSetAttributeCallbacks(
-        EGLAttribArrayCallback platformAttribCallback,
-        EGLIntArrayCallback surfaceAttribCallback,
-        EGLIntArrayCallback contextAttribCallback,
+    void EglSetAttributeCallbacks(
+        EglAttribArrayCallback platformAttribCallback,
+        EglIntArrayCallback surfaceAttribCallback,
+        EglIntArrayCallback contextAttribCallback,
         Ref userdata
     );
 
@@ -12029,15 +12029,15 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_EndGPUComputePass")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EndGPUComputePass")]
-    void EndGPUComputePass(GPUComputePassHandle compute_pass);
+    void EndGpuComputePass(GpuComputePassHandle compute_pass);
 
     [NativeName("SDL_EndGPUCopyPass")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EndGPUCopyPass")]
-    void EndGPUCopyPass(GPUCopyPassHandle copy_pass);
+    void EndGpuCopyPass(GpuCopyPassHandle copy_pass);
 
     [NativeName("SDL_EndGPURenderPass")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EndGPURenderPass")]
-    void EndGPURenderPass(GPURenderPassHandle render_pass);
+    void EndGpuRenderPass(GpuRenderPassHandle render_pass);
 
     [NativeName("SDL_EnterAppMainCallbacks")]
     [NativeFunction("SDL3", EntryPoint = "SDL_EnterAppMainCallbacks")]
@@ -12269,13 +12269,13 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GDKSuspendComplete")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GDKSuspendComplete")]
-    void GDKSuspendComplete();
+    void GdkSuspendComplete();
 
     [NativeName("SDL_GenerateMipmapsForGPUTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GenerateMipmapsForGPUTexture")]
-    void GenerateMipmapsForGPUTexture(
-        GPUCommandBufferHandle command_buffer,
-        GPUTextureHandle texture
+    void GenerateMipmapsForGpuTexture(
+        GpuCommandBufferHandle command_buffer,
+        GpuTextureHandle texture
     );
 
     [NativeName("SDL_GetAppMetadataProperty")]
@@ -12566,7 +12566,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GetCPUCacheLineSize")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCPUCacheLineSize")]
-    int GetCPUCacheLineSize();
+    int GetCpuCacheLineSize();
 
     [NativeName("SDL_GetCurrentAudioDriver")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetCurrentAudioDriver")]
@@ -13130,27 +13130,27 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GetGPUDeviceDriver")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
-    Ptr<sbyte> GetGPUDeviceDriver(GPUDeviceHandle device);
+    Ptr<sbyte> GetGpuDeviceDriver(GpuDeviceHandle device);
 
     [NativeName("SDL_GetGPUDeviceDriver")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDeviceDriver")]
-    sbyte* GetGPUDeviceDriverRaw(GPUDeviceHandle device);
+    sbyte* GetGpuDeviceDriverRaw(GpuDeviceHandle device);
 
     [NativeName("SDL_GetGPUDriver")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
-    Ptr<sbyte> GetGPUDriver(int index);
+    Ptr<sbyte> GetGpuDriver(int index);
 
     [NativeName("SDL_GetGPUDriver")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUDriver")]
-    sbyte* GetGPUDriverRaw(int index);
+    sbyte* GetGpuDriverRaw(int index);
 
     [NativeName("SDL_GetGPUShaderFormats")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUShaderFormats")]
-    uint GetGPUShaderFormats(GPUDeviceHandle device);
+    uint GetGpuShaderFormats(GpuDeviceHandle device);
 
     [NativeName("SDL_GetGPUSwapchainTextureFormat")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGPUSwapchainTextureFormat")]
-    GPUTextureFormat GetGPUSwapchainTextureFormat(GPUDeviceHandle device, WindowHandle window);
+    GpuTextureFormat GetGpuSwapchainTextureFormat(GpuDeviceHandle device, WindowHandle window);
 
     [NativeName("SDL_GetGrabbedWindow")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetGrabbedWindow")]
@@ -13590,7 +13590,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GetNumGPUDrivers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetNumGPUDrivers")]
-    int GetNumGPUDrivers();
+    int GetNumGpuDrivers();
 
     [NativeName("SDL_GetNumHapticAxes")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetNumHapticAxes")]
@@ -13614,7 +13614,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GetNumLogicalCPUCores")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetNumLogicalCPUCores")]
-    int GetNumLogicalCPUCores();
+    int GetNumLogicalCpuCores();
 
     [NativeName("SDL_GetNumRenderDrivers")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetNumRenderDrivers")]
@@ -14040,7 +14040,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GetRGB")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
-    void GetRGB(
+    void GetRgb(
         uint pixel,
         PixelFormatDetails* format,
         Palette* palette,
@@ -14051,7 +14051,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GetRGB")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetRGB")]
-    void GetRGB(
+    void GetRgb(
         uint pixel,
         Ref<PixelFormatDetails> format,
         Ref<Palette> palette,
@@ -14286,7 +14286,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GetSystemRAM")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSystemRAM")]
-    int GetSystemRAM();
+    int GetSystemRam();
 
     [NativeName("SDL_GetSystemTheme")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetSystemTheme")]
@@ -14395,11 +14395,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GetTLS")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
-    void* GetTLS(AtomicInt* id);
+    void* GetTls(AtomicInt* id);
 
     [NativeName("SDL_GetTLS")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTLS")]
-    Ptr GetTLS(Ref<AtomicInt> id);
+    Ptr GetTls(Ref<AtomicInt> id);
 
     [NativeName("SDL_GetTouchDeviceName")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetTouchDeviceName")]
@@ -14505,11 +14505,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GetWindowICCProfile")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowICCProfile")]
-    void* GetWindowICCProfile(WindowHandle window, nuint* size);
+    void* GetWindowIccProfile(WindowHandle window, nuint* size);
 
     [NativeName("SDL_GetWindowICCProfile")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowICCProfile")]
-    Ptr GetWindowICCProfile(WindowHandle window, Ref<nuint> size);
+    Ptr GetWindowIccProfile(WindowHandle window, Ref<nuint> size);
 
     [NativeName("SDL_GetWindowID")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetWindowID")]
@@ -14777,56 +14777,56 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_GPUSupportsProperties")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
-    MaybeBool<byte> GPUSupportsProperties(uint props);
+    MaybeBool<byte> GpuSupportsProperties(uint props);
 
     [NativeName("SDL_GPUSupportsProperties")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsProperties")]
-    byte GPUSupportsPropertiesRaw(uint props);
+    byte GpuSupportsPropertiesRaw(uint props);
 
     [NativeName("SDL_GPUSupportsShaderFormats")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
-    byte GPUSupportsShaderFormats(uint format_flags, sbyte* name);
+    byte GpuSupportsShaderFormats(uint format_flags, sbyte* name);
 
     [NativeName("SDL_GPUSupportsShaderFormats")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GPUSupportsShaderFormats")]
-    MaybeBool<byte> GPUSupportsShaderFormats(uint format_flags, Ref<sbyte> name);
+    MaybeBool<byte> GpuSupportsShaderFormats(uint format_flags, Ref<sbyte> name);
 
     [NativeName("SDL_GPUTextureFormatTexelBlockSize")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureFormatTexelBlockSize")]
-    uint GPUTextureFormatTexelBlockSize(GPUTextureFormat format);
+    uint GpuTextureFormatTexelBlockSize(GpuTextureFormat format);
 
     [NativeName("SDL_GPUTextureSupportsFormat")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
-    MaybeBool<byte> GPUTextureSupportsFormat(
-        GPUDeviceHandle device,
-        GPUTextureFormat format,
-        GPUTextureType type,
+    MaybeBool<byte> GpuTextureSupportsFormat(
+        GpuDeviceHandle device,
+        GpuTextureFormat format,
+        GpuTextureType type,
         uint usage
     );
 
     [NativeName("SDL_GPUTextureSupportsFormat")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsFormat")]
-    byte GPUTextureSupportsFormatRaw(
-        GPUDeviceHandle device,
-        GPUTextureFormat format,
-        GPUTextureType type,
+    byte GpuTextureSupportsFormatRaw(
+        GpuDeviceHandle device,
+        GpuTextureFormat format,
+        GpuTextureType type,
         uint usage
     );
 
     [NativeName("SDL_GPUTextureSupportsSampleCount")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
-    MaybeBool<byte> GPUTextureSupportsSampleCount(
-        GPUDeviceHandle device,
-        GPUTextureFormat format,
-        GPUSampleCount sample_count
+    MaybeBool<byte> GpuTextureSupportsSampleCount(
+        GpuDeviceHandle device,
+        GpuTextureFormat format,
+        GpuSampleCount sample_count
     );
 
     [NativeName("SDL_GPUTextureSupportsSampleCount")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GPUTextureSupportsSampleCount")]
-    byte GPUTextureSupportsSampleCountRaw(
-        GPUDeviceHandle device,
-        GPUTextureFormat format,
-        GPUSampleCount sample_count
+    byte GpuTextureSupportsSampleCountRaw(
+        GpuDeviceHandle device,
+        GpuTextureFormat format,
+        GpuSampleCount sample_count
     );
 
     [NativeName("SDL_GUIDToString")]
@@ -14871,7 +14871,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_HasAVX")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX")]
-    MaybeBool<byte> HasAVX();
+    MaybeBool<byte> HasAvx();
 
     [NativeName("SDL_HasAVX2")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX2")]
@@ -14891,7 +14891,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_HasAVX")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX")]
-    byte HasAVXRaw();
+    byte HasAvxRaw();
 
     [NativeName("SDL_HasClipboardData")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasClipboardData")]
@@ -14959,19 +14959,19 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_HasLSX")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasLSX")]
-    MaybeBool<byte> HasLSX();
+    MaybeBool<byte> HasLsx();
 
     [NativeName("SDL_HasLSX")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasLSX")]
-    byte HasLSXRaw();
+    byte HasLsxRaw();
 
     [NativeName("SDL_HasMMX")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasMMX")]
-    MaybeBool<byte> HasMMX();
+    MaybeBool<byte> HasMmx();
 
     [NativeName("SDL_HasMMX")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasMMX")]
-    byte HasMMXRaw();
+    byte HasMmxRaw();
 
     [NativeName("SDL_HasMouse")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasMouse")]
@@ -15031,7 +15031,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_HasSSE")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE")]
-    MaybeBool<byte> HasSSE();
+    MaybeBool<byte> HasSse();
 
     [NativeName("SDL_HasSSE2")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE2")]
@@ -15067,7 +15067,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_HasSSE")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE")]
-    byte HasSSERaw();
+    byte HasSseRaw();
 
     [NativeName("SDL_hid_ble_scan")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_ble_scan")]
@@ -15317,11 +15317,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_InsertGPUDebugLabel")]
     [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
-    void InsertGPUDebugLabel(GPUCommandBufferHandle command_buffer, sbyte* text);
+    void InsertGpuDebugLabel(GpuCommandBufferHandle command_buffer, sbyte* text);
 
     [NativeName("SDL_InsertGPUDebugLabel")]
     [NativeFunction("SDL3", EntryPoint = "SDL_InsertGPUDebugLabel")]
-    void InsertGPUDebugLabel(GPUCommandBufferHandle command_buffer, Ref<sbyte> text);
+    void InsertGpuDebugLabel(GpuCommandBufferHandle command_buffer, Ref<sbyte> text);
 
     [NativeName("SDL_IOFromConstMem")]
     [NativeFunction("SDL3", EntryPoint = "SDL_IOFromConstMem")]
@@ -15537,19 +15537,19 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_LoadBMP")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP")]
-    Surface* LoadBMP(sbyte* file);
+    Surface* LoadBmp(sbyte* file);
 
     [NativeName("SDL_LoadBMP")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP")]
-    Ptr<Surface> LoadBMP(Ref<sbyte> file);
+    Ptr<Surface> LoadBmp(Ref<sbyte> file);
 
     [NativeName("SDL_LoadBMP_IO")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP_IO")]
-    Surface* LoadBmpIo(IOStreamHandle src, byte closeio);
+    Surface* LoadBmpIO(IOStreamHandle src, byte closeio);
 
     [NativeName("SDL_LoadBMP_IO")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadBMP_IO")]
-    Ptr<Surface> LoadBmpIo(IOStreamHandle src, MaybeBool<byte> closeio);
+    Ptr<Surface> LoadBmpIO(IOStreamHandle src, MaybeBool<byte> closeio);
 
     [NativeName("SDL_LoadFile")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadFile")]
@@ -15585,11 +15585,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_LoadWAV")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV")]
-    byte LoadWAV(sbyte* path, AudioSpec* spec, byte** audio_buf, uint* audio_len);
+    byte LoadWav(sbyte* path, AudioSpec* spec, byte** audio_buf, uint* audio_len);
 
     [NativeName("SDL_LoadWAV")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV")]
-    MaybeBool<byte> LoadWAV(
+    MaybeBool<byte> LoadWav(
         Ref<sbyte> path,
         Ref<AudioSpec> spec,
         Ref2D<byte> audio_buf,
@@ -15598,7 +15598,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_LoadWAV_IO")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV_IO")]
-    byte LoadWavIo(
+    byte LoadWavIO(
         IOStreamHandle src,
         byte closeio,
         AudioSpec* spec,
@@ -15608,7 +15608,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_LoadWAV_IO")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LoadWAV_IO")]
-    MaybeBool<byte> LoadWavIo(
+    MaybeBool<byte> LoadWavIO(
         IOStreamHandle src,
         MaybeBool<byte> closeio,
         Ref<AudioSpec> spec,
@@ -15742,27 +15742,27 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_MapGPUTransferBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
-    void* MapGPUTransferBuffer(
-        GPUDeviceHandle device,
-        GPUTransferBufferHandle transfer_buffer,
+    void* MapGpuTransferBuffer(
+        GpuDeviceHandle device,
+        GpuTransferBufferHandle transfer_buffer,
         byte cycle
     );
 
     [NativeName("SDL_MapGPUTransferBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapGPUTransferBuffer")]
-    Ptr MapGPUTransferBuffer(
-        GPUDeviceHandle device,
-        GPUTransferBufferHandle transfer_buffer,
+    Ptr MapGpuTransferBuffer(
+        GpuDeviceHandle device,
+        GpuTransferBufferHandle transfer_buffer,
         MaybeBool<byte> cycle
     );
 
     [NativeName("SDL_MapRGB")]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapRGB")]
-    uint MapRGB(PixelFormatDetails* format, Palette* palette, byte r, byte g, byte b);
+    uint MapRgb(PixelFormatDetails* format, Palette* palette, byte r, byte g, byte b);
 
     [NativeName("SDL_MapRGB")]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapRGB")]
-    uint MapRGB(Ref<PixelFormatDetails> format, Ref<Palette> palette, byte r, byte g, byte b);
+    uint MapRgb(Ref<PixelFormatDetails> format, Ref<Palette> palette, byte r, byte g, byte b);
 
     [NativeName("SDL_MapRGBA")]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapRGBA")]
@@ -15781,11 +15781,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_MapSurfaceRGB")]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGB")]
-    uint MapSurfaceRGB(Surface* surface, byte r, byte g, byte b);
+    uint MapSurfaceRgb(Surface* surface, byte r, byte g, byte b);
 
     [NativeName("SDL_MapSurfaceRGB")]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGB")]
-    uint MapSurfaceRGB(Ref<Surface> surface, byte r, byte g, byte b);
+    uint MapSurfaceRgb(Ref<Surface> surface, byte r, byte g, byte b);
 
     [NativeName("SDL_MapSurfaceRGBA")]
     [NativeFunction("SDL3", EntryPoint = "SDL_MapSurfaceRGBA")]
@@ -16013,11 +16013,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_OpenURL")]
     [NativeFunction("SDL3", EntryPoint = "SDL_OpenURL")]
-    byte OpenURL(sbyte* url);
+    byte OpenUrl(sbyte* url);
 
     [NativeName("SDL_OpenURL")]
     [NativeFunction("SDL3", EntryPoint = "SDL_OpenURL")]
-    MaybeBool<byte> OpenURL(Ref<sbyte> url);
+    MaybeBool<byte> OpenUrl(Ref<sbyte> url);
 
     [NativeName("SDL_OpenUserStorage")]
     [NativeFunction("SDL3", EntryPoint = "SDL_OpenUserStorage")]
@@ -16091,7 +16091,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_PopGPUDebugGroup")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PopGPUDebugGroup")]
-    void PopGPUDebugGroup(GPUCommandBufferHandle command_buffer);
+    void PopGpuDebugGroup(GpuCommandBufferHandle command_buffer);
 
     [NativeName("SDL_pow")]
     [NativeFunction("SDL3", EntryPoint = "SDL_pow")]
@@ -16151,8 +16151,8 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_PushGPUComputeUniformData")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
-    void PushGPUComputeUniformData(
-        GPUCommandBufferHandle command_buffer,
+    void PushGpuComputeUniformData(
+        GpuCommandBufferHandle command_buffer,
         uint slot_index,
         void* data,
         uint length
@@ -16160,8 +16160,8 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_PushGPUComputeUniformData")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUComputeUniformData")]
-    void PushGPUComputeUniformData(
-        GPUCommandBufferHandle command_buffer,
+    void PushGpuComputeUniformData(
+        GpuCommandBufferHandle command_buffer,
         uint slot_index,
         Ref data,
         uint length
@@ -16169,16 +16169,16 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_PushGPUDebugGroup")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
-    void PushGPUDebugGroup(GPUCommandBufferHandle command_buffer, sbyte* name);
+    void PushGpuDebugGroup(GpuCommandBufferHandle command_buffer, sbyte* name);
 
     [NativeName("SDL_PushGPUDebugGroup")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUDebugGroup")]
-    void PushGPUDebugGroup(GPUCommandBufferHandle command_buffer, Ref<sbyte> name);
+    void PushGpuDebugGroup(GpuCommandBufferHandle command_buffer, Ref<sbyte> name);
 
     [NativeName("SDL_PushGPUFragmentUniformData")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
-    void PushGPUFragmentUniformData(
-        GPUCommandBufferHandle command_buffer,
+    void PushGpuFragmentUniformData(
+        GpuCommandBufferHandle command_buffer,
         uint slot_index,
         void* data,
         uint length
@@ -16186,8 +16186,8 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_PushGPUFragmentUniformData")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUFragmentUniformData")]
-    void PushGPUFragmentUniformData(
-        GPUCommandBufferHandle command_buffer,
+    void PushGpuFragmentUniformData(
+        GpuCommandBufferHandle command_buffer,
         uint slot_index,
         Ref data,
         uint length
@@ -16195,8 +16195,8 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_PushGPUVertexUniformData")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
-    void PushGPUVertexUniformData(
-        GPUCommandBufferHandle command_buffer,
+    void PushGpuVertexUniformData(
+        GpuCommandBufferHandle command_buffer,
         uint slot_index,
         void* data,
         uint length
@@ -16204,8 +16204,8 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_PushGPUVertexUniformData")]
     [NativeFunction("SDL3", EntryPoint = "SDL_PushGPUVertexUniformData")]
-    void PushGPUVertexUniformData(
-        GPUCommandBufferHandle command_buffer,
+    void PushGpuVertexUniformData(
+        GpuCommandBufferHandle command_buffer,
         uint slot_index,
         Ref data,
         uint length
@@ -16237,11 +16237,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_QueryGPUFence")]
     [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
-    MaybeBool<byte> QueryGPUFence(GPUDeviceHandle device, GPUFenceHandle fence);
+    MaybeBool<byte> QueryGpuFence(GpuDeviceHandle device, GpuFenceHandle fence);
 
     [NativeName("SDL_QueryGPUFence")]
     [NativeFunction("SDL3", EntryPoint = "SDL_QueryGPUFence")]
-    byte QueryGPUFenceRaw(GPUDeviceHandle device, GPUFenceHandle fence);
+    byte QueryGpuFenceRaw(GpuDeviceHandle device, GpuFenceHandle fence);
 
     [NativeName("SDL_Quit")]
     [NativeFunction("SDL3", EntryPoint = "SDL_Quit")]
@@ -16506,45 +16506,45 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_ReleaseGPUBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUBuffer")]
-    void ReleaseGPUBuffer(GPUDeviceHandle device, GPUBufferHandle buffer);
+    void ReleaseGpuBuffer(GpuDeviceHandle device, GpuBufferHandle buffer);
 
     [NativeName("SDL_ReleaseGPUComputePipeline")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUComputePipeline")]
-    void ReleaseGPUComputePipeline(
-        GPUDeviceHandle device,
-        GPUComputePipelineHandle compute_pipeline
+    void ReleaseGpuComputePipeline(
+        GpuDeviceHandle device,
+        GpuComputePipelineHandle compute_pipeline
     );
 
     [NativeName("SDL_ReleaseGPUFence")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUFence")]
-    void ReleaseGPUFence(GPUDeviceHandle device, GPUFenceHandle fence);
+    void ReleaseGpuFence(GpuDeviceHandle device, GpuFenceHandle fence);
 
     [NativeName("SDL_ReleaseGPUGraphicsPipeline")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUGraphicsPipeline")]
-    void ReleaseGPUGraphicsPipeline(
-        GPUDeviceHandle device,
-        GPUGraphicsPipelineHandle graphics_pipeline
+    void ReleaseGpuGraphicsPipeline(
+        GpuDeviceHandle device,
+        GpuGraphicsPipelineHandle graphics_pipeline
     );
 
     [NativeName("SDL_ReleaseGPUSampler")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUSampler")]
-    void ReleaseGPUSampler(GPUDeviceHandle device, GPUSamplerHandle sampler);
+    void ReleaseGpuSampler(GpuDeviceHandle device, GpuSamplerHandle sampler);
 
     [NativeName("SDL_ReleaseGPUShader")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUShader")]
-    void ReleaseGPUShader(GPUDeviceHandle device, GPUShaderHandle shader);
+    void ReleaseGpuShader(GpuDeviceHandle device, GpuShaderHandle shader);
 
     [NativeName("SDL_ReleaseGPUTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUTexture")]
-    void ReleaseGPUTexture(GPUDeviceHandle device, GPUTextureHandle texture);
+    void ReleaseGpuTexture(GpuDeviceHandle device, GpuTextureHandle texture);
 
     [NativeName("SDL_ReleaseGPUTransferBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseGPUTransferBuffer")]
-    void ReleaseGPUTransferBuffer(GPUDeviceHandle device, GPUTransferBufferHandle transfer_buffer);
+    void ReleaseGpuTransferBuffer(GpuDeviceHandle device, GpuTransferBufferHandle transfer_buffer);
 
     [NativeName("SDL_ReleaseWindowFromGPUDevice")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReleaseWindowFromGPUDevice")]
-    void ReleaseWindowFromGPUDevice(GPUDeviceHandle device, WindowHandle window);
+    void ReleaseWindowFromGpuDevice(GpuDeviceHandle device, WindowHandle window);
 
     [NativeName("SDL_ReloadGamepadMappings")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ReloadGamepadMappings")]
@@ -17111,19 +17111,19 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_SaveBMP")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
-    byte SaveBMP(Surface* surface, sbyte* file);
+    byte SaveBmp(Surface* surface, sbyte* file);
 
     [NativeName("SDL_SaveBMP")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP")]
-    MaybeBool<byte> SaveBMP(Ref<Surface> surface, Ref<sbyte> file);
+    MaybeBool<byte> SaveBmp(Ref<Surface> surface, Ref<sbyte> file);
 
     [NativeName("SDL_SaveBMP_IO")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP_IO")]
-    byte SaveBmpIo(Surface* surface, IOStreamHandle dst, byte closeio);
+    byte SaveBmpIO(Surface* surface, IOStreamHandle dst, byte closeio);
 
     [NativeName("SDL_SaveBMP_IO")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SaveBMP_IO")]
-    MaybeBool<byte> SaveBmpIo(Ref<Surface> surface, IOStreamHandle dst, MaybeBool<byte> closeio);
+    MaybeBool<byte> SaveBmpIO(Ref<Surface> surface, IOStreamHandle dst, MaybeBool<byte> closeio);
 
     [NativeName("SDL_SaveFile")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SaveFile")]
@@ -17489,11 +17489,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_SetGamepadLED")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadLED")]
-    MaybeBool<byte> SetGamepadLED(GamepadHandle gamepad, byte red, byte green, byte blue);
+    MaybeBool<byte> SetGamepadLed(GamepadHandle gamepad, byte red, byte green, byte blue);
 
     [NativeName("SDL_SetGamepadLED")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadLED")]
-    byte SetGamepadLEDRaw(GamepadHandle gamepad, byte red, byte green, byte blue);
+    byte SetGamepadLedRaw(GamepadHandle gamepad, byte red, byte green, byte blue);
 
     [NativeName("SDL_SetGamepadMapping")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGamepadMapping")]
@@ -17525,72 +17525,72 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_SetGPUAllowedFramesInFlight")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUAllowedFramesInFlight")]
-    MaybeBool<byte> SetGPUAllowedFramesInFlight(
-        GPUDeviceHandle device,
+    MaybeBool<byte> SetGpuAllowedFramesInFlight(
+        GpuDeviceHandle device,
         uint allowed_frames_in_flight
     );
 
     [NativeName("SDL_SetGPUAllowedFramesInFlight")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUAllowedFramesInFlight")]
-    byte SetGPUAllowedFramesInFlightRaw(GPUDeviceHandle device, uint allowed_frames_in_flight);
+    byte SetGpuAllowedFramesInFlightRaw(GpuDeviceHandle device, uint allowed_frames_in_flight);
 
     [NativeName("SDL_SetGPUBlendConstants")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBlendConstants")]
-    void SetGPUBlendConstants(GPURenderPassHandle render_pass, FColor blend_constants);
+    void SetGpuBlendConstants(GpuRenderPassHandle render_pass, FColor blend_constants);
 
     [NativeName("SDL_SetGPUBufferName")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
-    void SetGPUBufferName(GPUDeviceHandle device, GPUBufferHandle buffer, sbyte* text);
+    void SetGpuBufferName(GpuDeviceHandle device, GpuBufferHandle buffer, sbyte* text);
 
     [NativeName("SDL_SetGPUBufferName")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUBufferName")]
-    void SetGPUBufferName(GPUDeviceHandle device, GPUBufferHandle buffer, Ref<sbyte> text);
+    void SetGpuBufferName(GpuDeviceHandle device, GpuBufferHandle buffer, Ref<sbyte> text);
 
     [NativeName("SDL_SetGPUScissor")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
-    void SetGPUScissor(GPURenderPassHandle render_pass, Rect* scissor);
+    void SetGpuScissor(GpuRenderPassHandle render_pass, Rect* scissor);
 
     [NativeName("SDL_SetGPUScissor")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUScissor")]
-    void SetGPUScissor(GPURenderPassHandle render_pass, Ref<Rect> scissor);
+    void SetGpuScissor(GpuRenderPassHandle render_pass, Ref<Rect> scissor);
 
     [NativeName("SDL_SetGPUStencilReference")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUStencilReference")]
-    void SetGPUStencilReference(GPURenderPassHandle render_pass, byte reference);
+    void SetGpuStencilReference(GpuRenderPassHandle render_pass, byte reference);
 
     [NativeName("SDL_SetGPUSwapchainParameters")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
-    MaybeBool<byte> SetGPUSwapchainParameters(
-        GPUDeviceHandle device,
+    MaybeBool<byte> SetGpuSwapchainParameters(
+        GpuDeviceHandle device,
         WindowHandle window,
-        GPUSwapchainComposition swapchain_composition,
-        GPUPresentMode present_mode
+        GpuSwapchainComposition swapchain_composition,
+        GpuPresentMode present_mode
     );
 
     [NativeName("SDL_SetGPUSwapchainParameters")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUSwapchainParameters")]
-    byte SetGPUSwapchainParametersRaw(
-        GPUDeviceHandle device,
+    byte SetGpuSwapchainParametersRaw(
+        GpuDeviceHandle device,
         WindowHandle window,
-        GPUSwapchainComposition swapchain_composition,
-        GPUPresentMode present_mode
+        GpuSwapchainComposition swapchain_composition,
+        GpuPresentMode present_mode
     );
 
     [NativeName("SDL_SetGPUTextureName")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
-    void SetGPUTextureName(GPUDeviceHandle device, GPUTextureHandle texture, sbyte* text);
+    void SetGpuTextureName(GpuDeviceHandle device, GpuTextureHandle texture, sbyte* text);
 
     [NativeName("SDL_SetGPUTextureName")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUTextureName")]
-    void SetGPUTextureName(GPUDeviceHandle device, GPUTextureHandle texture, Ref<sbyte> text);
+    void SetGpuTextureName(GpuDeviceHandle device, GpuTextureHandle texture, Ref<sbyte> text);
 
     [NativeName("SDL_SetGPUViewport")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
-    void SetGPUViewport(GPURenderPassHandle render_pass, GPUViewport* viewport);
+    void SetGpuViewport(GpuRenderPassHandle render_pass, GpuViewport* viewport);
 
     [NativeName("SDL_SetGPUViewport")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetGPUViewport")]
-    void SetGPUViewport(GPURenderPassHandle render_pass, Ref<GPUViewport> viewport);
+    void SetGpuViewport(GpuRenderPassHandle render_pass, Ref<GpuViewport> viewport);
 
     [NativeName("SDL_SetHapticAutocenter")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetHapticAutocenter")]
@@ -17642,11 +17642,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_SetJoystickLED")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickLED")]
-    MaybeBool<byte> SetJoystickLED(JoystickHandle joystick, byte red, byte green, byte blue);
+    MaybeBool<byte> SetJoystickLed(JoystickHandle joystick, byte red, byte green, byte blue);
 
     [NativeName("SDL_SetJoystickLED")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickLED")]
-    byte SetJoystickLEDRaw(JoystickHandle joystick, byte red, byte green, byte blue);
+    byte SetJoystickLedRaw(JoystickHandle joystick, byte red, byte green, byte blue);
 
     [NativeName("SDL_SetJoystickPlayerIndex")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetJoystickPlayerIndex")]
@@ -17998,11 +17998,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_SetSurfaceRLE")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceRLE")]
-    byte SetSurfaceRLE(Surface* surface, byte enabled);
+    byte SetSurfaceRle(Surface* surface, byte enabled);
 
     [NativeName("SDL_SetSurfaceRLE")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetSurfaceRLE")]
-    MaybeBool<byte> SetSurfaceRLE(Ref<Surface> surface, MaybeBool<byte> enabled);
+    MaybeBool<byte> SetSurfaceRle(Ref<Surface> surface, MaybeBool<byte> enabled);
 
     [NativeName("SDL_SetTextInputArea")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTextInputArea")]
@@ -18062,11 +18062,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_SetTLS")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTLS")]
-    byte SetTLS(AtomicInt* id, void* value, TLSDestructorCallback destructor);
+    byte SetTls(AtomicInt* id, void* value, TlsDestructorCallback destructor);
 
     [NativeName("SDL_SetTLS")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetTLS")]
-    MaybeBool<byte> SetTLS(Ref<AtomicInt> id, Ref value, TLSDestructorCallback destructor);
+    MaybeBool<byte> SetTls(Ref<AtomicInt> id, Ref value, TlsDestructorCallback destructor);
 
     [NativeName("SDL_SetWindowAlwaysOnTop")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetWindowAlwaysOnTop")]
@@ -18727,15 +18727,15 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_SubmitGPUCommandBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
-    MaybeBool<byte> SubmitGPUCommandBuffer(GPUCommandBufferHandle command_buffer);
+    MaybeBool<byte> SubmitGpuCommandBuffer(GpuCommandBufferHandle command_buffer);
 
     [NativeName("SDL_SubmitGPUCommandBufferAndAcquireFence")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBufferAndAcquireFence")]
-    GPUFenceHandle SubmitGPUCommandBufferAndAcquireFence(GPUCommandBufferHandle command_buffer);
+    GpuFenceHandle SubmitGpuCommandBufferAndAcquireFence(GpuCommandBufferHandle command_buffer);
 
     [NativeName("SDL_SubmitGPUCommandBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SubmitGPUCommandBuffer")]
-    byte SubmitGPUCommandBufferRaw(GPUCommandBufferHandle command_buffer);
+    byte SubmitGpuCommandBufferRaw(GpuCommandBufferHandle command_buffer);
 
     [NativeName("SDL_SurfaceHasAlternateImages")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasAlternateImages")]
@@ -18755,11 +18755,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_SurfaceHasRLE")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasRLE")]
-    byte SurfaceHasRLE(Surface* surface);
+    byte SurfaceHasRle(Surface* surface);
 
     [NativeName("SDL_SurfaceHasRLE")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SurfaceHasRLE")]
-    MaybeBool<byte> SurfaceHasRLE(Ref<Surface> surface);
+    MaybeBool<byte> SurfaceHasRle(Ref<Surface> surface);
 
     [NativeName("SDL_SyncWindow")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SyncWindow")]
@@ -18963,7 +18963,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_UnmapGPUTransferBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UnmapGPUTransferBuffer")]
-    void UnmapGPUTransferBuffer(GPUDeviceHandle device, GPUTransferBufferHandle transfer_buffer);
+    void UnmapGpuTransferBuffer(GpuDeviceHandle device, GpuTransferBufferHandle transfer_buffer);
 
     [NativeName("SDL_UnregisterApp")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UnregisterApp")]
@@ -19053,7 +19053,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_UpdateYUVTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateYUVTexture")]
-    byte UpdateYUVTexture(
+    byte UpdateYuvTexture(
         Texture* texture,
         Rect* rect,
         byte* Yplane,
@@ -19066,7 +19066,7 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_UpdateYUVTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UpdateYUVTexture")]
-    MaybeBool<byte> UpdateYUVTexture(
+    MaybeBool<byte> UpdateYuvTexture(
         Ref<Texture> texture,
         Ref<Rect> rect,
         Ref<byte> Yplane,
@@ -19079,37 +19079,37 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_UploadToGPUBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
-    void UploadToGPUBuffer(
-        GPUCopyPassHandle copy_pass,
-        GPUTransferBufferLocation* source,
-        GPUBufferRegion* destination,
+    void UploadToGpuBuffer(
+        GpuCopyPassHandle copy_pass,
+        GpuTransferBufferLocation* source,
+        GpuBufferRegion* destination,
         byte cycle
     );
 
     [NativeName("SDL_UploadToGPUBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUBuffer")]
-    void UploadToGPUBuffer(
-        GPUCopyPassHandle copy_pass,
-        Ref<GPUTransferBufferLocation> source,
-        Ref<GPUBufferRegion> destination,
+    void UploadToGpuBuffer(
+        GpuCopyPassHandle copy_pass,
+        Ref<GpuTransferBufferLocation> source,
+        Ref<GpuBufferRegion> destination,
         MaybeBool<byte> cycle
     );
 
     [NativeName("SDL_UploadToGPUTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
-    void UploadToGPUTexture(
-        GPUCopyPassHandle copy_pass,
-        GPUTextureTransferInfo* source,
-        GPUTextureRegion* destination,
+    void UploadToGpuTexture(
+        GpuCopyPassHandle copy_pass,
+        GpuTextureTransferInfo* source,
+        GpuTextureRegion* destination,
         byte cycle
     );
 
     [NativeName("SDL_UploadToGPUTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UploadToGPUTexture")]
-    void UploadToGPUTexture(
-        GPUCopyPassHandle copy_pass,
-        Ref<GPUTextureTransferInfo> source,
-        Ref<GPUTextureRegion> destination,
+    void UploadToGpuTexture(
+        GpuCopyPassHandle copy_pass,
+        Ref<GpuTextureTransferInfo> source,
+        Ref<GpuTextureRegion> destination,
         MaybeBool<byte> cycle
     );
 
@@ -19228,20 +19228,20 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_WaitAndAcquireGPUSwapchainTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitAndAcquireGPUSwapchainTexture")]
-    byte WaitAndAcquireGPUSwapchainTexture(
-        GPUCommandBufferHandle command_buffer,
+    byte WaitAndAcquireGpuSwapchainTexture(
+        GpuCommandBufferHandle command_buffer,
         WindowHandle window,
-        GPUTextureHandle* swapchain_texture,
+        GpuTextureHandle* swapchain_texture,
         uint* swapchain_texture_width,
         uint* swapchain_texture_height
     );
 
     [NativeName("SDL_WaitAndAcquireGPUSwapchainTexture")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitAndAcquireGPUSwapchainTexture")]
-    MaybeBool<byte> WaitAndAcquireGPUSwapchainTexture(
-        GPUCommandBufferHandle command_buffer,
+    MaybeBool<byte> WaitAndAcquireGpuSwapchainTexture(
+        GpuCommandBufferHandle command_buffer,
         WindowHandle window,
-        Ref<GPUTextureHandle> swapchain_texture,
+        Ref<GpuTextureHandle> swapchain_texture,
         Ref<uint> swapchain_texture_width,
         Ref<uint> swapchain_texture_height
     );
@@ -19276,37 +19276,37 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_WaitForGPUFences")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
-    byte WaitForGPUFences(
-        GPUDeviceHandle device,
+    byte WaitForGpuFences(
+        GpuDeviceHandle device,
         byte wait_all,
-        GPUFenceHandle* fences,
+        GpuFenceHandle* fences,
         uint num_fences
     );
 
     [NativeName("SDL_WaitForGPUFences")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUFences")]
-    MaybeBool<byte> WaitForGPUFences(
-        GPUDeviceHandle device,
+    MaybeBool<byte> WaitForGpuFences(
+        GpuDeviceHandle device,
         MaybeBool<byte> wait_all,
-        Ref<GPUFenceHandle> fences,
+        Ref<GpuFenceHandle> fences,
         uint num_fences
     );
 
     [NativeName("SDL_WaitForGPUIdle")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
-    MaybeBool<byte> WaitForGPUIdle(GPUDeviceHandle device);
+    MaybeBool<byte> WaitForGpuIdle(GpuDeviceHandle device);
 
     [NativeName("SDL_WaitForGPUIdle")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUIdle")]
-    byte WaitForGPUIdleRaw(GPUDeviceHandle device);
+    byte WaitForGpuIdleRaw(GpuDeviceHandle device);
 
     [NativeName("SDL_WaitForGPUSwapchain")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUSwapchain")]
-    MaybeBool<byte> WaitForGPUSwapchain(GPUDeviceHandle device, WindowHandle window);
+    MaybeBool<byte> WaitForGpuSwapchain(GpuDeviceHandle device, WindowHandle window);
 
     [NativeName("SDL_WaitForGPUSwapchain")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitForGPUSwapchain")]
-    byte WaitForGPUSwapchainRaw(GPUDeviceHandle device, WindowHandle window);
+    byte WaitForGpuSwapchainRaw(GpuDeviceHandle device, WindowHandle window);
 
     [NativeName("SDL_WaitProcess")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WaitProcess")]
@@ -19458,34 +19458,34 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_WindowSupportsGPUPresentMode")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
-    MaybeBool<byte> WindowSupportsGPUPresentMode(
-        GPUDeviceHandle device,
+    MaybeBool<byte> WindowSupportsGpuPresentMode(
+        GpuDeviceHandle device,
         WindowHandle window,
-        GPUPresentMode present_mode
+        GpuPresentMode present_mode
     );
 
     [NativeName("SDL_WindowSupportsGPUPresentMode")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUPresentMode")]
-    byte WindowSupportsGPUPresentModeRaw(
-        GPUDeviceHandle device,
+    byte WindowSupportsGpuPresentModeRaw(
+        GpuDeviceHandle device,
         WindowHandle window,
-        GPUPresentMode present_mode
+        GpuPresentMode present_mode
     );
 
     [NativeName("SDL_WindowSupportsGPUSwapchainComposition")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
-    MaybeBool<byte> WindowSupportsGPUSwapchainComposition(
-        GPUDeviceHandle device,
+    MaybeBool<byte> WindowSupportsGpuSwapchainComposition(
+        GpuDeviceHandle device,
         WindowHandle window,
-        GPUSwapchainComposition swapchain_composition
+        GpuSwapchainComposition swapchain_composition
     );
 
     [NativeName("SDL_WindowSupportsGPUSwapchainComposition")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WindowSupportsGPUSwapchainComposition")]
-    byte WindowSupportsGPUSwapchainCompositionRaw(
-        GPUDeviceHandle device,
+    byte WindowSupportsGpuSwapchainCompositionRaw(
+        GpuDeviceHandle device,
         WindowHandle window,
-        GPUSwapchainComposition swapchain_composition
+        GpuSwapchainComposition swapchain_composition
     );
 
     [NativeName("SDL_WriteIO")]

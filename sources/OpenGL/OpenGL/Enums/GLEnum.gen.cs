@@ -3272,7 +3272,7 @@ public enum GLEnum : uint
     R16 = 33322,
 
     [NativeName("GL_RG8")]
-    RG8 = 33323,
+    Rg8 = 33323,
 
     [NativeName("GL_RG16")]
     Rg16 = 33324,
@@ -10340,7 +10340,7 @@ public enum GLEnum : uint
     CompressedSrgbAlphaS3TcDxt5EXT = 35919,
 
     [NativeName("GL_SR8_EXT")]
-    SR8EXT = 36797,
+    Sr8EXT = 36797,
 
     [NativeName("GL_SRG8_EXT")]
     Srg8EXT = 36798,
@@ -10451,7 +10451,7 @@ public enum GLEnum : uint
     R8EXT = 33321,
 
     [NativeName("GL_RG8_EXT")]
-    RG8EXT = 33323,
+    Rg8EXT = 33323,
 
     [NativeName("GL_R32F_EXT")]
     R32FEXT = 33326,

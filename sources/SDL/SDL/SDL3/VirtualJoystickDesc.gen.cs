@@ -77,7 +77,7 @@ public unsafe partial struct VirtualJoystickDesc
     public VirtualJoystickDescRumbleTriggers RumbleTriggers;
 
     [NativeName("SetLED")]
-    public VirtualJoystickDescSetLED SetLED;
+    public VirtualJoystickDescSetLed SetLed;
 
     [NativeName("SendEffect")]
     public VirtualJoystickDescSendEffect SendEffect;

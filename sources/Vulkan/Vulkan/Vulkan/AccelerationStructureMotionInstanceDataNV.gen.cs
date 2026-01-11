@@ -37,5 +37,5 @@ public partial struct AccelerationStructureMotionInstanceDataNV
         ["VK_NV_ray_tracing_motion_blur"],
         ImpliesSets = ["VK_KHR_ray_tracing_pipeline"]
     )]
-    public AccelerationStructureSRTMotionInstanceNV SrtMotionInstance;
+    public AccelerationStructureSrtMotionInstanceNV SrtMotionInstance;
 }
