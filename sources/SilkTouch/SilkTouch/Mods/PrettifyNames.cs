@@ -46,7 +46,7 @@ public class PrettifyNames(
         /// The maximum length of an all capitals string to be treated as a single acronym, rather than as an all
         /// capitals word.
         /// </summary>
-        public int LongAcronymThreshold { get; init; } = 3; // TODO: Change default to 2 in next PR to match framework design guidelines
+        public int LongAcronymThreshold { get; init; } = 2;
 
         /// <summary>
         /// Multiple candidate name prefixes that may apply across all of the bindings generated.
