@@ -2,6 +2,8 @@
 @../remap.rsp
 --exclude
 _GUID
+AL_CPLUSPLUS
+ALC_CPLUSPLUS
 --file
 openal-soft-al.h
 --methodClassName

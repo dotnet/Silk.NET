@@ -83,7 +83,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
         ],
         MinVersion = "1.1"
     )]
-    public PhysicalDeviceIDPropertiesDeviceUUID DeviceUUID;
+    public PhysicalDeviceIDPropertiesDeviceUuid DeviceUuid;
 
     [NativeName("driverUUID")]
     [SupportedApiProfile(
@@ -108,7 +108,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
         ],
         MinVersion = "1.1"
     )]
-    public PhysicalDeviceIDPropertiesDriverUUID DriverUUID;
+    public PhysicalDeviceIDPropertiesDriverUuid DriverUuid;
 
     [NativeName("deviceLUID")]
     [SupportedApiProfile(
@@ -133,7 +133,7 @@ public unsafe partial struct PhysicalDeviceIDProperties
         ],
         MinVersion = "1.1"
     )]
-    public PhysicalDeviceIDPropertiesDeviceLUID DeviceLUID;
+    public PhysicalDeviceIDPropertiesDeviceLuid DeviceLuid;
 
     [NativeName("deviceNodeMask")]
     [SupportedApiProfile(
@@ -183,5 +183,5 @@ public unsafe partial struct PhysicalDeviceIDProperties
         ],
         MinVersion = "1.1"
     )]
-    public uint DeviceLUIDValid;
+    public uint DeviceLuidValid;
 }

@@ -15,5 +15,5 @@ public partial struct StdVideoEncodeH264WeightTableChromaWeightL0
 {
     [NativeName("e0_0")]
     [SupportedApiProfile("vulkan")]
-    public sbyte E0X0;
+    public sbyte E0x0;
 }

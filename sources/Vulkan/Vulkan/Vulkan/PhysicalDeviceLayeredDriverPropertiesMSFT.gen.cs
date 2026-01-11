@@ -42,5 +42,5 @@ public unsafe partial struct PhysicalDeviceLayeredDriverPropertiesMSFT
             "VK_MSFT_layered_driver+VK_VERSION_1_1",
         ]
     )]
-    public LayeredDriverUnderlyingApiMSFT UnderlyingAPI;
+    public LayeredDriverUnderlyingApiMSFT UnderlyingApi;
 }

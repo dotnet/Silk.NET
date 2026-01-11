@@ -78,7 +78,7 @@ public partial struct StdVideoH264SpsFlags
 
     [NativeName("direct_8x8_inference_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint Direct8X8InferenceFlag
+    public uint Direct8x8InferenceFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 6) & 0x1u; }

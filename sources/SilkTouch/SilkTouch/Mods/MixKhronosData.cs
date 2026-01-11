@@ -11,7 +11,6 @@ using Microsoft.Extensions.Options;
 using Silk.NET.SilkTouch.Clang;
 using Silk.NET.SilkTouch.Mods.Metadata;
 using Silk.NET.SilkTouch.Mods.Transformation;
-using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -28,7 +27,6 @@ public partial class MixKhronosData(
 )
     : IMod,
         IResponseFileMod,
-        INameTrimmer,
         IFunctionTransformer,
         IApiMetadataProvider<SymbolConstraints>,
         IApiMetadataProvider<IEnumerable<SupportedApiProfileAttribute>>
@@ -231,12 +229,6 @@ public partial class MixKhronosData(
     }
 
     /// <inheritdoc />
-    Version INameTrimmer.Version { get; } = new(0, 0, 0);
-
-    /// <inheritdoc/>
-    int INameTrimmer.Order => (int)TrimmerOrder.MixKhronosData;
-
-    /// <inheritdoc />
     public async Task InitializeAsync(IModContext ctx, CancellationToken ct = default)
     {
         var currentConfig = cfg.Get(ctx.JobKey);
@@ -356,8 +348,8 @@ public partial class MixKhronosData(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        var currentConfig = cfg.Get(ctx.JobKey);
         var jobData = Jobs[ctx.JobKey];
+        var currentConfig = jobData.Configuration;
         var proj = ctx.SourceProject;
 
         if (proj == null)
@@ -1220,41 +1212,6 @@ public partial class MixKhronosData(
     }
 
     /// <inheritdoc />
-    public void Trim(NameTrimmerContext context)
-    {
-        if (context.JobKey is null)
-        {
-            return;
-        }
-
-        if (!Jobs.TryGetValue(context.JobKey, out var job))
-        {
-            throw new InvalidOperationException(
-                "BeforeJobAsync has not run yet! MixKhronosData must come before PrettifyNames in the mod list."
-            );
-        }
-
-        // Prevent enums like GLEnum from having their prefix trimmed
-        if (context.Container is null)
-        {
-            foreach (var (original, (current, previous)) in context.Names)
-            {
-                foreach (var name in (IEnumerable<string>)[current, .. previous])
-                {
-                    if (
-                        job.Groups.TryGetValue(name, out var group)
-                        && name == $"{group.Namespace}Enum"
-                    )
-                    {
-                        context.Names[original] = new CandidateNames(name, []);
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
-    /// <inheritdoc />
     public void Transform(
         MethodDeclarationSyntax current,
         ITransformationContext ctx,
@@ -2035,6 +1992,15 @@ public partial class MixKhronosData(
             var typeVendor = job.Vendors.FirstOrDefault(typeName.EndsWith);
             var hasTypeSuffix = typeVendor != null;
             var vendorAffixType = "KhronosVendor";
+
+            // Identify the namespace enum
+            // Eg: GLEnum, ALEnum
+            if (groupInfo?.Namespace != null && typeName == $"{groupInfo.Namespace}Enum")
+            {
+                node = node.WithAttributeLists(
+                    node.AttributeLists.AddNamePrefix("KhronosNamespaceEnum", groupInfo.Namespace)
+                );
+            }
 
             // Figure out the enum's exclusive vendor
             var exclusiveVendor = groupInfo?.ExclusiveVendor ?? typeVendor;

@@ -1,3 +1,4 @@
+@../../remap-stdint.rsp
 --remap
 __GLsync=GLsync
 _cl_context=void
@@ -23,3 +24,5 @@ GLclampf=float
 GLdouble=double
 GLclampd=double
 GLhandleARB=uint
+GLintptrARB=nint
+GLsizeiptrARB=nuint

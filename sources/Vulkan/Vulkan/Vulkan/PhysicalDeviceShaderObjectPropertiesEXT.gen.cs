@@ -46,7 +46,7 @@ public unsafe partial struct PhysicalDeviceShaderObjectPropertiesEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public PhysicalDeviceShaderObjectPropertiesEXTShaderBinaryUUID ShaderBinaryUUID;
+    public PhysicalDeviceShaderObjectPropertiesExtShaderBinaryUuid ShaderBinaryUuid;
 
     [NativeName("shaderBinaryVersion")]
     [SupportedApiProfile(

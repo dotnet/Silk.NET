@@ -25,7 +25,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer1X2Pixels = 1,
+    Rate1InvocationPer1x2Pixels = 1,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_2X1_PIXELS_NV")]
     [SupportedApiProfile(
@@ -33,7 +33,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer2X1Pixels = 4,
+    Rate1InvocationPer2x1Pixels = 4,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_2X2_PIXELS_NV")]
     [SupportedApiProfile(
@@ -41,7 +41,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer2X2Pixels = 5,
+    Rate1InvocationPer2x2Pixels = 5,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_2X4_PIXELS_NV")]
     [SupportedApiProfile(
@@ -49,7 +49,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer2X4Pixels = 6,
+    Rate1InvocationPer2x4Pixels = 6,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_4X2_PIXELS_NV")]
     [SupportedApiProfile(
@@ -57,7 +57,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer4X2Pixels = 9,
+    Rate1InvocationPer4x2Pixels = 9,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_1_INVOCATION_PER_4X4_PIXELS_NV")]
     [SupportedApiProfile(
@@ -65,7 +65,7 @@ public enum FragmentShadingRateNV : uint
         ["VK_NV_fragment_shading_rate_enums"],
         ImpliesSets = ["VK_KHR_fragment_shading_rate"]
     )]
-    Rate1InvocationPer4X4Pixels = 10,
+    Rate1InvocationPer4x4Pixels = 10,
 
     [NativeName("VK_FRAGMENT_SHADING_RATE_2_INVOCATIONS_PER_PIXEL_NV")]
     [SupportedApiProfile(

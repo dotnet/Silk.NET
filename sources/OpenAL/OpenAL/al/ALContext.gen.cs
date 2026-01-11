@@ -1905,12 +1905,9 @@ public unsafe partial class ALContext : IALContext, IALContext.Static
             Underlying.Value!.SuspendContext(context);
     }
 
-    [NativeName("ALC_CPLUSPLUS")]
-    public const int Cplusplus = 201402;
-
     [NativeName("ALC_VERSION_0_1")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_0", "ALC_VERSION_1_1"], MinVersion = "1.0")]
-    public const int Version0X1 = 1;
+    public const int Version0x1 = 1;
 
     [NativeName("ALC_EXT_CAPTURE")]
     [SupportedApiProfile("alc", ["ALC_VERSION_1_1"], MinVersion = "1.1")]

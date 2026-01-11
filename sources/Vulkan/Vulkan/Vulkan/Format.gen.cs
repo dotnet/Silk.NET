@@ -4592,7 +4592,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC4X4UnormBlock = 157,
+    Astc4x4UnormBlock = 157,
 
     [NativeName("VK_FORMAT_ASTC_4x4_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4621,7 +4621,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC4X4SrgbBlock = 158,
+    Astc4x4SrgbBlock = 158,
 
     [NativeName("VK_FORMAT_ASTC_5x4_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4650,7 +4650,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X4UnormBlock = 159,
+    Astc5x4UnormBlock = 159,
 
     [NativeName("VK_FORMAT_ASTC_5x4_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4679,7 +4679,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X4SrgbBlock = 160,
+    Astc5x4SrgbBlock = 160,
 
     [NativeName("VK_FORMAT_ASTC_5x5_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4708,7 +4708,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X5UnormBlock = 161,
+    Astc5x5UnormBlock = 161,
 
     [NativeName("VK_FORMAT_ASTC_5x5_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4737,7 +4737,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC5X5SrgbBlock = 162,
+    Astc5x5SrgbBlock = 162,
 
     [NativeName("VK_FORMAT_ASTC_6x5_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4766,7 +4766,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X5UnormBlock = 163,
+    Astc6x5UnormBlock = 163,
 
     [NativeName("VK_FORMAT_ASTC_6x5_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4795,7 +4795,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X5SrgbBlock = 164,
+    Astc6x5SrgbBlock = 164,
 
     [NativeName("VK_FORMAT_ASTC_6x6_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4824,7 +4824,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X6UnormBlock = 165,
+    Astc6x6UnormBlock = 165,
 
     [NativeName("VK_FORMAT_ASTC_6x6_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4853,7 +4853,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC6X6SrgbBlock = 166,
+    Astc6x6SrgbBlock = 166,
 
     [NativeName("VK_FORMAT_ASTC_8x5_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4882,7 +4882,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X5UnormBlock = 167,
+    Astc8x5UnormBlock = 167,
 
     [NativeName("VK_FORMAT_ASTC_8x5_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4911,7 +4911,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X5SrgbBlock = 168,
+    Astc8x5SrgbBlock = 168,
 
     [NativeName("VK_FORMAT_ASTC_8x6_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4940,7 +4940,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X6UnormBlock = 169,
+    Astc8x6UnormBlock = 169,
 
     [NativeName("VK_FORMAT_ASTC_8x6_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -4969,7 +4969,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X6SrgbBlock = 170,
+    Astc8x6SrgbBlock = 170,
 
     [NativeName("VK_FORMAT_ASTC_8x8_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -4998,7 +4998,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X8UnormBlock = 171,
+    Astc8x8UnormBlock = 171,
 
     [NativeName("VK_FORMAT_ASTC_8x8_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5027,7 +5027,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC8X8SrgbBlock = 172,
+    Astc8x8SrgbBlock = 172,
 
     [NativeName("VK_FORMAT_ASTC_10x5_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5056,7 +5056,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X5UnormBlock = 173,
+    Astc10x5UnormBlock = 173,
 
     [NativeName("VK_FORMAT_ASTC_10x5_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5085,7 +5085,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X5SrgbBlock = 174,
+    Astc10x5SrgbBlock = 174,
 
     [NativeName("VK_FORMAT_ASTC_10x6_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5114,7 +5114,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X6UnormBlock = 175,
+    Astc10x6UnormBlock = 175,
 
     [NativeName("VK_FORMAT_ASTC_10x6_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5143,7 +5143,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X6SrgbBlock = 176,
+    Astc10x6SrgbBlock = 176,
 
     [NativeName("VK_FORMAT_ASTC_10x8_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5172,7 +5172,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X8UnormBlock = 177,
+    Astc10x8UnormBlock = 177,
 
     [NativeName("VK_FORMAT_ASTC_10x8_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5201,7 +5201,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X8SrgbBlock = 178,
+    Astc10x8SrgbBlock = 178,
 
     [NativeName("VK_FORMAT_ASTC_10x10_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5230,7 +5230,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X10UnormBlock = 179,
+    Astc10x10UnormBlock = 179,
 
     [NativeName("VK_FORMAT_ASTC_10x10_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5259,7 +5259,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC10X10SrgbBlock = 180,
+    Astc10x10SrgbBlock = 180,
 
     [NativeName("VK_FORMAT_ASTC_12x10_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5288,7 +5288,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X10UnormBlock = 181,
+    Astc12x10UnormBlock = 181,
 
     [NativeName("VK_FORMAT_ASTC_12x10_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5317,7 +5317,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X10SrgbBlock = 182,
+    Astc12x10SrgbBlock = 182,
 
     [NativeName("VK_FORMAT_ASTC_12x12_UNORM_BLOCK")]
     [SupportedApiProfile(
@@ -5346,7 +5346,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X12UnormBlock = 183,
+    Astc12x12UnormBlock = 183,
 
     [NativeName("VK_FORMAT_ASTC_12x12_SRGB_BLOCK")]
     [SupportedApiProfile(
@@ -5375,7 +5375,7 @@ public enum Format : uint
         ],
         MinVersion = "1.0"
     )]
-    ASTC12X12SrgbBlock = 184,
+    Astc12x12SrgbBlock = 184,
 
     [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM")]
     [SupportedApiProfile(
@@ -5400,7 +5400,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8G8R8X422Unorm = 1000156000,
+    G8B8G8R8x422Unorm = 1000156000,
 
     [NativeName("VK_FORMAT_B8G8R8G8_422_UNORM")]
     [SupportedApiProfile(
@@ -5425,7 +5425,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    B8G8R8G8X422Unorm = 1000156001,
+    B8G8R8G8x422Unorm = 1000156001,
 
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_420_UNORM")]
     [SupportedApiProfile(
@@ -5450,7 +5450,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8R8X3Plane420Unorm = 1000156002,
+    G8B8R8x3Plane420Unorm = 1000156002,
 
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_420_UNORM")]
     [SupportedApiProfile(
@@ -5475,7 +5475,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8R8X2Plane420Unorm = 1000156003,
+    G8B8R8x2Plane420Unorm = 1000156003,
 
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_422_UNORM")]
     [SupportedApiProfile(
@@ -5500,7 +5500,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8R8X3Plane422Unorm = 1000156004,
+    G8B8R8x3Plane422Unorm = 1000156004,
 
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_422_UNORM")]
     [SupportedApiProfile(
@@ -5525,7 +5525,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8R8X2Plane422Unorm = 1000156005,
+    G8B8R8x2Plane422Unorm = 1000156005,
 
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_444_UNORM")]
     [SupportedApiProfile(
@@ -5550,7 +5550,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G8B8R8X3Plane444Unorm = 1000156006,
+    G8B8R8x3Plane444Unorm = 1000156006,
 
     [NativeName("VK_FORMAT_R10X6_UNORM_PACK16")]
     [SupportedApiProfile(
@@ -5575,7 +5575,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R10X6UnormPack16 = 1000156007,
+    R10x6UnormPack16 = 1000156007,
 
     [NativeName("VK_FORMAT_R10X6G10X6_UNORM_2PACK16")]
     [SupportedApiProfile(
@@ -5600,7 +5600,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R10X6G10X6Unorm2Pack16 = 1000156008,
+    R10x6G10x6Unorm2Pack16 = 1000156008,
 
     [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16")]
     [SupportedApiProfile(
@@ -5625,7 +5625,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R10X6G10X6B10X6A10X6Unorm4Pack16 = 1000156009,
+    R10x6G10x6B10x6A10x6Unorm4Pack16 = 1000156009,
 
     [NativeName("VK_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16")]
     [SupportedApiProfile(
@@ -5650,7 +5650,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6G10X6R10X6X422Unorm4Pack16 = 1000156010,
+    G10x6B10x6G10x6R10x6x422Unorm4Pack16 = 1000156010,
 
     [NativeName("VK_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16")]
     [SupportedApiProfile(
@@ -5675,7 +5675,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    B10X6G10X6R10X6G10X6X422Unorm4Pack16 = 1000156011,
+    B10x6G10x6R10x6G10x6x422Unorm4Pack16 = 1000156011,
 
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -5700,7 +5700,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6R10X6X3Plane420Unorm3Pack16 = 1000156012,
+    G10x6B10x6R10x6x3Plane420Unorm3Pack16 = 1000156012,
 
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -5725,7 +5725,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6R10X6X2Plane420Unorm3Pack16 = 1000156013,
+    G10x6B10x6R10x6x2Plane420Unorm3Pack16 = 1000156013,
 
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -5750,7 +5750,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6R10X6X3Plane422Unorm3Pack16 = 1000156014,
+    G10x6B10x6R10x6x3Plane422Unorm3Pack16 = 1000156014,
 
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -5775,7 +5775,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6R10X6X2Plane422Unorm3Pack16 = 1000156015,
+    G10x6B10x6R10x6x2Plane422Unorm3Pack16 = 1000156015,
 
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -5800,7 +5800,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G10X6B10X6R10X6X3Plane444Unorm3Pack16 = 1000156016,
+    G10x6B10x6R10x6x3Plane444Unorm3Pack16 = 1000156016,
 
     [NativeName("VK_FORMAT_R12X4_UNORM_PACK16")]
     [SupportedApiProfile(
@@ -5825,7 +5825,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R12X4UnormPack16 = 1000156017,
+    R12x4UnormPack16 = 1000156017,
 
     [NativeName("VK_FORMAT_R12X4G12X4_UNORM_2PACK16")]
     [SupportedApiProfile(
@@ -5850,7 +5850,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R12X4G12X4Unorm2Pack16 = 1000156018,
+    R12x4G12x4Unorm2Pack16 = 1000156018,
 
     [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16")]
     [SupportedApiProfile(
@@ -5875,7 +5875,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    R12X4G12X4B12X4A12X4Unorm4Pack16 = 1000156019,
+    R12x4G12x4B12x4A12x4Unorm4Pack16 = 1000156019,
 
     [NativeName("VK_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16")]
     [SupportedApiProfile(
@@ -5900,7 +5900,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4G12X4R12X4X422Unorm4Pack16 = 1000156020,
+    G12x4B12x4G12x4R12x4x422Unorm4Pack16 = 1000156020,
 
     [NativeName("VK_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16")]
     [SupportedApiProfile(
@@ -5925,7 +5925,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    B12X4G12X4R12X4G12X4X422Unorm4Pack16 = 1000156021,
+    B12x4G12x4R12x4G12x4x422Unorm4Pack16 = 1000156021,
 
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -5950,7 +5950,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4R12X4X3Plane420Unorm3Pack16 = 1000156022,
+    G12x4B12x4R12x4x3Plane420Unorm3Pack16 = 1000156022,
 
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -5975,7 +5975,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4R12X4X2Plane420Unorm3Pack16 = 1000156023,
+    G12x4B12x4R12x4x2Plane420Unorm3Pack16 = 1000156023,
 
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -6000,7 +6000,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4R12X4X3Plane422Unorm3Pack16 = 1000156024,
+    G12x4B12x4R12x4x3Plane422Unorm3Pack16 = 1000156024,
 
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -6025,7 +6025,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4R12X4X2Plane422Unorm3Pack16 = 1000156025,
+    G12x4B12x4R12x4x2Plane422Unorm3Pack16 = 1000156025,
 
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -6050,7 +6050,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G12X4B12X4R12X4X3Plane444Unorm3Pack16 = 1000156026,
+    G12x4B12x4R12x4x3Plane444Unorm3Pack16 = 1000156026,
 
     [NativeName("VK_FORMAT_G16B16G16R16_422_UNORM")]
     [SupportedApiProfile(
@@ -6075,7 +6075,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16G16R16X422Unorm = 1000156027,
+    G16B16G16R16x422Unorm = 1000156027,
 
     [NativeName("VK_FORMAT_B16G16R16G16_422_UNORM")]
     [SupportedApiProfile(
@@ -6100,7 +6100,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    B16G16R16G16X422Unorm = 1000156028,
+    B16G16R16G16x422Unorm = 1000156028,
 
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_420_UNORM")]
     [SupportedApiProfile(
@@ -6125,7 +6125,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16R16X3Plane420Unorm = 1000156029,
+    G16B16R16x3Plane420Unorm = 1000156029,
 
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_420_UNORM")]
     [SupportedApiProfile(
@@ -6150,7 +6150,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16R16X2Plane420Unorm = 1000156030,
+    G16B16R16x2Plane420Unorm = 1000156030,
 
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM")]
     [SupportedApiProfile(
@@ -6175,7 +6175,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16R16X3Plane422Unorm = 1000156031,
+    G16B16R16x3Plane422Unorm = 1000156031,
 
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_422_UNORM")]
     [SupportedApiProfile(
@@ -6200,7 +6200,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16R16X2Plane422Unorm = 1000156032,
+    G16B16R16x2Plane422Unorm = 1000156032,
 
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM")]
     [SupportedApiProfile(
@@ -6225,7 +6225,7 @@ public enum Format : uint
         ],
         MinVersion = "1.1"
     )]
-    G16B16R16X3Plane444Unorm = 1000156033,
+    G16B16R16x3Plane444Unorm = 1000156033,
 
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_444_UNORM")]
     [SupportedApiProfile(
@@ -6242,7 +6242,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    G8B8R8X2Plane444Unorm = 1000330000,
+    G8B8R8x2Plane444Unorm = 1000330000,
 
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -6259,7 +6259,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    G10X6B10X6R10X6X2Plane444Unorm3Pack16 = 1000330001,
+    G10x6B10x6R10x6x2Plane444Unorm3Pack16 = 1000330001,
 
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16")]
     [SupportedApiProfile(
@@ -6276,7 +6276,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    G12X4B12X4R12X4X2Plane444Unorm3Pack16 = 1000330002,
+    G12x4B12x4R12x4x2Plane444Unorm3Pack16 = 1000330002,
 
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_444_UNORM")]
     [SupportedApiProfile(
@@ -6293,7 +6293,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    G16B16R16X2Plane444Unorm = 1000330003,
+    G16B16R16x2Plane444Unorm = 1000330003,
 
     [NativeName("VK_FORMAT_A4R4G4B4_UNORM_PACK16")]
     [SupportedApiProfile(
@@ -6344,7 +6344,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC4X4SfloatBlock = 1000066000,
+    Astc4x4SfloatBlock = 1000066000,
 
     [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6361,7 +6361,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC5X4SfloatBlock = 1000066001,
+    Astc5x4SfloatBlock = 1000066001,
 
     [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6378,7 +6378,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC5X5SfloatBlock = 1000066002,
+    Astc5x5SfloatBlock = 1000066002,
 
     [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6395,7 +6395,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC6X5SfloatBlock = 1000066003,
+    Astc6x5SfloatBlock = 1000066003,
 
     [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6412,7 +6412,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC6X6SfloatBlock = 1000066004,
+    Astc6x6SfloatBlock = 1000066004,
 
     [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6429,7 +6429,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC8X5SfloatBlock = 1000066005,
+    Astc8x5SfloatBlock = 1000066005,
 
     [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6446,7 +6446,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC8X6SfloatBlock = 1000066006,
+    Astc8x6SfloatBlock = 1000066006,
 
     [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6463,7 +6463,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC8X8SfloatBlock = 1000066007,
+    Astc8x8SfloatBlock = 1000066007,
 
     [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6480,7 +6480,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X5SfloatBlock = 1000066008,
+    Astc10x5SfloatBlock = 1000066008,
 
     [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6497,7 +6497,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X6SfloatBlock = 1000066009,
+    Astc10x6SfloatBlock = 1000066009,
 
     [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6514,7 +6514,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X8SfloatBlock = 1000066010,
+    Astc10x8SfloatBlock = 1000066010,
 
     [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6531,7 +6531,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC10X10SfloatBlock = 1000066011,
+    Astc10x10SfloatBlock = 1000066011,
 
     [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6548,7 +6548,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC12X10SfloatBlock = 1000066012,
+    Astc12x10SfloatBlock = 1000066012,
 
     [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK")]
     [SupportedApiProfile(
@@ -6565,7 +6565,7 @@ public enum Format : uint
         ],
         MinVersion = "1.3"
     )]
-    ASTC12X12SfloatBlock = 1000066013,
+    Astc12x12SfloatBlock = 1000066013,
 
     [NativeName("VK_FORMAT_A1B5G5R5_UNORM_PACK16")]
     [SupportedApiProfile(
@@ -6595,35 +6595,35 @@ public enum Format : uint
 
     [NativeName("VK_FORMAT_PVRTC1_2BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X2BppUnormBlockIMG = 1000054000,
+    Pvrtc1x2BppUnormBlockIMG = 1000054000,
 
     [NativeName("VK_FORMAT_PVRTC1_4BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X4BppUnormBlockIMG = 1000054001,
+    Pvrtc1x4BppUnormBlockIMG = 1000054001,
 
     [NativeName("VK_FORMAT_PVRTC2_2BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X2BppUnormBlockIMG = 1000054002,
+    Pvrtc2x2BppUnormBlockIMG = 1000054002,
 
     [NativeName("VK_FORMAT_PVRTC2_4BPP_UNORM_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X4BppUnormBlockIMG = 1000054003,
+    Pvrtc2x4BppUnormBlockIMG = 1000054003,
 
     [NativeName("VK_FORMAT_PVRTC1_2BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X2BppSrgbBlockIMG = 1000054004,
+    Pvrtc1x2BppSrgbBlockIMG = 1000054004,
 
     [NativeName("VK_FORMAT_PVRTC1_4BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc1X4BppSrgbBlockIMG = 1000054005,
+    Pvrtc1x4BppSrgbBlockIMG = 1000054005,
 
     [NativeName("VK_FORMAT_PVRTC2_2BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X2BppSrgbBlockIMG = 1000054006,
+    Pvrtc2x2BppSrgbBlockIMG = 1000054006,
 
     [NativeName("VK_FORMAT_PVRTC2_4BPP_SRGB_BLOCK_IMG")]
     [SupportedApiProfile("vulkan", ["VK_IMG_format_pvrtc"])]
-    Pvrtc2X4BppSrgbBlockIMG = 1000054007,
+    Pvrtc2x4BppSrgbBlockIMG = 1000054007,
 
     [NativeName("VK_FORMAT_R8_BOOL_ARM")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
@@ -6650,7 +6650,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R10X6UintPack16ARM = 1000609000,
+    R10x6UintPack16ARM = 1000609000,
 
     [NativeName("VK_FORMAT_R10X6G10X6_UINT_2PACK16_ARM")]
     [SupportedApiProfile(
@@ -6661,7 +6661,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6Uint2Pack16ARM = 1000609001,
+    R10x6G10x6Uint2Pack16ARM = 1000609001,
 
     [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UINT_4PACK16_ARM")]
     [SupportedApiProfile(
@@ -6672,7 +6672,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6B10X6A10X6Uint4Pack16ARM = 1000609002,
+    R10x6G10x6B10x6A10x6Uint4Pack16ARM = 1000609002,
 
     [NativeName("VK_FORMAT_R12X4_UINT_PACK16_ARM")]
     [SupportedApiProfile(
@@ -6683,7 +6683,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R12X4UintPack16ARM = 1000609003,
+    R12x4UintPack16ARM = 1000609003,
 
     [NativeName("VK_FORMAT_R12X4G12X4_UINT_2PACK16_ARM")]
     [SupportedApiProfile(
@@ -6694,7 +6694,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4Uint2Pack16ARM = 1000609004,
+    R12x4G12x4Uint2Pack16ARM = 1000609004,
 
     [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UINT_4PACK16_ARM")]
     [SupportedApiProfile(
@@ -6705,7 +6705,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4B12X4A12X4Uint4Pack16ARM = 1000609005,
+    R12x4G12x4B12x4A12x4Uint4Pack16ARM = 1000609005,
 
     [NativeName("VK_FORMAT_R14X2_UINT_PACK16_ARM")]
     [SupportedApiProfile(
@@ -6716,7 +6716,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2UintPack16ARM = 1000609006,
+    R14x2UintPack16ARM = 1000609006,
 
     [NativeName("VK_FORMAT_R14X2G14X2_UINT_2PACK16_ARM")]
     [SupportedApiProfile(
@@ -6727,7 +6727,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2Uint2Pack16ARM = 1000609007,
+    R14x2G14x2Uint2Pack16ARM = 1000609007,
 
     [NativeName("VK_FORMAT_R14X2G14X2B14X2A14X2_UINT_4PACK16_ARM")]
     [SupportedApiProfile(
@@ -6738,7 +6738,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2B14X2A14X2Uint4Pack16ARM = 1000609008,
+    R14x2G14x2B14x2A14x2Uint4Pack16ARM = 1000609008,
 
     [NativeName("VK_FORMAT_R14X2_UNORM_PACK16_ARM")]
     [SupportedApiProfile(
@@ -6749,7 +6749,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2UnormPack16ARM = 1000609009,
+    R14x2UnormPack16ARM = 1000609009,
 
     [NativeName("VK_FORMAT_R14X2G14X2_UNORM_2PACK16_ARM")]
     [SupportedApiProfile(
@@ -6760,7 +6760,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2Unorm2Pack16ARM = 1000609010,
+    R14x2G14x2Unorm2Pack16ARM = 1000609010,
 
     [NativeName("VK_FORMAT_R14X2G14X2B14X2A14X2_UNORM_4PACK16_ARM")]
     [SupportedApiProfile(
@@ -6771,7 +6771,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    R14X2G14X2B14X2A14X2Unorm4Pack16ARM = 1000609011,
+    R14x2G14x2B14x2A14x2Unorm4Pack16ARM = 1000609011,
 
     [NativeName("VK_FORMAT_G14X2_B14X2R14X2_2PLANE_420_UNORM_3PACK16_ARM")]
     [SupportedApiProfile(
@@ -6782,7 +6782,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    G14X2B14X2R14X2X2Plane420Unorm3Pack16ARM = 1000609012,
+    G14x2B14x2R14x2x2Plane420Unorm3Pack16ARM = 1000609012,
 
     [NativeName("VK_FORMAT_G14X2_B14X2R14X2_2PLANE_422_UNORM_3PACK16_ARM")]
     [SupportedApiProfile(
@@ -6793,7 +6793,7 @@ public enum Format : uint
             "VK_ARM_format_pack+VK_VERSION_1_1",
         ]
     )]
-    G14X2B14X2R14X2X2Plane422Unorm3Pack16ARM = 1000609013,
+    G14x2B14x2R14x2x2Plane422Unorm3Pack16ARM = 1000609013,
 
     [NativeName("VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6804,7 +6804,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC4X4SfloatBlockEXT = ASTC4X4SfloatBlock,
+    Astc4x4SfloatBlockEXT = Astc4x4SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6815,7 +6815,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC5X4SfloatBlockEXT = ASTC5X4SfloatBlock,
+    Astc5x4SfloatBlockEXT = Astc5x4SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6826,7 +6826,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC5X5SfloatBlockEXT = ASTC5X5SfloatBlock,
+    Astc5x5SfloatBlockEXT = Astc5x5SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6837,7 +6837,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC6X5SfloatBlockEXT = ASTC6X5SfloatBlock,
+    Astc6x5SfloatBlockEXT = Astc6x5SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6848,7 +6848,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC6X6SfloatBlockEXT = ASTC6X6SfloatBlock,
+    Astc6x6SfloatBlockEXT = Astc6x6SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6859,7 +6859,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X5SfloatBlockEXT = ASTC8X5SfloatBlock,
+    Astc8x5SfloatBlockEXT = Astc8x5SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6870,7 +6870,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X6SfloatBlockEXT = ASTC8X6SfloatBlock,
+    Astc8x6SfloatBlockEXT = Astc8x6SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6881,7 +6881,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC8X8SfloatBlockEXT = ASTC8X8SfloatBlock,
+    Astc8x8SfloatBlockEXT = Astc8x8SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6892,7 +6892,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X5SfloatBlockEXT = ASTC10X5SfloatBlock,
+    Astc10x5SfloatBlockEXT = Astc10x5SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6903,7 +6903,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X6SfloatBlockEXT = ASTC10X6SfloatBlock,
+    Astc10x6SfloatBlockEXT = Astc10x6SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6914,7 +6914,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X8SfloatBlockEXT = ASTC10X8SfloatBlock,
+    Astc10x8SfloatBlockEXT = Astc10x8SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6925,7 +6925,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC10X10SfloatBlockEXT = ASTC10X10SfloatBlock,
+    Astc10x10SfloatBlockEXT = Astc10x10SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6936,7 +6936,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC12X10SfloatBlockEXT = ASTC12X10SfloatBlock,
+    Astc12x10SfloatBlockEXT = Astc12x10SfloatBlock,
 
     [NativeName("VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK_EXT")]
     [SupportedApiProfile(
@@ -6947,7 +6947,7 @@ public enum Format : uint
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    ASTC12X12SfloatBlockEXT = ASTC12X12SfloatBlock,
+    Astc12x12SfloatBlockEXT = Astc12x12SfloatBlock,
 
     [NativeName("VK_FORMAT_G8B8G8R8_422_UNORM_KHR")]
     [SupportedApiProfile(
@@ -6958,7 +6958,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8G8R8X422UnormKHR = G8B8G8R8X422Unorm,
+    G8B8G8R8x422UnormKHR = G8B8G8R8x422Unorm,
 
     [NativeName("VK_FORMAT_B8G8R8G8_422_UNORM_KHR")]
     [SupportedApiProfile(
@@ -6969,7 +6969,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B8G8R8G8X422UnormKHR = B8G8R8G8X422Unorm,
+    B8G8R8G8x422UnormKHR = B8G8R8G8x422Unorm,
 
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
@@ -6980,7 +6980,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X3Plane420UnormKHR = G8B8R8X3Plane420Unorm,
+    G8B8R8x3Plane420UnormKHR = G8B8R8x3Plane420Unorm,
 
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
@@ -6991,7 +6991,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X2Plane420UnormKHR = G8B8R8X2Plane420Unorm,
+    G8B8R8x2Plane420UnormKHR = G8B8R8x2Plane420Unorm,
 
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
@@ -7002,7 +7002,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X3Plane422UnormKHR = G8B8R8X3Plane422Unorm,
+    G8B8R8x3Plane422UnormKHR = G8B8R8x3Plane422Unorm,
 
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
@@ -7013,7 +7013,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X2Plane422UnormKHR = G8B8R8X2Plane422Unorm,
+    G8B8R8x2Plane422UnormKHR = G8B8R8x2Plane422Unorm,
 
     [NativeName("VK_FORMAT_G8_B8_R8_3PLANE_444_UNORM_KHR")]
     [SupportedApiProfile(
@@ -7024,7 +7024,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X3Plane444UnormKHR = G8B8R8X3Plane444Unorm,
+    G8B8R8x3Plane444UnormKHR = G8B8R8x3Plane444Unorm,
 
     [NativeName("VK_FORMAT_R10X6_UNORM_PACK16_KHR")]
     [SupportedApiProfile(
@@ -7035,7 +7035,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R10X6UnormPack16KHR = R10X6UnormPack16,
+    R10x6UnormPack16KHR = R10x6UnormPack16,
 
     [NativeName("VK_FORMAT_R10X6G10X6_UNORM_2PACK16_KHR")]
     [SupportedApiProfile(
@@ -7046,7 +7046,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6Unorm2Pack16KHR = R10X6G10X6Unorm2Pack16,
+    R10x6G10x6Unorm2Pack16KHR = R10x6G10x6Unorm2Pack16,
 
     [NativeName("VK_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
@@ -7057,7 +7057,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R10X6G10X6B10X6A10X6Unorm4Pack16KHR = R10X6G10X6B10X6A10X6Unorm4Pack16,
+    R10x6G10x6B10x6A10x6Unorm4Pack16KHR = R10x6G10x6B10x6A10x6Unorm4Pack16,
 
     [NativeName("VK_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
@@ -7068,7 +7068,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6G10X6R10X6X422Unorm4Pack16KHR = G10X6B10X6G10X6R10X6X422Unorm4Pack16,
+    G10x6B10x6G10x6R10x6x422Unorm4Pack16KHR = G10x6B10x6G10x6R10x6x422Unorm4Pack16,
 
     [NativeName("VK_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
@@ -7079,7 +7079,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B10X6G10X6R10X6G10X6X422Unorm4Pack16KHR = B10X6G10X6R10X6G10X6X422Unorm4Pack16,
+    B10x6G10x6R10x6G10x6x422Unorm4Pack16KHR = B10x6G10x6R10x6G10x6x422Unorm4Pack16,
 
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
@@ -7090,7 +7090,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X3Plane420Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane420Unorm3Pack16,
+    G10x6B10x6R10x6x3Plane420Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane420Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
@@ -7101,7 +7101,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X2Plane420Unorm3Pack16KHR = G10X6B10X6R10X6X2Plane420Unorm3Pack16,
+    G10x6B10x6R10x6x2Plane420Unorm3Pack16KHR = G10x6B10x6R10x6x2Plane420Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
@@ -7112,7 +7112,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X3Plane422Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane422Unorm3Pack16,
+    G10x6B10x6R10x6x3Plane422Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane422Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
@@ -7123,7 +7123,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X2Plane422Unorm3Pack16KHR = G10X6B10X6R10X6X2Plane422Unorm3Pack16,
+    G10x6B10x6R10x6x2Plane422Unorm3Pack16KHR = G10x6B10x6R10x6x2Plane422Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
@@ -7134,7 +7134,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X3Plane444Unorm3Pack16KHR = G10X6B10X6R10X6X3Plane444Unorm3Pack16,
+    G10x6B10x6R10x6x3Plane444Unorm3Pack16KHR = G10x6B10x6R10x6x3Plane444Unorm3Pack16,
 
     [NativeName("VK_FORMAT_R12X4_UNORM_PACK16_KHR")]
     [SupportedApiProfile(
@@ -7145,7 +7145,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R12X4UnormPack16KHR = R12X4UnormPack16,
+    R12x4UnormPack16KHR = R12x4UnormPack16,
 
     [NativeName("VK_FORMAT_R12X4G12X4_UNORM_2PACK16_KHR")]
     [SupportedApiProfile(
@@ -7156,7 +7156,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4Unorm2Pack16KHR = R12X4G12X4Unorm2Pack16,
+    R12x4G12x4Unorm2Pack16KHR = R12x4G12x4Unorm2Pack16,
 
     [NativeName("VK_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
@@ -7167,7 +7167,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    R12X4G12X4B12X4A12X4Unorm4Pack16KHR = R12X4G12X4B12X4A12X4Unorm4Pack16,
+    R12x4G12x4B12x4A12x4Unorm4Pack16KHR = R12x4G12x4B12x4A12x4Unorm4Pack16,
 
     [NativeName("VK_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
@@ -7178,7 +7178,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4G12X4R12X4X422Unorm4Pack16KHR = G12X4B12X4G12X4R12X4X422Unorm4Pack16,
+    G12x4B12x4G12x4R12x4x422Unorm4Pack16KHR = G12x4B12x4G12x4R12x4x422Unorm4Pack16,
 
     [NativeName("VK_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16_KHR")]
     [SupportedApiProfile(
@@ -7189,7 +7189,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B12X4G12X4R12X4G12X4X422Unorm4Pack16KHR = B12X4G12X4R12X4G12X4X422Unorm4Pack16,
+    B12x4G12x4R12x4G12x4x422Unorm4Pack16KHR = B12x4G12x4R12x4G12x4x422Unorm4Pack16,
 
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
@@ -7200,7 +7200,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X3Plane420Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane420Unorm3Pack16,
+    G12x4B12x4R12x4x3Plane420Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane420Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
@@ -7211,7 +7211,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X2Plane420Unorm3Pack16KHR = G12X4B12X4R12X4X2Plane420Unorm3Pack16,
+    G12x4B12x4R12x4x2Plane420Unorm3Pack16KHR = G12x4B12x4R12x4x2Plane420Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
@@ -7222,7 +7222,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X3Plane422Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane422Unorm3Pack16,
+    G12x4B12x4R12x4x3Plane422Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane422Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
@@ -7233,7 +7233,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X2Plane422Unorm3Pack16KHR = G12X4B12X4R12X4X2Plane422Unorm3Pack16,
+    G12x4B12x4R12x4x2Plane422Unorm3Pack16KHR = G12x4B12x4R12x4x2Plane422Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16_KHR")]
     [SupportedApiProfile(
@@ -7244,7 +7244,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X3Plane444Unorm3Pack16KHR = G12X4B12X4R12X4X3Plane444Unorm3Pack16,
+    G12x4B12x4R12x4x3Plane444Unorm3Pack16KHR = G12x4B12x4R12x4x3Plane444Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G16B16G16R16_422_UNORM_KHR")]
     [SupportedApiProfile(
@@ -7255,7 +7255,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16G16R16X422UnormKHR = G16B16G16R16X422Unorm,
+    G16B16G16R16x422UnormKHR = G16B16G16R16x422Unorm,
 
     [NativeName("VK_FORMAT_B16G16R16G16_422_UNORM_KHR")]
     [SupportedApiProfile(
@@ -7266,7 +7266,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    B16G16R16G16X422UnormKHR = B16G16R16G16X422Unorm,
+    B16G16R16G16x422UnormKHR = B16G16R16G16x422Unorm,
 
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
@@ -7277,7 +7277,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X3Plane420UnormKHR = G16B16R16X3Plane420Unorm,
+    G16B16R16x3Plane420UnormKHR = G16B16R16x3Plane420Unorm,
 
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_420_UNORM_KHR")]
     [SupportedApiProfile(
@@ -7288,7 +7288,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X2Plane420UnormKHR = G16B16R16X2Plane420Unorm,
+    G16B16R16x2Plane420UnormKHR = G16B16R16x2Plane420Unorm,
 
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
@@ -7299,7 +7299,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X3Plane422UnormKHR = G16B16R16X3Plane422Unorm,
+    G16B16R16x3Plane422UnormKHR = G16B16R16x3Plane422Unorm,
 
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_422_UNORM_KHR")]
     [SupportedApiProfile(
@@ -7310,7 +7310,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X2Plane422UnormKHR = G16B16R16X2Plane422Unorm,
+    G16B16R16x2Plane422UnormKHR = G16B16R16x2Plane422Unorm,
 
     [NativeName("VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM_KHR")]
     [SupportedApiProfile(
@@ -7321,7 +7321,7 @@ public enum Format : uint
             "VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X3Plane444UnormKHR = G16B16R16X3Plane444Unorm,
+    G16B16R16x3Plane444UnormKHR = G16B16R16x3Plane444Unorm,
 
     [NativeName("VK_FORMAT_G8_B8R8_2PLANE_444_UNORM_EXT")]
     [SupportedApiProfile(
@@ -7332,7 +7332,7 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G8B8R8X2Plane444UnormEXT = G8B8R8X2Plane444Unorm,
+    G8B8R8x2Plane444UnormEXT = G8B8R8x2Plane444Unorm,
 
     [NativeName("VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16_EXT")]
     [SupportedApiProfile(
@@ -7343,7 +7343,7 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G10X6B10X6R10X6X2Plane444Unorm3Pack16EXT = G10X6B10X6R10X6X2Plane444Unorm3Pack16,
+    G10x6B10x6R10x6x2Plane444Unorm3Pack16EXT = G10x6B10x6R10x6x2Plane444Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16_EXT")]
     [SupportedApiProfile(
@@ -7354,7 +7354,7 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G12X4B12X4R12X4X2Plane444Unorm3Pack16EXT = G12X4B12X4R12X4X2Plane444Unorm3Pack16,
+    G12x4B12x4R12x4x2Plane444Unorm3Pack16EXT = G12x4B12x4R12x4x2Plane444Unorm3Pack16,
 
     [NativeName("VK_FORMAT_G16_B16R16_2PLANE_444_UNORM_EXT")]
     [SupportedApiProfile(
@@ -7365,7 +7365,7 @@ public enum Format : uint
             "VK_EXT_ycbcr_2plane_444_formats+VK_VERSION_1_1",
         ]
     )]
-    G16B16R16X2Plane444UnormEXT = G16B16R16X2Plane444Unorm,
+    G16B16R16x2Plane444UnormEXT = G16B16R16x2Plane444Unorm,
 
     [NativeName("VK_FORMAT_A4R4G4B4_UNORM_PACK16_EXT")]
     [SupportedApiProfile(

@@ -95,7 +95,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Features
             "VK_EXT_texture_compression_astc_hdr+VK_VERSION_1_1",
         ]
     )]
-    public uint TextureCompressionASTCHDR;
+    public uint TextureCompressionAstcHdr;
 
     [NativeName("shaderZeroInitializeWorkgroupMemory")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_3", "VK_VERSION_1_4"], MinVersion = "1.3")]

@@ -50,10 +50,10 @@ public enum TransferCharacteristics
     Srgb = 13,
 
     [NativeName("SDL_TRANSFER_CHARACTERISTICS_BT2020_10BIT")]
-    Bt2020X10Bit = 14,
+    Bt2020x10Bit = 14,
 
     [NativeName("SDL_TRANSFER_CHARACTERISTICS_BT2020_12BIT")]
-    Bt2020X12Bit = 15,
+    Bt2020x12Bit = 15,
 
     [NativeName("SDL_TRANSFER_CHARACTERISTICS_PQ")]
     Pq = 16,

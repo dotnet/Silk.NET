@@ -126,8 +126,8 @@ public class ArrayParameterTransformer : IFunctionTransformer
         // Get information from the function name for benefit-of-doubt overloading i.e. if the function matches a very
         // well-known function style then let's just go ahead and overload it. (Mainly for OpenAL)
         var epSpan = entryPoint.AsSpan();
-        var verb = epSpan[int.Max(epSpan.IndexOfAny(NameUtils.Uppercase), 0)..];
-        verb = verb[..(verb[1..].IndexOfAny(NameUtils.Uppercase) + 1)];
+        var verb = epSpan[int.Max(epSpan.IndexOfAny(NameUtils.UpperChars), 0)..];
+        verb = verb[..(verb[1..].IndexOfAny(NameUtils.UpperChars) + 1)];
         var benefitOfDoubt = false;
         if (
             countParam is null

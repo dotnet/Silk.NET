@@ -80,22 +80,22 @@ public enum AttributeType : uint
     Sampler2DShadow = 35682,
 
     [NativeName("GL_FLOAT_MAT2x3")]
-    FloatMAT2X3 = 35685,
+    FloatMat2x3 = 35685,
 
     [NativeName("GL_FLOAT_MAT2x4")]
-    FloatMAT2X4 = 35686,
+    FloatMat2x4 = 35686,
 
     [NativeName("GL_FLOAT_MAT3x2")]
-    FloatMAT3X2 = 35687,
+    FloatMat3x2 = 35687,
 
     [NativeName("GL_FLOAT_MAT3x4")]
-    FloatMAT3X4 = 35688,
+    FloatMat3x4 = 35688,
 
     [NativeName("GL_FLOAT_MAT4x2")]
-    FloatMAT4X2 = 35689,
+    FloatMat4x2 = 35689,
 
     [NativeName("GL_FLOAT_MAT4x3")]
-    FloatMAT4X3 = 35690,
+    FloatMat4x3 = 35690,
 
     [NativeName("GL_SAMPLER_1D_ARRAY_SHADOW")]
     Sampler1DArrayShadow = 36291,
@@ -221,22 +221,22 @@ public enum AttributeType : uint
     DoubleMat4 = 36680,
 
     [NativeName("GL_DOUBLE_MAT2x3")]
-    DoubleMAT2X3 = 36681,
+    DoubleMat2x3 = 36681,
 
     [NativeName("GL_DOUBLE_MAT2x4")]
-    DoubleMAT2X4 = 36682,
+    DoubleMat2x4 = 36682,
 
     [NativeName("GL_DOUBLE_MAT3x2")]
-    DoubleMAT3X2 = 36683,
+    DoubleMat3x2 = 36683,
 
     [NativeName("GL_DOUBLE_MAT3x4")]
-    DoubleMAT3X4 = 36684,
+    DoubleMat3x4 = 36684,
 
     [NativeName("GL_DOUBLE_MAT4x2")]
-    DoubleMAT4X2 = 36685,
+    DoubleMat4x2 = 36685,
 
     [NativeName("GL_DOUBLE_MAT4x3")]
-    DoubleMAT4X3 = 36686,
+    DoubleMat4x3 = 36686,
 
     [NativeName("GL_IMAGE_1D")]
     Image1D = 36940,
@@ -437,20 +437,20 @@ public enum AttributeType : uint
     Sampler2DShadowEXT = 35682,
 
     [NativeName("GL_FLOAT_MAT2x3_NV")]
-    FloatMAT2X3NV = 35685,
+    FloatMat2x3NV = 35685,
 
     [NativeName("GL_FLOAT_MAT2x4_NV")]
-    FloatMAT2X4NV = 35686,
+    FloatMat2x4NV = 35686,
 
     [NativeName("GL_FLOAT_MAT3x2_NV")]
-    FloatMAT3X2NV = 35687,
+    FloatMat3x2NV = 35687,
 
     [NativeName("GL_FLOAT_MAT3x4_NV")]
-    FloatMAT3X4NV = 35688,
+    FloatMat3x4NV = 35688,
 
     [NativeName("GL_FLOAT_MAT4x2_NV")]
-    FloatMAT4X2NV = 35689,
+    FloatMat4x2NV = 35689,
 
     [NativeName("GL_FLOAT_MAT4x3_NV")]
-    FloatMAT4X3NV = 35690,
+    FloatMat4x3NV = 35690,
 }

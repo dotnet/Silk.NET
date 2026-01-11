@@ -49,5 +49,5 @@ public partial struct PipelineCacheHeaderVersionDataGraphQCOM
         ["VK_QCOM_data_graph_model"],
         ImpliesSets = ["VK_ARM_data_graph"]
     )]
-    public PipelineCacheHeaderVersionDataGraphQCOMToolchainVersion ToolchainVersion;
+    public PipelineCacheHeaderVersionDataGraphQcomToolchainVersion ToolchainVersion;
 }

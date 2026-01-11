@@ -42,7 +42,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public PhysicalDeviceMeshShaderPropertiesEXTMaxTaskWorkGroupCount MaxTaskWorkGroupCount;
+    public PhysicalDeviceMeshShaderPropertiesExtMaxTaskWorkGroupCount MaxTaskWorkGroupCount;
 
     [NativeName("maxTaskWorkGroupInvocations")]
     [SupportedApiProfile(
@@ -58,7 +58,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public PhysicalDeviceMeshShaderPropertiesEXTMaxTaskWorkGroupSize MaxTaskWorkGroupSize;
+    public PhysicalDeviceMeshShaderPropertiesExtMaxTaskWorkGroupSize MaxTaskWorkGroupSize;
 
     [NativeName("maxTaskPayloadSize")]
     [SupportedApiProfile(
@@ -98,7 +98,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public PhysicalDeviceMeshShaderPropertiesEXTMaxMeshWorkGroupCount MaxMeshWorkGroupCount;
+    public PhysicalDeviceMeshShaderPropertiesExtMaxMeshWorkGroupCount MaxMeshWorkGroupCount;
 
     [NativeName("maxMeshWorkGroupInvocations")]
     [SupportedApiProfile(
@@ -114,7 +114,7 @@ public unsafe partial struct PhysicalDeviceMeshShaderPropertiesEXT
         ["VK_EXT_mesh_shader"],
         ImpliesSets = ["VK_EXT_mesh_shader+VK_KHR_spirv_1_4", "VK_EXT_mesh_shader+VK_VERSION_1_2"]
     )]
-    public PhysicalDeviceMeshShaderPropertiesEXTMaxMeshWorkGroupSize MaxMeshWorkGroupSize;
+    public PhysicalDeviceMeshShaderPropertiesExtMaxMeshWorkGroupSize MaxMeshWorkGroupSize;
 
     [NativeName("maxMeshSharedMemorySize")]
     [SupportedApiProfile(

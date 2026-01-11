@@ -35,7 +35,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Size1X1Bit = 0x1,
+    Size1x1Bit = 0x1,
 
     [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_2X2_BIT_NV")]
     [SupportedApiProfile(
@@ -47,7 +47,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Size2X2Bit = 0x2,
+    Size2x2Bit = 0x2,
 
     [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_4X4_BIT_NV")]
     [SupportedApiProfile(
@@ -59,7 +59,7 @@ public enum OpticalFlowGridSizeFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Size4X4Bit = 0x4,
+    Size4x4Bit = 0x4,
 
     [NativeName("VK_OPTICAL_FLOW_GRID_SIZE_8X8_BIT_NV")]
     [SupportedApiProfile(
@@ -71,5 +71,5 @@ public enum OpticalFlowGridSizeFlagsNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    Size8X8Bit = 0x8,
+    Size8x8Bit = 0x8,
 }

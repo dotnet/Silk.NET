@@ -282,7 +282,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
         ],
         MinVersion = "1.3"
     )]
-    public uint IntegerDotProduct4X8BitPackedUnsignedAccelerated;
+    public uint IntegerDotProduct4x8BitPackedUnsignedAccelerated;
 
     [NativeName("integerDotProduct4x8BitPackedSignedAccelerated")]
     [SupportedApiProfile(
@@ -299,7 +299,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
         ],
         MinVersion = "1.3"
     )]
-    public uint IntegerDotProduct4X8BitPackedSignedAccelerated;
+    public uint IntegerDotProduct4x8BitPackedSignedAccelerated;
 
     [NativeName("integerDotProduct4x8BitPackedMixedSignednessAccelerated")]
     [SupportedApiProfile(
@@ -316,7 +316,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
         ],
         MinVersion = "1.3"
     )]
-    public uint IntegerDotProduct4X8BitPackedMixedSignednessAccelerated;
+    public uint IntegerDotProduct4x8BitPackedMixedSignednessAccelerated;
 
     [NativeName("integerDotProduct16BitUnsignedAccelerated")]
     [SupportedApiProfile(
@@ -537,7 +537,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
         ],
         MinVersion = "1.3"
     )]
-    public uint IntegerDotProductAccumulatingSaturating4X8BitPackedUnsignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating4x8BitPackedUnsignedAccelerated;
 
     [NativeName("integerDotProductAccumulatingSaturating4x8BitPackedSignedAccelerated")]
     [SupportedApiProfile(
@@ -554,7 +554,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
         ],
         MinVersion = "1.3"
     )]
-    public uint IntegerDotProductAccumulatingSaturating4X8BitPackedSignedAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating4x8BitPackedSignedAccelerated;
 
     [NativeName("integerDotProductAccumulatingSaturating4x8BitPackedMixedSignednessAccelerated")]
     [SupportedApiProfile(
@@ -571,7 +571,7 @@ public unsafe partial struct PhysicalDeviceVulkan13Properties
         ],
         MinVersion = "1.3"
     )]
-    public uint IntegerDotProductAccumulatingSaturating4X8BitPackedMixedSignednessAccelerated;
+    public uint IntegerDotProductAccumulatingSaturating4x8BitPackedMixedSignednessAccelerated;
 
     [NativeName("integerDotProductAccumulatingSaturating16BitUnsignedAccelerated")]
     [SupportedApiProfile(

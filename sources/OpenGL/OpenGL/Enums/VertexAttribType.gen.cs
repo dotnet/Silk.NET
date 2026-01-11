@@ -35,7 +35,7 @@ public enum VertexAttribType : uint
     Double = 5130,
 
     [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV")]
-    UnsignedInt2X10X10X10Rev = 33640,
+    UnsignedInt2x10x10x10Rev = 33640,
 
     [NativeName("GL_UNSIGNED_INT_10F_11F_11F_REV")]
     UnsignedInt10F11F11FRev = 35899,
@@ -44,11 +44,11 @@ public enum VertexAttribType : uint
     HalfFloat = 5131,
 
     [NativeName("GL_INT_2_10_10_10_REV")]
-    Int2X10X10X10Rev = 36255,
+    Int2x10x10x10Rev = 36255,
 
     [NativeName("GL_FIXED")]
     Fixed = 5132,
 
     [NativeName("GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
-    UnsignedInt2X10X10X10RevEXT = 33640,
+    UnsignedInt2x10x10x10RevEXT = 33640,
 }

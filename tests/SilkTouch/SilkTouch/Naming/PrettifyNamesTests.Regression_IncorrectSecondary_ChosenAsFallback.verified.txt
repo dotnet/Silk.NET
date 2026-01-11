@@ -1,0 +1,21 @@
+﻿public class AL
+{
+    [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
+    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+    public void GetBufferPtrDirectSOFT()
+    {
+    }
+
+    [NameAffix("Suffix", "KhronosFunctionDataType", "v")]
+    [NameAffix("Suffix", "KhronosNonVendorSuffix", "Direct")]
+    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+    public void GetBufferPtrvDirectSOFT()
+    {
+    }
+
+    // This is to ensure that prefix identification doesn't trim too much
+    [NameAffix("Suffix", "KhronosFunctionDataType", "i")]
+    public void Filter()
+    {
+    }
+}

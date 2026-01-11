@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -47,7 +46,11 @@ public class PrettifyNames(
         /// The maximum length of an all capitals string to be treated as a single acronym, rather than as an all
         /// capitals word.
         /// </summary>
-        public int? LongAcronymThreshold { get; init; }
+        /// <remarks>
+        /// The default is 2 to match Microsoft's .NET framework design guidelines:
+        /// https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions
+        /// </remarks>
+        public int LongAcronymThreshold { get; init; } = 2;
 
         /// <summary>
         /// Multiple candidate name prefixes that may apply across all of the bindings generated.
@@ -126,7 +129,7 @@ public class PrettifyNames(
         var newNames = new Dictionary<string, RenamedType>();
 
         var nameAffixer = new NameAffixer(visitor.AffixTypes, cfg.Affixes);
-        var nameTransformer = new NameUtils.NameTransformer(cfg.LongAcronymThreshold ?? 3); // TODO: Change to 2 in next PR to match framework design guidelines
+        var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
 
         // Trim the trimmable names if the trimmer baseline is set
         // Otherwise, we just prettify the trimmable names
@@ -141,7 +144,7 @@ public class PrettifyNames(
                         name,
                         cfg.NameOverrides,
                         nameAffixer,
-                        nameTransformer
+                        namePrettifier
                     ),
                     nonFunctions.ToDictionary(
                         x => x,
@@ -151,7 +154,7 @@ public class PrettifyNames(
                                 x,
                                 cfg.NameOverrides,
                                 nameAffixer,
-                                nameTransformer
+                                namePrettifier
                             )
                     ),
                     functions.ToDictionary(
@@ -162,7 +165,7 @@ public class PrettifyNames(
                                 x.Name,
                                 cfg.NameOverrides,
                                 nameAffixer,
-                                nameTransformer
+                                namePrettifier
                             )
                     )
                 );
@@ -180,7 +183,7 @@ public class PrettifyNames(
                 .SelectMany(x => x.Get(ctx.JobKey))
                 .Append(new NameAffixerEarlyTrimmer(nameAffixer))
                 .Append(new NameAffixerLateTrimmer(nameAffixer))
-                .Append(new PrettifyNamesTrimmer(nameTransformer))
+                .Append(new PrettifyNamesTrimmer(namePrettifier))
                 .OrderBy(x => x.Order)
                 .ToArray();
 
@@ -275,7 +278,7 @@ public class PrettifyNames(
                         typeName,
                         cfg.NameOverrides,
                         nameAffixer,
-                        nameTransformer
+                        namePrettifier
                     ),
                     [],
                     []
@@ -289,7 +292,7 @@ public class PrettifyNames(
                     memberName,
                     cfg.NameOverrides,
                     nameAffixer,
-                    nameTransformer
+                    namePrettifier
                 );
             }
 
@@ -461,7 +464,7 @@ public class PrettifyNames(
         string name,
         Dictionary<string, string> nameOverrides,
         NameAffixer nameAffixer,
-        ICulturedStringTransformer nameTransformer
+        NamePrettifier namePrettifier
     )
     {
         // Check for overrides
@@ -503,7 +506,7 @@ public class PrettifyNames(
 
         var result = name;
         result = nameAffixer.RemoveAffixes(result, container, name, null);
-        result = result.Prettify(nameTransformer, allowAllCaps);
+        result = namePrettifier.Prettify(result, allowAllCaps);
         result = nameAffixer.ApplyAffixes(result, container, name, null);
 
         return result;
@@ -1616,7 +1619,7 @@ public class PrettifyNames(
         }
     }
 
-    private class PrettifyNamesTrimmer(ICulturedStringTransformer nameTransformer) : INameTrimmer
+    private class PrettifyNamesTrimmer(NamePrettifier namePrettifier) : INameTrimmer
     {
         /// <inheritdoc/>
         public Version Version => new(0, 0, 0);
@@ -1633,11 +1636,11 @@ public class PrettifyNames(
 
                 for (var i = 0; i < secondary.Count; i++)
                 {
-                    secondary[i] = secondary[i].Prettify(nameTransformer, allowAllCaps);
+                    secondary[i] = namePrettifier.Prettify(secondary[i], allowAllCaps);
                 }
 
                 context.Names[original] = new CandidateNames(
-                    primary.Prettify(nameTransformer, allowAllCaps),
+                    namePrettifier.Prettify(primary, allowAllCaps),
                     secondary
                 );
             }
