@@ -13,7 +13,7 @@ public enum StdVideoAV1TxMode : uint
 {
     [NativeName("STD_VIDEO_AV1_TX_MODE_ONLY_4X4")]
     [SupportedApiProfile("vulkan")]
-    Only4X4 = 0,
+    Only4x4 = 0,
 
     [NativeName("STD_VIDEO_AV1_TX_MODE_LARGEST")]
     [SupportedApiProfile("vulkan")]

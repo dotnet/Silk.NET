@@ -2,13 +2,14 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_TransferCharacteristics")]
-public enum TransferCharacteristics
+public enum TransferCharacteristics : uint
 {
     [NativeName("SDL_TRANSFER_CHARACTERISTICS_UNKNOWN")]
     Unknown = 0,
@@ -50,10 +51,10 @@ public enum TransferCharacteristics
     Srgb = 13,
 
     [NativeName("SDL_TRANSFER_CHARACTERISTICS_BT2020_10BIT")]
-    Bt2020X10Bit = 14,
+    Bt2020x10Bit = 14,
 
     [NativeName("SDL_TRANSFER_CHARACTERISTICS_BT2020_12BIT")]
-    Bt2020X12Bit = 15,
+    Bt2020x12Bit = 15,
 
     [NativeName("SDL_TRANSFER_CHARACTERISTICS_PQ")]
     Pq = 16,

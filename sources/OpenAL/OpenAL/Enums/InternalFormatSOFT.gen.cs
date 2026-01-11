@@ -50,29 +50,29 @@ public enum InternalFormatSOFT : uint
     Rear32F = 4617,
 
     [NativeName("AL_5POINT1_8_SOFT")]
-    X5Point1X8 = 4618,
+    X5Point1x8 = 4618,
 
     [NativeName("AL_5POINT1_16_SOFT")]
-    X5Point1X16 = 4619,
+    X5Point1x16 = 4619,
 
     [NativeName("AL_5POINT1_32F_SOFT")]
-    X5Point1X32F = 4620,
+    X5Point1x32F = 4620,
 
     [NativeName("AL_6POINT1_8_SOFT")]
-    X6Point1X8 = 4621,
+    X6Point1x8 = 4621,
 
     [NativeName("AL_6POINT1_16_SOFT")]
-    X6Point1X16 = 4622,
+    X6Point1x16 = 4622,
 
     [NativeName("AL_6POINT1_32F_SOFT")]
-    X6Point1X32F = 4623,
+    X6Point1x32F = 4623,
 
     [NativeName("AL_7POINT1_8_SOFT")]
-    X7Point1X8 = 4624,
+    X7Point1x8 = 4624,
 
     [NativeName("AL_7POINT1_16_SOFT")]
-    X7Point1X16 = 4625,
+    X7Point1x16 = 4625,
 
     [NativeName("AL_7POINT1_32F_SOFT")]
-    X7Point1X32F = 4626,
+    X7Point1x32F = 4626,
 }

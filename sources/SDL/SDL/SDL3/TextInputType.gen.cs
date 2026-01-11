@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_TextInputType")]
-public enum TextInputType
+public enum TextInputType : uint
 {
     [NativeName("SDL_TEXTINPUT_TYPE_TEXT")]
     Text = 0,

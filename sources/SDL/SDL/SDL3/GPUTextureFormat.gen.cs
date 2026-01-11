@@ -3,12 +3,11 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_GPUTextureFormat")]
-public enum GPUTextureFormat
+public enum GPUTextureFormat : uint
 {
     [NativeName("SDL_GPU_TEXTUREFORMAT_INVALID")]
     Invalid = 0,
@@ -200,128 +199,128 @@ public enum GPUTextureFormat
     D32FloatS8Uint = 62,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_4x4_UNORM")]
-    Astc4X4Unorm = 63,
+    Astc4x4Unorm = 63,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_5x4_UNORM")]
-    Astc5X4Unorm = 64,
+    Astc5x4Unorm = 64,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_5x5_UNORM")]
-    Astc5X5Unorm = 65,
+    Astc5x5Unorm = 65,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_6x5_UNORM")]
-    Astc6X5Unorm = 66,
+    Astc6x5Unorm = 66,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_6x6_UNORM")]
-    Astc6X6Unorm = 67,
+    Astc6x6Unorm = 67,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_8x5_UNORM")]
-    Astc8X5Unorm = 68,
+    Astc8x5Unorm = 68,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_8x6_UNORM")]
-    Astc8X6Unorm = 69,
+    Astc8x6Unorm = 69,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_8x8_UNORM")]
-    Astc8X8Unorm = 70,
+    Astc8x8Unorm = 70,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x5_UNORM")]
-    Astc10X5Unorm = 71,
+    Astc10x5Unorm = 71,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x6_UNORM")]
-    Astc10X6Unorm = 72,
+    Astc10x6Unorm = 72,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x8_UNORM")]
-    Astc10X8Unorm = 73,
+    Astc10x8Unorm = 73,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x10_UNORM")]
-    Astc10X10Unorm = 74,
+    Astc10x10Unorm = 74,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_12x10_UNORM")]
-    Astc12X10Unorm = 75,
+    Astc12x10Unorm = 75,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_12x12_UNORM")]
-    Astc12X12Unorm = 76,
+    Astc12x12Unorm = 76,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_4x4_UNORM_SRGB")]
-    Astc4X4UnormSrgb = 77,
+    Astc4x4UnormSrgb = 77,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_5x4_UNORM_SRGB")]
-    Astc5X4UnormSrgb = 78,
+    Astc5x4UnormSrgb = 78,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_5x5_UNORM_SRGB")]
-    Astc5X5UnormSrgb = 79,
+    Astc5x5UnormSrgb = 79,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_6x5_UNORM_SRGB")]
-    Astc6X5UnormSrgb = 80,
+    Astc6x5UnormSrgb = 80,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_6x6_UNORM_SRGB")]
-    Astc6X6UnormSrgb = 81,
+    Astc6x6UnormSrgb = 81,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_8x5_UNORM_SRGB")]
-    Astc8X5UnormSrgb = 82,
+    Astc8x5UnormSrgb = 82,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_8x6_UNORM_SRGB")]
-    Astc8X6UnormSrgb = 83,
+    Astc8x6UnormSrgb = 83,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_8x8_UNORM_SRGB")]
-    Astc8X8UnormSrgb = 84,
+    Astc8x8UnormSrgb = 84,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x5_UNORM_SRGB")]
-    Astc10X5UnormSrgb = 85,
+    Astc10x5UnormSrgb = 85,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x6_UNORM_SRGB")]
-    Astc10X6UnormSrgb = 86,
+    Astc10x6UnormSrgb = 86,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x8_UNORM_SRGB")]
-    Astc10X8UnormSrgb = 87,
+    Astc10x8UnormSrgb = 87,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x10_UNORM_SRGB")]
-    Astc10X10UnormSrgb = 88,
+    Astc10x10UnormSrgb = 88,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_12x10_UNORM_SRGB")]
-    Astc12X10UnormSrgb = 89,
+    Astc12x10UnormSrgb = 89,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_12x12_UNORM_SRGB")]
-    Astc12X12UnormSrgb = 90,
+    Astc12x12UnormSrgb = 90,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_4x4_FLOAT")]
-    Astc4X4Float = 91,
+    Astc4x4Float = 91,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_5x4_FLOAT")]
-    Astc5X4Float = 92,
+    Astc5x4Float = 92,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_5x5_FLOAT")]
-    Astc5X5Float = 93,
+    Astc5x5Float = 93,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_6x5_FLOAT")]
-    Astc6X5Float = 94,
+    Astc6x5Float = 94,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_6x6_FLOAT")]
-    Astc6X6Float = 95,
+    Astc6x6Float = 95,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_8x5_FLOAT")]
-    Astc8X5Float = 96,
+    Astc8x5Float = 96,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_8x6_FLOAT")]
-    Astc8X6Float = 97,
+    Astc8x6Float = 97,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_8x8_FLOAT")]
-    Astc8X8Float = 98,
+    Astc8x8Float = 98,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x5_FLOAT")]
-    Astc10X5Float = 99,
+    Astc10x5Float = 99,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x6_FLOAT")]
-    Astc10X6Float = 100,
+    Astc10x6Float = 100,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x8_FLOAT")]
-    Astc10X8Float = 101,
+    Astc10x8Float = 101,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_10x10_FLOAT")]
-    Astc10X10Float = 102,
+    Astc10x10Float = 102,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_12x10_FLOAT")]
-    Astc12X10Float = 103,
+    Astc12x10Float = 103,
 
     [NativeName("SDL_GPU_TEXTUREFORMAT_ASTC_12x12_FLOAT")]
-    Astc12X12Float = 104,
+    Astc12x12Float = 104,
 }

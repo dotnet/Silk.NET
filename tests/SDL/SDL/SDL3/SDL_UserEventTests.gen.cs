@@ -38,7 +38,7 @@ public static unsafe partial class SDL_UserEventTests
         }
         else
         {
-            Assert.That(sizeof(UserEvent), Is.EqualTo(32));
+            Assert.That(sizeof(UserEvent), Is.EqualTo(28));
         }
     }
 }

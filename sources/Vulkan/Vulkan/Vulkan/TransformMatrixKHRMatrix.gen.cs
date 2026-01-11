@@ -15,5 +15,5 @@ public partial struct TransformMatrixKHRMatrix
 {
     [NativeName("e0_0")]
     [SupportedApiProfile("vulkan")]
-    public float E0X0;
+    public float E0x0;
 }

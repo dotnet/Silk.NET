@@ -15,5 +15,5 @@ public partial struct StdVideoVP9SegmentationFeatureData
 {
     [NativeName("e0_0")]
     [SupportedApiProfile("vulkan")]
-    public short E0X0;
+    public short E0x0;
 }

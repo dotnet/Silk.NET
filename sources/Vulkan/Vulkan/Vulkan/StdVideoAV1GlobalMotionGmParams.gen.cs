@@ -15,5 +15,5 @@ public partial struct StdVideoAV1GlobalMotionGmParams
 {
     [NativeName("e0_0")]
     [SupportedApiProfile("vulkan")]
-    public int E0X0;
+    public int E0x0;
 }

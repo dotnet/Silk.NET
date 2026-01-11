@@ -21,9 +21,9 @@ public partial struct StdVideoH264ScalingLists
 
     [NativeName("ScalingList4x4")]
     [SupportedApiProfile("vulkan")]
-    public StdVideoH264ScalingListsScalingList4X4 ScalingList4X4;
+    public StdVideoH264ScalingListsScalingList4x4 ScalingList4x4;
 
     [NativeName("ScalingList8x8")]
     [SupportedApiProfile("vulkan")]
-    public StdVideoH264ScalingListsScalingList8X8 ScalingList8X8;
+    public StdVideoH264ScalingListsScalingList8x8 ScalingList8x8;
 }

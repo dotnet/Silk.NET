@@ -14,57 +14,57 @@ public enum StdVideoVP9Level : uint
 {
     [NativeName("STD_VIDEO_VP9_LEVEL_1_0")]
     [SupportedApiProfile("vulkan")]
-    Level1X0 = 0,
+    Level1x0 = 0,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_1_1")]
     [SupportedApiProfile("vulkan")]
-    Level1X1 = 1,
+    Level1x1 = 1,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_2_0")]
     [SupportedApiProfile("vulkan")]
-    Level2X0 = 2,
+    Level2x0 = 2,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_2_1")]
     [SupportedApiProfile("vulkan")]
-    Level2X1 = 3,
+    Level2x1 = 3,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_3_0")]
     [SupportedApiProfile("vulkan")]
-    Level3X0 = 4,
+    Level3x0 = 4,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_3_1")]
     [SupportedApiProfile("vulkan")]
-    Level3X1 = 5,
+    Level3x1 = 5,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_4_0")]
     [SupportedApiProfile("vulkan")]
-    Level4X0 = 6,
+    Level4x0 = 6,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_4_1")]
     [SupportedApiProfile("vulkan")]
-    Level4X1 = 7,
+    Level4x1 = 7,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_5_0")]
     [SupportedApiProfile("vulkan")]
-    Level5X0 = 8,
+    Level5x0 = 8,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_5_1")]
     [SupportedApiProfile("vulkan")]
-    Level5X1 = 9,
+    Level5x1 = 9,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_5_2")]
     [SupportedApiProfile("vulkan")]
-    Level5X2 = 10,
+    Level5x2 = 10,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_6_0")]
     [SupportedApiProfile("vulkan")]
-    Level6X0 = 11,
+    Level6x0 = 11,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_6_1")]
     [SupportedApiProfile("vulkan")]
-    Level6X1 = 12,
+    Level6x1 = 12,
 
     [NativeName("STD_VIDEO_VP9_LEVEL_6_2")]
     [SupportedApiProfile("vulkan")]
-    Level6X2 = 13,
+    Level6x2 = 13,
 }

@@ -38,7 +38,7 @@ public partial struct StdVideoAV1SequenceHeaderFlags
 
     [NativeName("use_128x128_superblock")]
     [SupportedApiProfile("vulkan")]
-    public uint Use128X128Superblock
+    public uint Use128x128Superblock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return (Bitfield >> 2) & 0x1u; }

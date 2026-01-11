@@ -18,7 +18,7 @@ public partial struct StdVideoH264PpsFlags
 
     [NativeName("transform_8x8_mode_flag")]
     [SupportedApiProfile("vulkan")]
-    public uint Transform8X8ModeFlag
+    public uint Transform8x8ModeFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get { return Bitfield & 0x1u; }

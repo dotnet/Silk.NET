@@ -69,11 +69,11 @@ public enum StdVideoAV1TransferCharacteristics : uint
 
     [NativeName("STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_BT_2020_10_BIT")]
     [SupportedApiProfile("vulkan")]
-    Bt2020X10Bit = 14,
+    Bt2020x10Bit = 14,
 
     [NativeName("STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_BT_2020_12_BIT")]
     [SupportedApiProfile("vulkan")]
-    Bt2020X12Bit = 15,
+    Bt2020x12Bit = 15,
 
     [NativeName("STD_VIDEO_AV1_TRANSFER_CHARACTERISTICS_SMPTE_2084")]
     [SupportedApiProfile("vulkan")]

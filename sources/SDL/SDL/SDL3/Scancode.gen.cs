@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_Scancode")]
-public enum Scancode
+public enum Scancode : uint
 {
     [NativeName("SDL_SCANCODE_UNKNOWN")]
     ScancodeUnknown = 0,

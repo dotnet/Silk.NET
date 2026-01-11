@@ -26,11 +26,11 @@ public enum OutputModeSOFT : uint
     StereoHrtf = 6578,
 
     [NativeName("ALC_SURROUND_5_1_SOFT")]
-    Surround5X1 = 5380,
+    Surround5x1 = 5380,
 
     [NativeName("ALC_SURROUND_6_1_SOFT")]
-    Surround6X1 = 5381,
+    Surround6x1 = 5381,
 
     [NativeName("ALC_SURROUND_7_1_SOFT")]
-    Surround7X1 = 5382,
+    Surround7x1 = 5382,
 }

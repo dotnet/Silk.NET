@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_ThreadState")]
-public enum ThreadState
+public enum ThreadState : uint
 {
     [NativeName("SDL_THREAD_UNKNOWN")]
     Unknown = 0,

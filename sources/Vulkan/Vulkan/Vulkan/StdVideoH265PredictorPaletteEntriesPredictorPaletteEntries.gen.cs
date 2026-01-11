@@ -15,5 +15,5 @@ public partial struct StdVideoH265PredictorPaletteEntriesPredictorPaletteEntries
 {
     [NativeName("e0_0")]
     [SupportedApiProfile("vulkan")]
-    public ushort E0X0;
+    public ushort E0x0;
 }

@@ -248,13 +248,13 @@ public enum ALCEnum : uint
     StereoHrtfSOFT = 6578,
 
     [NativeName("ALC_SURROUND_5_1_SOFT")]
-    Surround5X1SOFT = 5380,
+    Surround5x1SOFT = 5380,
 
     [NativeName("ALC_SURROUND_6_1_SOFT")]
-    Surround6X1SOFT = 5381,
+    Surround6x1SOFT = 5381,
 
     [NativeName("ALC_SURROUND_7_1_SOFT")]
-    Surround7X1SOFT = 5382,
+    Surround7x1SOFT = 5382,
 
     [NativeName("ALC_CONTEXT_FLAGS_EXT")]
     ContextFlagsEXT = 6607,

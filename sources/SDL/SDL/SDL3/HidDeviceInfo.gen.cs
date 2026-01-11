@@ -3,7 +3,6 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
@@ -20,16 +19,16 @@ public unsafe partial struct HidDeviceInfo
     public ushort ProductId;
 
     [NativeName("serial_number")]
-    public ushort* SerialNumber;
+    public uint* SerialNumber;
 
     [NativeName("release_number")]
     public ushort ReleaseNumber;
 
     [NativeName("manufacturer_string")]
-    public ushort* ManufacturerString;
+    public uint* ManufacturerString;
 
     [NativeName("product_string")]
-    public ushort* ProductString;
+    public uint* ProductString;
 
     [NativeName("usage_page")]
     public ushort UsagePage;

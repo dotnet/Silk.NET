@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_ColorPrimaries")]
-public enum ColorPrimaries
+public enum ColorPrimaries : uint
 {
     [NativeName("SDL_COLOR_PRIMARIES_UNKNOWN")]
     Unknown = 0,

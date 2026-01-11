@@ -93,7 +93,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Transform8X8ModeFlagSetBit = 0x200,
+    Transform8x8ModeFlagSetBit = 0x200,
 
     [NativeName("VK_VIDEO_ENCODE_H264_STD_DIRECT_SPATIAL_MV_PRED_FLAG_UNSET_BIT_KHR")]
     [SupportedApiProfile(
@@ -125,7 +125,7 @@ public enum VideoEncodeH264StdFlagsKHR : uint
         ["VK_KHR_video_encode_h264"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    Direct8X8InferenceFlagUnsetBit = 0x2000,
+    Direct8x8InferenceFlagUnsetBit = 0x2000,
 
     [NativeName("VK_VIDEO_ENCODE_H264_STD_CONSTRAINED_INTRA_PRED_FLAG_SET_BIT_KHR")]
     [SupportedApiProfile(

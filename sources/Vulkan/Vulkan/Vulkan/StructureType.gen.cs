@@ -2964,7 +2964,7 @@ public enum StructureType : uint
         ],
         MinVersion = "1.2"
     )]
-    PhysicalDeviceVulkan1X1Features = 49,
+    PhysicalDeviceVulkan1x1Features = 49,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_1_PROPERTIES")]
     [SupportedApiProfile(
@@ -2985,7 +2985,7 @@ public enum StructureType : uint
         ],
         MinVersion = "1.2"
     )]
-    PhysicalDeviceVulkan1X1Properties = 50,
+    PhysicalDeviceVulkan1x1Properties = 50,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_2_FEATURES")]
     [SupportedApiProfile(
@@ -3006,7 +3006,7 @@ public enum StructureType : uint
         ],
         MinVersion = "1.2"
     )]
-    PhysicalDeviceVulkan1X2Features = 51,
+    PhysicalDeviceVulkan1x2Features = 51,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_2_PROPERTIES")]
     [SupportedApiProfile(
@@ -3027,7 +3027,7 @@ public enum StructureType : uint
         ],
         MinVersion = "1.2"
     )]
-    PhysicalDeviceVulkan1X2Properties = 52,
+    PhysicalDeviceVulkan1x2Properties = 52,
 
     [NativeName("VK_STRUCTURE_TYPE_IMAGE_FORMAT_LIST_CREATE_INFO")]
     [SupportedApiProfile(
@@ -3866,7 +3866,7 @@ public enum StructureType : uint
         ],
         MinVersion = "1.3"
     )]
-    PhysicalDeviceVulkan1X3Features = 53,
+    PhysicalDeviceVulkan1x3Features = 53,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_3_PROPERTIES")]
     [SupportedApiProfile(
@@ -3883,7 +3883,7 @@ public enum StructureType : uint
         ],
         MinVersion = "1.3"
     )]
-    PhysicalDeviceVulkan1X3Properties = 54,
+    PhysicalDeviceVulkan1x3Properties = 54,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TOOL_PROPERTIES")]
     [SupportedApiProfile(
@@ -4633,7 +4633,7 @@ public enum StructureType : uint
         ],
         MinVersion = "1.4"
     )]
-    PhysicalDeviceVulkan1X4Features = 55,
+    PhysicalDeviceVulkan1x4Features = 55,
 
     [NativeName("VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_4_PROPERTIES")]
     [SupportedApiProfile(
@@ -4646,7 +4646,7 @@ public enum StructureType : uint
         ],
         MinVersion = "1.4"
     )]
-    PhysicalDeviceVulkan1X4Properties = 56,
+    PhysicalDeviceVulkan1x4Properties = 56,
 
     [NativeName("VK_STRUCTURE_TYPE_DEVICE_QUEUE_GLOBAL_PRIORITY_CREATE_INFO")]
     [SupportedApiProfile(
@@ -9005,7 +9005,7 @@ public enum StructureType : uint
             "VK_EXT_rgba10x6_formats+VK_VERSION_1_1",
         ]
     )]
-    PhysicalDeviceRgba10X6FormatsFeaturesEXT = 1000344000,
+    PhysicalDeviceRgba10x6FormatsFeaturesEXT = 1000344000,
 
     [NativeName("VK_STRUCTURE_TYPE_DIRECTFB_SURFACE_CREATE_INFO_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_directfb_surface"], ImpliesSets = ["VK_KHR_surface"])]
