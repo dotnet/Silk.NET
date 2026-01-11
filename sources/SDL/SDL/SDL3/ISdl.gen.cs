@@ -4961,19 +4961,19 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_HasAVX2")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX2")]
-        static abstract MaybeBool<byte> HasAVX2();
+        static abstract MaybeBool<byte> HasAvx2();
 
         [NativeName("SDL_HasAVX2")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX2")]
-        static abstract byte HasAVX2Raw();
+        static abstract byte HasAvx2Raw();
 
         [NativeName("SDL_HasAVX512F")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX512F")]
-        static abstract MaybeBool<byte> HasAVX512F();
+        static abstract MaybeBool<byte> HasAvx512F();
 
         [NativeName("SDL_HasAVX512F")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX512F")]
-        static abstract byte HasAVX512FRaw();
+        static abstract byte HasAvx512FRaw();
 
         [NativeName("SDL_HasAVX")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX")]
@@ -5121,35 +5121,35 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_HasSSE2")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE2")]
-        static abstract MaybeBool<byte> HasSSE2();
+        static abstract MaybeBool<byte> HasSse2();
 
         [NativeName("SDL_HasSSE2")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE2")]
-        static abstract byte HasSSE2Raw();
+        static abstract byte HasSse2Raw();
 
         [NativeName("SDL_HasSSE3")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE3")]
-        static abstract MaybeBool<byte> HasSSE3();
+        static abstract MaybeBool<byte> HasSse3();
 
         [NativeName("SDL_HasSSE3")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE3")]
-        static abstract byte HasSSE3Raw();
+        static abstract byte HasSse3Raw();
 
         [NativeName("SDL_HasSSE41")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE41")]
-        static abstract MaybeBool<byte> HasSSE41();
+        static abstract MaybeBool<byte> HasSse41();
 
         [NativeName("SDL_HasSSE41")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE41")]
-        static abstract byte HasSSE41Raw();
+        static abstract byte HasSse41Raw();
 
         [NativeName("SDL_HasSSE42")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE42")]
-        static abstract MaybeBool<byte> HasSSE42();
+        static abstract MaybeBool<byte> HasSse42();
 
         [NativeName("SDL_HasSSE42")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE42")]
-        static abstract byte HasSSE42Raw();
+        static abstract byte HasSse42Raw();
 
         [NativeName("SDL_HasSSE")]
         [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE")]
@@ -9047,19 +9047,19 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_StepBackUTF8")]
         [NativeFunction("SDL3", EntryPoint = "SDL_StepBackUTF8")]
-        static abstract uint StepBackUTF8(sbyte* start, sbyte** pstr);
+        static abstract uint StepBackUtf8(sbyte* start, sbyte** pstr);
 
         [NativeName("SDL_StepBackUTF8")]
         [NativeFunction("SDL3", EntryPoint = "SDL_StepBackUTF8")]
-        static abstract uint StepBackUTF8(Ref<sbyte> start, Ref2D<sbyte> pstr);
+        static abstract uint StepBackUtf8(Ref<sbyte> start, Ref2D<sbyte> pstr);
 
         [NativeName("SDL_StepUTF8")]
         [NativeFunction("SDL3", EntryPoint = "SDL_StepUTF8")]
-        static abstract uint StepUTF8(sbyte** pstr, nuint* pslen);
+        static abstract uint StepUtf8(sbyte** pstr, nuint* pslen);
 
         [NativeName("SDL_StepUTF8")]
         [NativeFunction("SDL3", EntryPoint = "SDL_StepUTF8")]
-        static abstract uint StepUTF8(Ref2D<sbyte> pstr, Ref<nuint> pslen);
+        static abstract uint StepUtf8(Ref2D<sbyte> pstr, Ref<nuint> pslen);
 
         [NativeName("SDL_StopHapticEffect")]
         [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticEffect")]
@@ -9483,11 +9483,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_UCS4ToUTF8")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UCS4ToUTF8")]
-        static abstract sbyte* UCS4ToUTF8(uint codepoint, sbyte* dst);
+        static abstract sbyte* Ucs4ToUtf8(uint codepoint, sbyte* dst);
 
         [NativeName("SDL_UCS4ToUTF8")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UCS4ToUTF8")]
-        static abstract Ptr<sbyte> UCS4ToUTF8(uint codepoint, Ref<sbyte> dst);
+        static abstract Ptr<sbyte> Ucs4ToUtf8(uint codepoint, Ref<sbyte> dst);
 
         [NativeName("SDL_uitoa")]
         [NativeFunction("SDL3", EntryPoint = "SDL_uitoa")]
@@ -14875,19 +14875,19 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_HasAVX2")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX2")]
-    MaybeBool<byte> HasAVX2();
+    MaybeBool<byte> HasAvx2();
 
     [NativeName("SDL_HasAVX2")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX2")]
-    byte HasAVX2Raw();
+    byte HasAvx2Raw();
 
     [NativeName("SDL_HasAVX512F")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX512F")]
-    MaybeBool<byte> HasAVX512F();
+    MaybeBool<byte> HasAvx512F();
 
     [NativeName("SDL_HasAVX512F")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX512F")]
-    byte HasAVX512FRaw();
+    byte HasAvx512FRaw();
 
     [NativeName("SDL_HasAVX")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasAVX")]
@@ -15035,35 +15035,35 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_HasSSE2")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE2")]
-    MaybeBool<byte> HasSSE2();
+    MaybeBool<byte> HasSse2();
 
     [NativeName("SDL_HasSSE2")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE2")]
-    byte HasSSE2Raw();
+    byte HasSse2Raw();
 
     [NativeName("SDL_HasSSE3")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE3")]
-    MaybeBool<byte> HasSSE3();
+    MaybeBool<byte> HasSse3();
 
     [NativeName("SDL_HasSSE3")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE3")]
-    byte HasSSE3Raw();
+    byte HasSse3Raw();
 
     [NativeName("SDL_HasSSE41")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE41")]
-    MaybeBool<byte> HasSSE41();
+    MaybeBool<byte> HasSse41();
 
     [NativeName("SDL_HasSSE41")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE41")]
-    byte HasSSE41Raw();
+    byte HasSse41Raw();
 
     [NativeName("SDL_HasSSE42")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE42")]
-    MaybeBool<byte> HasSSE42();
+    MaybeBool<byte> HasSse42();
 
     [NativeName("SDL_HasSSE42")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE42")]
-    byte HasSSE42Raw();
+    byte HasSse42Raw();
 
     [NativeName("SDL_HasSSE")]
     [NativeFunction("SDL3", EntryPoint = "SDL_HasSSE")]
@@ -18443,19 +18443,19 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_StepBackUTF8")]
     [NativeFunction("SDL3", EntryPoint = "SDL_StepBackUTF8")]
-    uint StepBackUTF8(sbyte* start, sbyte** pstr);
+    uint StepBackUtf8(sbyte* start, sbyte** pstr);
 
     [NativeName("SDL_StepBackUTF8")]
     [NativeFunction("SDL3", EntryPoint = "SDL_StepBackUTF8")]
-    uint StepBackUTF8(Ref<sbyte> start, Ref2D<sbyte> pstr);
+    uint StepBackUtf8(Ref<sbyte> start, Ref2D<sbyte> pstr);
 
     [NativeName("SDL_StepUTF8")]
     [NativeFunction("SDL3", EntryPoint = "SDL_StepUTF8")]
-    uint StepUTF8(sbyte** pstr, nuint* pslen);
+    uint StepUtf8(sbyte** pstr, nuint* pslen);
 
     [NativeName("SDL_StepUTF8")]
     [NativeFunction("SDL3", EntryPoint = "SDL_StepUTF8")]
-    uint StepUTF8(Ref2D<sbyte> pstr, Ref<nuint> pslen);
+    uint StepUtf8(Ref2D<sbyte> pstr, Ref<nuint> pslen);
 
     [NativeName("SDL_StopHapticEffect")]
     [NativeFunction("SDL3", EntryPoint = "SDL_StopHapticEffect")]
@@ -18867,11 +18867,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_UCS4ToUTF8")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UCS4ToUTF8")]
-    sbyte* UCS4ToUTF8(uint codepoint, sbyte* dst);
+    sbyte* Ucs4ToUtf8(uint codepoint, sbyte* dst);
 
     [NativeName("SDL_UCS4ToUTF8")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UCS4ToUTF8")]
-    Ptr<sbyte> UCS4ToUTF8(uint codepoint, Ref<sbyte> dst);
+    Ptr<sbyte> Ucs4ToUtf8(uint codepoint, Ref<sbyte> dst);
 
     [NativeName("SDL_uitoa")]
     [NativeFunction("SDL3", EntryPoint = "SDL_uitoa")]

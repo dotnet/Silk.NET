@@ -21,7 +21,7 @@ public enum ColorPrimaries
     Unspecified = 2,
 
     [NativeName("SDL_COLOR_PRIMARIES_BT470M")]
-    BT470M = 4,
+    Bt470M = 4,
 
     [NativeName("SDL_COLOR_PRIMARIES_BT470BG")]
     Bt470Bg = 5,

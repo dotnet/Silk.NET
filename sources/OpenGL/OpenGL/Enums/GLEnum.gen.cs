@@ -2570,22 +2570,22 @@ public enum GLEnum : uint
     PixelUnpackBufferBinding = 35055,
 
     [NativeName("GL_FLOAT_MAT2x3")]
-    FloatMAT2X3 = 35685,
+    FloatMat2X3 = 35685,
 
     [NativeName("GL_FLOAT_MAT2x4")]
-    FloatMAT2X4 = 35686,
+    FloatMat2X4 = 35686,
 
     [NativeName("GL_FLOAT_MAT3x2")]
-    FloatMAT3X2 = 35687,
+    FloatMat3X2 = 35687,
 
     [NativeName("GL_FLOAT_MAT3x4")]
-    FloatMAT3X4 = 35688,
+    FloatMat3X4 = 35688,
 
     [NativeName("GL_FLOAT_MAT4x2")]
-    FloatMAT4X2 = 35689,
+    FloatMat4X2 = 35689,
 
     [NativeName("GL_FLOAT_MAT4x3")]
-    FloatMAT4X3 = 35690,
+    FloatMat4X3 = 35690,
 
     [NativeName("GL_SRGB")]
     Srgb = 35904,
@@ -2678,16 +2678,16 @@ public enum GLEnum : uint
     ContextFlagForwardCompatibleBit = 1,
 
     [NativeName("GL_RGBA32F")]
-    RGBA32F = 34836,
+    Rgba32F = 34836,
 
     [NativeName("GL_RGB32F")]
-    RGB32F = 34837,
+    Rgb32F = 34837,
 
     [NativeName("GL_RGBA16F")]
-    RGBA16F = 34842,
+    Rgba16F = 34842,
 
     [NativeName("GL_RGB16F")]
-    RGB16F = 34843,
+    Rgb16F = 34843,
 
     [NativeName("GL_VERTEX_ATTRIB_ARRAY_INTEGER")]
     VertexAttribArrayInteger = 35069,
@@ -3284,10 +3284,10 @@ public enum GLEnum : uint
     R32F = 33326,
 
     [NativeName("GL_RG16F")]
-    RG16F = 33327,
+    Rg16F = 33327,
 
     [NativeName("GL_RG32F")]
-    RG32F = 33328,
+    Rg32F = 33328,
 
     [NativeName("GL_R8I")]
     R8I = 33329,
@@ -3836,22 +3836,22 @@ public enum GLEnum : uint
     DoubleMat4 = 36680,
 
     [NativeName("GL_DOUBLE_MAT2x3")]
-    DoubleMAT2X3 = 36681,
+    DoubleMat2X3 = 36681,
 
     [NativeName("GL_DOUBLE_MAT2x4")]
-    DoubleMAT2X4 = 36682,
+    DoubleMat2X4 = 36682,
 
     [NativeName("GL_DOUBLE_MAT3x2")]
-    DoubleMAT3X2 = 36683,
+    DoubleMat3X2 = 36683,
 
     [NativeName("GL_DOUBLE_MAT3x4")]
-    DoubleMAT3X4 = 36684,
+    DoubleMat3X4 = 36684,
 
     [NativeName("GL_DOUBLE_MAT4x2")]
-    DoubleMAT4X2 = 36685,
+    DoubleMat4X2 = 36685,
 
     [NativeName("GL_DOUBLE_MAT4x3")]
-    DoubleMAT4X3 = 36686,
+    DoubleMat4X3 = 36686,
 
     [NativeName("GL_ACTIVE_SUBROUTINES")]
     ActiveSubroutines = 36325,
@@ -6122,46 +6122,46 @@ public enum GLEnum : uint
     ViewClassEtc2EacRgba = 37767,
 
     [NativeName("GL_VIEW_CLASS_ASTC_4x4_RGBA")]
-    VIEWClassASTC4X4Rgba = 37768,
+    ViewClassAstc4X4Rgba = 37768,
 
     [NativeName("GL_VIEW_CLASS_ASTC_5x4_RGBA")]
-    VIEWClassASTC5X4Rgba = 37769,
+    ViewClassAstc5X4Rgba = 37769,
 
     [NativeName("GL_VIEW_CLASS_ASTC_5x5_RGBA")]
-    VIEWClassASTC5X5Rgba = 37770,
+    ViewClassAstc5X5Rgba = 37770,
 
     [NativeName("GL_VIEW_CLASS_ASTC_6x5_RGBA")]
-    VIEWClassASTC6X5Rgba = 37771,
+    ViewClassAstc6X5Rgba = 37771,
 
     [NativeName("GL_VIEW_CLASS_ASTC_6x6_RGBA")]
-    VIEWClassASTC6X6Rgba = 37772,
+    ViewClassAstc6X6Rgba = 37772,
 
     [NativeName("GL_VIEW_CLASS_ASTC_8x5_RGBA")]
-    VIEWClassASTC8X5Rgba = 37773,
+    ViewClassAstc8X5Rgba = 37773,
 
     [NativeName("GL_VIEW_CLASS_ASTC_8x6_RGBA")]
-    VIEWClassASTC8X6Rgba = 37774,
+    ViewClassAstc8X6Rgba = 37774,
 
     [NativeName("GL_VIEW_CLASS_ASTC_8x8_RGBA")]
-    VIEWClassASTC8X8Rgba = 37775,
+    ViewClassAstc8X8Rgba = 37775,
 
     [NativeName("GL_VIEW_CLASS_ASTC_10x5_RGBA")]
-    VIEWClassASTC10X5Rgba = 37776,
+    ViewClassAstc10X5Rgba = 37776,
 
     [NativeName("GL_VIEW_CLASS_ASTC_10x6_RGBA")]
-    VIEWClassASTC10X6Rgba = 37777,
+    ViewClassAstc10X6Rgba = 37777,
 
     [NativeName("GL_VIEW_CLASS_ASTC_10x8_RGBA")]
-    VIEWClassASTC10X8Rgba = 37778,
+    ViewClassAstc10X8Rgba = 37778,
 
     [NativeName("GL_VIEW_CLASS_ASTC_10x10_RGBA")]
-    VIEWClassASTC10X10Rgba = 37779,
+    ViewClassAstc10X10Rgba = 37779,
 
     [NativeName("GL_VIEW_CLASS_ASTC_12x10_RGBA")]
-    VIEWClassASTC12X10Rgba = 37780,
+    ViewClassAstc12X10Rgba = 37780,
 
     [NativeName("GL_VIEW_CLASS_ASTC_12x12_RGBA")]
-    VIEWClassASTC12X12Rgba = 37781,
+    ViewClassAstc12X12Rgba = 37781,
 
     [NativeName("GL_MATRIX_PALETTE_ARB")]
     MatrixPaletteARB = 34880,
@@ -7307,88 +7307,88 @@ public enum GLEnum : uint
     SubgroupFeatureQuadBitKHR = 128,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4_KHR")]
-    CompressedRGBAASTC4X4KHR = 37808,
+    CompressedRgbaAstc4X4KHR = 37808,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x4_KHR")]
-    CompressedRGBAASTC5X4KHR = 37809,
+    CompressedRgbaAstc5X4KHR = 37809,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5_KHR")]
-    CompressedRGBAASTC5X5KHR = 37810,
+    CompressedRgbaAstc5X5KHR = 37810,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x5_KHR")]
-    CompressedRGBAASTC6X5KHR = 37811,
+    CompressedRgbaAstc6X5KHR = 37811,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6_KHR")]
-    CompressedRGBAASTC6X6KHR = 37812,
+    CompressedRgbaAstc6X6KHR = 37812,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_8x5_KHR")]
-    CompressedRGBAASTC8X5KHR = 37813,
+    CompressedRgbaAstc8X5KHR = 37813,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_8x6_KHR")]
-    CompressedRGBAASTC8X6KHR = 37814,
+    CompressedRgbaAstc8X6KHR = 37814,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_8x8_KHR")]
-    CompressedRGBAASTC8X8KHR = 37815,
+    CompressedRgbaAstc8X8KHR = 37815,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x5_KHR")]
-    CompressedRGBAASTC10X5KHR = 37816,
+    CompressedRgbaAstc10X5KHR = 37816,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x6_KHR")]
-    CompressedRGBAASTC10X6KHR = 37817,
+    CompressedRgbaAstc10X6KHR = 37817,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x8_KHR")]
-    CompressedRGBAASTC10X8KHR = 37818,
+    CompressedRgbaAstc10X8KHR = 37818,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_10x10_KHR")]
-    CompressedRGBAASTC10X10KHR = 37819,
+    CompressedRgbaAstc10X10KHR = 37819,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_12x10_KHR")]
-    CompressedRGBAASTC12X10KHR = 37820,
+    CompressedRgbaAstc12X10KHR = 37820,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_12x12_KHR")]
-    CompressedRGBAASTC12X12KHR = 37821,
+    CompressedRgbaAstc12X12KHR = 37821,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR")]
-    CompressedSRGB8Alpha8Astc4X4KHR = 37840,
+    CompressedSrgb8Alpha8Astc4X4KHR = 37840,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR")]
-    CompressedSRGB8Alpha8Astc5X4KHR = 37841,
+    CompressedSrgb8Alpha8Astc5X4KHR = 37841,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR")]
-    CompressedSRGB8Alpha8Astc5X5KHR = 37842,
+    CompressedSrgb8Alpha8Astc5X5KHR = 37842,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR")]
-    CompressedSRGB8Alpha8Astc6X5KHR = 37843,
+    CompressedSrgb8Alpha8Astc6X5KHR = 37843,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR")]
-    CompressedSRGB8Alpha8Astc6X6KHR = 37844,
+    CompressedSrgb8Alpha8Astc6X6KHR = 37844,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR")]
-    CompressedSRGB8Alpha8Astc8X5KHR = 37845,
+    CompressedSrgb8Alpha8Astc8X5KHR = 37845,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR")]
-    CompressedSRGB8Alpha8Astc8X6KHR = 37846,
+    CompressedSrgb8Alpha8Astc8X6KHR = 37846,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR")]
-    CompressedSRGB8Alpha8Astc8X8KHR = 37847,
+    CompressedSrgb8Alpha8Astc8X8KHR = 37847,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR")]
-    CompressedSRGB8Alpha8Astc10X5KHR = 37848,
+    CompressedSrgb8Alpha8Astc10X5KHR = 37848,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR")]
-    CompressedSRGB8Alpha8Astc10X6KHR = 37849,
+    CompressedSrgb8Alpha8Astc10X6KHR = 37849,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR")]
-    CompressedSRGB8Alpha8Astc10X8KHR = 37850,
+    CompressedSrgb8Alpha8Astc10X8KHR = 37850,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR")]
-    CompressedSRGB8Alpha8Astc10X10KHR = 37851,
+    CompressedSrgb8Alpha8Astc10X10KHR = 37851,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR")]
-    CompressedSRGB8Alpha8Astc12X10KHR = 37852,
+    CompressedSrgb8Alpha8Astc12X10KHR = 37852,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR")]
-    CompressedSRGB8Alpha8Astc12X12KHR = 37853,
+    CompressedSrgb8Alpha8Astc12X12KHR = 37853,
 
     [NativeName("GL_PALETTE4_RGB8_OES")]
     Palette4Rgb8OES = 35728,
@@ -7553,22 +7553,22 @@ public enum GLEnum : uint
     Float16Mat4AMD = 37319,
 
     [NativeName("GL_FLOAT16_MAT2x3_AMD")]
-    Float16MAT2X3AMD = 37320,
+    Float16Mat2X3AMD = 37320,
 
     [NativeName("GL_FLOAT16_MAT2x4_AMD")]
-    Float16MAT2X4AMD = 37321,
+    Float16Mat2X4AMD = 37321,
 
     [NativeName("GL_FLOAT16_MAT3x2_AMD")]
-    Float16MAT3X2AMD = 37322,
+    Float16Mat3X2AMD = 37322,
 
     [NativeName("GL_FLOAT16_MAT3x4_AMD")]
-    Float16MAT3X4AMD = 37323,
+    Float16Mat3X4AMD = 37323,
 
     [NativeName("GL_FLOAT16_MAT4x2_AMD")]
-    Float16MAT4X2AMD = 37324,
+    Float16Mat4X2AMD = 37324,
 
     [NativeName("GL_FLOAT16_MAT4x3_AMD")]
-    Float16MAT4X3AMD = 37325,
+    Float16Mat4X3AMD = 37325,
 
     [NativeName("GL_INT64_NV")]
     Int64NV = 5134,
@@ -10643,22 +10643,22 @@ public enum GLEnum : uint
     DoubleMat4EXT = 36680,
 
     [NativeName("GL_DOUBLE_MAT2x3_EXT")]
-    DoubleMAT2X3EXT = 36681,
+    DoubleMat2X3EXT = 36681,
 
     [NativeName("GL_DOUBLE_MAT2x4_EXT")]
-    DoubleMAT2X4EXT = 36682,
+    DoubleMat2X4EXT = 36682,
 
     [NativeName("GL_DOUBLE_MAT3x2_EXT")]
-    DoubleMAT3X2EXT = 36683,
+    DoubleMat3X2EXT = 36683,
 
     [NativeName("GL_DOUBLE_MAT3x4_EXT")]
-    DoubleMAT3X4EXT = 36684,
+    DoubleMat3X4EXT = 36684,
 
     [NativeName("GL_DOUBLE_MAT4x2_EXT")]
-    DoubleMAT4X2EXT = 36685,
+    DoubleMat4X2EXT = 36685,
 
     [NativeName("GL_DOUBLE_MAT4x3_EXT")]
-    DoubleMAT4X3EXT = 36686,
+    DoubleMat4X3EXT = 36686,
 
     [NativeName("GL_VERTEX_SHADER_EXT")]
     VertexShaderEXT = 34688,
@@ -15563,64 +15563,64 @@ public enum GLEnum : uint
     TextureBufferSizeOES = 37278,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_3x3x3_OES")]
-    CompressedRGBAASTC3X3X3OES = 37824,
+    CompressedRgbaAstc3X3X3OES = 37824,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x3x3_OES")]
-    CompressedRGBAASTC4X3X3OES = 37825,
+    CompressedRgbaAstc4X3X3OES = 37825,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4x3_OES")]
-    CompressedRGBAASTC4X4X3OES = 37826,
+    CompressedRgbaAstc4X4X3OES = 37826,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_4x4x4_OES")]
-    CompressedRGBAASTC4X4X4OES = 37827,
+    CompressedRgbaAstc4X4X4OES = 37827,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x4x4_OES")]
-    CompressedRGBAASTC5X4X4OES = 37828,
+    CompressedRgbaAstc5X4X4OES = 37828,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5x4_OES")]
-    CompressedRGBAASTC5X5X4OES = 37829,
+    CompressedRgbaAstc5X5X4OES = 37829,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_5x5x5_OES")]
-    CompressedRGBAASTC5X5X5OES = 37830,
+    CompressedRgbaAstc5X5X5OES = 37830,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x5x5_OES")]
-    CompressedRGBAASTC6X5X5OES = 37831,
+    CompressedRgbaAstc6X5X5OES = 37831,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6x5_OES")]
-    CompressedRGBAASTC6X6X5OES = 37832,
+    CompressedRgbaAstc6X6X5OES = 37832,
 
     [NativeName("GL_COMPRESSED_RGBA_ASTC_6x6x6_OES")]
-    CompressedRGBAASTC6X6X6OES = 37833,
+    CompressedRgbaAstc6X6X6OES = 37833,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_3x3x3_OES")]
-    CompressedSRGB8Alpha8Astc3X3X3OES = 37856,
+    CompressedSrgb8Alpha8Astc3X3X3OES = 37856,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES")]
-    CompressedSRGB8Alpha8Astc4X3X3OES = 37857,
+    CompressedSrgb8Alpha8Astc4X3X3OES = 37857,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x3_OES")]
-    CompressedSRGB8Alpha8Astc4X4X3OES = 37858,
+    CompressedSrgb8Alpha8Astc4X4X3OES = 37858,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x4_OES")]
-    CompressedSRGB8Alpha8Astc4X4X4OES = 37859,
+    CompressedSrgb8Alpha8Astc4X4X4OES = 37859,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4x4_OES")]
-    CompressedSRGB8Alpha8Astc5X4X4OES = 37860,
+    CompressedSrgb8Alpha8Astc5X4X4OES = 37860,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x4_OES")]
-    CompressedSRGB8Alpha8Astc5X5X4OES = 37861,
+    CompressedSrgb8Alpha8Astc5X5X4OES = 37861,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x5_OES")]
-    CompressedSRGB8Alpha8Astc5X5X5OES = 37862,
+    CompressedSrgb8Alpha8Astc5X5X5OES = 37862,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5x5_OES")]
-    CompressedSRGB8Alpha8Astc6X5X5OES = 37863,
+    CompressedSrgb8Alpha8Astc6X5X5OES = 37863,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x5_OES")]
-    CompressedSRGB8Alpha8Astc6X6X5OES = 37864,
+    CompressedSrgb8Alpha8Astc6X6X5OES = 37864,
 
     [NativeName("GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x6_OES")]
-    CompressedSRGB8Alpha8Astc6X6X6OES = 37865,
+    CompressedSrgb8Alpha8Astc6X6X6OES = 37865,
 
     [NativeName("GL_TEXTURE_CUBE_MAP_ARRAY_OES")]
     TextureCubeMapArrayOES = 36873,
@@ -16910,22 +16910,22 @@ public enum GLEnum : uint
     VertexAttribArrayDivisorNV = 35070,
 
     [NativeName("GL_FLOAT_MAT2x3_NV")]
-    FloatMAT2X3NV = 35685,
+    FloatMat2X3NV = 35685,
 
     [NativeName("GL_FLOAT_MAT2x4_NV")]
-    FloatMAT2X4NV = 35686,
+    FloatMat2X4NV = 35686,
 
     [NativeName("GL_FLOAT_MAT3x2_NV")]
-    FloatMAT3X2NV = 35687,
+    FloatMat3X2NV = 35687,
 
     [NativeName("GL_FLOAT_MAT3x4_NV")]
-    FloatMAT3X4NV = 35688,
+    FloatMat3X4NV = 35688,
 
     [NativeName("GL_FLOAT_MAT4x2_NV")]
-    FloatMAT4X2NV = 35689,
+    FloatMat4X2NV = 35689,
 
     [NativeName("GL_FLOAT_MAT4x3_NV")]
-    FloatMAT4X3NV = 35690,
+    FloatMat4X3NV = 35690,
 
     [NativeName("GL_PACK_ROW_LENGTH_NV")]
     PackRowLengthNV = 3330,

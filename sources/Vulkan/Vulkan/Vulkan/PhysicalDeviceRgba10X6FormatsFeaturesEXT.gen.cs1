@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("VkPhysicalDeviceRGBA10X6FormatsFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
-public unsafe partial struct PhysicalDeviceRGBA10X6FormatsFeaturesEXT
+public unsafe partial struct PhysicalDeviceRgba10X6FormatsFeaturesEXT
 {
     [NativeName("sType")]
     [SupportedApiProfile(

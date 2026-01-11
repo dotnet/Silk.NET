@@ -80,22 +80,22 @@ public enum UniformType : uint
     Sampler2DShadow = 35682,
 
     [NativeName("GL_FLOAT_MAT2x3")]
-    FloatMAT2X3 = 35685,
+    FloatMat2X3 = 35685,
 
     [NativeName("GL_FLOAT_MAT2x4")]
-    FloatMAT2X4 = 35686,
+    FloatMat2X4 = 35686,
 
     [NativeName("GL_FLOAT_MAT3x2")]
-    FloatMAT3X2 = 35687,
+    FloatMat3X2 = 35687,
 
     [NativeName("GL_FLOAT_MAT3x4")]
-    FloatMAT3X4 = 35688,
+    FloatMat3X4 = 35688,
 
     [NativeName("GL_FLOAT_MAT4x2")]
-    FloatMAT4X2 = 35689,
+    FloatMat4X2 = 35689,
 
     [NativeName("GL_FLOAT_MAT4x3")]
-    FloatMAT4X3 = 35690,
+    FloatMat4X3 = 35690,
 
     [NativeName("GL_SAMPLER_1D_ARRAY")]
     Sampler1DArray = 36288,
@@ -227,20 +227,20 @@ public enum UniformType : uint
     DoubleMat4 = 36680,
 
     [NativeName("GL_DOUBLE_MAT2x3")]
-    DoubleMAT2X3 = 36681,
+    DoubleMat2X3 = 36681,
 
     [NativeName("GL_DOUBLE_MAT2x4")]
-    DoubleMAT2X4 = 36682,
+    DoubleMat2X4 = 36682,
 
     [NativeName("GL_DOUBLE_MAT3x2")]
-    DoubleMAT3X2 = 36683,
+    DoubleMat3X2 = 36683,
 
     [NativeName("GL_DOUBLE_MAT3x4")]
-    DoubleMAT3X4 = 36684,
+    DoubleMat3X4 = 36684,
 
     [NativeName("GL_DOUBLE_MAT4x2")]
-    DoubleMAT4X2 = 36685,
+    DoubleMat4X2 = 36685,
 
     [NativeName("GL_DOUBLE_MAT4x3")]
-    DoubleMAT4X3 = 36686,
+    DoubleMat4X3 = 36686,
 }
