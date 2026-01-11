@@ -155,23 +155,34 @@ public class NamePrettifier(int longAcronymThreshold)
 
         // Apply pascal casing
         var wasPreviousAcronym = false;
+        var didPreviousEndWithUpper = false;
         for (var i = 0; i < words.Count; i++)
         {
             var current = words[i];
             if (canIdentifyAcronyms)
             {
                 var isCurrentAcronym = IsAcronym(current, longAcronymThreshold);
+                var doesCurrentEndWithUpper = GetCharType(current[^1]) is CharType.Upper;
+
                 try
                 {
                     if (isCurrentAcronym)
                     {
-                        // Check if previous or next are acronyms and if they are also preserved
-                        // Eg: [RGBA, ASTC] should result in [Rgba, Astc] since "RGBAASTC" is hard to read
+                        // Check if previous or next are preserved acronyms
+                        //
+                        // Eg: For an acronym threshold of 10,
+                        // [RGBA, ASTC] should result in [Rgba, Astc] since "RGBAASTC" can be ambiguous to read
+                        //
+                        // However, [RGBA8, ASTC] should remain [RGBA8, ASTC] since the 8 separates the two acronyms
+                        // This means if the previous did not end with an uppercase character,
+                        // we can still safely preserve the current acronym
                         var isNextAcronym =
                             i + 1 < words.Count && IsAcronym(words[i + 1], longAcronymThreshold);
 
-                        // TODO: Temporarily disabled
-                        // if (!wasPreviousAcronym && !isNextAcronym)
+                        if (
+                            (!wasPreviousAcronym || !didPreviousEndWithUpper)
+                            && (!isNextAcronym || !doesCurrentEndWithUpper)
+                        )
                         {
                             // Preserve the acronym
                             continue;
@@ -180,9 +191,10 @@ public class NamePrettifier(int longAcronymThreshold)
                 }
                 finally
                 {
-                    // Save whether the current word was an acronym or not
-                    // This is important since we lose information about the current word after it is modified below
+                    // Save information about the current word so that we have it for the next word
+                    // This is important because we lose it after the current word is modified
                     wasPreviousAcronym = isCurrentAcronym;
+                    didPreviousEndWithUpper = doesCurrentEndWithUpper;
                 }
             }
 
@@ -193,7 +205,6 @@ public class NamePrettifier(int longAcronymThreshold)
         // Lowercase "X" if it is between two numbers
         // Eg: [2, X2] becomes [2, x2]
         // "2X2" becomes "2x2"
-        // Note that numbers get merged into previous words above
         for (var i = words.Count - 1; i >= 1; i--)
         {
             var current = words[i];
