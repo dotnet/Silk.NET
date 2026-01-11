@@ -4,5 +4,5 @@ namespace Silk.NET.Core;
 /// The Android platform-specific handles.
 /// </summary>
 /// <param name="Window"><c>ANativeWindow*</c>.</param>
-/// <param name="Surface"><c>EglSurface</c>.</param>
+/// <param name="Surface"><c>EGLSurface</c>.</param>
 public readonly record struct AndroidPlatformInfo(nint Window, nint Surface);
