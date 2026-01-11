@@ -75,7 +75,7 @@ public partial struct DeviceFaultVendorBinaryHeaderVersionOneEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultVendorBinaryHeaderVersionOneEXTPipelineCacheUUID PipelineCacheUUID;
+    public DeviceFaultVendorBinaryHeaderVersionOneExtPipelineCacheUuid PipelineCacheUuid;
 
     [NativeName("applicationNameOffset")]
     [SupportedApiProfile(

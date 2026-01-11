@@ -212,7 +212,7 @@ public partial struct PhysicalDeviceProperties
         ],
         MinVersion = "1.0"
     )]
-    public PhysicalDevicePropertiesPipelineCacheUUID PipelineCacheUUID;
+    public PhysicalDevicePropertiesPipelineCacheUuid PipelineCacheUuid;
 
     [NativeName("limits")]
     [SupportedApiProfile(

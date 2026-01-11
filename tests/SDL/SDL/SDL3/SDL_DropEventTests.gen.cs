@@ -38,7 +38,7 @@ public static unsafe partial class SDL_DropEventTests
         }
         else
         {
-            Assert.That(sizeof(DropEvent), Is.EqualTo(40));
+            Assert.That(sizeof(DropEvent), Is.EqualTo(32));
         }
     }
 }

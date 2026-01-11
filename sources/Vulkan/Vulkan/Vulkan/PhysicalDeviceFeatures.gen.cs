@@ -317,7 +317,7 @@ public partial struct PhysicalDeviceFeatures
         ],
         MinVersion = "1.0"
     )]
-    public uint TextureCompressionETC2;
+    public uint TextureCompressionEtc2;
 
     [NativeName("textureCompressionASTC_LDR")]
     [SupportedApiProfile(

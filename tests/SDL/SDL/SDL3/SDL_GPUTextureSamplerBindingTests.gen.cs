@@ -8,40 +8,40 @@ using NUnit.Framework;
 
 namespace Silk.NET.SDL.UnitTests;
 
-/// <summary>Provides validation of the <see cref = "GPUTextureSamplerBinding"/> struct.</summary>
+/// <summary>Provides validation of the <see cref = "GpuTextureSamplerBinding"/> struct.</summary>
 public static unsafe partial class SDL_GPUTextureSamplerBindingTests
 {
-    /// <summary>Validates that the <see cref = "GPUTextureSamplerBinding"/> struct is blittable.</summary>
+    /// <summary>Validates that the <see cref = "GpuTextureSamplerBinding"/> struct is blittable.</summary>
 
     [Test]
     public static void IsBlittableTest()
     {
         Assert.That(
-            Marshal.SizeOf<GPUTextureSamplerBinding>(),
-            Is.EqualTo(sizeof(GPUTextureSamplerBinding))
+            Marshal.SizeOf<GpuTextureSamplerBinding>(),
+            Is.EqualTo(sizeof(GpuTextureSamplerBinding))
         );
     }
 
-    /// <summary>Validates that the <see cref = "GPUTextureSamplerBinding"/> struct has the right <see cref = "LayoutKind"/>.</summary>
+    /// <summary>Validates that the <see cref = "GpuTextureSamplerBinding"/> struct has the right <see cref = "LayoutKind"/>.</summary>
 
     [Test]
     public static void IsLayoutSequentialTest()
     {
-        Assert.That(typeof(GPUTextureSamplerBinding).IsLayoutSequential, Is.True);
+        Assert.That(typeof(GpuTextureSamplerBinding).IsLayoutSequential, Is.True);
     }
 
-    /// <summary>Validates that the <see cref = "GPUTextureSamplerBinding"/> struct has the correct size.</summary>
+    /// <summary>Validates that the <see cref = "GpuTextureSamplerBinding"/> struct has the correct size.</summary>
 
     [Test]
     public static void SizeOfTest()
     {
         if (Environment.Is64BitProcess)
         {
-            Assert.That(sizeof(GPUTextureSamplerBinding), Is.EqualTo(16));
+            Assert.That(sizeof(GpuTextureSamplerBinding), Is.EqualTo(16));
         }
         else
         {
-            Assert.That(sizeof(GPUTextureSamplerBinding), Is.EqualTo(8));
+            Assert.That(sizeof(GpuTextureSamplerBinding), Is.EqualTo(8));
         }
     }
 }
