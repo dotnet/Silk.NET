@@ -2550,6 +2550,10 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDesktopDisplayMode")]
         static abstract DisplayMode* GetDesktopDisplayModeRaw(uint displayID);
 
+        [NativeName("SDL_GetDirect3D9AdapterIndex")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetDirect3D9AdapterIndex")]
+        static abstract int GetDirect3D9AdapterIndex(uint displayID);
+
         [NativeName("SDL_GetDisplayBounds")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayBounds")]
         static abstract byte GetDisplayBounds(uint displayID, Rect* rect);
@@ -2609,6 +2613,18 @@ public unsafe partial interface ISdl
         [NativeName("SDL_GetDisplayUsableBounds")]
         [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayUsableBounds")]
         static abstract MaybeBool<byte> GetDisplayUsableBounds(uint displayID, Ref<Rect> rect);
+
+        [NativeName("SDL_GetDXGIOutputInfo")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetDXGIOutputInfo")]
+        static abstract byte GetDxgiOutputInfo(uint displayID, int* adapterIndex, int* outputIndex);
+
+        [NativeName("SDL_GetDXGIOutputInfo")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_GetDXGIOutputInfo")]
+        static abstract MaybeBool<byte> GetDxgiOutputInfo(
+            uint displayID,
+            Ref<int> adapterIndex,
+            Ref<int> outputIndex
+        );
 
         [NativeName("SDL_getenv")]
         [NativeFunction("SDL3", EntryPoint = "SDL_getenv")]
@@ -5196,7 +5212,7 @@ public unsafe partial interface ISdl
         static abstract int HidGetIndexedString(
             HidDeviceHandle dev,
             int string_index,
-            uint* @string,
+            ushort* @string,
             nuint maxlen
         );
 
@@ -5205,7 +5221,7 @@ public unsafe partial interface ISdl
         static abstract int HidGetIndexedString(
             HidDeviceHandle dev,
             int string_index,
-            Ref<uint> @string,
+            Ref<ushort> @string,
             nuint maxlen
         );
 
@@ -5221,7 +5237,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_manufacturer_string")]
         static abstract int HidGetManufacturerString(
             HidDeviceHandle dev,
-            uint* @string,
+            ushort* @string,
             nuint maxlen
         );
 
@@ -5229,19 +5245,19 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_manufacturer_string")]
         static abstract int HidGetManufacturerString(
             HidDeviceHandle dev,
-            Ref<uint> @string,
+            Ref<ushort> @string,
             nuint maxlen
         );
 
         [NativeName("SDL_hid_get_product_string")]
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_product_string")]
-        static abstract int HidGetProductString(HidDeviceHandle dev, uint* @string, nuint maxlen);
+        static abstract int HidGetProductString(HidDeviceHandle dev, ushort* @string, nuint maxlen);
 
         [NativeName("SDL_hid_get_product_string")]
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_product_string")]
         static abstract int HidGetProductString(
             HidDeviceHandle dev,
-            Ref<uint> @string,
+            Ref<ushort> @string,
             nuint maxlen
         );
 
@@ -5261,7 +5277,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_serial_number_string")]
         static abstract int HidGetSerialNumberString(
             HidDeviceHandle dev,
-            uint* @string,
+            ushort* @string,
             nuint maxlen
         );
 
@@ -5269,7 +5285,7 @@ public unsafe partial interface ISdl
         [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_serial_number_string")]
         static abstract int HidGetSerialNumberString(
             HidDeviceHandle dev,
-            Ref<uint> @string,
+            Ref<ushort> @string,
             nuint maxlen
         );
 
@@ -5282,7 +5298,7 @@ public unsafe partial interface ISdl
         static abstract HidDeviceHandle HidOpen(
             ushort vendor_id,
             ushort product_id,
-            uint* serial_number
+            ushort* serial_number
         );
 
         [NativeName("SDL_hid_open")]
@@ -5290,7 +5306,7 @@ public unsafe partial interface ISdl
         static abstract HidDeviceHandle HidOpen(
             ushort vendor_id,
             ushort product_id,
-            Ref<uint> serial_number
+            Ref<ushort> serial_number
         );
 
         [NativeName("SDL_hid_open_path")]
@@ -5481,11 +5497,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_IOvprintf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_IOvprintf")]
-        static abstract nuint IOvprintf(IOStreamHandle context, sbyte* fmt, VaListTagHandle ap);
+        static abstract nuint IOvprintf(IOStreamHandle context, sbyte* fmt, sbyte* ap);
 
         [NativeName("SDL_IOvprintf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_IOvprintf")]
-        static abstract nuint IOvprintf(IOStreamHandle context, Ref<sbyte> fmt, VaListTagHandle ap);
+        static abstract nuint IOvprintf(IOStreamHandle context, Ref<sbyte> fmt, Ref<sbyte> ap);
 
         [NativeName("SDL_isalnum")]
         [NativeFunction("SDL3", EntryPoint = "SDL_isalnum")]
@@ -5844,12 +5860,7 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_LogMessageV")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LogMessageV")]
-        static abstract void LogMessageV(
-            int category,
-            LogPriority priority,
-            sbyte* fmt,
-            VaListTagHandle ap
-        );
+        static abstract void LogMessageV(int category, LogPriority priority, sbyte* fmt, sbyte* ap);
 
         [NativeName("SDL_LogMessageV")]
         [NativeFunction("SDL3", EntryPoint = "SDL_LogMessageV")]
@@ -5857,24 +5868,24 @@ public unsafe partial interface ISdl
             int category,
             LogPriority priority,
             Ref<sbyte> fmt,
-            VaListTagHandle ap
+            Ref<sbyte> ap
         );
 
         [NativeName("SDL_lround")]
         [NativeFunction("SDL3", EntryPoint = "SDL_lround")]
-        static abstract nint Lround(double x);
+        static abstract int Lround(double x);
 
         [NativeName("SDL_lroundf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_lroundf")]
-        static abstract nint Lroundf(float x);
+        static abstract int Lroundf(float x);
 
         [NativeName("SDL_ltoa")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ltoa")]
-        static abstract sbyte* Ltoa(nint value, sbyte* str, int radix);
+        static abstract sbyte* Ltoa(int value, sbyte* str, int radix);
 
         [NativeName("SDL_ltoa")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ltoa")]
-        static abstract Ptr<sbyte> Ltoa(nint value, Ref<sbyte> str, int radix);
+        static abstract Ptr<sbyte> Ltoa(int value, Ref<sbyte> str, int radix);
 
         [NativeName("SDL_main")]
         [NativeFunction("SDL3", EntryPoint = "SDL_main")]
@@ -6709,6 +6720,14 @@ public unsafe partial interface ISdl
         [NativeName("SDL_realloc")]
         [NativeFunction("SDL3", EntryPoint = "SDL_realloc")]
         static abstract Ptr Realloc(Ref mem, nuint size);
+
+        [NativeName("SDL_RegisterApp")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RegisterApp")]
+        static abstract byte RegisterApp(sbyte* name, uint style, void* hInst);
+
+        [NativeName("SDL_RegisterApp")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_RegisterApp")]
+        static abstract MaybeBool<byte> RegisterApp(Ref<sbyte> name, uint style, Ref hInst);
 
         [NativeName("SDL_RegisterEvents")]
         [NativeFunction("SDL3", EntryPoint = "SDL_RegisterEvents")]
@@ -7801,11 +7820,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_SetErrorV")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
-        static abstract byte SetErrorV(sbyte* fmt, VaListTagHandle ap);
+        static abstract byte SetErrorV(sbyte* fmt, sbyte* ap);
 
         [NativeName("SDL_SetErrorV")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
-        static abstract MaybeBool<byte> SetErrorV(Ref<sbyte> fmt, VaListTagHandle ap);
+        static abstract MaybeBool<byte> SetErrorV(Ref<sbyte> fmt, Ref<sbyte> ap);
 
         [NativeName("SDL_SetEventEnabled")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetEventEnabled")]
@@ -8155,30 +8174,6 @@ public unsafe partial interface ISdl
             float y,
             float pressure
         );
-
-        [NativeName("SDL_SetLinuxThreadPriority")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriority")]
-        static abstract MaybeBool<byte> SetLinuxThreadPriority(long threadID, int priority);
-
-        [NativeName("SDL_SetLinuxThreadPriorityAndPolicy")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriorityAndPolicy")]
-        static abstract MaybeBool<byte> SetLinuxThreadPriorityAndPolicy(
-            long threadID,
-            int sdlPriority,
-            int schedPolicy
-        );
-
-        [NativeName("SDL_SetLinuxThreadPriorityAndPolicy")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriorityAndPolicy")]
-        static abstract byte SetLinuxThreadPriorityAndPolicyRaw(
-            long threadID,
-            int sdlPriority,
-            int schedPolicy
-        );
-
-        [NativeName("SDL_SetLinuxThreadPriority")]
-        [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriority")]
-        static abstract byte SetLinuxThreadPriorityRaw(long threadID, int priority);
 
         [NativeName("SDL_SetLogOutputFunction")]
         [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
@@ -9296,11 +9291,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_strtol")]
         [NativeFunction("SDL3", EntryPoint = "SDL_strtol")]
-        static abstract nint Strtol(sbyte* str, sbyte** endp, int @base);
+        static abstract int Strtol(sbyte* str, sbyte** endp, int @base);
 
         [NativeName("SDL_strtol")]
         [NativeFunction("SDL3", EntryPoint = "SDL_strtol")]
-        static abstract nint Strtol(Ref<sbyte> str, Ref2D<sbyte> endp, int @base);
+        static abstract int Strtol(Ref<sbyte> str, Ref2D<sbyte> endp, int @base);
 
         [NativeName("SDL_strtoll")]
         [NativeFunction("SDL3", EntryPoint = "SDL_strtoll")]
@@ -9312,11 +9307,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_strtoul")]
         [NativeFunction("SDL3", EntryPoint = "SDL_strtoul")]
-        static abstract nuint Strtoul(sbyte* str, sbyte** endp, int @base);
+        static abstract uint Strtoul(sbyte* str, sbyte** endp, int @base);
 
         [NativeName("SDL_strtoul")]
         [NativeFunction("SDL3", EntryPoint = "SDL_strtoul")]
-        static abstract nuint Strtoul(Ref<sbyte> str, Ref2D<sbyte> endp, int @base);
+        static abstract uint Strtoul(Ref<sbyte> str, Ref2D<sbyte> endp, int @base);
 
         [NativeName("SDL_strtoull")]
         [NativeFunction("SDL3", EntryPoint = "SDL_strtoull")]
@@ -9512,11 +9507,11 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_ultoa")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ultoa")]
-        static abstract sbyte* Ultoa(nuint value, sbyte* str, int radix);
+        static abstract sbyte* Ultoa(uint value, sbyte* str, int radix);
 
         [NativeName("SDL_ultoa")]
         [NativeFunction("SDL3", EntryPoint = "SDL_ultoa")]
-        static abstract Ptr<sbyte> Ultoa(nuint value, Ref<sbyte> str, int radix);
+        static abstract Ptr<sbyte> Ultoa(uint value, Ref<sbyte> str, int radix);
 
         [NativeName("SDL_UnbindAudioStream")]
         [NativeFunction("SDL3", EntryPoint = "SDL_UnbindAudioStream")]
@@ -9588,6 +9583,10 @@ public unsafe partial interface ISdl
             GPUDeviceHandle device,
             GPUTransferBufferHandle transfer_buffer
         );
+
+        [NativeName("SDL_UnregisterApp")]
+        [NativeFunction("SDL3", EntryPoint = "SDL_UnregisterApp")]
+        static abstract void UnregisterApp();
 
         [NativeName("SDL_unsetenv_unsafe")]
         [NativeFunction("SDL3", EntryPoint = "SDL_unsetenv_unsafe")]
@@ -9783,44 +9782,39 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_vasprintf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_vasprintf")]
-        static abstract int Vasprintf(sbyte** strp, sbyte* fmt, VaListTagHandle ap);
+        static abstract int Vasprintf(sbyte** strp, sbyte* fmt, sbyte* ap);
 
         [NativeName("SDL_vasprintf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_vasprintf")]
-        static abstract int Vasprintf(Ref2D<sbyte> strp, Ref<sbyte> fmt, VaListTagHandle ap);
+        static abstract int Vasprintf(Ref2D<sbyte> strp, Ref<sbyte> fmt, Ref<sbyte> ap);
 
         [NativeName("SDL_vsnprintf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_vsnprintf")]
-        static abstract int Vsnprintf(sbyte* text, nuint maxlen, sbyte* fmt, VaListTagHandle ap);
+        static abstract int Vsnprintf(sbyte* text, nuint maxlen, sbyte* fmt, sbyte* ap);
 
         [NativeName("SDL_vsnprintf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_vsnprintf")]
-        static abstract int Vsnprintf(
-            Ref<sbyte> text,
-            nuint maxlen,
-            Ref<sbyte> fmt,
-            VaListTagHandle ap
-        );
+        static abstract int Vsnprintf(Ref<sbyte> text, nuint maxlen, Ref<sbyte> fmt, Ref<sbyte> ap);
 
         [NativeName("SDL_vsscanf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_vsscanf")]
-        static abstract int Vsscanf(sbyte* text, sbyte* fmt, VaListTagHandle ap);
+        static abstract int Vsscanf(sbyte* text, sbyte* fmt, sbyte* ap);
 
         [NativeName("SDL_vsscanf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_vsscanf")]
-        static abstract int Vsscanf(Ref<sbyte> text, Ref<sbyte> fmt, VaListTagHandle ap);
+        static abstract int Vsscanf(Ref<sbyte> text, Ref<sbyte> fmt, Ref<sbyte> ap);
 
         [NativeName("SDL_vswprintf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_vswprintf")]
-        static abstract int Vswprintf(uint* text, nuint maxlen, uint* fmt, VaListTagHandle ap);
+        static abstract int Vswprintf(ushort* text, nuint maxlen, ushort* fmt, sbyte* ap);
 
         [NativeName("SDL_vswprintf")]
         [NativeFunction("SDL3", EntryPoint = "SDL_vswprintf")]
         static abstract int Vswprintf(
-            Ref<uint> text,
+            Ref<ushort> text,
             nuint maxlen,
-            Ref<uint> fmt,
-            VaListTagHandle ap
+            Ref<ushort> fmt,
+            Ref<sbyte> ap
         );
 
         [NativeName("SDL_Vulkan_CreateSurface")]
@@ -10032,99 +10026,99 @@ public unsafe partial interface ISdl
 
         [NativeName("SDL_wcscasecmp")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcscasecmp")]
-        static abstract int Wcscasecmp(uint* str1, uint* str2);
+        static abstract int Wcscasecmp(ushort* str1, ushort* str2);
 
         [NativeName("SDL_wcscasecmp")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcscasecmp")]
-        static abstract int Wcscasecmp(Ref<uint> str1, Ref<uint> str2);
+        static abstract int Wcscasecmp(Ref<ushort> str1, Ref<ushort> str2);
 
         [NativeName("SDL_wcscmp")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcscmp")]
-        static abstract int Wcscmp(uint* str1, uint* str2);
+        static abstract int Wcscmp(ushort* str1, ushort* str2);
 
         [NativeName("SDL_wcscmp")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcscmp")]
-        static abstract int Wcscmp(Ref<uint> str1, Ref<uint> str2);
+        static abstract int Wcscmp(Ref<ushort> str1, Ref<ushort> str2);
 
         [NativeName("SDL_wcsdup")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsdup")]
-        static abstract uint* Wcsdup(uint* wstr);
+        static abstract ushort* Wcsdup(ushort* wstr);
 
         [NativeName("SDL_wcsdup")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsdup")]
-        static abstract Ptr<uint> Wcsdup(Ref<uint> wstr);
+        static abstract Ptr<ushort> Wcsdup(Ref<ushort> wstr);
 
         [NativeName("SDL_wcslcat")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcslcat")]
-        static abstract nuint Wcslcat(uint* dst, uint* src, nuint maxlen);
+        static abstract nuint Wcslcat(ushort* dst, ushort* src, nuint maxlen);
 
         [NativeName("SDL_wcslcat")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcslcat")]
-        static abstract nuint Wcslcat(Ref<uint> dst, Ref<uint> src, nuint maxlen);
+        static abstract nuint Wcslcat(Ref<ushort> dst, Ref<ushort> src, nuint maxlen);
 
         [NativeName("SDL_wcslcpy")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcslcpy")]
-        static abstract nuint Wcslcpy(uint* dst, uint* src, nuint maxlen);
+        static abstract nuint Wcslcpy(ushort* dst, ushort* src, nuint maxlen);
 
         [NativeName("SDL_wcslcpy")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcslcpy")]
-        static abstract nuint Wcslcpy(Ref<uint> dst, Ref<uint> src, nuint maxlen);
+        static abstract nuint Wcslcpy(Ref<ushort> dst, Ref<ushort> src, nuint maxlen);
 
         [NativeName("SDL_wcslen")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcslen")]
-        static abstract nuint Wcslen(uint* wstr);
+        static abstract nuint Wcslen(ushort* wstr);
 
         [NativeName("SDL_wcslen")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcslen")]
-        static abstract nuint Wcslen(Ref<uint> wstr);
+        static abstract nuint Wcslen(Ref<ushort> wstr);
 
         [NativeName("SDL_wcsncasecmp")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsncasecmp")]
-        static abstract int Wcsncasecmp(uint* str1, uint* str2, nuint maxlen);
+        static abstract int Wcsncasecmp(ushort* str1, ushort* str2, nuint maxlen);
 
         [NativeName("SDL_wcsncasecmp")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsncasecmp")]
-        static abstract int Wcsncasecmp(Ref<uint> str1, Ref<uint> str2, nuint maxlen);
+        static abstract int Wcsncasecmp(Ref<ushort> str1, Ref<ushort> str2, nuint maxlen);
 
         [NativeName("SDL_wcsncmp")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsncmp")]
-        static abstract int Wcsncmp(uint* str1, uint* str2, nuint maxlen);
+        static abstract int Wcsncmp(ushort* str1, ushort* str2, nuint maxlen);
 
         [NativeName("SDL_wcsncmp")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsncmp")]
-        static abstract int Wcsncmp(Ref<uint> str1, Ref<uint> str2, nuint maxlen);
+        static abstract int Wcsncmp(Ref<ushort> str1, Ref<ushort> str2, nuint maxlen);
 
         [NativeName("SDL_wcsnlen")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsnlen")]
-        static abstract nuint Wcsnlen(uint* wstr, nuint maxlen);
+        static abstract nuint Wcsnlen(ushort* wstr, nuint maxlen);
 
         [NativeName("SDL_wcsnlen")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsnlen")]
-        static abstract nuint Wcsnlen(Ref<uint> wstr, nuint maxlen);
+        static abstract nuint Wcsnlen(Ref<ushort> wstr, nuint maxlen);
 
         [NativeName("SDL_wcsnstr")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsnstr")]
-        static abstract uint* Wcsnstr(uint* haystack, uint* needle, nuint maxlen);
+        static abstract ushort* Wcsnstr(ushort* haystack, ushort* needle, nuint maxlen);
 
         [NativeName("SDL_wcsnstr")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsnstr")]
-        static abstract Ptr<uint> Wcsnstr(Ref<uint> haystack, Ref<uint> needle, nuint maxlen);
+        static abstract Ptr<ushort> Wcsnstr(Ref<ushort> haystack, Ref<ushort> needle, nuint maxlen);
 
         [NativeName("SDL_wcsstr")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsstr")]
-        static abstract uint* Wcsstr(uint* haystack, uint* needle);
+        static abstract ushort* Wcsstr(ushort* haystack, ushort* needle);
 
         [NativeName("SDL_wcsstr")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcsstr")]
-        static abstract Ptr<uint> Wcsstr(Ref<uint> haystack, Ref<uint> needle);
+        static abstract Ptr<ushort> Wcsstr(Ref<ushort> haystack, Ref<ushort> needle);
 
         [NativeName("SDL_wcstol")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcstol")]
-        static abstract nint Wcstol(uint* str, uint** endp, int @base);
+        static abstract int Wcstol(ushort* str, ushort** endp, int @base);
 
         [NativeName("SDL_wcstol")]
         [NativeFunction("SDL3", EntryPoint = "SDL_wcstol")]
-        static abstract nint Wcstol(Ref<uint> str, Ref2D<uint> endp, int @base);
+        static abstract int Wcstol(Ref<ushort> str, Ref2D<ushort> endp, int @base);
 
         [NativeName("SDL_WindowHasSurface")]
         [NativeFunction("SDL3", EntryPoint = "SDL_WindowHasSurface")]
@@ -12685,6 +12679,10 @@ public unsafe partial interface ISdl
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDesktopDisplayMode")]
     DisplayMode* GetDesktopDisplayModeRaw(uint displayID);
 
+    [NativeName("SDL_GetDirect3D9AdapterIndex")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetDirect3D9AdapterIndex")]
+    int GetDirect3D9AdapterIndex(uint displayID);
+
     [NativeName("SDL_GetDisplayBounds")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayBounds")]
     byte GetDisplayBounds(uint displayID, Rect* rect);
@@ -12744,6 +12742,14 @@ public unsafe partial interface ISdl
     [NativeName("SDL_GetDisplayUsableBounds")]
     [NativeFunction("SDL3", EntryPoint = "SDL_GetDisplayUsableBounds")]
     MaybeBool<byte> GetDisplayUsableBounds(uint displayID, Ref<Rect> rect);
+
+    [NativeName("SDL_GetDXGIOutputInfo")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetDXGIOutputInfo")]
+    byte GetDxgiOutputInfo(uint displayID, int* adapterIndex, int* outputIndex);
+
+    [NativeName("SDL_GetDXGIOutputInfo")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_GetDXGIOutputInfo")]
+    MaybeBool<byte> GetDxgiOutputInfo(uint displayID, Ref<int> adapterIndex, Ref<int> outputIndex);
 
     [NativeName("SDL_getenv")]
     [NativeFunction("SDL3", EntryPoint = "SDL_getenv")]
@@ -15117,11 +15123,16 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_hid_get_indexed_string")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_indexed_string")]
-    int HidGetIndexedString(HidDeviceHandle dev, int string_index, uint* @string, nuint maxlen);
+    int HidGetIndexedString(HidDeviceHandle dev, int string_index, ushort* @string, nuint maxlen);
 
     [NativeName("SDL_hid_get_indexed_string")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_indexed_string")]
-    int HidGetIndexedString(HidDeviceHandle dev, int string_index, Ref<uint> @string, nuint maxlen);
+    int HidGetIndexedString(
+        HidDeviceHandle dev,
+        int string_index,
+        Ref<ushort> @string,
+        nuint maxlen
+    );
 
     [NativeName("SDL_hid_get_input_report")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_input_report")]
@@ -15133,19 +15144,19 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_hid_get_manufacturer_string")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_manufacturer_string")]
-    int HidGetManufacturerString(HidDeviceHandle dev, uint* @string, nuint maxlen);
+    int HidGetManufacturerString(HidDeviceHandle dev, ushort* @string, nuint maxlen);
 
     [NativeName("SDL_hid_get_manufacturer_string")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_manufacturer_string")]
-    int HidGetManufacturerString(HidDeviceHandle dev, Ref<uint> @string, nuint maxlen);
+    int HidGetManufacturerString(HidDeviceHandle dev, Ref<ushort> @string, nuint maxlen);
 
     [NativeName("SDL_hid_get_product_string")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_product_string")]
-    int HidGetProductString(HidDeviceHandle dev, uint* @string, nuint maxlen);
+    int HidGetProductString(HidDeviceHandle dev, ushort* @string, nuint maxlen);
 
     [NativeName("SDL_hid_get_product_string")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_product_string")]
-    int HidGetProductString(HidDeviceHandle dev, Ref<uint> @string, nuint maxlen);
+    int HidGetProductString(HidDeviceHandle dev, Ref<ushort> @string, nuint maxlen);
 
     [NativeName("SDL_hid_get_report_descriptor")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_report_descriptor")]
@@ -15157,11 +15168,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_hid_get_serial_number_string")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_serial_number_string")]
-    int HidGetSerialNumberString(HidDeviceHandle dev, uint* @string, nuint maxlen);
+    int HidGetSerialNumberString(HidDeviceHandle dev, ushort* @string, nuint maxlen);
 
     [NativeName("SDL_hid_get_serial_number_string")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_get_serial_number_string")]
-    int HidGetSerialNumberString(HidDeviceHandle dev, Ref<uint> @string, nuint maxlen);
+    int HidGetSerialNumberString(HidDeviceHandle dev, Ref<ushort> @string, nuint maxlen);
 
     [NativeName("SDL_hid_init")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_init")]
@@ -15169,11 +15180,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_hid_open")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_open")]
-    HidDeviceHandle HidOpen(ushort vendor_id, ushort product_id, uint* serial_number);
+    HidDeviceHandle HidOpen(ushort vendor_id, ushort product_id, ushort* serial_number);
 
     [NativeName("SDL_hid_open")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_open")]
-    HidDeviceHandle HidOpen(ushort vendor_id, ushort product_id, Ref<uint> serial_number);
+    HidDeviceHandle HidOpen(ushort vendor_id, ushort product_id, Ref<ushort> serial_number);
 
     [NativeName("SDL_hid_open_path")]
     [NativeFunction("SDL3", EntryPoint = "SDL_hid_open_path")]
@@ -15342,11 +15353,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_IOvprintf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_IOvprintf")]
-    nuint IOvprintf(IOStreamHandle context, sbyte* fmt, VaListTagHandle ap);
+    nuint IOvprintf(IOStreamHandle context, sbyte* fmt, sbyte* ap);
 
     [NativeName("SDL_IOvprintf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_IOvprintf")]
-    nuint IOvprintf(IOStreamHandle context, Ref<sbyte> fmt, VaListTagHandle ap);
+    nuint IOvprintf(IOStreamHandle context, Ref<sbyte> fmt, Ref<sbyte> ap);
 
     [NativeName("SDL_isalnum")]
     [NativeFunction("SDL3", EntryPoint = "SDL_isalnum")]
@@ -15691,27 +15702,27 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_LogMessageV")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LogMessageV")]
-    void LogMessageV(int category, LogPriority priority, sbyte* fmt, VaListTagHandle ap);
+    void LogMessageV(int category, LogPriority priority, sbyte* fmt, sbyte* ap);
 
     [NativeName("SDL_LogMessageV")]
     [NativeFunction("SDL3", EntryPoint = "SDL_LogMessageV")]
-    void LogMessageV(int category, LogPriority priority, Ref<sbyte> fmt, VaListTagHandle ap);
+    void LogMessageV(int category, LogPriority priority, Ref<sbyte> fmt, Ref<sbyte> ap);
 
     [NativeName("SDL_lround")]
     [NativeFunction("SDL3", EntryPoint = "SDL_lround")]
-    nint Lround(double x);
+    int Lround(double x);
 
     [NativeName("SDL_lroundf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_lroundf")]
-    nint Lroundf(float x);
+    int Lroundf(float x);
 
     [NativeName("SDL_ltoa")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ltoa")]
-    sbyte* Ltoa(nint value, sbyte* str, int radix);
+    sbyte* Ltoa(int value, sbyte* str, int radix);
 
     [NativeName("SDL_ltoa")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ltoa")]
-    Ptr<sbyte> Ltoa(nint value, Ref<sbyte> str, int radix);
+    Ptr<sbyte> Ltoa(int value, Ref<sbyte> str, int radix);
 
     [NativeName("SDL_main")]
     [NativeFunction("SDL3", EntryPoint = "SDL_main")]
@@ -16472,6 +16483,14 @@ public unsafe partial interface ISdl
     [NativeName("SDL_realloc")]
     [NativeFunction("SDL3", EntryPoint = "SDL_realloc")]
     Ptr Realloc(Ref mem, nuint size);
+
+    [NativeName("SDL_RegisterApp")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RegisterApp")]
+    byte RegisterApp(sbyte* name, uint style, void* hInst);
+
+    [NativeName("SDL_RegisterApp")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_RegisterApp")]
+    MaybeBool<byte> RegisterApp(Ref<sbyte> name, uint style, Ref hInst);
 
     [NativeName("SDL_RegisterEvents")]
     [NativeFunction("SDL3", EntryPoint = "SDL_RegisterEvents")]
@@ -17430,11 +17449,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_SetErrorV")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
-    byte SetErrorV(sbyte* fmt, VaListTagHandle ap);
+    byte SetErrorV(sbyte* fmt, sbyte* ap);
 
     [NativeName("SDL_SetErrorV")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetErrorV")]
-    MaybeBool<byte> SetErrorV(Ref<sbyte> fmt, VaListTagHandle ap);
+    MaybeBool<byte> SetErrorV(Ref<sbyte> fmt, Ref<sbyte> ap);
 
     [NativeName("SDL_SetEventEnabled")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetEventEnabled")]
@@ -17701,26 +17720,6 @@ public unsafe partial interface ISdl
         float y,
         float pressure
     );
-
-    [NativeName("SDL_SetLinuxThreadPriority")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriority")]
-    MaybeBool<byte> SetLinuxThreadPriority(long threadID, int priority);
-
-    [NativeName("SDL_SetLinuxThreadPriorityAndPolicy")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriorityAndPolicy")]
-    MaybeBool<byte> SetLinuxThreadPriorityAndPolicy(
-        long threadID,
-        int sdlPriority,
-        int schedPolicy
-    );
-
-    [NativeName("SDL_SetLinuxThreadPriorityAndPolicy")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriorityAndPolicy")]
-    byte SetLinuxThreadPriorityAndPolicyRaw(long threadID, int sdlPriority, int schedPolicy);
-
-    [NativeName("SDL_SetLinuxThreadPriority")]
-    [NativeFunction("SDL3", EntryPoint = "SDL_SetLinuxThreadPriority")]
-    byte SetLinuxThreadPriorityRaw(long threadID, int priority);
 
     [NativeName("SDL_SetLogOutputFunction")]
     [NativeFunction("SDL3", EntryPoint = "SDL_SetLogOutputFunction")]
@@ -18688,11 +18687,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_strtol")]
     [NativeFunction("SDL3", EntryPoint = "SDL_strtol")]
-    nint Strtol(sbyte* str, sbyte** endp, int @base);
+    int Strtol(sbyte* str, sbyte** endp, int @base);
 
     [NativeName("SDL_strtol")]
     [NativeFunction("SDL3", EntryPoint = "SDL_strtol")]
-    nint Strtol(Ref<sbyte> str, Ref2D<sbyte> endp, int @base);
+    int Strtol(Ref<sbyte> str, Ref2D<sbyte> endp, int @base);
 
     [NativeName("SDL_strtoll")]
     [NativeFunction("SDL3", EntryPoint = "SDL_strtoll")]
@@ -18704,11 +18703,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_strtoul")]
     [NativeFunction("SDL3", EntryPoint = "SDL_strtoul")]
-    nuint Strtoul(sbyte* str, sbyte** endp, int @base);
+    uint Strtoul(sbyte* str, sbyte** endp, int @base);
 
     [NativeName("SDL_strtoul")]
     [NativeFunction("SDL3", EntryPoint = "SDL_strtoul")]
-    nuint Strtoul(Ref<sbyte> str, Ref2D<sbyte> endp, int @base);
+    uint Strtoul(Ref<sbyte> str, Ref2D<sbyte> endp, int @base);
 
     [NativeName("SDL_strtoull")]
     [NativeFunction("SDL3", EntryPoint = "SDL_strtoull")]
@@ -18892,11 +18891,11 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_ultoa")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ultoa")]
-    sbyte* Ultoa(nuint value, sbyte* str, int radix);
+    sbyte* Ultoa(uint value, sbyte* str, int radix);
 
     [NativeName("SDL_ultoa")]
     [NativeFunction("SDL3", EntryPoint = "SDL_ultoa")]
-    Ptr<sbyte> Ultoa(nuint value, Ref<sbyte> str, int radix);
+    Ptr<sbyte> Ultoa(uint value, Ref<sbyte> str, int radix);
 
     [NativeName("SDL_UnbindAudioStream")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UnbindAudioStream")]
@@ -18965,6 +18964,10 @@ public unsafe partial interface ISdl
     [NativeName("SDL_UnmapGPUTransferBuffer")]
     [NativeFunction("SDL3", EntryPoint = "SDL_UnmapGPUTransferBuffer")]
     void UnmapGPUTransferBuffer(GPUDeviceHandle device, GPUTransferBufferHandle transfer_buffer);
+
+    [NativeName("SDL_UnregisterApp")]
+    [NativeFunction("SDL3", EntryPoint = "SDL_UnregisterApp")]
+    void UnregisterApp();
 
     [NativeName("SDL_unsetenv_unsafe")]
     [NativeFunction("SDL3", EntryPoint = "SDL_unsetenv_unsafe")]
@@ -19136,35 +19139,35 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_vasprintf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_vasprintf")]
-    int Vasprintf(sbyte** strp, sbyte* fmt, VaListTagHandle ap);
+    int Vasprintf(sbyte** strp, sbyte* fmt, sbyte* ap);
 
     [NativeName("SDL_vasprintf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_vasprintf")]
-    int Vasprintf(Ref2D<sbyte> strp, Ref<sbyte> fmt, VaListTagHandle ap);
+    int Vasprintf(Ref2D<sbyte> strp, Ref<sbyte> fmt, Ref<sbyte> ap);
 
     [NativeName("SDL_vsnprintf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_vsnprintf")]
-    int Vsnprintf(sbyte* text, nuint maxlen, sbyte* fmt, VaListTagHandle ap);
+    int Vsnprintf(sbyte* text, nuint maxlen, sbyte* fmt, sbyte* ap);
 
     [NativeName("SDL_vsnprintf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_vsnprintf")]
-    int Vsnprintf(Ref<sbyte> text, nuint maxlen, Ref<sbyte> fmt, VaListTagHandle ap);
+    int Vsnprintf(Ref<sbyte> text, nuint maxlen, Ref<sbyte> fmt, Ref<sbyte> ap);
 
     [NativeName("SDL_vsscanf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_vsscanf")]
-    int Vsscanf(sbyte* text, sbyte* fmt, VaListTagHandle ap);
+    int Vsscanf(sbyte* text, sbyte* fmt, sbyte* ap);
 
     [NativeName("SDL_vsscanf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_vsscanf")]
-    int Vsscanf(Ref<sbyte> text, Ref<sbyte> fmt, VaListTagHandle ap);
+    int Vsscanf(Ref<sbyte> text, Ref<sbyte> fmt, Ref<sbyte> ap);
 
     [NativeName("SDL_vswprintf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_vswprintf")]
-    int Vswprintf(uint* text, nuint maxlen, uint* fmt, VaListTagHandle ap);
+    int Vswprintf(ushort* text, nuint maxlen, ushort* fmt, sbyte* ap);
 
     [NativeName("SDL_vswprintf")]
     [NativeFunction("SDL3", EntryPoint = "SDL_vswprintf")]
-    int Vswprintf(Ref<uint> text, nuint maxlen, Ref<uint> fmt, VaListTagHandle ap);
+    int Vswprintf(Ref<ushort> text, nuint maxlen, Ref<ushort> fmt, Ref<sbyte> ap);
 
     [NativeName("SDL_Vulkan_CreateSurface")]
     [NativeFunction("SDL3", EntryPoint = "SDL_Vulkan_CreateSurface")]
@@ -19351,99 +19354,99 @@ public unsafe partial interface ISdl
 
     [NativeName("SDL_wcscasecmp")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcscasecmp")]
-    int Wcscasecmp(uint* str1, uint* str2);
+    int Wcscasecmp(ushort* str1, ushort* str2);
 
     [NativeName("SDL_wcscasecmp")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcscasecmp")]
-    int Wcscasecmp(Ref<uint> str1, Ref<uint> str2);
+    int Wcscasecmp(Ref<ushort> str1, Ref<ushort> str2);
 
     [NativeName("SDL_wcscmp")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcscmp")]
-    int Wcscmp(uint* str1, uint* str2);
+    int Wcscmp(ushort* str1, ushort* str2);
 
     [NativeName("SDL_wcscmp")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcscmp")]
-    int Wcscmp(Ref<uint> str1, Ref<uint> str2);
+    int Wcscmp(Ref<ushort> str1, Ref<ushort> str2);
 
     [NativeName("SDL_wcsdup")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsdup")]
-    uint* Wcsdup(uint* wstr);
+    ushort* Wcsdup(ushort* wstr);
 
     [NativeName("SDL_wcsdup")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsdup")]
-    Ptr<uint> Wcsdup(Ref<uint> wstr);
+    Ptr<ushort> Wcsdup(Ref<ushort> wstr);
 
     [NativeName("SDL_wcslcat")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcslcat")]
-    nuint Wcslcat(uint* dst, uint* src, nuint maxlen);
+    nuint Wcslcat(ushort* dst, ushort* src, nuint maxlen);
 
     [NativeName("SDL_wcslcat")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcslcat")]
-    nuint Wcslcat(Ref<uint> dst, Ref<uint> src, nuint maxlen);
+    nuint Wcslcat(Ref<ushort> dst, Ref<ushort> src, nuint maxlen);
 
     [NativeName("SDL_wcslcpy")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcslcpy")]
-    nuint Wcslcpy(uint* dst, uint* src, nuint maxlen);
+    nuint Wcslcpy(ushort* dst, ushort* src, nuint maxlen);
 
     [NativeName("SDL_wcslcpy")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcslcpy")]
-    nuint Wcslcpy(Ref<uint> dst, Ref<uint> src, nuint maxlen);
+    nuint Wcslcpy(Ref<ushort> dst, Ref<ushort> src, nuint maxlen);
 
     [NativeName("SDL_wcslen")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcslen")]
-    nuint Wcslen(uint* wstr);
+    nuint Wcslen(ushort* wstr);
 
     [NativeName("SDL_wcslen")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcslen")]
-    nuint Wcslen(Ref<uint> wstr);
+    nuint Wcslen(Ref<ushort> wstr);
 
     [NativeName("SDL_wcsncasecmp")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsncasecmp")]
-    int Wcsncasecmp(uint* str1, uint* str2, nuint maxlen);
+    int Wcsncasecmp(ushort* str1, ushort* str2, nuint maxlen);
 
     [NativeName("SDL_wcsncasecmp")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsncasecmp")]
-    int Wcsncasecmp(Ref<uint> str1, Ref<uint> str2, nuint maxlen);
+    int Wcsncasecmp(Ref<ushort> str1, Ref<ushort> str2, nuint maxlen);
 
     [NativeName("SDL_wcsncmp")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsncmp")]
-    int Wcsncmp(uint* str1, uint* str2, nuint maxlen);
+    int Wcsncmp(ushort* str1, ushort* str2, nuint maxlen);
 
     [NativeName("SDL_wcsncmp")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsncmp")]
-    int Wcsncmp(Ref<uint> str1, Ref<uint> str2, nuint maxlen);
+    int Wcsncmp(Ref<ushort> str1, Ref<ushort> str2, nuint maxlen);
 
     [NativeName("SDL_wcsnlen")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsnlen")]
-    nuint Wcsnlen(uint* wstr, nuint maxlen);
+    nuint Wcsnlen(ushort* wstr, nuint maxlen);
 
     [NativeName("SDL_wcsnlen")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsnlen")]
-    nuint Wcsnlen(Ref<uint> wstr, nuint maxlen);
+    nuint Wcsnlen(Ref<ushort> wstr, nuint maxlen);
 
     [NativeName("SDL_wcsnstr")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsnstr")]
-    uint* Wcsnstr(uint* haystack, uint* needle, nuint maxlen);
+    ushort* Wcsnstr(ushort* haystack, ushort* needle, nuint maxlen);
 
     [NativeName("SDL_wcsnstr")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsnstr")]
-    Ptr<uint> Wcsnstr(Ref<uint> haystack, Ref<uint> needle, nuint maxlen);
+    Ptr<ushort> Wcsnstr(Ref<ushort> haystack, Ref<ushort> needle, nuint maxlen);
 
     [NativeName("SDL_wcsstr")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsstr")]
-    uint* Wcsstr(uint* haystack, uint* needle);
+    ushort* Wcsstr(ushort* haystack, ushort* needle);
 
     [NativeName("SDL_wcsstr")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcsstr")]
-    Ptr<uint> Wcsstr(Ref<uint> haystack, Ref<uint> needle);
+    Ptr<ushort> Wcsstr(Ref<ushort> haystack, Ref<ushort> needle);
 
     [NativeName("SDL_wcstol")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcstol")]
-    nint Wcstol(uint* str, uint** endp, int @base);
+    int Wcstol(ushort* str, ushort** endp, int @base);
 
     [NativeName("SDL_wcstol")]
     [NativeFunction("SDL3", EntryPoint = "SDL_wcstol")]
-    nint Wcstol(Ref<uint> str, Ref2D<uint> endp, int @base);
+    int Wcstol(Ref<ushort> str, Ref2D<ushort> endp, int @base);
 
     [NativeName("SDL_WindowHasSurface")]
     [NativeFunction("SDL3", EntryPoint = "SDL_WindowHasSurface")]

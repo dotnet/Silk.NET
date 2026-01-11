@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_Colorspace")]
-public enum Colorspace : uint
+public enum Colorspace
 {
     [NativeName("SDL_COLORSPACE_UNKNOWN")]
     Unknown = 0,
