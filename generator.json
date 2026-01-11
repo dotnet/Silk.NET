@@ -428,7 +428,7 @@
           "VkMemoryDecompressionMethodFlagsEXT": "VK_MEMORY_DECOMPRESSION_METHOD"
         },
         "NameOverrides": {
-          "VkGeometryAABBNV.numAABBs": "NumAabbs"
+          "numAABBs": "NumAabbs"
         },
         "Affixes": {
           "HandleType": {
