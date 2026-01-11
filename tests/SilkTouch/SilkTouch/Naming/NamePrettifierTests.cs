@@ -45,6 +45,7 @@ public class NamePrettifierTests
     public string AcronymsWithNumbers(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
+    // "Hello" in the following tests is used to ensure acronym identification is enabled
     [Theory]
     // Both want to be uppercased, but conflict, so both revert back to pascal case
     [TestCase("ABC_XYZ_Hello", 4, ExpectedResult = "AbcXyzHello")]
@@ -54,8 +55,8 @@ public class NamePrettifierTests
     [TestCase("ABCDEFG_XYZ_Hello", 3, ExpectedResult = "AbcdefgXYZHello")]
     // 123 is considered part of acronyms for the purposes of preserving acronyms,
     // but not for whether consecutive acronyms conflict
-    [TestCase("ABC123_XYZ", 6, ExpectedResult = "ABC123XYZ")]
-    [TestCase("ABC123_XYZ", 3, ExpectedResult = "Abc123XYZ")]
+    [TestCase("ABC123_XYZ_Hello", 6, ExpectedResult = "ABC123XYZHello")]
+    [TestCase("ABC123_XYZ_Hello", 3, ExpectedResult = "Abc123XYZHello")]
     public string ConsecutiveAcronyms(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
