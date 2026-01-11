@@ -3,11 +3,12 @@
 // Ported from SDL.h and corresponding dependencies of SDL3.
 // Original source is Copyright (C) 1997-2024 Sam Lantinga. Licensed under the zlib license.
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_MessageBoxColorType")]
-public enum MessageBoxColorType : uint
+public enum MessageBoxColorType
 {
     [NativeName("SDL_MESSAGEBOX_COLOR_BACKGROUND")]
     Background = 0,

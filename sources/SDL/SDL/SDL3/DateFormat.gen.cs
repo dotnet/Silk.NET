@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.SDL;
 
 [NativeName("SDL_DateFormat")]
-public enum DateFormat : uint
+public enum DateFormat
 {
     [NativeName("SDL_DATE_FORMAT_YYYYMMDD")]
     Yyyymmdd = 0,
