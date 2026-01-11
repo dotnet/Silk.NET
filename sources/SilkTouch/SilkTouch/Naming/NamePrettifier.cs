@@ -1,9 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Buffers;
 using System.Globalization;
-using System.Text;
 
 namespace Silk.NET.SilkTouch.Naming;
 
@@ -21,47 +19,6 @@ namespace Silk.NET.SilkTouch.Naming;
 /// </param>
 public class NamePrettifier(int longAcronymThreshold)
 {
-    private enum CharType
-    {
-        /// <summary>
-        /// Characters that are capital letters.
-        /// </summary>
-        Upper,
-
-        /// <summary>
-        /// Characters that are digits.
-        /// </summary>
-        Number,
-
-        /// <summary>
-        /// Characters that separate words in C# identifiers.
-        /// </summary>
-        Separator,
-
-        /// <summary>
-        /// All other characters.
-        /// Often lowercase letters.
-        /// </summary>
-        Other,
-    }
-
-    /// <summary>
-    /// All capital letters.
-    /// </summary>
-    private static readonly SearchValues<char> UpperChars = SearchValues.Create(
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    );
-
-    /// <summary>
-    /// All digits.
-    /// </summary>
-    private static readonly SearchValues<char> NumberChars = SearchValues.Create("0123456789");
-
-    /// <summary>
-    /// All characters that separate words in C# identifiers.
-    /// </summary>
-    private static readonly SearchValues<char> SeparatorChars = SearchValues.Create("_");
-
     /// <summary>
     /// Prettifies the given C# identifier.
     /// </summary>
@@ -79,13 +36,13 @@ public class NamePrettifier(int longAcronymThreshold)
             throw new InvalidOperationException("Cannot prettify an empty identifier");
         }
 
-        var words = BreakIntoWords(identifier);
+        var words = NameSplitter.BreakIntoWords(identifier);
 
         // Add "X" to separate out numbers
         for (var i = words.Count - 1; i >= 1; i--)
         {
-            var startOfCurrent = GetCharType(words[i][0]);
-            var endOfPrevious = GetCharType(words[i - 1][^1]);
+            var startOfCurrent = NameUtils.GetCharType(words[i][0]);
+            var endOfPrevious = NameUtils.GetCharType(words[i - 1][^1]);
 
             if (startOfCurrent is CharType.Number && endOfPrevious is CharType.Number)
             {
@@ -96,7 +53,7 @@ public class NamePrettifier(int longAcronymThreshold)
         // Add "X" if first word is a number
         if (words.Count > 0)
         {
-            if (GetCharType(words[0][0]) is CharType.Number)
+            if (NameUtils.GetCharType(words[0][0]) is CharType.Number)
             {
                 words.Insert(0, "X");
             }
@@ -140,8 +97,8 @@ public class NamePrettifier(int longAcronymThreshold)
         // Merge "fragments"
         for (var i = words.Count - 1; i >= 1; i--)
         {
-            var startOfCurrent = GetCharType(words[i][0]);
-            var endOfPrevious = GetCharType(words[i - 1][^1]);
+            var startOfCurrent = NameUtils.GetCharType(words[i][0]);
+            var endOfPrevious = NameUtils.GetCharType(words[i - 1][^1]);
 
             // Merge numbers into previous non-numbers
             // Eg: [RGB, 16] becomes [RGB16]
@@ -162,7 +119,7 @@ public class NamePrettifier(int longAcronymThreshold)
             if (canIdentifyAcronyms)
             {
                 var isCurrentAcronym = IsAcronym(current, longAcronymThreshold);
-                var doesCurrentEndWithUpper = GetCharType(current[^1]) is CharType.Upper;
+                var doesCurrentEndWithUpper = NameUtils.GetCharType(current[^1]) is CharType.Upper;
 
                 try
                 {
@@ -211,10 +168,10 @@ public class NamePrettifier(int longAcronymThreshold)
             if (
                 current.Length >= 2
                 && current[0] == 'X'
-                && GetCharType(current[1]) is CharType.Number
+                && NameUtils.GetCharType(current[1]) is CharType.Number
             )
             {
-                var endOfPrevious = GetCharType(words[i - 1][^1]);
+                var endOfPrevious = NameUtils.GetCharType(words[i - 1][^1]);
                 if (endOfPrevious is CharType.Number)
                 {
                     words[i] = "x" + current[1..];
@@ -243,119 +200,6 @@ public class NamePrettifier(int longAcronymThreshold)
     }
 
     /// <summary>
-    /// Splits the given C# identifier into separate words.
-    /// </summary>
-    /// <remarks>
-    /// See the test cases for this method to see examples on how this method behaves.
-    /// </remarks>
-    /// <param name="identifier">A string that contains only valid C# identifier characters.</param>
-    public static List<string> BreakIntoWords(string identifier)
-    {
-        var words = new List<string>();
-        var currentWord = new StringBuilder();
-
-        // Break into words
-        for (var i = 0; i < identifier.Length; i++)
-        {
-            var c = identifier[i];
-
-            var previous = i - 1 >= 0 ? GetCharType(identifier[i - 1]) : CharType.Separator;
-            var current = GetCharType(c);
-            var next =
-                i + 1 < identifier.Length ? GetCharType(identifier[i + 1]) : CharType.Separator;
-
-            // Identify breakpoints within the identifier by examining 3 characters at a time
-            switch (i)
-            {
-                // Split at separators
-                case { } when current == CharType.Separator:
-                {
-                    NewWord();
-                    break;
-                }
-
-                // Split at end of acronyms
-                case { }
-                    when previous is CharType.Upper
-                        && current is CharType.Upper
-                        && next is CharType.Other:
-                {
-                    NewWord();
-                    AddCurrent();
-                    break;
-                }
-
-                // Split at start of new words
-                case { } when previous is not CharType.Upper && current is CharType.Upper:
-                {
-                    NewWord();
-                    AddCurrent();
-                    break;
-                }
-
-                // Split at start of numbers
-                case { } when previous is not CharType.Number && current is CharType.Number:
-                {
-                    NewWord();
-                    AddCurrent();
-                    break;
-                }
-
-                // Split at end of numbers
-                case { } when previous is CharType.Number && current is not CharType.Number:
-                {
-                    NewWord();
-                    AddCurrent();
-                    break;
-                }
-
-                // Default
-                case { }:
-                {
-                    AddCurrent();
-                    break;
-                }
-            }
-
-            continue;
-
-            // Adds the current character to the current word
-            void AddCurrent()
-            {
-                currentWord.Append(c);
-            }
-        }
-
-        // Flush pending word
-        NewWord();
-
-        return words;
-
-        // Starts a new word
-        void NewWord()
-        {
-            if (currentWord.Length > 0)
-            {
-                words.Add(currentWord.ToString());
-                currentWord.Clear();
-            }
-        }
-    }
-
-    /// <summary>
-    /// Gets the char type for the specified character according
-    /// to the categorization defined by <see cref="CharType"/>.
-    /// </summary>
-    private static CharType GetCharType(char c) =>
-        c switch
-        {
-            { } when UpperChars.Contains(c) => CharType.Upper,
-            { } when NumberChars.Contains(c) => CharType.Number,
-            { } when SeparatorChars.Contains(c) => CharType.Separator,
-            _ => CharType.Other,
-        };
-
-    /// <summary>
     /// Returns whether the word is an acronym or not for the purposes of pascal casing.
     /// If the word is longer than the threshold, it is not considered an acronym.
     /// </summary>
@@ -367,12 +211,13 @@ public class NamePrettifier(int longAcronymThreshold)
     /// Uncategorized characters are considered to be lowercase for this method.
     /// </summary>
     private static bool IsAllNonLower(string word) =>
-        !word.Any(c => GetCharType(c) is CharType.Other);
+        !word.Any(c => NameUtils.GetCharType(c) is CharType.Other);
 
     /// <summary>
     /// Returns if the word is entirely composed of capital letters.
     /// </summary>
-    private static bool IsAllCaps(string word) => word.All(c => GetCharType(c) is CharType.Upper);
+    private static bool IsAllCaps(string word) =>
+        word.All(c => NameUtils.GetCharType(c) is CharType.Upper);
 
     /// <summary>
     /// Pascal cases the provided word.

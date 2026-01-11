@@ -15,25 +15,41 @@ namespace Silk.NET.SilkTouch.Naming;
 public static partial class NameUtils
 {
     /// <summary>
-    /// An instance of <see cref="SearchValues{T}"/> matching ASCII capital letters.
+    /// All capital letters.
     /// </summary>
-    public static readonly SearchValues<char> Uppercase = SearchValues.Create(
+    public static readonly SearchValues<char> UpperChars = SearchValues.Create(
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     );
 
     /// <summary>
-    /// An instance of <see cref="SearchValues{T}"/> matching ASCII lowercase letters and numbers.
+    /// All digits.
     /// </summary>
-    public static readonly SearchValues<char> NotUppercase = SearchValues.Create(
-        "abcdefghijklmnopqrstuvwxyz0123456789"
-    );
+    public static readonly SearchValues<char> NumberChars = SearchValues.Create("0123456789");
 
     /// <summary>
-    /// An instance of <see cref="SearchValues{T}"/> matching ASCII letters, numbers, and an underscore.
+    /// All characters that separate words in C# identifiers.
+    /// </summary>
+    public static readonly SearchValues<char> SeparatorChars = SearchValues.Create("_");
+
+    /// <summary>
+    /// ASCII letters, numbers, and an underscore.
     /// </summary>
     public static readonly SearchValues<char> IdentifierChars = SearchValues.Create(
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
     );
+
+    /// <summary>
+    /// Gets the char type for the specified character according
+    /// to the categorization defined by <see cref="CharType"/>.
+    /// </summary>
+    public static CharType GetCharType(char c) =>
+        c switch
+        {
+            { } when UpperChars.Contains(c) => CharType.Upper,
+            { } when NumberChars.Contains(c) => CharType.Number,
+            { } when SeparatorChars.Contains(c) => CharType.Separator,
+            _ => CharType.Other,
+        };
 
     /// <summary>
     /// Finds a common prefix in a set of names with respect to the word boundaries

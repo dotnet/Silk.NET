@@ -12,10 +12,7 @@ public class NameSplitterTests
     {
         using (Assert.EnterMultipleScope())
         {
-            Assert.That(
-                NamePrettifier.BreakIntoWords("HelloWorld"),
-                Is.EqualTo(["Hello", "World"])
-            );
+            Assert.That(NameSplitter.BreakIntoWords("HelloWorld"), Is.EqualTo(["Hello", "World"]));
         }
     }
 
@@ -24,12 +21,9 @@ public class NameSplitterTests
     {
         using (Assert.EnterMultipleScope())
         {
+            Assert.That(NameSplitter.BreakIntoWords("Hello_World"), Is.EqualTo(["Hello", "World"]));
             Assert.That(
-                NamePrettifier.BreakIntoWords("Hello_World"),
-                Is.EqualTo(["Hello", "World"])
-            );
-            Assert.That(
-                NamePrettifier.BreakIntoWords("_Hello_World_"),
+                NameSplitter.BreakIntoWords("_Hello_World_"),
                 Is.EqualTo(["Hello", "World"])
             );
         }
@@ -40,12 +34,12 @@ public class NameSplitterTests
     {
         using (Assert.EnterMultipleScope())
         {
-            Assert.That(NamePrettifier.BreakIntoWords("HelloUI"), Is.EqualTo(["Hello", "UI"]));
-            Assert.That(NamePrettifier.BreakIntoWords("HelloGUI"), Is.EqualTo(["Hello", "GUI"]));
-            Assert.That(NamePrettifier.BreakIntoWords("GUIHello"), Is.EqualTo(["GUI", "Hello"]));
-            Assert.That(NamePrettifier.BreakIntoWords("GUI_Hello"), Is.EqualTo(["GUI", "Hello"]));
+            Assert.That(NameSplitter.BreakIntoWords("HelloUI"), Is.EqualTo(["Hello", "UI"]));
+            Assert.That(NameSplitter.BreakIntoWords("HelloGUI"), Is.EqualTo(["Hello", "GUI"]));
+            Assert.That(NameSplitter.BreakIntoWords("GUIHello"), Is.EqualTo(["GUI", "Hello"]));
+            Assert.That(NameSplitter.BreakIntoWords("GUI_Hello"), Is.EqualTo(["GUI", "Hello"]));
             Assert.That(
-                NamePrettifier.BreakIntoWords("ABC_XYZ_Hello"),
+                NameSplitter.BreakIntoWords("ABC_XYZ_Hello"),
                 Is.EqualTo(["ABC", "XYZ", "Hello"])
             );
         }
@@ -56,9 +50,9 @@ public class NameSplitterTests
     {
         using (Assert.EnterMultipleScope())
         {
-            Assert.That(NamePrettifier.BreakIntoWords("123"), Is.EqualTo(["123"]));
-            Assert.That(NamePrettifier.BreakIntoWords("A123A"), Is.EqualTo(["A", "123", "A"]));
-            Assert.That(NamePrettifier.BreakIntoWords("a123a"), Is.EqualTo(["a", "123", "a"]));
+            Assert.That(NameSplitter.BreakIntoWords("123"), Is.EqualTo(["123"]));
+            Assert.That(NameSplitter.BreakIntoWords("A123A"), Is.EqualTo(["A", "123", "A"]));
+            Assert.That(NameSplitter.BreakIntoWords("a123a"), Is.EqualTo(["a", "123", "a"]));
         }
     }
 
@@ -67,8 +61,8 @@ public class NameSplitterTests
     {
         using (Assert.EnterMultipleScope())
         {
-            Assert.That(NamePrettifier.BreakIntoWords("8x8"), Is.EqualTo(["8", "x", "8"]));
-            Assert.That(NamePrettifier.BreakIntoWords("8X8"), Is.EqualTo(["8", "X", "8"]));
+            Assert.That(NameSplitter.BreakIntoWords("8x8"), Is.EqualTo(["8", "x", "8"]));
+            Assert.That(NameSplitter.BreakIntoWords("8X8"), Is.EqualTo(["8", "X", "8"]));
         }
     }
 
@@ -78,7 +72,7 @@ public class NameSplitterTests
         using (Assert.EnterMultipleScope())
         {
             Assert.That(
-                NamePrettifier.BreakIntoWords("SpvImageFormatR32ui"),
+                NameSplitter.BreakIntoWords("SpvImageFormatR32ui"),
                 Is.EqualTo(["Spv", "Image", "Format", "R", "32", "ui"])
             );
         }
