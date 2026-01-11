@@ -427,6 +427,9 @@
           "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2",
           "VkMemoryDecompressionMethodFlagsEXT": "VK_MEMORY_DECOMPRESSION_METHOD"
         },
+        "NameOverrides": {
+          "VkGeometryAABBNV.numAABBs": "NumAabbs"
+        },
         "Affixes": {
           "HandleType": {
             "Order": 1

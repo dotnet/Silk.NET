@@ -54,7 +54,7 @@ public unsafe partial struct GeometryAabbNV
             "VK_VERSION_1_1",
         ]
     )]
-    public uint NumAabBs;
+    public uint NumAabbs;
 
     [NativeName("stride")]
     [SupportedApiProfile(
