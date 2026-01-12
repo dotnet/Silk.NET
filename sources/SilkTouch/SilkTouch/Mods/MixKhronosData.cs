@@ -2228,7 +2228,7 @@ public partial class MixKhronosData(
                 FixupGroupNameForOpenCL(ref groupName, ref likelyOpenCL, ref isBitmask);
             }
 
-            // Initialize the group
+            // Initialize the group before enum members are parsed below
             // This ensures two things:
             // 1. The native name is correct
             // 2. Empty groups are recorded properly
