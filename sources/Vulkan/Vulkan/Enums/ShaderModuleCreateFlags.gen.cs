@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkShaderModuleCreateFlagBits")]
+[NativeName("VkShaderModuleCreateFlags")]
 [Flags]
 public enum ShaderModuleCreateFlags : uint
 {

@@ -1986,16 +1986,18 @@ public partial class MixKhronosData(
         // Trimming is done by PrettifyNames, if PrettifyNames is configured to do so
         public override SyntaxNode VisitEnumDeclaration(EnumDeclarationSyntax node)
         {
-            var typeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
-            var groupInfo = job.Groups.GetValueOrDefault(typeName);
+            var nativeTypeName = node.AttributeLists.GetNativeNameOrDefault(node.Identifier);
+            var managedTypeName = node.Identifier.Text;
 
-            var typeVendor = job.Vendors.FirstOrDefault(typeName.EndsWith);
+            var groupInfo = job.Groups.GetValueOrDefault(managedTypeName);
+
+            var typeVendor = job.Vendors.FirstOrDefault(nativeTypeName.EndsWith);
             var hasTypeSuffix = typeVendor != null;
             var vendorAffixType = "KhronosVendor";
 
             // Identify the namespace enum
             // Eg: GLEnum, ALEnum
-            if (groupInfo?.Namespace != null && typeName == $"{groupInfo.Namespace}Enum")
+            if (groupInfo?.Namespace != null && nativeTypeName == $"{groupInfo.Namespace}enum")
             {
                 node = node.WithAttributeLists(
                     node.AttributeLists.AddNamePrefix("KhronosNamespaceEnum", groupInfo.Namespace)
@@ -2023,7 +2025,8 @@ public partial class MixKhronosData(
                 // Trimming both would cause conflicts.
                 // Trimming one but not the other would imply one is core and the other is not.
                 var hasMultipleVersions =
-                    job.Groups.Count(x => x.Key.StartsWith(typeName[..^typeVendor.Length])) > 1;
+                    job.Groups.Count(x => x.Key.StartsWith(nativeTypeName[..^typeVendor.Length]))
+                    > 1;
                 var isSafeToTrimType = !hasMultipleVersions;
 
                 // Identify the affix for trimming if the type vendor suffix does not match the identified exclusive vendor suffix
@@ -2139,9 +2142,25 @@ public partial class MixKhronosData(
     [SuppressMessage("ReSharper", "MoveLocalFunctionAfterJumpStatement")]
     internal void ReadGroups(XDocument doc, JobData data, HashSet<string> vendors)
     {
+        // For reference:
+        // Khronos XMLs specify enums in the following format
+        // <registry> - Top level element.
+        //   <enums> - Main enum group.
+        //     <enum> - Enum member.
+        //
+        // Each API has slight variations in how the XML is structured.
+        //
+        // Main enum group:
+        // Either has the "group" and "namespace" properties (OpenGL-style).
+        // Or has the "name" property.
+        //
+        // Enum member:
+        // "group" property spcifies a list of additional OpenGL-style groups the enum member belongs to.
+
         // Designed to be compatible with OpenGL, EGL, WGL, GLX, and OpenCL.
-        // This will work for Vulkan as well, but for Vulkan the enums are actually "typedef enum"s in the headers and
-        // therefore the result of this function will go mostly ignored.
+        // This will work for Vulkan as well, but for Vulkan the enums are actually "typedef enum"s in the headers.
+        // This means that for Vulkan, this means that instead of using this information to directly generate the enums
+        // this information will mostly be used to enhance the enums scraped from the headers (eg: native name and bitmask information).
         var anyNamespaced =
             doc.Element("registry")?.Elements("enums").Attributes("namespace").Any() ?? false;
         var anyGLStyleGroups =
@@ -2149,6 +2168,8 @@ public partial class MixKhronosData(
             ?? false;
         var likelyOpenCL = false; // OpenCL specific
         var topLevelIntentionalExclusions = new HashSet<string>(); // OpenCL specific
+
+        // Parse enum groups
         foreach (var block in doc.Element("registry")?.Elements("enums") ?? [])
         {
             // Is it a bitmask?
@@ -2166,7 +2187,7 @@ public partial class MixKhronosData(
             if (enumNamespace is not null)
             {
                 groupName ??= $"{enumNamespace}Enum";
-                nativeName ??= enumNamespace;
+                nativeName ??= $"{enumNamespace}enum";
             }
 
             // OpenCL enum name
@@ -2176,8 +2197,8 @@ public partial class MixKhronosData(
             }
 
             // Vulkan/OpenXR enum name
-            nativeName ??= groupName;
             groupName = groupName?.Replace("FlagBits", "Flags");
+            nativeName ??= groupName;
 
             // Skip Vulkan API Constants since it is not an enum
             if (block.Attribute("type")?.Value == "constants")
@@ -2207,7 +2228,28 @@ public partial class MixKhronosData(
                 FixupGroupNameForOpenCL(ref groupName, ref likelyOpenCL, ref isBitmask);
             }
 
-            // Mark the enums
+            // Initialize the group
+            // This ensures two things:
+            // 1. The native name is correct
+            // 2. Empty groups are recorded properly
+            if (
+                groupName != null
+                && !IsUngroupable(groupName)
+                && !data.Groups.ContainsKey(groupName)
+            )
+            {
+                data.Groups[groupName] = new EnumGroup(
+                    groupName,
+                    nativeName,
+                    anyGLStyleGroups ? "GLenum" : null,
+                    [],
+                    isBitmask,
+                    VendorFromString(groupName, vendors),
+                    enumNamespace
+                );
+            }
+
+            // Parse enum members
             foreach (var @enum in block.Elements("enum"))
             {
                 var enumName =
@@ -2225,7 +2267,7 @@ public partial class MixKhronosData(
                     data.EnumsToGroups[enumName] = enumToGroups = [];
                 }
 
-                // OpenGL-style groups
+                // Parse OpenGL-style groups
                 var glGroups = @enum
                     .Attribute("group")
                     ?.Value.Split(
@@ -2236,12 +2278,12 @@ public partial class MixKhronosData(
                 // Get the vendor (if the enum name ends with a vendor that is).
                 var thisVendor = VendorFromString(enumName, vendors);
 
-                foreach (
-                    var group in (groupName is null ? Enumerable.Empty<string>() : [groupName])
-                        .Concat(glGroups ?? [])
-                        .Concat(block.Attribute("group")?.Value is { Length: > 0 } g ? [g] : [])
-                        .Distinct()
-                )
+                // Add the enum member to the namespace enum, the main enum group, and its additional OpenGL-style groups
+                var memberGroups = (groupName is null ? Enumerable.Empty<string>() : [groupName])
+                    .Concat(block.Attribute("group")?.Value is { Length: > 0 } g ? [g] : [])
+                    .Concat(glGroups ?? [])
+                    .Distinct();
+                foreach (var group in memberGroups)
                 {
                     if (IsUngroupable(group))
                     {
@@ -2275,24 +2317,6 @@ public partial class MixKhronosData(
                     // Mark this enum.
                     enumToGroups.Add(group);
                 }
-            }
-
-            // Some enum groups don't have members, meaning that the code above won't catch them
-            if (
-                groupName != null
-                && !IsUngroupable(groupName)
-                && !data.Groups.ContainsKey(groupName)
-            )
-            {
-                data.Groups[groupName] = new EnumGroup(
-                    groupName,
-                    nativeName,
-                    null,
-                    [],
-                    isBitmask,
-                    VendorFromString(groupName, vendors),
-                    enumNamespace
-                );
             }
         }
 

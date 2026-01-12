@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeName("VkTensorViewCreateFlagBitsARM")]
+[NativeName("VkTensorViewCreateFlagsARM")]
 [Flags]
 public enum TensorViewCreateFlagsARM : ulong
 {

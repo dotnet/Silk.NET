@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[NativeName("GLEnum")]
+[NativeName("GLenum")]
 public enum GLEnum : uint
 {
     [NativeName("GL_DEPTH_BUFFER_BIT")]

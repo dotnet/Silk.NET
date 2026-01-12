@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ALEnum")]
+[NativeName("ALenum")]
 public enum ALEnum : uint
 {
     [NativeName("AL_NONE")]

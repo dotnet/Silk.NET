@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ALCEnum")]
+[NativeName("ALCenum")]
 public enum ALCEnum : uint
 {
     [NativeName("ALC_INVALID")]
