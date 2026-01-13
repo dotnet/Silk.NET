@@ -1,12 +1,41 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Microsoft.CodeAnalysis.CSharp;
 using Silk.NET.SilkTouch.Naming;
 
 namespace Silk.NET.SilkTouch.UnitTests.Naming;
 
 public class NameAffixerTests
 {
+    [Test]
+    public void GetAffixes()
+    {
+        var member = SyntaxFactory.ParseMemberDeclaration(
+            """
+            [NameAffix("Prefix", "SharedPrefix", "al")]
+            [NameAffix("Suffix", "KhronosFunctionDataType", "v")]
+            [NameAffix("Suffix", "KhronosNonVendor", "Direct")]
+            [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+            public void alGetBufferPtrvDirectSOFT() { }
+            """
+        );
+
+        var affixes = member!.AttributeLists.GetNameAffixes();
+
+        Assert.That(
+            affixes,
+            Is.EqualTo(
+                [
+                    new NameAffix(NameAffixType.Prefix, "SharedPrefix", "al", 0),
+                    new NameAffix(NameAffixType.Suffix, "KhronosFunctionDataType", "v", 1),
+                    new NameAffix(NameAffixType.Suffix, "KhronosNonVendor", "Direct", 2),
+                    new NameAffix(NameAffixType.Suffix, "KhronosVendor", "SOFT", 3),
+                ]
+            )
+        );
+    }
+
     [Test]
     public void ApplyAffixes_AddsAffixes()
     {
