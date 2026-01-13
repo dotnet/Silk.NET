@@ -8,6 +8,39 @@ namespace Silk.NET.SilkTouch.UnitTests.Naming;
 public class NameAffixerTests
 {
     [Test]
+    public void ApplyAffixes_AddsAffixes()
+    {
+        Assert.Multiple(() =>
+        {
+            Assert.That(NameAffixer.ApplyAffixes("Name", []), Is.EqualTo("Name"));
+
+            Assert.That(
+                NameAffixer.ApplyAffixes(
+                    "PresentMode",
+                    [
+                        new NameAffix(NameAffixType.Prefix, "Category", "Vk", 0),
+                        new NameAffix(NameAffixType.Suffix, "Category", "KHR", 1),
+                    ]
+                ),
+                Is.EqualTo("VkPresentModeKHR")
+            );
+
+            Assert.That(
+                NameAffixer.ApplyAffixes(
+                    "GetBufferPtr",
+                    [
+                        new NameAffix(NameAffixType.Prefix, "Category", "al", 0),
+                        new NameAffix(NameAffixType.Suffix, "Category", "v", 1),
+                        new NameAffix(NameAffixType.Suffix, "Category", "Direct", 2),
+                        new NameAffix(NameAffixType.Suffix, "Category", "SOFT", 3),
+                    ]
+                ),
+                Is.EqualTo("alGetBufferPtrvDirectSOFT")
+            );
+        });
+    }
+
+    [Test]
     public void StripAffixes_RemovesAffixes()
     {
         Assert.Multiple(() =>

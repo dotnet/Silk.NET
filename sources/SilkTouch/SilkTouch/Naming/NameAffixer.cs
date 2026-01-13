@@ -123,12 +123,54 @@ public static class NameAffixer
     }
 
     /// <summary>
+    /// Applies the specified affixes to the specified name.
+    /// </summary>
+    /// <remarks>
+    /// <see cref="PrettifyNames"/> has a much configurable version of this method.
+    /// That version is intentionally not exposed since configuration of affixes should be left to the user.
+    /// </remarks>
+    /// <param name="name">The name to apply affixes to.</param>
+    /// <param name="affixes">The affixes to apply. The span's elements may be reordered by this method.</param>
+    /// <returns>The name with affixes applied.</returns>
+    public static string ApplyAffixes(string name, Span<NameAffix> affixes)
+    {
+        if (affixes.Length == 0)
+        {
+            return name;
+        }
+
+        // Sort affixes so that the inner affixes are first
+        affixes.Sort(
+            static (a, b) =>
+            {
+                // Sort by ascending declaration order
+                // Lower declaration order means the affix is closer to the inside of the name
+                return a.DeclarationOrder.CompareTo(b.DeclarationOrder);
+            }
+        );
+
+        foreach (var affix in affixes)
+        {
+            if (affix.Type == NameAffixType.Prefix)
+            {
+                name = affix.Affix + name;
+            }
+            else
+            {
+                name += affix.Affix;
+            }
+        }
+
+        return name;
+    }
+
+    /// <summary>
     /// Strips the specified affixes from the specified name.
     /// Affixes not present on the name will be ignored.
     /// </summary>
-    /// <param name="name">The name to remove affixes from.</param>
+    /// <param name="name">The name to strip affixes from.</param>
     /// <param name="affixes">The affixes to remove. The span's elements may be reordered by this method.</param>
-    /// <returns>The new primary name.</returns>
+    /// <returns>The name with affixes stripped.</returns>
     public static string StripAffixes(string name, Span<NameAffix> affixes)
     {
         if (affixes.Length == 0)
