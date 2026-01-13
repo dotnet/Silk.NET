@@ -870,13 +870,6 @@ public class PrettifyNames(
         Dictionary<string, string> Functions
     );
 
-    private record struct NameAffix(
-        bool IsPrefix,
-        string Category,
-        string Affix,
-        int DeclarationOrder
-    );
-
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
 
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
