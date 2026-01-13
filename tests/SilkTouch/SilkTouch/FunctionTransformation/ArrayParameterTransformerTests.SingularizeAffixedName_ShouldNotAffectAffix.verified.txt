@@ -1,0 +1,11 @@
+﻿[NameAffix("Suffix", "KhronosVendor", "OES")]
+[NativeFunction("opengl", EntryPoint = "glFeedbackBufferxOES")]
+public static void glFeedbackBufferxOES([NativeTypeName("GLsizei")] uint n, [NativeTypeName("GLenum")] uint type, [NativeTypeName("const GLfixed *")] int* buffer)
+{
+}
+
+[NameAffix("Suffix", "KhronosVendor", "OES")]
+[NativeFunction("opengl", EntryPoint = "glFeedbackBufferxOES")]
+public static void glFeedbackBufferxOES([NativeTypeName("GLenum")] uint type, [NativeTypeName("const GLfixed *")] int buffer)
+{
+}

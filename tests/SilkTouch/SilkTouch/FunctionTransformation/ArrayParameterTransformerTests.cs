@@ -20,7 +20,12 @@ public class ArrayParameterTransformerTests
                 """
                 [NameAffix("Suffix", "KhronosNonVendor", "Direct")]
                 [NativeFunction("opengl", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
-                public static void alDeleteAuxiliaryEffectSlotsDirect(ContextHandle context, int n, uint* effectslots) { }
+                public static void alDeleteAuxiliaryEffectSlotsDirect(
+                    ALCcontext context,
+                    [NativeTypeName("ALsizei")] int n,
+                    [NativeTypeName("const ALuint *")] uint* effectslots)
+                {
+                }
                 """
             )!;
 
@@ -44,7 +49,7 @@ public class ArrayParameterTransformerTests
         );
 
         // "Slots" should be pluralized as "Slot"
-        await Verify(results.Select(result => result.NormalizeWhitespace().ToString()));
+        await Verify(string.Join("\n\n", results.Select(result => result.NormalizeWhitespace())));
     }
 
     private class SingularizeAffixedName_ShouldSingularizeBaseName_MetadataProvider
@@ -89,7 +94,12 @@ public class ArrayParameterTransformerTests
                 """
                 [NameAffix("Suffix", "KhronosVendor", "OES")]
                 [NativeFunction("opengl", EntryPoint = "glFeedbackBufferxOES")]
-                public static void glFeedbackBufferxOES(uint n, uint type, int* buffer) { }
+                public static void glFeedbackBufferxOES(
+                    [NativeTypeName("GLsizei")] uint n,
+                    [NativeTypeName("GLenum")] uint type,
+                    [NativeTypeName("const GLfixed *")] int* buffer)
+                {
+                }
                 """
             )!;
 
@@ -110,7 +120,7 @@ public class ArrayParameterTransformerTests
         );
 
         // The "OES" suffix should not be singularized as "O"
-        await Verify(results.Select(result => result.NormalizeWhitespace().ToString()));
+        await Verify(string.Join("\n\n", results.Select(result => result.NormalizeWhitespace())));
     }
 
     private class SingularizeAffixedName_ShouldNotAffectAffix_MetadataProvider
