@@ -248,8 +248,6 @@ public partial class MixKhronosData(
         job.TypeMap.TryAdd("uint32_t", "uint");
         job.TypeMap.TryAdd("int64_t", "long");
         job.TypeMap.TryAdd("uint64_t", "ulong");
-        job.TypeMap.TryAdd("GLenum", "uint");
-        job.TypeMap.TryAdd("GLbitfield", "uint");
         if (specPath is null)
         {
             // No metadata, can't continue. It'd be odd if the Khronos mod is being used in this case. There was once
@@ -2155,7 +2153,7 @@ public partial class MixKhronosData(
         // Or has the "name" property.
         //
         // Enum member:
-        // "group" property spcifies a list of additional OpenGL-style groups the enum member belongs to.
+        // The "group" property specifies a list of additional OpenGL-style groups the enum member belongs to.
 
         // Designed to be compatible with OpenGL, EGL, WGL, GLX, and OpenCL.
         // This will work for Vulkan as well, but for Vulkan the enums are actually "typedef enum"s in the headers.
@@ -2182,6 +2180,9 @@ public partial class MixKhronosData(
                     ? enumNamespace
                     : null;
             var nativeName = groupName;
+
+            // OpenGL-style enums have an uint base type
+            var baseType = anyGLStyleGroups ? "uint" : null;
 
             // Create an ungrouped group as well i.e. GLEnum, WGLEnum, etc
             if (enumNamespace is not null)
@@ -2241,7 +2242,7 @@ public partial class MixKhronosData(
                 data.Groups[groupName] = new EnumGroup(
                     groupName,
                     nativeName,
-                    anyGLStyleGroups ? "GLenum" : null,
+                    baseType,
                     [],
                     isBitmask,
                     VendorFromString(groupName, vendors),
@@ -2307,7 +2308,7 @@ public partial class MixKhronosData(
                         : new EnumGroup(
                             group,
                             group,
-                            anyGLStyleGroups ? "GLenum" : null,
+                            baseType,
                             [],
                             isBitmask,
                             thisVendor,
