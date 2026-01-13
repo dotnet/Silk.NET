@@ -67,6 +67,7 @@ public class ArrayParameterTransformerTests
                     false,
                     0
                 );
+                return true;
             }
 
             metadata = null;
@@ -132,6 +133,7 @@ public class ArrayParameterTransformerTests
                     false,
                     0
                 );
+                return true;
             }
 
             metadata = null;
