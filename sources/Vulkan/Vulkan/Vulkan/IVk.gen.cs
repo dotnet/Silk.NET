@@ -1264,6 +1264,23 @@ public unsafe partial interface IVk
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorBuffersEXT")]
+        static abstract void CmdBindDescriptorBufferEXT(
+            CommandBufferHandle commandBuffer,
+            DescriptorBufferBindingInfoEXT pBindingInfos
+        );
+
+        [NativeName("vkCmdBindDescriptorBuffersEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_descriptor_buffer"],
+            ImpliesSets = [
+                "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+                "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+                "VK_KHR_synchronization2+VK_VERSION_1_2",
+                "VK_VERSION_1_3",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorBuffersEXT")]
         static abstract void CmdBindDescriptorBuffersEXT(
             CommandBufferHandle commandBuffer,
             uint bufferCount,
@@ -1286,23 +1303,6 @@ public unsafe partial interface IVk
             CommandBufferHandle commandBuffer,
             uint bufferCount,
             Ref<DescriptorBufferBindingInfoEXT> pBindingInfos
-        );
-
-        [NativeName("vkCmdBindDescriptorBuffersEXT")]
-        [SupportedApiProfile(
-            "vulkan",
-            ["VK_EXT_descriptor_buffer"],
-            ImpliesSets = [
-                "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
-                "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
-                "VK_KHR_synchronization2+VK_VERSION_1_2",
-                "VK_VERSION_1_3",
-            ]
-        )]
-        [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorBuffersEXT")]
-        static abstract void CmdBindDescriptorBuffersEXT(
-            CommandBufferHandle commandBuffer,
-            DescriptorBufferBindingInfoEXT pBindingInfos
         );
 
         [NativeName("vkCmdBindDescriptorSets")]
@@ -2083,6 +2083,21 @@ public unsafe partial interface IVk
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdBuildMicromapsEXT")]
+        static abstract void CmdBuildMicromapEXT(
+            CommandBufferHandle commandBuffer,
+            MicromapBuildInfoEXT pInfos
+        );
+
+        [NativeName("vkCmdBuildMicromapsEXT")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_EXT_opacity_micromap"],
+            ImpliesSets = [
+                "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+                "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdBuildMicromapsEXT")]
         static abstract void CmdBuildMicromapsEXT(
             CommandBufferHandle commandBuffer,
             uint infoCount,
@@ -2103,21 +2118,6 @@ public unsafe partial interface IVk
             CommandBufferHandle commandBuffer,
             uint infoCount,
             Ref<MicromapBuildInfoEXT> pInfos
-        );
-
-        [NativeName("vkCmdBuildMicromapsEXT")]
-        [SupportedApiProfile(
-            "vulkan",
-            ["VK_EXT_opacity_micromap"],
-            ImpliesSets = [
-                "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-                "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-            ]
-        )]
-        [NativeFunction("vulkan", EntryPoint = "vkCmdBuildMicromapsEXT")]
-        static abstract void CmdBuildMicromapsEXT(
-            CommandBufferHandle commandBuffer,
-            MicromapBuildInfoEXT pInfos
         );
 
         [NativeName("vkCmdBuildPartitionedAccelerationStructuresNV")]
@@ -9516,24 +9516,6 @@ public unsafe partial interface IVk
             uint firstQuery
         );
 
-        [NativeName("vkCmdWriteAccelerationStructuresPropertiesKHR")]
-        [SupportedApiProfile(
-            "vulkan",
-            ["VK_KHR_acceleration_structure"],
-            ImpliesSets = [
-                "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-                "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-            ]
-        )]
-        [NativeFunction("vulkan", EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesKHR")]
-        static abstract void CmdWriteAccelerationStructuresPropertiesKHR(
-            CommandBufferHandle commandBuffer,
-            AccelerationStructureHandleKHR pAccelerationStructures,
-            QueryType queryType,
-            QueryPoolHandle queryPool,
-            uint firstQuery
-        );
-
         [NativeName("vkCmdWriteAccelerationStructuresPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9572,6 +9554,24 @@ public unsafe partial interface IVk
             uint firstQuery
         );
 
+        [NativeName("vkCmdWriteAccelerationStructuresPropertiesKHR")]
+        [SupportedApiProfile(
+            "vulkan",
+            ["VK_KHR_acceleration_structure"],
+            ImpliesSets = [
+                "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+                "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+            ]
+        )]
+        [NativeFunction("vulkan", EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesKHR")]
+        static abstract void CmdWriteAccelerationStructuresPropertyKHR(
+            CommandBufferHandle commandBuffer,
+            AccelerationStructureHandleKHR pAccelerationStructures,
+            QueryType queryType,
+            QueryPoolHandle queryPool,
+            uint firstQuery
+        );
+
         [NativeName("vkCmdWriteAccelerationStructuresPropertiesNV")]
         [SupportedApiProfile(
             "vulkan",
@@ -9582,7 +9582,7 @@ public unsafe partial interface IVk
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesNV")]
-        static abstract void CmdWriteAccelerationStructuresPropertiesNV(
+        static abstract void CmdWriteAccelerationStructuresPropertyNV(
             CommandBufferHandle commandBuffer,
             AccelerationStructureHandleNV pAccelerationStructures,
             QueryType queryType,
@@ -9663,7 +9663,7 @@ public unsafe partial interface IVk
             ]
         )]
         [NativeFunction("vulkan", EntryPoint = "vkCmdWriteMicromapsPropertiesEXT")]
-        static abstract void CmdWriteMicromapsPropertiesEXT(
+        static abstract void CmdWriteMicromapsPropertyEXT(
             CommandBufferHandle commandBuffer,
             MicromapHandleEXT pMicromaps,
             QueryType queryType,
@@ -25982,6 +25982,23 @@ public unsafe partial interface IVk
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorBuffersEXT")]
+    void CmdBindDescriptorBufferEXT(
+        CommandBufferHandle commandBuffer,
+        DescriptorBufferBindingInfoEXT pBindingInfos
+    );
+
+    [NativeName("vkCmdBindDescriptorBuffersEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_descriptor_buffer"],
+        ImpliesSets = [
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
+            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
+            "VK_KHR_synchronization2+VK_VERSION_1_2",
+            "VK_VERSION_1_3",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorBuffersEXT")]
     void CmdBindDescriptorBuffersEXT(
         CommandBufferHandle commandBuffer,
         uint bufferCount,
@@ -26004,23 +26021,6 @@ public unsafe partial interface IVk
         CommandBufferHandle commandBuffer,
         uint bufferCount,
         Ref<DescriptorBufferBindingInfoEXT> pBindingInfos
-    );
-
-    [NativeName("vkCmdBindDescriptorBuffersEXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_descriptor_buffer"],
-        ImpliesSets = [
-            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_KHR_get_physical_device_properties2",
-            "VK_KHR_synchronization2+VK_KHR_buffer_device_address+VK_EXT_descriptor_indexing+VK_VERSION_1_1",
-            "VK_KHR_synchronization2+VK_VERSION_1_2",
-            "VK_VERSION_1_3",
-        ]
-    )]
-    [NativeFunction("vulkan", EntryPoint = "vkCmdBindDescriptorBuffersEXT")]
-    void CmdBindDescriptorBuffersEXT(
-        CommandBufferHandle commandBuffer,
-        DescriptorBufferBindingInfoEXT pBindingInfos
     );
 
     [NativeName("vkCmdBindDescriptorSets")]
@@ -26769,6 +26769,18 @@ public unsafe partial interface IVk
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdBuildMicromapsEXT")]
+    void CmdBuildMicromapEXT(CommandBufferHandle commandBuffer, MicromapBuildInfoEXT pInfos);
+
+    [NativeName("vkCmdBuildMicromapsEXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_opacity_micromap"],
+        ImpliesSets = [
+            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
+            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdBuildMicromapsEXT")]
     void CmdBuildMicromapsEXT(
         CommandBufferHandle commandBuffer,
         uint infoCount,
@@ -26790,18 +26802,6 @@ public unsafe partial interface IVk
         uint infoCount,
         Ref<MicromapBuildInfoEXT> pInfos
     );
-
-    [NativeName("vkCmdBuildMicromapsEXT")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_EXT_opacity_micromap"],
-        ImpliesSets = [
-            "VK_KHR_acceleration_structure+VK_KHR_synchronization2",
-            "VK_KHR_acceleration_structure+VK_VERSION_1_3",
-        ]
-    )]
-    [NativeFunction("vulkan", EntryPoint = "vkCmdBuildMicromapsEXT")]
-    void CmdBuildMicromapsEXT(CommandBufferHandle commandBuffer, MicromapBuildInfoEXT pInfos);
 
     [NativeName("vkCmdBuildPartitionedAccelerationStructuresNV")]
     [SupportedApiProfile(
@@ -33813,24 +33813,6 @@ public unsafe partial interface IVk
         uint firstQuery
     );
 
-    [NativeName("vkCmdWriteAccelerationStructuresPropertiesKHR")]
-    [SupportedApiProfile(
-        "vulkan",
-        ["VK_KHR_acceleration_structure"],
-        ImpliesSets = [
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
-            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
-        ]
-    )]
-    [NativeFunction("vulkan", EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesKHR")]
-    void CmdWriteAccelerationStructuresPropertiesKHR(
-        CommandBufferHandle commandBuffer,
-        AccelerationStructureHandleKHR pAccelerationStructures,
-        QueryType queryType,
-        QueryPoolHandle queryPool,
-        uint firstQuery
-    );
-
     [NativeName("vkCmdWriteAccelerationStructuresPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33869,6 +33851,24 @@ public unsafe partial interface IVk
         uint firstQuery
     );
 
+    [NativeName("vkCmdWriteAccelerationStructuresPropertiesKHR")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_KHR_acceleration_structure"],
+        ImpliesSets = [
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_1+VK_EXT_descriptor_indexing+VK_KHR_buffer_device_address",
+            "VK_KHR_deferred_host_operations+VK_VERSION_1_2",
+        ]
+    )]
+    [NativeFunction("vulkan", EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesKHR")]
+    void CmdWriteAccelerationStructuresPropertyKHR(
+        CommandBufferHandle commandBuffer,
+        AccelerationStructureHandleKHR pAccelerationStructures,
+        QueryType queryType,
+        QueryPoolHandle queryPool,
+        uint firstQuery
+    );
+
     [NativeName("vkCmdWriteAccelerationStructuresPropertiesNV")]
     [SupportedApiProfile(
         "vulkan",
@@ -33879,7 +33879,7 @@ public unsafe partial interface IVk
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesNV")]
-    void CmdWriteAccelerationStructuresPropertiesNV(
+    void CmdWriteAccelerationStructuresPropertyNV(
         CommandBufferHandle commandBuffer,
         AccelerationStructureHandleNV pAccelerationStructures,
         QueryType queryType,
@@ -33960,7 +33960,7 @@ public unsafe partial interface IVk
         ]
     )]
     [NativeFunction("vulkan", EntryPoint = "vkCmdWriteMicromapsPropertiesEXT")]
-    void CmdWriteMicromapsPropertiesEXT(
+    void CmdWriteMicromapsPropertyEXT(
         CommandBufferHandle commandBuffer,
         MicromapHandleEXT pMicromaps,
         QueryType queryType,
