@@ -2180,15 +2180,14 @@ public partial class MixKhronosData(
                     ? enumNamespace
                     : null;
             var nativeName = groupName;
-
-            // OpenGL-style enums have an uint base type
-            var baseType = anyGLStyleGroups ? "uint" : null;
+            string? baseType = null;
 
             // Create an ungrouped group as well i.e. GLEnum, WGLEnum, etc
             if (enumNamespace is not null)
             {
                 groupName ??= $"{enumNamespace}Enum";
                 nativeName ??= $"{enumNamespace}enum";
+                baseType ??= $"{enumNamespace}enum";
             }
 
             // OpenCL enum name
