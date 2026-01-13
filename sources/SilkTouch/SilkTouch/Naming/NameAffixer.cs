@@ -17,7 +17,7 @@ public static class NameAffixer
     /// <summary>
     /// Reads the name affix data from the specified attribute lists.
     /// </summary>
-    public static NameAffix[] GetAffixData(this SyntaxList<AttributeListSyntax> attributeLists)
+    public static NameAffix[] GetNameAffixes(this SyntaxList<AttributeListSyntax> attributeLists)
     {
         NameAffix[] affixes = [];
         var declarationOrder = 0;
@@ -44,7 +44,12 @@ public static class NameAffixer
                     affixes =
                     [
                         .. affixes,
-                        new NameAffix(type == "Prefix", category, affix, declarationOrder),
+                        new NameAffix(
+                            type == "Prefix" ? NameAffixType.Prefix : NameAffixType.Suffix,
+                            category,
+                            affix,
+                            declarationOrder
+                        ),
                     ];
                     declarationOrder++;
                 }
@@ -118,57 +123,65 @@ public static class NameAffixer
     }
 
     /// <summary>
-    /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list if provided.
+    /// Strips the specified affixes from the specified name.
+    /// Affixes not present on the name will be ignored.
     /// </summary>
     /// <param name="name">The name to remove affixes from.</param>
-    /// <param name="affixes">The affixes to remove. Note that the span will be modified.</param>
+    /// <param name="affixes">The affixes to remove. The span's elements may be reordered by this method.</param>
     /// <returns>The new primary name.</returns>
-    public static string RemoveAffixes(string name, Span<NameAffix> affixes)
+    public static string StripAffixes(string name, Span<NameAffix> affixes)
     {
         if (affixes.Length == 0)
         {
             return name;
         }
 
-        var originalPrimary = name;
-
         // Sort affixes so that the outer affixes are first
         affixes.Sort(
             static (a, b) =>
             {
-                // Sort by descending declaration order
+                // Sort so that prefixes are first
+                if (a.Type != b.Type)
+                {
+                    return ((int)a.Type).CompareTo((int)b.Type);
+                }
+
+                // Then by descending declaration order
                 // Lower declaration order means the affix is closer to the inside of the name
                 return -a.DeclarationOrder.CompareTo(b.DeclarationOrder);
             }
         );
 
-        // TODO: Write this to not require a list/allocations
-        var prefixes = affixes.Where(x => x.IsPrefix).ToList();
-        var suffixes = affixes.Where(x => !x.IsPrefix).ToList();
+        var firstSuffixI = 0;
+        for (; firstSuffixI < affixes.Length; firstSuffixI++)
+        {
+            if (affixes[firstSuffixI].Type == NameAffixType.Suffix)
+            {
+                break;
+            }
+        }
+
+        var prefixes = affixes[..firstSuffixI];
+        var suffixes = affixes[firstSuffixI..];
 
         RemoveSide(true, prefixes);
         RemoveSide(false, suffixes);
 
-        if (originalPrimary != name)
-        {
-            secondary?.Add(originalPrimary);
-        }
-
         return name;
 
-        void RemoveSide(bool isPrefix, List<NameAffix> nameAffixes)
+        void RemoveSide(bool isPrefix, Span<NameAffix> nameAffixes)
         {
-            while (nameAffixes.Count > 0)
+            while (nameAffixes.Length > 0)
             {
                 var removedAffix = false;
-                for (var i = 0; i < nameAffixes.Count; i++)
+                for (var i = 0; i < nameAffixes.Length; i++)
                 {
                     var affix = nameAffixes[i];
                     if (isPrefix ? name.StartsWith(affix.Affix) : name.EndsWith(affix.Affix))
                     {
                         name = isPrefix ? name[affix.Affix.Length..] : name[..^affix.Affix.Length];
 
-                        nameAffixes.RemoveAt(i);
+                        nameAffixes = RemoveAt(nameAffixes, i);
                         removedAffix = true;
                         break;
                     }
@@ -179,6 +192,22 @@ public static class NameAffixer
                     break;
                 }
             }
+        }
+
+        // Removes the element at i by moving it to the end and slicing the span
+        // The order of the remaining elements is maintained
+        Span<NameAffix> RemoveAt(Span<NameAffix> nameAffixes, int i)
+        {
+            var removed = nameAffixes[i];
+            if (nameAffixes.Length == 1)
+            {
+                return [];
+            }
+
+            nameAffixes[(i + 1)..].CopyTo(nameAffixes[..^1]);
+            nameAffixes[^1] = removed;
+
+            return nameAffixes[..^1];
         }
     }
 }

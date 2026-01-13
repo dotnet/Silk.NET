@@ -6,8 +6,16 @@ namespace Silk.NET.SilkTouch.Naming;
 /// <summary>
 /// Represents a parsed <see cref="NameAffixAttribute"/>.
 /// </summary>
-/// <param name="IsPrefix">True if the affix is declared as a prefix. False if it is a suffix.</param>
+/// <param name="Type">The type of affix.</param>
 /// <param name="Category">The category of the affix.</param>
 /// <param name="Affix">The affix of the identifier.</param>
-/// <param name="DeclarationOrder">The order that the attribute was declared in. 0 is the first.</param>
-public record struct NameAffix(bool IsPrefix, string Category, string Affix, int DeclarationOrder);
+/// <param name="DeclarationOrder">
+/// The order that the attribute was declared in.
+/// 0 is the first and indicates that the affix is on the inside of the name.
+/// </param>
+public record struct NameAffix(
+    NameAffixType Type,
+    string Category,
+    string Affix,
+    int DeclarationOrder
+);

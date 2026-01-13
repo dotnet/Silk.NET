@@ -951,52 +951,13 @@ public class PrettifyNames(
             || _enumInProgress is not null
             || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
 
-        private bool TryGetAffixData(
-            SyntaxList<AttributeListSyntax> attributeLists,
-            out NameAffix[] affixes
-        )
-        {
-            affixes = [];
-            var declarationOrder = 0;
-            foreach (var list in attributeLists)
-            {
-                foreach (var attribute in list.Attributes)
-                {
-                    if (!attribute.IsAttribute("Silk.NET.Core.NameAffix"))
-                    {
-                        continue;
-                    }
-
-                    var argumentList = attribute.ArgumentList;
-                    if (
-                        argumentList != null
-                        && argumentList.Arguments[0].Expression
-                            is LiteralExpressionSyntax { Token.Value: string type }
-                        && argumentList.Arguments[1].Expression
-                            is LiteralExpressionSyntax { Token.Value: string category }
-                        && argumentList.Arguments[2].Expression
-                            is LiteralExpressionSyntax { Token.Value: string affix }
-                    )
-                    {
-                        affixes =
-                        [
-                            .. affixes,
-                            new NameAffix(type == "Prefix", category, affix, declarationOrder),
-                        ];
-                        declarationOrder++;
-                    }
-                }
-            }
-
-            return affixes.Length != 0;
-        }
-
         private void ReportTypeAffixData(
             string typeIdentifier,
             SyntaxList<AttributeListSyntax> attributeLists
         )
         {
-            if (!TryGetAffixData(attributeLists, out var affixes))
+            var affixes = attributeLists.GetNameAffixes();
+            if (affixes.Length == 0)
             {
                 return;
             }
@@ -1018,7 +979,8 @@ public class PrettifyNames(
             SyntaxList<AttributeListSyntax> attributeLists
         )
         {
-            if (!TryGetAffixData(attributeLists, out var affixData))
+            var affixes = attributeLists.GetNameAffixes();
+            if (affixes.Length == 0)
             {
                 return;
             }
@@ -1029,8 +991,8 @@ public class PrettifyNames(
             }
 
             // Note that TryAdd will lead to affixes for later members being silently dropped.
-            // This is to handle methods which have the same name and affixes. It is fine to drop the affixes in this case.
-            (typeAffixData.MemberAffixes ??= []).TryAdd(memberIdentifier, affixData);
+            // This is to handle methods which almost always have the same name and affixes. It is fine to drop the affixes in this case.
+            (typeAffixData.MemberAffixes ??= []).TryAdd(memberIdentifier, affixes);
             AffixTypes[typeIdentifier] = typeAffixData;
         }
 
@@ -1322,8 +1284,8 @@ public class PrettifyNames(
                 }
             );
 
-            var prefixes = affixes.Where(x => x.IsPrefix).ToList();
-            var suffixes = affixes.Where(x => !x.IsPrefix).ToList();
+            var prefixes = affixes.Where(x => x.Type == NameAffixType.Prefix).ToList();
+            var suffixes = affixes.Where(x => x.Type == NameAffixType.Suffix).ToList();
 
             RemoveSide(true, prefixes);
             RemoveSide(false, suffixes);
@@ -1472,7 +1434,7 @@ public class PrettifyNames(
                 {
                     if (!GetConfiguration(affix).Remove)
                     {
-                        if (affix.IsPrefix)
+                        if (affix.Type == NameAffixType.Prefix)
                         {
                             name = affix.Affix + name;
                         }
