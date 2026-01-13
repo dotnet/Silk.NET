@@ -1,8 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using Microsoft.CodeAnalysis.CSharp;
 using Silk.NET.SilkTouch.Naming;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.UnitTests.Naming;
 
@@ -11,7 +11,7 @@ public class NameAffixerTests
     [Test]
     public void GetAffixes()
     {
-        var member = SyntaxFactory.ParseMemberDeclaration(
+        var member = ParseMemberDeclaration(
             """
             [NameAffix("Prefix", "SharedPrefix", "al")]
             [NameAffix("Suffix", "KhronosFunctionDataType", "v")]
