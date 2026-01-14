@@ -8,29 +8,30 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenGL;
 
 [NativeName("FragmentShaderDestModMaskATI")]
+[Flags]
 public enum FragmentShaderDestModMask : uint
 {
     [NativeName("GL_NONE")]
-    None = 0,
+    None = 0x0,
 
     [NativeName("GL_2X_BIT_ATI")]
-    X2XBitATI = 1,
+    X2XBitATI = 0x1,
 
     [NativeName("GL_4X_BIT_ATI")]
-    X4XBitATI = 2,
+    X4XBitATI = 0x2,
 
     [NativeName("GL_8X_BIT_ATI")]
-    X8XBitATI = 4,
+    X8XBitATI = 0x4,
 
     [NativeName("GL_HALF_BIT_ATI")]
-    HalfBitATI = 8,
+    HalfBitATI = 0x8,
 
     [NativeName("GL_QUARTER_BIT_ATI")]
-    QuarterBitATI = 16,
+    QuarterBitATI = 0x10,
 
     [NativeName("GL_EIGHTH_BIT_ATI")]
-    EighthBitATI = 32,
+    EighthBitATI = 0x20,
 
     [NativeName("GL_SATURATE_BIT_ATI")]
-    SaturateBitATI = 64,
+    SaturateBitATI = 0x40,
 }

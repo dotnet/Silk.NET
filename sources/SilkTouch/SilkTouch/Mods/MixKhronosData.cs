@@ -440,19 +440,28 @@ public partial class MixKhronosData(
         return Task.FromResult(rsps);
     }
 
+    /// <summary>
+    /// Contains information about a group of enums.
+    /// </summary>
+    /// <remarks>
+    /// There are two bitmask properties to better handle OpenGL-style enums.
+    /// Some enums are explicitly stated to be bitmasks while some have to be inferred.
+    /// </remarks>
     /// <param name="Name">The name of the group. This is the name used for the C# enum.</param>
     /// <param name="NativeName">The native name of the group, if available. This is the name used for the [NativeName] attribute.</param>
-    /// <param name="Type"></param>
-    /// <param name="Enums"></param>
-    /// <param name="KnownBitmask"></param>
-    /// <param name="ExclusiveVendor"></param>
-    /// <param name="Namespace"></param>
+    /// <param name="Type">The base type of the group.</param>
+    /// <param name="Enums">Members of this group extracted from other parts of the generated bindings.</param>
+    /// <param name="IsDefinitelyBitmask">Whether the group is explicitly known to be a bitmask, i.e., it is stated in the XML spec.</param>
+    /// <param name="IsMaybeBitmask">Whether the group is likely a bitmask based on heuristics.</param>
+    /// <param name="ExclusiveVendor">The identified exclusive vendor for the group. Eg: NV.</param>
+    /// <param name="Namespace">The namespace for the group. Eg: GL.</param>
     internal record EnumGroup(
         string Name,
         string? NativeName,
         string? Type,
         List<VariableDeclaratorSyntax> Enums,
-        bool KnownBitmask,
+        bool IsDefinitelyBitmask,
+        bool IsMaybeBitmask,
         string? ExclusiveVendor,
         string? Namespace
     );
@@ -1759,7 +1768,10 @@ public partial class MixKhronosData(
                 );
             }
 
-            if (job.Groups.TryGetValue(identifier, out var group) && group.KnownBitmask)
+            if (
+                job.Groups.TryGetValue(identifier, out var group)
+                && (group.IsDefinitelyBitmask || group.IsMaybeBitmask)
+            )
             {
                 // Add [Flags] attribute
                 var flagsAttribute = AttributeList(
@@ -2175,22 +2187,32 @@ public partial class MixKhronosData(
 
             // OpenGL/EGL/WGL/GLX namespace
             var enumNamespace = block.Attribute("namespace")?.Value;
-            var groupName =
-                enumNamespace is not null && !enumNamespace.All(char.IsUpper)
-                    ? enumNamespace
-                    : null;
+            var namespaceGroupName = enumNamespace != null ? $"{enumNamespace}Enum" : null;
+            var groupName = block.Attribute("group")?.Value;
             var nativeName = groupName;
-            string? baseType = null;
+            var baseType = enumNamespace != null ? $"{enumNamespace}enum" : null;
 
-            // Create an ungrouped group as well i.e. GLEnum, WGLEnum, etc
-            if (enumNamespace is not null)
+            // Create a group for the namespace as well i.e. GLEnum, WGLEnum, etc
+            if (
+                namespaceGroupName is not null
+                && !data.Groups.TryGetValue(namespaceGroupName, out var namespaceGroup)
+            )
             {
-                groupName ??= $"{enumNamespace}Enum";
-                nativeName ??= $"{enumNamespace}enum";
-                baseType ??= $"{enumNamespace}enum";
+                namespaceGroup = new EnumGroup(
+                    namespaceGroupName,
+                    $"{enumNamespace}enum",
+                    baseType,
+                    [],
+                    false,
+                    false,
+                    null,
+                    enumNamespace
+                );
+
+                data.Groups[namespaceGroupName] = namespaceGroup;
             }
 
-            // OpenCL enum name
+            // Vulkan/OpenXR/OpenCL enum name
             if (!anyNamespaced)
             {
                 groupName ??= block.Attribute("name")?.Value;
@@ -2212,7 +2234,9 @@ public partial class MixKhronosData(
             // skip over the block. We continue on in the top-level case to permanently prevent any group operations
             // from occurring on the top-level intentional exclusions because they're special numbers/constants.
             var topLevelIntentionalExclusion =
-                groupName is not null && IsIntentionalExclusion(groupName);
+                groupName != null
+                && namespaceGroupName == null
+                && IsIntentionalExclusion(groupName);
             static bool IsIntentionalExclusion(string groupName) =>
                 groupName.StartsWith("Constants") // these are constants
                 || groupName is "MiscNumbers" or "SpecialNumbers";
@@ -2229,24 +2253,27 @@ public partial class MixKhronosData(
             }
 
             // Initialize the group before enum members are parsed below
-            // This ensures two things:
+            // This ensures 3 things:
             // 1. The native name is correct
-            // 2. Empty groups are recorded properly
-            if (
-                groupName != null
-                && !IsUngroupable(groupName)
-                && !data.Groups.ContainsKey(groupName)
-            )
+            // 2. Whether the enum is a bitmask is correct
+            // 3. Empty groups are recorded properly
+            if (groupName != null && !IsUngroupable(groupName))
             {
-                data.Groups[groupName] = new EnumGroup(
-                    groupName,
-                    nativeName,
-                    baseType,
-                    [],
-                    isBitmask,
-                    VendorFromString(groupName, vendors),
-                    enumNamespace
-                );
+                data.Groups[groupName] = data.Groups.TryGetValue(groupName, out var group)
+                    ? group with
+                    {
+                        IsDefinitelyBitmask = isBitmask,
+                    }
+                    : new EnumGroup(
+                        groupName,
+                        nativeName,
+                        baseType,
+                        [],
+                        isBitmask,
+                        false,
+                        VendorFromString(groupName, vendors),
+                        enumNamespace
+                    );
             }
 
             // Parse enum members
@@ -2268,7 +2295,7 @@ public partial class MixKhronosData(
                 }
 
                 // Parse OpenGL-style groups
-                var glGroups = @enum
+                var additionalGroups = @enum
                     .Attribute("group")
                     ?.Value.Split(
                         _listSeparators,
@@ -2279,43 +2306,59 @@ public partial class MixKhronosData(
                 var thisVendor = VendorFromString(enumName, vendors);
 
                 // Add the enum member to the namespace enum, the main enum group, and its additional OpenGL-style groups
-                var memberGroups = (groupName is null ? Enumerable.Empty<string>() : [groupName])
-                    .Concat(block.Attribute("group")?.Value is { Length: > 0 } g ? [g] : [])
-                    .Concat(glGroups ?? [])
-                    .Distinct();
-                foreach (var group in memberGroups)
+                var memberGroupNames = new HashSet<string>();
+                if (namespaceGroupName != null)
                 {
-                    if (IsUngroupable(group))
+                    memberGroupNames.Add(namespaceGroupName);
+                }
+
+                if (groupName != null)
+                {
+                    memberGroupNames.Add(groupName);
+                }
+
+                if (additionalGroups != null)
+                {
+                    memberGroupNames.UnionWith(additionalGroups);
+                }
+
+                foreach (var memberGroupName in memberGroupNames)
+                {
+                    if (IsUngroupable(memberGroupName))
                     {
                         continue;
                     }
 
                     // Update the group info.
-                    data.Groups[group] = data.Groups.TryGetValue(group, out var groupInfo)
-                        ? groupInfo with
+                    data.Groups[memberGroupName] = data.Groups.TryGetValue(
+                        memberGroupName,
+                        out var memberGroup
+                    )
+                        ? memberGroup with
                         {
-                            KnownBitmask = isBitmask && groupInfo.KnownBitmask,
+                            IsMaybeBitmask = isBitmask && memberGroup.IsMaybeBitmask,
                             ExclusiveVendor =
-                                thisVendor is not null && groupInfo.ExclusiveVendor == thisVendor
+                                thisVendor is not null && memberGroup.ExclusiveVendor == thisVendor
                                     ? thisVendor
                                     : null,
                             Namespace =
-                                enumNamespace is not null && groupInfo.Namespace == enumNamespace
+                                enumNamespace is not null && memberGroup.Namespace == enumNamespace
                                     ? enumNamespace
                                     : null,
                         }
                         : new EnumGroup(
-                            group,
-                            group,
+                            memberGroupName,
+                            memberGroupName,
                             baseType,
                             [],
+                            false,
                             isBitmask,
                             thisVendor,
                             enumNamespace
                         );
 
                     // Mark this enum.
-                    enumToGroups.Add(group);
+                    enumToGroups.Add(memberGroupName);
                 }
             }
         }
@@ -2466,6 +2509,7 @@ public partial class MixKhronosData(
                     "ulong",
                     [],
                     @enum.Parent?.Element("type")?.Value == "cl_bitfield",
+                    false,
                     VendorFromString(@enum.Value, vendors),
                     null
                 );
@@ -2632,6 +2676,7 @@ public partial class MixKhronosData(
                         [],
                         (typeStr is not null && typeStr.Contains("bitfield"))
                             || group.Contains("flags"),
+                        false,
                         thisVendor,
                         null
                     );
