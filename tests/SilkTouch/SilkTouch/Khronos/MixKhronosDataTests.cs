@@ -447,16 +447,13 @@ public class MixKhronosDataTests
                     {
                         {
                             "GLEnum",
-                            new MixKhronosData.EnumGroup(
-                                "GLEnum",
-                                "GLenum",
-                                "Glenum",
-                                [],
-                                false,
-                                false,
-                                null,
-                                "GL"
-                            )
+                            new MixKhronosData.EnumGroup()
+                            {
+                                Name = "GLEnum",
+                                NativeName = "GLenum",
+                                BaseType = "GLenum",
+                                Namespace = "GL",
+                            }
                         },
                     },
                 },
