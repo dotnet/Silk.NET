@@ -2541,7 +2541,9 @@ public partial class MixKhronosData(
                     Name = @enum.Value,
                     NativeName = @enum.Value,
                     // cl_properties and cl_bitfield are both cl_ulong which is ulong
-                    BaseType = "ulong",
+                    // We currently use cl_bitfield to represent the backing type of OpenCL enums
+                    // Decision was made here: https://github.com/dotnet/Silk.NET/pull/2534#discussion_r2686840153
+                    BaseType = "cl_bitfield",
 
                     IsDefinitelyBitmask = @enum.Parent?.Element("type")?.Value == "cl_bitfield",
                     ExclusiveVendor = VendorFromString(@enum.Value, vendors),
