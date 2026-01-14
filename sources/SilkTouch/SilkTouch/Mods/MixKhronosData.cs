@@ -2207,27 +2207,43 @@ public partial class MixKhronosData(
             var isBitmask = block.Attribute("type")?.Value == "bitmask";
 
             // OpenGL/EGL/WGL/GLX namespace
-            var enumNamespace = block.Attribute("namespace")?.Value;
-            var namespaceGroupName = enumNamespace != null ? $"{enumNamespace}Enum" : null;
             var groupName = block.Attribute("group")?.Value;
             var nativeName = groupName;
+            var enumNamespace = block.Attribute("namespace")?.Value;
             var baseType = enumNamespace != null ? $"{enumNamespace}enum" : null;
 
-            // Create a group for the namespace as well i.e. GLEnum, WGLEnum, etc
-            if (
-                namespaceGroupName is not null
-                && !data.Groups.TryGetValue(namespaceGroupName, out var namespaceGroup)
-            )
+            string? namespaceGroupName = null;
+            if (enumNamespace != null)
             {
-                namespaceGroup = new EnumGroup()
+                if (!enumNamespace.All(char.IsUpper))
                 {
-                    Name = namespaceGroupName,
-                    NativeName = $"{enumNamespace}enum",
-                    BaseType = baseType,
-                    Namespace = enumNamespace,
-                };
+                    // Use the namespace name directly if it is not all uppercase
+                    // Eg: WGLLayerPlaneMask
+                    namespaceGroupName = enumNamespace;
+                }
+                else
+                {
+                    // Otherwise, suffix the name with -Enum
+                    // Eg: GLEnum, ALEnum, WGLEnum
+                    namespaceGroupName = $"{enumNamespace}Enum";
+                }
+            }
 
-                data.Groups[namespaceGroupName] = namespaceGroup;
+            // Create a group for the namespace as well i.e. GLEnum, WGLEnum, etc
+            if (namespaceGroupName is not null)
+            {
+                if (!data.Groups.TryGetValue(namespaceGroupName, out var namespaceGroup))
+                {
+                    namespaceGroup = new EnumGroup()
+                    {
+                        Name = namespaceGroupName,
+                        NativeName = $"{enumNamespace}enum",
+                        BaseType = baseType,
+                        Namespace = enumNamespace,
+                    };
+
+                    data.Groups[namespaceGroupName] = namespaceGroup;
+                }
             }
 
             // Vulkan/OpenXR/OpenCL enum name
