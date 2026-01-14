@@ -58,7 +58,7 @@ namespace Silk.NET.Input
         /// </exception>
         /// <exception cref="NotSupportedException">
         /// Couldn't find a suitable input platform for this view. This occurs when you've created a window/view using
-        /// a window platform, but haven't installed
+        /// a window platform, but haven't installed the corresponding input backend package.
         /// </exception>
         public static IInputContext CreateInput(this IView view)
         {
