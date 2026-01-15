@@ -991,7 +991,7 @@ public class PrettifyNames(
             }
 
             // Note that TryAdd will lead to affixes for later members being silently dropped.
-            // This is to handle methods which almost always have the same name and affixes. It is fine to drop the affixes in this case.
+            // This is to handle methods which have the same name and affixes. It is fine to drop the affixes in this case.
             (typeAffixData.MemberAffixes ??= []).TryAdd(memberIdentifier, affixes);
             AffixTypes[typeIdentifier] = typeAffixData;
         }
