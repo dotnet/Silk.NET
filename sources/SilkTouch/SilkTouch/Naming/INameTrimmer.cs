@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Silk.NET.SilkTouch.Naming;
+﻿namespace Silk.NET.SilkTouch.Naming;
 
 /// <summary>
 /// Represents a name trimmer.
@@ -14,12 +11,6 @@ public interface INameTrimmer
     /// version can be specified in the mod configuration)
     /// </summary>
     Version Version { get; }
-
-    /// <summary>
-    /// Used to define the order that the trimmers will run in.
-    /// Higher values indicate that the trimmer should run later.
-    /// </summary>
-    int Order { get; }
 
     /// <summary>
     /// Trims prefixes from the given constituent names within the given container.

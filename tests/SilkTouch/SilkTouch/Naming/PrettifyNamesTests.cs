@@ -39,8 +39,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -73,8 +72,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -103,8 +101,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -138,8 +135,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -181,8 +177,7 @@ public class PrettifyNamesTests
                 NullLogger<PrettifyNames>.Instance,
                 new DummyOptions<PrettifyNames.Configuration>(
                     new PrettifyNames.Configuration() { GlobalPrefixHints = ["gl"] }
-                ),
-                [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+                )
             );
 
             await prettifyNames.ExecuteAsync(context);
@@ -210,8 +205,7 @@ public class PrettifyNamesTests
 
             var prettifyNames = new PrettifyNames(
                 NullLogger<PrettifyNames>.Instance,
-                new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
-                [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+                new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
             );
 
             await prettifyNames.ExecuteAsync(context);
@@ -255,8 +249,7 @@ public class PrettifyNamesTests
                 NullLogger<PrettifyNames>.Instance,
                 new DummyOptions<PrettifyNames.Configuration>(
                     new PrettifyNames.Configuration() { GlobalPrefixHints = ["gl"] }
-                ),
-                [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+                )
             );
 
             await prettifyNames.ExecuteAsync(context);
@@ -287,8 +280,7 @@ public class PrettifyNamesTests
 
             var prettifyNames = new PrettifyNames(
                 NullLogger<PrettifyNames>.Instance,
-                new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
-                [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+                new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
             );
 
             await prettifyNames.ExecuteAsync(context);
@@ -327,8 +319,7 @@ public class PrettifyNamesTests
 
         var prettifyNames = new PrettifyNames(
             NullLogger<PrettifyNames>.Instance,
-            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration()),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -354,8 +345,7 @@ public class PrettifyNamesTests
             NullLogger<PrettifyNames>.Instance,
             new DummyOptions<PrettifyNames.Configuration>(
                 new PrettifyNames.Configuration() { GlobalPrefixHints = ["vk"] }
-            ),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            )
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -382,8 +372,7 @@ public class PrettifyNamesTests
             NullLogger<PrettifyNames>.Instance,
             new DummyOptions<PrettifyNames.Configuration>(
                 new PrettifyNames.Configuration() { GlobalPrefixHints = ["gl"] }
-            ),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            )
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -419,8 +408,7 @@ public class PrettifyNamesTests
             NullLogger<PrettifyNames>.Instance,
             new DummyOptions<PrettifyNames.Configuration>(
                 new PrettifyNames.Configuration() { LongAcronymThreshold = 3 }
-            ),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            )
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -470,8 +458,7 @@ public class PrettifyNamesTests
             NullLogger<PrettifyNames>.Instance,
             new DummyOptions<PrettifyNames.Configuration>(
                 new PrettifyNames.Configuration() { LongAcronymThreshold = 4 }
-            ),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            )
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -529,8 +516,7 @@ public class PrettifyNamesTests
                         },
                     },
                 }
-            ),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            )
         );
 
         await prettifyNames.ExecuteAsync(context);
@@ -562,8 +548,7 @@ public class PrettifyNamesTests
             NullLogger<PrettifyNames>.Instance,
             new DummyOptions<PrettifyNames.Configuration>(
                 new PrettifyNames.Configuration() { GlobalPrefixHints = ["gl"] }
-            ),
-            [new DummyJobDependency<INameTrimmer>([new NameTrimmer()])]
+            )
         );
 
         await prettifyNames.ExecuteAsync(context);

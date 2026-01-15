@@ -14,12 +14,10 @@ namespace Silk.NET.SilkTouch.Mods;
 /// </summary>
 /// <param name="logger">The logger.</param>
 /// <param name="config">Configuration snapshot.</param>
-/// <param name="trimmerProviders">Name trimmer providers.</param>
 [ModConfiguration<Configuration>]
 public class PrettifyNames(
     ILogger<PrettifyNames> logger,
-    IOptionsSnapshot<PrettifyNames.Configuration> config,
-    IEnumerable<IJobDependency<INameTrimmer>> trimmerProviders
+    IOptionsSnapshot<PrettifyNames.Configuration> config
 ) : IMod, IResponseFileMod
 {
     /// <summary>
@@ -179,13 +177,13 @@ public class PrettifyNames(
             // couldn't be bothered to introduce a weight property. It is also unclear what effect this has on 2.17/2.18
             // but to be honest those trimmers aren't used and are only included for posterity and understanding of the
             // old logic.
-            var trimmers = trimmerProviders
-                .SelectMany(x => x.Get(ctx.JobKey))
-                .Append(new NameAffixerEarlyTrimmer(nameAffixer))
-                .Append(new NameAffixerLateTrimmer(nameAffixer))
-                .Append(new PrettifyNamesTrimmer(namePrettifier))
-                .OrderBy(x => x.Order)
-                .ToArray();
+            var trimmers = new INameTrimmer[]
+            {
+                new NameAffixerEarlyTrimmer(nameAffixer),
+                new NameTrimmer(),
+                new PrettifyNamesTrimmer(namePrettifier),
+                new NameAffixerLateTrimmer(nameAffixer),
+            };
 
             // Create a type name dictionary to trim the type names.
             var typeNames = visitor.TrimmableTypes.ToDictionary(
@@ -1455,10 +1453,7 @@ public class PrettifyNames(
     private class NameAffixerEarlyTrimmer(PrettifyNamesAffixer affixer) : INameTrimmer
     {
         /// <inheritdoc/>
-        public Version Version => new(0, 0, 0);
-
-        /// <inheritdoc/>
-        public int Order => (int)TrimmerOrder.NameAffixerEarlyTrimmer;
+        public Version Version => new(3, 0);
 
         public void Trim(NameTrimmerContext context)
         {
@@ -1494,10 +1489,7 @@ public class PrettifyNames(
     private class NameAffixerLateTrimmer(PrettifyNamesAffixer affixer) : INameTrimmer
     {
         /// <inheritdoc/>
-        public Version Version => new(0, 0, 0);
-
-        /// <inheritdoc/>
-        public int Order => (int)TrimmerOrder.NameAffixerLateTrimmer;
+        public Version Version => new(3, 0);
 
         public void Trim(NameTrimmerContext context)
         {
@@ -1530,10 +1522,7 @@ public class PrettifyNames(
     private class PrettifyNamesTrimmer(NamePrettifier namePrettifier) : INameTrimmer
     {
         /// <inheritdoc/>
-        public Version Version => new(0, 0, 0);
-
-        /// <inheritdoc/>
-        public int Order => (int)TrimmerOrder.PrettifyNamesTrimmer;
+        public Version Version => new(3, 0);
 
         public void Trim(NameTrimmerContext context)
         {
