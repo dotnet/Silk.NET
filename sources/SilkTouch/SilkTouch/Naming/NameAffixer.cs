@@ -60,51 +60,37 @@ public static class NameAffixer
     }
 
     /// <summary>
-    /// Adds a name prefix attribute to the given attribute list.
+    /// Adds a [NameAffix] attribute to the given attribute list.
     /// </summary>
     /// <param name="attributeLists">The attribute lists to add the attribute to.</param>
+    /// <param name="type">The affix type to add.</param>
     /// <param name="category">The affix category.</param>
-    /// <param name="prefix">The value of the affix.</param>
+    /// <param name="affix">The value of the affix.</param>
     /// <param name="addToInner">
     /// Use true if the affix comes from the inside of the name.
     /// Use false if not (outside or appended to end).
     /// True means that the attribute is added to the start of the attribute list, meaning that the affix is re-appended earlier.
     /// </param>
-    public static SyntaxList<AttributeListSyntax> AddNamePrefix(
+    public static SyntaxList<AttributeListSyntax> AddNameAffix(
         this IEnumerable<AttributeListSyntax> attributeLists,
-        string category,
-        string prefix,
-        bool addToInner = false
-    ) => attributeLists.AddNamePrefixOrSuffix("Prefix", category, prefix, addToInner);
-
-    /// <summary>
-    /// Adds a name suffix attribute to the given attribute list.
-    /// </summary>
-    /// <param name="attributeLists">The attribute lists to add the attribute to.</param>
-    /// <param name="category">The affix category.</param>
-    /// <param name="suffix">The value of the affix.</param>
-    /// <param name="addToInner">
-    /// Use true if the affix comes from the inside of the name.
-    /// Use false if not (outside or appended to end).
-    /// True means that the attribute is added to the start of the attribute list, meaning that the affix is re-appended earlier.
-    /// </param>
-    public static SyntaxList<AttributeListSyntax> AddNameSuffix(
-        this IEnumerable<AttributeListSyntax> attributeLists,
-        string category,
-        string suffix,
-        bool addToInner = false
-    ) => attributeLists.AddNamePrefixOrSuffix("Suffix", category, suffix, addToInner);
-
-    private static SyntaxList<AttributeListSyntax> AddNamePrefixOrSuffix(
-        this IEnumerable<AttributeListSyntax> attributeLists,
-        string type,
+        NameAffixType type,
         string category,
         string affix,
         bool addToInner = false
     )
     {
+        var affixType = type switch
+        {
+            NameAffixType.Prefix => "Prefix",
+            NameAffixType.Suffix => "Suffix",
+            _ => throw new ArgumentOutOfRangeException(nameof(type)),
+        };
+
         var typeArgument = AttributeArgument(
-            LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{type}\"", type))
+            LiteralExpression(
+                SyntaxKind.StringLiteralExpression,
+                Literal($"\"{affixType}\"", affixType)
+            )
         );
         var categoryArgument = AttributeArgument(
             LiteralExpression(

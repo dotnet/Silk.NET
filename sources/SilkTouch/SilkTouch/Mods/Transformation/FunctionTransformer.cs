@@ -183,7 +183,11 @@ public class FunctionTransformer(
                         .WithIdentifier(Identifier(newIden));
 
                     newFun = newFun.WithAttributeLists(
-                        newFun.AttributeLists.AddNameSuffix("RawFunction", "Raw")
+                        newFun.AttributeLists.AddNameAffix(
+                            NameAffixType.Suffix,
+                            "RawFunction",
+                            "Raw"
+                        )
                     );
 
                     discrim = ModUtils.DiscrimStr(

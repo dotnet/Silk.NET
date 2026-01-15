@@ -542,7 +542,7 @@ public class TransformHandles(
                 .WithAttributeLists(
                     new SyntaxList<AttributeListSyntax>()
                         .WithNativeName(structName)
-                        .AddNameSuffix("HandleType", "Handle")
+                        .AddNameAffix(NameAffixType.Suffix, "HandleType", "Handle")
                 )
                 .WithMembers(
                     List(

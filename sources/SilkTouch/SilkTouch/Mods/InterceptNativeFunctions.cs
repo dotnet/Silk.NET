@@ -132,7 +132,11 @@ public class InterceptNativeFunctions(
                 );
 
             return node.WithAttributeLists(
-                node.AttributeLists.AddNameSuffix("InterceptedFunction", "Internal")
+                node.AttributeLists.AddNameAffix(
+                    NameAffixType.Suffix,
+                    "InterceptedFunction",
+                    "Internal"
+                )
             );
         }
     }
