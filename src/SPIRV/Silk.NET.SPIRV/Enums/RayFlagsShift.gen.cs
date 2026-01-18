@@ -28,6 +28,8 @@ namespace Silk.NET.SPIRV
         CullOpaqueKhrShift = 0x6,
         [NativeName("Name", "SpvRayFlagsCullNoOpaqueKHRShift")]
         CullNoOpaqueKhrShift = 0x7,
+        [NativeName("Name", "SpvRayFlagsSkipBuiltinPrimitivesNVShift")]
+        SkipBuiltinPrimitivesNVShift = 0x8,
         [NativeName("Name", "SpvRayFlagsSkipTrianglesKHRShift")]
         SkipTrianglesKhrShift = 0x8,
         [NativeName("Name", "SpvRayFlagsSkipAABBsKHRShift")]

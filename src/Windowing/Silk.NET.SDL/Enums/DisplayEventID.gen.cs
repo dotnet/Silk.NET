@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L185_C9")]
     [NativeName("Name", "SDL_DisplayEventID")]
     public enum DisplayEventID : int
     {

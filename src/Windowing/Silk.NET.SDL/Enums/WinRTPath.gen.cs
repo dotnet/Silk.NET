@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_system_L475_C9")]
     [NativeName("Name", "SDL_WinRT_Path")]
     public enum WinRTPath : int
     {

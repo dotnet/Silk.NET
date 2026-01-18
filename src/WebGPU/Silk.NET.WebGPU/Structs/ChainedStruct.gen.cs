@@ -37,8 +37,8 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "const struct WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const struct WGPUChainedStruct *")]
+        [NativeName("Type", "struct WGPUChainedStruct *")]
+        [NativeName("Type.Name", "struct WGPUChainedStruct *")]
         [NativeName("Name", "next")]
         public ChainedStruct* Next;
 

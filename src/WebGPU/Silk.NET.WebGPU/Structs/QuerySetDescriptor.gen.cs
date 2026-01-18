@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU
         public QuerySetDescriptor
         (
             ChainedStruct* nextInChain = null,
-            byte* label = null,
+            StringView? label = null,
             QueryType? type = null,
             uint? count = null
         ) : this()
@@ -34,7 +34,7 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label;
+                Label = label.Value;
             }
 
             if (type is not null)
@@ -49,15 +49,15 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "label")]
-        public byte* Label;
+        public StringView Label;
 
         [NativeName("Type", "WGPUQueryType")]
         [NativeName("Type.Name", "WGPUQueryType")]

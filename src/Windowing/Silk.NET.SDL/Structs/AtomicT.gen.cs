@@ -16,7 +16,6 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousRecord_SDL_atomic_L263_C9")]
     [NativeName("Name", "SDL_atomic_t")]
     public unsafe partial struct AtomicT
     {

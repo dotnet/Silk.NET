@@ -13,11 +13,11 @@ namespace Silk.NET.WebGPU
     public enum ErrorFilter : int
     {
         [NativeName("Name", "WGPUErrorFilter_Validation")]
-        Validation = 0x0,
+        Validation = 0x1,
         [NativeName("Name", "WGPUErrorFilter_OutOfMemory")]
-        OutOfMemory = 0x1,
+        OutOfMemory = 0x2,
         [NativeName("Name", "WGPUErrorFilter_Internal")]
-        Internal = 0x2,
+        Internal = 0x3,
         [NativeName("Name", "WGPUErrorFilter_Force32")]
         Force32 = 0x7FFFFFFF,
     }

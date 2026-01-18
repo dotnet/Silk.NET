@@ -23,7 +23,7 @@ namespace Silk.NET.WebGPU
         (
             ChainedStruct* nextInChain = null,
             ShaderModule* module = null,
-            byte* entryPoint = null,
+            StringView? entryPoint = null,
             nuint? constantCount = null,
             ConstantEntry* constants = null,
             nuint? bufferCount = null,
@@ -42,7 +42,7 @@ namespace Silk.NET.WebGPU
 
             if (entryPoint is not null)
             {
-                EntryPoint = entryPoint;
+                EntryPoint = entryPoint.Value;
             }
 
             if (constantCount is not null)
@@ -67,8 +67,8 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
@@ -77,10 +77,10 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "module")]
         public ShaderModule* Module;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "entryPoint")]
-        public byte* EntryPoint;
+        public StringView EntryPoint;
 
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]

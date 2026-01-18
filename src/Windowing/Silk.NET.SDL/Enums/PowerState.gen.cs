@@ -9,7 +9,6 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_power_L42_C9")]
     [NativeName("Name", "SDL_PowerState")]
     public enum PowerState : int
     {

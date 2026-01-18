@@ -21,19 +21,52 @@ namespace Silk.NET.WebGPU
     {
         public InstanceDescriptor
         (
-            ChainedStruct* nextInChain = null
+            ChainedStruct* nextInChain = null,
+            nuint? requiredFeatureCount = null,
+            InstanceFeatureName* requiredFeatures = null,
+            InstanceLimits* requiredLimits = null
         ) : this()
         {
             if (nextInChain is not null)
             {
                 NextInChain = nextInChain;
             }
+
+            if (requiredFeatureCount is not null)
+            {
+                RequiredFeatureCount = requiredFeatureCount.Value;
+            }
+
+            if (requiredFeatures is not null)
+            {
+                RequiredFeatures = requiredFeatures;
+            }
+
+            if (requiredLimits is not null)
+            {
+                RequiredLimits = requiredLimits;
+            }
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
+
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "requiredFeatureCount")]
+        public nuint RequiredFeatureCount;
+
+        [NativeName("Type", "const WGPUInstanceFeatureName *")]
+        [NativeName("Type.Name", "const WGPUInstanceFeatureName *")]
+        [NativeName("Name", "requiredFeatures")]
+        public InstanceFeatureName* RequiredFeatures;
+
+        [NativeName("Type", "const WGPUInstanceLimits *")]
+        [NativeName("Type.Name", "const WGPUInstanceLimits *")]
+        [NativeName("Name", "requiredLimits")]
+        public InstanceLimits* RequiredLimits;
     }
 }

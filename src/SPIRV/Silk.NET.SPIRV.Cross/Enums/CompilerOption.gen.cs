@@ -200,6 +200,12 @@ namespace Silk.NET.SPIRV.Cross
         HlslUseEntryPointName = 0x400005A,
         [NativeName("Name", "SPVC_COMPILER_OPTION_HLSL_PRESERVE_STRUCTURED_BUFFERS")]
         HlslPreserveStructuredBuffers = 0x400005B,
+        [NativeName("Name", "SPVC_COMPILER_OPTION_MSL_AUTO_DISABLE_RASTERIZATION")]
+        MslAutoDisableRasterization = 0x800005C,
+        [NativeName("Name", "SPVC_COMPILER_OPTION_MSL_ENABLE_POINT_SIZE_DEFAULT")]
+        MslEnablePointSizeDefault = 0x800005D,
+        [NativeName("Name", "SPVC_COMPILER_OPTION_HLSL_USER_SEMANTIC")]
+        HlslUserSemantic = 0x400005E,
         [NativeName("Name", "SPVC_COMPILER_OPTION_INT_MAX")]
         IntMax = 0x7FFFFFFF,
     }

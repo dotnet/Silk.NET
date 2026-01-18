@@ -21,30 +21,30 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
     {
         public ShaderDefine
         (
-            byte* name = null,
-            byte* value = null
+            StringView? name = null,
+            StringView? value = null
         ) : this()
         {
             if (name is not null)
             {
-                Name = name;
+                Name = name.Value;
             }
 
             if (value is not null)
             {
-                Value = value;
+                Value = value.Value;
             }
         }
 
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "name")]
-        public byte* Name;
+        public StringView Name;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "value")]
-        public byte* Value;
+        public StringView Value;
     }
 }

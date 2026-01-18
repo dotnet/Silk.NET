@@ -12,12 +12,14 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUCullMode")]
     public enum CullMode : int
     {
+        [NativeName("Name", "WGPUCullMode_Undefined")]
+        Undefined = 0x0,
         [NativeName("Name", "WGPUCullMode_None")]
-        None = 0x0,
+        None = 0x1,
         [NativeName("Name", "WGPUCullMode_Front")]
-        Front = 0x1,
+        Front = 0x2,
         [NativeName("Name", "WGPUCullMode_Back")]
-        Back = 0x2,
+        Back = 0x3,
         [NativeName("Name", "WGPUCullMode_Force32")]
         Force32 = 0x7FFFFFFF,
     }

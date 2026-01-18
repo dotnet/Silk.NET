@@ -42,8 +42,8 @@ namespace Silk.NET.SDL
         [NativeName("Name", "bindType")]
         public GameControllerBindType BindType;
 
-        [NativeName("Type", "union (unnamed union at build/submodules/SDL/include\\SDL_gamecontroller.h:94:5)")]
-        [NativeName("Type.Name", "union (unnamed union at build/submodules/SDL/include\\SDL_gamecontroller.h:94:5)")]
+        [NativeName("Type", "union (unnamed union at build/submodules/SDL/include\\SDL_gamecontroller.h:96:5)")]
+        [NativeName("Type.Name", "union (unnamed union at build/submodules/SDL/include\\SDL_gamecontroller.h:96:5)")]
         [NativeName("Name", "value")]
         public GameControllerButtonBindValue Value;
     }

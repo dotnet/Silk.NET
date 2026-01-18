@@ -12,14 +12,16 @@ namespace Silk.NET.WebGPU
     [NativeName("Name", "WGPUPresentMode")]
     public enum PresentMode : int
     {
+        [NativeName("Name", "WGPUPresentMode_Undefined")]
+        Undefined = 0x0,
         [NativeName("Name", "WGPUPresentMode_Fifo")]
-        Fifo = 0x0,
+        Fifo = 0x1,
         [NativeName("Name", "WGPUPresentMode_FifoRelaxed")]
-        FifoRelaxed = 0x1,
+        FifoRelaxed = 0x2,
         [NativeName("Name", "WGPUPresentMode_Immediate")]
-        Immediate = 0x2,
+        Immediate = 0x3,
         [NativeName("Name", "WGPUPresentMode_Mailbox")]
-        Mailbox = 0x3,
+        Mailbox = 0x4,
         [NativeName("Name", "WGPUPresentMode_Force32")]
         Force32 = 0x7FFFFFFF,
     }

@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU
         public SamplerDescriptor
         (
             ChainedStruct* nextInChain = null,
-            byte* label = null,
+            StringView? label = null,
             AddressMode? addressModeU = null,
             AddressMode? addressModeV = null,
             AddressMode? addressModeW = null,
@@ -42,7 +42,7 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label;
+                Label = label.Value;
             }
 
             if (addressModeU is not null)
@@ -97,15 +97,15 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "label")]
-        public byte* Label;
+        public StringView Label;
 
         [NativeName("Type", "WGPUAddressMode")]
         [NativeName("Type.Name", "WGPUAddressMode")]

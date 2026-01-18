@@ -22,10 +22,11 @@ namespace Silk.NET.WebGPU
         public RequestAdapterOptions
         (
             ChainedStruct* nextInChain = null,
-            Surface* compatibleSurface = null,
+            FeatureLevel? featureLevel = null,
             PowerPreference? powerPreference = null,
+            Silk.NET.Core.Bool32? forceFallbackAdapter = null,
             BackendType? backendType = null,
-            Silk.NET.Core.Bool32? forceFallbackAdapter = null
+            Surface* compatibleSurface = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -33,9 +34,9 @@ namespace Silk.NET.WebGPU
                 NextInChain = nextInChain;
             }
 
-            if (compatibleSurface is not null)
+            if (featureLevel is not null)
             {
-                CompatibleSurface = compatibleSurface;
+                FeatureLevel = featureLevel.Value;
             }
 
             if (powerPreference is not null)
@@ -43,41 +44,51 @@ namespace Silk.NET.WebGPU
                 PowerPreference = powerPreference.Value;
             }
 
+            if (forceFallbackAdapter is not null)
+            {
+                ForceFallbackAdapter = forceFallbackAdapter.Value;
+            }
+
             if (backendType is not null)
             {
                 BackendType = backendType.Value;
             }
 
-            if (forceFallbackAdapter is not null)
+            if (compatibleSurface is not null)
             {
-                ForceFallbackAdapter = forceFallbackAdapter.Value;
+                CompatibleSurface = compatibleSurface;
             }
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "WGPUSurface")]
-        [NativeName("Type.Name", "WGPUSurface")]
-        [NativeName("Name", "compatibleSurface")]
-        public Surface* CompatibleSurface;
+        [NativeName("Type", "WGPUFeatureLevel")]
+        [NativeName("Type.Name", "WGPUFeatureLevel")]
+        [NativeName("Name", "featureLevel")]
+        public FeatureLevel FeatureLevel;
 
         [NativeName("Type", "WGPUPowerPreference")]
         [NativeName("Type.Name", "WGPUPowerPreference")]
         [NativeName("Name", "powerPreference")]
         public PowerPreference PowerPreference;
 
+        [NativeName("Type", "WGPUBool")]
+        [NativeName("Type.Name", "WGPUBool")]
+        [NativeName("Name", "forceFallbackAdapter")]
+        public Silk.NET.Core.Bool32 ForceFallbackAdapter;
+
         [NativeName("Type", "WGPUBackendType")]
         [NativeName("Type.Name", "WGPUBackendType")]
         [NativeName("Name", "backendType")]
         public BackendType BackendType;
 
-        [NativeName("Type", "WGPUBool")]
-        [NativeName("Type.Name", "WGPUBool")]
-        [NativeName("Name", "forceFallbackAdapter")]
-        public Silk.NET.Core.Bool32 ForceFallbackAdapter;
+        [NativeName("Type", "WGPUSurface")]
+        [NativeName("Type.Name", "WGPUSurface")]
+        [NativeName("Name", "compatibleSurface")]
+        public Surface* CompatibleSurface;
     }
 }

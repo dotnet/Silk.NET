@@ -30,6 +30,8 @@ namespace Silk.NET.OpenCL
         ExtensionsWithVersion = 0x907,
         [NativeName("Name", "CL_PLATFORM_ICD_SUFFIX_KHR")]
         IcdSuffixKhr = 0x920,
+        [NativeName("Name", "CL_PLATFORM_UNLOADABLE_KHR")]
+        UnloadableKhr = 0x921,
         [NativeName("Name", "CL_PLATFORM_NUMERIC_VERSION_KHR")]
         NumericVersionKhr = 0x906,
         [NativeName("Name", "CL_PLATFORM_EXTENSIONS_WITH_VERSION_KHR")]

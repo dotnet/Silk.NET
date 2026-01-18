@@ -22,7 +22,7 @@ namespace Silk.NET.WebGPU
         public ConstantEntry
         (
             ChainedStruct* nextInChain = null,
-            byte* key = null,
+            StringView? key = null,
             double? value = null
         ) : this()
         {
@@ -33,7 +33,7 @@ namespace Silk.NET.WebGPU
 
             if (key is not null)
             {
-                Key = key;
+                Key = key.Value;
             }
 
             if (value is not null)
@@ -43,15 +43,15 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "key")]
-        public byte* Key;
+        public StringView Key;
 
         [NativeName("Type", "double")]
         [NativeName("Type.Name", "double")]

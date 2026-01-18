@@ -24,7 +24,7 @@ namespace Silk.NET.WebGPU
             ChainedStruct* nextInChain = null,
             TextureFormat? format = null,
             BlendState* blend = null,
-            Silk.NET.WebGPU.ColorWriteMask? writeMask = null
+            ulong? writeMask = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -49,8 +49,8 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
@@ -64,9 +64,9 @@ namespace Silk.NET.WebGPU
         [NativeName("Name", "blend")]
         public BlendState* Blend;
 
-        [NativeName("Type", "WGPUColorWriteMaskFlags")]
-        [NativeName("Type.Name", "WGPUColorWriteMaskFlags")]
+        [NativeName("Type", "WGPUColorWriteMask")]
+        [NativeName("Type.Name", "WGPUColorWriteMask")]
         [NativeName("Name", "writeMask")]
-        public Silk.NET.WebGPU.ColorWriteMask WriteMask;
+        public ulong WriteMask;
     }
 }

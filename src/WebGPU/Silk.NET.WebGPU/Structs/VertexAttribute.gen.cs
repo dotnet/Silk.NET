@@ -21,11 +21,17 @@ namespace Silk.NET.WebGPU
     {
         public VertexAttribute
         (
+            ChainedStruct* nextInChain = null,
             VertexFormat? format = null,
             ulong? offset = null,
             uint? shaderLocation = null
         ) : this()
         {
+            if (nextInChain is not null)
+            {
+                NextInChain = nextInChain;
+            }
+
             if (format is not null)
             {
                 Format = format.Value;
@@ -42,6 +48,11 @@ namespace Silk.NET.WebGPU
             }
         }
 
+
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Name", "nextInChain")]
+        public ChainedStruct* NextInChain;
 
         [NativeName("Type", "WGPUVertexFormat")]
         [NativeName("Type.Name", "WGPUVertexFormat")]

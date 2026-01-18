@@ -22,8 +22,8 @@ namespace Silk.NET.WebGPU
         public BufferDescriptor
         (
             ChainedStruct* nextInChain = null,
-            byte* label = null,
-            Silk.NET.WebGPU.BufferUsage? usage = null,
+            StringView? label = null,
+            ulong? usage = null,
             ulong? size = null,
             Silk.NET.Core.Bool32? mappedAtCreation = null
         ) : this()
@@ -35,7 +35,7 @@ namespace Silk.NET.WebGPU
 
             if (label is not null)
             {
-                Label = label;
+                Label = label.Value;
             }
 
             if (usage is not null)
@@ -55,20 +55,20 @@ namespace Silk.NET.WebGPU
         }
 
 
-        [NativeName("Type", "const WGPUChainedStruct *")]
-        [NativeName("Type.Name", "const WGPUChainedStruct *")]
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
         [NativeName("Name", "nextInChain")]
         public ChainedStruct* NextInChain;
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
+        [NativeName("Type", "WGPUStringView")]
+        [NativeName("Type.Name", "WGPUStringView")]
         [NativeName("Name", "label")]
-        public byte* Label;
+        public StringView Label;
 
-        [NativeName("Type", "WGPUBufferUsageFlags")]
-        [NativeName("Type.Name", "WGPUBufferUsageFlags")]
+        [NativeName("Type", "WGPUBufferUsage")]
+        [NativeName("Type.Name", "WGPUBufferUsage")]
         [NativeName("Name", "usage")]
-        public Silk.NET.WebGPU.BufferUsage Usage;
+        public ulong Usage;
 
         [NativeName("Type", "uint64_t")]
         [NativeName("Type.Name", "uint64_t")]

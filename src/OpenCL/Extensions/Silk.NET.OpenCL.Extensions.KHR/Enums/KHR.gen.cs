@@ -801,6 +801,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         IcdSuffixKhr = 0x920,
         [NativeName("Name", "CL_PLATFORM_ICD_SUFFIX_KHR")]
         PlatformIcdSuffixKhr = 0x920,
+        [NativeName("Name", "CL_PLATFORM_UNLOADABLE_KHR")]
+        UnloadableKhr = 0x921,
+        [NativeName("Name", "CL_PLATFORM_UNLOADABLE_KHR")]
+        PlatformUnloadableKhr = 0x921,
         [NativeName("Name", "CL_PLATFORM_NUMERIC_VERSION_KHR")]
         PlatformNumericVersionKhr = 0x906,
         [NativeName("Name", "CL_PLATFORM_EXTENSIONS_WITH_VERSION_KHR")]

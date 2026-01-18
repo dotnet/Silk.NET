@@ -21,6 +21,7 @@ namespace Silk.NET.WebGPU
     {
         public RenderPassDepthStencilAttachment
         (
+            ChainedStruct* nextInChain = null,
             TextureView* view = null,
             LoadOp? depthLoadOp = null,
             StoreOp? depthStoreOp = null,
@@ -32,6 +33,11 @@ namespace Silk.NET.WebGPU
             Silk.NET.Core.Bool32? stencilReadOnly = null
         ) : this()
         {
+            if (nextInChain is not null)
+            {
+                NextInChain = nextInChain;
+            }
+
             if (view is not null)
             {
                 View = view;
@@ -78,6 +84,11 @@ namespace Silk.NET.WebGPU
             }
         }
 
+
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Name", "nextInChain")]
+        public ChainedStruct* NextInChain;
 
         [NativeName("Type", "WGPUTextureView")]
         [NativeName("Type.Name", "WGPUTextureView")]

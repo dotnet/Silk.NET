@@ -21,19 +21,19 @@ namespace Silk.NET.WebGPU
     {
         public SurfaceTexture
         (
+            ChainedStruct* nextInChain = null,
             Texture* texture = null,
-            Silk.NET.Core.Bool32? suboptimal = null,
             SurfaceGetCurrentTextureStatus? status = null
         ) : this()
         {
+            if (nextInChain is not null)
+            {
+                NextInChain = nextInChain;
+            }
+
             if (texture is not null)
             {
                 Texture = texture;
-            }
-
-            if (suboptimal is not null)
-            {
-                Suboptimal = suboptimal.Value;
             }
 
             if (status is not null)
@@ -43,15 +43,15 @@ namespace Silk.NET.WebGPU
         }
 
 
+        [NativeName("Type", "WGPUChainedStruct *")]
+        [NativeName("Type.Name", "WGPUChainedStruct *")]
+        [NativeName("Name", "nextInChain")]
+        public ChainedStruct* NextInChain;
+
         [NativeName("Type", "WGPUTexture")]
         [NativeName("Type.Name", "WGPUTexture")]
         [NativeName("Name", "texture")]
         public Texture* Texture;
-
-        [NativeName("Type", "WGPUBool")]
-        [NativeName("Type.Name", "WGPUBool")]
-        [NativeName("Name", "suboptimal")]
-        public Silk.NET.Core.Bool32 Suboptimal;
 
         [NativeName("Type", "WGPUSurfaceGetCurrentTextureStatus")]
         [NativeName("Type.Name", "WGPUSurfaceGetCurrentTextureStatus")]

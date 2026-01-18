@@ -19,10 +19,10 @@ namespace Silk.NET.WebGPU
     public unsafe readonly struct PfnRequestDeviceCallback : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, byte*, void*, void> Handle => (delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, byte*, void*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, StringView, void*, void*, void> Handle => (delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, StringView, void*, void*, void>) _handle;
         public PfnRequestDeviceCallback
         (
-            delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, byte*, void*, void> ptr
+            delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, StringView, void*, void*, void> ptr
         ) => _handle = ptr;
 
         public PfnRequestDeviceCallback
@@ -35,7 +35,7 @@ namespace Silk.NET.WebGPU
 
         public static implicit operator nint(PfnRequestDeviceCallback pfn) => (nint) pfn.Handle;
         public static explicit operator PfnRequestDeviceCallback(nint pfn)
-            => new PfnRequestDeviceCallback((delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, byte*, void*, void>) pfn);
+            => new PfnRequestDeviceCallback((delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, StringView, void*, void*, void>) pfn);
 
         public static implicit operator PfnRequestDeviceCallback(RequestDeviceCallback proc)
             => new PfnRequestDeviceCallback(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.WebGPU
         public static explicit operator RequestDeviceCallback(PfnRequestDeviceCallback pfn)
             => SilkMarshal.PtrToDelegate<RequestDeviceCallback>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, byte*, void*, void>(PfnRequestDeviceCallback pfn) => pfn.Handle;
-        public static implicit operator PfnRequestDeviceCallback(delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, byte*, void*, void> ptr) => new PfnRequestDeviceCallback(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, StringView, void*, void*, void>(PfnRequestDeviceCallback pfn) => pfn.Handle;
+        public static implicit operator PfnRequestDeviceCallback(delegate* unmanaged[Cdecl]<RequestDeviceStatus, Device*, StringView, void*, void*, void> ptr) => new PfnRequestDeviceCallback(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void RequestDeviceCallback(RequestDeviceStatus arg0, Device* arg1, byte* arg2, void* arg3);
+    public unsafe delegate void RequestDeviceCallback(RequestDeviceStatus arg0, Device* arg1, StringView arg2, void* arg3, void* arg4);
 }
 

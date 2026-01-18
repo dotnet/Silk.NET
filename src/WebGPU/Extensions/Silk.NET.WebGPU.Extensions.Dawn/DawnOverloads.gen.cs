@@ -17,14 +17,6 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
     public static class DawnOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 3772, Column 24 in dawn-webgpu.h")]
-        public static unsafe Status GetInstanceFeatures(this Dawn thisApi, Span<InstanceFeatures> features)
-        {
-            // SpanOverloader
-            return thisApi.GetInstanceFeatures(ref features.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 24 in dawn-webgpu.h")]
         public static unsafe Device* AdapterCreateDevice(this Dawn thisApi, Adapter* adapter, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<DeviceDescriptor> descriptor)
         {
@@ -33,11 +25,27 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3780, Column 20 in dawn-webgpu.h")]
+        public static unsafe nuint AdapterEnumerateFeatures(this Dawn thisApi, Adapter* adapter, Span<FeatureName> features)
+        {
+            // SpanOverloader
+            return thisApi.AdapterEnumerateFeatures(adapter, ref features.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3781, Column 24 in dawn-webgpu.h")]
         public static unsafe Status AdapterGetFormatCapabilities(this Dawn thisApi, Adapter* adapter, TextureFormat format, Span<FormatCapabilities> capabilities)
         {
             // SpanOverloader
             return thisApi.AdapterGetFormatCapabilities(adapter, format, ref capabilities.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3784, Column 24 in dawn-webgpu.h")]
+        public static unsafe Status AdapterGetProperties(this Dawn thisApi, Adapter* adapter, Span<AdapterProperties> properties)
+        {
+            // SpanOverloader
+            return thisApi.AdapterGetProperties(adapter, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -153,6 +161,14 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3885, Column 20 in dawn-webgpu.h")]
+        public static unsafe nuint DeviceEnumerateFeatures(this Dawn thisApi, Device* device, Span<FeatureName> features)
+        {
+            // SpanOverloader
+            return thisApi.DeviceEnumerateFeatures(device, ref features.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3886, Column 18 in dawn-webgpu.h")]
         public static unsafe void DeviceForceLoss(this Dawn thisApi, Device* device, DeviceLostReason type, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> message)
         {
@@ -209,6 +225,14 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         }
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 3903, Column 18 in dawn-webgpu.h")]
+        public static unsafe void DeviceSetUncapturedErrorCallback<T0>(this Dawn thisApi, Device* device, PfnErrorCallback callback, Span<T0> userdata) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.DeviceSetUncapturedErrorCallback(device, callback, ref userdata.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3905, Column 18 in dawn-webgpu.h")]
         public static unsafe void DeviceValidateTextureDescriptor(this Dawn thisApi, Device* device, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<TextureDescriptor> descriptor)
         {
@@ -246,14 +270,6 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         {
             // SpanOverloader
             return thisApi.InstanceRequestAdapterF(instance, in options.GetPinnableReference(), callbackInfo);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 3925, Column 28 in dawn-webgpu.h")]
-        public static unsafe WaitStatus InstanceWaitAny(this Dawn thisApi, Instance* instance, nuint futureCount, Span<FutureWaitInfo> futures, ulong timeoutNS)
-        {
-            // SpanOverloader
-            return thisApi.InstanceWaitAny(instance, futureCount, ref futures.GetPinnableReference(), timeoutNS);
         }
 
         /// <summary>To be documented.</summary>

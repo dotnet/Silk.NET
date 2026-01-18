@@ -1176,6 +1176,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceCustomBorderColorPropertiesExt = 1000287001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_CUSTOM_BORDER_COLOR_FEATURES_EXT")]
         PhysicalDeviceCustomBorderColorFeaturesExt = 1000287002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXTURE_COMPRESSION_ASTC_3D_FEATURES_EXT")]
+        PhysicalDeviceTextureCompressionAstc3DFeaturesExt = 1000288000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_LIBRARY_CREATE_INFO_KHR")]
         PipelineLibraryCreateInfoKhr = 1000290000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_BARRIER_FEATURES_NV")]
@@ -2268,12 +2270,6 @@ namespace Silk.NET.Vulkan
         VideoDecodeAV1InlineSessionParametersInfoKhr = 1000586003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SURFACE_CREATE_INFO_OHOS")]
         SurfaceCreateInfoOhos = 1000685000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_NATIVE_BUFFER_OHOS")]
-        NativeBufferOhos = 1000453001,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_SWAPCHAIN_IMAGE_CREATE_INFO_OHOS")]
-        SwapchainImageCreateInfoOhos = 1000453002,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENTATION_PROPERTIES_OHOS")]
-        PhysicalDevicePresentationPropertiesOhos = 1000453003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HDR_VIVID_FEATURES_HUAWEI")]
         PhysicalDeviceHdrVividFeaturesHuawei = 1000590000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_HDR_VIVID_DYNAMIC_METADATA_HUAWEI")]
@@ -2356,6 +2352,10 @@ namespace Silk.NET.Vulkan
         RenderingEndInfoKhr = 1000619003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RESOLVE_IMAGE_MODE_INFO_KHR")]
         ResolveImageModeInfoKhr = 1000630004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_LONG_VECTOR_FEATURES_EXT")]
+        PhysicalDeviceShaderLongVectorFeaturesExt = 1000635000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_LONG_VECTOR_PROPERTIES_EXT")]
+        PhysicalDeviceShaderLongVectorPropertiesExt = 1000635001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CACHE_INCREMENTAL_MODE_FEATURES_SEC")]
         PhysicalDevicePipelineCacheIncrementalModeFeaturesSec = 1000637000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_UNIFORM_BUFFER_UNSIZED_ARRAY_FEATURES_EXT")]

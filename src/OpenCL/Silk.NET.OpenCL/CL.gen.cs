@@ -140,6 +140,9 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_LAYER_API_VERSION_100")]
         public const int LayerApiVersion100 = unchecked((int) 100);
         [NativeName("Type", "")]
+        [NativeName("Name", "CL_LAYER_PROPERTIES_LIST_END")]
+        public const int LayerPropertiesListEnd = unchecked((int) ((cl_layer_properties)0));
+        [NativeName("Type", "")]
         [NativeName("Name", "CL_LONG_MAX")]
         public const long LongMax = unchecked((long) long.MaxValue);
         [NativeName("Type", "")]
