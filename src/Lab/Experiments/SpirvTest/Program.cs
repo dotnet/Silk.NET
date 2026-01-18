@@ -1,4 +1,5 @@
 ﻿
+using Silk.NET.Core.Native;
 using Silk.NET.SPIRV.Reflect;
 using Silk.NET.SPIRV.Cross;
 using Result = Silk.NET.SPIRV.Reflect.Result;
@@ -39,6 +40,19 @@ unsafe
             throw new Exception($"failed to parse spirv {result.ToString()}");
         
         Console.WriteLine($"Parsed IR");
+
+        Compiler* compiler = null;
+        result = cross.ContextCreateCompiler(context, Backend.Glsl, parsedIr, CaptureMode.Copy, &compiler);
+        if(result != Silk.NET.SPIRV.Cross.Result.Success)
+            throw new Exception($"failed to create compiler {result.ToString()}");
+
+        byte* source = null;
+        result = cross.CompilerCompile(compiler, &source);
+        if(result != Silk.NET.SPIRV.Cross.Result.Success)
+            throw new Exception($"failed to compile {result.ToString()}");
+
+        string? str = SilkMarshal.PtrToString((nint)source, NativeStringEncoding.UTF8);
+        Console.WriteLine($"Compiled int {str}");
         
         cross.ContextDestroy(context);
     }
