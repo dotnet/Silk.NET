@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDescriptorSetAllocateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorSetAllocateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -33,7 +35,7 @@ public unsafe partial struct DescriptorSetAllocateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -57,7 +59,7 @@ public unsafe partial struct DescriptorSetAllocateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDescriptorPool")]
+    [NativeName("descriptorPool")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -81,7 +83,7 @@ public unsafe partial struct DescriptorSetAllocateInfo
     )]
     public DescriptorPoolHandle DescriptorPool;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("descriptorSetCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -105,7 +107,7 @@ public unsafe partial struct DescriptorSetAllocateInfo
     )]
     public uint DescriptorSetCount;
 
-    [NativeTypeName("const VkDescriptorSetLayout *")]
+    [NativeName("pSetLayouts")]
     [SupportedApiProfile(
         "vulkan",
         [

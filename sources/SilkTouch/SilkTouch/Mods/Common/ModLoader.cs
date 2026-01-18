@@ -32,6 +32,8 @@ public class ModLoader
             nameof(ClangScraper) => typeof(ClangScraper),
             nameof(ChangeNativeClass) => typeof(ChangeNativeClass),
             nameof(InterceptNativeFunctions) => typeof(InterceptNativeFunctions),
+            nameof(MarkNativeNames) => typeof(MarkNativeNames),
+            nameof(StripAttributes) => typeof(StripAttributes),
             _ => null,
         };
 }

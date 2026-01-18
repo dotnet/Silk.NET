@@ -7,50 +7,51 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH264HrdParameters")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264HrdParameters
 {
-    [NativeTypeName("uint8_t")]
+    [NativeName("cpb_cnt_minus1")]
     [SupportedApiProfile("vulkan")]
     public byte CpbCntMinus1;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("bit_rate_scale")]
     [SupportedApiProfile("vulkan")]
     public byte BitRateScale;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("cpb_size_scale")]
     [SupportedApiProfile("vulkan")]
     public byte CpbSizeScale;
 
-    [NativeTypeName("uint8_t")]
+    [NativeName("reserved1")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved1;
 
-    [NativeTypeName("uint32_t[32]")]
+    [NativeName("bit_rate_value_minus1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264HrdParametersBitRateValueMinus1 BitRateValueMinus1;
 
-    [NativeTypeName("uint32_t[32]")]
+    [NativeName("cpb_size_value_minus1")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264HrdParametersCpbSizeValueMinus1 CpbSizeValueMinus1;
 
-    [NativeTypeName("uint8_t[32]")]
+    [NativeName("cbr_flag")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264HrdParametersCbrFlag CbrFlag;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("initial_cpb_removal_delay_length_minus1")]
     [SupportedApiProfile("vulkan")]
     public uint InitialCpbRemovalDelayLengthMinus1;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("cpb_removal_delay_length_minus1")]
     [SupportedApiProfile("vulkan")]
     public uint CpbRemovalDelayLengthMinus1;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dpb_output_delay_length_minus1")]
     [SupportedApiProfile("vulkan")]
     public uint DpbOutputDelayLengthMinus1;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("time_offset_length")]
     [SupportedApiProfile("vulkan")]
     public uint TimeOffsetLength;
 }

@@ -6,10 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkOpticalFlowSessionBindingPointNV")]
 [SupportedApiProfile("vulkan")]
 public enum OpticalFlowSessionBindingPointNV : uint
 {
+    [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_UNKNOWN_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -19,8 +20,9 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    UnknownNV = 0,
+    Unknown = 0,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_INPUT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -30,8 +32,9 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    InputNV = 1,
+    Input = 1,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_REFERENCE_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -41,8 +44,9 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    ReferenceNV = 2,
+    Reference = 2,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_HINT_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -52,8 +56,9 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    HintNV = 3,
+    Hint = 3,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_FLOW_VECTOR_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -63,8 +68,9 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    FlowVectorNV = 4,
+    FlowVector = 4,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_BACKWARD_FLOW_VECTOR_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -74,8 +80,9 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    BackwardFlowVectorNV = 5,
+    BackwardFlowVector = 5,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_COST_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -85,8 +92,9 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    CostNV = 6,
+    Cost = 6,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_BACKWARD_COST_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -96,8 +104,9 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    BackwardCostNV = 7,
+    BackwardCost = 7,
 
+    [NativeName("VK_OPTICAL_FLOW_SESSION_BINDING_POINT_GLOBAL_FLOW_NV")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_optical_flow"],
@@ -107,5 +116,5 @@ public enum OpticalFlowSessionBindingPointNV : uint
             "VK_VERSION_1_3",
         ]
     )]
-    GlobalFlowNV = 8,
+    GlobalFlow = 8,
 }

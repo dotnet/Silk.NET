@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeH265RateControlInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH265RateControlInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -18,7 +20,7 @@ public unsafe partial struct VideoEncodeH265RateControlInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -26,7 +28,7 @@ public unsafe partial struct VideoEncodeH265RateControlInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkVideoEncodeH265RateControlFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -34,7 +36,7 @@ public unsafe partial struct VideoEncodeH265RateControlInfoKHR
     )]
     public VideoEncodeH265RateControlFlagsKHR Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("gopFrameCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -42,7 +44,7 @@ public unsafe partial struct VideoEncodeH265RateControlInfoKHR
     )]
     public uint GopFrameCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("idrPeriod")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -50,7 +52,7 @@ public unsafe partial struct VideoEncodeH265RateControlInfoKHR
     )]
     public uint IdrPeriod;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("consecutiveBFrameCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],
@@ -58,7 +60,7 @@ public unsafe partial struct VideoEncodeH265RateControlInfoKHR
     )]
     public uint ConsecutiveBFrameCount;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("subLayerCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265"],

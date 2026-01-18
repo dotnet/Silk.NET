@@ -1,0 +1,15 @@
+﻿public enum GLEnum
+{
+    [NameAffix("Suffix", "KhronosVendor", "EXT")]
+    Rgb16EXT = 32852,
+    [NameAffix("Suffix", "KhronosVendor", "EXT")]
+    Rgb16FEXT = 34843,
+}
+
+public enum ALEnum
+{
+    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+    Mono16SOFT = 4353,
+    [NameAffix("Suffix", "KhronosVendor", "SOFT")]
+    Mono32FSOFT = 65552,
+}

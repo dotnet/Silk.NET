@@ -8,4 +8,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_main_func")]
 public unsafe delegate int MainFuncDelegate(int arg0, sbyte** arg1);

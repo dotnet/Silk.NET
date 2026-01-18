@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDescriptorBufferPropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -23,6 +25,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -35,7 +38,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("combinedImageSamplerDescriptorSingleArray")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -48,7 +51,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public uint CombinedImageSamplerDescriptorSingleArray;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("bufferlessPushDescriptors")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -61,7 +64,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public uint BufferlessPushDescriptors;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("allowSamplerImageViewPostSubmitCreation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -74,7 +77,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public uint AllowSamplerImageViewPostSubmitCreation;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("descriptorBufferOffsetAlignment")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -87,7 +90,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public ulong DescriptorBufferOffsetAlignment;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxDescriptorBufferBindings")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -100,7 +103,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public uint MaxDescriptorBufferBindings;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxResourceDescriptorBufferBindings")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -113,7 +116,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public uint MaxResourceDescriptorBufferBindings;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxSamplerDescriptorBufferBindings")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -126,7 +129,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public uint MaxSamplerDescriptorBufferBindings;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxEmbeddedImmutableSamplerBindings")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -139,7 +142,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public uint MaxEmbeddedImmutableSamplerBindings;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxEmbeddedImmutableSamplers")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -152,7 +155,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public uint MaxEmbeddedImmutableSamplers;
 
-    [NativeTypeName("size_t")]
+    [NativeName("bufferCaptureReplayDescriptorDataSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -165,7 +168,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint BufferCaptureReplayDescriptorDataSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("imageCaptureReplayDescriptorDataSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -178,7 +181,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint ImageCaptureReplayDescriptorDataSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("imageViewCaptureReplayDescriptorDataSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -191,7 +194,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint ImageViewCaptureReplayDescriptorDataSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("samplerCaptureReplayDescriptorDataSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -204,7 +207,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint SamplerCaptureReplayDescriptorDataSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("accelerationStructureCaptureReplayDescriptorDataSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -217,7 +220,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint AccelerationStructureCaptureReplayDescriptorDataSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("samplerDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -230,7 +233,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint SamplerDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("combinedImageSamplerDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -243,7 +246,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint CombinedImageSamplerDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("sampledImageDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -256,7 +259,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint SampledImageDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("storageImageDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -269,7 +272,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint StorageImageDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("uniformTexelBufferDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -282,7 +285,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint UniformTexelBufferDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("robustUniformTexelBufferDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -295,7 +298,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint RobustUniformTexelBufferDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("storageTexelBufferDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -308,7 +311,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint StorageTexelBufferDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("robustStorageTexelBufferDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -321,7 +324,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint RobustStorageTexelBufferDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("uniformBufferDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -334,7 +337,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint UniformBufferDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("robustUniformBufferDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -347,7 +350,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint RobustUniformBufferDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("storageBufferDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -360,7 +363,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint StorageBufferDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("robustStorageBufferDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -373,7 +376,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint RobustStorageBufferDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("inputAttachmentDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -386,7 +389,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint InputAttachmentDescriptorSize;
 
-    [NativeTypeName("size_t")]
+    [NativeName("accelerationStructureDescriptorSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -399,7 +402,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public nuint AccelerationStructureDescriptorSize;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("maxSamplerDescriptorBufferRange")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -412,7 +415,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public ulong MaxSamplerDescriptorBufferRange;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("maxResourceDescriptorBufferRange")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -425,7 +428,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public ulong MaxResourceDescriptorBufferRange;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("samplerDescriptorBufferAddressSpaceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -438,7 +441,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public ulong SamplerDescriptorBufferAddressSpaceSize;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("resourceDescriptorBufferAddressSpaceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],
@@ -451,7 +454,7 @@ public unsafe partial struct PhysicalDeviceDescriptorBufferPropertiesEXT
     )]
     public ulong ResourceDescriptorBufferAddressSpaceSize;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("descriptorBufferAddressSpaceSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_descriptor_buffer"],

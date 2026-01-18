@@ -7,24 +7,57 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ConvolutionParameter")]
 public enum ConvolutionParameter : uint
 {
-    ConvolutionBorderMode = unchecked((uint)0x8013),
-    ConvolutionFilterScale = unchecked((uint)0x8014),
-    ConvolutionFilterBias = unchecked((uint)0x8015),
-    ConvolutionFormat = unchecked((uint)0x8017),
-    ConvolutionWidth = unchecked((uint)0x8018),
-    ConvolutionHeight = unchecked((uint)0x8019),
-    MaxConvolutionWidth = unchecked((uint)0x801A),
-    MaxConvolutionHeight = unchecked((uint)0x801B),
-    ConvolutionBorderColor = unchecked((uint)0x8154),
-    ConvolutionBorderModeEXT = unchecked((uint)0x8013),
-    ConvolutionFilterScaleEXT = unchecked((uint)0x8014),
-    ConvolutionFilterBiasEXT = unchecked((uint)0x8015),
-    ConvolutionFormatEXT = unchecked((uint)0x8017),
-    ConvolutionWidthEXT = unchecked((uint)0x8018),
-    ConvolutionHeightEXT = unchecked((uint)0x8019),
-    MaxConvolutionWidthEXT = unchecked((uint)0x801A),
-    MaxConvolutionHeightEXT = unchecked((uint)0x801B),
+    [NativeName("GL_CONVOLUTION_BORDER_MODE")]
+    ConvolutionBorderMode = 32787,
+
+    [NativeName("GL_CONVOLUTION_FILTER_SCALE")]
+    ConvolutionFilterScale = 32788,
+
+    [NativeName("GL_CONVOLUTION_FILTER_BIAS")]
+    ConvolutionFilterBias = 32789,
+
+    [NativeName("GL_CONVOLUTION_FORMAT")]
+    ConvolutionFormat = 32791,
+
+    [NativeName("GL_CONVOLUTION_WIDTH")]
+    ConvolutionWidth = 32792,
+
+    [NativeName("GL_CONVOLUTION_HEIGHT")]
+    ConvolutionHeight = 32793,
+
+    [NativeName("GL_MAX_CONVOLUTION_WIDTH")]
+    MaxConvolutionWidth = 32794,
+
+    [NativeName("GL_MAX_CONVOLUTION_HEIGHT")]
+    MaxConvolutionHeight = 32795,
+
+    [NativeName("GL_CONVOLUTION_BORDER_COLOR")]
+    ConvolutionBorderColor = 33108,
+
+    [NativeName("GL_CONVOLUTION_BORDER_MODE_EXT")]
+    ConvolutionBorderModeEXT = 32787,
+
+    [NativeName("GL_CONVOLUTION_FILTER_SCALE_EXT")]
+    ConvolutionFilterScaleEXT = 32788,
+
+    [NativeName("GL_CONVOLUTION_FILTER_BIAS_EXT")]
+    ConvolutionFilterBiasEXT = 32789,
+
+    [NativeName("GL_CONVOLUTION_FORMAT_EXT")]
+    ConvolutionFormatEXT = 32791,
+
+    [NativeName("GL_CONVOLUTION_WIDTH_EXT")]
+    ConvolutionWidthEXT = 32792,
+
+    [NativeName("GL_CONVOLUTION_HEIGHT_EXT")]
+    ConvolutionHeightEXT = 32793,
+
+    [NativeName("GL_MAX_CONVOLUTION_WIDTH_EXT")]
+    MaxConvolutionWidthEXT = 32794,
+
+    [NativeName("GL_MAX_CONVOLUTION_HEIGHT_EXT")]
+    MaxConvolutionHeightEXT = 32795,
 }

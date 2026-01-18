@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ContainerType")]
 public enum ContainerType : uint
 {
-    ProgramObjectARB = unchecked((uint)0x8B40),
-    ProgramObjectEXT = unchecked((uint)0x8B40),
+    [NativeName("GL_PROGRAM_OBJECT_ARB")]
+    ProgramObjectARB = 35648,
+
+    [NativeName("GL_PROGRAM_OBJECT_EXT")]
+    ProgramObjectEXT = 35648,
 }

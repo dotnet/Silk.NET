@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoProfileListInfoKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoProfileListInfoKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -18,7 +20,7 @@ public unsafe partial struct VideoProfileListInfoKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -26,7 +28,7 @@ public unsafe partial struct VideoProfileListInfoKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("profileCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],
@@ -34,7 +36,7 @@ public unsafe partial struct VideoProfileListInfoKHR
     )]
     public uint ProfileCount;
 
-    [NativeTypeName("const VkVideoProfileInfoKHR *")]
+    [NativeName("pProfiles")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_queue"],

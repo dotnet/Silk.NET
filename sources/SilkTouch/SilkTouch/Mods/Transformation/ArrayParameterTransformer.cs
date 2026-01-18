@@ -87,8 +87,8 @@ public class ArrayParameterTransformer : IFunctionTransformer
                         x.CountParamIdx,
                         // 2. Select only the last parameter this count parameter is associated with
                         ParamForCount: x.ParamsForCount.Select(
-                            (y, j) => (PtrParamInfo: y, ParamForCountIdx: j)
-                        )
+                                (y, j) => (PtrParamInfo: y, ParamForCountIdx: j)
+                            )
                             .LastOrDefault()
                     )
                 )
@@ -126,8 +126,8 @@ public class ArrayParameterTransformer : IFunctionTransformer
         // Get information from the function name for benefit-of-doubt overloading i.e. if the function matches a very
         // well-known function style then let's just go ahead and overload it. (Mainly for OpenAL)
         var epSpan = entryPoint.AsSpan();
-        var verb = epSpan[int.Max(epSpan.IndexOfAny(NameUtils.Uppercase), 0)..];
-        verb = verb[..(verb[1..].IndexOfAny(NameUtils.Uppercase) + 1)];
+        var verb = epSpan[int.Max(epSpan.IndexOfAny(NameUtils.UpperChars), 0)..];
+        verb = verb[..(verb[1..].IndexOfAny(NameUtils.UpperChars) + 1)];
         var benefitOfDoubt = false;
         if (
             countParam is null
@@ -232,7 +232,14 @@ public class ArrayParameterTransformer : IFunctionTransformer
     ) : CSharpSyntaxRewriter
     {
         public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            node.WithIdentifier(Identifier(node.Identifier.ToString().Singularize(false)))
+            node.WithIdentifier(
+                    // TODO: Temporarily hack to fix issue where OpenGL -OES vendor suffix gets replaced with -O
+                    Identifier(
+                        node.Identifier.Text.EndsWith("OES")
+                            ? node.Identifier.Text
+                            : node.Identifier.Text.Singularize(false)
+                    )
+                )
                 .WithReturnType(
                     isOutput ? ptrElementType : PredefinedType(Token(SyntaxKind.VoidKeyword))
                 )
@@ -253,7 +260,6 @@ public class ArrayParameterTransformer : IFunctionTransformer
                             // call.
                             ? Block(
                                 (StatementSyntax[])
-
                                     [
                                         LocalDeclarationStatement(
                                             VariableDeclaration(
@@ -271,7 +277,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
                                             )
                                         ),
                                         .. blk.Statements,
-                                        ReturnStatement(IdentifierName(ptrParam))
+                                        ReturnStatement(IdentifierName(ptrParam)),
                                     ]
                             )
                             : blk
@@ -309,15 +315,15 @@ public class ArrayParameterTransformer : IFunctionTransformer
                 ? syn.WithParameters(
                     SeparatedList(
                         syn.Parameters.Select(x =>
-                            x.Identifier.ToString() == countParam
-                            || (isOutput && x.Identifier.ToString() == ptrParam)
-                                ? null
+                                x.Identifier.ToString() == countParam
+                                || (isOutput && x.Identifier.ToString() == ptrParam)
+                                    ? null
                                 : base.VisitParameter(x) is ParameterSyntax p
                                     ? p.Identifier.ToString() == ptrParam
-                                        ? p.WithType(ptrElementType)
+                                            ? p.WithType(ptrElementType)
                                         : p
-                                    : null
-                        )
+                                : null
+                            )
                             .OfType<ParameterSyntax>()
                     )
                 )

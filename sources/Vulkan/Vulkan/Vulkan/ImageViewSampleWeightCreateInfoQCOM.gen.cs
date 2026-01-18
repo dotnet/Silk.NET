@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImageViewSampleWeightCreateInfoQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageViewSampleWeightCreateInfoQCOM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -20,7 +22,7 @@ public unsafe partial struct ImageViewSampleWeightCreateInfoQCOM
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -31,6 +33,7 @@ public unsafe partial struct ImageViewSampleWeightCreateInfoQCOM
     )]
     public void* PNext;
 
+    [NativeName("filterCenter")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -41,6 +44,7 @@ public unsafe partial struct ImageViewSampleWeightCreateInfoQCOM
     )]
     public Offset2D FilterCenter;
 
+    [NativeName("filterSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],
@@ -51,7 +55,7 @@ public unsafe partial struct ImageViewSampleWeightCreateInfoQCOM
     )]
     public Extent2D FilterSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("numPhases")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_image_processing"],

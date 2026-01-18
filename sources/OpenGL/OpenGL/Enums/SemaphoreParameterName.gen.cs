@@ -7,12 +7,21 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("SemaphoreParameterName")]
 public enum SemaphoreParameterName : uint
 {
-    D3D12FenceValueEXT = unchecked((uint)0x9595),
-    TimelineSemaphoreValueNV = unchecked((uint)0x9595),
-    SemaphoreTypeNV = unchecked((uint)0x95B3),
-    SemaphoreTypeBinaryNV = unchecked((uint)0x95B4),
-    SemaphoreTypeTimelineNV = unchecked((uint)0x95B5),
+    [NativeName("GL_D3D12_FENCE_VALUE_EXT")]
+    D3D12FenceValueEXT = 38293,
+
+    [NativeName("GL_TIMELINE_SEMAPHORE_VALUE_NV")]
+    TimelineSemaphoreValueNV = 38293,
+
+    [NativeName("GL_SEMAPHORE_TYPE_NV")]
+    SemaphoreTypeNV = 38323,
+
+    [NativeName("GL_SEMAPHORE_TYPE_BINARY_NV")]
+    SemaphoreTypeBinaryNV = 38324,
+
+    [NativeName("GL_SEMAPHORE_TYPE_TIMELINE_NV")]
+    SemaphoreTypeTimelineNV = 38325,
 }

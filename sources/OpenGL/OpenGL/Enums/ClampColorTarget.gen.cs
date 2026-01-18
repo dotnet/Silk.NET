@@ -7,11 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ClampColorTargetARB")]
 public enum ClampColorTarget : uint
 {
-    ReadColor = unchecked((uint)0x891C),
-    VertexColorARB = unchecked((uint)0x891A),
-    FragmentColorARB = unchecked((uint)0x891B),
-    ReadColorARB = unchecked((uint)0x891C),
+    [NativeName("GL_CLAMP_READ_COLOR")]
+    ReadColor = 35100,
+
+    [NativeName("GL_CLAMP_VERTEX_COLOR_ARB")]
+    VertexColorARB = 35098,
+
+    [NativeName("GL_CLAMP_FRAGMENT_COLOR_ARB")]
+    FragmentColorARB = 35099,
+
+    [NativeName("GL_CLAMP_READ_COLOR_ARB")]
+    ReadColorARB = 35100,
 }

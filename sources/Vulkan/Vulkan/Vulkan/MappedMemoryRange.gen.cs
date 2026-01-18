@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMappedMemoryRange")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MappedMemoryRange
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public unsafe partial struct MappedMemoryRange
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +70,7 @@ public unsafe partial struct MappedMemoryRange
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDeviceMemory")]
+    [NativeName("memory")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +99,7 @@ public unsafe partial struct MappedMemoryRange
     )]
     public DeviceMemoryHandle Memory;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("offset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +128,7 @@ public unsafe partial struct MappedMemoryRange
     )]
     public ulong Offset;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("size")]
     [SupportedApiProfile(
         "vulkan",
         [

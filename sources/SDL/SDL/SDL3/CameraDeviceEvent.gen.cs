@@ -7,16 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_CameraDeviceEvent")]
 public partial struct CameraDeviceEvent
 {
+    [NativeName("type")]
     public EventType Type;
 
-    [NativeTypeName("Uint32")]
+    [NativeName("reserved")]
     public uint Reserved;
 
-    [NativeTypeName("Uint64")]
+    [NativeName("timestamp")]
     public ulong Timestamp;
 
-    [NativeTypeName("SDL_CameraID")]
+    [NativeName("which")]
     public uint Which;
 }

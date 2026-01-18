@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPerformanceCounterKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceCounterKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -20,6 +22,7 @@ public unsafe partial struct PerformanceCounterKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -30,6 +33,7 @@ public unsafe partial struct PerformanceCounterKHR
     )]
     public void* PNext;
 
+    [NativeName("unit")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -40,6 +44,7 @@ public unsafe partial struct PerformanceCounterKHR
     )]
     public PerformanceCounterUnitKHR Unit;
 
+    [NativeName("scope")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -50,6 +55,7 @@ public unsafe partial struct PerformanceCounterKHR
     )]
     public PerformanceCounterScopeKHR Scope;
 
+    [NativeName("storage")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -60,7 +66,7 @@ public unsafe partial struct PerformanceCounterKHR
     )]
     public PerformanceCounterStorageKHR Storage;
 
-    [NativeTypeName("uint8_t[16]")]
+    [NativeName("uuid")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -69,5 +75,5 @@ public unsafe partial struct PerformanceCounterKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterKHRUuid Uuid;
+    public PerformanceCounterKhrUuid Uuid;
 }

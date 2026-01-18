@@ -7,25 +7,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineViewportSwizzleStateCreateInfoNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineViewportSwizzleStateCreateInfoNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineViewportSwizzleStateCreateFlagsNV")]
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     public uint Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("viewportCount")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     public uint ViewportCount;
 
-    [NativeTypeName("const VkViewportSwizzleNV *")]
+    [NativeName("pViewportSwizzles")]
     [SupportedApiProfile("vulkan", ["VK_NV_viewport_swizzle"])]
     public ViewportSwizzleNV* PViewportSwizzles;
 }

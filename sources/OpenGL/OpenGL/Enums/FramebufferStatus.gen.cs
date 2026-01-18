@@ -7,16 +7,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FramebufferStatus")]
 public enum FramebufferStatus : uint
 {
-    Undefined = unchecked((uint)0x8219),
-    Complete = unchecked((uint)0x8CD5),
-    IncompleteAttachment = unchecked((uint)0x8CD6),
-    IncompleteMissingAttachment = unchecked((uint)0x8CD7),
-    IncompleteDrawBuffer = unchecked((uint)0x8CDB),
-    IncompleteReadBuffer = unchecked((uint)0x8CDC),
-    Unsupported = unchecked((uint)0x8CDD),
-    IncompleteMultisample = unchecked((uint)0x8D56),
-    IncompleteLayerTargets = unchecked((uint)0x8DA8),
+    [NativeName("GL_FRAMEBUFFER_UNDEFINED")]
+    Undefined = 33305,
+
+    [NativeName("GL_FRAMEBUFFER_COMPLETE")]
+    Complete = 36053,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT")]
+    IncompleteAttachment = 36054,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT")]
+    IncompleteMissingAttachment = 36055,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER")]
+    IncompleteDrawBuffer = 36059,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER")]
+    IncompleteReadBuffer = 36060,
+
+    [NativeName("GL_FRAMEBUFFER_UNSUPPORTED")]
+    Unsupported = 36061,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE")]
+    IncompleteMultisample = 36182,
+
+    [NativeName("GL_FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS")]
+    IncompleteLayerTargets = 36264,
 }

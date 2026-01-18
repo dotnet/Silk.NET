@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDevicePrivateDataCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DevicePrivateDataCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -26,7 +28,7 @@ public unsafe partial struct DevicePrivateDataCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -43,7 +45,7 @@ public unsafe partial struct DevicePrivateDataCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("privateDataSlotRequestCount")]
     [SupportedApiProfile(
         "vulkan",
         [

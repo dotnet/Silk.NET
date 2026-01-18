@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkWriteDescriptorSetAccelerationStructureNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct WriteDescriptorSetAccelerationStructureNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -20,7 +22,7 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureNV
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -31,7 +33,7 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureNV
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("accelerationStructureCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -42,7 +44,7 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureNV
     )]
     public uint AccelerationStructureCount;
 
-    [NativeTypeName("const VkAccelerationStructureNV *")]
+    [NativeName("pAccelerationStructures")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_ray_tracing"],
@@ -51,5 +53,5 @@ public unsafe partial struct WriteDescriptorSetAccelerationStructureNV
             "VK_VERSION_1_1",
         ]
     )]
-    public AccelerationStructureNVHandle* PAccelerationStructures;
+    public AccelerationStructureHandleNV* PAccelerationStructures;
 }

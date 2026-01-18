@@ -7,17 +7,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkHeadlessSurfaceCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct HeadlessSurfaceCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public void* PNext;
 
-    [NativeTypeName("VkHeadlessSurfaceCreateFlagsEXT")]
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan", ["VK_EXT_headless_surface"], ImpliesSets = ["VK_KHR_surface"])]
     public uint Flags;
 }

@@ -8,13 +8,14 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkFramebufferCreateFlagBits")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum FramebufferCreateFlags : uint
 {
     None = 0x0,
 
+    [NativeName("VK_FRAMEBUFFER_CREATE_IMAGELESS_BIT")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,6 +30,7 @@ public enum FramebufferCreateFlags : uint
     )]
     ImagelessBit = 0x1,
 
+    [NativeName("VK_FRAMEBUFFER_CREATE_IMAGELESS_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_imageless_framebuffer"],

@@ -14,6 +14,9 @@ public class NameTrimmer : INameTrimmer
     /// <inheritdoc />
     public virtual Version Version => new(3, 0);
 
+    /// <inheritdoc/>
+    public virtual int Order => (int)TrimmerOrder.NameTrimmer;
+
     /// <summary>
     /// Determines whether a second pass without using <see cref="GetTrimmingName"/> is warranted.
     /// </summary>
@@ -32,8 +35,7 @@ public class NameTrimmer : INameTrimmer
     public void Trim(NameTrimmerContext context)
     {
         string? identifiedPrefix = null;
-        Dictionary<string, (string Primary, List<string>? Secondary, string Original)> localNames =
-            null!;
+        List<AugmentedCandidateNames> localNames = null!;
         var nPasses = HasRawPass
             ? HasNaivePass
                 ? 3
@@ -44,17 +46,12 @@ public class NameTrimmer : INameTrimmer
         {
             for (var i = 0; i < nPasses; i++) // try with both trimming name and non trimming name
             {
-                if (context.Names is null)
-                {
-                    continue;
-                }
-
                 // Attempt to identify the hint being used.
                 string? hint = null;
                 foreach (var candidateHint in context.Configuration.GlobalPrefixHints ?? [])
                 {
                     var match = true;
-                    foreach (var name in context.Names.Keys)
+                    foreach (var (name, _) in context.Names.Values)
                     {
                         if (!name.StartsWith(candidateHint, StringComparison.OrdinalIgnoreCase))
                         {
@@ -91,7 +88,7 @@ public class NameTrimmer : INameTrimmer
                 // If we have found a prefix,
                 if (
                     identifiedPrefix.Length > 0
-                    && identifiedPrefix.Length < localNames.Keys.Min(x => x.Length)
+                    && identifiedPrefix.Length < localNames.Min(x => x.TrimmingName.Length)
                 )
                 {
                     // break and use it for trimming!
@@ -101,10 +98,10 @@ public class NameTrimmer : INameTrimmer
                 // If not, do most of them at least start with the hint?
                 if (
                     hint is null
-                    || localNames.Keys.Count(x =>
-                        x.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
+                    || localNames.Count(x =>
+                        x.TrimmingName.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
                     )
-                        >= localNames.Keys.Count / 2
+                        >= localNames.Count / 2
                 )
                 {
                     // Nope, nothing we can do it seems, we've already tried both trimming name and non trimming name...
@@ -130,12 +127,12 @@ public class NameTrimmer : INameTrimmer
         }
 
         identifiedPrefix = identifiedPrefix?.Trim('_');
-        foreach (var (trimmingName, (oldPrimary, secondary, originalName)) in localNames)
+        foreach (var (oldPrimary, secondary, originalName, trimmingName) in localNames)
         {
             foreach (
                 var candidatePrefix in !string.IsNullOrWhiteSpace(identifiedPrefix)
                     ? [identifiedPrefix] // otherwise we fall back to the hints...
-                    : context.Configuration.GlobalPrefixHints ?? Enumerable.Empty<string>()
+                    : context.Configuration.GlobalPrefixHints ?? []
             )
             {
                 if (
@@ -152,21 +149,43 @@ public class NameTrimmer : INameTrimmer
                     continue;
                 }
 
-                var prefixLen = candidatePrefix
-                    .TakeWhile((x, i) => char.ToLower(oldPrimary[i]) == char.ToLower(x))
-                    .Count();
-                if (prefixLen >= oldPrimary.Length)
+                var oldPrimaryI = 0;
+                var isPrefixTooLong = false;
+                for (var candidateI = 0; candidateI < candidatePrefix.Length; candidateI++)
+                {
+                    if (oldPrimaryI >= oldPrimary.Length)
+                    {
+                        isPrefixTooLong = true;
+                        break;
+                    }
+
+                    if (
+                        char.ToLower(candidatePrefix[candidateI])
+                        == char.ToLower(oldPrimary[oldPrimaryI])
+                    )
+                    {
+                        oldPrimaryI++;
+                        continue;
+                    }
+
+                    if (candidatePrefix[candidateI] == '_')
+                    {
+                        oldPrimaryI++;
+                    }
+                }
+
+                if (isPrefixTooLong)
                 {
                     continue;
                 }
 
-                var sec = secondary ?? [];
-                sec.Add(oldPrimary);
-
                 // this was trimmingName originally. given that we're using trimming name to determine a prefix but then
                 // using that prefix on the old primary, this could cause intended behaviour in some cases. there's probably
                 // a better way to do this. (this is working around glDisablei -> glDisable -> Disablei).
-                context.Names![originalName] = (oldPrimary[prefixLen..].Trim('_'), sec);
+                context.Names[originalName] = new CandidateNames(
+                    oldPrimary[oldPrimaryI..].Trim('_'),
+                    secondary
+                );
                 break;
             }
         }
@@ -188,16 +207,15 @@ public class NameTrimmer : INameTrimmer
     /// </param>
     /// <returns>
     /// Null to skip this container outright, empty if no prefix was found, or the prefix otherwise.
-    /// Returns the local names dictionary alongside it as well. That is, the mapping of the results of
-    /// <see cref="GetTrimmingName"/> to the new name.
+    /// <para/>
+    /// A local names list is also returned.
+    /// This is the list of names to be used for the remainder of the trimming process
+    /// and contains the trimming name and original name.
     /// </returns>
-    protected (
-        string Prefix,
-        Dictionary<string, (string Primary, List<string>? Secondary, string Original)>
-    )? GetPrefix(
+    protected (string Prefix, List<AugmentedCandidateNames>)? GetPrefix(
         string? container,
         string? hint,
-        Dictionary<string, (string Primary, List<string>? Secondary)>? names,
+        Dictionary<string, CandidateNames> names,
         Dictionary<string, string>? prefixOverrides,
         HashSet<string>? nonDeterminant,
         bool getTrimmingName,
@@ -205,7 +223,7 @@ public class NameTrimmer : INameTrimmer
     )
     {
         // If the type has no members,
-        if (names is null || names.Count == 0)
+        if (names.Count == 0)
         {
             // skip it
             return null;
@@ -215,10 +233,17 @@ public class NameTrimmer : INameTrimmer
         var containerTrimmingName = getTrimmingName
             ? GetTrimmingName(prefixOverrides, container ?? hint ?? string.Empty, true, hint)
             : container ?? hint ?? string.Empty;
-        var localNames = names.ToDictionary(
-            x => getTrimmingName ? GetTrimmingName(prefixOverrides, x.Key, false, hint) : x.Key,
-            x => (x.Value.Primary, x.Value.Secondary, x.Key)
-        );
+
+        var localNames = names
+            .Select(x => new AugmentedCandidateNames(
+                x.Value.Primary,
+                x.Value.Secondary,
+                x.Key,
+                getTrimmingName
+                    ? GetTrimmingName(prefixOverrides, x.Value.Primary, false, hint)
+                    : x.Value.Primary
+            ))
+            .ToList();
 
         // Set the prefix to the prefix override for this container, if it exists.
         // This is to allow us to handle poorly/inconsistently named containers,
@@ -232,42 +257,68 @@ public class NameTrimmer : INameTrimmer
         // then it will trim ThingsRGB to sRGB and ThingRGB to RGB
         // a case like this is simple to add a special case for in the generator to handle sRGB specially,
         // but see ImageChannelOrder from spirv.h for a more problematic occurrence.
-        var prefix =
+        string prefix;
+        if (
             container is not null
             && (prefixOverrides?.TryGetValue(container, out var @override) ?? false)
-                ? @override
-            : names.Count == 1 && !string.IsNullOrWhiteSpace(containerTrimmingName)
-                ? NameUtils.FindCommonPrefix(
-                    [
-                        names.Keys.First(x => !(nonDeterminant?.Contains(x) ?? false)),
-                        containerTrimmingName,
-                    ],
-                    true,
+        )
+        {
+            // Use the override
+            prefix = @override;
+        }
+        else
+        {
+            if (names.Count == 1)
+            {
+                if (!string.IsNullOrWhiteSpace(containerTrimmingName))
+                {
+                    // Use the member name and its container.
+                    prefix = NameUtils.FindCommonPrefix(
+                        [
+                            names
+                                .First(x => !(nonDeterminant?.Contains(x.Key) ?? false))
+                                .Value.Primary,
+                            containerTrimmingName,
+                        ],
+                        true,
+                        false,
+                        naive
+                    );
+                }
+                else
+                {
+                    // One name. Can't determine prefix.
+                    prefix = "";
+                }
+            }
+            else
+            {
+                // Common case - Find the prefix based on the container's members
+                prefix = NameUtils.FindCommonPrefix(
+                    localNames
+                        .Where(x => !(nonDeterminant?.Contains(x.Original) ?? false))
+                        .Select(x => x.TrimmingName)
+                        .ToList(),
+                    // If naive mode is on and we're trimming type names, allow full matches (method class is
+                    // probably the prefix)
+                    naive && container is null,
                     false,
                     naive
-                )
-            : NameUtils.FindCommonPrefix(
-                localNames
-                    .Where(x => !(nonDeterminant?.Contains(x.Value.Key) ?? false))
-                    .Select(x => x.Key)
-                    .ToList(),
-                // If naive mode is on and we're trimming type names, allow full matches (method class is
-                // probably the prefix)
-                naive && container is null,
-                false,
-                naive
-            );
+                );
+            }
+        }
 
         // If any of the children's trimming name is shorter than the prefix length,
         if (
-            localNames.Keys.Any(x =>
-                x.Length <= prefix.Length && !(nonDeterminant?.Contains(x) ?? false)
+            localNames.Any(x =>
+                x.TrimmingName.Length <= prefix.Length
+                && !(nonDeterminant?.Contains(x.Original) ?? false)
             ) && !string.IsNullOrWhiteSpace(containerTrimmingName)
         )
         {
             // Do a second pass, but put the container name in the loop to see if it makes a difference
             prefix = NameUtils.FindCommonPrefix(
-                localNames.Keys.Concat(Enumerable.Repeat(containerTrimmingName, 1)).ToList(),
+                localNames.Select(x => x.TrimmingName).Append(containerTrimmingName).ToList(),
                 // If naive mode is on and we're trimming type names, allow full matches (method class is probably the
                 // prefix)
                 naive && container is null,
@@ -292,10 +343,10 @@ public class NameTrimmer : INameTrimmer
             {
                 // Trim the end of the prefix to the start of the forbidden trimming
                 // ex:
-                //     word = GL
-                //     prefix = THIS_GL_
+                //     input prefix = THIS_GL_
+                //     forbidden trimming = GL
                 //
-                //     it makes prefix = THIS
+                //     resulting prefix = THIS
                 prefix = prefix[..idx];
             }
         }
@@ -325,8 +376,32 @@ public class NameTrimmer : INameTrimmer
             return name;
         }
 
-        return hint is not null && name.StartsWith(hint, StringComparison.OrdinalIgnoreCase)
-            ? $"{hint}_{name[hint.Length..].Trim('_').LenientUnderscore()}"
-            : name.LenientUnderscore();
+        if (hint is not null && name.StartsWith(hint, StringComparison.OrdinalIgnoreCase))
+        {
+            return $"{hint}_{name[hint.Length..].Trim('_').LenientUnderscore()}";
+        }
+
+        return name.Trim('_').LenientUnderscore();
+    }
+
+    /// <summary>
+    /// Similar to <see cref="CandidateNames"/>, but with some additional information.
+    /// </summary>
+    /// <param name="Primary">The preferred version of the trimmed name.</param>
+    /// <param name="Secondary">The fallback versions of the trimmed name in case the primary does not work.</param>
+    /// <param name="Original">The original, unmodified name.</param>
+    /// <param name="TrimmingName">The name used for trimming purposes.</param>
+    protected record struct AugmentedCandidateNames(
+        string Primary,
+        List<string> Secondary,
+        string Original,
+        string TrimmingName
+    )
+    {
+        /// <summary>
+        /// Formats this instance as a string.
+        /// </summary>
+        public override string ToString() =>
+            $"(Original={Original}, TrimmingName={TrimmingName}, Primary={Primary}, Secondary=[{string.Join(", ", Secondary)}])";
     }
 }

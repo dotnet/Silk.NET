@@ -8,8 +8,10 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("_padding_e__FixedBuffer")]
 [InlineArray(3)]
 public partial struct VirtualJoystickTouchpadDescPadding
 {
+    [NativeName("e0")]
     public ushort E0;
 }

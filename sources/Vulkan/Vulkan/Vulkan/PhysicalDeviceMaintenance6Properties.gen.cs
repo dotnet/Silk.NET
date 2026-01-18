@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMaintenance6Properties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMaintenance6Properties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -23,6 +25,7 @@ public unsafe partial struct PhysicalDeviceMaintenance6Properties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +38,7 @@ public unsafe partial struct PhysicalDeviceMaintenance6Properties
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("blockTexelViewCompatibleMultipleLayers")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +51,7 @@ public unsafe partial struct PhysicalDeviceMaintenance6Properties
     )]
     public uint BlockTexelViewCompatibleMultipleLayers;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxCombinedImageSamplerDescriptorCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -61,7 +64,7 @@ public unsafe partial struct PhysicalDeviceMaintenance6Properties
     )]
     public uint MaxCombinedImageSamplerDescriptorCount;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("fragmentShadingRateClampCombinerInputs")]
     [SupportedApiProfile(
         "vulkan",
         [

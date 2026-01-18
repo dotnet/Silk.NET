@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDescriptorSetLayoutBindingFlagsCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorSetLayoutBindingFlagsCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -28,7 +30,7 @@ public unsafe partial struct DescriptorSetLayoutBindingFlagsCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -46,7 +48,7 @@ public unsafe partial struct DescriptorSetLayoutBindingFlagsCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("bindingCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -64,7 +66,7 @@ public unsafe partial struct DescriptorSetLayoutBindingFlagsCreateInfo
     )]
     public uint BindingCount;
 
-    [NativeTypeName("const VkDescriptorBindingFlags *")]
+    [NativeName("pBindingFlags")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -31,7 +31,10 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <c>Program</c>, <c>Program</c> must be declared in <c>Silk.NET.OpenGL</c>, <c>Silk.NET</c>, or <c>Silk</c>.
 /// </remarks>
 [ModConfiguration<Config>]
-public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, ILogger<TransformHandles> logger) : Mod
+public class TransformHandles(
+    IOptionsSnapshot<TransformHandles.Config> config,
+    ILogger<TransformHandles> logger
+) : Mod
 {
     /// <summary>
     /// The configuration for the <see cref="TransformHandles"/> mod.
@@ -82,10 +85,13 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             foreach (var (fullyQualifiedName, node) in syntaxNodes)
             {
                 var relativePath = $"Handles/{PathForFullyQualified(fullyQualifiedName)}";
-                project = project.AddDocument(
-                    Path.GetFileName(relativePath),
-                    node.NormalizeWhitespace(),
-                    filePath: project.FullPath(relativePath)).Project;
+                project = project
+                    .AddDocument(
+                        Path.GetFileName(relativePath),
+                        node.NormalizeWhitespace(),
+                        filePath: project.FullPath(relativePath)
+                    )
+                    .Project;
             }
 
             // Update compilation
@@ -109,7 +115,9 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             {
                 // The struct is defined in multiple places (eg: partial keyword)
                 // This means we don't know which of the parts to rewrite
-                throw new InvalidOperationException("Struct has more than 1 declaring syntax reference");
+                throw new InvalidOperationException(
+                    "Struct has more than 1 declaring syntax reference"
+                );
             }
 
             var declaringSyntaxReference = handleTypeSymbol.DeclaringSyntaxReferences.Single();
@@ -121,20 +129,24 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         }
 
         // Do the two following transformation to all references of the handle types:
-        // 1. Add -Handle suffix
         // 2. Reduce pointer dimensions
         ctx.SourceProject = project;
-        await LocationTransformationUtils.ModifyAllReferencesAsync(ctx, handleTypes, [
-            new IdentifierRenamingTransformer(handleTypes.Select(t => ((ISymbol)t, GetNewHandleTypeName(t.Name)))),
-            new PointerDimensionReductionTransformer(),
-        ], logger, ct);
+        await LocationTransformationUtils.ModifyAllReferencesAsync(
+            ctx,
+            handleTypes,
+            [new PointerDimensionReductionTransformer()],
+            logger,
+            ct
+        );
         project = ctx.SourceProject;
 
         // Use document IDs from earlier
         var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL);
         foreach (var (originalName, documentId) in handleTypeDocumentIds)
         {
-            var document = project.GetDocument(documentId) ?? throw new InvalidOperationException("Failed to find document");
+            var document =
+                project.GetDocument(documentId)
+                ?? throw new InvalidOperationException("Failed to find document");
 
             var syntaxTree = await document.GetSyntaxTreeAsync(ct);
             if (syntaxTree == null)
@@ -145,10 +157,9 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             var syntaxRoot = await syntaxTree.GetRootAsync(ct);
 
             // Rewrite handle struct to include handle members
-            document = document.WithSyntaxRoot(handleTypeRewriter.Visit(syntaxRoot).NormalizeWhitespace());
-
-            // Rename document to match type name
-            document = document.ReplaceNameAndPath(originalName, GetNewHandleTypeName(originalName));
+            document = document.WithSyntaxRoot(
+                handleTypeRewriter.Visit(syntaxRoot).NormalizeWhitespace()
+            );
 
             project = document.Project;
         }
@@ -156,25 +167,18 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         ctx.SourceProject = project;
 
         return;
-
-        string GetNewHandleTypeName(string name)
-        {
-            // TODO: Hack: This is a temporary fix for trimming _T off of Vulkan handle structs. Remove after implementing the new prettification strategy and things should still work.
-            if (name.EndsWith("_T"))
-            {
-                name = name[..^2];
-            }
-
-            name += "Handle";
-
-            return name;
-        }
     }
 
-    private class MissingHandleTypeDiscoverer(ILogger logger, Compilation compilation, CancellationToken ct) : SymbolVisitor
+    private class MissingHandleTypeDiscoverer(
+        ILogger logger,
+        Compilation compilation,
+        CancellationToken ct
+    ) : SymbolVisitor
     {
-        private readonly HashSet<IErrorTypeSymbol> _nonHandleTypes = new(SymbolEqualityComparer.Default);
-        private readonly Dictionary<IErrorTypeSymbol, string> _missingTypes = new(SymbolEqualityComparer.Default);
+        private readonly HashSet<IErrorTypeSymbol> _nonHandleTypes =
+            new(SymbolEqualityComparer.Default);
+        private readonly Dictionary<IErrorTypeSymbol, string> _missingTypes =
+            new(SymbolEqualityComparer.Default);
 
         private string? _currentNamespace = null;
         private int _pointerTypeDepth = 0;
@@ -187,7 +191,8 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             // We need to find and generate all missing handle types
             // Handle types are types that are only referenced through a pointer
             // We do this by parsing through the list of type errors
-            var typeErrors = compilation.GetDiagnostics(ct)
+            var typeErrors = compilation
+                .GetDiagnostics(ct)
                 .Where(d => d.Id == "CS0246") // Type errors
                 .ToList();
 
@@ -233,7 +238,10 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                         }
                         case MemberDeclarationSyntax memberDeclarationSyntax:
                         {
-                            var symbol = semanticModel.GetDeclaredSymbol(memberDeclarationSyntax, ct);
+                            var symbol = semanticModel.GetDeclaredSymbol(
+                                memberDeclarationSyntax,
+                                ct
+                            );
                             if (symbol != null)
                             {
                                 symbolsFound.Add(symbol);
@@ -257,7 +265,9 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 if (!isSuccess)
                 {
                     // This is to warn of unhandled cases
-                    logger.LogWarning("Failed to find corresponding symbol for type error. There may be an unhandled case in the code");
+                    logger.LogWarning(
+                        "Failed to find corresponding symbol for type error. There may be an unhandled case in the code"
+                    );
                 }
             }
 
@@ -267,7 +277,10 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 Visit(symbol);
             }
 
-            return new Dictionary<IErrorTypeSymbol, string>(_missingTypes.Where(kvp => !_nonHandleTypes.Contains(kvp.Key)), SymbolEqualityComparer.Default);
+            return new Dictionary<IErrorTypeSymbol, string>(
+                _missingTypes.Where(kvp => !_nonHandleTypes.Contains(kvp.Key)),
+                SymbolEqualityComparer.Default
+            );
         }
 
         public override void VisitMethod(IMethodSymbol symbol)
@@ -335,7 +348,9 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             {
                 if (_currentNamespace == null)
                 {
-                    throw new InvalidOperationException($"{nameof(_currentNamespace)} should not be null");
+                    throw new InvalidOperationException(
+                        $"{nameof(_currentNamespace)} should not be null"
+                    );
                 }
 
                 if (_pointerTypeDepth == 0)
@@ -345,7 +360,9 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
 
                 if (_missingTypes.TryGetValue(errorTypeSymbol, out var sharedNamespace))
                 {
-                    _missingTypes[errorTypeSymbol] = NameUtils.FindCommonPrefix([sharedNamespace, _currentNamespace], true, false, true).Trim('.');
+                    _missingTypes[errorTypeSymbol] = NameUtils
+                        .FindCommonPrefix([sharedNamespace, _currentNamespace], true, false, true)
+                        .Trim('.');
                 }
                 else
                 {
@@ -363,10 +380,13 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         /// <param name="typesToGenerate">Map from error type symbol to the namespace the type should be created in.</param>
         /// <returns>Map from the fully qualified name of the generated type to the syntax node containing code for that type.</returns>
         public Dictionary<string, SyntaxNode> GenerateSyntaxNodes(
-            Dictionary<IErrorTypeSymbol, string> typesToGenerate) =>
-            GenerateSyntaxNodes(typesToGenerate
-                .Select(kvp => new KeyValuePair<string, string>(kvp.Key.Name, kvp.Value))
-                .ToDictionary());
+            Dictionary<IErrorTypeSymbol, string> typesToGenerate
+        ) =>
+            GenerateSyntaxNodes(
+                typesToGenerate
+                    .Select(kvp => new KeyValuePair<string, string>(kvp.Key.Name, kvp.Value))
+                    .ToDictionary()
+            );
 
         /// <summary>
         /// Generates a syntax node for each specified type.
@@ -374,7 +394,8 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         /// <param name="missingHandleTypes">Map from type name to the namespace the type should be created in.</param>
         /// <returns>Map from the fully qualified name of the generated type to the syntax node containing code for that type.</returns>
         public Dictionary<string, SyntaxNode> GenerateSyntaxNodes(
-            Dictionary<string, string> missingHandleTypes)
+            Dictionary<string, string> missingHandleTypes
+        )
         {
             var results = new Dictionary<string, SyntaxNode>();
             foreach (var (name, ns) in missingHandleTypes)
@@ -397,7 +418,11 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                                 : FileScopedNamespaceDeclaration(
                                         ModUtils.NamespaceIntoIdentifierName(ns)
                                     )
-                                    .WithMembers(SingletonList<MemberDeclarationSyntax>(structDeclarationSyntax))
+                                    .WithMembers(
+                                        SingletonList<MemberDeclarationSyntax>(
+                                            structDeclarationSyntax
+                                        )
+                                    )
                         )
                     );
             }
@@ -406,7 +431,11 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         }
     }
 
-    private class HandleTypeDiscoverer(Project project, Compilation compilation, CancellationToken ct) : SymbolVisitor
+    private class HandleTypeDiscoverer(
+        Project project,
+        Compilation compilation,
+        CancellationToken ct
+    ) : SymbolVisitor
     {
         private readonly Solution _solution = project.Solution;
 
@@ -430,7 +459,12 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 // For each struct, find its references
                 // Verify that all references are through pointers
                 // Also verify that there is at least one reference through a pointer
-                var references = await SymbolFinder.FindReferencesAsync(structSymbol, _solution, documents, ct);
+                var references = await SymbolFinder.FindReferencesAsync(
+                    structSymbol,
+                    _solution,
+                    documents,
+                    ct
+                );
 
                 var wasReferencedAsPointer = false;
                 var wasReferencedAsNonPointer = false;
@@ -486,7 +520,11 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
             // Find empty structs
             // IsImplicitlyDeclared lets us ignore implicitly declared constructors
             // SpecialType lets us ignore Void and System.RuntimeArgumentHandle
-            if (symbol.TypeKind != TypeKind.Struct || symbol.Members().Any(member => !member.IsImplicitlyDeclared) || symbol.SpecialType != SpecialType.None)
+            if (
+                symbol.TypeKind != TypeKind.Struct
+                || symbol.Members().Any(member => !member.IsImplicitlyDeclared)
+                || symbol.SpecialType != SpecialType.None
+            )
             {
                 return;
             }
@@ -501,9 +539,15 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
         {
             var structName = node.Identifier.Text;
             return node.WithIdentifier(Identifier(structName))
+                .WithAttributeLists(
+                    new SyntaxList<AttributeListSyntax>()
+                        .WithNativeName(structName)
+                        .AddNameSuffix("HandleType", "Handle")
+                )
                 .WithMembers(
                     List(
-                        GetDefaultHandleMembers(structName).Concat(useDSL ? GetDSLHandleMembers(structName) : [])
+                        GetDefaultHandleMembers(structName)
+                            .Concat(useDSL ? GetDSLHandleMembers(structName) : [])
                     )
                 )
                 .WithModifiers(
@@ -516,16 +560,41 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                 );
         }
 
-        private static IEnumerable<MemberDeclarationSyntax> GetDefaultHandleMembers(string structName)
+        private static IEnumerable<MemberDeclarationSyntax> GetDefaultHandleMembers(
+            string structName
+        )
         {
+            var backingType = PointerType(PredefinedType(Token(SyntaxKind.VoidKeyword)));
+
             yield return FieldDeclaration(
                     VariableDeclaration(
-                        PointerType(PredefinedType(Token(SyntaxKind.VoidKeyword))),
+                        backingType,
                         SingletonSeparatedList(VariableDeclarator("Handle"))
                     )
                 )
                 .WithModifiers(
                     TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.ReadOnlyKeyword))
+                );
+
+            yield return ConstructorDeclaration(Identifier(structName))
+                .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                .WithParameterList(
+                    ParameterList(
+                        SingletonSeparatedList(
+                            Parameter(Identifier("handle")).WithType(backingType)
+                        )
+                    )
+                )
+                .WithBody(
+                    Block(
+                        ExpressionStatement(
+                            AssignmentExpression(
+                                SyntaxKind.SimpleAssignmentExpression,
+                                IdentifierName("Handle"),
+                                IdentifierName("handle")
+                            )
+                        )
+                    )
                 );
 
             yield return MethodDeclaration(
@@ -640,7 +709,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                             {
                                 Parameter(Identifier("left")).WithType(IdentifierName(structName)),
                                 Token(SyntaxKind.CommaToken),
-                                Parameter(Identifier("right")).WithType(IdentifierName(structName))
+                                Parameter(Identifier("right")).WithType(IdentifierName(structName)),
                             }
                         )
                     )
@@ -675,7 +744,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                         SeparatedList(
                             [
                                 Parameter(Identifier("left")).WithType(IdentifierName(structName)),
-                                Parameter(Identifier("right")).WithType(IdentifierName(structName))
+                                Parameter(Identifier("right")).WithType(IdentifierName(structName)),
                             ]
                         )
                     )
@@ -740,7 +809,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                             {
                                 Parameter(Identifier("left")).WithType(IdentifierName(structName)),
                                 Token(SyntaxKind.CommaToken),
-                                Parameter(Identifier("right")).WithType(IdentifierName("NullPtr"))
+                                Parameter(Identifier("right")).WithType(IdentifierName("NullPtr")),
                             }
                         )
                     )
@@ -775,7 +844,7 @@ public class TransformHandles(IOptionsSnapshot<TransformHandles.Config> config, 
                         SeparatedList(
                             [
                                 Parameter(Identifier("left")).WithType(IdentifierName(structName)),
-                                Parameter(Identifier("right")).WithType(IdentifierName("NullPtr"))
+                                Parameter(Identifier("right")).WithType(IdentifierName("NullPtr")),
                             ]
                         )
                     )

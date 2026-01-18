@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceFaultAddressInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public partial struct DeviceFaultAddressInfoEXT
 {
+    [NativeName("addressType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -21,7 +23,7 @@ public partial struct DeviceFaultAddressInfoEXT
     )]
     public DeviceFaultAddressTypeEXT AddressType;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("reportedAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -32,7 +34,7 @@ public partial struct DeviceFaultAddressInfoEXT
     )]
     public ulong ReportedAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("addressPrecision")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],

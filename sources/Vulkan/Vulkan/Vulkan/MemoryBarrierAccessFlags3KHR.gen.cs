@@ -7,21 +7,23 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMemoryBarrierAccessFlags3KHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MemoryBarrierAccessFlags3KHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     public void* PNext;
 
-    [NativeTypeName("VkAccessFlags3KHR")]
+    [NativeName("srcAccessMask3")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     public AccessFlags3KHR SrcAccessMask3;
 
-    [NativeTypeName("VkAccessFlags3KHR")]
+    [NativeName("dstAccessMask3")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance8"], ImpliesSets = ["VK_VERSION_1_1"])]
     public AccessFlags3KHR DstAccessMask3;
 }

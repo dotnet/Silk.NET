@@ -70,7 +70,8 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
         foreach (var docId in project.DocumentIds)
         {
             var doc =
-                project.GetDocument(docId) ?? throw new InvalidOperationException("Document missing");
+                project.GetDocument(docId)
+                ?? throw new InvalidOperationException("Document missing");
             var (fname, node) = (doc.RelativePath(), await doc.GetSyntaxRootAsync(ct));
             if (fname is null)
             {
@@ -92,26 +93,30 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             foreach (var newStruct in rewriter.ExtractedNestedStructs)
             {
                 // Add new documents for each nested struct
-                 project = project.AddDocument(
-                    $"{newStruct.Identifier}.gen.cs",
-                    CompilationUnit()
-                        .WithMembers(
-                            rewriter.Namespace is not null
-                                ? SingletonList<MemberDeclarationSyntax>(
-                                    FileScopedNamespaceDeclaration(
-                                            ModUtils.NamespaceIntoIdentifierName(rewriter.Namespace)
-                                        )
-                                        .WithMembers(
-                                            SingletonList<MemberDeclarationSyntax>(newStruct)
-                                        )
-                                )
-                                : SingletonList<MemberDeclarationSyntax>(newStruct)
+                project = project
+                    .AddDocument(
+                        $"{newStruct.Identifier}.gen.cs",
+                        CompilationUnit()
+                            .WithMembers(
+                                rewriter.Namespace is not null
+                                    ? SingletonList<MemberDeclarationSyntax>(
+                                        FileScopedNamespaceDeclaration(
+                                                ModUtils.NamespaceIntoIdentifierName(
+                                                    rewriter.Namespace
+                                                )
+                                            )
+                                            .WithMembers(
+                                                SingletonList<MemberDeclarationSyntax>(newStruct)
+                                            )
+                                    )
+                                    : SingletonList<MemberDeclarationSyntax>(newStruct)
+                            )
+                            .NormalizeWhitespace(),
+                        filePath: project.FullPath(
+                            $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
                         )
-                        .NormalizeWhitespace(),
-                    filePath: project.FullPath(
-                        $"{fname.AsSpan()[..fname.LastIndexOf('/')]}/{newStruct.Identifier}.gen.cs"
                     )
-                ).Project;
+                    .Project;
             }
 
             rewriter.File = null;
@@ -124,25 +129,21 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
         var extractedFunctionPointers = rewriter
             .FunctionPointerTypes.Values //.Where(x => x.IsUnique)
             .SelectMany(x =>
-                (IEnumerable<(
-                    MemberDeclarationSyntax,
-                    string,
-                    HashSet<string>,
-                    HashSet<string>
-                    )>) [
-                    (
-                        x.Delegate,
-                        x.Delegate.Identifier.ToString(),
-                        x.ReferencingFileDirs,
-                        x.ReferencingNamespaces
-                    ),
-                    (
-                        x.Pfn,
-                        x.Pfn.Identifier.ToString(),
-                        x.ReferencingFileDirs,
-                        x.ReferencingNamespaces
-                    ),
-                ]
+                (IEnumerable<(MemberDeclarationSyntax, string, HashSet<string>, HashSet<string>)>)
+                    [
+                        (
+                            x.Delegate,
+                            x.Delegate.Identifier.ToString(),
+                            x.ReferencingFileDirs,
+                            x.ReferencingNamespaces
+                        ),
+                        (
+                            x.Pfn,
+                            x.Pfn.Identifier.ToString(),
+                            x.ReferencingFileDirs,
+                            x.ReferencingNamespaces
+                        ),
+                    ]
             )
             .Concat(
                 enums.Select(x =>
@@ -153,7 +154,8 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                         x.Value.Item3
                     )
                 )
-            ).ToList();
+            )
+            .ToList();
 
         foreach (var (typeDecl, identifier, fileDirs, namespaces) in extractedFunctionPointers)
         {
@@ -508,13 +510,26 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                 var (pfn, @delegate) = CreateFunctionPointerTypes(
                     currentNativeTypeName,
                     $"{currentNativeTypeName}Delegate",
-                    currentNativeTypeName == fallback
-                        ? SingletonList(
-                            AttributeList(
-                                SingletonSeparatedList(Attribute(IdentifierName("Transformed")))
+                    (
+                        currentNativeTypeName == fallback
+                            ? SingletonList(
+                                AttributeList(
+                                    SingletonSeparatedList(Attribute(IdentifierName("Transformed")))
+                                )
                             )
-                        )
-                        : default,
+                            : default
+                    ).WithNativeName(currentNativeTypeName),
+                    (
+                        currentNativeTypeName == fallback
+                            ? SingletonList(
+                                AttributeList(
+                                    SingletonSeparatedList(Attribute(IdentifierName("Transformed")))
+                                )
+                            )
+                            : default
+                    )
+                        .WithNativeName(currentNativeTypeName)
+                        .AddNameSuffix("FunctionPointerDelegateType", "Delegate"),
                     node
                 );
                 FunctionPointerTypes[currentNativeTypeName] = pfnInfo = (pfn, @delegate, [], []);
@@ -754,7 +769,8 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
     ) CreateFunctionPointerTypes(
         string pfnName,
         string delegateName,
-        SyntaxList<AttributeListSyntax> attrLists,
+        SyntaxList<AttributeListSyntax> pfnAttrLists,
+        SyntaxList<AttributeListSyntax> delegateAttrLists,
         FunctionPointerTypeSyntax rawPfn
     )
     {
@@ -774,7 +790,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                     )
                 )
             )
-            .WithAttributeLists(attrLists)
+            .WithAttributeLists(pfnAttrLists)
             .WithMembers(
                 List<MemberDeclarationSyntax>(
                     [
@@ -935,7 +951,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
             .WithModifiers(
                 TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.UnsafeKeyword))
             )
-            .WithAttributeLists(attrLists)
+            .WithAttributeLists(delegateAttrLists)
             .WithParameterList(
                 ParameterList(
                     SeparatedList(

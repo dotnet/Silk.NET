@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkShaderModuleCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ShaderModuleCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +36,7 @@ public unsafe partial struct ShaderModuleCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -58,7 +60,7 @@ public unsafe partial struct ShaderModuleCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkShaderModuleCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -82,7 +84,7 @@ public unsafe partial struct ShaderModuleCreateInfo
     )]
     public ShaderModuleCreateFlags Flags;
 
-    [NativeTypeName("size_t")]
+    [NativeName("codeSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -106,7 +108,7 @@ public unsafe partial struct ShaderModuleCreateInfo
     )]
     public nuint CodeSize;
 
-    [NativeTypeName("const uint32_t *")]
+    [NativeName("pCode")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDynamicRenderingLocalReadFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDynamicRenderingLocalReadFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDeviceDynamicRenderingLocalReadFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_GRAPHICS_VERSION_1_4", "VK_VERSION_1_4"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDeviceDynamicRenderingLocalReadFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("dynamicRenderingLocalRead")]
     [SupportedApiProfile("vulkan", ["VK_VERSION_1_4"], MinVersion = "1.4")]
     public uint DynamicRenderingLocalRead;
 }

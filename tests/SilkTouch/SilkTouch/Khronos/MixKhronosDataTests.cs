@@ -2,30 +2,25 @@ using System.IO.Compression;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging.Abstractions;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.SilkTouch.Mods;
 using Silk.NET.SilkTouch.Mods.Metadata;
-using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-using NameTrimmer = Silk.NET.SilkTouch.Naming.NameTrimmer;
 
 namespace Silk.NET.SilkTouch.UnitTests.Khronos;
 
-[TestFixture]
 public class MixKhronosDataTests
 {
-    struct Options : IOptionsSnapshot<MixKhronosData.Configuration>
+    static MixKhronosDataTests()
     {
-        public required MixKhronosData.Configuration Value { get; init; }
-
-        public MixKhronosData.Configuration Get(string? name) => Value;
+        if (!VerifyDiffPlex.Initialized)
+        {
+            VerifyDiffPlex.Initialize();
+        }
     }
-
-    [ModuleInitializer]
-    public static void Initialize() => VerifyDiffPlex.Initialize();
 
     public static string TestFile(string name, [CallerFilePath] string? fPath = null) =>
         Path.Combine(
@@ -50,18 +45,19 @@ public class MixKhronosDataTests
         IEnumerable<string> files = ["gl.xml", "wgl.xml", "glx.xml", "cl.xml", "vk.xml"];
         return files
             .ToAsyncEnumerable()
-            .Select(async (x, ct) =>
-            {
-                var mod = new MixKhronosData(
-                    new NullLogger<MixKhronosData>(),
-                    new Options
-                    {
-                        Value = new MixKhronosData.Configuration { SpecPath = TestFile(x) },
-                    }
-                );
-                await mod.InitializeAsync(new DummyModContext(), ct);
-                return (object[])[x, mod.Jobs[""]];
-            });
+            .Select(
+                async (x, ct) =>
+                {
+                    var mod = new MixKhronosData(
+                        new NullLogger<MixKhronosData>(),
+                        new DummyOptions<MixKhronosData.Configuration>(
+                            new MixKhronosData.Configuration { SpecPath = TestFile(x) }
+                        )
+                    );
+                    await mod.InitializeAsync(new DummyModContext(), ct);
+                    return (object[])[x, mod.Jobs[""]];
+                }
+            );
     }
 
     private static IAsyncEnumerable<object[]> EnumTestCases() =>
@@ -69,22 +65,23 @@ public class MixKhronosDataTests
 
     private static IAsyncEnumerable<object[]> RegressionTestCases() =>
         TestCases()
-            .Select(async (object[] s, CancellationToken ct) =>
-                s[0] is "gl.xml" or "cl.xml"
-                    ? (object[])
-                        [
-                            s[0],
-                            s[1],
-                            await Task.WhenAll(
-                                TestFiles(
-                                        new Regex(
-                                            $@"regression\.2\.21\.{((string)s[0])[..^4]}.*\.json\.gz"
+            .Select(
+                async (object[] s, CancellationToken ct) =>
+                    s[0] is "gl.xml" or "cl.xml"
+                        ? (object[])
+                            [
+                                s[0],
+                                s[1],
+                                await Task.WhenAll(
+                                    TestFiles(
+                                            new Regex(
+                                                $@"regression\.2\.21\.{((string)s[0])[..^4]}.*\.json\.gz"
+                                            )
                                         )
-                                    )
-                                    .Select(ReadProfile)
-                            ),
-                        ]
-                    : null
+                                        .Select(ReadProfile)
+                                ),
+                            ]
+                        : null
             )
             .OfType<object[]>();
 
@@ -298,110 +295,177 @@ public class MixKhronosDataTests
         );
 
     [Test]
-    public void OverzealousNameTrimming()
+    public async Task IdentifiesVendorSuffixes()
     {
-        // This had an issue where GL_PIXEL_COUNT_NV and GL_PIXEL_COUNT_AVAILABLE_NV resulted in a trimming name of
-        // GL_PIXEL_COUNT_ resulting in GL_PIXEL_COUNT_NV becoming _NV which would in turn be turned into nothing.
-        var baseTrimmer = new NameTrimmer();
-        var uut = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "OcclusionQueryParameterNameNV.gen.cs",
+                """
+                public enum OcclusionQueryParameterNameNV
+                {
+                    GL_PIXEL_COUNT_NV = 34918,
+                    GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+
+        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
             Jobs =
             {
                 ["OpenGL"] = new MixKhronosData.JobData
                 {
-                    Configuration = new MixKhronosData.Configuration
-                    {
-                        UseExtensionVendorTrimmings = MixKhronosData
-                            .ExtensionVendorTrimmingMode
-                            .None,
-                    },
+                    Configuration = new MixKhronosData.Configuration(),
                     Vendors = ["NV"],
-                    Groups =
-                    {
-                        {
-                            "OcclusionQueryParameterNameNV",
-                            new MixKhronosData.EnumGroup(
-                                "OcclusionQueryParameterNameNV",
-                                "uint",
-                                [],
-                                false,
-                                "NV",
-                                "Silk.NET.OpenGL"
-                            )
-                        },
-                    },
                 },
             },
         };
-        var names = new Dictionary<string, (string, List<string>?)>
-        {
-            { "GL_PIXEL_COUNT_NV", ("GL_PIXEL_COUNT_NV", []) },
-            { "GL_PIXEL_COUNT_AVAILABLE_NV", ("GL_PIXEL_COUNT_AVAILABLE_NV", []) },
-        };
-        var ctx = new NameTrimmerContext
-        {
-            Container = "OcclusionQueryParameterNameNV",
-            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
-            Names = names,
-            JobKey = "OpenGL",
-        };
-        baseTrimmer.Trim(ctx);
-        uut.Trim(ctx);
-        Assert.That(names["GL_PIXEL_COUNT_NV"].Item1, Is.EqualTo("PixelCount"));
-        Assert.That(names["GL_PIXEL_COUNT_AVAILABLE_NV"].Item1, Is.EqualTo("PixelCountAvailable"));
+
+        await mixKhronosData.ExecuteAsync(context);
+
+        // There should be 3 NV suffixes identified
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
     }
 
     [Test]
-    public void OverzealousNameTrimmingFixupIsNotOverzealousForOpenAL()
+    public async Task IdentifiesImpliedVendorSuffixes()
     {
-        var baseTrimmer = new NameTrimmer();
-        var uut = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "OcclusionQueryParameterNameNV.gen.cs",
+                """
+                public enum OcclusionQueryParameterNameNV
+                {
+                    GL_PIXEL_COUNT_NV = 34918,
+                    GL_PIXEL_COUNT_AVAILABLE_NV = 34919,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+
+        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
         {
             Jobs =
             {
-                ["OpenAL"] = new MixKhronosData.JobData
+                ["OpenGL"] = new MixKhronosData.JobData
                 {
-                    Configuration = new MixKhronosData.Configuration
+                    Configuration = new MixKhronosData.Configuration()
                     {
-                        UseExtensionVendorTrimmings = MixKhronosData
-                            .ExtensionVendorTrimmingMode
-                            .None,
+                        IdentifyEnumMemberImpliedVendors = true,
                     },
-                    Vendors = ["SOFT"],
+                    Vendors = ["NV"],
+                },
+            },
+        };
+
+        await mixKhronosData.ExecuteAsync(context);
+
+        // The NV suffix on the type name should be identified as KhronosVendor
+        // The NV suffixes on the member names should be identified as KhronosImpliedVendor
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task IdentifiesNonExclusiveVendorSuffixes()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "BufferUsageARB.gen.cs",
+                """
+                public enum BufferUsageARB : uint
+                {
+                    GL_STREAM_DRAW = 35040,
+                    GL_STREAM_READ = 35041,
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+
+        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        {
+            Jobs =
+            {
+                ["OpenGL"] = new MixKhronosData.JobData
+                {
+                    Configuration = new MixKhronosData.Configuration()
+                    {
+                        IdentifyEnumTypeNonExclusiveVendors = true,
+                    },
+                    Vendors = ["ARB"],
+                },
+            },
+        };
+
+        await mixKhronosData.ExecuteAsync(context);
+
+        // The ARB suffix on the type name should be identified as KhronosNonExclusiveVendor
+        // This is because the enum group contains core enums
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public async Task IdentifiesNamespaceEnumPrefix()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "GLEnum.gen.cs",
+                """
+                public enum GLEnum { }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { JobKey = "OpenGL", SourceProject = project };
+
+        var mixKhronosData = new MixKhronosData(NullLogger<MixKhronosData>.Instance, null!)
+        {
+            Jobs =
+            {
+                ["OpenGL"] = new MixKhronosData.JobData
+                {
+                    Configuration = new MixKhronosData.Configuration()
+                    {
+                        IdentifyEnumTypeNonExclusiveVendors = true,
+                    },
+                    Vendors = ["ARB"],
                     Groups =
                     {
                         {
-                            "VocalMorpherPhoneme",
+                            "GLEnum",
                             new MixKhronosData.EnumGroup(
-                                "VocalMorpherPhoneme",
-                                "uint",
+                                "GLEnum",
+                                "GLEnum",
+                                "Glenum",
                                 [],
                                 false,
                                 null,
-                                "Silk.NET.OpenAL"
+                                "GL"
                             )
                         },
                     },
                 },
             },
         };
-        var names = new Dictionary<string, (string, List<string>?)>
-        {
-            { "AL_VOCAL_MORPHER_PHONEME_A", ("AL_VOCAL_MORPHER_PHONEME_A", null) },
-            { "AL_VOCAL_MORPHER_PHONEME_E", ("AL_VOCAL_MORPHER_PHONEME_E", null) },
-            { "AL_VOCAL_MORPHER_PHONEME_I", ("AL_VOCAL_MORPHER_PHONEME_I", null) },
-        };
-        var ctx = new NameTrimmerContext
-        {
-            Container = "VocalMorpherPhoneme",
-            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["al"] },
-            Names = names,
-            JobKey = "OpenAL",
-        };
-        baseTrimmer.Trim(ctx);
-        uut.Trim(ctx);
-        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_A"].Item1, Is.EqualTo("A"));
-        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_E"].Item1, Is.EqualTo("E"));
-        Assert.That(names["AL_VOCAL_MORPHER_PHONEME_I"].Item1, Is.EqualTo("I"));
+
+        await mixKhronosData.ExecuteAsync(context);
+
+        // The ARB suffix on the type name should be identified as KhronosNonExclusiveVendor
+        // This is because the enum group contains core enums
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
     }
 }

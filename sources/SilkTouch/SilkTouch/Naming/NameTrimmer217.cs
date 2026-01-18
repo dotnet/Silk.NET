@@ -13,6 +13,9 @@ public class NameTrimmer217 : NameTrimmer
     /// <inheritdoc />
     public override Version Version => new(2, 17);
 
+    /// <inheritdoc/>
+    public override int Order => (int)TrimmerOrder.NameTrimmer217;
+
     /// <inheritdoc />
     protected override bool HasRawPass => false;
 

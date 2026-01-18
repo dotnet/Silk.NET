@@ -8,14 +8,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("_combinerOps_e__FixedBuffer")]
 [InlineArray(2)]
-[SupportedApiProfile(
-    "vulkan",
-    ["VK_NV_fragment_shading_rate_enums"],
-    ImpliesSets = ["VK_KHR_fragment_shading_rate"]
-)]
+[SupportedApiProfile("vulkan")]
 public partial struct PipelineFragmentShadingRateEnumStateCreateInfoNVCombinerOps
 {
+    [NativeName("e0")]
     [SupportedApiProfile("vulkan")]
     public FragmentShadingRateCombinerOpKHR E0;
 }

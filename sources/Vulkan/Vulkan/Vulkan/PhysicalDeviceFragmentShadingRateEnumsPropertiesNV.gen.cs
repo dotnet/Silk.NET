@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_fragment_shading_rate_enums"],
@@ -17,6 +19,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_fragment_shading_rate_enums"],
@@ -24,6 +27,7 @@ public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
     )]
     public void* PNext;
 
+    [NativeName("maxFragmentShadingRateInvocationCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_fragment_shading_rate_enums"],

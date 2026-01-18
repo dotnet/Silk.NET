@@ -10,13 +10,24 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("DebugSourceEXT")]
 public enum DebugSourceEXT : uint
 {
-    DontCare = unchecked((uint)0x0002),
-    DebugSourceApi = unchecked((uint)0x19B5),
-    DebugSourceAudioSystem = unchecked((uint)0x19B6),
-    DebugSourceThirdParty = unchecked((uint)0x19B7),
-    DebugSourceApplication = unchecked((uint)0x19B8),
-    DebugSourceOther = unchecked((uint)0x19B9),
+    [NativeName("AL_DONT_CARE_EXT")]
+    DontCare = 2,
+
+    [NativeName("AL_DEBUG_SOURCE_API_EXT")]
+    DebugSourceApi = 6581,
+
+    [NativeName("AL_DEBUG_SOURCE_AUDIO_SYSTEM_EXT")]
+    DebugSourceAudioSystem = 6582,
+
+    [NativeName("AL_DEBUG_SOURCE_THIRD_PARTY_EXT")]
+    DebugSourceThirdParty = 6583,
+
+    [NativeName("AL_DEBUG_SOURCE_APPLICATION_EXT")]
+    DebugSourceApplication = 6584,
+
+    [NativeName("AL_DEBUG_SOURCE_OTHER_EXT")]
+    DebugSourceOther = 6585,
 }

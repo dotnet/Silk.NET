@@ -1,0 +1,7 @@
+﻿public enum InternalFormat
+{
+    [NameAffix("Suffix", "KhronosVendor", "ARB")]
+    Rgba32FARB = 34836,
+    [NameAffix("Suffix", "KhronosVendor", "ARB")]
+    Rgb32FARB = 34837,
+}

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_primitives_generated_query"],
@@ -18,6 +20,7 @@ public unsafe partial struct PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_primitives_generated_query"],
@@ -25,7 +28,7 @@ public unsafe partial struct PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("primitivesGeneratedQuery")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_primitives_generated_query"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
     )]
     public uint PrimitivesGeneratedQuery;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("primitivesGeneratedQueryWithRasterizerDiscard")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_primitives_generated_query"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
     )]
     public uint PrimitivesGeneratedQueryWithRasterizerDiscard;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("primitivesGeneratedQueryWithNonZeroStreams")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_primitives_generated_query"],

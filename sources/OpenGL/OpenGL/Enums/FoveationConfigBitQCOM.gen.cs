@@ -7,10 +7,18 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("FoveationConfigBitQCOM")]
+[Flags]
 public enum FoveationConfigBitQCOM : uint
 {
-    EnableBit = unchecked((uint)0x00000001),
-    ScaledBinMethodBit = unchecked((uint)0x00000002),
-    SubsampledLayoutMethodBit = unchecked((uint)0x00000004),
+    None = 0x0,
+
+    [NativeName("GL_FOVEATION_ENABLE_BIT_QCOM")]
+    EnableBit = 0x1,
+
+    [NativeName("GL_FOVEATION_SCALED_BIN_METHOD_BIT_QCOM")]
+    ScaledBinMethodBit = 0x2,
+
+    [NativeName("GL_FOVEATION_SUBSAMPLED_LAYOUT_METHOD_BIT_QCOM")]
+    SubsampledLayoutMethodBit = 0x4,
 }

@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("TriangleFace")]
 public enum TriangleFace : uint
 {
-    Front = unchecked((uint)0x0404),
-    Back = unchecked((uint)0x0405),
-    FrontAndBack = unchecked((uint)0x0408),
+    [NativeName("GL_FRONT")]
+    Front = 1028,
+
+    [NativeName("GL_BACK")]
+    Back = 1029,
+
+    [NativeName("GL_FRONT_AND_BACK")]
+    FrontAndBack = 1032,
 }

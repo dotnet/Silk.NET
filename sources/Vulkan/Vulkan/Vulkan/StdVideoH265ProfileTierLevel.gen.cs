@@ -8,15 +8,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoH265ProfileTierLevel")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265ProfileTierLevel
 {
+    [NativeName("flags")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ProfileTierLevelFlags Flags;
 
+    [NativeName("general_profile_idc")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265ProfileIdc GeneralProfileIdc;
 
+    [NativeName("general_level_idc")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH265LevelIdc GeneralLevelIdc;
 }

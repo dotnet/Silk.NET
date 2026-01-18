@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDataGraphProcessingEngineARM")]
 [SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceDataGraphProcessingEngineARM
 {
+    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -17,7 +19,7 @@ public partial struct PhysicalDeviceDataGraphProcessingEngineARM
     )]
     public PhysicalDeviceDataGraphProcessingEngineTypeARM Type;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("isForeign")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

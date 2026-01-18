@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -22,6 +24,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("deviceGeneratedCommands")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_NV_device_generated_commands"],
@@ -41,7 +44,7 @@ public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesEXT
     )]
     public uint DeviceGeneratedCommands;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("dynamicGeneratedPipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

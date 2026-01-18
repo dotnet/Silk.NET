@@ -7,41 +7,42 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_StorageInterface")]
 public unsafe partial struct StorageInterface
 {
-    [NativeTypeName("Uint32")]
+    [NativeName("version")]
     public uint Version;
 
-    [NativeTypeName("bool (*)(void *)")]
+    [NativeName("close")]
     public StorageInterfaceClose Close;
 
-    [NativeTypeName("bool (*)(void *)")]
+    [NativeName("ready")]
     public StorageInterfaceReady Ready;
 
-    [NativeTypeName("bool (*)(void *, const char *, SDL_EnumerateDirectoryCallback, void *)")]
+    [NativeName("enumerate")]
     public StorageInterfaceEnumerate Enumerate;
 
-    [NativeTypeName("bool (*)(void *, const char *, SDL_PathInfo *)")]
+    [NativeName("info")]
     public StorageInterfaceInfo Info;
 
-    [NativeTypeName("bool (*)(void *, const char *, void *, Uint64)")]
+    [NativeName("read_file")]
     public StorageInterfaceReadFile ReadFile;
 
-    [NativeTypeName("bool (*)(void *, const char *, const void *, Uint64)")]
+    [NativeName("write_file")]
     public StorageInterfaceWriteFile WriteFile;
 
-    [NativeTypeName("bool (*)(void *, const char *)")]
+    [NativeName("mkdir")]
     public StorageInterfaceMkdir Mkdir;
 
-    [NativeTypeName("bool (*)(void *, const char *)")]
+    [NativeName("remove")]
     public StorageInterfaceRemove Remove;
 
-    [NativeTypeName("bool (*)(void *, const char *, const char *)")]
+    [NativeName("rename")]
     public StorageInterfaceRename Rename;
 
-    [NativeTypeName("bool (*)(void *, const char *, const char *)")]
+    [NativeName("copy")]
     public StorageInterfaceCopy Copy;
 
-    [NativeTypeName("Uint64 (*)(void *)")]
+    [NativeName("space_remaining")]
     public StorageInterfaceSpaceRemaining SpaceRemaining;
 }

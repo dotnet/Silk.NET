@@ -8,35 +8,39 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkTensorDescriptionARM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct TensorDescriptionARM
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public void* PNext;
 
+    [NativeName("tiling")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorTilingARM Tiling;
 
+    [NativeName("format")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public Format Format;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("dimensionCount")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public uint DimensionCount;
 
-    [NativeTypeName("const int64_t *")]
+    [NativeName("pDimensions")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public long* PDimensions;
 
-    [NativeTypeName("const int64_t *")]
+    [NativeName("pStrides")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public long* PStrides;
 
-    [NativeTypeName("VkTensorUsageFlagsARM")]
+    [NativeName("usage")]
     [SupportedApiProfile("vulkan", ["VK_ARM_tensors"], ImpliesSets = ["VK_VERSION_1_3"])]
     public TensorUsageFlagsARM Usage;
 }

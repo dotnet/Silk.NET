@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("QueryCounterTarget")]
 public enum QueryCounterTarget : uint
 {
-    Timestamp = unchecked((uint)0x8E28),
-    TimestampEXT = unchecked((uint)0x8E28),
+    [NativeName("GL_TIMESTAMP")]
+    Timestamp = 36392,
+
+    [NativeName("GL_TIMESTAMP_EXT")]
+    TimestampEXT = 36392,
 }

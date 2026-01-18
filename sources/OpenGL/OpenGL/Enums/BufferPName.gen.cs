@@ -7,20 +7,45 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("BufferPNameARB")]
 public enum BufferPName : uint
 {
-    Size = unchecked((uint)0x8764),
-    Usage = unchecked((uint)0x8765),
-    Access = unchecked((uint)0x88BB),
-    Mapped = unchecked((uint)0x88BC),
-    AccessFlags = unchecked((uint)0x911F),
-    MapLength = unchecked((uint)0x9120),
-    MapOffset = unchecked((uint)0x9121),
-    ImmutableStorage = unchecked((uint)0x821F),
-    StorageFlags = unchecked((uint)0x8220),
-    SizeARB = unchecked((uint)0x8764),
-    UsageARB = unchecked((uint)0x8765),
-    AccessARB = unchecked((uint)0x88BB),
-    MappedARB = unchecked((uint)0x88BC),
+    [NativeName("GL_BUFFER_SIZE")]
+    Size = 34660,
+
+    [NativeName("GL_BUFFER_USAGE")]
+    Usage = 34661,
+
+    [NativeName("GL_BUFFER_ACCESS")]
+    Access = 35003,
+
+    [NativeName("GL_BUFFER_MAPPED")]
+    Mapped = 35004,
+
+    [NativeName("GL_BUFFER_ACCESS_FLAGS")]
+    AccessFlags = 37151,
+
+    [NativeName("GL_BUFFER_MAP_LENGTH")]
+    MapLength = 37152,
+
+    [NativeName("GL_BUFFER_MAP_OFFSET")]
+    MapOffset = 37153,
+
+    [NativeName("GL_BUFFER_IMMUTABLE_STORAGE")]
+    ImmutableStorage = 33311,
+
+    [NativeName("GL_BUFFER_STORAGE_FLAGS")]
+    StorageFlags = 33312,
+
+    [NativeName("GL_BUFFER_SIZE_ARB")]
+    SizeARB = 34660,
+
+    [NativeName("GL_BUFFER_USAGE_ARB")]
+    UsageARB = 34661,
+
+    [NativeName("GL_BUFFER_ACCESS_ARB")]
+    AccessARB = 35003,
+
+    [NativeName("GL_BUFFER_MAPPED_ARB")]
+    MappedARB = 35004,
 }

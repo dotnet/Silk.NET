@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSparseImageMemoryRequirements")]
 [SupportedApiProfile("vulkan")]
 public partial struct SparseImageMemoryRequirements
 {
+    [NativeName("formatProperties")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public partial struct SparseImageMemoryRequirements
     )]
     public SparseImageFormatProperties FormatProperties;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("imageMipTailFirstLod")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +70,7 @@ public partial struct SparseImageMemoryRequirements
     )]
     public uint ImageMipTailFirstLod;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("imageMipTailSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +99,7 @@ public partial struct SparseImageMemoryRequirements
     )]
     public ulong ImageMipTailSize;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("imageMipTailOffset")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +128,7 @@ public partial struct SparseImageMemoryRequirements
     )]
     public ulong ImageMipTailOffset;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("imageMipTailStride")]
     [SupportedApiProfile(
         "vulkan",
         [

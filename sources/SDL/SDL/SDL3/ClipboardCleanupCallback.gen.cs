@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_ClipboardCleanupCallback")]
 public readonly unsafe struct ClipboardCleanupCallback : IDisposable
 {
     private readonly void* Pointer;

@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkVideoEncodeH265QuantizationMapCapabilitiesKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct VideoEncodeH265QuantizationMapCapabilitiesKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265", "VK_KHR_video_encode_quantization_map"],
@@ -22,6 +24,7 @@ public unsafe partial struct VideoEncodeH265QuantizationMapCapabilitiesKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265", "VK_KHR_video_encode_quantization_map"],
@@ -33,7 +36,7 @@ public unsafe partial struct VideoEncodeH265QuantizationMapCapabilitiesKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("minQpDelta")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265", "VK_KHR_video_encode_quantization_map"],
@@ -45,7 +48,7 @@ public unsafe partial struct VideoEncodeH265QuantizationMapCapabilitiesKHR
     )]
     public int MinQpDelta;
 
-    [NativeTypeName("int32_t")]
+    [NativeName("maxQpDelta")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_h265", "VK_KHR_video_encode_quantization_map"],

@@ -7,15 +7,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("ContextFlagMask")]
+[Flags]
 public enum ContextFlagMask : uint
 {
-    ForwardCompatibleBit = unchecked((uint)0x00000001),
-    DebugBit = unchecked((uint)0x00000002),
-    RobustAccessBit = unchecked((uint)0x00000004),
-    NoErrorBit = unchecked((uint)0x00000008),
-    RobustAccessBitARB = unchecked((uint)0x00000004),
-    NoErrorBitKHR = unchecked((uint)0x00000008),
-    DebugBitKHR = unchecked((uint)0x00000002),
-    ProtectedContentBitEXT = unchecked((uint)0x00000010),
+    None = 0x0,
+
+    [NativeName("GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT")]
+    ForwardCompatibleBit = 0x1,
+
+    [NativeName("GL_CONTEXT_FLAG_DEBUG_BIT")]
+    DebugBit = 0x2,
+
+    [NativeName("GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT")]
+    RobustAccessBit = 0x4,
+
+    [NativeName("GL_CONTEXT_FLAG_NO_ERROR_BIT")]
+    NoErrorBit = 0x8,
+
+    [NativeName("GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT_ARB")]
+    RobustAccessBitARB = 0x4,
+
+    [NativeName("GL_CONTEXT_FLAG_NO_ERROR_BIT_KHR")]
+    NoErrorBitKHR = 0x8,
+
+    [NativeName("GL_CONTEXT_FLAG_DEBUG_BIT_KHR")]
+    DebugBitKHR = 0x2,
+
+    [NativeName("GL_CONTEXT_FLAG_PROTECTED_CONTENT_BIT_EXT")]
+    ProtectedContentBitEXT = 0x10,
 }

@@ -7,11 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkVideoEncodeUsageFlagBitsKHR")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum VideoEncodeUsageFlagsKHR : uint
 {
+    [NativeName("VK_VIDEO_ENCODE_USAGE_DEFAULT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -20,8 +21,9 @@ public enum VideoEncodeUsageFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    DefaultKHR = 0x0,
+    Default = 0x0,
 
+    [NativeName("VK_VIDEO_ENCODE_USAGE_TRANSCODING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -30,8 +32,9 @@ public enum VideoEncodeUsageFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    TranscodingBitKHR = 0x1,
+    TranscodingBit = 0x1,
 
+    [NativeName("VK_VIDEO_ENCODE_USAGE_STREAMING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -40,8 +43,9 @@ public enum VideoEncodeUsageFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    StreamingBitKHR = 0x2,
+    StreamingBit = 0x2,
 
+    [NativeName("VK_VIDEO_ENCODE_USAGE_RECORDING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -50,8 +54,9 @@ public enum VideoEncodeUsageFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    RecordingBitKHR = 0x4,
+    RecordingBit = 0x4,
 
+    [NativeName("VK_VIDEO_ENCODE_USAGE_CONFERENCING_BIT_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_video_encode_queue"],
@@ -60,5 +65,5 @@ public enum VideoEncodeUsageFlagsKHR : uint
             "VK_KHR_video_queue+VK_VERSION_1_3",
         ]
     )]
-    ConferencingBitKHR = 0x8,
+    ConferencingBit = 0x8,
 }

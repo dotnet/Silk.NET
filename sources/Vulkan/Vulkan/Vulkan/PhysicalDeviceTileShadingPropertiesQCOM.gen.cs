@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceTileShadingPropertiesQCOM")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTileShadingPropertiesQCOM
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceTileShadingPropertiesQCOM
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceTileShadingPropertiesQCOM
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxApronSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceTileShadingPropertiesQCOM
     )]
     public uint MaxApronSize;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("preferNonCoherent")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -53,6 +56,7 @@ public unsafe partial struct PhysicalDeviceTileShadingPropertiesQCOM
     )]
     public uint PreferNonCoherent;
 
+    [NativeName("tileGranularity")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],
@@ -63,6 +67,7 @@ public unsafe partial struct PhysicalDeviceTileShadingPropertiesQCOM
     )]
     public Extent2D TileGranularity;
 
+    [NativeName("maxTileShadingRate")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_QCOM_tile_shading"],

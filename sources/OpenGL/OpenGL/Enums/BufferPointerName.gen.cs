@@ -7,9 +7,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("BufferPointerNameARB")]
 public enum BufferPointerName : uint
 {
-    Pointer = unchecked((uint)0x88BD),
-    PointerARB = unchecked((uint)0x88BD),
+    [NativeName("GL_BUFFER_MAP_POINTER")]
+    Pointer = 35005,
+
+    [NativeName("GL_BUFFER_MAP_POINTER_ARB")]
+    PointerARB = 35005,
 }

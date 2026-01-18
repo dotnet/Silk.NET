@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_dynamic_rendering_unused_attachments"],
@@ -22,6 +24,7 @@ public unsafe partial struct PhysicalDeviceDynamicRenderingUnusedAttachmentsFeat
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_dynamic_rendering_unused_attachments"],
@@ -33,7 +36,7 @@ public unsafe partial struct PhysicalDeviceDynamicRenderingUnusedAttachmentsFeat
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("dynamicRenderingUnusedAttachments")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_dynamic_rendering_unused_attachments"],

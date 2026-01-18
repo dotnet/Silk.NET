@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineViewportStateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineViewportStateCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -29,7 +31,7 @@ public unsafe partial struct PipelineViewportStateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +50,7 @@ public unsafe partial struct PipelineViewportStateCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPipelineViewportStateCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -67,7 +69,7 @@ public unsafe partial struct PipelineViewportStateCreateInfo
     )]
     public uint Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("viewportCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -86,7 +88,7 @@ public unsafe partial struct PipelineViewportStateCreateInfo
     )]
     public uint ViewportCount;
 
-    [NativeTypeName("const VkViewport *")]
+    [NativeName("pViewports")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -105,7 +107,7 @@ public unsafe partial struct PipelineViewportStateCreateInfo
     )]
     public Viewport* PViewports;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("scissorCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -124,7 +126,7 @@ public unsafe partial struct PipelineViewportStateCreateInfo
     )]
     public uint ScissorCount;
 
-    [NativeTypeName("const VkRect2D *")]
+    [NativeName("pScissors")]
     [SupportedApiProfile(
         "vulkan",
         [

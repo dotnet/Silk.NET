@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceExtendedDynamicState3FeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3TessellationDomainOrigin")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3TessellationDomainOrigin;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3DepthClampEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -53,7 +56,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3DepthClampEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3PolygonMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -64,7 +67,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3PolygonMode;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3RasterizationSamples")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -75,7 +78,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3RasterizationSamples;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3SampleMask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -86,7 +89,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3SampleMask;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3AlphaToCoverageEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -97,7 +100,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3AlphaToCoverageEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3AlphaToOneEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -108,7 +111,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3AlphaToOneEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3LogicOpEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -119,7 +122,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3LogicOpEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3ColorBlendEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -130,7 +133,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3ColorBlendEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3ColorBlendEquation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -141,7 +144,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3ColorBlendEquation;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3ColorWriteMask")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -152,7 +155,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3ColorWriteMask;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3RasterizationStream")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -163,7 +166,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3RasterizationStream;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3ConservativeRasterizationMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -174,7 +177,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3ConservativeRasterizationMode;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3ExtraPrimitiveOverestimationSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -185,7 +188,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3ExtraPrimitiveOverestimationSize;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3DepthClipEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -196,7 +199,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3DepthClipEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3SampleLocationsEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -207,7 +210,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3SampleLocationsEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3ColorBlendAdvanced")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -218,7 +221,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3ColorBlendAdvanced;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3ProvokingVertexMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -229,7 +232,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3ProvokingVertexMode;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3LineRasterizationMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -240,7 +243,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3LineRasterizationMode;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3LineStippleEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -251,7 +254,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3LineStippleEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3DepthClipNegativeOneToOne")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -262,7 +265,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3DepthClipNegativeOneToOne;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3ViewportWScalingEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -273,7 +276,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3ViewportWScalingEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3ViewportSwizzle")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -284,7 +287,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3ViewportSwizzle;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3CoverageToColorEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -295,7 +298,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3CoverageToColorEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3CoverageToColorLocation")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -306,7 +309,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3CoverageToColorLocation;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3CoverageModulationMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -317,7 +320,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3CoverageModulationMode;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3CoverageModulationTableEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -328,7 +331,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3CoverageModulationTableEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3CoverageModulationTable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -339,7 +342,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3CoverageModulationTable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3CoverageReductionMode")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -350,7 +353,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3CoverageReductionMode;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3RepresentativeFragmentTestEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],
@@ -361,7 +364,7 @@ public unsafe partial struct PhysicalDeviceExtendedDynamicState3FeaturesEXT
     )]
     public uint ExtendedDynamicState3RepresentativeFragmentTestEnable;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("extendedDynamicState3ShadingRateImageEnable")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_extended_dynamic_state3"],

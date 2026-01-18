@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceDataGraphOperationSupportARM")]
 [SupportedApiProfile("vulkan")]
 public partial struct PhysicalDeviceDataGraphOperationSupportARM
 {
+    [NativeName("operationType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
@@ -18,15 +20,15 @@ public partial struct PhysicalDeviceDataGraphOperationSupportARM
     )]
     public PhysicalDeviceDataGraphOperationTypeARM OperationType;
 
-    [NativeTypeName("char[128]")]
+    [NativeName("name")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],
         ImpliesSets = ["VK_KHR_deferred_host_operations", "VK_KHR_maintenance5", "VK_VERSION_1_3"]
     )]
-    public PhysicalDeviceDataGraphOperationSupportARMName Name;
+    public PhysicalDeviceDataGraphOperationSupportArmName Name;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("version")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_ARM_data_graph"],

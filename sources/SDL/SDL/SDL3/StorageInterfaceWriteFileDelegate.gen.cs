@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[Transformed]
+[NativeName("SDL_StorageInterface_write_file")]
 public unsafe delegate byte StorageInterfaceWriteFileDelegate(
     void* arg0,
     sbyte* arg1,

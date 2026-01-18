@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceProvokingVertexFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_provoking_vertex"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_provoking_vertex"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("provokingVertexLast")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_provoking_vertex"],
@@ -42,7 +45,7 @@ public unsafe partial struct PhysicalDeviceProvokingVertexFeaturesEXT
     )]
     public uint ProvokingVertexLast;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("transformFeedbackPreservesProvokingVertex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_provoking_vertex"],

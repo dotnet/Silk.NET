@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceVulkan14Properties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceVulkan14Properties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -23,6 +25,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -35,7 +38,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("lineSubPixelPrecisionBits")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -48,7 +51,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint LineSubPixelPrecisionBits;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxVertexAttribDivisor")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -61,7 +64,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint MaxVertexAttribDivisor;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("supportsNonZeroFirstInstance")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -74,7 +77,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint SupportsNonZeroFirstInstance;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxPushDescriptors")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -87,7 +90,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint MaxPushDescriptors;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("dynamicRenderingLocalReadDepthStencilAttachments")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -100,7 +103,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint DynamicRenderingLocalReadDepthStencilAttachments;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("dynamicRenderingLocalReadMultisampledAttachments")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -113,7 +116,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint DynamicRenderingLocalReadMultisampledAttachments;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("earlyFragmentMultisampleCoverageAfterSampleCounting")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -126,7 +129,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint EarlyFragmentMultisampleCoverageAfterSampleCounting;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("earlyFragmentSampleMaskTestBeforeSampleCounting")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -139,7 +142,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint EarlyFragmentSampleMaskTestBeforeSampleCounting;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("depthStencilSwizzleOneSupport")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -152,7 +155,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint DepthStencilSwizzleOneSupport;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("polygonModePointSize")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -165,7 +168,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint PolygonModePointSize;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("nonStrictSinglePixelWideLinesUseParallelogram")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -178,7 +181,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint NonStrictSinglePixelWideLinesUseParallelogram;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("nonStrictWideLinesUseParallelogram")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -191,7 +194,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint NonStrictWideLinesUseParallelogram;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("blockTexelViewCompatibleMultipleLayers")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -204,7 +207,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint BlockTexelViewCompatibleMultipleLayers;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxCombinedImageSamplerDescriptorCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -217,7 +220,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint MaxCombinedImageSamplerDescriptorCount;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("fragmentShadingRateClampCombinerInputs")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -230,6 +233,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint FragmentShadingRateClampCombinerInputs;
 
+    [NativeName("defaultRobustnessStorageBuffers")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -242,6 +246,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public PipelineRobustnessBufferBehavior DefaultRobustnessStorageBuffers;
 
+    [NativeName("defaultRobustnessUniformBuffers")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -254,6 +259,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public PipelineRobustnessBufferBehavior DefaultRobustnessUniformBuffers;
 
+    [NativeName("defaultRobustnessVertexInputs")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -266,6 +272,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public PipelineRobustnessBufferBehavior DefaultRobustnessVertexInputs;
 
+    [NativeName("defaultRobustnessImages")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -278,7 +285,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public PipelineRobustnessImageBehavior DefaultRobustnessImages;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("copySrcLayoutCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -291,6 +298,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint CopySrcLayoutCount;
 
+    [NativeName("pCopySrcLayouts")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -303,7 +311,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public ImageLayout* PCopySrcLayouts;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("copyDstLayoutCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -316,6 +324,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public uint CopyDstLayoutCount;
 
+    [NativeName("pCopyDstLayouts")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -328,7 +337,7 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
     )]
     public ImageLayout* PCopyDstLayouts;
 
-    [NativeTypeName("uint8_t[16]")]
+    [NativeName("optimalTilingLayoutUUID")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -339,9 +348,9 @@ public unsafe partial struct PhysicalDeviceVulkan14Properties
         ],
         MinVersion = "1.4"
     )]
-    public PhysicalDeviceVulkan14PropertiesOptimalTilingLayoutUUID OptimalTilingLayoutUUID;
+    public PhysicalDeviceVulkan14PropertiesOptimalTilingLayoutUuid OptimalTilingLayoutUuid;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("identicalMemoryTypeRequirements")]
     [SupportedApiProfile(
         "vulkan",
         [

@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceImageFormatInfo2")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceImageFormatInfo2
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -34,7 +36,7 @@ public unsafe partial struct PhysicalDeviceImageFormatInfo2
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -59,6 +61,7 @@ public unsafe partial struct PhysicalDeviceImageFormatInfo2
     )]
     public void* PNext;
 
+    [NativeName("format")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -83,6 +86,7 @@ public unsafe partial struct PhysicalDeviceImageFormatInfo2
     )]
     public Format Format;
 
+    [NativeName("type")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -107,6 +111,7 @@ public unsafe partial struct PhysicalDeviceImageFormatInfo2
     )]
     public ImageType Type;
 
+    [NativeName("tiling")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -131,7 +136,7 @@ public unsafe partial struct PhysicalDeviceImageFormatInfo2
     )]
     public ImageTiling Tiling;
 
-    [NativeTypeName("VkImageUsageFlags")]
+    [NativeName("usage")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -156,7 +161,7 @@ public unsafe partial struct PhysicalDeviceImageFormatInfo2
     )]
     public ImageUsageFlags Usage;
 
-    [NativeTypeName("VkImageCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [

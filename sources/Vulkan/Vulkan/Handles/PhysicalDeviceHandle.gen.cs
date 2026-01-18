@@ -8,9 +8,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDevice")]
 public readonly unsafe partial struct PhysicalDeviceHandle
 {
     public readonly void* Handle;
+
+    public PhysicalDeviceHandle(void* handle)
+    {
+        Handle = handle;
+    }
 
     public bool Equals(PhysicalDeviceHandle other) => Handle == other.Handle;
 

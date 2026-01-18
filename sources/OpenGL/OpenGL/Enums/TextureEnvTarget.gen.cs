@@ -7,10 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenGL;
 
-[Transformed]
+[NativeName("TextureEnvTarget")]
 public enum TextureEnvTarget : uint
 {
-    TextureENV = unchecked((uint)0x2300),
-    TextureFilterControl = unchecked((uint)0x8500),
-    PointSprite = unchecked((uint)0x8861),
+    [NativeName("GL_TEXTURE_ENV")]
+    TextureENV = 8960,
+
+    [NativeName("GL_TEXTURE_FILTER_CONTROL")]
+    TextureFilterControl = 34048,
+
+    [NativeName("GL_POINT_SPRITE")]
+    PointSprite = 34913,
 }

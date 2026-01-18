@@ -113,7 +113,7 @@ public class InterceptNativeFunctions(
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
             );
 
-            return node.WithRenameSafeAttributeLists()
+            node = node.WithRenameSafeAttributeLists()
                 .WithIdentifier(Identifier($"{node.Identifier}Internal"))
                 .WithModifiers(
                     [
@@ -129,6 +129,10 @@ public class InterceptNativeFunctions(
                         ),
                     ]
                 );
+
+            return node.WithAttributeLists(
+                node.AttributeLists.AddNameSuffix("InterceptedFunction", "Internal")
+            );
         }
     }
 }

@@ -1,0 +1,7 @@
+﻿public enum OcclusionQueryParameterNameNV
+{
+    [NameAffix("Suffix", "KhronosVendor", "NV")]
+    CountNV = 34918,
+    [NameAffix("Suffix", "KhronosVendor", "NV")]
+    CountAvailableNV = 34919,
+}

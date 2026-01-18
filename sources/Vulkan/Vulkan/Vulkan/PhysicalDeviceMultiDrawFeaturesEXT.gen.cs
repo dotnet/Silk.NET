@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceMultiDrawFeaturesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceMultiDrawFeaturesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multi_draw"],
@@ -21,6 +23,7 @@ public unsafe partial struct PhysicalDeviceMultiDrawFeaturesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multi_draw"],
@@ -31,7 +34,7 @@ public unsafe partial struct PhysicalDeviceMultiDrawFeaturesEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("multiDraw")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_multi_draw"],

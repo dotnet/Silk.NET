@@ -8,16 +8,19 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPipelineRasterizationStateRasterizationOrderAMD")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PipelineRasterizationStateRasterizationOrderAMD
 {
+    [NativeName("sType")]
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
     public void* PNext;
 
+    [NativeName("rasterizationOrder")]
     [SupportedApiProfile("vulkan", ["VK_AMD_rasterization_order"])]
     public RasterizationOrderAMD RasterizationOrder;
 }

@@ -8,25 +8,27 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("StdVideoEncodeH264RefPicMarkingEntry")]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH264RefPicMarkingEntry
 {
+    [NativeName("memory_management_control_operation")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264MemMgmtControlOp MemoryManagementControlOperation;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("difference_of_pic_nums_minus1")]
     [SupportedApiProfile("vulkan")]
     public ushort DifferenceOfPicNumsMinus1;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("long_term_pic_num")]
     [SupportedApiProfile("vulkan")]
     public ushort LongTermPicNum;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("long_term_frame_idx")]
     [SupportedApiProfile("vulkan")]
     public ushort LongTermFrameIdx;
 
-    [NativeTypeName("uint16_t")]
+    [NativeName("max_long_term_frame_idx_plus1")]
     [SupportedApiProfile("vulkan")]
     public ushort MaxLongTermFrameIdxPlus1;
 }

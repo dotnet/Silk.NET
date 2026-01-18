@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDeviceFaultInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DeviceFaultInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -20,6 +22,7 @@ public unsafe partial struct DeviceFaultInfoEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -30,7 +33,7 @@ public unsafe partial struct DeviceFaultInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("char[256]")]
+    [NativeName("description")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -39,8 +42,9 @@ public unsafe partial struct DeviceFaultInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultInfoEXTDescription Description;
+    public DeviceFaultInfoExtDescription Description;
 
+    [NativeName("pAddressInfos")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -51,6 +55,7 @@ public unsafe partial struct DeviceFaultInfoEXT
     )]
     public DeviceFaultAddressInfoEXT* PAddressInfos;
 
+    [NativeName("pVendorInfos")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],
@@ -61,6 +66,7 @@ public unsafe partial struct DeviceFaultInfoEXT
     )]
     public DeviceFaultVendorInfoEXT* PVendorInfos;
 
+    [NativeName("pVendorBinaryData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_fault"],

@@ -8,15 +8,30 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
+[NativeName("SDL_Surface")]
 public unsafe partial struct Surface
 {
-    [NativeTypeName("SDL_SurfaceFlags")]
+    [NativeName("flags")]
     public uint Flags;
+
+    [NativeName("format")]
     public PixelFormat Format;
+
+    [NativeName("w")]
     public int W;
+
+    [NativeName("h")]
     public int H;
+
+    [NativeName("pitch")]
     public int Pitch;
+
+    [NativeName("pixels")]
     public void* Pixels;
+
+    [NativeName("refcount")]
     public int Refcount;
+
+    [NativeName("reserved")]
     public void* Reserved;
 }

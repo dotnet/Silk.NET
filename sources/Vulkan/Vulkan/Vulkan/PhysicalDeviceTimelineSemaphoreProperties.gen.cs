@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceTimelineSemaphoreProperties")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceTimelineSemaphoreProperties
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,6 +33,7 @@ public unsafe partial struct PhysicalDeviceTimelineSemaphoreProperties
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +54,7 @@ public unsafe partial struct PhysicalDeviceTimelineSemaphoreProperties
     )]
     public void* PNext;
 
-    [NativeTypeName("uint64_t")]
+    [NativeName("maxTimelineSemaphoreValueDifference")]
     [SupportedApiProfile(
         "vulkan",
         [

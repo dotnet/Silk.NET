@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPerformanceCounterDescriptionKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PerformanceCounterDescriptionKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -20,6 +22,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -30,7 +33,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
     )]
     public void* PNext;
 
-    [NativeTypeName("VkPerformanceCounterDescriptionFlagsKHR")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -41,7 +44,7 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
     )]
     public PerformanceCounterDescriptionFlagsKHR Flags;
 
-    [NativeTypeName("char[256]")]
+    [NativeName("name")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -50,9 +53,9 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionKHRName Name;
+    public PerformanceCounterDescriptionKhrName Name;
 
-    [NativeTypeName("char[256]")]
+    [NativeName("category")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -61,9 +64,9 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionKHRCategory Category;
+    public PerformanceCounterDescriptionKhrCategory Category;
 
-    [NativeTypeName("char[256]")]
+    [NativeName("description")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_performance_query"],
@@ -72,5 +75,5 @@ public unsafe partial struct PerformanceCounterDescriptionKHR
             "VK_KHR_performance_query+VK_VERSION_1_1",
         ]
     )]
-    public PerformanceCounterDescriptionKHRDescription Description;
+    public PerformanceCounterDescriptionKhrDescription Description;
 }

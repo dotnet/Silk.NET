@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkGeneratedCommandsInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct GeneratedCommandsInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -21,7 +23,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -33,7 +35,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("VkShaderStageFlags")]
+    [NativeName("shaderStages")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -45,7 +47,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
     )]
     public ShaderStageFlags ShaderStages;
 
-    [NativeTypeName("VkIndirectExecutionSetEXT")]
+    [NativeName("indirectExecutionSet")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -55,9 +57,9 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public IndirectExecutionSetEXTHandle IndirectExecutionSet;
+    public IndirectExecutionSetHandleEXT IndirectExecutionSet;
 
-    [NativeTypeName("VkIndirectCommandsLayoutEXT")]
+    [NativeName("indirectCommandsLayout")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -67,9 +69,9 @@ public unsafe partial struct GeneratedCommandsInfoEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public IndirectCommandsLayoutEXTHandle IndirectCommandsLayout;
+    public IndirectCommandsLayoutHandleEXT IndirectCommandsLayout;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("indirectAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -81,7 +83,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
     )]
     public ulong IndirectAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("indirectAddressSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -93,7 +95,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
     )]
     public ulong IndirectAddressSize;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("preprocessAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -105,7 +107,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
     )]
     public ulong PreprocessAddress;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("preprocessSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -117,7 +119,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
     )]
     public ulong PreprocessSize;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxSequenceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -129,7 +131,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
     )]
     public uint MaxSequenceCount;
 
-    [NativeTypeName("VkDeviceAddress")]
+    [NativeName("sequenceCountAddress")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],
@@ -141,7 +143,7 @@ public unsafe partial struct GeneratedCommandsInfoEXT
     )]
     public ulong SequenceCountAddress;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxDrawCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_generated_commands"],

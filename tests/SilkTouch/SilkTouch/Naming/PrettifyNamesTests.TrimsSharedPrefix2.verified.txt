@@ -1,0 +1,6 @@
+﻿public enum VocalMorpherPhoneme
+{
+    A = 0,
+    E = 1,
+    I = 2,
+}

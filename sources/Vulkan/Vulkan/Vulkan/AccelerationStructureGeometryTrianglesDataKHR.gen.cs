@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkAccelerationStructureGeometryTrianglesDataKHR")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -20,7 +22,7 @@ public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -31,6 +33,7 @@ public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR
     )]
     public void* PNext;
 
+    [NativeName("vertexFormat")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -41,6 +44,7 @@ public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR
     )]
     public Format VertexFormat;
 
+    [NativeName("vertexData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -51,7 +55,7 @@ public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR
     )]
     public DeviceOrHostAddressConstKHR VertexData;
 
-    [NativeTypeName("VkDeviceSize")]
+    [NativeName("vertexStride")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -62,7 +66,7 @@ public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR
     )]
     public ulong VertexStride;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("maxVertex")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -73,6 +77,7 @@ public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR
     )]
     public uint MaxVertex;
 
+    [NativeName("indexType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -83,6 +88,7 @@ public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR
     )]
     public IndexType IndexType;
 
+    [NativeName("indexData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],
@@ -93,6 +99,7 @@ public unsafe partial struct AccelerationStructureGeometryTrianglesDataKHR
     )]
     public DeviceOrHostAddressConstKHR IndexData;
 
+    [NativeName("transformData")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_acceleration_structure"],

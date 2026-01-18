@@ -8,16 +8,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL;
 
-[NativeTypeName("unsigned int")]
-public enum TextInputType : uint
+[NativeName("SDL_TextInputType")]
+public enum TextInputType
 {
-    Text,
-    TextName,
-    TextEmail,
-    TextUsername,
-    TextPasswordHidden,
-    TextPasswordVisible,
-    Number,
-    NumberPasswordHidden,
-    NumberPasswordVisible,
+    [NativeName("SDL_TEXTINPUT_TYPE_TEXT")]
+    Text = 0,
+
+    [NativeName("SDL_TEXTINPUT_TYPE_TEXT_NAME")]
+    TextName = 1,
+
+    [NativeName("SDL_TEXTINPUT_TYPE_TEXT_EMAIL")]
+    TextEmail = 2,
+
+    [NativeName("SDL_TEXTINPUT_TYPE_TEXT_USERNAME")]
+    TextUsername = 3,
+
+    [NativeName("SDL_TEXTINPUT_TYPE_TEXT_PASSWORD_HIDDEN")]
+    TextPasswordHidden = 4,
+
+    [NativeName("SDL_TEXTINPUT_TYPE_TEXT_PASSWORD_VISIBLE")]
+    TextPasswordVisible = 5,
+
+    [NativeName("SDL_TEXTINPUT_TYPE_NUMBER")]
+    Number = 6,
+
+    [NativeName("SDL_TEXTINPUT_TYPE_NUMBER_PASSWORD_HIDDEN")]
+    NumberPasswordHidden = 7,
+
+    [NativeName("SDL_TEXTINPUT_TYPE_NUMBER_PASSWORD_VISIBLE")]
+    NumberPasswordVisible = 8,
 }

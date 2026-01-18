@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkPhysicalDeviceHostQueryResetFeatures")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct PhysicalDeviceHostQueryResetFeatures
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,6 +32,7 @@ public unsafe partial struct PhysicalDeviceHostQueryResetFeatures
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -50,7 +53,7 @@ public unsafe partial struct PhysicalDeviceHostQueryResetFeatures
     )]
     public void* PNext;
 
-    [NativeTypeName("VkBool32")]
+    [NativeName("hostQueryReset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_VERSION_1_2", "VK_VERSION_1_3", "VK_VERSION_1_4"],

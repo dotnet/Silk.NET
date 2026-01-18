@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkImageViewSlicedCreateInfoEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct ImageViewSlicedCreateInfoEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_sliced_view_of_3d"],
@@ -20,7 +22,7 @@ public unsafe partial struct ImageViewSlicedCreateInfoEXT
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_sliced_view_of_3d"],
@@ -31,7 +33,7 @@ public unsafe partial struct ImageViewSlicedCreateInfoEXT
     )]
     public void* PNext;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("sliceOffset")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_sliced_view_of_3d"],
@@ -42,7 +44,7 @@ public unsafe partial struct ImageViewSlicedCreateInfoEXT
     )]
     public uint SliceOffset;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("sliceCount")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_image_sliced_view_of_3d"],

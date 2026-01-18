@@ -8,9 +8,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkCommandBufferBeginInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct CommandBufferBeginInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -39,7 +41,7 @@ public unsafe partial struct CommandBufferBeginInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -68,7 +70,7 @@ public unsafe partial struct CommandBufferBeginInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkCommandBufferUsageFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -97,7 +99,7 @@ public unsafe partial struct CommandBufferBeginInfo
     )]
     public CommandBufferUsageFlags Flags;
 
-    [NativeTypeName("const VkCommandBufferInheritanceInfo *")]
+    [NativeName("pInheritanceInfo")]
     [SupportedApiProfile(
         "vulkan",
         [

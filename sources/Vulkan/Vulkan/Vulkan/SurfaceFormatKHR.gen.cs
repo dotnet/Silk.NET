@@ -7,12 +7,15 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkSurfaceFormatKHR")]
 [SupportedApiProfile("vulkan")]
 public partial struct SurfaceFormatKHR
 {
+    [NativeName("format")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     public Format Format;
 
+    [NativeName("colorSpace")]
     [SupportedApiProfile("vulkan", ["VK_KHR_surface"])]
     public ColorSpaceKHR ColorSpace;
 }

@@ -10,9 +10,12 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[Transformed]
+[NativeName("EnableCap")]
 public enum EnableCap : uint
 {
-    SourceDistanceModel = unchecked((uint)0x200),
-    DebugOutputEXT = unchecked((uint)0x19B2),
+    [NativeName("AL_SOURCE_DISTANCE_MODEL")]
+    SourceDistanceModel = 512,
+
+    [NativeName("AL_DEBUG_OUTPUT_EXT")]
+    DebugOutputEXT = 6578,
 }

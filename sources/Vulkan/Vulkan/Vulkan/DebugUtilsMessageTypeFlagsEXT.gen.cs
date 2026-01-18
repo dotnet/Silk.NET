@@ -7,22 +7,26 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
-[SupportedApiProfile("vulkan")]
+[NativeName("VkDebugUtilsMessageTypeFlagBitsEXT")]
 [Flags]
+[SupportedApiProfile("vulkan")]
 public enum DebugUtilsMessageTypeFlagsEXT : uint
 {
     None = 0x0,
 
+    [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    GeneralBitEXT = 0x1,
+    GeneralBit = 0x1,
 
+    [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    ValidationBitEXT = 0x2,
+    ValidationBit = 0x2,
 
+    [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    PerformanceBitEXT = 0x4,
+    PerformanceBit = 0x4,
 
+    [NativeName("VK_DEBUG_UTILS_MESSAGE_TYPE_DEVICE_ADDRESS_BINDING_BIT_EXT")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_device_address_binding_report"],
@@ -31,5 +35,5 @@ public enum DebugUtilsMessageTypeFlagsEXT : uint
             "VK_EXT_debug_utils+VK_VERSION_1_1",
         ]
     )]
-    DeviceAddressBindingBitEXT = 0x8,
+    DeviceAddressBindingBit = 0x8,
 }

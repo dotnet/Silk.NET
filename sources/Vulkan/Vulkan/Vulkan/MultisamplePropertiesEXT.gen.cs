@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkMultisamplePropertiesEXT")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct MultisamplePropertiesEXT
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -20,6 +22,7 @@ public unsafe partial struct MultisamplePropertiesEXT
     )]
     public StructureType SType;
 
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],
@@ -30,6 +33,7 @@ public unsafe partial struct MultisamplePropertiesEXT
     )]
     public void* PNext;
 
+    [NativeName("maxSampleLocationGridSize")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_EXT_sample_locations"],

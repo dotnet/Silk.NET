@@ -7,10 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
-[NativeTypeName("unsigned int")]
+[NativeName("VkSemaphoreType")]
 [SupportedApiProfile("vulkan")]
 public enum SemaphoreType : uint
 {
+    [NativeName("VK_SEMAPHORE_TYPE_BINARY")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -31,6 +32,7 @@ public enum SemaphoreType : uint
     )]
     Binary = 0,
 
+    [NativeName("VK_SEMAPHORE_TYPE_TIMELINE")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,6 +53,7 @@ public enum SemaphoreType : uint
     )]
     Timeline = 1,
 
+    [NativeName("VK_SEMAPHORE_TYPE_BINARY_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_timeline_semaphore"],
@@ -61,6 +64,7 @@ public enum SemaphoreType : uint
     )]
     BinaryKHR = Binary,
 
+    [NativeName("VK_SEMAPHORE_TYPE_TIMELINE_KHR")]
     [SupportedApiProfile(
         "vulkan",
         ["VK_KHR_timeline_semaphore"],

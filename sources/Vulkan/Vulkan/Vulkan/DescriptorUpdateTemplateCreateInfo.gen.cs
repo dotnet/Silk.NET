@@ -7,9 +7,11 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Vulkan;
 
+[NativeName("VkDescriptorUpdateTemplateCreateInfo")]
 [SupportedApiProfile("vulkan")]
 public unsafe partial struct DescriptorUpdateTemplateCreateInfo
 {
+    [NativeName("sType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -30,7 +32,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
     )]
     public StructureType SType;
 
-    [NativeTypeName("const void *")]
+    [NativeName("pNext")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -51,7 +53,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
     )]
     public void* PNext;
 
-    [NativeTypeName("VkDescriptorUpdateTemplateCreateFlags")]
+    [NativeName("flags")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -72,7 +74,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
     )]
     public uint Flags;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("descriptorUpdateEntryCount")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -93,7 +95,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
     )]
     public uint DescriptorUpdateEntryCount;
 
-    [NativeTypeName("const VkDescriptorUpdateTemplateEntry *")]
+    [NativeName("pDescriptorUpdateEntries")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -114,6 +116,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
     )]
     public DescriptorUpdateTemplateEntry* PDescriptorUpdateEntries;
 
+    [NativeName("templateType")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -134,7 +137,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
     )]
     public DescriptorUpdateTemplateType TemplateType;
 
-    [NativeTypeName("VkDescriptorSetLayout")]
+    [NativeName("descriptorSetLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -155,6 +158,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
     )]
     public DescriptorSetLayoutHandle DescriptorSetLayout;
 
+    [NativeName("pipelineBindPoint")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -175,7 +179,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
     )]
     public PipelineBindPoint PipelineBindPoint;
 
-    [NativeTypeName("VkPipelineLayout")]
+    [NativeName("pipelineLayout")]
     [SupportedApiProfile(
         "vulkan",
         [
@@ -196,7 +200,7 @@ public unsafe partial struct DescriptorUpdateTemplateCreateInfo
     )]
     public PipelineLayoutHandle PipelineLayout;
 
-    [NativeTypeName("uint32_t")]
+    [NativeName("set")]
     [SupportedApiProfile(
         "vulkan",
         [
