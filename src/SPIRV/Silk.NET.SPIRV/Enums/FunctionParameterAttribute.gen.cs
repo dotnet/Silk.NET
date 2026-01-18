@@ -28,6 +28,8 @@ namespace Silk.NET.SPIRV
         NoWrite = 0x6,
         [NativeName("Name", "SpvFunctionParameterAttributeNoReadWrite")]
         NoReadWrite = 0x7,
+        [NativeName("Name", "SpvFunctionParameterAttributeRuntimeAlignedALTERA")]
+        RuntimeAlignedAltera = 0x1734,
         [NativeName("Name", "SpvFunctionParameterAttributeRuntimeAlignedINTEL")]
         RuntimeAlignedIntel = 0x1734,
         [NativeName("Name", "SpvFunctionParameterAttributeMax")]

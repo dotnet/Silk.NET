@@ -706,6 +706,28 @@ namespace Silk.NET.SPIRV
         DepthAttachmentReadExt = 0x1041,
         [NativeName("Name", "SpvOpStencilAttachmentReadEXT")]
         StencilAttachmentReadExt = 0x1042,
+        [NativeName("Name", "SpvOpTypeTensorARM")]
+        TypeTensorArm = 0x1043,
+        [NativeName("Name", "SpvOpTensorReadARM")]
+        TensorReadArm = 0x1044,
+        [NativeName("Name", "SpvOpTensorWriteARM")]
+        TensorWriteArm = 0x1045,
+        [NativeName("Name", "SpvOpTensorQuerySizeARM")]
+        TensorQuerySizeArm = 0x1046,
+        [NativeName("Name", "SpvOpGraphConstantARM")]
+        GraphConstantArm = 0x1055,
+        [NativeName("Name", "SpvOpGraphEntryPointARM")]
+        GraphEntryPointArm = 0x1056,
+        [NativeName("Name", "SpvOpGraphARM")]
+        GraphArm = 0x1057,
+        [NativeName("Name", "SpvOpGraphInputARM")]
+        GraphInputArm = 0x1058,
+        [NativeName("Name", "SpvOpGraphSetOutputARM")]
+        GraphSetOutputArm = 0x1059,
+        [NativeName("Name", "SpvOpGraphEndARM")]
+        GraphEndArm = 0x105A,
+        [NativeName("Name", "SpvOpTypeGraphARM")]
+        TypeGraphArm = 0x105E,
         [NativeName("Name", "SpvOpTerminateInvocation")]
         TerminateInvocation = 0x1140,
         [NativeName("Name", "SpvOpTypeUntypedPointerKHR")]
@@ -728,6 +750,8 @@ namespace Silk.NET.SPIRV
         UntypedArrayLengthKhr = 0x1149,
         [NativeName("Name", "SpvOpUntypedPrefetchKHR")]
         UntypedPrefetchKhr = 0x114A,
+        [NativeName("Name", "SpvOpFmaKHR")]
+        FmaKhr = 0x114B,
         [NativeName("Name", "SpvOpSubgroupAllKHR")]
         SubgroupAllKhr = 0x114C,
         [NativeName("Name", "SpvOpSubgroupAnyKHR")]
@@ -740,6 +764,8 @@ namespace Silk.NET.SPIRV
         SubgroupReadInvocationKhr = 0x1150,
         [NativeName("Name", "SpvOpExtInstWithForwardRefsKHR")]
         ExtInstWithForwardRefsKhr = 0x1151,
+        [NativeName("Name", "SpvOpUntypedGroupAsyncCopyKHR")]
+        UntypedGroupAsyncCopyKhr = 0x1152,
         [NativeName("Name", "SpvOpTraceRayKHR")]
         TraceRayKhr = 0x115D,
         [NativeName("Name", "SpvOpExecuteCallableKHR")]
@@ -812,6 +838,8 @@ namespace Silk.NET.SPIRV
         ImageBlockMatchSsdqcom = 0x1182,
         [NativeName("Name", "SpvOpImageBlockMatchSADQCOM")]
         ImageBlockMatchSadqcom = 0x1183,
+        [NativeName("Name", "SpvOpBitCastArrayQCOM")]
+        BitCastArrayQCom = 0x1191,
         [NativeName("Name", "SpvOpImageBlockMatchWindowSSDQCOM")]
         ImageBlockMatchWindowSsdqcom = 0x1194,
         [NativeName("Name", "SpvOpImageBlockMatchWindowSADQCOM")]
@@ -820,6 +848,12 @@ namespace Silk.NET.SPIRV
         ImageBlockMatchGatherSsdqcom = 0x1196,
         [NativeName("Name", "SpvOpImageBlockMatchGatherSADQCOM")]
         ImageBlockMatchGatherSadqcom = 0x1197,
+        [NativeName("Name", "SpvOpCompositeConstructCoopMatQCOM")]
+        CompositeConstructCoopMatQCom = 0x11BC,
+        [NativeName("Name", "SpvOpCompositeExtractCoopMatQCOM")]
+        CompositeExtractCoopMatQCom = 0x11BD,
+        [NativeName("Name", "SpvOpExtractSubArrayQCOM")]
+        ExtractSubArrayQCom = 0x11BE,
         [NativeName("Name", "SpvOpGroupIAddNonUniformAMD")]
         GroupIAddNonUniformAmd = 0x1388,
         [NativeName("Name", "SpvOpGroupFAddNonUniformAMD")]
@@ -842,12 +876,22 @@ namespace Silk.NET.SPIRV
         FragmentFetchAmd = 0x1394,
         [NativeName("Name", "SpvOpReadClockKHR")]
         ReadClockKhr = 0x13C0,
-        [NativeName("Name", "SpvOpFinalizeNodePayloadsAMDX")]
-        FinalizeNodePayloadsAmdx = 0x13D3,
+        [NativeName("Name", "SpvOpAllocateNodePayloadsAMDX")]
+        AllocateNodePayloadsAmdx = 0x13D2,
+        [NativeName("Name", "SpvOpEnqueueNodePayloadsAMDX")]
+        EnqueueNodePayloadsAmdx = 0x13D3,
+        [NativeName("Name", "SpvOpTypeNodePayloadArrayAMDX")]
+        TypeNodePayloadArrayAmdx = 0x13D4,
         [NativeName("Name", "SpvOpFinishWritingNodePayloadAMDX")]
         FinishWritingNodePayloadAmdx = 0x13D6,
-        [NativeName("Name", "SpvOpInitializeNodePayloadsAMDX")]
-        InitializeNodePayloadsAmdx = 0x13E2,
+        [NativeName("Name", "SpvOpNodePayloadArrayLengthAMDX")]
+        NodePayloadArrayLengthAmdx = 0x13E2,
+        [NativeName("Name", "SpvOpIsNodePayloadValidAMDX")]
+        IsNodePayloadValidAmdx = 0x13ED,
+        [NativeName("Name", "SpvOpConstantStringAMDX")]
+        ConstantStringAmdx = 0x13EF,
+        [NativeName("Name", "SpvOpSpecConstantStringAMDX")]
+        SpecConstantStringAmdx = 0x13F0,
         [NativeName("Name", "SpvOpGroupNonUniformQuadAllKHR")]
         GroupNonUniformQuadAllKhr = 0x13F6,
         [NativeName("Name", "SpvOpGroupNonUniformQuadAnyKHR")]
@@ -920,6 +964,20 @@ namespace Silk.NET.SPIRV
         TypeHitObjectNV = 0x14A1,
         [NativeName("Name", "SpvOpImageSampleFootprintNV")]
         ImageSampleFootprintNV = 0x14A3,
+        [NativeName("Name", "SpvOpTypeCooperativeVectorNV")]
+        TypeCooperativeVectorNV = 0x14A8,
+        [NativeName("Name", "SpvOpTypeVectorIdEXT")]
+        TypeVectorIdExt = 0x14A8,
+        [NativeName("Name", "SpvOpCooperativeVectorMatrixMulNV")]
+        CooperativeVectorMatrixMulNV = 0x14A9,
+        [NativeName("Name", "SpvOpCooperativeVectorOuterProductAccumulateNV")]
+        CooperativeVectorOuterProductAccumulateNV = 0x14AA,
+        [NativeName("Name", "SpvOpCooperativeVectorReduceSumAccumulateNV")]
+        CooperativeVectorReduceSumAccumulateNV = 0x14AB,
+        [NativeName("Name", "SpvOpCooperativeVectorMatrixMulAddNV")]
+        CooperativeVectorMatrixMulAddNV = 0x14AC,
+        [NativeName("Name", "SpvOpCooperativeMatrixConvertNV")]
+        CooperativeMatrixConvertNV = 0x14AD,
         [NativeName("Name", "SpvOpEmitMeshTasksEXT")]
         EmitMeshTasksExt = 0x14AE,
         [NativeName("Name", "SpvOpSetMeshOutputsEXT")]
@@ -932,6 +990,70 @@ namespace Silk.NET.SPIRV
         FetchMicroTriangleVertexPositionNV = 0x14B4,
         [NativeName("Name", "SpvOpFetchMicroTriangleVertexBarycentricNV")]
         FetchMicroTriangleVertexBarycentricNV = 0x14B5,
+        [NativeName("Name", "SpvOpCooperativeVectorLoadNV")]
+        CooperativeVectorLoadNV = 0x14B6,
+        [NativeName("Name", "SpvOpCooperativeVectorStoreNV")]
+        CooperativeVectorStoreNV = 0x14B7,
+        [NativeName("Name", "SpvOpHitObjectRecordFromQueryEXT")]
+        HitObjectRecordFromQueryExt = 0x14B8,
+        [NativeName("Name", "SpvOpHitObjectRecordMissEXT")]
+        HitObjectRecordMissExt = 0x14B9,
+        [NativeName("Name", "SpvOpHitObjectRecordMissMotionEXT")]
+        HitObjectRecordMissMotionExt = 0x14BA,
+        [NativeName("Name", "SpvOpHitObjectGetIntersectionTriangleVertexPositionsEXT")]
+        HitObjectGetIntersectionTriangleVertexPositionsExt = 0x14BB,
+        [NativeName("Name", "SpvOpHitObjectGetRayFlagsEXT")]
+        HitObjectGetRayFlagsExt = 0x14BC,
+        [NativeName("Name", "SpvOpHitObjectSetShaderBindingTableRecordIndexEXT")]
+        HitObjectSetShaderBindingTableRecordIndexExt = 0x14BD,
+        [NativeName("Name", "SpvOpHitObjectReorderExecuteShaderEXT")]
+        HitObjectReorderExecuteShaderExt = 0x14BE,
+        [NativeName("Name", "SpvOpHitObjectTraceReorderExecuteEXT")]
+        HitObjectTraceReorderExecuteExt = 0x14BF,
+        [NativeName("Name", "SpvOpHitObjectTraceMotionReorderExecuteEXT")]
+        HitObjectTraceMotionReorderExecuteExt = 0x14C0,
+        [NativeName("Name", "SpvOpTypeHitObjectEXT")]
+        TypeHitObjectExt = 0x14C1,
+        [NativeName("Name", "SpvOpReorderThreadWithHintEXT")]
+        ReorderThreadWithHintExt = 0x14C2,
+        [NativeName("Name", "SpvOpReorderThreadWithHitObjectEXT")]
+        ReorderThreadWithHitObjectExt = 0x14C3,
+        [NativeName("Name", "SpvOpHitObjectTraceRayEXT")]
+        HitObjectTraceRayExt = 0x14C4,
+        [NativeName("Name", "SpvOpHitObjectTraceRayMotionEXT")]
+        HitObjectTraceRayMotionExt = 0x14C5,
+        [NativeName("Name", "SpvOpHitObjectRecordEmptyEXT")]
+        HitObjectRecordEmptyExt = 0x14C6,
+        [NativeName("Name", "SpvOpHitObjectExecuteShaderEXT")]
+        HitObjectExecuteShaderExt = 0x14C7,
+        [NativeName("Name", "SpvOpHitObjectGetCurrentTimeEXT")]
+        HitObjectGetCurrentTimeExt = 0x14C8,
+        [NativeName("Name", "SpvOpHitObjectGetAttributesEXT")]
+        HitObjectGetAttributesExt = 0x14C9,
+        [NativeName("Name", "SpvOpHitObjectGetHitKindEXT")]
+        HitObjectGetHitKindExt = 0x14CA,
+        [NativeName("Name", "SpvOpHitObjectGetPrimitiveIndexEXT")]
+        HitObjectGetPrimitiveIndexExt = 0x14CB,
+        [NativeName("Name", "SpvOpHitObjectGetGeometryIndexEXT")]
+        HitObjectGetGeometryIndexExt = 0x14CC,
+        [NativeName("Name", "SpvOpHitObjectGetInstanceIdEXT")]
+        HitObjectGetInstanceIdExt = 0x14CD,
+        [NativeName("Name", "SpvOpHitObjectGetInstanceCustomIndexEXT")]
+        HitObjectGetInstanceCustomIndexExt = 0x14CE,
+        [NativeName("Name", "SpvOpHitObjectGetObjectRayOriginEXT")]
+        HitObjectGetObjectRayOriginExt = 0x14CF,
+        [NativeName("Name", "SpvOpHitObjectGetObjectRayDirectionEXT")]
+        HitObjectGetObjectRayDirectionExt = 0x14D0,
+        [NativeName("Name", "SpvOpHitObjectGetWorldRayDirectionEXT")]
+        HitObjectGetWorldRayDirectionExt = 0x14D1,
+        [NativeName("Name", "SpvOpHitObjectGetWorldRayOriginEXT")]
+        HitObjectGetWorldRayOriginExt = 0x14D2,
+        [NativeName("Name", "SpvOpHitObjectGetObjectToWorldEXT")]
+        HitObjectGetObjectToWorldExt = 0x14D3,
+        [NativeName("Name", "SpvOpHitObjectGetWorldToObjectEXT")]
+        HitObjectGetWorldToObjectExt = 0x14D4,
+        [NativeName("Name", "SpvOpHitObjectGetRayTMaxEXT")]
+        HitObjectGetRayTMaxExt = 0x14D5,
         [NativeName("Name", "SpvOpReportIntersectionKHR")]
         ReportIntersectionKhr = 0x14D6,
         [NativeName("Name", "SpvOpReportIntersectionNV")]
@@ -954,6 +1076,24 @@ namespace Silk.NET.SPIRV
         TypeAccelerationStructureNV = 0x14DD,
         [NativeName("Name", "SpvOpExecuteCallableNV")]
         ExecuteCallableNV = 0x14E0,
+        [NativeName("Name", "SpvOpRayQueryGetClusterIdNV")]
+        RayQueryGetClusterIdNV = 0x14E1,
+        [NativeName("Name", "SpvOpRayQueryGetIntersectionClusterIdNV")]
+        RayQueryGetIntersectionClusterIdNV = 0x14E1,
+        [NativeName("Name", "SpvOpHitObjectGetClusterIdNV")]
+        HitObjectGetClusterIdNV = 0x14E2,
+        [NativeName("Name", "SpvOpHitObjectGetRayTMinEXT")]
+        HitObjectGetRayTMinExt = 0x14E3,
+        [NativeName("Name", "SpvOpHitObjectGetShaderBindingTableRecordIndexEXT")]
+        HitObjectGetShaderBindingTableRecordIndexExt = 0x14E4,
+        [NativeName("Name", "SpvOpHitObjectGetShaderRecordBufferHandleEXT")]
+        HitObjectGetShaderRecordBufferHandleExt = 0x14E5,
+        [NativeName("Name", "SpvOpHitObjectIsEmptyEXT")]
+        HitObjectIsEmptyExt = 0x14E6,
+        [NativeName("Name", "SpvOpHitObjectIsHitEXT")]
+        HitObjectIsHitExt = 0x14E7,
+        [NativeName("Name", "SpvOpHitObjectIsMissEXT")]
+        HitObjectIsMissExt = 0x14E8,
         [NativeName("Name", "SpvOpTypeCooperativeMatrixNV")]
         TypeCooperativeMatrixNV = 0x14EE,
         [NativeName("Name", "SpvOpCooperativeMatrixLoadNV")]
@@ -968,12 +1108,46 @@ namespace Silk.NET.SPIRV
         BeginInvocationInterlockExt = 0x14F4,
         [NativeName("Name", "SpvOpEndInvocationInterlockEXT")]
         EndInvocationInterlockExt = 0x14F5,
+        [NativeName("Name", "SpvOpCooperativeMatrixReduceNV")]
+        CooperativeMatrixReduceNV = 0x14F6,
+        [NativeName("Name", "SpvOpCooperativeMatrixLoadTensorNV")]
+        CooperativeMatrixLoadTensorNV = 0x14F7,
+        [NativeName("Name", "SpvOpCooperativeMatrixStoreTensorNV")]
+        CooperativeMatrixStoreTensorNV = 0x14F8,
+        [NativeName("Name", "SpvOpCooperativeMatrixPerElementOpNV")]
+        CooperativeMatrixPerElementOpNV = 0x14F9,
+        [NativeName("Name", "SpvOpTypeTensorLayoutNV")]
+        TypeTensorLayoutNV = 0x14FA,
+        [NativeName("Name", "SpvOpTypeTensorViewNV")]
+        TypeTensorViewNV = 0x14FB,
+        [NativeName("Name", "SpvOpCreateTensorLayoutNV")]
+        CreateTensorLayoutNV = 0x14FC,
+        [NativeName("Name", "SpvOpTensorLayoutSetDimensionNV")]
+        TensorLayoutSetDimensionNV = 0x14FD,
+        [NativeName("Name", "SpvOpTensorLayoutSetStrideNV")]
+        TensorLayoutSetStrideNV = 0x14FE,
+        [NativeName("Name", "SpvOpTensorLayoutSliceNV")]
+        TensorLayoutSliceNV = 0x14FF,
+        [NativeName("Name", "SpvOpTensorLayoutSetClampValueNV")]
+        TensorLayoutSetClampValueNV = 0x1500,
+        [NativeName("Name", "SpvOpCreateTensorViewNV")]
+        CreateTensorViewNV = 0x1501,
+        [NativeName("Name", "SpvOpTensorViewSetDimensionNV")]
+        TensorViewSetDimensionNV = 0x1502,
+        [NativeName("Name", "SpvOpTensorViewSetStrideNV")]
+        TensorViewSetStrideNV = 0x1503,
         [NativeName("Name", "SpvOpDemoteToHelperInvocation")]
         DemoteToHelperInvocation = 0x1504,
         [NativeName("Name", "SpvOpDemoteToHelperInvocationEXT")]
         DemoteToHelperInvocationExt = 0x1504,
         [NativeName("Name", "SpvOpIsHelperInvocationEXT")]
         IsHelperInvocationExt = 0x1505,
+        [NativeName("Name", "SpvOpTensorViewSetClipNV")]
+        TensorViewSetClipNV = 0x1506,
+        [NativeName("Name", "SpvOpTensorLayoutSetBlockSizeNV")]
+        TensorLayoutSetBlockSizeNV = 0x1508,
+        [NativeName("Name", "SpvOpCooperativeMatrixTransposeNV")]
+        CooperativeMatrixTransposeNV = 0x150E,
         [NativeName("Name", "SpvOpConvertUToImageNV")]
         ConvertUToImageNV = 0x150F,
         [NativeName("Name", "SpvOpConvertUToSamplerNV")]
@@ -990,6 +1164,32 @@ namespace Silk.NET.SPIRV
         SamplerImageAddressingModeNV = 0x1515,
         [NativeName("Name", "SpvOpRawAccessChainNV")]
         RawAccessChainNV = 0x1516,
+        [NativeName("Name", "SpvOpRayQueryGetIntersectionSpherePositionNV")]
+        RayQueryGetIntersectionSpherePositionNV = 0x1533,
+        [NativeName("Name", "SpvOpRayQueryGetIntersectionSphereRadiusNV")]
+        RayQueryGetIntersectionSphereRadiusNV = 0x1534,
+        [NativeName("Name", "SpvOpRayQueryGetIntersectionLSSPositionsNV")]
+        RayQueryGetIntersectionLssPositionsNV = 0x1535,
+        [NativeName("Name", "SpvOpRayQueryGetIntersectionLSSRadiiNV")]
+        RayQueryGetIntersectionLssRadiiNV = 0x1536,
+        [NativeName("Name", "SpvOpRayQueryGetIntersectionLSSHitValueNV")]
+        RayQueryGetIntersectionLssHitValueNV = 0x1537,
+        [NativeName("Name", "SpvOpHitObjectGetSpherePositionNV")]
+        HitObjectGetSpherePositionNV = 0x1538,
+        [NativeName("Name", "SpvOpHitObjectGetSphereRadiusNV")]
+        HitObjectGetSphereRadiusNV = 0x1539,
+        [NativeName("Name", "SpvOpHitObjectGetLSSPositionsNV")]
+        HitObjectGetLssPositionsNV = 0x153A,
+        [NativeName("Name", "SpvOpHitObjectGetLSSRadiiNV")]
+        HitObjectGetLssRadiiNV = 0x153B,
+        [NativeName("Name", "SpvOpHitObjectIsSphereHitNV")]
+        HitObjectIsSphereHitNV = 0x153C,
+        [NativeName("Name", "SpvOpHitObjectIsLSSHitNV")]
+        HitObjectIsLssHitNV = 0x153D,
+        [NativeName("Name", "SpvOpRayQueryIsSphereHitNV")]
+        RayQueryIsSphereHitNV = 0x153E,
+        [NativeName("Name", "SpvOpRayQueryIsLSSHitNV")]
+        RayQueryIsLssHitNV = 0x153F,
         [NativeName("Name", "SpvOpSubgroupShuffleINTEL")]
         SubgroupShuffleIntel = 0x15C3,
         [NativeName("Name", "SpvOpSubgroupShuffleDownINTEL")]
@@ -1306,40 +1506,76 @@ namespace Silk.NET.SPIRV
         SaveMemoryIntel = 0x16BB,
         [NativeName("Name", "SpvOpRestoreMemoryINTEL")]
         RestoreMemoryIntel = 0x16BC,
+        [NativeName("Name", "SpvOpArbitraryFloatSinCosPiALTERA")]
+        ArbitraryFloatSinCosPiAltera = 0x16D0,
         [NativeName("Name", "SpvOpArbitraryFloatSinCosPiINTEL")]
         ArbitraryFloatSinCosPiIntel = 0x16D0,
+        [NativeName("Name", "SpvOpArbitraryFloatCastALTERA")]
+        ArbitraryFloatCastAltera = 0x16D1,
         [NativeName("Name", "SpvOpArbitraryFloatCastINTEL")]
         ArbitraryFloatCastIntel = 0x16D1,
+        [NativeName("Name", "SpvOpArbitraryFloatCastFromIntALTERA")]
+        ArbitraryFloatCastFromIntAltera = 0x16D2,
         [NativeName("Name", "SpvOpArbitraryFloatCastFromIntINTEL")]
         ArbitraryFloatCastFromIntIntel = 0x16D2,
+        [NativeName("Name", "SpvOpArbitraryFloatCastToIntALTERA")]
+        ArbitraryFloatCastToIntAltera = 0x16D3,
         [NativeName("Name", "SpvOpArbitraryFloatCastToIntINTEL")]
         ArbitraryFloatCastToIntIntel = 0x16D3,
+        [NativeName("Name", "SpvOpArbitraryFloatAddALTERA")]
+        ArbitraryFloatAddAltera = 0x16D6,
         [NativeName("Name", "SpvOpArbitraryFloatAddINTEL")]
         ArbitraryFloatAddIntel = 0x16D6,
+        [NativeName("Name", "SpvOpArbitraryFloatSubALTERA")]
+        ArbitraryFloatSubAltera = 0x16D7,
         [NativeName("Name", "SpvOpArbitraryFloatSubINTEL")]
         ArbitraryFloatSubIntel = 0x16D7,
+        [NativeName("Name", "SpvOpArbitraryFloatMulALTERA")]
+        ArbitraryFloatMulAltera = 0x16D8,
         [NativeName("Name", "SpvOpArbitraryFloatMulINTEL")]
         ArbitraryFloatMulIntel = 0x16D8,
+        [NativeName("Name", "SpvOpArbitraryFloatDivALTERA")]
+        ArbitraryFloatDivAltera = 0x16D9,
         [NativeName("Name", "SpvOpArbitraryFloatDivINTEL")]
         ArbitraryFloatDivIntel = 0x16D9,
+        [NativeName("Name", "SpvOpArbitraryFloatGTALTERA")]
+        ArbitraryFloatGtaltera = 0x16DA,
         [NativeName("Name", "SpvOpArbitraryFloatGTINTEL")]
         ArbitraryFloatGtintel = 0x16DA,
+        [NativeName("Name", "SpvOpArbitraryFloatGEALTERA")]
+        ArbitraryFloatGealtera = 0x16DB,
         [NativeName("Name", "SpvOpArbitraryFloatGEINTEL")]
         ArbitraryFloatGeintel = 0x16DB,
+        [NativeName("Name", "SpvOpArbitraryFloatLTALTERA")]
+        ArbitraryFloatLtaltera = 0x16DC,
         [NativeName("Name", "SpvOpArbitraryFloatLTINTEL")]
         ArbitraryFloatLtintel = 0x16DC,
+        [NativeName("Name", "SpvOpArbitraryFloatLEALTERA")]
+        ArbitraryFloatLealtera = 0x16DD,
         [NativeName("Name", "SpvOpArbitraryFloatLEINTEL")]
         ArbitraryFloatLeintel = 0x16DD,
+        [NativeName("Name", "SpvOpArbitraryFloatEQALTERA")]
+        ArbitraryFloatEqaltera = 0x16DE,
         [NativeName("Name", "SpvOpArbitraryFloatEQINTEL")]
         ArbitraryFloatEqintel = 0x16DE,
+        [NativeName("Name", "SpvOpArbitraryFloatRecipALTERA")]
+        ArbitraryFloatRecipAltera = 0x16DF,
         [NativeName("Name", "SpvOpArbitraryFloatRecipINTEL")]
         ArbitraryFloatRecipIntel = 0x16DF,
+        [NativeName("Name", "SpvOpArbitraryFloatRSqrtALTERA")]
+        ArbitraryFloatRSqrtAltera = 0x16E0,
         [NativeName("Name", "SpvOpArbitraryFloatRSqrtINTEL")]
         ArbitraryFloatRSqrtIntel = 0x16E0,
+        [NativeName("Name", "SpvOpArbitraryFloatCbrtALTERA")]
+        ArbitraryFloatCbrtAltera = 0x16E1,
         [NativeName("Name", "SpvOpArbitraryFloatCbrtINTEL")]
         ArbitraryFloatCbrtIntel = 0x16E1,
+        [NativeName("Name", "SpvOpArbitraryFloatHypotALTERA")]
+        ArbitraryFloatHypotAltera = 0x16E2,
         [NativeName("Name", "SpvOpArbitraryFloatHypotINTEL")]
         ArbitraryFloatHypotIntel = 0x16E2,
+        [NativeName("Name", "SpvOpArbitraryFloatSqrtALTERA")]
+        ArbitraryFloatSqrtAltera = 0x16E3,
         [NativeName("Name", "SpvOpArbitraryFloatSqrtINTEL")]
         ArbitraryFloatSqrtIntel = 0x16E3,
         [NativeName("Name", "SpvOpArbitraryFloatLogINTEL")]
@@ -1396,36 +1632,68 @@ namespace Silk.NET.SPIRV
         AliasScopeDeclIntel = 0x1718,
         [NativeName("Name", "SpvOpAliasScopeListDeclINTEL")]
         AliasScopeListDeclIntel = 0x1719,
+        [NativeName("Name", "SpvOpFixedSqrtALTERA")]
+        FixedSqrtAltera = 0x1723,
         [NativeName("Name", "SpvOpFixedSqrtINTEL")]
         FixedSqrtIntel = 0x1723,
+        [NativeName("Name", "SpvOpFixedRecipALTERA")]
+        FixedRecipAltera = 0x1724,
         [NativeName("Name", "SpvOpFixedRecipINTEL")]
         FixedRecipIntel = 0x1724,
+        [NativeName("Name", "SpvOpFixedRsqrtALTERA")]
+        FixedRsqrtAltera = 0x1725,
         [NativeName("Name", "SpvOpFixedRsqrtINTEL")]
         FixedRsqrtIntel = 0x1725,
+        [NativeName("Name", "SpvOpFixedSinALTERA")]
+        FixedSinAltera = 0x1726,
         [NativeName("Name", "SpvOpFixedSinINTEL")]
         FixedSinIntel = 0x1726,
+        [NativeName("Name", "SpvOpFixedCosALTERA")]
+        FixedCosAltera = 0x1727,
         [NativeName("Name", "SpvOpFixedCosINTEL")]
         FixedCosIntel = 0x1727,
+        [NativeName("Name", "SpvOpFixedSinCosALTERA")]
+        FixedSinCosAltera = 0x1728,
         [NativeName("Name", "SpvOpFixedSinCosINTEL")]
         FixedSinCosIntel = 0x1728,
+        [NativeName("Name", "SpvOpFixedSinPiALTERA")]
+        FixedSinPiAltera = 0x1729,
         [NativeName("Name", "SpvOpFixedSinPiINTEL")]
         FixedSinPiIntel = 0x1729,
+        [NativeName("Name", "SpvOpFixedCosPiALTERA")]
+        FixedCosPiAltera = 0x172A,
         [NativeName("Name", "SpvOpFixedCosPiINTEL")]
         FixedCosPiIntel = 0x172A,
+        [NativeName("Name", "SpvOpFixedSinCosPiALTERA")]
+        FixedSinCosPiAltera = 0x172B,
         [NativeName("Name", "SpvOpFixedSinCosPiINTEL")]
         FixedSinCosPiIntel = 0x172B,
+        [NativeName("Name", "SpvOpFixedLogALTERA")]
+        FixedLogAltera = 0x172C,
         [NativeName("Name", "SpvOpFixedLogINTEL")]
         FixedLogIntel = 0x172C,
+        [NativeName("Name", "SpvOpFixedExpALTERA")]
+        FixedExpAltera = 0x172D,
         [NativeName("Name", "SpvOpFixedExpINTEL")]
         FixedExpIntel = 0x172D,
+        [NativeName("Name", "SpvOpPtrCastToCrossWorkgroupALTERA")]
+        PtrCastToCrossWorkgroupAltera = 0x172E,
         [NativeName("Name", "SpvOpPtrCastToCrossWorkgroupINTEL")]
         PtrCastToCrossWorkgroupIntel = 0x172E,
+        [NativeName("Name", "SpvOpCrossWorkgroupCastToPtrALTERA")]
+        CrossWorkgroupCastToPtrAltera = 0x1732,
         [NativeName("Name", "SpvOpCrossWorkgroupCastToPtrINTEL")]
         CrossWorkgroupCastToPtrIntel = 0x1732,
+        [NativeName("Name", "SpvOpReadPipeBlockingALTERA")]
+        ReadPipeBlockingAltera = 0x173A,
         [NativeName("Name", "SpvOpReadPipeBlockingINTEL")]
         ReadPipeBlockingIntel = 0x173A,
+        [NativeName("Name", "SpvOpWritePipeBlockingALTERA")]
+        WritePipeBlockingAltera = 0x173B,
         [NativeName("Name", "SpvOpWritePipeBlockingINTEL")]
         WritePipeBlockingIntel = 0x173B,
+        [NativeName("Name", "SpvOpFPGARegALTERA")]
+        FpgaRegAltera = 0x173D,
         [NativeName("Name", "SpvOpFPGARegINTEL")]
         FpgaRegIntel = 0x173D,
         [NativeName("Name", "SpvOpRayQueryGetRayTMinKHR")]
@@ -1482,8 +1750,60 @@ namespace Silk.NET.SPIRV
         ControlBarrierArriveIntel = 0x17FE,
         [NativeName("Name", "SpvOpControlBarrierWaitINTEL")]
         ControlBarrierWaitIntel = 0x17FF,
+        [NativeName("Name", "SpvOpArithmeticFenceEXT")]
+        ArithmeticFenceExt = 0x1801,
+        [NativeName("Name", "SpvOpTaskSequenceCreateALTERA")]
+        TaskSequenceCreateAltera = 0x1813,
+        [NativeName("Name", "SpvOpTaskSequenceCreateINTEL")]
+        TaskSequenceCreateIntel = 0x1813,
+        [NativeName("Name", "SpvOpTaskSequenceAsyncALTERA")]
+        TaskSequenceAsyncAltera = 0x1814,
+        [NativeName("Name", "SpvOpTaskSequenceAsyncINTEL")]
+        TaskSequenceAsyncIntel = 0x1814,
+        [NativeName("Name", "SpvOpTaskSequenceGetALTERA")]
+        TaskSequenceGetAltera = 0x1815,
+        [NativeName("Name", "SpvOpTaskSequenceGetINTEL")]
+        TaskSequenceGetIntel = 0x1815,
+        [NativeName("Name", "SpvOpTaskSequenceReleaseALTERA")]
+        TaskSequenceReleaseAltera = 0x1816,
+        [NativeName("Name", "SpvOpTaskSequenceReleaseINTEL")]
+        TaskSequenceReleaseIntel = 0x1816,
+        [NativeName("Name", "SpvOpTypeTaskSequenceALTERA")]
+        TypeTaskSequenceAltera = 0x1837,
+        [NativeName("Name", "SpvOpTypeTaskSequenceINTEL")]
+        TypeTaskSequenceIntel = 0x1837,
         [NativeName("Name", "SpvOpSubgroupBlockPrefetchINTEL")]
         SubgroupBlockPrefetchIntel = 0x184D,
+        [NativeName("Name", "SpvOpSubgroup2DBlockLoadINTEL")]
+        Subgroup2DBlockLoadIntel = 0x1857,
+        [NativeName("Name", "SpvOpSubgroup2DBlockLoadTransformINTEL")]
+        Subgroup2DBlockLoadTransformIntel = 0x1858,
+        [NativeName("Name", "SpvOpSubgroup2DBlockLoadTransposeINTEL")]
+        Subgroup2DBlockLoadTransposeIntel = 0x1859,
+        [NativeName("Name", "SpvOpSubgroup2DBlockPrefetchINTEL")]
+        Subgroup2DBlockPrefetchIntel = 0x185A,
+        [NativeName("Name", "SpvOpSubgroup2DBlockStoreINTEL")]
+        Subgroup2DBlockStoreIntel = 0x185B,
+        [NativeName("Name", "SpvOpSubgroupMatrixMultiplyAccumulateINTEL")]
+        SubgroupMatrixMultiplyAccumulateIntel = 0x185D,
+        [NativeName("Name", "SpvOpBitwiseFunctionINTEL")]
+        BitwiseFunctionIntel = 0x1862,
+        [NativeName("Name", "SpvOpUntypedVariableLengthArrayINTEL")]
+        UntypedVariableLengthArrayIntel = 0x1864,
+        [NativeName("Name", "SpvOpConditionalExtensionINTEL")]
+        ConditionalExtensionIntel = 0x1868,
+        [NativeName("Name", "SpvOpConditionalEntryPointINTEL")]
+        ConditionalEntryPointIntel = 0x1869,
+        [NativeName("Name", "SpvOpConditionalCapabilityINTEL")]
+        ConditionalCapabilityIntel = 0x186A,
+        [NativeName("Name", "SpvOpSpecConstantTargetINTEL")]
+        SpecConstantTargetIntel = 0x186B,
+        [NativeName("Name", "SpvOpSpecConstantArchitectureINTEL")]
+        SpecConstantArchitectureIntel = 0x186C,
+        [NativeName("Name", "SpvOpSpecConstantCapabilitiesINTEL")]
+        SpecConstantCapabilitiesIntel = 0x186D,
+        [NativeName("Name", "SpvOpConditionalCopyObjectINTEL")]
+        ConditionalCopyObjectIntel = 0x186E,
         [NativeName("Name", "SpvOpGroupIMulKHR")]
         GroupIMulKhr = 0x1901,
         [NativeName("Name", "SpvOpGroupFMulKHR")]
@@ -1500,10 +1820,18 @@ namespace Silk.NET.SPIRV
         GroupLogicalOrKhr = 0x1907,
         [NativeName("Name", "SpvOpGroupLogicalXorKHR")]
         GroupLogicalXorKhr = 0x1908,
+        [NativeName("Name", "SpvOpRoundFToTF32INTEL")]
+        RoundFToTF32intel = 0x191A,
         [NativeName("Name", "SpvOpMaskedGatherINTEL")]
         MaskedGatherIntel = 0x191C,
         [NativeName("Name", "SpvOpMaskedScatterINTEL")]
         MaskedScatterIntel = 0x191D,
+        [NativeName("Name", "SpvOpConvertHandleToImageINTEL")]
+        ConvertHandleToImageIntel = 0x1981,
+        [NativeName("Name", "SpvOpConvertHandleToSamplerINTEL")]
+        ConvertHandleToSamplerIntel = 0x1982,
+        [NativeName("Name", "SpvOpConvertHandleToSampledImageINTEL")]
+        ConvertHandleToSampledImageIntel = 0x1983,
         [NativeName("Name", "SpvOpMax")]
         Max = 0x7FFFFFFF,
     }

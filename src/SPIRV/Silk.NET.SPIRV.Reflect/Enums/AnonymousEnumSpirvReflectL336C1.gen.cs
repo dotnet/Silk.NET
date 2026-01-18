@@ -9,8 +9,8 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SPIRV.Reflect
 {
-    [NativeName("Name", "__AnonymousEnum_spirv_reflect_L335_C1")]
-    public enum AnonymousEnumSpirvReflectL335C1 : int
+    [NativeName("Name", "__AnonymousEnum_spirv_reflect_L336_C1")]
+    public enum AnonymousEnumSpirvReflectL336C1 : int
     {
         [NativeName("Name", "SPV_REFLECT_BINDING_NUMBER_DONT_CHANGE")]
         BindingNumberDontChange = unchecked((int) 0xFFFFFFFFFFFFFFFF),
