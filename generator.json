@@ -147,6 +147,7 @@
         "SpecPath": "eng/submodules/opengl/xml/gl.xml",
         "Namespace": "Silk.NET.OpenGL",
         "TypeMap": {
+          "GLenum": "uint",
           "TraceMaskMESA": "uint",
           "PathRenderingTokenNV": "byte",
           "PathCoordType": "byte"
@@ -252,6 +253,10 @@
       "MixKhronosData": {
         "SpecPath": "eng/submodules/openal-soft/registry/xml/al.xml",
         "Namespace": "Silk.NET.OpenAL",
+        "TypeMap": {
+          "ALenum": "uint",
+          "ALCenum": "uint"
+        },
         "NonStandardExtensionNomenclature": true,
         "Vendors": [
           "SOFT",
