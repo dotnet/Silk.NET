@@ -28,7 +28,7 @@ public class InputContext
     private Keyboards? _keyboards;
     private Gamepads? _gamepads;
     private Joysticks? _joysticks;
-    private List<IInputBackend> _backends = [];
+    private readonly List<IInputBackend> _backends = [];
     private List<IInputDevice>? _devices;
 
     /// <summary>

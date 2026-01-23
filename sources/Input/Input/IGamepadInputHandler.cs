@@ -3,7 +3,7 @@ namespace Silk.NET.Input;
 /// <summary>
 /// An <see cref="IInputHandler"/> that also receives <see cref="IGamepad"/> input.
 /// </summary>
-public interface IGamepadInputHandler : IButtonInputHandler<JoystickButton>
+public interface IGamepadInputHandler : IButtonInputHandler<JoystickButton>, IInputHandler<GamepadThumbstickMoveEvent>, IInputHandler<GamepadTriggerMoveEvent>
 {
     /// <summary>
     /// Called when one of the twin sticks moves.
@@ -16,4 +16,7 @@ public interface IGamepadInputHandler : IButtonInputHandler<JoystickButton>
     /// </summary>
     /// <param name="event">The event details.</param>
     void HandleTriggerMove(GamepadTriggerMoveEvent @event);
+
+    void IInputHandler<GamepadThumbstickMoveEvent>.Handle(GamepadThumbstickMoveEvent @event) => HandleThumbstickMove(@event);
+    void IInputHandler<GamepadTriggerMoveEvent>.Handle(GamepadTriggerMoveEvent @event) => HandleTriggerMove(@event);
 }

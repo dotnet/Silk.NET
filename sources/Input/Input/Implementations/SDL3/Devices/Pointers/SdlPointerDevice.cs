@@ -181,13 +181,46 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         pressure ??= isDown ? 1.0f : 0.0f;;
         var idx = EnumInfo<PointerButton>.ValueIndexOfUnnamed(button);
         _buttons[idx] = new Button<PointerButton>(button, isDown, pressure.Value);
+    }
 
+    public override void FinalizeUpdate(SdlInputBackend.SilkEventQueues silkEvents)
+    {
+        while (_scrollEvents.TryDequeue(out var evt))
+        {
+            silkEvents.MouseScrollEvents.Enqueue(evt);
+        }
+
+        while (_pointEvents.TryDequeue(out var evt))
+        {
+            silkEvents.PointChangedEvents.Enqueue(evt);
+        }
+
+        while (_clickEvents.TryDequeue(out var evt))
+        {
+            silkEvents.PointerClickEvents.Enqueue(evt);
+        }
+
+        while (_gripEvents.TryDequeue(out var evt))
+        {
+            silkEvents.PointerGripChangedEvents.Enqueue(evt);
+        }
+
+        while(_targetEvents.TryDequeue(out var evt))
+        {
+            silkEvents.PointerTargetChangedEvents.Enqueue(evt);
+        }
     }
 
     protected IReadOnlyList<IPointerTarget> ActiveTargets => _activeTargets;
     private readonly List<IPointerTarget> _activeTargets = [];
     private readonly List<IPointerTarget> _allTargets = [];
-
     private readonly IPointerTarget _unboundedPointerTarget;
     protected IReadOnlyList<IPointerTarget> UnboundedTargetList { get; }
+
+    private readonly Queue<MouseScrollEvent> _scrollEvents = new();
+    private readonly Queue<PointChangedEvent> _pointEvents = new();
+    private readonly Queue<PointerClickEvent> _clickEvents = new();
+    private readonly Queue<PointerGripChangedEvent> _gripEvents = new();
+    private readonly Queue<PointerTargetChangedEvent> _targetEvents = new();
+
 }

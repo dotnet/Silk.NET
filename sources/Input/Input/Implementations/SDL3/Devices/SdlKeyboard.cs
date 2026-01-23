@@ -102,19 +102,24 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         return _textRecorder?.ConsumeInput();
     }
 
-    /// <summary>
-    /// Updates the internal modifier state.
-    /// </summary>
-    /// <remarks>
-    /// This should be called every frame the keyboard is updated in <see cref="SdlInputBackend"/>.
-    /// This mod state is purely used for sdl-related calls and modifiers that are independent of key state (e.g. numlock, caps lock)
-    /// - otherwise, we handle the modifier states with our standard key handling logic
-    /// </remarks>
-    public void FinalizeUpdate(SdlInputBackend.SilkEventQueues queues)
+    public override void FinalizeUpdate(SdlInputBackend.SilkEventQueues queues)
     {
         if (_hasUpdates)
         {
+            // This should be called every frame the keyboard is updated in <see cref="SdlInputBackend"/>.
+            // This mod state is purely used for sdl-related calls and modifiers that are independent of key state (e.g. numlock, caps lock)
+            // - otherwise, we handle the modifier states with our standard key handling logic
             _modState = NativeBackend.GetModState();
+        }
+
+        while (_keyChangedEvents.TryDequeue(out var evt))
+        {
+            queues.KeyChangedEvents.Enqueue(evt);
+        }
+
+        while (_keyCharEvents.TryDequeue(out var evt))
+        {
+            queues.KeyCharEvents.Enqueue(evt);
         }
     }
 
@@ -224,6 +229,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     private ushort _modState;
     private const float _pressureMultiplier = 1f / 255f;
     private readonly ButtonStates _keyStates;
+    private readonly Queue<KeyChangedEvent> _keyChangedEvents = new();
+    private readonly Queue<KeyCharEvent> _keyCharEvents = new();
 
     private class ButtonStates : IReadOnlyList<Button<KeyName>>
     {

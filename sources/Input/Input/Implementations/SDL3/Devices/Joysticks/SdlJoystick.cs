@@ -173,6 +173,24 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
     protected override void Release() => NativeBackend.CloseJoystick(JoystickHandle);
 
+    public override void FinalizeUpdate(SdlInputBackend.SilkEventQueues silkEvents)
+    {
+        while (_buttonEvents.TryDequeue(out var evt))
+        {
+            silkEvents.ButtonChangedEvents.Enqueue(evt);
+        }
+
+        while (_axisEvents.TryDequeue(out var evt))
+        {
+            silkEvents.JoystickAxisMoveEvents.Enqueue(evt);
+        }
+
+        while(_hatEvents.TryDequeue(out var evt))
+        {
+            silkEvents.JoystickHatMoveEvents.Enqueue(evt);
+        }
+    }
+
     public void RefreshSdlId() => _sdlDeviceId = NativeBackend.GetJoystickID(JoystickHandle);
     private ulong _sdlDeviceId;
 
@@ -183,6 +201,11 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
     // Constants
     internal const short DigitalThreshold = short.MaxValue / 8;
+
+    // events
+    private readonly Queue<ButtonChangedEvent<JoystickButton>> _buttonEvents = new();
+    private readonly Queue<JoystickAxisMoveEvent> _axisEvents = new();
+    private readonly Queue<JoystickHatMoveEvent> _hatEvents = new();
 
     ButtonReadOnlyList<JoystickButton> IButtonDevice<JoystickButton>.State => State.Buttons;
 

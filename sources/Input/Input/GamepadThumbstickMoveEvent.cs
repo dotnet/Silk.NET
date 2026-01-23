@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Numerics;
+using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -14,4 +15,4 @@ namespace Silk.NET.Input;
 /// The new position of the thumbstick, where each axis is between <c>-1.0</c> and <c>1.0</c>.
 /// </param>
 /// <param name="Delta">The change in <see cref="Value"/> as a result of this event.</param>
-public readonly record struct GamepadThumbstickMoveEvent(IGamepad Gamepad, long Timestamp, Vector2 Value, Vector2 Delta);
+public readonly record struct GamepadThumbstickMoveEvent(IGamepad Gamepad, long Timestamp, Vector2 Value, Vector2 Delta) : ITimestampedEvent;

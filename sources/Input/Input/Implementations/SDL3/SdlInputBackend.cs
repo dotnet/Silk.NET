@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Buffers;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
@@ -13,10 +14,8 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-
 internal partial class SdlInputBackend : IInputBackend
 {
-
     [field: MaybeNull]
     public SdlUnboundedPointerTarget UnboundedPointerTarget =>
         field ??= new SdlUnboundedPointerTarget(this);
@@ -71,6 +70,7 @@ internal partial class SdlInputBackend : IInputBackend
         {
             Sdl.ThrowError();
         }
+
         Id = (nint)ptr.Handle;
         CursorConfiguration = new SdlCursor(Sdl);
 
@@ -152,7 +152,6 @@ internal partial class SdlInputBackend : IInputBackend
     // public SdlBackendRoot Root { get; }
 
 
-
     // TODO we can't query support for these modes, but should we try-it-and-see to be accurate?
 
     // TODO if you're using one input context for all windows, there is no way to specify a window for grabbed cursor mode
@@ -199,10 +198,7 @@ internal partial class SdlInputBackend : IInputBackend
         foreach (var device in _eventProcessingArgs.Devices)
         {
             // todo - implement this for all device types instead
-            if (device is SdlKeyboard keyboard)
-            {
-                keyboard.FinalizeUpdate(_silkEvents);
-            }
+            device.FinalizeUpdate(_silkEvents);
         }
 
         _silkEvents.RaiseEvents(handler);
@@ -351,14 +347,18 @@ internal partial class SdlInputBackend : IInputBackend
                     case EventType.JoystickUpdateComplete:
                         break;
                 }
+
                 break;
             }
+
             #endregion
+
             #region Pointers
+
             // Mouse events
             case >= EventType.MouseMotion and <= EventType.MouseAdded:
             {
-                if(!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, out var mouse))
+                if (!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, out var mouse))
                 {
                     return;
                 }
@@ -421,7 +421,8 @@ internal partial class SdlInputBackend : IInputBackend
                     case EventType.PenAxis:
                     {
                         ref readonly var penEvt = ref evt.Paxis;
-                        penDevice.Event(target, new Vector2(penEvt.X, penEvt.Y), (SdlPenInputFlags)penEvt.PenState, penEvt.Axis, penEvt.Value);
+                        penDevice.Event(target, new Vector2(penEvt.X, penEvt.Y), (SdlPenInputFlags)penEvt.PenState,
+                            penEvt.Axis, penEvt.Value);
                         break;
                     }
                 }
@@ -443,10 +444,12 @@ internal partial class SdlInputBackend : IInputBackend
                 touchDevice.Event(finger, target, (FingerEventType)finger.Type);
                 break;
             }
+
             #endregion
         }
 
         #region unimplemented
+
         switch (type)
         {
             //  Input events ----------------------------------------------------------
@@ -485,6 +488,7 @@ internal partial class SdlInputBackend : IInputBackend
                 break;
             }
         }
+
         #endregion
 
         return;
@@ -555,37 +559,170 @@ internal partial class SdlInputBackend : IInputBackend
 
     internal class SilkEventQueues
     {
-        public Queue<ButtonChangedEvent<JoystickButton>> ButtonChangedEvents { get; } = new();
-        public Queue<ConnectionEvent> ConnectionEvents { get; } = new();
-        public Queue<KeyChangedEvent> KeyChangedEvents { get; } = new();
-        public Queue<GamepadThumbstickMoveEvent> GamepadThumbstickMoveEvents { get; } = new();
-        public Queue<GamepadTriggerMoveEvent> GamepadTriggerMoveEvents { get; } = new();
-        public Queue<JoystickAxisMoveEvent> JoystickAxisMoveEvents { get; } = new();
-        public Queue<JoystickHatMoveEvent> JoystickHatMoveEvents { get; } = new();
-        public Queue<KeyCharEvent> KeyCharEvents { get; } = new();
-        public Queue<MouseScrollEvent> MouseScrollEvents { get; } = new();
-        public Queue<PointChangedEvent> PointChangedEvents { get; } = new();
-        public Queue<PointerClickEvent> PointerClickEvents{ get; } = new();
-        public Queue<PointerGripChangedEvent> PointerGripChangedEvents { get; } = new();
-        public Queue<PointerTargetChangedEvent> PointerTargetChangedEvents { get; } = new();
+        public IEventQueue<ButtonChangedEvent<JoystickButton>> ButtonChangedEvents => _buttonChangedEvents;
 
-        public void RaiseEvents(IInputHandler handler)
+        public IEventQueue<ConnectionEvent> ConnectionEvents => _connectionEvents;
+
+        public IEventQueue<KeyChangedEvent> KeyChangedEvents => _keyChangedEvents;
+
+        public IEventQueue<GamepadThumbstickMoveEvent> GamepadThumbstickMoveEvents => _gamepadThumbstickMoveEvents;
+
+        public IEventQueue<GamepadTriggerMoveEvent> GamepadTriggerMoveEvents => _gamepadTriggerMoveEvents;
+
+        public IEventQueue<JoystickAxisMoveEvent> JoystickAxisMoveEvents => _joystickAxisMoveEvents;
+
+        public IEventQueue<JoystickHatMoveEvent> JoystickHatMoveEvents => _joystickHatMoveEvents;
+
+        public IEventQueue<KeyCharEvent> KeyCharEvents => _keyCharEvents;
+
+        public IEventQueue<MouseScrollEvent> MouseScrollEvents => _mouseScrollEvents;
+
+        public IEventQueue<PointChangedEvent> PointChangedEvents => _pointChangedEvents;
+
+        public IEventQueue<PointerClickEvent> PointerClickEvents => _pointerClickEvents;
+
+        public IEventQueue<PointerGripChangedEvent> PointerGripChangedEvents => _pointerGripChangedEvents;
+
+        public IEventQueue<PointerTargetChangedEvent> PointerTargetChangedEvents => _pointerTargetChangedEvents;
+
+        private readonly OrderedEventQueue _orderedEvents = new();
+        private readonly EventQueue<ButtonChangedEvent<JoystickButton>> _buttonChangedEvents = new();
+        private readonly EventQueue<ConnectionEvent> _connectionEvents = new();
+        private readonly EventQueue<KeyChangedEvent> _keyChangedEvents = new();
+        private readonly EventQueue<GamepadThumbstickMoveEvent> _gamepadThumbstickMoveEvents = new();
+        private readonly EventQueue<GamepadTriggerMoveEvent> _gamepadTriggerMoveEvents = new();
+        private readonly EventQueue<JoystickAxisMoveEvent> _joystickAxisMoveEvents = new();
+        private readonly EventQueue<JoystickHatMoveEvent> _joystickHatMoveEvents = new();
+        private readonly EventQueue<KeyCharEvent> _keyCharEvents = new();
+        private readonly EventQueue<MouseScrollEvent> _mouseScrollEvents = new();
+        private readonly EventQueue<PointChangedEvent> _pointChangedEvents = new();
+        private readonly EventQueue<PointerClickEvent> _pointerClickEvents = new();
+        private readonly EventQueue<PointerGripChangedEvent> _pointerGripChangedEvents = new();
+        private readonly EventQueue<PointerTargetChangedEvent> _pointerTargetChangedEvents = new();
+
+        public void RaiseEvents(params Span<IInputHandler> handlers)
         {
+            _orderedEvents.Enqueue(_buttonChangedEvents);
+            _orderedEvents.Enqueue(_connectionEvents);
+            _orderedEvents.Enqueue(_keyChangedEvents);
+            _orderedEvents.Enqueue(_gamepadThumbstickMoveEvents);
+            _orderedEvents.Enqueue(_gamepadTriggerMoveEvents);
+            _orderedEvents.Enqueue(_joystickAxisMoveEvents);
+            _orderedEvents.Enqueue(_joystickHatMoveEvents);
+            _orderedEvents.Enqueue(_keyCharEvents);
+            _orderedEvents.Enqueue(_mouseScrollEvents);
+            _orderedEvents.Enqueue(_pointChangedEvents);
+            _orderedEvents.Enqueue(_pointerClickEvents);
+            _orderedEvents.Enqueue(_pointerGripChangedEvents);
+            _orderedEvents.Enqueue(_pointerTargetChangedEvents);
+            _orderedEvents.SortDescending();
 
+            if (handlers is { Length: > 0 })
+            {
+                while (_orderedEvents.TryDequeue(out var evt))
+                {
+                    switch (evt.Value)
+                    {
+                        case var genericEvt when genericEvt.Type == typeof(ButtonChangedEvent<JoystickButton>):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<ButtonChangedEvent<JoystickButton>>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(ConnectionEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<ConnectionEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(KeyChangedEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<KeyChangedEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(GamepadThumbstickMoveEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<GamepadThumbstickMoveEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(GamepadTriggerMoveEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<GamepadTriggerMoveEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(JoystickAxisMoveEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<JoystickAxisMoveEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(JoystickHatMoveEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<JoystickHatMoveEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(KeyCharEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<KeyCharEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(MouseScrollEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<MouseScrollEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(PointChangedEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<PointChangedEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(PointerClickEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<PointerClickEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(PointerGripChangedEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<PointerGripChangedEvent>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(PointerTargetChangedEvent):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<PointerTargetChangedEvent>());
+                            break;
+                        }
+                        default:
+                        {
+                            throw new InvalidOperationException(nameof(evt.Value.Type));
+                        }
+                    }
+                }
+            }
+
+
+            _buttonChangedEvents.Clear();
+            _connectionEvents.Clear();
+            _keyChangedEvents.Clear();
+            _gamepadThumbstickMoveEvents.Clear();
+            _gamepadTriggerMoveEvents.Clear();
+            _joystickAxisMoveEvents.Clear();
+            _joystickHatMoveEvents.Clear();
+            _keyCharEvents.Clear();
+            _mouseScrollEvents.Clear();
+            _pointChangedEvents.Clear();
+            _pointerClickEvents.Clear();
+            _pointerGripChangedEvents.Clear();
+            _pointerTargetChangedEvents.Clear();
         }
 
-        public void ClearEvents()
+        private static void RaiseEvent<TItem>(Span<IInputHandler> handlers, in TItem evt)
+            where TItem : struct, ITimestampedEvent
         {
-            ButtonChangedEvents.Clear();
-            ConnectionEvents.Clear();
-            KeyChangedEvents.Clear();
-            GamepadThumbstickMoveEvents.Clear();
-            GamepadTriggerMoveEvents.Clear();
-            JoystickAxisMoveEvents.Clear();
-            JoystickHatMoveEvents.Clear();
-            KeyCharEvents.Clear();
-            MouseScrollEvents.Clear();
-            PointChangedEvents.Clear();
+            for (var index = 0; index < handlers.Length; index++)
+            {
+                var handler = handlers[index];
+                if (handler is IInputHandler<TItem> inputHandler)
+                {
+                    inputHandler.Handle(evt);
+                }
+            }
         }
     }
 
@@ -605,7 +742,6 @@ internal partial class SdlInputBackend : IInputBackend
             SdlWindowTargets = [];
             DisplayTargets = [];
         }
-
     }
 
     internal enum SdlPenInputFlags : uint
@@ -661,4 +797,87 @@ internal partial class SdlInputBackend : IInputBackend
     private readonly long _epoch;
     private readonly SdlEventQueue _pumpedSdlEvents = new();
     private readonly SilkEventQueues _silkEvents = new();
+}
+
+internal interface IEventQueue<T> where T : struct, ITimestampedEvent
+{
+    public void Enqueue(in T item);
+}
+
+internal record struct GenericEvent(nint EventPtr, long Timestamp, Type Type) : ITimestampedEvent
+{
+    public unsafe T Value<T>() => Unsafe.AsRef<T>((void*)EventPtr);
+}
+
+internal interface ITimestampedEvent
+{
+    public long Timestamp { get; }
+}
+
+internal sealed class OrderedEventQueue : EventQueue<GenericEvent>
+{
+    public void Enqueue<T>(in EventQueue<T> queue) where T : struct, ITimestampedEvent
+    {
+        for(var i = 0; i < queue.Count; ++i)
+        {
+            Enqueue(queue.AsGenericEvent(i));
+        }
+    }
+
+    public void Sort()
+    {
+        var span = Events.AsSpan(0, Count);
+        span.Sort((x, y) => x.Timestamp.CompareTo(y.Timestamp));
+    }
+
+    public void SortDescending()
+    {
+        var span = Events.AsSpan(0, Count);
+        span.Sort((x, y) => y.Timestamp.CompareTo(x.Timestamp));
+    }
+}
+
+internal unsafe class EventQueue<T> : IEventQueue<T> where T : struct, ITimestampedEvent
+{
+    protected T[] Events { get; private set; } = [];
+    public int Count { get; private set; }
+
+    public nint this[int index] => (nint)Unsafe.AsPointer(ref Events[index]);
+
+    public GenericEvent AsGenericEvent(int index)
+    {
+        ref var evt = ref Events[index];
+        return new GenericEvent((nint)Unsafe.AsPointer(ref evt), evt.Timestamp, typeof(T));
+    }
+
+    public void Enqueue(in T item)
+    {
+        if (Events.Length == Count)
+        {
+            var newEvts = GC.AllocateArray<T>(length: Events.Length == 0 ? 16 : Events.Length * 2, pinned: true);
+            Events.CopyTo(newEvts, 0);
+            Events = newEvts;
+            Debug.Assert(Events.Length > Count);
+        }
+
+        Events[Count++] = item;
+    }
+
+    public bool TryDequeue([NotNullWhen(true)] out T? value)
+    {
+        if (Count == 0)
+        {
+            value = null;
+            return false;
+        }
+
+        value = Events[--Count];
+        return true;
+    }
+
+    public void Clear()
+    {
+        Events.AsSpan().Clear();
+        Count = 0;
+    }
 }

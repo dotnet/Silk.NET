@@ -122,6 +122,24 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         NativeBackend.CloseGamepad(_gamepadHandle);
     }
 
+    public override void FinalizeUpdate(SdlInputBackend.SilkEventQueues silkEvents)
+    {
+        while (_buttonEvents.TryDequeue(out var evt))
+        {
+            silkEvents.ButtonChangedEvents.Enqueue(evt);
+        }
+
+        while (_thumbstickEvents.TryDequeue(out var evt))
+        {
+            silkEvents.GamepadThumbstickMoveEvents.Enqueue(evt);
+        }
+
+        while (_triggerEvents.TryDequeue(out var evt))
+        {
+            silkEvents.GamepadTriggerMoveEvents.Enqueue(evt);
+        }
+    }
+
     #region IGamepad
 
     GamepadState IGamepad.State => GamepadState;
@@ -345,6 +363,9 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     private readonly Dictionary<int, GamepadBinding> _bindings = new();
     private readonly List<List<GamepadBinding>?> _hatBindings = [];
     private readonly List<GamepadBinding> _outputBindings = [];
+    private readonly Queue<ButtonChangedEvent<JoystickButton>> _buttonEvents = new();
+    private readonly Queue<GamepadThumbstickMoveEvent> _thumbstickEvents = new();
+    private readonly Queue<GamepadTriggerMoveEvent> _triggerEvents = new();
 
 
     // SDL indexes the 3 of these separately, but it is more convenient

@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Silk.NET.Input.SDL3;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Input;
@@ -24,4 +25,4 @@ namespace Silk.NET.Input;
 /// The new <see cref="IPointerTarget.Bounds"/> of the target. This may be the same as <see cref="OldBounds"/> if there
 /// has been no change.
 /// </param>
-public readonly record struct PointerTargetChangedEvent(IPointerDevice Pointer, long Timestamp, IPointerTarget Target, bool? IsAdded, Box3D<float> OldBounds, Box3D<float> NewBounds);
+public readonly record struct PointerTargetChangedEvent(IPointerDevice Pointer, long Timestamp, IPointerTarget Target, bool? IsAdded, Box3D<float> OldBounds, Box3D<float> NewBounds) : ITimestampedEvent;

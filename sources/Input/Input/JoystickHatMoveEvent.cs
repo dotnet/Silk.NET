@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Numerics;
+using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -12,4 +13,4 @@ namespace Silk.NET.Input;
 /// </param>
 /// <param name="Value">The position of the hat after this event.</param>
 /// <param name="Delta">The change in <see cref="Value"/> as a result of this event.</param>
-public readonly record struct JoystickHatMoveEvent(IJoystick Joystick, long Timestamp, Vector2 Value, Vector2 Delta);
+public readonly record struct JoystickHatMoveEvent(IJoystick Joystick, long Timestamp, Vector2 Value, Vector2 Delta) : ITimestampedEvent;
