@@ -100,7 +100,8 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                 name: coverage-${{ matrix.name }}
-                path: ./coverage/**/coverage.cobertura.xml
+                path: ./coverage/**/*.cobertura.xml
+                if-no-files-found: error
     Report-Coverage:
         name: "Report Coverage"
         runs-on: ubuntu-latest
@@ -119,7 +120,7 @@ jobs:
             - name: Generate Report
               uses: danielpalme/ReportGenerator-GitHub-Action@5.1.9
               with:
-                reports: './coverage/**/**/coverage.cobertura.xml'
+                reports: './coverage/**/*.cobertura.xml'
                 targetdir: './coveragereport'
                 reporttypes: 'Cobertura'
                 verbosity: 'Info'
