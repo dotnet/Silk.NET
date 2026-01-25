@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Input;
@@ -344,6 +345,15 @@ public sealed class Pointers
             clicks = CollectionsMarshal.AsSpan(_clicks);
         }
     }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IInputHandler<PointerTargetChangedEvent>.Handle(PointerTargetChangedEvent @event) => HandleTargetChanged(@event);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IInputHandler<PointChangedEvent>.Handle(PointChangedEvent @event) => HandlePointChanged(@event);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IInputHandler<PointerGripChangedEvent>.Handle(PointerGripChangedEvent @event) => HandleGripChanged(@event);
 
     /// <inheritdoc />
     protected internal override void HandleDeviceConnectionChanged(ConnectionEvent @event)

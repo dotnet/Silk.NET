@@ -166,7 +166,6 @@ internal partial class SdlInputBackend : IInputBackend
     {
         if (!_pumped)
         {
-            _silkEvents.ClearEvents();
             Sdl.PumpEvents();
         }
 

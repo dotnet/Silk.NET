@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
 
@@ -115,6 +116,15 @@ public class InputContext
             HandleDeviceConnectionChanged(new ConnectionEvent(device, 0, true));
         }
     }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IInputHandler<PointerTargetChangedEvent>.Handle(PointerTargetChangedEvent @event) => Pointers.HandleTargetChanged(@event);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IInputHandler<PointChangedEvent>.Handle(PointChangedEvent @event) => Pointers.HandlePointChanged(@event);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    void IInputHandler<PointerGripChangedEvent>.Handle(PointerGripChangedEvent @event) => Pointers.HandleGripChanged(@event);
 
     private void HandleDeviceConnectionChanged(ConnectionEvent e)
     {

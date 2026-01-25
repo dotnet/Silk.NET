@@ -3,7 +3,7 @@ namespace Silk.NET.Input;
 /// <summary>
 /// An <see cref="IInputHandler"/> that also receives <see cref="IPointerDevice"/> events.
 /// </summary>
-public interface IPointerInputHandler : IButtonInputHandler<PointerButton>, IInputHandler<PointerTargetChangedEvent, PointChangedEvent, PointerGripChangedEvent>
+public interface IPointerInputHandler : IButtonInputHandler<PointerButton>, IInputHandler<PointerTargetChangedEvent>, IInputHandler<PointChangedEvent>, IInputHandler<PointerGripChangedEvent>
 {
     /// <summary>
     /// Called when the properties of a target at which the user can point using the pointer change. This includes the
