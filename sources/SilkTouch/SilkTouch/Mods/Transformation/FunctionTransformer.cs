@@ -6,6 +6,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
+using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods.Transformation;
@@ -182,7 +183,11 @@ public class FunctionTransformer(
                         .WithIdentifier(Identifier(newIden));
 
                     newFun = newFun.WithAttributeLists(
-                        newFun.AttributeLists.AddNameSuffix("RawFunction", "Raw")
+                        newFun.AttributeLists.AddNameAffix(
+                            NameAffixType.Suffix,
+                            "RawFunction",
+                            "Raw"
+                        )
                     );
 
                     discrim = ModUtils.DiscrimStr(

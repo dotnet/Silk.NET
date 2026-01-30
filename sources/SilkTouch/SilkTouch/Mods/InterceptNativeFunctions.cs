@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
+using Silk.NET.SilkTouch.Naming;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -131,7 +132,11 @@ public class InterceptNativeFunctions(
                 );
 
             return node.WithAttributeLists(
-                node.AttributeLists.AddNameSuffix("InterceptedFunction", "Internal")
+                node.AttributeLists.AddNameAffix(
+                    NameAffixType.Suffix,
+                    "InterceptedFunction",
+                    "Internal"
+                )
             );
         }
     }

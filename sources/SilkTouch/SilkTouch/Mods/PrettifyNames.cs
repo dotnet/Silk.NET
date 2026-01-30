@@ -128,7 +128,7 @@ public class PrettifyNames(
         // The dictionary containing mappings from the original type names to the new names of the type and its members
         var newNames = new Dictionary<string, RenamedType>();
 
-        var nameAffixer = new NameAffixer(visitor.AffixTypes, cfg.Affixes);
+        var nameAffixer = new PrettifyNamesAffixer(visitor.AffixTypes, cfg.Affixes);
         var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
 
         // Trim the trimmable names if the trimmer baseline is set
@@ -463,7 +463,7 @@ public class PrettifyNames(
         string? container,
         string name,
         Dictionary<string, string> nameOverrides,
-        NameAffixer nameAffixer,
+        PrettifyNamesAffixer nameAffixer,
         NamePrettifier namePrettifier
     )
     {
@@ -870,13 +870,6 @@ public class PrettifyNames(
         Dictionary<string, string> Functions
     );
 
-    private record struct NameAffix(
-        bool IsPrefix,
-        string Category,
-        string Affix,
-        int DeclarationOrder
-    );
-
     private record struct TypeData(List<string> NonFunctions, List<FunctionData> Functions);
 
     private record struct FunctionData(string Name, MethodDeclarationSyntax Syntax);
@@ -958,52 +951,13 @@ public class PrettifyNames(
             || _enumInProgress is not null
             || node.Ancestors().OfType<BaseTypeDeclarationSyntax>().Any();
 
-        private bool TryGetAffixData(
-            SyntaxList<AttributeListSyntax> attributeLists,
-            out NameAffix[] affixes
-        )
-        {
-            affixes = [];
-            var declarationOrder = 0;
-            foreach (var list in attributeLists)
-            {
-                foreach (var attribute in list.Attributes)
-                {
-                    if (!attribute.IsAttribute("Silk.NET.Core.NameAffix"))
-                    {
-                        continue;
-                    }
-
-                    var argumentList = attribute.ArgumentList;
-                    if (
-                        argumentList != null
-                        && argumentList.Arguments[0].Expression
-                            is LiteralExpressionSyntax { Token.Value: string type }
-                        && argumentList.Arguments[1].Expression
-                            is LiteralExpressionSyntax { Token.Value: string category }
-                        && argumentList.Arguments[2].Expression
-                            is LiteralExpressionSyntax { Token.Value: string affix }
-                    )
-                    {
-                        affixes =
-                        [
-                            .. affixes,
-                            new NameAffix(type == "Prefix", category, affix, declarationOrder),
-                        ];
-                        declarationOrder++;
-                    }
-                }
-            }
-
-            return affixes.Length != 0;
-        }
-
         private void ReportTypeAffixData(
             string typeIdentifier,
             SyntaxList<AttributeListSyntax> attributeLists
         )
         {
-            if (!TryGetAffixData(attributeLists, out var affixes))
+            var affixes = attributeLists.GetNameAffixes();
+            if (affixes.Length == 0)
             {
                 return;
             }
@@ -1025,7 +979,8 @@ public class PrettifyNames(
             SyntaxList<AttributeListSyntax> attributeLists
         )
         {
-            if (!TryGetAffixData(attributeLists, out var affixData))
+            var affixes = attributeLists.GetNameAffixes();
+            if (affixes.Length == 0)
             {
                 return;
             }
@@ -1037,7 +992,7 @@ public class PrettifyNames(
 
             // Note that TryAdd will lead to affixes for later members being silently dropped.
             // This is to handle methods which have the same name and affixes. It is fine to drop the affixes in this case.
-            (typeAffixData.MemberAffixes ??= []).TryAdd(memberIdentifier, affixData);
+            (typeAffixData.MemberAffixes ??= []).TryAdd(memberIdentifier, affixes);
             AffixTypes[typeIdentifier] = typeAffixData;
         }
 
@@ -1286,7 +1241,7 @@ public class PrettifyNames(
 
     /// <param name="affixTypes">The affix data retrieved by the <see cref="Visitor"/>.</param>
     /// <param name="config">The configuration from <see cref="Configuration.Affixes"/>.</param>
-    private class NameAffixer(
+    private class PrettifyNamesAffixer(
         Dictionary<string, TypeAffixData> affixTypes,
         Dictionary<string, NameAffixConfiguration> config
     )
@@ -1317,61 +1272,13 @@ public class PrettifyNames(
                 return primary;
             }
 
-            var originalPrimary = primary;
-
-            // Sort affixes so that the outer affixes are first
-            affixes.Sort(
-                static (a, b) =>
-                {
-                    // Sort by descending declaration order
-                    // Lower declaration order means the affix is closer to the inside of the name
-                    return -a.DeclarationOrder.CompareTo(b.DeclarationOrder);
-                }
-            );
-
-            var prefixes = affixes.Where(x => x.IsPrefix).ToList();
-            var suffixes = affixes.Where(x => !x.IsPrefix).ToList();
-
-            RemoveSide(true, prefixes);
-            RemoveSide(false, suffixes);
-
-            if (originalPrimary != primary)
+            var stripped = NameAffixer.StripAffixes(primary, affixes);
+            if (stripped != primary)
             {
-                secondary?.Add(originalPrimary);
+                secondary?.Add(primary);
             }
 
-            return primary;
-
-            void RemoveSide(bool isPrefix, List<NameAffix> nameAffixes)
-            {
-                while (nameAffixes.Count > 0)
-                {
-                    var removedAffix = false;
-                    for (var i = 0; i < nameAffixes.Count; i++)
-                    {
-                        var affix = nameAffixes[i];
-                        if (
-                            isPrefix
-                                ? primary.StartsWith(affix.Affix)
-                                : primary.EndsWith(affix.Affix)
-                        )
-                        {
-                            primary = isPrefix
-                                ? primary[affix.Affix.Length..]
-                                : primary[..^affix.Affix.Length];
-
-                            nameAffixes.RemoveAt(i);
-                            removedAffix = true;
-                            break;
-                        }
-                    }
-
-                    if (!removedAffix)
-                    {
-                        break;
-                    }
-                }
-            }
+            return stripped;
         }
 
         /// <summary>
@@ -1479,7 +1386,7 @@ public class PrettifyNames(
                 {
                     if (!GetConfiguration(affix).Remove)
                     {
-                        if (affix.IsPrefix)
+                        if (affix.Type == NameAffixType.Prefix)
                         {
                             name = affix.Affix + name;
                         }
@@ -1544,7 +1451,7 @@ public class PrettifyNames(
     /// Removes identified affixes so that other trimmers can process the base name separately.
     /// These affixes should be reapplied by <see cref="NameAffixerLateTrimmer"/>.
     /// </summary>
-    private class NameAffixerEarlyTrimmer(NameAffixer affixer) : INameTrimmer
+    private class NameAffixerEarlyTrimmer(PrettifyNamesAffixer affixer) : INameTrimmer
     {
         /// <inheritdoc/>
         public Version Version => new(0, 0, 0);
@@ -1583,7 +1490,7 @@ public class PrettifyNames(
     /// <summary>
     /// Reapplies and transforms identified affixes based on <see cref="NameAffixConfiguration"/>.
     /// </summary>
-    private class NameAffixerLateTrimmer(NameAffixer affixer) : INameTrimmer
+    private class NameAffixerLateTrimmer(PrettifyNamesAffixer affixer) : INameTrimmer
     {
         /// <inheritdoc/>
         public Version Version => new(0, 0, 0);

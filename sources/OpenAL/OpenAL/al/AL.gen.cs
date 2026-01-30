@@ -1208,6 +1208,17 @@ public unsafe partial class AL : IAL, IAL.Static
         public static void DeleteAuxiliaryEffectSlot(uint effectslots) =>
             DeleteAuxiliaryEffectSlots(1, (uint*)&effectslots);
 
+        [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
+        public static void DeleteAuxiliaryEffectSlotDirect(
+            ContextHandle context,
+            uint effectslots
+        ) => DeleteAuxiliaryEffectSlotsDirect(context, 1, (uint*)&effectslots);
+
         [NativeName("alDeleteAuxiliaryEffectSlots")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alDeleteAuxiliaryEffectSlots")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -1264,17 +1275,6 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
-        [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
-        public static void DeleteAuxiliaryEffectSlotsDirect(
-            ContextHandle context,
-            uint effectslots
-        ) => DeleteAuxiliaryEffectSlotsDirect(context, 1, (uint*)&effectslots);
-
         [NativeName("alDeleteBuffers")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alDeleteBuffers")]
@@ -1329,6 +1329,15 @@ public unsafe partial class AL : IAL, IAL.Static
         [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
         public static void DeleteEffect(uint effects) => DeleteEffects(1, (uint*)&effects);
 
+        [NativeName("alDeleteEffectsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
+        public static void DeleteEffectDirect(ContextHandle context, uint effects) =>
+            DeleteEffectsDirect(context, 1, (uint*)&effects);
+
         [NativeName("alDeleteEffects")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alDeleteEffects")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -1373,19 +1382,19 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
-        [NativeName("alDeleteEffectsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
-        public static void DeleteEffectsDirect(ContextHandle context, uint effects) =>
-            DeleteEffectsDirect(context, 1, (uint*)&effects);
-
         [NativeName("alDeleteFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
         public static void DeleteFilter(uint filters) => DeleteFilters(1, (uint*)&filters);
+
+        [NativeName("alDeleteFiltersDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
+        public static void DeleteFilterDirect(ContextHandle context, uint filters) =>
+            DeleteFiltersDirect(context, 1, (uint*)&filters);
 
         [NativeName("alDeleteFilters")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alDeleteFilters")]
@@ -1431,19 +1440,19 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
-        [NativeName("alDeleteFiltersDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
-        public static void DeleteFiltersDirect(ContextHandle context, uint filters) =>
-            DeleteFiltersDirect(context, 1, (uint*)&filters);
-
         [NativeName("alDeleteSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alDeleteSources")]
         public static void DeleteSource(uint sources) => DeleteSources(1, (uint*)&sources);
+
+        [NativeName("alDeleteSourcesDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
+        public static void DeleteSourceDirect(ContextHandle context, uint sources) =>
+            DeleteSourcesDirect(context, 1, (uint*)&sources);
 
         [NativeName("alDeleteSources")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alDeleteSources")]
@@ -1488,15 +1497,6 @@ public unsafe partial class AL : IAL, IAL.Static
                 DeleteSourcesDirect(context, n, __dsl_sources);
             }
         }
-
-        [NativeName("alDeleteSourcesDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
-        public static void DeleteSourcesDirect(ContextHandle context, uint sources) =>
-            DeleteSourcesDirect(context, 1, (uint*)&sources);
 
         [NativeName("alDisable")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alDisable")]
@@ -2172,6 +2172,19 @@ public unsafe partial class AL : IAL, IAL.Static
             return effectslots;
         }
 
+        [NativeName("alGenAuxiliaryEffectSlotsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
+        public static uint GenAuxiliaryEffectSlotDirect(ContextHandle context)
+        {
+            uint effectslots = default;
+            GenAuxiliaryEffectSlotsDirect(context, 1, (uint*)&effectslots);
+            return effectslots;
+        }
+
         [NativeName("alGenAuxiliaryEffectSlots")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGenAuxiliaryEffectSlots")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -2222,19 +2235,6 @@ public unsafe partial class AL : IAL, IAL.Static
             {
                 GenAuxiliaryEffectSlotsDirect(context, n, __dsl_effectslots);
             }
-        }
-
-        [NativeName("alGenAuxiliaryEffectSlotsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
-        public static uint GenAuxiliaryEffectSlotsDirect(ContextHandle context)
-        {
-            uint effectslots = default;
-            GenAuxiliaryEffectSlotsDirect(context, 1, (uint*)&effectslots);
-            return effectslots;
         }
 
         [NativeName("alGenBuffers")]
@@ -2301,6 +2301,19 @@ public unsafe partial class AL : IAL, IAL.Static
             return effects;
         }
 
+        [NativeName("alGenEffectsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
+        public static uint GenEffectDirect(ContextHandle context)
+        {
+            uint effects = default;
+            GenEffectsDirect(context, 1, (uint*)&effects);
+            return effects;
+        }
+
         [NativeName("alGenEffects")]
         [DllImport("openal", ExactSpelling = true, EntryPoint = "alGenEffects")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -2345,19 +2358,6 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
-        [NativeName("alGenEffectsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
-        public static uint GenEffectsDirect(ContextHandle context)
-        {
-            uint effects = default;
-            GenEffectsDirect(context, 1, (uint*)&effects);
-            return effects;
-        }
-
         [NativeName("alGenFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alGenFilters")]
@@ -2365,6 +2365,19 @@ public unsafe partial class AL : IAL, IAL.Static
         {
             uint filters = default;
             GenFilters(1, (uint*)&filters);
+            return filters;
+        }
+
+        [NativeName("alGenFiltersDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
+        public static uint GenFilterDirect(ContextHandle context)
+        {
+            uint filters = default;
+            GenFiltersDirect(context, 1, (uint*)&filters);
             return filters;
         }
 
@@ -2412,19 +2425,6 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
-        [NativeName("alGenFiltersDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
-        public static uint GenFiltersDirect(ContextHandle context)
-        {
-            uint filters = default;
-            GenFiltersDirect(context, 1, (uint*)&filters);
-            return filters;
-        }
-
         [NativeName("alGenSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alGenSources")]
@@ -2432,6 +2432,19 @@ public unsafe partial class AL : IAL, IAL.Static
         {
             uint sources = default;
             GenSources(1, (uint*)&sources);
+            return sources;
+        }
+
+        [NativeName("alGenSourcesDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
+        public static uint GenSourceDirect(ContextHandle context)
+        {
+            uint sources = default;
+            GenSourcesDirect(context, 1, (uint*)&sources);
             return sources;
         }
 
@@ -2477,19 +2490,6 @@ public unsafe partial class AL : IAL, IAL.Static
             {
                 GenSourcesDirect(context, n, __dsl_sources);
             }
-        }
-
-        [NativeName("alGenSourcesDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
-        public static uint GenSourcesDirect(ContextHandle context)
-        {
-            uint sources = default;
-            GenSourcesDirect(context, 1, (uint*)&sources);
-            return sources;
         }
 
         [NativeName("alGetAuxiliaryEffectSlotf")]
@@ -9459,6 +9459,18 @@ public unsafe partial class AL : IAL, IAL.Static
         public void DeleteAuxiliaryEffectSlot(uint effectslots) =>
             T.DeleteAuxiliaryEffectSlot(effectslots);
 
+        [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteAuxiliaryEffectSlotDirect(ContextHandle context, uint effectslots) =>
+            T.DeleteAuxiliaryEffectSlotDirect(context, effectslots);
+
         [NativeName("alDeleteAuxiliaryEffectSlots")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
@@ -9506,18 +9518,6 @@ public unsafe partial class AL : IAL, IAL.Static
             int n,
             Ref<uint> effectslots
         ) => T.DeleteAuxiliaryEffectSlotsDirect(context, n, effectslots);
-
-        [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public void DeleteAuxiliaryEffectSlotsDirect(ContextHandle context, uint effectslots) =>
-            T.DeleteAuxiliaryEffectSlotsDirect(context, effectslots);
 
         [NativeName("alDeleteBuffers")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -9575,6 +9575,18 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public void DeleteEffect(uint effects) => T.DeleteEffect(effects);
 
+        [NativeName("alDeleteEffectsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteEffectDirect(ContextHandle context, uint effects) =>
+            T.DeleteEffectDirect(context, effects);
+
         [NativeName("alDeleteEffects")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
@@ -9615,18 +9627,6 @@ public unsafe partial class AL : IAL, IAL.Static
         public void DeleteEffectsDirect(ContextHandle context, int n, Ref<uint> effects) =>
             T.DeleteEffectsDirect(context, n, effects);
 
-        [NativeName("alDeleteEffectsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public void DeleteEffectsDirect(ContextHandle context, uint effects) =>
-            T.DeleteEffectsDirect(context, effects);
-
         [NativeName("alDeleteFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
@@ -9634,6 +9634,18 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void DeleteFilter(uint filters) => T.DeleteFilter(filters);
+
+        [NativeName("alDeleteFiltersDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteFilterDirect(ContextHandle context, uint filters) =>
+            T.DeleteFilterDirect(context, filters);
 
         [NativeName("alDeleteFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -9675,18 +9687,6 @@ public unsafe partial class AL : IAL, IAL.Static
         public void DeleteFiltersDirect(ContextHandle context, int n, Ref<uint> filters) =>
             T.DeleteFiltersDirect(context, n, filters);
 
-        [NativeName("alDeleteFiltersDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public void DeleteFiltersDirect(ContextHandle context, uint filters) =>
-            T.DeleteFiltersDirect(context, filters);
-
         [NativeName("alDeleteSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alDeleteSources")]
@@ -9694,6 +9694,18 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public void DeleteSource(uint sources) => T.DeleteSource(sources);
+
+        [NativeName("alDeleteSourcesDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public void DeleteSourceDirect(ContextHandle context, uint sources) =>
+            T.DeleteSourceDirect(context, sources);
 
         [NativeName("alDeleteSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -9734,18 +9746,6 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public void DeleteSourcesDirect(ContextHandle context, int n, Ref<uint> sources) =>
             T.DeleteSourcesDirect(context, n, sources);
-
-        [NativeName("alDeleteSourcesDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public void DeleteSourcesDirect(ContextHandle context, uint sources) =>
-            T.DeleteSourcesDirect(context, sources);
 
         [NativeName("alDisable")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -10458,6 +10458,18 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public uint GenAuxiliaryEffectSlot() => T.GenAuxiliaryEffectSlot();
 
+        [NativeName("alGenAuxiliaryEffectSlotsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GenAuxiliaryEffectSlotDirect(ContextHandle context) =>
+            T.GenAuxiliaryEffectSlotDirect(context);
+
         [NativeName("alGenAuxiliaryEffectSlots")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
@@ -10505,18 +10517,6 @@ public unsafe partial class AL : IAL, IAL.Static
             int n,
             Ref<uint> effectslots
         ) => T.GenAuxiliaryEffectSlotsDirect(context, n, effectslots);
-
-        [NativeName("alGenAuxiliaryEffectSlotsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public uint GenAuxiliaryEffectSlotsDirect(ContextHandle context) =>
-            T.GenAuxiliaryEffectSlotsDirect(context);
 
         [NativeName("alGenBuffers")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -10574,6 +10574,17 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public uint GenEffect() => T.GenEffect();
 
+        [NativeName("alGenEffectsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GenEffectDirect(ContextHandle context) => T.GenEffectDirect(context);
+
         [NativeName("alGenEffects")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alGenEffects")]
@@ -10614,17 +10625,6 @@ public unsafe partial class AL : IAL, IAL.Static
         public void GenEffectsDirect(ContextHandle context, int n, Ref<uint> effects) =>
             T.GenEffectsDirect(context, n, effects);
 
-        [NativeName("alGenEffectsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public uint GenEffectsDirect(ContextHandle context) => T.GenEffectsDirect(context);
-
         [NativeName("alGenFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alGenFilters")]
@@ -10632,6 +10632,17 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public uint GenFilter() => T.GenFilter();
+
+        [NativeName("alGenFiltersDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GenFilterDirect(ContextHandle context) => T.GenFilterDirect(context);
 
         [NativeName("alGenFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -10673,17 +10684,6 @@ public unsafe partial class AL : IAL, IAL.Static
         public void GenFiltersDirect(ContextHandle context, int n, Ref<uint> filters) =>
             T.GenFiltersDirect(context, n, filters);
 
-        [NativeName("alGenFiltersDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public uint GenFiltersDirect(ContextHandle context) => T.GenFiltersDirect(context);
-
         [NativeName("alGenSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alGenSources")]
@@ -10691,6 +10691,17 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public uint GenSource() => T.GenSource();
+
+        [NativeName("alGenSourcesDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public uint GenSourceDirect(ContextHandle context) => T.GenSourceDirect(context);
 
         [NativeName("alGenSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -10731,17 +10742,6 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public void GenSourcesDirect(ContextHandle context, int n, Ref<uint> sources) =>
             T.GenSourcesDirect(context, n, sources);
-
-        [NativeName("alGenSourcesDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public uint GenSourcesDirect(ContextHandle context) => T.GenSourcesDirect(context);
 
         [NativeName("alGetAuxiliaryEffectSlotf")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -17789,6 +17789,20 @@ public unsafe partial class AL : IAL, IAL.Static
         public static void DeleteAuxiliaryEffectSlot(uint effectslots) =>
             Underlying.Value!.DeleteAuxiliaryEffectSlot(effectslots);
 
+        [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteAuxiliaryEffectSlotDirect(
+            ContextHandle context,
+            uint effectslots
+        ) => Underlying.Value!.DeleteAuxiliaryEffectSlotDirect(context, effectslots);
+
         [NativeName("alDeleteAuxiliaryEffectSlots")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
@@ -17847,20 +17861,6 @@ public unsafe partial class AL : IAL, IAL.Static
                 DeleteAuxiliaryEffectSlotsDirect(context, n, __dsl_effectslots);
             }
         }
-
-        [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static void DeleteAuxiliaryEffectSlotsDirect(
-            ContextHandle context,
-            uint effectslots
-        ) => Underlying.Value!.DeleteAuxiliaryEffectSlotsDirect(context, effectslots);
 
         [NativeName("alDeleteBuffers")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -17930,6 +17930,18 @@ public unsafe partial class AL : IAL, IAL.Static
         )]
         public static void DeleteEffect(uint effects) => Underlying.Value!.DeleteEffect(effects);
 
+        [NativeName("alDeleteEffectsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteEffectDirect(ContextHandle context, uint effects) =>
+            Underlying.Value!.DeleteEffectDirect(context, effects);
+
         [NativeName("alDeleteEffects")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
@@ -17982,18 +17994,6 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
-        [NativeName("alDeleteEffectsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static void DeleteEffectsDirect(ContextHandle context, uint effects) =>
-            Underlying.Value!.DeleteEffectsDirect(context, effects);
-
         [NativeName("alDeleteFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
@@ -18001,6 +18001,18 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DeleteFilter(uint filters) => Underlying.Value!.DeleteFilter(filters);
+
+        [NativeName("alDeleteFiltersDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteFilterDirect(ContextHandle context, uint filters) =>
+            Underlying.Value!.DeleteFilterDirect(context, filters);
 
         [NativeName("alDeleteFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -18054,18 +18066,6 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
-        [NativeName("alDeleteFiltersDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static void DeleteFiltersDirect(ContextHandle context, uint filters) =>
-            Underlying.Value!.DeleteFiltersDirect(context, filters);
-
         [NativeName("alDeleteSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alDeleteSources")]
@@ -18073,6 +18073,18 @@ public unsafe partial class AL : IAL, IAL.Static
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
         public static void DeleteSource(uint sources) => Underlying.Value!.DeleteSource(sources);
+
+        [NativeName("alDeleteSourcesDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static void DeleteSourceDirect(ContextHandle context, uint sources) =>
+            Underlying.Value!.DeleteSourceDirect(context, sources);
 
         [NativeName("alDeleteSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -18125,18 +18137,6 @@ public unsafe partial class AL : IAL, IAL.Static
                 DeleteSourcesDirect(context, n, __dsl_sources);
             }
         }
-
-        [NativeName("alDeleteSourcesDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static void DeleteSourcesDirect(ContextHandle context, uint sources) =>
-            Underlying.Value!.DeleteSourcesDirect(context, sources);
 
         [NativeName("alDisable")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -18965,6 +18965,22 @@ public unsafe partial class AL : IAL, IAL.Static
             return effectslots;
         }
 
+        [NativeName("alGenAuxiliaryEffectSlotsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GenAuxiliaryEffectSlotDirect(ContextHandle context)
+        {
+            uint effectslots = default;
+            GenAuxiliaryEffectSlotsDirect(context, 1, (uint*)&effectslots);
+            return effectslots;
+        }
+
         [NativeName("alGenAuxiliaryEffectSlots")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
@@ -19022,22 +19038,6 @@ public unsafe partial class AL : IAL, IAL.Static
             {
                 GenAuxiliaryEffectSlotsDirect(context, n, __dsl_effectslots);
             }
-        }
-
-        [NativeName("alGenAuxiliaryEffectSlotsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static uint GenAuxiliaryEffectSlotsDirect(ContextHandle context)
-        {
-            uint effectslots = default;
-            GenAuxiliaryEffectSlotsDirect(context, 1, (uint*)&effectslots);
-            return effectslots;
         }
 
         [NativeName("alGenBuffers")]
@@ -19118,6 +19118,22 @@ public unsafe partial class AL : IAL, IAL.Static
             return effects;
         }
 
+        [NativeName("alGenEffectsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GenEffectDirect(ContextHandle context)
+        {
+            uint effects = default;
+            GenEffectsDirect(context, 1, (uint*)&effects);
+            return effects;
+        }
+
         [NativeName("alGenEffects")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alGenEffects")]
@@ -19170,22 +19186,6 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
-        [NativeName("alGenEffectsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static uint GenEffectsDirect(ContextHandle context)
-        {
-            uint effects = default;
-            GenEffectsDirect(context, 1, (uint*)&effects);
-            return effects;
-        }
-
         [NativeName("alGenFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alGenFilters")]
@@ -19196,6 +19196,22 @@ public unsafe partial class AL : IAL, IAL.Static
         {
             uint filters = default;
             GenFilters(1, (uint*)&filters);
+            return filters;
+        }
+
+        [NativeName("alGenFiltersDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GenFilterDirect(ContextHandle context)
+        {
+            uint filters = default;
+            GenFiltersDirect(context, 1, (uint*)&filters);
             return filters;
         }
 
@@ -19251,22 +19267,6 @@ public unsafe partial class AL : IAL, IAL.Static
             }
         }
 
-        [NativeName("alGenFiltersDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static uint GenFiltersDirect(ContextHandle context)
-        {
-            uint filters = default;
-            GenFiltersDirect(context, 1, (uint*)&filters);
-            return filters;
-        }
-
         [NativeName("alGenSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alGenSources")]
@@ -19277,6 +19277,22 @@ public unsafe partial class AL : IAL, IAL.Static
         {
             uint sources = default;
             GenSources(1, (uint*)&sources);
+            return sources;
+        }
+
+        [NativeName("alGenSourcesDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
+        [MethodImpl(
+            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
+        )]
+        public static uint GenSourceDirect(ContextHandle context)
+        {
+            uint sources = default;
+            GenSourcesDirect(context, 1, (uint*)&sources);
             return sources;
         }
 
@@ -19330,22 +19346,6 @@ public unsafe partial class AL : IAL, IAL.Static
             {
                 GenSourcesDirect(context, n, __dsl_sources);
             }
-        }
-
-        [NativeName("alGenSourcesDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
-        [MethodImpl(
-            MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
-        )]
-        public static uint GenSourcesDirect(ContextHandle context)
-        {
-            uint sources = default;
-            GenSourcesDirect(context, 1, (uint*)&sources);
-            return sources;
         }
 
         [NativeName("alGetAuxiliaryEffectSlotf")]
@@ -28604,6 +28604,26 @@ public unsafe partial class AL : IAL, IAL.Static
     public static void DeleteAuxiliaryEffectSlot(uint effectslots) =>
         ThisThread.DeleteAuxiliaryEffectSlot(effectslots);
 
+    [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteAuxiliaryEffectSlotDirect(ContextHandle context, uint effectslots) =>
+        ((IAL)this).DeleteAuxiliaryEffectSlotsDirect(context, 1, (uint*)&effectslots);
+
+    [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteAuxiliaryEffectSlotDirect(ContextHandle context, uint effectslots) =>
+        ThisThread.DeleteAuxiliaryEffectSlotDirect(context, effectslots);
+
     [NativeName("alDeleteAuxiliaryEffectSlots")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
@@ -28705,26 +28725,6 @@ public unsafe partial class AL : IAL, IAL.Static
         int n,
         Ref<uint> effectslots
     ) => ThisThread.DeleteAuxiliaryEffectSlotsDirect(context, n, effectslots);
-
-    [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAL.DeleteAuxiliaryEffectSlotsDirect(ContextHandle context, uint effectslots) =>
-        ((IAL)this).DeleteAuxiliaryEffectSlotsDirect(context, 1, (uint*)&effectslots);
-
-    [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DeleteAuxiliaryEffectSlotsDirect(ContextHandle context, uint effectslots) =>
-        ThisThread.DeleteAuxiliaryEffectSlotsDirect(context, effectslots);
 
     [NativeName("alDeleteBuffers")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -28839,6 +28839,26 @@ public unsafe partial class AL : IAL, IAL.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteEffect(uint effects) => ThisThread.DeleteEffect(effects);
 
+    [NativeName("alDeleteEffectsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteEffectDirect(ContextHandle context, uint effects) =>
+        ((IAL)this).DeleteEffectsDirect(context, 1, (uint*)&effects);
+
+    [NativeName("alDeleteEffectsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteEffectDirect(ContextHandle context, uint effects) =>
+        ThisThread.DeleteEffectDirect(context, effects);
+
     [NativeName("alDeleteEffects")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
@@ -28928,26 +28948,6 @@ public unsafe partial class AL : IAL, IAL.Static
     public static void DeleteEffectsDirect(ContextHandle context, int n, Ref<uint> effects) =>
         ThisThread.DeleteEffectsDirect(context, n, effects);
 
-    [NativeName("alDeleteEffectsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAL.DeleteEffectsDirect(ContextHandle context, uint effects) =>
-        ((IAL)this).DeleteEffectsDirect(context, 1, (uint*)&effects);
-
-    [NativeName("alDeleteEffectsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DeleteEffectsDirect(ContextHandle context, uint effects) =>
-        ThisThread.DeleteEffectsDirect(context, effects);
-
     [NativeName("alDeleteFilters")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
@@ -28959,6 +28959,26 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteFilter(uint filters) => ThisThread.DeleteFilter(filters);
+
+    [NativeName("alDeleteFiltersDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteFilterDirect(ContextHandle context, uint filters) =>
+        ((IAL)this).DeleteFiltersDirect(context, 1, (uint*)&filters);
+
+    [NativeName("alDeleteFiltersDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteFilterDirect(ContextHandle context, uint filters) =>
+        ThisThread.DeleteFilterDirect(context, filters);
 
     [NativeName("alDeleteFilters")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -29049,26 +29069,6 @@ public unsafe partial class AL : IAL, IAL.Static
     public static void DeleteFiltersDirect(ContextHandle context, int n, Ref<uint> filters) =>
         ThisThread.DeleteFiltersDirect(context, n, filters);
 
-    [NativeName("alDeleteFiltersDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAL.DeleteFiltersDirect(ContextHandle context, uint filters) =>
-        ((IAL)this).DeleteFiltersDirect(context, 1, (uint*)&filters);
-
-    [NativeName("alDeleteFiltersDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DeleteFiltersDirect(ContextHandle context, uint filters) =>
-        ThisThread.DeleteFiltersDirect(context, filters);
-
     [NativeName("alDeleteSources")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alDeleteSources")]
@@ -29080,6 +29080,26 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alDeleteSources")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteSource(uint sources) => ThisThread.DeleteSource(sources);
+
+    [NativeName("alDeleteSourcesDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    void IAL.DeleteSourceDirect(ContextHandle context, uint sources) =>
+        ((IAL)this).DeleteSourcesDirect(context, 1, (uint*)&sources);
+
+    [NativeName("alDeleteSourcesDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static void DeleteSourceDirect(ContextHandle context, uint sources) =>
+        ThisThread.DeleteSourceDirect(context, sources);
 
     [NativeName("alDeleteSources")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -29169,26 +29189,6 @@ public unsafe partial class AL : IAL, IAL.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void DeleteSourcesDirect(ContextHandle context, int n, Ref<uint> sources) =>
         ThisThread.DeleteSourcesDirect(context, n, sources);
-
-    [NativeName("alDeleteSourcesDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    void IAL.DeleteSourcesDirect(ContextHandle context, uint sources) =>
-        ((IAL)this).DeleteSourcesDirect(context, 1, (uint*)&sources);
-
-    [NativeName("alDeleteSourcesDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static void DeleteSourcesDirect(ContextHandle context, uint sources) =>
-        ThisThread.DeleteSourcesDirect(context, sources);
 
     [NativeName("alDisable")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -30552,6 +30552,30 @@ public unsafe partial class AL : IAL, IAL.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GenAuxiliaryEffectSlot() => ThisThread.GenAuxiliaryEffectSlot();
 
+    [NativeName("alGenAuxiliaryEffectSlotsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint IAL.GenAuxiliaryEffectSlotDirect(ContextHandle context)
+    {
+        uint effectslots = default;
+        ((IAL)this).GenAuxiliaryEffectSlotsDirect(context, 1, (uint*)&effectslots);
+        return effectslots;
+    }
+
+    [NativeName("alGenAuxiliaryEffectSlotsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GenAuxiliaryEffectSlotDirect(ContextHandle context) =>
+        ThisThread.GenAuxiliaryEffectSlotDirect(context);
+
     [NativeName("alGenAuxiliaryEffectSlots")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
@@ -30650,30 +30674,6 @@ public unsafe partial class AL : IAL, IAL.Static
         int n,
         Ref<uint> effectslots
     ) => ThisThread.GenAuxiliaryEffectSlotsDirect(context, n, effectslots);
-
-    [NativeName("alGenAuxiliaryEffectSlotsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IAL.GenAuxiliaryEffectSlotsDirect(ContextHandle context)
-    {
-        uint effectslots = default;
-        ((IAL)this).GenAuxiliaryEffectSlotsDirect(context, 1, (uint*)&effectslots);
-        return effectslots;
-    }
-
-    [NativeName("alGenAuxiliaryEffectSlotsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint GenAuxiliaryEffectSlotsDirect(ContextHandle context) =>
-        ThisThread.GenAuxiliaryEffectSlotsDirect(context);
 
     [NativeName("alGenBuffers")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -30797,6 +30797,30 @@ public unsafe partial class AL : IAL, IAL.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GenEffect() => ThisThread.GenEffect();
 
+    [NativeName("alGenEffectsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint IAL.GenEffectDirect(ContextHandle context)
+    {
+        uint effects = default;
+        ((IAL)this).GenEffectsDirect(context, 1, (uint*)&effects);
+        return effects;
+    }
+
+    [NativeName("alGenEffectsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GenEffectDirect(ContextHandle context) =>
+        ThisThread.GenEffectDirect(context);
+
     [NativeName("alGenEffects")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alGenEffects")]
@@ -30885,30 +30909,6 @@ public unsafe partial class AL : IAL, IAL.Static
     public static void GenEffectsDirect(ContextHandle context, int n, Ref<uint> effects) =>
         ThisThread.GenEffectsDirect(context, n, effects);
 
-    [NativeName("alGenEffectsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IAL.GenEffectsDirect(ContextHandle context)
-    {
-        uint effects = default;
-        ((IAL)this).GenEffectsDirect(context, 1, (uint*)&effects);
-        return effects;
-    }
-
-    [NativeName("alGenEffectsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint GenEffectsDirect(ContextHandle context) =>
-        ThisThread.GenEffectsDirect(context);
-
     [NativeName("alGenFilters")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alGenFilters")]
@@ -30925,6 +30925,30 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alGenFilters")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GenFilter() => ThisThread.GenFilter();
+
+    [NativeName("alGenFiltersDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint IAL.GenFilterDirect(ContextHandle context)
+    {
+        uint filters = default;
+        ((IAL)this).GenFiltersDirect(context, 1, (uint*)&filters);
+        return filters;
+    }
+
+    [NativeName("alGenFiltersDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GenFilterDirect(ContextHandle context) =>
+        ThisThread.GenFilterDirect(context);
 
     [NativeName("alGenFilters")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -31014,30 +31038,6 @@ public unsafe partial class AL : IAL, IAL.Static
     public static void GenFiltersDirect(ContextHandle context, int n, Ref<uint> filters) =>
         ThisThread.GenFiltersDirect(context, n, filters);
 
-    [NativeName("alGenFiltersDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IAL.GenFiltersDirect(ContextHandle context)
-    {
-        uint filters = default;
-        ((IAL)this).GenFiltersDirect(context, 1, (uint*)&filters);
-        return filters;
-    }
-
-    [NativeName("alGenFiltersDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint GenFiltersDirect(ContextHandle context) =>
-        ThisThread.GenFiltersDirect(context);
-
     [NativeName("alGenSources")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alGenSources")]
@@ -31054,6 +31054,30 @@ public unsafe partial class AL : IAL, IAL.Static
     [NativeFunction("openal", EntryPoint = "alGenSources")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static uint GenSource() => ThisThread.GenSource();
+
+    [NativeName("alGenSourcesDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    uint IAL.GenSourceDirect(ContextHandle context)
+    {
+        uint sources = default;
+        ((IAL)this).GenSourcesDirect(context, 1, (uint*)&sources);
+        return sources;
+    }
+
+    [NativeName("alGenSourcesDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+    public static uint GenSourceDirect(ContextHandle context) =>
+        ThisThread.GenSourceDirect(context);
 
     [NativeName("alGenSources")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -31142,30 +31166,6 @@ public unsafe partial class AL : IAL, IAL.Static
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public static void GenSourcesDirect(ContextHandle context, int n, Ref<uint> sources) =>
         ThisThread.GenSourcesDirect(context, n, sources);
-
-    [NativeName("alGenSourcesDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    uint IAL.GenSourcesDirect(ContextHandle context)
-    {
-        uint sources = default;
-        ((IAL)this).GenSourcesDirect(context, 1, (uint*)&sources);
-        return sources;
-    }
-
-    [NativeName("alGenSourcesDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
-    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static uint GenSourcesDirect(ContextHandle context) =>
-        ThisThread.GenSourcesDirect(context);
 
     [NativeName("alGetAuxiliaryEffectSlotf")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]

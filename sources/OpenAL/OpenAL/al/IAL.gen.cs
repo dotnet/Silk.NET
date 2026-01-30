@@ -910,6 +910,17 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
         static abstract void DeleteAuxiliaryEffectSlot(uint effectslots);
 
+        [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
+        static abstract void DeleteAuxiliaryEffectSlotDirect(
+            ContextHandle context,
+            uint effectslots
+        );
+
         [NativeName("alDeleteAuxiliaryEffectSlots")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
@@ -942,17 +953,6 @@ public unsafe partial interface IAL
             ContextHandle context,
             int n,
             Ref<uint> effectslots
-        );
-
-        [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
-        static abstract void DeleteAuxiliaryEffectSlotsDirect(
-            ContextHandle context,
-            uint effectslots
         );
 
         [NativeName("alDeleteBuffers")]
@@ -991,6 +991,14 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
         static abstract void DeleteEffect(uint effects);
 
+        [NativeName("alDeleteEffectsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
+        static abstract void DeleteEffectDirect(ContextHandle context, uint effects);
+
         [NativeName("alDeleteEffects")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
@@ -1017,18 +1025,18 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
         static abstract void DeleteEffectsDirect(ContextHandle context, int n, Ref<uint> effects);
 
-        [NativeName("alDeleteEffectsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
-        static abstract void DeleteEffectsDirect(ContextHandle context, uint effects);
-
         [NativeName("alDeleteFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
         static abstract void DeleteFilter(uint filters);
+
+        [NativeName("alDeleteFiltersDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
+        static abstract void DeleteFilterDirect(ContextHandle context, uint filters);
 
         [NativeName("alDeleteFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -1056,18 +1064,18 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
         static abstract void DeleteFiltersDirect(ContextHandle context, int n, Ref<uint> filters);
 
-        [NativeName("alDeleteFiltersDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
-        static abstract void DeleteFiltersDirect(ContextHandle context, uint filters);
-
         [NativeName("alDeleteSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alDeleteSources")]
         static abstract void DeleteSource(uint sources);
+
+        [NativeName("alDeleteSourcesDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+        ]
+        [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
+        static abstract void DeleteSourceDirect(ContextHandle context, uint sources);
 
         [NativeName("alDeleteSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -1094,14 +1102,6 @@ public unsafe partial interface IAL
         ]
         [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
         static abstract void DeleteSourcesDirect(ContextHandle context, int n, Ref<uint> sources);
-
-        [NativeName("alDeleteSourcesDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-        ]
-        [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
-        static abstract void DeleteSourcesDirect(ContextHandle context, uint sources);
 
         [NativeName("alDisable")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -1660,6 +1660,14 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
         static abstract uint GenAuxiliaryEffectSlot();
 
+        [NativeName("alGenAuxiliaryEffectSlotsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
+        static abstract uint GenAuxiliaryEffectSlotDirect(ContextHandle context);
+
         [NativeName("alGenAuxiliaryEffectSlots")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
@@ -1693,14 +1701,6 @@ public unsafe partial interface IAL
             int n,
             Ref<uint> effectslots
         );
-
-        [NativeName("alGenAuxiliaryEffectSlotsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
-        static abstract uint GenAuxiliaryEffectSlotsDirect(ContextHandle context);
 
         [NativeName("alGenBuffers")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -1738,6 +1738,14 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alGenEffects")]
         static abstract uint GenEffect();
 
+        [NativeName("alGenEffectsDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
+        static abstract uint GenEffectDirect(ContextHandle context);
+
         [NativeName("alGenEffects")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alGenEffects")]
@@ -1764,18 +1772,18 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
         static abstract void GenEffectsDirect(ContextHandle context, int n, Ref<uint> effects);
 
-        [NativeName("alGenEffectsDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
-        static abstract uint GenEffectsDirect(ContextHandle context);
-
         [NativeName("alGenFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
         [NativeFunction("openal", EntryPoint = "alGenFilters")]
         static abstract uint GenFilter();
+
+        [NativeName("alGenFiltersDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
+        static abstract uint GenFilterDirect(ContextHandle context);
 
         [NativeName("alGenFilters")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -1803,18 +1811,18 @@ public unsafe partial interface IAL
         [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
         static abstract void GenFiltersDirect(ContextHandle context, int n, Ref<uint> filters);
 
-        [NativeName("alGenFiltersDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
-        static abstract uint GenFiltersDirect(ContextHandle context);
-
         [NativeName("alGenSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
         [NativeFunction("openal", EntryPoint = "alGenSources")]
         static abstract uint GenSource();
+
+        [NativeName("alGenSourcesDirect")]
+        [
+            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+        ]
+        [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
+        static abstract uint GenSourceDirect(ContextHandle context);
 
         [NativeName("alGenSources")]
         [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -1841,14 +1849,6 @@ public unsafe partial interface IAL
         ]
         [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
         static abstract void GenSourcesDirect(ContextHandle context, int n, Ref<uint> sources);
-
-        [NativeName("alGenSourcesDirect")]
-        [
-            SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-            SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-        ]
-        [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
-        static abstract uint GenSourcesDirect(ContextHandle context);
 
         [NativeName("alGetAuxiliaryEffectSlotf")]
         [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -6959,6 +6959,14 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
     void DeleteAuxiliaryEffectSlot(uint effectslots);
 
+    [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
+    void DeleteAuxiliaryEffectSlotDirect(ContextHandle context, uint effectslots);
+
     [NativeName("alDeleteAuxiliaryEffectSlots")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlots")]
@@ -6984,14 +6992,6 @@ public unsafe partial interface IAL
     ]
     [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
     void DeleteAuxiliaryEffectSlotsDirect(ContextHandle context, int n, Ref<uint> effectslots);
-
-    [NativeName("alDeleteAuxiliaryEffectSlotsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteAuxiliaryEffectSlotsDirect")]
-    void DeleteAuxiliaryEffectSlotsDirect(ContextHandle context, uint effectslots);
 
     [NativeName("alDeleteBuffers")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -7029,6 +7029,14 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
     void DeleteEffect(uint effects);
 
+    [NativeName("alDeleteEffectsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
+    void DeleteEffectDirect(ContextHandle context, uint effects);
+
     [NativeName("alDeleteEffects")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alDeleteEffects")]
@@ -7055,18 +7063,18 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
     void DeleteEffectsDirect(ContextHandle context, int n, Ref<uint> effects);
 
-    [NativeName("alDeleteEffectsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteEffectsDirect")]
-    void DeleteEffectsDirect(ContextHandle context, uint effects);
-
     [NativeName("alDeleteFilters")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alDeleteFilters")]
     void DeleteFilter(uint filters);
+
+    [NativeName("alDeleteFiltersDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
+    void DeleteFilterDirect(ContextHandle context, uint filters);
 
     [NativeName("alDeleteFilters")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -7094,18 +7102,18 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
     void DeleteFiltersDirect(ContextHandle context, int n, Ref<uint> filters);
 
-    [NativeName("alDeleteFiltersDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteFiltersDirect")]
-    void DeleteFiltersDirect(ContextHandle context, uint filters);
-
     [NativeName("alDeleteSources")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alDeleteSources")]
     void DeleteSource(uint sources);
+
+    [NativeName("alDeleteSourcesDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+    ]
+    [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
+    void DeleteSourceDirect(ContextHandle context, uint sources);
 
     [NativeName("alDeleteSources")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -7132,14 +7140,6 @@ public unsafe partial interface IAL
     ]
     [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
     void DeleteSourcesDirect(ContextHandle context, int n, Ref<uint> sources);
-
-    [NativeName("alDeleteSourcesDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-    ]
-    [NativeFunction("openal", EntryPoint = "alDeleteSourcesDirect")]
-    void DeleteSourcesDirect(ContextHandle context, uint sources);
 
     [NativeName("alDisable")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -7563,6 +7563,14 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
     uint GenAuxiliaryEffectSlot();
 
+    [NativeName("alGenAuxiliaryEffectSlotsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
+    uint GenAuxiliaryEffectSlotDirect(ContextHandle context);
+
     [NativeName("alGenAuxiliaryEffectSlots")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlots")]
@@ -7588,14 +7596,6 @@ public unsafe partial interface IAL
     ]
     [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
     void GenAuxiliaryEffectSlotsDirect(ContextHandle context, int n, Ref<uint> effectslots);
-
-    [NativeName("alGenAuxiliaryEffectSlotsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenAuxiliaryEffectSlotsDirect")]
-    uint GenAuxiliaryEffectSlotsDirect(ContextHandle context);
 
     [NativeName("alGenBuffers")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -7633,6 +7633,14 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alGenEffects")]
     uint GenEffect();
 
+    [NativeName("alGenEffectsDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
+    uint GenEffectDirect(ContextHandle context);
+
     [NativeName("alGenEffects")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alGenEffects")]
@@ -7659,18 +7667,18 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
     void GenEffectsDirect(ContextHandle context, int n, Ref<uint> effects);
 
-    [NativeName("alGenEffectsDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenEffectsDirect")]
-    uint GenEffectsDirect(ContextHandle context);
-
     [NativeName("alGenFilters")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
     [NativeFunction("openal", EntryPoint = "alGenFilters")]
     uint GenFilter();
+
+    [NativeName("alGenFiltersDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
+    uint GenFilterDirect(ContextHandle context);
 
     [NativeName("alGenFilters")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]
@@ -7698,18 +7706,18 @@ public unsafe partial interface IAL
     [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
     void GenFiltersDirect(ContextHandle context, int n, Ref<uint> filters);
 
-    [NativeName("alGenFiltersDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context", "ALC_EXT_EFX"], RequireAll = true)
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenFiltersDirect")]
-    uint GenFiltersDirect(ContextHandle context);
-
     [NativeName("alGenSources")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
     [NativeFunction("openal", EntryPoint = "alGenSources")]
     uint GenSource();
+
+    [NativeName("alGenSourcesDirect")]
+    [
+        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
+        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
+    ]
+    [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
+    uint GenSourceDirect(ContextHandle context);
 
     [NativeName("alGenSources")]
     [SupportedApiProfile("al", ["AL_VERSION_1_0", "AL_VERSION_1_1"], MinVersion = "1.0")]
@@ -7736,14 +7744,6 @@ public unsafe partial interface IAL
     ]
     [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
     void GenSourcesDirect(ContextHandle context, int n, Ref<uint> sources);
-
-    [NativeName("alGenSourcesDirect")]
-    [
-        SupportedApiProfile("al", ["AL_EXT_direct_context"]),
-        SupportedApiProfile("alc", ["AL_EXT_direct_context"])
-    ]
-    [NativeFunction("openal", EntryPoint = "alGenSourcesDirect")]
-    uint GenSourcesDirect(ContextHandle context);
 
     [NativeName("alGetAuxiliaryEffectSlotf")]
     [SupportedApiProfile("al", ["ALC_EXT_EFX"]), SupportedApiProfile("alc", ["ALC_EXT_EFX"])]

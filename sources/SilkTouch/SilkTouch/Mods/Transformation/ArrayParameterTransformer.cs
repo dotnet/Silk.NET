@@ -1,10 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
-using System.Buffers;
 using System.Diagnostics;
-using System.Linq;
 using Humanizer;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -231,15 +228,16 @@ public class ArrayParameterTransformer : IFunctionTransformer
         bool isHr
     ) : CSharpSyntaxRewriter
     {
-        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node) =>
-            node.WithIdentifier(
-                    // TODO: Temporarily hack to fix issue where OpenGL -OES vendor suffix gets replaced with -O
-                    Identifier(
-                        node.Identifier.Text.EndsWith("OES")
-                            ? node.Identifier.Text
-                            : node.Identifier.Text.Singularize(false)
-                    )
-                )
+        public override SyntaxNode VisitMethodDeclaration(MethodDeclarationSyntax node)
+        {
+            var identifier = node.Identifier.Text;
+            var affixes = node.AttributeLists.GetNameAffixes();
+            var singularizedIdentifier = NameAffixer.ApplyAffixes(
+                NameAffixer.StripAffixes(identifier, affixes).Singularize(),
+                affixes
+            );
+
+            return node.WithIdentifier(Identifier(singularizedIdentifier))
                 .WithReturnType(
                     isOutput ? ptrElementType : PredefinedType(Token(SyntaxKind.VoidKeyword))
                 )
@@ -288,6 +286,7 @@ public class ArrayParameterTransformer : IFunctionTransformer
                 .WithParameterList(
                     Visit(node.ParameterList) as ParameterListSyntax ?? ParameterList()
                 );
+        }
 
         public override SyntaxNode VisitReturnStatement(ReturnStatementSyntax node) =>
             ExpressionStatement(
