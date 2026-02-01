@@ -2,11 +2,13 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
+using System.Runtime.CompilerServices;
+using Silk.NET.Maths;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
 
-internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
+internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 {
     public override PointerState State => _state;
     public ICursorConfiguration Cursor { get; }
@@ -20,7 +22,8 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         _state = new MouseState(Buttons, Points, Vector2.Zero);
         Cursor = cursor;
         float x = 0, y = 0;
-        _ = NativeBackend.GetMouseState(x.AsRef(), y.AsRef());
+        var mouseInputFlags = GetButtonMaskSdl(ref x, ref y);
+        ApplyMouseButtonState(mouseInputFlags);
 
         var window = NativeBackend.GetMouseFocus();
         uint windowId;
@@ -37,14 +40,28 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
             }
         }
 
-        _mouseWindowId = windowId;
         var pressure = _state.Buttons[PointerButton.Primary].Pressure;
         SetTargetPoint(windowId, new Vector3(x, y, 0), pressure);
         // var point = _unboundedPointerTarget.GetPoint(this, 0);
     }
 
-    protected override uint GetButtonMaskSdl() => NativeBackend.GetMouseState(nullptr, nullptr);
+    private void ApplyMouseButtonState(SdlMouseInputFlags mouseState)
+    {
+        foreach (var pointerButtonName in EnumInfo<PointerButton>.UniqueValues)
+        {
+            ref var button = ref GetButtonRef(pointerButtonName);
+            var isDown = mouseState.Has(pointerButtonName);
+            button = button with { IsDown = isDown, Pressure = isDown ? 1 : 0 };
+        }
+    }
 
+    public override void Initialize()
+    {
+
+    }
+
+    private unsafe SdlMouseInputFlags GetButtonMaskSdl(ref float x, ref float y) =>
+        (SdlMouseInputFlags)NativeBackend.GetMouseState((float*)Unsafe.AsPointer(ref x), (float*)Unsafe.AsPointer(ref y));
 
     public static SdlMouse CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
     {
@@ -101,7 +118,7 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     {
         if (NativeBackend.WarpMouseGlobal(position.X, position.Y))
         {
-            SetTargetPoint(_mouseWindowId, new Vector3(position.X, position.Y, 0), 0);
+            SetTargetPoint(null, new Vector3(position.X, position.Y, 0), 0);
             return true;
         }
 
@@ -116,8 +133,11 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         _accumulatedMotion += movementRelative;
         // todo - test against evtMotion state values
 
-        SetTargetPoint(mouseWindowId, _accumulatedMotion, 0);
+        //SetTargetPoint(mouseWindowId, _accumulatedMotion, 0, 0);
+        SetTargetPoint(mouseWindowId, new Vector3(evtMotion.X, evtMotion.Y, 0), 0);
     }
+
+
 
     public void AddButtonEvent(in MouseButtonEvent evtButton)
     {
@@ -128,12 +148,14 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 
     public void AddWheelEvent(in MouseWheelEvent evtWheel)
     {
-        _mouseScroll[0] += evtWheel.X;
-        _mouseScroll[1] += evtWheel.Y;
+        ref var x = ref _mouseScroll.X;
+        ref var y = ref _mouseScroll.Y;
+        x += evtWheel.X;
+        y += evtWheel.Y;
 
         // todo - evt.Which?
-        var hMagnitude = MathF.Abs(_mouseScroll[0]);
-        var vMagnitude = MathF.Abs(_mouseScroll[1]);
+        var hMagnitude = MathF.Abs(x);
+        var vMagnitude = MathF.Abs(y);
 
         if (hMagnitude >= 1)
         {
@@ -151,31 +173,6 @@ internal class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     }
 
 
-    private void SetTargetPoint(uint windowId, in Vector3 pos, float pressure)
-    {
-        _ = Backend.TryGetPointerTargetForWindow(windowId, out var windowTarget);
-
-        if (TryGetPointIndexForTarget(windowTarget, out var index))
-        {
-            UpdatePoint(ToTargetPoint(pos, pressure, windowTarget), index);
-        }
-        else
-        {
-            AddPoint(ToTargetPoint(pos, pressure, windowTarget));
-        }
-
-#if DEBUG
-        if (_mouseWindowId != windowId)
-        {
-            InputLog.Warn($"Mouse window changed from {_mouseWindowId} to {windowId}");
-        }
-#endif
-
-        _mouseWindowId = windowId;
-    }
-
-
-    private uint _mouseWindowId;
     private Vector2 _mouseScroll;
     private Vector3 _accumulatedMotion;
 }

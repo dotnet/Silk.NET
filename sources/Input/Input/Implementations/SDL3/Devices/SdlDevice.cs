@@ -36,6 +36,13 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
         SdlDeviceId = sdlDeviceId;
     }
 
+    /// <summary>
+    /// This is called directly after the device's constructor completes.
+    /// Use it for initialization logic that requires object construction to be complete to perform.
+    /// </summary>
+    public abstract void Initialize();
+
+
     protected abstract void Release();
 
     public void Dispose()

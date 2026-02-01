@@ -25,6 +25,7 @@ internal partial class SdlInputBackend
         try
         {
             device = T.CreateDevice(id, this);
+            device.Initialize();
         }
         catch (Exception e)
         {

@@ -66,12 +66,13 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
         }
     }
 
+
     protected override void Release() => InputLog.Debug("Releasing touch device, but touch devices have no special release logic.");
 
     // todo - consider whether we want to use the related mouse device's buttons here
     //  (if this is a simulated touch device),
     //  or some other simulation method?
-    protected override uint GetButtonMaskSdl() => 0;
+   // protected override uint GetButtonMaskSdl() => 0;
 
     public override PointerState State { get; }
 
@@ -88,6 +89,11 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
         }
 
         State = new PointerState(Buttons, Points);
+    }
+
+    public override void Initialize()
+    {
+
     }
 
     public void Event(in TouchFingerEvent finger, IPointerTarget? target, SdlInputBackend.FingerEventType fingerType)

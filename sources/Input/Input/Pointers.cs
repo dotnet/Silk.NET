@@ -132,6 +132,8 @@ public sealed class Pointers
             _clicks.RemoveAt(i--);
 
             // SAFETY: We have to replace the span now as the RemoveAt could've in theory reallocated.
+            // note from dom:
+            // looking at RemoveAt source, i don't know if this is necessary? but maybe for earlier runtimes it is?
             clicks = CollectionsMarshal.AsSpan(_clicks);
         }
     }

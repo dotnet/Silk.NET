@@ -2,7 +2,8 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
-
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
@@ -21,19 +22,29 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         for (var i = 0; i < EnumInfo<PointerButton>.UniqueValues.Count; i++)
         {
             var button = EnumInfo<PointerButton>.UniqueValues[i];
-            var pressed = IsPointerButtonPressedSdl(button, GetButtonMaskSdl());
-            _buttons.Add(new Button<PointerButton>(button, pressed, pressed ? 1.0f : 0.0f));
+            _buttons.Add(new Button<PointerButton>(button, false, 0f));
         }
-
-
     }
 
-    protected abstract uint GetButtonMaskSdl();
+    protected ref Button<PointerButton> GetButtonRef(PointerButton button)
+    {
+        var index = EnumInfo<PointerButton>.ValueIndexOfUnnamed(button);
+        _buttons.EnsureCapacity(index + 1);
+
+        while (index >= _buttons.Count)
+        {
+            _buttons.Add(new Button<PointerButton>(button, false, 0f));
+        }
+
+        var span = CollectionsMarshal.AsSpan(_buttons);
+        return ref span[index];
+    }
+
 
     private readonly List<Button<PointerButton>> _buttons = [];
     protected ButtonReadOnlyList<PointerButton> Buttons => new(_buttons);
     protected InputReadOnlyList<TargetPoint> Points => new(_points);
-    private readonly List<TargetPoint> _points = new();
+    private readonly List<TargetPoint> _points = [];
     protected void ClearPoints() => _points.Clear();
 
     public abstract PointerState State { get; }
@@ -46,31 +57,21 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
     /// </summary>
     protected abstract bool OnePointOnly { get; }
 
-
-    protected static bool IsPointerButtonPressedSdl(PointerButton button, uint state)
+    protected bool TryGetPointIndexForTarget(IPointerTarget? target, out int index, int? touchId = null)
     {
-        var index = EnumInfo<PointerButton>.ValueIndexOf(button);
-        if (index is < 0 or >= 32)
-        {
-            return false;
-        }
-
-        return (state & (1 << index)) != 0;
-    }
-
-    protected bool TryGetPointIndexForTarget(IPointerTarget? target, out int index)
-    {
-        if (!OnePointOnly)
+        if (touchId != null && !OnePointOnly)
         {
             throw new InvalidOperationException("Cannot get single point index for target " +
                                                 "when device supports multiple points per-target");
         }
 
         target ??= _unboundedPointerTarget;
+        touchId ??= 0;
 
         for (var i = 0; i < _points.Count; i++)
         {
-            if (_points[i].Target == target)
+            var point = GetPointRef(i);
+            if (point.Target == target && point.Id == touchId.Value)
             {
                 index = i;
                 return true;
@@ -80,20 +81,6 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         index = -1;
         return false;
     }
-
-
-    protected void UpdatePoint(in TargetPoint point, int index)
-    {
-        // todo - optimize using ref and array
-        var existing = _points[index];
-        if (existing != default && existing.Target != point.Target)
-        {
-            throw new InvalidOperationException("Cannot update point with a different target");
-        }
-
-        _points[index] = point;
-    }
-
 
     protected void AddPoint(in TargetPoint point)
     {
@@ -129,22 +116,61 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         }
     }
 
+    private static Ray3D<float> ConstructRay(in Vector3 pos, Vector3D<float>? direction = null)
+    {
+        return new Ray3D<float>(pos.ToGeneric(), direction ?? Vector3D<float>.UnitZ);
+    }
+
+    protected void SetTargetPoint(uint? windowId, in Vector3 pos, float pressure, int? touchId = null, Ray3D<float>? ray = null)
+    {
+        windowId ??= _previousWindowId;
+        _ = Backend.TryGetPointerTargetForWindow(windowId.Value, out var windowTarget);
+
+        if (TryGetPointIndexForTarget(windowTarget, out var index, touchId))
+        {
+            ref var point = ref GetPointRef(index);
+            UpdateTargetPointPosition(ref point, pos, windowTarget);
+            if (ray != null)
+            {
+                UpdateTargetPointRay(ref point, ray.Value, windowTarget);
+            }
+
+        }
+        else
+        {
+            AddPoint(ToTargetPoint(pos, pressure, windowTarget, touchId ?? 0, ray));
+        }
+
+#if DEBUG
+        if (_previousWindowId != windowId)
+        {
+            InputLog.Warn($"Mouse window changed from {_previousWindowId} to {windowId}");
+        }
+#endif
+
+        _previousWindowId = windowId.Value;
+    }
+    private uint _previousWindowId;
+
     /// <summary>
     ///
     /// </summary>
     /// <param name="pos"></param>
     /// <param name="pressure"></param>
     /// <param name="windowTarget">If null, will be considered unbounded</param>
+    /// <param name="touchId">The unique ID of the touch/pointer point, persisting through its lifetime</param>
+    /// <param name="ray">The point in pre-translated 3d space the pointer is pointing from. e.g. pen orientation and position</param>
+    /// <param name="direction"></param>
     /// <returns></returns>
-    protected TargetPoint ToTargetPoint(Vector3 pos, float pressure, IPointerTarget? windowTarget)
+    protected TargetPoint ToTargetPoint(in Vector3 pos, float pressure, IPointerTarget? windowTarget, int touchId, in Ray3D<float>? ray = null, in Vector3D<float>? direction = null)
     {
         if (windowTarget is null || windowTarget == _unboundedPointerTarget)
         {
-            return new TargetPoint(0, // todo: use a unique id
+            return new TargetPoint(touchId,
                 Flags: TargetPointFlags.NotPointingAtTarget,
                 Position: pos,
                 NormalizedPosition: default,
-                Pointer: default, // todo - standardize this pointer as a proper ray
+                Pointer: ray ?? ConstructRay(pos, direction),
                 Pressure: pressure,
                 Target: _unboundedPointerTarget
             );
@@ -159,13 +185,70 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
             Flags: TargetPointFlags.PointingAtTarget,
             Position: pos,
             NormalizedPosition: (pos - min) / (max - min),
-            Pointer: default, // todo- standardize this pointer as a proper ray
+            Pointer: ray ?? ConstructRay(pos, direction),
             Pressure: pressure,
             Target: windowTarget
         );
     }
 
-    protected void SetPointPressure(int index, float pressure) => _points[index] = _points[index] with { Pressure = pressure };
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private void UpdateTargetPointPosition(ref TargetPoint point, in Vector3 pos, IPointerTarget? windowTarget)
+    {
+        point = ToTargetPoint(pos, point.Pressure, windowTarget, point.Id, point.Pointer);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private void UpdateTargetPointRay(ref TargetPoint point, Ray3D<float> ray, IPointerTarget? windowTarget)
+    {
+        point = ToTargetPoint(point.Position, point.Pressure, windowTarget, point.Id, ray);
+    }
+
+
+    protected void SetPointPressure(int index, float pressure)
+    {
+        ref var point = ref GetPointRef(index);
+        point = point with { Pressure = pressure };
+    }
+
+    protected void SetPointXTilt(int index, float xTilt)
+    {
+        ref var point = ref GetPointRef(index);
+        point = point with { Pointer = point.Pointer with { Direction = point.Pointer.Direction with { X = xTilt } } };
+    }
+
+    protected void SetPointYTilt(int index, float yTilt)
+    {
+        ref var point = ref GetPointRef(index);
+        point = point with { Pointer = point.Pointer with { Direction = point.Pointer.Direction with { Y = yTilt } } };
+    }
+
+    protected void SetPointTwist(int index, float twist)
+    {
+        ref var point = ref GetPointRef(index);
+        point = point with { Pointer = point.Pointer with { Direction = point.Pointer.Direction with { Z = twist} } };
+    }
+
+    protected void SetPointDistance(int index, float distance01)
+    {
+        ref var point = ref GetPointRef(index);
+        point = point with {
+            Pointer = point.Pointer with { Origin = point.Pointer.Origin with { Z = distance01 } }
+        };
+    }
+
+    private ref TargetPoint GetPointRef(int index)
+    {
+        _points.EnsureCapacity(index + 1);
+        while (index >= _points.Count)
+        {
+            _points.Add(default);
+        }
+
+        var span = CollectionsMarshal.AsSpan(_points);
+        return ref span[index];
+    }
+
+    protected void SetGripPressure(float pressure) => State.GripPressure = pressure;
 
     protected void SetAllPointsPressure(float pressure)
     {
@@ -175,10 +258,9 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         }
     }
 
-
     protected void AddButtonEvent(PointerButton button, bool isDown, float? pressure = null)
     {
-        pressure ??= isDown ? 1.0f : 0.0f;;
+        pressure ??= isDown ? 1.0f : 0.0f;
         var idx = EnumInfo<PointerButton>.ValueIndexOfUnnamed(button);
         _buttons[idx] = new Button<PointerButton>(button, isDown, pressure.Value);
     }
@@ -205,7 +287,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
             silkEvents.PointerGripChangedEvents.Enqueue(evt);
         }
 
-        while(_targetEvents.TryDequeue(out var evt))
+        while (_targetEvents.TryDequeue(out var evt))
         {
             silkEvents.PointerTargetChangedEvents.Enqueue(evt);
         }
@@ -222,5 +304,4 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
     private readonly Queue<PointerClickEvent> _clickEvents = new();
     private readonly Queue<PointerGripChangedEvent> _gripEvents = new();
     private readonly Queue<PointerTargetChangedEvent> _targetEvents = new();
-
 }

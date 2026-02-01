@@ -1,7 +1,5 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-
-using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using Silk.NET.SDL;
 
@@ -13,7 +11,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         base(backend, silkId, sdlDeviceId, unbounded)
     {
         Name = name;
-        State = new PointerState(_buttons, _points);
+        State = new PointerState(Buttons, Points);
     }
 
     public static SdlPen CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
@@ -48,36 +46,93 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         SdlPen Create() => new(backend, uniqueId, sdlDeviceId, name.ReadToString(), backend.UnboundedPointerTarget);
     }
 
-    protected override uint GetButtonMaskSdl()
+    private void ApplyPenInputState(SdlPenInputFlags penState)
     {
-        throw new NotImplementedException();
+        foreach (var pointerButtonName in EnumInfo<PointerButton>.UniqueValues)
+        {
+            ref var button = ref GetButtonRef(pointerButtonName);
+            var isDown = penState.Has(pointerButtonName);
+            button = button with { IsDown = isDown, Pressure = isDown ? 1 : 0 };
+        }
     }
 
-    private readonly List<Button<PointerButton>> _buttons = [];
-    private readonly List<TargetPoint> _points = [];
+
+
+    public override void Initialize()
+    {
+
+    }
 
     public override PointerState State { get; }
 
     protected override bool OnePointOnly => true;
 
-
     public override string Name { get; }
     protected override void Release() => throw new NotImplementedException();
 
-
-    private void SetWindowTarget(IPointerTarget? target) => _windowTarget = target;
-
-    private bool _isPenClose;
-    private IPointerTarget? _windowTarget;
-
-    public void Event(IPointerTarget? target, in Vector2? position, SdlInputBackend.SdlPenInputFlags state,
-        PenAxis? axis = null, [NotNullIfNotNull(nameof(axis))] float? axisValue = null)
+    public void UpDownEvent(in PenTouchEvent evt)
     {
+
     }
 
-    public void SetProximity(IPointerTarget? target, bool inProximity)
+
+    public void MotionEvent(in PenMotionEvent evt)
     {
-        _isPenClose = inProximity;
-        SetWindowTarget(target);
+        if (!Backend.TryGetPointerTargetForWindow(evt.WindowID, out var target))
+        {
+            return;
+        }
+
+        UpdatePoint(ToTargetPoint(new Vector3(evt.X, evt.Y, 0), 0, target, 0), 0);
+    }
+
+
+    public void ButtonEvent(in PenButtonEvent evt) => ApplyPenInputState((SdlPenInputFlags)evt.PenState);
+
+    public void AxisEvent(in PenAxisEvent evt)
+    {
+        switch (evt.Axis)
+        {
+            case PenAxis.Pressure:
+            {
+                SetPointPressure(0, evt.Value);
+                break;;
+            }
+            case PenAxis.Xtilt:
+            {
+                SetPointXTilt(0, evt.Value);
+                break;
+            }
+            case PenAxis.Ytilt:
+            {
+                SetPointYTilt(0, evt.Value);
+                break;
+            }
+            case PenAxis.Distance:
+            {
+                SetPointDistance(0, evt.Value);
+                break;
+            }
+            case PenAxis.Rotation: // barrel rotation
+            {
+                SetPointTwist(0, evt.Value);
+                break;
+            }
+            case PenAxis.Slider:
+            {
+                // additional "button" or additional "axis" or "pressure"?
+                // SetPointSlider(0, evt.Value);
+                break;
+            }
+            case PenAxis.TangentialPressure:
+            {
+                SetGripPressure(evt.Value);
+                break;
+            }
+            default:
+            {
+                return;
+            }
+        }
     }
 }

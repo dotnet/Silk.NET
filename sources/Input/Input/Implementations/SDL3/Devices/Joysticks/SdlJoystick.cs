@@ -171,6 +171,8 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     }
 
 
+    public override void Initialize() => throw new NotImplementedException();
+
     protected override void Release() => NativeBackend.CloseJoystick(JoystickHandle);
 
     public override void FinalizeUpdate(SdlInputBackend.SilkEventQueues silkEvents)
