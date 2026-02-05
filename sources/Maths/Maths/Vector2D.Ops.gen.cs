@@ -4,6 +4,7 @@
 namespace Silk.NET.Maths
 {
     using System.Numerics;
+    using System.Runtime.Intrinsics;
 
     /// <summary>
     /// Methods for working with <see cref="Vector2D{T}"/>.
@@ -91,6 +92,154 @@ namespace Silk.NET.Maths
         public static Vector2D<int> CeilingToInt<T>(Vector2D<T> vector)
             where T : IFloatingPoint<T> =>
             Vector2D.Ceiling(vector).AsChecked<int>();
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
+        public static Vector64<float> ToVector64(Vector2D<float> vector)
+            => Vector64.Create(vector.X, vector.Y);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
+        public static Vector128<float> ToVector128(Vector2D<float> vector)
+            => Vector128.Create(vector.X, vector.Y, (float)0, (float)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
+        public static Vector256<float> ToVector256(Vector2D<float> vector)
+            => Vector256.Create(vector.X, vector.Y, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
+        public static Vector512<float> ToVector512(Vector2D<float> vector)
+            => Vector512.Create(vector.X, vector.Y, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
+        public static Vector128<double> ToVector128(Vector2D<double> vector)
+            => Vector128.Create(vector.X, vector.Y);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
+        public static Vector256<double> ToVector256(Vector2D<double> vector)
+            => Vector256.Create(vector.X, vector.Y, (double)0, (double)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
+        public static Vector512<double> ToVector512(Vector2D<double> vector)
+            => Vector512.Create(vector.X, vector.Y, (double)0, (double)0, (double)0, (double)0, (double)0, (double)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
+        public static Vector64<byte> ToVector64(Vector2D<byte> vector)
+            => Vector64.Create(vector.X, vector.Y, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
+        public static Vector128<byte> ToVector128(Vector2D<byte> vector)
+            => Vector128.Create(vector.X, vector.Y, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
+        public static Vector256<byte> ToVector256(Vector2D<byte> vector)
+            => Vector256.Create(vector.X, vector.Y, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
+        public static Vector512<byte> ToVector512(Vector2D<byte> vector)
+            => Vector512.Create(vector.X, vector.Y, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
+        public static Vector64<short> ToVector64(Vector2D<short> vector)
+            => Vector64.Create(vector.X, vector.Y, (short)0, (short)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
+        public static Vector128<short> ToVector128(Vector2D<short> vector)
+            => Vector128.Create(vector.X, vector.Y, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
+        public static Vector256<short> ToVector256(Vector2D<short> vector)
+            => Vector256.Create(vector.X, vector.Y, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
+        public static Vector512<short> ToVector512(Vector2D<short> vector)
+            => Vector512.Create(vector.X, vector.Y, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
+        public static Vector64<int> ToVector64(Vector2D<int> vector)
+            => Vector64.Create(vector.X, vector.Y);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
+        public static Vector128<int> ToVector128(Vector2D<int> vector)
+            => Vector128.Create(vector.X, vector.Y, (int)0, (int)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
+        public static Vector256<int> ToVector256(Vector2D<int> vector)
+            => Vector256.Create(vector.X, vector.Y, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
+        public static Vector512<int> ToVector512(Vector2D<int> vector)
+            => Vector512.Create(vector.X, vector.Y, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
+        public static Vector128<long> ToVector128(Vector2D<long> vector)
+            => Vector128.Create(vector.X, vector.Y);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
+        public static Vector256<long> ToVector256(Vector2D<long> vector)
+            => Vector256.Create(vector.X, vector.Y, (long)0, (long)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
+        public static Vector512<long> ToVector512(Vector2D<long> vector)
+            => Vector512.Create(vector.X, vector.Y, (long)0, (long)0, (long)0, (long)0, (long)0, (long)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
+        public static Vector64<sbyte> ToVector64(Vector2D<sbyte> vector)
+            => Vector64.Create(vector.X, vector.Y, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
+        public static Vector128<sbyte> ToVector128(Vector2D<sbyte> vector)
+            => Vector128.Create(vector.X, vector.Y, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
+        public static Vector256<sbyte> ToVector256(Vector2D<sbyte> vector)
+            => Vector256.Create(vector.X, vector.Y, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
+        public static Vector512<sbyte> ToVector512(Vector2D<sbyte> vector)
+            => Vector512.Create(vector.X, vector.Y, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
+        public static Vector64<ushort> ToVector64(Vector2D<ushort> vector)
+            => Vector64.Create(vector.X, vector.Y, (ushort)0, (ushort)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
+        public static Vector128<ushort> ToVector128(Vector2D<ushort> vector)
+            => Vector128.Create(vector.X, vector.Y, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
+        public static Vector256<ushort> ToVector256(Vector2D<ushort> vector)
+            => Vector256.Create(vector.X, vector.Y, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
+        public static Vector512<ushort> ToVector512(Vector2D<ushort> vector)
+            => Vector512.Create(vector.X, vector.Y, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
+        public static Vector64<uint> ToVector64(Vector2D<uint> vector)
+            => Vector64.Create(vector.X, vector.Y);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
+        public static Vector128<uint> ToVector128(Vector2D<uint> vector)
+            => Vector128.Create(vector.X, vector.Y, (uint)0, (uint)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
+        public static Vector256<uint> ToVector256(Vector2D<uint> vector)
+            => Vector256.Create(vector.X, vector.Y, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
+        public static Vector512<uint> ToVector512(Vector2D<uint> vector)
+            => Vector512.Create(vector.X, vector.Y, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
+        public static Vector128<ulong> ToVector128(Vector2D<ulong> vector)
+            => Vector128.Create(vector.X, vector.Y);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
+        public static Vector256<ulong> ToVector256(Vector2D<ulong> vector)
+            => Vector256.Create(vector.X, vector.Y, (ulong)0, (ulong)0);
+
+        /// <summary>Converts a <see cref="Vector2D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
+        public static Vector512<ulong> ToVector512(Vector2D<ulong> vector)
+            => Vector512.Create(vector.X, vector.Y, (ulong)0, (ulong)0, (ulong)0, (ulong)0, (ulong)0, (ulong)0);
 
         /// <summary>Linearly interpolates between two vectors using a scalar t-value (clamped between 0 and 1).</summary>
         public static Vector2D<T> LerpClamped<T>(Vector2D<T> a, Vector2D<T> b, T amount)
