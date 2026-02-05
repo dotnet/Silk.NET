@@ -182,7 +182,7 @@ namespace Silk.NET.Maths
 
         /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
         /// <returns>The string representation.</returns>
-        public string ToString(string? format, IFormatProvider? formatProvider) =>
+        public string ToString(string? format, IFormatProvider? formatProvider = null) =>
             $"<{X.ToString(format, formatProvider)}, {Y.ToString(format, formatProvider)}, {Z.ToString(format, formatProvider)}, {W.ToString(format, formatProvider)}>";
 
         /// <summary>Parses a string to a <see cref="Vector4D{T}"/> instance.</summary>

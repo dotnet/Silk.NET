@@ -1199,7 +1199,6 @@ namespace Silk.NET.Maths
             }
         }*/
 
-        /*
         /// <summary>Attempts to extract the scale, translation, and rotation components from the given scale/rotation/translation matrix.
         /// If successful, the out parameters will contained the extracted values.</summary>
         /// <param name="matrix">The source matrix.</param>
@@ -1212,193 +1211,137 @@ namespace Silk.NET.Maths
         {
             bool result = true;
 
-            unsafe
+            translation = new Vector3D<T>(matrix.M41, matrix.M42, matrix.M43);
+
+            // Extract basis vectors (rows)
+            var basis = new Vector3D<T>[3];
+            basis[0] = new Vector3D<T>(matrix.M11, matrix.M12, matrix.M13);
+            basis[1] = new Vector3D<T>(matrix.M21, matrix.M22, matrix.M23);
+            basis[2] = new Vector3D<T>(matrix.M31, matrix.M32, matrix.M33);
+
+            // Compute scales
+            var scales = new T[3];
+            scales[0] = basis[0].Length;
+            scales[1] = basis[1].Length;
+            scales[2] = basis[2].Length;
+
+            scale = new Vector3D<T>(scales[0], scales[1], scales[2]);
+
+            // Rank axes by scale magnitude
+            uint a, b, c;
             {
-                fixed (Vector3D<T>* scaleBase = &scale)
+                T x = scales[0], y = scales[1], z = scales[2];
+
+                if (!(x >= y))
                 {
-                    T* pfScales = (T*) scaleBase;
-                    T det;
-
-                    VectorBasis<T> vectorBasis;
-                    Vector3D<T>** pVectorBasis = (Vector3D<T>**) &vectorBasis;
-
-                    Matrix4X4<T> matTemp = Matrix4X4<T>.Identity;
-                    CanonicalBasis<T> canonicalBasis = default;
-                    Vector3D<T>* pCanonicalBasis = &canonicalBasis.Row0;
-
-                    canonicalBasis.Row0 = new Vector3D<T>(T.One, T.Zero, T.Zero);
-                    canonicalBasis.Row1 = new Vector3D<T>(T.Zero, T.One, T.Zero);
-                    canonicalBasis.Row2 = new Vector3D<T>(T.Zero, T.Zero, T.One);
-
-                    translation = new Vector3D<T>(
-                        matrix.M41,
-                        matrix.M42,
-                        matrix.M43);
-
-                    pVectorBasis[0] = (Vector3D<T>*) &matTemp.Row1;
-                    pVectorBasis[1] = (Vector3D<T>*) &matTemp.Row2;
-                    pVectorBasis[2] = (Vector3D<T>*) &matTemp.Row3;
-
-                    *(pVectorBasis[0]) = new Vector3D<T>(matrix.M11, matrix.M12, matrix.M13);
-                    *(pVectorBasis[1]) = new Vector3D<T>(matrix.M21, matrix.M22, matrix.M23);
-                    *(pVectorBasis[2]) = new Vector3D<T>(matrix.M31, matrix.M32, matrix.M33);
-
-                    scale.X = pVectorBasis[0]->Length;
-                    scale.Y = pVectorBasis[1]->Length;
-                    scale.Z = pVectorBasis[2]->Length;
-
-                    uint a, b, c;
-                    #region Ranking
-                    T x = pfScales[0], y = pfScales[1], z = pfScales[2];
-                    if (!(x >= y))
-                    {
-                        if (!(y >= z))
-                        {
-                            a = 2;
-                            b = 1;
-                            c = 0;
-                        }
-                        else
-                        {
-                            a = 1;
-
-                            if (!(x >= z))
-                            {
-                                b = 2;
-                                c = 0;
-                            }
-                            else
-                            {
-                                b = 0;
-                                c = 2;
-                            }
-                        }
-                    }
+                    if (!(y >= z))
+                    { a = 2; b = 1; c = 0; }
                     else
                     {
+                        a = 1;
                         if (!(x >= z))
-                        {
-                            a = 2;
-                            b = 0;
-                            c = 1;
-                        }
+                        { b = 2; c = 0; }
                         else
-                        {
-                            a = 0;
-
-                            if (!(y >= z))
-                            {
-                                b = 2;
-                                c = 1;
-                            }
-                            else
-                            {
-                                b = 1;
-                                c = 2;
-                            }
-                        }
+                        { b = 0; c = 2; }
                     }
-                    #endregion
-
-                    if (!(pfScales[a] >= T.CreateTruncating(DecomposeEpsilon)))
-                    {
-                        *(pVectorBasis[a]) = pCanonicalBasis[a];
-                    }
-
-                    *pVectorBasis[a] = Vector3D.Normalize(*pVectorBasis[a]);
-
-                    if (!(pfScales[b] >= T.CreateTruncating(DecomposeEpsilon)))
-                    {
-                        uint cc;
-                        T fAbsX, fAbsY, fAbsZ;
-
-                        fAbsX = T.Abs(pVectorBasis[a]->X);
-                        fAbsY = T.Abs(pVectorBasis[a]->Y);
-                        fAbsZ = T.Abs(pVectorBasis[a]->Z);
-
-                        #region Ranking
-                        if (!(fAbsX >= fAbsY))
-                        {
-                            if (!(fAbsY >= fAbsZ))
-                            {
-                                cc = 0;
-                            }
-                            else
-                            {
-                                if (!(fAbsX >= fAbsZ))
-                                {
-                                    cc = 0;
-                                }
-                                else
-                                {
-                                    cc = 2;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            if (!(fAbsX >= fAbsZ))
-                            {
-                                cc = 1;
-                            }
-                            else
-                            {
-                                if (!(fAbsY >= fAbsZ))
-                                {
-                                    cc = 1;
-                                }
-                                else
-                                {
-                                    cc = 2;
-                                }
-                            }
-                        }
-                        #endregion
-
-                        *pVectorBasis[b] = Vector3D.Cross(*pVectorBasis[a], *(pCanonicalBasis + cc));
-                    }
-
-                    *pVectorBasis[b] = Vector3D.Normalize(*pVectorBasis[b]);
-
-                    if (!(pfScales[c] >= T.CreateTruncating(DecomposeEpsilon)))
-                    {
-                        *pVectorBasis[c] = Vector3D.Cross(*pVectorBasis[a], *pVectorBasis[b]);
-                    }
-
-                    *pVectorBasis[c] = Vector3D.Normalize(*pVectorBasis[c]);
-
-                    det = matTemp.GetDeterminant();
-
-                    // use Kramer's rule to check for handedness of coordinate system
-                    if (!(det >= T.Zero))
-                    {
-                        // switch coordinate system by negating the scale and inverting the basis vector on the x-axis
-                        pfScales[a] = -pfScales[a];
-                        *pVectorBasis[a] = -(*pVectorBasis[a]);
-
-                        det = -det;
-                    }
-
-                    det = det - T.One;
-                    det = det * det;
-
-                    if (!(T.CreateTruncating(DecomposeEpsilon) >= det))
-                    {
-                        // Non-SRT matrix encountered
-                        rotation = Quaternion<T>.Identity;
-                        result = false;
-                    }
+                }
+                else
+                {
+                    if (!(x >= z))
+                    { a = 2; b = 0; c = 1; }
                     else
                     {
-                        // generate the quaternion from the matrix
-                        rotation = Quaternion<T>.CreateFromRotationMatrix(matTemp);
+                        a = 0;
+                        if (!(y >= z))
+                        { b = 2; c = 1; }
+                        else
+                        { b = 1; c = 2; }
                     }
                 }
             }
 
+            var canonical = new[]
+            {
+                new Vector3D<T>(T.One,  T.Zero, T.Zero),
+                new Vector3D<T>(T.Zero, T.One,  T.Zero),
+                new Vector3D<T>(T.Zero, T.Zero, T.One)
+            };
+
+            T eps = T.CreateTruncating(DecomposeEpsilon);
+
+            if (!(scales[a] >= eps))
+                basis[a] = canonical[a];
+
+            basis[a] = Vector3D.Normalize(basis[a]);
+
+            if (!(scales[b] >= eps))
+            {
+                T ax = T.Abs(basis[a].X);
+                T ay = T.Abs(basis[a].Y);
+                T az = T.Abs(basis[a].Z);
+
+                uint cc;
+                if (!(ax >= ay))
+                {
+                    if (!(ay >= az))
+                        cc = 0;
+                    else
+                        cc = (!(ax >= az)) ? 0u : 2u;
+                }
+                else
+                {
+                    if (!(ax >= az))
+                        cc = 1;
+                    else
+                        cc = (!(ay >= az)) ? 1u : 2u;
+                }
+
+                basis[b] = Vector3D.Cross(basis[a], canonical[cc]);
+            }
+
+            basis[b] = Vector3D.Normalize(basis[b]);
+
+            if (!(scales[c] >= eps))
+                basis[c] = Vector3D.Cross(basis[a], basis[b]);
+
+            basis[c] = Vector3D.Normalize(basis[c]);
+
+            // Rebuild orthonormal rotation matrix
+            var rotationMatrix = new Matrix4X4<T>(
+                basis[0].X, basis[0].Y, basis[0].Z, T.Zero,
+                basis[1].X, basis[1].Y, basis[1].Z, T.Zero,
+                basis[2].X, basis[2].Y, basis[2].Z, T.Zero,
+                T.Zero, T.Zero, T.Zero, T.Zero);
+
+            T det = rotationMatrix.GetDeterminant();
+
+            // Fix handedness
+            if (!(det >= T.Zero))
+            {
+                scales[a] = -scales[a];
+                det = -det;
+
+                rotationMatrix.Row1 = -rotationMatrix.Row1;
+                rotationMatrix.Row2 = -rotationMatrix.Row2;
+                rotationMatrix.Row3 = -rotationMatrix.Row3;
+            }
+
+            T diff = det - T.One;
+            diff *= diff;
+
+            if (!(eps >= diff))
+            {
+                rotation = Quaternion<T>.Identity;
+                result = false;
+            }
+            else
+            {
+                rotation = Quaternion<T>.CreateFromRotationMatrix(rotationMatrix);
+            }
+
+            scale = new Vector3D<T>(scales[0], scales[1], scales[2]);
             return result;
         }
-        */
 
         /// <summary>Transforms the given matrix by applying the given Quaternion rotation.</summary>
         /// <param name="value">The source matrix to transform.</param>

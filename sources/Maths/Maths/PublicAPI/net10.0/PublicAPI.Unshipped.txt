@@ -601,7 +601,7 @@ Silk.NET.Maths.Vector2D<T>.Count.get -> int
 Silk.NET.Maths.Vector2D<T>.Equals(Silk.NET.Maths.Vector2D<T> other) -> bool
 Silk.NET.Maths.Vector2D<T>.GetEnumerator() -> System.Collections.Generic.IEnumerator<T>!
 Silk.NET.Maths.Vector2D<T>.this[int index].get -> T
-Silk.NET.Maths.Vector2D<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Vector2D<T>.ToString(string? format, System.IFormatProvider? formatProvider = null) -> string!
 Silk.NET.Maths.Vector2D<T>.TryFormat(System.Span<byte> utf8Destination, out int bytesWritten, System.ReadOnlySpan<char> format, System.IFormatProvider? provider) -> bool
 Silk.NET.Maths.Vector2D<T>.TryFormat(System.Span<char> destination, out int charsWritten, System.ReadOnlySpan<char> format, System.IFormatProvider? provider) -> bool
 Silk.NET.Maths.Vector2D<T>.Vector2D() -> void
@@ -628,7 +628,7 @@ Silk.NET.Maths.Vector3D<T>.Count.get -> int
 Silk.NET.Maths.Vector3D<T>.Equals(Silk.NET.Maths.Vector3D<T> other) -> bool
 Silk.NET.Maths.Vector3D<T>.GetEnumerator() -> System.Collections.Generic.IEnumerator<T>!
 Silk.NET.Maths.Vector3D<T>.this[int index].get -> T
-Silk.NET.Maths.Vector3D<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Vector3D<T>.ToString(string? format, System.IFormatProvider? formatProvider = null) -> string!
 Silk.NET.Maths.Vector3D<T>.TryFormat(System.Span<byte> utf8Destination, out int bytesWritten, System.ReadOnlySpan<char> format, System.IFormatProvider? provider) -> bool
 Silk.NET.Maths.Vector3D<T>.TryFormat(System.Span<char> destination, out int charsWritten, System.ReadOnlySpan<char> format, System.IFormatProvider? provider) -> bool
 Silk.NET.Maths.Vector3D<T>.Vector3D() -> void
@@ -657,7 +657,7 @@ Silk.NET.Maths.Vector4D<T>.Count.get -> int
 Silk.NET.Maths.Vector4D<T>.Equals(Silk.NET.Maths.Vector4D<T> other) -> bool
 Silk.NET.Maths.Vector4D<T>.GetEnumerator() -> System.Collections.Generic.IEnumerator<T>!
 Silk.NET.Maths.Vector4D<T>.this[int index].get -> T
-Silk.NET.Maths.Vector4D<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Vector4D<T>.ToString(string? format, System.IFormatProvider? formatProvider = null) -> string!
 Silk.NET.Maths.Vector4D<T>.TryFormat(System.Span<byte> utf8Destination, out int bytesWritten, System.ReadOnlySpan<char> format, System.IFormatProvider? provider) -> bool
 Silk.NET.Maths.Vector4D<T>.TryFormat(System.Span<char> destination, out int charsWritten, System.ReadOnlySpan<char> format, System.IFormatProvider? provider) -> bool
 Silk.NET.Maths.Vector4D<T>.Vector4D() -> void
@@ -1175,6 +1175,7 @@ static Silk.NET.Maths.Matrix4X4.CreateShadow<T>(Silk.NET.Maths.Vector3D<T> light
 static Silk.NET.Maths.Matrix4X4.CreateTranslation<T>(Silk.NET.Maths.Vector3D<T> position) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateTranslation<T>(T xPosition, T yPosition, T zPosition) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.CreateWorld<T>(Silk.NET.Maths.Vector3D<T> position, Silk.NET.Maths.Vector3D<T> forward, Silk.NET.Maths.Vector3D<T> up) -> Silk.NET.Maths.Matrix4X4<T>
+static Silk.NET.Maths.Matrix4X4.Decompose<T>(Silk.NET.Maths.Matrix4X4<T> matrix, out Silk.NET.Maths.Vector3D<T> scale, out Silk.NET.Maths.Quaternion<T> rotation, out Silk.NET.Maths.Vector3D<T> translation) -> bool
 static Silk.NET.Maths.Matrix4X4.Invert<T>(Silk.NET.Maths.Matrix4X4<T> matrix, out Silk.NET.Maths.Matrix4X4<T> result) -> bool
 static Silk.NET.Maths.Matrix4X4.Lerp<T>(Silk.NET.Maths.Matrix4X4<T> value1, Silk.NET.Maths.Matrix4X4<T> value2, T amount) -> Silk.NET.Maths.Matrix4X4<T>
 static Silk.NET.Maths.Matrix4X4.Multiply<T>(Silk.NET.Maths.Matrix2X4<T> left, Silk.NET.Maths.Matrix4X4<T> right) -> Silk.NET.Maths.Matrix2X4<T>
@@ -1510,6 +1511,7 @@ static Silk.NET.Maths.Vector2D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, S
 static Silk.NET.Maths.Vector2D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector2D<T>
+static Silk.NET.Maths.Vector2D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix2X2<T> matrix) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix2X3<T> matrix) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix2X4<T> matrix) -> Silk.NET.Maths.Vector2D<T>
@@ -1520,6 +1522,7 @@ static Silk.NET.Maths.Vector2D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vec
 static Silk.NET.Maths.Vector2D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector2D<T>
+static Silk.NET.Maths.Vector2D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.Truncate<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D<T>.CreateChecked<TOther>(Silk.NET.Maths.Vector2D<TOther> source) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D<T>.CreateSaturating<TOther>(Silk.NET.Maths.Vector2D<TOther> source) -> Silk.NET.Maths.Vector2D<T>
@@ -1722,6 +1725,7 @@ static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, S
 static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
+static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix3X2<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix3X3<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix3X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
@@ -1729,6 +1733,7 @@ static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, S
 static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
+static Silk.NET.Maths.Vector3D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix3X2<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix3X3<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix3X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
@@ -1736,6 +1741,7 @@ static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vec
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
+static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix3X2<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix3X3<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix3X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
@@ -1743,6 +1749,7 @@ static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vec
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector3D<T>
+static Silk.NET.Maths.Vector3D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.Truncate<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D<T>.CreateChecked<TOther>(Silk.NET.Maths.Vector3D<TOther> source) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D<T>.CreateSaturating<TOther>(Silk.NET.Maths.Vector3D<TOther> source) -> Silk.NET.Maths.Vector3D<T>
@@ -1942,26 +1949,32 @@ static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, S
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix4X2<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector4D<T> vector, Silk.NET.Maths.Matrix4X2<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector4D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector4D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector4D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Vector4D.Transform<T>(Silk.NET.Maths.Vector4D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X2<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector2D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix4X2<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector3D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector4D<T> vector, Silk.NET.Maths.Matrix4X2<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector4D<T> vector, Silk.NET.Maths.Matrix4X3<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector4D<T> vector, Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector4D<T> vector, Silk.NET.Maths.Matrix5X4<T> matrix) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Vector4D.TransformNormal<T>(Silk.NET.Maths.Vector4D<T> vector, Silk.NET.Maths.Quaternion<T> quaternion) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Truncate<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D<T>.CreateChecked<TOther>(Silk.NET.Maths.Vector4D<TOther> source) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.CreateSaturating<TOther>(Silk.NET.Maths.Vector4D<TOther> source) -> Silk.NET.Maths.Vector4D<T>

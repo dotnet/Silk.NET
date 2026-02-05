@@ -859,7 +859,115 @@ namespace Silk.NET.Maths
             where TSelf : IHyperbolicFunctions<TSelf> =>
             new(TSelf.Tanh(x.X), TSelf.Tanh(x.Y), TSelf.Tanh(x.Z));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified Quaternion.</summary>
+        public static Vector3D<T> Transform<T>(Vector2D<T> vector, Quaternion<T> quaternion)
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
+        {
+            var v = new Vector4D<T>(vector.X, vector.Y, T.Zero, T.One);
+
+            // Quaternion-vector rotation (optimized form)
+            var x2 = quaternion.X + quaternion.X;
+            var y2 = quaternion.Y + quaternion.Y;
+            var z2 = quaternion.Z + quaternion.Z;
+
+            var wx2 = quaternion.W * x2;
+            var wy2 = quaternion.W * y2;
+            var wz2 = quaternion.W * z2;
+            var xx2 = quaternion.X * x2;
+            var xy2 = quaternion.X * y2;
+            var xz2 = quaternion.X * z2;
+            var yy2 = quaternion.Y * y2;
+            var yz2 = quaternion.Y * z2;
+            var zz2 = quaternion.Z * z2;
+
+            return new Vector3D<T>(
+                v.X * (T.One - yy2 + zz2) + v.Y * (xy2 - wz2) + v.Z * (xz2 + wy2),
+                v.Y * (T.One - yy2 + zz2) + v.X * (xy2 + wz2) + v.Z * (yz2 - wx2),
+                v.Z * (T.One - yy2 + zz2) + v.X * (xz2 - wy2) + v.Y * (yz2 + wx2));
+        }
+
+        /// <summary>Transforms the given vector by the specified Quaternion.</summary>
+        public static Vector3D<T> Transform<T>(Vector3D<T> vector, Quaternion<T> quaternion)
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
+        {
+            var v = new Vector4D<T>(vector.X, vector.Y, vector.Z, T.One);
+
+            // Quaternion-vector rotation (optimized form)
+            var x2 = quaternion.X + quaternion.X;
+            var y2 = quaternion.Y + quaternion.Y;
+            var z2 = quaternion.Z + quaternion.Z;
+
+            var wx2 = quaternion.W * x2;
+            var wy2 = quaternion.W * y2;
+            var wz2 = quaternion.W * z2;
+            var xx2 = quaternion.X * x2;
+            var xy2 = quaternion.X * y2;
+            var xz2 = quaternion.X * z2;
+            var yy2 = quaternion.Y * y2;
+            var yz2 = quaternion.Y * z2;
+            var zz2 = quaternion.Z * z2;
+
+            return new Vector3D<T>(
+                v.X * (T.One - yy2 + zz2) + v.Y * (xy2 - wz2) + v.Z * (xz2 + wy2),
+                v.Y * (T.One - yy2 + zz2) + v.X * (xy2 + wz2) + v.Z * (yz2 - wx2),
+                v.Z * (T.One - yy2 + zz2) + v.X * (xz2 - wy2) + v.Y * (yz2 + wx2));
+        }
+
+        /// <summary>Transforms the given vector by the specified Quaternion.</summary>
+        public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Quaternion<T> quaternion)
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
+        {
+            var v = new Vector4D<T>(vector.X, vector.Y, T.Zero, T.Zero);
+
+            // Quaternion-vector rotation (optimized form)
+            var x2 = quaternion.X + quaternion.X;
+            var y2 = quaternion.Y + quaternion.Y;
+            var z2 = quaternion.Z + quaternion.Z;
+
+            var wx2 = quaternion.W * x2;
+            var wy2 = quaternion.W * y2;
+            var wz2 = quaternion.W * z2;
+            var xx2 = quaternion.X * x2;
+            var xy2 = quaternion.X * y2;
+            var xz2 = quaternion.X * z2;
+            var yy2 = quaternion.Y * y2;
+            var yz2 = quaternion.Y * z2;
+            var zz2 = quaternion.Z * z2;
+
+            return new Vector3D<T>(
+                v.X * (T.One - yy2 + zz2) + v.Y * (xy2 - wz2) + v.Z * (xz2 + wy2),
+                v.Y * (T.One - yy2 + zz2) + v.X * (xy2 + wz2) + v.Z * (yz2 - wx2),
+                v.Z * (T.One - yy2 + zz2) + v.X * (xz2 - wy2) + v.Y * (yz2 + wx2));
+        }
+
+        /// <summary>Transforms the given vector by the specified Quaternion.</summary>
+        public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Quaternion<T> quaternion)
+            where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
+        {
+            var v = new Vector4D<T>(vector.X, vector.Y, vector.Z, T.Zero);
+
+            // Quaternion-vector rotation (optimized form)
+            var x2 = quaternion.X + quaternion.X;
+            var y2 = quaternion.Y + quaternion.Y;
+            var z2 = quaternion.Z + quaternion.Z;
+
+            var wx2 = quaternion.W * x2;
+            var wy2 = quaternion.W * y2;
+            var wz2 = quaternion.W * z2;
+            var xx2 = quaternion.X * x2;
+            var xy2 = quaternion.X * y2;
+            var xz2 = quaternion.X * z2;
+            var yy2 = quaternion.Y * y2;
+            var yz2 = quaternion.Y * z2;
+            var zz2 = quaternion.Z * z2;
+
+            return new Vector3D<T>(
+                v.X * (T.One - yy2 + zz2) + v.Y * (xy2 - wz2) + v.Z * (xz2 + wy2),
+                v.Y * (T.One - yy2 + zz2) + v.X * (xy2 + wz2) + v.Z * (yz2 - wx2),
+                v.Z * (T.One - yy2 + zz2) + v.X * (xz2 - wy2) + v.Y * (yz2 + wx2));
+        }
+
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix3X2<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -867,7 +975,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix3X2<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -875,7 +983,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix3X3<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -883,12 +991,12 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + matrix.M23,
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + matrix.M33);
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix3X3<T> matrix)
             where T : INumberBase<T>
             => vector * matrix;
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix3X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -896,7 +1004,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + matrix.M24,
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + matrix.M34);
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix3X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -904,7 +1012,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + (vector.Z * matrix.M23) + matrix.M24,
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + (vector.Z * matrix.M33) + matrix.M34);
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix4X2<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -912,7 +1020,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix4X2<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -920,7 +1028,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix4X3<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -928,7 +1036,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + matrix.M23,
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + matrix.M33);
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix4X3<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -936,7 +1044,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + (vector.Z * matrix.M23),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + (vector.Z * matrix.M33));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix4X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -944,7 +1052,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + matrix.M24,
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + matrix.M34);
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix4X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -952,7 +1060,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + (vector.Z * matrix.M23) + matrix.M24,
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + (vector.Z * matrix.M33) + matrix.M34);
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix5X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -960,7 +1068,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + matrix.M24,
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + matrix.M34);
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix5X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -968,7 +1076,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + (vector.Z * matrix.M23) + matrix.M24,
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + (vector.Z * matrix.M33) + matrix.M34);
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix3X2<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -976,7 +1084,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix3X2<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -984,7 +1092,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix3X3<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -992,12 +1100,12 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix3X3<T> matrix)
             where T : INumberBase<T>
             => vector * matrix;
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix3X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -1005,7 +1113,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix3X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -1013,7 +1121,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + (vector.Z * matrix.M23),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + (vector.Z * matrix.M33));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix4X2<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -1021,7 +1129,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix4X2<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -1029,7 +1137,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix4X3<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -1037,7 +1145,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix4X3<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -1045,7 +1153,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + (vector.Z * matrix.M23),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + (vector.Z * matrix.M33));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix4X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -1053,7 +1161,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix4X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -1061,7 +1169,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22) + (vector.Z * matrix.M23),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32) + (vector.Z * matrix.M33));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix5X4<T> matrix)
             where T : INumberBase<T>
             => new(
@@ -1069,7 +1177,7 @@ namespace Silk.NET.Maths
                 (vector.X * matrix.M21) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M31) + (vector.Y * matrix.M32));
 
-        /// <summary>Transforms the given vector by the specified transformation matrix.</summary>
+        /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix5X4<T> matrix)
             where T : INumberBase<T>
             => new(
