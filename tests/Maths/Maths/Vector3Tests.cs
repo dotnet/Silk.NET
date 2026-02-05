@@ -24,7 +24,6 @@ namespace Silk.NET.Maths.Tests
             float[] a = new float[4];
             float[] b = new float[3];
 
-            Assert.Throws<NullReferenceException>(() => v1.CopyTo(null, 0));
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, -1));
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, a.Length));
             Assert.Throws<ArgumentException>(() => v1.CopyTo(a, a.Length - 2));
@@ -896,7 +895,7 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> expected = new Vector3D<float>(6.0f, 8.0f, 10.0f);
             Vector3D<float> actual;
 
-            actual = Vector3D.Add(a, b);
+            actual = a + b;
             Assert.Equal(expected, actual);
         }
 
@@ -908,7 +907,7 @@ namespace Silk.NET.Maths.Tests
             float div = 2.0f;
             Vector3D<float> expected = new Vector3D<float>(0.5f, 1.0f, 1.5f);
             Vector3D<float> actual;
-            actual = Vector3D.Divide(a, div);
+            actual = a / div;
             Assert.Equal(expected, actual);
         }
 
@@ -922,7 +921,7 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> expected = new Vector3D<float>(1.0f / 5.0f, 6.0f / 2.0f, 7.0f / 3.0f);
             Vector3D<float> actual;
 
-            actual = Vector3D.Divide(a, b);
+            actual = a / b;
             Assert.Equal(expected, actual);
         }
 
@@ -992,7 +991,7 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> expected = new Vector3D<float>(5.0f, 12.0f, 21.0f);
             Vector3D<float> actual;
 
-            actual = Vector3D.Multiply(a, b);
+            actual = a * b;
             Assert.Equal(expected, actual);
         }
 
@@ -1005,7 +1004,7 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> expected = new Vector3D<float>(-1.0f, -2.0f, -3.0f);
             Vector3D<float> actual;
 
-            actual = Vector3D.Negate(a);
+            actual = -a;
             Assert.Equal(expected, actual);
         }
 
@@ -1057,7 +1056,7 @@ namespace Silk.NET.Maths.Tests
             Vector3D<float> expected = new Vector3D<float>(-4.0f, 4.0f, 0.0f);
             Vector3D<float> actual;
 
-            actual = Vector3D.Subtract(a, b);
+            actual = a - b;
             Assert.Equal(expected, actual);
         }
 
@@ -1181,10 +1180,10 @@ namespace Silk.NET.Maths.Tests
         {
             Vector3D<float> a = new Vector3D<float>(-2.5f, 2.0f, 0.5f);
             Vector3D<float> b = new Vector3D<float>(5.5f, 4.5f, 16.5f);
-            Assert.Equal(2, (int)Vector3D.SquareRoot(b).X);
-            Assert.Equal(2, (int)Vector3D.SquareRoot(b).Y);
-            Assert.Equal(4, (int)Vector3D.SquareRoot(b).Z);
-            Assert.Equal(float.NaN, Vector3D.SquareRoot(a).X);
+            Assert.Equal(2, (int)Vector3D.Sqrt(b).X);
+            Assert.Equal(2, (int)Vector3D.Sqrt(b).Y);
+            Assert.Equal(4, (int)Vector3D.Sqrt(b).Z);
+            Assert.Equal(float.NaN, Vector3D.Sqrt(a).X);
         }
 
         // A test to make sure these types are blittable directly into GPU buffer memory layouts

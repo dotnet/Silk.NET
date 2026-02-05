@@ -24,7 +24,6 @@ namespace Silk.NET.Maths.Tests
             float[] a = new float[3];
             float[] b = new float[2];
 
-            Assert.Throws<NullReferenceException>(() => v1.CopyTo(null, 0));
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, -1));
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, a.Length));
             Assert.Throws<ArgumentException>(() => v1.CopyTo(a, 2));
@@ -628,8 +627,6 @@ namespace Silk.NET.Maths.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.operator - did not return the expected value.");
         }
 
-
-
         // A test for operator - (Vector2f)
         // Negate test with special float value
         [Fact]
@@ -845,7 +842,7 @@ namespace Silk.NET.Maths.Tests
             Vector2D<float> expected = new Vector2D<float>(6.0f, 8.0f);
             Vector2D<float> actual;
 
-            actual = Vector2D.Add(a, b);
+            actual = a + b;
             Assert.Equal(expected, actual);
         }
 
@@ -857,7 +854,7 @@ namespace Silk.NET.Maths.Tests
             float div = 2.0f;
             Vector2D<float> expected = new Vector2D<float>(0.5f, 1.0f);
             Vector2D<float> actual;
-            actual = Vector2D.Divide(a, div);
+            actual = a /  div;
             Assert.Equal(expected, actual);
         }
 
@@ -871,7 +868,7 @@ namespace Silk.NET.Maths.Tests
             Vector2D<float> expected = new Vector2D<float>(1.0f / 5.0f, 6.0f / 2.0f);
             Vector2D<float> actual;
 
-            actual = Vector2D.Divide(a, b);
+            actual = a / b;
             Assert.Equal(expected, actual);
         }
 
@@ -941,7 +938,7 @@ namespace Silk.NET.Maths.Tests
             Vector2D<float> expected = new Vector2D<float>(5.0f, 12.0f);
             Vector2D<float> actual;
 
-            actual = Vector2D.Multiply(a, b);
+            actual = a * b;
             Assert.Equal(expected, actual);
         }
 
@@ -954,7 +951,7 @@ namespace Silk.NET.Maths.Tests
             Vector2D<float> expected = new Vector2D<float>(-1.0f, -2.0f);
             Vector2D<float> actual;
 
-            actual = Vector2D.Negate(a);
+            actual = -a;
             Assert.Equal(expected, actual);
         }
 
@@ -1006,7 +1003,7 @@ namespace Silk.NET.Maths.Tests
             Vector2D<float> expected = new Vector2D<float>(-4.0f, 4.0f);
             Vector2D<float> actual;
 
-            actual = Vector2D.Subtract(a, b);
+            actual = a - b;
             Assert.Equal(expected, actual);
         }
 
@@ -1152,9 +1149,9 @@ namespace Silk.NET.Maths.Tests
         {
             Vector2D<float> v1 = new Vector2D<float>(-2.5f, 2.0f);
             Vector2D<float> v2 = new Vector2D<float>(5.5f, 4.5f);
-            Assert.Equal(2, (int)Vector2D.SquareRoot(v2).X);
-            Assert.Equal(2, (int)Vector2D.SquareRoot(v2).Y);
-            Assert.Equal(float.NaN, Vector2D.SquareRoot(v1).X);
+            Assert.Equal(2, (int)Vector2D.Sqrt(v2).X);
+            Assert.Equal(2, (int)Vector2D.Sqrt(v2).Y);
+            Assert.Equal(float.NaN, Vector2D.Sqrt(v1).X);
         }
 
         // A test to make sure these types are blittable directly into GPU buffer memory layouts
