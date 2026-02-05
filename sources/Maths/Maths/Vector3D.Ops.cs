@@ -7,7 +7,7 @@ namespace Silk.NET.Maths
 {
     public static partial class Vector3D
     {
-        /// <summary> Computes the cross product of two vectors. </summary>
+        /// <summary>Computes the cross product of two vectors.</summary>
         public static Vector3D<T> Cross<T>(Vector3D<T> left, Vector3D<T> right)
             where T : INumberBase<T> =>
             new Vector3D<T>(

@@ -138,10 +138,12 @@ namespace Silk.NET.Maths
         public Span<T> AsSpan() => MemoryMarshal.CreateSpan(ref X, 2);
 
         /// <summary>Formats the vector as a string.</summary>
+        /// <returns>The string representation.</returns>
         public override string ToString() =>
             $"<{X}, {Y}>";
 
         /// <summary>Formats the vector as a string using the specified format and format provider.</summary>
+        /// <returns>The string representation.</returns>
         public string ToString(string? format, IFormatProvider? formatProvider) =>
             $"<{X.ToString(format, formatProvider)}, {Y.ToString(format, formatProvider)}>";
 
