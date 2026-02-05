@@ -79,6 +79,21 @@ namespace Silk.NET.Maths
             return Dot(difference, difference);
         }
 
+        /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Round(TSelf)"/> to each member of the vector and converts to integer.</summary>
+        public static Vector3D<int> RoundToInt<T>(Vector3D<T> vector)
+            where T : IFloatingPoint<T> =>
+            Vector3D.Round(vector).AsChecked<int>();
+
+        /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Floor(TSelf)"/> to each member of the vector and converts to integer.</summary>
+        public static Vector3D<int> FloorToInt<T>(Vector3D<T> vector)
+            where T : IFloatingPoint<T> =>
+            Vector3D.Floor(vector).AsChecked<int>();
+
+        /// <summary>Applies <see cref="IFloatingPoint{TSelf}.Ceiling(TSelf)"/> to each member of the vector and converts to integer.</summary>
+        public static Vector3D<int> CeilingToInt<T>(Vector3D<T> vector)
+            where T : IFloatingPoint<T> =>
+            Vector3D.Ceiling(vector).AsChecked<int>();
+
         /// <summary>Linearly interpolates between two vectors using a scalar t-value (clamped between 0 and 1).</summary>
         public static Vector3D<T> LerpClamped<T>(Vector3D<T> a, Vector3D<T> b, T amount)
             where T : IFloatingPointIeee754<T> =>
