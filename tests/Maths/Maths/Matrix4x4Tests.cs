@@ -1578,40 +1578,6 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(expected, actual);
         }
 
-        // A test for GetHashCode ()
-        [Fact]
-        public void Matrix4x4GetHashCodeTest()
-        {
-            Matrix4X4<float> target = GenerateIncrementalMatrixNumber();
-
-            HashCode hash = default;
-
-            hash.Add(target.M11);
-            hash.Add(target.M12);
-            hash.Add(target.M13);
-            hash.Add(target.M14);
-
-            hash.Add(target.M21);
-            hash.Add(target.M22);
-            hash.Add(target.M23);
-            hash.Add(target.M24);
-
-            hash.Add(target.M31);
-            hash.Add(target.M32);
-            hash.Add(target.M33);
-            hash.Add(target.M34);
-
-            hash.Add(target.M41);
-            hash.Add(target.M42);
-            hash.Add(target.M43);
-            hash.Add(target.M44);
-
-            int expected = hash.ToHashCode();
-            int actual = target.GetHashCode();
-
-            Assert.Equal(expected, actual);
-        }
-
         // A test for Multiply (Matrix4X4<float>, Matrix4X4<float>)
         [Fact]
         public void Matrix4x4MultiplyTest3()

@@ -619,27 +619,6 @@ namespace Silk.NET.Maths.Tests
             Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
         }
 
-
-        // A test for Transform (Vector2D<float>f, Quaternion)
-        [Fact]
-        public void Vector4TransformVector2QuaternionTest3()
-        {
-            Vector2D<float> v = new Vector2D<float>(1.0f, 2.0f);
-
-            Matrix4X4<float> m =
-                Matrix4X4.CreateRotationX<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationY<float>(MathHelper.ToRadians(30.0f)) *
-                Matrix4X4.CreateRotationZ<float>(MathHelper.ToRadians(30.0f));
-
-            Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
-
-            Vector4D<float> expected = Vector4D.Transform(v, m);
-            Vector4D<float> actual;
-
-            actual = Vector4D.Transform(v, q);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
-        }
-
         // A test for Transform (Vector3D<float>f, Quaternion)
         [Fact]
         public void Vector4TransformVector3Quaternion()

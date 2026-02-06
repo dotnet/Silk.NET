@@ -864,12 +864,9 @@ namespace Silk.NET.Maths
         public static Vector4D<T> Transform<T>(Vector2D<T> vector, Quaternion<T> quaternion)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
-            var v = new Vector4D<T>(vector.X, vector.Y, T.Zero, T.One);
-
-            // Quaternion-vector rotation (optimized form)
             var x2 = quaternion.X + quaternion.X;
             var y2 = quaternion.Y + quaternion.Y;
-            var z2 = quaternion.Z + quaternion.Z;
+            var z2 = T.Zero;
 
             var wx2 = quaternion.W * x2;
             var wy2 = quaternion.W * y2;
@@ -881,20 +878,17 @@ namespace Silk.NET.Maths
             var yz2 = quaternion.Y * z2;
             var zz2 = quaternion.Z * z2;
 
-            return new Vector4D<T>(
-                v.X * (T.One - yy2 + zz2) + v.Y * (xy2 - wz2) + v.Z * (xz2 + wy2),
-                v.Y * (T.One - yy2 + zz2) + v.X * (xy2 + wz2) + v.Z * (yz2 - wx2),
-                v.Z * (T.One - yy2 + zz2) + v.X * (xz2 - wy2) + v.Y * (yz2 + wx2),
-                v.W * (T.One - yy2 + zz2));
-        }
+            return new(
+                (vector.X * (T.One - yy2 - zz2)) + (vector.Y * (xy2 - wz2)),
+                (vector.X * (xy2 + wz2)) + (vector.Y * (T.One - xx2 - zz2)),
+                (vector.X * (xz2 - wy2)) + (vector.Y * (yz2 + wx2)),
+                T.One);
+    }
 
         /// <summary>Transforms the given vector by the specified Quaternion.</summary>
         public static Vector4D<T> Transform<T>(Vector3D<T> vector, Quaternion<T> quaternion)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
-            var v = new Vector4D<T>(vector.X, vector.Y, vector.Z, T.One);
-
-            // Quaternion-vector rotation (optimized form)
             var x2 = quaternion.X + quaternion.X;
             var y2 = quaternion.Y + quaternion.Y;
             var z2 = quaternion.Z + quaternion.Z;
@@ -909,20 +903,17 @@ namespace Silk.NET.Maths
             var yz2 = quaternion.Y * z2;
             var zz2 = quaternion.Z * z2;
 
-            return new Vector4D<T>(
-                v.X * (T.One - yy2 + zz2) + v.Y * (xy2 - wz2) + v.Z * (xz2 + wy2),
-                v.Y * (T.One - yy2 + zz2) + v.X * (xy2 + wz2) + v.Z * (yz2 - wx2),
-                v.Z * (T.One - yy2 + zz2) + v.X * (xz2 - wy2) + v.Y * (yz2 + wx2),
-                v.W * (T.One - yy2 + zz2));
-        }
+            return new(
+                (vector.X * (T.One - yy2 - zz2)) + (vector.Y * (xy2 - wz2)) + (vector.Z * (xz2 + wy2)),
+                (vector.X * (xy2 + wz2)) + (vector.Y * (T.One - xx2 - zz2)) + (vector.Z * (yz2 - wx2)),
+                (vector.X * (xz2 - wy2)) + (vector.Y * (yz2 + wx2)) + (vector.Z * (T.One - xx2 - yy2)),
+                T.One);
+    }
 
         /// <summary>Transforms the given vector by the specified Quaternion.</summary>
         public static Vector4D<T> Transform<T>(Vector4D<T> vector, Quaternion<T> quaternion)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
-            var v = vector;
-
-            // Quaternion-vector rotation (optimized form)
             var x2 = quaternion.X + quaternion.X;
             var y2 = quaternion.Y + quaternion.Y;
             var z2 = quaternion.Z + quaternion.Z;
@@ -937,23 +928,20 @@ namespace Silk.NET.Maths
             var yz2 = quaternion.Y * z2;
             var zz2 = quaternion.Z * z2;
 
-            return new Vector4D<T>(
-                v.X * (T.One - yy2 + zz2) + v.Y * (xy2 - wz2) + v.Z * (xz2 + wy2),
-                v.Y * (T.One - yy2 + zz2) + v.X * (xy2 + wz2) + v.Z * (yz2 - wx2),
-                v.Z * (T.One - yy2 + zz2) + v.X * (xz2 - wy2) + v.Y * (yz2 + wx2),
-                v.W * (T.One - yy2 + zz2));
-        }
+            return new(
+                (vector.X * (T.One - yy2 - zz2)) + (vector.Y * (xy2 - wz2)) + (vector.Z * (xz2 + wy2)),
+                (vector.X * (xy2 + wz2)) + (vector.Y * (T.One - xx2 - zz2)) + (vector.Z * (yz2 - wx2)),
+                (vector.X * (xz2 - wy2)) + (vector.Y * (yz2 + wx2)) + (vector.Z * (T.One - xx2 - yy2)),
+                T.One);
+    }
 
         /// <summary>Transforms the given vector by the specified Quaternion.</summary>
         public static Vector4D<T> TransformNormal<T>(Vector2D<T> vector, Quaternion<T> quaternion)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
-            var v = new Vector4D<T>(vector.X, vector.Y, T.Zero, T.Zero);
-
-            // Quaternion-vector rotation (optimized form)
             var x2 = quaternion.X + quaternion.X;
             var y2 = quaternion.Y + quaternion.Y;
-            var z2 = quaternion.Z + quaternion.Z;
+            var z2 = T.Zero;
 
             var wx2 = quaternion.W * x2;
             var wy2 = quaternion.W * y2;
@@ -965,20 +953,17 @@ namespace Silk.NET.Maths
             var yz2 = quaternion.Y * z2;
             var zz2 = quaternion.Z * z2;
 
-            return new Vector4D<T>(
-                v.X * (T.One - yy2 + zz2) + v.Y * (xy2 - wz2) + v.Z * (xz2 + wy2),
-                v.Y * (T.One - yy2 + zz2) + v.X * (xy2 + wz2) + v.Z * (yz2 - wx2),
-                v.Z * (T.One - yy2 + zz2) + v.X * (xz2 - wy2) + v.Y * (yz2 + wx2),
-                v.W * (T.One - yy2 + zz2));
-        }
+            return new(
+                (vector.X * (T.One - yy2 - zz2)) + (vector.Y * (xy2 - wz2)),
+                (vector.X * (xy2 + wz2)) + (vector.Y * (T.One - xx2 - zz2)),
+                (vector.X * (xz2 - wy2)) + (vector.Y * (yz2 + wx2)),
+                T.One);
+    }
 
         /// <summary>Transforms the given vector by the specified Quaternion.</summary>
         public static Vector4D<T> TransformNormal<T>(Vector3D<T> vector, Quaternion<T> quaternion)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
-            var v = new Vector4D<T>(vector.X, vector.Y, vector.Z, T.Zero);
-
-            // Quaternion-vector rotation (optimized form)
             var x2 = quaternion.X + quaternion.X;
             var y2 = quaternion.Y + quaternion.Y;
             var z2 = quaternion.Z + quaternion.Z;
@@ -993,20 +978,17 @@ namespace Silk.NET.Maths
             var yz2 = quaternion.Y * z2;
             var zz2 = quaternion.Z * z2;
 
-            return new Vector4D<T>(
-                v.X * (T.One - yy2 + zz2) + v.Y * (xy2 - wz2) + v.Z * (xz2 + wy2),
-                v.Y * (T.One - yy2 + zz2) + v.X * (xy2 + wz2) + v.Z * (yz2 - wx2),
-                v.Z * (T.One - yy2 + zz2) + v.X * (xz2 - wy2) + v.Y * (yz2 + wx2),
-                v.W * (T.One - yy2 + zz2));
-        }
+            return new(
+                (vector.X * (T.One - yy2 - zz2)) + (vector.Y * (xy2 - wz2)) + (vector.Z * (xz2 + wy2)),
+                (vector.X * (xy2 + wz2)) + (vector.Y * (T.One - xx2 - zz2)) + (vector.Z * (yz2 - wx2)),
+                (vector.X * (xz2 - wy2)) + (vector.Y * (yz2 + wx2)) + (vector.Z * (T.One - xx2 - yy2)),
+                T.One);
+    }
 
         /// <summary>Transforms the given vector by the specified Quaternion.</summary>
         public static Vector4D<T> TransformNormal<T>(Vector4D<T> vector, Quaternion<T> quaternion)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
-            var v = vector;
-
-            // Quaternion-vector rotation (optimized form)
             var x2 = quaternion.X + quaternion.X;
             var y2 = quaternion.Y + quaternion.Y;
             var z2 = quaternion.Z + quaternion.Z;
@@ -1021,12 +1003,12 @@ namespace Silk.NET.Maths
             var yz2 = quaternion.Y * z2;
             var zz2 = quaternion.Z * z2;
 
-            return new Vector4D<T>(
-                v.X * (T.One - yy2 + zz2) + v.Y * (xy2 - wz2) + v.Z * (xz2 + wy2),
-                v.Y * (T.One - yy2 + zz2) + v.X * (xy2 + wz2) + v.Z * (yz2 - wx2),
-                v.Z * (T.One - yy2 + zz2) + v.X * (xz2 - wy2) + v.Y * (yz2 + wx2),
-                v.W * (T.One - yy2 + zz2));
-        }
+            return new(
+                (vector.X * (T.One - yy2 - zz2)) + (vector.Y * (xy2 - wz2)) + (vector.Z * (xz2 + wy2)),
+                (vector.X * (xy2 + wz2)) + (vector.Y * (T.One - xx2 - zz2)) + (vector.Z * (yz2 - wx2)),
+                (vector.X * (xz2 - wy2)) + (vector.Y * (yz2 + wx2)) + (vector.Z * (T.One - xx2 - yy2)),
+                T.One);
+    }
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector4D<T> Transform<T>(Vector2D<T> vector, Matrix2X4<T> matrix)

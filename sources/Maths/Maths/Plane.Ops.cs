@@ -19,61 +19,19 @@ namespace Silk.NET.Maths
         /// <returns>The Plane containing the three points.</returns>
         [MethodImpl((MethodImplOptions)768)]
         public static Plane<T> CreateFromVertices<T>(Vector3D<T> point1, Vector3D<T> point2, Vector3D<T> point3)
-            where T : INumberBase<T>
+            where T : IRootFunctions<T>
         {
-            var a = point1;
-            var b = point2;
-            var c = point3;
-            var ab = b - a;
-            var ac = c - a;
+            var a = point2 - point1;
+            var b = point3 - point1;
 
-            var cross = Vector3D.Cross(ab, ac);
-            Plane<T> p;
-            p.Normal = cross;
-            p.Distance = -((p.Normal.X * a.X) + (p.Normal.Y * a.Y) + (p.Normal.Z * a.Z));
+            // N = Cross(a, b)
+            var n = Vector3D.Cross(a, b);
+            var normal = Vector3D.Normalize(n);
 
-            return p;
+            // D = - Dot(N, point1)
+            var d = -Vector3D.Dot(normal, point1);
 
-            /*if (Vector.IsHardwareAccelerated)
-            {
-                Vector3D<T> a = point2 - point1;
-                Vector3D<T> b = point3 - point1;
-
-                // N = Cross(a, b)
-                Vector3D<T> n = Vector3D.Cross(a, b);
-                Vector3D<T> normal = Vector3D.Normalize(n);
-
-                // D = - Dot(N, point1)
-                T d = -Vector3D.Dot(normal, point1);
-
-                return new Plane<T>(normal, d);
-            }
-            else
-            {
-                T ax = point2.X - point1.X;
-                T ay = point2.Y - point1.Y;
-                T az = point2.Z - point1.Z;
-
-                T bx = point3.X - point1.X;
-                T by = point3.Y - point1.Y;
-                T bz = point3.Z - point1.Z;
-
-                // N=Cross(a,b)
-                T nx = (ay * bz) - (az * by);
-                T ny = (az * bx) - (ax * bz);
-                T nz = (ax * by) - (ay * bx);
-
-                // Normalize(N)
-                T ls = (nx * nx) + (ny * ny) + (nz * nz);
-                T invNorm = T.One / T.Sqrt(ls);
-
-                Vector3D<T> normal = new Vector3D<T>(
-                    nx * invNorm,
-                    ny * invNorm,
-                    nz * invNorm);
-
-                return new(normal, -((normal.X * point1.X) + (normal.Y * point1.Y) + (normal.Z * point1.Z)));
-            }*/
+            return new Plane<T>(normal, d);
         }
 
         /// <summary>Calculates the dot product of a Plane and Vector4D.</summary>
