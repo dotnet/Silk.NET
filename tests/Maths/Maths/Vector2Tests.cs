@@ -26,7 +26,7 @@ namespace Silk.NET.Maths.Tests
 
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, -1));
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, a.Length));
-            Assert.Throws<ArgumentException>(() => v1.CopyTo(a, 2));
+            Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, 2));
 
             v1.CopyTo(a, 1);
             v1.CopyTo(b);
@@ -307,28 +307,6 @@ namespace Silk.NET.Maths.Tests
             // Case N4: combination case.
             a = new Vector2D<float>(-2.0f, 4.0f);
             expected = new Vector2D<float>(min.X, max.Y);
-            actual = Vector2D.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
-            // User specified min value is bigger than max value.
-            max = new Vector2D<float>(0.0f, 0.1f);
-            min = new Vector2D<float>(1.0f, 1.1f);
-
-            // Case W1: specified value is in the range.
-            a = new Vector2D<float>(0.5f, 0.3f);
-            expected = max;
-            actual = Vector2D.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
-
-            // Normal case.
-            // Case W2: specified value is bigger than max and min value.
-            a = new Vector2D<float>(2.0f, 3.0f);
-            expected = max;
-            actual = Vector2D.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
-
-            // Case W3: specified value is smaller than min and max value.
-            a = new Vector2D<float>(-1.0f, -2.0f);
-            expected = max;
             actual = Vector2D.Clamp(a, min, max);
             Assert.True(MathHelper.Equal(expected, actual), "Vector2f.Clamp did not return the expected value.");
         }

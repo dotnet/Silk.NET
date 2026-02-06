@@ -285,7 +285,7 @@ namespace Silk.NET.Maths
         {
             Quaternion<T> ans = default;
 
-            var invNorm = T.One / value.LengthSquared;
+            var invNorm = T.One / value.Length;
 
             ans.X = value.X * invNorm;
             ans.Y = value.Y * invNorm;
@@ -299,7 +299,7 @@ namespace Silk.NET.Maths
         /// <remarks>This modifies the Quaternion. Use <see cref="Normalize(Quaternion{T})"/> to obtain a new value without affecting the original.</remarks>
         public void Normalize()
         {
-            var invNorm = T.One / LengthSquared;
+            var invNorm = T.One / Length;
 
             X *= invNorm;
             Y *= invNorm;

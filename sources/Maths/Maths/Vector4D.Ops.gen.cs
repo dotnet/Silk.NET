@@ -58,10 +58,7 @@ namespace Silk.NET.Maths
         /// <summary>Normalizes a vector.</summary>
         public static Vector4D<T> Normalize<T>(this Vector4D<T> vector)
             where T : IRootFunctions<T>
-        {
-            T length = vector.Length;
-            return length != T.Zero ? vector / length : Vector4D<T>.Zero;
-        }
+            => vector / vector.Length;
 
         /// <summary>Returns the Euclidean distance between the two given points.</summary>
         /// <param name="value1">The first point.</param>
@@ -1058,10 +1055,10 @@ namespace Silk.NET.Maths
         public static Vector4D<T> Transform<T>(Vector2D<T> vector, Matrix3X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
-                (vector.X * matrix.M13) + (vector.Y * matrix.M23),
-                (vector.X * matrix.M14) + (vector.Y * matrix.M24));
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32,
+                (vector.X * matrix.M13) + (vector.Y * matrix.M23) + matrix.M33,
+                (vector.X * matrix.M14) + (vector.Y * matrix.M24) + matrix.M34);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector4D<T> Transform<T>(Vector3D<T> vector, Matrix3X4<T> matrix)
@@ -1104,28 +1101,28 @@ namespace Silk.NET.Maths
         public static Vector4D<T> Transform<T>(Vector2D<T> vector, Matrix5X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41,
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42,
-                (vector.X * matrix.M13) + (vector.Y * matrix.M23) + matrix.M43,
-                (vector.X * matrix.M14) + (vector.Y * matrix.M24) + matrix.M44);
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M51,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M52,
+                (vector.X * matrix.M13) + (vector.Y * matrix.M23) + matrix.M53,
+                (vector.X * matrix.M14) + (vector.Y * matrix.M24) + matrix.M54);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector4D<T> Transform<T>(Vector3D<T> vector, Matrix5X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + matrix.M41,
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + matrix.M42,
-                (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33) + matrix.M43,
-                (vector.X * matrix.M14) + (vector.Y * matrix.M24) + (vector.Z * matrix.M34) + matrix.M44);
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + matrix.M51,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + matrix.M52,
+                (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33) + matrix.M53,
+                (vector.X * matrix.M14) + (vector.Y * matrix.M24) + (vector.Z * matrix.M34) + matrix.M54);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector4D<T> Transform<T>(Vector4D<T> vector, Matrix5X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + (vector.W * matrix.M41),
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + (vector.W * matrix.M42),
-                (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33) + (vector.W * matrix.M43),
-                (vector.X * matrix.M14) + (vector.Y * matrix.M24) + (vector.Z * matrix.M34) + (vector.W * matrix.M44));
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + (vector.W * matrix.M41) + matrix.M51,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + (vector.W * matrix.M42) + matrix.M52,
+                (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33) + (vector.W * matrix.M43) + matrix.M53,
+                (vector.X * matrix.M14) + (vector.Y * matrix.M24) + (vector.Z * matrix.M34) + (vector.W * matrix.M44) + matrix.M54);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector4D<T> TransformNormal<T>(Vector2D<T> vector, Matrix2X4<T> matrix)

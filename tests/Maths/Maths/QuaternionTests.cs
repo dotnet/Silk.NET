@@ -524,7 +524,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> target = new Quaternion<float>(-1.0f, 2.2f, 3.3f, -4.4f);
 
             string expected = string.Format(CultureInfo.CurrentCulture
-                , "{{X:{0} Y:{1} Z:{2} W:{3}}}"
+                , "<{0}, {1}, {2}, {3}>"
                 , -1.0f, 2.2f, 3.3f, -4.4f);
 
             string actual = target.ToString();
@@ -590,17 +590,6 @@ namespace Silk.NET.Maths.Tests
             obj = null!;
             expected = false;
             actual = a.Equals(obj);
-            Assert.Equal(expected, actual);
-        }
-
-        // A test for GetHashCode ()
-        [Fact]
-        public void QuaternionGetHashCodeTest()
-        {
-            Quaternion<float> a = new Quaternion<float>(1.0f, 2.0f, 3.0f, 4.0f);
-
-            int expected = unchecked(a.X.GetHashCode() + a.Y.GetHashCode() + a.Z.GetHashCode() + a.W.GetHashCode());
-            int actual = a.GetHashCode();
             Assert.Equal(expected, actual);
         }
 

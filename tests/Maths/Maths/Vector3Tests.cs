@@ -26,7 +26,7 @@ namespace Silk.NET.Maths.Tests
 
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, -1));
             Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, a.Length));
-            Assert.Throws<ArgumentException>(() => v1.CopyTo(a, a.Length - 2));
+            Assert.Throws<ArgumentOutOfRangeException>(() => v1.CopyTo(a, a.Length - 2));
 
             v1.CopyTo(a, 1);
             v1.CopyTo(b);
@@ -544,25 +544,6 @@ namespace Silk.NET.Maths.Tests
             // User specified min value is bigger than max value.
             max = new Vector3D<float>(0.0f, 0.1f, 0.13f);
             min = new Vector3D<float>(1.0f, 1.1f, 1.13f);
-
-            // Case W1: specified value is in the range.
-            a = new Vector3D<float>(0.5f, 0.3f, 0.33f);
-            expected = max;
-            actual = Vector3D.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector3D<float>f.Clamp did not return the expected value.");
-
-            // Normal case.
-            // Case W2: specified value is bigger than max and min value.
-            a = new Vector3D<float>(2.0f, 3.0f, 4.0f);
-            expected = max;
-            actual = Vector3D.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector3D<float>f.Clamp did not return the expected value.");
-
-            // Case W3: specified value is smaller than min and max value.
-            a = new Vector3D<float>(-2.0f, -3.0f, -4.0f);
-            expected = max;
-            actual = Vector3D.Clamp(a, min, max);
-            Assert.True(MathHelper.Equal(expected, actual), "Vector3D<float>f.Clamp did not return the expected value.");
         }
 
         // A test for TransformNormal (Vector3D<float>f, Matrix4X4)

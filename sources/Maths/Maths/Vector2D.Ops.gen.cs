@@ -54,10 +54,7 @@ namespace Silk.NET.Maths
         /// <summary>Normalizes a vector.</summary>
         public static Vector2D<T> Normalize<T>(this Vector2D<T> vector)
             where T : IRootFunctions<T>
-        {
-            T length = vector.Length;
-            return length != T.Zero ? vector / length : Vector2D<T>.Zero;
-        }
+            => vector / vector.Length;
 
         /// <summary>Returns the Euclidean distance between the two given points.</summary>
         /// <param name="value1">The first point.</param>
@@ -954,8 +951,8 @@ namespace Silk.NET.Maths
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix3X2<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22));
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix3X3<T> matrix)
@@ -968,22 +965,22 @@ namespace Silk.NET.Maths
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix3X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22));
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix4X2<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22));
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix4X3<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31,
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32);
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix4X4<T> matrix)
@@ -996,8 +993,8 @@ namespace Silk.NET.Maths
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix5X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41,
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42);
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M51,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M52);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> TransformNormal<T>(Vector2D<T> vector, Matrix2X2<T> matrix)
