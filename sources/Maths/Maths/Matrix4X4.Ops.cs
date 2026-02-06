@@ -20,26 +20,6 @@ namespace Silk.NET.Maths
 #endif
         private const float DecomposeEpsilon = 0.0001f;
 
-        /*
-        private struct CanonicalBasis<T>
-            where T : INumberBase<T>
-        {
-            public Vector3D<T> Row0;
-            public Vector3D<T> Row1;
-            public Vector3D<T> Row2;
-        };
-
-        private struct VectorBasis<T>
-            where T : INumberBase<T>
-        {
-#pragma warning disable 649
-            public unsafe Vector3D<T>* Element0;
-            public unsafe Vector3D<T>* Element1;
-            public unsafe Vector3D<T>* Element2;
-#pragma warning restore 649
-        }
-        */
-
         /// <summary>Creates a spherical billboard that rotates around a specified object position.</summary>
         /// <param name="objectPosition">Position of the object the billboard will rotate around.</param>
         /// <param name="cameraPosition">Position of the camera.</param>
@@ -1210,136 +1190,181 @@ namespace Silk.NET.Maths
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {
             bool result = true;
+            scale = default;
 
-            translation = new Vector3D<T>(matrix.M41, matrix.M42, matrix.M43);
+            Vector3D<T>[] vectorBasis = new Vector3D<T>[3];
+            Matrix3X3<T> canonicalBasis = Matrix3X3<T>.Identity;
+            Matrix4X4<T> matTemp;
 
-            // Extract basis vectors (rows)
-            var basis = new Vector3D<T>[3];
-            basis[0] = new Vector3D<T>(matrix.M11, matrix.M12, matrix.M13);
-            basis[1] = new Vector3D<T>(matrix.M21, matrix.M22, matrix.M23);
-            basis[2] = new Vector3D<T>(matrix.M31, matrix.M32, matrix.M33);
+            translation = new Vector3D<T>(
+                matrix.M41,
+                matrix.M42,
+                matrix.M43);
 
-            // Compute scales
-            var scales = new T[3];
-            scales[0] = basis[0].Length;
-            scales[1] = basis[1].Length;
-            scales[2] = basis[2].Length;
+            matTemp = new Matrix4X4<T>(
+                matrix.M11, matrix.M12, matrix.M13, T.Zero,
+                matrix.M21, matrix.M22, matrix.M23, T.Zero,
+                matrix.M31, matrix.M32, matrix.M33, T.Zero,
+                T.Zero, T.Zero, T.Zero, T.One);
 
-            scale = new Vector3D<T>(scales[0], scales[1], scales[2]);
+            T x = scale.X = matTemp.Row1.Length;
+            T y = scale.Y = matTemp.Row2.Length;
+            T z = scale.Z = matTemp.Row3.Length;
 
-            // Rank axes by scale magnitude
-            uint a, b, c;
+            int a, b, c;
+            if (!(x >= y))
             {
-                T x = scales[0], y = scales[1], z = scales[2];
-
-                if (!(x >= y))
+                if (!(y >= z))
                 {
-                    if (!(y >= z))
-                    { a = 2; b = 1; c = 0; }
-                    else
-                    {
-                        a = 1;
-                        if (!(x >= z))
-                        { b = 2; c = 0; }
-                        else
-                        { b = 0; c = 2; }
-                    }
+                    a = 2;
+                    b = 1;
+                    c = 0;
                 }
                 else
                 {
+                    a = 1;
+
                     if (!(x >= z))
-                    { a = 2; b = 0; c = 1; }
+                    {
+                        b = 2;
+                        c = 0;
+                    }
                     else
                     {
-                        a = 0;
-                        if (!(y >= z))
-                        { b = 2; c = 1; }
-                        else
-                        { b = 1; c = 2; }
+                        b = 0;
+                        c = 2;
                     }
                 }
             }
-
-            var canonical = new[]
+            else
             {
-                new Vector3D<T>(T.One,  T.Zero, T.Zero),
-                new Vector3D<T>(T.Zero, T.One,  T.Zero),
-                new Vector3D<T>(T.Zero, T.Zero, T.One)
-            };
+                if (!(x >= z))
+                {
+                    a = 2;
+                    b = 0;
+                    c = 1;
+                }
+                else
+                {
+                    a = 0;
+
+                    if (!(y >= z))
+                    {
+                        b = 2;
+                        c = 1;
+                    }
+                    else
+                    {
+                        b = 1;
+                        c = 2;
+                    }
+                }
+            }
 
             T eps = T.CreateTruncating(DecomposeEpsilon);
 
-            if (!(scales[a] >= eps))
-                basis[a] = canonical[a];
-
-            basis[a] = Vector3D.Normalize(basis[a]);
-
-            if (!(scales[b] >= eps))
+            if (!(scale[a] >= eps))
             {
-                T ax = T.Abs(basis[a].X);
-                T ay = T.Abs(basis[a].Y);
-                T az = T.Abs(basis[a].Z);
+                var normalA = canonicalBasis[a];
+                matTemp[a][0] = normalA[0];
+                matTemp[a][1] = normalA[1];
+                matTemp[a][2] = normalA[2];
+            }
 
-                uint cc;
-                if (!(ax >= ay))
+            matTemp[a] = matTemp[a].Normalize();
+
+            if (!(scale[b] >= eps))
+            {
+                int cc;
+                T absX, absY, absZ;
+
+                absX = T.Abs(matTemp[a].X);
+                absY = T.Abs(matTemp[a].Y);
+                absZ = T.Abs(matTemp[a].Z);
+
+                if (!(absX >= absY))
                 {
-                    if (!(ay >= az))
+                    if (!(absY >= absZ))
+                    {
                         cc = 0;
+                    }
                     else
-                        cc = (!(ax >= az)) ? 0u : 2u;
+                    {
+                        if (!(absX >= absZ))
+                        {
+                            cc = 0;
+                        }
+                        else
+                        {
+                            cc = 2;
+                        }
+                    }
                 }
                 else
                 {
-                    if (!(ax >= az))
+                    if (!(absX >= absZ))
+                    {
                         cc = 1;
+                    }
                     else
-                        cc = (!(ay >= az)) ? 1u : 2u;
+                    {
+                        if (!(absY >= absZ))
+                        {
+                            cc = 1;
+                        }
+                        else
+                        {
+                            cc = 2;
+                        }
+                    }
                 }
 
-                basis[b] = Vector3D.Cross(basis[a], canonical[cc]);
+                var normalB = Vector3D.Cross(new Vector3D<T>(matTemp[a].AsSpan()[^-1]), canonicalBasis[cc]);
+                matTemp[b][0] = normalB[0];
+                matTemp[b][1] = normalB[1];
+                matTemp[b][2] = normalB[2];
             }
 
-            basis[b] = Vector3D.Normalize(basis[b]);
+            matTemp[b] = matTemp[b].Normalize();
 
-            if (!(scales[c] >= eps))
-                basis[c] = Vector3D.Cross(basis[a], basis[b]);
+            if (!(scale[c] >= eps))
+            {
+                var normalC = Vector3D.Cross(new Vector3D<T>(matTemp[a].AsSpan()), new Vector3D<T>(matTemp[b].AsSpan()));
+                matTemp[c][0] = normalC[0];
+                matTemp[c][1] = normalC[1];
+                matTemp[c][2] = normalC[2];
+            }
 
-            basis[c] = Vector3D.Normalize(basis[c]);
+            matTemp[c] = matTemp[c].Normalize();
 
-            // Rebuild orthonormal rotation matrix
-            var rotationMatrix = new Matrix4X4<T>(
-                basis[0].X, basis[0].Y, basis[0].Z, T.Zero,
-                basis[1].X, basis[1].Y, basis[1].Z, T.Zero,
-                basis[2].X, basis[2].Y, basis[2].Z, T.Zero,
-                T.Zero, T.Zero, T.Zero, T.Zero);
+            T det = matTemp.GetDeterminant();
 
-            T det = rotationMatrix.GetDeterminant();
-
-            // Fix handedness
+            // use Kramer's rule to check for handedness of coordinate system
             if (!(det >= T.Zero))
             {
-                scales[a] = -scales[a];
+                // switch coordinate system by negating the scale and inverting the basis vector on the x-axis
+                scale[a] = -scale[a];
+                matTemp[a][0] = -matTemp[a][0];
+                matTemp[a][1] = -matTemp[a][1];
+                matTemp[a][2] = -matTemp[a][2];
                 det = -det;
-
-                rotationMatrix.Row1 = -rotationMatrix.Row1;
-                rotationMatrix.Row2 = -rotationMatrix.Row2;
-                rotationMatrix.Row3 = -rotationMatrix.Row3;
             }
 
-            T diff = det - T.One;
-            diff *= diff;
+            det = det - T.One;
+            det = det * det;
 
-            if (!(eps >= diff))
+            if (!(eps >= det))
             {
+                // Non-SRT matrix encountered
                 rotation = Quaternion<T>.Identity;
                 result = false;
             }
             else
             {
-                rotation = Quaternion<T>.CreateFromRotationMatrix(rotationMatrix);
+                // generate the quaternion from the matrix
+                rotation = Quaternion<T>.CreateFromRotationMatrix(matTemp);
             }
 
-            scale = new Vector3D<T>(scales[0], scales[1], scales[2]);
             return result;
         }
 
