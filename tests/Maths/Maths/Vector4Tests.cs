@@ -651,9 +651,7 @@ namespace Silk.NET.Maths.Tests
             Quaternion<float> q = Quaternion<float>.CreateFromRotationMatrix(m);
 
             Vector4D<float> expected = Vector4D.Transform(v, m);
-            Vector4D<float> actual;
-
-            actual = Vector4D.Transform(v, q);
+            Vector4D<float> actual = Vector4D.Transform(v, q);
             Assert.True(MathHelper.Equal(expected, actual), "Vector4D<float>f.Transform did not return the expected value.");
 
             //
