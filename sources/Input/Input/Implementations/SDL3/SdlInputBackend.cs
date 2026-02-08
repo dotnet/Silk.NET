@@ -446,8 +446,7 @@ internal partial class SdlInputBackend : IInputBackend
                     return;
                 }
 
-                _ = backend.TryGetPointerTargetForWindow(finger.WindowID, out var target);
-                touchDevice.Event(finger, target, (FingerEventType)finger.Type);
+                touchDevice.Event(finger, (FingerEventType)finger.Type);
                 break;
             }
 

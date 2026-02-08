@@ -1,6 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
+
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
@@ -57,10 +59,8 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
     }
 
 
-
     public override void Initialize()
     {
-
     }
 
     public override PointerState State { get; }
@@ -68,22 +68,40 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
     protected override bool OnePointOnly => true;
 
     public override string Name { get; }
-    protected override void Release() => throw new NotImplementedException();
+
+    protected override void Release()
+    {
+    }
 
     public void UpDownEvent(in PenTouchEvent evt)
     {
+        MotionEvent(evt.WindowID, evt.X, evt.Y);
 
+        var previousPressure = GetPointPressure(0);
+        const float divisor = 1f / 255f;
+        var downPressure = evt.Down * divisor;
+        if (downPressure > 0)
+        {
+            AddButtonEvent(PointerButton.Primary, true, Math.Max(previousPressure, downPressure));
+        }
+        else
+        {
+            AddButtonEvent(PointerButton.Primary, false, 0);
+        }
     }
 
 
-    public void MotionEvent(in PenMotionEvent evt)
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void MotionEvent(in PenMotionEvent evt) => MotionEvent(evt.WindowID, evt.X, evt.Y);
+
+    private void MotionEvent(in uint windowId, float x, float y)
     {
-        if (!Backend.TryGetPointerTargetForWindow(evt.WindowID, out var target))
+        if (!Backend.TryGetPointerTargetForWindow(windowId, out var target))
         {
             return;
         }
 
-        UpdatePoint(ToTargetPoint(new Vector3(evt.X, evt.Y, 0), 0, target, 0), 0);
+        SetTargetPoint(windowId, new Vector3(x, y, 0), GetPointPressure(0),0);
     }
 
 
@@ -96,7 +114,8 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
             case PenAxis.Pressure:
             {
                 SetPointPressure(0, evt.Value);
-                break;;
+                break;
+                ;
             }
             case PenAxis.Xtilt:
             {

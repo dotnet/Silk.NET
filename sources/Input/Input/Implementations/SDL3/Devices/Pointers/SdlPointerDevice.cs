@@ -116,6 +116,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         }
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static Ray3D<float> ConstructRay(in Vector3 pos, Vector3D<float>? direction = null)
     {
         return new Ray3D<float>(pos.ToGeneric(), direction ?? Vector3D<float>.UnitZ);
@@ -203,12 +204,13 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         point = ToTargetPoint(point.Position, point.Pressure, windowTarget, point.Id, ray);
     }
 
-
     protected void SetPointPressure(int index, float pressure)
     {
         ref var point = ref GetPointRef(index);
         point = point with { Pressure = pressure };
     }
+
+    protected float GetPointPressure(int index) => GetPointRef(index).Pressure;
 
     protected void SetPointXTilt(int index, float xTilt)
     {
