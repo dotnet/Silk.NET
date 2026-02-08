@@ -12,19 +12,91 @@ namespace Silk.NET.Maths
     public static partial class Vector2D
     {
         /// <summary>Extensions for vectors with elements implementing <see cref="IRootFunctions{TSelf}"/>.</summary>
-        extension<T>(Vector2D<T> vector)
-            where T : IRootFunctions<T>
+        extension<TSelf>(Vector2D<TSelf> vector)
+            where TSelf : IRootFunctions<TSelf>
         {
             /// <summary>Gets the length of the vector.</summary>
-            public T Length => T.Sqrt(vector.LengthSquared);
+            public TSelf Length => TSelf.Sqrt(vector.LengthSquared);
         }
 
         /// <summary>Extensions for vectors with elements implementing <see cref="INumberBase{TSelf}"/>.</summary>
-        extension<T>(Vector2D<T> vector)
-            where T : INumberBase<T>
+        extension<TSelf>(Vector2D<TSelf> vector)
+            where TSelf : INumberBase<TSelf>
         {
             /// <summary>Gets the length squared of the vector.</summary>
-            public T LengthSquared => Vector2D.Dot(vector, vector);
+            public TSelf LengthSquared => Vector2D.Dot(vector, vector);
+        }
+
+        /// <summary>Extensions for vectors with elements implementing <see cref="IBinaryNumber{TSelf}"/>.</summary>
+        extension<TSelf>(Vector2D<TSelf> vector)
+            where TSelf : INumberBase<TSelf>, IBinaryNumber<TSelf>
+        {
+            /// <summary>Gets a vector with all components set to <see cref="IBinaryNumber{TSelf}.AllBitsSet"/>.</summary>
+            public static Vector2D<TSelf> AllBitsSet => new(TSelf.AllBitsSet);
+        }
+
+        /// <summary>Extensions for vectors with elements implementing <see cref="IFloatingPointConstants{TSelf}"/>.</summary>
+        extension<TSelf>(Vector2D<TSelf> vector)
+            where TSelf : INumberBase<TSelf>, IFloatingPointConstants<TSelf>
+        {
+            /// <summary>Gets a vector with all components set to <see cref="IFloatingPointConstants{TSelf}.E"/>.</summary>
+            public static Vector2D<TSelf> E => new(TSelf.E);
+
+            /// <summary>Gets a vector with all components set to <see cref="IFloatingPointConstants{TSelf}.Pi"/>.</summary>
+            public static Vector2D<TSelf> Pi => new(TSelf.Pi);
+
+            /// <summary>Gets a vector with all components set to <see cref="IFloatingPointConstants{TSelf}.Tau"/>.</summary>
+            public static Vector2D<TSelf> Tau => new(TSelf.Tau);
+        }
+
+        /// <summary>Extensions for vectors with elements implementing <see cref="IFloatingPointIeee754{TSelf}"/>.</summary>
+        extension<TSelf>(Vector2D<TSelf> vector)
+            where TSelf : INumberBase<TSelf>, IFloatingPointIeee754<TSelf>
+        {
+            /// <summary>Gets a vector with all components set to <see cref="IFloatingPointIeee754{TSelf}.Epsilon"/>.</summary>
+            public static Vector2D<TSelf> Epsilon => new(TSelf.Epsilon);
+
+            /// <summary>Gets a vector with all components set to <see cref="IFloatingPointIeee754{TSelf}.NaN"/>.</summary>
+            public static Vector2D<TSelf> NaN => new(TSelf.NaN);
+
+            /// <summary>Gets a vector with all components set to <see cref="IFloatingPointIeee754{TSelf}.NegativeInfinity"/>.</summary>
+            public static Vector2D<TSelf> NegativeInfinity => new(TSelf.NegativeInfinity);
+
+            /// <summary>Gets a vector with all components set to <see cref="IFloatingPointIeee754{TSelf}.NegativeZero"/>.</summary>
+            public static Vector2D<TSelf> NegativeZero => new(TSelf.NegativeZero);
+
+            /// <summary>Gets a vector with all components set to <see cref="IFloatingPointIeee754{TSelf}.PositiveInfinity"/>.</summary>
+            public static Vector2D<TSelf> PositiveInfinity => new(TSelf.PositiveInfinity);
+        }
+
+        /// <summary>Extensions for vectors with elements implementing <see cref="IMinMaxValue{TSelf}"/>.</summary>
+        extension<TSelf>(Vector2D<TSelf> vector)
+            where TSelf : INumberBase<TSelf>, IMinMaxValue<TSelf>
+        {
+            /// <summary>Gets a vector with all components set to <see cref="IMinMaxValue{TSelf}.MinValue"/>.</summary>
+            public static Vector2D<TSelf> MinValue => new(TSelf.MinValue);
+
+            /// <summary>Gets a vector with all components set to <see cref="IMinMaxValue{TSelf}.MaxValue"/>.</summary>
+            public static Vector2D<TSelf> MaxValue => new(TSelf.MaxValue);
+        }
+
+        /// <summary>Extensions for vectors with elements implementing <see cref="INumberBase{TSelf}"/>.</summary>
+        extension<TSelf>(Vector2D<TSelf> vector)
+            where TSelf : INumberBase<TSelf>
+        {
+            /// <summary>Gets a vector with all components set to <see cref="INumberBase{TSelf}.One"/>.</summary>
+            public static Vector2D<TSelf> One => new(TSelf.One);
+
+            /// <summary>Gets a vector with all components set to <see cref="INumberBase{TSelf}.Zero"/>.</summary>
+            public static Vector2D<TSelf> Zero => new(TSelf.Zero);
+        }
+
+        /// <summary>Extensions for vectors with elements implementing <see cref="ISignedNumber{TSelf}"/>.</summary>
+        extension<TSelf>(Vector2D<TSelf> vector)
+            where TSelf : INumberBase<TSelf>, ISignedNumber<TSelf>
+        {
+            /// <summary>Gets a vector with all components set to <see cref="ISignedNumber{TSelf}.NegativeOne"/>.</summary>
+            public static Vector2D<TSelf> NegativeOne => new(TSelf.NegativeOne);
         }
 
         /// <summary>Desconstructs a vector into its components.</summary>

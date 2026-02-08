@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
@@ -127,6 +128,9 @@ namespace Silk.NET.Maths
         /// <returns>The string representation.</returns>
         public override readonly string ToString() =>
             $"<{Axis.X}, {Axis.Y}, {Axis.Z}, {W}>";
+
+        /// <summary>Returns a span over the Quaternion components.</summary>
+        public Span<T> AsSpan() => MemoryMarshal.CreateSpan(ref X, 4);
 
         /// <summary>Returns a boolean indicating whether the two given Quaternions are not equal.</summary>
         /// <param name="left">The first Quaternion to compare.</param>

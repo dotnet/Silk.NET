@@ -510,6 +510,7 @@ Silk.NET.Maths.Plane<T>.Plane(T x, T y, T z, T distance) -> void
 Silk.NET.Maths.Quaternion<T>
 Silk.NET.Maths.Quaternion<T>.Angle.get -> T
 Silk.NET.Maths.Quaternion<T>.As<TOther>() -> Silk.NET.Maths.Quaternion<TOther>
+Silk.NET.Maths.Quaternion<T>.AsSpan() -> System.Span<T>
 Silk.NET.Maths.Quaternion<T>.Axis -> Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Quaternion<T>.Equals(Silk.NET.Maths.Quaternion<T> other) -> bool
 Silk.NET.Maths.Quaternion<T>.Invert() -> void
@@ -584,9 +585,9 @@ Silk.NET.Maths.Sphere<T>.Sphere(T centerX, T centerY, T centerZ, T radius) -> vo
 Silk.NET.Maths.Sphere<T>.SquaredRadius.get -> T
 Silk.NET.Maths.SystemNumericsExtensions
 Silk.NET.Maths.Vector2D
-Silk.NET.Maths.Vector2D.extension<T>(Silk.NET.Maths.Vector2D<T>)
-Silk.NET.Maths.Vector2D.extension<T>(Silk.NET.Maths.Vector2D<T>).Length.get -> T
-Silk.NET.Maths.Vector2D.extension<T>(Silk.NET.Maths.Vector2D<T>).LengthSquared.get -> T
+Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>)
+Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).Length.get -> TSelf
+Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).LengthSquared.get -> TSelf
 Silk.NET.Maths.Vector2D<T>
 Silk.NET.Maths.Vector2D<T>.As<TOther>() -> Silk.NET.Maths.Vector2D<TOther>
 Silk.NET.Maths.Vector2D<T>.AsChecked<TOther>() -> Silk.NET.Maths.Vector2D<TOther>
@@ -611,9 +612,9 @@ Silk.NET.Maths.Vector2D<T>.Vector2D(T x, T y) -> void
 Silk.NET.Maths.Vector2D<T>.X -> T
 Silk.NET.Maths.Vector2D<T>.Y -> T
 Silk.NET.Maths.Vector3D
-Silk.NET.Maths.Vector3D.extension<T>(Silk.NET.Maths.Vector3D<T>)
-Silk.NET.Maths.Vector3D.extension<T>(Silk.NET.Maths.Vector3D<T>).Length.get -> T
-Silk.NET.Maths.Vector3D.extension<T>(Silk.NET.Maths.Vector3D<T>).LengthSquared.get -> T
+Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>)
+Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).Length.get -> TSelf
+Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).LengthSquared.get -> TSelf
 Silk.NET.Maths.Vector3D<T>
 Silk.NET.Maths.Vector3D<T>.As<TOther>() -> Silk.NET.Maths.Vector3D<TOther>
 Silk.NET.Maths.Vector3D<T>.AsChecked<TOther>() -> Silk.NET.Maths.Vector3D<TOther>
@@ -640,9 +641,9 @@ Silk.NET.Maths.Vector3D<T>.X -> T
 Silk.NET.Maths.Vector3D<T>.Y -> T
 Silk.NET.Maths.Vector3D<T>.Z -> T
 Silk.NET.Maths.Vector4D
-Silk.NET.Maths.Vector4D.extension<T>(Silk.NET.Maths.Vector4D<T>)
-Silk.NET.Maths.Vector4D.extension<T>(Silk.NET.Maths.Vector4D<T>).Length.get -> T
-Silk.NET.Maths.Vector4D.extension<T>(Silk.NET.Maths.Vector4D<T>).LengthSquared.get -> T
+Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>)
+Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).Length.get -> TSelf
+Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).LengthSquared.get -> TSelf
 Silk.NET.Maths.Vector4D<T>
 Silk.NET.Maths.Vector4D<T>.As<TOther>() -> Silk.NET.Maths.Vector4D<TOther>
 Silk.NET.Maths.Vector4D<T>.AsChecked<TOther>() -> Silk.NET.Maths.Vector4D<TOther>
@@ -1394,14 +1395,42 @@ static Silk.NET.Maths.Vector2D.Exp2<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> 
 static Silk.NET.Maths.Vector2D.Exp2M1<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Exp<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.ExpM1<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).AllBitsSet.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).E.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).Epsilon.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).MaxValue.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).MinValue.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).NaN.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).NegativeInfinity.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).NegativeOne.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).NegativeZero.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).One.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).Pi.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).PositiveInfinity.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).Tau.get -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.extension<TSelf>(Silk.NET.Maths.Vector2D<TSelf>).Zero.get -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Floor<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.FloorToInt<T>(Silk.NET.Maths.Vector2D<T> vector) -> Silk.NET.Maths.Vector2D<int>
 static Silk.NET.Maths.Vector2D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector2D<TSelf> left, Silk.NET.Maths.Vector2D<TSelf> right, Silk.NET.Maths.Vector2D<TSelf> addend) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector2D<TSelf> left, Silk.NET.Maths.Vector2D<TSelf> right, TSelf addend) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector2D<TSelf> left, TSelf right, Silk.NET.Maths.Vector2D<TSelf> addend) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector2D<TSelf> left, TSelf right, TSelf addend) -> Silk.NET.Maths.Vector2D<TSelf>
-static Silk.NET.Maths.Vector2D.get_Length<T>(Silk.NET.Maths.Vector2D<T> vector) -> T
-static Silk.NET.Maths.Vector2D.get_LengthSquared<T>(Silk.NET.Maths.Vector2D<T> vector) -> T
+static Silk.NET.Maths.Vector2D.get_AllBitsSet<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_E<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_Epsilon<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_Length<TSelf>(Silk.NET.Maths.Vector2D<TSelf> vector) -> TSelf
+static Silk.NET.Maths.Vector2D.get_LengthSquared<TSelf>(Silk.NET.Maths.Vector2D<TSelf> vector) -> TSelf
+static Silk.NET.Maths.Vector2D.get_MaxValue<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_MinValue<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_NaN<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_NegativeInfinity<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_NegativeOne<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_NegativeZero<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_One<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_Pi<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_PositiveInfinity<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_Tau<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
+static Silk.NET.Maths.Vector2D.get_Zero<TSelf>() -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Hypot<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x, Silk.NET.Maths.Vector2D<TSelf> y) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Hypot<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x, TSelf y) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Ieee754Remainder<TSelf>(Silk.NET.Maths.Vector2D<TSelf> left, Silk.NET.Maths.Vector2D<TSelf> right) -> Silk.NET.Maths.Vector2D<TSelf>
@@ -1617,14 +1646,42 @@ static Silk.NET.Maths.Vector3D.Exp2<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> 
 static Silk.NET.Maths.Vector3D.Exp2M1<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Exp<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.ExpM1<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).AllBitsSet.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).E.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).Epsilon.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).MaxValue.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).MinValue.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).NaN.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).NegativeInfinity.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).NegativeOne.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).NegativeZero.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).One.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).Pi.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).PositiveInfinity.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).Tau.get -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.extension<TSelf>(Silk.NET.Maths.Vector3D<TSelf>).Zero.get -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Floor<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.FloorToInt<T>(Silk.NET.Maths.Vector3D<T> vector) -> Silk.NET.Maths.Vector3D<int>
 static Silk.NET.Maths.Vector3D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector3D<TSelf> left, Silk.NET.Maths.Vector3D<TSelf> right, Silk.NET.Maths.Vector3D<TSelf> addend) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector3D<TSelf> left, Silk.NET.Maths.Vector3D<TSelf> right, TSelf addend) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector3D<TSelf> left, TSelf right, Silk.NET.Maths.Vector3D<TSelf> addend) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector3D<TSelf> left, TSelf right, TSelf addend) -> Silk.NET.Maths.Vector3D<TSelf>
-static Silk.NET.Maths.Vector3D.get_Length<T>(Silk.NET.Maths.Vector3D<T> vector) -> T
-static Silk.NET.Maths.Vector3D.get_LengthSquared<T>(Silk.NET.Maths.Vector3D<T> vector) -> T
+static Silk.NET.Maths.Vector3D.get_AllBitsSet<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_E<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_Epsilon<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_Length<TSelf>(Silk.NET.Maths.Vector3D<TSelf> vector) -> TSelf
+static Silk.NET.Maths.Vector3D.get_LengthSquared<TSelf>(Silk.NET.Maths.Vector3D<TSelf> vector) -> TSelf
+static Silk.NET.Maths.Vector3D.get_MaxValue<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_MinValue<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_NaN<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_NegativeInfinity<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_NegativeOne<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_NegativeZero<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_One<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_Pi<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_PositiveInfinity<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_Tau<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
+static Silk.NET.Maths.Vector3D.get_Zero<TSelf>() -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Hypot<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x, Silk.NET.Maths.Vector3D<TSelf> y) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Hypot<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x, TSelf y) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Ieee754Remainder<TSelf>(Silk.NET.Maths.Vector3D<TSelf> left, Silk.NET.Maths.Vector3D<TSelf> right) -> Silk.NET.Maths.Vector3D<TSelf>
@@ -1844,14 +1901,42 @@ static Silk.NET.Maths.Vector4D.Exp2<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> 
 static Silk.NET.Maths.Vector4D.Exp2M1<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Exp<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.ExpM1<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).AllBitsSet.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).E.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).Epsilon.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).MaxValue.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).MinValue.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).NaN.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).NegativeInfinity.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).NegativeOne.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).NegativeZero.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).One.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).Pi.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).PositiveInfinity.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).Tau.get -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.extension<TSelf>(Silk.NET.Maths.Vector4D<TSelf>).Zero.get -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Floor<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.FloorToInt<T>(Silk.NET.Maths.Vector4D<T> vector) -> Silk.NET.Maths.Vector4D<int>
 static Silk.NET.Maths.Vector4D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector4D<TSelf> left, Silk.NET.Maths.Vector4D<TSelf> right, Silk.NET.Maths.Vector4D<TSelf> addend) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector4D<TSelf> left, Silk.NET.Maths.Vector4D<TSelf> right, TSelf addend) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector4D<TSelf> left, TSelf right, Silk.NET.Maths.Vector4D<TSelf> addend) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.FusedMultiplyAdd<TSelf>(Silk.NET.Maths.Vector4D<TSelf> left, TSelf right, TSelf addend) -> Silk.NET.Maths.Vector4D<TSelf>
-static Silk.NET.Maths.Vector4D.get_Length<T>(Silk.NET.Maths.Vector4D<T> vector) -> T
-static Silk.NET.Maths.Vector4D.get_LengthSquared<T>(Silk.NET.Maths.Vector4D<T> vector) -> T
+static Silk.NET.Maths.Vector4D.get_AllBitsSet<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_E<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_Epsilon<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_Length<TSelf>(Silk.NET.Maths.Vector4D<TSelf> vector) -> TSelf
+static Silk.NET.Maths.Vector4D.get_LengthSquared<TSelf>(Silk.NET.Maths.Vector4D<TSelf> vector) -> TSelf
+static Silk.NET.Maths.Vector4D.get_MaxValue<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_MinValue<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_NaN<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_NegativeInfinity<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_NegativeOne<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_NegativeZero<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_One<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_Pi<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_PositiveInfinity<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_Tau<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
+static Silk.NET.Maths.Vector4D.get_Zero<TSelf>() -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Hypot<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x, Silk.NET.Maths.Vector4D<TSelf> y) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Hypot<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x, TSelf y) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Ieee754Remainder<TSelf>(Silk.NET.Maths.Vector4D<TSelf> left, Silk.NET.Maths.Vector4D<TSelf> right) -> Silk.NET.Maths.Vector4D<TSelf>
