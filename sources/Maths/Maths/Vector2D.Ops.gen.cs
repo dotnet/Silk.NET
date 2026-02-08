@@ -80,17 +80,6 @@ namespace Silk.NET.Maths
             public static Vector2D<TSelf> MaxValue => new(TSelf.MaxValue);
         }
 
-        /// <summary>Extensions for vectors with elements implementing <see cref="INumberBase{TSelf}"/>.</summary>
-        extension<TSelf>(Vector2D<TSelf> vector)
-            where TSelf : INumberBase<TSelf>
-        {
-            /// <summary>Gets a vector with all components set to <see cref="INumberBase{TSelf}.One"/>.</summary>
-            public static Vector2D<TSelf> One => new(TSelf.One);
-
-            /// <summary>Gets a vector with all components set to <see cref="INumberBase{TSelf}.Zero"/>.</summary>
-            public static Vector2D<TSelf> Zero => new(TSelf.Zero);
-        }
-
         /// <summary>Extensions for vectors with elements implementing <see cref="ISignedNumber{TSelf}"/>.</summary>
         extension<TSelf>(Vector2D<TSelf> vector)
             where TSelf : INumberBase<TSelf>, ISignedNumber<TSelf>
