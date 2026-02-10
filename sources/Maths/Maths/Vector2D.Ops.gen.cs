@@ -31,52 +31,52 @@ namespace Silk.NET.Maths
         extension<TSelf>(Vector2D<TSelf> vector)
             where TSelf : INumberBase<TSelf>, IBitwiseOperators<TSelf, TSelf, TSelf>
         {
-            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_OnesComplement"/>
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf,TSelf}.op_OnesComplement"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
             public static Vector2D<TSelf> OnesComplement(Vector2D<TSelf> value)
                 => new(~value.X, ~value.Y);
 
-            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseAnd"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
             public static Vector2D<TSelf> BitwiseAnd(Vector2D<TSelf> left, Vector2D<TSelf> right)
                 => new(left.X & right.X, left.Y & right.Y);
 
-            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
             public static Vector2D<TSelf> BitwiseOr(Vector2D<TSelf> left, Vector2D<TSelf> right)
                 => new(left.X | right.X, left.Y | right.Y);
 
-            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_ExclusiveOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
             public static Vector2D<TSelf> ExclusiveOr(Vector2D<TSelf> left, Vector2D<TSelf> right)
                 => new(left.X ^ right.X, left.Y ^ right.Y);
 
-            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf,TSelf}.op_BitwiseAnd"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
             public static Vector2D<TSelf> BitwiseAnd(Vector2D<TSelf> left, TSelf right)
                 => new(left.X & right, left.Y & right);
 
-            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
             public static Vector2D<TSelf> BitwiseOr(Vector2D<TSelf> left, TSelf right)
                 => new(left.X | right, left.Y | right);
 
-            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_ExclusiveOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
             public static Vector2D<TSelf> ExclusiveOr(Vector2D<TSelf> left, TSelf right)
                 => new(left.X ^ right, left.Y ^ right);
 
-            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseAnd"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
             public static Vector2D<TSelf> BitwiseAnd(TSelf left, Vector2D<TSelf> right)
                 => new(left & right.X, left & right.Y);
 
-            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf,TSelf}.op_BitwiseOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
             public static Vector2D<TSelf> BitwiseOr(TSelf left, Vector2D<TSelf> right)
                 => new(left | right.X, left | right.Y);
 
-            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_ExclusiveOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
             public static Vector2D<TSelf> ExclusiveOr(TSelf left, Vector2D<TSelf> right)
                 => new(left ^ right.X, left ^ right.Y);
@@ -1047,63 +1047,63 @@ namespace Silk.NET.Maths
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix2X3<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix2X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix3X2<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31,
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31, 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix3X3<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31,
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31, 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix3X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31,
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31, 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix4X2<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41,
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41, 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix4X3<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41,
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41, 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix4X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41,
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41, 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> Transform<T>(Vector2D<T> vector, Matrix5X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M51,
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M51, 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M52);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
@@ -1115,63 +1115,63 @@ namespace Silk.NET.Maths
         public static Vector2D<T> TransformNormal<T>(Vector2D<T> vector, Matrix2X3<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> TransformNormal<T>(Vector2D<T> vector, Matrix2X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> TransformNormal<T>(Vector2D<T> vector, Matrix3X2<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> TransformNormal<T>(Vector2D<T> vector, Matrix3X3<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> TransformNormal<T>(Vector2D<T> vector, Matrix3X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> TransformNormal<T>(Vector2D<T> vector, Matrix4X2<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> TransformNormal<T>(Vector2D<T> vector, Matrix4X3<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> TransformNormal<T>(Vector2D<T> vector, Matrix4X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector2D<T> TransformNormal<T>(Vector2D<T> vector, Matrix5X4<T> matrix)
             where T : INumberBase<T>
             => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
                 (vector.X * matrix.M12) + (vector.Y * matrix.M22));
     }
 }
