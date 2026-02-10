@@ -27,6 +27,61 @@ namespace Silk.NET.Maths
             public TSelf LengthSquared => Vector3D.Dot(vector, vector);
         }
 
+        /// <summary>Extensions for vectors with elements implementing <see cref="IBitwiseOperators{TSelf, TSelf, TSelf}"/>.</summary>
+        extension<TSelf>(Vector3D<TSelf> vector)
+            where TSelf : INumberBase<TSelf>, IBitwiseOperators<TSelf, TSelf, TSelf>
+        {
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_OnesComplement"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector3D<TSelf> OnesComplement(Vector3D<TSelf> value)
+                => new(~value.X, ~value.Y, ~value.Z);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector3D<TSelf> BitwiseAnd(Vector3D<TSelf> left, Vector3D<TSelf> right)
+                => new(left.X & right.X, left.Y & right.Y, left.Z & right.Z);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector3D<TSelf> BitwiseOr(Vector3D<TSelf> left, Vector3D<TSelf> right)
+                => new(left.X | right.X, left.Y | right.Y, left.Z | right.Z);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector3D<TSelf> ExclusiveOr(Vector3D<TSelf> left, Vector3D<TSelf> right)
+                => new(left.X ^ right.X, left.Y ^ right.Y, left.Z ^ right.Z);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector3D<TSelf> BitwiseAnd(Vector3D<TSelf> left, TSelf right)
+                => new(left.X & right, left.Y & right, left.Z & right);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector3D<TSelf> BitwiseOr(Vector3D<TSelf> left, TSelf right)
+                => new(left.X | right, left.Y | right, left.Z | right);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector3D<TSelf> ExclusiveOr(Vector3D<TSelf> left, TSelf right)
+                => new(left.X ^ right, left.Y ^ right, left.Z ^ right);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector3D<TSelf> BitwiseAnd(TSelf left, Vector3D<TSelf> right)
+                => new(left & right.X, left & right.Y, left & right.Z);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector3D<TSelf> BitwiseOr(TSelf left, Vector3D<TSelf> right)
+                => new(left | right.X, left | right.Y, left | right.Z);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector3D<TSelf> ExclusiveOr(TSelf left, Vector3D<TSelf> right)
+                => new(left ^ right.X, left ^ right.Y, left ^ right.Z);
+        }
+
         /// <summary>Extensions for vectors with elements implementing <see cref="IBinaryNumber{TSelf}"/>.</summary>
         extension<TSelf>(Vector3D<TSelf> vector)
             where TSelf : INumberBase<TSelf>, IBinaryNumber<TSelf>

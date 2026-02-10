@@ -27,6 +27,61 @@ namespace Silk.NET.Maths
             public TSelf LengthSquared => Vector4D.Dot(vector, vector);
         }
 
+        /// <summary>Extensions for vectors with elements implementing <see cref="IBitwiseOperators{TSelf, TSelf, TSelf}"/>.</summary>
+        extension<TSelf>(Vector4D<TSelf> vector)
+            where TSelf : INumberBase<TSelf>, IBitwiseOperators<TSelf, TSelf, TSelf>
+        {
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_OnesComplement"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector4D<TSelf> OnesComplement(Vector4D<TSelf> value)
+                => new(~value.X, ~value.Y, ~value.Z, ~value.W);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector4D<TSelf> BitwiseAnd(Vector4D<TSelf> left, Vector4D<TSelf> right)
+                => new(left.X & right.X, left.Y & right.Y, left.Z & right.Z, left.W & right.W);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector4D<TSelf> BitwiseOr(Vector4D<TSelf> left, Vector4D<TSelf> right)
+                => new(left.X | right.X, left.Y | right.Y, left.Z | right.Z, left.W | right.W);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector4D<TSelf> ExclusiveOr(Vector4D<TSelf> left, Vector4D<TSelf> right)
+                => new(left.X ^ right.X, left.Y ^ right.Y, left.Z ^ right.Z, left.W ^ right.W);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector4D<TSelf> BitwiseAnd(Vector4D<TSelf> left, TSelf right)
+                => new(left.X & right, left.Y & right, left.Z & right, left.W & right);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector4D<TSelf> BitwiseOr(Vector4D<TSelf> left, TSelf right)
+                => new(left.X | right, left.Y | right, left.Z | right, left.W | right);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector4D<TSelf> ExclusiveOr(Vector4D<TSelf> left, TSelf right)
+                => new(left.X ^ right, left.Y ^ right, left.Z ^ right, left.W ^ right);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector4D<TSelf> BitwiseAnd(TSelf left, Vector4D<TSelf> right)
+                => new(left & right.X, left & right.Y, left & right.Z, left & right.W);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector4D<TSelf> BitwiseOr(TSelf left, Vector4D<TSelf> right)
+                => new(left | right.X, left | right.Y, left | right.Z, left | right.W);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector4D<TSelf> ExclusiveOr(TSelf left, Vector4D<TSelf> right)
+                => new(left ^ right.X, left ^ right.Y, left ^ right.Z, left ^ right.W);
+        }
+
         /// <summary>Extensions for vectors with elements implementing <see cref="IBinaryNumber{TSelf}"/>.</summary>
         extension<TSelf>(Vector4D<TSelf> vector)
             where TSelf : INumberBase<TSelf>, IBinaryNumber<TSelf>

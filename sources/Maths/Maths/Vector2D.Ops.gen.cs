@@ -27,6 +27,61 @@ namespace Silk.NET.Maths
             public TSelf LengthSquared => Vector2D.Dot(vector, vector);
         }
 
+        /// <summary>Extensions for vectors with elements implementing <see cref="IBitwiseOperators{TSelf, TSelf, TSelf}"/>.</summary>
+        extension<TSelf>(Vector2D<TSelf> vector)
+            where TSelf : INumberBase<TSelf>, IBitwiseOperators<TSelf, TSelf, TSelf>
+        {
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_OnesComplement"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector2D<TSelf> OnesComplement(Vector2D<TSelf> value)
+                => new(~value.X, ~value.Y);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector2D<TSelf> BitwiseAnd(Vector2D<TSelf> left, Vector2D<TSelf> right)
+                => new(left.X & right.X, left.Y & right.Y);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector2D<TSelf> BitwiseOr(Vector2D<TSelf> left, Vector2D<TSelf> right)
+                => new(left.X | right.X, left.Y | right.Y);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector2D<TSelf> ExclusiveOr(Vector2D<TSelf> left, Vector2D<TSelf> right)
+                => new(left.X ^ right.X, left.Y ^ right.Y);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector2D<TSelf> BitwiseAnd(Vector2D<TSelf> left, TSelf right)
+                => new(left.X & right, left.Y & right);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector2D<TSelf> BitwiseOr(Vector2D<TSelf> left, TSelf right)
+                => new(left.X | right, left.Y | right);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector2D<TSelf> ExclusiveOr(Vector2D<TSelf> left, TSelf right)
+                => new(left.X ^ right, left.Y ^ right);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseAnd"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector2D<TSelf> BitwiseAnd(TSelf left, Vector2D<TSelf> right)
+                => new(left & right.X, left & right.Y);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_BitwiseOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector2D<TSelf> BitwiseOr(TSelf left, Vector2D<TSelf> right)
+                => new(left | right.X, left | right.Y);
+
+            /// <inheritdoc cref="IBitwiseOperators{TSelf,TSelf,TSelf}.op_ExclusiveOr"/>
+            /// <remarks>Applied component-wise to the vector.</remarks>
+            public static Vector2D<TSelf> ExclusiveOr(TSelf left, Vector2D<TSelf> right)
+                => new(left ^ right.X, left ^ right.Y);
+        }
+
         /// <summary>Extensions for vectors with elements implementing <see cref="IBinaryNumber{TSelf}"/>.</summary>
         extension<TSelf>(Vector2D<TSelf> vector)
             where TSelf : INumberBase<TSelf>, IBinaryNumber<TSelf>
