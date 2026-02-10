@@ -1391,8 +1391,8 @@ static Silk.NET.Maths.Vector2D.CosPi<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) ->
 static Silk.NET.Maths.Vector2D.Cross<T>(Silk.NET.Maths.Vector2D<T> left, Silk.NET.Maths.Vector2D<T> right) -> T
 static Silk.NET.Maths.Vector2D.Deconstruct<T>(this Silk.NET.Maths.Vector2D<T> vector, out T x, out T y) -> void
 static Silk.NET.Maths.Vector2D.DegreesToRadians<TSelf>(Silk.NET.Maths.Vector2D<TSelf> degrees) -> Silk.NET.Maths.Vector2D<TSelf>
-static Silk.NET.Maths.Vector2D.Distance<T>(Silk.NET.Maths.Vector2D<T> value1, Silk.NET.Maths.Vector2D<T> value2) -> T
-static Silk.NET.Maths.Vector2D.DistanceSquared<T>(Silk.NET.Maths.Vector2D<T> value1, Silk.NET.Maths.Vector2D<T> value2) -> T
+static Silk.NET.Maths.Vector2D.Distance<T>(Silk.NET.Maths.Vector2D<T> start, Silk.NET.Maths.Vector2D<T> end) -> T
+static Silk.NET.Maths.Vector2D.DistanceSquared<T>(Silk.NET.Maths.Vector2D<T> start, Silk.NET.Maths.Vector2D<T> end) -> T
 static Silk.NET.Maths.Vector2D.DivRem<T>(Silk.NET.Maths.Vector2D<T> left, Silk.NET.Maths.Vector2D<T> right) -> (Silk.NET.Maths.Vector2D<T> Quotient, Silk.NET.Maths.Vector2D<T> Remainder)
 static Silk.NET.Maths.Vector2D.Dot<T>(Silk.NET.Maths.Vector2D<T> left, Silk.NET.Maths.Vector2D<T> right) -> T
 static Silk.NET.Maths.Vector2D.ExclusiveOr<TSelf>(Silk.NET.Maths.Vector2D<TSelf> left, Silk.NET.Maths.Vector2D<TSelf> right) -> Silk.NET.Maths.Vector2D<TSelf>
@@ -1658,8 +1658,8 @@ static Silk.NET.Maths.Vector3D.CosPi<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) ->
 static Silk.NET.Maths.Vector3D.Cross<T>(Silk.NET.Maths.Vector3D<T> left, Silk.NET.Maths.Vector3D<T> right) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.Deconstruct<T>(this Silk.NET.Maths.Vector3D<T> vector, out T x, out T y, out T z) -> void
 static Silk.NET.Maths.Vector3D.DegreesToRadians<TSelf>(Silk.NET.Maths.Vector3D<TSelf> degrees) -> Silk.NET.Maths.Vector3D<TSelf>
-static Silk.NET.Maths.Vector3D.Distance<T>(Silk.NET.Maths.Vector3D<T> value1, Silk.NET.Maths.Vector3D<T> value2) -> T
-static Silk.NET.Maths.Vector3D.DistanceSquared<T>(Silk.NET.Maths.Vector3D<T> value1, Silk.NET.Maths.Vector3D<T> value2) -> T
+static Silk.NET.Maths.Vector3D.Distance<T>(Silk.NET.Maths.Vector3D<T> start, Silk.NET.Maths.Vector3D<T> end) -> T
+static Silk.NET.Maths.Vector3D.DistanceSquared<T>(Silk.NET.Maths.Vector3D<T> start, Silk.NET.Maths.Vector3D<T> end) -> T
 static Silk.NET.Maths.Vector3D.DivRem<T>(Silk.NET.Maths.Vector3D<T> left, Silk.NET.Maths.Vector3D<T> right) -> (Silk.NET.Maths.Vector3D<T> Quotient, Silk.NET.Maths.Vector3D<T> Remainder)
 static Silk.NET.Maths.Vector3D.Dot<T>(Silk.NET.Maths.Vector3D<T> left, Silk.NET.Maths.Vector3D<T> right) -> T
 static Silk.NET.Maths.Vector3D.ExclusiveOr<TSelf>(Silk.NET.Maths.Vector3D<TSelf> left, Silk.NET.Maths.Vector3D<TSelf> right) -> Silk.NET.Maths.Vector3D<TSelf>
@@ -1929,8 +1929,8 @@ static Silk.NET.Maths.Vector4D.Cosh<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> 
 static Silk.NET.Maths.Vector4D.CosPi<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Deconstruct<T>(this Silk.NET.Maths.Vector4D<T> vector, out T x, out T y, out T z, out T w) -> void
 static Silk.NET.Maths.Vector4D.DegreesToRadians<TSelf>(Silk.NET.Maths.Vector4D<TSelf> degrees) -> Silk.NET.Maths.Vector4D<TSelf>
-static Silk.NET.Maths.Vector4D.Distance<T>(Silk.NET.Maths.Vector4D<T> value1, Silk.NET.Maths.Vector4D<T> value2) -> T
-static Silk.NET.Maths.Vector4D.DistanceSquared<T>(Silk.NET.Maths.Vector4D<T> value1, Silk.NET.Maths.Vector4D<T> value2) -> T
+static Silk.NET.Maths.Vector4D.Distance<T>(Silk.NET.Maths.Vector4D<T> start, Silk.NET.Maths.Vector4D<T> end) -> T
+static Silk.NET.Maths.Vector4D.DistanceSquared<T>(Silk.NET.Maths.Vector4D<T> start, Silk.NET.Maths.Vector4D<T> end) -> T
 static Silk.NET.Maths.Vector4D.DivRem<T>(Silk.NET.Maths.Vector4D<T> left, Silk.NET.Maths.Vector4D<T> right) -> (Silk.NET.Maths.Vector4D<T> Quotient, Silk.NET.Maths.Vector4D<T> Remainder)
 static Silk.NET.Maths.Vector4D.Dot<T>(Silk.NET.Maths.Vector4D<T> left, Silk.NET.Maths.Vector4D<T> right) -> T
 static Silk.NET.Maths.Vector4D.ExclusiveOr<TSelf>(Silk.NET.Maths.Vector4D<TSelf> left, Silk.NET.Maths.Vector4D<TSelf> right) -> Silk.NET.Maths.Vector4D<TSelf>

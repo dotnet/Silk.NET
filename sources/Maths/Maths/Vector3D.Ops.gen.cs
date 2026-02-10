@@ -175,21 +175,21 @@ namespace Silk.NET.Maths
             => vector / vector.Length;
 
         /// <summary>Returns the Euclidean distance between the two given points.</summary>
-        /// <param name="value1">The first point.</param>
-        /// <param name="value2">The second point.</param>
+        /// <param name="start">The starting point.</param>
+        /// <param name="end">The ending point.</param>
         /// <returns>The distance.</returns>
-        public static T Distance<T>(Vector3D<T> value1, Vector3D<T> value2)
+        public static T Distance<T>(Vector3D<T> start, Vector3D<T> end)
             where T : IRootFunctions<T> =>
-            T.Sqrt(DistanceSquared(value1, value2));
+            T.Sqrt(DistanceSquared(start, end));
 
         /// <summary>Returns the Euclidean distance squared between the two given points.</summary>
-        /// <param name="value1">The first point.</param>
-        /// <param name="value2">The second point.</param>
+        /// <param name="start">The starting point.</param>
+        /// <param name="end">The ending point.</param>
         /// <returns>The distance squared.</returns>
-        public static T DistanceSquared<T>(Vector3D<T> value1, Vector3D<T> value2)
+        public static T DistanceSquared<T>(Vector3D<T> start, Vector3D<T> end)
             where T : INumberBase<T>
         {
-            var difference = value1 - value2;
+            var difference = end - start;
             return Dot(difference, difference);
         }
 
