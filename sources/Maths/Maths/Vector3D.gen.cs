@@ -403,12 +403,20 @@ namespace Silk.NET.Maths
             Vector3D<TOther>.CreateTruncating(this);
 
         /// <summary>Implicitly casts a <see cref="ValueTuple{T, T, T}"/> to a <see cref="Vector3D{T}"/>.</summary>
-        public static implicit operator Vector3D<T>((T X, T Y, T Z) v) =>
-            new(v.X, v.Y, v.Z);
+        public static implicit operator Vector3D<T>((T X, T Y, T Z) value) =>
+            new(value.X, value.Y, value.Z);
 
         /// <summary>Implicitly casts a <see cref="Vector3D{T}"/> to a <see cref="ValueTuple{T, T, T}"/>.</summary>
-        public static implicit operator (T X, T Y, T Z)(Vector3D<T> v) =>
-            (v.X, v.Y, v.Z);
+        public static implicit operator (T X, T Y, T Z)(Vector3D<T> value) =>
+            (value.X, value.Y, value.Z);
+
+        /// <summary>Explicitly casts a <see cref="Vector3D{T}"/> to a <see cref="Vector2D{T}"/> .</summary>
+        public static explicit operator Vector2D<T>(Vector3D<T> value) =>
+            new(value.X, value.Y);
+
+        /// <summary>Explicitly casts a <see cref="Vector2D{T}"/> to a <see cref="Vector3D{T}"/>.</summary>
+        public static explicit operator Vector3D<T>(Vector2D<T> value) =>
+            new(value.X, value.Y, T.Zero);
 
         /// <summary>Returns the given vector.</summary>
         /// <param name="vector">The source vector.</param>

@@ -445,12 +445,28 @@ namespace Silk.NET.Maths
             Vector4D<TOther>.CreateTruncating(this);
 
         /// <summary>Implicitly casts a <see cref="ValueTuple{T, T, T, T}"/> to a <see cref="Vector4D{T}"/>.</summary>
-        public static implicit operator Vector4D<T>((T X, T Y, T Z, T W) v) =>
-            new(v.X, v.Y, v.Z, v.W);
+        public static implicit operator Vector4D<T>((T X, T Y, T Z, T W) value) =>
+            new(value.X, value.Y, value.Z, value.W);
 
         /// <summary>Implicitly casts a <see cref="Vector4D{T}"/> to a <see cref="ValueTuple{T, T, T, T}"/>.</summary>
-        public static implicit operator (T X, T Y, T Z, T W)(Vector4D<T> v) =>
-            (v.X, v.Y, v.Z, v.W);
+        public static implicit operator (T X, T Y, T Z, T W)(Vector4D<T> value) =>
+            (value.X, value.Y, value.Z, value.W);
+
+        /// <summary>Explicitly casts a <see cref="Vector4D{T}"/> to a <see cref="Vector2D{T}"/> .</summary>
+        public static explicit operator Vector2D<T>(Vector4D<T> value) =>
+            new(value.X, value.Y);
+
+        /// <summary>Explicitly casts a <see cref="Vector2D{T}"/> to a <see cref="Vector4D{T}"/>.</summary>
+        public static explicit operator Vector4D<T>(Vector2D<T> value) =>
+            new(value.X, value.Y, T.Zero, T.Zero);
+
+        /// <summary>Explicitly casts a <see cref="Vector4D{T}"/> to a <see cref="Vector3D{T}"/> .</summary>
+        public static explicit operator Vector3D<T>(Vector4D<T> value) =>
+            new(value.X, value.Y, value.Z);
+
+        /// <summary>Explicitly casts a <see cref="Vector3D{T}"/> to a <see cref="Vector4D{T}"/>.</summary>
+        public static explicit operator Vector4D<T>(Vector3D<T> value) =>
+            new(value.X, value.Y, value.Z, T.Zero);
 
         /// <summary>Returns the given vector.</summary>
         /// <param name="vector">The source vector.</param>

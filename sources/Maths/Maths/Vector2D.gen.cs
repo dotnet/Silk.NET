@@ -361,12 +361,12 @@ namespace Silk.NET.Maths
             Vector2D<TOther>.CreateTruncating(this);
 
         /// <summary>Implicitly casts a <see cref="ValueTuple{T, T}"/> to a <see cref="Vector2D{T}"/>.</summary>
-        public static implicit operator Vector2D<T>((T X, T Y) v) =>
-            new(v.X, v.Y);
+        public static implicit operator Vector2D<T>((T X, T Y) value) =>
+            new(value.X, value.Y);
 
         /// <summary>Implicitly casts a <see cref="Vector2D{T}"/> to a <see cref="ValueTuple{T, T}"/>.</summary>
-        public static implicit operator (T X, T Y)(Vector2D<T> v) =>
-            (v.X, v.Y);
+        public static implicit operator (T X, T Y)(Vector2D<T> value) =>
+            (value.X, value.Y);
 
         /// <summary>Returns the given vector.</summary>
         /// <param name="vector">The source vector.</param>

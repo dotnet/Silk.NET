@@ -1600,8 +1600,8 @@ static Silk.NET.Maths.Vector2D<T>.explicit operator Silk.NET.Maths.Vector2D<uint
 static Silk.NET.Maths.Vector2D<T>.explicit operator Silk.NET.Maths.Vector2D<ulong>(Silk.NET.Maths.Vector2D<T> from) -> Silk.NET.Maths.Vector2D<ulong>
 static Silk.NET.Maths.Vector2D<T>.explicit operator Silk.NET.Maths.Vector2D<ushort>(Silk.NET.Maths.Vector2D<T> from) -> Silk.NET.Maths.Vector2D<ushort>
 static Silk.NET.Maths.Vector2D<T>.explicit operator System.Numerics.Vector2(Silk.NET.Maths.Vector2D<T> from) -> System.Numerics.Vector2
-static Silk.NET.Maths.Vector2D<T>.implicit operator (T X, T Y)(Silk.NET.Maths.Vector2D<T> v) -> (T X, T Y)
-static Silk.NET.Maths.Vector2D<T>.implicit operator Silk.NET.Maths.Vector2D<T>((T X, T Y) v) -> Silk.NET.Maths.Vector2D<T>
+static Silk.NET.Maths.Vector2D<T>.implicit operator (T X, T Y)(Silk.NET.Maths.Vector2D<T> value) -> (T X, T Y)
+static Silk.NET.Maths.Vector2D<T>.implicit operator Silk.NET.Maths.Vector2D<T>((T X, T Y) value) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D<T>.One.get -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D<T>.operator !=(Silk.NET.Maths.Vector2D<T> left, Silk.NET.Maths.Vector2D<T> right) -> bool
 static Silk.NET.Maths.Vector2D<T>.operator *(Silk.NET.Maths.Vector2D<T> left, Silk.NET.Maths.Vector2D<T> right) -> Silk.NET.Maths.Vector2D<T>
@@ -1857,6 +1857,7 @@ static Silk.NET.Maths.Vector3D<T>.explicit operator checked Silk.NET.Maths.Vecto
 static Silk.NET.Maths.Vector3D<T>.explicit operator checked Silk.NET.Maths.Vector3D<ulong>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<ulong>
 static Silk.NET.Maths.Vector3D<T>.explicit operator checked Silk.NET.Maths.Vector3D<ushort>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<ushort>
 static Silk.NET.Maths.Vector3D<T>.explicit operator checked System.Numerics.Vector3(Silk.NET.Maths.Vector3D<T> from) -> System.Numerics.Vector3
+static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector2D<T>(Silk.NET.Maths.Vector3D<T> value) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<byte>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<byte>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<decimal>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<decimal>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<double>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<double>
@@ -1866,13 +1867,14 @@ static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<long
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<sbyte>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<sbyte>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<short>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<short>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<System.Half>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<System.Half>
+static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<T>(Silk.NET.Maths.Vector2D<T> value) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<T>(System.Numerics.Vector3 from) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<uint>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<uint>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<ulong>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<ulong>
 static Silk.NET.Maths.Vector3D<T>.explicit operator Silk.NET.Maths.Vector3D<ushort>(Silk.NET.Maths.Vector3D<T> from) -> Silk.NET.Maths.Vector3D<ushort>
 static Silk.NET.Maths.Vector3D<T>.explicit operator System.Numerics.Vector3(Silk.NET.Maths.Vector3D<T> from) -> System.Numerics.Vector3
-static Silk.NET.Maths.Vector3D<T>.implicit operator (T X, T Y, T Z)(Silk.NET.Maths.Vector3D<T> v) -> (T X, T Y, T Z)
-static Silk.NET.Maths.Vector3D<T>.implicit operator Silk.NET.Maths.Vector3D<T>((T X, T Y, T Z) v) -> Silk.NET.Maths.Vector3D<T>
+static Silk.NET.Maths.Vector3D<T>.implicit operator (T X, T Y, T Z)(Silk.NET.Maths.Vector3D<T> value) -> (T X, T Y, T Z)
+static Silk.NET.Maths.Vector3D<T>.implicit operator Silk.NET.Maths.Vector3D<T>((T X, T Y, T Z) value) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D<T>.One.get -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D<T>.operator !=(Silk.NET.Maths.Vector3D<T> left, Silk.NET.Maths.Vector3D<T> right) -> bool
 static Silk.NET.Maths.Vector3D<T>.operator *(Silk.NET.Maths.Vector3D<T> left, Silk.NET.Maths.Vector3D<T> right) -> Silk.NET.Maths.Vector3D<T>
@@ -2126,6 +2128,8 @@ static Silk.NET.Maths.Vector4D<T>.explicit operator checked Silk.NET.Maths.Vecto
 static Silk.NET.Maths.Vector4D<T>.explicit operator checked Silk.NET.Maths.Vector4D<ulong>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<ulong>
 static Silk.NET.Maths.Vector4D<T>.explicit operator checked Silk.NET.Maths.Vector4D<ushort>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<ushort>
 static Silk.NET.Maths.Vector4D<T>.explicit operator checked System.Numerics.Vector4(Silk.NET.Maths.Vector4D<T> from) -> System.Numerics.Vector4
+static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector2D<T>(Silk.NET.Maths.Vector4D<T> value) -> Silk.NET.Maths.Vector2D<T>
+static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector3D<T>(Silk.NET.Maths.Vector4D<T> value) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<byte>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<byte>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<decimal>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<decimal>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<double>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<double>
@@ -2135,13 +2139,15 @@ static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<long
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<sbyte>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<sbyte>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<short>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<short>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<System.Half>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<System.Half>
+static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<T>(Silk.NET.Maths.Vector2D<T> value) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<T>(Silk.NET.Maths.Vector3D<T> value) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<T>(System.Numerics.Vector4 from) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<uint>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<uint>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<ulong>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<ulong>
 static Silk.NET.Maths.Vector4D<T>.explicit operator Silk.NET.Maths.Vector4D<ushort>(Silk.NET.Maths.Vector4D<T> from) -> Silk.NET.Maths.Vector4D<ushort>
 static Silk.NET.Maths.Vector4D<T>.explicit operator System.Numerics.Vector4(Silk.NET.Maths.Vector4D<T> from) -> System.Numerics.Vector4
-static Silk.NET.Maths.Vector4D<T>.implicit operator (T X, T Y, T Z, T W)(Silk.NET.Maths.Vector4D<T> v) -> (T X, T Y, T Z, T W)
-static Silk.NET.Maths.Vector4D<T>.implicit operator Silk.NET.Maths.Vector4D<T>((T X, T Y, T Z, T W) v) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Vector4D<T>.implicit operator (T X, T Y, T Z, T W)(Silk.NET.Maths.Vector4D<T> value) -> (T X, T Y, T Z, T W)
+static Silk.NET.Maths.Vector4D<T>.implicit operator Silk.NET.Maths.Vector4D<T>((T X, T Y, T Z, T W) value) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.One.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.operator !=(Silk.NET.Maths.Vector4D<T> left, Silk.NET.Maths.Vector4D<T> right) -> bool
 static Silk.NET.Maths.Vector4D<T>.operator *(Silk.NET.Maths.Vector4D<T> left, Silk.NET.Maths.Vector4D<T> right) -> Silk.NET.Maths.Vector4D<T>
