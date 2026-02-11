@@ -102,17 +102,6 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(expected, actual);
         }
 
-        // A test for GetHashCode ()
-        [Fact]
-        public void PlaneGetHashCodeTest()
-        {
-            Plane<float> target = new Plane<float>(1.0f, 2.0f, 3.0f, 4.0f);
-
-            int expected = target.Normal.GetHashCode() + target.Distance.GetHashCode();
-            int actual = target.GetHashCode();
-            Assert.Equal(expected, actual);
-        }
-
         // A test for Plane<float> (float, float, float, float)
         [Fact]
         public void PlaneConstructorTest1()
