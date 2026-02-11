@@ -161,7 +161,10 @@ namespace Silk.NET.Maths
         public override bool Equals(object? obj) => obj is Matrix3X4<T> other && Equals(other);
 
         /// <inheridoc/>
-        public bool Equals(Matrix3X4<T> other) => this == other;
+        public bool Equals(Matrix3X4<T> other) =>
+            Row1.Equals(other.Row1) &&
+            Row2.Equals(other.Row2) &&
+            Row3.Equals(other.Row3);
 
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(Row1, Row2, Row3);

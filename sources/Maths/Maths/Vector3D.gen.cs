@@ -339,6 +339,15 @@ namespace Silk.NET.Maths
         static bool IParsable<Vector3D<T>>.TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector3D<T> result) =>
             TryParse(s, provider, out result);
 
+        /// <inheridoc/>
+        public override bool Equals(object? obj) => obj is Vector3D<T> other && Equals(other);
+
+        /// <inheridoc/>
+        public bool Equals(Vector3D<T> other) =>
+            X.Equals(other.X) &&
+            Y.Equals(other.Y) &&
+            Z.Equals(other.Z);
+
         /// <summary>Returns a boolean indicating whether the given two vectors are equal.</summary>
         /// <param name="left">The first vector to compare.</param>
         /// <param name="right">The second vector to compare.</param>
@@ -356,12 +365,6 @@ namespace Silk.NET.Maths
             left.X != right.X ||
             left.Y != right.Y ||
             left.Z != right.Z;
-
-        /// <inheridoc/>
-        public override bool Equals(object? obj) => obj is Vector3D<T> other && Equals(other);
-
-        /// <inheridoc/>
-        public bool Equals(Vector3D<T> other) => this == other;
 
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(X, Y, Z);

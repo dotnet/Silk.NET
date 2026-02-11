@@ -299,6 +299,14 @@ namespace Silk.NET.Maths
         static bool IParsable<Vector2D<T>>.TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector2D<T> result) =>
             TryParse(s, provider, out result);
 
+        /// <inheridoc/>
+        public override bool Equals(object? obj) => obj is Vector2D<T> other && Equals(other);
+
+        /// <inheridoc/>
+        public bool Equals(Vector2D<T> other) =>
+            X.Equals(other.X) &&
+            Y.Equals(other.Y);
+
         /// <summary>Returns a boolean indicating whether the given two vectors are equal.</summary>
         /// <param name="left">The first vector to compare.</param>
         /// <param name="right">The second vector to compare.</param>
@@ -314,12 +322,6 @@ namespace Silk.NET.Maths
         public static bool operator !=(Vector2D<T> left, Vector2D<T> right) =>
             left.X != right.X ||
             left.Y != right.Y;
-
-        /// <inheridoc/>
-        public override bool Equals(object? obj) => obj is Vector2D<T> other && Equals(other);
-
-        /// <inheridoc/>
-        public bool Equals(Vector2D<T> other) => this == other;
 
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(X, Y);

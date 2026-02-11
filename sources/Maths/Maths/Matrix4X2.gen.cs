@@ -142,7 +142,11 @@ namespace Silk.NET.Maths
         public override bool Equals(object? obj) => obj is Matrix4X2<T> other && Equals(other);
 
         /// <inheridoc/>
-        public bool Equals(Matrix4X2<T> other) => this == other;
+        public bool Equals(Matrix4X2<T> other) =>
+            Row1.Equals(other.Row1) &&
+            Row2.Equals(other.Row2) &&
+            Row3.Equals(other.Row3) &&
+            Row4.Equals(other.Row4);
 
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(Row1, Row2, Row3, Row4);

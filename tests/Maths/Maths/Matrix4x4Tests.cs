@@ -2414,22 +2414,41 @@ namespace Silk.NET.Maths.Tests
             Assert.False(p.IsIdentity);
 
             // Counterintuitive result - IEEE rules for NaN comparison are weird!
-            Assert.False(a.Equals(a));
-            Assert.False(b.Equals(b));
-            Assert.False(c.Equals(c));
-            Assert.False(d.Equals(d));
-            Assert.False(e.Equals(e));
-            Assert.False(f.Equals(f));
-            Assert.False(g.Equals(g));
-            Assert.False(h.Equals(h));
-            Assert.False(i.Equals(i));
-            Assert.False(j.Equals(j));
-            Assert.False(k.Equals(k));
-            Assert.False(l.Equals(l));
-            Assert.False(m.Equals(m));
-            Assert.False(n.Equals(n));
-            Assert.False(o.Equals(o));
-            Assert.False(p.Equals(p));
+#pragma warning disable CS1718 // Comparison made to same variable
+            Assert.False(a == a);
+            Assert.False(b == b);
+            Assert.False(c == c);
+            Assert.False(d == d);
+            Assert.False(e == e);
+            Assert.False(f == f);
+            Assert.False(g == g);
+            Assert.False(h == h);
+            Assert.False(i == i);
+            Assert.False(j == j);
+            Assert.False(k == k);
+            Assert.False(l == l);
+            Assert.False(m == m);
+            Assert.False(n == n);
+            Assert.False(o == o);
+            Assert.False(p == p);
+#pragma warning restore CS1718 // Comparison made to same variable
+
+            Assert.True(a.Equals(a));
+            Assert.True(b.Equals(b));
+            Assert.True(c.Equals(c));
+            Assert.True(d.Equals(d));
+            Assert.True(e.Equals(e));
+            Assert.True(f.Equals(f));
+            Assert.True(g.Equals(g));
+            Assert.True(h.Equals(h));
+            Assert.True(i.Equals(i));
+            Assert.True(j.Equals(j));
+            Assert.True(k.Equals(k));
+            Assert.True(l.Equals(l));
+            Assert.True(m.Equals(m));
+            Assert.True(n.Equals(n));
+            Assert.True(o.Equals(o));
+            Assert.True(p.Equals(p));
         }
 
         // A test to make sure these types are blittable directly into GPU buffer memory layouts

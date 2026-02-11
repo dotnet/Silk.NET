@@ -1137,9 +1137,15 @@ namespace Silk.NET.Maths.Tests
             Assert.False(c.Equals(Vector3D<float>.Zero));
 
             // Counterintuitive result - IEEE rules for NaN comparison are weird!
-            Assert.False(a.Equals(a));
-            Assert.False(b.Equals(b));
-            Assert.False(c.Equals(c));
+#pragma warning disable CS1718 // Comparison made to same variable
+            Assert.False(a == a);
+            Assert.False(b == b);
+            Assert.False(c == c);
+#pragma warning restore CS1718 // Comparison made to same variable
+
+            Assert.True(a.Equals(a));
+            Assert.True(b.Equals(b));
+            Assert.True(c.Equals(c));
         }
 
         [Fact]

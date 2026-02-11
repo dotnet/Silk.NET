@@ -379,6 +379,16 @@ namespace Silk.NET.Maths
         static bool IParsable<Vector4D<T>>.TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out Vector4D<T> result) =>
             TryParse(s, provider, out result);
 
+        /// <inheridoc/>
+        public override bool Equals(object? obj) => obj is Vector4D<T> other && Equals(other);
+
+        /// <inheridoc/>
+        public bool Equals(Vector4D<T> other) =>
+            X.Equals(other.X) &&
+            Y.Equals(other.Y) &&
+            Z.Equals(other.Z) &&
+            W.Equals(other.W);
+
         /// <summary>Returns a boolean indicating whether the given two vectors are equal.</summary>
         /// <param name="left">The first vector to compare.</param>
         /// <param name="right">The second vector to compare.</param>
@@ -398,12 +408,6 @@ namespace Silk.NET.Maths
             left.Y != right.Y ||
             left.Z != right.Z ||
             left.W != right.W;
-
-        /// <inheridoc/>
-        public override bool Equals(object? obj) => obj is Vector4D<T> other && Equals(other);
-
-        /// <inheridoc/>
-        public bool Equals(Vector4D<T> other) => this == other;
 
         /// <inheridoc/>
         public override int GetHashCode() => HashCode.Combine(X, Y, Z, W);
