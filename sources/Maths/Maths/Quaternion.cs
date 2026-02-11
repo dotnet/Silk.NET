@@ -16,21 +16,21 @@ namespace Silk.NET.Maths
         where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
     {
         /// <summary>The 1st row of the matrix represented as a vector.</summary>
-        [IgnoreDataMember]
+        [DataMember]
         public Vector3D<T> Axis;
 
         /// <summary>Specifies the X-value of the vector component of the Quaternion.</summary>
-        [DataMember]
+        [IgnoreDataMember]
         [UnscopedRef]
         public ref T X => ref Axis.X;
 
         /// <summary>Specifies the Y-value of the vector component of the Quaternion.</summary>
-        [DataMember]
+        [IgnoreDataMember]
         [UnscopedRef]
         public ref T Y => ref Axis.Y;
 
         /// <summary>Specifies the Z-value of the vector component of the Quaternion.</summary>
-        [DataMember]
+        [IgnoreDataMember]
         [UnscopedRef]
         public ref T Z => ref Axis.Z;
 
@@ -39,28 +39,22 @@ namespace Silk.NET.Maths
         public T W;
 
         /// <summary>Constructs a Quaternion from the given components.</summary>
+        /// <param name="axis">The 3-component vector representing a direction.</param>
+        /// <param name="w">The rotation (W) component of the Quaternion.</param>
+        public Quaternion(Vector3D<T> axis, T w)
+        {
+            Axis = axis;
+            W = w;
+        }
+
+        /// <summary>Constructs a Quaternion from the given components.</summary>
         /// <param name="x">The X-component of the Quaternion.</param>
         /// <param name="y">The Y-component of the Quaternion.</param>
         /// <param name="z">The Z-component of the Quaternion.</param>
         /// <param name="w">The rotation (W) component of the Quaternion.</param>
         public Quaternion(T x, T y, T z, T w)
+            : this(new(x, y, z), w)
         {
-            X = x;
-            Y = y;
-            Z = z;
-            W = w;
-        }
-
-        // TODO: Vector4F/Vector3F constructors
-        /// <summary>Constructs a Quaternion from the given components.</summary>
-        /// <param name="axis">The 3-component vector representing a direction.</param>
-        /// <param name="w">The rotation (W) component of the Quaternion.</param>
-        public Quaternion(Vector3D<T> axis, T w)
-        {
-            X = axis.X;
-            Y = axis.Y;
-            Z = axis.Z;
-            W = w;
         }
 
         /// <summary>Constructs a Quaternion from the given vector.</summary>
@@ -74,17 +68,29 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Gets the rotation angle represented by the <see cref="Quaternion{T}"/>.</summary>
-        public T Angle => T.CreateChecked(2) * T.Acos(W);
+        public readonly T Angle => T.CreateChecked(2) * T.Acos(W);
 
         ///<summary>Gets the component at the specified index: 0 = X, 1 = Y, 2 = Z, 3 = W. </summary>
-        // TODO: Make this a ref
-        public T this[int index] => index switch {
-            0 => X,
-            1 => Y,
-            2 => Z,
-            3 => W,
-            _ => throw new IndexOutOfRangeException(nameof(index))
-        };
+        [UnscopedRef]
+        public ref T this[int index]
+        {
+            get
+            {
+                switch (index)
+                {
+                    case 0:
+                        return ref X;
+                    case 1:
+                        return ref Y;
+                    case 2:
+                        return ref Z;
+                    case 3:
+                        return ref W;
+                }
+
+                throw new ArgumentOutOfRangeException(nameof(index));
+            }
+        }
 
         /// <summary>Returns the zero <see cref="Quaternion{T}"/>, representing an undefined rotation.</summary>
         public static Quaternion<T> Zero { get; } = new Quaternion<T>(T.Zero, T.Zero, T.Zero, T.Zero);
@@ -98,20 +104,20 @@ namespace Silk.NET.Maths
 
         /// <summary>Calculates the length of the Quaternion.</summary>
         /// <returns>The computed length of the Quaternion.</returns>
-        public readonly T Length
-            => T.Sqrt(LengthSquared);
+        public readonly T Length =>
+            T.Sqrt(LengthSquared);
 
         /// <summary>Calculates the length squared of the Quaternion. This operation is cheaper than Length().</summary>
         /// <returns>The length squared of the Quaternion.</returns>
-        public readonly T LengthSquared
-            => (Axis.X * Axis.X) + (Axis.Y * Axis.Y) + (Axis.Z * Axis.Z) + (W * W);
+        public readonly T LengthSquared =>
+            (Axis.X * Axis.X) + (Axis.Y * Axis.Y) + (Axis.Z * Axis.Z) + (W * W);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Quaternion{T}"/> instance.</summary>
         public override bool Equals(object? obj) =>
             obj is Quaternion<T> other && Equals(other);
 
         /// <summary>Returns a boolean indicating whether the given <see cref="Quaternion{T}"/> is equal to this <see cref="Quaternion{T}"/> instance.</summary>
-        public bool Equals(Quaternion<T> other) =>
+        public readonly bool Equals(Quaternion<T> other) =>
             this == other;
 
         /// <summary>Returns the hash code for this instance.</summary>
@@ -127,69 +133,69 @@ namespace Silk.NET.Maths
         /// <summary>Returns a span over the Quaternion components.</summary>
         public Span<T> AsSpan() => MemoryMarshal.CreateSpan(ref X, 4);
 
-        /// <summary>Returns a boolean indicating whether the two given Quaternions are not equal.</summary>
-        /// <param name="left">The first Quaternion to compare.</param>
-        /// <param name="right">The second Quaternion to compare.</param>
-        /// <returns>True if the Quaternions are not equal; False if they are equal.</returns>
-        public static bool operator !=(Quaternion<T> left, Quaternion<T> right) =>
-            !(left == right);
-
         /// <summary>Returns a boolean indicating whether the two given Quaternions are equal.</summary>
         /// <param name="left">The first Quaternion to compare.</param>
         /// <param name="right">The second Quaternion to compare.</param>
-        /// <returns>True if the Quaternions are equal; False otherwise.</returns>
+        /// <returns><c>true</c> if the Quaternions are equal; <c>false</c> otherwise.</returns>
         public static bool operator ==(Quaternion<T> left, Quaternion<T> right) =>
             left.X == right.X && left.Y == right.Y && left.Z == right.Z && left.W == right.W;
 
+        /// <summary>Returns a boolean indicating whether the two given Quaternions are not equal.</summary>
+        /// <param name="left">The first Quaternion to compare.</param>
+        /// <param name="right">The second Quaternion to compare.</param>
+        /// <returns><c>true</c> if the Quaternions are not equal; <c>false</c> if they are equal.</returns>
+        public static bool operator !=(Quaternion<T> left, Quaternion<T> right) =>
+            left.X != right.X || left.Y != right.Y || left.Z != right.Z || left.W != right.W;
+
         /// <summary>Adds two Quaternions element-by-element.</summary>
-        /// <param name="value1">The first source Quaternion.</param>
-        /// <param name="value2">The second source Quaternion.</param>
+        /// <param name="left">The first source Quaternion.</param>
+        /// <param name="right">The second source Quaternion.</param>
         /// <returns>The result of adding the Quaternions.</returns>
-        public static Quaternion<T> operator +(Quaternion<T> value1, Quaternion<T> value2)
+        public static Quaternion<T> operator +(Quaternion<T> left, Quaternion<T> right)
         {
             Quaternion<T> ans = default;
 
-            ans.X = value1.X + value2.X;
-            ans.Y = value1.Y + value2.Y;
-            ans.Z = value1.Z + value2.Z;
-            ans.W = value1.W + value2.W;
+            ans.X = left.X + right.X;
+            ans.Y = left.Y + right.Y;
+            ans.Z = left.Z + right.Z;
+            ans.W = left.W + right.W;
 
             return ans;
         }
 
         /// <summary>Subtracts one Quaternion from another.</summary>
-        /// <param name="value1">The first source Quaternion.</param>
-        /// <param name="value2">The second Quaternion, to be subtracted from the first.</param>
+        /// <param name="left">The first source Quaternion.</param>
+        /// <param name="right">The second Quaternion, to be subtracted from the first.</param>
         /// <returns>The result of the subtraction.</returns>
-        public static Quaternion<T> operator -(Quaternion<T> value1, Quaternion<T> value2)
+        public static Quaternion<T> operator -(Quaternion<T> left, Quaternion<T> right)
         {
             Quaternion<T> ans = default;
 
-            ans.X = value1.X - value2.X;
-            ans.Y = value1.Y - value2.Y;
-            ans.Z = value1.Z - value2.Z;
-            ans.W = value1.W - value2.W;
+            ans.X = left.X - right.X;
+            ans.Y = left.Y - right.Y;
+            ans.Z = left.Z - right.Z;
+            ans.W = left.W - right.W;
 
             return ans;
         }
 
         /// <summary>Multiplies two Quaternions together.</summary>
-        /// <param name="value1">The Quaternion on the left side of the multiplication.</param>
-        /// <param name="value2">The Quaternion on the right side of the multiplication.</param>
+        /// <param name="left">The Quaternion on the left side of the multiplication.</param>
+        /// <param name="right">The Quaternion on the right side of the multiplication.</param>
         /// <returns>The result of the multiplication.</returns>
-        public static Quaternion<T> operator *(Quaternion<T> value1, Quaternion<T> value2)
+        public static Quaternion<T> operator *(Quaternion<T> left, Quaternion<T> right)
         {
             Quaternion<T> ans = default;
 
-            T q1x = value1.X;
-            T q1y = value1.Y;
-            T q1z = value1.Z;
-            T q1w = value1.W;
+            T q1x = left.X;
+            T q1y = left.Y;
+            T q1z = left.Z;
+            T q1w = left.W;
 
-            T q2x = value2.X;
-            T q2y = value2.Y;
-            T q2z = value2.Z;
-            T q2w = value2.W;
+            T q2x = right.X;
+            T q2y = right.Y;
+            T q2z = right.Z;
+            T q2w = right.W;
 
             // cross(av, bv)
             var cx = (q1y * q2z) - (q1z * q2y);
@@ -207,26 +213,26 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Divides a Quaternion by another Quaternion.</summary>
-        /// <param name="value1">The source Quaternion.</param>
-        /// <param name="value2">The divisor.</param>
+        /// <param name="left">The source Quaternion.</param>
+        /// <param name="right">The divisor.</param>
         /// <returns>The result of the division.</returns>
-        public static Quaternion<T> operator /(Quaternion<T> value1, Quaternion<T> value2)
+        public static Quaternion<T> operator /(Quaternion<T> left, Quaternion<T> right)
         {
             Quaternion<T> ans = default;
 
-            T q1x = value1.X;
-            T q1y = value1.Y;
-            T q1z = value1.Z;
-            T q1w = value1.W;
+            T q1x = left.X;
+            T q1y = left.Y;
+            T q1z = left.Z;
+            T q1w = left.W;
 
             //-------------------------------------
             // Inverse part.
-            var invNorm = T.One / value2.LengthSquared;
+            var invNorm = T.One / right.LengthSquared;
 
-            var q2x = -(value2.X * invNorm);
-            var q2y = -(value2.Y * invNorm);
-            var q2z = -(value2.Z * invNorm);
-            var q2w = value2.W * invNorm;
+            var q2x = -(right.X * invNorm);
+            var q2y = -(right.Y * invNorm);
+            var q2z = -(right.Z * invNorm);
+            var q2w = right.W * invNorm;
 
             //-------------------------------------
             // Multiply part.
@@ -262,17 +268,17 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Multiplies a Quaternion by a scalar value.</summary>
-        /// <param name="value1">The source Quaternion.</param>
-        /// <param name="value2">The scalar value.</param>
+        /// <param name="left">The source Quaternion.</param>
+        /// <param name="right">The scalar value.</param>
         /// <returns>The result of the multiplication.</returns>
-        public static Quaternion<T> operator *(Quaternion<T> value1, T value2)
+        public static Quaternion<T> operator *(Quaternion<T> left, T right)
         {
             Quaternion<T> ans = default;
 
-            ans.X = value1.X * value2;
-            ans.Y = value1.Y * value2;
-            ans.Z = value1.Z * value2;
-            ans.W = value1.W * value2;
+            ans.X = left.X * right;
+            ans.Y = left.Y * right;
+            ans.Z = left.Z * right;
+            ans.W = left.W * right;
 
             return ans;
         }
@@ -347,39 +353,10 @@ namespace Silk.NET.Maths
             (quaternion1.X * quaternion2.X) + (quaternion1.Y * quaternion2.Y) + (quaternion1.Z * quaternion2.Z) + (quaternion1.W * quaternion2.W);
 
         /// <summary>Concatenates two Quaternions; the result represents the value1 rotation followed by the value2 rotation.</summary>
-        /// <param name="value1">The first Quaternion rotation in the series.</param>
-        /// <param name="value2">The second Quaternion rotation in the series.</param>
+        /// <param name="first">The first Quaternion rotation in the series.</param>
+        /// <param name="second">The second Quaternion rotation in the series.</param>
         /// <returns>A new Quaternion representing the concatenation of the value1 rotation followed by the value2 rotation.</returns>
-        public static Quaternion<T> Concatenate(Quaternion<T> value1, Quaternion<T> value2)
-        {
-            Quaternion<T> ans = default;
-
-            // Concatenate rotation is actually q2 * q1 instead of q1 * q2.
-            // So that's why value2 goes q1 and value1 goes q2.
-            T q1x = value2.X;
-            T q1y = value2.Y;
-            T q1z = value2.Z;
-            T q1w = value2.W;
-
-            T q2x = value1.X;
-            T q2y = value1.Y;
-            T q2z = value1.Z;
-            T q2w = value1.W;
-
-            // cross(av, bv)
-            var cx = (q1y * q2z) - (q1z * q2y);
-            var cy = (q1z * q2x) - (q1x * q2z);
-            var cz = (q1x * q2y) - (q1y * q2x);
-
-            var dot = (q1x * q2x) + (q1y * q2y) + (q1z * q2z);
-
-            ans.X = (q1x * q2w) + (q2x * q1w) + cx;
-            ans.Y = (q1y * q2w) + (q2y * q1w) + cy;
-            ans.Z = (q1z * q2w) + (q2z * q1w) + cz;
-            ans.W = (q1w * q2w) - dot;
-
-            return ans;
-        }
+        public static Quaternion<T> Concatenate(Quaternion<T> first, Quaternion<T> second) => second * first;
 
         /// <summary>Creates the conjugate of a specified Quaternion.</summary>
         /// <param name="value">The Quaternion of which to return the conjugate.</param>
@@ -555,35 +532,35 @@ namespace Silk.NET.Maths
         }
 
         /// <summary> Linearly interpolates between two quaternions.</summary>
-        /// <param name="quaternion1">The first source Quaternion.</param>
-        /// <param name="quaternion2">The second source Quaternion.</param>
+        /// <param name="value1">The first source Quaternion.</param>
+        /// <param name="value2">The second source Quaternion.</param>
         /// <param name="amount">The relative weight of the second source Quaternion in the interpolation.</param>
         /// <returns>The interpolated Quaternion.</returns>
-        public static Quaternion<T> Lerp(Quaternion<T> quaternion1, Quaternion<T> quaternion2, T amount)
+        public static Quaternion<T> Lerp(Quaternion<T> value1, Quaternion<T> value2, T amount)
         {
             var t = amount;
             var t1 = T.One - t;
 
             Quaternion<T> r = default;
 
-            T dot = (quaternion1.X * quaternion2.X)
-                + (quaternion1.Y * quaternion2.Y)
-                + (quaternion1.Z * quaternion2.Z)
-                + (quaternion1.W * quaternion2.W);
+            T dot = (value1.X * value2.X)
+                + (value1.Y * value2.Y)
+                + (value1.Z * value2.Z)
+                + (value1.W * value2.W);
 
             if (dot >= T.Zero)
             {
-                r.X = (t1 * quaternion1.X) + (t * quaternion2.X);
-                r.Y = (t1 * quaternion1.Y) + (t * quaternion2.Y);
-                r.Z = (t1 * quaternion1.Z) + (t * quaternion2.Z);
-                r.W = (t1 * quaternion1.W) + (t * quaternion2.W);
+                r.X = (t1 * value1.X) + (t * value2.X);
+                r.Y = (t1 * value1.Y) + (t * value2.Y);
+                r.Z = (t1 * value1.Z) + (t * value2.Z);
+                r.W = (t1 * value1.W) + (t * value2.W);
             }
             else
             {
-                r.X = (t1 * quaternion1.X) - (t * quaternion2.X);
-                r.Y = (t1 * quaternion1.Y) - (t * quaternion2.Y);
-                r.Z = (t1 * quaternion1.Z) - (t * quaternion2.Z);
-                r.W = (t1 * quaternion1.W) - (t * quaternion2.W);
+                r.X = (t1 * value1.X) - (t * value2.X);
+                r.Y = (t1 * value1.Y) - (t * value2.Y);
+                r.Z = (t1 * value1.Z) - (t * value2.Z);
+                r.W = (t1 * value1.W) - (t * value2.W);
             }
 
             // Normalize it.
@@ -599,17 +576,17 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Interpolates between two quaternions, using spherical linear interpolation.</summary>
-        /// <param name="quaternion1">The first source Quaternion.</param>
-        /// <param name="quaternion2">The second source Quaternion.</param>
+        /// <param name="value1">The first source Quaternion.</param>
+        /// <param name="value2">The second source Quaternion.</param>
         /// <param name="amount">The relative weight of the second source Quaternion in the interpolation.</param>
         /// <returns>The interpolated Quaternion.</returns>
-        public static Quaternion<T> Slerp(Quaternion<T> quaternion1, Quaternion<T> quaternion2, T amount)
+        public static Quaternion<T> Slerp(Quaternion<T> value1, Quaternion<T> value2, T amount)
         {
             const float SlerpEpsilon = 1e-6f;
 
             var t = amount;
 
-            T cosOmega = (quaternion1.X * quaternion2.X) + (quaternion1.Y * quaternion2.Y) + (quaternion1.Z * quaternion2.Z) + (quaternion1.W * quaternion2.W);
+            T cosOmega = (value1.X * value2.X) + (value1.Y * value2.Y) + (value1.Z * value2.Z) + (value1.W * value2.W);
 
             var flip = false;
 
@@ -640,10 +617,10 @@ namespace Silk.NET.Maths
 
             Quaternion<T> ans = default;
 
-            ans.X = (s1 * quaternion1.X) + (s2 * quaternion2.X);
-            ans.Y = (s1 * quaternion1.Y) + (s2 * quaternion2.Y);
-            ans.Z = (s1 * quaternion1.Z) + (s2 * quaternion2.Z);
-            ans.W = (s1 * quaternion1.W) + (s2 * quaternion2.W);
+            ans.X = (s1 * value1.X) + (s2 * value2.X);
+            ans.Y = (s1 * value1.Y) + (s2 * value2.Y);
+            ans.Z = (s1 * value1.Z) + (s2 * value2.Z);
+            ans.W = (s1 * value1.W) + (s2 * value2.W);
 
             return ans;
         }
