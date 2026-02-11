@@ -311,7 +311,9 @@ namespace Silk.NET.Maths
         /// <param name="left">The first vector to compare.</param>
         /// <param name="right">The second vector to compare.</param>
         /// <returns><c>true</c> if the given vectors are not equal; <c>false</c> otherwise.</returns>
-        public static bool operator !=(Vector2D<T> left, Vector2D<T> right) => !(left == right);
+        public static bool operator !=(Vector2D<T> left, Vector2D<T> right) =>
+            left.X != right.X ||
+            left.Y != right.Y;
 
         /// <inheridoc/>
         public override bool Equals(object? obj) => obj is Vector2D<T> other && Equals(other);

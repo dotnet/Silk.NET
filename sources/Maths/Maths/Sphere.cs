@@ -114,22 +114,18 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Returns a boolean indicating whether the two given Spheres are equal.</summary>
-        /// <param name="value1">The first Spheres to compare.</param>
-        /// <param name="value2">The second Spheres to compare.</param>
+        /// <param name="left">The first Spheres to compare.</param>
+        /// <param name="right">The second Spheres to compare.</param>
         /// <returns>True if the Spheres are equal; False otherwise.</returns>
-        public static bool operator ==(Sphere<T> value1, Sphere<T> value2)
-        {
-            return value1.Equals(value2);
-        }
+        public static bool operator ==(Sphere<T> left, Sphere<T> right) =>
+            left.Center == right.Center && left.Radius == right.Radius;
 
         /// <summary>Returns a boolean indicating whether the two given Spheres are not equal.</summary>
-        /// <param name="value1">The first Sphere to compare.</param>
-        /// <param name="value2">The second Sphere to compare.</param>
+        /// <param name="left">The first Sphere to compare.</param>
+        /// <param name="right">The second Sphere to compare.</param>
         /// <returns>True if the Spheres are not equal; False if they are equal.</returns>
-        public static bool operator !=(Sphere<T> value1, Sphere<T> value2)
-        {
-            return !value1.Equals(value2);
-        }
+        public static bool operator !=(Sphere<T> left, Sphere<T> right) =>
+            left.Center != right.Center || left.Radius != right.Radius;
 
         /// <summary>
         /// Returns this sphere casted to <typeparamref name="TOther"></typeparamref>

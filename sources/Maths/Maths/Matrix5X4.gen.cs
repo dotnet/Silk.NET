@@ -259,7 +259,12 @@ namespace Silk.NET.Maths
         /// <param name="left">The first matrix to compare.</param>
         /// <param name="right">The second matrix to compare.</param>
         /// <returns><c>true</c> if the given matrices are not equal; <c>false</c> otherwise.</returns>
-        public static bool operator !=(Matrix5X4<T> left, Matrix5X4<T> right) => !(left == right);
+        public static bool operator !=(Matrix5X4<T> left, Matrix5X4<T> right) =>
+            left.Row1 != right.Row1 ||
+            left.Row2 != right.Row2 ||
+            left.Row3 != right.Row3 ||
+            left.Row4 != right.Row4 ||
+            left.Row5 != right.Row5;
 
         /// <summary>Adds two matrices together.</summary>
         /// <param name="left">The first source matrix.</param>

@@ -119,22 +119,18 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Returns a boolean indicating whether the two given Circles are equal.</summary>
-        /// <param name="value1">The first Circles to compare.</param>
-        /// <param name="value2">The second Circles to compare.</param>
+        /// <param name="left">The first Circles to compare.</param>
+        /// <param name="right">The second Circles to compare.</param>
         /// <returns>True if the Circles are equal; False otherwise.</returns>
-        public static bool operator ==(Circle<T> value1, Circle<T> value2)
-        {
-            return value1.Equals(value2);
-        }
+        public static bool operator ==(Circle<T> left, Circle<T> right) =>
+            left.Center == right.Center && left.Radius == right.Radius;
 
         /// <summary>Returns a boolean indicating whether the two given Circles are not equal.</summary>
-        /// <param name="value1">The first Circle to compare.</param>
-        /// <param name="value2">The second Circle to compare.</param>
+        /// <param name="left">The first Circle to compare.</param>
+        /// <param name="right">The second Circle to compare.</param>
         /// <returns>True if the Circles are not equal; False if they are equal.</returns>
-        public static bool operator !=(Circle<T> value1, Circle<T> value2)
-        {
-            return !value1.Equals(value2);
-        }
+        public static bool operator !=(Circle<T> left, Circle<T> right) =>
+            left.Center != right.Center || left.Radius != right.Radius;
 
         /// <summary>
         /// Returns this circle casted to <typeparamref name="TOther"></typeparamref>

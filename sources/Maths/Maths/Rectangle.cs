@@ -193,22 +193,18 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Returns a boolean indicating whether the two given Rectangles are equal.</summary>
-        /// <param name="value1">The first Rectangle to compare.</param>
-        /// <param name="value2">The second Rectangle to compare.</param>
+        /// <param name="left">The first Rectangle to compare.</param>
+        /// <param name="right">The second Rectangle to compare.</param>
         /// <returns>True if the Rectangles are equal; False otherwise.</returns>
-        public static bool operator ==(Rectangle<T> value1, Rectangle<T> value2)
-        {
-            return value1.Equals(value2);
-        }
+        public static bool operator ==(Rectangle<T> left, Rectangle<T> right) =>
+            left.Origin == right.Origin && left.Size == right.Size;
 
         /// <summary>Returns a boolean indicating whether the two given Rectangles are not equal.</summary>
-        /// <param name="value1">The first Rectangle to compare.</param>
-        /// <param name="value2">The second Rectangle to compare.</param>
+        /// <param name="left">The first Rectangle to compare.</param>
+        /// <param name="right">The second Rectangle to compare.</param>
         /// <returns>True if the Rectangles are not equal; False if they are equal.</returns>
-        public static bool operator !=(Rectangle<T> value1, Rectangle<T> value2)
-        {
-            return !value1.Equals(value2);
-        }
+        public static bool operator !=(Rectangle<T> left, Rectangle<T> right) =>
+            left.Origin != right.Origin || left.Size != right.Size;
 
         /// <summary>
         /// Returns this rectangle casted to <typeparamref name="TOther"></typeparamref>

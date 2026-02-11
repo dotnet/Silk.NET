@@ -108,22 +108,18 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Returns a boolean indicating whether the two given Rays are equal.</summary>
-        /// <param name="value1">The first Ray to compare.</param>
-        /// <param name="value2">The second Ray to compare.</param>
+        /// <param name="left">The first Ray to compare.</param>
+        /// <param name="right">The second Ray to compare.</param>
         /// <returns>True if the Rays are equal; False otherwise.</returns>
-        public static bool operator ==(Ray2D<T> value1, Ray2D<T> value2)
-        {
-            return value1.Equals(value2);
-        }
+        public static bool operator ==(Ray2D<T> left, Ray2D<T> right) =>
+            left.Origin == right.Origin && left.Direction == right.Direction;
 
         /// <summary>Returns a boolean indicating whether the two given Rays are not equal.</summary>
-        /// <param name="value1">The first Ray to compare.</param>
-        /// <param name="value2">The second Ray to compare.</param>
+        /// <param name="left">The first Ray to compare.</param>
+        /// <param name="right">The second Ray to compare.</param>
         /// <returns>True if the Rays are not equal; False if they are equal.</returns>
-        public static bool operator !=(Ray2D<T> value1, Ray2D<T> value2)
-        {
-            return !value1.Equals(value2);
-        }
+        public static bool operator !=(Ray2D<T> left, Ray2D<T> right) =>
+            left.Origin != right.Origin || left.Direction != right.Direction;
 
         /// <summary>
         /// Returns this ray casted to <typeparamref name="TOther"></typeparamref>

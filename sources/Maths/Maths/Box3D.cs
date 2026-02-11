@@ -184,22 +184,18 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Returns a boolean indicating whether the two given Box3s are equal.</summary>
-        /// <param name="value1">The first Box3D to compare.</param>
-        /// <param name="value2">The second Box3D to compare.</param>
+        /// <param name="left">The first Box3D to compare.</param>
+        /// <param name="right">The second Box3D to compare.</param>
         /// <returns>True if the Box3s are equal; False otherwise.</returns>
-        public static bool operator ==(Box3D<T> value1, Box3D<T> value2)
-        {
-            return value1.Equals(value2);
-        }
+        public static bool operator ==(Box3D<T> left, Box3D<T> right) =>
+             left.Min == right.Min && left.Max == right.Max;
 
         /// <summary>Returns a boolean indicating whether the two given Box3s are not equal.</summary>
-        /// <param name="value1">The first Box3D to compare.</param>
-        /// <param name="value2">The second Box3D to compare.</param>
+        /// <param name="left">The first Box3D to compare.</param>
+        /// <param name="right">The second Box3D to compare.</param>
         /// <returns>True if the Box3s are not equal; False if they are equal.</returns>
-        public static bool operator !=(Box3D<T> value1, Box3D<T> value2)
-        {
-            return !value1.Equals(value2);
-        }
+        public static bool operator !=(Box3D<T> left, Box3D<T> right) =>
+             left.Min != right.Min || left.Max != right.Max;
 
         /// <summary>
         /// Returns this box casted to <typeparamref name="TOther"></typeparamref>

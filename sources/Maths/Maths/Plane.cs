@@ -56,22 +56,6 @@ namespace Silk.NET.Maths
             Distance = value.W;
         }
 
-        /// <summary>Returns a boolean indicating whether the two given Planes are equal.</summary>
-        /// <param name="value1">The first Plane to compare.</param>
-        /// <param name="value2">The second Plane to compare.</param>
-        /// <returns>True if the Planes are equal; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static bool operator ==(Plane<T> value1, Plane<T> value2)
-            => value1.Normal == value2.Normal && value1.Distance == value2.Distance;
-
-        /// <summary>Returns a boolean indicating whether the two given Planes are not equal.</summary>
-        /// <param name="value1">The first Plane to compare.</param>
-        /// <param name="value2">The second Plane to compare.</param>
-        /// <returns>True if the Planes are not equal; False if they are equal.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static bool operator !=(Plane<T> value1, Plane<T> value2)
-            => !(value1 == value2);
-
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Plane instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this Plane; False otherwise.</returns>
@@ -96,6 +80,22 @@ namespace Silk.NET.Maths
         {
             return Normal.GetHashCode() + Distance.GetHashCode();
         }
+
+        /// <summary>Returns a boolean indicating whether the two given Planes are equal.</summary>
+        /// <param name="left">The first Plane to compare.</param>
+        /// <param name="right">The second Plane to compare.</param>
+        /// <returns>True if the Planes are equal; False otherwise.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static bool operator ==(Plane<T> left, Plane<T> right)
+            => left.Normal == right.Normal && left.Distance == right.Distance;
+
+        /// <summary>Returns a boolean indicating whether the two given Planes are not equal.</summary>
+        /// <param name="left">The first Plane to compare.</param>
+        /// <param name="right">The second Plane to compare.</param>
+        /// <returns>True if the Planes are not equal; False if they are equal.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public static bool operator !=(Plane<T> left, Plane<T> right)
+            => left.Normal != right.Normal || left.Distance != right.Distance;
 
         /// <summary>Returns a String representing this Plane instance.</summary>
         /// <returns>The string representation.</returns>

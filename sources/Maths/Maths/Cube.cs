@@ -198,22 +198,18 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Returns a boolean indicating whether the two given Cubes are equal.</summary>
-        /// <param name="value1">The first Cube to compare.</param>
-        /// <param name="value2">The second Cube to compare.</param>
+        /// <param name="left">The first Cube to compare.</param>
+        /// <param name="right">The second Cube to compare.</param>
         /// <returns>True if the Cubes are equal; False otherwise.</returns>
-        public static bool operator ==(Cube<T> value1, Cube<T> value2)
-        {
-            return value1.Equals(value2);
-        }
+        public static bool operator ==(Cube<T> left, Cube<T> right) =>
+            left.Origin == right.Origin && left.Size == right.Size;
 
         /// <summary>Returns a boolean indicating whether the two given Cubes are not equal.</summary>
-        /// <param name="value1">The first Cube to compare.</param>
-        /// <param name="value2">The second Cube to compare.</param>
+        /// <param name="left">The first Cube to compare.</param>
+        /// <param name="right">The second Cube to compare.</param>
         /// <returns>True if the Cubes are not equal; False if they are equal.</returns>
-        public static bool operator !=(Cube<T> value1, Cube<T> value2)
-        {
-            return !value1.Equals(value2);
-        }
+        public static bool operator !=(Cube<T> left, Cube<T> right) =>
+            left.Origin != right.Origin || left.Size != right.Size;
 
         /// <summary>
         /// Returns this circle casted to <typeparamref name="TOther"></typeparamref>
