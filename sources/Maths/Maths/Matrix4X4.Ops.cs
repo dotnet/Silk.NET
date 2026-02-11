@@ -1318,7 +1318,7 @@ namespace Silk.NET.Maths
                     }
                 }
 
-                var normalB = Vector3D.Cross(new Vector3D<T>(matTemp[a].AsSpan()[^-1]), canonicalBasis[cc]);
+                var normalB = Vector3D.Cross((Vector3D<T>)matTemp[a], canonicalBasis[cc]);
                 matTemp[b][0] = normalB[0];
                 matTemp[b][1] = normalB[1];
                 matTemp[b][2] = normalB[2];
@@ -1328,7 +1328,7 @@ namespace Silk.NET.Maths
 
             if (!(scale[c] >= eps))
             {
-                var normalC = Vector3D.Cross(new Vector3D<T>(matTemp[a].AsSpan()), new Vector3D<T>(matTemp[b].AsSpan()));
+                var normalC = Vector3D.Cross((Vector3D<T>)matTemp[a], (Vector3D<T>)matTemp[b]);
                 matTemp[c][0] = normalC[0];
                 matTemp[c][1] = normalC[1];
                 matTemp[c][2] = normalC[2];
