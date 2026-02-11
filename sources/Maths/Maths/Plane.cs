@@ -55,46 +55,40 @@ namespace Silk.NET.Maths
             Distance = value.W;
         }
 
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this Plane instance.</summary>
-        /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this Plane; False otherwise.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public override readonly bool Equals(object? obj)
-        {
-            return (obj is Plane<T> other) && Equals(other);
-        }
-
         /// <summary>Returns a boolean indicating whether the given Plane is equal to this Plane instance.</summary>
         /// <param name="other">The Plane to compare this instance to.</param>
-        /// <returns>True if the other Plane is equal to this instance; False otherwise.</returns>
+        /// <returns><c>true</c> if the other Plane is equal to this instance; <c>false</c> otherwise.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public readonly bool Equals(Plane<T> other)
-        {
-            return Normal.Equals(other.Normal) && Distance == other.Distance;
-        }
+        public readonly bool Equals(Plane<T> other) =>
+            Normal.Equals(other.Normal) && Distance.Equals(other.Distance);
+
+        /// <summary>Returns a boolean indicating whether the given Object is equal to this Plane instance.</summary>
+        /// <param name="obj">The Object to compare against.</param>
+        /// <returns><c>true</c> if the Object is equal to this Plane; <c>false</c> otherwise.</returns>
+        [MethodImpl((MethodImplOptions)768)]
+        public override readonly bool Equals(object? obj) =>
+            obj is Plane<T> other && Equals(other);
 
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>The hash code.</returns>
-        public override readonly int GetHashCode()
-        {
-            return Normal.GetHashCode() + Distance.GetHashCode();
-        }
+        public override readonly int GetHashCode() =>
+            HashCode.Combine(Normal, Distance);
 
         /// <summary>Returns a boolean indicating whether the two given Planes are equal.</summary>
         /// <param name="left">The first Plane to compare.</param>
         /// <param name="right">The second Plane to compare.</param>
-        /// <returns>True if the Planes are equal; False otherwise.</returns>
+        /// <returns><c>true</c> if the Planes are equal; <c>false</c> otherwise.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static bool operator ==(Plane<T> left, Plane<T> right)
-            => left.Normal == right.Normal && left.Distance == right.Distance;
+        public static bool operator ==(Plane<T> left, Plane<T> right) =>
+            left.Normal == right.Normal && left.Distance == right.Distance;
 
         /// <summary>Returns a boolean indicating whether the two given Planes are not equal.</summary>
         /// <param name="left">The first Plane to compare.</param>
         /// <param name="right">The second Plane to compare.</param>
-        /// <returns>True if the Planes are not equal; False if they are equal.</returns>
+        /// <returns><c>true</c> if the Planes are not equal; <c>false</c> if they are equal.</returns>
         [MethodImpl((MethodImplOptions)768)]
-        public static bool operator !=(Plane<T> left, Plane<T> right)
-            => left.Normal != right.Normal || left.Distance != right.Distance;
+        public static bool operator !=(Plane<T> left, Plane<T> right) =>
+            left.Normal != right.Normal || left.Distance != right.Distance;
 
         /// <summary>Returns a String representing this Plane instance.</summary>
         /// <returns>The string representation.</returns>

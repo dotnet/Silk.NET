@@ -96,38 +96,32 @@ namespace Silk.NET.Maths
 
         /// <summary>Returns a boolean indicating whether the given Circle is equal to this Circle instance.</summary>
         /// <param name="other">The Circle to compare this instance to.</param>
-        /// <returns>True if the other Circle is equal to this instance; False otherwise.</returns>
-        public bool Equals(Circle<T> other)
-        {
-            return Center.Equals(other.Center) && Radius.Equals(other.Radius);
-        }
+        /// <returns><c>true</c> if the other Circle is equal to this instance; <c>false</c> otherwise.</returns>
+        public bool Equals(Circle<T> other) =>
+            Center.Equals(other.Center) && Radius.Equals(other.Radius);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Circle instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this Circle; False otherwise.</returns>
-        public override bool Equals(object? obj)
-        {
-            return obj is Circle<T> other && Equals(other);
-        }
+        /// <returns><c>true</c> if the Object is equal to this Circle; <c>false</c> otherwise.</returns>
+        public override bool Equals(object? obj) =>
+            obj is Circle<T> other && Equals(other);
 
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>The hash code.</returns>
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Center, Radius);
-        }
+        public override readonly int GetHashCode()
+            => HashCode.Combine(Center, Radius);
 
         /// <summary>Returns a boolean indicating whether the two given Circles are equal.</summary>
         /// <param name="left">The first Circles to compare.</param>
         /// <param name="right">The second Circles to compare.</param>
-        /// <returns>True if the Circles are equal; False otherwise.</returns>
+        /// <returns><c>true</c> if the Circles are equal; <c>false</c> otherwise.</returns>
         public static bool operator ==(Circle<T> left, Circle<T> right) =>
             left.Center == right.Center && left.Radius == right.Radius;
 
         /// <summary>Returns a boolean indicating whether the two given Circles are not equal.</summary>
         /// <param name="left">The first Circle to compare.</param>
         /// <param name="right">The second Circle to compare.</param>
-        /// <returns>True if the Circles are not equal; False if they are equal.</returns>
+        /// <returns><c>true</c> if the Circles are not equal; <c>false</c> if they are equal.</returns>
         public static bool operator !=(Circle<T> left, Circle<T> right) =>
             left.Center != right.Center || left.Radius != right.Radius;
 

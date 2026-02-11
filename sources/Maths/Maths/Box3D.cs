@@ -160,38 +160,32 @@ namespace Silk.NET.Maths
 
         /// <summary>Returns a boolean indicating whether the given Box3D is equal to this Box3D instance.</summary>
         /// <param name="other">The Box3D to compare this instance to.</param>
-        /// <returns>True if the other Box3D is equal to this instance; False otherwise.</returns>
-        public bool Equals(Box3D<T> other)
-        {
-            return Min.Equals(other.Min) && Max.Equals(other.Max);
-        }
+        /// <returns><c>true</c> if the other Box3D is equal to this instance; <c>false</c> otherwise.</returns>
+        public bool Equals(Box3D<T> other) =>
+            Min.Equals(other.Min) && Max.Equals(other.Max);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Box3D instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this Box3D; False otherwise.</returns>
-        public override bool Equals(object? obj)
-        {
-            return obj is Box3D<T> other && Equals(other);
-        }
+        /// <returns><c>true</c> if the Object is equal to this Box3D; <c>false</c> otherwise.</returns>
+        public override bool Equals(object? obj) =>
+            obj is Box3D<T> other && Equals(other);
 
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>The hash code.</returns>
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Min, Max);
-        }
+        public override readonly int GetHashCode() =>
+            HashCode.Combine(Min, Max);
 
         /// <summary>Returns a boolean indicating whether the two given Box3s are equal.</summary>
         /// <param name="left">The first Box3D to compare.</param>
         /// <param name="right">The second Box3D to compare.</param>
-        /// <returns>True if the Box3s are equal; False otherwise.</returns>
+        /// <returns><c>true</c> if the Box3s are equal; <c>false</c> otherwise.</returns>
         public static bool operator ==(Box3D<T> left, Box3D<T> right) =>
              left.Min == right.Min && left.Max == right.Max;
 
         /// <summary>Returns a boolean indicating whether the two given Box3s are not equal.</summary>
         /// <param name="left">The first Box3D to compare.</param>
         /// <param name="right">The second Box3D to compare.</param>
-        /// <returns>True if the Box3s are not equal; False if they are equal.</returns>
+        /// <returns><c>true</c> if the Box3s are not equal; <c>false</c> if they are equal.</returns>
         public static bool operator !=(Box3D<T> left, Box3D<T> right) =>
              left.Min != right.Min || left.Max != right.Max;
 

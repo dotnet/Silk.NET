@@ -89,38 +89,32 @@ namespace Silk.NET.Maths
 
         /// <summary>Returns a boolean indicating whether the given Ray3D is equal to this Ray3D instance.</summary>
         /// <param name="other">The Ray3D to compare this instance to.</param>
-        /// <returns>True if the other Ray3D is equal to this instance; False otherwise.</returns>
-        public bool Equals(Ray3D<T> other)
-        {
-            return Origin.Equals(other.Origin) && Direction.Equals(other.Direction);
-        }
+        /// <returns><c>true</c> if the other Ray3D is equal to this instance; <c>false</c> otherwise.</returns>
+        public bool Equals(Ray3D<T> other) =>
+            Origin.Equals(other.Origin) && Direction.Equals(other.Direction);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Ray3D instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this Ray3D; False otherwise.</returns>
-        public override bool Equals(object? obj)
-        {
-            return obj is Ray3D<T> other && Equals(other);
-        }
+        /// <returns><c>true</c> if the Object is equal to this Ray3D; <c>false</c> otherwise.</returns>
+        public override bool Equals(object? obj) =>
+            obj is Ray3D<T> other && Equals(other);
 
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>The hash code.</returns>
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Origin, Direction);
-        }
+        public override readonly int GetHashCode() =>
+            HashCode.Combine(Origin, Direction);
 
         /// <summary>Returns a boolean indicating whether the two given Rays are equal.</summary>
         /// <param name="left">The first Ray to compare.</param>
         /// <param name="right">The second Ray to compare.</param>
-        /// <returns>True if the Rays are equal; False otherwise.</returns>
+        /// <returns><c>true</c> if the Rays are equal; <c>false</c> otherwise.</returns>
         public static bool operator ==(Ray3D<T> left, Ray3D<T> right) =>
             left.Origin == right.Origin && left.Direction == right.Direction;
 
         /// <summary>Returns a boolean indicating whether the two given Rays are not equal.</summary>
         /// <param name="left">The first Ray to compare.</param>
         /// <param name="right">The second Ray to compare.</param>
-        /// <returns>True if the Rays are not equal; False if they are equal.</returns>
+        /// <returns><c>true</c> if the Rays are not equal; <c>false</c> if they are equal.</returns>
         public static bool operator !=(Ray3D<T> left, Ray3D<T> right) =>
             left.Origin != right.Origin || left.Direction != right.Direction;
 

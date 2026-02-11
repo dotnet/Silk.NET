@@ -170,38 +170,32 @@ namespace Silk.NET.Maths
 
         /// <summary>Returns a boolean indicating whether the given Rectangle is equal to this Rectangle instance.</summary>
         /// <param name="other">The Rectangle to compare this instance to.</param>
-        /// <returns>True if the other Rectangle is equal to this instance; False otherwise.</returns>
-        public bool Equals(Rectangle<T> other)
-        {
-            return Origin.Equals(other.Origin) && Size.Equals(other.Size);
-        }
+        /// <returns><c>true</c> if the other Rectangle is equal to this instance; <c>false</c> otherwise.</returns>
+        public bool Equals(Rectangle<T> other) =>
+            Origin.Equals(other.Origin) && Size.Equals(other.Size);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Rectangle instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this Rectangle; False otherwise.</returns>
-        public override bool Equals(object? obj)
-        {
-            return obj is Rectangle<T> other && Equals(other);
-        }
+        /// <returns><c>true</c> if the Object is equal to this Rectangle; <c>false</c> otherwise.</returns>
+        public override bool Equals(object? obj) =>
+            obj is Rectangle<T> other && Equals(other);
 
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>The hash code.</returns>
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Origin, Size);
-        }
+        public override readonly int GetHashCode() =>
+            HashCode.Combine(Origin, Size);
 
         /// <summary>Returns a boolean indicating whether the two given Rectangles are equal.</summary>
         /// <param name="left">The first Rectangle to compare.</param>
         /// <param name="right">The second Rectangle to compare.</param>
-        /// <returns>True if the Rectangles are equal; False otherwise.</returns>
+        /// <returns><c>true</c> if the Rectangles are equal; <c>false</c> otherwise.</returns>
         public static bool operator ==(Rectangle<T> left, Rectangle<T> right) =>
             left.Origin == right.Origin && left.Size == right.Size;
 
         /// <summary>Returns a boolean indicating whether the two given Rectangles are not equal.</summary>
         /// <param name="left">The first Rectangle to compare.</param>
         /// <param name="right">The second Rectangle to compare.</param>
-        /// <returns>True if the Rectangles are not equal; False if they are equal.</returns>
+        /// <returns><c>true</c> if the Rectangles are not equal; <c>false</c> if they are equal.</returns>
         public static bool operator !=(Rectangle<T> left, Rectangle<T> right) =>
             left.Origin != right.Origin || left.Size != right.Size;
 

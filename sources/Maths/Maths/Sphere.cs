@@ -91,38 +91,32 @@ namespace Silk.NET.Maths
 
         /// <summary>Returns a boolean indicating whether the given Sphere is equal to this Sphere instance.</summary>
         /// <param name="other">The Sphere to compare this instance to.</param>
-        /// <returns>True if the other Sphere is equal to this instance; False otherwise.</returns>
-        public bool Equals(Sphere<T> other)
-        {
-            return Center.Equals(other.Center) && Radius.Equals(other.Radius);
-        }
+        /// <returns><c>true</c> if the other Sphere is equal to this instance; <c>false</c> otherwise.</returns>
+        public bool Equals(Sphere<T> other) =>
+            Center.Equals(other.Center) && Radius.Equals(other.Radius);
 
         /// <summary>Returns a boolean indicating whether the given Object is equal to this Sphere instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this Sphere; False otherwise.</returns>
-        public override bool Equals(object? obj)
-        {
-            return obj is Sphere<T> other && Equals(other);
-        }
+        /// <returns><c>true</c> if the Object is equal to this Sphere; <c>false</c> otherwise.</returns>
+        public override bool Equals(object? obj) =>
+            obj is Sphere<T> other && Equals(other);
 
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>The hash code.</returns>
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Center, Radius);
-        }
+        public override readonly int GetHashCode() =>
+            HashCode.Combine(Center, Radius);
 
         /// <summary>Returns a boolean indicating whether the two given Spheres are equal.</summary>
         /// <param name="left">The first Spheres to compare.</param>
         /// <param name="right">The second Spheres to compare.</param>
-        /// <returns>True if the Spheres are equal; False otherwise.</returns>
+        /// <returns><c>true</c> if the Spheres are equal; <c>false</c> otherwise.</returns>
         public static bool operator ==(Sphere<T> left, Sphere<T> right) =>
             left.Center == right.Center && left.Radius == right.Radius;
 
         /// <summary>Returns a boolean indicating whether the two given Spheres are not equal.</summary>
         /// <param name="left">The first Sphere to compare.</param>
         /// <param name="right">The second Sphere to compare.</param>
-        /// <returns>True if the Spheres are not equal; False if they are equal.</returns>
+        /// <returns><c>true</c> if the Spheres are not equal; <c>false</c> if they are equal.</returns>
         public static bool operator !=(Sphere<T> left, Sphere<T> right) =>
             left.Center != right.Center || left.Radius != right.Radius;
 
