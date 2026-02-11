@@ -32,9 +32,8 @@ namespace Silk.NET.Maths
         /// <param name="z">The Z-component of the normal.</param>
         /// <param name="distance">The distance of the Plane along its normal from the origin.</param>
         public Plane(T x, T y, T z, T distance)
+            : this(new Vector3D<T>(x, y, z), distance)
         {
-            Normal = new Vector3D<T>(x, y, z);
-            Distance = distance;
         }
 
         /// <summary>Constructs a Plane from the given normal and distance along the normal from the origin.</summary>
