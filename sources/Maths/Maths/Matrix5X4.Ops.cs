@@ -12,12 +12,12 @@ namespace Silk.NET.Maths
     public static partial class Matrix5X4
     {
         /// <summary>Multiplies a vector by a matrix.</summary>
-        /// <param name="value1">The vector.</param>
-        /// <param name="value2">The matrix.</param>
+        /// <param name="left">The vector.</param>
+        /// <param name="right">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions) 768)]
-        public static Vector4D<T> Multiply<T>(Vector4D<T> value1, Matrix5X4<T> value2)
+        public static Vector4D<T> Multiply<T>(Vector4D<T> left, Matrix5X4<T> right)
             where T : INumberBase<T>
-            => value1 * value2;
+            => left * right;
     }
 }

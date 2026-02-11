@@ -1243,7 +1243,7 @@ static Silk.NET.Maths.Matrix5X4.Add<T>(Silk.NET.Maths.Matrix5X4<T> left, Silk.NE
 static Silk.NET.Maths.Matrix5X4.Lerp<T>(Silk.NET.Maths.Matrix5X4<T> value1, Silk.NET.Maths.Matrix5X4<T> value2, T amount) -> Silk.NET.Maths.Matrix5X4<T>
 static Silk.NET.Maths.Matrix5X4.Multiply<T>(Silk.NET.Maths.Matrix5X4<T> left, Silk.NET.Maths.Matrix4X4<T> right) -> Silk.NET.Maths.Matrix5X4<T>
 static Silk.NET.Maths.Matrix5X4.Multiply<T>(Silk.NET.Maths.Matrix5X4<T> left, T right) -> Silk.NET.Maths.Matrix5X4<T>
-static Silk.NET.Maths.Matrix5X4.Multiply<T>(Silk.NET.Maths.Vector4D<T> value1, Silk.NET.Maths.Matrix5X4<T> value2) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Matrix5X4.Multiply<T>(Silk.NET.Maths.Vector4D<T> left, Silk.NET.Maths.Matrix5X4<T> right) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Matrix5X4.Multiply<T>(T left, Silk.NET.Maths.Matrix5X4<T> right) -> Silk.NET.Maths.Matrix5X4<T>
 static Silk.NET.Maths.Matrix5X4.Negate<T>(Silk.NET.Maths.Matrix5X4<T> value) -> Silk.NET.Maths.Matrix5X4<T>
 static Silk.NET.Maths.Matrix5X4.Subtract<T>(Silk.NET.Maths.Matrix5X4<T> left, Silk.NET.Maths.Matrix5X4<T> right) -> Silk.NET.Maths.Matrix5X4<T>
@@ -1278,7 +1278,7 @@ static Silk.NET.Maths.Matrix5X4<T>.Identity.get -> Silk.NET.Maths.Matrix5X4<T>
 static Silk.NET.Maths.Matrix5X4<T>.operator !=(Silk.NET.Maths.Matrix5X4<T> left, Silk.NET.Maths.Matrix5X4<T> right) -> bool
 static Silk.NET.Maths.Matrix5X4<T>.operator *(Silk.NET.Maths.Matrix5X4<T> left, Silk.NET.Maths.Matrix4X4<T> right) -> Silk.NET.Maths.Matrix5X4<T>
 static Silk.NET.Maths.Matrix5X4<T>.operator *(Silk.NET.Maths.Matrix5X4<T> left, T right) -> Silk.NET.Maths.Matrix5X4<T>
-static Silk.NET.Maths.Matrix5X4<T>.operator *(Silk.NET.Maths.Vector4D<T> value1, Silk.NET.Maths.Matrix5X4<T> value2) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Matrix5X4<T>.operator *(Silk.NET.Maths.Vector4D<T> left, Silk.NET.Maths.Matrix5X4<T> right) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Matrix5X4<T>.operator *(T left, Silk.NET.Maths.Matrix5X4<T> right) -> Silk.NET.Maths.Matrix5X4<T>
 static Silk.NET.Maths.Matrix5X4<T>.operator +(Silk.NET.Maths.Matrix5X4<T> left, Silk.NET.Maths.Matrix5X4<T> right) -> Silk.NET.Maths.Matrix5X4<T>
 static Silk.NET.Maths.Matrix5X4<T>.operator -(Silk.NET.Maths.Matrix5X4<T> left, Silk.NET.Maths.Matrix5X4<T> right) -> Silk.NET.Maths.Matrix5X4<T>

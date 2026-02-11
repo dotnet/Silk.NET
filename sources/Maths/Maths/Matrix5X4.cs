@@ -101,13 +101,13 @@ namespace Silk.NET.Maths
         public readonly bool IsIdentity => this == Identity;
 
         /// <summary>Multiplies a vector by a matrix.</summary>
-        /// <param name="value1">The vector.</param>
-        /// <param name="value2">The matrix.</param>
+        /// <param name="left">The vector.</param>
+        /// <param name="right">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        public static unsafe Vector4D<T> operator *(Vector4D<T> value1, Matrix5X4<T> value2)
+        public static unsafe Vector4D<T> operator *(Vector4D<T> left, Matrix5X4<T> right)
         {
-            return value1.X * value2.Row1 + value1.Y * value2.Row2 + value1.Z * value2.Row3 +
-                   value1.W * value2.Row4 + value2.Row5;
+            return left.X * right.Row1 + left.Y * right.Row2 + left.Z * right.Row3 +
+                   left.W * right.Row4 + right.Row5;
         }
     }
 }
