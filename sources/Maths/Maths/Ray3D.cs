@@ -12,8 +12,8 @@ namespace Silk.NET.Maths
     /// <typeparam name="T">The type used to store numeric values.</typeparam>
     [Serializable]
     [DataContract]
-    public struct Ray3D<T>
-        : IEquatable<Ray3D<T>>
+    public struct Ray3D<T> :
+        IEquatable<Ray3D<T>>
         where T : INumberBase<T>
     {
         /// <summary>

@@ -6,8 +6,8 @@ using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
-    public partial struct Matrix4X3<T>
-        : IEquatable<Matrix4X3<T>>
+    public partial struct Matrix4X3<T> :
+        IEquatable<Matrix4X3<T>>
         where T : INumberBase<T>
     {
         private static readonly Matrix4X3<T> _identity = new

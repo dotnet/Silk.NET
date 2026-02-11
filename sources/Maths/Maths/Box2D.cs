@@ -11,8 +11,8 @@ namespace Silk.NET.Maths
     /// </summary>
     [Serializable]
     [DataContract]
-    public struct Box2D<T>
-        : IEquatable<Box2D<T>>
+    public struct Box2D<T> :
+        IEquatable<Box2D<T>>
         where T : INumber<T>
     {
         /// <summary>

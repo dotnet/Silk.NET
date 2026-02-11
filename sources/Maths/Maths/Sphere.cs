@@ -11,8 +11,8 @@ namespace Silk.NET.Maths
     /// </summary>
     [Serializable]
     [DataContract]
-    public struct Sphere<T>
-        : IEquatable<Sphere<T>>
+    public struct Sphere<T> :
+        IEquatable<Sphere<T>>
         where T : IRootFunctions<T>
     {
         /// <summary>

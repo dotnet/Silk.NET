@@ -11,8 +11,8 @@ namespace Silk.NET.Maths
     /// </summary>
     [Serializable]
     [DataContract]
-    public struct Rectangle<T>
-        : IEquatable<Rectangle<T>>
+    public struct Rectangle<T> :
+        IEquatable<Rectangle<T>>
         where T : INumber<T>
     {
         /// <summary>

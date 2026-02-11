@@ -11,8 +11,8 @@ namespace Silk.NET.Maths
     /// </summary>
     [Serializable]
     [DataContract]
-    public struct Cube<T>
-        : IEquatable<Cube<T>>
+    public struct Cube<T> :
+        IEquatable<Cube<T>>
         where T : INumber<T>
     {
         /// <summary>

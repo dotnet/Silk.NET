@@ -14,8 +14,8 @@ namespace Silk.NET.Maths
     /// <typeparam name="T">The type used to store values.</typeparam>
     [Serializable]
     [DataContract]
-    public struct Plane<T>
-        : IEquatable<Plane<T>>
+    public struct Plane<T> :
+        IEquatable<Plane<T>>
         where T : INumberBase<T>
     {
         /// <summary>The normal vector of the Plane.</summary>

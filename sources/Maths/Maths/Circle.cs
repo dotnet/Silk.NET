@@ -11,8 +11,8 @@ namespace Silk.NET.Maths
     /// </summary>
     [Serializable]
     [DataContract]
-    public struct Circle<T>
-        : IEquatable<Circle<T>>
+    public struct Circle<T> :
+        IEquatable<Circle<T>>
         where T : IRootFunctions<T>
     {
         /// <summary>
