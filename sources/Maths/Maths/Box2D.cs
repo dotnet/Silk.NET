@@ -136,10 +136,8 @@ namespace Silk.NET.Maths
         /// <typeparam name="TScale">The type of the scale.</typeparam>
         /// <returns>The calculated box.</returns>
         public Box2D<T> GetScaled<TScale>(Vector2D<TScale> scale, Vector2D<T> anchor)
-            where TScale : INumber<TScale>
-        {
-            return this.AsTruncating<TScale>().GetScaled(scale, anchor.AsTruncating<TScale>()).AsTruncating<T>();
-        }
+            where TScale : INumber<TScale> =>
+            this.AsTruncating<TScale>().GetScaled(scale, anchor.AsTruncating<TScale>()).AsTruncating<T>();
 
         /// <summary>
         /// Calculates a box inflated to contain the given point.

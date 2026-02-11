@@ -105,8 +105,8 @@ namespace Silk.NET.Maths
 
         /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>The hash code.</returns>
-        public override readonly int GetHashCode()
-            => HashCode.Combine(Center, Radius);
+        public override readonly int GetHashCode() =>
+            HashCode.Combine(Center, Radius);
 
         /// <summary>Returns a boolean indicating whether the two given Circles are equal.</summary>
         /// <param name="left">The first Circles to compare.</param>

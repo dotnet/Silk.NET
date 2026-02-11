@@ -17,7 +17,7 @@ namespace Silk.NET.Maths
         /// <returns>The result of the multiplication.</returns>
         [MethodImpl((MethodImplOptions) 768)]
         public static Vector4D<T> Multiply<T>(Vector4D<T> left, Matrix5X4<T> right)
-            where T : INumberBase<T>
-            => left * right;
+            where T : INumberBase<T> =>
+            left * right;
     }
 }

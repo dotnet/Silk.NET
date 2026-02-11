@@ -103,104 +103,104 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="Half"/> matrix</returns>
-        public static explicit operator Plane<Half>(Plane<T> from)
-            => new((Vector3D<Half>)from.Normal, Half.CreateTruncating(from.Distance));
+        public static explicit operator Plane<Half>(Plane<T> from) =>
+            new((Vector3D<Half>)from.Normal, Half.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="float"/> matrix</returns>
-        public static explicit operator Plane<float>(Plane<T> from)
-            => new((Vector3D<float>)from.Normal, float.CreateTruncating(from.Distance));
+        public static explicit operator Plane<float>(Plane<T> from) =>
+            new((Vector3D<float>)from.Normal, float.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into <see cref="System.Numerics.Plane"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="System.Numerics"/> matrix</returns>
-        public static explicit operator System.Numerics.Plane(Plane<T> from)
-            => new((System.Numerics.Vector3)from.Normal, float.CreateTruncating(from.Distance));
+        public static explicit operator System.Numerics.Plane(Plane<T> from) =>
+            new((System.Numerics.Vector3)from.Normal, float.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="double"/> matrix</returns>
-        public static explicit operator Plane<double>(Plane<T> from)
-            => new((Vector3D<double>)from.Normal, double.CreateTruncating(from.Distance));
+        public static explicit operator Plane<double>(Plane<T> from) =>
+            new((Vector3D<double>)from.Normal, double.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="decimal"/> matrix</returns>
-        public static explicit operator Plane<decimal>(Plane<T> from)
-            => new((Vector3D<decimal>)from.Normal, decimal.CreateTruncating(from.Distance));
+        public static explicit operator Plane<decimal>(Plane<T> from) =>
+            new((Vector3D<decimal>)from.Normal, decimal.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="sbyte"/> matrix</returns>
-        public static explicit operator Plane<sbyte>(Plane<T> from)
-            => new((Vector3D<sbyte>)from.Normal, sbyte.CreateTruncating(from.Distance));
+        public static explicit operator Plane<sbyte>(Plane<T> from) =>
+            new((Vector3D<sbyte>)from.Normal, sbyte.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="byte"/> matrix</returns>
-        public static explicit operator Plane<byte>(Plane<T> from)
-            => new((Vector3D<byte>)from.Normal, byte.CreateTruncating(from.Distance));
+        public static explicit operator Plane<byte>(Plane<T> from) =>
+            new((Vector3D<byte>)from.Normal, byte.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ushort"/> matrix</returns>
-        public static explicit operator Plane<ushort>(Plane<T> from)
-            => new((Vector3D<ushort>)from.Normal, ushort.CreateTruncating(from.Distance));
+        public static explicit operator Plane<ushort>(Plane<T> from) =>
+            new((Vector3D<ushort>)from.Normal, ushort.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="short"/> matrix</returns>
-        public static explicit operator Plane<short>(Plane<T> from)
-            => new((Vector3D<short>)from.Normal, short.CreateTruncating(from.Distance));
+        public static explicit operator Plane<short>(Plane<T> from) =>
+            new((Vector3D<short>)from.Normal, short.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="uint"/> matrix</returns>
-        public static explicit operator Plane<uint>(Plane<T> from)
-            => new((Vector3D<uint>)from.Normal, uint.CreateTruncating(from.Distance));
+        public static explicit operator Plane<uint>(Plane<T> from) =>
+            new((Vector3D<uint>)from.Normal, uint.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="int"/> matrix</returns>
-        public static explicit operator Plane<int>(Plane<T> from)
-            => new((Vector3D<int>)from.Normal, int.CreateTruncating(from.Distance));
+        public static explicit operator Plane<int>(Plane<T> from) =>
+            new((Vector3D<int>)from.Normal, int.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="ulong"/> matrix</returns>
-        public static explicit operator Plane<ulong>(Plane<T> from)
-            => new((Vector3D<ulong>)from.Normal, ulong.CreateTruncating(from.Distance));
+        public static explicit operator Plane<ulong>(Plane<T> from) =>
+            new((Vector3D<ulong>)from.Normal, ulong.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Converts a <see cref="Plane{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
         /// <returns>The <see cref="long"/> matrix</returns>
-        public static explicit operator Plane<long>(Plane<T> from)
-            => new((Vector3D<long>)from.Normal, long.CreateTruncating(from.Distance));
+        public static explicit operator Plane<long>(Plane<T> from) =>
+            new((Vector3D<long>)from.Normal, long.CreateTruncating(from.Distance));
 
         /// <summary>
         /// Returns this plane casted to <typeparamref name="TOther"></typeparamref>
