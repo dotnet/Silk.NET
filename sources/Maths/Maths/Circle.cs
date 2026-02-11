@@ -53,46 +53,43 @@ namespace Silk.NET.Maths
         /// The diameter.
         /// </summary>
         [IgnoreDataMember]
-        public T Diameter => Radius * T.CreateTruncating(2);
+        public readonly T Diameter => Radius + Radius;
 
         /// <summary>
         /// The radius squared.
         /// </summary>
         [IgnoreDataMember]
-        public T SquaredRadius => Radius * Radius;
+        public readonly T SquaredRadius => Radius * Radius;
 
         /// <summary>
         /// The circumference.
         /// </summary>
         [IgnoreDataMember]
-        public T Circumference => T.Tau * Radius;
+        public readonly T Circumference => T.Tau * Radius;
 
         /// <summary>
         /// Calculates the squared distance to the nearest edge from the point.
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance squared.</returns>
-        public T GetDistanceToNearestEdgeSquared(Vector2D<T> point)
-        {
-            return Vector2D.DistanceSquared(Center, point) - SquaredRadius;
-        }
+        public readonly T GetDistanceToNearestEdgeSquared(Vector2D<T> point) =>
+            Vector2D.DistanceSquared(Center, point) - SquaredRadius;
 
         /// <summary>
         /// Calculates the distance to the nearest edge from the point.
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector2D<T> point) => T.Sqrt(GetDistanceToNearestEdgeSquared(point));
+        public T GetDistanceToNearestEdge(Vector2D<T> point) =>
+            T.Sqrt(GetDistanceToNearestEdgeSquared(point));
 
         /// <summary>
         /// Calculates a new circle translated by a given distance.
         /// </summary>
         /// <param name="distance">The distance.</param>
-        /// <returns>The calculated cube.</returns>
-        public Circle<T> GetTranslated(Vector2D<T> distance)
-        {
-            return new(Center + distance, Radius);
-        }
+        /// <returns>The calculated circle.</returns>
+        public readonly Circle<T> GetTranslated(Vector2D<T> distance) =>
+            new(Center + distance, Radius);
 
         /// <summary>Returns a boolean indicating whether the given Circle is equal to this Circle instance.</summary>
         /// <param name="other">The Circle to compare this instance to.</param>

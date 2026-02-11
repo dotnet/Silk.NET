@@ -76,14 +76,14 @@ namespace Silk.NET.Maths
         /// The center of this box.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T> Center => (Min + Max) / T.CreateTruncating(2);
+        public readonly Vector2D<T> Center => (Min + Max) / T.CreateTruncating(2);
 
         /// <summary>
         /// The size of this box.
         /// When setting the box is scaled about its center.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T> Size => Max - Min;
+        public readonly Vector2D<T> Size => Max - Min;
 
         /// <summary>
         /// Calculates whether this box contains a point.
@@ -91,9 +91,9 @@ namespace Silk.NET.Maths
         /// <param name="point">The point.</param>
         /// <returns><c>true</c> if this box contains the point; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
-        public bool Contains(Vector2D<T> point)
-            => (point.X >= Min.X) && (point.Y >= Min.Y)
-            && (point.X <= Max.X) && (point.Y <= Max.Y);
+        public readonly bool Contains(Vector2D<T> point) =>
+            (point.X >= Min.X) && (point.Y >= Min.Y) &&
+            (point.X <= Max.X) && (point.Y <= Max.Y);
 
         /// <summary>
         /// Calculates whether this box contains another box
@@ -101,16 +101,16 @@ namespace Silk.NET.Maths
         /// <param name="other">The box.</param>
         /// <returns><c>true</c> if this box contains the given box; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a box that touches the edge contained.</remarks>
-        public bool Contains(Box2D<T> other)
-            => (other.Min.X >= Min.X) && (other.Min.Y >= Min.Y)
-            && (other.Max.X <= Max.X) && (other.Max.Y <= Max.Y);
+        public readonly bool Contains(Box2D<T> other) =>
+            (other.Min.X >= Min.X) && (other.Min.Y >= Min.Y) &&
+            (other.Max.X <= Max.X) && (other.Max.Y <= Max.Y);
 
         /// <summary>
         /// Calculates this box translated by a given distance.
         /// </summary>
         /// <param name="distance">The distance.</param>
         /// <returns>The calculated box.</returns>
-        public Box2D<T> GetTranslated(Vector2D<T> distance)
+        public readonly Box2D<T> GetTranslated(Vector2D<T> distance)
         {
             return new(Min + distance, Max + distance);
         }
@@ -121,7 +121,7 @@ namespace Silk.NET.Maths
         /// <param name="scale">The scale.</param>
         /// <param name="anchor">The anchor.</param>
         /// <returns>The calculated box.</returns>
-        public Box2D<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
+        public readonly Box2D<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
         {
             var min = (scale * (Min - anchor)) + anchor;
             var max = (scale * (Max - anchor)) + anchor;
@@ -146,10 +146,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The calculated box.</returns>
-        public Box2D<T> GetInflated(Vector2D<T> point)
-        {
-            return new(Vector2D.Min(Min, point), Vector2D.Max(Max, point));
-        }
+        public readonly Box2D<T> GetInflated(Vector2D<T> point) =>
+            new(Vector2D.Min(Min, point), Vector2D.Max(Max, point));
 
         /// <summary>Returns a boolean indicating whether the given Box2D is equal to this Box2D instance.</summary>
         /// <param name="other">The Box2D to compare this instance to.</param>

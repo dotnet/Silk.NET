@@ -82,13 +82,13 @@ namespace Silk.NET.Maths
         /// The Maximum point of this Rectangle.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T> Max => Origin + Size;
+        public readonly Vector2D<T> Max => Origin + Size;
 
         /// <summary>
         /// Half the size of this rectangle.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T> HalfSize => Size / T.CreateTruncating(2);
+        public readonly Vector2D<T> HalfSize => Size / T.CreateTruncating(2);
 
         /// <summary>
         /// Calculates whether this rectangle contains a point.
@@ -122,10 +122,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance.</param>
         /// <returns>The calculated rectangle.</returns>
-        public Rectangle<T> GetTranslated(Vector2D<T> distance)
-        {
-            return new(Origin + distance, Size);
-        }
+        public readonly Rectangle<T> GetTranslated(Vector2D<T> distance) =>
+            new(Origin + distance, Size);
 
         /// <summary>
         /// Calculates a new rectangle scaled by the given scale around the given anchor.

@@ -54,13 +54,13 @@ namespace Silk.NET.Maths
         /// The diameter.
         /// </summary>
         [IgnoreDataMember]
-        public T Diameter => Radius * T.CreateTruncating(2);
+        public readonly T Diameter => Radius * T.CreateTruncating(2);
 
         /// <summary>
         /// The radius squared.
         /// </summary>
         [IgnoreDataMember]
-        public T SquaredRadius => Radius * Radius;
+        public readonly T SquaredRadius => Radius * Radius;
 
         /// <summary>
         /// Calculates the squared distance to the nearest edge from the point.
@@ -84,10 +84,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance.</param>
         /// <returns>The calculated sphere.</returns>
-        public Sphere<T> GetTranslated(Vector3D<T> distance)
-        {
-            return new(Center + distance, Radius);
-        }
+        public readonly Sphere<T> GetTranslated(Vector3D<T> distance) =>
+            new(Center + distance, Radius);
 
         /// <summary>Returns a boolean indicating whether the given Sphere is equal to this Sphere instance.</summary>
         /// <param name="other">The Sphere to compare this instance to.</param>

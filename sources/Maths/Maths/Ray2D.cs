@@ -78,10 +78,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance along the ray.</param>
         /// <returns>A point at a distance along the ray.</returns>
-        public readonly Vector2D<T> GetPoint(T distance)
-        {
-            return Origin + (Direction * distance);
-        }
+        public readonly Vector2D<T> GetPoint(T distance) =>
+            Origin + (Direction * distance);
 
         /// <summary>Returns a boolean indicating whether the given Ray2D is equal to this Ray2D instance.</summary>
         /// <param name="other">The Ray2D to compare this instance to.</param>

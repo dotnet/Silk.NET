@@ -86,13 +86,13 @@ namespace Silk.NET.Maths
         /// The Maximum point of this cube.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3D<T> Max => Origin + Size;
+        public readonly Vector3D<T> Max => Origin + Size;
 
         /// <summary>
         /// Half the size of this cube.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3D<T> HalfSize => Size / T.CreateTruncating(2);
+        public readonly Vector3D<T> HalfSize => Size / T.CreateTruncating(2);
 
         /// <summary>
         /// Calculates whether this cube contains a point.
@@ -126,10 +126,8 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance.</param>
         /// <returns>The calculated cube.</returns>
-        public Cube<T> GetTranslated(Vector3D<T> distance)
-        {
-            return new(Origin + distance, Size);
-        }
+        public readonly Cube<T> GetTranslated(Vector3D<T> distance) =>
+            new(Origin + distance, Size);
 
         /// <summary>
         /// Calculates a new cube scaled by the given scale around the given anchor.
