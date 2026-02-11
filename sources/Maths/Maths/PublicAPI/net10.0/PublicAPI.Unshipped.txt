@@ -1313,9 +1313,9 @@ static Silk.NET.Maths.Quaternion<T>.CreateFromRotationMatrix(Silk.NET.Maths.Matr
 static Silk.NET.Maths.Quaternion<T>.CreateFromRotationMatrix(Silk.NET.Maths.Matrix4X4<T> matrix) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.CreateFromYawPitchRoll(T yaw, T pitch, T roll) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.Dot(Silk.NET.Maths.Quaternion<T> quaternion1, Silk.NET.Maths.Quaternion<T> quaternion2) -> T
-static Silk.NET.Maths.Quaternion<T>.explicit operator Silk.NET.Maths.Quaternion<double>(Silk.NET.Maths.Quaternion<T> from) -> Silk.NET.Maths.Quaternion<double>
-static Silk.NET.Maths.Quaternion<T>.explicit operator Silk.NET.Maths.Quaternion<float>(Silk.NET.Maths.Quaternion<T> from) -> Silk.NET.Maths.Quaternion<float>
-static Silk.NET.Maths.Quaternion<T>.explicit operator Silk.NET.Maths.Quaternion<System.Half>(Silk.NET.Maths.Quaternion<T> from) -> Silk.NET.Maths.Quaternion<System.Half>
+static Silk.NET.Maths.Quaternion<T>.explicit operator checked Silk.NET.Maths.Quaternion<T>(System.Numerics.Quaternion from) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.explicit operator checked System.Numerics.Quaternion(Silk.NET.Maths.Quaternion<T> from) -> System.Numerics.Quaternion
+static Silk.NET.Maths.Quaternion<T>.explicit operator Silk.NET.Maths.Quaternion<T>(System.Numerics.Quaternion from) -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.explicit operator System.Numerics.Quaternion(Silk.NET.Maths.Quaternion<T> from) -> System.Numerics.Quaternion
 static Silk.NET.Maths.Quaternion<T>.Identity.get -> Silk.NET.Maths.Quaternion<T>
 static Silk.NET.Maths.Quaternion<T>.Invert(Silk.NET.Maths.Quaternion<T> value) -> Silk.NET.Maths.Quaternion<T>

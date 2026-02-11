@@ -147,6 +147,22 @@ namespace Silk.NET.Maths
         public static bool operator !=(Quaternion<T> left, Quaternion<T> right) =>
             left.X != right.X || left.Y != right.Y || left.Z != right.Z || left.W != right.W;
 
+        /// <summary>Converts a <see cref="Quaternion"/> to a <see cref="Quaternion{T}"/>.</summary>
+        public static explicit operator Quaternion<T>(Quaternion from) =>
+            new(T.CreateTruncating(from.X), T.CreateTruncating(from.Y), T.CreateTruncating(from.Z), T.CreateTruncating(from.W));
+
+        /// <summary>Converts a <see cref="Quaternion"/> to a <see cref="Quaternion{T}"/>.</summary>
+        public static explicit operator checked Quaternion<T>(Quaternion from) =>
+            new(T.CreateChecked(from.X), T.CreateChecked(from.Y), T.CreateChecked(from.Z), T.CreateChecked(from.W));
+
+        /// <summary>Converts a <see cref="Quaternion{T}"/> to <see cref="Quaternion"/>.</summary>
+        public static explicit operator Quaternion(Quaternion<T> from) =>
+            new(float.CreateTruncating(from.X), float.CreateTruncating(from.Y), float.CreateTruncating(from.Z), float.CreateTruncating(from.W));
+
+        /// <summary>Converts a <see cref="Quaternion{T}"/> to <see cref="Quaternion"/>.</summary>
+        public static explicit operator checked Quaternion(Quaternion<T> from) =>
+            new(float.CreateChecked(from.X), float.CreateChecked(from.Y), float.CreateChecked(from.Z), float.CreateChecked(from.W));
+
         /// <summary>Adds two Quaternions element-by-element.</summary>
         /// <param name="left">The first source Quaternion.</param>
         /// <param name="right">The second source Quaternion.</param>
@@ -623,6 +639,18 @@ namespace Silk.NET.Maths
             ans.W = (s1 * value1.W) + (s2 * value2.W);
 
             return ans;
+        }
+
+        /// <summary>
+        /// Returns this quaternion casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted quaternion</returns>
+        [Obsolete("Use AsChecked, AsSaturating, or AsTruncating instead.", error: false)]
+        public Quaternion<TOther> As<TOther>()
+            where TOther : INumber<TOther>, IRootFunctions<TOther>, ITrigonometricFunctions<TOther>
+        {
+            return new(TOther.CreateTruncating(X), TOther.CreateTruncating(Y), TOther.CreateTruncating(Z), TOther.CreateTruncating(W));
         }
     }
 }
