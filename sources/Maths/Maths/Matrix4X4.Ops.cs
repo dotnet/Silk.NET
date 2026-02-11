@@ -12,11 +12,7 @@ namespace Silk.NET.Maths
     public static partial class Matrix4X4
     {
         private const float BillboardEpsilon = 1e-4f;
-#if MATHF
         private const float BillboardMinAngle = 1.0f - (0.1f * (MathF.PI / 180.0f)); // 0.1 degrees
-#else
-        private const float BillboardMinAngle = 1.0f - (0.1f * (((float) Math.PI) / 180.0f)); // 0.1 degrees
-#endif
         private const float DecomposeEpsilon = 0.0001f;
 
         /// <summary>Creates a spherical billboard that rotates around a specified object position.</summary>

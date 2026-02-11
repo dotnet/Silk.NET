@@ -10,11 +10,7 @@ namespace Silk.NET.Maths
     /// </summary>
     public static partial class Matrix3X2
     {
-#if MATHF
         private const float RotationEpsilon = 0.001f * MathF.PI / 180f;     // 0.1% of a degree
-#else
-        private const float RotationEpsilon = 0.001f * ((float) Math.PI) / 180f;     // 0.1% of a degree
-#endif
 
         /// <summary>Creates a rotation matrix using the given rotation in radians.</summary>
         /// <param name="radians">The amount of rotation, in radians.</param>
@@ -33,17 +29,9 @@ namespace Silk.NET.Maths
                 s = T.Zero;
             }
             else if ((radians > T.CreateTruncating(
-#if MATHF
                 MathF.PI
-#else
-                ((float) Math.PI)
-#endif
                 / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(
-#if MATHF
                 MathF.PI
-#else
-                ((float) Math.PI)
-#endif
                 / 2 + RotationEpsilon)))
             {
                 // Exact case for 90 degree rotation.
@@ -51,17 +39,9 @@ namespace Silk.NET.Maths
                 s = T.One;
             }
             else if (!(radians >= T.CreateTruncating(-
-#if MATHF
                 MathF.PI
-#else
-                                                                                 ((float) Math.PI)
-#endif
                                                                              + RotationEpsilon)) || (radians > T.CreateTruncating(
-#if MATHF
                 MathF.PI
-#else
-                ((float) Math.PI)
-#endif
                 - RotationEpsilon)))
             {
                 // Exact case for 180 degree rotation.
@@ -69,17 +49,9 @@ namespace Silk.NET.Maths
                 s = T.Zero;
             }
             else if ((radians > T.CreateTruncating(-
-#if MATHF
                 MathF.PI
-#else
-                    ((float) Math.PI)
-#endif
                 / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(-
-#if MATHF
                 MathF.PI
-#else
-                    ((float) Math.PI)
-#endif
                 / 2 + RotationEpsilon)))
             {
                 // Exact case for 270 degree rotation.
@@ -124,17 +96,9 @@ namespace Silk.NET.Maths
                 s = T.Zero;
             }
             else if ((radians > T.CreateTruncating(
-#if MATHF
                 MathF.PI
-#else
-                ((float) Math.PI)
-#endif
                 / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(
-#if MATHF
                 MathF.PI
-#else
-                ((float) Math.PI)
-#endif
                 / 2 + RotationEpsilon)))
             {
                 // Exact case for 90 degree rotation.
@@ -142,17 +106,9 @@ namespace Silk.NET.Maths
                 s = T.One;
             }
             else if (!(radians >= T.CreateTruncating(-
-#if MATHF
                 MathF.PI
-#else
-                                                                                 ((float) Math.PI)
-#endif
                                                                              + RotationEpsilon)) || (radians > T.CreateTruncating(
-#if MATHF
                 MathF.PI
-#else
-                ((float) Math.PI)
-#endif    
                 - RotationEpsilon)))
             {
                 // Exact case for 180 degree rotation.
@@ -160,17 +116,9 @@ namespace Silk.NET.Maths
                 s = T.Zero;
             }
             else if ((radians > T.CreateTruncating(-
-#if MATHF
                 MathF.PI
-#else
-                    ((float) Math.PI)
-#endif
                 / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(-
-#if MATHF
                 MathF.PI
-#else
-                    ((float) Math.PI)
-#endif
                 / 2 + RotationEpsilon)))
             {
                 // Exact case for 270 degree rotation.
