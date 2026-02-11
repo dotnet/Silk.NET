@@ -1452,8 +1452,8 @@ static Silk.NET.Maths.Vector2D.Ieee754Remainder<TSelf>(Silk.NET.Maths.Vector2D<T
 static Silk.NET.Maths.Vector2D.Ieee754Remainder<TSelf>(Silk.NET.Maths.Vector2D<TSelf> left, TSelf right) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.ILogB<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<int>
 static Silk.NET.Maths.Vector2D.Lerp<TSelf>(Silk.NET.Maths.Vector2D<TSelf> value1, Silk.NET.Maths.Vector2D<TSelf> value2, TSelf amount) -> Silk.NET.Maths.Vector2D<TSelf>
-static Silk.NET.Maths.Vector2D.LerpClamped<T>(Silk.NET.Maths.Vector2D<T> a, Silk.NET.Maths.Vector2D<T> b, Silk.NET.Maths.Vector2D<T> amount) -> Silk.NET.Maths.Vector2D<T>
-static Silk.NET.Maths.Vector2D.LerpClamped<T>(Silk.NET.Maths.Vector2D<T> a, Silk.NET.Maths.Vector2D<T> b, T amount) -> Silk.NET.Maths.Vector2D<T>
+static Silk.NET.Maths.Vector2D.LerpClamped<T>(Silk.NET.Maths.Vector2D<T> value1, Silk.NET.Maths.Vector2D<T> value2, Silk.NET.Maths.Vector2D<T> amount) -> Silk.NET.Maths.Vector2D<T>
+static Silk.NET.Maths.Vector2D.LerpClamped<T>(Silk.NET.Maths.Vector2D<T> value1, Silk.NET.Maths.Vector2D<T> value2, T amount) -> Silk.NET.Maths.Vector2D<T>
 static Silk.NET.Maths.Vector2D.Log10<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Log10P1<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
 static Silk.NET.Maths.Vector2D.Log2<TSelf>(Silk.NET.Maths.Vector2D<TSelf> x) -> Silk.NET.Maths.Vector2D<TSelf>
@@ -1719,8 +1719,8 @@ static Silk.NET.Maths.Vector3D.Ieee754Remainder<TSelf>(Silk.NET.Maths.Vector3D<T
 static Silk.NET.Maths.Vector3D.Ieee754Remainder<TSelf>(Silk.NET.Maths.Vector3D<TSelf> left, TSelf right) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.ILogB<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<int>
 static Silk.NET.Maths.Vector3D.Lerp<TSelf>(Silk.NET.Maths.Vector3D<TSelf> value1, Silk.NET.Maths.Vector3D<TSelf> value2, TSelf amount) -> Silk.NET.Maths.Vector3D<TSelf>
-static Silk.NET.Maths.Vector3D.LerpClamped<T>(Silk.NET.Maths.Vector3D<T> a, Silk.NET.Maths.Vector3D<T> b, Silk.NET.Maths.Vector3D<T> amount) -> Silk.NET.Maths.Vector3D<T>
-static Silk.NET.Maths.Vector3D.LerpClamped<T>(Silk.NET.Maths.Vector3D<T> a, Silk.NET.Maths.Vector3D<T> b, T amount) -> Silk.NET.Maths.Vector3D<T>
+static Silk.NET.Maths.Vector3D.LerpClamped<T>(Silk.NET.Maths.Vector3D<T> value1, Silk.NET.Maths.Vector3D<T> value2, Silk.NET.Maths.Vector3D<T> amount) -> Silk.NET.Maths.Vector3D<T>
+static Silk.NET.Maths.Vector3D.LerpClamped<T>(Silk.NET.Maths.Vector3D<T> value1, Silk.NET.Maths.Vector3D<T> value2, T amount) -> Silk.NET.Maths.Vector3D<T>
 static Silk.NET.Maths.Vector3D.Log10<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Log10P1<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
 static Silk.NET.Maths.Vector3D.Log2<TSelf>(Silk.NET.Maths.Vector3D<TSelf> x) -> Silk.NET.Maths.Vector3D<TSelf>
@@ -1992,8 +1992,8 @@ static Silk.NET.Maths.Vector4D.Ieee754Remainder<TSelf>(Silk.NET.Maths.Vector4D<T
 static Silk.NET.Maths.Vector4D.Ieee754Remainder<TSelf>(Silk.NET.Maths.Vector4D<TSelf> left, TSelf right) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.ILogB<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<int>
 static Silk.NET.Maths.Vector4D.Lerp<TSelf>(Silk.NET.Maths.Vector4D<TSelf> value1, Silk.NET.Maths.Vector4D<TSelf> value2, TSelf amount) -> Silk.NET.Maths.Vector4D<TSelf>
-static Silk.NET.Maths.Vector4D.LerpClamped<T>(Silk.NET.Maths.Vector4D<T> a, Silk.NET.Maths.Vector4D<T> b, Silk.NET.Maths.Vector4D<T> amount) -> Silk.NET.Maths.Vector4D<T>
-static Silk.NET.Maths.Vector4D.LerpClamped<T>(Silk.NET.Maths.Vector4D<T> a, Silk.NET.Maths.Vector4D<T> b, T amount) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Vector4D.LerpClamped<T>(Silk.NET.Maths.Vector4D<T> value1, Silk.NET.Maths.Vector4D<T> value2, Silk.NET.Maths.Vector4D<T> amount) -> Silk.NET.Maths.Vector4D<T>
+static Silk.NET.Maths.Vector4D.LerpClamped<T>(Silk.NET.Maths.Vector4D<T> value1, Silk.NET.Maths.Vector4D<T> value2, T amount) -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D.Log10<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Log10P1<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
 static Silk.NET.Maths.Vector4D.Log2<TSelf>(Silk.NET.Maths.Vector4D<TSelf> x) -> Silk.NET.Maths.Vector4D<TSelf>
