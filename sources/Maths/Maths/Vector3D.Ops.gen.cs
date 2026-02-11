@@ -33,53 +33,53 @@ namespace Silk.NET.Maths
         {
             /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf,TSelf}.op_OnesComplement"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
-            public static Vector3D<TSelf> OnesComplement(Vector3D<TSelf> value)
-                => new(~value.X, ~value.Y, ~value.Z);
+            public static Vector3D<TSelf> OnesComplement(Vector3D<TSelf> value) =>
+                new(~value.X, ~value.Y, ~value.Z);
 
             /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseAnd"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
-            public static Vector3D<TSelf> BitwiseAnd(Vector3D<TSelf> left, Vector3D<TSelf> right)
-                => new(left.X & right.X, left.Y & right.Y, left.Z & right.Z);
+            public static Vector3D<TSelf> BitwiseAnd(Vector3D<TSelf> left, Vector3D<TSelf> right) =>
+                new(left.X & right.X, left.Y & right.Y, left.Z & right.Z);
 
             /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
-            public static Vector3D<TSelf> BitwiseOr(Vector3D<TSelf> left, Vector3D<TSelf> right)
-                => new(left.X | right.X, left.Y | right.Y, left.Z | right.Z);
+            public static Vector3D<TSelf> BitwiseOr(Vector3D<TSelf> left, Vector3D<TSelf> right) =>
+                new(left.X | right.X, left.Y | right.Y, left.Z | right.Z);
 
             /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_ExclusiveOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
-            public static Vector3D<TSelf> ExclusiveOr(Vector3D<TSelf> left, Vector3D<TSelf> right)
-                => new(left.X ^ right.X, left.Y ^ right.Y, left.Z ^ right.Z);
+            public static Vector3D<TSelf> ExclusiveOr(Vector3D<TSelf> left, Vector3D<TSelf> right) =>
+                new(left.X ^ right.X, left.Y ^ right.Y, left.Z ^ right.Z);
 
             /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf,TSelf}.op_BitwiseAnd"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
-            public static Vector3D<TSelf> BitwiseAnd(Vector3D<TSelf> left, TSelf right)
-                => new(left.X & right, left.Y & right, left.Z & right);
+            public static Vector3D<TSelf> BitwiseAnd(Vector3D<TSelf> left, TSelf right) =>
+                new(left.X & right, left.Y & right, left.Z & right);
 
             /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
-            public static Vector3D<TSelf> BitwiseOr(Vector3D<TSelf> left, TSelf right)
-                => new(left.X | right, left.Y | right, left.Z | right);
+            public static Vector3D<TSelf> BitwiseOr(Vector3D<TSelf> left, TSelf right) =>
+                new(left.X | right, left.Y | right, left.Z | right);
 
             /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_ExclusiveOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
-            public static Vector3D<TSelf> ExclusiveOr(Vector3D<TSelf> left, TSelf right)
-                => new(left.X ^ right, left.Y ^ right, left.Z ^ right);
+            public static Vector3D<TSelf> ExclusiveOr(Vector3D<TSelf> left, TSelf right) =>
+                new(left.X ^ right, left.Y ^ right, left.Z ^ right);
 
             /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_BitwiseAnd"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
-            public static Vector3D<TSelf> BitwiseAnd(TSelf left, Vector3D<TSelf> right)
-                => new(left & right.X, left & right.Y, left & right.Z);
+            public static Vector3D<TSelf> BitwiseAnd(TSelf left, Vector3D<TSelf> right) =>
+                new(left & right.X, left & right.Y, left & right.Z);
 
             /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf,TSelf}.op_BitwiseOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
-            public static Vector3D<TSelf> BitwiseOr(TSelf left, Vector3D<TSelf> right)
-                => new(left | right.X, left | right.Y, left | right.Z);
+            public static Vector3D<TSelf> BitwiseOr(TSelf left, Vector3D<TSelf> right) =>
+                new(left | right.X, left | right.Y, left | right.Z);
 
             /// <inheritdoc cref="IBitwiseOperators{TSelf, TSelf, TSelf}.op_ExclusiveOr"/>
             /// <remarks>Applied component-wise to the vector.</remarks>
-            public static Vector3D<TSelf> ExclusiveOr(TSelf left, Vector3D<TSelf> right)
-                => new(left ^ right.X, left ^ right.Y, left ^ right.Z);
+            public static Vector3D<TSelf> ExclusiveOr(TSelf left, Vector3D<TSelf> right) =>
+                new(left ^ right.X, left ^ right.Y, left ^ right.Z);
         }
 
         /// <summary>Extensions for vectors with elements implementing <see cref="IBinaryNumber{TSelf}"/>.</summary>
@@ -171,8 +171,8 @@ namespace Silk.NET.Maths
 
         /// <summary>Normalizes a vector.</summary>
         public static Vector3D<T> Normalize<T>(this Vector3D<T> vector)
-            where T : IRootFunctions<T>
-            => vector / vector.Length;
+            where T : IRootFunctions<T> =>
+            vector / vector.Length;
 
         /// <summary>Returns the Euclidean distance between the two given points.</summary>
         /// <param name="start">The starting point.</param>
@@ -209,140 +209,140 @@ namespace Silk.NET.Maths
             Vector3D.Ceiling(vector).AsChecked<int>();
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
-        public static Vector128<float> ToVector128(Vector3D<float> vector)
-            => Vector128.Create(vector.X, vector.Y, vector.Z, (float)0);
+        public static Vector128<float> ToVector128(Vector3D<float> vector) =>
+            Vector128.Create(vector.X, vector.Y, vector.Z, (float)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
-        public static Vector256<float> ToVector256(Vector3D<float> vector)
-            => Vector256.Create(vector.X, vector.Y, vector.Z, (float)0, (float)0, (float)0, (float)0, (float)0);
+        public static Vector256<float> ToVector256(Vector3D<float> vector) =>
+            Vector256.Create(vector.X, vector.Y, vector.Z, (float)0, (float)0, (float)0, (float)0, (float)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
-        public static Vector512<float> ToVector512(Vector3D<float> vector)
-            => Vector512.Create(vector.X, vector.Y, vector.Z, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0);
+        public static Vector512<float> ToVector512(Vector3D<float> vector) =>
+            Vector512.Create(vector.X, vector.Y, vector.Z, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0, (float)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
-        public static Vector256<double> ToVector256(Vector3D<double> vector)
-            => Vector256.Create(vector.X, vector.Y, vector.Z, (double)0);
+        public static Vector256<double> ToVector256(Vector3D<double> vector) =>
+            Vector256.Create(vector.X, vector.Y, vector.Z, (double)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
-        public static Vector512<double> ToVector512(Vector3D<double> vector)
-            => Vector512.Create(vector.X, vector.Y, vector.Z, (double)0, (double)0, (double)0, (double)0, (double)0);
+        public static Vector512<double> ToVector512(Vector3D<double> vector) =>
+            Vector512.Create(vector.X, vector.Y, vector.Z, (double)0, (double)0, (double)0, (double)0, (double)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
-        public static Vector64<byte> ToVector64(Vector3D<byte> vector)
-            => Vector64.Create(vector.X, vector.Y, vector.Z, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
+        public static Vector64<byte> ToVector64(Vector3D<byte> vector) =>
+            Vector64.Create(vector.X, vector.Y, vector.Z, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
-        public static Vector128<byte> ToVector128(Vector3D<byte> vector)
-            => Vector128.Create(vector.X, vector.Y, vector.Z, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
+        public static Vector128<byte> ToVector128(Vector3D<byte> vector) =>
+            Vector128.Create(vector.X, vector.Y, vector.Z, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
-        public static Vector256<byte> ToVector256(Vector3D<byte> vector)
-            => Vector256.Create(vector.X, vector.Y, vector.Z, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
+        public static Vector256<byte> ToVector256(Vector3D<byte> vector) =>
+            Vector256.Create(vector.X, vector.Y, vector.Z, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
-        public static Vector512<byte> ToVector512(Vector3D<byte> vector)
-            => Vector512.Create(vector.X, vector.Y, vector.Z, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
+        public static Vector512<byte> ToVector512(Vector3D<byte> vector) =>
+            Vector512.Create(vector.X, vector.Y, vector.Z, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0, (byte)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
-        public static Vector64<short> ToVector64(Vector3D<short> vector)
-            => Vector64.Create(vector.X, vector.Y, vector.Z, (short)0);
+        public static Vector64<short> ToVector64(Vector3D<short> vector) =>
+            Vector64.Create(vector.X, vector.Y, vector.Z, (short)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
-        public static Vector128<short> ToVector128(Vector3D<short> vector)
-            => Vector128.Create(vector.X, vector.Y, vector.Z, (short)0, (short)0, (short)0, (short)0, (short)0);
+        public static Vector128<short> ToVector128(Vector3D<short> vector) =>
+            Vector128.Create(vector.X, vector.Y, vector.Z, (short)0, (short)0, (short)0, (short)0, (short)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
-        public static Vector256<short> ToVector256(Vector3D<short> vector)
-            => Vector256.Create(vector.X, vector.Y, vector.Z, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0);
+        public static Vector256<short> ToVector256(Vector3D<short> vector) =>
+            Vector256.Create(vector.X, vector.Y, vector.Z, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
-        public static Vector512<short> ToVector512(Vector3D<short> vector)
-            => Vector512.Create(vector.X, vector.Y, vector.Z, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0);
+        public static Vector512<short> ToVector512(Vector3D<short> vector) =>
+            Vector512.Create(vector.X, vector.Y, vector.Z, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0, (short)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
-        public static Vector128<int> ToVector128(Vector3D<int> vector)
-            => Vector128.Create(vector.X, vector.Y, vector.Z, (int)0);
+        public static Vector128<int> ToVector128(Vector3D<int> vector) =>
+            Vector128.Create(vector.X, vector.Y, vector.Z, (int)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
-        public static Vector256<int> ToVector256(Vector3D<int> vector)
-            => Vector256.Create(vector.X, vector.Y, vector.Z, (int)0, (int)0, (int)0, (int)0, (int)0);
+        public static Vector256<int> ToVector256(Vector3D<int> vector) =>
+            Vector256.Create(vector.X, vector.Y, vector.Z, (int)0, (int)0, (int)0, (int)0, (int)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
-        public static Vector512<int> ToVector512(Vector3D<int> vector)
-            => Vector512.Create(vector.X, vector.Y, vector.Z, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0);
+        public static Vector512<int> ToVector512(Vector3D<int> vector) =>
+            Vector512.Create(vector.X, vector.Y, vector.Z, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0, (int)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
-        public static Vector256<long> ToVector256(Vector3D<long> vector)
-            => Vector256.Create(vector.X, vector.Y, vector.Z, (long)0);
+        public static Vector256<long> ToVector256(Vector3D<long> vector) =>
+            Vector256.Create(vector.X, vector.Y, vector.Z, (long)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
-        public static Vector512<long> ToVector512(Vector3D<long> vector)
-            => Vector512.Create(vector.X, vector.Y, vector.Z, (long)0, (long)0, (long)0, (long)0, (long)0);
+        public static Vector512<long> ToVector512(Vector3D<long> vector) =>
+            Vector512.Create(vector.X, vector.Y, vector.Z, (long)0, (long)0, (long)0, (long)0, (long)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
-        public static Vector64<sbyte> ToVector64(Vector3D<sbyte> vector)
-            => Vector64.Create(vector.X, vector.Y, vector.Z, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
+        public static Vector64<sbyte> ToVector64(Vector3D<sbyte> vector) =>
+            Vector64.Create(vector.X, vector.Y, vector.Z, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
-        public static Vector128<sbyte> ToVector128(Vector3D<sbyte> vector)
-            => Vector128.Create(vector.X, vector.Y, vector.Z, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
+        public static Vector128<sbyte> ToVector128(Vector3D<sbyte> vector) =>
+            Vector128.Create(vector.X, vector.Y, vector.Z, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
-        public static Vector256<sbyte> ToVector256(Vector3D<sbyte> vector)
-            => Vector256.Create(vector.X, vector.Y, vector.Z, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
+        public static Vector256<sbyte> ToVector256(Vector3D<sbyte> vector) =>
+            Vector256.Create(vector.X, vector.Y, vector.Z, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
-        public static Vector512<sbyte> ToVector512(Vector3D<sbyte> vector)
-            => Vector512.Create(vector.X, vector.Y, vector.Z, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
+        public static Vector512<sbyte> ToVector512(Vector3D<sbyte> vector) =>
+            Vector512.Create(vector.X, vector.Y, vector.Z, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0, (sbyte)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector64{T}"/>.</summary>
-        public static Vector64<ushort> ToVector64(Vector3D<ushort> vector)
-            => Vector64.Create(vector.X, vector.Y, vector.Z, (ushort)0);
+        public static Vector64<ushort> ToVector64(Vector3D<ushort> vector) =>
+            Vector64.Create(vector.X, vector.Y, vector.Z, (ushort)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
-        public static Vector128<ushort> ToVector128(Vector3D<ushort> vector)
-            => Vector128.Create(vector.X, vector.Y, vector.Z, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0);
+        public static Vector128<ushort> ToVector128(Vector3D<ushort> vector) =>
+            Vector128.Create(vector.X, vector.Y, vector.Z, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
-        public static Vector256<ushort> ToVector256(Vector3D<ushort> vector)
-            => Vector256.Create(vector.X, vector.Y, vector.Z, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0);
+        public static Vector256<ushort> ToVector256(Vector3D<ushort> vector) =>
+            Vector256.Create(vector.X, vector.Y, vector.Z, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
-        public static Vector512<ushort> ToVector512(Vector3D<ushort> vector)
-            => Vector512.Create(vector.X, vector.Y, vector.Z, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0);
+        public static Vector512<ushort> ToVector512(Vector3D<ushort> vector) =>
+            Vector512.Create(vector.X, vector.Y, vector.Z, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0, (ushort)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector128{T}"/>.</summary>
-        public static Vector128<uint> ToVector128(Vector3D<uint> vector)
-            => Vector128.Create(vector.X, vector.Y, vector.Z, (uint)0);
+        public static Vector128<uint> ToVector128(Vector3D<uint> vector) =>
+            Vector128.Create(vector.X, vector.Y, vector.Z, (uint)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
-        public static Vector256<uint> ToVector256(Vector3D<uint> vector)
-            => Vector256.Create(vector.X, vector.Y, vector.Z, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0);
+        public static Vector256<uint> ToVector256(Vector3D<uint> vector) =>
+            Vector256.Create(vector.X, vector.Y, vector.Z, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
-        public static Vector512<uint> ToVector512(Vector3D<uint> vector)
-            => Vector512.Create(vector.X, vector.Y, vector.Z, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0);
+        public static Vector512<uint> ToVector512(Vector3D<uint> vector) =>
+            Vector512.Create(vector.X, vector.Y, vector.Z, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0, (uint)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector256{T}"/>.</summary>
-        public static Vector256<ulong> ToVector256(Vector3D<ulong> vector)
-            => Vector256.Create(vector.X, vector.Y, vector.Z, (ulong)0);
+        public static Vector256<ulong> ToVector256(Vector3D<ulong> vector) =>
+            Vector256.Create(vector.X, vector.Y, vector.Z, (ulong)0);
 
         /// <summary>Converts a <see cref="Vector3D{T}"/> to a <see cref="Vector512{T}"/>.</summary>
-        public static Vector512<ulong> ToVector512(Vector3D<ulong> vector)
-            => Vector512.Create(vector.X, vector.Y, vector.Z, (ulong)0, (ulong)0, (ulong)0, (ulong)0, (ulong)0);
+        public static Vector512<ulong> ToVector512(Vector3D<ulong> vector) =>
+            Vector512.Create(vector.X, vector.Y, vector.Z, (ulong)0, (ulong)0, (ulong)0, (ulong)0, (ulong)0);
 
         /// <summary>Linearly interpolates between two vectors using a scalar t-value (clamped between 0 and 1).</summary>
-        public static Vector3D<T> LerpClamped<T>(Vector3D<T> a, Vector3D<T> b, T amount)
+        public static Vector3D<T> LerpClamped<T>(Vector3D<T> value1, Vector3D<T> value2, T amount)
             where T : IFloatingPointIeee754<T> =>
-            Lerp(a, b, T.Clamp(amount, T.Zero, T.One));
+            Lerp(value1, value2, T.Clamp(amount, T.Zero, T.One));
 
         /// <summary>Linearly interpolates between two vectors using a vector t-value (clamped between 0 and 1).</summary>
-        public static Vector3D<T> LerpClamped<T>(Vector3D<T> a, Vector3D<T> b, Vector3D<T> amount)
+        public static Vector3D<T> LerpClamped<T>(Vector3D<T> value1, Vector3D<T> value2, Vector3D<T> amount)
             where T : IFloatingPointIeee754<T> =>
-            new(T.Lerp(a.X, b.X, T.Clamp(amount.X, T.Zero, T.One)),
-                T.Lerp(a.Y, b.Y, T.Clamp(amount.Y, T.Zero, T.One)),
-                T.Lerp(a.Z, b.Z, T.Clamp(amount.Z, T.Zero, T.One)));
+            new(T.Lerp(value1.X, value2.X, T.Clamp(amount.X, T.Zero, T.One)),
+                T.Lerp(value1.Y, value2.Y, T.Clamp(amount.Y, T.Zero, T.One)),
+                T.Lerp(value1.Z, value2.Z, T.Clamp(amount.Z, T.Zero, T.One)));
 
         /// <summary>Applies <see cref="ITrigonometricFunctions{TSelf}.SinCos(TSelf)"/> to the provided arguments.</summary>
         /// <param name="x">A vector whose members will be provided for <parameref name="x"/>.</param>
@@ -1070,214 +1070,190 @@ namespace Silk.NET.Maths
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix2X3<T> matrix)
-            where T : INumberBase<T>
-            => vector * matrix;
+            where T : INumberBase<T> =>
+            vector * matrix;
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix2X3<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix2X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix2X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix3X3<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31, 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32, 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32,
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + matrix.M33);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix3X3<T> matrix)
-            where T : INumberBase<T>
-            => vector * matrix;
+            where T : INumberBase<T> =>
+            vector * matrix;
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix3X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31, 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32, 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M31,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M32,
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + matrix.M33);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix3X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix4X3<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41, 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42, 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42,
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + matrix.M43);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix4X3<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + matrix.M41, 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + matrix.M42, 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + matrix.M41,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + matrix.M42,
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33) + matrix.M43);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix4X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41, 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42, 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M41,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M42,
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + matrix.M43);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix4X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + matrix.M41, 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + matrix.M42, 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + matrix.M41,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + matrix.M42,
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33) + matrix.M43);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector2D<T> vector, Matrix5X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M51, 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M52, 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + matrix.M51,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + matrix.M52,
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + matrix.M53);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> Transform<T>(Vector3D<T> vector, Matrix5X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + matrix.M51, 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + matrix.M52, 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31) + matrix.M51,
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32) + matrix.M52,
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33) + matrix.M53);
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix2X3<T> matrix)
-            where T : INumberBase<T>
-            => vector * matrix;
+            where T : INumberBase<T> =>
+            vector * matrix;
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix2X3<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix2X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix2X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix3X3<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix3X3<T> matrix)
-            where T : INumberBase<T>
-            => vector * matrix;
+            where T : INumberBase<T> =>
+            vector * matrix;
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix3X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix3X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix4X3<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix4X3<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix4X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix4X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector2D<T> vector, Matrix5X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23));
 
         /// <summary>Transforms the given vector by the specified transformation Matrix.</summary>
         public static Vector3D<T> TransformNormal<T>(Vector3D<T> vector, Matrix5X4<T> matrix)
-            where T : INumberBase<T>
-            => new(
-                (vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31), 
-                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32), 
+            where T : INumberBase<T> =>
+            new((vector.X * matrix.M11) + (vector.Y * matrix.M21) + (vector.Z * matrix.M31),
+                (vector.X * matrix.M12) + (vector.Y * matrix.M22) + (vector.Z * matrix.M32),
                 (vector.X * matrix.M13) + (vector.Y * matrix.M23) + (vector.Z * matrix.M33));
     }
 }
