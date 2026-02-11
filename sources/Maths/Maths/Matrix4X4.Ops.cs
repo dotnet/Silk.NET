@@ -812,7 +812,7 @@ namespace Silk.NET.Maths
         /// <summary>Attempts to calculate the inverse of the given matrix. If successful, result will contain the inverted matrix.</summary>
         /// <param name="matrix">The source matrix to invert.</param>
         /// <param name="result">If successful, contains the inverted matrix.</param>
-        /// <returns>True if the source matrix could be inverted; False otherwise.</returns>
+        /// <returns><c>true</c> if the source matrix could be inverted; <c>false</c> otherwise.</returns>
         ///
         [MethodImpl((MethodImplOptions)768)]
         public static unsafe bool Invert<T>(Matrix4X4<T> matrix, out Matrix4X4<T> result)
@@ -1184,7 +1184,7 @@ namespace Silk.NET.Maths
         /// <param name="scale">The scaling component of the transformation matrix.</param>
         /// <param name="rotation">The rotation component of the transformation matrix.</param>
         /// <param name="translation">The translation component of the transformation matrix</param>
-        /// <returns>True if the source matrix was successfully decomposed; False otherwise.</returns>
+        /// <returns><c>true</c> if the source matrix was successfully decomposed; <c>false</c> otherwise.</returns>
         public static bool Decompose<T>(Matrix4X4<T> matrix, out Vector3D<T> scale, out Quaternion<T> rotation, out Vector3D<T> translation)
             where T : INumber<T>, IRootFunctions<T>, ITrigonometricFunctions<T>
         {

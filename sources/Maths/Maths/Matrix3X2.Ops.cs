@@ -375,7 +375,7 @@ namespace Silk.NET.Maths
         /// <summary>Attempts to invert the given matrix. If the operation succeeds, the inverted matrix is stored in the result parameter.</summary>
         /// <param name="matrix">The source matrix.</param>
         /// <param name="result">The output matrix.</param>
-        /// <returns>True if the operation succeeded, False otherwise.</returns>
+        /// <returns><c>true</c> if the operation succeeded, False otherwise.</returns>
         public static bool Invert<T>(Matrix3X2<T> matrix, out Matrix3X2<T> result)
             where T : IFloatingPointIeee754<T>
         {

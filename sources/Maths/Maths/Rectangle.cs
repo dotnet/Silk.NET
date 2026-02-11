@@ -94,7 +94,7 @@ namespace Silk.NET.Maths
         /// Calculates whether this rectangle contains a point.
         /// </summary>
         /// <param name="point">The point.</param>
-        /// <returns>True if this rectangle contains the point; False otherwise.</returns>
+        /// <returns><c>true</c> if this rectangle contains the point; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector2D<T> point)
         {
@@ -107,7 +107,7 @@ namespace Silk.NET.Maths
         /// Calculates whether this rectangle contains another rectangle
         /// </summary>
         /// <param name="other">The rectangle.</param>
-        /// <returns>True if this rectangle contains the given rectangle; False otherwise.</returns>
+        /// <returns><c>true</c> if this rectangle contains the given rectangle; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a rectangle that touches the edge contained.</remarks>
         public bool Contains(Rectangle<T> other)
         {

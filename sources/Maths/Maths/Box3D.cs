@@ -93,7 +93,7 @@ namespace Silk.NET.Maths
         /// Calculates whether this box contains a point.
         /// </summary>
         /// <param name="point">The point.</param>
-        /// <returns>True if this box contains the point; False otherwise.</returns>
+        /// <returns><c>true</c> if this box contains the point; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector3D<T> point)
             => (point.X >= Min.X) && (point.Y >= Min.Y) && (point.Z >= Min.Z)
@@ -103,7 +103,7 @@ namespace Silk.NET.Maths
         /// Calculates whether this box contains another box
         /// </summary>
         /// <param name="other">The box.</param>
-        /// <returns>True if this box contains the given box; False otherwise.</returns>
+        /// <returns><c>true</c> if this box contains the given box; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a box that touches the edge contained.</remarks>
         public bool Contains(Box3D<T> other)
             => (other.Min.X >= this.Min.X) && (other.Min.Y >= this.Min.Y) && (other.Min.Z >= this.Min.Z)

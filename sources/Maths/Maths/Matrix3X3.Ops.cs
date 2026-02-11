@@ -280,7 +280,7 @@ namespace Silk.NET.Maths
         /// <param name="matrix">The source matrix.</param>
         /// <param name="scale">The scaling component of the transformation matrix.</param>
         /// <param name="rotation">The rotation component of the transformation matrix.</param>
-        /// <returns>True if the source matrix was successfully decomposed; False otherwise.</returns>
+        /// <returns><c>true</c> if the source matrix was successfully decomposed; <c>false</c> otherwise.</returns>
         public static bool Decompose<T>(Matrix3X3<T> matrix, out Vector3D<T> scale, out Silk.NET.Maths.Legacy.Quaternion<T> rotation)
             where T : INumberBase<T>
         {

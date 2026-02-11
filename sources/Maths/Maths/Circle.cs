@@ -147,7 +147,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="circle">The circle.</param>
         /// <param name="point">The point.</param>
-        /// <returns>True if this circle contains the point; False otherwise.</returns>
+        /// <returns><c>true</c> if this circle contains the point; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public static bool Contains<T>(this Circle<T> circle, Vector2D<T> point)
             where T : INumber<T>, IRootFunctions<T>
@@ -160,7 +160,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="circle">The circle.</param>
         /// <param name="other">The other circle.</param>
-        /// <returns>True if this circle contains the given circle; False otherwise.</returns>
+        /// <returns><c>true</c> if this circle contains the given circle; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a circle that touches the edge contained.</remarks>
         public static bool Contains<T>(this Circle<T> circle, Circle<T> other)
             where T : INumber<T>, IRootFunctions<T>

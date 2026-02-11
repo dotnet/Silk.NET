@@ -143,7 +143,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="sphere">The sphere.</param>
         /// <param name="point">The point.</param>
-        /// <returns>True if this sphere contains the point; False otherwise.</returns>
+        /// <returns><c>true</c> if this sphere contains the point; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public static bool Contains<T>(this Sphere<T> sphere, Vector3D<T> point)
             where T : INumber<T>, IRootFunctions<T>
@@ -156,7 +156,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="sphere">The sphere.</param>
         /// <param name="other">The other sphere.</param>
-        /// <returns>True if this sphere contains the given sphere; False otherwise.</returns>
+        /// <returns><c>true</c> if this sphere contains the given sphere; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a sphere that touches the edge contained.</remarks>
         public static bool Contains<T>(this Sphere<T> sphere, Sphere<T> other)
             where T : INumber<T>, IRootFunctions<T>

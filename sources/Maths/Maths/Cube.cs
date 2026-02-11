@@ -98,7 +98,7 @@ namespace Silk.NET.Maths
         /// Calculates whether this cube contains a point.
         /// </summary>
         /// <param name="point">The point.</param>
-        /// <returns>True if this cube contains the point; False otherwise.</returns>
+        /// <returns><c>true</c> if this cube contains the point; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
         public bool Contains(Vector3D<T> point)
         {
@@ -111,7 +111,7 @@ namespace Silk.NET.Maths
         /// Calculates whether this cube contains another cube
         /// </summary>
         /// <param name="other">The cube.</param>
-        /// <returns>True if this cube contains the given cube; False otherwise.</returns>
+        /// <returns><c>true</c> if this cube contains the given cube; <c>false</c> otherwise.</returns>
         /// <remarks>This does consider a cube that touches the edge contained.</remarks>
         public bool Contains(Cube<T> other)
         {
