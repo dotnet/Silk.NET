@@ -28,31 +28,22 @@ namespace Silk.NET.Maths
                 c = T.One;
                 s = T.Zero;
             }
-            else if ((radians > T.CreateTruncating(
-                MathF.PI
-                / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(
-                MathF.PI
-                / 2 + RotationEpsilon)))
+            else if ((radians > T.CreateTruncating(MathF.PI / 2 - RotationEpsilon)) &&
+                    !(radians >= T.CreateTruncating(MathF.PI / 2 + RotationEpsilon)))
             {
                 // Exact case for 90 degree rotation.
                 c = T.Zero;
                 s = T.One;
             }
-            else if (!(radians >= T.CreateTruncating(-
-                MathF.PI
-                                                                             + RotationEpsilon)) || (radians > T.CreateTruncating(
-                MathF.PI
-                - RotationEpsilon)))
+            else if (!(radians >= T.CreateTruncating(-MathF.PI + RotationEpsilon)) ||
+                      (radians > T.CreateTruncating(MathF.PI - RotationEpsilon)))
             {
                 // Exact case for 180 degree rotation.
                 c = -T.One;
                 s = T.Zero;
             }
-            else if ((radians > T.CreateTruncating(-
-                MathF.PI
-                / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(-
-                MathF.PI
-                / 2 + RotationEpsilon)))
+            else if ((radians > T.CreateTruncating(-MathF.PI / 2 - RotationEpsilon)) &&
+                    !(radians >= T.CreateTruncating(-MathF.PI / 2 + RotationEpsilon)))
             {
                 // Exact case for 270 degree rotation.
                 c = T.Zero;
@@ -95,31 +86,22 @@ namespace Silk.NET.Maths
                 c = T.One;
                 s = T.Zero;
             }
-            else if ((radians > T.CreateTruncating(
-                MathF.PI
-                / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(
-                MathF.PI
-                / 2 + RotationEpsilon)))
+            else if ((radians > T.CreateTruncating(MathF.PI / 2 - RotationEpsilon)) &&
+                    !(radians >= T.CreateTruncating(MathF.PI / 2 + RotationEpsilon)))
             {
                 // Exact case for 90 degree rotation.
                 c = T.Zero;
                 s = T.One;
             }
-            else if (!(radians >= T.CreateTruncating(-
-                MathF.PI
-                                                                             + RotationEpsilon)) || (radians > T.CreateTruncating(
-                MathF.PI
-                - RotationEpsilon)))
+            else if (!(radians >= T.CreateTruncating(-MathF.PI + RotationEpsilon)) ||
+                      (radians > T.CreateTruncating(MathF.PI - RotationEpsilon)))
             {
                 // Exact case for 180 degree rotation.
                 c = -T.One;
                 s = T.Zero;
             }
-            else if ((radians > T.CreateTruncating(-
-                MathF.PI
-                / 2 - RotationEpsilon)) && !(radians >= T.CreateTruncating(-
-                MathF.PI
-                / 2 + RotationEpsilon)))
+            else if ((radians > T.CreateTruncating(-MathF.PI / 2 - RotationEpsilon)) &&
+                    !(radians >= T.CreateTruncating(-MathF.PI / 2 + RotationEpsilon)))
             {
                 // Exact case for 270 degree rotation.
                 c = T.Zero;
