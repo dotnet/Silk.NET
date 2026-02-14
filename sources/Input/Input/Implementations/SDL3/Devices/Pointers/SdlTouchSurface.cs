@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
+using Silk.NET.Maths;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Pointers;
@@ -80,7 +81,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
     protected override bool OnePointOnly => false;
     private readonly TouchDeviceType _type;
 
-    public SdlTouchSurface(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unbounded, TouchDeviceType type, bool isSimulated) : base(backend, uniqueId, sdlDeviceId, unbounded)
+    private SdlTouchSurface(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend, IPointerTarget unbounded, TouchDeviceType type, bool isSimulated) : base(backend, uniqueId, sdlDeviceId, unbounded)
     {
         _type = type;
         IsSimulated = isSimulated;
@@ -100,8 +101,32 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
     public void Event(in TouchFingerEvent finger, SdlInputBackend.FingerEventType fingerType)
     {
         var position = new Vector3(finger.X, finger.Y, 0);
-        var fingerId = finger.TouchID;
-        fingerId %= int.MaxValue;
-        SetTargetPoint(finger.WindowID, position, finger.Pressure, (int)fingerId);
+        var fingerId = (uint)(finger.TouchID % int.MaxValue);
+        var whichWindowId = finger.WindowID;
+        if (Backend.TryGetPointerTargetForWindow(whichWindowId, out var target))
+        {
+            position *= target.Bounds.Size.ToSystem();
+        }
+        else
+        {
+            throw new InvalidOperationException($"Touch device {this} has no target with window id {whichWindowId}");
+        }
+
+        switch (fingerType)
+        {
+            case SdlInputBackend.FingerEventType.Motion:
+                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, null, null, true);
+                break;
+            case SdlInputBackend.FingerEventType.Down:
+                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, true, null, true);
+                break;
+            case SdlInputBackend.FingerEventType.Up:
+                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, false, null, true);
+                break;
+            case SdlInputBackend.FingerEventType.Canceled:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(fingerType), fingerType, null);
+        }
     }
 }

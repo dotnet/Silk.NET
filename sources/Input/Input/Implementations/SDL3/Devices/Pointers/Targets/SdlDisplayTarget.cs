@@ -21,5 +21,6 @@ internal sealed class SdlDisplayTarget : SdlBoundedPointerTarget, ISdlBoundedPoi
 
     public uint Id { get; }
     public SilkSdlDisplayHandle Handle { get; }
-    public static SdlDisplayTarget? Create(SdlInputBackend backend, uint id, SilkSdlDisplayHandle handle) => new(backend, handle);
+    public static SdlDisplayTarget Create(SdlInputBackend backend, uint id, SilkSdlDisplayHandle handle) =>
+        new(backend, handle);
 }

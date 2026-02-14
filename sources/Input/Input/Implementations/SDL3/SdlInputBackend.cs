@@ -225,6 +225,8 @@ internal partial class SdlInputBackend : IInputBackend
 
         switch (type)
         {
+            case EventType.GamepadAdded:
+                return;
             case EventType.GamepadRemoved:
                 backend.RemoveDevice<SdlGamepad>(devices, evt.Gdevice.Which);
                 return;
@@ -249,13 +251,10 @@ internal partial class SdlInputBackend : IInputBackend
                     return;
                 }
 
-                if (type == EventType.KeyboardAdded)
-                {
-                    return;
-                }
-
                 switch (type)
                 {
+                    case EventType.KeyboardAdded:
+                        return;
                     case EventType.KeyDown:
                     case EventType.KeyUp:
                         keyboard.AddKeyEvent(evt.Key);
@@ -280,11 +279,6 @@ internal partial class SdlInputBackend : IInputBackend
             case >= EventType.GamepadAxisMotion and <= EventType.GamepadSteamHandleUpdated:
             {
                 if (!backend.TryGetOrCreateDevice<SdlGamepad>(evt.Gdevice.Which, out var gamepad))
-                {
-                    return;
-                }
-
-                if (type is EventType.GamepadAdded)
                 {
                     return;
                 }
@@ -323,14 +317,10 @@ internal partial class SdlInputBackend : IInputBackend
                     return;
                 }
 
-                if (type is EventType.JoystickAdded)
-                {
-                    // already done
-                    return;
-                }
-
                 switch (type)
                 {
+                    case EventType.JoystickAdded:
+                        return;
                     case EventType.JoystickAxisMotion:
                         joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value);
                         break;
@@ -361,13 +351,6 @@ internal partial class SdlInputBackend : IInputBackend
             case >= EventType.MouseMotion and <= EventType.MouseAdded:
             {
                 if (!backend.TryGetOrCreateDevice<SdlMouse>(evt.Mdevice.Which, out var mouse))
-                {
-                    return;
-                }
-
-                _ = backend.TryGetPointerTargetForWindow(evt.Button.WindowID, out var target);
-
-                if (type is EventType.MouseAdded)
                 {
                     return;
                 }

@@ -26,7 +26,6 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     /// </summary>
     public static readonly IReadOnlyList<T> UniqueValues;
 
-
     /// <summary>
     /// The value with the highest numerical value
     /// </summary>

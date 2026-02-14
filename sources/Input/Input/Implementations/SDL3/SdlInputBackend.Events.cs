@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
@@ -187,6 +188,14 @@ internal interface IEventQueue<T> where T : struct, ITimestampedEvent
 internal readonly record struct GenericEvent(nint EventPtr, long Timestamp, Type Type) : ITimestampedEvent
 {
     public unsafe T Value<T>() => Unsafe.AsRef<T>((void*)EventPtr);
+
+    public static GenericEvent Create<T>([ReadOnly(true)] ref T evt, long timestamp) where T : struct
+    {
+        unsafe
+        {
+            return new GenericEvent((nint)Unsafe.AsPointer(ref evt), timestamp, typeof(T));
+        }
+    }
 }
 
 internal interface ITimestampedEvent

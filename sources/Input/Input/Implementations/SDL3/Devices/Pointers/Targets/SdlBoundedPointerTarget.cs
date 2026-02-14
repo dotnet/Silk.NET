@@ -129,6 +129,6 @@ internal abstract class SdlBoundedPointerTarget : IPointerTarget
 
     public void Dispose()
     {
-        throw new NotImplementedException();
+
     }
 }

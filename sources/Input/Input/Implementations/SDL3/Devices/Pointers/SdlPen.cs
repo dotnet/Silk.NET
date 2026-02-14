@@ -48,17 +48,6 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         SdlPen Create() => new(backend, uniqueId, sdlDeviceId, name.ReadToString(), backend.UnboundedPointerTarget);
     }
 
-    private void ApplyPenInputState(SdlPenInputFlags penState)
-    {
-        foreach (var pointerButtonName in EnumInfo<PointerButton>.UniqueValues)
-        {
-            ref var button = ref GetButtonRef(pointerButtonName);
-            var isDown = penState.Has(pointerButtonName);
-            button = button with { IsDown = isDown, Pressure = isDown ? 1 : 0 };
-        }
-    }
-
-
     public override void Initialize()
     {
     }
@@ -77,16 +66,15 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
     {
         MotionEvent(evt.WindowID, evt.X, evt.Y);
 
-        var previousPressure = GetPointPressure(0);
-        const float divisor = 1f / 255f;
-        var downPressure = evt.Down * divisor;
-        if (downPressure > 0)
+        if (evt.Down > 0)
         {
-            AddButtonEvent(PointerButton.Primary, true, Math.Max(previousPressure, downPressure));
+            const float divisor = 1f / 255f;
+            var downPressure = evt.Down * divisor;
+            AddButtonEvent(PointerButton.Primary, evt.Timestamp, true, downPressure);
         }
         else
         {
-            AddButtonEvent(PointerButton.Primary, false, 0);
+            AddButtonEvent(PointerButton.Primary, evt.Timestamp, false, 0);
         }
     }
 
@@ -94,18 +82,39 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void MotionEvent(in PenMotionEvent evt) => MotionEvent(evt.WindowID, evt.X, evt.Y);
 
-    private void MotionEvent(in uint windowId, float x, float y)
-    {
-        if (!Backend.TryGetPointerTargetForWindow(windowId, out var target))
-        {
-            return;
-        }
+    private void MotionEvent(in uint windowId, float x, float y) =>
+        AddOrUpdatePoint(
+            touchId: null,
+            windowId: windowId == 0 ? null : windowId,
+            pos: new Vector3(x, y, 0),
+            pressure: null,
+            isDown: null,
+            ray: null,
+            isPositionInWindowSpace: true);
 
-        SetTargetPoint(windowId, new Vector3(x, y, 0), GetPointPressure(0),0);
+    public void ButtonEvent(in PenButtonEvent evt)
+    {
+        var button = (SdlPenButton)evt.Button;
+        var pointerButton = button switch {
+            SdlPenButton.Button1 => PointerButton.Primary,
+            SdlPenButton.Button2 => PointerButton.Secondary,
+            SdlPenButton.Button3 => PointerButton.MiddleButton,
+            SdlPenButton.Button4 => PointerButton.Button4,
+            SdlPenButton.Button5 => PointerButton.Button5,
+            _ => throw new ArgumentOutOfRangeException(nameof(button), button, null)
+        };
+
+        AddButtonEvent(pointerButton, evt.Timestamp, evt.Down > 0, evt.Down / 255f);
     }
 
-
-    public void ButtonEvent(in PenButtonEvent evt) => ApplyPenInputState((SdlPenInputFlags)evt.PenState);
+    private enum SdlPenButton : byte
+    {
+        Button1 = 1,
+        Button2,
+        Button3,
+        Button4,
+        Button5,
+    }
 
     public void AxisEvent(in PenAxisEvent evt)
     {
@@ -113,28 +122,27 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         {
             case PenAxis.Pressure:
             {
-                SetPointPressure(0, evt.Value);
+                AddOrUpdatePoint(null, null, new Vector3(evt.X, evt.Y, 0), evt.Value, null, null, true);
                 break;
-                ;
             }
             case PenAxis.Xtilt:
             {
-                SetPointXTilt(0, evt.Value);
+                UpdatePointRay(null, evt.Value, null, null, distance: null);
                 break;
             }
             case PenAxis.Ytilt:
             {
-                SetPointYTilt(0, evt.Value);
+                UpdatePointRay(null, null, evt.Value, null, distance: null);
                 break;
             }
             case PenAxis.Distance:
             {
-                SetPointDistance(0, evt.Value);
+                UpdatePointRay(null, null, null, null, distance: evt.Value);
                 break;
             }
             case PenAxis.Rotation: // barrel rotation
             {
-                SetPointTwist(0, evt.Value);
+                UpdatePointRay(null, null, null, evt.Value, distance: null);
                 break;
             }
             case PenAxis.Slider:

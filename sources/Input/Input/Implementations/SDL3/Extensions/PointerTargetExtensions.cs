@@ -61,8 +61,8 @@ internal static class PointerTargetExtensions
         public TargetPoint GetPoint(IPointerDevice pointer, int point)
         {
             var points = pointer.State.Points;
-            var pointerPointsCount = points.Count;
-            for (var i = 0; i < pointerPointsCount; i++)
+            var allPtCount = points.Count;
+            for (var i = 0; i < allPtCount; i++)
             {
                 var targetPoint = points[i];
                 if (targetPoint.Target == target && point-- == 0)
