@@ -135,11 +135,19 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
         var down = (hatState & HatState.Down) == HatState.Down;
         var y = (float)(*(byte*)&up - *(byte*)&down);
 
-        _rawHatState[hatIdx] = new Vector2(x, y);
+        ref var hatStateRef = ref _rawHatState[hatIdx];
+        var previous = hatStateRef;
+        hatStateRef = new Vector2(x, y);
 
         foreach(var device in _devices)
         {
             device.UpdateFromJoyHat(hatIdx, hatState);
+        }
+
+        var delta = hatStateRef - previous;
+        if (delta != Vector2.Zero)
+        {
+            _hatEvents.Enqueue(new JoystickHatMoveEvent(this, hatIdx, hatStateRef, delta));
         }
     }
 
@@ -164,10 +172,21 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
     #endregion
 
-    internal static (float minus, float plus) SplitValue(float mappedValue)
+    /// <summary>
+    /// Returns a "split" axis vector, taking what would be a single axis value (e.g. Left Thumbstick X) from (0, 1)
+    /// and splitting it into two separate axes from (0, 1)
+    /// </summary>
+    /// <param name="value">The axis value on a scale of 0 to 1</param>
+    /// <returns>A vector representing the split axis values with <br/>
+    /// X as the 'minus' component & <br/>
+    /// Y as the 'plus' component</returns>
+    /// <remarks>
+    /// Todo: the gamepad api demands that joystick axes are (-1, 1)
+    /// </remarks>
+    internal static Vector2 SplitValue(float value)
     {
-        mappedValue = (float)((mappedValue - 0.5d) * 2d);
-        return mappedValue > 0 ? (0, mappedValue) : (mappedValue, 0);
+        value = (float)((value - 0.5d) * 2d);
+        return value > 0 ? new Vector2(0, value) : new Vector2(value, 0);
     }
 
 

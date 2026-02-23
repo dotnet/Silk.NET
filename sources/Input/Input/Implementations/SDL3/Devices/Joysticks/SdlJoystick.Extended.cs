@@ -1,8 +1,10 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input.SDL3.Devices.Joysticks;
 
@@ -38,10 +40,29 @@ internal sealed partial class SdlJoystick
             throw new Exception("Received an invalid SDL button??");
         }
 
-        _rawButtonState[idx] = new Button<JoystickButton>(button, isDown, pressure);
+        ref var buttonState = ref _rawButtonState[idx];
+
+        var previous = buttonState;
+
+        buttonState = new Button<JoystickButton>(button, isDown, pressure);
+
+        // ReSharper disable once CompareOfFloatsByEqualityOperator
+        if (previous.IsDown != buttonState.IsDown || previous.Pressure != buttonState.Pressure)
+        {
+            _buttonEvents.Enqueue(new ButtonChangedEvent<JoystickButton>(this, Stopwatch.GetTimestamp(), buttonState, previous));
+        }
     }
 
-    internal void UpdateRawAxisState(JoystickAxis axis, float value)
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    internal float GetAxisState(JoystickAxis axis) => _rawAxisState[axis.Index()];
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private float GetAxisStateByIndex(int index) => _rawAxisState[index];
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    internal Vector2 GetAxisStateByIndex2D(int xIndex, int yIndex) => new(GetAxisStateByIndex(xIndex), GetAxisStateByIndex(yIndex));
+
+    internal bool UpdateRawAxisState(JoystickAxis axis, float value, out JoystickAxisMoveEvent evt)
     {
         var index = axis.Index();
         if (index < 0)
@@ -49,7 +70,20 @@ internal sealed partial class SdlJoystick
             throw new Exception("Received an invalid SDL axis??");
         }
 
-        _rawAxisState[axis.Index()] = value;
+        ref var state = ref _rawAxisState[index];
+        var p = state;
+        state = value;
+
+        var delta = value - p;
+        if (delta != 0)
+        {
+            evt = new JoystickAxisMoveEvent(this, Stopwatch.GetTimestamp(), index, value, delta);
+            _axisEvents.Enqueue(evt);
+            return true;
+        }
+
+        evt = default;
+        return false;
     }
 
     private readonly List<ISdlJoystick> _devices = [];
