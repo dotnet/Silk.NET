@@ -23,6 +23,7 @@ public class KeyboardState
     {
         get
         {
+            // todo - optimize?
             var state = KeyModifiers.None;
             if(Keys[KeyName.ControlLeft])
                 state |= KeyModifiers.ControlLeft;

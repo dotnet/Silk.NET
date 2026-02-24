@@ -210,8 +210,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             }
             case GamepadAxis.LeftTrigger or GamepadAxis.RightTrigger:
             {
-                var axis = GetJoystickAxis(gAxis);
-                if (Joystick.UpdateRawAxisState(axis, mappedValue, out var moveEvt))
+                if (Joystick.UpdateRawAxisState(GetJoystickAxis(gAxis), mappedValue, out var moveEvt))
                 {
                     _triggerEvents.Enqueue(new GamepadTriggerMoveEvent(this, moveEvt.Timestamp, moveEvt.Axis,
                         moveEvt.Value, moveEvt.Delta));

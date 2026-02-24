@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using Silk.NET.Input.SDL3;
 using Silk.NET.SDL;
@@ -36,14 +37,15 @@ internal sealed class TextRecorder
     /// </summary>
     /// <param name="name">The keystroke to add</param>
     /// <param name="keyboard">The keyboard whose state we are recording</param>
-    public void AddKeyStroke(KeyName name, IKeyboard keyboard)
+    public bool AddKeyStroke(KeyName name, IKeyboard keyboard, [NotNullWhen(true)] out char? newChar)
     {
         var isChar = name.IsChar();
         var isDeletion = name.IsDeletion();
 
         if (!isChar && !isDeletion)
         {
-            return;
+            newChar = null;
+            return false;
         }
 
         if (name == KeyName.Paste)
@@ -54,7 +56,8 @@ internal sealed class TextRecorder
                 InsertText(clipboardText);
             }
 
-            return;
+            newChar = null;
+            return false;
         }
 
         var state = keyboard.State;
@@ -63,18 +66,20 @@ internal sealed class TextRecorder
         {
             if (activeModifiers.IsAlt() || activeModifiers.IsControl())
             {
-                return;
+                newChar = null;
+                return false;
             }
 
             // insert the appropriate character
             // first, we need the virtual key represented by the scancode (KeyName)
 
-            if (_converter.TryConvert(name, activeModifiers, out var c))
+            if (_converter.TryConvert(name, activeModifiers, out newChar))
             {
-                InsertText(c.Value);
+                InsertText(newChar.Value);
+                return true;
             }
 
-            return;
+            return false;
         }
 
         if (name.IsDeletion())
@@ -147,6 +152,9 @@ internal sealed class TextRecorder
                     break;
             }
         }
+
+        newChar = null;
+        return false;
     }
 
     /// <summary>

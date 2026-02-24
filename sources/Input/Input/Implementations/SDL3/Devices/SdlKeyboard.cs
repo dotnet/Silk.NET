@@ -137,14 +137,28 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
             var isDown = key.Down != 0;
             var button = _keyStates[keyName];
             var stateChanged = button.IsDown != isDown;
+            var isRepeat = key.Repeat != 0;
             _keyStates.SetKeyState(keyName, key.Down);
 
-            var shouldRecord = _textIsRecording == TextRecorderState.RecordingNoSdl
-                               && ((stateChanged && isDown) || (!stateChanged && key.Repeat != 0));
+            var shouldRecord = _textIsRecording == TextRecorderState.RecordingNoSdl && ((stateChanged && isDown) ||
+                                                                                        (!stateChanged && isRepeat));
             if (shouldRecord)
             {
                 _textRecorder ??= new TextRecorder(null);
-                _textRecorder.AddKeyStroke(keyName, this);
+                if(_textRecorder.AddKeyStroke(keyName, this, out var newChar))
+                {
+                    _keyCharEvents.Enqueue(new KeyCharEvent(this, Stopwatch.GetTimestamp(), newChar.Value));
+                }
+            }
+            else
+            {
+                _keyChangedEvents.Enqueue(new KeyChangedEvent(
+                    Keyboard: this,
+                    Timestamp: Stopwatch.GetTimestamp(),
+                    Key: _keyStates[keyName],
+                    Previous: button,
+                    Modifiers: State.Modifiers,
+                    IsRepeat: isRepeat));
             }
         }
     }
