@@ -97,17 +97,18 @@ internal partial class InputTesting : ISurfaceApplication
             GL.UseProgram(prog);
 
 
-            inputContext = InitInput(surface);
-            inputContext.ConnectionChanged += OnInputConnectionChanged;
+            inputContext = InitInputContext(surface);
+        };
+        surface.Update += _ =>
+        {
+            ExecuteInput(inputContext, surface);
         };
         surface.Render += _ =>
         {
-            ExecuteInput(inputContext, surface);
-
             GL.Clear(ClearBufferMask.ColorBufferBit);
             GL.DrawArrays(PrimitiveType.Triangles, 0, 3);
         };
-        surface.Terminating += _ =>
+        surface.Terminating += evt =>
         {
             GL.DeleteVertexArray(vao);
             GL.DeleteBuffer(vbo);

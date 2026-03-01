@@ -113,7 +113,7 @@ public class InputContext
             backend.Update(this);
         }
 
-        _pointers?.HandleUpdate();
+        _pointers?.ProcessClicks();
     }
 
     private void HandleBackendRemoval(IInputBackend backend)

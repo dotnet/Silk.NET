@@ -322,7 +322,7 @@ public sealed class Pointers
         }
     }
 
-    internal void HandleUpdate()
+    internal void ProcessClicks()
     {
         if (_clicks is null)
         {
