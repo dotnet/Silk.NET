@@ -114,8 +114,6 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     public override string Name => Joystick.Name;
 
-    public override void Initialize() => throw new NotImplementedException();
-
     protected override void Release()
     {
         Joystick.RemoveDeviceMapping(this);

@@ -273,7 +273,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
                 return touchId != null
                     ? throw new InvalidOperationException(
                         "A single-point device cannot have a touchId - it must be null.")
-                    : 0;
+                    : 0u;
             }
 
             return touchId ?? throw new ArgumentNullException($"TouchId cannot be null for device {this}.");

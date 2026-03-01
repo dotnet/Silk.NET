@@ -59,10 +59,6 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         }
     }
 
-    public override void Initialize()
-    {
-    }
-
     private unsafe SdlMouseInputFlags GetMouseState(ref float x, ref float y) =>
         (SdlMouseInputFlags)NativeBackend.GetMouseState((float*)Unsafe.AsPointer(ref x),
             (float*)Unsafe.AsPointer(ref y));

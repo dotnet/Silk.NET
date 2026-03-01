@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
@@ -118,17 +119,19 @@ public class InputContext
 
     private void HandleBackendRemoval(IInputBackend backend)
     {
+        var timestamp = Stopwatch.GetTimestamp();
         foreach (var device in backend.Devices)
         {
-            HandleDeviceConnectionChanged(new ConnectionEvent(device, 0, false));
+            HandleDeviceConnectionChanged(new ConnectionEvent(device, timestamp, false));
         }
     }
 
     private void HandleBackendAddition(IInputBackend backend)
     {
+        var timestamp = Stopwatch.GetTimestamp();
         foreach (var device in backend.Devices)
         {
-            HandleDeviceConnectionChanged(new ConnectionEvent(device, 0, true));
+            HandleDeviceConnectionChanged(new ConnectionEvent(device, timestamp, true));
         }
     }
 
@@ -138,6 +141,7 @@ public class InputContext
         _joysticks?.HandleDeviceConnectionChanged(e);
         _gamepads?.HandleDeviceConnectionChanged(e);
         _keyboards?.HandleDeviceConnectionChanged(e);
+
         if (_devices is null)
         {
             return;

@@ -93,11 +93,6 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
         State = new PointerState(Buttons, Points);
     }
 
-    public override void Initialize()
-    {
-
-    }
-
     public void Event(in TouchFingerEvent finger, SdlInputBackend.FingerEventType fingerType)
     {
         var position = new Vector3(finger.X, finger.Y, 0);

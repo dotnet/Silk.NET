@@ -180,9 +180,11 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     /// and splitting it into two separate axes from (0, 1)
     /// </summary>
     /// <param name="value">The axis value on a scale of 0 to 1</param>
-    /// <returns>A vector representing the split axis values with <br/>
-    /// X as the 'minus' component & <br/>
-    /// Y as the 'plus' component</returns>
+    /// <returns>
+    /// A vector representing the split axis values with <br/>
+    /// X as the 'minus' component and
+    /// Y as the 'plus' component
+    /// </returns>
     /// <remarks>
     /// Todo: the gamepad api demands that joystick axes are (-1, 1)
     /// </remarks>
@@ -191,9 +193,6 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
         value = (float)((value - 0.5d) * 2d);
         return value > 0 ? new Vector2(0, value) : new Vector2(value, 0);
     }
-
-
-    public override void Initialize() => throw new NotImplementedException();
 
     protected override void Release() => NativeBackend.CloseJoystick(JoystickHandle);
 

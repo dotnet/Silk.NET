@@ -45,11 +45,6 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
             numLockActive: () => (_modState & Sdl.KmodNum) == Sdl.KmodNum);
     }
 
-    public override void Initialize()
-    {
-
-    }
-
     protected override void Release()
     {
     }

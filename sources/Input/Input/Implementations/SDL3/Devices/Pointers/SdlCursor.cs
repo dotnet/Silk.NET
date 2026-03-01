@@ -135,7 +135,7 @@ internal unsafe class SdlCursor : ICursorConfiguration, IDisposable
         // if so, the result of this evaluation will still report that "Default" is available..
         // lest we make it nullable... nah i'll leave it to the Sdl gods for now
         var successfulStyles = CursorStyles.Default;
-        for (var i = 0; i < _cursorStyles.Count; i++)
+        for (var i = 0; i < mainStyles.Length; i++)
         {
             var cursorStyle = mainStyles[i];
             var sdlStyle = _cursorStyles[cursorStyle];

@@ -48,10 +48,6 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         SdlPen Create() => new(backend, uniqueId, sdlDeviceId, name.ReadToString(), backend.UnboundedPointerTarget);
     }
 
-    public override void Initialize()
-    {
-    }
-
     public override PointerState State { get; }
 
     protected override bool OnePointOnly => true;

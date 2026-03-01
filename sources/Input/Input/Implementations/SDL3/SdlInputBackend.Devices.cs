@@ -25,7 +25,6 @@ internal partial class SdlInputBackend
         try
         {
             device = T.CreateDevice(id, this);
-            device.Initialize();
         }
         catch (Exception e)
         {
@@ -39,7 +38,6 @@ internal partial class SdlInputBackend
             InputLog.Error($"Failed to create device {nameof(T)} with id '{id}'");
             return false;
         }
-
 
         sdlDevices.Add(device);
         InputLog.Debug($"{typeof(T)} added: (sdl ID: {id})");
