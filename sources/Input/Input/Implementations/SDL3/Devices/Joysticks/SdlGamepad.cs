@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Diagnostics;
-using System.Numerics;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Joysticks;
@@ -185,7 +184,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
                 return;
             case GamepadAxis.Leftx or GamepadAxis.Lefty or GamepadAxis.Rightx or GamepadAxis.Righty:
             {
-                var axis = GetJoystickAxis(gAxis);
+                var axis = ToJoystickAxis(gAxis);
                 var axes = GetJoystickAxis2(axis);
                 var xIndex = axes.X.Index();
                 var yIndex = axes.Y.Index();
@@ -210,7 +209,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             }
             case GamepadAxis.LeftTrigger or GamepadAxis.RightTrigger:
             {
-                if (Joystick.UpdateRawAxisState(GetJoystickAxis(gAxis), mappedValue, out var moveEvt))
+                if (Joystick.UpdateRawAxisState(ToJoystickAxis(gAxis), mappedValue, out var moveEvt))
                 {
                     _triggerEvents.Enqueue(new GamepadTriggerMoveEvent(this, moveEvt.Timestamp, moveEvt.Axis,
                         moveEvt.Value, moveEvt.Delta));
@@ -224,7 +223,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
         return;
 
-        static JoystickAxis GetJoystickAxis(GamepadAxis gamepadAxis) => gamepadAxis switch {
+        static JoystickAxis ToJoystickAxis(GamepadAxis gamepadAxis) => gamepadAxis switch {
             GamepadAxis.Leftx => JoystickAxis.LeftX,
             GamepadAxis.Lefty => JoystickAxis.LeftY,
             GamepadAxis.Rightx => JoystickAxis.RightX,

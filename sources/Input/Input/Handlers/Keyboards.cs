@@ -6,7 +6,9 @@ namespace Silk.NET.Input;
 public sealed class Keyboards : InputContextDeviceList<IKeyboard>, IKeyboardInputHandler
 {
     internal Keyboards(InputContext ctx)
-        : base(ctx) { }
+        : base(ctx)
+    {
+    }
 
     /// <summary>
     /// Raised when state pertaining to a pushable key on the keyboard changes (e.g. key up, key down, key repeat).

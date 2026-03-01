@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3.Devices.Joysticks;
@@ -9,7 +10,7 @@ namespace Silk.NET.Input.SDL3.Devices.Joysticks;
 internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDevice<SdlJoystick>, IOrderedDevice
 {
     public JoystickState State { get; }
-    internal readonly JoystickType JoystickType;
+    private readonly JoystickType _joystickType;
     internal JoystickHandle JoystickHandle { get; }
 
     public static SdlJoystick CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
@@ -46,9 +47,11 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
 
     public override string Name => NativeBackend.GetJoystickNameForID((uint)SdlDeviceId).ReadToString();
-
-    public override ulong SdlDeviceId => _sdlDeviceId;
-
+    public override ulong SdlDeviceId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => SdlDeviceId;
+    }
 
 
     private SdlJoystick(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
@@ -70,7 +73,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
         }
 
         JoystickHandle = joystickHandle;
-        JoystickType = NativeBackend.GetJoystickType(joystickHandle);
+        _joystickType = NativeBackend.GetJoystickType(joystickHandle);
 
 
         // init current joystick state

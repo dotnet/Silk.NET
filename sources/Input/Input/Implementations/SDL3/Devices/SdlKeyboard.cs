@@ -140,8 +140,9 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
             var isRepeat = key.Repeat != 0;
             _keyStates.SetKeyState(keyName, key.Down);
 
-            var shouldRecord = _textIsRecording == TextRecorderState.RecordingNoSdl && ((stateChanged && isDown) ||
-                                                                                        (!stateChanged && isRepeat));
+            var shouldRecord = _textIsRecording == TextRecorderState.RecordingNoSdl &&
+                               ((stateChanged && isDown) ||
+                                (!stateChanged && isRepeat));
             if (shouldRecord)
             {
                 _textRecorder ??= new TextRecorder(null);

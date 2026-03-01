@@ -6,7 +6,9 @@ namespace Silk.NET.Input;
 public sealed class Gamepads : InputContextDeviceList<IGamepad>, IGamepadInputHandler
 {
     internal Gamepads(InputContext ctx)
-        : base(ctx) { }
+        : base(ctx)
+    {
+    }
 
     /// <summary>
     /// Raised when state pertaining to a pushable button on the gamepad changes (e.g. button up, button down).

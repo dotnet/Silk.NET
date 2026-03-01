@@ -18,7 +18,8 @@ public class InputContext
         IMouseInputHandler,
         IPointerInputHandler,
         IKeyboardInputHandler,
-        IList<IInputBackend>
+        IList<IInputBackend>,
+        IReadOnlyList<IInputBackend>
 {
     // These are lazy-initialized as they contain their own device lists in addition to the device list stored here and
     // the device lists stored in each of the backends. You could argue having this many duplicated lists is inefficient
@@ -63,6 +64,20 @@ public class InputContext
             {
                 return _devices;
             }
+
+            if (Backends.Count == 0)
+            {
+                return _devices = [];
+            }
+
+            var deviceCount = 0;
+
+            foreach(var backend in Backends)
+            {
+                deviceCount += backend.Devices.Count;
+            }
+
+            _devices = new List<IInputDevice>(deviceCount);
 
             foreach (var backend in Backends)
             {
@@ -117,15 +132,6 @@ public class InputContext
         }
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointerTargetChangedEvent>.Handle(PointerTargetChangedEvent @event) => Pointers.HandleTargetChanged(@event);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointChangedEvent>.Handle(PointChangedEvent @event) => Pointers.HandlePointChanged(@event);
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    void IInputHandler<PointerGripChangedEvent>.Handle(PointerGripChangedEvent @event) => Pointers.HandleGripChanged(@event);
-
     private void HandleDeviceConnectionChanged(ConnectionEvent e)
     {
         _pointers?.HandleDeviceConnectionChanged(e);
@@ -139,17 +145,25 @@ public class InputContext
 
         if (e.IsConnected)
         {
-            _devices?.Add(e.Device);
+            _devices.Add(e.Device);
         }
         else
         {
-            _devices?.Remove(e.Device);
+            _devices.Remove(e.Device);
         }
     }
 
-    void IButtonInputHandler<JoystickButton>.HandleButtonChanged(
-        ButtonChangedEvent<JoystickButton> @event
-    ) => _joysticks?.HandleButtonChanged(@event);
+    void IInputHandler<PointerTargetChangedEvent>.Handle(PointerTargetChangedEvent @event) =>
+        _pointers?.HandleTargetChanged(@event);
+
+    void IInputHandler<PointChangedEvent>.Handle(PointChangedEvent @event) =>
+        _pointers?.HandlePointChanged(@event);
+
+    void IInputHandler<PointerGripChangedEvent>.Handle(PointerGripChangedEvent @event) =>
+        _pointers?.HandleGripChanged(@event);
+
+    void IButtonInputHandler<JoystickButton>.HandleButtonChanged(ButtonChangedEvent<JoystickButton> @event) =>
+        _joysticks?.HandleButtonChanged(@event);
 
     void IJoystickInputHandler.HandleAxisMove(JoystickAxisMoveEvent @event) =>
         _joysticks?.HandleAxisMove(@event);
@@ -163,9 +177,8 @@ public class InputContext
     void IGamepadInputHandler.HandleTriggerMove(GamepadTriggerMoveEvent @event) =>
         _gamepads?.HandleTriggerMove(@event);
 
-    void IButtonInputHandler<PointerButton>.HandleButtonChanged(
-        ButtonChangedEvent<PointerButton> @event
-    ) => _pointers?.HandleButtonChanged(@event);
+    void IButtonInputHandler<PointerButton>.HandleButtonChanged(ButtonChangedEvent<PointerButton> @event) =>
+        _pointers?.HandleButtonChanged(@event);
 
     void IMouseInputHandler.HandleScroll(MouseScrollEvent @event) =>
         _pointers?.HandleScroll(@event);
@@ -246,6 +259,27 @@ public class InputContext
     IInputBackend IList<IInputBackend>.this[int index]
     {
         get => _backends[index];
-        set => _backends[index] = value;
+        set
+        {
+            ArgumentNullException.ThrowIfNull(value);
+
+            var existing = _backends[index];
+            if(existing == value)
+            {
+                return;
+            }
+
+            HandleBackendRemoval(existing);
+            HandleBackendAddition(value);
+            _backends[index] = value;
+        }
     }
+
+    int IReadOnlyCollection<IInputBackend>.Count => _backends.Count;
+
+    /// <summary>
+    /// Returns the <see cref="IInputBackend"/> at the specified index.
+    /// </summary>
+    /// <param name="index"></param>
+    public IInputBackend this[int index] => _backends[index];
 }
