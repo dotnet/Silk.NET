@@ -41,7 +41,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
             return new SdlJoystick(sdlDeviceId, uniqueId, backend);
         }
 
-        uniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, uniqueId);
+        uniqueId = SdlInputBackend.FallbackUniqueId<SdlJoystick>(sdlDeviceId, uniqueId);
         return new SdlJoystick(sdlDeviceId, uniqueId, backend);
     }
 

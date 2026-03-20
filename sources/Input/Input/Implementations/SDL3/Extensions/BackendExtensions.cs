@@ -11,10 +11,30 @@ internal static unsafe class BackendExtensions
     extension(SdlInputBackend backend)
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static nint FallbackUniqueId(ulong sdlDeviceId, nint uniqueId)
+        public static nint FallbackUniqueId<T>(ulong sdlDeviceId, nint uniqueId)
         {
-            InputLog.Warn($"Failed to create a deterministically unique identifier for device {sdlDeviceId}.");
-            return uniqueId ^ ((nint)sdlDeviceId | ((nint)sdlDeviceId << 16));
+            InputLog.Warn($"Failed to create a deterministically unique identifier for device {sdlDeviceId} ({typeof(T).Name}).");
+
+            // set the highest bit of the unique id as a hint that the id was not unique
+            var highestBit = (nint)1 << ((sizeof(nint) * 8) - 1);
+            var typeHash = (nint)typeof(T).GetHashCode();
+
+            if (sdlDeviceId == 0 && uniqueId == 0)
+            {
+                return highestBit ^ typeHash;
+            }
+
+            if (uniqueId == 0)
+            {
+                return highestBit ^ (typeHash & (nint)sdlDeviceId);
+            }
+
+            if (sdlDeviceId == 0)
+            {
+                return highestBit ^ (typeHash & uniqueId);
+            }
+
+            return uniqueId ^ ( highestBit | ((nint)sdlDeviceId ^ ((nint)sdlDeviceId << (sizeof(nint) / 2))));
         }
 
         public bool AttemptUniqueId(Ptr<sbyte> ptr, ref nint uniqueId1)

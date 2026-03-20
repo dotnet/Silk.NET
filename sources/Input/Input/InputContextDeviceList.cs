@@ -28,7 +28,7 @@ public abstract class InputContextDeviceList<T> : IReadOnlyList<T>, IInputHandle
     private List<T> List => _list ??= _ctx.Devices.OfType<T>().ToList();
 
     /// <inheritdoc />
-    public IEnumerator<T> GetEnumerator() => throw new NotImplementedException();
+    public IEnumerator<T> GetEnumerator() => List.GetEnumerator();
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 

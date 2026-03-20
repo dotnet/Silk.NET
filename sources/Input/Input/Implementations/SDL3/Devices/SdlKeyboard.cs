@@ -24,13 +24,21 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     public static SdlKeyboard CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
     {
         var namePtr = backend.Sdl.GetKeyboardNameForID((uint)sdlDeviceId);
-        nint uniqueId = 0;
-        if (backend.AttemptUniqueId(namePtr, ref uniqueId))
+
+        var uniqueId = (nint)sdlDeviceId;
+        if (namePtr == nullptr)
         {
-            return new SdlKeyboard(sdlDeviceId, uniqueId, backend);
+            InputLog.Warn($"Failed to get keyboard name for device {sdlDeviceId}.");
+        }
+        else
+        {
+            if (backend.AttemptUniqueId(namePtr, ref uniqueId))
+            {
+                return new SdlKeyboard(sdlDeviceId, uniqueId, backend);
+            }
         }
 
-        uniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, uniqueId);
+        uniqueId = SdlInputBackend.FallbackUniqueId<SdlKeyboard>(sdlDeviceId, uniqueId);
         return new SdlKeyboard(sdlDeviceId, uniqueId, backend);
     }
 

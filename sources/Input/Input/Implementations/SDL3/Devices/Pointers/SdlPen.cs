@@ -41,7 +41,7 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
             return Create();
         }
 
-        uniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, uniqueId);
+        uniqueId = SdlInputBackend.FallbackUniqueId<SdlPen>(sdlDeviceId, uniqueId);
         return Create();
 
 

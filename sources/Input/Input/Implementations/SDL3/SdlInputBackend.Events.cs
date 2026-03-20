@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
@@ -37,6 +38,7 @@ internal partial class SdlInputBackend
         public IEventQueue<PointerGripChangedEvent> PointerGripChangedEvents => _pointerGripChangedEvents;
 
         public IEventQueue<PointerTargetChangedEvent> PointerTargetChangedEvents => _pointerTargetChangedEvents;
+        public IEventQueue<ButtonChangedEvent<PointerButton>> PointerButtonEvents => _pointerButtonEvents;
 
         private readonly OrderedEventQueue _orderedEvents = new();
         private readonly EventQueue<ButtonChangedEvent<JoystickButton>> _buttonChangedEvents = new();
@@ -50,6 +52,7 @@ internal partial class SdlInputBackend
         private readonly EventQueue<MouseScrollEvent> _mouseScrollEvents = new();
         private readonly EventQueue<PointChangedEvent> _pointChangedEvents = new();
         private readonly EventQueue<PointerClickEvent> _pointerClickEvents = new();
+        private readonly EventQueue<ButtonChangedEvent<PointerButton>> _pointerButtonEvents = new();
         private readonly EventQueue<PointerGripChangedEvent> _pointerGripChangedEvents = new();
         private readonly EventQueue<PointerTargetChangedEvent> _pointerTargetChangedEvents = new();
 
@@ -68,6 +71,7 @@ internal partial class SdlInputBackend
             _orderedEvents.Enqueue(_pointerClickEvents);
             _orderedEvents.Enqueue(_pointerGripChangedEvents);
             _orderedEvents.Enqueue(_pointerTargetChangedEvents);
+            _orderedEvents.Enqueue(_pointerButtonEvents);
             _orderedEvents.Sort();
 
             if (handlers is { Length: > 0 })
@@ -79,6 +83,11 @@ internal partial class SdlInputBackend
                         case var genericEvt when genericEvt.Type == typeof(ButtonChangedEvent<JoystickButton>):
                         {
                             RaiseEvent(handlers, genericEvt.Value<ButtonChangedEvent<JoystickButton>>());
+                            break;
+                        }
+                        case var genericEvt when genericEvt.Type == typeof(ButtonChangedEvent<KeyName>):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<ButtonChangedEvent<KeyName>>());
                             break;
                         }
                         case var genericEvt when genericEvt.Type == typeof(ConnectionEvent):
@@ -131,6 +140,11 @@ internal partial class SdlInputBackend
                             RaiseEvent(handlers, genericEvt.Value<PointerClickEvent>());
                             break;
                         }
+                        case var genericEvt when genericEvt.Type == typeof(ButtonChangedEvent<PointerButton>):
+                        {
+                            RaiseEvent(handlers, genericEvt.Value<ButtonChangedEvent<PointerButton>>());
+                            break;
+                        }
                         case var genericEvt when genericEvt.Type == typeof(PointerGripChangedEvent):
                         {
                             RaiseEvent(handlers, genericEvt.Value<PointerGripChangedEvent>());
@@ -163,6 +177,7 @@ internal partial class SdlInputBackend
             _pointerClickEvents.Clear();
             _pointerGripChangedEvents.Clear();
             _pointerTargetChangedEvents.Clear();
+            _pointerButtonEvents.Clear();
         }
 
         private static void RaiseEvent<TItem>(Span<IInputHandler> handlers, in TItem evt)

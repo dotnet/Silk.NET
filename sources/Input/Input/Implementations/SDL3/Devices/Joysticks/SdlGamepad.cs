@@ -169,7 +169,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
         }
 
-        joystickUniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, joystickUniqueId);
+        joystickUniqueId = SdlInputBackend.FallbackUniqueId<SdlGamepad>(sdlDeviceId, joystickUniqueId);
         return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
     }
 

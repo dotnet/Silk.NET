@@ -43,7 +43,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         }
 
         // var pressure = _state.Buttons[PointerButton.Primary].Pressure;
-        AddOrUpdatePoint(0, windowId, new Vector3(x, y, 0), null, DownState, null, true);
+        AddOrUpdatePoint(null, windowId, new Vector3(x, y, 0), null, DownState, null, true);
         // var point = _unboundedPointerTarget.GetPoint(this, 0);
     }
 
@@ -69,7 +69,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         nint uniqueId = 0;
         if (!backend.AttemptUniqueId(deviceName, ref uniqueId))
         {
-            uniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, uniqueId);
+            uniqueId = SdlInputBackend.FallbackUniqueId<SdlMouse>(sdlDeviceId, uniqueId);
         }
 
         return new SdlMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget,

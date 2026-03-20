@@ -6,16 +6,6 @@ using Surface = Silk.NET.Windowing.Surface;
 
 internal partial class InputTesting
 {
-    private static void ExecuteInput(InputContext? context, INativeWindow window)
-    {
-        if (context is null)
-        {
-            return;
-        }
-
-        TestLog.Debug($"Update called on {window}");
-        context.Update();
-    }
 
     private static InputContext InitInputContext<TSurface>(TSurface surface) where TSurface : Surface
     {

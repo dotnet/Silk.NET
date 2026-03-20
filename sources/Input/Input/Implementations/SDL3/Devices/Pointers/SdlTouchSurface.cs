@@ -34,7 +34,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
             return Create();
         }
 
-        uniqueId = SdlInputBackend.FallbackUniqueId(sdlDeviceId, uniqueId);
+        uniqueId = SdlInputBackend.FallbackUniqueId<SdlTouchSurface>(sdlDeviceId, uniqueId);
 
         return Create();
 

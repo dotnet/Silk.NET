@@ -77,6 +77,21 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         {
             silkEvents.PointerTargetChangedEvents.Enqueue(evt);
         }
+
+        while (_buttonEvents.TryDequeue(out var evt))
+        {
+            silkEvents.PointerButtonEvents.Enqueue(evt);
+        }
+
+        while (_clickEvents.TryDequeue(out var evt))
+        {
+            silkEvents.PointerClickEvents.Enqueue(evt);
+        }
+
+        while (_targetEvents.TryDequeue(out var evt))
+        {
+            silkEvents.PointerTargetChangedEvents.Enqueue(evt);
+        }
     }
 
     private ref Button<PointerButton> GetButtonRef(PointerButton button)
