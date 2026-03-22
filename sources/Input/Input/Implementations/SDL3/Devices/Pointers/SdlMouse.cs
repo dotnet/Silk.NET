@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
@@ -24,8 +25,10 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         _state = new MouseState(Buttons, Points, Vector2.Zero);
         Cursor = cursor;
         float x = 0, y = 0;
+        var nowSdl = NativeBackend.GetTicks();
+        var now = Stopwatch.GetTimestamp();
         var mouseInputFlags = GetMouseState(ref x, ref y);
-        ApplyMouseButtonState(mouseInputFlags);
+        ApplyMouseButtonState(mouseInputFlags, nowSdl, now);
 
         var window = NativeBackend.GetMouseFocus();
         uint windowId;
@@ -42,19 +45,20 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
             }
         }
 
+
         // var pressure = _state.Buttons[PointerButton.Primary].Pressure;
-        AddOrUpdatePoint(null, windowId, new Vector3(x, y, 0), null, DownState, null, true);
+        AddOrUpdatePoint(null, windowId, new Vector3(x, y, 0), null, DownState, null, true, nowSdl, now);
         // var point = _unboundedPointerTarget.GetPoint(this, 0);
     }
 
 
-    private void ApplyMouseButtonState(SdlMouseInputFlags mouseState)
+    private void ApplyMouseButtonState(SdlMouseInputFlags mouseState, ulong nowSdl, long now)
     {
         foreach (var pointerButtonName in EnumInfo<PointerButton>.UniqueValues)
         {
             if (mouseState.Has(pointerButtonName))
             {
-                AddButtonEvent(pointerButtonName, 0, true);
+                AddButtonEvent(pointerButtonName, now, nowSdl, true);
             }
         }
     }
@@ -63,7 +67,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
         (SdlMouseInputFlags)NativeBackend.GetMouseState((float*)Unsafe.AsPointer(ref x),
             (float*)Unsafe.AsPointer(ref y));
 
-    public static SdlMouse CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
+    public static SdlMouse CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         var deviceName = backend.Sdl.GetMouseNameForID((uint)sdlDeviceId);
         nint uniqueId = 0;
@@ -72,8 +76,15 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
             uniqueId = SdlInputBackend.FallbackUniqueId<SdlMouse>(sdlDeviceId, uniqueId);
         }
 
-        return new SdlMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget,
-            backend.CursorConfiguration);
+        return new
+            SdlMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, backend.CursorConfiguration) {
+                ScrollEvents = silkEvents.MouseScrollSdlEvents,
+                PointEvents = silkEvents.PointChangedSdlEvents,
+                ClickEvents = silkEvents.PointerClickSdlEvents,
+                ButtonEvents = silkEvents.PointerButtonSdlEvents,
+                GripEvents = silkEvents.PointerGripChangedSdlEvents,
+                TargetEvents = silkEvents.PointerTargetChangedSdlEvents
+            };
     }
 
     public override string Name => NativeBackend.GetMouseNameForID((uint)SdlDeviceId).ReadToString();
@@ -169,25 +180,35 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     /// </summary>
     public bool NeedsPump { get; private set; }
 
-    public void AddMotion(in MouseMotionEvent evtMotion) =>
+    public void AddMotion(in MouseMotionEvent evtMotion, long timestamp) =>
         AddOrUpdatePoint(null, evtMotion.WindowID, new Vector3(evtMotion.X, evtMotion.Y, 0), 1, null, null,
-            evtMotion.WindowID != 0);
+            evtMotion.WindowID != 0, evtMotion.Timestamp, timestamp);
 
 
-    public void AddButtonEvent(in MouseButtonEvent evtButton)
+    public void AddButtonEvent(in MouseButtonEvent evtButton, long timestamp)
     {
-        var button = PointerButton.Primary + evtButton.Button;
+        var button = evtButton.Button switch {
+            1 => PointerButton.Primary,
+            2 => PointerButton.MiddleButton,
+            3 => PointerButton.Secondary,
+            4 => PointerButton.Button4,
+            5 => PointerButton.Button5,
+            _ => throw new ArgumentOutOfRangeException(nameof(evtButton.Button), evtButton.Button, null)
+        };
+        //var button = PointerButton.Primary + (evtButton.Button - 1);
         const float mult = 1 / 255f;
-        AddButtonEvent(button, evtButton.Timestamp, evtButton.Down > 0, evtButton.Down * mult);
+        AddButtonEvent(button, timestamp, evtButton.Timestamp, evtButton.Down > 0, evtButton.Down * mult);
     }
 
-    public void AddWheelEvent(in MouseWheelEvent evtWheel)
+    public void AddWheelEvent(in MouseWheelEvent evtWheel, long timestamp)
     {
         var wheelState = _state.WheelPosition = new Vector2(evtWheel.X, evtWheel.Y);
         AddMouseScrollEvent(
             scrollWheelPosition: wheelState,
             windowId: evtWheel.WindowID,
             position: new Vector3(evtWheel.MouseX, evtWheel.MouseY, 0),
-            isMouseRelative: evtWheel.WindowID != 0);
+            isMouseRelative: evtWheel.WindowID != 0,
+            sdlTimestamp: evtWheel.Timestamp,
+            timestamp: timestamp);
     }
 }

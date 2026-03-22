@@ -9,7 +9,7 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Input.SDL3;
 
-internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
+internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>, INeedFinalizationEachFrame
 {
     public KeyboardState State { get; }
     public override string Name => NativeBackend.GetKeyboardNameForID((uint)SdlDeviceId).ReadToString();
@@ -21,7 +21,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
 
     private bool _hasUpdates;
 
-    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
+    public static SdlKeyboard CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         var namePtr = backend.Sdl.GetKeyboardNameForID((uint)sdlDeviceId);
 
@@ -34,12 +34,16 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         {
             if (backend.AttemptUniqueId(namePtr, ref uniqueId))
             {
-                return new SdlKeyboard(sdlDeviceId, uniqueId, backend);
+                return new SdlKeyboard(sdlDeviceId, uniqueId, backend) {
+                    KeyChangedEvents = silkEvents.KeyChangedSdlEvents, KeyCharEvents = silkEvents.KeyCharSdlEvents
+                };
             }
         }
 
         uniqueId = SdlInputBackend.FallbackUniqueId<SdlKeyboard>(sdlDeviceId, uniqueId);
-        return new SdlKeyboard(sdlDeviceId, uniqueId, backend);
+        return new SdlKeyboard(sdlDeviceId, uniqueId, backend) {
+            KeyChangedEvents = silkEvents.KeyChangedSdlEvents, KeyCharEvents = silkEvents.KeyCharSdlEvents
+        };
     }
 
     private SdlKeyboard(ulong sdlDeviceId, nint uniqueId, SdlInputBackend backend) : base(backend, uniqueId, sdlDeviceId)
@@ -109,7 +113,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
         return _textRecorder?.ConsumeInput();
     }
 
-    public override void FinalizeUpdate(SdlInputBackend.SilkEventQueues queues)
+    public void FinalizeUpdate()
     {
         if (_hasUpdates)
         {
@@ -118,19 +122,9 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
             // - otherwise, we handle the modifier states with our standard key handling logic
             _modState = NativeBackend.GetModState();
         }
-
-        while (_keyChangedEvents.TryDequeue(out var evt))
-        {
-            queues.KeyChangedEvents.Enqueue(evt);
-        }
-
-        while (_keyCharEvents.TryDequeue(out var evt))
-        {
-            queues.KeyCharEvents.Enqueue(evt);
-        }
     }
 
-    public void AddKeyEvent(in KeyboardEvent key)
+    public void AddKeyEvent(in KeyboardEvent key, long timestamp)
     {
         _hasUpdates = true;
         var keyName = SdlKeyConversions.ScancodeToKeyName(key.Scancode); // SdlToKeyName(key.Which);
@@ -151,18 +145,18 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
                 _textRecorder ??= new TextRecorder(null);
                 if(_textRecorder.AddKeyStroke(keyName, this, out var newChar))
                 {
-                    _keyCharEvents.Enqueue(new KeyCharEvent(this, Stopwatch.GetTimestamp(), newChar.Value));
+                    KeyCharEvents.Enqueue(new KeyCharEvent(this, timestamp, newChar.Value), key.Timestamp);
                 }
             }
             else
             {
-                _keyChangedEvents.Enqueue(new KeyChangedEvent(
+                KeyChangedEvents.Enqueue(new KeyChangedEvent(
                     Keyboard: this,
-                    Timestamp: Stopwatch.GetTimestamp(),
+                    Timestamp: timestamp,
                     Key: _keyStates[keyName],
                     Previous: button,
                     Modifiers: State.Modifiers,
-                    IsRepeat: isRepeat));
+                    IsRepeat: isRepeat), key.Timestamp);
             }
         }
     }
@@ -175,7 +169,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
             var windowHandle = NativeBackend.GetWindowFromID(evt.WindowID);
             if (windowHandle.Handle != null)
             {
-                Console.Out.WriteLine("Unexpected text editing event");
+                InputLog.Warn("Unexpected text editing event");
                 BeginRecordingSdl(windowHandle);
             }
         }
@@ -226,7 +220,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
             var windowHandle = NativeBackend.GetWindowFromID(evt.WindowID);
             if (windowHandle.Handle != null)
             {
-                Console.Out.WriteLine("Unexpected text input event");
+                InputLog.Warn("Unexpected text input event");
                 BeginRecordingSdl(windowHandle);
             }
         }
@@ -251,8 +245,8 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
     private ushort _modState;
     private const float _pressureMultiplier = 1f / 255f;
     private readonly ButtonStates _keyStates;
-    private readonly Queue<KeyChangedEvent> _keyChangedEvents = new();
-    private readonly Queue<KeyCharEvent> _keyCharEvents = new();
+    internal required ISdlEventQueue<KeyChangedEvent> KeyChangedEvents;
+    internal required ISdlEventQueue<KeyCharEvent> KeyCharEvents;
 
     private class ButtonStates : IReadOnlyList<Button<KeyName>>
     {
@@ -297,7 +291,7 @@ internal class SdlKeyboard : SdlDevice, IKeyboard, ISdlDevice<SdlKeyboard>
             return CreateButton((KeyName)key, _keyPressures[keyIdx]);
         }
 
-        private Button<KeyName> CreateButton(KeyName key, byte pressure) => new(key, pressure > 0, pressure * _pressureMultiplier);
+        private static Button<KeyName> CreateButton(KeyName key, byte pressure) => new(key, pressure > 0, pressure * _pressureMultiplier);
 
         public static bool IsDefined(KeyName keyName) => _indices[(int)keyName] >= 0;
     }

@@ -1,5 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Input;
@@ -45,7 +47,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
     private static readonly string[] _names;
     private static readonly Dictionary<T, int> _numericallyDistinctValues;
     private static readonly ulong[] _allEnumValuesRaw;
-    private static bool _unnamedAreIndexable;
+    private static readonly bool _unnamedAreIndexable;
 
     static unsafe EnumInfo()
     {
@@ -136,6 +138,9 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         for (var i = 0; i < vals.Length; i++)
         {
             var enumVal = vals[i];
+
+            // get attribute and check for ignore
+
             dict.Add(enumVal, i);
         }
 
@@ -242,7 +247,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         where TNumber : unmanaged, IComparable<TNumber>
     {
         // numerically distinct numbers
-        var allValues = Enum.GetValues<T>();
+        var allValues = Enum.GetValues<T>().Where(x => !IsIgnored(x)).ToArray();
 
         if (byNumericValue)
         {
@@ -259,8 +264,11 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         return allValues;
     }
 
+    private static bool IsIgnored(T value)
+    {
+        var attr = value.GetType().GetField(value.ToString())?.GetCustomAttribute<OrderedIndexIgnoreAttribute>();
+        return attr is not null;
+    }
+
     public static unsafe bool HasValue(int value) => _allEnumValuesRaw.Contains(*(uint*)&value);
 }
-
-[AttributeUsage(AttributeTargets.Enum)]
-internal class OrderedIndexUsageAttribute : Attribute;

@@ -13,7 +13,7 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 /// <summary>
 /// A base class for SDL input devices that operate in terms of a window's or DWMs bounds.
 /// </summary>
-internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
+internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinalizationEachFrame
 {
     protected SdlPointerDevice(SdlInputBackend backend, nint silkId,
         ulong sdlDeviceId, IPointerTarget unboundedPointerTarget) : base(backend, silkId, sdlDeviceId)
@@ -28,7 +28,8 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         }
     }
 
-    protected void AddButtonEvent(PointerButton button, ulong sdlTimestamp, bool isDown, float? pressure = null)
+
+    protected void AddButtonEvent(PointerButton button, long timestamp, ulong sdlTimestamp, bool isDown, float? pressure = null)
     {
         pressure ??= isDown ? 1.0f : 0.0f;
         var idx = EnumInfo<PointerButton>.ValueIndexOfUnnamed(button);
@@ -45,54 +46,11 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
 
         if (myButton != original)
         {
-            _buttonEvents.Enqueue(new ButtonChangedEvent<PointerButton>(this, (long)sdlTimestamp, myButton, original));
+            ButtonEvents.Enqueue(new ButtonChangedEvent<PointerButton>(this,timestamp, myButton, original), sdlTimestamp);
         }
     }
 
     private static readonly Button<PointerButton> _unknownButton = new(PointerButton.Unknown, false, 0f);
-
-    public override void FinalizeUpdate(SdlInputBackend.SilkEventQueues silkEvents)
-    {
-        while (_scrollEvents.TryDequeue(out var evt))
-        {
-            silkEvents.MouseScrollEvents.Enqueue(evt);
-        }
-
-        while (_pointEvents.TryDequeue(out var evt))
-        {
-            silkEvents.PointChangedEvents.Enqueue(evt);
-        }
-
-        while (_clickEvents.TryDequeue(out var evt))
-        {
-            silkEvents.PointerClickEvents.Enqueue(evt);
-        }
-
-        while (_gripEvents.TryDequeue(out var evt))
-        {
-            silkEvents.PointerGripChangedEvents.Enqueue(evt);
-        }
-
-        while (_targetEvents.TryDequeue(out var evt))
-        {
-            silkEvents.PointerTargetChangedEvents.Enqueue(evt);
-        }
-
-        while (_buttonEvents.TryDequeue(out var evt))
-        {
-            silkEvents.PointerButtonEvents.Enqueue(evt);
-        }
-
-        while (_clickEvents.TryDequeue(out var evt))
-        {
-            silkEvents.PointerClickEvents.Enqueue(evt);
-        }
-
-        while (_targetEvents.TryDequeue(out var evt))
-        {
-            silkEvents.PointerTargetChangedEvents.Enqueue(evt);
-        }
-    }
 
     private ref Button<PointerButton> GetButtonRef(PointerButton button)
     {
@@ -118,7 +76,31 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
     /// </summary>
     protected abstract bool OnePointOnly { get; }
 
-    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget? target, uint touchId, in Vector3? positionOnTarget,
+    public void FinalizeUpdate()
+    {
+        RepopulateActiveTargets();
+        return;
+
+        void RepopulateActiveTargets()
+        {
+            // todo - optimize target collection population
+            _activeTargets.Clear();
+            foreach (var point in _points)
+            {
+                if (!_activeTargets.Contains(point.Target!))
+                {
+                    _activeTargets.Add(point.Target!);
+                    if (!_allTargets.Contains(point.Target!))
+                    {
+                        _allTargets.Add(point.Target!);
+                    }
+                }
+            }
+        }
+    }
+
+    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget? target, uint touchId,
+        in Vector3? positionOnTarget,
         Ray3D<float>? ray, float? pressure, out TargetPoint? oldPoint)
     {
         if (touchId != 0 && OnePointOnly)
@@ -180,26 +162,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         return ref point;
     }
 
-    private void RepopulateActiveTargets()
-    {
-        // todo - optimize target collection population
-        _activeTargets.Clear();
-        foreach (var point in _points)
-        {
-            if (!_activeTargets.Contains(point.Target!))
-            {
-                _activeTargets.Add(point.Target!);
-                if (!_allTargets.Contains(point.Target!))
-                {
-                    _allTargets.Add(point.Target!);
-                }
-            }
-        }
-    }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static Ray3D<float> ConstructRay(in Vector3 origin, Vector3? direction = null) =>
-        ConstructRay(origin.ToGeneric(), direction?.ToGeneric());
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static Ray3D<float> ConstructRay(in Vector3D<float> origin, Vector3D<float>? direction = null) =>
@@ -215,9 +178,11 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
     /// <param name="isDown">"Down" status. Set null if has not changed</param>
     /// <param name="ray">The ray - set null if has not changed or is simply computed in 2D without extra calculation</param>
     /// <param name="isPositionInWindowSpace">True if the provided position (if present) is relative to the given window id</param>
+    /// <param name="sdlTimestamp"></param>
+    /// <param name="timestamp"></param>
     /// <exception cref="InvalidOperationException"></exception>
     protected void AddOrUpdatePoint(uint? touchId, uint? windowId, in Vector3? pos, float? pressure, bool? isDown,
-        Ray3D<float>? ray, bool isPositionInWindowSpace)
+        Ray3D<float>? ray, bool isPositionInWindowSpace, ulong sdlTimestamp, long timestamp)
     {
         if (pos == null && pressure == null && isDown == null && ray == null)
         {
@@ -239,10 +204,11 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
             }
         }
 
-        ref var point = ref CreateOrUpdateTargetPoint(windowTarget, touchId.Value, pos, ray, pressure, out var oldPoint);
+        ref var point =
+            ref CreateOrUpdateTargetPoint(windowTarget, touchId.Value, pos, ray, pressure, out var oldPoint);
 
-        _pointEvents.Enqueue(new PointChangedEvent(this, Stopwatch.GetTimestamp(), OldPoint: oldPoint,
-            NewPoint: point));
+        PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint,
+            NewPoint: point), sdlTimestamp);
 
         if (isDown is false)
         {
@@ -257,8 +223,9 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
                     candidatePoint = default;
                 }
             }
-            _pointEvents.Enqueue(new PointChangedEvent(this, Stopwatch.GetTimestamp(), OldPoint: previous,
-                NewPoint: point));
+
+            PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: previous,
+                NewPoint: point), sdlTimestamp);
         }
 
         if (windowId != null && windowId.Value != _previousWindowId)
@@ -333,7 +300,8 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
         );
     }
 
-    protected void AddMouseScrollEvent(Vector2 scrollWheelPosition, uint? windowId, Vector3? position, bool isMouseRelative)
+    protected void AddMouseScrollEvent(Vector2 scrollWheelPosition, uint? windowId, Vector3? position,
+        bool isMouseRelative, ulong sdlTimestamp, long timestamp)
     {
         if (this is not IMouse mouse)
         {
@@ -347,19 +315,19 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
 
         var previousScroll = _previousScrollWheelPosition ?? Vector2.Zero;
 
-        _scrollEvents.Enqueue(new MouseScrollEvent(
+        ScrollEvents.Enqueue(new MouseScrollEvent(
             Mouse: mouse,
-            Timestamp: Stopwatch.GetTimestamp(),
+            Timestamp: timestamp,
             Point: point,
             WheelPosition: scrollWheelPosition,
-            Delta: scrollWheelPosition - previousScroll));
+            Delta: scrollWheelPosition - previousScroll), sdlTimestamp);
 
         _previousScrollWheelPosition = scrollWheelPosition;
     }
 
     private Vector2? _previousScrollWheelPosition;
 
-    protected void UpdatePointRay(uint? touchId, float? xTilt, float? yTilt, float? zTwist, float? distance)
+    protected void UpdatePointRay(uint? touchId, float? xTilt, float? yTilt, float? zTwist, float? distance, ulong sdlTimestamp, long timestamp)
     {
         if (xTilt == null && yTilt == null && zTwist == null && distance == null)
         {
@@ -381,16 +349,16 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
                 direction: new Vector3D<float>(xTilt.Value, yTilt.Value, zTwist.Value))
         };
 
-        _pointEvents.Enqueue(new PointChangedEvent(this, Stopwatch.GetTimestamp(), OldPoint: oldPoint,
-            NewPoint: point));
+        PointEvents.Enqueue(new PointChangedEvent(this, timestamp, OldPoint: oldPoint,
+            NewPoint: point), sdlTimestamp);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    protected void SetGripPressure(float pressure)
+    protected void SetGripPressure(float pressure, ulong sdlTimestamp, long timestamp)
     {
-        _gripEvents.Enqueue(new PointerGripChangedEvent(this, Stopwatch.GetTimestamp(), pressure,
-            pressure - State.GripPressure));
+        // todo - use only the given events to update the state? is that possible? keyboard character input would probably be a problem..
         State.GripPressure = pressure;
+        GripEvents.Enqueue(new PointerGripChangedEvent(this, timestamp, pressure, pressure - State.GripPressure), sdlTimestamp);
     }
 
 
@@ -412,10 +380,10 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice
     private readonly IPointerTarget _unboundedPointerTarget;
     private readonly IReadOnlyList<IPointerTarget> _unboundedTargetList;
 
-    private readonly Queue<MouseScrollEvent> _scrollEvents = new();
-    private readonly Queue<PointChangedEvent> _pointEvents = new();
-    private readonly Queue<PointerClickEvent> _clickEvents = new();
-    private readonly Queue<ButtonChangedEvent<PointerButton>> _buttonEvents = new();
-    private readonly Queue<PointerGripChangedEvent> _gripEvents = new();
-    private readonly Queue<PointerTargetChangedEvent> _targetEvents = new();
+    internal required ISdlEventQueue<MouseScrollEvent> ScrollEvents { private get; init; }
+    internal required ISdlEventQueue<PointChangedEvent> PointEvents { private get; init; }
+    internal required ISdlEventQueue<PointerClickEvent> ClickEvents { private get; init; }
+    internal required ISdlEventQueue<ButtonChangedEvent<PointerButton>> ButtonEvents { private get; init; }
+    internal required ISdlEventQueue<PointerGripChangedEvent> GripEvents { private get; init; }
+    internal required ISdlEventQueue<PointerTargetChangedEvent> TargetEvents { private get; init; }
 }

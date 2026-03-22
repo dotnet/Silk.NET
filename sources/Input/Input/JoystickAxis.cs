@@ -3,9 +3,12 @@
 
 namespace Silk.NET.Input;
 
+[OrderedIndexUsage]
 internal enum JoystickAxis
 {
+    [OrderedIndexIgnore]
     Unknown = int.MaxValue - ushort.MaxValue,
+
     MinusLeftX, PlusLeftX, MinusLeftY, PlusRightY,
     MinusRightX, PlusRightX, MinusRightY, PlusLeftY,
     LeftX, LeftY, RightX, RightY,

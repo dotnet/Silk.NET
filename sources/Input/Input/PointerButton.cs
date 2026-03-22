@@ -9,6 +9,7 @@ public enum PointerButton
     /// <summary>
     /// An unrecognised button.
     /// </summary>
+    [OrderedIndexIgnore]
     Unknown = JoystickAxis.Unknown,
 
     /// <summary>

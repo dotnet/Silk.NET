@@ -58,5 +58,4 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
     }
 
     private bool _isDisposed;
-    public abstract void FinalizeUpdate(SdlInputBackend.SilkEventQueues silkEvents);
 }

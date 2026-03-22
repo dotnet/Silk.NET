@@ -24,7 +24,7 @@ internal partial class SdlInputBackend
 
         try
         {
-            device = T.CreateDevice(id, this);
+            device = T.CreateDevice(id, this, _silkEvents);
         }
         catch (Exception e)
         {

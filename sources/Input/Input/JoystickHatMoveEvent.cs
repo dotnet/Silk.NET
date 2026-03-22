@@ -13,4 +13,6 @@ namespace Silk.NET.Input;
 /// </param>
 /// <param name="Value">The position of the hat after this event.</param>
 /// <param name="Delta">The change in <see cref="Value"/> as a result of this event.</param>
-public readonly record struct JoystickHatMoveEvent(IJoystick Joystick, long Timestamp, Vector2 Value, Vector2 Delta) : ITimestampedEvent;
+// todo: hats are not class objects in and of themselves, and a joystick could have > 1 hat. we should include a hat index here.
+// and so I am for now - though this should not be accepted without review since it goes against the initial design of the API.
+public readonly record struct JoystickHatMoveEvent(IJoystick Joystick, long Timestamp, int WhichHat, Vector2 Value, Vector2 Delta) : ITimestampedEvent;

@@ -216,15 +216,17 @@ public sealed class Pointers
 
         _clicks.Add(
             new ClickData(
-                device,
-                null,
-                default(TargetPoint) with
+                Device: device,
+                FirstClickButton: null,
+
+                // why wipe the data like this?
+                FirstClickPosition: default(TargetPoint) with
                 {
                     Target = point.Target,
                     Id = point.Id,
                 },
-                null,
-                true
+                FirstClickTime: null,
+                IsFirstClick: true
             )
         );
         return ref CollectionsMarshal.AsSpan(_clicks)[idx];
@@ -237,18 +239,27 @@ public sealed class Pointers
         long timestamp
     )
     {
-        if ((_clicks is null && DoubleClick is null && Click is null) || point.Target is null)
+        if ((DoubleClick is null && Click is null) || point.Target is null)
         {
             return;
         }
 
         ref var click = ref GetClickData(device, in point, out var idx);
+
+        if (click.IsFirstClick)
+        {
+            var time = click.FirstClickTime;
+            click.FirstClickTime = null;
+        }
+
+        // If it's the first click or the click's prior button is different, then...
         if (click.IsFirstClick || (click.FirstClickButton is { } firstBtn && firstBtn != button))
         {
-            // This is the first click with the given mouse button.
+            // ... this is the first click with the given mouse button.
             var time = click.FirstClickTime;
             click.FirstClickTime = null;
 
+            // if the click is the second click, then ...
             if (
                 click is { IsFirstClick: false, FirstClickButton: { } prevBtn }
                 && time is { } clickTime
@@ -260,9 +271,9 @@ public sealed class Pointers
                 );
             }
         }
-        else
+        else // otherwise...
         {
-            // This is the second click with the same mouse button.
+            // ... this is the second click with the same mouse button.
             if (click.FirstClickTime is { } fct && timestamp - fct <= _doubleClickTime)
             {
                 // Within the maximum double click time.

@@ -1,10 +1,8 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Buffers;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Numerics;
 using System.Runtime.CompilerServices;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
 using Silk.NET.Input.SDL3.Devices.Pointers;
@@ -73,22 +71,7 @@ internal partial class SdlInputBackend : IInputBackend
 
         Id = (nint)ptr.Handle;
         CursorConfiguration = new SdlCursor(Sdl);
-
-        // The epoch deals in nanoseconds, so we take multiple measurements for the most accurate timestamps.
-        const byte epochMeasurements = 3;
-        var epoch = 0L;
-        for (byte i = 0; i < epochMeasurements; i++)
-        {
-            // We know the ticks per nanosecond, so to get the epoch timestamp we multiply the TicksNS by the ticks per
-            // nanosecond to get the number of ticks relative to SDL's epoch, and then subtract that from the timestamp
-            // now to get the timestamp of SDL's epoch. From there, when we receive an event we can just report the
-            // timestamp as _epoch + (timestamp * _ticksPerNanosecond).
-            var nowTimestamp = Stopwatch.GetTimestamp();
-            var nowTicks = Sdl.GetTicksNS();
-            epoch += unchecked(nowTimestamp - (long)(nowTicks * _ticksPerNanosecond));
-        }
-
-        _epoch = epoch / epochMeasurements;
+        InitializeEventQueue(out _silkEvents);
 
         // ===============================================================================================
         // === If we ever need to share common state across window-specific "backends", use the below: ===
@@ -140,6 +123,39 @@ internal partial class SdlInputBackend : IInputBackend
         // // Register ourselves with the root.
         // Root.Backends.Add(this, null);
         // Id = (nint)Root.EventFilter.Handle + Root.Backends.Count() - 1;
+
+        return;
+        static void InitializeEventQueue(out SilkEventContext context)
+        {
+            // Create our event queue with maximal timestamp accuracy
+
+            // The SDL timestamps deal in nanoseconds, so we take multiple measurements to get the most accurate
+            // relationship between SDL and Stopwatch timeestamps
+            const byte measurementCount = 4;
+            Span<SdlTimestampCalculator.Basis> calibrations = stackalloc SdlTimestampCalculator.Basis[measurementCount];
+            for (byte i = 0; i < measurementCount; i++)
+            {
+                long nowTimestamp;
+                ulong nowSdl;
+
+                // alternate the order in which we do it, so we get a more accurate average that is not influenced
+                // as much by the time it takes to acquire each type of measurement
+                if (i % 2 == 0)
+                {
+                    nowTimestamp = Stopwatch.GetTimestamp();
+                    nowSdl = Silk.NET.SDL.Sdl.GetTicksNS();
+                }
+                else
+                {
+                    nowSdl = Silk.NET.SDL.Sdl.GetTicksNS();
+                    nowTimestamp = Stopwatch.GetTimestamp();
+                }
+
+                calibrations[i] = new SdlTimestampCalculator.Basis(nowSdl, nowTimestamp);
+            }
+
+            context = new SilkEventContext(calibrations.Average());
+        }
     }
 
     // [UnmanagedCallersOnly]
@@ -180,7 +196,7 @@ internal partial class SdlInputBackend : IInputBackend
         // it always just be done in the same way as other input events? e.g. via events
         // windows can change without input events being processed... but who cares? as long as the devices
         // have the latest information when they're updated, we should be good?
-        UpdatePointerTargets(_eventProcessingArgs.SdlWindowTargets, _eventProcessingArgs.DisplayTargets);
+        UpdatePointerTargets(_eventProcessingArgs.SdlWindowTargets, _eventProcessingArgs.SdlDisplayTargets);
 
         // actually process the events
         if (!_pumpedSdlEvents.HasEvents)
@@ -191,13 +207,15 @@ internal partial class SdlInputBackend : IInputBackend
 
         while (_pumpedSdlEvents.TryDequeue(out var evt))
         {
-            ProcessEvent(evt, ref _eventProcessingArgs);
+            ProcessEvent(evt.Event, evt.Timestamp, ref _eventProcessingArgs);
         }
 
         foreach (var device in _eventProcessingArgs.Devices)
         {
-            // todo - implement this for all device types instead
-            device.FinalizeUpdate(_silkEvents);
+            if (device is INeedFinalizationEachFrame needer)
+            {
+                needer.FinalizeUpdate();
+            }
         }
 
         _silkEvents.RaiseEvents(handler);
@@ -212,13 +230,12 @@ internal partial class SdlInputBackend : IInputBackend
         return 1;
     }
 
-    private static void ProcessEvent(in Event evt, ref ProcessEventArgs processEventArgs)
+    private static void ProcessEvent(in Event evt, long timestamp, ref ProcessEventArgs processEventArgs)
     {
         var backend = processEventArgs.Backend;
         var devices = processEventArgs.Devices;
-        var timestamp = GetTimestamp(in evt);
-        Debug.Assert(timestamp >= processEventArgs.PreviousTimestamp, "Events out of order");
-        processEventArgs.PreviousTimestamp = timestamp;
+        Debug.Assert(evt.Common.Timestamp >= processEventArgs.PreviousTimestamp, "Events out of order");
+        processEventArgs.PreviousTimestamp = evt.Common.Timestamp;
 
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         var type = (EventType)evt.Common.Type;
@@ -257,7 +274,7 @@ internal partial class SdlInputBackend : IInputBackend
                         return;
                     case EventType.KeyDown:
                     case EventType.KeyUp:
-                        keyboard.AddKeyEvent(evt.Key);
+                        keyboard.AddKeyEvent(evt.Key, timestamp);
                         break;
                     case EventType.TextEditing:
                         keyboard.AddTextEditingEvent(evt.Edit);
@@ -286,11 +303,11 @@ internal partial class SdlInputBackend : IInputBackend
                 switch (type)
                 {
                     case EventType.GamepadAxisMotion:
-                        gamepad.AddAxisEvent(evt.Gaxis.Axis, evt.Gaxis.Value);
+                        gamepad.AddAxisEvent(evt.Gaxis.Axis, evt.Gaxis.Value, evt.Gaxis.Timestamp, timestamp);
                         break;
                     case EventType.GamepadButtonDown:
                     case EventType.GamepadButtonUp:
-                        gamepad.AddButtonEvent(evt.Gbutton.Button, evt.Gbutton.Down);
+                        gamepad.AddButtonEvent(evt.Gbutton.Button, evt.Gbutton.Down, evt.Gbutton.Timestamp, timestamp);
                         break;
                     case EventType.GamepadRemapped:
                         gamepad.Remap();
@@ -322,17 +339,17 @@ internal partial class SdlInputBackend : IInputBackend
                     case EventType.JoystickAdded:
                         return;
                     case EventType.JoystickAxisMotion:
-                        joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value);
+                        joystick.AddAxisEvent(evt.Jaxis.Axis, evt.Jaxis.Value, evt.Jaxis.Timestamp, timestamp);
                         break;
                     case EventType.JoystickBallMotion:
                         // todo: ball events?
                         break;
                     case EventType.JoystickHatMotion:
-                        joystick.AddHatEvent(evt.Jhat.Hat, evt.Jhat.Value);
+                        joystick.AddHatEvent(evt.Jhat.Hat, evt.Jhat.Value, evt.Jhat.Timestamp, timestamp);
                         break;
                     case EventType.JoystickButtonDown:
                     case EventType.JoystickButtonUp:
-                        joystick.AddButtonEvent(evt.Jbutton.Button, evt.Jbutton.Down);
+                        joystick.AddButtonEvent(evt.Jbutton.Button, evt.Jbutton.Down, evt.Jbutton.Timestamp, timestamp);
                         break;
                     case EventType.JoystickBatteryUpdated:
                         break;
@@ -360,14 +377,14 @@ internal partial class SdlInputBackend : IInputBackend
                     case EventType.MouseAdded:
                         return;
                     case EventType.MouseMotion:
-                        mouse.AddMotion(evt.Motion);
+                        mouse.AddMotion(evt.Motion, timestamp);
                         break;
                     case EventType.MouseButtonDown:
                     case EventType.MouseButtonUp:
-                        mouse.AddButtonEvent(evt.Button);
+                        mouse.AddButtonEvent(evt.Button, timestamp);
                         break;
                     case EventType.MouseWheel:
-                        mouse.AddWheelEvent(evt.Wheel);
+                        mouse.AddWheelEvent(evt.Wheel, timestamp);
                         break;
                 }
 
@@ -395,23 +412,23 @@ internal partial class SdlInputBackend : IInputBackend
                     case EventType.PenDown:
                     case EventType.PenUp:
                     {
-                        penDevice.UpDownEvent(evt.Ptouch);
+                        penDevice.UpDownEvent(evt.Ptouch, timestamp);
                         break;
                     }
                     case EventType.PenButtonDown:
                     case EventType.PenButtonUp:
                     {
-                        penDevice.ButtonEvent(evt.Pbutton);
+                        penDevice.ButtonEvent(evt.Pbutton, timestamp);
                         break;
                     }
                     case EventType.PenMotion:
                     {
-                        penDevice.MotionEvent(evt.Pmotion);
+                        penDevice.MotionEvent(evt.Pmotion, timestamp);
                         break;
                     }
                     case EventType.PenAxis:
                     {
-                        penDevice.AxisEvent(evt.Paxis);
+                        penDevice.AxisEvent(evt.Paxis, timestamp);
                         break;
                     }
                 }
@@ -429,7 +446,7 @@ internal partial class SdlInputBackend : IInputBackend
                     return;
                 }
 
-                touchDevice.Event(finger, (FingerEventType)finger.Type);
+                touchDevice.Event(finger, (FingerEventType)finger.Type, timestamp);
                 break;
             }
 
@@ -462,11 +479,12 @@ internal partial class SdlInputBackend : IInputBackend
             {
                 var bounds = SdlBoundedPointerTarget.CalculateAllDisplayBounds(backend.Sdl);
                 var x = (QueuedEventType.BoundedPointerTargetUpdate,
-                        timestamp,
+                        evt.Common.Timestamp,
                         bounds.Min.ToSystem(),
                         bounds.Max.ToSystem()
                     );
-                Console.WriteLine($"Display bounds changed: {x.BoundedPointerTargetUpdate}");
+
+                InputLog.Debug($"Display bounds changed: {x.BoundedPointerTargetUpdate}");
                 break;
             }
             case EventType.WindowMouseLeave
@@ -478,11 +496,6 @@ internal partial class SdlInputBackend : IInputBackend
         }
 
         #endregion
-
-        return;
-
-        ulong GetTimestamp(in Event @event) =>
-            unchecked((ulong)(backend._epoch + (@event.Common.Timestamp * _ticksPerNanosecond)));
     }
 
 
@@ -530,19 +543,67 @@ internal partial class SdlInputBackend : IInputBackend
         return target != null;
     }
 
+    private readonly struct TimedSdlEvent
+    {
+        public readonly long Timestamp;
+        public readonly Event Event;
+
+        public TimedSdlEvent(Event @event, long timestamp)
+        {
+            Event = @event;
+            Timestamp = timestamp;
+        }
+    }
 
     private class SdlEventQueue
     {
-        private readonly Queue<Event> _events = new(1024);
-        public void Add(ref Event p0) => _events.Enqueue(p0);
+        private TimedSdlEvent[] _events = new TimedSdlEvent[256];
+        private int _nextEventIndex;
+        public void Add(ref Event p0)
+        {
+            var timestamp = Stopwatch.GetTimestamp();
+            _isSorted = false;
+            if (_nextEventIndex == _events.Length)
+            {
+                Array.Resize(ref _events, _events.Length * 2);
+            }
+
+            _events[_nextEventIndex++] = new(p0, timestamp);
+        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool TryDequeue(out Event p0) => _events.TryDequeue(out p0);
+        public bool TryDequeue(out TimedSdlEvent p0)
+        {
+            if (_nextEventIndex == 0)
+            {
+                p0 = default;
+                return false;
+            }
+
+            if (!_isSorted)
+            {
+                // sort the events by timestamp
+                Array.Sort(_events, 0, _nextEventIndex, _comparer);
+                _isSorted = true;
+            }
+
+            p0 = _events[--_nextEventIndex];
+            return true;
+        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void Clear() => _events.Clear();
+        public void Clear()
+        {
+            _nextEventIndex = 0;
+            _isSorted = false;
+        }
 
-        public bool HasEvents => _events.Count > 0;
+        public bool HasEvents => _nextEventIndex > 0;
+
+        private bool _isSorted;
+
+        // order in descending order, such that "de-queueing" the last event will return the first chronological event in the queue (last event in the array)
+        private static readonly Comparer<Event> _comparer = Comparer<Event>.Create((e1, e2) => e2.Common.Timestamp.CompareTo(e1.Common.Timestamp));
     }
 
     private struct ProcessEventArgs
@@ -550,7 +611,7 @@ internal partial class SdlInputBackend : IInputBackend
         public readonly SdlInputBackend Backend;
         public readonly List<SdlDevice> Devices;
         public readonly List<SdlWindowTarget> SdlWindowTargets;
-        public readonly List<SdlDisplayTarget> DisplayTargets;
+        public readonly List<SdlDisplayTarget> SdlDisplayTargets;
         public ulong PreviousTimestamp;
 
         public ProcessEventArgs(SdlInputBackend backend)
@@ -559,7 +620,7 @@ internal partial class SdlInputBackend : IInputBackend
             PreviousTimestamp = ulong.MinValue;
             Devices = [];
             SdlWindowTargets = [];
-            DisplayTargets = [];
+            SdlDisplayTargets = [];
         }
     }
 
@@ -593,13 +654,11 @@ internal partial class SdlInputBackend : IInputBackend
     private readonly HashSet<nint> _deviceRegistry = [];
 
     // NOTE: Be careful where these are used!
-    private static readonly double _ticksPerNanosecond = Stopwatch.Frequency / 10e9d;
 
     private ProcessEventArgs _eventProcessingArgs;
     private bool _pumped;
-    private readonly long _epoch;
     private readonly SdlEventQueue _pumpedSdlEvents = new();
-    private readonly SilkEventQueues _silkEvents = new();
+    private readonly SilkEventContext _silkEvents;
 }
 
 [Flags]

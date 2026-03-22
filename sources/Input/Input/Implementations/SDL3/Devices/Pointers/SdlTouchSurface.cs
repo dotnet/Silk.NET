@@ -20,7 +20,7 @@ namespace Silk.NET.Input.SDL3.Devices.Pointers;
 /// </summary>
 internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, IPointerDevice
 {
-    public static SdlTouchSurface CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
+    public static SdlTouchSurface CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         var namePtr = backend.Sdl.GetTouchDeviceName(sdlDeviceId);
 
@@ -47,7 +47,15 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
             //const ulong simulatedId = (1UL << 31) & 1UL;
             var isSimulated = sdlDeviceId == simulatedId;
             var deviceType = backend.Sdl.GetTouchDeviceType(sdlDeviceId);
-            return new SdlTouchSurface(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, deviceType, isSimulated);
+            return new SdlTouchSurface(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, deviceType,
+                isSimulated) {
+                ScrollEvents = silkEvents.MouseScrollSdlEvents,
+                PointEvents = silkEvents.PointChangedSdlEvents,
+                ClickEvents = silkEvents.PointerClickSdlEvents,
+                ButtonEvents = silkEvents.PointerButtonSdlEvents,
+                GripEvents = silkEvents.PointerGripChangedSdlEvents,
+                TargetEvents = silkEvents.PointerTargetChangedSdlEvents
+            };
         }
     }
 
@@ -93,7 +101,7 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
         State = new PointerState(Buttons, Points);
     }
 
-    public void Event(in TouchFingerEvent finger, SdlInputBackend.FingerEventType fingerType)
+    public void Event(in TouchFingerEvent finger, SdlInputBackend.FingerEventType fingerType, long timestamp)
     {
         var position = new Vector3(finger.X, finger.Y, 0);
         var fingerId = (uint)(finger.TouchID % int.MaxValue);
@@ -110,13 +118,13 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
         switch (fingerType)
         {
             case SdlInputBackend.FingerEventType.Motion:
-                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, null, null, true);
+                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, null, null, true, finger.Timestamp, timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Down:
-                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, true, null, true);
+                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, true, null, true, finger.Timestamp, timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Up:
-                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, false, null, true);
+                AddOrUpdatePoint(fingerId, whichWindowId, position, finger.Pressure, false, null, true, finger.Timestamp, timestamp);
                 break;
             case SdlInputBackend.FingerEventType.Canceled:
                 break;

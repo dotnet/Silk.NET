@@ -13,36 +13,45 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     private readonly JoystickType _joystickType;
     internal JoystickHandle JoystickHandle { get; }
 
-    public static SdlJoystick CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
+    public static SdlJoystick CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext silkEvents)
     {
         nint uniqueId = 0;
 
         var guid = backend.Sdl.GetJoystickGuidForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(new ReadOnlySpan<byte>(&guid, 16), ref uniqueId))
         {
-            return new SdlJoystick(sdlDeviceId, uniqueId, backend);
+            return CreatePls(backend, uniqueId, sdlDeviceId, silkEvents);
         }
 
         var pathPtr = backend.Sdl.GetJoystickPathForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(pathPtr, ref uniqueId))
         {
-            return new SdlJoystick(sdlDeviceId, uniqueId, backend);
+            return CreatePls(backend, uniqueId, sdlDeviceId, silkEvents);
         }
 
         var name = backend.Sdl.GetJoystickNameForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(name, ref uniqueId))
         {
-            return new SdlJoystick(sdlDeviceId, uniqueId, backend);
+            return CreatePls(backend, uniqueId, sdlDeviceId, silkEvents);
         }
 
         var type = backend.Sdl.GetJoystickTypeForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(type, ref uniqueId))
         {
-            return new SdlJoystick(sdlDeviceId, uniqueId, backend);
+            return CreatePls(backend, uniqueId, sdlDeviceId, silkEvents);
         }
 
         uniqueId = SdlInputBackend.FallbackUniqueId<SdlJoystick>(sdlDeviceId, uniqueId);
-        return new SdlJoystick(sdlDeviceId, uniqueId, backend);
+        return CreatePls(backend, uniqueId, sdlDeviceId, silkEvents);
+
+        static SdlJoystick CreatePls(SdlInputBackend sdlInputBackend, nint uniqueId, ulong sdlDeviceId, SilkEventContext context)
+        {
+             return new SdlJoystick(sdlDeviceId, uniqueId, sdlInputBackend) {
+                 ButtonEvents = context.ButtonChangedSdlEvents,
+                 AxisEvents = context.JoystickAxisMoveSdlEvents,
+                 HatEvents = context.JoystickHatMoveSdlEvents
+             };
+        }
     }
 
 
@@ -78,10 +87,12 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
         // init current joystick state
         var buttonCount = NativeBackend.GetNumJoystickButtons(joystickHandle);
+        var nowTimestamp = System.Diagnostics.Stopwatch.GetTimestamp();
+        var nowSdlTimestamp = NativeBackend.GetTicks();
         for (byte i = 0; i < buttonCount; i++)
         {
             var joystickInput = NativeBackend.GetJoystickButtonRaw(JoystickHandle, i);
-            AddButtonEvent(i, joystickInput);
+            AddButtonEvent(i, joystickInput, nowSdlTimestamp, nowTimestamp);
         }
 
         var axisCount = NativeBackend.GetNumJoystickAxes(joystickHandle);
@@ -94,14 +105,14 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
                 joystickInput = short.MinValue;
             }
 
-            AddAxisEvent(i, joystickInput);
+            AddAxisEvent(i, joystickInput, nowSdlTimestamp, nowTimestamp);
         }
 
         var hatCount = NativeBackend.GetNumJoystickHats(joystickHandle);
         for (var i = 0; i < hatCount; ++i)
         {
             var hatInput = NativeBackend.GetJoystickHat(joystickHandle, i);
-            AddHatEvent(i, hatInput);
+            AddHatEvent(i, hatInput, nowSdlTimestamp, nowTimestamp);
         }
 
         _rawAxisState = new float[EnumInfo<JoystickAxis>.UniqueValues.Count + axisCount];
@@ -127,7 +138,7 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
     #region Sdl Events
 
-    public void AddHatEvent(int hatIdx, byte hatInput)
+    public void AddHatEvent(int hatIdx, byte hatInput, ulong sdlTimestamp, long timestamp)
     {
         var hatState = (HatState)hatInput;
         var left = (hatState & HatState.Left) == HatState.Left;
@@ -144,32 +155,32 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
         foreach(var device in _devices)
         {
-            device.UpdateFromJoyHat(hatIdx, hatState);
+            device.UpdateFromJoyHat(hatIdx, hatState, sdlTimestamp, timestamp);
         }
 
         var delta = hatStateRef - previous;
         if (delta != Vector2.Zero)
         {
-            _hatEvents.Enqueue(new JoystickHatMoveEvent(this, hatIdx, hatStateRef, delta));
+            HatEvents.Enqueue(new JoystickHatMoveEvent(this, timestamp, hatIdx, hatStateRef, delta), sdlTimestamp);
         }
     }
 
-    public void AddAxisEvent(int axis, short joystickInput)
+    public void AddAxisEvent(int axis, short joystickInput, ulong sdlTimestamp, long timestamp)
     {
         _rawAxisState[axis] = (float)(joystickInput + short.MaxValue) / ushort.MaxValue;
         foreach (var device in _devices)
         {
-            device.UpdateFromJoyAxis(axis, joystickInput);
+            device.UpdateFromJoyAxis(axis, joystickInput, sdlTimestamp, timestamp);
         }
     }
 
-    public void AddButtonEvent(byte sdlButtonId, byte sdlButtonDown)
+    public void AddButtonEvent(byte sdlButtonId, byte sdlButtonDown, ulong sdlTimestamp, long timestamp)
     {
         var down = sdlButtonDown > 0;
         _rawButtonState[sdlButtonId] = new Button<JoystickButton>((JoystickButton)sdlButtonId, down, down ? 1 : 0);
         foreach (var device in _devices)
         {
-            device.UpdateFromJoyButton(sdlButtonId, down);
+            device.UpdateFromJoyButton(sdlButtonId, down, sdlTimestamp, timestamp);
         }
     }
 
@@ -196,23 +207,6 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
 
     protected override void Release() => NativeBackend.CloseJoystick(JoystickHandle);
 
-    public override void FinalizeUpdate(SdlInputBackend.SilkEventQueues silkEvents)
-    {
-        while (_buttonEvents.TryDequeue(out var evt))
-        {
-            silkEvents.ButtonChangedEvents.Enqueue(evt);
-        }
-
-        while (_axisEvents.TryDequeue(out var evt))
-        {
-            silkEvents.JoystickAxisMoveEvents.Enqueue(evt);
-        }
-
-        while(_hatEvents.TryDequeue(out var evt))
-        {
-            silkEvents.JoystickHatMoveEvents.Enqueue(evt);
-        }
-    }
 
     public void RefreshSdlId() => _sdlDeviceId = NativeBackend.GetJoystickID(JoystickHandle);
     private ulong _sdlDeviceId;
@@ -226,9 +220,9 @@ internal sealed unsafe partial class SdlJoystick : SdlDevice, IJoystick, ISdlDev
     internal const short DigitalThreshold = short.MaxValue / 8;
 
     // events
-    private readonly Queue<ButtonChangedEvent<JoystickButton>> _buttonEvents = new();
-    private readonly Queue<JoystickAxisMoveEvent> _axisEvents = new();
-    private readonly Queue<JoystickHatMoveEvent> _hatEvents = new();
+    internal required ISdlEventQueue<ButtonChangedEvent<JoystickButton>> ButtonEvents { get; init; }
+    internal required ISdlEventQueue<JoystickAxisMoveEvent> AxisEvents { get; init; }
+    internal required ISdlEventQueue<JoystickHatMoveEvent> HatEvents { get; init; }
 
     ButtonReadOnlyList<JoystickButton> IButtonDevice<JoystickButton>.State => State.Buttons;
 

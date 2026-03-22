@@ -122,19 +122,6 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         NativeBackend.CloseGamepad(_gamepadHandle);
     }
 
-    public override void FinalizeUpdate(SdlInputBackend.SilkEventQueues silkEvents)
-    {
-        while (_thumbstickEvents.TryDequeue(out var evt))
-        {
-            silkEvents.GamepadThumbstickMoveEvents.Enqueue(evt);
-        }
-
-        while (_triggerEvents.TryDequeue(out var evt))
-        {
-            silkEvents.GamepadTriggerMoveEvents.Enqueue(evt);
-        }
-    }
-
     #region IGamepad
 
     GamepadState IGamepad.State => GamepadState;
@@ -147,7 +134,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     #endregion
 
-    public static SdlGamepad? CreateDevice(ulong sdlDeviceId, SdlInputBackend backend)
+    public static SdlGamepad? CreateDevice(ulong sdlDeviceId, SdlInputBackend backend, SilkEventContext context)
     {
         if (!backend.TryGetOrCreateDevice<SdlJoystick>(sdlDeviceId, out var joystick))
         {
@@ -159,21 +146,28 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
         if (backend.AttemptUniqueId(gpn, ref joystickUniqueId))
         {
-            return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
+            return new SdlGamepad(joystick, uniqueId: joystickUniqueId) {
+                _thumbstickEvents = context.GamepadThumbstickMoveSdlEvents
+            };
         }
 
         // manipulate the joystick id to make a unique gamepad id
         var guid = backend.Sdl.GetGamepadGuidForID((uint)sdlDeviceId);
         if (backend.AttemptUniqueId(guid, ref joystickUniqueId))
         {
-            return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
+            return new SdlGamepad(joystick, uniqueId: joystickUniqueId) {
+                _thumbstickEvents = context.GamepadThumbstickMoveSdlEvents
+            };
         }
 
         joystickUniqueId = SdlInputBackend.FallbackUniqueId<SdlGamepad>(sdlDeviceId, joystickUniqueId);
-        return new SdlGamepad(joystick, uniqueId: joystickUniqueId);
+        var sdlGamepad = new SdlGamepad(joystick, uniqueId: joystickUniqueId) {
+            _thumbstickEvents = context.GamepadThumbstickMoveSdlEvents
+        };
+        return sdlGamepad;
     }
 
-    private void UpdateGamepadAxis(GamepadAxis gAxis, int value, int min, int max)
+    private void UpdateGamepadAxis(GamepadAxis gAxis, int value, int min, int max, ulong sdlTimestamp, long timestamp)
     {
         var mappedValue = (float)(value + min) / (max - min);
         switch (gAxis)
@@ -188,18 +182,18 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
                 var yIndex = axes.Y.Index();
                 var previous = Joystick.GetAxisStateByIndex2D(xIndex, yIndex);
 
-                if (Joystick.UpdateRawAxisState(axis, mappedValue, out _))
+                if (Joystick.UpdateRawAxisState(axis, mappedValue, out _, sdlTimestamp, timestamp))
                 {
                     var latest = Joystick.GetAxisStateByIndex2D(xIndex, yIndex);
                     _thumbstickEvents.Enqueue(new GamepadThumbstickMoveEvent(Gamepad: this,
-                        Timestamp: Stopwatch.GetTimestamp(),
+                        Timestamp: timestamp,
                         Value: latest,
-                        Delta: latest - previous));
+                        Delta: latest - previous), sdlTimestamp);
 
                     ToSplitPair(axis, out var minusAxis, out var plusAxis);
                     var split = SdlJoystick.SplitValue(mappedValue);
-                    Joystick.UpdateRawAxisState(minusAxis, split.X, out _);
-                    Joystick.UpdateRawAxisState(plusAxis, split.Y, out _);
+                    Joystick.UpdateRawAxisState(minusAxis, split.X, out _, sdlTimestamp, timestamp);
+                    Joystick.UpdateRawAxisState(plusAxis, split.Y, out _, sdlTimestamp, timestamp);
                 }
 
                 break;
@@ -207,7 +201,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
             }
             case GamepadAxis.LeftTrigger or GamepadAxis.RightTrigger:
             {
-                if (Joystick.UpdateRawAxisState(ToJoystickAxis(gAxis), mappedValue, out var moveEvt))
+                if (Joystick.UpdateRawAxisState(ToJoystickAxis(gAxis), mappedValue, out var moveEvt, sdlTimestamp, timestamp))
                 {
                     _triggerEvents.Enqueue(new GamepadTriggerMoveEvent(this, moveEvt.Timestamp, moveEvt.Axis,
                         moveEvt.Value, moveEvt.Delta));
@@ -266,7 +260,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     #region ISdlJoystick
 
-    public void UpdateFromJoyButton(int buttonIdx, bool down)
+    public void UpdateFromJoyButton(int buttonIdx, bool down, ulong sdlTimestamp, long timestamp)
     {
         if (!_bindings.TryGetValue(buttonIdx << _buttonShift, out var binding))
         {
@@ -284,22 +278,24 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
                     gAxis: axis.Axis,
                     value: down ? axis.AxisMax : axis.AxisMin,
                     min: axis.AxisMin,
-                    max: axis.AxisMax);
+                    max: axis.AxisMax,
+                    sdlTimestamp: sdlTimestamp,
+                    timestamp: timestamp);
                 break;
 
             case GamepadBindingType.Button:
-                UpdateButton(output->Button, down);
+                UpdateButton(output->Button, down, sdlTimestamp, timestamp);
                 break;
         }
     }
 
-    public void AddButtonEvent(byte sdlButtonId, byte sdlButtonDown) =>
-        UpdateButton((GamepadButton)sdlButtonId, sdlButtonDown > 0);
+    public void AddButtonEvent(byte sdlButtonId, byte sdlButtonDown, ulong sdlTimestamp, long timestamp) =>
+        UpdateButton((GamepadButton)sdlButtonId, sdlButtonDown > 0, sdlTimestamp, timestamp);
 
-    public void AddAxisEvent(byte evtAxis, short evtValue) =>
-        UpdateGamepadAxis((GamepadAxis)evtAxis, evtValue, Sdl.JoystickAxisMin, Sdl.JoystickAxisMax);
+    public void AddAxisEvent(byte evtAxis, short evtValue, ulong sdlTimestamp, long timestamp) =>
+        UpdateGamepadAxis((GamepadAxis)evtAxis, evtValue, Sdl.JoystickAxisMin, Sdl.JoystickAxisMax, sdlTimestamp, timestamp);
 
-    public void UpdateFromJoyAxis(int axis, short joystickInput)
+    public void UpdateFromJoyAxis(int axis, short joystickInput, ulong sdlTimestamp, long timestamp)
     {
         if (!_bindings.TryGetValue(axis << _axisShift, out var binding))
         {
@@ -314,15 +310,15 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         switch (binding.OutputType)
         {
             case GamepadBindingType.Axis:
-                UpdateGamepadAxis(output->Axis.Axis, joystickInput, input->AxisMin, input->AxisMax);
+                UpdateGamepadAxis(output->Axis.Axis, joystickInput, input->AxisMin, input->AxisMax, sdlTimestamp, timestamp);
                 break;
             case GamepadBindingType.Button:
-                UpdateButton(output->Button, joystickInput >= input->AxisMin && joystickInput <= input->AxisMax);
+                UpdateButton(output->Button, joystickInput >= input->AxisMin && joystickInput <= input->AxisMax, sdlTimestamp, timestamp);
                 break;
         }
     }
 
-    public void UpdateFromJoyHat(int hatIdx, SdlJoystick.HatState hatState)
+    public void UpdateFromJoyHat(int hatIdx, SdlJoystick.HatState hatState, ulong sdlTimestamp, long timestamp)
     {
         if (_hatBindings.Count <= hatIdx)
         {
@@ -349,11 +345,13 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
                         gAxis: axis.Axis,
                         value: bindingState == SdlJoystick.HatState.Centered ? axis.AxisMin : axis.AxisMax,
                         min: axis.AxisMin,
-                        max: axis.AxisMax);
+                        max: axis.AxisMax,
+                        sdlTimestamp: sdlTimestamp,
+                        timestamp: timestamp);
                     break;
                 case GamepadBindingType.Button:
                     var button = binding.Output.Button;
-                    UpdateButton(button, bindingState != SdlJoystick.HatState.Centered);
+                    UpdateButton(button, bindingState != SdlJoystick.HatState.Centered, sdlTimestamp, timestamp);;
                     break;
             }
         }
@@ -361,10 +359,10 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     #endregion
 
-    private void UpdateButton(GamepadButton button, bool value)
+    private void UpdateButton(GamepadButton button, bool value, ulong sdlTimestamp, long timestamp)
     {
         var asJoystickButton = AsJoystickButton(button);
-        Joystick.UpdateRawButtonState(asJoystickButton, value, value ? 1 : 0);
+        Joystick.UpdateRawButtonState(asJoystickButton, value, value ? 1 : 0, sdlTimestamp, timestamp);
         return;
 
         static JoystickButton AsJoystickButton(GamepadButton buttonIndex) =>
@@ -392,7 +390,7 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     private readonly Dictionary<int, GamepadBinding> _bindings = new();
     private readonly List<List<GamepadBinding>?> _hatBindings = [];
     private readonly List<GamepadBinding> _outputBindings = [];
-    private readonly Queue<GamepadThumbstickMoveEvent> _thumbstickEvents = new();
+    internal required ISdlEventQueue<GamepadThumbstickMoveEvent> _thumbstickEvents { get; init; }
     private readonly Queue<GamepadTriggerMoveEvent> _triggerEvents = new();
 
 
