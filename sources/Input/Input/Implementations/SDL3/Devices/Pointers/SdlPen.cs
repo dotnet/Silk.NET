@@ -70,6 +70,11 @@ internal class SdlPen : SdlPointerDevice, ISdlDevice<SdlPen>
         get;
     }
 
+    protected internal override void Initialize()
+    {
+        // todo ?
+    }
+
     protected override void Release()
     {
     }

@@ -77,6 +77,11 @@ internal class SdlTouchSurface : SdlPointerDevice, ISdlDevice<SdlTouchSurface>, 
     }
 
 
+    protected internal override void Initialize()
+    {
+
+    }
+
     protected override void Release() => InputLog.Debug("Releasing touch device, but touch devices have no special release logic.");
 
     // todo - consider whether we want to use the related mouse device's buttons here

@@ -24,6 +24,10 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
     {
         _state = new MouseState(Buttons, Points, Vector2.Zero);
         Cursor = cursor;
+    }
+
+    protected internal override void Initialize()
+    {
         float x = 0, y = 0;
         var nowSdl = NativeBackend.GetTicks();
         var now = Stopwatch.GetTimestamp();
@@ -76,8 +80,8 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
             uniqueId = SdlInputBackend.FallbackUniqueId<SdlMouse>(sdlDeviceId, uniqueId);
         }
 
-        return new
-            SdlMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, backend.CursorConfiguration) {
+        var mouse =
+            new SdlMouse(sdlDeviceId, uniqueId, backend, backend.UnboundedPointerTarget, backend.CursorConfiguration) {
                 ScrollEvents = silkEvents.MouseScrollSdlEvents,
                 PointEvents = silkEvents.PointChangedSdlEvents,
                 ClickEvents = silkEvents.PointerClickSdlEvents,
@@ -85,6 +89,8 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
                 GripEvents = silkEvents.PointerGripChangedSdlEvents,
                 TargetEvents = silkEvents.PointerTargetChangedSdlEvents
             };
+
+        return mouse;
     }
 
     public override string Name => NativeBackend.GetMouseNameForID((uint)SdlDeviceId).ReadToString();
@@ -158,7 +164,7 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
             if (currentHintVal == 0)
             {
                 sbyte hintVal = 1;
-                if(NativeBackend.SetHint(Sdl.HintMouseRelativeWarpMotion, new Ref<sbyte>(ref hintVal)))
+                if (NativeBackend.SetHint(Sdl.HintMouseRelativeWarpMotion, new Ref<sbyte>(ref hintVal)))
                 {
                     _hintsAsEvents = true;
                 }

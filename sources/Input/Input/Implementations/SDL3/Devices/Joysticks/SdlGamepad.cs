@@ -11,7 +11,7 @@ namespace Silk.NET.Input.SDL3.Devices.Joysticks;
 /// </summary>
 internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGamepad>, ISdlJoystick, IJoystick
 {
-    private readonly GamepadHandle _gamepadHandle;
+    private GamepadHandle _gamepadHandle;
 
     public SdlJoystick Joystick { get; }
 
@@ -21,13 +21,6 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
     {
         Joystick = joystick;
 
-        var joystickHandle = joystick.JoystickHandle;
-        var gamepadHandle = *(GamepadHandle*)&joystickHandle; //NativeBackend.OpenGamepad(sdlDeviceId);
-        _gamepadHandle = gamepadHandle;
-        Remap(gamepadHandle);
-
-        GamepadState = new GamepadState(joystick.RawButtonState, joystick.RawAxisState);
-        Joystick.AddDeviceMapping(this);
     }
 
     private void Remap(GamepadHandle gamepadHandle)
@@ -114,6 +107,17 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
 
     public override string Name => Joystick.Name;
 
+    protected internal override void Initialize()
+    {
+        var joystickHandle = Joystick.JoystickHandle;
+        var gamepadHandle = *(GamepadHandle*)&joystickHandle; //NativeBackend.OpenGamepad(sdlDeviceId);
+        _gamepadHandle = gamepadHandle;
+        Remap(gamepadHandle);
+
+        _state = new GamepadState(Joystick.RawButtonState, Joystick.RawAxisState);
+        Joystick.AddDeviceMapping(this);
+    }
+
     protected override void Release()
     {
         Joystick.RemoveDeviceMapping(this);
@@ -121,11 +125,12 @@ internal sealed unsafe class SdlGamepad : SdlDevice, IGamepad, ISdlDevice<SdlGam
         // todo: does this close the joystick as well?
         NativeBackend.CloseGamepad(_gamepadHandle);
     }
+    private GamepadState _state;
 
     #region IGamepad
 
     GamepadState IGamepad.State => GamepadState;
-    private GamepadState GamepadState { get; }
+    private GamepadState GamepadState => _state;
 
     public IReadOnlyList<IMotor> VibrationMotors =>
         _rumbler ??= SdlRumble.Create<GamepadHandle>(_gamepadHandle.Handle, NativeBackend, 2);

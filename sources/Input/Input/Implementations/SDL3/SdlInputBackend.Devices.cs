@@ -39,6 +39,18 @@ internal partial class SdlInputBackend
             return false;
         }
 
+        try
+        {
+            device.Initialize();
+        }
+        catch (Exception e)
+        {
+            InputLog.Error($"Failed to initialize device {nameof(T)} with id '{id}': {e}");
+            device.Dispose();
+            device = null;
+            return false;
+        }
+
         sdlDevices.Add(device);
         InputLog.Debug($"{typeof(T)} added: (sdl ID: {id})");
         return true;

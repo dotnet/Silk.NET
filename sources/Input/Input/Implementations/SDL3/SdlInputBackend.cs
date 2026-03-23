@@ -543,12 +543,12 @@ internal partial class SdlInputBackend : IInputBackend
         return target != null;
     }
 
-    private readonly struct TimedSdlEvent
+    private readonly struct TimedRawSdlEvent
     {
         public readonly long Timestamp;
         public readonly Event Event;
 
-        public TimedSdlEvent(Event @event, long timestamp)
+        public TimedRawSdlEvent(Event @event, long timestamp)
         {
             Event = @event;
             Timestamp = timestamp;
@@ -557,7 +557,7 @@ internal partial class SdlInputBackend : IInputBackend
 
     private class SdlEventQueue
     {
-        private TimedSdlEvent[] _events = new TimedSdlEvent[256];
+        private TimedRawSdlEvent[] _events = new TimedRawSdlEvent[256];
         private int _nextEventIndex;
         public void Add(ref Event p0)
         {
@@ -572,7 +572,7 @@ internal partial class SdlInputBackend : IInputBackend
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool TryDequeue(out TimedSdlEvent p0)
+        public bool TryDequeue(out TimedRawSdlEvent p0)
         {
             if (_nextEventIndex == 0)
             {
@@ -603,7 +603,7 @@ internal partial class SdlInputBackend : IInputBackend
         private bool _isSorted;
 
         // order in descending order, such that "de-queueing" the last event will return the first chronological event in the queue (last event in the array)
-        private static readonly Comparer<Event> _comparer = Comparer<Event>.Create((e1, e2) => e2.Common.Timestamp.CompareTo(e1.Common.Timestamp));
+        private static readonly Comparer<TimedRawSdlEvent> _comparer = Comparer<TimedRawSdlEvent>.Create((e1, e2) => e2.Timestamp.CompareTo(e1.Timestamp));
     }
 
     private struct ProcessEventArgs

@@ -36,6 +36,8 @@ internal abstract class SdlDevice : IInputDevice, IDisposable
         SdlDeviceId = sdlDeviceId;
     }
 
+    protected internal abstract void Initialize();
+
     protected abstract void Release();
 
     public void Dispose()
