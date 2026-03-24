@@ -312,11 +312,7 @@
           "ALDEBUGPROCEXT": "DebugProcEXT",
           "ALDEBUGPROCEXTDelegate": "DebugProcDelegateEXT",
           "LPALFOLDBACKCALLBACK": "FoldbackCallback",
-          "LPALFOLDBACKCALLBACKDelegate": "FoldbackCallbackDelegate",
-          "EAXSetDirect": "EAXSetDirect",
-          "EAXGetDirect": "EAXGetDirect",
-          "EAXGetBufferModeDirect": "EAXGetBufferModeDirect",
-          "EAXSetBufferModeDirect": "EAXSetBufferModeDirect"
+          "LPALFOLDBACKCALLBACKDelegate": "FoldbackCallbackDelegate"
         },
         "Affixes": {
           "HandleType": {

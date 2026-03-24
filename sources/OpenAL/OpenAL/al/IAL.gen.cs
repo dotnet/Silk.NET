@@ -6027,7 +6027,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "EAXGetBufferModeDirect")]
-        static abstract int EAXGetBufferModeDirect(
+        static abstract int EaxGetBufferModeDirect(
             ContextHandle context,
             uint buffer,
             int* pReserved
@@ -6039,7 +6039,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "EAXGetBufferModeDirect")]
-        static abstract int EAXGetBufferModeDirect(
+        static abstract int EaxGetBufferModeDirect(
             ContextHandle context,
             uint buffer,
             Ref<int> pReserved
@@ -6051,7 +6051,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "EAXGetDirect")]
-        static abstract int EAXGetDirect(
+        static abstract int EaxGetDirect(
             ContextHandle context,
             System.Guid* property_set_id,
             uint property_id,
@@ -6066,7 +6066,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "EAXGetDirect")]
-        static abstract int EAXGetDirect(
+        static abstract int EaxGetDirect(
             ContextHandle context,
             Ref<System.Guid> property_set_id,
             uint property_id,
@@ -6081,7 +6081,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "EAXSetBufferModeDirect")]
-        static abstract sbyte EAXSetBufferModeDirect(
+        static abstract sbyte EaxSetBufferModeDirect(
             ContextHandle context,
             int n,
             uint* buffers,
@@ -6094,7 +6094,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "EAXSetBufferModeDirect")]
-        static abstract MaybeBool<sbyte> EAXSetBufferModeDirect(
+        static abstract MaybeBool<sbyte> EaxSetBufferModeDirect(
             ContextHandle context,
             int n,
             Ref<uint> buffers,
@@ -6107,7 +6107,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "EAXSetDirect")]
-        static abstract int EAXSetDirect(
+        static abstract int EaxSetDirect(
             ContextHandle context,
             System.Guid* property_set_id,
             uint property_id,
@@ -6122,7 +6122,7 @@ public unsafe partial interface IAL
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
         [NativeFunction("openal", EntryPoint = "EAXSetDirect")]
-        static abstract int EAXSetDirect(
+        static abstract int EaxSetDirect(
             ContextHandle context,
             Ref<System.Guid> property_set_id,
             uint property_id,
@@ -11433,7 +11433,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetBufferModeDirect")]
-    int EAXGetBufferModeDirect(ContextHandle context, uint buffer, int* pReserved);
+    int EaxGetBufferModeDirect(ContextHandle context, uint buffer, int* pReserved);
 
     [NativeName("EAXGetBufferModeDirect")]
     [
@@ -11441,7 +11441,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetBufferModeDirect")]
-    int EAXGetBufferModeDirect(ContextHandle context, uint buffer, Ref<int> pReserved);
+    int EaxGetBufferModeDirect(ContextHandle context, uint buffer, Ref<int> pReserved);
 
     [NativeName("EAXGetDirect")]
     [
@@ -11449,7 +11449,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetDirect")]
-    int EAXGetDirect(
+    int EaxGetDirect(
         ContextHandle context,
         System.Guid* property_set_id,
         uint property_id,
@@ -11464,7 +11464,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetDirect")]
-    int EAXGetDirect(
+    int EaxGetDirect(
         ContextHandle context,
         Ref<System.Guid> property_set_id,
         uint property_id,
@@ -11479,7 +11479,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetBufferModeDirect")]
-    sbyte EAXSetBufferModeDirect(ContextHandle context, int n, uint* buffers, int value);
+    sbyte EaxSetBufferModeDirect(ContextHandle context, int n, uint* buffers, int value);
 
     [NativeName("EAXSetBufferModeDirect")]
     [
@@ -11487,7 +11487,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetBufferModeDirect")]
-    MaybeBool<sbyte> EAXSetBufferModeDirect(
+    MaybeBool<sbyte> EaxSetBufferModeDirect(
         ContextHandle context,
         int n,
         Ref<uint> buffers,
@@ -11500,7 +11500,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetDirect")]
-    int EAXSetDirect(
+    int EaxSetDirect(
         ContextHandle context,
         System.Guid* property_set_id,
         uint property_id,
@@ -11515,7 +11515,7 @@ public unsafe partial interface IAL
         SupportedApiProfile("alc", ["AL_EXT_direct_context"])
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetDirect")]
-    int EAXSetDirect(
+    int EaxSetDirect(
         ContextHandle context,
         Ref<System.Guid> property_set_id,
         uint property_id,

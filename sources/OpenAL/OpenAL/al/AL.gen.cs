@@ -8203,7 +8203,7 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        public static extern int EAXGetBufferModeDirect(
+        public static extern int EaxGetBufferModeDirect(
             ContextHandle context,
             uint buffer,
             int* pReserved
@@ -8218,7 +8218,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int EAXGetBufferModeDirect(
+        public static int EaxGetBufferModeDirect(
             ContextHandle context,
             uint buffer,
             Ref<int> pReserved
@@ -8226,7 +8226,7 @@ public unsafe partial class AL : IAL, IAL.Static
         {
             fixed (int* __dsl_pReserved = pReserved)
             {
-                return (int)EAXGetBufferModeDirect(context, buffer, __dsl_pReserved);
+                return (int)EaxGetBufferModeDirect(context, buffer, __dsl_pReserved);
             }
         }
 
@@ -8236,7 +8236,7 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        public static extern int EAXGetDirect(
+        public static extern int EaxGetDirect(
             ContextHandle context,
             System.Guid* property_set_id,
             uint property_id,
@@ -8254,7 +8254,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int EAXGetDirect(
+        public static int EaxGetDirect(
             ContextHandle context,
             Ref<System.Guid> property_set_id,
             uint property_id,
@@ -8266,7 +8266,7 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (void* __dsl_value = value)
             fixed (System.Guid* __dsl_property_set_id = property_set_id)
             {
-                return (int)EAXGetDirect(
+                return (int)EaxGetDirect(
                     context,
                     __dsl_property_set_id,
                     property_id,
@@ -8283,7 +8283,7 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        public static extern sbyte EAXSetBufferModeDirect(
+        public static extern sbyte EaxSetBufferModeDirect(
             ContextHandle context,
             int n,
             uint* buffers,
@@ -8299,7 +8299,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<sbyte> EAXSetBufferModeDirect(
+        public static MaybeBool<sbyte> EaxSetBufferModeDirect(
             ContextHandle context,
             int n,
             Ref<uint> buffers,
@@ -8309,7 +8309,7 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (uint* __dsl_buffers = buffers)
             {
                 return (MaybeBool<sbyte>)
-                    (sbyte)EAXSetBufferModeDirect(context, n, __dsl_buffers, value);
+                    (sbyte)EaxSetBufferModeDirect(context, n, __dsl_buffers, value);
             }
         }
 
@@ -8319,7 +8319,7 @@ public unsafe partial class AL : IAL, IAL.Static
             SupportedApiProfile("al", ["AL_EXT_direct_context"]),
             SupportedApiProfile("alc", ["AL_EXT_direct_context"])
         ]
-        public static extern int EAXSetDirect(
+        public static extern int EaxSetDirect(
             ContextHandle context,
             System.Guid* property_set_id,
             uint property_id,
@@ -8337,7 +8337,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int EAXSetDirect(
+        public static int EaxSetDirect(
             ContextHandle context,
             Ref<System.Guid> property_set_id,
             uint property_id,
@@ -8349,7 +8349,7 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (void* __dsl_value = value)
             fixed (System.Guid* __dsl_property_set_id = property_set_id)
             {
-                return (int)EAXSetDirect(
+                return (int)EaxSetDirect(
                     context,
                     __dsl_property_set_id,
                     property_id,
@@ -16286,8 +16286,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int EAXGetBufferModeDirect(ContextHandle context, uint buffer, int* pReserved) =>
-            T.EAXGetBufferModeDirect(context, buffer, pReserved);
+        public int EaxGetBufferModeDirect(ContextHandle context, uint buffer, int* pReserved) =>
+            T.EaxGetBufferModeDirect(context, buffer, pReserved);
 
         [NativeName("EAXGetBufferModeDirect")]
         [
@@ -16298,8 +16298,8 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int EAXGetBufferModeDirect(ContextHandle context, uint buffer, Ref<int> pReserved) =>
-            T.EAXGetBufferModeDirect(context, buffer, pReserved);
+        public int EaxGetBufferModeDirect(ContextHandle context, uint buffer, Ref<int> pReserved) =>
+            T.EaxGetBufferModeDirect(context, buffer, pReserved);
 
         [NativeName("EAXGetDirect")]
         [
@@ -16310,14 +16310,14 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int EAXGetDirect(
+        public int EaxGetDirect(
             ContextHandle context,
             System.Guid* property_set_id,
             uint property_id,
             uint source_id,
             void* value,
             uint value_size
-        ) => T.EAXGetDirect(context, property_set_id, property_id, source_id, value, value_size);
+        ) => T.EaxGetDirect(context, property_set_id, property_id, source_id, value, value_size);
 
         [NativeName("EAXGetDirect")]
         [
@@ -16328,14 +16328,14 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int EAXGetDirect(
+        public int EaxGetDirect(
             ContextHandle context,
             Ref<System.Guid> property_set_id,
             uint property_id,
             uint source_id,
             Ref value,
             uint value_size
-        ) => T.EAXGetDirect(context, property_set_id, property_id, source_id, value, value_size);
+        ) => T.EaxGetDirect(context, property_set_id, property_id, source_id, value, value_size);
 
         [NativeName("EAXSetBufferModeDirect")]
         [
@@ -16346,12 +16346,12 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public sbyte EAXSetBufferModeDirect(
+        public sbyte EaxSetBufferModeDirect(
             ContextHandle context,
             int n,
             uint* buffers,
             int value
-        ) => T.EAXSetBufferModeDirect(context, n, buffers, value);
+        ) => T.EaxSetBufferModeDirect(context, n, buffers, value);
 
         [NativeName("EAXSetBufferModeDirect")]
         [
@@ -16362,12 +16362,12 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public MaybeBool<sbyte> EAXSetBufferModeDirect(
+        public MaybeBool<sbyte> EaxSetBufferModeDirect(
             ContextHandle context,
             int n,
             Ref<uint> buffers,
             int value
-        ) => T.EAXSetBufferModeDirect(context, n, buffers, value);
+        ) => T.EaxSetBufferModeDirect(context, n, buffers, value);
 
         [NativeName("EAXSetDirect")]
         [
@@ -16378,14 +16378,14 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int EAXSetDirect(
+        public int EaxSetDirect(
             ContextHandle context,
             System.Guid* property_set_id,
             uint property_id,
             uint source_id,
             void* value,
             uint value_size
-        ) => T.EAXSetDirect(context, property_set_id, property_id, source_id, value, value_size);
+        ) => T.EaxSetDirect(context, property_set_id, property_id, source_id, value, value_size);
 
         [NativeName("EAXSetDirect")]
         [
@@ -16396,14 +16396,14 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public int EAXSetDirect(
+        public int EaxSetDirect(
             ContextHandle context,
             Ref<System.Guid> property_set_id,
             uint property_id,
             uint source_id,
             Ref value,
             uint value_size
-        ) => T.EAXSetDirect(context, property_set_id, property_id, source_id, value, value_size);
+        ) => T.EaxSetDirect(context, property_set_id, property_id, source_id, value, value_size);
     }
 
     public partial class ThisThread
@@ -25946,11 +25946,11 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int EAXGetBufferModeDirect(
+        public static int EaxGetBufferModeDirect(
             ContextHandle context,
             uint buffer,
             int* pReserved
-        ) => Underlying.Value!.EAXGetBufferModeDirect(context, buffer, pReserved);
+        ) => Underlying.Value!.EaxGetBufferModeDirect(context, buffer, pReserved);
 
         [NativeName("EAXGetBufferModeDirect")]
         [
@@ -25961,7 +25961,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int EAXGetBufferModeDirect(
+        public static int EaxGetBufferModeDirect(
             ContextHandle context,
             uint buffer,
             Ref<int> pReserved
@@ -25969,7 +25969,7 @@ public unsafe partial class AL : IAL, IAL.Static
         {
             fixed (int* __dsl_pReserved = pReserved)
             {
-                return (int)EAXGetBufferModeDirect(context, buffer, __dsl_pReserved);
+                return (int)EaxGetBufferModeDirect(context, buffer, __dsl_pReserved);
             }
         }
 
@@ -25982,7 +25982,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int EAXGetDirect(
+        public static int EaxGetDirect(
             ContextHandle context,
             System.Guid* property_set_id,
             uint property_id,
@@ -25990,7 +25990,7 @@ public unsafe partial class AL : IAL, IAL.Static
             void* value,
             uint value_size
         ) =>
-            Underlying.Value!.EAXGetDirect(
+            Underlying.Value!.EaxGetDirect(
                 context,
                 property_set_id,
                 property_id,
@@ -26008,7 +26008,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int EAXGetDirect(
+        public static int EaxGetDirect(
             ContextHandle context,
             Ref<System.Guid> property_set_id,
             uint property_id,
@@ -26020,7 +26020,7 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (void* __dsl_value = value)
             fixed (System.Guid* __dsl_property_set_id = property_set_id)
             {
-                return (int)EAXGetDirect(
+                return (int)EaxGetDirect(
                     context,
                     __dsl_property_set_id,
                     property_id,
@@ -26040,12 +26040,12 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static sbyte EAXSetBufferModeDirect(
+        public static sbyte EaxSetBufferModeDirect(
             ContextHandle context,
             int n,
             uint* buffers,
             int value
-        ) => Underlying.Value!.EAXSetBufferModeDirect(context, n, buffers, value);
+        ) => Underlying.Value!.EaxSetBufferModeDirect(context, n, buffers, value);
 
         [NativeName("EAXSetBufferModeDirect")]
         [
@@ -26056,7 +26056,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static MaybeBool<sbyte> EAXSetBufferModeDirect(
+        public static MaybeBool<sbyte> EaxSetBufferModeDirect(
             ContextHandle context,
             int n,
             Ref<uint> buffers,
@@ -26066,7 +26066,7 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (uint* __dsl_buffers = buffers)
             {
                 return (MaybeBool<sbyte>)
-                    (sbyte)EAXSetBufferModeDirect(context, n, __dsl_buffers, value);
+                    (sbyte)EaxSetBufferModeDirect(context, n, __dsl_buffers, value);
             }
         }
 
@@ -26079,7 +26079,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int EAXSetDirect(
+        public static int EaxSetDirect(
             ContextHandle context,
             System.Guid* property_set_id,
             uint property_id,
@@ -26087,7 +26087,7 @@ public unsafe partial class AL : IAL, IAL.Static
             void* value,
             uint value_size
         ) =>
-            Underlying.Value!.EAXSetDirect(
+            Underlying.Value!.EaxSetDirect(
                 context,
                 property_set_id,
                 property_id,
@@ -26105,7 +26105,7 @@ public unsafe partial class AL : IAL, IAL.Static
         [MethodImpl(
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization
         )]
-        public static int EAXSetDirect(
+        public static int EaxSetDirect(
             ContextHandle context,
             Ref<System.Guid> property_set_id,
             uint property_id,
@@ -26117,7 +26117,7 @@ public unsafe partial class AL : IAL, IAL.Static
             fixed (void* __dsl_value = value)
             fixed (System.Guid* __dsl_property_set_id = property_set_id)
             {
-                return (int)EAXSetDirect(
+                return (int)EaxSetDirect(
                     context,
                     __dsl_property_set_id,
                     property_id,
@@ -42711,7 +42711,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetBufferModeDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IAL.EAXGetBufferModeDirect(ContextHandle context, uint buffer, int* pReserved) =>
+    int IAL.EaxGetBufferModeDirect(ContextHandle context, uint buffer, int* pReserved) =>
         (
             (delegate* unmanaged<ContextHandle, uint, int*, int>)(
                 _slots[293] is not null and var loadedFnPtr
@@ -42727,8 +42727,8 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetBufferModeDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int EAXGetBufferModeDirect(ContextHandle context, uint buffer, int* pReserved) =>
-        ThisThread.EAXGetBufferModeDirect(context, buffer, pReserved);
+    public static int EaxGetBufferModeDirect(ContextHandle context, uint buffer, int* pReserved) =>
+        ThisThread.EaxGetBufferModeDirect(context, buffer, pReserved);
 
     [NativeName("EAXGetBufferModeDirect")]
     [
@@ -42737,11 +42737,11 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetBufferModeDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IAL.EAXGetBufferModeDirect(ContextHandle context, uint buffer, Ref<int> pReserved)
+    int IAL.EaxGetBufferModeDirect(ContextHandle context, uint buffer, Ref<int> pReserved)
     {
         fixed (int* __dsl_pReserved = pReserved)
         {
-            return (int)((IAL)this).EAXGetBufferModeDirect(context, buffer, __dsl_pReserved);
+            return (int)((IAL)this).EaxGetBufferModeDirect(context, buffer, __dsl_pReserved);
         }
     }
 
@@ -42752,11 +42752,11 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetBufferModeDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int EAXGetBufferModeDirect(
+    public static int EaxGetBufferModeDirect(
         ContextHandle context,
         uint buffer,
         Ref<int> pReserved
-    ) => ThisThread.EAXGetBufferModeDirect(context, buffer, pReserved);
+    ) => ThisThread.EaxGetBufferModeDirect(context, buffer, pReserved);
 
     [NativeName("EAXGetDirect")]
     [
@@ -42765,7 +42765,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IAL.EAXGetDirect(
+    int IAL.EaxGetDirect(
         ContextHandle context,
         System.Guid* property_set_id,
         uint property_id,
@@ -42788,7 +42788,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int EAXGetDirect(
+    public static int EaxGetDirect(
         ContextHandle context,
         System.Guid* property_set_id,
         uint property_id,
@@ -42796,7 +42796,7 @@ public unsafe partial class AL : IAL, IAL.Static
         void* value,
         uint value_size
     ) =>
-        ThisThread.EAXGetDirect(
+        ThisThread.EaxGetDirect(
             context,
             property_set_id,
             property_id,
@@ -42812,7 +42812,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IAL.EAXGetDirect(
+    int IAL.EaxGetDirect(
         ContextHandle context,
         Ref<System.Guid> property_set_id,
         uint property_id,
@@ -42825,7 +42825,7 @@ public unsafe partial class AL : IAL, IAL.Static
         fixed (System.Guid* __dsl_property_set_id = property_set_id)
         {
             return (int)
-                ((IAL)this).EAXGetDirect(
+                ((IAL)this).EaxGetDirect(
                     context,
                     __dsl_property_set_id,
                     property_id,
@@ -42843,7 +42843,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXGetDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int EAXGetDirect(
+    public static int EaxGetDirect(
         ContextHandle context,
         Ref<System.Guid> property_set_id,
         uint property_id,
@@ -42851,7 +42851,7 @@ public unsafe partial class AL : IAL, IAL.Static
         Ref value,
         uint value_size
     ) =>
-        ThisThread.EAXGetDirect(
+        ThisThread.EaxGetDirect(
             context,
             property_set_id,
             property_id,
@@ -42867,7 +42867,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetBufferModeDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    sbyte IAL.EAXSetBufferModeDirect(ContextHandle context, int n, uint* buffers, int value) =>
+    sbyte IAL.EaxSetBufferModeDirect(ContextHandle context, int n, uint* buffers, int value) =>
         (
             (delegate* unmanaged<ContextHandle, int, uint*, int, sbyte>)(
                 _slots[295] is not null and var loadedFnPtr
@@ -42883,12 +42883,12 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetBufferModeDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static sbyte EAXSetBufferModeDirect(
+    public static sbyte EaxSetBufferModeDirect(
         ContextHandle context,
         int n,
         uint* buffers,
         int value
-    ) => ThisThread.EAXSetBufferModeDirect(context, n, buffers, value);
+    ) => ThisThread.EaxSetBufferModeDirect(context, n, buffers, value);
 
     [NativeName("EAXSetBufferModeDirect")]
     [
@@ -42897,7 +42897,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetBufferModeDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    MaybeBool<sbyte> IAL.EAXSetBufferModeDirect(
+    MaybeBool<sbyte> IAL.EaxSetBufferModeDirect(
         ContextHandle context,
         int n,
         Ref<uint> buffers,
@@ -42907,7 +42907,7 @@ public unsafe partial class AL : IAL, IAL.Static
         fixed (uint* __dsl_buffers = buffers)
         {
             return (MaybeBool<sbyte>)
-                (sbyte)((IAL)this).EAXSetBufferModeDirect(context, n, __dsl_buffers, value);
+                (sbyte)((IAL)this).EaxSetBufferModeDirect(context, n, __dsl_buffers, value);
         }
     }
 
@@ -42918,12 +42918,12 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetBufferModeDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static MaybeBool<sbyte> EAXSetBufferModeDirect(
+    public static MaybeBool<sbyte> EaxSetBufferModeDirect(
         ContextHandle context,
         int n,
         Ref<uint> buffers,
         int value
-    ) => ThisThread.EAXSetBufferModeDirect(context, n, buffers, value);
+    ) => ThisThread.EaxSetBufferModeDirect(context, n, buffers, value);
 
     [NativeName("EAXSetDirect")]
     [
@@ -42932,7 +42932,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IAL.EAXSetDirect(
+    int IAL.EaxSetDirect(
         ContextHandle context,
         System.Guid* property_set_id,
         uint property_id,
@@ -42955,7 +42955,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int EAXSetDirect(
+    public static int EaxSetDirect(
         ContextHandle context,
         System.Guid* property_set_id,
         uint property_id,
@@ -42963,7 +42963,7 @@ public unsafe partial class AL : IAL, IAL.Static
         void* value,
         uint value_size
     ) =>
-        ThisThread.EAXSetDirect(
+        ThisThread.EaxSetDirect(
             context,
             property_set_id,
             property_id,
@@ -42979,7 +42979,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    int IAL.EAXSetDirect(
+    int IAL.EaxSetDirect(
         ContextHandle context,
         Ref<System.Guid> property_set_id,
         uint property_id,
@@ -42992,7 +42992,7 @@ public unsafe partial class AL : IAL, IAL.Static
         fixed (System.Guid* __dsl_property_set_id = property_set_id)
         {
             return (int)
-                ((IAL)this).EAXSetDirect(
+                ((IAL)this).EaxSetDirect(
                     context,
                     __dsl_property_set_id,
                     property_id,
@@ -43010,7 +43010,7 @@ public unsafe partial class AL : IAL, IAL.Static
     ]
     [NativeFunction("openal", EntryPoint = "EAXSetDirect")]
     [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-    public static int EAXSetDirect(
+    public static int EaxSetDirect(
         ContextHandle context,
         Ref<System.Guid> property_set_id,
         uint property_id,
@@ -43018,7 +43018,7 @@ public unsafe partial class AL : IAL, IAL.Static
         Ref value,
         uint value_size
     ) =>
-        ThisThread.EAXSetDirect(
+        ThisThread.EaxSetDirect(
             context,
             property_set_id,
             property_id,
