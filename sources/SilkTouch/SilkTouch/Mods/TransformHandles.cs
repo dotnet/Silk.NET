@@ -165,8 +165,6 @@ public class TransformHandles(
         }
 
         ctx.SourceProject = project;
-
-        return;
     }
 
     private class MissingHandleTypeDiscoverer(
