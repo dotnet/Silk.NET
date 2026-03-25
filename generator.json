@@ -42,6 +42,7 @@
         "AddIncludes",
         "ClangScraper",
         "MarkNativeNames",
+        "ExtractHandles",
         "ExtractNestedTyping",
         "TransformHandles",
         "TransformFunctions",
@@ -59,7 +60,6 @@
         "InputTestRoot": "tests/SDL"
       },
       "TransformHandles": {
-        "AssumeMissingTypesOpaque": true,
         "UseDSL": true
       },
       "TransformFunctions": {
@@ -228,6 +228,7 @@
         "ChangeNativeClass",
         "AddApiProfiles",
         "MixKhronosData",
+        "ExtractHandles",
         "ExtractNestedTyping",
         "TransformHandles",
         "InterceptNativeFunctions",
@@ -351,7 +352,6 @@
         "BenefitOfTheDoubtArrayTransformation": true
       },
       "TransformHandles": {
-        "AssumeMissingTypesOpaque": true,
         "UseDSL": true
       },
       "StripAttributes": {
@@ -370,6 +370,7 @@
         "AddIncludes",
         "ClangScraper",
         "MarkNativeNames",
+        "ExtractHandles",
         "ExtractNestedTyping",
         "TransformHandles",
         "MixKhronosData",
@@ -423,7 +424,6 @@
         }
       },
       "TransformHandles": {
-        "AssumeMissingTypesOpaque": true,
         "UseDSL": true
       },
       "PrettifyNames": {

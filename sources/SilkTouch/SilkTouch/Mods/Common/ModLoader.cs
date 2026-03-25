@@ -25,6 +25,7 @@ public class ModLoader
             nameof(BakeSourceSets) => typeof(BakeSourceSets),
             nameof(AddApiProfiles) => typeof(AddApiProfiles),
             nameof(MixKhronosData) => typeof(MixKhronosData),
+            nameof(ExtractHandles) => typeof(ExtractHandles),
             nameof(TransformHandles) => typeof(TransformHandles),
             nameof(TransformEnums) => typeof(TransformEnums),
             nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
