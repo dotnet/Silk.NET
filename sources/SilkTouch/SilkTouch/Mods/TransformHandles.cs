@@ -323,7 +323,7 @@ public class TransformHandles(
                     Identifier("Equals")
                 )
                 .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.OverrideKeyword)])
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.OverrideKeyword))
                 )
                 .WithParameterList(
                     ParameterList(
@@ -362,7 +362,7 @@ public class TransformHandles(
                     Identifier("GetHashCode")
                 )
                 .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.OverrideKeyword)])
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.OverrideKeyword))
                 )
                 .WithExpressionBody(
                     ArrowExpressionClause(
@@ -394,7 +394,7 @@ public class TransformHandles(
                     Token(SyntaxKind.EqualsEqualsToken)
                 )
                 .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
                 )
                 .WithParameterList(
                     ParameterList(
@@ -431,7 +431,7 @@ public class TransformHandles(
                     Token(SyntaxKind.ExclamationEqualsToken)
                 )
                 .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
                 )
                 .WithParameterList(
                     ParameterList(
@@ -494,7 +494,7 @@ public class TransformHandles(
                     Token(SyntaxKind.EqualsEqualsToken)
                 )
                 .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
                 )
                 .WithParameterList(
                     ParameterList(
@@ -531,7 +531,7 @@ public class TransformHandles(
                     Token(SyntaxKind.ExclamationEqualsToken)
                 )
                 .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
                 )
                 .WithParameterList(
                     ParameterList(
@@ -569,7 +569,7 @@ public class TransformHandles(
                     IdentifierName(structName)
                 )
                 .WithModifiers(
-                    TokenList([Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)])
+                    TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword))
                 )
                 .WithParameterList(
                     ParameterList(
