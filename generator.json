@@ -60,7 +60,7 @@
         "InputTestRoot": "tests/SDL"
       },
       "TransformHandles": {
-        "UseDSL": true
+        "UseDsl": true
       },
       "TransformFunctions": {
         "BoolTypes": {
@@ -352,7 +352,7 @@
         "BenefitOfTheDoubtArrayTransformation": true
       },
       "TransformHandles": {
-        "UseDSL": true
+        "UseDsl": true
       },
       "StripAttributes": {
         "Remove": [
@@ -424,7 +424,7 @@
         }
       },
       "TransformHandles": {
-        "UseDSL": true
+        "UseDsl": true
       },
       "PrettifyNames": {
         "GlobalPrefixHints": ["PFN_vk","vk"],

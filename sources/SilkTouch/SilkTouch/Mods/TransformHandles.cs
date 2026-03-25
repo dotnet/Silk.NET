@@ -39,7 +39,7 @@ public class TransformHandles(
         /// <summary>
         /// Whether the DSL (i.e. <c>nullptr</c>) should be usable with handle types.
         /// </summary>
-        public bool UseDSL { get; init; }
+        public bool UseDsl { get; init; }
     }
 
     /// <inheritdoc />
@@ -99,7 +99,7 @@ public class TransformHandles(
         project = ctx.SourceProject;
 
         // Use document IDs from earlier
-        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDSL);
+        var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDsl);
         foreach (var (originalName, documentId) in handleTypeDocumentIds)
         {
             var document =
@@ -227,7 +227,7 @@ public class TransformHandles(
         }
     }
 
-    private class HandleTypeRewriter(bool useDSL) : CSharpSyntaxRewriter
+    private class HandleTypeRewriter(bool useDsl) : CSharpSyntaxRewriter
     {
         public override SyntaxNode VisitStructDeclaration(StructDeclarationSyntax node)
         {
@@ -241,7 +241,7 @@ public class TransformHandles(
                 .WithMembers(
                     List(
                         GetDefaultHandleMembers(structName)
-                            .Concat(useDSL ? GetDSLHandleMembers(structName) : [])
+                            .Concat(useDsl ? GetDslHandleMembers(structName) : [])
                     )
                 )
                 .WithModifiers(
@@ -465,7 +465,7 @@ public class TransformHandles(
                 .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
         }
 
-        private static IEnumerable<MemberDeclarationSyntax> GetDSLHandleMembers(string structName)
+        private static IEnumerable<MemberDeclarationSyntax> GetDslHandleMembers(string structName)
         {
             yield return MethodDeclaration(
                     PredefinedType(Token(SyntaxKind.BoolKeyword)),
