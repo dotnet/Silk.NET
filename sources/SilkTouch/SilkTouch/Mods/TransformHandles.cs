@@ -66,7 +66,7 @@ public class TransformHandles(
 
         // Store handle document IDs for later
         // We will use these IDs to know which documents to rewrite and rename
-        var handleTypeDocumentIds = new List<(string OriginalName, DocumentId DocumentId)>();
+        var handleTypeDocumentIds = new List<DocumentId>();
         foreach (var handleTypeSymbol in handleTypes)
         {
             if (handleTypeSymbol.DeclaringSyntaxReferences.Length > 1)
@@ -82,7 +82,7 @@ public class TransformHandles(
             var documentId = project.GetDocumentId(declaringSyntaxReference.SyntaxTree);
             if (documentId != null)
             {
-                handleTypeDocumentIds.Add((handleTypeSymbol.Name, documentId));
+                handleTypeDocumentIds.Add(documentId);
             }
         }
 
@@ -100,7 +100,7 @@ public class TransformHandles(
 
         // Use document IDs from earlier
         var handleTypeRewriter = new HandleTypeRewriter(cfg.UseDsl);
-        foreach (var (originalName, documentId) in handleTypeDocumentIds)
+        foreach (var documentId in handleTypeDocumentIds)
         {
             var document =
                 project.GetDocument(documentId)
