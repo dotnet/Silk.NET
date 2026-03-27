@@ -82,6 +82,7 @@ public class NamePrettifierTests
     // Add x between numbers to maintain separation
     [TestCase("123_123_123", ExpectedResult = "X123x123x123")]
     [TestCase("Hello123_123_123", ExpectedResult = "Hello123x123x123")]
+    [TestCase("Hello123X123X123", ExpectedResult = "Hello123x123x123")]
     public string ConsecutiveNumbers(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
