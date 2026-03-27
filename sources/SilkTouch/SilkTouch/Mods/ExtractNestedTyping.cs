@@ -322,11 +322,20 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                     continue;
                 }
 
-                var iden = $"{node.Identifier}_{match.Groups[1].Value}";
+                var iden = $"{node.Identifier}{match.Groups[1].Value}";
                 _typeRenames[struc.Identifier.ToString()] = iden;
                 struc =
-                    VisitStructDeclaration(struc.WithIdentifier(Identifier(iden)))
-                        as StructDeclarationSyntax
+                    VisitStructDeclaration(
+                        struc
+                            .WithIdentifier(Identifier(iden))
+                            .WithAttributeLists(
+                                struc.AttributeLists.AddResolvedNameAffix(
+                                    NameAffixType.Prefix,
+                                    "NestedStructParent",
+                                    node.Identifier.ToString()
+                                )
+                            )
+                    ) as StructDeclarationSyntax
                     ?? struc;
                 ExtractedNestedStructs.Add(struc);
                 members = members.RemoveAt(i--);
