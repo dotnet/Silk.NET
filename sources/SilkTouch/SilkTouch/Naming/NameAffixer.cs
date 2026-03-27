@@ -59,6 +59,8 @@ public static class NameAffixer
                             declarationOrder
                         ),
                     ];
+
+                    declarationOrder++;
                 }
                 else if (
                     argumentList.Arguments[2].Expression is InvocationExpressionSyntax
@@ -86,9 +88,9 @@ public static class NameAffixer
                             true
                         ),
                     ];
-                }
 
-                declarationOrder++;
+                    declarationOrder++;
+                }
             }
         }
 
