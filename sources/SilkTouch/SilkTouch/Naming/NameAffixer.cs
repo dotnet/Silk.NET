@@ -92,17 +92,87 @@ public static class NameAffixer
                 Literal($"\"{affixType}\"", affixType)
             )
         );
+
         var categoryArgument = AttributeArgument(
             LiteralExpression(
                 SyntaxKind.StringLiteralExpression,
                 Literal($"\"{category}\"", category)
             )
         );
+
         var affixArgument = AttributeArgument(
             LiteralExpression(SyntaxKind.StringLiteralExpression, Literal($"\"{affix}\"", affix))
         );
-        var argumentList = AttributeArgumentList([typeArgument, categoryArgument, affixArgument]);
 
+        var argumentList = AttributeArgumentList([typeArgument, categoryArgument, affixArgument]);
+        var attribute = AttributeList([Attribute(IdentifierName("NameAffix"), argumentList)]);
+
+        return addToInner ? [attribute, .. attributeLists] : [.. attributeLists, attribute];
+    }
+
+    /// <summary>
+    /// This is similar to <see cref="AddNameAffix(IEnumerable{AttributeListSyntax},NameAffixType,string,string,bool)"/>
+    /// but allows the name of another symbol to be referenced.
+    /// <para/>
+    /// This ensures transformations applied to the referenced symbol's name
+    /// are also applied to this affix.
+    /// </summary>
+    /// <remarks>
+    /// This allows compound names to be handled more cleanly.
+    /// </remarks>
+    /// <example>
+    /// For example, <c>PerformanceCounterDescriptionARM</c> can be used as a resolved prefix for <c>PerformanceCounterDescriptionARMName</c>.
+    /// If <c>PerformanceCounterDescriptionARM</c> becomes <c>ARMPerformanceCounterDescription</c>,
+    /// then <c>PerformanceCounterDescriptionARMName</c> will also be output as <c>ARMPerformanceCounterDescriptionName</c>.
+    /// </example>
+    public static SyntaxList<AttributeListSyntax> AddResolvedNameAffix(
+        this IEnumerable<AttributeListSyntax> attributeLists,
+        NameAffixType type,
+        string category,
+        string resolvedAffix,
+        bool addToInner = false
+    )
+    {
+        var affixType = type switch
+        {
+            NameAffixType.Prefix => "Prefix",
+            NameAffixType.Suffix => "Suffix",
+            _ => throw new ArgumentOutOfRangeException(nameof(type)),
+        };
+
+        var typeArgument = AttributeArgument(
+            LiteralExpression(
+                SyntaxKind.StringLiteralExpression,
+                Literal($"\"{affixType}\"", affixType)
+            )
+        );
+
+        var categoryArgument = AttributeArgument(
+            LiteralExpression(
+                SyntaxKind.StringLiteralExpression,
+                Literal($"\"{category}\"", category)
+            )
+        );
+
+        // nameof(resolvedAffix)
+        var affixArgument = AttributeArgument(
+            InvocationExpression(
+                    IdentifierName(
+                        Identifier(
+                            TriviaList(),
+                            SyntaxKind.NameOfKeyword,
+                            "nameof",
+                            "nameof",
+                            TriviaList()
+                        )
+                    )
+                )
+                .WithArgumentList(
+                    ArgumentList(SingletonSeparatedList(Argument(IdentifierName(resolvedAffix))))
+                )
+        );
+
+        var argumentList = AttributeArgumentList([typeArgument, categoryArgument, affixArgument]);
         var attribute = AttributeList([Attribute(IdentifierName("NameAffix"), argumentList)]);
 
         return addToInner ? [attribute, .. attributeLists] : [.. attributeLists, attribute];
