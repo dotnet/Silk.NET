@@ -13,9 +13,14 @@ namespace Silk.NET.SilkTouch.Naming;
 /// The order that the attribute was declared in.
 /// 0 is the first and indicates that the affix is on the inside of the name.
 /// </param>
+/// <param name="IsReference">
+/// Whether the affix uses the name of a referenced symbol.
+/// See <see cref="NameAffixer.AddReferencedNameAffix"/>.
+/// </param>
 public record struct NameAffix(
     NameAffixType Type,
     string Category,
     string Affix,
-    int DeclarationOrder
+    int DeclarationOrder,
+    bool IsReference = false
 );

@@ -32,13 +32,21 @@ public static class NameAffixer
 
                 var argumentList = attribute.ArgumentList;
                 if (
-                    argumentList != null
-                    && argumentList.Arguments[0].Expression
-                        is LiteralExpressionSyntax { Token.Value: string type }
-                    && argumentList.Arguments[1].Expression
-                        is LiteralExpressionSyntax { Token.Value: string category }
-                    && argumentList.Arguments[2].Expression
-                        is LiteralExpressionSyntax { Token.Value: string affix }
+                    argumentList == null
+                    || argumentList.Arguments[0].Expression
+                        is not LiteralExpressionSyntax { Token.Value: string type }
+                    || argumentList.Arguments[1].Expression
+                        is not LiteralExpressionSyntax { Token.Value: string category }
+                )
+                {
+                    continue;
+                }
+
+                if (
+                    argumentList.Arguments[2].Expression is LiteralExpressionSyntax
+                    {
+                        Token.Value: string affix
+                    }
                 )
                 {
                     affixes =
@@ -51,8 +59,36 @@ public static class NameAffixer
                             declarationOrder
                         ),
                     ];
-                    declarationOrder++;
                 }
+                else if (
+                    argumentList.Arguments[2].Expression is InvocationExpressionSyntax
+                    {
+                        Expression: IdentifierNameSyntax { Identifier.ValueText: "nameof" },
+                        ArgumentList.Arguments: [
+                            {
+                                Expression: IdentifierNameSyntax
+                                {
+                                    Identifier.ValueText: var referencedAffix,
+                                },
+                            },
+                        ],
+                    }
+                )
+                {
+                    affixes =
+                    [
+                        .. affixes,
+                        new NameAffix(
+                            type == "Prefix" ? NameAffixType.Prefix : NameAffixType.Suffix,
+                            category,
+                            referencedAffix,
+                            declarationOrder,
+                            true
+                        ),
+                    ];
+                }
+
+                declarationOrder++;
             }
         }
 
@@ -121,15 +157,15 @@ public static class NameAffixer
     /// This allows compound names to be handled more cleanly.
     /// </remarks>
     /// <example>
-    /// For example, <c>PerformanceCounterDescriptionARM</c> can be used as a resolved prefix for <c>PerformanceCounterDescriptionARMName</c>.
+    /// For example, <c>PerformanceCounterDescriptionARM</c> can be used as a referenced prefix for <c>PerformanceCounterDescriptionARMName</c>.
     /// If <c>PerformanceCounterDescriptionARM</c> becomes <c>ARMPerformanceCounterDescription</c>,
     /// then <c>PerformanceCounterDescriptionARMName</c> will also be output as <c>ARMPerformanceCounterDescriptionName</c>.
     /// </example>
-    public static SyntaxList<AttributeListSyntax> AddResolvedNameAffix(
+    public static SyntaxList<AttributeListSyntax> AddReferencedNameAffix(
         this IEnumerable<AttributeListSyntax> attributeLists,
         NameAffixType type,
         string category,
-        string resolvedAffix,
+        string referencedAffix,
         bool addToInner = false
     )
     {
@@ -154,7 +190,7 @@ public static class NameAffixer
             )
         );
 
-        // nameof(resolvedAffix)
+        // nameof(referencedAffix)
         var affixArgument = AttributeArgument(
             InvocationExpression(
                     IdentifierName(
@@ -168,7 +204,7 @@ public static class NameAffixer
                     )
                 )
                 .WithArgumentList(
-                    ArgumentList(SingletonSeparatedList(Argument(IdentifierName(resolvedAffix))))
+                    ArgumentList(SingletonSeparatedList(Argument(IdentifierName(referencedAffix))))
                 )
         );
 

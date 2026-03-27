@@ -329,7 +329,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                         struc
                             .WithIdentifier(Identifier(iden))
                             .WithAttributeLists(
-                                struc.AttributeLists.AddResolvedNameAffix(
+                                struc.AttributeLists.AddReferencedNameAffix(
                                     NameAffixType.Prefix,
                                     "NestedStructParent",
                                     node.Identifier.ToString()
@@ -538,7 +538,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                             : default
                     )
                         .WithNativeName(currentNativeTypeName)
-                        .AddResolvedNameAffix(
+                        .AddReferencedNameAffix(
                             NameAffixType.Prefix,
                             "FunctionPointerParent",
                             currentNativeTypeName
