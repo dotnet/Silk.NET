@@ -529,6 +529,11 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                             : default
                     )
                         .WithNativeName(currentNativeTypeName)
+                        .AddResolvedNameAffix(
+                            NameAffixType.Prefix,
+                            "FunctionPointerParent",
+                            currentNativeTypeName
+                        )
                         .AddNameAffix(
                             NameAffixType.Suffix,
                             "FunctionPointerDelegateType",
