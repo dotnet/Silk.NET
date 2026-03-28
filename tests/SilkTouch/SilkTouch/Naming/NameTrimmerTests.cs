@@ -77,7 +77,7 @@ public class NameTrimmerTests : NameTrimmer
         );
         var expected = new Dictionary<string, string>
         {
-            { "GL_2X_BIT_ATI", "X2XBitAti" },
+            { "GL_2X_BIT_ATI", "2XBitAti" },
             { "GL_COMP_BIT_ATI", "CompBitAti" },
             { "GL_NEGATE_BIT_ATI", "NegateBitAti" },
             { "GL_BIAS_BIT_ATI", "BiasBitAti" },

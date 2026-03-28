@@ -508,6 +508,7 @@ public class PrettifyNames(
         result = nameAffixer.RemoveAffixes(result, container, name, null);
         result = namePrettifier.Prettify(result, allowAllCaps);
         result = nameAffixer.ApplyAffixes(result, container, name, null);
+        result = NameUtils.PrefixIfStartsWithNumber(result);
 
         return result;
     }
@@ -1505,7 +1506,7 @@ public class PrettifyNames(
                 foreach (var (original, (primary, secondary)) in context.Names)
                 {
                     var secondaries = secondary;
-                    var newPrimary = affixer.ApplyAffixes(primary, null, original, secondaries);
+                    var newPrimary = affixer.ApplyAffixes(primary, null, original, secondaries); // TODO: Prefix names starting with numbers
                     context.Names[original] = new CandidateNames(newPrimary, secondaries);
                 }
 

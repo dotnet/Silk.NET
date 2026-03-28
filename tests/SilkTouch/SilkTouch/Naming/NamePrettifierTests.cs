@@ -71,16 +71,19 @@ public class NamePrettifierTests
     public string ConsecutiveAcronyms(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
+    /// <summary>
+    /// C# identifiers cannot start with numbers, but <see cref="NamePrettifier.Prettify"/> no longer handles this
+    /// in favor of calling <see cref="NameUtils.PrefixIfStartsWithNumber"/> separately.
+    /// </summary>
     [Theory]
-    // C# identifiers cannot start with numbers
-    [TestCase("123", ExpectedResult = "X123")]
-    [TestCase("123Hello", ExpectedResult = "X123Hello")]
+    [TestCase("123", ExpectedResult = "123")]
+    [TestCase("123Hello", ExpectedResult = "123Hello")]
     public string StartsWithNumber(string input, int longAcronymThreshold = 0) =>
         new NamePrettifier(longAcronymThreshold).Prettify(input);
 
     [Theory]
     // Add x between numbers to maintain separation
-    [TestCase("123_123_123", ExpectedResult = "X123x123x123")]
+    [TestCase("123_123_123", ExpectedResult = "123x123x123")]
     [TestCase("Hello123_123_123", ExpectedResult = "Hello123x123x123")]
     [TestCase("Hello123X123X123", ExpectedResult = "Hello123x123x123")]
     public string ConsecutiveNumbers(string input, int longAcronymThreshold = 0) =>
@@ -171,5 +174,19 @@ public class NamePrettifierTests
             Assert.That(nameTransformer.Prettify("MONO16"), Is.EqualTo("Mono16"));
             Assert.That(nameTransformer.Prettify("MONO16f"), Is.EqualTo("Mono16F"));
         }
+    }
+
+    [Test]
+    public void EmptyInput_IsAllowed()
+    {
+        var nameTransformer = new NamePrettifier(4);
+        nameTransformer.Prettify("");
+    }
+
+    [Test]
+    public void EmptyOutput_IsAllowed()
+    {
+        var nameTransformer = new NamePrettifier(4);
+        nameTransformer.Prettify("_");
     }
 }

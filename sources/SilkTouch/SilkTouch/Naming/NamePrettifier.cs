@@ -31,11 +31,6 @@ public class NamePrettifier(int longAcronymThreshold)
     /// <exception cref="InvalidOperationException">Thrown when the input or output is an empty identifier.</exception>
     public string Prettify(string identifier, bool allowAllCaps = false)
     {
-        if (identifier.Length == 0)
-        {
-            throw new InvalidOperationException("Cannot prettify an empty identifier");
-        }
-
         var words = NameSplitter.BreakIntoWords(identifier);
 
         // Add "X" to separate out numbers
@@ -47,15 +42,6 @@ public class NamePrettifier(int longAcronymThreshold)
             if (startOfCurrent is CharType.Number && endOfPrevious is CharType.Number)
             {
                 words.Insert(i, "X");
-            }
-        }
-
-        // Add "X" if first word is a number
-        if (words.Count > 0)
-        {
-            if (NameUtils.GetCharType(words[0][0]) is CharType.Number)
-            {
-                words.Insert(0, "X");
             }
         }
 
@@ -179,17 +165,11 @@ public class NamePrettifier(int longAcronymThreshold)
             }
         }
 
-        var result = string.Join("", words);
-        if (result.Length == 0)
-        {
-            throw new InvalidOperationException(
-                $"Prettification for '{identifier}' led to an empty identifier"
-            );
-        }
+        var result = string.Join(null, words);
 
         // Disallow all capitals
         var resultSpan = result.AsSpan();
-        if (!allowAllCaps && IsAllCaps(result))
+        if (result.Length > 0 && !allowAllCaps && IsAllCaps(result))
         {
             Span<char> caps = stackalloc char[resultSpan.Length - 1];
             resultSpan[1..].ToLower(caps, CultureInfo.InvariantCulture);

@@ -39,6 +39,19 @@ public static partial class NameUtils
     );
 
     /// <summary>
+    /// Prefixes the given identifier with the specified prefix if it starts with a number.
+    /// </summary>
+    public static string PrefixIfStartsWithNumber(string identifier, string prefix = "X")
+    {
+        if (identifier.Length > 0 && char.IsDigit(identifier[0]))
+        {
+            return $"X{identifier}";
+        }
+
+        return identifier;
+    }
+
+    /// <summary>
     /// Gets the char type for the specified character according
     /// to the categorization defined by <see cref="CharType"/>.
     /// </summary>
