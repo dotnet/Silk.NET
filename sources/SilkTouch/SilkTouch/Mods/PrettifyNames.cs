@@ -129,11 +129,11 @@ public class PrettifyNames(
         // Define name processors
         var nameProcessors = new INameProcessor[]
         {
-            new StripAffixesNameProcessor(nameAffixer),
+            new StripAffixesProcessor(nameAffixer),
             new NameTrimmer(),
-            new PrettifyNameProcessor(namePrettifier),
-            new ReapplyAffixesNameProcessor(nameAffixer),
-            new PrefixIfStartsWithNumberNameProcessor(),
+            new PrettifyProcessor(namePrettifier),
+            new ReapplyAffixesProcessor(nameAffixer),
+            new PrefixIfStartsWithNumberProcessor(),
         };
 
         // Create a type name dictionary to trim the type names.
@@ -1201,7 +1201,7 @@ public class PrettifyNames(
         /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list if provided.
         /// </summary>
         /// <remarks>
-        /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="StripAffixesNameProcessor"/>.
+        /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="StripAffixesProcessor"/>.
         /// </remarks>
         /// <param name="primary">The current primary name.</param>
         /// <param name="container">The container name. Either null or the containing type.</param>
@@ -1234,7 +1234,7 @@ public class PrettifyNames(
         /// Applies affixes to the specified primary name and adds fallbacks to the secondary list if provided.
         /// </summary>
         /// <remarks>
-        /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="ReapplyAffixesNameProcessor"/>.
+        /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="ReapplyAffixesProcessor"/>.
         /// </remarks>
         /// <param name="primary">The current primary name.</param>
         /// <param name="container">The container name. Either null or the containing type.</param>
@@ -1398,9 +1398,9 @@ public class PrettifyNames(
 
     /// <summary>
     /// Removes identified affixes so that other name processors can process the base name separately.
-    /// These affixes should be reapplied by <see cref="ReapplyAffixesNameProcessor"/>.
+    /// These affixes should be reapplied by <see cref="ReapplyAffixesProcessor"/>.
     /// </summary>
-    private class StripAffixesNameProcessor(PrettifyNamesAffixer affixer) : INameProcessor
+    private class StripAffixesProcessor(PrettifyNamesAffixer affixer) : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
         {
@@ -1430,7 +1430,7 @@ public class PrettifyNames(
         }
     }
 
-    private class PrettifyNameProcessor(NamePrettifier namePrettifier) : INameProcessor
+    private class PrettifyProcessor(NamePrettifier namePrettifier) : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
         {
@@ -1455,7 +1455,7 @@ public class PrettifyNames(
     /// <summary>
     /// Reapplies and transforms identified affixes based on <see cref="NameAffixConfiguration"/>.
     /// </summary>
-    private class ReapplyAffixesNameProcessor(PrettifyNamesAffixer affixer) : INameProcessor
+    private class ReapplyAffixesProcessor(PrettifyNamesAffixer affixer) : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
         {
@@ -1485,7 +1485,7 @@ public class PrettifyNames(
         }
     }
 
-    private class PrefixIfStartsWithNumberNameProcessor : INameProcessor
+    private class PrefixIfStartsWithNumberProcessor : INameProcessor
     {
         public void ProcessNames(NameProcessorContext context)
         {
