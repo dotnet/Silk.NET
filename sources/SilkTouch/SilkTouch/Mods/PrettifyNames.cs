@@ -1449,9 +1449,6 @@ public class PrettifyNames(
     /// </summary>
     private class NameAffixerEarlyTrimmer(PrettifyNamesAffixer affixer) : INameTrimmer
     {
-        /// <inheritdoc/>
-        public Version Version => new(3, 0);
-
         public void Trim(NameTrimmerContext context)
         {
             if (context.Container == null)
@@ -1482,9 +1479,6 @@ public class PrettifyNames(
 
     private class PrettifyNamesTrimmer(NamePrettifier namePrettifier) : INameTrimmer
     {
-        /// <inheritdoc/>
-        public Version Version => new(3, 0);
-
         public void Trim(NameTrimmerContext context)
         {
             foreach (var (original, (primary, secondary)) in context.Names)
@@ -1514,9 +1508,6 @@ public class PrettifyNames(
     /// </summary>
     private class NameAffixerLateTrimmer(PrettifyNamesAffixer affixer) : INameTrimmer
     {
-        /// <inheritdoc/>
-        public Version Version => new(3, 0);
-
         public void Trim(NameTrimmerContext context)
         {
             if (context.Container == null)

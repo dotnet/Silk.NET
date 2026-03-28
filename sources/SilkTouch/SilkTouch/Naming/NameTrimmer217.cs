@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Humanizer;
+﻿using Humanizer;
 
 namespace Silk.NET.SilkTouch.Naming;
 
@@ -10,9 +8,6 @@ namespace Silk.NET.SilkTouch.Naming;
 [Obsolete("Use NameTrimmer instead for 3.0 names")]
 public class NameTrimmer217 : NameTrimmer
 {
-    /// <inheritdoc />
-    public override Version Version => new(2, 17);
-
     /// <inheritdoc />
     protected override bool HasRawPass => false;
 

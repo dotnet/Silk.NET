@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text.Json;
-
-namespace Silk.NET.SilkTouch.Naming;
+﻿namespace Silk.NET.SilkTouch.Naming;
 
 /// <summary>
 /// The default name trimmer ported from Silk.NET 2.18 with modifications for 3.0.
 /// </summary>
 public class NameTrimmer : INameTrimmer
 {
-    /// <inheritdoc />
-    public virtual Version Version => new(3, 0);
-
     /// <summary>
     /// Determines whether a second pass without using <see cref="GetTrimmingName"/> is warranted.
     /// </summary>

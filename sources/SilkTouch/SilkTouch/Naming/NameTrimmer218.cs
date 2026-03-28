@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Silk.NET.SilkTouch.Naming;
+﻿namespace Silk.NET.SilkTouch.Naming;
 
 /// <summary>
 /// The 2.18 name trimmer.
@@ -8,9 +6,6 @@ namespace Silk.NET.SilkTouch.Naming;
 [Obsolete("Use NameTrimmer instead for 3.0 names")]
 public class NameTrimmer218 : NameTrimmer
 {
-    /// <inheritdoc />
-    public override Version Version => new(2, 18);
-
     /// <inheritdoc />
     protected override bool HasRawPass => false;
 
