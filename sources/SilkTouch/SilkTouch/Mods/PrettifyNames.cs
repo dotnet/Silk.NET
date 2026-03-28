@@ -173,10 +173,7 @@ public class PrettifyNames(
         {
             // Trim and prettify the trimmable names
 
-            // Get all the trimmers that are above this baseline. We also sort by the version. Why? Because someone
-            // couldn't be bothered to introduce a weight property. It is also unclear what effect this has on 2.17/2.18
-            // but to be honest those trimmers aren't used and are only included for posterity and understanding of the
-            // old logic.
+            // Define trimmers
             var trimmers = new INameTrimmer[]
             {
                 new NameAffixerEarlyTrimmer(nameAffixer),
