@@ -27,8 +27,8 @@ public class NameTrimmerTests : NameTrimmer
             GetPrefix(null, hint, test, null, null, false, true)?.Prefix,
             Is.EqualTo("GLFW")
         );
-        Trim(
-            new NameTrimmerContext
+        ProcessNames(
+            new NameProcessorContext
             {
                 Configuration = new PrettifyNames.Configuration
                 {
@@ -66,8 +66,8 @@ public class NameTrimmerTests : NameTrimmer
             { "GL_NEGATE_BIT_ATI", new CandidateNames("GL_NEGATE_BIT_ATI", []) },
             { "GL_BIAS_BIT_ATI", new CandidateNames("GL_BIAS_BIT_ATI", []) },
         };
-        Trim(
-            new NameTrimmerContext
+        ProcessNames(
+            new NameProcessorContext
             {
                 Container = "FragmentShaderColorModMaskATI",
                 Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
@@ -96,8 +96,8 @@ public class NameTrimmerTests : NameTrimmer
             { "GL_EVAL_2D_NV", new CandidateNames("GL_EVAL_2D_NV", []) },
             { "GL_EVAL_TRIANGULAR_2D_NV", new CandidateNames("GL_EVAL_TRIANGULAR_2D_NV", []) },
         };
-        Trim(
-            new NameTrimmerContext
+        ProcessNames(
+            new NameProcessorContext
             {
                 Container = "EvalTargetNV",
                 Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
@@ -123,7 +123,7 @@ public class NameTrimmerTests : NameTrimmer
         {
             { "GL_FILL_NV", new CandidateNames("GL_FILL_NV", []) },
         };
-        var ctx = new NameTrimmerContext
+        var ctx = new NameProcessorContext
         {
             Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
             Container = "EvalMapsModeNV",
@@ -131,7 +131,7 @@ public class NameTrimmerTests : NameTrimmer
             Names = names,
         };
         var uut = new NameTrimmer();
-        uut.Trim(ctx);
+        uut.ProcessNames(ctx);
         Assert.That(names["GL_FILL_NV"].Primary, Is.EqualTo("FILL_NV"));
     }
 
@@ -142,7 +142,7 @@ public class NameTrimmerTests : NameTrimmer
         {
             { "ALC_CONTEXT_DEBUG_BIT_EXT", new CandidateNames("ALC_CONTEXT_DEBUG_BIT_EXT", []) },
         };
-        var ctx = new NameTrimmerContext
+        var ctx = new NameProcessorContext
         {
             Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["alc", "al"] },
             Container = "ContextFlagsEXT",
@@ -150,7 +150,7 @@ public class NameTrimmerTests : NameTrimmer
             Names = names,
         };
         var uut = new NameTrimmer();
-        uut.Trim(ctx);
+        uut.ProcessNames(ctx);
         Assert.That(
             names["ALC_CONTEXT_DEBUG_BIT_EXT"].Primary,
             Is.EqualTo("CONTEXT_DEBUG_BIT_EXT")

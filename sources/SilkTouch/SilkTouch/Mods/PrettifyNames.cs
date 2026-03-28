@@ -126,14 +126,14 @@ public class PrettifyNames(
 
         // Trim and prettify the trimmable names
 
-        // Define trimmers
-        var trimmers = new INameTrimmer[]
+        // Define name processors
+        var nameProcessors = new INameProcessor[]
         {
-            new NameAffixerEarlyTrimmer(nameAffixer),
+            new NameAffixerEarlyNameProcessor(nameAffixer),
             new NameTrimmer(),
-            new PrettifyNamesTrimmer(namePrettifier),
-            new NameAffixerLateTrimmer(nameAffixer),
-            new PrefixIfStartsWithNumberTrimmer(),
+            new PrettifyNameProcessor(namePrettifier),
+            new NameAffixerLateNameProcessor(nameAffixer),
+            new PrefixIfStartsWithNumberNameProcessor(),
         };
 
         // Create a type name dictionary to trim the type names.
@@ -146,8 +146,8 @@ public class PrettifyNames(
         // trim.
         if (typeNames.Count > 1 || cfg.GlobalPrefixHints is not null)
         {
-            Trim(
-                new NameTrimmerContext
+            ProcessNames(
+                new NameProcessorContext
                 {
                     Container = null,
                     Names = typeNames,
@@ -155,7 +155,7 @@ public class PrettifyNames(
                     JobKey = ctx.JobKey,
                     NonDeterminant = visitor.NonDeterminant,
                 },
-                trimmers
+                nameProcessors
             );
         }
 
@@ -169,8 +169,8 @@ public class PrettifyNames(
             var constNames = consts.ToDictionary(x => x, x => new CandidateNames(x, []));
 
             // Trim the constants.
-            Trim(
-                new NameTrimmerContext
+            ProcessNames(
+                new NameProcessorContext
                 {
                     Container = typeName,
                     Names = constNames,
@@ -178,7 +178,7 @@ public class PrettifyNames(
                     JobKey = ctx.JobKey,
                     NonDeterminant = visitor.NonDeterminant,
                 },
-                trimmers
+                nameProcessors
             );
 
             // Rename the functions. More often that not functions have different nomenclature to constants, so we
@@ -194,8 +194,8 @@ public class PrettifyNames(
             );
 
             // Trim the functions.
-            Trim(
-                new NameTrimmerContext
+            ProcessNames(
+                new NameProcessorContext
                 {
                     Container = typeName,
                     Names = functionNames,
@@ -203,7 +203,7 @@ public class PrettifyNames(
                     JobKey = ctx.JobKey,
                     NonDeterminant = visitor.NonDeterminant,
                 },
-                trimmers,
+                nameProcessors,
                 functionSyntax
             );
 
@@ -461,15 +461,15 @@ public class PrettifyNames(
         return result;
     }
 
-    private void Trim(
-        NameTrimmerContext context,
-        IEnumerable<INameTrimmer> trimmers,
+    private void ProcessNames(
+        NameProcessorContext context,
+        IEnumerable<INameProcessor> nameProcessors,
         Dictionary<string, IEnumerable<MethodDeclarationSyntax>>? functionSyntax = null
     )
     {
         // Ensure the trimmers don't see names that have been manually overridden, as we don't want them to influence
         // automatic prefix determination for example
-        var namesToTrim = context.Names;
+        var namesToProcess = context.Names;
         foreach (var (nativeName, overriddenName) in context.Configuration.NameOverrides)
         {
             var nameToAdd = nativeName;
@@ -497,21 +497,21 @@ public class PrettifyNames(
                 }
             }
 
-            if (!namesToTrim.TryGetValue(nameToAdd, out var v))
+            if (!namesToProcess.TryGetValue(nameToAdd, out var v))
             {
                 continue;
             }
 
             // If we haven't created the differentiated dictionary yet, then do so now. We do want to keep the original
             // dictionary so we can actually apply the renames; if we have created two different branching dictionaries
-            // they are recombined following trimming.
-            if (namesToTrim == context.Names)
+            // they are recombined following name processing.
+            if (namesToProcess == context.Names)
             {
-                namesToTrim = namesToTrim.ToDictionary();
+                namesToProcess = namesToProcess.ToDictionary();
             }
 
-            // Don't let the trimmers see the overridden native name.
-            namesToTrim.Remove(nameToAdd);
+            // Don't let the name processors see the overridden native name.
+            namesToProcess.Remove(nameToAdd);
 
             // Apply the name override to the dictionary we actually use.
             context.Names[nameToAdd] = new CandidateNames(
@@ -520,16 +520,16 @@ public class PrettifyNames(
             );
         }
 
-        // Run each trimmer
-        foreach (var trimmer in trimmers)
+        // Run each name processor
+        foreach (var nameProcessor in nameProcessors)
         {
-            trimmer.Trim(context with { Names = namesToTrim });
+            nameProcessor.ProcessNames(context with { Names = namesToProcess });
         }
 
         // Apply changes
-        if (namesToTrim != context.Names)
+        if (namesToProcess != context.Names)
         {
-            foreach (var (evalName, result) in namesToTrim)
+            foreach (var (evalName, result) in namesToProcess)
             {
                 context.Names[evalName] = result;
             }
@@ -1201,7 +1201,7 @@ public class PrettifyNames(
         /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list if provided.
         /// </summary>
         /// <remarks>
-        /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="NameAffixerEarlyTrimmer"/>.
+        /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="NameAffixerEarlyNameProcessor"/>.
         /// </remarks>
         /// <param name="primary">The current primary name.</param>
         /// <param name="container">The container name. Either null or the containing type.</param>
@@ -1234,7 +1234,7 @@ public class PrettifyNames(
         /// Applies affixes to the specified primary name and adds fallbacks to the secondary list if provided.
         /// </summary>
         /// <remarks>
-        /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="NameAffixerLateTrimmer"/>.
+        /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="NameAffixerLateNameProcessor"/>.
         /// </remarks>
         /// <param name="primary">The current primary name.</param>
         /// <param name="container">The container name. Either null or the containing type.</param>
@@ -1397,12 +1397,12 @@ public class PrettifyNames(
     }
 
     /// <summary>
-    /// Removes identified affixes so that other trimmers can process the base name separately.
-    /// These affixes should be reapplied by <see cref="NameAffixerLateTrimmer"/>.
+    /// Removes identified affixes so that other name processors can process the base name separately.
+    /// These affixes should be reapplied by <see cref="NameAffixerLateNameProcessor"/>.
     /// </summary>
-    private class NameAffixerEarlyTrimmer(PrettifyNamesAffixer affixer) : INameTrimmer
+    private class NameAffixerEarlyNameProcessor(PrettifyNamesAffixer affixer) : INameProcessor
     {
-        public void Trim(NameTrimmerContext context)
+        public void ProcessNames(NameProcessorContext context)
         {
             if (context.Container == null)
             {
@@ -1430,9 +1430,9 @@ public class PrettifyNames(
         }
     }
 
-    private class PrettifyNamesTrimmer(NamePrettifier namePrettifier) : INameTrimmer
+    private class PrettifyNameProcessor(NamePrettifier namePrettifier) : INameProcessor
     {
-        public void Trim(NameTrimmerContext context)
+        public void ProcessNames(NameProcessorContext context)
         {
             foreach (var (original, (primary, secondary)) in context.Names)
             {
@@ -1455,9 +1455,9 @@ public class PrettifyNames(
     /// <summary>
     /// Reapplies and transforms identified affixes based on <see cref="NameAffixConfiguration"/>.
     /// </summary>
-    private class NameAffixerLateTrimmer(PrettifyNamesAffixer affixer) : INameTrimmer
+    private class NameAffixerLateNameProcessor(PrettifyNamesAffixer affixer) : INameProcessor
     {
-        public void Trim(NameTrimmerContext context)
+        public void ProcessNames(NameProcessorContext context)
         {
             if (context.Container == null)
             {
@@ -1485,9 +1485,9 @@ public class PrettifyNames(
         }
     }
 
-    private class PrefixIfStartsWithNumberTrimmer : INameTrimmer
+    private class PrefixIfStartsWithNumberNameProcessor : INameProcessor
     {
-        public void Trim(NameTrimmerContext context)
+        public void ProcessNames(NameProcessorContext context)
         {
             foreach (var (original, (primary, secondary)) in context.Names)
             {

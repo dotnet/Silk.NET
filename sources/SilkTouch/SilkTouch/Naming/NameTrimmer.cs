@@ -3,7 +3,7 @@
 /// <summary>
 /// The default name trimmer ported from Silk.NET 2.18 with modifications for 3.0.
 /// </summary>
-public class NameTrimmer : INameTrimmer
+public class NameTrimmer : INameProcessor
 {
     /// <summary>
     /// Determines whether a second pass without using <see cref="GetTrimmingName"/> is warranted.
@@ -20,7 +20,7 @@ public class NameTrimmer : INameTrimmer
     private static readonly HashSet<string> s_forbiddenTrimmings = new() { "unsigned", "per" };
 
     /// <inheritdoc />
-    public void Trim(NameTrimmerContext context)
+    public void ProcessNames(NameProcessorContext context)
     {
         string? identifiedPrefix = null;
         List<AugmentedCandidateNames> localNames = null!;

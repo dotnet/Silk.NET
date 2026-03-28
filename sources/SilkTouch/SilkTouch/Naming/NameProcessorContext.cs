@@ -6,9 +6,9 @@ using Silk.NET.SilkTouch.Mods;
 namespace Silk.NET.SilkTouch.Naming;
 
 /// <summary>
-/// State made available to <see cref="INameTrimmer"/> implementations when determining a trimmed name.
+/// State made available to <see cref="INameProcessor"/> implementations when determining a trimmed name.
 /// </summary>
-public readonly struct NameTrimmerContext
+public readonly struct NameProcessorContext
 {
     /// <summary>
     /// Gets the name of the "container" (e.g. a type name) of the APIs in <see cref="Names"/>.
