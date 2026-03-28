@@ -36,11 +36,6 @@ public class PrettifyNames(
         public Dictionary<string, string> NameOverrides { get; init; } = [];
 
         /// <summary>
-        /// The base trimmer version. If null, trimming is disabled.
-        /// </summary>
-        public Version? TrimmerBaseline { get; init; } = new(3, 0);
-
-        /// <summary>
         /// The maximum length of an all capitals string to be treated as a single acronym, rather than as an all
         /// capitals word.
         /// </summary>
@@ -129,138 +124,95 @@ public class PrettifyNames(
         var nameAffixer = new PrettifyNamesAffixer(visitor.AffixTypes, cfg.Affixes);
         var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
 
-        // Trim the trimmable names if the trimmer baseline is set
-        // Otherwise, we just prettify the trimmable names
-        if (cfg.TrimmerBaseline is null)
+        // Trim and prettify the trimmable names
+
+        // Define trimmers
+        var trimmers = new INameTrimmer[]
         {
-            // Only prettify the trimmable names
-            foreach (var (name, (nonFunctions, functions)) in visitor.TrimmableTypes)
-            {
-                newNames[name] = new RenamedType(
-                    ApplyPrettifyOnlyPipeline(
-                        null,
-                        name,
-                        cfg.NameOverrides,
-                        nameAffixer,
-                        namePrettifier
-                    ),
-                    nonFunctions.ToDictionary(
-                        x => x,
-                        x =>
-                            ApplyPrettifyOnlyPipeline(
-                                name,
-                                x,
-                                cfg.NameOverrides,
-                                nameAffixer,
-                                namePrettifier
-                            )
-                    ),
-                    functions.ToDictionary(
-                        x => x.Name,
-                        x =>
-                            ApplyPrettifyOnlyPipeline(
-                                name,
-                                x.Name,
-                                cfg.NameOverrides,
-                                nameAffixer,
-                                namePrettifier
-                            )
-                    )
-                );
-            }
+            new NameAffixerEarlyTrimmer(nameAffixer),
+            new NameTrimmer(),
+            new PrettifyNamesTrimmer(namePrettifier),
+            new NameAffixerLateTrimmer(nameAffixer),
+            new PrefixIfStartsWithNumberTrimmer(),
+        };
+
+        // Create a type name dictionary to trim the type names.
+        var typeNames = visitor.TrimmableTypes.ToDictionary(
+            x => x.Key,
+            x => new CandidateNames(x.Key, [])
+        );
+
+        // If we don't have a prefix hint and don't have more than one type, we can't determine a prefix so don't
+        // trim.
+        if (typeNames.Count > 1 || cfg.GlobalPrefixHints is not null)
+        {
+            Trim(
+                new NameTrimmerContext
+                {
+                    Container = null,
+                    Names = typeNames,
+                    Configuration = cfg,
+                    JobKey = ctx.JobKey,
+                    NonDeterminant = visitor.NonDeterminant,
+                },
+                trimmers
+            );
         }
-        else
+
+        // Now rename everything within each type.
+        foreach (var (typeName, (newTypeName, _)) in typeNames)
         {
-            // Trim and prettify the trimmable names
+            var (_, (consts, functions)) = visitor.TrimmableTypes.First(x => x.Key == typeName);
 
-            // Define trimmers
-            var trimmers = new INameTrimmer[]
-            {
-                new NameAffixerEarlyTrimmer(nameAffixer),
-                new NameTrimmer(),
-                new PrettifyNamesTrimmer(namePrettifier),
-                new NameAffixerLateTrimmer(nameAffixer),
-                new PrefixIfStartsWithNumberTrimmer(),
-            };
+            // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
+            // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
+            var constNames = consts.ToDictionary(x => x, x => new CandidateNames(x, []));
 
-            // Create a type name dictionary to trim the type names.
-            var typeNames = visitor.TrimmableTypes.ToDictionary(
-                x => x.Key,
-                x => new CandidateNames(x.Key, [])
+            // Trim the constants.
+            Trim(
+                new NameTrimmerContext
+                {
+                    Container = typeName,
+                    Names = constNames,
+                    Configuration = cfg,
+                    JobKey = ctx.JobKey,
+                    NonDeterminant = visitor.NonDeterminant,
+                },
+                trimmers
             );
 
-            // If we don't have a prefix hint and don't have more than one type, we can't determine a prefix so don't
-            // trim.
-            if (typeNames.Count > 1 || cfg.GlobalPrefixHints is not null)
-            {
-                Trim(
-                    new NameTrimmerContext
-                    {
-                        Container = null,
-                        Names = typeNames,
-                        Configuration = cfg,
-                        JobKey = ctx.JobKey,
-                        NonDeterminant = visitor.NonDeterminant,
-                    },
-                    trimmers
-                );
-            }
+            // Rename the functions. More often that not functions have different nomenclature to constants, so we
+            // treat them separately.
+            var functionNames = functions
+                .DistinctBy(x => x.Name)
+                .ToDictionary(x => x.Name, x => new CandidateNames(x.Name, []));
 
-            // Now rename everything within each type.
-            foreach (var (typeName, (newTypeName, _)) in typeNames)
-            {
-                var (_, (consts, functions)) = visitor.TrimmableTypes.First(x => x.Key == typeName);
+            // Collect the syntax as this is used for conflict resolution in the Trim function.
+            var functionSyntax = functionNames.Keys.ToDictionary(
+                x => x,
+                x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
+            );
 
-                // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
-                // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
-                var constNames = consts.ToDictionary(x => x, x => new CandidateNames(x, []));
+            // Trim the functions.
+            Trim(
+                new NameTrimmerContext
+                {
+                    Container = typeName,
+                    Names = functionNames,
+                    Configuration = cfg,
+                    JobKey = ctx.JobKey,
+                    NonDeterminant = visitor.NonDeterminant,
+                },
+                trimmers,
+                functionSyntax
+            );
 
-                // Trim the constants.
-                Trim(
-                    new NameTrimmerContext
-                    {
-                        Container = typeName,
-                        Names = constNames,
-                        Configuration = cfg,
-                        JobKey = ctx.JobKey,
-                        NonDeterminant = visitor.NonDeterminant,
-                    },
-                    trimmers
-                );
-
-                // Rename the functions. More often that not functions have different nomenclature to constants, so we
-                // treat them separately.
-                var functionNames = functions
-                    .DistinctBy(x => x.Name)
-                    .ToDictionary(x => x.Name, x => new CandidateNames(x.Name, []));
-
-                // Collect the syntax as this is used for conflict resolution in the Trim function.
-                var functionSyntax = functionNames.Keys.ToDictionary(
-                    x => x,
-                    x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
-                );
-
-                // Trim the functions.
-                Trim(
-                    new NameTrimmerContext
-                    {
-                        Container = typeName,
-                        Names = functionNames,
-                        Configuration = cfg,
-                        JobKey = ctx.JobKey,
-                        NonDeterminant = visitor.NonDeterminant,
-                    },
-                    trimmers,
-                    functionSyntax
-                );
-
-                // Add it to the rewriter's list of names to... rewrite...
-                newNames[typeName] = new RenamedType(
-                    newTypeName,
-                    constNames.ToDictionary(x => x.Key, x => x.Value.Primary),
-                    functionNames.ToDictionary(x => x.Key, x => x.Value.Primary)
-                );
-            }
+            // Add it to the rewriter's list of names to... rewrite...
+            newNames[typeName] = new RenamedType(
+                newTypeName,
+                constNames.ToDictionary(x => x.Key, x => x.Value.Primary),
+                functionNames.ToDictionary(x => x.Key, x => x.Value.Primary)
+            );
         }
 
         // Prettify the prettify only names
