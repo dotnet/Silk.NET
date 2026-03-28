@@ -180,6 +180,7 @@ public class PrettifyNames(
                 new NameTrimmer(),
                 new PrettifyNamesTrimmer(namePrettifier),
                 new NameAffixerLateTrimmer(nameAffixer),
+                new PrefixIfStartsWithNumberTrimmer(),
             };
 
             // Create a type name dictionary to trim the type names.
@@ -1488,15 +1489,11 @@ public class PrettifyNames(
 
                 for (var i = 0; i < secondary.Count; i++)
                 {
-                    secondary[i] = NameUtils.PrefixIfStartsWithNumber(
-                        namePrettifier.Prettify(secondary[i], allowAllCaps)
-                    );
+                    secondary[i] = namePrettifier.Prettify(secondary[i], allowAllCaps);
                 }
 
                 context.Names[original] = new CandidateNames(
-                    NameUtils.PrefixIfStartsWithNumber(
-                        namePrettifier.Prettify(primary, allowAllCaps)
-                    ),
+                    namePrettifier.Prettify(primary, allowAllCaps),
                     secondary
                 );
             }
@@ -1515,7 +1512,7 @@ public class PrettifyNames(
                 foreach (var (original, (primary, secondary)) in context.Names)
                 {
                     var secondaries = secondary;
-                    var newPrimary = affixer.ApplyAffixes(primary, null, original, secondaries); // TODO: Prefix names starting with numbers
+                    var newPrimary = affixer.ApplyAffixes(primary, null, original, secondaries);
                     context.Names[original] = new CandidateNames(newPrimary, secondaries);
                 }
 
@@ -1532,6 +1529,25 @@ public class PrettifyNames(
                     secondaries
                 );
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
+            }
+        }
+    }
+
+    private class PrefixIfStartsWithNumberTrimmer : INameTrimmer
+    {
+        public void Trim(NameTrimmerContext context)
+        {
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                for (var i = 0; i < secondary.Count; i++)
+                {
+                    secondary[i] = NameUtils.PrefixIfStartsWithNumber(secondary[i]);
+                }
+
+                context.Names[original] = new CandidateNames(
+                    NameUtils.PrefixIfStartsWithNumber(primary),
+                    secondary
+                );
             }
         }
     }
