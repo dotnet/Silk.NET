@@ -1480,6 +1480,35 @@ public class PrettifyNames(
         }
     }
 
+    private class PrettifyNamesTrimmer(NamePrettifier namePrettifier) : INameTrimmer
+    {
+        /// <inheritdoc/>
+        public Version Version => new(3, 0);
+
+        public void Trim(NameTrimmerContext context)
+        {
+            foreach (var (original, (primary, secondary)) in context.Names)
+            {
+                // Be lenient about caps for type names (e.g. GL)
+                var allowAllCaps = context.Container == null;
+
+                for (var i = 0; i < secondary.Count; i++)
+                {
+                    secondary[i] = NameUtils.PrefixIfStartsWithNumber(
+                        namePrettifier.Prettify(secondary[i], allowAllCaps)
+                    );
+                }
+
+                context.Names[original] = new CandidateNames(
+                    NameUtils.PrefixIfStartsWithNumber(
+                        namePrettifier.Prettify(primary, allowAllCaps)
+                    ),
+                    secondary
+                );
+            }
+        }
+    }
+
     /// <summary>
     /// Reapplies and transforms identified affixes based on <see cref="NameAffixConfiguration"/>.
     /// </summary>
@@ -1512,31 +1541,6 @@ public class PrettifyNames(
                     secondaries
                 );
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
-            }
-        }
-    }
-
-    private class PrettifyNamesTrimmer(NamePrettifier namePrettifier) : INameTrimmer
-    {
-        /// <inheritdoc/>
-        public Version Version => new(3, 0);
-
-        public void Trim(NameTrimmerContext context)
-        {
-            foreach (var (original, (primary, secondary)) in context.Names)
-            {
-                // Be lenient about caps for type names (e.g. GL)
-                var allowAllCaps = context.Container == null;
-
-                for (var i = 0; i < secondary.Count; i++)
-                {
-                    secondary[i] = namePrettifier.Prettify(secondary[i], allowAllCaps);
-                }
-
-                context.Names[original] = new CandidateNames(
-                    namePrettifier.Prettify(primary, allowAllCaps),
-                    secondary
-                );
             }
         }
     }
