@@ -157,6 +157,11 @@ public static class NameAffixer
     /// </summary>
     /// <remarks>
     /// This allows compound names to be handled more cleanly.
+    /// <para/>
+    /// For simplicity, only names within the same scope depth are currently supported.
+    /// This should cover most real world use cases since
+    /// if something is nested and has the parent name as a prefix,
+    /// then the prefix is likely unnecessary.
     /// </remarks>
     /// <example>
     /// For example, <c>PerformanceCounterDescriptionARM</c> can be used as a referenced prefix for <c>PerformanceCounterDescriptionARMName</c>.
