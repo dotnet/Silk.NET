@@ -65,7 +65,7 @@ public unsafe partial struct VideoEncodeAv1PictureInfoKHR
         ["VK_KHR_video_encode_av1"],
         ImpliesSets = ["VK_KHR_video_encode_queue"]
     )]
-    public VideoEncodeAv1PictureInfoKhrReferenceNameSlotIndices ReferenceNameSlotIndices;
+    public VideoEncodeAv1PictureInfoKHRReferenceNameSlotIndices ReferenceNameSlotIndices;
 
     [NativeName("primaryReferenceCdfOnly")]
     [SupportedApiProfile(

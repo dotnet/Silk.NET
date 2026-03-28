@@ -1915,9 +1915,8 @@ public partial class MixKhronosData(
             MethodDeclarationSyntax? methodDeclaration = null
         )
         {
-            // Get the name of the identifier, preferring the native one if available
             // This name will be modified by the code below as different suffixes are identified
-            var trimmedName = attributeLists.GetNativeNameOrDefault(identifier);
+            var trimmedName = identifier.ToString();
 
             if (trimHandleSuffix)
             {

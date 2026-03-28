@@ -43,7 +43,7 @@ public unsafe partial struct PipelineExecutableStatisticKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutableStatisticKhrName Name;
+    public PipelineExecutableStatisticKHRName Name;
 
     [NativeName("description")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PipelineExecutableStatisticKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutableStatisticKhrDescription Description;
+    public PipelineExecutableStatisticKHRDescription Description;
 
     [NativeName("format")]
     [SupportedApiProfile(

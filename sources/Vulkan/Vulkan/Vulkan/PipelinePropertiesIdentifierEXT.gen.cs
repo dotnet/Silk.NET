@@ -42,5 +42,5 @@ public unsafe partial struct PipelinePropertiesIdentifierEXT
             "VK_EXT_pipeline_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelinePropertiesIdentifierExtPipelineIdentifier PipelineIdentifier;
+    public PipelinePropertiesIdentifierEXTPipelineIdentifier PipelineIdentifier;
 }

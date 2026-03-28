@@ -26,5 +26,5 @@ public unsafe partial struct DebugUtilsLabelEXT
 
     [NativeName("color")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public DebugUtilsLabelExtColor Color;
+    public DebugUtilsLabelEXTColor Color;
 }

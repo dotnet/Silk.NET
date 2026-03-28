@@ -42,7 +42,7 @@ public unsafe partial struct VideoDecodeAv1PictureInfoKHR
         ["VK_KHR_video_decode_av1"],
         ImpliesSets = ["VK_KHR_video_decode_queue"]
     )]
-    public VideoDecodeAv1PictureInfoKhrReferenceNameSlotIndices ReferenceNameSlotIndices;
+    public VideoDecodeAv1PictureInfoKHRReferenceNameSlotIndices ReferenceNameSlotIndices;
 
     [NativeName("frameHeaderOffset")]
     [SupportedApiProfile(

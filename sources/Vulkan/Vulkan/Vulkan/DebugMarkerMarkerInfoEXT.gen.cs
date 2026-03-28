@@ -26,5 +26,5 @@ public unsafe partial struct DebugMarkerMarkerInfoEXT
 
     [NativeName("color")]
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_marker"], ImpliesSets = ["VK_EXT_debug_report"])]
-    public DebugMarkerMarkerInfoExtColor Color;
+    public DebugMarkerMarkerInfoEXTColor Color;
 }

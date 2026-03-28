@@ -40,7 +40,7 @@ public readonly unsafe struct DebugUtilsMessengerCallbackEXT : IDisposable
     ) => Pointer = ptr;
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]
-    public DebugUtilsMessengerCallbackEXT(DebugUtilsMessengerCallbackDelegateEXT proc) =>
+    public DebugUtilsMessengerCallbackEXT(DebugUtilsMessengerCallbackEXTDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     [SupportedApiProfile("vulkan", ["VK_EXT_debug_utils"])]

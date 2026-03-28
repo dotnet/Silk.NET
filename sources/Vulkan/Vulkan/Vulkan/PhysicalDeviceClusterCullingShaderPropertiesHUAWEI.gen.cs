@@ -43,7 +43,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHUAWEI
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceClusterCullingShaderPropertiesHuaweiMaxWorkGroupCount MaxWorkGroupCount;
+    public PhysicalDeviceClusterCullingShaderPropertiesHUAWEIMaxWorkGroupCount MaxWorkGroupCount;
 
     [NativeName("maxWorkGroupSize")]
     [SupportedApiProfile(
@@ -54,7 +54,7 @@ public unsafe partial struct PhysicalDeviceClusterCullingShaderPropertiesHUAWEI
             "VK_HUAWEI_cluster_culling_shader+VK_VERSION_1_1",
         ]
     )]
-    public PhysicalDeviceClusterCullingShaderPropertiesHuaweiMaxWorkGroupSize MaxWorkGroupSize;
+    public PhysicalDeviceClusterCullingShaderPropertiesHUAWEIMaxWorkGroupSize MaxWorkGroupSize;
 
     [NativeName("maxOutputClusterCount")]
     [SupportedApiProfile(

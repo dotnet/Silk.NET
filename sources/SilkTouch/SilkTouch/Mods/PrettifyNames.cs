@@ -401,6 +401,7 @@ public class PrettifyNames(
         ctx.SourceProject = proj;
     }
 
+    // TODO: Remove this method and unify the name processing code.
     /// <summary>
     /// Applies the prettify only pipeline.
     /// This currently consists of checking for name overrides first.
@@ -455,7 +456,7 @@ public class PrettifyNames(
         var result = name;
         result = nameAffixer.RemoveAffixes(result, container, name, null);
         result = namePrettifier.Prettify(result, allowAllCaps);
-        result = nameAffixer.ApplyAffixes(result, container, name, null);
+        result = nameAffixer.ApplyAffixes(result, container, name, null, null);
         result = NameUtils.PrefixIfStartsWithNumber(result);
 
         return result;
@@ -1240,12 +1241,14 @@ public class PrettifyNames(
         /// <param name="container">The container name. Either null or the containing type.</param>
         /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
         /// <param name="secondary">The list of secondary names. This should be null if used by <see cref="ApplyPrettifyOnlyPipeline"/>.</param>
+        /// <param name="context">The context containing the current names for the current container.</param>
         /// <returns>The new primary name.</returns>
         public string ApplyAffixes(
             string primary,
             string? container,
             string originalName,
-            List<string>? secondary
+            List<string>? secondary,
+            NameProcessorContext? context // TODO: Handle this better. Exposing the entire context is excessive.
         )
         {
             var affixes = GetAffixes(container, originalName);
@@ -1333,15 +1336,28 @@ public class PrettifyNames(
 
                 foreach (var affix in currentAffixes)
                 {
+                    var affixValue = affix.Affix;
+                    if (
+                        affix.IsReference
+                        && context.HasValue
+                        && context.Value.Names.TryGetValue(
+                            affixValue,
+                            out var referencedCandidateNames
+                        )
+                    )
+                    {
+                        affixValue = referencedCandidateNames.Primary;
+                    }
+
                     if (!GetConfiguration(affix).Remove)
                     {
                         if (affix.Type == NameAffixType.Prefix)
                         {
-                            name = affix.Affix + name;
+                            name = affixValue + name;
                         }
                         else
                         {
-                            name += affix.Affix;
+                            name += affixValue;
                         }
                     }
                 }
@@ -1363,7 +1379,7 @@ public class PrettifyNames(
         /// <param name="container">The container name. Either null or the containing type.</param>
         /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
         /// <returns>The name affixes for the specified identifier.</returns>
-        private NameAffix[] GetAffixes(string? container, string originalName)
+        public NameAffix[] GetAffixes(string? container, string originalName)
         {
             TypeAffixData typeAffixData;
             if (container == null)
@@ -1404,18 +1420,6 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            if (context.Container == null)
-            {
-                foreach (var (original, (primary, secondary)) in context.Names)
-                {
-                    var secondaries = secondary;
-                    var newPrimary = affixer.RemoveAffixes(primary, null, original, secondaries);
-                    context.Names[original] = new CandidateNames(newPrimary, secondaries);
-                }
-
-                return;
-            }
-
             foreach (var (original, (primary, secondary)) in context.Names)
             {
                 var secondaries = secondary;
@@ -1425,6 +1429,7 @@ public class PrettifyNames(
                     original,
                     secondaries
                 );
+
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }
         }
@@ -1459,27 +1464,25 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            if (context.Container == null)
-            {
-                foreach (var (original, (primary, secondary)) in context.Names)
-                {
-                    var secondaries = secondary;
-                    var newPrimary = affixer.ApplyAffixes(primary, null, original, secondaries);
-                    context.Names[original] = new CandidateNames(newPrimary, secondaries);
-                }
+            var processingOrder = context
+                .Names.Keys.OrderBy(original =>
+                    affixer.GetAffixes(context.Container, original).Any(x => x.IsReference)
+                )
+                .ToArray();
 
-                return;
-            }
-
-            foreach (var (original, (primary, secondary)) in context.Names)
+            foreach (var original in processingOrder)
             {
+                var (primary, secondary) = context.Names[original];
+
                 var secondaries = secondary;
                 var newPrimary = affixer.ApplyAffixes(
                     primary,
                     context.Container,
                     original,
-                    secondaries
+                    secondaries,
+                    context
                 );
+
                 context.Names[original] = new CandidateNames(newPrimary, secondaries);
             }
         }

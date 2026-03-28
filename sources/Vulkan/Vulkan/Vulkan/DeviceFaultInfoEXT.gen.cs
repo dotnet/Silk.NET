@@ -42,7 +42,7 @@ public unsafe partial struct DeviceFaultInfoEXT
             "VK_EXT_device_fault+VK_VERSION_1_1",
         ]
     )]
-    public DeviceFaultInfoExtDescription Description;
+    public DeviceFaultInfoEXTDescription Description;
 
     [NativeName("pAddressInfos")]
     [SupportedApiProfile(

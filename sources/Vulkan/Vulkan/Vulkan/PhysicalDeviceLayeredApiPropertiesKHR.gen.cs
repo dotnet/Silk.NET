@@ -34,5 +34,5 @@ public unsafe partial struct PhysicalDeviceLayeredApiPropertiesKHR
 
     [NativeName("deviceName")]
     [SupportedApiProfile("vulkan", ["VK_KHR_maintenance7"], ImpliesSets = ["VK_VERSION_1_1"])]
-    public PhysicalDeviceLayeredApiPropertiesKhrDeviceName DeviceName;
+    public PhysicalDeviceLayeredApiPropertiesKHRDeviceName DeviceName;
 }

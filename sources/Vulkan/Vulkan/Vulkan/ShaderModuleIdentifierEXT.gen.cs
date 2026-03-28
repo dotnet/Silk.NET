@@ -58,5 +58,5 @@ public unsafe partial struct ShaderModuleIdentifierEXT
             "VK_VERSION_1_3",
         ]
     )]
-    public ShaderModuleIdentifierExtIdentifier Identifier;
+    public ShaderModuleIdentifierEXTIdentifier Identifier;
 }

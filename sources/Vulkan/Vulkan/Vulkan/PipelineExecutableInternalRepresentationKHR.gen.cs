@@ -42,7 +42,7 @@ public unsafe partial struct PipelineExecutableInternalRepresentationKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutableInternalRepresentationKhrName Name;
+    public PipelineExecutableInternalRepresentationKHRName Name;
 
     [NativeName("description")]
     [SupportedApiProfile(
@@ -53,7 +53,7 @@ public unsafe partial struct PipelineExecutableInternalRepresentationKHR
             "VK_KHR_pipeline_executable_properties+VK_VERSION_1_1",
         ]
     )]
-    public PipelineExecutableInternalRepresentationKhrDescription Description;
+    public PipelineExecutableInternalRepresentationKHRDescription Description;
 
     [NativeName("isText")]
     [SupportedApiProfile(

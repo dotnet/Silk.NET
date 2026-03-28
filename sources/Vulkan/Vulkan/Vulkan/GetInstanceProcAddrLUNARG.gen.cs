@@ -25,7 +25,7 @@ public readonly unsafe struct GetInstanceProcAddrLUNARG : IDisposable
     ) => Pointer = ptr;
 
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
-    public GetInstanceProcAddrLUNARG(GetInstanceProcAddrDelegateLUNARG proc) =>
+    public GetInstanceProcAddrLUNARG(GetInstanceProcAddrLUNARGDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     [SupportedApiProfile("vulkan", ["VK_LUNARG_direct_driver_loading"])]
