@@ -204,11 +204,19 @@ internal partial class SdlInputBackend : IInputBackend
             return;
         }
 
-
         while (_pumpedSdlEvents.TryDequeue(out var evt))
+        {
+            _pumpedSdlEventsSorted.Add(evt);
+        }
+
+        _pumpedSdlEventsSorted.Sort((x, y) => x.Event.Common.Timestamp.CompareTo(y.Event.Common.Timestamp));
+
+        foreach (var evt in _pumpedSdlEventsSorted)
         {
             ProcessEvent(evt.Event, evt.Timestamp, ref _eventProcessingArgs);
         }
+
+        _pumpedSdlEventsSorted.Clear();
 
         foreach (var device in _eventProcessingArgs.Devices)
         {
@@ -220,6 +228,7 @@ internal partial class SdlInputBackend : IInputBackend
 
         _silkEvents.RaiseEvents(handler);
     }
+
 
 
     // ?? [UnmanagedFunctionPointer()]
@@ -568,7 +577,7 @@ internal partial class SdlInputBackend : IInputBackend
                 Array.Resize(ref _events, _events.Length * 2);
             }
 
-            _events[_nextEventIndex++] = new(p0, timestamp);
+            _events[_nextEventIndex++] = new TimedRawSdlEvent(p0, timestamp);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -657,25 +666,11 @@ internal partial class SdlInputBackend : IInputBackend
 
     private ProcessEventArgs _eventProcessingArgs;
     private bool _pumped;
+    private readonly List<TimedRawSdlEvent> _pumpedSdlEventsSorted = new();
     private readonly SdlEventQueue _pumpedSdlEvents = new();
     private readonly SilkEventContext _silkEvents;
 }
 
-[Flags]
-internal enum SdlPenInputFlags : uint
-{
-    Down = SDL.Sdl.PenInputDown,
-    Button1 = SDL.Sdl.PenInputButton1,
-    Button2 = SDL.Sdl.PenInputButton2,
-    Button3 = SDL.Sdl.PenInputButton3,
-    Button4 = SDL.Sdl.PenInputButton4,
-    Button5 = SDL.Sdl.PenInputButton5,
-
-    EraserTip = SDL.Sdl.PenInputEraserTip,
-
-    // Sdl 3.4
-    PenInProximity = SDL.Sdl.PenInputEraserTip << 1
-}
 
 [Flags]
 internal enum SdlMouseInputFlags : uint

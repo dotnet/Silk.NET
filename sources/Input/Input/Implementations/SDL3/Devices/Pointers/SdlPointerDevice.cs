@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using System.Runtime.CompilerServices;
@@ -38,8 +39,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
             _buttons.Add(_unknownButton);
         }
 
-        var buttonSpan = CollectionsMarshal.AsSpan(_buttons);
-        ref var myButton = ref buttonSpan[idx];
+        ref var myButton = ref CollectionsMarshal.AsSpan(_buttons)[idx];
         var original = myButton;
         myButton = new Button<PointerButton>(button, isDown, pressure.Value);
 
@@ -51,14 +51,6 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
     }
 
     private static readonly Button<PointerButton> _unknownButton = new(PointerButton.Unknown, false, 0f);
-
-    private ref Button<PointerButton> GetButtonRef(PointerButton button)
-    {
-        var index = EnumInfo<PointerButton>.ValueIndexOfUnnamed(button);
-        _buttons.EnsureCapacity(index + 1);
-        var span = CollectionsMarshal.AsSpan(_buttons);
-        return ref span[index];
-    }
 
 
     private readonly List<Button<PointerButton>> _buttons = new(EnumInfo<PointerButton>.UniqueValues.Count);
@@ -100,7 +92,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
         }
     }
 
-    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget? target, uint touchId,
+    private unsafe ref TargetPoint CreateOrUpdateTargetPoint(IPointerTarget target, uint touchId,
         in Vector3? positionOnTarget,
         Ray3D<float>? ray, float? pressure, out TargetPoint? oldPoint)
     {
@@ -110,6 +102,8 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
                 "A single-point device cannot have multiple points per-target, so the " +
                 "provided touchId must be 0.");
         }
+
+        Debug.Assert(target != null, "The target must be non-null for a valid point.");
 
         target ??= _unboundedPointerTarget;
 
@@ -241,10 +235,11 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
     }
 
     private void GetPointIdentifiers([NotNull] ref uint? touchId, [DisallowNull] uint? windowId,
-        out IPointerTarget? windowTarget)
+        out IPointerTarget windowTarget)
     {
         touchId = ValidateTouchId(touchId);
-        _ = Backend.TryGetPointerTargetForWindow(windowId.Value, out windowTarget);
+        var success = Backend.TryGetPointerTargetForWindow(windowId.Value, out windowTarget!);
+        Debug.Assert(success, "No pointer target found for window id {windowId} - this should never happen.");
 
         return;
 
@@ -366,8 +361,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
             _points.Add(default);
         }
 
-        var span = CollectionsMarshal.AsSpan(_points);
-        return ref span[index];
+        return ref CollectionsMarshal.AsSpan(_points)[index];
     }
 
     private uint _previousWindowId;

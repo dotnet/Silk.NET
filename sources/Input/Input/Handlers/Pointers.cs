@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Silk.NET.Input.SDL3;
 
 namespace Silk.NET.Input;
 
@@ -132,8 +133,6 @@ public sealed class Pointers
             _clicks.RemoveAt(i--);
 
             // SAFETY: We have to replace the span now as the RemoveAt could've in theory reallocated.
-            // note from dom:
-            // looking at RemoveAt source, i don't know if this is necessary? but maybe for earlier runtimes it is?
             clicks = CollectionsMarshal.AsSpan(_clicks);
         }
     }
@@ -143,7 +142,15 @@ public sealed class Pointers
 
     internal void HandlePointChanged(PointChangedEvent @event)
     {
-        PointChanged?.Invoke(@event);
+        try
+        {
+            PointChanged?.Invoke(@event);
+        }
+        catch (Exception e)
+        {
+            InputLog.Error($"Exception while handling point changed event: {e.Message}\n{e.StackTrace}");
+        }
+
         if (_clicks is null || @event is not { OldPoint: not null, NewPoint: { } @new })
         {
             return;
@@ -216,17 +223,15 @@ public sealed class Pointers
 
         _clicks.Add(
             new ClickData(
-                Device: device,
-                FirstClickButton: null,
-
-                // why wipe the data like this?
-                FirstClickPosition: default(TargetPoint) with
+                device,
+                null,
+                default(TargetPoint) with
                 {
                     Target = point.Target,
                     Id = point.Id,
                 },
-                FirstClickTime: null,
-                IsFirstClick: true
+                null,
+                true
             )
         );
         return ref CollectionsMarshal.AsSpan(_clicks)[idx];
@@ -239,41 +244,30 @@ public sealed class Pointers
         long timestamp
     )
     {
-        if ((DoubleClick is null && Click is null) || point.Target is null)
+        if ((_clicks is null && DoubleClick is null && Click is null) || point.Target is null)
         {
             return;
         }
 
         ref var click = ref GetClickData(device, in point, out var idx);
-
-        if (click.IsFirstClick)
-        {
-            var time = click.FirstClickTime;
-            click.FirstClickTime = null;
-        }
-
-        // If it's the first click or the click's prior button is different, then...
         if (click.IsFirstClick || (click.FirstClickButton is { } firstBtn && firstBtn != button))
         {
-            // ... this is the first click with the given mouse button.
+            // This is the first click with the given mouse button.
             var time = click.FirstClickTime;
             click.FirstClickTime = null;
 
-            // if the click is the second click, then ...
             if (
                 click is { IsFirstClick: false, FirstClickButton: { } prevBtn }
                 && time is { } clickTime
             )
             {
                 // Only the mouse buttons differ so treat last click as a single click.
-                Click?.Invoke(
-                    new PointerClickEvent(device, clickTime, click.FirstClickPosition, prevBtn)
-                );
+                InvokeClick(new PointerClickEvent(device, clickTime, click.FirstClickPosition, prevBtn));
             }
         }
-        else // otherwise...
+        else
         {
-            // ... this is the second click with the same mouse button.
+            // This is the second click with the same mouse button.
             if (click.FirstClickTime is { } fct && timestamp - fct <= _doubleClickTime)
             {
                 // Within the maximum double click time.
@@ -290,7 +284,7 @@ public sealed class Pointers
 
                 // Second click was in time but outside range -> single click.
                 // The second click is another "first click".
-                Click?.Invoke(new PointerClickEvent(device, timestamp, point, button));
+                InvokeClick(new PointerClickEvent(device, timestamp, point, button));
             }
             else
             {
@@ -325,12 +319,13 @@ public sealed class Pointers
 
     private void HandleDoubleClickExceedsParameters(ref ClickData click)
     {
-        click.FirstClickTime = null;
-        click.IsFirstClick = true;
         if (click is { FirstClickButton: { } fcb, FirstClickTime: { } fct })
         {
-            Click?.Invoke(new PointerClickEvent(click.Device, fct, click.FirstClickPosition, fcb));
+            InvokeClick(new PointerClickEvent(click.Device, fct, click.FirstClickPosition, fcb));
         }
+
+        click.FirstClickTime = null;
+        click.IsFirstClick = true;
     }
 
     internal void ProcessClicks()
@@ -345,7 +340,7 @@ public sealed class Pointers
         for (var i = 0; i < clicks.Length; i++)
         {
             ref var click = ref clicks[i];
-            if (click.FirstClickTime is not { } fct || updateTime - fct <= _doubleClickTime)
+            if (click.FirstClickTime is not { } firstTime || updateTime - firstTime <= _doubleClickTime)
             {
                 continue;
             }
@@ -356,6 +351,18 @@ public sealed class Pointers
 
             // SAFETY: We have to replace the span now as the RemoveAt could've in theory reallocated.
             clicks = CollectionsMarshal.AsSpan(_clicks);
+        }
+    }
+
+    private void InvokeClick(PointerClickEvent evt)
+    {
+        try
+        {
+            Click?.Invoke(evt);
+        }
+        catch (Exception e)
+        {
+            InputLog.Error($"Exception during click event: {e.Message}\n{e.StackTrace}");
         }
     }
 

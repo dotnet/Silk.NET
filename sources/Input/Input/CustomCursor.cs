@@ -3,7 +3,7 @@ namespace Silk.NET.Input;
 /// <summary>
 /// Represents a custom image for a mouse cursor.
 /// </summary>
-public readonly ref struct CustomCursor
+public readonly ref struct CustomCursor : IEquatable<CustomCursor>
 {
     /// <summary>
     /// The number of pixels in the X axis.
@@ -35,4 +35,35 @@ public readonly ref struct CustomCursor
     /// </summary>
     /// <remarks>Note that this operator does not consider reference equality</remarks>
     public static bool operator !=(CustomCursor left, CustomCursor right) => !(left == right);
+
+    /// <summary>
+    /// Value-based equality check.
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
+    public bool Equals(CustomCursor other) => Width == other.Width && Height == other.Height && Data.SequenceEqual(other.Data);
+
+    /// <summary>
+    /// Value-based hashcode
+    /// </summary>
+    public override int GetHashCode()
+    {
+        HashCode hashCode = new();
+        hashCode.Add(Width);
+        hashCode.Add(Height);
+        for (var i = 0; i < Data.Length; ++i)
+        {
+            hashCode.Add(Data[i]);
+        }
+
+        return hashCode.ToHashCode();
+    }
+
+    /// <summary>
+    /// Reference-based equality check. Because this is a <c>ref struct</c>, this will always return <c>false</c>, as
+    /// this cannot escape the stack, and thus cannot be boxed, and thus cannot be cast to/from <c>object</c>.
+    /// </summary>
+    /// <param name="o"></param>
+    /// <returns></returns>
+    public override bool Equals(object? o) => false;
 }
