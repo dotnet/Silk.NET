@@ -255,7 +255,7 @@ internal static class EnumInfo<T> where T : unmanaged, Enum
         }
 
         // sort by increasing order
-        Array.Sort(allValues, (a, b) => {
+        allValues.AsSpan().StableSort((a, b) => {
             var aNumber = ValueOf<T, TNumber>(a);
             var bNumber = ValueOf<T, TNumber>(b);
             return aNumber.CompareTo(bNumber);

@@ -4,6 +4,7 @@
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using Silk.NET.Input.SDL3.Devices.Joysticks;
 using Silk.NET.Input.SDL3.Devices.Pointers;
 using Silk.NET.Input.SDL3.Devices.Pointers.Targets;
@@ -209,7 +210,8 @@ internal partial class SdlInputBackend : IInputBackend
             _pumpedSdlEventsSorted.Add(evt);
         }
 
-        _pumpedSdlEventsSorted.Sort((x, y) => x.Event.Common.Timestamp.CompareTo(y.Event.Common.Timestamp));
+        var sortedSpan = CollectionsMarshal.AsSpan(_pumpedSdlEventsSorted);
+        sortedSpan.StableSort((x, y) => x.Event.Common.Timestamp.CompareTo(y.Event.Common.Timestamp));
 
         foreach (var evt in _pumpedSdlEventsSorted)
         {
@@ -592,7 +594,10 @@ internal partial class SdlInputBackend : IInputBackend
             if (!_isSorted)
             {
                 // sort the events by timestamp
-                Array.Sort(_events, 0, _nextEventIndex, _comparer);
+                var span = _events.AsSpan(0, _nextEventIndex);
+
+                // order in descending order, such that "de-queueing" the last event will return the first chronological event in the queue (last event in the array)
+                span.StableSort((e1, e2) => e2.Timestamp.CompareTo(e1.Timestamp));
                 _isSorted = true;
             }
 
@@ -611,8 +616,6 @@ internal partial class SdlInputBackend : IInputBackend
 
         private bool _isSorted;
 
-        // order in descending order, such that "de-queueing" the last event will return the first chronological event in the queue (last event in the array)
-        private static readonly Comparer<TimedRawSdlEvent> _comparer = Comparer<TimedRawSdlEvent>.Create((e1, e2) => e2.Timestamp.CompareTo(e1.Timestamp));
     }
 
     private struct ProcessEventArgs

@@ -4,7 +4,7 @@
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace Silk.NET.Input.SDL3;
+namespace Silk.NET.Input;
 
 internal static class InputLog
 {

@@ -20,7 +20,7 @@ internal class SdlEventQueue<T> : ISdlEventQueue<T> where T : struct
     }
 #pragma warning restore CS8500 // This takes the address of, gets the size of, or declares a pointer to a managed type
 
-    public int Count { get; protected set; }
+    protected int Count;
 
 
     public void Enqueue(in T item, ulong sdlTimestamp)
@@ -93,7 +93,7 @@ internal sealed class GenericEventQueue : SdlEventQueue<GenericEvent>
             sortKeys[i] = SdlTimestampCalculator.ToTimestamp(sdlTimestamps[i], _basis);
         }
 
-        sortKeys.Sort(valuesToSort, (timeA, timeB) => timeA.CompareTo(timeB));
+        sortKeys.StableSortWith(valuesToSort, (timeA, timeB) => timeA.CompareTo(timeB));
 
         return valuesToSort;
     }
