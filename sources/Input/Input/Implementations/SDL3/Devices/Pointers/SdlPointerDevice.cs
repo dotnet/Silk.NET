@@ -1,7 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using System.Runtime.CompilerServices;
@@ -28,8 +27,8 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
         }
     }
 
-
-    protected void AddButtonEvent(PointerButton button, long timestamp, ulong sdlTimestamp, bool isDown, float? pressure = null)
+    protected void AddButtonEvent(PointerButton button, long timestamp, ulong sdlTimestamp, bool isDown,
+        float? pressure = null)
     {
         pressure ??= isDown ? 1.0f : 0.0f;
         var idx = EnumInfo<PointerButton>.ValueIndexOfUnnamed(button);
@@ -46,7 +45,8 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
 
         if (myButton != original)
         {
-            ButtonEvents.Enqueue(new ButtonChangedEvent<PointerButton>(this,timestamp, myButton, original), sdlTimestamp);
+            ButtonEvents.Enqueue(new ButtonChangedEvent<PointerButton>(this, timestamp, myButton, original),
+                sdlTimestamp);
         }
     }
 
@@ -79,6 +79,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
     public void FinalizeUpdate()
     {
         RepopulateActiveTargets();
+
         return;
 
         void RepopulateActiveTargets()
@@ -161,7 +162,6 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
 
         return ref point;
     }
-
 
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -300,8 +300,7 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
         );
     }
 
-    protected void AddMouseScrollEvent(Vector2 scrollWheelPosition, uint? windowId, Vector3? position,
-        bool isMouseRelative, ulong sdlTimestamp, long timestamp)
+    protected void AddMouseScrollEvent(Vector2 scrollWheelPosition, Vector2 scrollWheelDelta, Vector3 mousePos, uint? windowId, ulong sdlTimestamp, long timestamp)
     {
         if (this is not IMouse mouse)
         {
@@ -311,23 +310,19 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
         uint? touchId = null;
         GetPointIdentifiers(ref touchId, windowId ?? _previousWindowId, out var windowTarget);
 
-        ref var point = ref CreateOrUpdateTargetPoint(windowTarget, touchId.Value, null, null, null, out _);
-
-        var previousScroll = _previousScrollWheelPosition ?? Vector2.Zero;
+        ref var point = ref CreateOrUpdateTargetPoint(windowTarget, touchId.Value, mousePos, null, null, out _);
 
         ScrollEvents.Enqueue(new MouseScrollEvent(
             Mouse: mouse,
             Timestamp: timestamp,
             Point: point,
             WheelPosition: scrollWheelPosition,
-            Delta: scrollWheelPosition - previousScroll), sdlTimestamp);
+            Delta: scrollWheelDelta), sdlTimestamp);
 
-        _previousScrollWheelPosition = scrollWheelPosition;
     }
 
-    private Vector2? _previousScrollWheelPosition;
-
-    protected void UpdatePointRay(uint? touchId, float? xTilt, float? yTilt, float? zTwist, float? distance, ulong sdlTimestamp, long timestamp)
+    protected void UpdatePointRay(uint? touchId, float? xTilt, float? yTilt, float? zTwist, float? distance,
+        ulong sdlTimestamp, long timestamp)
     {
         if (xTilt == null && yTilt == null && zTwist == null && distance == null)
         {
@@ -358,7 +353,8 @@ internal abstract class SdlPointerDevice : SdlDevice, IPointerDevice, INeedFinal
     {
         // todo - use only the given events to update the state? is that possible? keyboard character input would probably be a problem..
         State.GripPressure = pressure;
-        GripEvents.Enqueue(new PointerGripChangedEvent(this, timestamp, pressure, pressure - State.GripPressure), sdlTimestamp);
+        GripEvents.Enqueue(new PointerGripChangedEvent(this, timestamp, pressure, pressure - State.GripPressure),
+            sdlTimestamp);
     }
 
 

@@ -208,13 +208,26 @@ internal sealed class SdlMouse : SdlPointerDevice, IMouse, ISdlDevice<SdlMouse>
 
     public void AddWheelEvent(in MouseWheelEvent evtWheel, long timestamp)
     {
-        var wheelState = _state.WheelPosition = new Vector2(evtWheel.X, evtWheel.Y);
+        var pWheelPosition = _state.WheelPosition;
+        const float max = 100f;
+        var delta = new Vector2(evtWheel.X, evtWheel.Y);
+        if (delta.X != 0 && pWheelPosition.X is > max or < -max)
+        {
+            pWheelPosition.X = 0;
+        }
+
+        if (delta.Y != 0 && pWheelPosition.Y is > max or < -max)
+        {
+            pWheelPosition.Y = 0;
+        }
+
         AddMouseScrollEvent(
-            scrollWheelPosition: wheelState,
+            scrollWheelPosition: _state.WheelPosition = pWheelPosition + delta,
+            scrollWheelDelta: delta,
             windowId: evtWheel.WindowID,
-            position: new Vector3(evtWheel.MouseX, evtWheel.MouseY, 0),
-            isMouseRelative: evtWheel.WindowID != 0,
             sdlTimestamp: evtWheel.Timestamp,
+            mousePos: new Vector3(evtWheel.X, evtWheel.Y, 0),
             timestamp: timestamp);
     }
+
 }
