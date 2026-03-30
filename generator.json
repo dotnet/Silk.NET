@@ -300,8 +300,8 @@
         "NameOverrides": {
           "ALContext": "ALContext",
           "EFXEAXREVERBPROPERTIES": "EfxEaxReverbProperties",
-          "EFXEAXREVERBPROPERTIES_flReflectionsPan": "EfxEaxReverbPropertiesFlReflectionsPan",
-          "EFXEAXREVERBPROPERTIES_flLateReverbPan": "EfxEaxReverbPropertiesFlLateReverbPan",
+          "EFXEAXREVERBPROPERTIESflReflectionsPan": "EfxEaxReverbPropertiesFlReflectionsPan",
+          "EFXEAXREVERBPROPERTIESflLateReverbPan": "EfxEaxReverbPropertiesFlLateReverbPan",
           "ALCcontextHandle": "ContextHandle",
           "ALCdeviceHandle": "DeviceHandle",
           "ALBUFFERCALLBACKTYPESOFT": "BufferCallbackSOFT",
