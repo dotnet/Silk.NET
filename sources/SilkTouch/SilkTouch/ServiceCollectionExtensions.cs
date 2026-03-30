@@ -54,8 +54,6 @@ public static class ServiceCollectionExtensions
     /// <item><description><see cref="ClangScraper"/></description></item>
     /// <item><description><see cref="ResponseFileHandler"/></description></item>
     /// <item><description><see cref="SilkTouchGenerator"/></description></item>
-    /// <item><description><see cref="NameTrimmer"/></description></item>
-    /// <item><description>One or more <see cref="INameProcessor"/>s</description></item>
     /// <item><description>An appropriate implementation of <see cref="IStdIncludeResolver"/></description></item>
     /// <item><description>Mod implementations referenced in the configurations</description></item>
     /// <item>
