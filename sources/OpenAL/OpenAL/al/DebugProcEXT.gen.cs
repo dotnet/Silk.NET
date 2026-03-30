@@ -20,7 +20,7 @@ public readonly unsafe struct DebugProcEXT : IDisposable
     public DebugProcEXT(delegate* unmanaged<int, int, uint, int, int, sbyte*, void*, void> ptr) =>
         Pointer = ptr;
 
-    public DebugProcEXT(DebugProcDelegateEXT proc) => Pointer = SilkMarshal.DelegateToPtr(proc);
+    public DebugProcEXT(DebugProcEXTDelegate proc) => Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
 

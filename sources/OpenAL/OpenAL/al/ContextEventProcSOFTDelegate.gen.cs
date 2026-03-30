@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.OpenAL;
 
 [NativeName("ALCEVENTPROCTYPESOFT")]
-public unsafe delegate void ContextEventProcDelegateSOFT(
+public unsafe delegate void ContextEventProcSOFTDelegate(
     int arg0,
     int arg1,
     DeviceHandle arg2,

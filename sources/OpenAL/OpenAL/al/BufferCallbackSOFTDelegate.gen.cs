@@ -10,13 +10,5 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.OpenAL;
 
-[NativeName("ALDEBUGPROCEXT")]
-public unsafe delegate void DebugProcDelegateEXT(
-    int arg0,
-    int arg1,
-    uint arg2,
-    int arg3,
-    int arg4,
-    sbyte* arg5,
-    void* arg6
-);
+[NativeName("ALBUFFERCALLBACKTYPESOFT")]
+public unsafe delegate int BufferCallbackSOFTDelegate(void* arg0, void* arg1, int arg2);

@@ -20,7 +20,7 @@ public readonly unsafe struct EventProcSOFT : IDisposable
     public EventProcSOFT(delegate* unmanaged<int, uint, uint, int, sbyte*, void*, void> ptr) =>
         Pointer = ptr;
 
-    public EventProcSOFT(EventProcDelegateSOFT proc) => Pointer = SilkMarshal.DelegateToPtr(proc);
+    public EventProcSOFT(EventProcSOFTDelegate proc) => Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
 

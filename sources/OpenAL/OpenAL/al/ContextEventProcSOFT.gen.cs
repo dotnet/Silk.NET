@@ -21,7 +21,7 @@ public readonly unsafe struct ContextEventProcSOFT : IDisposable
         delegate* unmanaged<int, int, DeviceHandle, int, sbyte*, void*, void> ptr
     ) => Pointer = ptr;
 
-    public ContextEventProcSOFT(ContextEventProcDelegateSOFT proc) =>
+    public ContextEventProcSOFT(ContextEventProcSOFTDelegate proc) =>
         Pointer = SilkMarshal.DelegateToPtr(proc);
 
     public void Dispose() => SilkMarshal.Free(Pointer);
