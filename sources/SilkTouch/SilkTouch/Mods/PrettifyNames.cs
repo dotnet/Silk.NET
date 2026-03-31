@@ -345,67 +345,6 @@ public class PrettifyNames(
         ctx.SourceProject = proj;
     }
 
-    // TODO: Remove this method and unify the name processing code.
-    /// <summary>
-    /// Applies the prettify only pipeline.
-    /// This currently consists of checking for name overrides first.
-    /// Then if no override is found, then the name's affixes are removed,
-    /// the name is prettified, and the name's affixes are added back.
-    /// </summary>
-    private string ApplyPrettifyOnlyPipeline(
-        string? container,
-        string name,
-        Dictionary<string, string> nameOverrides,
-        PrettifyNamesAffixer nameAffixer,
-        NamePrettifier namePrettifier
-    )
-    {
-        // Check for overrides
-        foreach (var (nativeName, overriddenName) in nameOverrides)
-        {
-            if (nativeName.Contains('.'))
-            {
-                // We're processing a type dictionary, so don't add a member thing.
-                if (container is null)
-                {
-                    continue;
-                }
-
-                // Check whether the override is for this type.
-                var span = nativeName.AsSpan();
-                var containerSpan = span[..span.IndexOf('.')];
-                if (
-                    !containerSpan.Equals("*", StringComparison.Ordinal)
-                    && !containerSpan.Equals(container, StringComparison.Ordinal)
-                )
-                {
-                    continue;
-                }
-
-                var nameToAdd = span[(span.IndexOf('.') + 1)..].ToString();
-                if (nameToAdd == name)
-                {
-                    return overriddenName;
-                }
-            }
-            else if (nativeName == name)
-            {
-                return overriddenName;
-            }
-        }
-
-        // Be lenient about caps for type names (e.g. GL)
-        var allowAllCaps = container == null;
-
-        var result = name;
-        result = nameAffixer.RemoveAffixes(result, container, name, null);
-        result = namePrettifier.Prettify(result, allowAllCaps);
-        result = nameAffixer.ApplyAffixes(result, container, name, null, null);
-        result = NameUtils.PrefixIfStartsWithNumber(result);
-
-        return result;
-    }
-
     private void ProcessNames(
         NameProcessorContext context,
         IEnumerable<INameProcessor> nameProcessors,
@@ -1059,13 +998,6 @@ public class PrettifyNames(
                 var memberIdentifier = node.Identifier.ToString();
                 ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
 
-                // If it's not a constant then we only prettify.
-                var hasSetter =
-                    node.AccessorList?.Accessors.Any(a =>
-                        a.IsKind(SyntaxKind.SetAccessorDeclaration)
-                        || a.IsKind(SyntaxKind.InitAccessorDeclaration)
-                    ) ?? false;
-
                 _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
             }
         }
@@ -1092,18 +1024,18 @@ public class PrettifyNames(
         /// Removes affixes from the specified primary name and adds the original specified primary to the secondary list if provided.
         /// </summary>
         /// <remarks>
-        /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="StripAffixesProcessor"/>.
+        /// Designed to be used by <see cref="StripAffixesProcessor"/>.
         /// </remarks>
         /// <param name="primary">The current primary name.</param>
         /// <param name="container">The container name. Either null or the containing type.</param>
         /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
-        /// <param name="secondary">The list of secondary names. This should be null if used by <see cref="ApplyPrettifyOnlyPipeline"/>.</param>
+        /// <param name="secondary">The list of secondary names.</param>
         /// <returns>The new primary name.</returns>
         public string RemoveAffixes(
             string primary,
             string? container,
             string originalName,
-            List<string>? secondary
+            List<string> secondary
         )
         {
             var affixes = GetAffixes(container, originalName);
@@ -1115,7 +1047,7 @@ public class PrettifyNames(
             var stripped = NameAffixer.StripAffixes(primary, affixes);
             if (stripped != primary)
             {
-                secondary?.Add(primary);
+                secondary.Add(primary);
             }
 
             return stripped;
@@ -1125,19 +1057,19 @@ public class PrettifyNames(
         /// Applies affixes to the specified primary name and adds fallbacks to the secondary list if provided.
         /// </summary>
         /// <remarks>
-        /// Designed to be used by either <see cref="ApplyPrettifyOnlyPipeline"/> or <see cref="ReapplyAffixesProcessor"/>.
+        /// Designed to be used by <see cref="ReapplyAffixesProcessor"/>.
         /// </remarks>
         /// <param name="primary">The current primary name.</param>
         /// <param name="container">The container name. Either null or the containing type.</param>
         /// <param name="originalName">The original name of the identifier. Either the type name or the member name.</param>
-        /// <param name="secondary">The list of secondary names. This should be null if used by <see cref="ApplyPrettifyOnlyPipeline"/>.</param>
+        /// <param name="secondary">The list of secondary names.</param>
         /// <param name="context">The context containing the current names for the current container.</param>
         /// <returns>The new primary name.</returns>
         public string ApplyAffixes(
             string primary,
             string? container,
             string originalName,
-            List<string>? secondary,
+            List<string> secondary,
             NameProcessorContext? context // TODO: Handle this better. Exposing the entire context is excessive.
         )
         {
@@ -1193,10 +1125,6 @@ public class PrettifyNames(
                     hasProcessedNonDiscriminator = true;
                     currentPriority = GetConfiguration(affix).DiscriminatorPriority;
                     CreateName(primary, affixes.AsSpan()[..affixI]);
-                    if (secondary == null)
-                    {
-                        return newPrimary!;
-                    }
                 }
             }
 
@@ -1258,7 +1186,7 @@ public class PrettifyNames(
                 }
                 else
                 {
-                    secondary?.Add(name);
+                    secondary.Add(name);
                 }
             }
         }
