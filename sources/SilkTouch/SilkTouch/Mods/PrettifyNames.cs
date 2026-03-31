@@ -12,8 +12,6 @@ namespace Silk.NET.SilkTouch.Mods;
 /// <summary>
 /// A mod that will convert other naming conventions to the PascalCase nomenclature typically used in C#.
 /// </summary>
-/// <param name="logger">The logger.</param>
-/// <param name="config">Configuration snapshot.</param>
 [ModConfiguration<Configuration>]
 public class PrettifyNames(
     ILogger<PrettifyNames> logger,
@@ -21,15 +19,10 @@ public class PrettifyNames(
 ) : IMod, IResponseFileMod
 {
     /// <summary>
-    /// The configuration for the prettify names mod.
+    /// The configuration for the <see cref="PrettifyNames"/> mod.
     /// </summary>
-    public record Configuration // DON'T USE CONSTRUCTOR-STYLE RECORDS! Needs a default ctor.
+    public record Configuration
     {
-        /// <summary>
-        /// Corrections to the automatic prefix determination.
-        /// </summary>
-        public Dictionary<string, string> PrefixOverrides { get; init; } = [];
-
         /// <summary>
         /// Manually renamed native names.
         /// </summary>
@@ -44,11 +37,6 @@ public class PrettifyNames(
         /// https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions
         /// </remarks>
         public int LongAcronymThreshold { get; init; } = 2;
-
-        /// <summary>
-        /// Multiple candidate name prefixes that may apply across all of the bindings generated.
-        /// </summary>
-        public IReadOnlyList<string>? GlobalPrefixHints { get; init; }
 
         /// <summary>
         /// The configuration for each category of name affixes.
@@ -99,20 +87,14 @@ public class PrettifyNames(
     /// <inheritdoc />
     public async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        // First pass to scan the sources and create a dictionary of type/member names.
         var cfg = config.Get(ctx.JobKey);
-
-        // Sort the hints from large to small (longest prefix match)
-        var hints = cfg.GlobalPrefixHints?.ToList();
-        hints?.Sort((x, y) => -x.Length.CompareTo(y.Length));
-        cfg = cfg with { GlobalPrefixHints = hints };
-
-        var visitor = new Visitor();
         if (ctx.SourceProject is null)
         {
             return;
         }
 
+        // Scan sources to gather names
+        var visitor = new Visitor();
         foreach (var doc in ctx.SourceProject.Documents)
         {
             visitor.Visit(await doc.GetSyntaxRootAsync(ct));
@@ -121,31 +103,26 @@ public class PrettifyNames(
         // The dictionary containing mappings from the original type names to the new names of the type and its members
         var newNames = new Dictionary<string, RenamedType>();
 
-        var nameAffixer = new PrettifyNamesAffixer(visitor.AffixTypes, cfg.Affixes);
-        var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
-
-        // Trim and prettify the trimmable names
-
-        // Define name processors
-        var nameProcessors = new INameProcessor[]
+        // Process the names
         {
-            new StripAffixesProcessor(nameAffixer),
-            new NameTrimmer(),
-            new PrettifyProcessor(namePrettifier),
-            new ReapplyAffixesProcessor(nameAffixer),
-            new PrefixIfStartsWithNumberProcessor(),
-        };
+            var nameAffixer = new PrettifyNamesAffixer(visitor.AffixTypes, cfg.Affixes);
+            var namePrettifier = new NamePrettifier(cfg.LongAcronymThreshold);
 
-        // Create a type name dictionary to trim the type names.
-        var typeNames = visitor.TrimmableTypes.ToDictionary(
-            x => x.Key,
-            x => new CandidateNames(x.Key, [])
-        );
+            // Define name processors
+            var nameProcessors = new INameProcessor[]
+            {
+                new StripAffixesProcessor(nameAffixer),
+                new PrettifyProcessor(namePrettifier),
+                new ReapplyAffixesProcessor(nameAffixer),
+                new PrefixIfStartsWithNumberProcessor(),
+            };
 
-        // If we don't have a prefix hint and don't have more than one type, we can't determine a prefix so don't
-        // trim.
-        if (typeNames.Count > 1 || cfg.GlobalPrefixHints is not null)
-        {
+            // Create a type name dictionary to trim the type names.
+            var typeNames = visitor.TrimmableTypes.ToDictionary(
+                x => x.Key,
+                x => new CandidateNames(x.Key, [])
+            );
+
             ProcessNames(
                 new NameProcessorContext
                 {
@@ -157,94 +134,61 @@ public class PrettifyNames(
                 },
                 nameProcessors
             );
-        }
-
-        // Now rename everything within each type.
-        foreach (var (typeName, (newTypeName, _)) in typeNames)
-        {
-            var (_, (consts, functions)) = visitor.TrimmableTypes.First(x => x.Key == typeName);
-
-            // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
-            // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
-            var constNames = consts.ToDictionary(x => x, x => new CandidateNames(x, []));
-
-            // Trim the constants.
-            ProcessNames(
-                new NameProcessorContext
-                {
-                    Container = typeName,
-                    Names = constNames,
-                    Configuration = cfg,
-                    JobKey = ctx.JobKey,
-                    NonDeterminant = visitor.NonDeterminant,
-                },
-                nameProcessors
-            );
-
-            // Rename the functions. More often that not functions have different nomenclature to constants, so we
-            // treat them separately.
-            var functionNames = functions
-                .DistinctBy(x => x.Name)
-                .ToDictionary(x => x.Name, x => new CandidateNames(x.Name, []));
-
-            // Collect the syntax as this is used for conflict resolution in the Trim function.
-            var functionSyntax = functionNames.Keys.ToDictionary(
-                x => x,
-                x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
-            );
-
-            // Trim the functions.
-            ProcessNames(
-                new NameProcessorContext
-                {
-                    Container = typeName,
-                    Names = functionNames,
-                    Configuration = cfg,
-                    JobKey = ctx.JobKey,
-                    NonDeterminant = visitor.NonDeterminant,
-                },
-                nameProcessors,
-                functionSyntax
-            );
-
-            // Add it to the rewriter's list of names to... rewrite...
-            newNames[typeName] = new RenamedType(
-                newTypeName,
-                constNames.ToDictionary(x => x.Key, x => x.Value.Primary),
-                functionNames.ToDictionary(x => x.Key, x => x.Value.Primary)
-            );
-        }
-
-        // Prettify the prettify only names
-        foreach (var (typeName, memberNames) in visitor.PrettifyOnlyTypes)
-        {
-            if (!newNames.TryGetValue(typeName, out var renamedType))
+            // Now rename everything within each type.
+            foreach (var (typeName, (newTypeName, _)) in typeNames)
             {
-                renamedType = new RenamedType(
-                    ApplyPrettifyOnlyPipeline(
-                        null,
-                        typeName,
-                        cfg.NameOverrides,
-                        nameAffixer,
-                        namePrettifier
-                    ),
-                    [],
-                    []
+                var (_, (consts, functions)) = visitor.TrimmableTypes.First(x => x.Key == typeName);
+
+                // Rename the "constants" i.e. all the consts/static readonlys in this type. These are treated
+                // individually because everything that isn't a constant or a function is only prettified instead of prettified & trimmed.
+                var constNames = consts.ToDictionary(x => x, x => new CandidateNames(x, []));
+
+                // Trim the constants.
+                ProcessNames(
+                    new NameProcessorContext
+                    {
+                        Container = typeName,
+                        Names = constNames,
+                        Configuration = cfg,
+                        JobKey = ctx.JobKey,
+                        NonDeterminant = visitor.NonDeterminant,
+                    },
+                    nameProcessors
+                );
+
+                // Rename the functions. More often that not functions have different nomenclature to constants, so we
+                // treat them separately.
+                var functionNames = functions
+                    .DistinctBy(x => x.Name)
+                    .ToDictionary(x => x.Name, x => new CandidateNames(x.Name, []));
+
+                // Collect the syntax as this is used for conflict resolution in the Trim function.
+                var functionSyntax = functionNames.Keys.ToDictionary(
+                    x => x,
+                    x => functions.Where(y => y.Name == x).Select(y => y.Syntax)
+                );
+
+                // Trim the functions.
+                ProcessNames(
+                    new NameProcessorContext
+                    {
+                        Container = typeName,
+                        Names = functionNames,
+                        Configuration = cfg,
+                        JobKey = ctx.JobKey,
+                        NonDeterminant = visitor.NonDeterminant,
+                    },
+                    nameProcessors,
+                    functionSyntax
+                );
+
+                // Add it to the rewriter's list of names to... rewrite...
+                newNames[typeName] = new RenamedType(
+                    newTypeName,
+                    constNames.ToDictionary(x => x.Key, x => x.Value.Primary),
+                    functionNames.ToDictionary(x => x.Key, x => x.Value.Primary)
                 );
             }
-
-            foreach (var memberName in memberNames)
-            {
-                renamedType.NonFunctions[memberName] = ApplyPrettifyOnlyPipeline(
-                    typeName,
-                    memberName,
-                    cfg.NameOverrides,
-                    nameAffixer,
-                    namePrettifier
-                );
-            }
-
-            newNames[typeName] = renamedType;
         }
 
         if (logger.IsEnabled(LogLevel.Debug))
@@ -838,12 +782,6 @@ public class PrettifyNames(
         public Dictionary<string, TypeData> TrimmableTypes { get; } = new();
 
         /// <summary>
-        /// A mapping from type names to their member names.
-        /// These names do not participate in trimming and are only prettified.
-        /// </summary>
-        public Dictionary<string, List<string>> PrettifyOnlyTypes { get; } = new();
-
-        /// <summary>
         /// A mapping from type names to the type's affix data, which contains mappings from member names to each member's affix data.
         /// This is used at the start of trimming to remove declared affixes and at the end to restore declared affixes.
         /// Declared affixes are defined by the [NamePrefix] and [NameSuffix] attributes and don't contribute towards the usual trimming processes.
@@ -1088,12 +1026,6 @@ public class PrettifyNames(
 
         public override void VisitFieldDeclaration(FieldDeclarationSyntax node)
         {
-            // If it's not a constant then we only prettify
-            // C constants are globally scoped and typically prefixed, so we trim in addition to prettifying
-            var prettifyOnly =
-                !node.Modifiers.Any(SyntaxKind.ConstKeyword)
-                && !node.Modifiers.Any(SyntaxKind.StaticKeyword);
-
             if (node.Parent == _typeInProgress?.Type)
             {
                 var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
@@ -1102,20 +1034,7 @@ public class PrettifyNames(
                     var memberIdentifier = variable.Identifier.ToString();
                     ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
 
-                    if (prettifyOnly)
-                    {
-                        if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
-                        {
-                            typeData = [];
-                            PrettifyOnlyTypes.Add(typeIdentifier, typeData);
-                        }
-
-                        typeData.Add(memberIdentifier);
-                    }
-                    else
-                    {
-                        _typeInProgress.Value.NonFunctions.Add(memberIdentifier);
-                    }
+                    _typeInProgress.Value.NonFunctions.Add(memberIdentifier);
                 }
             }
         }
@@ -1127,25 +1046,8 @@ public class PrettifyNames(
                 var typeIdentifier = _typeInProgress!.Value.Type.Identifier.ToString();
                 var memberIdentifier = node.Identifier.ToString();
 
-                if (_typeInProgress!.Value.Type.IsKind(SyntaxKind.StructDeclaration))
-                {
-                    // Prettify only
-                    // Struct methods are introduced by the generator so they are not prefixed
-                    if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
-                    {
-                        typeData = [];
-                        PrettifyOnlyTypes.Add(typeIdentifier, typeData);
-                    }
-
-                    typeData.Add(memberIdentifier);
-                }
-                else
-                {
-                    // Trim + Prettify
-                    ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
-
-                    _typeInProgress!.Value.Functions.Add(new FunctionData(memberIdentifier, node));
-                }
+                ReportMemberAffixData(typeIdentifier, memberIdentifier, node.AttributeLists);
+                _typeInProgress!.Value.Functions.Add(new FunctionData(memberIdentifier, node));
             }
         }
 
@@ -1163,20 +1065,8 @@ public class PrettifyNames(
                         a.IsKind(SyntaxKind.SetAccessorDeclaration)
                         || a.IsKind(SyntaxKind.InitAccessorDeclaration)
                     ) ?? false;
-                if (hasSetter)
-                {
-                    if (!PrettifyOnlyTypes.TryGetValue(typeIdentifier, out var typeData))
-                    {
-                        typeData = [];
-                        PrettifyOnlyTypes.Add(typeIdentifier, typeData);
-                    }
 
-                    typeData.Add(memberIdentifier);
-                }
-                else
-                {
-                    _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
-                }
+                _typeInProgress!.Value.NonFunctions.Add(memberIdentifier);
             }
         }
     }

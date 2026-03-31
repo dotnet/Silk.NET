@@ -374,6 +374,7 @@
         "InterceptNativeFunctions",
         "TransformFunctions",
         "TransformProperties",
+        "IdentifySharedPrefixes",
         "PrettifyNames",
         "TransformEnums",
         "AddVTables",
@@ -422,12 +423,14 @@
       "TransformHandles": {
         "UseDsl": true
       },
-      "PrettifyNames": {
-        "GlobalPrefixHints": ["PFN_vk","vk"],
+      "IdentifySharedPrefixes": {
+        "GlobalPrefixHints": ["PFN_vk", "vk"],
         "PrefixOverrides": {
           "VkPipelineCreateFlags2": "VK_PIPELINE_CREATE_2",
           "VkMemoryDecompressionMethodFlagsEXT": "VK_MEMORY_DECOMPRESSION_METHOD"
-        },
+        }
+      },
+      "PrettifyNames": {
         "NameOverrides": {
           "numAABBs": "NumAabbs"
         },
