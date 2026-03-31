@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_loop_filter_mode_deltas_e__FixedBuffer")]
 [InlineArray(2)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoAv1LoopFilter))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1LoopFilterLoopFilterModeDeltas
 {

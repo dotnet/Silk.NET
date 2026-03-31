@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_bit_rate_value_minus1_e__FixedBuffer")]
 [InlineArray(32)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH264HrdParameters))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264HrdParametersBitRateValueMinus1
 {

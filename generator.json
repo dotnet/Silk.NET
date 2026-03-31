@@ -376,9 +376,9 @@
         "TransformProperties",
         "IdentifySharedPrefixes",
         "PrettifyNames",
-        "TransformEnums",
-        "AddVTables",
-        "StripAttributes"
+//        "TransformEnums",
+//        "AddVTables",
+//        "StripAttributes"
       ],
       "ClangScraper": {
         "ClangSharpResponseFiles": [

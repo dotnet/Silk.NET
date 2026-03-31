@@ -17,18 +17,22 @@ public partial struct StdVideoVp9ColorConfig
     public StdVideoVp9ColorConfigFlags Flags;
 
     [NativeName("BitDepth")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte BitDepth;
 
     [NativeName("subsampling_x")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte SubsamplingX;
 
     [NativeName("subsampling_y")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte SubsamplingY;
 
     [NativeName("reserved1")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte Reserved1;
 

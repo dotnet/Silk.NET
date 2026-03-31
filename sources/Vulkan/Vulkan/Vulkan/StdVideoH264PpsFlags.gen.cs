@@ -17,6 +17,7 @@ public partial struct StdVideoH264PpsFlags
     public uint Bitfield;
 
     [NativeName("transform_8x8_mode_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint Transform8x8ModeFlag
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("redundant_pic_cnt_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint RedundantPicCntPresentFlag
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("constrained_intra_pred_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ConstrainedIntraPredFlag
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("deblocking_filter_control_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DeblockingFilterControlPresentFlag
     {
@@ -57,6 +61,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("weighted_pred_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint WeightedPredFlag
     {
@@ -67,6 +72,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("bottom_field_pic_order_in_frame_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint BottomFieldPicOrderInFramePresentFlag
     {
@@ -77,6 +83,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("entropy_coding_mode_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EntropyCodingModeFlag
     {
@@ -87,6 +94,7 @@ public partial struct StdVideoH264PpsFlags
     }
 
     [NativeName("pic_scaling_matrix_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PicScalingMatrixPresentFlag
     {

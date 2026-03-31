@@ -17,6 +17,7 @@ public partial struct StdVideoVp9LoopFilterFlags
     public uint Bitfield;
 
     [NativeName("loop_filter_delta_enabled")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint LoopFilterDeltaEnabled
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoVp9LoopFilterFlags
     }
 
     [NativeName("loop_filter_delta_update")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint LoopFilterDeltaUpdate
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoVp9LoopFilterFlags
     }
 
     [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 30")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

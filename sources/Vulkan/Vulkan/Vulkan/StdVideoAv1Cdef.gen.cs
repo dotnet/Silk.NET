@@ -12,26 +12,32 @@ namespace Silk.NET.Vulkan;
 public partial struct StdVideoAv1Cdef
 {
     [NativeName("cdef_damping_minus_3")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte CdefDampingMinus3;
 
     [NativeName("cdef_bits")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte CdefBits;
 
     [NativeName("cdef_y_pri_strength")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1CdefCdefYPriStrength CdefYPriStrength;
 
     [NativeName("cdef_y_sec_strength")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1CdefCdefYSecStrength CdefYSecStrength;
 
     [NativeName("cdef_uv_pri_strength")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1CdefCdefUvPriStrength CdefUvPriStrength;
 
     [NativeName("cdef_uv_sec_strength")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1CdefCdefUvSecStrength CdefUvSecStrength;
 }

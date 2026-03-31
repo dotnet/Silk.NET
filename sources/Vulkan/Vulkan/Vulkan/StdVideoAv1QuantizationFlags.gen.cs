@@ -17,6 +17,7 @@ public partial struct StdVideoAv1QuantizationFlags
     public uint Bitfield;
 
     [NativeName("using_qmatrix")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UsingQmatrix
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoAv1QuantizationFlags
     }
 
     [NativeName("diff_uv_delta")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DiffUvDelta
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoAv1QuantizationFlags
     }
 
     [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 30")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

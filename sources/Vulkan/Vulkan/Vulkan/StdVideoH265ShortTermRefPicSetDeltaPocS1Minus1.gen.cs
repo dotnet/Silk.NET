@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_delta_poc_s1_minus1_e__FixedBuffer")]
 [InlineArray(16)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH265ShortTermRefPicSet))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265ShortTermRefPicSetDeltaPocS1Minus1
 {

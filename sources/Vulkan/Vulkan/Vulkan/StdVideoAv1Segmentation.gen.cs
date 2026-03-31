@@ -13,10 +13,12 @@ namespace Silk.NET.Vulkan;
 public partial struct StdVideoAv1Segmentation
 {
     [NativeName("FeatureEnabled")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1SegmentationFeatureEnabled FeatureEnabled;
 
     [NativeName("FeatureData")]
+    [NativeTypeName("int16_t[8][8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1SegmentationFeatureData FeatureData;
 }

@@ -9,22 +9,31 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH264ModificationOfPicNumsIdc")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH264ModificationOfPicNumsIdc : uint
 {
     [NativeName("STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_SHORT_TERM_SUBTRACT")]
     [SupportedApiProfile("vulkan")]
-    ShortTermSubtract = 0,
+    StdVideoH264ModificationOfPicNumsIdcShortTermSubtract = 0,
 
     [NativeName("STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_SHORT_TERM_ADD")]
     [SupportedApiProfile("vulkan")]
-    ShortTermAdd = 1,
+    StdVideoH264ModificationOfPicNumsIdcShortTermAdd = 1,
 
     [NativeName("STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_LONG_TERM")]
     [SupportedApiProfile("vulkan")]
-    LongTerm = 2,
+    StdVideoH264ModificationOfPicNumsIdcLongTerm = 2,
 
     [NativeName("STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_END")]
     [SupportedApiProfile("vulkan")]
-    End = 3,
+    StdVideoH264ModificationOfPicNumsIdcEnd = 3,
+
+    [NativeName("STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_INVALID")]
+    [SupportedApiProfile("vulkan")]
+    StdVideoH264ModificationOfPicNumsIdcInvalid = 0x7FFFFFFF,
+
+    [NativeName("STD_VIDEO_H264_MODIFICATION_OF_PIC_NUMS_IDC_MAX_ENUM")]
+    [SupportedApiProfile("vulkan")]
+    StdVideoH264ModificationOfPicNumsIdcMaxEnum = 0x7FFFFFFF,
 }

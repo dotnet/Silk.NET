@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_cdef_y_sec_strength_e__FixedBuffer")]
 [InlineArray(8)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoAv1Cdef))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoAv1CdefCdefYSecStrength
 {

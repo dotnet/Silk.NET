@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_RefPicList1_e__FixedBuffer")]
 [InlineArray(32)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoEncodeH264ReferenceListsInfo))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH264ReferenceListsInfoRefPicList1
 {

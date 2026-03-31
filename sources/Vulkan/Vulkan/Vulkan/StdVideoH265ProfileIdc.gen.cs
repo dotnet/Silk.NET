@@ -8,26 +8,35 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH265ProfileIdc")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH265ProfileIdc : uint
 {
     [NativeName("STD_VIDEO_H265_PROFILE_IDC_MAIN")]
     [SupportedApiProfile("vulkan")]
-    Main = 1,
+    StdVideoH265ProfileIdcMain = 1,
 
     [NativeName("STD_VIDEO_H265_PROFILE_IDC_MAIN_10")]
     [SupportedApiProfile("vulkan")]
-    Main10 = 2,
+    StdVideoH265ProfileIdcMain10 = 2,
 
     [NativeName("STD_VIDEO_H265_PROFILE_IDC_MAIN_STILL_PICTURE")]
     [SupportedApiProfile("vulkan")]
-    MainStillPicture = 3,
+    StdVideoH265ProfileIdcMainStillPicture = 3,
 
     [NativeName("STD_VIDEO_H265_PROFILE_IDC_FORMAT_RANGE_EXTENSIONS")]
     [SupportedApiProfile("vulkan")]
-    FormatRangeExtensions = 4,
+    StdVideoH265ProfileIdcFormatRangeExtensions = 4,
 
     [NativeName("STD_VIDEO_H265_PROFILE_IDC_SCC_EXTENSIONS")]
     [SupportedApiProfile("vulkan")]
-    SccExtensions = 9,
+    StdVideoH265ProfileIdcSccExtensions = 9,
+
+    [NativeName("STD_VIDEO_H265_PROFILE_IDC_INVALID")]
+    [SupportedApiProfile("vulkan")]
+    StdVideoH265ProfileIdcInvalid = 0x7FFFFFFF,
+
+    [NativeName("STD_VIDEO_H265_PROFILE_IDC_MAX_ENUM")]
+    [SupportedApiProfile("vulkan")]
+    StdVideoH265ProfileIdcMaxEnum = 0x7FFFFFFF,
 }

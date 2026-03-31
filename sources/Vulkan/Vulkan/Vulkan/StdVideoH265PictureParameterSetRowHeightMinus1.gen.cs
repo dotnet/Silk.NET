@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_row_height_minus1_e__FixedBuffer")]
 [InlineArray(21)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH265PictureParameterSet))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265PictureParameterSetRowHeightMinus1
 {

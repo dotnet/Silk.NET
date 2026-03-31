@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_ScalingList8x8_e__FixedBuffer")]
 [InlineArray(6 * 64)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH265ScalingLists))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265ScalingListsScalingList8x8
 {

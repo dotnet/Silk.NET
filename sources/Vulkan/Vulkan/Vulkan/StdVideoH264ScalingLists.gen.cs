@@ -12,18 +12,22 @@ namespace Silk.NET.Vulkan;
 public partial struct StdVideoH264ScalingLists
 {
     [NativeName("scaling_list_present_mask")]
+    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort ScalingListPresentMask;
 
     [NativeName("use_default_scaling_matrix_mask")]
+    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort UseDefaultScalingMatrixMask;
 
     [NativeName("ScalingList4x4")]
+    [NativeTypeName("uint8_t[6][16]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264ScalingListsScalingList4x4 ScalingList4x4;
 
     [NativeName("ScalingList8x8")]
+    [NativeTypeName("uint8_t[6][64]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoH264ScalingListsScalingList8x8 ScalingList8x8;
 }

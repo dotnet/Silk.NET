@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_delta_chroma_offset_l1_e__FixedBuffer")]
 [InlineArray(15 * 2)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoEncodeH265WeightTable))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265WeightTableDeltaChromaOffsetL1
 {

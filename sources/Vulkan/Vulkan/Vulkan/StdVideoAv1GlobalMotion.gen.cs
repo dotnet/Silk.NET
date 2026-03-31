@@ -13,10 +13,12 @@ namespace Silk.NET.Vulkan;
 public partial struct StdVideoAv1GlobalMotion
 {
     [NativeName("GmType")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1GlobalMotionGmType GmType;
 
     [NativeName("gm_params")]
+    [NativeTypeName("int32_t[8][6]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1GlobalMotionGmParams GmParams;
 }

@@ -16,18 +16,22 @@ public partial struct StdVideoDecodeAv1ReferenceInfo
     public StdVideoDecodeAv1ReferenceInfoFlags Flags;
 
     [NativeName("frame_type")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte FrameType;
 
     [NativeName("RefFrameSignBias")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte RefFrameSignBias;
 
     [NativeName("OrderHint")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte OrderHint;
 
     [NativeName("SavedOrderHints")]
+    [NativeTypeName("uint8_t[8]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoDecodeAv1ReferenceInfoSavedOrderHints SavedOrderHints;
 }

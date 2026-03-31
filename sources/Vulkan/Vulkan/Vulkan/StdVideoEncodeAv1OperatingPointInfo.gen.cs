@@ -17,26 +17,32 @@ public partial struct StdVideoEncodeAv1OperatingPointInfo
     public StdVideoEncodeAv1OperatingPointInfoFlags Flags;
 
     [NativeName("operating_point_idc")]
+    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort OperatingPointIdc;
 
     [NativeName("seq_level_idx")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte SeqLevelIdx;
 
     [NativeName("seq_tier")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte SeqTier;
 
     [NativeName("decoder_buffer_delay")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan")]
     public uint DecoderBufferDelay;
 
     [NativeName("encoder_buffer_delay")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan")]
     public uint EncoderBufferDelay;
 
     [NativeName("initial_display_delay_minus_1")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte InitialDisplayDelayMinus1;
 }

@@ -15,6 +15,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     public uint Bitfield;
 
     [NativeName("first_slice_segment_in_pic_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FirstSliceSegmentInPicFlag
     {
@@ -25,6 +26,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("dependent_slice_segment_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DependentSliceSegmentFlag
     {
@@ -35,6 +37,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("slice_sao_luma_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SliceSaoLumaFlag
     {
@@ -45,6 +48,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("slice_sao_chroma_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SliceSaoChromaFlag
     {
@@ -55,6 +59,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("num_ref_idx_active_override_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint NumRefIdxActiveOverrideFlag
     {
@@ -65,6 +70,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("mvd_l1_zero_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint MvdL1ZeroFlag
     {
@@ -75,6 +81,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("cabac_init_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint CabacInitFlag
     {
@@ -85,6 +92,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("cu_chroma_qp_offset_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint CuChromaQpOffsetEnabledFlag
     {
@@ -95,6 +103,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("deblocking_filter_override_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DeblockingFilterOverrideFlag
     {
@@ -105,6 +114,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("slice_deblocking_filter_disabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SliceDeblockingFilterDisabledFlag
     {
@@ -115,6 +125,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("collocated_from_l0_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint CollocatedFromL0Flag
     {
@@ -125,6 +136,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("slice_loop_filter_across_slices_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SliceLoopFilterAcrossSlicesEnabledFlag
     {
@@ -135,6 +147,7 @@ public partial struct StdVideoEncodeH265SliceSegmentHeaderFlags
     }
 
     [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 20")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

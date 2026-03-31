@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_max_dec_pic_buffering_minus1_e__FixedBuffer")]
 [InlineArray(7)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH265DecPicBufMgr))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH265DecPicBufMgrMaxDecPicBufferingMinus1
 {

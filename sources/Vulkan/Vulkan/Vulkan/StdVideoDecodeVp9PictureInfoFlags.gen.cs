@@ -17,6 +17,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     public uint Bitfield;
 
     [NativeName("error_resilient_mode")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ErrorResilientMode
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("intra_only")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IntraOnly
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("allow_high_precision_mv")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint AllowHighPrecisionMv
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("refresh_frame_context")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint RefreshFrameContext
     {
@@ -57,6 +61,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("frame_parallel_decoding_mode")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FrameParallelDecodingMode
     {
@@ -67,6 +72,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("segmentation_enabled")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SegmentationEnabled
     {
@@ -77,6 +83,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("show_frame")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ShowFrame
     {
@@ -87,6 +94,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("UsePrevFrameMvs")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UsePrevFrameMvs
     {
@@ -97,6 +105,7 @@ public partial struct StdVideoDecodeVp9PictureInfoFlags
     }
 
     [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 24")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

@@ -17,6 +17,7 @@ public partial struct StdVideoVp9SegmentationFlags
     public uint Bitfield;
 
     [NativeName("segmentation_update_map")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SegmentationUpdateMap
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoVp9SegmentationFlags
     }
 
     [NativeName("segmentation_temporal_update")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SegmentationTemporalUpdate
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoVp9SegmentationFlags
     }
 
     [NativeName("segmentation_update_data")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SegmentationUpdateData
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoVp9SegmentationFlags
     }
 
     [NativeName("segmentation_abs_or_delta_update")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SegmentationAbsOrDeltaUpdate
     {
@@ -57,6 +61,7 @@ public partial struct StdVideoVp9SegmentationFlags
     }
 
     [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 28")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

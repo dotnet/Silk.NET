@@ -1,0 +1,34 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from the Vulkan headers and corresponding dependencies.
+// Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace Silk.NET.Vulkan;
+
+[NativeName("VkExternalImageFormatPropertiesNV")]
+[NameAffix("Suffix", "KhronosVendor", "NV")]
+[SupportedApiProfile("vulkan")]
+public partial struct VkExternalImageFormatPropertiesNV
+{
+    [NativeName("imageFormatProperties")]
+    [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
+    public VkImageFormatProperties ImageFormatProperties;
+
+    [NativeName("externalMemoryFeatures")]
+    [NativeTypeName("VkExternalMemoryFeatureFlagsNV")]
+    [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
+    public VkExternalMemoryFeatureFlagsNV ExternalMemoryFeatures;
+
+    [NativeName("exportFromImportedHandleTypes")]
+    [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
+    [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
+    public VkExternalMemoryHandleTypeFlagsNV ExportFromImportedHandleTypes;
+
+    [NativeName("compatibleHandleTypes")]
+    [NativeTypeName("VkExternalMemoryHandleTypeFlagsNV")]
+    [SupportedApiProfile("vulkan", ["VK_NV_external_memory_capabilities"])]
+    public VkExternalMemoryHandleTypeFlagsNV CompatibleHandleTypes;
+}

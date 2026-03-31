@@ -12,10 +12,12 @@ namespace Silk.NET.Vulkan;
 public partial struct StdVideoAv1LoopRestoration
 {
     [NativeName("FrameRestorationType")]
+    [NativeTypeName("StdVideoAV1FrameRestorationType[3]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1LoopRestorationFrameRestorationType FrameRestorationType;
 
     [NativeName("LoopRestorationSize")]
+    [NativeTypeName("uint16_t[3]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1LoopRestorationLoopRestorationSize LoopRestorationSize;
 }

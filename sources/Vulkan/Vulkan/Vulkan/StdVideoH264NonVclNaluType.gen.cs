@@ -9,34 +9,43 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoH264NonVclNaluType")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoH264NonVclNaluType : uint
 {
     [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_SPS")]
     [SupportedApiProfile("vulkan")]
-    Sps = 0,
+    StdVideoH264NonVclNaluTypeSps = 0,
 
     [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_PPS")]
     [SupportedApiProfile("vulkan")]
-    Pps = 1,
+    StdVideoH264NonVclNaluTypePps = 1,
 
     [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_AUD")]
     [SupportedApiProfile("vulkan")]
-    Aud = 2,
+    StdVideoH264NonVclNaluTypeAud = 2,
 
     [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_PREFIX")]
     [SupportedApiProfile("vulkan")]
-    Prefix = 3,
+    StdVideoH264NonVclNaluTypePrefix = 3,
 
     [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_END_OF_SEQUENCE")]
     [SupportedApiProfile("vulkan")]
-    EndOfSequence = 4,
+    StdVideoH264NonVclNaluTypeEndOfSequence = 4,
 
     [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_END_OF_STREAM")]
     [SupportedApiProfile("vulkan")]
-    EndOfStream = 5,
+    StdVideoH264NonVclNaluTypeEndOfStream = 5,
 
     [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_PRECODED")]
     [SupportedApiProfile("vulkan")]
-    Precoded = 6,
+    StdVideoH264NonVclNaluTypePrecoded = 6,
+
+    [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_INVALID")]
+    [SupportedApiProfile("vulkan")]
+    StdVideoH264NonVclNaluTypeInvalid = 0x7FFFFFFF,
+
+    [NativeName("STD_VIDEO_H264_NON_VCL_NALU_TYPE_MAX_ENUM")]
+    [SupportedApiProfile("vulkan")]
+    StdVideoH264NonVclNaluTypeMaxEnum = 0x7FFFFFFF,
 }

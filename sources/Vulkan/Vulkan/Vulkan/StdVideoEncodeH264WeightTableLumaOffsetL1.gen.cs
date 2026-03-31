@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_luma_offset_l1_e__FixedBuffer")]
 [InlineArray(32)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoEncodeH264WeightTable))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH264WeightTableLumaOffsetL1
 {

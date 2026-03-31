@@ -17,6 +17,7 @@ public partial struct StdVideoDecodeH264ReferenceInfoFlags
     public uint Bitfield;
 
     [NativeName("top_field_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint TopFieldFlag
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoDecodeH264ReferenceInfoFlags
     }
 
     [NativeName("bottom_field_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint BottomFieldFlag
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoDecodeH264ReferenceInfoFlags
     }
 
     [NativeName("used_for_long_term_reference")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UsedForLongTermReference
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoDecodeH264ReferenceInfoFlags
     }
 
     [NativeName("is_non_existing")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IsNonExisting
     {

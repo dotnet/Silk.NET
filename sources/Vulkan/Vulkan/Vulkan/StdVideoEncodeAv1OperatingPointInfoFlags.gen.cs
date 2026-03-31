@@ -17,6 +17,7 @@ public partial struct StdVideoEncodeAv1OperatingPointInfoFlags
     public uint Bitfield;
 
     [NativeName("decoder_model_present_for_this_op")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DecoderModelPresentForThisOp
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoEncodeAv1OperatingPointInfoFlags
     }
 
     [NativeName("low_delay_mode_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint LowDelayModeFlag
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoEncodeAv1OperatingPointInfoFlags
     }
 
     [NativeName("initial_display_delay_present_for_this_op")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint InitialDisplayDelayPresentForThisOp
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoEncodeAv1OperatingPointInfoFlags
     }
 
     [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 29")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

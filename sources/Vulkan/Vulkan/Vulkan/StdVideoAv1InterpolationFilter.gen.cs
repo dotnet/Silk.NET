@@ -9,26 +9,35 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1InterpolationFilter")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoAv1InterpolationFilter : uint
 {
     [NativeName("STD_VIDEO_AV1_INTERPOLATION_FILTER_EIGHTTAP")]
     [SupportedApiProfile("vulkan")]
-    Eighttap = 0,
+    StdVideoAv1InterpolationFilterEighttap = 0,
 
     [NativeName("STD_VIDEO_AV1_INTERPOLATION_FILTER_EIGHTTAP_SMOOTH")]
     [SupportedApiProfile("vulkan")]
-    EighttapSmooth = 1,
+    StdVideoAv1InterpolationFilterEighttapSmooth = 1,
 
     [NativeName("STD_VIDEO_AV1_INTERPOLATION_FILTER_EIGHTTAP_SHARP")]
     [SupportedApiProfile("vulkan")]
-    EighttapSharp = 2,
+    StdVideoAv1InterpolationFilterEighttapSharp = 2,
 
     [NativeName("STD_VIDEO_AV1_INTERPOLATION_FILTER_BILINEAR")]
     [SupportedApiProfile("vulkan")]
-    Bilinear = 3,
+    StdVideoAv1InterpolationFilterBilinear = 3,
 
     [NativeName("STD_VIDEO_AV1_INTERPOLATION_FILTER_SWITCHABLE")]
     [SupportedApiProfile("vulkan")]
-    Switchable = 4,
+    StdVideoAv1InterpolationFilterSwitchable = 4,
+
+    [NativeName("STD_VIDEO_AV1_INTERPOLATION_FILTER_INVALID")]
+    [SupportedApiProfile("vulkan")]
+    StdVideoAv1InterpolationFilterInvalid = 0x7FFFFFFF,
+
+    [NativeName("STD_VIDEO_AV1_INTERPOLATION_FILTER_MAX_ENUM")]
+    [SupportedApiProfile("vulkan")]
+    StdVideoAv1InterpolationFilterMaxEnum = 0x7FFFFFFF,
 }

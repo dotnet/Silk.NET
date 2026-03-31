@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_reserved2_e__FixedBuffer")]
 [InlineArray(3)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoDecodeAv1PictureInfo))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoDecodeAv1PictureInfoReserved2
 {

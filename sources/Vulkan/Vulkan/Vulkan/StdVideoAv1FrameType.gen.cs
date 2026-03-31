@@ -9,22 +9,31 @@ using System.Runtime.InteropServices;
 namespace Silk.NET.Vulkan;
 
 [NativeName("StdVideoAV1FrameType")]
+[NativeTypeName("unsigned int")]
 [SupportedApiProfile("vulkan")]
 public enum StdVideoAv1FrameType : uint
 {
     [NativeName("STD_VIDEO_AV1_FRAME_TYPE_KEY")]
     [SupportedApiProfile("vulkan")]
-    Key = 0,
+    StdVideoAv1FrameTypeKey = 0,
 
     [NativeName("STD_VIDEO_AV1_FRAME_TYPE_INTER")]
     [SupportedApiProfile("vulkan")]
-    Inter = 1,
+    StdVideoAv1FrameTypeInter = 1,
 
     [NativeName("STD_VIDEO_AV1_FRAME_TYPE_INTRA_ONLY")]
     [SupportedApiProfile("vulkan")]
-    IntraOnly = 2,
+    StdVideoAv1FrameTypeIntraOnly = 2,
 
     [NativeName("STD_VIDEO_AV1_FRAME_TYPE_SWITCH")]
     [SupportedApiProfile("vulkan")]
-    Switch = 3,
+    StdVideoAv1FrameTypeSwitch = 3,
+
+    [NativeName("STD_VIDEO_AV1_FRAME_TYPE_INVALID")]
+    [SupportedApiProfile("vulkan")]
+    StdVideoAv1FrameTypeInvalid = 0x7FFFFFFF,
+
+    [NativeName("STD_VIDEO_AV1_FRAME_TYPE_MAX_ENUM")]
+    [SupportedApiProfile("vulkan")]
+    StdVideoAv1FrameTypeMaxEnum = 0x7FFFFFFF,
 }

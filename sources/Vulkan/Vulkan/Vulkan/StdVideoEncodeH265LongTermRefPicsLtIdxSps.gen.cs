@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_lt_idx_sps_e__FixedBuffer")]
 [InlineArray(32)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoEncodeH265LongTermRefPics))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoEncodeH265LongTermRefPicsLtIdxSps
 {

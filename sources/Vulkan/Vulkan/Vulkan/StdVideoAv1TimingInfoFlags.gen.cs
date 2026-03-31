@@ -17,6 +17,7 @@ public partial struct StdVideoAv1TimingInfoFlags
     public uint Bitfield;
 
     [NativeName("equal_picture_interval")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EqualPictureInterval
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoAv1TimingInfoFlags
     }
 
     [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 31")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

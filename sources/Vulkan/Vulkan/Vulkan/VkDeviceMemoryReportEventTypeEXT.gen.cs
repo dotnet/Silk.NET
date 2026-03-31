@@ -1,0 +1,88 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from the Vulkan headers and corresponding dependencies.
+// Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace Silk.NET.Vulkan;
+
+[NameAffix("Suffix", "KhronosVendor", "EXT")]
+[NativeName("VkDeviceMemoryReportEventTypeEXT")]
+[NativeTypeName("unsigned int")]
+[SupportedApiProfile("vulkan")]
+public enum VkDeviceMemoryReportEventTypeEXT : uint
+{
+    [NameAffix("Suffix", "KhronosImpliedVendor", "EXT")]
+    [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_ALLOCATE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
+    VkDeviceMemoryReportEventTypeAllocate = 0,
+
+    [NameAffix("Suffix", "KhronosImpliedVendor", "EXT")]
+    [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_FREE_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
+    VkDeviceMemoryReportEventTypeFree = 1,
+
+    [NameAffix("Suffix", "KhronosImpliedVendor", "EXT")]
+    [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_IMPORT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
+    VkDeviceMemoryReportEventTypeImport = 2,
+
+    [NameAffix("Suffix", "KhronosImpliedVendor", "EXT")]
+    [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_UNIMPORT_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
+    VkDeviceMemoryReportEventTypeUnimport = 3,
+
+    [NameAffix("Suffix", "KhronosImpliedVendor", "EXT")]
+    [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_ALLOCATION_FAILED_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
+    VkDeviceMemoryReportEventTypeAllocationFailed = 4,
+
+    [NameAffix("Suffix", "KhronosImpliedVendor", "EXT")]
+    [NativeName("VK_DEVICE_MEMORY_REPORT_EVENT_TYPE_MAX_ENUM_EXT")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_device_memory_report"],
+        ImpliesSets = [
+            "VK_EXT_device_memory_report+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_device_memory_report+VK_VERSION_1_1",
+        ]
+    )]
+    VkDeviceMemoryReportEventTypeMaxEnum = 0x7FFFFFFF,
+}

@@ -10,6 +10,7 @@ namespace Silk.NET.Vulkan;
 
 [NativeName("_cbr_flag_e__FixedBuffer")]
 [InlineArray(32)]
+[NameAffix("Prefix", "NestedStructParent", nameof(StdVideoH264HrdParameters))]
 [SupportedApiProfile("vulkan")]
 public partial struct StdVideoH264HrdParametersCbrFlag
 {

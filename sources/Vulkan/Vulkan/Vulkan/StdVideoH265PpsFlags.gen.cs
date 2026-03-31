@@ -17,6 +17,7 @@ public partial struct StdVideoH265PpsFlags
     public uint Bitfield;
 
     [NativeName("dependent_slice_segments_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DependentSliceSegmentsEnabledFlag
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("output_flag_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint OutputFlagPresentFlag
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("sign_data_hiding_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SignDataHidingEnabledFlag
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("cabac_init_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint CabacInitPresentFlag
     {
@@ -57,6 +61,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("constrained_intra_pred_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ConstrainedIntraPredFlag
     {
@@ -67,6 +72,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("transform_skip_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint TransformSkipEnabledFlag
     {
@@ -77,6 +83,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("cu_qp_delta_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint CuQpDeltaEnabledFlag
     {
@@ -87,6 +94,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("pps_slice_chroma_qp_offsets_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PpsSliceChromaQpOffsetsPresentFlag
     {
@@ -97,6 +105,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("weighted_pred_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint WeightedPredFlag
     {
@@ -107,6 +116,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("weighted_bipred_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint WeightedBipredFlag
     {
@@ -117,6 +127,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("transquant_bypass_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint TransquantBypassEnabledFlag
     {
@@ -127,6 +138,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("tiles_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint TilesEnabledFlag
     {
@@ -137,6 +149,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("entropy_coding_sync_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EntropyCodingSyncEnabledFlag
     {
@@ -147,6 +160,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("uniform_spacing_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint UniformSpacingFlag
     {
@@ -157,6 +171,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("loop_filter_across_tiles_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint LoopFilterAcrossTilesEnabledFlag
     {
@@ -167,6 +182,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("pps_loop_filter_across_slices_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PpsLoopFilterAcrossSlicesEnabledFlag
     {
@@ -177,6 +193,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("deblocking_filter_control_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DeblockingFilterControlPresentFlag
     {
@@ -187,6 +204,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("deblocking_filter_override_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DeblockingFilterOverrideEnabledFlag
     {
@@ -197,6 +215,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("pps_deblocking_filter_disabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PpsDeblockingFilterDisabledFlag
     {
@@ -207,6 +226,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("pps_scaling_list_data_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PpsScalingListDataPresentFlag
     {
@@ -217,6 +237,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("lists_modification_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ListsModificationPresentFlag
     {
@@ -227,6 +248,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("slice_segment_header_extension_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SliceSegmentHeaderExtensionPresentFlag
     {
@@ -237,6 +259,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("pps_extension_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PpsExtensionPresentFlag
     {
@@ -247,6 +270,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("cross_component_prediction_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint CrossComponentPredictionEnabledFlag
     {
@@ -257,6 +281,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("chroma_qp_offset_list_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ChromaQpOffsetListEnabledFlag
     {
@@ -267,6 +292,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("pps_curr_pic_ref_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PpsCurrPicRefEnabledFlag
     {
@@ -277,6 +303,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("residual_adaptive_colour_transform_enabled_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ResidualAdaptiveColourTransformEnabledFlag
     {
@@ -287,6 +314,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("pps_slice_act_qp_offsets_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PpsSliceActQpOffsetsPresentFlag
     {
@@ -297,6 +325,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("pps_palette_predictor_initializers_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PpsPalettePredictorInitializersPresentFlag
     {
@@ -307,6 +336,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("monochrome_palette_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint MonochromePaletteFlag
     {
@@ -317,6 +347,7 @@ public partial struct StdVideoH265PpsFlags
     }
 
     [NativeName("pps_range_extension_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint PpsRangeExtensionFlag
     {

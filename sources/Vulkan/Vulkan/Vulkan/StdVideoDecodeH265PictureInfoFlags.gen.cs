@@ -17,6 +17,7 @@ public partial struct StdVideoDecodeH265PictureInfoFlags
     public uint Bitfield;
 
     [NativeName("IrapPicFlag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IrapPicFlag
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoDecodeH265PictureInfoFlags
     }
 
     [NativeName("IdrPicFlag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IdrPicFlag
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoDecodeH265PictureInfoFlags
     }
 
     [NativeName("IsReference")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IsReference
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoDecodeH265PictureInfoFlags
     }
 
     [NativeName("short_term_ref_pic_set_sps_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ShortTermRefPicSetSpsFlag
     {

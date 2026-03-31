@@ -1,0 +1,96 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from the Vulkan headers and corresponding dependencies.
+// Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace Silk.NET.Vulkan;
+
+[NativeName("VkPhysicalDeviceSampleLocationsPropertiesEXT")]
+[NameAffix("Suffix", "KhronosVendor", "EXT")]
+[SupportedApiProfile("vulkan")]
+public unsafe partial struct VkPhysicalDeviceSampleLocationsPropertiesEXT
+{
+    [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sample_locations+VK_VERSION_1_1",
+        ]
+    )]
+    public VkStructureType SType;
+
+    [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sample_locations+VK_VERSION_1_1",
+        ]
+    )]
+    public void* PNext;
+
+    [NativeName("sampleLocationSampleCounts")]
+    [NativeTypeName("VkSampleCountFlags")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sample_locations+VK_VERSION_1_1",
+        ]
+    )]
+    public VkSampleCountFlags SampleLocationSampleCounts;
+
+    [NativeName("maxSampleLocationGridSize")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sample_locations+VK_VERSION_1_1",
+        ]
+    )]
+    public VkExtent2D MaxSampleLocationGridSize;
+
+    [NativeName("sampleLocationCoordinateRange")]
+    [NativeTypeName("float[2]")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sample_locations+VK_VERSION_1_1",
+        ]
+    )]
+    public VkPhysicalDeviceSampleLocationsPropertiesEXTSampleLocationCoordinateRange SampleLocationCoordinateRange;
+
+    [NativeName("sampleLocationSubPixelBits")]
+    [NativeTypeName("uint32_t")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sample_locations+VK_VERSION_1_1",
+        ]
+    )]
+    public uint SampleLocationSubPixelBits;
+
+    [NativeName("variableSampleLocations")]
+    [NativeTypeName("VkBool32")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_EXT_sample_locations"],
+        ImpliesSets = [
+            "VK_EXT_sample_locations+VK_KHR_get_physical_device_properties2",
+            "VK_EXT_sample_locations+VK_VERSION_1_1",
+        ]
+    )]
+    public uint VariableSampleLocations;
+}

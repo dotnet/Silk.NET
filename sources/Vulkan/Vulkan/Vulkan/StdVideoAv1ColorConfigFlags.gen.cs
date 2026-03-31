@@ -17,6 +17,7 @@ public partial struct StdVideoAv1ColorConfigFlags
     public uint Bitfield;
 
     [NativeName("mono_chrome")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint MonoChrome
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoAv1ColorConfigFlags
     }
 
     [NativeName("color_range")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ColorRange
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoAv1ColorConfigFlags
     }
 
     [NativeName("separate_uv_delta_q")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SeparateUvDeltaQ
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoAv1ColorConfigFlags
     }
 
     [NativeName("color_description_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ColorDescriptionPresentFlag
     {
@@ -57,6 +61,7 @@ public partial struct StdVideoAv1ColorConfigFlags
     }
 
     [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 28")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

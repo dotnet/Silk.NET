@@ -16,38 +16,47 @@ public unsafe partial struct StdVideoAv1TileInfo
     public StdVideoAv1TileInfoFlags Flags;
 
     [NativeName("TileCols")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte TileCols;
 
     [NativeName("TileRows")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte TileRows;
 
     [NativeName("context_update_tile_id")]
+    [NativeTypeName("uint16_t")]
     [SupportedApiProfile("vulkan")]
     public ushort ContextUpdateTileId;
 
     [NativeName("tile_size_bytes_minus_1")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte TileSizeBytesMinus1;
 
     [NativeName("reserved1")]
+    [NativeTypeName("uint8_t[7]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoAv1TileInfoReserved1 Reserved1;
 
     [NativeName("pMiColStarts")]
+    [NativeTypeName("const uint16_t *")]
     [SupportedApiProfile("vulkan")]
     public ushort* PMiColStarts;
 
     [NativeName("pMiRowStarts")]
+    [NativeTypeName("const uint16_t *")]
     [SupportedApiProfile("vulkan")]
     public ushort* PMiRowStarts;
 
     [NativeName("pWidthInSbsMinus1")]
+    [NativeTypeName("const uint16_t *")]
     [SupportedApiProfile("vulkan")]
     public ushort* PWidthInSbsMinus1;
 
     [NativeName("pHeightInSbsMinus1")]
+    [NativeTypeName("const uint16_t *")]
     [SupportedApiProfile("vulkan")]
     public ushort* PHeightInSbsMinus1;
 }

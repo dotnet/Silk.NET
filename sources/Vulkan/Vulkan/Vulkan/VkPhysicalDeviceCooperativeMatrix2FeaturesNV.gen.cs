@@ -1,0 +1,94 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// Ported from the Vulkan headers and corresponding dependencies.
+// Original source is Copyright 2015-2025 The Khronos Group Inc. Licensed under the MIT license.
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace Silk.NET.Vulkan;
+
+[NativeName("VkPhysicalDeviceCooperativeMatrix2FeaturesNV")]
+[NameAffix("Suffix", "KhronosVendor", "NV")]
+[SupportedApiProfile("vulkan")]
+public unsafe partial struct VkPhysicalDeviceCooperativeMatrix2FeaturesNV
+{
+    [NativeName("sType")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public VkStructureType SType;
+
+    [NativeName("pNext")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public void* PNext;
+
+    [NativeName("cooperativeMatrixWorkgroupScope")]
+    [NativeTypeName("VkBool32")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public uint CooperativeMatrixWorkgroupScope;
+
+    [NativeName("cooperativeMatrixFlexibleDimensions")]
+    [NativeTypeName("VkBool32")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public uint CooperativeMatrixFlexibleDimensions;
+
+    [NativeName("cooperativeMatrixReductions")]
+    [NativeTypeName("VkBool32")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public uint CooperativeMatrixReductions;
+
+    [NativeName("cooperativeMatrixConversions")]
+    [NativeTypeName("VkBool32")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public uint CooperativeMatrixConversions;
+
+    [NativeName("cooperativeMatrixPerElementOperations")]
+    [NativeTypeName("VkBool32")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public uint CooperativeMatrixPerElementOperations;
+
+    [NativeName("cooperativeMatrixTensorAddressing")]
+    [NativeTypeName("VkBool32")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public uint CooperativeMatrixTensorAddressing;
+
+    [NativeName("cooperativeMatrixBlockLoads")]
+    [NativeTypeName("VkBool32")]
+    [SupportedApiProfile(
+        "vulkan",
+        ["VK_NV_cooperative_matrix2"],
+        ImpliesSets = ["VK_KHR_cooperative_matrix"]
+    )]
+    public uint CooperativeMatrixBlockLoads;
+}

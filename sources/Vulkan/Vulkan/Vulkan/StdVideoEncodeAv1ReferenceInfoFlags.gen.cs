@@ -17,6 +17,7 @@ public partial struct StdVideoEncodeAv1ReferenceInfoFlags
     public uint Bitfield;
 
     [NativeName("disable_frame_end_update_cdf")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DisableFrameEndUpdateCdf
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoEncodeAv1ReferenceInfoFlags
     }
 
     [NativeName("segmentation_enabled")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SegmentationEnabled
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoEncodeAv1ReferenceInfoFlags
     }
 
     [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 30")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

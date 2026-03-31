@@ -17,6 +17,7 @@ public partial struct StdVideoH264SpsFlags
     public uint Bitfield;
 
     [NativeName("constraint_set0_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ConstraintSet0Flag
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("constraint_set1_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ConstraintSet1Flag
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("constraint_set2_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ConstraintSet2Flag
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("constraint_set3_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ConstraintSet3Flag
     {
@@ -57,6 +61,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("constraint_set4_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ConstraintSet4Flag
     {
@@ -67,6 +72,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("constraint_set5_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ConstraintSet5Flag
     {
@@ -77,6 +83,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("direct_8x8_inference_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint Direct8x8InferenceFlag
     {
@@ -87,6 +94,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("mb_adaptive_frame_field_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint MbAdaptiveFrameFieldFlag
     {
@@ -97,6 +105,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("frame_mbs_only_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FrameMbsOnlyFlag
     {
@@ -107,6 +116,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("delta_pic_order_always_zero_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint DeltaPicOrderAlwaysZeroFlag
     {
@@ -117,6 +127,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("separate_colour_plane_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SeparateColourPlaneFlag
     {
@@ -127,6 +138,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("gaps_in_frame_num_value_allowed_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint GapsInFrameNumValueAllowedFlag
     {
@@ -137,6 +149,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("qpprime_y_zero_transform_bypass_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint QpprimeYZeroTransformBypassFlag
     {
@@ -147,6 +160,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("frame_cropping_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FrameCroppingFlag
     {
@@ -157,6 +171,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("seq_scaling_matrix_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint SeqScalingMatrixPresentFlag
     {
@@ -167,6 +182,7 @@ public partial struct StdVideoH264SpsFlags
     }
 
     [NativeName("vui_parameters_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VuiParametersPresentFlag
     {

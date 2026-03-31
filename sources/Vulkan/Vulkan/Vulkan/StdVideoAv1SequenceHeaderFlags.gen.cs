@@ -17,6 +17,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     public uint Bitfield;
 
     [NativeName("still_picture")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint StillPicture
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("reduced_still_picture_header")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ReducedStillPictureHeader
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("use_128x128_superblock")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint Use128x128Superblock
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_filter_intra")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableFilterIntra
     {
@@ -57,6 +61,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_intra_edge_filter")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableIntraEdgeFilter
     {
@@ -67,6 +72,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_interintra_compound")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableInterintraCompound
     {
@@ -77,6 +83,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_masked_compound")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableMaskedCompound
     {
@@ -87,6 +94,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_warped_motion")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableWarpedMotion
     {
@@ -97,6 +105,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_dual_filter")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableDualFilter
     {
@@ -107,6 +116,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_order_hint")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableOrderHint
     {
@@ -117,6 +127,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_jnt_comp")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableJntComp
     {
@@ -127,6 +138,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_ref_frame_mvs")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableRefFrameMvs
     {
@@ -137,6 +149,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("frame_id_numbers_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FrameIdNumbersPresentFlag
     {
@@ -147,6 +160,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_superres")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableSuperres
     {
@@ -157,6 +171,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_cdef")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableCdef
     {
@@ -167,6 +182,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("enable_restoration")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint EnableRestoration
     {
@@ -177,6 +193,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("film_grain_params_present")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FilmGrainParamsPresent
     {
@@ -187,6 +204,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("timing_info_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint TimingInfoPresentFlag
     {
@@ -197,6 +215,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("initial_display_delay_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint InitialDisplayDelayPresentFlag
     {
@@ -207,6 +226,7 @@ public partial struct StdVideoAv1SequenceHeaderFlags
     }
 
     [NativeName("reserved")]
+    [NativeTypeName("uint32_t : 13")]
     [SupportedApiProfile("vulkan")]
     public uint Reserved
     {

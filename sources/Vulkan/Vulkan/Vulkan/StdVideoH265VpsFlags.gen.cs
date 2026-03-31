@@ -17,6 +17,7 @@ public partial struct StdVideoH265VpsFlags
     public uint Bitfield;
 
     [NativeName("vps_temporal_id_nesting_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VpsTemporalIdNestingFlag
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoH265VpsFlags
     }
 
     [NativeName("vps_sub_layer_ordering_info_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VpsSubLayerOrderingInfoPresentFlag
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoH265VpsFlags
     }
 
     [NativeName("vps_timing_info_present_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VpsTimingInfoPresentFlag
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoH265VpsFlags
     }
 
     [NativeName("vps_poc_proportional_to_timing_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint VpsPocProportionalToTimingFlag
     {

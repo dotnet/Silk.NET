@@ -17,6 +17,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     public uint Bitfield;
 
     [NativeName("field_pic_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint FieldPicFlag
     {
@@ -27,6 +28,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     }
 
     [NativeName("is_intra")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IsIntra
     {
@@ -37,6 +39,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     }
 
     [NativeName("IdrPicFlag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IdrPicFlag
     {
@@ -47,6 +50,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     }
 
     [NativeName("bottom_field_flag")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint BottomFieldFlag
     {
@@ -57,6 +61,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     }
 
     [NativeName("is_reference")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint IsReference
     {
@@ -67,6 +72,7 @@ public partial struct StdVideoDecodeH264PictureInfoFlags
     }
 
     [NativeName("complementary_field_pair")]
+    [NativeTypeName("uint32_t : 1")]
     [SupportedApiProfile("vulkan")]
     public uint ComplementaryFieldPair
     {

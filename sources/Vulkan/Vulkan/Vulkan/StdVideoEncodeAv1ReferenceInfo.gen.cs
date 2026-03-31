@@ -17,6 +17,7 @@ public unsafe partial struct StdVideoEncodeAv1ReferenceInfo
     public StdVideoEncodeAv1ReferenceInfoFlags Flags;
 
     [NativeName("RefFrameId")]
+    [NativeTypeName("uint32_t")]
     [SupportedApiProfile("vulkan")]
     public uint RefFrameId;
 
@@ -25,14 +26,17 @@ public unsafe partial struct StdVideoEncodeAv1ReferenceInfo
     public StdVideoAv1FrameType FrameType;
 
     [NativeName("OrderHint")]
+    [NativeTypeName("uint8_t")]
     [SupportedApiProfile("vulkan")]
     public byte OrderHint;
 
     [NativeName("reserved1")]
+    [NativeTypeName("uint8_t[3]")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeAv1ReferenceInfoReserved1 Reserved1;
 
     [NativeName("pExtensionHeader")]
+    [NativeTypeName("const StdVideoEncodeAV1ExtensionHeader *")]
     [SupportedApiProfile("vulkan")]
     public StdVideoEncodeAv1ExtensionHeader* PExtensionHeader;
 }
