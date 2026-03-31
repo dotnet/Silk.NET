@@ -557,4 +557,38 @@ public class PrettifyNamesTests
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
     }
+
+    [Test]
+    public async Task SuccessfullyUsesReferencedAffixes()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                [NameAffix("Suffix", "Test", "ShouldBeInOutputName")]
+                public struct GamepadBinding { }
+
+                [NameAffix("Prefix", "NestedStructParent", nameof(GamepadBinding))]
+                public struct GamepadBindingInput { }
+
+                [NameAffix("Prefix", "NestedStructParent", nameof(GamepadBindingInput))]
+                public struct GamepadBindingInputAxis { }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+        );
+
+        await prettifyNames.ExecuteAsync(context);
+
+        // All names should start with GamepadBindingShouldBeInOutputName
+        var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
+        await Verify(result!.NormalizeWhitespace().ToString());
+    }
 }
