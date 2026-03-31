@@ -449,6 +449,9 @@
           },
           "KhronosHandleType": {
             "Remove": true
+          },
+          "SharedPrefix": {
+            "Remove": true
           }
         }
       },
