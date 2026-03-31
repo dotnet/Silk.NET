@@ -4,7 +4,6 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging.Abstractions;
 using Silk.NET.SilkTouch.Mods;
-using Silk.NET.SilkTouch.Naming;
 
 namespace Silk.NET.SilkTouch.UnitTests.Naming;
 
@@ -590,5 +589,93 @@ public class PrettifyNamesTests
         // All names should start with GamepadBindingShouldBeInOutputName
         var result = await context.SourceProject.Documents.First().GetSyntaxRootAsync();
         await Verify(result!.NormalizeWhitespace().ToString());
+    }
+
+    [Test]
+    public void CycleInReferencedAffixes_Throws()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                [NameAffix("Suffix", "Test", nameof(B))]
+                public struct A { }
+
+                [NameAffix("Suffix", "Test", nameof(A))]
+                public struct B { }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+        );
+
+        Assert.ThrowsAsync<InvalidOperationException>(async () =>
+        {
+            await prettifyNames.ExecuteAsync(context);
+        });
+    }
+
+    [Test]
+    public void MissingReferencedAffix_Throws()
+    {
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                [NameAffix("Suffix", "Test", nameof(B))]
+                public struct A { }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+        );
+
+        Assert.ThrowsAsync<InvalidOperationException>(async () =>
+        {
+            await prettifyNames.ExecuteAsync(context);
+        });
+    }
+
+    [Test]
+    public void ReferencedAffixExists_ButInDifferentContainer_Throws()
+    {
+        // This test is here because referencing names in different containers is currently not supported
+        var project = TestUtils
+            .CreateTestProject()
+            .AddDocument(
+                "Test.gen.cs",
+                """
+                public struct A
+                {
+                    [NameAffix("Suffix", "Test", nameof(A))]
+                    public static int B;
+                }
+                """
+            )
+            .Project;
+
+        var context = new DummyModContext() { SourceProject = project };
+
+        var prettifyNames = new PrettifyNames(
+            NullLogger<PrettifyNames>.Instance,
+            new DummyOptions<PrettifyNames.Configuration>(new PrettifyNames.Configuration())
+        );
+
+        Assert.ThrowsAsync<InvalidOperationException>(async () =>
+        {
+            await prettifyNames.ExecuteAsync(context);
+        });
     }
 }
