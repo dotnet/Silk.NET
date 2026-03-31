@@ -1542,8 +1542,7 @@ public class PrettifyNames(
                             // This is because we currently can only resolve names that are given by the NameProcessorContext
                             // Please update this message if this limitation changes
                             throw new NotSupportedException(
-                                $"{key} references a name that does not exist. "
-                                    + $"This is usually because the referenced name is in a different name container. "
+                                $"A name affix for '{key}' references a name that does not exist or is part of a different name container. "
                                     + $"Referencing names from other containers is currently not supported"
                             );
                         }
