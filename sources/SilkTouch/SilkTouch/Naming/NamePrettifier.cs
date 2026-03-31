@@ -31,7 +31,7 @@ public class NamePrettifier(int longAcronymThreshold)
     /// <exception cref="InvalidOperationException">Thrown when the input or output is an empty identifier.</exception>
     public string Prettify(string identifier, bool allowAllCaps = false)
     {
-        var words = NameSplitter.BreakIntoWords(identifier);
+        var words = NameSplitter.SplitIntoWords(identifier);
 
         // Add "X" to separate out numbers
         for (var i = words.Count - 1; i >= 1; i--)

@@ -17,7 +17,7 @@ public static class NameSplitter
     /// See the test cases for this method to see examples on how this method behaves.
     /// </remarks>
     /// <param name="identifier">A string that contains only valid C# identifier characters.</param>
-    public static List<string> BreakIntoWords(string identifier)
+    public static List<string> SplitIntoWords(string identifier)
     {
         var words = new List<string>();
         var currentWord = new StringBuilder();
