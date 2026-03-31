@@ -162,9 +162,6 @@ public static class NameAffixer
     /// This lets us skip sorting across different containers.
     /// This should cover most real world use cases since if something is nested and
     /// has the parent name as a prefix, then the prefix is likely unnecessary.
-    /// <para/>
-    /// Similarly, only direct references are supported. Transitive references are not.
-    /// This lets us naively sort all references to the end of the container without a topological sort.
     /// </remarks>
     /// <example>
     /// For example, <c>PerformanceCounterDescriptionARM</c> can be used as a referenced prefix for <c>PerformanceCounterDescriptionARMName</c>.

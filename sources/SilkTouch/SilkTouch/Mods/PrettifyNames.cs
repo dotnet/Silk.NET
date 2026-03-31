@@ -1464,13 +1464,83 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
-            var processingOrder = context
-                .Names.Keys.OrderBy(original =>
-                    affixer.GetAffixes(context.Container, original).Any(x => x.IsReference)
-                )
-                .ToArray();
+            // Calculate processing order using topological sort
+            var processingOrderByKey = new List<string>();
+            {
+                var ready = new Queue<string>();
+                var dependencyCountByKey = new Dictionary<string, int>();
+                var notifyDependantByKey = new Dictionary<string, List<string>>();
 
-            foreach (var original in processingOrder)
+                // Build dependency graph
+                foreach (var key in context.Names.Keys)
+                {
+                    var dependencyCount = 0;
+
+                    var affixes = affixer.GetAffixes(context.Container, key);
+                    foreach (var affix in affixes)
+                    {
+                        if (!affix.IsReference)
+                        {
+                            continue;
+                        }
+
+                        // Add as dependency
+                        if (!notifyDependantByKey.TryGetValue(affix.Affix, out var dependants))
+                        {
+                            notifyDependantByKey[affix.Affix] = dependants = [];
+                        }
+
+                        dependants.Add(key);
+                        dependencyCount++;
+                    }
+
+                    if (dependencyCount == 0)
+                    {
+                        // No dependencies
+                        ready.Enqueue(key);
+                        continue;
+                    }
+
+                    // Store dependency count
+                    dependencyCountByKey.Add(key, dependencyCount);
+                }
+
+                // Output final order
+                while (ready.TryDequeue(out var key))
+                {
+                    processingOrderByKey.Add(key);
+                    if (notifyDependantByKey.TryGetValue(key, out var dependants))
+                    {
+                        foreach (var dependant in dependants)
+                        {
+                            if (
+                                dependencyCountByKey.TryGetValue(dependant, out var dependencyCount)
+                            )
+                            {
+                                dependencyCount--;
+                                if (dependencyCount == 0)
+                                {
+                                    ready.Enqueue(dependant);
+                                    dependencyCountByKey.Remove(dependant);
+                                    continue;
+                                }
+
+                                dependencyCountByKey[dependant] = dependencyCount;
+                            }
+                        }
+                    }
+                }
+
+                // Check for cycles
+                if (dependencyCountByKey.Count != 0)
+                {
+                    throw new InvalidOperationException(
+                        $"Detected cycle in referenced affixes. Names that are part of the cycle: {string.Join(", ", dependencyCountByKey)}"
+                    );
+                }
+            }
+
+            foreach (var original in processingOrderByKey)
             {
                 var (primary, secondary) = context.Names[original];
 
