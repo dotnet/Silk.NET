@@ -1439,11 +1439,11 @@ public class PrettifyNames(
     {
         public void ProcessNames(NameProcessorContext context)
         {
+            // Be lenient about caps for type names (e.g. GL)
+            var allowAllCaps = context.Container == null;
+
             foreach (var (original, (primary, secondary)) in context.Names)
             {
-                // Be lenient about caps for type names (e.g. GL)
-                var allowAllCaps = context.Container == null;
-
                 for (var i = 0; i < secondary.Count; i++)
                 {
                     secondary[i] = namePrettifier.Prettify(secondary[i], allowAllCaps);
