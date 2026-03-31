@@ -564,7 +564,7 @@ public class PrettifyNamesTests
         var project = TestUtils
             .CreateTestProject()
             .AddDocument(
-                "Test.gen.cs",
+                "SDL.gen.cs",
                 """
                 [NameAffix("Suffix", "Test", "ShouldBeInOutputName")]
                 public struct GamepadBinding { }
