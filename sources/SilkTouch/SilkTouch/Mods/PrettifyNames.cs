@@ -1531,9 +1531,25 @@ public class PrettifyNames(
                     }
                 }
 
-                // Check for cycles
+                // Check for unfulfilled dependencies
                 if (dependencyCountByKey.Count != 0)
                 {
+                    // Check for missing dependencies
+                    foreach (var key in dependencyCountByKey.Keys)
+                    {
+                        if (!context.Names.ContainsKey(key))
+                        {
+                            // This is because we currently can only resolve names that are given by the NameProcessorContext
+                            // Please update this message if this limitation changes
+                            throw new NotSupportedException(
+                                $"{key} references a name that does not exist. "
+                                    + $"This is usually because the referenced name is in a different name container. "
+                                    + $"Referencing names from other containers is currently not supported"
+                            );
+                        }
+                    }
+
+                    // Remaining must be a cycle
                     throw new InvalidOperationException(
                         $"Detected cycle in referenced affixes. Names that are part of the cycle: {string.Join(", ", dependencyCountByKey)}"
                     );
