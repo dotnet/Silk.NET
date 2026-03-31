@@ -26,6 +26,7 @@ public class ModLoader
             nameof(ClangScraper) => typeof(ClangScraper),
             nameof(ExtractHandles) => typeof(ExtractHandles),
             nameof(ExtractNestedTyping) => typeof(ExtractNestedTyping),
+            nameof(IdentifySharedPrefixes) => typeof(IdentifySharedPrefixes),
             nameof(InterceptNativeFunctions) => typeof(InterceptNativeFunctions),
             nameof(MarkNativeNames) => typeof(MarkNativeNames),
             nameof(MixKhronosData) => typeof(MixKhronosData),
