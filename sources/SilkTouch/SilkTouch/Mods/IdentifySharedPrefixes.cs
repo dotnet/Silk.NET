@@ -33,6 +33,7 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         public IReadOnlyList<string>? GlobalPrefixHints { get; init; }
     }
 
+    /// <inheritdoc />
     public override Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
         // TODO

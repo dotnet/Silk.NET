@@ -36,7 +36,7 @@ public class NameTrimmer : INameProcessor
             {
                 // Attempt to identify the hint being used.
                 string? hint = null;
-                foreach (var candidateHint in context.Configuration.GlobalPrefixHints ?? [])
+                foreach (var candidateHint in context.Configuration2.GlobalPrefixHints ?? [])
                 {
                     var match = true;
                     foreach (var (name, _) in context.Names.Values)
@@ -59,7 +59,7 @@ public class NameTrimmer : INameProcessor
                     context.Container,
                     hint,
                     context.Names,
-                    context.Configuration.PrefixOverrides,
+                    context.Configuration2.PrefixOverrides,
                     context.NonDeterminant,
                     i == 0,
                     naive = i == 2
@@ -108,7 +108,7 @@ public class NameTrimmer : INameProcessor
         // is better than nothing - if the name doesn't start with the prefix we simply won't use the prefix.
         if (
             string.IsNullOrWhiteSpace(identifiedPrefix)
-            && context.Configuration.GlobalPrefixHints is not { Count: > 0 }
+            && context.Configuration2.GlobalPrefixHints is not { Count: > 0 }
         )
         {
             return;
@@ -120,7 +120,7 @@ public class NameTrimmer : INameProcessor
             foreach (
                 var candidatePrefix in !string.IsNullOrWhiteSpace(identifiedPrefix)
                     ? [identifiedPrefix] // otherwise we fall back to the hints...
-                    : context.Configuration.GlobalPrefixHints ?? []
+                    : context.Configuration2.GlobalPrefixHints ?? []
             )
             {
                 if (

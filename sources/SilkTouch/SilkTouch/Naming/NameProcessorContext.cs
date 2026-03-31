@@ -34,6 +34,11 @@ public readonly struct NameProcessorContext
     public PrettifyNames.Configuration Configuration { get; init; }
 
     /// <summary>
+    /// Gets the current configuration for the <see cref="PrettifyNames"/> mod.
+    /// </summary>
+    public IdentifySharedPrefixes.Configuration Configuration2 { get; init; } // TODO: Temporary
+
+    /// <summary>
     /// Gets a set of original API names (i.e. the key stored in <see cref="Names"/>) that have been marked with
     /// the <c>[Transformed]</c> attribute.
     /// </summary>
