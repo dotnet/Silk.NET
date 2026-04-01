@@ -11,13 +11,13 @@ namespace Silk.NET.Assimp
     internal class AssimpLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string[] Linux => new[] { "libassimp.so.5" };
+        public override string[] Linux => new[] { "libassimp.so.6" };
 
         /// <inheritdoc />
-        public override string[] MacOS => new[] { "libassimp.5.dylib" };
+        public override string[] MacOS => new[] { "libassimp.6.dylib" };
 
         /// <inheritdoc />
-        public override string[] Android => new[] { "libassimp.so.5" };
+        public override string[] Android => new[] { "libassimp.so.6" };
 
         /// <inheritdoc />
         public override string[] IOS => new[] { "__Internal" };
