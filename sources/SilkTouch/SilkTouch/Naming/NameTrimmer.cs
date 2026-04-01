@@ -56,8 +56,8 @@ public class NameTrimmer : INameProcessor
                     context.Names,
                     context.Configuration2.PrefixOverrides,
                     context.NonDeterminant,
-                    i == 0,
-                    naive = i == 2
+                    getTrimmingName: i == 0,
+                    naive: naive = i == 2
                 );
 
                 if (result is null)
