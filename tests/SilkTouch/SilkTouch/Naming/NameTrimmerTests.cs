@@ -30,9 +30,9 @@ public class NameTrimmerTests : NameTrimmer
         ProcessNames(
             new NameProcessorContext
             {
-                Configuration = new PrettifyNames.Configuration
+                Configuration2 = new IdentifySharedPrefixes.Configuration
                 {
-                    GlobalPrefixHints = hint is null ? null : [hint],
+                    GlobalPrefixHints = hint is null ? [] : [hint],
                 },
                 Names = test,
                 JobKey = "GLFW",
@@ -70,7 +70,10 @@ public class NameTrimmerTests : NameTrimmer
             new NameProcessorContext
             {
                 Container = "FragmentShaderColorModMaskATI",
-                Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
+                Configuration2 = new IdentifySharedPrefixes.Configuration
+                {
+                    GlobalPrefixHints = ["gl"],
+                },
                 Names = test,
                 JobKey = "OpenGL",
             }
@@ -100,7 +103,10 @@ public class NameTrimmerTests : NameTrimmer
             new NameProcessorContext
             {
                 Container = "EvalTargetNV",
-                Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
+                Configuration2 = new IdentifySharedPrefixes.Configuration
+                {
+                    GlobalPrefixHints = ["gl"],
+                },
                 Names = test,
                 JobKey = "OpenGL",
             }
@@ -125,7 +131,10 @@ public class NameTrimmerTests : NameTrimmer
         };
         var ctx = new NameProcessorContext
         {
-            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["gl"] },
+            Configuration2 = new IdentifySharedPrefixes.Configuration
+            {
+                GlobalPrefixHints = ["gl"],
+            },
             Container = "EvalMapsModeNV",
             JobKey = "OpenGL",
             Names = names,
@@ -144,7 +153,10 @@ public class NameTrimmerTests : NameTrimmer
         };
         var ctx = new NameProcessorContext
         {
-            Configuration = new PrettifyNames.Configuration { GlobalPrefixHints = ["alc", "al"] },
+            Configuration2 = new IdentifySharedPrefixes.Configuration
+            {
+                GlobalPrefixHints = ["alc", "al"],
+            },
             Container = "ContextFlagsEXT",
             JobKey = "OpenAL",
             Names = names,

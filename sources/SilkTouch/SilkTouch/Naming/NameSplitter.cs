@@ -14,7 +14,7 @@ public static class NameSplitter
     /// Splits the given C# identifier into separate words and rejoins them using an underscore as a separator.
     /// </summary>
     public static string Underscore(string identifier) =>
-        string.Join("_", BreakIntoWords(identifier));
+        string.Join("_", SplitIntoWords(identifier));
 
     /// <summary>
     /// Splits the given C# identifier into separate words.
