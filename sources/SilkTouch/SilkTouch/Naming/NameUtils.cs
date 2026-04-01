@@ -1,6 +1,5 @@
 ﻿using System.Buffers;
 using System.Diagnostics.CodeAnalysis;
-using System.Text.RegularExpressions;
 using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.Logging;
 using Silk.NET.SilkTouch.Mods;
@@ -12,7 +11,7 @@ namespace Silk.NET.SilkTouch.Naming;
 /// Contains utilities used throughout the naming namespace.
 /// </summary>
 [SuppressMessage("ReSharper", "LoopCanBeConvertedToQuery")]
-public static partial class NameUtils
+public static class NameUtils
 {
     /// <summary>
     /// All capital letters.
@@ -186,47 +185,6 @@ public static partial class NameUtils
         // This was done in #2207. I guess this was the smarter fix my previous comment was talking about.
         return foundPrefix[..(naive ? foundPrefix.Length : foundPrefix.LastIndexOf('_') + 1)];
     }
-
-    /// <summary>
-    /// Separates the input words with underscore
-    /// </summary>
-    /// <param name="input">The string to be underscored</param>
-    /// <returns></returns>
-    public static string LenientUnderscore(this string input) =>
-        // This is a modified version of Humanizer's Underscore methods with the following changes:
-        // - The regex ([\p{Ll}\d])([\p{Lu}]) has been replaced with
-        //   ([\p{Ll}\d])(?=[\p{Lu}][\p{Lu}\p{Ll}])([\p{Lu}]) - In this regex, the positive lookahead assertion
-        //   (?=[\p{Lu}][\p{Lu}\p{Ll}]) ensures that the next character after the match is an uppercase letter,
-        //   followed by any letter (uppercase or lowercase). This will only match if the 2nd character after the
-        //   initial match is uppercase. That was suggested by ChatGPT, a human had to add the final
-        //   [\p{Ll}])([\p{Lu}]) to ensure we don't erroneous match non-pascal case strings and to capture the
-        //   second character to ensure we can do the replacement. Still pretty smart though.
-        // - The final ToLower has been omitted as it was not deemed necessary
-        // - The regex ([\p{Ll}])([\p{Lu}]) has been added to replace lowercase letters followed by an uppercase letter with the
-        //   same sequence but with an underscore inbetween,
-        //   this fixes cases like SpvImageFormatR32ui being Spv_Image_FormatR32ui instead of Spv_Image_Format_R32ui
-        KebabOrSpace()
-            .Replace(
-                LowerUpper()
-                    .Replace(
-                        LowerUpperAnyUpper()
-                            .Replace(LowerUpperLower().Replace(input, "$1_$2"), "$1_$2"),
-                        "$1_$2"
-                    ),
-                "_"
-            );
-
-    [GeneratedRegex(@"[-\s]")]
-    private static partial Regex KebabOrSpace();
-
-    [GeneratedRegex(@"([\p{Ll}])([\p{Lu}])")]
-    private static partial Regex LowerUpper();
-
-    [GeneratedRegex(@"([\p{Ll}])(?=[\p{Lu}][\p{Lu}\p{Ll}])([\p{Lu}])")]
-    private static partial Regex LowerUpperAnyUpper();
-
-    [GeneratedRegex(@"([\p{Lu}]+)([\p{Lu}][\p{Ll}])")]
-    private static partial Regex LowerUpperLower();
 
     /// <summary>
     /// Rename all symbols with the given new names
