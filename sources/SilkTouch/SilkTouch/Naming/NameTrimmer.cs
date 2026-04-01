@@ -355,7 +355,7 @@ public class NameTrimmer : INameProcessor
         string? hint = null
     )
     {
-        // If theres a prefix override for this enum,
+        // If there's a prefix override for this enum,
         if (prefixOverrides?.ContainsKey(name) ?? false)
         {
             // Use the raw native name as the trimming name
@@ -364,10 +364,10 @@ public class NameTrimmer : INameProcessor
 
         if (hint is not null && name.StartsWith(hint, StringComparison.OrdinalIgnoreCase))
         {
-            return $"{hint}_{name[hint.Length..].Trim('_').LenientUnderscore()}";
+            return NameSplitter.Underscore($"{hint}_{name[hint.Length..]}");
         }
 
-        return name.Trim('_').LenientUnderscore();
+        return NameSplitter.Underscore(name);
     }
 
     /// <summary>
