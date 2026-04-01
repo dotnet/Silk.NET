@@ -199,7 +199,7 @@ public class NameTrimmer : INameProcessor
         string? container,
         string? hint,
         Dictionary<string, CandidateNames> names,
-        Dictionary<string, string>? prefixOverrides,
+        Dictionary<string, string> prefixOverrides,
         HashSet<string>? nonDeterminant,
         bool getTrimmingName,
         bool naive
@@ -241,10 +241,7 @@ public class NameTrimmer : INameProcessor
         // a case like this is simple to add a special case for in the generator to handle sRGB specially,
         // but see ImageChannelOrder from spirv.h for a more problematic occurrence.
         string prefix;
-        if (
-            container is not null
-            && (prefixOverrides?.TryGetValue(container, out var @override) ?? false)
-        )
+        if (container is not null && prefixOverrides.TryGetValue(container, out var @override))
         {
             // Use the override
             prefix = @override;
@@ -345,13 +342,13 @@ public class NameTrimmer : INameProcessor
     /// <param name="hint">The global prefix hint.</param>
     /// <returns>The trimming name.</returns>
     private string GetTrimmingName(
-        Dictionary<string, string>? prefixOverrides,
+        Dictionary<string, string> prefixOverrides,
         string name,
         string? hint = null
     )
     {
         // If there's a prefix override for this enum,
-        if (prefixOverrides?.ContainsKey(name) ?? false)
+        if (prefixOverrides.ContainsKey(name))
         {
             // Use the raw native name as the trimming name
             return name;
@@ -372,7 +369,7 @@ public class NameTrimmer : INameProcessor
     /// <param name="Secondary">The fallback versions of the trimmed name in case the primary does not work.</param>
     /// <param name="Original">The original, unmodified name.</param>
     /// <param name="TrimmingName">The name used for trimming purposes.</param>
-    private record struct AugmentedCandidateNames(
+    private readonly record struct AugmentedCandidateNames(
         string Primary,
         List<string> Secondary,
         string Original,
