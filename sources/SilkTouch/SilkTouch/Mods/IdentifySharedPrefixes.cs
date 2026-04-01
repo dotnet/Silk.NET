@@ -1,6 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.Extensions.Options;
 
 namespace Silk.NET.SilkTouch.Mods;
@@ -30,20 +31,24 @@ public class IdentifySharedPrefixes(IOptionsSnapshot<IdentifySharedPrefixes.Conf
         /// A list of known prefixes that are commonly used by names in the native API.
         /// These are preferred when identifying shared prefixes.
         /// </summary>
-        public IReadOnlyList<string>? GlobalPrefixHints { get; init; }
+        public IReadOnlyList<string> GlobalPrefixHints { get; init; } = [];
     }
 
     /// <inheritdoc />
-    public override Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
+    public override async Task ExecuteAsync(IModContext ctx, CancellationToken ct = default)
     {
-        // TODO
-        Console.WriteLine(config);
+        var cfg = config.Get(ctx.JobKey);
+        if (ctx.SourceProject is null)
+        {
+            return;
+        }
 
-        // // Sort the hints from large to small (longest prefix match)
-        // var hints = cfg.GlobalPrefixHints?.ToList();
-        // hints?.Sort((x, y) => -x.Length.CompareTo(y.Length));
-        // cfg = cfg with { GlobalPrefixHints = hints };
-
-        return base.ExecuteAsync(ctx, ct);
+        // Sort the hints from large to small
+        // This makes it so that we prefer longer prefixes
+        var hints = cfg.GlobalPrefixHints.ToList();
+        hints.Sort((x, y) => -x.Length.CompareTo(y.Length));
+        cfg = cfg with { GlobalPrefixHints = hints };
     }
+
+    private class Visitor : CSharpSyntaxRewriter { }
 }
