@@ -657,7 +657,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                 var (enumName, enumType) in _numericTypeNames.OrderByDescending(x => x.Key.Length)
             )
             {
-                var enumTrimmingName = _nameTrimmer.GetTrimmingName(null, enumName, true);
+                var enumTrimmingName = _nameTrimmer.GetTrimmingName(null, enumName);
                 (EnumDeclarationSyntax, HashSet<string>, HashSet<string>)? extractedEnum = enumType
                     is { } theType
                     ? (
@@ -677,7 +677,7 @@ public partial class ExtractNestedTyping(ILogger<ExtractNestedTyping> logger) : 
                     // taking casing into account). It is possible that this could be expanded, but this should be done
                     // carefully to ensure we don't light up prematurely.
                     var nextConst = false;
-                    var trimmingName = _nameTrimmer.GetTrimmingName(null, constant, false);
+                    var trimmingName = _nameTrimmer.GetTrimmingName(null, constant);
                     foreach (var enumCandidate in (IEnumerable<string>)[enumName, enumTrimmingName])
                     {
                         foreach (

@@ -219,7 +219,7 @@ public class NameTrimmer : INameProcessor
 
         // Get the trimming names
         var containerTrimmingName = getTrimmingName
-            ? GetTrimmingName(prefixOverrides, container ?? hint ?? string.Empty, true, hint)
+            ? GetTrimmingName(prefixOverrides, container ?? hint ?? string.Empty, hint)
             : container ?? hint ?? string.Empty;
 
         var localNames = names
@@ -228,7 +228,7 @@ public class NameTrimmer : INameProcessor
                 x.Value.Secondary,
                 x.Key,
                 getTrimmingName
-                    ? GetTrimmingName(prefixOverrides, x.Value.Primary, false, hint)
+                    ? GetTrimmingName(prefixOverrides, x.Value.Primary, hint)
                     : x.Value.Primary
             ))
             .ToList();
@@ -347,13 +347,11 @@ public class NameTrimmer : INameProcessor
     /// </summary>
     /// <param name="prefixOverrides">The prefix overrides.</param>
     /// <param name="name">The name to get a trimming name for.</param>
-    /// <param name="isContainer">Whether the name passed into <paramref name="name"/> is the container name.</param>
     /// <param name="hint">The global prefix hint.</param>
     /// <returns>The trimming name.</returns>
     public virtual string GetTrimmingName(
         Dictionary<string, string>? prefixOverrides,
         string name,
-        bool isContainer,
         string? hint = null
     )
     {
