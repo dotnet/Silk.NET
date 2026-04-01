@@ -5,17 +5,16 @@
 /// </summary>
 public class NameTrimmer : INameProcessor
 {
-    /// <summary>
-    /// Determines whether a second pass without using <see cref="GetTrimmingName"/> is warranted.
-    /// </summary>
-    protected virtual bool HasRawPass => true;
-
-    /// <summary>
-    /// Determines whether a third pass using "naive" prefix detection is warranted. Only applicable if
-    /// <see cref="HasRawPass"/> is true.
-    /// </summary>
-    /// <seealso cref="NameUtils"/>
-    protected virtual bool HasNaivePass => true;
+    // /// <summary>
+    // /// Determines whether a second pass without using <see cref="GetTrimmingName"/> is warranted.
+    // /// </summary>
+    // private const bool _hasRawPass = true;
+    //
+    // /// <summary>
+    // /// Determines whether a third pass using "naive" prefix detection is warranted. Only applicable if
+    // /// <see cref="_hasRawPass"/> is true.
+    // /// </summary>
+    // private const bool _hasNaivePass = true;
 
     private static readonly HashSet<string> s_forbiddenTrimmings = new() { "unsigned", "per" };
 
@@ -24,12 +23,8 @@ public class NameTrimmer : INameProcessor
     {
         string? identifiedPrefix = null;
         List<AugmentedCandidateNames> localNames = null!;
-        var nPasses = HasRawPass
-            ? HasNaivePass
-                ? 3
-                : 2
-            : 1;
         var naive = false;
+        var nPasses = 3;
         if (identifiedPrefix is null)
         {
             for (var i = 0; i < nPasses; i++) // try with both trimming name and non trimming name
@@ -200,7 +195,7 @@ public class NameTrimmer : INameProcessor
     /// This is the list of names to be used for the remainder of the trimming process
     /// and contains the trimming name and original name.
     /// </returns>
-    protected (string Prefix, List<AugmentedCandidateNames>)? GetPrefix(
+    private (string Prefix, List<AugmentedCandidateNames>)? GetPrefix(
         string? container,
         string? hint,
         Dictionary<string, CandidateNames> names,
@@ -349,7 +344,7 @@ public class NameTrimmer : INameProcessor
     /// <param name="name">The name to get a trimming name for.</param>
     /// <param name="hint">The global prefix hint.</param>
     /// <returns>The trimming name.</returns>
-    public virtual string GetTrimmingName(
+    private string GetTrimmingName(
         Dictionary<string, string>? prefixOverrides,
         string name,
         string? hint = null
@@ -377,7 +372,7 @@ public class NameTrimmer : INameProcessor
     /// <param name="Secondary">The fallback versions of the trimmed name in case the primary does not work.</param>
     /// <param name="Original">The original, unmodified name.</param>
     /// <param name="TrimmingName">The name used for trimming purposes.</param>
-    protected record struct AugmentedCandidateNames(
+    private record struct AugmentedCandidateNames(
         string Primary,
         List<string> Secondary,
         string Original,
