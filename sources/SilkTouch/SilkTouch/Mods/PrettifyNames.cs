@@ -130,7 +130,7 @@ public class PrettifyNames(
                     Names = typeNames,
                     Configuration = cfg,
                     JobKey = ctx.JobKey,
-                    NonDeterminant = visitor.NonDeterminant,
+                    NonDeterminant = [],
                 },
                 nameProcessors
             );
@@ -151,7 +151,7 @@ public class PrettifyNames(
                         Names = constNames,
                         Configuration = cfg,
                         JobKey = ctx.JobKey,
-                        NonDeterminant = visitor.NonDeterminant,
+                        NonDeterminant = [],
                     },
                     nameProcessors
                 );
@@ -176,7 +176,7 @@ public class PrettifyNames(
                         Names = functionNames,
                         Configuration = cfg,
                         JobKey = ctx.JobKey,
-                        NonDeterminant = visitor.NonDeterminant,
+                        NonDeterminant = [],
                     },
                     nameProcessors,
                     functionSyntax
@@ -728,15 +728,6 @@ public class PrettifyNames(
         public Dictionary<string, TypeAffixData> AffixTypes { get; } = new();
 
         /// <summary>
-        /// A set of type names marked with the [Transformed] attribute.
-        /// </summary>
-        /// <remarks>
-        /// These are not used for prefix determination since they can contain identifiers that
-        /// are not part of the original source code.
-        /// </remarks>
-        public HashSet<string> NonDeterminant { get; } = new();
-
-        /// <summary>
         /// Tracks the type that we currently are visiting.
         /// </summary>
         private TypeInProgress? _typeInProgress;
@@ -833,11 +824,6 @@ public class PrettifyNames(
             }
 
             var identifier = node.Identifier.ToString();
-            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
-            {
-                NonDeterminant.Add(identifier);
-            }
-
             ReportTypeAffixData(identifier, node.AttributeLists);
 
             // Recurse into members.
@@ -869,11 +855,6 @@ public class PrettifyNames(
             }
 
             var identifier = node.Identifier.ToString();
-            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
-            {
-                NonDeterminant.Add(identifier);
-            }
-
             ReportTypeAffixData(identifier, node.AttributeLists);
 
             // Recurse into members
@@ -905,11 +886,6 @@ public class PrettifyNames(
             }
 
             var identifier = node.Identifier.ToString();
-            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
-            {
-                NonDeterminant.Add(identifier);
-            }
-
             ReportTypeAffixData(identifier, node.AttributeLists);
 
             // Recurse into members
@@ -938,11 +914,6 @@ public class PrettifyNames(
                 }
 
                 return;
-            }
-
-            if (node.AttributeLists.ContainsAttribute("Silk.NET.Core.Transformed"))
-            {
-                NonDeterminant.Add(identifier);
             }
 
             ReportTypeAffixData(identifier, node.AttributeLists);
